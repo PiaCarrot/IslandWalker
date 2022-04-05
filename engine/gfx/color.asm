@@ -65,6 +65,75 @@ SGB_ApplyPartyMenuHPPals:
 	ld [hl], e
 	ret
 
+Intro_LoadMagikarpPalettes: ; unreferenced
+	call CheckCGB
+	ret z
+
+; CGB only
+	ld hl, .MagikarpBGPal
+	ld de, wBGPals1
+	ld bc, 1 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	ld hl, .MagikarpOBPal
+	ld de, wOBPals1
+	ld bc, 1 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+.MagikarpBGPal:
+INCLUDE "gfx/intro/gs_magikarp_bg.pal"
+
+.MagikarpOBPal:
+INCLUDE "gfx/intro/gs_magikarp_ob.pal"
+
+Intro_LoadAllPal0:
+	call CheckCGB
+	ret nz
+	ldh a, [hSGB]
+	and a
+	ret z
+	ld hl, BlkPacket_AllPal0
+	jp PushSGBPals
+
+Intro_LoadMonPalette:
+	call CheckCGB
+	jr nz, .cgb
+	ldh a, [hSGB]
+	and a
+	ret z
+	ld a, c
+	push af
+	ld hl, PalPacket_Pal01
+	ld de, wSGBPals
+	ld bc, PALPACKET_LENGTH
+	call CopyBytes
+	pop af
+	call GetMonPalettePointer
+	ld a, [hli]
+	ld [wSGBPals + 3], a
+	ld a, [hli]
+	ld [wSGBPals + 4], a
+	ld a, [hli]
+	ld [wSGBPals + 5], a
+	ld a, [hl]
+	ld [wSGBPals + 6], a
+	ld hl, wSGBPals
+	jp PushSGBPals
+
+.cgb
+	ld de, wOBPals1
+	ld a, c
+	call GetMonPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ret
+
 LoadTrainerClassPaletteAsNthBGPal:
 	ld a, [wTrainerClass]
 	call GetTrainerPalettePointer

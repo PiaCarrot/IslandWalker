@@ -23,7 +23,9 @@ DEF NUM_SPRITE_ANIM_STRUCTS EQU 10 ; see wSpriteAnimationStructs
 ; Previously: UnusedSpriteAnimGFX indexes (see data/sprite_anims/unused_gfx.asm)
 	const_def
 	const SPRITE_ANIM_DICT_DEFAULT      ; 0
-	const_skip 4                        ; unused
+	const SPRITE_ANIM_DICT_GS_INTRO     ; 1
+	const SPRITE_ANIM_DICT_GS_INTRO_2   ; 2
+	const_skip 2                        ; unused
 	const SPRITE_ANIM_DICT_TEXT_CURSOR  ; 5
 	const SPRITE_ANIM_DICT_GS_SPLASH    ; 6
 	const SPRITE_ANIM_DICT_SLOTS        ; 7
@@ -65,58 +67,73 @@ DEF NUM_SPRITEANIMDICT_ENTRIES EQU 10
 	const SPRITE_ANIM_OBJ_HEADBUTT                  ; 1b
 	const SPRITE_ANIM_OBJ_EGG_HATCH                 ; 1c
 	const SPRITE_ANIM_OBJ_BLUE_WALK                 ; 1d
-	const SPRITE_ANIM_OBJ_INTRO_SUICUNE             ; 1e
-	const SPRITE_ANIM_OBJ_INTRO_PICHU               ; 1f
-	const SPRITE_ANIM_OBJ_INTRO_WOOPER              ; 20
-	const SPRITE_ANIM_OBJ_INTRO_UNOWN               ; 21
-	const SPRITE_ANIM_OBJ_INTRO_UNOWN_F             ; 22
-	const SPRITE_ANIM_OBJ_INTRO_SUICUNE_AWAY        ; 23
+	const SPRITE_ANIM_OBJ_GS_INTRO_BUBBLE           ; 1e
+	const SPRITE_ANIM_OBJ_GS_INTRO_SHELLDER         ; 1f
+	const SPRITE_ANIM_OBJ_GS_INTRO_MAGIKARP         ; 20
+	const SPRITE_ANIM_OBJ_UNUSED_INTRO_AERODACTYL   ; 21
+	const SPRITE_ANIM_OBJ_GS_INTRO_LAPRAS           ; 22
+	const SPRITE_ANIM_OBJ_GS_INTRO_NOTE             ; 23
 	const SPRITE_ANIM_OBJ_CELEBI                    ; 24
-	const SPRITE_ANIM_OBJ_PC_CURSOR                 ; 25
-	const SPRITE_ANIM_OBJ_PC_QUICK                  ; 26
-	const SPRITE_ANIM_OBJ_PC_MODE                   ; 27
-	const SPRITE_ANIM_OBJ_PC_MODE2                  ; 28
-	const SPRITE_ANIM_OBJ_PC_PACK                   ; 29
+	const SPRITE_ANIM_OBJ_GS_INTRO_INVISIBLE_NOTE   ; 25
+	const SPRITE_ANIM_OBJ_GS_INTRO_JIGGLYPUFF       ; 26
+	const SPRITE_ANIM_OBJ_GS_INTRO_PIKACHU          ; 27
+	const SPRITE_ANIM_OBJ_GS_INTRO_PIKACHU_TAIL     ; 28
+	const SPRITE_ANIM_OBJ_GS_INTRO_FIREBALL         ; 29
+	const SPRITE_ANIM_OBJ_GS_INTRO_CHIKORITA        ; 2a
+	const SPRITE_ANIM_OBJ_GS_INTRO_CYNDAQUIL        ; 2b
+	const SPRITE_ANIM_OBJ_GS_INTRO_TOTODILE         ; 2c
+	const SPRITE_ANIM_OBJ_PC_CURSOR                 ; 2d
+	const SPRITE_ANIM_OBJ_PC_QUICK                  ; 2e
+	const SPRITE_ANIM_OBJ_PC_MODE                   ; 2f
+	const SPRITE_ANIM_OBJ_PC_MODE2                  ; 30
+	const SPRITE_ANIM_OBJ_PC_PACK                   ; 31
 DEF NUM_SPRITE_ANIM_OBJS EQU const_value
 
 ; DoSpriteAnimFrame.Jumptable indexes (see engine/sprite_anims/functions.asm)
 	const_def
-	const SPRITE_ANIM_FUNC_NULL                      ; 00
-	const SPRITE_ANIM_FUNC_PARTY_MON                 ; 01
-	const SPRITE_ANIM_FUNC_PARTY_MON_SWITCH          ; 02
-	const SPRITE_ANIM_FUNC_PARTY_MON_SELECTED        ; 03
-	const SPRITE_ANIM_FUNC_GS_TITLE_TRAIL            ; 04
-	const SPRITE_ANIM_FUNC_NAMING_SCREEN_CURSOR      ; 05
-	const SPRITE_ANIM_FUNC_GAMEFREAK_LOGO            ; 06
-	const SPRITE_ANIM_FUNC_GS_GAMEFREAK_LOGO_STAR    ; 07
-	const SPRITE_ANIM_FUNC_GS_GAMEFREAK_LOGO_SPARKLE ; 08
-	const SPRITE_ANIM_FUNC_SLOTS_GOLEM               ; 09
-	const SPRITE_ANIM_FUNC_SLOTS_CHANSEY             ; 0a
-	const SPRITE_ANIM_FUNC_SLOTS_EGG                 ; 0b
-	const SPRITE_ANIM_FUNC_MAIL_CURSOR               ; 0c
-	const SPRITE_ANIM_FUNC_UNUSED_CURSOR             ; 0d
-	const SPRITE_ANIM_FUNC_MEMORY_GAME_CURSOR        ; 0e
-	const SPRITE_ANIM_FUNC_POKEGEAR_ARROW            ; 0f
-	const SPRITE_ANIM_FUNC_TRADE_POKE_BALL           ; 10
-	const SPRITE_ANIM_FUNC_TRADE_TUBE_BULGE          ; 11
-	const SPRITE_ANIM_FUNC_TRADEMON_IN_TUBE          ; 12
-	const SPRITE_ANIM_FUNC_REVEAL_NEW_MON            ; 13
-	const SPRITE_ANIM_FUNC_RADIO_TUNING_KNOB         ; 14
-	const SPRITE_ANIM_FUNC_CUT_LEAVES                ; 15
-	const SPRITE_ANIM_FUNC_FLY_FROM                  ; 16
-	const SPRITE_ANIM_FUNC_FLY_LEAF                  ; 17
-	const SPRITE_ANIM_FUNC_FLY_TO                    ; 18
-	const SPRITE_ANIM_FUNC_GS_INTRO_HO_OH_LUGIA      ; 19
-	const SPRITE_ANIM_FUNC_INTRO_SUICUNE             ; 1a
-	const SPRITE_ANIM_FUNC_INTRO_PICHU_WOOPER        ; 1b
-	const SPRITE_ANIM_FUNC_CELEBI                    ; 1c
-	const SPRITE_ANIM_FUNC_INTRO_UNOWN               ; 1d
-	const SPRITE_ANIM_FUNC_INTRO_UNOWN_F             ; 1e
-	const SPRITE_ANIM_FUNC_INTRO_SUICUNE_AWAY        ; 1f
-	const SPRITE_ANIM_FUNC_PC_CURSOR                 ; 20
-	const SPRITE_ANIM_FUNC_PC_QUICK                  ; 21
-	const SPRITE_ANIM_FUNC_PC_MODE                   ; 22
-	const SPRITE_ANIM_FUNC_PC_PACK                   ; 23
+	const SPRITE_ANIM_FUNC_NULL                        ; 00
+	const SPRITE_ANIM_FUNC_PARTY_MON                   ; 01
+	const SPRITE_ANIM_FUNC_PARTY_MON_SWITCH            ; 02
+	const SPRITE_ANIM_FUNC_PARTY_MON_SELECTED          ; 03
+	const SPRITE_ANIM_FUNC_GS_TITLE_TRAIL              ; 04
+	const SPRITE_ANIM_FUNC_NAMING_SCREEN_CURSOR        ; 05
+	const SPRITE_ANIM_FUNC_GAMEFREAK_LOGO              ; 06
+	const SPRITE_ANIM_FUNC_GS_GAMEFREAK_LOGO_STAR      ; 07
+	const SPRITE_ANIM_FUNC_GS_GAMEFREAK_LOGO_SPARKLE   ; 08
+	const SPRITE_ANIM_FUNC_SLOTS_GOLEM                 ; 09
+	const SPRITE_ANIM_FUNC_SLOTS_CHANSEY               ; 0a
+	const SPRITE_ANIM_FUNC_SLOTS_EGG                   ; 0b
+	const SPRITE_ANIM_FUNC_MAIL_CURSOR                 ; 0c
+	const SPRITE_ANIM_FUNC_UNUSED_CURSOR               ; 0d
+	const SPRITE_ANIM_FUNC_MEMORY_GAME_CURSOR          ; 0e
+	const SPRITE_ANIM_FUNC_POKEGEAR_ARROW              ; 0f
+	const SPRITE_ANIM_FUNC_TRADE_POKE_BALL             ; 10
+	const SPRITE_ANIM_FUNC_TRADE_TUBE_BULGE            ; 11
+	const SPRITE_ANIM_FUNC_TRADEMON_IN_TUBE            ; 12
+	const SPRITE_ANIM_FUNC_REVEAL_NEW_MON              ; 13
+	const SPRITE_ANIM_FUNC_RADIO_TUNING_KNOB           ; 14
+	const SPRITE_ANIM_FUNC_CUT_LEAVES                  ; 15
+	const SPRITE_ANIM_FUNC_FLY_FROM                    ; 16
+	const SPRITE_ANIM_FUNC_FLY_LEAF                    ; 17
+	const SPRITE_ANIM_FUNC_FLY_TO                      ; 18
+	const SPRITE_ANIM_FUNC_GS_INTRO_HO_OH_LUGIA        ; 19
+	const SPRITE_ANIM_FUNC_GS_INTRO_BUBBLE             ; 1d
+	const SPRITE_ANIM_FUNC_GS_INTRO_SHELLDER           ; 1e
+	const SPRITE_ANIM_FUNC_CELEBI                      ; 1c
+	const SPRITE_ANIM_FUNC_GS_INTRO_MAGIKARP           ; 1d
+	const SPRITE_ANIM_FUNC_UNUSED_INTRO_AERODACTYL     ; 1e
+	const SPRITE_ANIM_FUNC_GS_INTRO_LAPRAS             ; 1f
+	const SPRITE_ANIM_FUNC_GS_INTRO_NOTE               ; 20
+	const SPRITE_ANIM_FUNC_GS_INTRO_JIGGLYPUFF         ; 21
+	const SPRITE_ANIM_FUNC_GS_INTRO_PIKACHU            ; 22
+	const SPRITE_ANIM_FUNC_GS_INTRO_PIKACHU_TAIL       ; 23
+	const SPRITE_ANIM_FUNC_GS_INTRO_FIREBALL           ; 24
+	const SPRITE_ANIM_FUNC_GS_INTRO_CHIKORITA_TOTODILE ; 25
+	const SPRITE_ANIM_FUNC_GS_INTRO_CYNDAQUIL          ; 26
+	const SPRITE_ANIM_FUNC_PC_CURSOR                   ; 27
+	const SPRITE_ANIM_FUNC_PC_QUICK                    ; 28
+	const SPRITE_ANIM_FUNC_PC_MODE                     ; 29
+	const SPRITE_ANIM_FUNC_PC_PACK                     ; 2a
 DEF NUM_SPRITE_ANIM_FUNCS EQU const_value
 
 ; SpriteAnimFrameData indexes (see data/sprite_anims/framesets.asm)
@@ -173,25 +190,32 @@ DEF NUM_SPRITE_ANIM_FUNCS EQU const_value
 	const SPRITE_ANIM_FRAMESET_MOBILE_TRADE_SENT_PULSE   ; 31
 	const SPRITE_ANIM_FRAMESET_MOBILE_TRADE_OT_PULSE     ; 32
 	const SPRITE_ANIM_FRAMESET_MOBILE_TRADE_PING         ; 33
-	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE             ; 34
-	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_2           ; 35
-	const SPRITE_ANIM_FRAMESET_INTRO_PICHU               ; 36
-	const SPRITE_ANIM_FRAMESET_INTRO_WOOPER              ; 37
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_1             ; 38
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_2             ; 39
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_3             ; 3a
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_4             ; 3b
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F_2           ; 3c
-	const SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_AWAY        ; 3d
-	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F             ; 3e
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_BUBBLE           ; 34
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_SHELLDER         ; 35
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_MAGIKARP         ; 36
+	const SPRITE_ANIM_FRAMESET_UNUSED_INTRO_AERODACTYL   ; 37
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_LAPRAS           ; 38
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_NOTE             ; 39
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_INVISIBLE_NOTE   ; 3a
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_JIGGLYPUFF       ; 3b
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_JIGGLYPUFF_2     ; 3c
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_PIKACHU          ; 3d
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_PIKACHU_2        ; 3e
 	const SPRITE_ANIM_FRAMESET_CELEBI_LEFT               ; 3f
 	const SPRITE_ANIM_FRAMESET_CELEBI_RIGHT              ; 40
-	const SPRITE_ANIM_FRAMESET_PC_CURSOR                 ; 41
-	const SPRITE_ANIM_FRAMESET_PC_CURSOR_ITEM            ; 42
-	const SPRITE_ANIM_FRAMESET_PC_QUICK                  ; 43
-	const SPRITE_ANIM_FRAMESET_PC_MODE                   ; 44
-	const SPRITE_ANIM_FRAMESET_PC_MODE2                  ; 45
-	const SPRITE_ANIM_FRAMESET_PC_PACK                   ; 46
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_PIKACHU_3        ; 41
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_PIKACHU_TAIL     ; 42
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_PIKACHU_TAIL_2   ; 43
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_FIREBALL         ; 44
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_CHIKORITA        ; 45
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_CYNDAQUIL        ; 46
+	const SPRITE_ANIM_FRAMESET_GS_INTRO_TOTODILE         ; 47
+	const SPRITE_ANIM_FRAMESET_PC_CURSOR                 ; 48
+	const SPRITE_ANIM_FRAMESET_PC_CURSOR_ITEM            ; 49
+	const SPRITE_ANIM_FRAMESET_PC_QUICK                  ; 4a
+	const SPRITE_ANIM_FRAMESET_PC_MODE                   ; 4b
+	const SPRITE_ANIM_FRAMESET_PC_MODE2                  ; 4c
+	const SPRITE_ANIM_FRAMESET_PC_PACK                   ; 4d
 DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 
 ; SpriteAnimOAMData indexes (see data/sprite_anims/oam.asm)
@@ -204,7 +228,7 @@ DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 	const SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2         ; 05
 	const SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_1         ; 06
 	const SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_2         ; 07
-	const SPRITE_ANIM_OAMSET_GS_INTRO_UNUSED_LAPRAS      ; 08
+	const SPRITE_ANIM_OAMSET_UNUSED_INTRO_AERODACTYL     ; 08
 	const SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_1           ; 09
 	const SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_2           ; 0a
 	const SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_3           ; 0b

@@ -341,6 +341,17 @@ wBattleMonNickname:: ds MON_NAME_LENGTH
 
 wBattleMon:: battle_struct wBattleMon
 
+; intro water/grass/fire cutscene data
+	ds 4
+wIntroJumptableIndex:: db
+wIntroBGMapPointer:: dw
+wIntroTilemapPointer:: dw
+wIntroTilesPointer:: dw
+wIntroFrameCounter1:: db
+wIntroFrameCounter2:: db
+wIntroSpriteStateFlag:: db
+
+
 	ds 2
 
 wWildMon:: db
@@ -3196,7 +3207,12 @@ wOBPals2:: ds 8 palettes
 wLYOverrides:: ds SCREEN_HEIGHT_PX
 wLYOverridesEnd::
 
-	ds 1
+UNION
+	ds 16
+	wLYOverrides2:: ds SCREEN_HEIGHT_PX
+	wLYOverrides2End::
+
+NEXTU
 
 wMagnetTrain:: ; used only for BANK(wMagnetTrain)
 wMagnetTrainDirection:: db
@@ -3208,11 +3224,12 @@ wMagnetTrainPlayerSpriteInitX:: db
 wPalFadeDelayFrames:: db
 wPalFadeDelay:: db
 
-	ds 104
+	ds 105
 
 	align 8
 wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
 wLYOverridesBackupEnd::
+ENDU
 
 
 SECTION "Used Storage", WRAMX

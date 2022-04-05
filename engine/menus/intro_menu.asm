@@ -870,7 +870,7 @@ DEF NUM_TITLESCREENOPTIONS EQU const_value
 IntroSequence:
 	farcall SplashScreen
 	jr c, StartTitleScreen
-	farcall CrystalIntro
+	farcall GoldSilverIntro
 
 	; fallthrough
 
