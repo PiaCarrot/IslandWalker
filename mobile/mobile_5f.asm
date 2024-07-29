@@ -1247,7 +1247,7 @@ Function17ded9:
 	push hl
 	ld a, [wPartyCount]
 	dec a
-	ld hl, wPartyMon1DVs
+	ld hl, wPartyMon1IVs
 	call GetPartyLocation
 	ld d, h
 	ld e, l

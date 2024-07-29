@@ -12,11 +12,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 224, 200, 200, 188, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 11, 13 ; DVs
+	ivs 25, 26, 26, 22, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 41 ; HP
@@ -35,11 +35,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 200, 224, 188, 200, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 13, 15, 11 ; DVs
+	ivs 25, 28, 26, 31, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 39 ; HP
@@ -58,11 +58,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 200, 200, 213, 224, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 14, 15 ; DVs
+	ivs 27, 26, 22, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 46 ; HP
@@ -81,11 +81,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 15, 13, 7 ; DVs
+	ivs 19, 14, 31, 26, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 20, 20, 25, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 66 ; HP
@@ -104,11 +104,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 200, 174, 200, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 15, 12, 15 ; DVs
+	ivs 29, 28, 31, 24, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 47 ; HP
@@ -127,11 +127,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 200, 174, 183, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 13 ; DVs
+	ivs 28, 31, 28, 31, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 20, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 38 ; HP
@@ -150,11 +150,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 188, 188 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 11, 13, 15 ; DVs
+	ivs 26, 22, 22, 26, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 46 ; HP
@@ -173,11 +173,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 15, 11 ; DVs
+	ivs 24, 26, 22, 31, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 5, 20, 10, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 43 ; HP
@@ -196,11 +196,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 11 ; DVs
+	ivs 25, 31, 26, 28, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 52 ; HP
@@ -219,11 +219,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 188, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 11, 15 ; DVs
+	ivs 27, 31, 22, 22, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 20, 20, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 38 ; HP
@@ -242,11 +242,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 200, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 13, 14 ; DVs
+	ivs 27, 31, 22, 26, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 5, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 44 ; HP
@@ -265,11 +265,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 15, 13, 15 ; DVs
+	ivs 29, 28, 31, 26, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 5, 5, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 37 ; HP
@@ -288,11 +288,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 182, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 15, 14 ; DVs
+	ivs 28, 31, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 20, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 36 ; HP
@@ -311,11 +311,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 13, 15, 13 ; DVs
+	ivs 27, 28, 26, 31, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 15, 30 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 39 ; HP
@@ -334,11 +334,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 179, 200, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 12, 14 ; DVs
+	ivs 27, 26, 31, 24, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 77 ; HP
@@ -357,11 +357,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 15, 15, 7 ; DVs
+	ivs 23, 28, 31, 31, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 57 ; HP
@@ -380,11 +380,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 14 ; DVs
+	ivs 29, 31, 28, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 5, 10, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 45 ; HP
@@ -403,11 +403,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 7, 15, 7 ; DVs
+	ivs 20, 31, 14, 31, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 43 ; HP
@@ -426,11 +426,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 15, 15, 15 ; DVs
+	ivs 31, 31, 31, 31, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 0, 0, 0 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 36 ; HP
@@ -449,11 +449,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 6, 5, 5, 7 ; DVs
+	ivs 12, 12, 10, 10, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 30, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 40 ; HP
@@ -472,11 +472,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 3, 6, 7 ; DVs
+	ivs 12, 14, 6, 12, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 34 ; HP
@@ -498,11 +498,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 12, 15, 11, 12 ; DVs
+	ivs 25, 24, 31, 22, 24, 24 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 81 ; HP
@@ -521,11 +521,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 13, 11 ; DVs
+	ivs 23, 26, 22, 26, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 71 ; HP
@@ -544,11 +544,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 10, 15, 13 ; DVs
+	ivs 26, 31, 20, 31, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 83 ; HP
@@ -567,11 +567,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 224, 213, 224, 174, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 15, 15, 15 ; DVs
+	ivs 31, 31, 31, 31, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 77 ; HP
@@ -590,11 +590,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 224, 224, 174, 224, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 15 ; DVs
+	ivs 29, 31, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 68 ; HP
@@ -613,11 +613,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 188, 213, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 15, 11 ; DVs
+	ivs 24, 26, 22, 31, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 15, 20, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 81 ; HP
@@ -636,11 +636,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 224, 174, 213, 174, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 14 ; DVs
+	ivs 27, 26, 31, 26, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 78 ; HP
@@ -659,11 +659,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 213, 224, 224, 213, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 11 ; DVs
+	ivs 25, 31, 26, 28, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 83 ; HP
@@ -682,11 +682,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 213, 224, 200, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 11, 11 ; DVs
+	ivs 23, 31, 22, 22, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 10, 5, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 78 ; HP
@@ -705,11 +705,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 224, 224, 174, 174, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 13, 15, 14 ; DVs
+	ivs 27, 22, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 25, 10, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 148 ; HP
@@ -728,11 +728,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 235, 174, 200, 235, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 13, 7 ; DVs
+	ivs 22, 31, 28, 26, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 98 ; HP
@@ -751,11 +751,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 213, 224, 213, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 12, 15, 14 ; DVs
+	ivs 28, 31, 24, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 20, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 58 ; HP
@@ -774,11 +774,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 200, 213, 200, 213, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 15, 14 ; DVs
+	ivs 28, 31, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 25, 20, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 73 ; HP
@@ -797,11 +797,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 224, 213, 188, 224, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 15, 13 ; DVs
+	ivs 27, 31, 22, 31, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 67 ; HP
@@ -820,11 +820,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 224, 200, 224, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 14, 15 ; DVs
+	ivs 28, 31, 22, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 76 ; HP
@@ -843,11 +843,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 200, 200, 200, 200, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 13, 15, 7 ; DVs
+	ivs 22, 28, 26, 31, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 82 ; HP
@@ -866,11 +866,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 200, 200, 200, 200, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 15, 14 ; DVs
+	ivs 28, 26, 31, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 83 ; HP
@@ -889,11 +889,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 200, 200, 200, 200, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 12, 7, 15, 14 ; DVs
+	ivs 25, 24, 14, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 5, 5, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 98 ; HP
@@ -912,11 +912,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 12, 7, 7, 7 ; DVs
+	ivs 16, 24, 14, 14, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 10, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 97 ; HP
@@ -935,11 +935,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 5, 6, 4, 6 ; DVs
+	ivs 10, 10, 12, 8, 12, 12 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 74 ; HP
@@ -958,11 +958,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 5, 5, 4, 7 ; DVs
+	ivs 11, 10, 10, 8, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 15, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 81 ; HP
@@ -984,11 +984,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 224, 224, 224, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 14, 13 ; DVs
+	ivs 25, 26, 22, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 20, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 103 ; HP
@@ -1007,11 +1007,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 235, 235, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 15, 11 ; DVs
+	ivs 25, 26, 26, 31, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 5, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 119 ; HP
@@ -1030,11 +1030,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 15, 15, 15 ; DVs
+	ivs 31, 31, 31, 31, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 101 ; HP
@@ -1053,11 +1053,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 224, 224, 174, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 14, 14 ; DVs
+	ivs 27, 31, 22, 28, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 102 ; HP
@@ -1076,11 +1076,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 224, 174, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 15, 15, 15 ; DVs
+	ivs 30, 28, 31, 31, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 81 ; HP
@@ -1099,11 +1099,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 213, 213, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 11 ; DVs
+	ivs 25, 26, 31, 26, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 5, 5, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 109 ; HP
@@ -1122,11 +1122,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 174, 213, 174, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 14, 13 ; DVs
+	ivs 26, 31, 22, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 20, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 217 ; HP
@@ -1145,11 +1145,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 213, 224, 224, 213, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 13 ; DVs
+	ivs 27, 31, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 108 ; HP
@@ -1168,11 +1168,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 213, 224, 200, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 11, 14 ; DVs
+	ivs 27, 31, 26, 22, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 118 ; HP
@@ -1191,11 +1191,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 224, 174, 174, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 15, 13, 12 ; DVs
+	ivs 26, 28, 31, 26, 24, 24 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 10, 35 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 111 ; HP
@@ -1214,11 +1214,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 235, 174, 200, 235, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 11 ; DVs
+	ivs 25, 26, 31, 26, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 10, 20, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 117 ; HP
@@ -1237,11 +1237,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 213, 224, 213, 224, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 14, 11 ; DVs
+	ivs 24, 26, 26, 28, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 10, 20, 5, 10 ; PP
 	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 99 ; HP
@@ -1260,11 +1260,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 200, 213, 200, 213, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 13, 14, 15 ; DVs
+	ivs 27, 22, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 30, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 98 ; HP
@@ -1283,11 +1283,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 213, 188, 224, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 11 ; DVs
+	ivs 25, 31, 26, 28, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 5, 25, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 142 ; HP
@@ -1306,11 +1306,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 200, 224, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 14, 11 ; DVs
+	ivs 24, 26, 26, 28, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 139 ; HP
@@ -1329,11 +1329,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 213, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 15, 15, 7 ; DVs
+	ivs 23, 28, 31, 31, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 25, 20, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 99 ; HP
@@ -1352,11 +1352,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 213, 224, 217, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 14 ; DVs
+	ivs 29, 31, 28, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 10, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 110 ; HP
@@ -1375,11 +1375,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 224, 213, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 7, 15, 7 ; DVs
+	ivs 20, 31, 14, 31, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 10, 30, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 101 ; HP
@@ -1398,11 +1398,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 7, 4, 5 ; DVs
+	ivs 11, 14, 14, 8, 10, 10 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 20, 30 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 114 ; HP
@@ -1421,11 +1421,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 6, 7, 7, 7 ; DVs
+	ivs 13, 12, 14, 14, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 20, 20, 35, 20 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 96 ; HP
@@ -1444,11 +1444,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 7, 6, 7 ; DVs
+	ivs 13, 14, 14, 12, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 20, 25, 15, 30 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 99 ; HP
@@ -1470,11 +1470,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 15, 14 ; DVs
+	ivs 28, 31, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 20, 5, 10, 15 ; PP
 	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 143 ; HP
@@ -1493,11 +1493,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 15 ; DVs
+	ivs 29, 31, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 20, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 142 ; HP
@@ -1516,11 +1516,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 13, 13, 13 ; DVs
+	ivs 26, 28, 26, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 205 ; HP
@@ -1539,11 +1539,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 11 ; DVs
+	ivs 25, 31, 26, 28, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 186 ; HP
@@ -1562,11 +1562,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 15, 13, 11 ; DVs
+	ivs 25, 28, 31, 26, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 137 ; HP
@@ -1585,11 +1585,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 213, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 14, 15 ; DVs
+	ivs 28, 26, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 126 ; HP
@@ -1608,11 +1608,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 213, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 11, 14 ; DVs
+	ivs 27, 31, 26, 22, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 131 ; HP
@@ -1631,11 +1631,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 213, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 15, 14, 7 ; DVs
+	ivs 21, 22, 31, 28, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 20, 20, 25, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 233 ; HP
@@ -1654,11 +1654,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 213, 224, 200, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 14, 13 ; DVs
+	ivs 26, 26, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 145 ; HP
@@ -1677,11 +1677,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 200, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 13, 15, 14 ; DVs
+	ivs 27, 22, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 20, 25, 20, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 139 ; HP
@@ -1700,11 +1700,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 213, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 11, 11 ; DVs
+	ivs 25, 31, 28, 22, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 10, 5, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 108 ; HP
@@ -1723,11 +1723,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 213, 224, 213, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 15, 12, 15 ; DVs
+	ivs 27, 22, 31, 24, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 157 ; HP
@@ -1746,11 +1746,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 213, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 12, 14, 15 ; DVs
+	ivs 27, 22, 24, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 30, 30, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 147 ; HP
@@ -1769,11 +1769,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 11, 11 ; DVs
+	ivs 25, 31, 28, 22, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 25, 30, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 152 ; HP
@@ -1792,11 +1792,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 10, 7, 15 ; DVs
+	ivs 25, 31, 20, 14, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 40, 10, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 140 ; HP
@@ -1815,11 +1815,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 15, 15, 7 ; DVs
+	ivs 23, 28, 31, 31, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 10, 25, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 133 ; HP
@@ -1838,11 +1838,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 14 ; DVs
+	ivs 29, 31, 28, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 142 ; HP
@@ -1861,11 +1861,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 7, 14, 7 ; DVs
+	ivs 20, 31, 14, 28, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 10, 20, 10, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 158 ; HP
@@ -1884,11 +1884,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 7, 7, 10 ; DVs
+	ivs 16, 14, 14, 14, 20, 20 ; IVs
+	db 0, 0 ; padding
 	db 25, 15, 15, 20 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 146 ; HP
@@ -1907,11 +1907,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 5, 6, 11 ; DVs
+	ivs 16, 14, 10, 12, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 40, 10, 20, 30 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 161 ; HP
@@ -1930,11 +1930,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 6, 5, 7, 7 ; DVs
+	ivs 12, 12, 10, 14, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 30, 15, 20, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 124 ; HP
@@ -1956,11 +1956,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 235, 235, 245, 224, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 15, 15 ; DVs
+	ivs 29, 26, 26, 31, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 5, 20 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 179 ; HP
@@ -1979,11 +1979,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 235, 224, 245, 245, 245, 245 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 15, 12 ; DVs
+	ivs 26, 26, 26, 31, 24, 24 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 178 ; HP
@@ -2002,11 +2002,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 245, 245, 245, 245, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 12, 15 ; DVs
+	ivs 28, 31, 26, 24, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 10, 20 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 123 ; HP
@@ -2025,11 +2025,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 245, 235, 235, 245, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 15 ; DVs
+	ivs 29, 31, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 15, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 263 ; HP
@@ -2048,11 +2048,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 235, 245, 245, 235, 245, 245 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 13, 13 ; DVs
+	ivs 26, 26, 26, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 10, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 234 ; HP
@@ -2071,11 +2071,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 235, 245, 239, 235, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 13, 15, 15 ; DVs
+	ivs 29, 28, 26, 31, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 20, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 161 ; HP
@@ -2094,11 +2094,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 213, 224, 200, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 14, 13 ; DVs
+	ivs 27, 26, 31, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 20, 30, 35 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 169 ; HP
@@ -2117,11 +2117,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 224, 200, 213, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 14 ; DVs
+	ivs 27, 26, 31, 26, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 10, 20 ; PP
 	db 15 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 196 ; HP
@@ -2140,11 +2140,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 200, 213, 224, 200, 210, 210 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 15, 14, 12 ; DVs
+	ivs 27, 31, 31, 28, 24, 24 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 5, 15 ; PP
 	db 13 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 187 ; HP
@@ -2163,11 +2163,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 213, 210, 200, 213, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 15, 15, 15 ; DVs
+	ivs 31, 31, 31, 31, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 20, 20, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 161 ; HP
@@ -2186,11 +2186,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 213, 200, 224, 213, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 7, 15, 14 ; DVs
+	ivs 26, 31, 14, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 20, 5, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 135 ; HP
@@ -2209,11 +2209,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 224, 213, 233, 200, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 13, 15, 14 ; DVs
+	ivs 25, 14, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 20, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 161 ; HP
@@ -2232,11 +2232,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 213, 224, 224, 213, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 13, 13 ; DVs
+	ivs 27, 31, 26, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 181 ; HP
@@ -2255,11 +2255,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 213, 200, 224, 200, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 15, 15, 15 ; DVs
+	ivs 30, 28, 31, 31, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 5, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 178 ; HP
@@ -2278,11 +2278,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 213, 224, 213, 200, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 13, 14 ; DVs
+	ivs 27, 31, 26, 26, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 20, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 190 ; HP
@@ -2301,11 +2301,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 213, 224, 224, 224, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 7, 14, 13 ; DVs
+	ivs 24, 26, 14, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 25, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 164 ; HP
@@ -2324,11 +2324,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 224, 224, 235, 213, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 12, 15, 13, 13 ; DVs
+	ivs 26, 24, 31, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 169 ; HP
@@ -2347,11 +2347,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 213, 224, 224, 200, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 13, 13 ; DVs
+	ivs 26, 26, 26, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 10, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 176 ; HP
@@ -2370,11 +2370,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 200, 200, 200, 200, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 4, 5, 5, 6 ; DVs
+	ivs 10, 8, 10, 10, 12, 12 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 161 ; HP
@@ -2393,11 +2393,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 200, 200, 200, 200, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 5, 6, 5 ; DVs
+	ivs 11, 14, 10, 12, 10, 10 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 193 ; HP
@@ -2416,11 +2416,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	db 200, 200, 200, 200, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 4, 5, 5, 6 ; DVs
+	ivs 10, 8, 10, 10, 12, 12 ; IVs
+	db 0, 0 ; padding
 	db 5, 5, 20, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 181 ; HP
@@ -2442,11 +2442,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 235, 235, 224, 245, 245, 245 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 15, 14 ; DVs
+	ivs 27, 26, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 211 ; HP
@@ -2465,11 +2465,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 235, 245, 235, 245, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 13 ; DVs
+	ivs 27, 31, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 240 ; HP
@@ -2488,11 +2488,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 245, 235, 235, 245, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 14, 15 ; DVs
+	ivs 28, 31, 22, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 212 ; HP
@@ -2511,11 +2511,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 235, 224, 224, 224, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 13, 14 ; DVs
+	ivs 26, 26, 26, 26, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 5, 20, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 223 ; HP
@@ -2534,11 +2534,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 224, 213, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 15 ; DVs
+	ivs 29, 31, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 226 ; HP
@@ -2557,11 +2557,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 213, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 15, 13 ; DVs
+	ivs 27, 26, 26, 31, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 20, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 229 ; HP
@@ -2580,11 +2580,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 224, 213, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 13 ; DVs
+	ivs 27, 31, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 20, 20, 5, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 346 ; HP
@@ -2603,11 +2603,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 213, 224, 224, 213, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 13, 13 ; DVs
+	ivs 27, 31, 26, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 20, 10, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 215 ; HP
@@ -2626,11 +2626,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 213, 224, 200, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 15, 13 ; DVs
+	ivs 27, 26, 26, 31, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 229 ; HP
@@ -2649,11 +2649,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 15 ; DVs
+	ivs 29, 31, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 10, 5, 10, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 232 ; HP
@@ -2672,11 +2672,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 235, 224, 200, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 13 ; DVs
+	ivs 27, 31, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 228 ; HP
@@ -2695,11 +2695,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 224, 213, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 14, 11 ; DVs
+	ivs 25, 31, 22, 28, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 25, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 196 ; HP
@@ -2718,11 +2718,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 213, 224, 213, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 12, 13 ; DVs
+	ivs 25, 31, 22, 24, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 424 ; HP
@@ -2741,11 +2741,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 213, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 10, 15, 12 ; DVs
+	ivs 26, 31, 20, 31, 24, 24 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 307 ; HP
@@ -2764,11 +2764,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 200, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 14, 13 ; DVs
+	ivs 27, 26, 31, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 10, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 214 ; HP
@@ -2787,11 +2787,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 15, 14, 11 ; DVs
+	ivs 26, 31, 31, 28, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 196 ; HP
@@ -2810,11 +2810,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 14 ; DVs
+	ivs 29, 31, 28, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 40, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 209 ; HP
@@ -2833,11 +2833,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 15, 10 ; DVs
+	ivs 24, 31, 22, 31, 20, 20 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 245 ; HP
@@ -2856,11 +2856,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 7, 6, 7 ; DVs
+	ivs 15, 22, 14, 12, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 10, 20, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 201 ; HP
@@ -2879,11 +2879,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 6, 6, 5, 15 ; DVs
+	ivs 19, 12, 12, 10, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 5, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 171 ; HP
@@ -2902,11 +2902,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 6, 5, 7 ; DVs
+	ivs 12, 14, 12, 10, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 15, 20 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 205 ; HP
@@ -2928,11 +2928,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 245, 237, 235, 224, 245, 245 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 14, 15 ; DVs
+	ivs 28, 31, 22, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 231 ; HP
@@ -2951,11 +2951,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 224, 224, 245, 245, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 15, 14, 15 ; DVs
+	ivs 28, 22, 31, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 318 ; HP
@@ -2974,11 +2974,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 233, 245, 235, 224, 241, 241 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 13, 13 ; DVs
+	ivs 26, 26, 26, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 20, 5, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 274 ; HP
@@ -2997,11 +2997,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 235, 235, 235, 241, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 14, 13 ; DVs
+	ivs 27, 26, 31, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 495 ; HP
@@ -3020,11 +3020,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 235, 235, 245, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 13, 13 ; DVs
+	ivs 26, 26, 26, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 365 ; HP
@@ -3043,11 +3043,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 241, 224, 235, 245, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 12, 13 ; DVs
+	ivs 25, 26, 26, 24, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 20, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 245 ; HP
@@ -3066,11 +3066,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 224, 213, 213, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 13, 15 ; DVs
+	ivs 27, 26, 22, 26, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 279 ; HP
@@ -3089,11 +3089,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 213, 224, 224, 213, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 13, 15 ; DVs
+	ivs 27, 26, 22, 26, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 20, 20, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 264 ; HP
@@ -3112,11 +3112,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 213, 224, 200, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 14, 13 ; DVs
+	ivs 26, 26, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 5, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 268 ; HP
@@ -3135,11 +3135,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 224, 224, 213, 213, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 11 ; DVs
+	ivs 25, 31, 26, 28, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 5, 20, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 269 ; HP
@@ -3158,11 +3158,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 235, 213, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 14, 15 ; DVs
+	ivs 27, 26, 22, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 5, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 271 ; HP
@@ -3181,11 +3181,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 224, 224, 213, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 14, 13, 13 ; DVs
+	ivs 26, 26, 28, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 266 ; HP
@@ -3204,11 +3204,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 224, 213, 224, 213, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 13 ; DVs
+	ivs 27, 31, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 262 ; HP
@@ -3227,11 +3227,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 224, 213, 213, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 13, 15, 11 ; DVs
+	ivs 24, 22, 26, 31, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 195 ; HP
@@ -3250,11 +3250,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 224, 200, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 13, 14, 15 ; DVs
+	ivs 27, 22, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 227 ; HP
@@ -3273,11 +3273,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 13 ; DVs
+	ivs 28, 31, 28, 31, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 30, 40, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 231 ; HP
@@ -3296,11 +3296,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 14 ; DVs
+	ivs 29, 31, 28, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 202 ; HP
@@ -3319,11 +3319,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 7, 15, 7 ; DVs
+	ivs 20, 31, 14, 31, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 251 ; HP
@@ -3342,11 +3342,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 6, 4, 4 ; DVs
+	ivs 10, 14, 12, 8, 8, 8 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 5, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 233 ; HP
@@ -3365,11 +3365,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 5, 6, 4, 4 ; DVs
+	ivs 9, 10, 12, 8, 8, 8 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 230 ; HP
@@ -3388,11 +3388,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 343000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 6, 6, 4 ; DVs
+	ivs 10, 14, 12, 12, 8, 8 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 231 ; HP
@@ -3414,11 +3414,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 245, 235, 245, 235, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 11 ; DVs
+	ivs 25, 31, 26, 28, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 263 ; HP
@@ -3437,11 +3437,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 245, 235, 224, 236, 245, 245 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 14, 13 ; DVs
+	ivs 25, 26, 22, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 415 ; HP
@@ -3460,11 +3460,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 235, 224, 235, 235, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 13, 11 ; DVs
+	ivs 25, 31, 26, 26, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 280 ; HP
@@ -3483,11 +3483,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 224, 224, 224, 174, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 13, 14 ; DVs
+	ivs 27, 31, 26, 26, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 276 ; HP
@@ -3506,11 +3506,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 224, 224, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 11 ; DVs
+	ivs 25, 26, 31, 26, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 366 ; HP
@@ -3529,11 +3529,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 224, 235, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 11 ; DVs
+	ivs 25, 26, 31, 26, 22, 22 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 318 ; HP
@@ -3552,11 +3552,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 224, 224, 213, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 14, 13, 13 ; DVs
+	ivs 26, 26, 28, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 247 ; HP
@@ -3575,11 +3575,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 213, 224, 224, 213, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 13 ; DVs
+	ivs 27, 31, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 273 ; HP
@@ -3598,11 +3598,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 213, 224, 200, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 14, 13 ; DVs
+	ivs 26, 31, 22, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 5, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 273 ; HP
@@ -3621,11 +3621,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 224, 224, 224, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 13, 13 ; DVs
+	ivs 26, 26, 26, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 303 ; HP
@@ -3644,11 +3644,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 235, 224, 200, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 14, 13 ; DVs
+	ivs 27, 26, 31, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 20, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 293 ; HP
@@ -3667,11 +3667,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 235, 224, 213, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 15 ; DVs
+	ivs 29, 26, 31, 26, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 10, 5, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 264 ; HP
@@ -3690,11 +3690,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 200, 213, 200, 213, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 12 ; DVs
+	ivs 26, 26, 31, 26, 24, 24 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 5, 35 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 256 ; HP
@@ -3713,11 +3713,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 224, 213, 188, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 14, 15 ; DVs
+	ivs 28, 26, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 25, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 258 ; HP
@@ -3736,11 +3736,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 224, 200, 224, 200, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 15, 14 ; DVs
+	ivs 27, 26, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 25, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 300 ; HP
@@ -3759,11 +3759,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 224, 200, 224, 200, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 15, 14, 13 ; DVs
+	ivs 28, 31, 31, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 10, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 282 ; HP
@@ -3782,11 +3782,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 224, 224, 200, 200, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 15, 14, 15 ; DVs
+	ivs 30, 31, 31, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 250 ; HP
@@ -3805,11 +3805,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 224, 224, 200, 224, 200, 200 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 13, 13 ; DVs
+	ivs 27, 31, 26, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 214 ; HP
@@ -3828,11 +3828,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 6, 5, 6, 5 ; DVs
+	ivs 10, 12, 10, 12, 10, 10 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 5, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 260 ; HP
@@ -3851,11 +3851,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 4, 6, 4 ; DVs
+	ivs 10, 14, 8, 12, 8, 8 ; IVs
+	db 0, 0 ; padding
 	db 5, 25, 15, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 241 ; HP
@@ -3874,11 +3874,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 6, 5, 7 ; DVs
+	ivs 12, 14, 12, 10, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 286 ; HP
@@ -3900,11 +3900,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 245, 245, 235, 245, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 13 ; DVs
+	ivs 27, 31, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 20, 10, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 349 ; HP
@@ -3923,11 +3923,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 255, 224, 237, 245, 245, 245 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 13 ; DVs
+	ivs 27, 31, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 5, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 343 ; HP
@@ -3946,11 +3946,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 245, 245, 245, 235, 245, 245 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 13 ; DVs
+	ivs 27, 26, 31, 26, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 289 ; HP
@@ -3969,11 +3969,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 13, 15 ; DVs
+	ivs 27, 26, 22, 26, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 5, 5, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 266 ; HP
@@ -3992,11 +3992,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 12, 15 ; DVs
+	ivs 28, 31, 26, 24, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 35, 30, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 325 ; HP
@@ -4015,11 +4015,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 213, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 13 ; DVs
+	ivs 27, 31, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 325 ; HP
@@ -4038,11 +4038,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 224, 235, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 14 ; DVs
+	ivs 27, 26, 31, 26, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 309 ; HP
@@ -4061,11 +4061,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 235, 224, 213, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 14 ; DVs
+	ivs 27, 26, 31, 26, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 354 ; HP
@@ -4084,11 +4084,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 213, 224, 224, 224, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 13, 14, 15 ; DVs
+	ivs 27, 22, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 405 ; HP
@@ -4107,11 +4107,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 235, 224, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 15, 14 ; DVs
+	ivs 27, 26, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 15, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 294 ; HP
@@ -4130,11 +4130,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 235, 235, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 14, 13 ; DVs
+	ivs 26, 26, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 337 ; HP
@@ -4153,11 +4153,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 213, 224, 235, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 13 ; DVs
+	ivs 28, 31, 28, 31, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 455 ; HP
@@ -4176,11 +4176,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 213, 224, 213, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 13, 14 ; DVs
+	ivs 27, 26, 31, 26, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 336 ; HP
@@ -4199,11 +4199,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 213, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 13, 15, 14 ; DVs
+	ivs 27, 22, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 5, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 633 ; HP
@@ -4222,11 +4222,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 200, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 11, 15, 14 ; DVs
+	ivs 27, 26, 22, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 309 ; HP
@@ -4245,11 +4245,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 14, 15, 15, 7 ; DVs
+	ivs 23, 28, 31, 31, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 10, 25, 10, 20 ; PP
 	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 279 ; HP
@@ -4268,11 +4268,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 14 ; DVs
+	ivs 29, 31, 28, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 20, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 203 ; HP
@@ -4291,11 +4291,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 7, 15, 7 ; DVs
+	ivs 20, 31, 14, 31, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 5, 15, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 293 ; HP
@@ -4314,11 +4314,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 4, 7, 5, 7 ; DVs
+	ivs 12, 8, 14, 10, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 322 ; HP
@@ -4337,11 +4337,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 6, 5, 7, 6 ; DVs
+	ivs 12, 12, 10, 14, 12, 12 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 15, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 284 ; HP
@@ -4360,11 +4360,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 5, 4, 4, 4 ; DVs
+	ivs 8, 10, 8, 8, 8, 8 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 15, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 342 ; HP
@@ -4386,11 +4386,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 245, 245, 245, 245, 245, 245 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 13 ; DVs
+	ivs 27, 31, 26, 28, 26, 26 ; IVs
+	db 0, 0 ; padding
 	db 15, 15, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 347 ; HP
@@ -4409,11 +4409,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 245, 245, 245, 245, 245, 245 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 15 ; DVs
+	ivs 29, 31, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 377 ; HP
@@ -4432,11 +4432,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 245, 245, 245, 245, 245, 245 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 15, 15, 14 ; DVs
+	ivs 28, 26, 31, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 20, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 349 ; HP
@@ -4455,11 +4455,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 224, 224, 224, 174, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 15, 14 ; DVs
+	ivs 28, 31, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 20, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 323 ; HP
@@ -4478,11 +4478,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 15 ; DVs
+	ivs 29, 31, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 341 ; HP
@@ -4501,11 +4501,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 235, 224, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 14, 15 ; DVs
+	ivs 28, 26, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 374 ; HP
@@ -4524,11 +4524,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 224, 224, 235, 235, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 13, 15 ; DVs
+	ivs 29, 31, 28, 26, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 343 ; HP
@@ -4547,11 +4547,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 213, 224, 224, 213, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 14, 15 ; DVs
+	ivs 28, 31, 22, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 5, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 309 ; HP
@@ -4570,11 +4570,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 235, 224, 235, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 15 ; DVs
+	ivs 29, 31, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 15, 10, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 404 ; HP
@@ -4593,11 +4593,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 224, 224, 235, 245, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 13, 14 ; DVs
+	ivs 27, 31, 26, 26, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 5, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 343 ; HP
@@ -4616,11 +4616,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 235, 224, 224, 235, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 12, 15 ; DVs
+	ivs 28, 31, 26, 24, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 20, 25, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 324 ; HP
@@ -4639,11 +4639,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 213, 224, 235, 224, 235, 235 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 11, 13, 14, 15 ; DVs
+	ivs 27, 22, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 5, 5, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 309 ; HP
@@ -4662,11 +4662,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 224, 224, 220, 213, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 13, 14, 15 ; DVs
+	ivs 29, 31, 26, 28, 31, 31 ; IVs
+	db 0, 0 ; padding
 	db 20, 5, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 301 ; HP
@@ -4685,11 +4685,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 224, 224, 224, 224, 213, 213 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 15, 14 ; DVs
+	ivs 28, 31, 22, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 25, 5, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 333 ; HP
@@ -4708,11 +4708,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 224, 200, 224, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 13, 13, 15, 14 ; DVs
+	ivs 27, 26, 26, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 703 ; HP
@@ -4731,11 +4731,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 7 ; DVs
+	ivs 23, 31, 28, 31, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 10, 5, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 387 ; HP
@@ -4754,11 +4754,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 14, 15, 14 ; DVs
+	ivs 29, 31, 28, 31, 28, 28 ; IVs
+	db 0, 0 ; padding
 	db 10, 10, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 375 ; HP
@@ -4777,11 +4777,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 224, 224, 224, 224, 224, 224 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 15, 11, 14, 7 ; DVs
+	ivs 21, 31, 22, 28, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 331 ; HP
@@ -4800,11 +4800,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 4, 4, 6 ; DVs
+	ivs 10, 14, 8, 8, 12, 12 ; IVs
+	db 0, 0 ; padding
 	db 5, 10, 10, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 329 ; HP
@@ -4823,11 +4823,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 6, 7, 7, 6 ; DVs
+	ivs 12, 12, 14, 14, 12, 12 ; IVs
+	db 0, 0 ; padding
 	db 20, 15, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 265 ; HP
@@ -4846,11 +4846,11 @@ BattleTowerMons:
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	db 174, 174, 174, 174, 174, 174 ; EVs
-	db 0, 0, 0, 0 ; padding
-	dn 7, 6, 5, 7 ; DVs
+	ivs 12, 14, 12, 10, 14, 14 ; IVs
+	db 0, 0 ; padding
 	db 15, 5, 5, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 425 ; HP

@@ -60,6 +60,10 @@ if DEF(_DEBUG)
 	; useful items
 	giveitem MAX_REPEL, 99
 	giveitem MASTER_BALL, 99
+	giveitem BLU_APRICORN, 2
+	giveitem BERRY
+	giveitem GOLD_BERRY
+	giveitem ICE_BERRY
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_HIVEBADGE
@@ -122,10 +126,10 @@ if DEF(_DEBUG)
 	; post-e4
 	setflag ENGINE_CREDITS_SKIP
 	; good party
-	givepoke MEWTWO, 100, BRIGHTPOWDER
+	givepoke MEWTWO, PLAIN_FORM, 100, BRIGHTPOWDER
 	; hm slaves
-	givepoke MEW, 100, LEFTOVERS
-	givepoke MEW, 100, LEFTOVERS
+	givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
+	givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
 	givepokemove FLY,        wPartyMon2, 0
 	givepokemove SURF,       wPartyMon2, 1
 	givepokemove STRENGTH,   wPartyMon2, 2
@@ -135,7 +139,8 @@ if DEF(_DEBUG)
 	givepokemove HEADBUTT,   wPartyMon3, 2
 	givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke PIKACHU, 50
+	givepoke SNORLAX, 50
+	givepokemove LOW_KICK,  wPartyMon4, 0
 	givepoke GENGAR, 50
 	givepoke DITTO, 50
 	; intro events

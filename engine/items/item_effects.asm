@@ -26,6 +26,8 @@ ItemEffects:
 	indirect_entries (FIRST_KEY_ITEM - 1) + NUM_KEY_ITEM_POCKET, ItemEffectsKeyItems
 	indirect_entries FIRST_BALL_ITEM - 1 ; sparse table
 	indirect_entries (FIRST_BALL_ITEM - 1) + NUM_BALL_ITEM_POCKET, ItemEffectsBalls
+	indirect_entries FIRST_BERRY_ITEM - 1 ; sparse table
+	indirect_entries (FIRST_BERRY_ITEM - 1) + NUM_BERRY_ITEM_POCKET, ItemEffectsBerries
 	indirect_table_end
 
 ItemEffects1:
@@ -44,7 +46,7 @@ ItemEffects1:
 	dw RestoreHPEffect     ; POTION
 	dw EscapeRopeEffect    ; ESCAPE_ROPE
 	dw RepelEffect         ; REPEL
-	dw RestorePPEffect     ; MAX_ELIXER
+	dw RestorePPEffect     ; MAX_ELIXIR
 	dw EvoStoneEffect      ; FIRE_STONE
 	dw EvoStoneEffect      ; THUNDERSTONE
 	dw EvoStoneEffect      ; WATER_STONE
@@ -83,37 +85,24 @@ ItemEffects1:
 	dw RestorePPEffect     ; PP_UP
 	dw RestorePPEffect     ; ETHER
 	dw RestorePPEffect     ; MAX_ETHER
-	dw RestorePPEffect     ; ELIXER
+	dw RestorePPEffect     ; ELIXIR
 	dw RestoreHPEffect     ; MOOMOO_MILK
 	dw NoEffect            ; QUICK_CLAW
-	dw StatusHealingEffect ; PSNCUREBERRY
 	dw NoEffect            ; GOLD_LEAF
 	dw NoEffect            ; SOFT_SAND
 	dw NoEffect            ; SHARP_BEAK
-	dw StatusHealingEffect ; PRZCUREBERRY
-	dw StatusHealingEffect ; BURNT_BERRY
-	dw StatusHealingEffect ; ICE_BERRY
 	dw NoEffect            ; POISON_BARB
 	dw NoEffect            ; KINGS_ROCK
-	dw BitterBerryEffect   ; BITTER_BERRY
-	dw StatusHealingEffect ; MINT_BERRY
-	dw NoEffect            ; RED_APRICORN
 	dw NoEffect            ; TINYMUSHROOM
 	dw NoEffect            ; BIG_MUSHROOM
 	dw NoEffect            ; SILVERPOWDER
-	dw NoEffect            ; BLU_APRICORN
 	dw NoEffect            ; ITEM_5A
 	dw NoEffect            ; AMULET_COIN
-	dw NoEffect            ; YLW_APRICORN
-	dw NoEffect            ; GRN_APRICORN
 	dw NoEffect            ; CLEANSE_TAG
 	dw NoEffect            ; MYSTIC_WATER
 	dw NoEffect            ; TWISTEDSPOON
-	dw NoEffect            ; WHT_APRICORN
-	dw NoEffect            ; BLACKBELT_I
-	dw NoEffect            ; BLK_APRICORN
+	dw NoEffect            ; BLACK_BELT_I
 	dw NoEffect            ; ITEM_64
-	dw NoEffect            ; PNK_APRICORN
 	dw NoEffect            ; BLACKGLASSES
 	dw NoEffect            ; SLOWPOKETAIL
 	dw NoEffect            ; PINK_BOW
@@ -121,7 +110,6 @@ ItemEffects1:
 	dw NoEffect            ; SMOKE_BALL
 	dw NoEffect            ; NEVERMELTICE
 	dw NoEffect            ; MAGNET
-	dw StatusHealingEffect ; MIRACLEBERRY
 	dw NoEffect            ; PEARL
 	dw NoEffect            ; BIG_PEARL
 	dw NoEffect            ; EVERSTONE
@@ -154,7 +142,6 @@ ItemEffects1:
 	dw NoEffect            ; ITEM_93
 	dw NoEffect            ; ITEM_94
 	dw NoEffect            ; ITEM_95
-	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
 	dw NoEffect            ; ITEM_99
@@ -170,8 +157,6 @@ ItemEffects1:
 	dw NoEffect            ; POLKADOT_BOW
 	dw NoEffect            ; ITEM_AB
 	dw NoEffect            ; UP_GRADE
-	dw RestoreHPEffect     ; BERRY
-	dw RestoreHPEffect     ; GOLD_BERRY
 	dw NoEffect            ; ITEM_B0
 	dw NoEffect            ; ITEM_B3
 	dw NoEffect            ; BRICK_PIECE
@@ -228,6 +213,26 @@ ItemEffectsBalls:
 	dw PokeBallEffect ; MOON_BALL
 	dw PokeBallEffect ; LOVE_BALL
 	dw PokeBallEffect ; PARK_BALL
+.IndirectEnd:
+
+ItemEffectsBerries:
+	dw NoEffect            ; RED_APRICORN
+	dw NoEffect            ; BLU_APRICORN
+	dw NoEffect            ; YLW_APRICORN
+	dw NoEffect            ; GRN_APRICORN
+	dw NoEffect            ; WHT_APRICORN
+	dw NoEffect            ; BLK_APRICORN
+	dw NoEffect            ; PNK_APRICORN
+	dw StatusHealingEffect ; PSNCUREBERRY
+	dw StatusHealingEffect ; PRZCUREBERRY
+	dw StatusHealingEffect ; BURNT_BERRY
+	dw StatusHealingEffect ; ICE_BERRY
+	dw BitterBerryEffect   ; BITTER_BERRY
+	dw StatusHealingEffect ; MINT_BERRY
+	dw StatusHealingEffect ; MIRACLEBERRY
+	dw RestorePPEffect     ; MYSTERYBERRY
+	dw RestoreHPEffect     ; BERRY
+	dw RestoreHPEffect     ; GOLD_BERRY
 .IndirectEnd:
 
 PokeBallEffect:
@@ -480,10 +485,18 @@ PokeBallEffect:
 	bit SUBSTATUS_TRANSFORMED, a
 	jr nz, .load_data
 
-	ld hl, wEnemyBackupDVs
-	ld a, [wEnemyMonDVs]
+	ld hl, wEnemyBackupIVsAndPersonality
+	ld a, [wEnemyMonIVs]
 	ld [hli], a
-	ld a, [wEnemyMonDVs + 1]
+	ld a, [wEnemyMonIVs + 1]
+	ld [hli], a
+	ld a, [wEnemyMonIVs + 2]
+	ld [hli], a
+	ld a, [wEnemyMonIVs + 3]
+	ld [hli], a
+	ld a, [wEnemyMonPersonality]
+	ld [hli], a
+	ld a, [wEnemyMonPersonality + 1]
 	ld [hl], a
 
 .load_data
@@ -492,6 +505,20 @@ PokeBallEffect:
 	ld a, [wEnemyMonLevel]
 	ld [wCurPartyLevel], a
 	farcall LoadEnemyMon
+
+	ld hl, wEnemyBackupIVsAndPersonality
+	ld a, [hli]
+	ld [wEnemyMonIVs], a
+	ld a, [hli]
+	ld [wEnemyMonIVs + 1], a
+	ld a, [hli]
+	ld [wEnemyMonIVs + 2], a
+	ld a, [hli]
+	ld [wEnemyMonIVs + 3], a
+	ld a, [hli]
+	ld [wEnemyMonPersonality], a
+	ld a, [hl]
+	ld [wEnemyMonPersonality + 1], a
 
 	pop af
 	ld [wEnemySubStatus5], a
@@ -795,41 +822,41 @@ ParkBallMultiplier:
 	ld b, $ff
 	ret
 
+GetSpeciesWeight::
+	; input: hl = species
+	; output: hl = weight
+	dec hl
+	add hl, hl
+	add hl, hl
+	; skip height
+	inc hl
+	inc hl
+	ld bc, PokemonBodyData
+	add hl, bc
+	ld a, BANK(PokemonBodyData)
+	jmp GetFarWord ; get weight
+
+GetSpeciesHeight::
+	; input: hl = species
+	; output: hl = height
+	dec hl
+	add hl, hl
+	add hl, hl
+	ld bc, PokemonBodyData
+	add hl, bc
+	ld a, BANK(PokemonBodyData)
+	jmp GetFarWord ; get weight
+
 HeavyBallMultiplier:
 ; subtract 20 from catch rate if weight < 102.4 kg
 ; else add 0 to catch rate if weight < 204.8 kg
 ; else add 20 to catch rate if weight < 307.2 kg
 ; else add 30 to catch rate if weight < 409.6 kg
 ; else add 40 to catch rate
+	push bc
 	ld a, [wEnemyMonSpecies]
 	call GetPokemonIndexFromID
-	dec hl
-	ld d, h
-	ld e, l
-	add hl, hl
-	add hl, de
-	ld de, PokedexDataPointerTable
-	add hl, de
-	ld a, BANK(PokedexDataPointerTable)
-	call GetFarByte
-	push af
-	inc hl
-	ld a, BANK(PokedexDataPointerTable)
-	call GetFarWord
-	pop de
-
-.SkipText:
-	ld a, d
-	call GetFarByte
-	inc hl
-	cp "@"
-	jr nz, .SkipText
-
-	ld a, d
-	push bc
-	inc hl
-	inc hl
-	call GetFarWord
+	call GetSpeciesWeight
 
 	srl h
 	rr l
@@ -2360,9 +2387,9 @@ RestorePPEffect:
 .loop2
 	ld a, [wTempRestorePPItem]
 	call GetItemIndexFromID
-	cphl16 MAX_ELIXER
+	cphl16 MAX_ELIXIR
 	jmp z, Elixer_RestorePPofAllMoves
-	cphl16 ELIXER
+	cphl16 ELIXIR
 	jmp z, Elixer_RestorePPofAllMoves
 
 	ld hl, RaiseThePPOfWhichMoveText
@@ -2564,7 +2591,7 @@ RestorePP:
 	ld a, [wTempRestorePPItem]
 	push hl
 	call GetItemIndexFromID
-	cphl16 MAX_ELIXER
+	cphl16 MAX_ELIXIR
 	pop hl
 	jr z, .restore_all
 	ld a, [wTempRestorePPItem]

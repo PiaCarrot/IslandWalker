@@ -372,7 +372,7 @@ BattleAnim_Shake:
 	anim_wait 40
 	anim_ret
 
-	BattleAnim_TargetObj_1Row:
+BattleAnim_TargetObj_1Row:
 	anim_battlergfx_2row
 	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_1ROW, $0, BG_EFFECT_TARGET, $0
 	anim_wait 6

@@ -165,7 +165,7 @@ endr
 
 	; Initialize stat experience.
 	xor a
-	ld b, MON_DVS - MON_EVS
+	ld b, MON_IVS - MON_EVS
 .loop
 	ld [de], a
 	inc de
@@ -179,9 +179,9 @@ endr
 	jr z, .registerpokedex
 
 	push hl
-	farcall GetTrainerDVs
+	farcall GetTrainerIVs
 	pop hl
-	jr .initializeDVs
+	jr .initializeIVs
 
 .registerpokedex
 	ld a, [wCurPartySpecies]
@@ -196,18 +196,43 @@ endr
 	push hl
 	ld a, [wBattleMode]
 	and a
-	jr nz, .copywildmonDVs
+	jr nz, .copywildmonIVs
 
+	ld bc, wTempMonIVs + 3
 	call Random
-	ld b, a
+	ld [bc], a
+	dec bc
 	call Random
-	ld c, a
-.initializeDVs
-	ld a, b
+	ld [bc], a
+	dec bc
+	call Random
+	ld [bc], a
+	dec bc
+	call Random
+	ld [bc], a
+.initializeIVs
+	ld a, [bc]
+	ld [de], a
+	inc bc
+	inc de
+	ld a, [bc]
+	ld [de], a
+	inc bc
+	inc de
+	ld a, [bc]
+	ld [de], a
+	inc bc
+	inc de
+	ld a, [bc]
 	ld [de], a
 	inc de
-	ld a, c
+
+	; Initial Personality
+	ld a, NUM_NATURES
+	call RandomRange
+	and NATURE_MASK
 	ld [de], a
+	inc de
 	inc de
 
 	; Initialize PP.
@@ -231,10 +256,13 @@ endr
 	; PokerusStatus
 	ld [de], a
 	inc de
-	; CaughtData/CaughtTime/CaughtLevel
+	; CaughtData/CaughtTime/CaughtBall
 	ld [de], a
 	inc de
-	; CaughtGender/CaughtLocation
+	; CaughtGender/CaughtLevel
+	ld [de], a
+	inc de
+	; CaughtLocation
 	ld [de], a
 	inc de
 
@@ -266,11 +294,25 @@ endr
 	inc de
 	jr .initstats
 
-.copywildmonDVs
-	ld a, [wEnemyMonDVs]
+.copywildmonIVs
+	ld a, [wEnemyMonIVs]
 	ld [de], a
 	inc de
-	ld a, [wEnemyMonDVs + 1]
+	ld a, [wEnemyMonIVs + 1]
+	ld [de], a
+	inc de
+	ld a, [wEnemyMonIVs + 2]
+	ld [de], a
+	inc de
+	ld a, [wEnemyMonIVs + 3]
+	ld [de], a
+	inc de
+
+	; Copy personality
+	ld a, [wEnemyMonPersonality]
+	ld [de], a
+	inc de
+	ld a, [wEnemyMonPersonality + 1]
 	ld [de], a
 	inc de
 
@@ -294,10 +336,13 @@ endr
 	; PokerusStatus
 	ld [de], a
 	inc de
-	; CaughtData/CaughtTime/CaughtLevel
+	; CaughtData/CaughtTime/CaughtBall
 	ld [de], a
 	inc de
-	; CaughtGender/CaughtLocation
+	; CaughtGender/CaughtLevel
+	ld [de], a
+	inc de
+	; CaughtLocation
 	ld [de], a
 	inc de
 
@@ -360,7 +405,7 @@ endr
 		endc
 	endc
 	jr nz, .done
-	ld hl, wPartyMon1DVs
+	ld hl, wPartyMon1Form
 	ld a, [wPartyCount]
 	dec a
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -476,7 +521,7 @@ AddTempmonToParty:
 		endc
 	endc
 	jr nz, .done
-	ld hl, wPartyMon1DVs
+	ld hl, wPartyMon1Form
 	ld a, [wPartyCount]
 	dec a
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -727,17 +772,17 @@ SendMonIntoBox:
 	ld [de], a
 	inc de
 
-	; Set all 5 Experience Values to 0
+	; Set all 6 Experience Values to 0
 	xor a
-	ld b, 2 * NUM_EXP_STATS
+	ld b, NUM_STATS
 .loop2
 	ld [de], a
 	inc de
 	dec b
 	jr nz, .loop2
 
-	ld hl, wEnemyMonDVs
-	ld b, 2 + NUM_MOVES ; DVs and PP ; wEnemyMonHappiness - wEnemyMonDVs
+	ld hl, wEnemyMonIVs
+	ld b, MON_HAPPINESS - MON_IVS ; IVs, Personality, and PP ; wEnemyMonHappiness - wEnemyMonIVs
 .loop3
 	ld a, [hli]
 	ld [de], a
@@ -749,6 +794,8 @@ SendMonIntoBox:
 	ld [de], a
 	inc de
 	xor a
+	ld [de], a
+	inc de
 	ld [de], a
 	inc de
 	ld [de], a
@@ -773,7 +820,7 @@ SendMonIntoBox:
 		cp HIGH(UNOWN)
 	endc
 	jr nz, .not_unown
-	ld hl, wBufferMonDVs
+	ld hl, wBufferMonForm
 	predef GetUnownLetter
 	farcall UpdateUnownDex
 
@@ -1068,11 +1115,10 @@ CalcMonStatC:
 	add hl, bc
 	ld a, [hl]
 	ld b, a
-
 .no_stat_exp
 	pop hl
 	push bc
-	ld bc, MON_DVS - MON_HP_EV + 1
+	ld bc, MON_IVS - MON_HP_EV + 1
 	add hl, bc
 	pop bc
 	ld a, c
@@ -1083,76 +1129,50 @@ CalcMonStatC:
 	cp STAT_SPD
 	jr z, .Speed
 	cp STAT_SATK
-	jr z, .Special
+	jr z, .Special_Atk
 	cp STAT_SDEF
-	jr z, .Special
-; DV_HP = (DV_ATK & 1) << 3 | (DV_DEF & 1) << 2 | (DV_SPD & 1) << 1 | (DV_SPC & 1)
-	push bc
-	ld a, [hl]
-	swap a
-	and 1
-	add a
-	add a
-	add a
-	ld b, a
-	ld a, [hli]
-	and 1
-	add a
-	add a
-	add b
-	ld b, a
-	ld a, [hl]
-	swap a
-	and 1
-	add a
-	add b
-	ld b, a
-	ld a, [hl]
-	and 1
-	add b
-	pop bc
-	jr .GotDV
+	jr z, .Special_Def
+; HP
+	call GetHPIV
+	jr .GotIV
 
 .Attack:
-	ld a, [hl]
-	swap a
-	and $f
-	jr .GotDV
+	call GetAttackIV
+	jr .GotIV
 
 .Defense:
-	ld a, [hl]
-	and $f
-	jr .GotDV
+	call GetDefenseIV
+	jr .GotIV
 
 .Speed:
-	inc hl
-	ld a, [hl]
-	swap a
-	and $f
-	jr .GotDV
+	call GetSpeedIV
+	jr .GotIV
 
-.Special:
-	inc hl
-	ld a, [hl]
-	and $f
+.Special_Atk:
+	call GetSpecialAttackIV
+	jr .GotIV
 
-.GotDV:
+.Special_Def:
+	call GetSpecialDefenseIV
+; fallthrough
+.GotIV:
 	ld d, 0
+	sla e
+	rl d
 	add e
 	ld e, a
 	adc d
 	sub e
 	ld d, a
-	sla e
-	rl d
-	srl b
-	srl b
 	ld a, b
+	srl a
+	srl a
 	add e
-	jr nc, .no_overflow_2
-	inc d
-
-.no_overflow_2
+	ld e, a
+	adc d
+	sub e
+	ld d, a
+	ld a, e
 	ldh [hMultiplicand + 2], a
 	ld a, d
 	ldh [hMultiplicand + 1], a
@@ -1216,7 +1236,77 @@ CalcMonStatC:
 	ldh [hMultiplicand + 2], a
 
 .stat_value_okay
+	; do natures here
+	xor a
+	ldh [hMultiplicand + 0], a
+	push hl
+	push bc
+	ld bc, MON_NATURE - MON_IVS
+	add hl, bc ; hl points to Nature
+	ld a, [hl]
+	and NATURE_MASK
+	pop bc
+	push bc
+	call GetNatureStatMultiplier
+	pop bc
+	pop hl
+	ldh [hMultiplier], a
+	call Multiply
+	ldh a, [hProduct + 1]
+	ldh [hDividend + 0], a
+	ldh a, [hProduct + 2]
+	ldh [hDividend + 1], a
+	ldh a, [hProduct + 3]
+	ldh [hDividend + 2], a
+	ld a, 10
+	ldh [hDivisor], a
+	ld a, 3
+	ld b, a
+	call Divide
 	jmp PopBCDEHL
+
+GetNatureStatMultiplier::
+; a points to Nature
+; c is 1-6 according to the stat (STAT_HP to STAT_SDEF)
+; returns (sets a to) 9 if c is lowered, 11 if raised, 10 if neutral
+; (to be used in calculations in CalcPkmnStatC)
+	push de
+	ld d, a
+	ld a, c
+	cp STAT_HP
+	jr z, .neutral
+	ld a, d
+	and NATURE_MASK
+	cp NO_NATURE
+	jr z, .neutral
+	ld d, STAT_HP
+.loop
+	inc d
+	sub 5
+	jr nc, .loop
+	add 7 ; Atk-SDf is 2-6, not 0-4
+	cp c
+	jr z, .penalty
+	ld a, d
+	cp c
+	jr z, .bonus
+.neutral
+	ld a, 10
+	pop de
+	ret
+.bonus
+	ld a, 11
+	pop de
+	ret
+.penalty
+	; Neutral natures (divisible by 6) raise and lower the same stat,
+	; but +10% -10% isn't neutral (the result is 99%), so we need to
+	; avoid messing with it altogether.
+	cp d
+	jr z, .neutral
+	ld a, 9
+	pop de
+	ret
 
 GivePoke::
 	push de
@@ -1238,6 +1328,12 @@ GivePoke::
 	push bc
 	push de
 	push af
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Form
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst AddNTimes
+	ld a, [wCurPartyForm]
+	ld [hl], a
 	ld a, [wCurItem]
 	and a
 	jr z, .done
@@ -1266,6 +1362,8 @@ GivePoke::
 	push bc
 	push de
 	push af
+	ld a, [wCurPartyForm]
+	ld [wBufferMonForm], a
 	ld a, [wCurItem]
 	and a
 	jr z, .done
@@ -1274,6 +1372,9 @@ GivePoke::
 	farcall UpdateStorageBoxMonFromTemp
 
 .done
+	ld hl, POKE_BALL ; given mon's use POKE_BALL for MON_CAUGHTBALL
+	call GetItemIDFromIndex
+	ld [wCurItem], a
 	ld a, [wCurPartySpecies]
 	ld [wNamedObjectIndex], a
 	ld [wTempEnemyMonSpecies], a

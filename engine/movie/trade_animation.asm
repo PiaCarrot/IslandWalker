@@ -203,11 +203,11 @@ RunTradeAnimScript:
 	call EnableLCD
 	call LoadTradeBallAndCableGFX
 	ld a, [wPlayerTrademonSpecies]
-	ld hl, wPlayerTrademonDVs
+	ld hl, wPlayerTrademonForm
 	ld de, vTiles0
 	call TradeAnim_GetFrontpic
 	ld a, [wOTTrademonSpecies]
-	ld hl, wOTTrademonDVs
+	ld hl, wOTTrademonForm
 	ld de, vTiles0 tile $31
 	call TradeAnim_GetFrontpic
 	ld a, [wPlayerTrademonSpecies]
@@ -316,7 +316,7 @@ TradeAnim_TubeToOT1:
 	call TradeAnim_PlaceTrademonStatsOnTubeAnim
 	ld a, [wLinkTradeSendmonSpecies]
 	ld [wTempIconSpecies], a
-	ld hl, wPlayerTrademonDVs
+	ld hl, wPlayerTrademonShiny
 	xor a
 	depixel 5, 11, 4, 0
 	ld b, $0
@@ -327,7 +327,7 @@ TradeAnim_TubeToPlayer1:
 	call TradeAnim_PlaceTrademonStatsOnTubeAnim
 	ld a, [wLinkTradeGetmonSpecies]
 	ld [wTempIconSpecies], a
-	ld hl, wOTTrademonDVs
+	ld hl, wOTTrademonShiny
 	ld a, TRADEANIMSTATE_2
 	depixel 9, 18, 4, 4
 	ld b, $4
@@ -337,7 +337,7 @@ TradeAnim_InitTubeAnim:
 	push bc
 	push de
 
-	push hl ; wPlayerTrademonDVs or wOTTrademonDVs
+	push hl ; wPlayerTrademonShiny or wOTTrademonShiny
 
 	push af
 	call DisableLCD
@@ -357,7 +357,7 @@ TradeAnim_InitTubeAnim:
 	ld a, $70
 	ldh [hWY], a
 	call EnableLCD
-	pop hl ; wPlayerTrademonDVs or wOTTrademonDVs
+	pop hl ; wPlayerTrademonShiny or wOTTrademonShiny
 	call LoadTradeBubbleGFX
 
 	pop de
@@ -739,10 +739,14 @@ TradeAnim_ShowGivemonData:
 	call ShowPlayerTrademonStats
 	ld a, [wPlayerTrademonSpecies]
 	ld [wCurPartySpecies], a
-	ld a, [wPlayerTrademonDVs]
-	ld [wTempMonDVs], a
-	ld a, [wPlayerTrademonDVs + 1]
-	ld [wTempMonDVs + 1], a
+	ld a, [wPlayerTrademonIVs]
+	ld [wTempMonIVs], a
+	ld a, [wPlayerTrademonIVs + 1]
+	ld [wTempMonIVs + 1], a
+	ld a, [wPlayerTrademonIVs + 2]
+	ld [wTempMonIVs + 2], a
+	ld a, [wPlayerTrademonIVs + 3]
+	ld [wTempMonIVs + 3], a
 	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetSGBLayout
 	ld a, %11100100 ; 3,2,1,0
@@ -763,10 +767,14 @@ TradeAnim_ShowGetmonData:
 	call ShowOTTrademonStats
 	ld a, [wOTTrademonSpecies]
 	ld [wCurPartySpecies], a
-	ld a, [wOTTrademonDVs]
-	ld [wTempMonDVs], a
-	ld a, [wOTTrademonDVs + 1]
-	ld [wTempMonDVs + 1], a
+	ld a, [wOTTrademonIVs]
+	ld [wTempMonIVs], a
+	ld a, [wOTTrademonIVs + 1]
+	ld [wTempMonIVs + 1], a
+	ld a, [wOTTrademonIVs + 2]
+	ld [wTempMonIVs + 2], a
+	ld a, [wOTTrademonIVs + 3]
+	ld [wTempMonIVs + 3], a
 	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetSGBLayout
 	ld a, %11100100 ; 3,2,1,0
@@ -1318,10 +1326,10 @@ LoadTradeBallAndCableGFX:
 	ret
 
 LoadTradeBubbleGFX:
-	push hl ; wPlayerTrademonDVs or wOTTrademonDVs
+	push hl ; wPlayerTrademonShiny or wOTTrademonShiny
 	call DelayFrame
 	ld e, MONICON_TRADE
-	pop bc ; wPlayerTrademonDVs or wOTTrademonDVs
+	pop bc ; wPlayerTrademonShiny or wOTTrademonShiny
 	farcall LoadMenuMonIcon
 	ld de, TradeBubbleGFX
 	ld hl, vTiles0 tile $72

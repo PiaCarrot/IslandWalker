@@ -260,9 +260,9 @@ GetBaseData::
 	ld hl, wBasePicSize
 	ld [hl], b
 
-; Beta front and back sprites
-; (see pokegold-spaceworld's data/pokemon/base_stats/*)
-	ld hl, wBaseUnusedFrontpic
+; Ability (which was formerly the unused frontpic)
+; I don't want to screw with this at the moment because it will break something else
+	ld hl, wBaseAbility1
 	ld a, e
 	ld [hli], a
 	ld a, d
@@ -279,6 +279,56 @@ GetBaseData::
 	pop af
 	rst Bankswitch
 	jmp PopBCDEHL
+
+GetLeadAbility:
+; Returns ability of lead mon unless it's an Egg. Used for field
+; abilities
+	ld a, [wPartyMon1Species]
+	call IsAPokemon
+	jr nc, .valid_mon
+	xor a
+	ret
+
+.valid_mon
+	push hl
+	ld hl, wPartyMon1Personality
+	ld c, a
+	call GetAbility
+	pop hl
+	ret
+
+GetAbility::
+; 'hl' contains the target personality to check (ability and form)
+; 'c' contains the target species
+; returns ability in a
+; preserves curspecies and base data
+	push bc
+	push de
+	push hl
+	ld a, c
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	pop hl
+	push hl
+	ld a, [hl]
+
+	; Assumes this returns z for ability 1.
+	and ABILITY_MASK
+	ld de, BASE_ABILITY1
+	jr z, .ability_1
+	ld de, BASE_ABILITY2
+.ability_1
+
+	ld a, BANK(BaseData)
+	ld hl, BaseData
+	call LoadIndirectPointer
+	add hl, de
+	call GetFarByte
+	pop hl
+	pop de
+	pop bc
+	ret
 
 GetCurNickname::
 	ld a, [wCurPartyMon]

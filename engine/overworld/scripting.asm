@@ -378,7 +378,7 @@ Script_yesorno:
 	call YesNoBox
 	; a = carry ? FALSE : TRUE
 	sbc a
-	inc a	
+	inc a
 	ld [wScriptVar], a
 	vc_hook Unknown_yesorno_ret
 	ret
@@ -1120,6 +1120,8 @@ Script_reloadmapafterbattle:
 	ld hl, wBattleScriptFlags
 	ld d, [hl]
 	ld [hl], 0
+	ld hl, wWildBattlePanic
+	ld [hl], d
 	ld a, [wBattleResult]
 	and ~BATTLERESULT_BITMASK
 	cp LOSE
@@ -1874,6 +1876,8 @@ Script_checkphonecall:
 Script_givepoke:
 	call LoadScriptPokemonID
 	ld [wCurPartySpecies], a
+	rst GetScriptByte
+	ld [wCurPartyForm], a
 	rst GetScriptByte
 	ld [wCurPartyLevel], a
 	rst GetScriptByte

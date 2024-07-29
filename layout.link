@@ -44,7 +44,7 @@ ROMX $03
 	"mobile5C"
 ROMX $04
 	"bank4"
-	"Tileset Data 11"
+	"Battle Animation Data"
 ROMX $05
 	"bank5"
 	"Load Map Part"
@@ -52,6 +52,7 @@ ROMX $06
 	"Tileset Data 1"
 	"Prism tilemap copy functions"
 	"Pics 20"
+	"Pokemon Body Data"
 ROMX $07
 	"Roofs"
 	"Tileset Data 2"

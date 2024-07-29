@@ -2315,7 +2315,7 @@ AI_Smart_HiddenPower:
 	ld a, 1
 	ldh [hBattleTurn], a
 
-; Calculate Hidden Power's type and base power based on enemy's DVs.
+; Calculate Hidden Power's type and base power based on enemy's IVs.
 	farcall HiddenPowerDamage
 	farcall BattleCheckTypeMatchup
 	pop hl
@@ -3039,15 +3039,24 @@ AIDamageCalc:
 	ld a, 1
 	ldh [hBattleTurn], a
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_LOW_KICK
+	jr z, .low_kick
 	ld de, 1
 	ld hl, ConstantDamageEffects
 	call IsInArray
-	jr nc, .notconstant
+	jr nc, .regular_damage
 	farjp BattleCommand_ConstantDamage
 
-.notconstant
-	farcall EnemyAttackDamage
+.low_kick
+	farcall BattleCommand_DamageStats
+	farcall BattleCommand_LowKick
+	jr .damagecalc
+
+.regular_damage
+	farcall BattleCommand_DamageStats
+.damagecalc
 	farcall BattleCommand_DamageCalc
+.stab
 	farjp BattleCommand_Stab
 
 INCLUDE "data/battle/ai/constant_damage_effects.asm"

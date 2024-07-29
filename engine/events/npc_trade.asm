@@ -173,11 +173,11 @@ DoNPCTrade:
 	ld de, wPlayerTrademonID
 	call Trade_CopyTwoBytes
 
-	ld hl, wPartyMon1DVs
+	ld hl, wPartyMon1IVs
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call Trade_GetAttributeOfCurrentPartymon
-	ld de, wPlayerTrademonDVs
-	call Trade_CopyTwoBytes
+	ld de, wPlayerTrademonIVs
+	call Trade_CopyFourBytes
 
 	ld hl, wPartyMon1Species
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -252,16 +252,16 @@ DoNPCTrade:
 	ld c, NAME_LENGTH
 	call CopyStringWithTerminator
 
-	ld e, NPCTRADE_DVS
+	ld e, NPCTRADE_IVS
 	call GetTradeAttr
-	ld de, wOTTrademonDVs
-	call Trade_CopyTwoBytes
+	ld de, wOTTrademonIVs
+	call Trade_CopyFourBytes
 
-	ld hl, wPartyMon1DVs
+	ld hl, wPartyMon1IVs
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call Trade_GetAttributeOfLastPartymon
-	ld hl, wOTTrademonDVs
-	call Trade_CopyTwoBytes
+	ld hl, wOTTrademonIVs
+	call Trade_CopyFourBytes
 
 	ld e, NPCTRADE_OT_ID
 	call GetTradeAttr
@@ -306,18 +306,17 @@ DoNPCTrade:
 	ret
 
 GetTradeAttr:
+	push bc
 	ld d, 0
 	push de
 	ld a, [wJumptableIndex]
 	and $f
-	swap a ; multiply a * 16
-	ld e, a
-	ld d, 0
 	ld hl, NPCTrades
-	add hl, de
-	add hl, de
+	ld bc, NPCTRADE_STRUCT_LENGTH
+	rst AddNTimes
 	pop de
 	add hl, de
+	pop bc
 	ret
 
 Trade_GetAttributeOfCurrentPartymon:
@@ -340,6 +339,13 @@ GetTradeMonName:
 	pop de
 	ret
 
+Trade_CopyFourBytes:
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
 Trade_CopyTwoBytes:
 	ld a, [hli]
 	ld [de], a
