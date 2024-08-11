@@ -146,6 +146,7 @@ IntroScene1:
 	depixel 28, 28
 	call DmgToCgbObjPals
 	call Intro_InitShellders
+	call Intro_InitLuvDisc
 	ld de, MUSIC_GS_OPENING
 	call PlayMusic
 	ret
@@ -413,6 +414,12 @@ Intro_InitShellders:
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_SHELLDER
 	call InitSpriteAnimStruct
 	ret
+	
+Intro_InitLuvDisc:
+	depixel 5, 5
+	ld a, SPRITE_ANIM_OBJ_GS_INTRO_LUVDISC
+	call InitSpriteAnimStruct
+	ret
 
 Intro_InitLapras:
 	ld a, [wIntroFrameCounter2]
@@ -420,12 +427,6 @@ Intro_InitLapras:
 	ret nz
 	depixel 16, 24
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_LAPRAS
-	call InitSpriteAnimStruct
-	ret
-
-Intro_UnusedInitAerodactyl: ; unreferenced
-	depixel 2, 0
-	ld a, SPRITE_ANIM_OBJ_UNUSED_INTRO_AERODACTYL
 	call InitSpriteAnimStruct
 	ret
 
@@ -783,13 +784,13 @@ IntroScene10:
 	ld bc, vTiles1 - vTiles0
 	call Decompress
 
-	ld c, CHIKORITA
+	ld c, BULBASAUR
 	ld de, vTiles0 tile $10
 	farcall Intro_GetMonFrontpic
-	ld c, CYNDAQUIL
+	ld c, CHARMANDER
 	ld de, vTiles0 tile $29
 	farcall Intro_GetMonFrontpic
-	ld c, TOTODILE
+	ld c, SQUIRTLE
 	ld de, vTiles0 tile $42
 	farcall Intro_GetMonFrontpic
 
@@ -826,7 +827,7 @@ IntroScene10:
 	ret
 
 IntroScene11:
-; scroll up to Charizard silhoutte, flash Johto starters
+; scroll up to Charizard silhoutte, flash Kanto starters
 	ld hl, wIntroFrameCounter2
 	ld a, [hl]
 	inc [hl]
@@ -1058,21 +1059,21 @@ Intro_FlashSilhouette:
 	ret
 
 Intro_LoadChikoritaPalette:
-	ld hl, CHIKORITA
+	ld hl, BULBASAUR
 	call GetPokemonIDFromIndex
 	ld c, a
 	farcall Intro_LoadMonPalette
 	ret
 
 Intro_LoadCyndaquilPalette:
-	ld hl, CYNDAQUIL
+	ld hl, CHARMANDER
 	call GetPokemonIDFromIndex
 	ld c, a
 	farcall Intro_LoadMonPalette
 	ret
 
 Intro_LoadTotodilePalette:
-	ld hl, TOTODILE
+	ld hl, SQUIRTLE
 	call GetPokemonIDFromIndex
 	ld c, a
 	farcall Intro_LoadMonPalette
@@ -1081,7 +1082,7 @@ Intro_LoadTotodilePalette:
 Intro_LoadCharizardPalette:
 	ldh a, [hCGB]
 	and a
-	ld hl, CYNDAQUIL
+	ld hl, CHARMANDER
 	call GetPokemonIDFromIndex
 	ld c, a
 	jr nz, .got_mon

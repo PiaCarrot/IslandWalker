@@ -56,7 +56,7 @@ SpriteAnimFrameData:
 	dw .Frameset_GSIntroBubble
 	dw .Frameset_GSIntroShellder
 	dw .Frameset_GSIntroMagikarp
-	dw .Frameset_UnusedIntroAerodactyl
+	dw .Frameset_GSIntroLuvdisc
 	dw .Frameset_GSIntroLapras
 	dw .Frameset_GSIntroNote
 	dw .Frameset_GSIntroInvisibleNote
@@ -403,8 +403,9 @@ SpriteAnimFrameData:
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_2,  1, OAM_X_FLIP
 	dorestart
 
-.Frameset_UnusedIntroAerodactyl:
-	oamframe SPRITE_ANIM_OAMSET_UNUSED_INTRO_AERODACTYL,  7, OAM_X_FLIP
+.Frameset_GSIntroLuvdisc:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LUVDISC_1,  8, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LUVDISC_2,  8, OAM_X_FLIP
 	endanim
 
 .Frameset_GSIntroLapras:
