@@ -20,6 +20,8 @@ SpriteAnimOAMData:
 	spriteanimoam $00, .OAMData_GSIntroLapras            ; SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_1
 	spriteanimoam $00, .OAMData_GSIntroLapras            ; SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_2
 	spriteanimoam $06, .OAMData_GSIntroLapras            ; SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_3
+	spriteanimoam $2c, .OAMData_GSIntroWingull            ; SPRITE_ANIM_OAMSET_GS_INTRO_WINGULL_1
+	spriteanimoam $3c, .OAMData_GSIntroWingull            ; SPRITE_ANIM_OAMSET_GS_INTRO_WINGULL_2
 	spriteanimoam $0c, .OAMData_GSIntroNote              ; SPRITE_ANIM_OAMSET_GS_INTRO_NOTE
 	spriteanimoam $0d, .OAMData_1x1_Palette0             ; SPRITE_ANIM_OAMSET_GS_INTRO_INVISIBLE_NOTE
 	spriteanimoam $00, .OAMData_GSIntroJigglypuffPikachu ; SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_1
@@ -173,6 +175,10 @@ SpriteAnimOAMData:
 	dbsprite  0, -1,  0,  0, $01, 2
 	dbsprite -1,  0,  0,  0, $10, 2
 	dbsprite  0,  0,  0,  0, $11, 2
+
+.OAMData_GSIntroWingull:
+	db 1
+	dbsprite 0, 0,  0,  0, $2c, 0
 
 .OAMData_GSGameFreakLogoStar:
 	db 4

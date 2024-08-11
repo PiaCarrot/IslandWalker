@@ -58,6 +58,7 @@ SpriteAnimFrameData:
 	dw .Frameset_GSIntroMagikarp
 	dw .Frameset_GSIntroLuvdisc
 	dw .Frameset_GSIntroLapras
+	dw .Frameset_GSIntroWingull
 	dw .Frameset_GSIntroNote
 	dw .Frameset_GSIntroInvisibleNote
 	dw .Frameset_GSIntroJigglypuff
@@ -396,6 +397,11 @@ SpriteAnimFrameData:
 .Frameset_GSIntroShellder:
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_1,  8
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2,  8
+	dorestart
+
+.Frameset_GSIntroWingull:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_WINGULL_1,  8
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_WINGULL_2,  8
 	dorestart
 
 .Frameset_GSIntroMagikarp:

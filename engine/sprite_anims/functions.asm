@@ -46,6 +46,7 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_GSIntroMagikarp
 	dw SpriteAnimFunc_UnusedIntroAerodactyl
 	dw SpriteAnimFunc_GSIntroLapras
+	dw SpriteAnimFunc_GSIntroWingull
 	dw SpriteAnimFunc_GSIntroNote
 	dw SpriteAnimFunc_GSIntroJigglypuff
 	dw SpriteAnimFunc_GSIntroPikachu
@@ -741,6 +742,16 @@ SpriteAnimFunc_GSIntroBubble:
 	ret
 
 .delete
+	call DeinitializeSprite
+	ret
+	
+SpriteAnimFunc_GSIntroWingull:
+	ld a, [wGlobalAnimYOffset]
+	ld hl, SPRITEANIMSTRUCT_YCOORD
+	add hl, bc
+	add [hl]
+	cp $b0
+	ret c
 	call DeinitializeSprite
 	ret
 

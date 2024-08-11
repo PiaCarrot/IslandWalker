@@ -318,6 +318,7 @@ IntroScene3_Jumper:
 
 .scene3_1:
 	call Intro_InitLapras
+	call Intro_InitWingull
 	depixel 28, 28, 4, 4
 	call DmgToCgbObjPals
 ; fallthrough
@@ -443,6 +444,18 @@ Intro_InitLapras:
 	ret nz
 	depixel 16, 24
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_LAPRAS
+	call InitSpriteAnimStruct
+	ret
+	
+Intro_InitWingull:
+	depixel 2, 20
+	call .InitAnim
+	depixel 3, 19
+	call .InitAnim
+	depixel 2, 17
+
+.InitAnim:
+	ld a, SPRITE_ANIM_OBJ_GS_INTRO_WINGULL
 	call InitSpriteAnimStruct
 	ret
 
