@@ -305,13 +305,13 @@ IntroScene3_Jumper:
 	dw .scene3_1
 	dw .scene3_2
 	dw .scene3_7
+	dw .scene3_2
+	dw .scene3_2
 	dw .scene3_3
 	dw .scene3_3
 	dw .scene3_3
 	dw .scene3_4
 	dw .scene3_5
-	dw .scene3_6
-	dw .scene3_6
 	dw .scene3_6
 	dw .scene3_6
 	dw .scene3_6
@@ -342,7 +342,7 @@ IntroScene3_Jumper:
 	and %00011111
 	jr z, .load_palettes
 	call Intro_InitMagikarps
-	ret
+	jr .scene3_6
 
 .load_palettes
 	farcall Intro_LoadMagikarpPalettes
@@ -353,8 +353,7 @@ IntroScene3_Jumper:
 	res LCD_STAT, [hl]
 	xor a
 	ldh [hLCDCPointer], a
-	ret
-
+; fallthrough
 .scene3_6:
 	call Intro_UpdateLYOverrides
 	ret
