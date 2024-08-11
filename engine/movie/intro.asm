@@ -40,6 +40,8 @@ GoldSilverIntro:
 	xor a
 	ldh [hSCX], a
 	ldh [hSCY], a
+	ld hl, rIE
+	res LCD_STAT, [hl]
 	ldh [hLCDCPointer], a
 	ldh [hLYOverrideStart], a
 	ldh [hLYOverrideEnd], a
@@ -130,6 +132,8 @@ IntroScene1:
 	ld [wIntroFrameCounter2], a
 	ld a, $80
 	ld [wIntroFrameCounter1], a
+	ld hl, rIE
+	set LCD_STAT, [hl]
 	ld a, $42
 	ldh [hLCDCPointer], a
 	call Intro_InitSineLYOverrides
@@ -330,6 +334,8 @@ IntroScene3_Jumper:
 	ret
 
 .scene3_5:
+	ld hl, rIE
+	res LCD_STAT, [hl]
 	xor a
 	ldh [hLCDCPointer], a
 	ret
