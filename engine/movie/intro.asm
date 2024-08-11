@@ -416,7 +416,7 @@ Intro_InitShellders:
 	ret
 	
 Intro_InitLuvDisc:
-	depixel 5, 5
+	depixel 5, 0
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_LUVDISC
 	call InitSpriteAnimStruct
 	ret

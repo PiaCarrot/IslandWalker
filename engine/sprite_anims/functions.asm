@@ -806,23 +806,50 @@ SpriteAnimFunc_GSIntroMagikarp:
 	ret
 
 SpriteAnimFunc_UnusedIntroAerodactyl:
-	ld hl, SPRITEANIMSTRUCT_XCOORD
+	call AnimSeqs_AnonJumptable
+	jp hl
+.anon_dw
+	dw .zero
+	dw .one
+
+.zero
+	call AnimSeqs_IncAnonJumptableIndex
+
+	ld hl, SPRITEANIMSTRUCT_INDEX
 	add hl, bc
 	ld a, [hl]
-	cp $b0
+
+	and $3
+	swap a
+	ld hl, SPRITEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], a
+
+.one
+	lb de, 2, 1
+	ldh a, [hSGB]
+	and a
+	jr z, .sgb
+	lb de, 4, 2
+.sgb
+	ld hl, SPRITEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld a, [hl]
+	cp $f0
 	jr nc, .delete
 
-	inc [hl]
+	add d
+	ld [hl], a
 	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
 	ld a, [hl]
-	inc [hl]
-	and $1
-	ret z
-
-	ld hl, SPRITEANIMSTRUCT_YCOORD
+	add e
+	ld [hl], a
+	ld d, 8
+	farcall Sine
+	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc
-	inc [hl]
+	ld [hl], a
 	ret
 
 .delete

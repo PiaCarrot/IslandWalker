@@ -406,7 +406,7 @@ SpriteAnimFrameData:
 .Frameset_GSIntroLuvdisc:
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LUVDISC_1,  8, OAM_X_FLIP
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LUVDISC_2,  8, OAM_X_FLIP
-	endanim
+	dorestart
 
 .Frameset_GSIntroLapras:
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_1,  7
