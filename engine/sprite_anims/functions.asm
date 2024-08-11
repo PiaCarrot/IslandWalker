@@ -795,7 +795,7 @@ SpriteAnimFunc_GSIntroMagikarp:
 	ld hl, SPRITEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld a, [hl]
-	cp $f0
+	cp SCREEN_WIDTH_PX + (3 * TILE_WIDTH)
 	jr nc, .delete
 
 	add d

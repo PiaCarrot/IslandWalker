@@ -212,6 +212,7 @@ IntroScene4:
 	ret
 
 .next
+	farcall ClearSpriteAnims
 	ld hl, wIntroJumptableIndex
 	inc [hl]
 	xor a
@@ -303,7 +304,7 @@ IntroScene3_Jumper:
 	dw .scene3_2
 	dw .scene3_1
 	dw .scene3_2
-	dw .scene3_2
+	dw .scene3_7
 	dw .scene3_3
 	dw .scene3_3
 	dw .scene3_3
@@ -316,9 +317,12 @@ IntroScene3_Jumper:
 	dw .scene3_6
 	dw .scene3_6
 
+.scene3_7
+	call Intro_InitWingull
+	jr .scene3_2
+
 .scene3_1:
 	call Intro_InitLapras
-	call Intro_InitWingull
 	depixel 28, 28, 4, 4
 	call DmgToCgbObjPals
 ; fallthrough
@@ -451,11 +455,11 @@ Intro_InitWingull:
 	ld a, [wIntroFrameCounter2]
 	and %00011111
 	ret nz
-	depixel 9, 15
+	depixel 10, 15
 	call .InitAnim
 	depixel 12, 10
 	call .InitAnim
-	depixel 10, 5
+	depixel 11, 5
 
 .InitAnim:
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_WINGULL
