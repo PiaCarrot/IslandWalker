@@ -1,8 +1,18 @@
 GoldSilverIntro:
+	ldh a, [rIE]
+	push af
+	call NormalSpeed
+	pop af
+	ldh [rIE], a
 	call .Init
 .Loop:
 	call .PlayFrame
 	jr nc, .Loop
+	ldh a, [rIE]
+	push af
+	call DoubleSpeed
+	pop af
+	ldh [rIE], a
 	ret
 
 .Init:
