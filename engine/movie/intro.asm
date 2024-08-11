@@ -448,11 +448,14 @@ Intro_InitLapras:
 	ret
 	
 Intro_InitWingull:
-	depixel 2, 20
+	ld a, [wIntroFrameCounter2]
+	and %00011111
+	ret nz
+	depixel 9, 15
 	call .InitAnim
-	depixel 3, 19
+	depixel 12, 10
 	call .InitAnim
-	depixel 2, 17
+	depixel 10, 5
 
 .InitAnim:
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_WINGULL
