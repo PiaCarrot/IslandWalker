@@ -953,7 +953,7 @@ IntroScene14:
 	ld [wIntroFrameCounter1], a
 	xor a
 	ld [wIntroFrameCounter2], a
-	ld de, SFX_GS_INTRO_CHARIZARD_FIREBALL
+	ld de, SFX_MASTER_BALL
 	call PlaySFX
 ; fallthrough
 
