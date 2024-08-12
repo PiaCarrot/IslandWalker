@@ -953,13 +953,11 @@ IntroScene14:
 	ld [wIntroFrameCounter1], a
 	xor a
 	ld [wIntroFrameCounter2], a
-	ld de, SFX_MASTER_BALL
-	call PlaySFX
 ; fallthrough
 
 IntroScene15:
 ; Charizard mouth wide open / fireball starts
-	call Intro_AnimateFireball
+;	call Intro_AnimateFireball
 	ld hl, wIntroFrameCounter1
 	ld a, [hl]
 	and a
@@ -976,7 +974,7 @@ IntroScene15:
 
 IntroScene16:
 ; continue fireball / fade out palettes
-	call Intro_AnimateFireball
+;	call Intro_AnimateFireball
 	ld hl, wIntroFrameCounter1
 	ld a, [hl]
 	inc [hl]
@@ -996,6 +994,9 @@ IntroScene16:
 	ret
 
 .next
+	ld hl, CELEBI
+	call GetPokemonIDFromIndex
+	call PlayMonCry
 	ld hl, wIntroJumptableIndex
 	inc [hl]
 	ret
@@ -1117,7 +1118,7 @@ Intro_LoadTotodilePalette:
 Intro_LoadCharizardPalette:
 	ldh a, [hCGB]
 	and a
-	ld hl, CHARMANDER
+	ld hl, CYNDAQUIL
 	call GetPokemonIDFromIndex
 	ld c, a
 	jr nz, .got_mon
