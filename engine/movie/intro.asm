@@ -254,7 +254,7 @@ IntroScene5:
 
 IntroScene17:
 ; delay a bit before leading into the title screen
-	ld c, 64
+	ld c, 48
 .loop
 	call DelayFrame
 	dec c
@@ -811,13 +811,6 @@ IntroScene10:
 	ld de, vTiles2
 	ld hl, Intro_FireGFX1
 	call Decompress
-	ld de, vTiles1
-	ld hl, Intro_FireGFX2
-	call Decompress
-	ld de, vTiles0
-	ld hl, Intro_FireGFX3
-	ld bc, vTiles1 - vTiles0
-	call Decompress
 
 	ld c, BULBASAUR
 	ld de, vTiles0 tile $10
@@ -922,17 +915,13 @@ IntroScene13:
 	ld hl, wIntroFrameCounter1
 	ld a, [hl]
 	and a
-	jr z, .next
+	jr .next
 	dec [hl]
 	ret
 
 .next
 	ld hl, wIntroJumptableIndex
 	inc [hl]
-	ld a, 1
-	call DrawIntroCharizardGraphic
-	ld a, 4
-	ld [wIntroFrameCounter1], a
 	ret
 
 IntroScene14:
@@ -947,12 +936,6 @@ IntroScene14:
 .next
 	ld hl, wIntroJumptableIndex
 	inc [hl]
-	ld a, 2
-	call DrawIntroCharizardGraphic
-	ld a, 64
-	ld [wIntroFrameCounter1], a
-	xor a
-	ld [wIntroFrameCounter2], a
 ; fallthrough
 
 IntroScene15:
@@ -1181,13 +1164,7 @@ endr
 ; db vtile offset, width, height; dwcoord x, y
 ; mouth closed
 	db $00, 8, 8
-	dwcoord 10, 6
-; mouth open
-	db $40, 9, 8
-	dwcoord 9, 6
-; breathing fire
-	db $88, 9, 8
-	dwcoord 8, 6
+	dwcoord 5, 6
 
 Intro_AnimateFireball:
 	ld hl, wIntroFrameCounter2

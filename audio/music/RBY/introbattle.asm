@@ -5,7 +5,7 @@ Music_IntroBattle:
 	dbw $03, Music_IntroBattle_Ch4
 
 Music_IntroBattle_Ch1: ; 7f844 (1f:7844)
-	tempo 85
+	tempo 80
 	volume 119
 	dutycycle 3
 	vibrato 6, 52
