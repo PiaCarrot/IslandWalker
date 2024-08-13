@@ -857,7 +857,7 @@ IntroScene10:
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
-	ld de, MUSIC_GS_OPENING_2
+	ld de, MUSIC_INTRO_BATTLE
 	call PlayMusic
 	ret
 
@@ -987,6 +987,10 @@ IntroScene16:
 	ld a, [hl]
 	cp -1
 	jr z, .next
+	ld hl, hSCY
+	inc [hl]
+	ld hl, wGlobalAnimYOffset
+	dec [hl]
 	call DmgToCgbBGPals
 	ld e, a
 	ld d, a
@@ -994,9 +998,6 @@ IntroScene16:
 	ret
 
 .next
-	ld hl, CELEBI
-	call GetPokemonIDFromIndex
-	call PlayMonCry
 	ld hl, wIntroJumptableIndex
 	inc [hl]
 	ret
@@ -1057,24 +1058,18 @@ Intro_CheckSCYEvent:
 	db -1
 
 Intro_ChikoritaAppears:
-	ld de, SFX_GS_INTRO_POKEMON_APPEARS
-	call PlaySFX
 	depixel 22, 1
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_CHIKORITA
 	call InitSpriteAnimStruct
 	ret
 
 Intro_CyndaquilAppears:
-	ld de, SFX_GS_INTRO_POKEMON_APPEARS
-	call PlaySFX
 	depixel 22, 20
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_CYNDAQUIL
 	call InitSpriteAnimStruct
 	ret
 
 Intro_TotodileAppears:
-	ld de, SFX_GS_INTRO_POKEMON_APPEARS
-	call PlaySFX
 	depixel 22, 1
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_TOTODILE
 	call InitSpriteAnimStruct
