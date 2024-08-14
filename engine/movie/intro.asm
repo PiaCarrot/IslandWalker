@@ -307,11 +307,11 @@ IntroScene3_Jumper:
 	dw .scene3_7
 	dw .scene3_2
 	dw .scene3_2
-	dw .scene3_3
+	dw .scene3_sky
 	dw .scene3_3
 	dw .scene3_3
 	dw .scene3_4
-	dw .scene3_5
+	dw .scene3_6
 	dw .scene3_6
 	dw .scene3_6
 	dw .scene3_6
@@ -331,6 +331,8 @@ IntroScene3_Jumper:
 	call Intro_AnimateOceanWaves
 	ret
 
+.scene3_sky
+	farcall Intro_LoadSkyPalettes
 .scene3_3:
 	call Intro_InitMagikarps
 	call Intro_AnimateOceanWaves
@@ -342,7 +344,7 @@ IntroScene3_Jumper:
 	and %00011111
 	jr z, .load_palettes
 	call Intro_InitMagikarps
-	jr .scene3_6
+	jr .scene3_5
 
 .load_palettes
 	farcall Intro_LoadMagikarpPalettes

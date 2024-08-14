@@ -70,12 +70,6 @@ Intro_LoadMagikarpPalettes: ; unreferenced
 	ret z
 
 ; CGB only
-	ld hl, .MagikarpBGPal
-	ld de, wBGPals1
-	ld bc, 1 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-
 	ld hl, .MagikarpOBPal
 	ld de, wOBPals1
 	ld bc, 1 palettes
@@ -87,11 +81,26 @@ Intro_LoadMagikarpPalettes: ; unreferenced
 	ldh [hCGBPalUpdate], a
 	ret
 
-.MagikarpBGPal:
-INCLUDE "gfx/intro/gs_magikarp_bg.pal"
-
 .MagikarpOBPal:
 INCLUDE "gfx/intro/gs_magikarp_ob.pal"
+
+Intro_LoadSkyPalettes:
+	call CheckCGB
+	ret z
+
+	ld hl, .SkyBGPal
+	ld de, wBGPals1
+	ld bc, 1 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+.SkyBGPal:
+INCLUDE "gfx/intro/gs_sky_bg.pal"
 
 Intro_LoadAllPal0:
 	call CheckCGB
