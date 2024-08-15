@@ -385,7 +385,7 @@ ProtostarLogoTilemap:
 INCBIN "gfx/splash/splash.tilemap"
 
 ProtostarLogoPalettes:
-INCBIN "gfx/splash/splash.pal"
+INCLUDE "gfx/splash/splash.pal"
 
 GameFreakDittoPaletteFade:
 INCLUDE "gfx/splash/ditto_fade.pal"
