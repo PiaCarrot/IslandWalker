@@ -16,23 +16,18 @@ SplashScreen:
 	ld a, SCREEN_HEIGHT_PX
 	ldh [hWY], a
 	call WaitBGMap
-	ld b, SCGB_GAMEFREAK_LOGO
-	call GetSGBLayout
-	call SetDefaultBGPAndOBP
+	ld c, 30
+	call DelayFrames
+; Stop here if not in GBC mode
+	farcall GBCOnlyScreen
+	ld hl, ProtostarLogoPalettes
+	ld de, wBGPals1
+	ld bc, 1 palettes
+	call FarCopyColorWRAM
 	ld c, 10
 	call DelayFrames
 
-; Draw copyright screen
-	farcall Copyright
-	call WaitBGMap
-	ld c, 100
-	call DelayFrames
-	farcall FadeToBlack
-	call ClearTilemap
-
-; Stop here if not in GBC mode
-	farcall GBCOnlyScreen
-
+ProtostarLogoPlay:
 ; Play GameFreak logo animation
 	call DisableLCD
     ; Load tile data
@@ -45,9 +40,6 @@ SplashScreen:
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	rst CopyBytes
 	call EnableLCD
-	; ld b, SCGB_DIPLOMA
-	; call GetSGBLayout
-	; call SetDefaultBGPAndOBP
 ; Update palette colors
 	ld c, 30
 	call DelayFrames
@@ -57,8 +49,8 @@ SplashScreen:
 	call FarCopyColorWRAM
 	ld c, 31
 	farcall FadePalettes
-	ld de, SFX_TWINKLE
-	call PlaySFX
+	ld de, MUSIC_MYSTICALMAN_ENCOUNTER
+	call PlayMusic
 .loop
 	call JoyTextDelay
 	ldh a, [hJoyLast]
@@ -69,6 +61,16 @@ SplashScreen:
 .done
 	ld de, SFX_TWINKLE
 	call PlaySFX
+	ld a, 4 ; fade time
+	ld [wMusicFade], a
+	ld de, MUSIC_NONE
+	ld a, e
+	ld [wMusicFadeID], a
+	ld a, d
+	ld [wMusicFadeID + 1], a
+	farcall FadeToBlack
+	ld c, 10
+	call DelayFrames
 	call GameFreakPresentsEnd
 	and a
 	ret
@@ -364,22 +366,7 @@ GameFreakLogo_Transform:
 	add hl, bc
 	inc [hl]
 	jmp GameFreakPresents_NextScene
-	
-; Routine to load data into VRAM
-LoadDataTest:
-    ; Ensure VRAM bank is selected if necessary (usually for GBC)
-    ld a, $01
-    ldh [rVBK], a ; Select VRAM bank 1 if using banked VRAM
 
-LoadLoop:
-    ld a, [hl+]   ; Load a byte from ROM (tile or tilemap data)
-    ld [de], a    ; Store it in VRAM at the address pointed by DE
-    inc de        ; Increment DE to the next address
-    dec bc        ; Decrement the byte counter
-    ld a, b       ; Load upper byte of BC into A
-    or c          ; OR it with the lower byte
-    jr nz, LoadLoop ; Repeat until BC is zero (all bytes are transferred)
-    ret
 
 ProtostarLogoGFX:
 INCBIN "gfx/splash/splash.2bpp.lz"
