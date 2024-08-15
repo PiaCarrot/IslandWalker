@@ -27,6 +27,7 @@ SplashScreen:
 	call WaitBGMap
 	ld c, 100
 	call DelayFrames
+	farcall FadeToBlack
 	call ClearTilemap
 
 ; Stop here if not in GBC mode
@@ -48,12 +49,14 @@ SplashScreen:
 	; call GetSGBLayout
 	; call SetDefaultBGPAndOBP
 ; Update palette colors
+	ld c, 30
+	call DelayFrames
 	ld hl, ProtostarLogoPalettes
-	ld de, wBGPals2
+	ld de, wBGPals1
 	ld bc, 1 palettes
 	call FarCopyColorWRAM
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
+	ld c, 31
+	farcall FadePalettes
 	ld de, SFX_TWINKLE
 	call PlaySFX
 .loop
