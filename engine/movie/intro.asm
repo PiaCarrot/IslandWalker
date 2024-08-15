@@ -416,12 +416,10 @@ Intro_InitMagikarps:
 	call .InitAnim4
 	depixel 31, 24
 	call .InitAnim2
-	call Random
-    ld b, a
-    and 1 percent
-    cp b
-    jr nz, .no_call
-	jp .SpawnShinyKarp
+	call Random                    ;generate a random number from 0-255
+	cp 3                           ;is the random number 3-255?
+    jr nc, .no_call                ;if so, no shiny, nc = greater than or equal
+	jp .SpawnShinyKarp             ;hey, we somehow rolled a 0, 1 or 2! Thats a 1.17% chance!
 .no_call:
 	depixel 2, 28
 	call .InitAnim3
@@ -452,6 +450,12 @@ Intro_InitMagikarps:
 	depixel 2, 28
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_MAGIKARP_SHINY
 	call InitSpriteAnimStruct
+	ld de, SFX_SHINE
+	call PlaySFX
+	; TODO: Test to make sure this even works
+	; ld de, EVENT_SHINY_MAGIKARP_INTRO
+    ; ld b, SET_FLAG
+    ; farcall EventFlagAction
 	jp .ShinySpawned
 
 Intro_InitShellders:
