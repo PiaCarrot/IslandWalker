@@ -5,7 +5,6 @@ SplashScreen:
 ; Reinitialize everything
 	ld de, MUSIC_NONE
 	call PlayMusic
-	call ClearBGPalettes
 	call ClearTilemap
 	ld a, HIGH(vBGMap0)
 	ldh [hBGMapAddress + 1], a
@@ -34,29 +33,65 @@ SplashScreen:
 	farcall GBCOnlyScreen
 
 ; Play GameFreak logo animation
-	call GameFreakPresentsInit
-.joy_loop
+	call DisableLCD
+    ; Load tile data
+    ld hl, ProtostarLogoGFX
+	ld de, vTiles2
+	call Decompress
+    ; Load tilemap data
+    ld hl, ProtostarLogoTilemap
+	decoord 0, 0
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
+	call EnableLCD
+	; ld b, SCGB_DIPLOMA
+	; call GetSGBLayout
+	; call SetDefaultBGPAndOBP
+; Update palette colors
+	ld hl, ProtostarLogoPalettes
+	ld de, wBGPals2
+	ld bc, 1 palettes
+	call FarCopyColorWRAM
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ld de, SFX_TWINKLE
+	call PlaySFX
+.loop
 	call JoyTextDelay
 	ldh a, [hJoyLast]
-	and BUTTONS
-	jr nz, .pressed_button
-	ld a, [wJumptableIndex]
-	bit 7, a
-	jr nz, .finish
-	call GameFreakPresentsScene
-	farcall PlaySpriteAnimations
-	call DelayFrame
-	jr .joy_loop
-
-.pressed_button
-	call GameFreakPresentsEnd
-	scf
-	ret
-
-.finish
+	ld b, a
+	and A_BUTTON
+	jr nz, .done
+	jr .loop
+.done
+	ld de, SFX_TWINKLE
+	call PlaySFX
 	call GameFreakPresentsEnd
 	and a
 	ret
+;	call GameFreakPresentsInit
+; .joy_loop
+	; call JoyTextDelay
+	; ldh a, [hJoyLast]
+	; and BUTTONS
+	; jr nz, .pressed_button
+	; ld a, [wJumptableIndex]
+	; bit 7, a
+	; jr nz, .finish
+	; call GameFreakPresentsScene
+	; farcall PlaySpriteAnimations
+	; call DelayFrame
+	; jr .joy_loop
+
+; .pressed_button
+	; call GameFreakPresentsEnd
+	; scf
+	; ret
+
+; .finish
+	; call GameFreakPresentsEnd
+	; and a
+	; ret
 
 GameFreakPresentsInit:
 	ld de, GameFreakLogoGFX
@@ -326,6 +361,31 @@ GameFreakLogo_Transform:
 	add hl, bc
 	inc [hl]
 	jmp GameFreakPresents_NextScene
+	
+; Routine to load data into VRAM
+LoadDataTest:
+    ; Ensure VRAM bank is selected if necessary (usually for GBC)
+    ld a, $01
+    ldh [rVBK], a ; Select VRAM bank 1 if using banked VRAM
+
+LoadLoop:
+    ld a, [hl+]   ; Load a byte from ROM (tile or tilemap data)
+    ld [de], a    ; Store it in VRAM at the address pointed by DE
+    inc de        ; Increment DE to the next address
+    dec bc        ; Decrement the byte counter
+    ld a, b       ; Load upper byte of BC into A
+    or c          ; OR it with the lower byte
+    jr nz, LoadLoop ; Repeat until BC is zero (all bytes are transferred)
+    ret
+
+ProtostarLogoGFX:
+INCBIN "gfx/splash/splash.2bpp.lz"
+
+ProtostarLogoTilemap:
+INCBIN "gfx/splash/splash.tilemap"
+
+ProtostarLogoPalettes:
+INCBIN "gfx/splash/splash.pal"
 
 GameFreakDittoPaletteFade:
 INCLUDE "gfx/splash/ditto_fade.pal"
