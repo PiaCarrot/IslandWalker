@@ -56,6 +56,10 @@ SpriteAnimFrameData:
 	dw .Frameset_GSIntroBubble
 	dw .Frameset_GSIntroShellder
 	dw .Frameset_GSIntroMagikarp
+	dw .Frameset_GSIntroMagikarpStripes
+	dw .Frameset_GSIntroMagikarpMask
+	dw .Frameset_GSIntroMagikarpSaucy
+	dw .Frameset_GSIntroMagikarpShiny
 	dw .Frameset_GSIntroLuvdisc
 	dw .Frameset_GSIntroLapras
 	dw .Frameset_GSIntroWingull
@@ -407,6 +411,26 @@ SpriteAnimFrameData:
 .Frameset_GSIntroMagikarp:
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_1,  1, OAM_X_FLIP
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_2,  1, OAM_X_FLIP
+	dorestart
+
+.Frameset_GSIntroMagikarpStripes:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_STRIPES_1,  1, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_STRIPES_2,  1, OAM_X_FLIP
+	dorestart
+
+.Frameset_GSIntroMagikarpMask:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_MASK_1,  1, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_MASK_2,  1, OAM_X_FLIP
+	dorestart
+
+.Frameset_GSIntroMagikarpSaucy:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SAUCY_1,  1, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SAUCY_2,  1, OAM_X_FLIP
+	dorestart
+
+.Frameset_GSIntroMagikarpShiny:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SHINY_1,  1, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SHINY_2,  1, OAM_X_FLIP
 	dorestart
 
 .Frameset_GSIntroLuvdisc:

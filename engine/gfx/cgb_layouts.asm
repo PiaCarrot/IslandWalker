@@ -528,7 +528,7 @@ _CGB_GSIntro:
 	call LoadHLPaletteIntoDE
 	ld hl, .ShellderLaprasOBPals
 	ld de, wOBPals1
-	ld bc, 3 palettes
+	ld bc, 7 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 	jmp WipeAttrmap

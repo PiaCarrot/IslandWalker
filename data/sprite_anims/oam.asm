@@ -15,6 +15,14 @@ SpriteAnimOAMData:
 	spriteanimoam $6e, .OAMData_GSIntroShellder          ; SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2
 	spriteanimoam $2d, .OAMData_GSIntroMagikarp          ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_1
 	spriteanimoam $4d, .OAMData_GSIntroMagikarp          ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_2
+	spriteanimoam $66, .OAMData_GSIntroMagikarpStripes   ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_STRIPES_1
+	spriteanimoam $86, .OAMData_GSIntroMagikarpStripes   ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_STRIPES_2
+	spriteanimoam $69, .OAMData_GSIntroMagikarpMask      ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_MASK_1
+	spriteanimoam $89, .OAMData_GSIntroMagikarpMask      ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_MASK_2
+	spriteanimoam $8c, .OAMData_GSIntroMagikarpSaucy     ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SAUCY_1
+	spriteanimoam $ac, .OAMData_GSIntroMagikarpSaucy     ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SAUCY_2
+	spriteanimoam $80, .OAMData_GSIntroMagikarpShiny     ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SHINY_1
+	spriteanimoam $a0, .OAMData_GSIntroMagikarpShiny     ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SHINY_2
 	spriteanimoam $60, .OAMData_GSIntroLuvdisc           ; SPRITE_ANIM_OAMSET_GS_INTRO_LUVDISC_1
 	spriteanimoam $62, .OAMData_GSIntroLuvdisc           ; SPRITE_ANIM_OAMSET_GS_INTRO_LUVDISC_2
 	spriteanimoam $00, .OAMData_GSIntroLapras            ; SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_1
@@ -390,6 +398,42 @@ SpriteAnimOAMData:
 	dbsprite -2,  0,  4,  0, $10, 1
 	dbsprite -1,  0,  4,  0, $11, 1
 	dbsprite  0,  0,  4,  0, $12, 1
+
+.OAMData_GSIntroMagikarpStripes:
+	db 6
+	dbsprite -2, -1,  4,  0, $00, 3
+	dbsprite -1, -1,  4,  0, $01, 3
+	dbsprite  0, -1,  4,  0, $02, 3
+	dbsprite -2,  0,  4,  0, $10, 3
+	dbsprite -1,  0,  4,  0, $11, 3
+	dbsprite  0,  0,  4,  0, $12, 3
+
+.OAMData_GSIntroMagikarpMask:
+	db 6
+	dbsprite -2, -1,  4,  0, $00, 4
+	dbsprite -1, -1,  4,  0, $01, 4
+	dbsprite  0, -1,  4,  0, $02, 4
+	dbsprite -2,  0,  4,  0, $10, 4
+	dbsprite -1,  0,  4,  0, $11, 4
+	dbsprite  0,  0,  4,  0, $12, 4
+
+.OAMData_GSIntroMagikarpSaucy:
+	db 6
+	dbsprite -2, -1,  4,  0, $00, 5
+	dbsprite -1, -1,  4,  0, $01, 5
+	dbsprite  0, -1,  4,  0, $02, 5
+	dbsprite -2,  0,  4,  0, $10, 5
+	dbsprite -1,  0,  4,  0, $11, 5
+	dbsprite  0,  0,  4,  0, $12, 5
+
+.OAMData_GSIntroMagikarpShiny:
+	db 6
+	dbsprite -2, -1,  4,  0, $00, 6
+	dbsprite -1, -1,  4,  0, $01, 6
+	dbsprite  0, -1,  4,  0, $02, 6
+	dbsprite -2,  0,  4,  0, $10, 6
+	dbsprite -1,  0,  4,  0, $11, 6
+	dbsprite  0,  0,  4,  0, $12, 6
 
 .OAMData_GSIntroLapras:
 	db 29

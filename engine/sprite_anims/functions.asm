@@ -44,6 +44,10 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_GSIntroShellder
 	dw SpriteAnimFunc_Celebi
 	dw SpriteAnimFunc_GSIntroMagikarp
+	dw SpriteAnimFunc_GSIntroMagikarpStripes
+	dw SpriteAnimFunc_GSIntroMagikarpMask
+	dw SpriteAnimFunc_GSIntroMagikarpSaucy
+	dw SpriteAnimFunc_GSIntroMagikarpShiny
 	dw SpriteAnimFunc_UnusedIntroAerodactyl
 	dw SpriteAnimFunc_GSIntroLapras
 	dw SpriteAnimFunc_GSIntroWingull
@@ -765,6 +769,9 @@ SpriteAnimFunc_GSIntroShellder:
 	call DeinitializeSprite
 	ret
 
+SpriteAnimFunc_GSIntroMagikarpStripes:
+SpriteAnimFunc_GSIntroMagikarpMask:
+SpriteAnimFunc_GSIntroMagikarpSaucy:
 SpriteAnimFunc_GSIntroMagikarp:
 	call AnimSeqs_AnonJumptable
 	jp hl
@@ -816,6 +823,7 @@ SpriteAnimFunc_GSIntroMagikarp:
 	call DeinitializeSprite
 	ret
 
+SpriteAnimFunc_GSIntroMagikarpShiny:
 SpriteAnimFunc_UnusedIntroAerodactyl:
 	call AnimSeqs_AnonJumptable
 	jp hl

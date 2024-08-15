@@ -406,24 +406,53 @@ Intro_InitMagikarps:
 	depixel 29, 28
 	call .InitAnim
 	depixel 26, 0
-	call .InitAnim
+	call .InitAnim2
 	depixel 0, 24
-	call .InitAnim
+	call .InitAnim3
 	ret
 
 .alternate_frame
 	depixel 28, 30
-	call .InitAnim
+	call .InitAnim4
 	depixel 31, 24
-	call .InitAnim
+	call .InitAnim2
+	call Random
+    ld b, a
+    and 1 percent
+    cp b
+    jr nz, .no_call
+	jp .SpawnShinyKarp
+.no_call:
 	depixel 2, 28
-	call .InitAnim
+	call .InitAnim3
+.ShinySpawned:
 	ret
 
 .InitAnim:
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_MAGIKARP
 	call InitSpriteAnimStruct
 	ret
+
+.InitAnim2:
+	ld a, SPRITE_ANIM_OBJ_GS_INTRO_MAGIKARP_STRIPES
+	call InitSpriteAnimStruct
+	ret
+
+.InitAnim3:
+	ld a, SPRITE_ANIM_OBJ_GS_INTRO_MAGIKARP_MASK
+	call InitSpriteAnimStruct
+	ret
+
+.InitAnim4:
+	ld a, SPRITE_ANIM_OBJ_GS_INTRO_MAGIKARP_SAUCY
+	call InitSpriteAnimStruct
+	ret
+	
+.SpawnShinyKarp:
+	depixel 2, 28
+	ld a, SPRITE_ANIM_OBJ_GS_INTRO_MAGIKARP_SHINY
+	call InitSpriteAnimStruct
+	jp .ShinySpawned
 
 Intro_InitShellders:
 	depixel 18, 7
