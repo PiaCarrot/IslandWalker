@@ -686,11 +686,11 @@ IntroScene6:
 
 	hlbgcoord 0, 0
 	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
-	xor a
+	ld a, $04
 	rst ByteFill
 
-	ld hl, Intro_WorldMapTilemap
-	ld bc, Intro_WorldMapTilemapEnd - Intro_WorldMapTilemap
+	ld hl, Intro_OrangeMapTilemap
+	ld bc, Intro_OrangeMapTilemapEnd - Intro_OrangeMapTilemap
 	call .copy_map_tiles_or_attr
 
 
@@ -706,8 +706,8 @@ IntroScene6:
 	push af
 	ld a, 1
 	ldh [rVBK], a
-	ld hl, Intro_WorldMapAttrmap
-	ld bc, Intro_WorldMapAttrmapEnd - Intro_WorldMapAttrmap
+	ld hl, Intro_OrangeMapAttrmap
+	ld bc, Intro_OrangeMapAttrmapEnd - Intro_OrangeMapAttrmap
 	call .copy_map_tiles_or_attr
 	pop af
 	ldh [rVBK], a
@@ -781,7 +781,7 @@ IntroScene7:
 	ld hl, wIntroFrameCounter2
 	ld a, [hl]
 	inc [hl]
-	and %00111111
+	and %00000001
 	ret nz
 	ld hl, hSCY
 	ld a, [hl]
@@ -801,6 +801,7 @@ IntroScene7:
 	ret
 
 IntroScene8:
+	farcall FadePalettes
 ; stop scrolling, Pikachu attacks
 	ld hl, wIntroFrameCounter1
 	ld a, [hl]
@@ -1380,16 +1381,24 @@ INCBIN "gfx/intro/water2.2bpp.lz"
 Intro_WorldMapGFX:
 INCBIN "gfx/intro/worldmap.2bpp.lz"
 
-Intro_WorldMapTilemap:
-INCBIN "gfx/intro/worldmap.tilemap"
-Intro_WorldMapTilemapEnd:
+Intro_OrangeMapTilemap:
+INCBIN "gfx/intro/orange.tilemap"
+Intro_OrangeMapTilemapEnd:
+
+Intro_KantoMapTilemap:
+INCBIN "gfx/intro/kanto.tilemap"
+Intro_KantoMapTilemapEnd:
 
 Intro_WorldMapPalette:
 INCLUDE "gfx/intro/worldmap.pal"
 
-Intro_WorldMapAttrmap:
-INCBIN "gfx/intro/worldmap.attrmap"
-Intro_WorldMapAttrmapEnd:
+Intro_OrangeMapAttrmap:
+INCBIN "gfx/intro/orange.attrmap"
+Intro_OrangeMapAttrmapEnd:
+
+Intro_KantoMapAttrmap:
+INCBIN "gfx/intro/kanto.attrmap"
+Intro_KantoMapAttrmapEnd:
 
 Intro_GrassGFX1:
 INCBIN "gfx/intro/grass1.2bpp.lz"
