@@ -661,24 +661,33 @@ IntroScene6:
 	farcall ClearSpriteAnims
 	call Intro_ResetLYOverrides
 
+	; ld de, vTiles2
+	; ld hl, Intro_GrassGFX1
+	; call Decompress
+	; ld a, LOW(Intro_GrassMeta)
+	; ld [wIntroTilesPointer + 0], a
+	; ld a, HIGH(Intro_GrassMeta)
+	; ld [wIntroTilesPointer + 1], a
+	; hlbgcoord 0, 0
+	; ld a, l
+	; ld [wIntroBGMapPointer + 0], a
+	; ld a, h
+	; ld [wIntroBGMapPointer + 1], a
+	; ld de, Intro_GrassTilemap
+	; ld a, e
+	; ld [wIntroTilemapPointer + 0], a
+	; ld a, d
+	; ld [wIntroTilemapPointer + 1], a
+	; call Intro_DrawBackground
+
+
+	ld hl, Intro_WorldMapGFX
 	ld de, vTiles2
-	ld hl, Intro_GrassGFX1
 	call Decompress
-	ld a, LOW(Intro_GrassMeta)
-	ld [wIntroTilesPointer + 0], a
-	ld a, HIGH(Intro_GrassMeta)
-	ld [wIntroTilesPointer + 1], a
+	ld de, Intro_WorldMapTilemap
 	hlbgcoord 0, 0
-	ld a, l
-	ld [wIntroBGMapPointer + 0], a
-	ld a, h
-	ld [wIntroBGMapPointer + 1], a
-	ld de, Intro_GrassTilemap
-	ld a, e
-	ld [wIntroTilemapPointer + 0], a
-	ld a, d
-	ld [wIntroTilemapPointer + 1], a
-	call Intro_DrawBackground
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
 
 	ld de, vTiles0
 	ld hl, Intro_GrassGFX2
@@ -1312,6 +1321,15 @@ INCBIN "gfx/intro/water.bin"
 
 Intro_WaterGFX2:
 INCBIN "gfx/intro/water2.2bpp.lz"
+
+Intro_WorldMapGFX:
+INCBIN "gfx/intro/worldmap.2bpp.lz"
+
+Intro_WorldMapTilemap:
+INCBIN "gfx/intro/worldmap.bin"
+
+Intro_WorldMapPalette:
+INCBIN "gfx/intro/worldmap.pal"
 
 Intro_GrassGFX1:
 INCBIN "gfx/intro/grass1.2bpp.lz"
