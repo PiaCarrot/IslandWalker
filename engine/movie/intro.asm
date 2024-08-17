@@ -684,6 +684,11 @@ IntroScene6:
 	ld de, vTiles2
 	call Decompress
 
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	xor a
+	rst ByteFill
+
 ; Code ugly but works - Vulcan did not write this.. promise.
 	ld hl, Intro_WorldMapTilemap
 	ld bc, Intro_WorldMapTilemapEnd - Intro_WorldMapTilemap
