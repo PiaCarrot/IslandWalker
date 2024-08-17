@@ -72,7 +72,9 @@ IntroSceneJumper:
 	dw IntroScene4
 	dw IntroScene5
 	dw IntroScene6
+	dw IntroScene6_5
 	dw IntroScene7
+	dw IntroScene7_5
 	dw IntroScene8
 	dw IntroScene9
 	dw IntroScene10
@@ -689,9 +691,9 @@ IntroScene6:
 	xor a
 	rst ByteFill
 
-	ld hl, Intro_WorldMapTilemap
-	ld bc, Intro_WorldMapTilemapEnd - Intro_WorldMapTilemap
-	call .copy_map_tiles_or_attr
+	ld hl, Intro_OrangeMapTilemap
+	ld bc, Intro_OrangeMapTilemapEnd - Intro_OrangeMapTilemap
+	call Intro_CopyMapTilesOrAttr
 
 
 	ld hl, Intro_WorldMapPalette
@@ -706,15 +708,15 @@ IntroScene6:
 	push af
 	ld a, 1
 	ldh [rVBK], a
-	ld hl, Intro_WorldMapAttrmap
-	ld bc, Intro_WorldMapAttrmapEnd - Intro_WorldMapAttrmap
-	call .copy_map_tiles_or_attr
+	ld hl, Intro_OrangeMapAttrmap
+	ld bc, Intro_OrangeMapAttrmapEnd - Intro_OrangeMapAttrmap
+	call Intro_CopyMapTilesOrAttr
 	pop af
 	ldh [rVBK], a
 
 	xor a
 	ldh [hSCX], a
-	ld a, 256 - SCREEN_HEIGHT_PX
+	ld a, 256 - SCREEN_HEIGHT_PX - (2 * TILE_WIDTH)
 	ldh [hSCY], a
 
 	; ld de, vTiles0
@@ -748,7 +750,7 @@ IntroScene6:
 	ld [wIntroSpriteStateFlag], a
 	ret
 
-.copy_map_tiles_or_attr:
+Intro_CopyMapTilesOrAttr:
 	debgcoord 0, 0
 .loop_tile_copy_2
 	push bc
@@ -775,13 +777,83 @@ IntroScene6:
 	jr nz, .loop_tile_copy_2
 	ret
 
-IntroScene7:
+IntroScene6_5:
 ; scroll left to Jigglypuff
 ;	call Intro_InitNote
 	ld hl, wIntroFrameCounter2
 	ld a, [hl]
 	inc [hl]
-	and %00111111
+	and %00000001
+	ret nz
+	ld hl, hSCY
+	ld a, [hl]
+	and a
+	jr z, .next
+	dec [hl]
+	ld hl, wGlobalAnimXOffset
+	inc [hl]
+	ret
+
+.next
+	ld c, 31
+	call FadeToBlack
+	ld a, -1
+	ld [wIntroFrameCounter1], a
+;	call Intro_InitPikachu
+	ld hl, wIntroJumptableIndex
+	inc [hl]
+	ret
+
+IntroScene7:
+	ld hl, wIntroJumptableIndex
+	inc [hl] ; only run once
+	call DisableLCD
+
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	xor a
+	rst ByteFill
+
+	ld hl, Intro_KantoMapTilemap
+	ld bc, Intro_KantoMapTilemapEnd - Intro_KantoMapTilemap
+	call Intro_CopyMapTilesOrAttr
+
+
+	ld hl, Intro_WorldMapPalette
+	ld de, wBGPals1
+	ld bc, 2 palettes
+	call FarCopyColorWRAM
+;	farcall ApplyPals
+;	ld a, TRUE
+;	ldh [hCGBPalUpdate], a
+
+	ld a, [rVBK]
+	push af
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, Intro_KantoMapAttrmap
+	ld bc, Intro_KantoMapAttrmapEnd - Intro_KantoMapAttrmap
+	call Intro_CopyMapTilesOrAttr
+	pop af
+	ldh [rVBK], a
+
+	xor a
+	ldh [hSCX], a
+	ld a, 256 - SCREEN_HEIGHT_PX - (2 * TILE_WIDTH)
+	ldh [hSCY], a
+
+	xor a
+	ld [wIntroFrameCounter2], a
+	call EnableLCD
+	ld c, 31
+	call FadePalettes
+	ret
+
+IntroScene7_5:
+	ld hl, wIntroFrameCounter2
+	ld a, [hl]
+	inc [hl]
+	and %00000001
 	ret nz
 	ld hl, hSCY
 	ld a, [hl]
@@ -795,7 +867,6 @@ IntroScene7:
 .next
 	ld a, -1
 	ld [wIntroFrameCounter1], a
-;	call Intro_InitPikachu
 	ld hl, wIntroJumptableIndex
 	inc [hl]
 	ret
@@ -1380,16 +1451,24 @@ INCBIN "gfx/intro/water2.2bpp.lz"
 Intro_WorldMapGFX:
 INCBIN "gfx/intro/worldmap.2bpp.lz"
 
-Intro_WorldMapTilemap:
-INCBIN "gfx/intro/worldmap.tilemap"
-Intro_WorldMapTilemapEnd:
-
 Intro_WorldMapPalette:
 INCLUDE "gfx/intro/worldmap.pal"
 
-Intro_WorldMapAttrmap:
-INCBIN "gfx/intro/worldmap.attrmap"
-Intro_WorldMapAttrmapEnd:
+Intro_OrangeMapTilemap:
+INCBIN "gfx/intro/orangemap.tilemap"
+Intro_OrangeMapTilemapEnd:
+
+Intro_OrangeMapAttrmap:
+INCBIN "gfx/intro/orangemap.attrmap"
+Intro_OrangeMapAttrmapEnd:
+
+Intro_KantoMapTilemap:
+INCBIN "gfx/intro/kantomap.tilemap"
+Intro_KantoMapTilemapEnd:
+
+Intro_KantoMapAttrmap:
+INCBIN "gfx/intro/kantomap.attrmap"
+Intro_KantoMapAttrmapEnd:
 
 Intro_GrassGFX1:
 INCBIN "gfx/intro/grass1.2bpp.lz"

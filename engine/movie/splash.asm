@@ -48,7 +48,7 @@ ProtostarLogoPlay:
 	ld bc, 1 palettes
 	call FarCopyColorWRAM
 	ld c, 31
-	farcall FadePalettes
+	call FadePalettes
 	ld de, MUSIC_MYSTICALMAN_ENCOUNTER
 	call PlayMusic
 .loop
@@ -68,7 +68,7 @@ ProtostarLogoPlay:
 	ld [wMusicFadeID], a
 	ld a, d
 	ld [wMusicFadeID + 1], a
-	farcall FadeToBlack
+	call FadeToBlack
 	ld c, 10
 	call DelayFrames
 	call GameFreakPresentsEnd
