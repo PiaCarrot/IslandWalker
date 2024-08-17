@@ -680,30 +680,29 @@ IntroScene6:
 	; ld [wIntroTilemapPointer + 1], a
 	; call Intro_DrawBackground
 
-
 	ld hl, Intro_WorldMapGFX
 	ld de, vTiles2
 	call Decompress
-	ld de, Intro_WorldMapTilemap
-	hlbgcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld hl, Intro_WorldMapTilemap
+	hlbgcoord 20, 36
+	ld bc, BG_MAP_WIDTH - BG_MAP_HEIGHT
 	rst CopyBytes
 
-	ld de, vTiles0
-	ld hl, Intro_GrassGFX2
-	call Decompress
-	ld hl, wSpriteAnimDict
-	ld a, SPRITE_ANIM_DICT_GS_INTRO
-	ld [hli], a
-	ld a, $00
-	ld [hli], a
-	xor a
-	ldh [hSCY], a
-	ld [wGlobalAnimYOffset], a
-	ld a, $60
-	ldh [hSCX], a
-	ld a, $a0
-	ld [wGlobalAnimXOffset], a
+	; ld de, vTiles0
+	; ld hl, Intro_GrassGFX2
+	; call Decompress
+	; ld hl, wSpriteAnimDict
+	; ld a, SPRITE_ANIM_DICT_GS_INTRO
+	; ld [hli], a
+	; ld a, $00
+	; ld [hli], a
+	; xor a
+	; ldh [hSCY], a
+	; ld [wGlobalAnimYOffset], a
+	; ld a, $60
+	; ldh [hSCX], a
+	; ld a, $a0
+	; ld [wGlobalAnimXOffset], a
 
 	xor a
 	ld [wIntroFrameCounter2], a
@@ -715,14 +714,14 @@ IntroScene6:
 	call DmgToCgbBGPals
 	depixel 28, 28, 4, 4
 	call DmgToCgbObjPals
-	call Intro_InitJigglypuff
+;	call Intro_InitJigglypuff
 	xor a ; FALSE
 	ld [wIntroSpriteStateFlag], a
 	ret
 
 IntroScene7:
 ; scroll left to Jigglypuff
-	call Intro_InitNote
+;	call Intro_InitNote
 	ld hl, wIntroFrameCounter2
 	ld a, [hl]
 	inc [hl]
@@ -740,7 +739,7 @@ IntroScene7:
 .next
 	ld a, -1
 	ld [wIntroFrameCounter1], a
-	call Intro_InitPikachu
+;	call Intro_InitPikachu
 	ld hl, wIntroJumptableIndex
 	inc [hl]
 	ret
@@ -752,7 +751,7 @@ IntroScene8:
 	and a
 	jr z, .next
 	dec [hl]
-	call Intro_InitNote
+;	call Intro_InitNote
 	ld hl, wIntroFrameCounter2
 	inc [hl]
 	ret
@@ -1326,7 +1325,7 @@ Intro_WorldMapGFX:
 INCBIN "gfx/intro/worldmap.2bpp.lz"
 
 Intro_WorldMapTilemap:
-INCBIN "gfx/intro/worldmap.bin"
+INCBIN "gfx/intro/worldmap.tilemap"
 
 Intro_WorldMapPalette:
 INCBIN "gfx/intro/worldmap.pal"
