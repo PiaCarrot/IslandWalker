@@ -689,9 +689,61 @@ IntroScene6:
 	xor a
 	rst ByteFill
 
-; Code ugly but works - Vulcan did not write this.. promise.
 	ld hl, Intro_WorldMapTilemap
 	ld bc, Intro_WorldMapTilemapEnd - Intro_WorldMapTilemap
+	call .copy_map_tiles_or_attr
+
+
+	ld hl, Intro_WorldMapPalette
+	ld de, wBGPals1
+	ld bc, 2 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+
+	ld a, [rVBK]
+	push af
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, Intro_WorldMapAttrmap
+	ld bc, Intro_WorldMapAttrmapEnd - Intro_WorldMapAttrmap
+	call .copy_map_tiles_or_attr
+	pop af
+	ldh [rVBK], a
+
+	; ld de, vTiles0
+	; ld hl, Intro_GrassGFX2
+	; call Decompress
+	; ld hl, wSpriteAnimDict
+	; ld a, SPRITE_ANIM_DICT_GS_INTRO
+	; ld [hli], a
+	; ld a, $00
+	; ld [hli], a
+	; xor a
+	; ldh [hSCY], a
+	; ld [wGlobalAnimYOffset], a
+	; ld a, $60
+	; ldh [hSCX], a
+	; ld a, $a0
+	; ld [wGlobalAnimXOffset], a
+
+	xor a
+	ld [wIntroFrameCounter2], a
+	call EnableLCD
+;	ld b, SCGB_GS_INTRO
+;	ld c, 1
+;	call GetSGBLayout
+;	ld a, %11100100
+;	call DmgToCgbBGPals
+;	depixel 28, 28, 4, 4
+;	call DmgToCgbObjPals
+;	call Intro_InitJigglypuff
+	xor a ; FALSE
+	ld [wIntroSpriteStateFlag], a
+	ret
+
+.copy_map_tiles_or_attr:
 	debgcoord 0, 0
 .loop_tile_copy_2
 	push bc
@@ -716,36 +768,6 @@ IntroScene6:
 	ld a, b
 	or c
 	jr nz, .loop_tile_copy_2
-
-	; ld de, vTiles0
-	; ld hl, Intro_GrassGFX2
-	; call Decompress
-	; ld hl, wSpriteAnimDict
-	; ld a, SPRITE_ANIM_DICT_GS_INTRO
-	; ld [hli], a
-	; ld a, $00
-	; ld [hli], a
-	; xor a
-	; ldh [hSCY], a
-	; ld [wGlobalAnimYOffset], a
-	; ld a, $60
-	; ldh [hSCX], a
-	; ld a, $a0
-	; ld [wGlobalAnimXOffset], a
-
-	xor a
-	ld [wIntroFrameCounter2], a
-	call EnableLCD
-	ld b, SCGB_GS_INTRO
-	ld c, 1
-	call GetSGBLayout
-	ld a, %11100100
-	call DmgToCgbBGPals
-	depixel 28, 28, 4, 4
-	call DmgToCgbObjPals
-;	call Intro_InitJigglypuff
-	xor a ; FALSE
-	ld [wIntroSpriteStateFlag], a
 	ret
 
 IntroScene7:
@@ -1358,7 +1380,11 @@ INCBIN "gfx/intro/worldmap.tilemap"
 Intro_WorldMapTilemapEnd:
 
 Intro_WorldMapPalette:
-INCBIN "gfx/intro/worldmap.pal"
+INCLUDE "gfx/intro/worldmap.pal"
+
+Intro_WorldMapAttrmap:
+INCBIN "gfx/intro/worldmap.attrmap"
+Intro_WorldMapAttrmapEnd:
 
 Intro_GrassGFX1:
 INCBIN "gfx/intro/grass1.2bpp.lz"
