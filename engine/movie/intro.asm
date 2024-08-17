@@ -683,10 +683,34 @@ IntroScene6:
 	ld hl, Intro_WorldMapGFX
 	ld de, vTiles2
 	call Decompress
+
+; Code ugly but works - Vulcan did not write this.. promise.
 	ld hl, Intro_WorldMapTilemap
-	hlbgcoord 20, 36
-	ld bc, BG_MAP_WIDTH - BG_MAP_HEIGHT
-	rst CopyBytes
+	ld bc, Intro_WorldMapTilemapEnd - Intro_WorldMapTilemap
+	debgcoord 0, 0
+.loop_tile_copy_2
+	push bc
+	ld c, 20
+.loop_tile_copy
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .loop_tile_copy
+	pop bc
+	push hl
+	ld hl, -20
+	add hl, bc
+	ld b, h
+	ld c, l
+	ld hl, BG_MAP_WIDTH - 20
+	add hl, de
+	ld d, h
+	ld e, l
+	pop hl
+	ld a, b
+	or c
+	jr nz, .loop_tile_copy_2
 
 	; ld de, vTiles0
 	; ld hl, Intro_GrassGFX2
@@ -1326,6 +1350,7 @@ INCBIN "gfx/intro/worldmap.2bpp.lz"
 
 Intro_WorldMapTilemap:
 INCBIN "gfx/intro/worldmap.tilemap"
+Intro_WorldMapTilemapEnd:
 
 Intro_WorldMapPalette:
 INCBIN "gfx/intro/worldmap.pal"
