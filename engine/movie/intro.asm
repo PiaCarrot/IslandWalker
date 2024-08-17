@@ -712,6 +712,11 @@ IntroScene6:
 	pop af
 	ldh [rVBK], a
 
+	xor a
+	ldh [hSCX], a
+	ld a, 256 - SCREEN_HEIGHT_PX
+	ldh [hSCY], a
+
 	; ld de, vTiles0
 	; ld hl, Intro_GrassGFX2
 	; call Decompress
@@ -776,9 +781,9 @@ IntroScene7:
 	ld hl, wIntroFrameCounter2
 	ld a, [hl]
 	inc [hl]
-	and 3
-	ret z
-	ld hl, hSCX
+	and %00111111
+	ret nz
+	ld hl, hSCY
 	ld a, [hl]
 	and a
 	jr z, .next
