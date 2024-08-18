@@ -173,8 +173,8 @@ ROMX $37
 	"Tileset Data 6"
 ROMX $38
 	"bank38"
-ROMX $39
 	"Copyright"
+ROMX $39
 	"bank39"
 ROMX $3a
 	"Audio"

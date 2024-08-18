@@ -73,6 +73,7 @@ IntroSceneJumper:
 	dw IntroScene5
 	dw IntroScene6
 	dw IntroScene6_5
+	dw IntroScene6_6
 	dw IntroScene7
 	dw IntroScene7_5
 	dw IntroScene8
@@ -663,25 +664,6 @@ IntroScene6:
 	farcall ClearSpriteAnims
 	call Intro_ResetLYOverrides
 
-	; ld de, vTiles2
-	; ld hl, Intro_GrassGFX1
-	; call Decompress
-	; ld a, LOW(Intro_GrassMeta)
-	; ld [wIntroTilesPointer + 0], a
-	; ld a, HIGH(Intro_GrassMeta)
-	; ld [wIntroTilesPointer + 1], a
-	; hlbgcoord 0, 0
-	; ld a, l
-	; ld [wIntroBGMapPointer + 0], a
-	; ld a, h
-	; ld [wIntroBGMapPointer + 1], a
-	; ld de, Intro_GrassTilemap
-	; ld a, e
-	; ld [wIntroTilemapPointer + 0], a
-	; ld a, d
-	; ld [wIntroTilemapPointer + 1], a
-	; call Intro_DrawBackground
-
 	ld hl, Intro_WorldMapGFX
 	ld de, vTiles2
 	call Decompress
@@ -719,33 +701,9 @@ IntroScene6:
 	ld a, 256 - SCREEN_HEIGHT_PX - (2 * TILE_WIDTH)
 	ldh [hSCY], a
 
-	; ld de, vTiles0
-	; ld hl, Intro_GrassGFX2
-	; call Decompress
-	; ld hl, wSpriteAnimDict
-	; ld a, SPRITE_ANIM_DICT_GS_INTRO
-	; ld [hli], a
-	; ld a, $00
-	; ld [hli], a
-	; xor a
-	; ldh [hSCY], a
-	; ld [wGlobalAnimYOffset], a
-	; ld a, $60
-	; ldh [hSCX], a
-	; ld a, $a0
-	; ld [wGlobalAnimXOffset], a
-
 	xor a
 	ld [wIntroFrameCounter2], a
 	call EnableLCD
-;	ld b, SCGB_GS_INTRO
-;	ld c, 1
-;	call GetSGBLayout
-;	ld a, %11100100
-;	call DmgToCgbBGPals
-;	depixel 28, 28, 4, 4
-;	call DmgToCgbObjPals
-;	call Intro_InitJigglypuff
 	xor a ; FALSE
 	ld [wIntroSpriteStateFlag], a
 	ret
@@ -778,7 +736,7 @@ Intro_CopyMapTilesOrAttr:
 	ret
 
 IntroScene6_5:
-; scroll left to Jigglypuff
+; scroll up the orange islands
 ;	call Intro_InitNote
 	ld hl, wIntroFrameCounter2
 	ld a, [hl]
@@ -799,9 +757,57 @@ IntroScene6_5:
 	call FadeToBlack
 	ld a, -1
 	ld [wIntroFrameCounter1], a
-;	call Intro_InitPikachu
 	ld hl, wIntroJumptableIndex
 	inc [hl]
+	ret
+	
+IntroScene6_6:
+	ld hl, wIntroJumptableIndex
+	inc [hl] ; only run once
+	call DisableLCD
+	
+	ld hl, Intro_PortraitsGFX
+	ld de, vTiles2
+	call Decompress
+
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	ld a, $2F
+	rst ByteFill
+
+	ld hl, Intro_Portrait1Tilemap
+	ld bc, Intro_Portrait1TilemapEnd - Intro_Portrait1Tilemap
+	call Intro_CopyMapTilesOrAttr
+
+
+	ld hl, Intro_PortraitPalettes
+	ld de, wBGPals1
+	ld bc, 7 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	
+	ld a, [rVBK]
+	push af
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, Intro_Portrait1Attrmap
+	ld bc, Intro_Portrait1AttrmapEnd - Intro_Portrait1Attrmap
+	call Intro_CopyMapTilesOrAttr
+	pop af
+	ldh [rVBK], a
+	
+	xor a
+	ldh [hSCX], a
+	ld a, 256 - SCREEN_HEIGHT_PX - (2 * TILE_WIDTH)
+	ldh [hSCY], a
+	
+	xor a
+	ld [wIntroFrameCounter2], a
+	call EnableLCD
+	ld c, 31
+	call FadePalettes
 	ret
 
 IntroScene7:
@@ -823,9 +829,9 @@ IntroScene7:
 	ld de, wBGPals1
 	ld bc, 2 palettes
 	call FarCopyColorWRAM
-;	farcall ApplyPals
-;	ld a, TRUE
-;	ldh [hCGBPalUpdate], a
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
 
 	ld a, [rVBK]
 	push af
@@ -928,46 +934,6 @@ IntroScene9:
 	db %01000000
 	db %00000000
 	db -1
-
-Intro_DummyFunction: ; unreferenced
-	ret
-
-Intro_InitNote:
-	ld a, [wIntroSpriteStateFlag]
-	and a
-	ret nz
-	ld hl, wIntroFrameCounter2
-	ld a, [hl]
-	and %00111111
-	ret nz
-	ld a, [hl]
-	and %01111111
-	jr z, .invisible
-	depixel 11, 6, 4, 0
-	ld a, SPRITE_ANIM_OBJ_GS_INTRO_NOTE
-	call InitSpriteAnimStruct
-	ret
-
-.invisible
-	depixel 10, 6, 4, 0
-	ld a, SPRITE_ANIM_OBJ_GS_INTRO_INVISIBLE_NOTE
-	call InitSpriteAnimStruct
-	ret
-
-Intro_InitJigglypuff:
-	depixel 14, 6
-	ld a, SPRITE_ANIM_OBJ_GS_INTRO_JIGGLYPUFF
-	call InitSpriteAnimStruct
-	ret
-
-Intro_InitPikachu:
-	depixel 14, 24
-	ld a, SPRITE_ANIM_OBJ_GS_INTRO_PIKACHU
-	call InitSpriteAnimStruct
-	depixel 14, 24
-	ld a, SPRITE_ANIM_OBJ_GS_INTRO_PIKACHU_TAIL
-	call InitSpriteAnimStruct
-	ret
 
 IntroScene10:
 ; Set up fireball cutscene (Charizard, Johto starters)
@@ -1110,7 +1076,6 @@ IntroScene14:
 
 IntroScene15:
 ; Charizard mouth wide open / fireball starts
-;	call Intro_AnimateFireball
 	ld hl, wIntroFrameCounter1
 	ld a, [hl]
 	and a
@@ -1127,7 +1092,6 @@ IntroScene15:
 
 IntroScene16:
 ; continue fireball / fade out palettes
-;	call Intro_AnimateFireball
 	ld hl, wIntroFrameCounter1
 	ld a, [hl]
 	inc [hl]
@@ -1207,7 +1171,6 @@ Intro_CheckSCYEvent:
 	dbw $d7, Intro_TotodileAppears
 	dbw $d8, Intro_FlashMonPalette
 	dbw $e8, Intro_FlashSilhouette
-	dbw $e9, Intro_LoadCharizardPalette
 	db -1
 
 Intro_ChikoritaAppears:
@@ -1263,20 +1226,6 @@ Intro_LoadTotodilePalette:
 	farcall Intro_LoadMonPalette
 	ret
 
-Intro_LoadCharizardPalette:
-	ldh a, [hCGB]
-	and a
-	ld hl, CYNDAQUIL
-	call GetPokemonIDFromIndex
-	ld c, a
-	jr nz, .got_mon
-	ld hl, CHARIZARD
-	call GetPokemonIDFromIndex
-	ld c, a
-.got_mon
-	farcall Intro_LoadMonPalette
-	ret
-
 DrawIntroCharizardGraphic:
 	push af
 	hlcoord 0, 6
@@ -1290,7 +1239,6 @@ DrawIntroCharizardGraphic:
 	pop af
 	ld e, a
 	ld d, 0
-	ld hl, .charizard_data
 rept 5
 	add hl, de
 endr
@@ -1328,39 +1276,6 @@ endr
 	call DelayFrame
 	xor a
 	ldh [hBGMapMode], a
-	ret
-
-.charizard_data
-; db vtile offset, width, height; dwcoord x, y
-; mouth closed
-	db $00, 8, 8
-	dwcoord 5, 6
-
-Intro_AnimateFireball:
-	ld hl, wIntroFrameCounter2
-	ld a, [hl]
-	inc [hl]
-	and 3
-	ret nz
-	depixel 12, 10, 4, 4
-	ld a, SPRITE_ANIM_OBJ_GS_INTRO_FIREBALL
-	call InitSpriteAnimStruct
-	ld hl, hSCX
-	dec [hl]
-	ld hl, wGlobalAnimXOffset
-	inc [hl]
-	ret
-
-Copy128Tiles: ; unreferenced
-	ld bc, 128 tiles
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	dec bc
-	ld a, c
-	or b
-	jr nz, .loop
 	ret
 
 Intro_DrawBackground:
@@ -1470,17 +1385,27 @@ Intro_KantoMapAttrmap:
 INCBIN "gfx/intro/kantomap.attrmap"
 Intro_KantoMapAttrmapEnd:
 
-Intro_GrassGFX1:
-INCBIN "gfx/intro/grass1.2bpp.lz"
+Intro_PortraitsGFX:
+INCBIN "gfx/intro/portraits.png"
 
-Intro_GrassTilemap:
-INCBIN "gfx/intro/grass.tilemap"
+Intro_PortraitPalettes:
+INCLUDE "gfx/intro/portraits.pal"
 
-Intro_GrassMeta:
-INCBIN "gfx/intro/grass.bin"
+Intro_Portrait1Tilemap:
+INCBIN "gfx/intro/portraits1.tilemap"
+Intro_Portrait1TilemapEnd:
 
-Intro_GrassGFX2:
-INCBIN "gfx/intro/grass2.2bpp.lz"
+Intro_Portrait2Tilemap:
+INCBIN "gfx/intro/portraits2.tilemap"
+Intro_Portrait2TilemapEnd:
+
+Intro_Portrait1Attrmap:
+INCBIN "gfx/intro/portraits1.attrmap"
+Intro_Portrait1AttrmapEnd:
+
+Intro_Portrait2Attrmap:
+INCBIN "gfx/intro/portraits2.attrmap"
+Intro_Portrait2AttrmapEnd:
 
 Intro_FireGFX1:
 INCBIN "gfx/intro/fire1.2bpp.lz"
