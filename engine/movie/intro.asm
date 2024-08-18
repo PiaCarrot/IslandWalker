@@ -890,16 +890,8 @@ IntroScene7_5:
 
 IntroScene8:
 ; stop scrolling, Pikachu attacks
-	ld hl, wIntroFrameCounter1
-	ld a, [hl]
-	and a
-	jr z, .next
-	dec [hl]
-	ld hl, wIntroFrameCounter2
-	inc [hl]
-	ret
-
-.next
+	ld c, 50
+	call DelayFrames
 	ld c, 31
 	call FadeToBlack
 	xor a
