@@ -767,7 +767,7 @@ IntroScene6_6:
 	call DisableLCD
 	
 	ld hl, Intro_PortraitsGFX
-	ld de, vTiles2
+	ld de, vTiles0
 	call Decompress
 
 	hlbgcoord 0, 0
@@ -778,7 +778,6 @@ IntroScene6_6:
 	ld hl, Intro_Portrait1Tilemap
 	ld bc, Intro_Portrait1TilemapEnd - Intro_Portrait1Tilemap
 	call Intro_CopyMapTilesOrAttr
-
 
 	ld hl, Intro_PortraitPalettes
 	ld de, wBGPals1
@@ -1384,6 +1383,17 @@ Intro_KantoMapTilemapEnd:
 Intro_KantoMapAttrmap:
 INCBIN "gfx/intro/kantomap.attrmap"
 Intro_KantoMapAttrmapEnd:
+
+Intro_Portrait1Attrmap:
+INCBIN "gfx/intro/portraits1.attrmap"
+Intro_Portrait1AttrmapEnd:
+
+Intro_Portrait2Attrmap:
+INCBIN "gfx/intro/portraits2.attrmap"
+Intro_Portrait2AttrmapEnd:
+
+Intro_PortraitPalettes:
+INCLUDE "gfx/intro/portraits.pal"
 
 Intro_FireGFX1:
 INCBIN "gfx/intro/fire1.2bpp.lz"
