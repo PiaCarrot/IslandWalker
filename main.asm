@@ -448,12 +448,12 @@ INCLUDE "engine/events/print_unown_2.asm"
 INCLUDE "engine/games/card_flip.asm"
 INCLUDE "engine/games/unown_puzzle.asm"
 INCLUDE "engine/games/memory_game.asm"
+INCLUDE "engine/movie/splash.asm"
 
 
 SECTION "bank39", ROMX
 
 INCLUDE "engine/menus/options_menu.asm"
-INCLUDE "engine/movie/splash.asm"
 INCLUDE "engine/movie/intro.asm"
 
 
@@ -691,6 +691,10 @@ INCLUDE "engine/gfx/fade.asm"
 SECTION "Pokemon Body Data", ROMX
 
 INCLUDE "data/pokemon/body_data.asm"
+
+SECTION "Intro GFX", ROMX
+
+INCLUDE "gfx/intro/intro_gfx.asm"
 
 
 SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]

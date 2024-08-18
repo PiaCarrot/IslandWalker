@@ -226,7 +226,7 @@ SpriteAnimFunc_MailCursor:
 	farjp ComposeMail_AnimateCursor
 
 SpriteAnimFunc_GameFreakLogo:
-	farjp GameFreakLogoSpriteAnim
+	ret
 
 SpriteAnimFunc_GSGameFreakLogoStar:
 	ld hl, SPRITEANIMSTRUCT_VAR1
