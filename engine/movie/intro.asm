@@ -1170,6 +1170,7 @@ Intro_CheckSCYEvent:
 	dbw $d7, Intro_TotodileAppears
 	dbw $d8, Intro_FlashMonPalette
 	dbw $e8, Intro_FlashSilhouette
+	dbw $e9, Intro_LoadCharizardPalette
 	db -1
 
 Intro_ChikoritaAppears:
@@ -1224,6 +1225,22 @@ Intro_LoadTotodilePalette:
 	ld c, a
 	farcall Intro_LoadMonPalette
 	ret
+	
+Intro_LoadCharizardPalette:
+	ldh a, [hCGB]
+	and a
+	ld hl, CYNDAQUIL
+	call GetPokemonIDFromIndex
+	ld c, a
+	jr nz, .got_mon
+	ld hl, CHARIZARD
+	call GetPokemonIDFromIndex
+	ld c, a
+.got_mon
+	farcall Intro_LoadMonPalette
+	ret
+
+
 
 DrawIntroCharizardGraphic:
 	push af
@@ -1238,6 +1255,7 @@ DrawIntroCharizardGraphic:
 	pop af
 	ld e, a
 	ld d, 0
+	ld hl, .charizard_data
 rept 5
 	add hl, de
 endr
@@ -1276,6 +1294,12 @@ endr
 	xor a
 	ldh [hBGMapMode], a
 	ret
+	
+.charizard_data
+; db vtile offset, width, height; dwcoord x, y
+; mouth closed
+	db $00, 8, 8
+	dwcoord 5, 6
 
 Intro_DrawBackground:
 	ld b, BG_MAP_WIDTH / 2
