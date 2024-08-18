@@ -74,9 +74,12 @@ IntroSceneJumper:
 	dw IntroScene6
 	dw IntroScene6_5
 	dw IntroScene6_6
+	dw IntroScene6_7
 	dw IntroScene7
 	dw IntroScene7_5
 	dw IntroScene8
+	dw IntroScene8_1
+	dw IntroScene8_2
 	dw IntroScene9
 	dw IntroScene10
 	dw IntroScene11
@@ -677,7 +680,6 @@ IntroScene6:
 	ld bc, Intro_OrangeMapTilemapEnd - Intro_OrangeMapTilemap
 	call Intro_CopyMapTilesOrAttr
 
-
 	ld hl, Intro_WorldMapPalette
 	ld de, wBGPals1
 	ld bc, 2 palettes
@@ -762,12 +764,13 @@ IntroScene6_5:
 	ret
 	
 IntroScene6_6:
+; after the fade we show portraits of the protagonists
 	ld hl, wIntroJumptableIndex
 	inc [hl] ; only run once
 	call DisableLCD
 
 	ld hl, Intro_PortraitsGFX
-	ld de, vTiles0
+	ld de, vTiles2
 	ld a, BANK(IntroGFX)
 	call FarDecompress
 
@@ -797,23 +800,32 @@ IntroScene6_6:
 	call Intro_CopyMapTilesOrAttr
 	pop af
 	ldh [rVBK], a
-	
-	xor a
-	ldh [hSCX], a
-	ld a, 256 - SCREEN_HEIGHT_PX - (2 * TILE_WIDTH)
-	ldh [hSCY], a
-	
-	xor a
-	ld [wIntroFrameCounter2], a
 	call EnableLCD
 	ld c, 31
-	call FadePalettes
+	call DelayFrames
+	ret
+
+	
+IntroScene6_7:
+; Wait a sec, scroll down	
+	ld c, 100
+	call DelayFrames
+	ld c, 15
+	call FadeToBlack
+	ld a, -1
+	ld [wIntroFrameCounter1], a
+	ld hl, wIntroJumptableIndex
+	inc [hl]
 	ret
 
 IntroScene7:
 	ld hl, wIntroJumptableIndex
 	inc [hl] ; only run once
 	call DisableLCD
+
+	ld hl, Intro_WorldMapGFX
+	ld de, vTiles2
+	call Decompress
 
 	hlbgcoord 0, 0
 	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
@@ -883,39 +895,83 @@ IntroScene8:
 	and a
 	jr z, .next
 	dec [hl]
-;	call Intro_InitNote
 	ld hl, wIntroFrameCounter2
 	inc [hl]
 	ret
 
 .next
+	ld c, 31
+	call FadeToBlack
 	xor a
 	ld [wIntroFrameCounter1], a
 	ld hl, wIntroJumptableIndex
 	inc [hl]
-	farcall Intro_LoadAllPal0
+	ret
+	
+IntroScene8_1:
+; 2nd portrait setup
+	ld hl, wIntroJumptableIndex
+	inc [hl] ; only run once
+	call DisableLCD
+
+	ld hl, Intro_Portraits2GFX
+	ld de, vTiles2
+	ld a, BANK(IntroGFX)
+	call FarDecompress
+
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	ld a, $0F
+	rst ByteFill
+
+	ld hl, Intro_Portrait2Tilemap
+	ld bc, Intro_Portrait2TilemapEnd - Intro_Portrait2Tilemap
+	call Intro_CopyMapTilesOrAttr
+
+	ld hl, Intro_PortraitPalettes
+	ld de, wBGPals1
+	ld bc, 7 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	
+	ld a, [rVBK]
+	push af
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, Intro_Portrait2Attrmap
+	ld bc, Intro_Portrait2AttrmapEnd - Intro_Portrait2Attrmap
+	call Intro_CopyMapTilesOrAttr
+	pop af
+	ldh [rVBK], a
+	call EnableLCD
+	ld c, 31
+	call DelayFrames
+	ret
+	ret
+
+IntroScene8_2:
+; Wait a sec, and then fade to GSBallScene
+	ld c, 100
+	call DelayFrames
+	ld c, 15
+	call FadeToBlack
+	ld a, -1
+	ld [wIntroFrameCounter1], a
+	ld hl, wIntroJumptableIndex
+	inc [hl]
 	ret
 
 IntroScene9:
-; scroll down and fade out
+; prep palettes for GSBallScene?
 	ld hl, wIntroFrameCounter1
 	ld a, [hl]
 	inc [hl]
-	srl a
-	srl a
-	srl a
-	ld e, a
-	ld d, 0
 	ld hl, .palettes
 	add hl, de
-	ld a, [hl]
-	cp -1
 	jr z, .next
 	call DmgToCgbBGPals
-	ld hl, hSCY
-	inc [hl]
-	ld hl, wGlobalAnimYOffset
-	dec [hl]
 	ret
 
 .next
