@@ -765,10 +765,11 @@ IntroScene6_6:
 	ld hl, wIntroJumptableIndex
 	inc [hl] ; only run once
 	call DisableLCD
-	
+
 	ld hl, Intro_PortraitsGFX
 	ld de, vTiles0
-	call Decompress
+	ld a, BANK(IntroGFX)
+	call FarDecompress
 
 	hlbgcoord 0, 0
 	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
@@ -822,7 +823,6 @@ IntroScene7:
 	ld hl, Intro_KantoMapTilemap
 	ld bc, Intro_KantoMapTilemapEnd - Intro_KantoMapTilemap
 	call Intro_CopyMapTilesOrAttr
-
 
 	ld hl, Intro_WorldMapPalette
 	ld de, wBGPals1
@@ -1407,6 +1407,14 @@ Intro_KantoMapTilemapEnd:
 Intro_KantoMapAttrmap:
 INCBIN "gfx/intro/kantomap.attrmap"
 Intro_KantoMapAttrmapEnd:
+
+Intro_Portrait1Tilemap:
+INCBIN "gfx/intro/portraits1.tilemap"
+Intro_Portrait1TilemapEnd:
+
+Intro_Portrait2Tilemap:
+INCBIN "gfx/intro/portraits2.tilemap"
+Intro_Portrait2TilemapEnd:
 
 Intro_Portrait1Attrmap:
 INCBIN "gfx/intro/portraits1.attrmap"
