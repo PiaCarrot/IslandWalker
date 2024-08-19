@@ -80,13 +80,9 @@ IntroSceneJumper:
 	dw IntroScene8
 	dw IntroScene8_1
 	dw IntroScene8_2
-	dw IntroScene9
 	dw IntroScene10
 	dw IntroScene11
 	dw IntroScene12
-	dw IntroScene13
-	dw IntroScene14
-	dw IntroScene15
 	dw IntroScene16
 	dw IntroScene17
 
@@ -260,7 +256,7 @@ IntroScene5:
 
 IntroScene17:
 ; delay a bit before leading into the title screen
-	ld c, 48
+	ld c, 16
 .loop
 	call DelayFrame
 	dec c
@@ -889,7 +885,7 @@ IntroScene7_5:
 	ret
 
 IntroScene8:
-; stop scrolling, Pikachu attacks
+; How long should it hang after Kanto stops scrolling
 	ld c, 50
 	call DelayFrames
 	ld c, 31
@@ -954,33 +950,6 @@ IntroScene8_2:
 	ld hl, wIntroJumptableIndex
 	inc [hl]
 	ret
-
-IntroScene9:
-; prep palettes for GSBallScene?
-	ld hl, wIntroFrameCounter1
-	ld a, [hl]
-	inc [hl]
-	ld hl, .palettes
-	add hl, de
-	jr z, .next
-	call DmgToCgbBGPals
-	ret
-
-.next
-	ld hl, wIntroJumptableIndex
-	inc [hl]
-	ret
-
-.palettes:
-	db %11100100
-	db %11100100
-	db %11100100
-	db %11100100
-	db %11100100
-	db %10010000
-	db %01000000
-	db %00000000
-	db -1
 
 IntroScene10:
 ; Set up fireball cutscene (Charizard, Johto starters)
@@ -1085,6 +1054,8 @@ IntroScene12:
 	inc [hl]
 	ld a, $80
 	ld [wIntroFrameCounter1], a
+	ld c, 175
+	call DelayFrames
 	ret
 
 .palettes:
@@ -1092,50 +1063,6 @@ IntroScene12:
 	db %10100101
 	db %11100100
 	db %00000000
-
-IntroScene13:
-; Charizard mouth open
-	ld hl, wIntroFrameCounter1
-	ld a, [hl]
-	and a
-	jr .next
-	dec [hl]
-	ret
-
-.next
-	ld hl, wIntroJumptableIndex
-	inc [hl]
-	ret
-
-IntroScene14:
-; Charizard breathing fire
-	ld hl, wIntroFrameCounter1
-	ld a, [hl]
-	and a
-	jr z, .next
-	dec [hl]
-	ret
-
-.next
-	ld hl, wIntroJumptableIndex
-	inc [hl]
-; fallthrough
-
-IntroScene15:
-; Charizard mouth wide open / fireball starts
-	ld hl, wIntroFrameCounter1
-	ld a, [hl]
-	and a
-	jr z, .next
-	dec [hl]
-	ret
-
-.next
-	ld hl, wIntroJumptableIndex
-	inc [hl]
-	xor a
-	ld [wIntroFrameCounter1], a
-	ret
 
 IntroScene16:
 ; continue fireball / fade out palettes
@@ -1218,7 +1145,6 @@ Intro_CheckSCYEvent:
 	dbw $d7, Intro_TotodileAppears
 	dbw $d8, Intro_FlashMonPalette
 	dbw $e8, Intro_FlashSilhouette
-	dbw $e9, Intro_LoadCharizardPalette
 	db -1
 
 Intro_ChikoritaAppears:
@@ -1273,22 +1199,6 @@ Intro_LoadTotodilePalette:
 	ld c, a
 	farcall Intro_LoadMonPalette
 	ret
-	
-Intro_LoadCharizardPalette:
-	ldh a, [hCGB]
-	and a
-	ld hl, CYNDAQUIL
-	call GetPokemonIDFromIndex
-	ld c, a
-	jr nz, .got_mon
-	ld hl, CHARIZARD
-	call GetPokemonIDFromIndex
-	ld c, a
-.got_mon
-	farcall Intro_LoadMonPalette
-	ret
-
-
 
 DrawIntroCharizardGraphic:
 	push af
