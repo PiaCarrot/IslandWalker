@@ -42,6 +42,7 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_GSIntroHoOhLugia
 	dw SpriteAnimFunc_GSIntroBubble
 	dw SpriteAnimFunc_GSIntroShellder
+	dw SpriteAnimFunc_GSIntroShellderEyes
 	dw SpriteAnimFunc_Celebi
 	dw SpriteAnimFunc_GSIntroMagikarp
 	dw SpriteAnimFunc_GSIntroMagikarpStripes
@@ -759,6 +760,7 @@ SpriteAnimFunc_GSIntroWingull:
 	call DeinitializeSprite
 	ret
 
+SpriteAnimFunc_GSIntroShellderEyes:
 SpriteAnimFunc_GSIntroShellder:
 	ld a, [wGlobalAnimYOffset]
 	ld hl, SPRITEANIMSTRUCT_YCOORD

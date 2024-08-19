@@ -162,6 +162,7 @@ IntroScene1:
 	depixel 28, 28
 	call DmgToCgbObjPals
 	call Intro_InitShellders
+	call Intro_InitShelldersEyes
 	call Intro_InitLuvDisc
 	ld de, MUSIC_GS_OPENING
 	call PlayMusic
@@ -469,6 +470,18 @@ Intro_InitShellders:
 
 .InitAnim:
 	ld a, SPRITE_ANIM_OBJ_GS_INTRO_SHELLDER
+	call InitSpriteAnimStruct
+	ret
+
+Intro_InitShelldersEyes:
+	depixel 18, 7
+	call .InitAnim
+	depixel 14, 10
+	call .InitAnim
+	depixel 16, 15
+
+.InitAnim:
+	ld a, SPRITE_ANIM_OBJ_GS_INTRO_SHELLDER_EYES
 	call InitSpriteAnimStruct
 	ret
 	

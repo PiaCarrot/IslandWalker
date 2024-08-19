@@ -55,6 +55,7 @@ SpriteAnimFrameData:
 	dw .Frameset_MobileTradePing
 	dw .Frameset_GSIntroBubble
 	dw .Frameset_GSIntroShellder
+	dw .Frameset_GSIntroShellderEyes
 	dw .Frameset_GSIntroMagikarp
 	dw .Frameset_GSIntroMagikarpStripes
 	dw .Frameset_GSIntroMagikarpMask
@@ -401,6 +402,11 @@ SpriteAnimFrameData:
 .Frameset_GSIntroShellder:
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_1,  8
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2,  8
+	dorestart
+
+.Frameset_GSIntroShellderEyes:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_EYES_1,  8
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_EYES_2,  8
 	dorestart
 
 .Frameset_GSIntroWingull:

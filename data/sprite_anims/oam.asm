@@ -13,6 +13,8 @@ SpriteAnimOAMData:
 	spriteanimoam $5c, .OAMData_1x1_Palette0             ; SPRITE_ANIM_OAMSET_GS_INTRO_BUBBLE_2
 	spriteanimoam $6c, .OAMData_GSIntroShellder          ; SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_1
 	spriteanimoam $6e, .OAMData_GSIntroShellder          ; SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2
+	spriteanimoam $A8, .OAMData_GSIntroShellderEyes      ; SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_EYES_1
+	spriteanimoam $AA, .OAMData_GSIntroShellderEyes      ; SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_EYES_2
 	spriteanimoam $2d, .OAMData_GSIntroMagikarp          ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_1
 	spriteanimoam $4d, .OAMData_GSIntroMagikarp          ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_2
 	spriteanimoam $66, .OAMData_GSIntroMagikarpStripes   ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_STRIPES_1
@@ -176,6 +178,13 @@ SpriteAnimOAMData:
 	dbsprite  0, -1,  0,  0, $01, 0
 	dbsprite -1,  0,  0,  0, $10, 0
 	dbsprite  0,  0,  0,  0, $11, 0
+
+.OAMData_GSIntroShellderEyes:
+	db 4
+	dbsprite -1, -1,  0,  0, $00, 7
+	dbsprite  0, -1,  0,  0, $01, 7
+	dbsprite -1,  0,  0,  0, $10, 7
+	dbsprite  0,  0,  0,  0, $11, 7
 
 .OAMData_GSIntroLuvdisc:
 	db 4
