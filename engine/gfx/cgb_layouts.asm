@@ -558,7 +558,17 @@ INCLUDE "gfx/intro/gs_shellder_lapras_ob.pal"
 	ld a, PREDEFPAL_GS_INTRO_STARTERS_TRANSITION
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
-	jmp WipeAttrmap
+	ld hl, GSBallPal
+	ld de, wBGPals1
+	ld bc, 1 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	call ApplyPals
+	call WipeAttrmap
+	jmp ApplyAttrmap
+	
+GSBallPal:
+INCLUDE "gfx/intro/gsball.pal"
 
 _CGB_BetaPoker:
 	ld hl, BetaPokerPals

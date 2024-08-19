@@ -1102,6 +1102,9 @@ IntroScene16:
 	ret
 
 .next
+	call DisableLCD
+	call Intro_BlankTilemapAndBGMap
+	call EnableLCD
 	ld hl, wIntroJumptableIndex
 	inc [hl]
 	ret
