@@ -80,6 +80,9 @@ IntroSceneJumper:
 	dw IntroScene8
 	dw IntroScene8_1
 	dw IntroScene8_2
+	dw IntroScene9
+	dw IntroScene9_5
+	dw IntroScene9_6
 	dw IntroScene10
 	dw IntroScene11
 	dw IntroScene12
@@ -164,7 +167,7 @@ IntroScene1:
 	call Intro_InitShellders
 	call Intro_InitShelldersEyes
 	call Intro_InitLuvDisc
-	ld de, MUSIC_GS_OPENING
+	ld de, MUSIC_NONE
 	call PlayMusic
 	ret
 
@@ -953,12 +956,98 @@ IntroScene8_1:
 	ret
 
 IntroScene8_2:
-; Wait a sec, and then fade to GSBallScene
+; Wait a sec, and then fade to RocketBallScene
 	ld c, 100
 	call DelayFrames
-	ld c, 15
+	ld c, 31
 	call FadeToBlack
 	ld a, -1
+	ld [wIntroFrameCounter1], a
+	ld hl, wIntroJumptableIndex
+	inc [hl]
+	ret
+	
+IntroScene9:
+; rocketball setup
+	ld hl, wIntroJumptableIndex
+	inc [hl] ; only run once
+	call DisableLCD
+
+	ld hl, Intro_RocketBallGFX
+	ld de, vTiles2
+	ld a, BANK(IntroGFX)
+	call FarDecompress
+
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	ld a, $08
+	rst ByteFill
+
+	ld hl, Intro_RocketBallTilemap
+	ld bc, Intro_RocketBallTilemapEnd - Intro_RocketBallTilemap
+	call Intro_CopyMapTilesOrAttr
+
+	ld hl, Intro_RocketBallPalettes
+	ld de, wBGPals1
+	ld bc, 8 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	
+	ld a, [rVBK]
+	push af
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, Intro_RocketBallAttrmap
+	ld bc, Intro_RocketBallAttrmapEnd - Intro_RocketBallAttrmap
+	call Intro_CopyMapTilesOrAttr
+	pop af
+	ldh [rVBK], a
+
+	xor a
+	ldh [hSCX], a
+	ld a, 256 - SCREEN_HEIGHT_PX - (2 * TILE_WIDTH)
+	ldh [hSCY], a
+
+	xor a
+	ld [wIntroFrameCounter2], a
+	call EnableLCD
+	ld c, 150
+	call DelayFrames
+	ld c, 31
+	call FadePalettes
+	ret
+
+IntroScene9_5:
+	ld hl, wIntroFrameCounter2
+	ld a, [hl]
+	inc [hl]
+	and %00000000
+	ret nz
+	ld hl, hSCY
+	ld a, [hl]
+	and a
+	jr z, .next
+	dec [hl]
+	ld hl, wGlobalAnimXOffset
+	inc [hl]
+	ret
+
+.next
+	ld a, -1
+	ld [wIntroFrameCounter1], a
+	ld hl, wIntroJumptableIndex
+	inc [hl]
+	ret
+	
+IntroScene9_6:
+; How long should it hang after Rocketball scrolls
+	ld c, 150
+	call DelayFrames
+	ld c, 31
+	call FadeToBlack
+	xor a
 	ld [wIntroFrameCounter1], a
 	ld hl, wIntroJumptableIndex
 	inc [hl]
@@ -1273,7 +1362,7 @@ endr
 ; db vtile offset, width, height; dwcoord x, y
 ; mouth closed
 	db $00, 8, 8
-	dwcoord 5, 6
+	dwcoord 7, 3
 
 Intro_DrawBackground:
 	ld b, BG_MAP_WIDTH / 2
@@ -1400,6 +1489,17 @@ Intro_Portrait2AttrmapEnd:
 
 Intro_PortraitPalettes:
 INCLUDE "gfx/intro/portraits.pal"
+
+Intro_RocketBallTilemap:
+INCBIN "gfx/intro/rocketball.tilemap"
+Intro_RocketBallTilemapEnd:
+
+Intro_RocketBallAttrmap:
+INCBIN "gfx/intro/rocketball.attrmap"
+Intro_RocketBallAttrmapEnd:
+
+Intro_RocketBallPalettes:
+INCLUDE "gfx/intro/rocketball.pal"
 
 Intro_FireGFX1:
 INCBIN "gfx/intro/fire1.2bpp.lz"
