@@ -1362,7 +1362,7 @@ endr
 ; db vtile offset, width, height; dwcoord x, y
 ; mouth closed
 	db $00, 8, 8
-	dwcoord 7, 3
+	dwcoord 7, 2
 
 Intro_DrawBackground:
 	ld b, BG_MAP_WIDTH / 2
