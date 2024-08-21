@@ -81,105 +81,17 @@ _TitleScreen:
 	ld a, 256 - SCREEN_HEIGHT_PX - (2 * TILE_WIDTH)
 	ldh [hSCY], a
 
-; Suicune gfx
-	; hlbgcoord 0, 12
-	; ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
-	; ld a, 0 | VRAM_BANK_1
-	; rst ByteFill
-	
-
-	
-; Draw Pokemon logo
-	; hlcoord 0, $0C, vBGMap1
-	; ld bc, 6 * 20
-	; ld a, 0 | VRAM_BANK_1
-	; rst ByteFill
-	
-; Draw copyright text
-	; hlbgcoord 3, 0, vBGMap1
-	; lb bc, 1, 13
-	; lb de, $c, 16
-	; call DrawTitleGraphic
-
-; Initialize running Suicune?
-;	ld d, $0
-;	call LoadSuicuneFrame
-
-; Initialize background crystal
-;	call InitializeBackground
-
-; Update palette colors
-	; ldh a, [rSVBK]
-	; push af
-	; ld a, BANK(wBGPals1)
-	; ldh [rSVBK], a
-
-	; ld hl, TitleScreenPalettes
-	; ld de, wBGPals1
-	; ld bc, 16 palettes
-	; rst CopyBytes
-
-	; ld hl, TitleScreenPalettes
-	; ld de, wBGPals2
-	; ld bc, 16 palettes
-	; rst CopyBytes
-
-	; pop af
-	; ldh [rSVBK], a
-
-; LY/SCX trickery starts here
-
-	; a = [rSVBK]
-	; push af
-	; ld a, BANK(wLYOverrides)
-	; ldh [rSVBK], a
-
-; Make sure the LYOverrides buffer is empty
-	; ld hl, wLYOverrides
-	; xor a
-	; ld bc, wLYOverridesEnd - wLYOverrides
-	; rst ByteFill
-
-; Let LCD Stat know we're messing around with SCX
-	; ld hl, rIE
-	; set LCD_STAT, [hl]
-	; ld a, LOW(rSCX)
-	; ldh [hLCDCPointer], a
-
-	; pop af
-	; ldh [rSVBK], a
-
 ; Reset audio
+	ld hl, wSpriteAnimDict
+	ld a, SPRITE_ANIM_DICT_DEFAULT
+	ld [hli], a
+	ld a, $00
+	ld [hli], a
+	xor a
 	call ChannelsOff
 	call EnableLCD
-
-; Set sprite size to 8x16
-	; ldh a, [rLCDC]
-	; set rLCDC_SPRITE_SIZE, a
-	; ldh [rLCDC], a
-
-	; ld a, +112
-	; ldh [hSCX], a
-	; ld a, 8
-	; ldh [hSCY], a
-	; ld a, 7
-	; ldh [hWX], a
-	; ld a, -112
-	; ldh [hWY], a
-
-	; ld a, TRUE
-	; ldh [hCGBPalUpdate], a
-
-; Update BG Map 0 (bank 0)
-	ldh [hBGMapMode], a
-
-	xor a
-	; ld [wSuicuneFrame], a
-
-; Play starting sound effect
+	call Title_InitPressA
 	jmp SFXChannelsOff
-	; ld de, SFX_TITLE_SCREEN_ENTRANCE
-	; jmp PlaySFX
 
 DrawTitleGraphic:
 ; input:
@@ -269,6 +181,15 @@ Title_CopyMapTilesOrAttr:
 	ld a, b
 	or c
 	jr nz, .loop_tile_copy_2
+	ret
+	
+Title_InitPressA:
+	depixel $10, $09
+	call .InitAnim
+
+.InitAnim:
+	ld a, SPRITE_ANIM_OBJ_TITLE_PRESS_A
+	call InitSpriteAnimStruct
 	ret
 
 OrangeLogoGFX:
