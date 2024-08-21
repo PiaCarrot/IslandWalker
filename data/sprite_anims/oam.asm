@@ -52,6 +52,8 @@ SpriteAnimOAMData:
 	spriteanimoam $42, .OAMData_GSIntroStarter           ; SPRITE_ANIM_OAMSET_GS_INTRO_TOTODILE
 	spriteanimoam $cc, .OAMData_TitlePressA              ; SPRITE_ANIM_OAMSET_TITLE_PRESS_A_1
 	spriteanimoam $bc, .OAMData_TitlePressA              ; SPRITE_ANIM_OAMSET_TITLE_PRESS_A_2
+	spriteanimoam $d0, .OAMData_TitleLogoPalmLeft        ; SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_LEFT
+	spriteanimoam $d3, .OAMData_TitleLogoPalmRight       ; SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_RIGHT
 	spriteanimoam $f8, .OAMData_GSTitleTrail             ; SPRITE_ANIM_OAMSET_GS_TITLE_TRAIL_1
 	spriteanimoam $fa, .OAMData_GSTitleTrail             ; SPRITE_ANIM_OAMSET_GS_TITLE_TRAIL_2
 	spriteanimoam $00, .OAMData_TextEntryCursor          ; SPRITE_ANIM_OAMSET_TEXT_ENTRY_CURSOR
@@ -187,6 +189,16 @@ SpriteAnimOAMData:
     dbsprite 0, 0,  0,  0, $01, 1
     dbsprite 1, 0,  0,  0, $02, 1
     dbsprite 2, 0,  0,  0, $03, 1
+
+.OAMData_TitleLogoPalmLeft:
+.OAMData_TitleLogoPalmRight:
+    db 6
+	dbsprite -2, -1,  4,  0, $00, 1
+	dbsprite -1, -1,  4,  0, $01, 1
+	dbsprite  0, -1,  4,  0, $02, 1
+	dbsprite -2,  0,  4,  0, $10, 1
+	dbsprite -1,  0,  4,  0, $11, 1
+	dbsprite  0,  0,  4,  0, $12, 1
 
 .OAMData_GSIntroShellderEyes:
 	db 4

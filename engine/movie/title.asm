@@ -43,7 +43,7 @@ _TitleScreen:
 
 ; Decompress logo
 	ld hl, OrangeLogoGFX
-	ld de, vTiles1
+	ld de, vTiles2
 	call Decompress
 	
 ; Back to VRAM bank 0
@@ -93,6 +93,8 @@ _TitleScreen:
 ; Reset audio
 	call ChannelsOff
 	call Title_InitPressA
+	call Title_InitLogoPalmLeft
+	call Title_InitLogoPalmRight
 	ld hl, wLYOverrides
 	ld bc, wLYOverridesEnd - wLYOverrides
 	xor a
@@ -192,7 +194,20 @@ Title_CopyMapTilesOrAttr:
 Title_InitPressA:
 	depixel 17, 10
 	ld a, SPRITE_ANIM_OBJ_TITLE_PRESS_A
-	jmp InitSpriteAnimStruct
+	call InitSpriteAnimStruct
+	ret
+	
+Title_InitLogoPalmLeft:
+	depixel 8, 6
+	ld a, SPRITE_ANIM_OBJ_TITLE_LOGO_PALM_LEFT
+	call InitSpriteAnimStruct
+	ret
+
+Title_InitLogoPalmRight:
+	depixel 8, 17
+	ld a, SPRITE_ANIM_OBJ_TITLE_LOGO_PALM_RIGHT
+	call InitSpriteAnimStruct
+	ret
 
 OrangeLogoGFX:
 INCBIN "gfx/title/logo.2bpp.lz"

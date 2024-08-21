@@ -80,6 +80,8 @@ SpriteAnimFrameData:
 	dw .Frameset_GSIntroCyndaquil
 	dw .Frameset_GSIntroTotodile
 	dw .Frameset_TitlePressA
+	dw .Frameset_TitleLogoPalmLeft
+	dw .Frameset_TitleLogoPalmRight
 	dw .Frameset_PCCursor
 	dw .Frameset_PCCursorItem
 	dw .Frameset_PCQuick
@@ -418,6 +420,14 @@ SpriteAnimFrameData:
 .Frameset_TitlePressA:
 	oamframe SPRITE_ANIM_OAMSET_TITLE_PRESS_A_1,  16
 	oamframe SPRITE_ANIM_OAMSET_TITLE_PRESS_A_2,  16
+	dorestart
+
+.Frameset_TitleLogoPalmLeft:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_LEFT,  32
+	dorestart
+
+.Frameset_TitleLogoPalmRight:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_RIGHT,  32
 	dorestart
 
 .Frameset_GSIntroMagikarp:
