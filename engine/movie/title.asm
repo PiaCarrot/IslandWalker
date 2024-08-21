@@ -95,6 +95,7 @@ _TitleScreen:
 	call Title_InitPressA
 	call Title_InitLogoPalmLeft
 	call Title_InitLogoPalmRight
+	call Title_InitMarillWait
 	ld hl, wLYOverrides
 	ld bc, wLYOverridesEnd - wLYOverrides
 	xor a
@@ -206,6 +207,12 @@ Title_InitLogoPalmLeft:
 Title_InitLogoPalmRight:
 	depixel 8, 17
 	ld a, SPRITE_ANIM_OBJ_TITLE_LOGO_PALM_RIGHT
+	call InitSpriteAnimStruct
+	ret
+
+Title_InitMarillWait:
+	depixel 19, 12
+	ld a, SPRITE_ANIM_OBJ_TITLE_MARILL_WAIT
 	call InitSpriteAnimStruct
 	ret
 

@@ -54,6 +54,10 @@ SpriteAnimOAMData:
 	spriteanimoam $bc, .OAMData_TitlePressA              ; SPRITE_ANIM_OAMSET_TITLE_PRESS_A_2
 	spriteanimoam $d0, .OAMData_TitleLogoPalmLeft        ; SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_LEFT
 	spriteanimoam $d3, .OAMData_TitleLogoPalmRight       ; SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_RIGHT
+	spriteanimoam $b0, .OAMData_TitleMarillWait          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_WAIT_1
+	spriteanimoam $b4, .OAMData_TitleMarillWait          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_WAIT_2
+	spriteanimoam $98, .OAMData_TitleMarillPressA        ; SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_1
+	spriteanimoam $b8, .OAMData_TitleMarillPressA        ; SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_2
 	spriteanimoam $f8, .OAMData_GSTitleTrail             ; SPRITE_ANIM_OAMSET_GS_TITLE_TRAIL_1
 	spriteanimoam $fa, .OAMData_GSTitleTrail             ; SPRITE_ANIM_OAMSET_GS_TITLE_TRAIL_2
 	spriteanimoam $00, .OAMData_TextEntryCursor          ; SPRITE_ANIM_OAMSET_TEXT_ENTRY_CURSOR
@@ -199,6 +203,18 @@ SpriteAnimOAMData:
 	dbsprite -2,  0,  4,  0, $10, 1
 	dbsprite -1,  0,  4,  0, $11, 1
 	dbsprite  0,  0,  4,  0, $12, 1
+
+.OAMData_TitleMarillWait:
+.OAMData_TitleMarillPressA:
+    db 8
+	dbsprite -3, -1,  0,  0, $00, 2
+	dbsprite -2, -1,  0,  0, $01, 2
+	dbsprite -1, -1,  0,  0, $02, 2
+	dbsprite  0, -1,  0,  0, $03, 2
+	dbsprite -3,  0,  0,  0, $10, 2
+	dbsprite -2,  0,  0,  0, $11, 2
+	dbsprite -1,  0,  0,  0, $12, 2
+	dbsprite  0,  0,  0,  0, $13, 2
 
 .OAMData_GSIntroShellderEyes:
 	db 4

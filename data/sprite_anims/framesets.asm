@@ -82,6 +82,8 @@ SpriteAnimFrameData:
 	dw .Frameset_TitlePressA
 	dw .Frameset_TitleLogoPalmLeft
 	dw .Frameset_TitleLogoPalmRight
+	dw .Frameset_TitleMarillWait
+	dw .Frameset_TitleMarillPressA
 	dw .Frameset_PCCursor
 	dw .Frameset_PCCursorItem
 	dw .Frameset_PCQuick
@@ -405,6 +407,16 @@ SpriteAnimFrameData:
 .Frameset_GSIntroShellder:
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_1,  8
 	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2,  8
+	dorestart
+
+.Frameset_TitleMarillWait:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_WAIT_1,  32
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_WAIT_2,  32
+	dorestart
+
+.Frameset_TitleMarillPressA:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_1,  32
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_2,  32
 	dorestart
 
 .Frameset_GSIntroShellderEyes:

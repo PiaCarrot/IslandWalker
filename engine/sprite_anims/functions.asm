@@ -62,6 +62,8 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_TitlePressA
 	dw SpriteAnimFunc_TitleLogoPalmLeft
 	dw SpriteAnimFunc_TitleLogoPalmRight
+	dw SpriteAnimFunc_TitleMarillWait
+	dw SpriteAnimFunc_TitleMarillPressA
 	dw SpriteAnimFunc_PcCursor
 	dw SpriteAnimFunc_PcQuick
 	dw SpriteAnimFunc_PcMode
@@ -754,6 +756,17 @@ SpriteAnimFunc_GSIntroBubble:
 	ret
 	
 SpriteAnimFunc_GSIntroWingull:
+	ld a, [wGlobalAnimYOffset]
+	ld hl, SPRITEANIMSTRUCT_YCOORD
+	add hl, bc
+	add [hl]
+	cp $b0
+	ret c
+	call DeinitializeSprite
+	ret
+
+SpriteAnimFunc_TitleMarillPressA:
+SpriteAnimFunc_TitleMarillWait:
 	ld a, [wGlobalAnimYOffset]
 	ld hl, SPRITEANIMSTRUCT_YCOORD
 	add hl, bc
