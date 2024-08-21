@@ -875,10 +875,10 @@ IntroSequence:
 	; fallthrough
 
 StartTitleScreen:
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	; ldh a, [rSVBK]
+	; push af
+	; ld a, BANK(wLYOverrides)
+	; ldh [rSVBK], a
 
 	call .TitleScreen
 	call DelayFrame
@@ -939,7 +939,7 @@ RunTitleScreen:
 	bit 7, a
 	jr nz, .done_title
 	call TitleScreenScene
-;	farcall SuicuneFrameIterator
+	farcall PlaySpriteAnimations
 	call DelayFrame
 	and a
 	ret

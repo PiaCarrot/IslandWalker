@@ -3,12 +3,11 @@ _TitleScreen:
 	call ClearTilemap
 	call DisableLCD
 	call ClearSprites
-	farcall ClearSpriteAnims
 
 ; Turn BG Map update off
 	xor a
 	ldh [hBGMapMode], a
-
+	
 ; Reset timing variables
 	ld hl, wJumptableIndex
 	ld [hli], a ; wJumptableIndex
@@ -19,6 +18,8 @@ _TitleScreen:
 	ldh [hMapAnims], a
 	ldh [hSCY], a
 	ldh [hSCX], a
+	
+	farcall ClearSpriteAnims
 
 	ld hl, OrangeTitleGFX
 	ld de, vTiles2
@@ -80,17 +81,22 @@ _TitleScreen:
 	ldh [hSCX], a
 	ld a, 256 - SCREEN_HEIGHT_PX - (2 * TILE_WIDTH)
 	ldh [hSCY], a
+	
+	ld hl, wSpriteAnimDict
+	xor a ; SPRITE_ANIM_DICT_DEFAULT and tile offset $00
+	ld [hli], a
+	ld [hl], a
+	ld hl, rLCDC
+	set rLCDC_SPRITE_SIZE, [hl]
+	call EnableLCD
 
 ; Reset audio
-	ld hl, wSpriteAnimDict
-	ld a, SPRITE_ANIM_DICT_DEFAULT
-	ld [hli], a
-	ld a, $00
-	ld [hli], a
-	xor a
 	call ChannelsOff
-	call EnableLCD
 	call Title_InitPressA
+	ld hl, wLYOverrides
+	ld bc, wLYOverridesEnd - wLYOverrides
+	xor a
+	call ByteFill
 	jmp SFXChannelsOff
 
 DrawTitleGraphic:
@@ -184,13 +190,9 @@ Title_CopyMapTilesOrAttr:
 	ret
 	
 Title_InitPressA:
-	depixel $10, $09
-	call .InitAnim
-
-.InitAnim:
+	depixel 12, 11
 	ld a, SPRITE_ANIM_OBJ_TITLE_PRESS_A
-	call InitSpriteAnimStruct
-	ret
+	jmp InitSpriteAnimStruct
 
 OrangeLogoGFX:
 INCBIN "gfx/title/logo.2bpp.lz"
