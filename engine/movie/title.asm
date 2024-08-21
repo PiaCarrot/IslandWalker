@@ -61,7 +61,7 @@ _TitleScreen:
 
 	ld hl, OrangeTitlePalettes
 	ld de, wBGPals1
-	ld bc, 3 palettes
+	ld bc, 4 palettes
 	call FarCopyColorWRAM
 	farcall ApplyPals
 	ld a, TRUE
