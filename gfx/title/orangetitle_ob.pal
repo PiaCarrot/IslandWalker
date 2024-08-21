@@ -1,0 +1,15 @@
+; obpalette 0 Dragonite
+	RGB 31, 31, 31
+	RGB 30, 30, 08
+	RGB 04, 21, 16
+	RGB 00, 00, 00
+; obpalette 1 Version and Press A
+	RGB 31, 31, 31
+	RGB 31, 21, 01
+	RGB 21, 11, 02
+	RGB 00, 00, 00
+; obpalette 2 Marill
+	RGB 31, 31, 31
+	RGB 08, 19, 23
+	RGB 30, 03, 02
+	RGB 00, 00, 00

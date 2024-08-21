@@ -939,7 +939,7 @@ RunTitleScreen:
 	bit 7, a
 	jr nz, .done_title
 	call TitleScreenScene
-	farcall SuicuneFrameIterator
+;	farcall SuicuneFrameIterator
 	call DelayFrame
 	and a
 	ret
@@ -968,49 +968,49 @@ TitleScreenScene:
 TitleScreenEntrance:
 ; Animate the logo:
 ; Move each line by 4 pixels until our count hits 0.
-	ldh a, [hSCX]
-	and a
-	jr z, .done
-	sub 4
-	ldh [hSCX], a
+	; ldh a, [hSCX]
+	; and a
+	; jr z, .done
+	; sub 4
+	; ldh [hSCX], a
 
 ; Lay out a base (all lines scrolling together).
-	ld e, a
-	ld hl, wLYOverrides
-	ld bc, 8 * 10 ; logo height
-	rst ByteFill
+	; ld e, a
+	; ld hl, wLYOverrides
+	; ld bc, 8 * 10 ; logo height
+	; rst ByteFill
 
 ; Reversed signage for every other line's position.
 ; This is responsible for the interlaced effect.
-	ld a, e
-	cpl
-	inc a
+	; ld a, e
+	; cpl
+	; inc a
 
-	ld b, 8 * 10 / 2 ; logo height / 2
-	ld hl, wLYOverrides + 1
-.loop
-	ld [hli], a
-	inc hl
-	dec b
-	jr nz, .loop
+	; ld b, 8 * 10 / 2 ; logo height / 2
+	; ld hl, wLYOverrides + 1
+; .loop
+	; ld [hli], a
+	; inc hl
+	; dec b
+	; jr nz, .loop
 
-	farjp AnimateTitleCrystal
+	; farjp AnimateTitleCrystal
 
-.done
+; .done
 ; Next scene
 	ld hl, wJumptableIndex
 	inc [hl]
-	ld hl, rIE
-	res LCD_STAT, [hl]
-	xor a
-	ldh [hLCDCPointer], a
+	; ld hl, rIE
+	; res LCD_STAT, [hl]
+	; xor a
+	; ldh [hLCDCPointer], a
 
 ; Play the title screen music.
 	ld de, MUSIC_TITLE
 	call PlayMusic
 
-	ld a, $88
-	ldh [hWY], a
+	; ld a, $88
+	; ldh [hWY], a
 	ret
 
 TitleScreenTimer:
@@ -1147,32 +1147,6 @@ DeleteSaveData:
 ResetClock:
 	farcall _ResetClock
 	jmp Init
-
-Copyright:
-	call ClearTilemap
-	call LoadFontsExtra
-	ld de, CopyrightGFX
-	ld hl, vTiles2 tile $60
-	lb bc, BANK(CopyrightGFX), 29
-	call Request2bpp
-	hlcoord 2, 7
-	ld de, CopyrightString
-	jmp PlaceString
-
-CopyrightString:
-	; ©1995-2001 Nintendo
-	db   $60, $61, $62, $63, $64, $65, $66
-	db   $67, $68, $69, $6a, $6b, $6c
-
-	; ©1995-2001 Creatures inc.
-	next $60, $61, $62, $63, $64, $65, $66
-	db   $6d, $6e, $6f, $70, $71, $72, $7a, $7b, $7c
-
-	; ©1995-2001 GAME FREAK inc.
-	next $60, $61, $62, $63, $64, $65, $66
-	db   $73, $74, $75, $76, $77, $78, $79, $7a, $7b, $7c
-
-	db "@"
 
 GameInit::
 	farcall TryLoadSaveData
