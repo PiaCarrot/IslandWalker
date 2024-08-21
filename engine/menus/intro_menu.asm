@@ -875,10 +875,10 @@ IntroSequence:
 	; fallthrough
 
 StartTitleScreen:
-	; ldh a, [rSVBK]
-	; push af
-	; ld a, BANK(wLYOverrides)
-	; ldh [rSVBK], a
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wLYOverrides)
+	ldh [rSVBK], a
 
 	call .TitleScreen
 	call DelayFrame

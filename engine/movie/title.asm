@@ -87,7 +87,7 @@ _TitleScreen:
 	ld [hli], a
 	ld [hl], a
 	ld hl, rLCDC
-	set rLCDC_SPRITE_SIZE, [hl]
+	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
 	call EnableLCD
 
 ; Reset audio
@@ -190,7 +190,7 @@ Title_CopyMapTilesOrAttr:
 	ret
 	
 Title_InitPressA:
-	depixel 12, 11
+	depixel 17, 10
 	ld a, SPRITE_ANIM_OBJ_TITLE_PRESS_A
 	jmp InitSpriteAnimStruct
 

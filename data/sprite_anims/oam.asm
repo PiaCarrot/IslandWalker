@@ -182,11 +182,11 @@ SpriteAnimOAMData:
 	dbsprite  0,  0,  0,  0, $11, 0
 
 .OAMData_TitlePressA:
-	db 4
-	dbsprite -2, 0,  0,  0, $00, 0
-	dbsprite -1, 0,  0,  0, $01, 0
-	dbsprite -2, 0,  0,  0, $02, 0
-	dbsprite -1, 0,  0,  0, $03, 0
+    db 4
+    dbsprite -1, 0,  0,  0, $00, 1
+    dbsprite 0, 0,  0,  0, $01, 1
+    dbsprite 1, 0,  0,  0, $02, 1
+    dbsprite 2, 0,  0,  0, $03, 1
 
 .OAMData_GSIntroShellderEyes:
 	db 4
