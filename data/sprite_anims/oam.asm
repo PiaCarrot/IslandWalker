@@ -189,10 +189,10 @@ SpriteAnimOAMData:
 
 .OAMData_TitlePressA:
     db 4
-    dbsprite -1, 0,  0,  0, $00, 1
-    dbsprite 0, 0,  0,  0, $01, 1
-    dbsprite 1, 0,  0,  0, $02, 1
-    dbsprite 2, 0,  0,  0, $03, 1
+    dbsprite -1, 0, 0,  -2, $00, 1
+    dbsprite 0, 0,  0,  -2, $01, 1
+    dbsprite 1, 0,  0,  -2, $02, 1
+    dbsprite 2, 0,  0,  -2, $03, 1
 
 .OAMData_TitleLogoPalmLeft:
 .OAMData_TitleLogoPalmRight:
@@ -207,14 +207,14 @@ SpriteAnimOAMData:
 .OAMData_TitleMarillWait:
 .OAMData_TitleMarillPressA:
     db 8
-	dbsprite -3, -1,  0,  0, $00, 2
-	dbsprite -2, -1,  0,  0, $01, 2
-	dbsprite -1, -1,  0,  0, $02, 2
-	dbsprite  0, -1,  0,  0, $03, 2
-	dbsprite -3,  0,  0,  0, $10, 2
-	dbsprite -2,  0,  0,  0, $11, 2
-	dbsprite -1,  0,  0,  0, $12, 2
-	dbsprite  0,  0,  0,  0, $13, 2
+	dbsprite -3, -1,  2,  0, $00, 2
+	dbsprite -2, -1,  2,  0, $01, 2
+	dbsprite -1, -1,  2,  0, $02, 2
+	dbsprite  0, -1,  2,  0, $03, 2
+	dbsprite -3,  0,  2,  0, $10, 2
+	dbsprite -2,  0,  2,  0, $11, 2
+	dbsprite -1,  0,  2,  0, $12, 2
+	dbsprite  0,  0,  2,  0, $13, 2
 
 .OAMData_GSIntroShellderEyes:
 	db 4

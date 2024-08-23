@@ -215,6 +215,30 @@ Title_InitMarillWait:
 	ld a, SPRITE_ANIM_OBJ_TITLE_MARILL_WAIT
 	call InitSpriteAnimStruct
 	ret
+	
+_TitleScreenPressedA:
+; Marill presses the a button
+	call Title_InitMarillPressA
+	
+
+
+; Scroll to top of the screen
+	ld hl, hSCY
+    ld a, 0
+.loop_scy
+	call DelayFrame
+    dec [hl]
+    cp [hl]	
+    jr nz, .loop_scy
+	ld c, 50
+	call DelayFrames
+	ret
+	
+Title_InitMarillPressA:
+	depixel 19, 12
+	ld a, SPRITE_ANIM_OBJ_TITLE_MARILL_PRESS_A
+	call InitSpriteAnimStruct
+	ret
 
 OrangeLogoGFX:
 INCBIN "gfx/title/logo.2bpp.lz"

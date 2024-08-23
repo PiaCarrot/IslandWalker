@@ -1081,10 +1081,12 @@ TitleScreenMain:
 ; Press Start or A to start the game.
 .check_start
 	ld a, [hl]
-	and START | A_BUTTON
+	and A_BUTTON
 	ret z
+	farcall _TitleScreenPressedA
 	ld a, TITLESCREENOPTION_MAIN_MENU
 	jr .done
+
 
 .delete_save_data
 	ld a, TITLESCREENOPTION_DELETE_SAVE_DATA

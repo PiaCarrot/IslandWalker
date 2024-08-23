@@ -765,8 +765,17 @@ SpriteAnimFunc_GSIntroWingull:
 	call DeinitializeSprite
 	ret
 
-SpriteAnimFunc_TitleMarillPressA:
 SpriteAnimFunc_TitleMarillWait:
+	ld a, [wGlobalAnimYOffset]
+	ld hl, SPRITEANIMSTRUCT_YCOORD
+	add hl, bc
+	add [hl]
+	cp $b0
+	ret c
+	call DeinitializeSprite
+	ret
+	
+SpriteAnimFunc_TitleMarillPressA:
 	ld a, [wGlobalAnimYOffset]
 	ld hl, SPRITEANIMSTRUCT_YCOORD
 	add hl, bc
