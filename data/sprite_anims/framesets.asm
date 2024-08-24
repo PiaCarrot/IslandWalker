@@ -84,6 +84,7 @@ SpriteAnimFrameData:
 	dw .Frameset_TitleLogoPalmRight
 	dw .Frameset_TitleMarillWait
 	dw .Frameset_TitleMarillPressA
+	dw .Frameset_TitleDragonite
 	dw .Frameset_PCCursor
 	dw .Frameset_PCCursorItem
 	dw .Frameset_PCQuick
@@ -440,6 +441,13 @@ SpriteAnimFrameData:
 
 .Frameset_TitleLogoPalmRight:
 	oamframe SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_RIGHT,  32
+	dorestart
+
+.Frameset_TitleDragonite:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_1,  12
+	oamframe SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_2,  12
+	oamframe SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_1,  12
+	oamframe SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_3,  12
 	dorestart
 
 .Frameset_GSIntroMagikarp:

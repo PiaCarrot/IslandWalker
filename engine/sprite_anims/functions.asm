@@ -64,6 +64,7 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_TitleLogoPalmRight
 	dw SpriteAnimFunc_TitleMarillWait
 	dw SpriteAnimFunc_TitleMarillPressA
+	dw SpriteAnimFunc_TitleDragonite
 	dw SpriteAnimFunc_PcCursor
 	dw SpriteAnimFunc_PcQuick
 	dw SpriteAnimFunc_PcMode
@@ -945,6 +946,85 @@ SpriteAnimFunc_GSIntroLapras:
 	ret
 
 .next1
+	call AnimSeqs_IncAnonJumptableIndex
+	ld hl, SPRITEANIMSTRUCT_VAR2
+	add hl, bc
+	ld [hl], $b0
+	ret
+
+.one
+	call .update_y_offset
+	ld hl, SPRITEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .next2
+
+	dec [hl]
+	ret
+
+.next2
+	call AnimSeqs_IncAnonJumptableIndex
+	ret
+
+.two
+	call .update_y_offset
+	ret z
+	ld hl, SPRITEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld a, [hl]
+	cp $d0
+	jr z, .delete
+	dec [hl]
+	ret
+
+.delete
+	call DeinitializeSprite
+	ld a, TRUE
+	ld [wIntroSpriteStateFlag], a
+	ret
+
+.update_y_offset
+	ld hl, SPRITEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	inc [hl]
+	ld d, 4
+	farcall Sine
+	ld hl, SPRITEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, SPRITEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	and $1
+	ret
+
+SpriteAnimFunc_TitleDragonite:
+	call AnimSeqs_AnonJumptable
+	jp hl
+.anon_dw
+	dw .zero
+	dw .one
+	dw .two
+
+.zero
+	call .update_y_offset
+	ret z
+
+	ld hl, SPRITEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld a, [hl]
+	cp $58
+	jr c, .next1
+
+	dec [hl]
+	ret
+
+.next1
+	ld hl, DRAGONITE
+	call GetPokemonIDFromIndex
+	call PlayMonCry
 	call AnimSeqs_IncAnonJumptableIndex
 	ld hl, SPRITEANIMSTRUCT_VAR2
 	add hl, bc

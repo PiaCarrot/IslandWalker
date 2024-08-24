@@ -61,7 +61,7 @@ _TitleScreen:
 
 	ld hl, OrangeTitlePalettes
 	ld de, wBGPals1
-	ld bc, 4 palettes
+	ld bc, 5 palettes
 	call FarCopyColorWRAM
 	farcall ApplyPals
 	ld a, TRUE
@@ -93,8 +93,6 @@ _TitleScreen:
 ; Reset audio
 	call ChannelsOff
 	call Title_InitPressA
-	call Title_InitLogoPalmLeft
-	call Title_InitLogoPalmRight
 	call Title_InitMarillWait
 	ld hl, wLYOverrides
 	ld bc, wLYOverridesEnd - wLYOverrides
@@ -218,25 +216,32 @@ Title_InitMarillWait:
 	
 _TitleScreenPressedA:
 ; Marill presses the a button
-	call Title_InitMarillPressA
+;	call Title_InitMarillPressA
+	farcall ClearSpriteAnims
 	
 
 
 ; Scroll to top of the screen
-	ld hl, hSCY
-    ld a, 0
+    ld a, 1
+    ld [wGlobalAnimYOffset], a
 .loop_scy
-	call DelayFrame
-    dec [hl]
-    cp [hl]	
+    call DelayFrame
+    farcall DoNextFrameForAllSprites
+    ld hl, hSCY
+    dec [hl]   
     jr nz, .loop_scy
-	ld c, 50
-	call DelayFrames
+	call Title_InitDragonite
 	ret
 	
 Title_InitMarillPressA:
 	depixel 19, 12
 	ld a, SPRITE_ANIM_OBJ_TITLE_MARILL_PRESS_A
+	call InitSpriteAnimStruct
+	ret
+	
+Title_InitDragonite:
+	depixel 7, 24
+	ld a, SPRITE_ANIM_OBJ_TITLE_DRAGONITE
 	call InitSpriteAnimStruct
 	ret
 
