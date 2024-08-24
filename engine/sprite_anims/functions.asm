@@ -1001,6 +1001,7 @@ SpriteAnimFunc_GSIntroLapras:
 	ret
 
 SpriteAnimFunc_TitleDragonite:
+	ld [wGameLogicPaused], a
 	call AnimSeqs_AnonJumptable
 	jp hl
 .anon_dw
@@ -1023,9 +1024,6 @@ SpriteAnimFunc_TitleDragonite:
 	ret
 
 .next1
-	ld hl, DRAGONITE
-	call GetPokemonIDFromIndex
-	call PlayMonCry
 	call AnimSeqs_IncAnonJumptableIndex
 	ld hl, SPRITEANIMSTRUCT_VAR2
 	add hl, bc
@@ -1066,6 +1064,17 @@ SpriteAnimFunc_TitleDragonite:
 	call DeinitializeSprite
 	ld a, TRUE
 	ld [wIntroSpriteStateFlag], a
+	ld hl, DRAGONITE
+	call GetPokemonIDFromIndex
+	call PlayMonCry
+	xor a ; FALSE
+	ld [wGameLogicPaused], a
+	ld c, 31
+	call FadeToBlack
+	ld a, TITLESCREENOPTION_MAIN_MENU
+	ld [wTitleScreenSelectedOption], a
+	ld hl, wJumptableIndex
+	set 7, [hl]
 	ret
 
 .update_y_offset
@@ -1073,7 +1082,7 @@ SpriteAnimFunc_TitleDragonite:
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
-	ld d, 4
+	ld d, 2
 	farcall Sine
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc
