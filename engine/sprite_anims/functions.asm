@@ -1019,6 +1019,7 @@ SpriteAnimFunc_TitleDragonite:
 	jr c, .next1
 
 	dec [hl]
+	dec [hl]
 	ret
 
 .next1
@@ -1040,6 +1041,8 @@ SpriteAnimFunc_TitleDragonite:
 	jr z, .next2
 
 	dec [hl]
+	dec [hl]
+	dec [hl]
 	ret
 
 .next2
@@ -1052,8 +1055,10 @@ SpriteAnimFunc_TitleDragonite:
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld a, [hl]
-	cp $d0
+	cp $d5
 	jr z, .delete
+	dec [hl]
+	dec [hl]
 	dec [hl]
 	ret
 

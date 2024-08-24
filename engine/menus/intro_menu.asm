@@ -1084,9 +1084,9 @@ TitleScreenMain:
 	and A_BUTTON
 	ret z
 	farcall _TitleScreenPressedA
-	; ret
-	ld a, TITLESCREENOPTION_MAIN_MENU
-	jr .done
+	ret
+	; ld a, TITLESCREENOPTION_MAIN_MENU
+	; jr .done
 
 
 .delete_save_data

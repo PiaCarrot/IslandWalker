@@ -231,6 +231,8 @@ _TitleScreenPressedA:
     dec [hl]   
     jr nz, .loop_scy
 	call Title_InitDragonite
+	ld c, 50
+	call DelayFrames
 	ret
 	
 Title_InitMarillPressA:
