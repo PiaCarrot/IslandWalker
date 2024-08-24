@@ -18,6 +18,8 @@ SplashScreen:
 	call WaitBGMap
 	ld c, 30
 	call DelayFrames
+	xor a ; FALSE
+	ld [wGameLogicPaused], a
 ; Stop here if not in GBC mode
 	farcall GBCOnlyScreen
 	ld hl, ProtostarLogoPalettes
