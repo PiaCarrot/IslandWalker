@@ -1016,30 +1016,8 @@ SpriteAnimFunc_TitleDragonite:
 	call AnimSeqs_AnonJumptable
 	jp hl
 .anon_dw
-	dw .zero
 	dw .one
 	dw .two
-
-.zero
-	call .update_y_offset
-	ret z
-
-	ld hl, SPRITEANIMSTRUCT_XCOORD
-	add hl, bc
-	ld a, [hl]
-	cp $58
-	jr c, .next1
-
-	dec [hl]
-	dec [hl]
-	ret
-
-.next1
-	call AnimSeqs_IncAnonJumptableIndex
-	ld hl, SPRITEANIMSTRUCT_VAR2
-	add hl, bc
-	ld [hl], $ff
-	ret
 
 .one
 	call .update_y_offset
@@ -1064,7 +1042,7 @@ SpriteAnimFunc_TitleDragonite:
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
 	ld a, [hl]
-	cp $d5
+	cp $DF
 	jr z, .delete
 	dec [hl]
 	dec [hl]

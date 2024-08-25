@@ -6,7 +6,7 @@ Music_GetBadge:
 	channel 4, Music_GetBadge_Ch4
 
 Music_GetBadge_Ch1:
-	tempo 150
+	tempo 120
 	volume 7, 7
 	duty_cycle 2
 	vibrato 8, 2, 4
