@@ -216,9 +216,19 @@ Title_InitMarillWait:
 	
 _TitleScreenPressedA:
 ; Marill presses the a button
-;	call Title_InitMarillPressA
+	call Title_InitMarillTail
+	ld de, SFX_TWINKLE
+	call PlaySFX
+	ld c, 31
+	call DelayFrames
 	farcall ClearSpriteAnims
-	
+	ld a, 12 ; fade time
+	ld [wMusicFade], a
+	ld de, MUSIC_NONE
+	ld a, e
+	ld [wMusicFadeID], a
+	ld a, d
+	ld [wMusicFadeID + 1], a
 
 
 ; Scroll to top of the screen
@@ -231,13 +241,17 @@ _TitleScreenPressedA:
     dec [hl]   
     jr nz, .loop_scy
 	call Title_InitDragonite
+	ld de, MUSIC_GET_BADGE
+	ld a, e
+	ld [wMapMusic], a
+	call PlayMusic
 	ld c, 50
 	call DelayFrames
 	ret
 	
-Title_InitMarillPressA:
-	depixel 19, 12
-	ld a, SPRITE_ANIM_OBJ_TITLE_MARILL_PRESS_A
+Title_InitMarillTail:
+	depixel 18, 13
+	ld a, SPRITE_ANIM_OBJ_TITLE_MARILL_TAIL
 	call InitSpriteAnimStruct
 	ret
 	

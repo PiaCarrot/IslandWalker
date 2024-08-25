@@ -58,6 +58,9 @@ SpriteAnimOAMData:
 	spriteanimoam $b4, .OAMData_TitleMarillWait          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_WAIT_2
 	spriteanimoam $98, .OAMData_TitleMarillPressA        ; SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_1
 	spriteanimoam $b8, .OAMData_TitleMarillPressA        ; SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_2
+	spriteanimoam $68, .OAMData_TitleMarillTail          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_1
+	spriteanimoam $6A, .OAMData_TitleMarillTail          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_2
+	spriteanimoam $6C, .OAMData_TitleMarillTail          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_3
 	spriteanimoam $00, .OAMData_TitleDragonite           ; SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_1
 	spriteanimoam $07, .OAMData_TitleDragonite           ; SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_2
 	spriteanimoam $50, .OAMData_TitleDragonite           ; SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_3
@@ -224,10 +227,20 @@ SpriteAnimOAMData:
 	dbsprite -2, -1,  2,  0, $01, 2
 	dbsprite -1, -1,  2,  0, $02, 2
 	dbsprite  0, -1,  2,  0, $03, 2
+	
 	dbsprite -3,  0,  2,  0, $10, 2
 	dbsprite -2,  0,  2,  0, $11, 2
 	dbsprite -1,  0,  2,  0, $12, 2
 	dbsprite  0,  0,  2,  0, $13, 2
+
+.OAMData_TitleMarillTail:
+	db 6
+	dbsprite -1, -1, 0, 0, $00, 2
+	dbsprite  0, -1, 0, 0, $01, 2
+	dbsprite -1,  0, 0, 0, $10, 2
+	dbsprite  0,  0, 0, 0, $11, 2
+	dbsprite -1,  1, 0, 0, $20, 2
+	dbsprite  0,  1, 0, 0, $21, 2
 
 .OAMData_GSIntroShellderEyes:
 	db 4
@@ -528,35 +541,6 @@ SpriteAnimOAMData:
 
 .OAMData_TitleDragonite:
 	db 30
-	; dbsprite -3, -3,  0,  0, $00, 0
-	; dbsprite -2, -3,  0,  0, $01, 0
-	; dbsprite -1, -3,  0,  0, $02, 0
-	; dbsprite  0, -3,  0,  0, $03, 0
-	; dbsprite -3, -2,  0,  0, $10, 0
-	; dbsprite -2, -2,  0,  0, $11, 0
-	; dbsprite -1, -2,  0,  0, $12, 0
-	; dbsprite  0, -2,  0,  0, $13, 0
-	; dbsprite -3, -1,  0,  0, $20, 0
-	; dbsprite -2, -1,  0,  0, $21, 0
-	; dbsprite -1, -1,  0,  0, $22, 0
-	; dbsprite  0, -1,  0,  0, $23, 0
-	; dbsprite  1, -1,  0,  0, $24, 0
-	; dbsprite -3,  0,  0,  0, $30, 0
-	; dbsprite -2,  0,  0,  0, $31, 0
-	; dbsprite -1,  0,  0,  0, $32, 0
-	; dbsprite  0,  0,  0,  0, $33, 0
-	; dbsprite  1,  0,  0,  0, $34, 0
-	; dbsprite -3,  1,  0,  0, $40, 0
-	; dbsprite -2,  1,  0,  0, $41, 0
-	; dbsprite -1,  1,  0,  0, $42, 0
-	; dbsprite  0,  1,  0,  0, $43, 0
-	; dbsprite  1,  1,  0,  0, $44, 0
-	; dbsprite  2,  1,  0,  0, $45, 0
-	; dbsprite -2,  2,  0,  0, $51, 0
-	; dbsprite -1,  2,  0,  0, $52, 0
-	; dbsprite  0,  2,  0,  0, $53, 0
-	; dbsprite  1,  2,  0,  0, $54, 0
-	; dbsprite  2,  2,  0,  0, $55, 0
 	dbsprite -3, -3,  0,  0, $00, 0
 	dbsprite -2, -3,  0,  0, $01, 0
 	dbsprite -1, -3,  0,  0, $02, 0

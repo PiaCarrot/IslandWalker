@@ -107,6 +107,8 @@
 	const MUSIC_MOBILE_CENTER                ; 66
 ; RBY
 	const MUSIC_INTRO_BATTLE
+; Title
+	const MUSIC_GET_BADGE
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

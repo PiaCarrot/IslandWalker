@@ -109,4 +109,5 @@ Music:
 	dba Music_MobileCenter
 ; rby
 	dba Music_IntroBattle
+	dba Music_GetBadge
 	assert_table_length NUM_MUSIC_SONGS

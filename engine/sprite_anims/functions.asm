@@ -64,6 +64,7 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_TitleLogoPalmRight
 	dw SpriteAnimFunc_TitleMarillWait
 	dw SpriteAnimFunc_TitleMarillPressA
+	dw SpriteAnimFunc_TitleMarillTail
 	dw SpriteAnimFunc_TitleDragonite
 	dw SpriteAnimFunc_PcCursor
 	dw SpriteAnimFunc_PcQuick
@@ -784,6 +785,17 @@ SpriteAnimFunc_TitleMarillPressA:
 	cp $b0
 	ret c
 	call DeinitializeSprite
+	ret	
+
+SpriteAnimFunc_TitleMarillTail:
+	ld [wGameLogicPaused], a
+	ld a, [wGlobalAnimYOffset]
+	ld hl, SPRITEANIMSTRUCT_YCOORD
+	add hl, bc
+	add [hl]
+	cp $b0
+	ret c
+	call DeinitializeSprite
 	ret
 
 SpriteAnimFunc_GSIntroShellderEyes:
@@ -1001,7 +1013,6 @@ SpriteAnimFunc_GSIntroLapras:
 	ret
 
 SpriteAnimFunc_TitleDragonite:
-	ld [wGameLogicPaused], a
 	call AnimSeqs_AnonJumptable
 	jp hl
 .anon_dw
@@ -1027,7 +1038,7 @@ SpriteAnimFunc_TitleDragonite:
 	call AnimSeqs_IncAnonJumptableIndex
 	ld hl, SPRITEANIMSTRUCT_VAR2
 	add hl, bc
-	ld [hl], $b0
+	ld [hl], $ff
 	ret
 
 .one
