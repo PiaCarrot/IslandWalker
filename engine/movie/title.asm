@@ -220,10 +220,18 @@ Title_InitMarillWait:
 	
 _TitleScreenPressedA:
 ; Marill presses the a button
+	farcall CheckSave
+	jr nz, .NoMarillCry
+	ld hl, MARILL
+	call GetPokemonIDFromIndex
+	call PlayMonCry
+	jp .Scroll
+.NoMarillCry
 	ld de, SFX_TWINKLE
 	call PlaySFX
-	ld c, 31
-	call DelayFrames
+.Scroll
+	; ld c, 31
+	; call DelayFrames
 	farcall ClearSpriteAnims
 	ld a, 12 ; fade time
 	ld [wMusicFade], a
