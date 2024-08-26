@@ -788,7 +788,6 @@ SpriteAnimFunc_TitleMarillPressA:
 	ret	
 
 SpriteAnimFunc_TitleMarillTail:
-	ld [wGameLogicPaused], a
 	ld a, [wGlobalAnimYOffset]
 	ld hl, SPRITEANIMSTRUCT_YCOORD
 	add hl, bc
@@ -1013,6 +1012,7 @@ SpriteAnimFunc_GSIntroLapras:
 	ret
 
 SpriteAnimFunc_TitleDragonite:
+	ld [wGameLogicPaused], a
 	call AnimSeqs_AnonJumptable
 	jp hl
 .anon_dw

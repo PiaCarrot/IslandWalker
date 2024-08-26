@@ -92,8 +92,9 @@ _TitleScreen:
 
 ; Reset audio
 	call ChannelsOff
-	call Title_InitPressA
 	call Title_InitMarillWait
+	call Title_InitMarillTail
+	call Title_InitPressA
 	ld hl, wLYOverrides
 	ld bc, wLYOverridesEnd - wLYOverrides
 	xor a
@@ -216,7 +217,6 @@ Title_InitMarillWait:
 	
 _TitleScreenPressedA:
 ; Marill presses the a button
-	call Title_InitMarillTail
 	ld de, SFX_TWINKLE
 	call PlaySFX
 	ld c, 31

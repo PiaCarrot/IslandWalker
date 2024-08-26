@@ -235,12 +235,12 @@ SpriteAnimOAMData:
 
 .OAMData_TitleMarillTail:
 	db 6
-	dbsprite -1, -1, 0, 0, $00, 2
-	dbsprite  0, -1, 0, 0, $01, 2
-	dbsprite -1,  0, 0, 0, $10, 2
-	dbsprite  0,  0, 0, 0, $11, 2
-	dbsprite -1,  1, 0, 0, $20, 2
-	dbsprite  0,  1, 0, 0, $21, 2
+	dbsprite -1, -1, -2, 2, $00, 2
+	dbsprite  0, -1, -2, 2, $01, 2
+	dbsprite -1,  0, -2, 2, $10, 2
+	dbsprite  0,  0, -2, 2, $11, 2
+	dbsprite -1,  1, -2, 2, $20, 2
+	dbsprite  0,  1, -2, 2, $21, 2
 
 .OAMData_GSIntroShellderEyes:
 	db 4
