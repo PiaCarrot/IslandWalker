@@ -92,13 +92,16 @@ _TitleScreen:
 
 ; Reset audio
 	call ChannelsOff
-	call Title_InitMarillWait
-	call Title_InitMarillTail
-	call Title_InitPressA
 	ld hl, wLYOverrides
 	ld bc, wLYOverridesEnd - wLYOverrides
 	xor a
 	call ByteFill
+	farcall CheckSave
+	jr nz, .NoMarillSpawn
+	call Title_InitMarillWait
+	call Title_InitMarillTail
+.NoMarillSpawn
+	call Title_InitPressA
 	jmp SFXChannelsOff
 
 DrawTitleGraphic:
