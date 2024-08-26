@@ -459,9 +459,12 @@ Intro_InitMagikarps:
 	ld de, SFX_SHINE
 	call PlaySFX
 	; TODO: Test to make sure this even works
+	; farcall CheckSave
+	; jr nz, .DontSetFlag
 	; ld de, EVENT_SHINY_MAGIKARP_INTRO
     ; ld b, SET_FLAG
     ; farcall EventFlagAction
+; .DontSetFlag
 	jp .ShinySpawned
 
 Intro_InitShellders:
