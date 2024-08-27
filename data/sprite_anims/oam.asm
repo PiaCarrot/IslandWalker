@@ -541,36 +541,36 @@ SpriteAnimOAMData:
 
 .OAMData_TitleDragonite:
 	db 30
-	dbsprite -3, -3,  0,  0, $00, 0
-	dbsprite -2, -3,  0,  0, $01, 0
-	dbsprite -1, -3,  0,  0, $02, 0
-	dbsprite  0, -3,  0,  0, $03, 0
-	dbsprite  1, -3,  0,  0, $04, 0
-	dbsprite -3, -2,  0,  0, $10, 0
-	dbsprite -2, -2,  0,  0, $11, 0
-	dbsprite -1, -2,  0,  0, $12, 0
-	dbsprite  0, -2,  0,  0, $13, 0
-	dbsprite  1, -2,  0,  0, $14, 0
-	dbsprite -3, -1,  0,  0, $20, 0
-	dbsprite -2, -1,  0,  0, $21, 0
-	dbsprite -1, -1,  0,  0, $22, 0
-	dbsprite  0, -1,  0,  0, $23, 0
-	dbsprite  1, -1,  0,  0, $24, 0
-	dbsprite  2, -1,  0,  0, $25, 0
-	dbsprite -3,  0,  0,  0, $30, 0
-	dbsprite -2,  0,  0,  0, $31, 0
-	dbsprite -1,  0,  0,  0, $32, 0
-	dbsprite  0,  0,  0,  0, $33, 0
-	dbsprite  1,  0,  0,  0, $34, 0
-	dbsprite  2,  0,  0,  0, $35, 0
-	dbsprite  3,  0,  0,  0, $36, 0
-	dbsprite -3,  1,  0,  0, $40, 0
-	dbsprite -2,  1,  0,  0, $41, 0
-	dbsprite -1,  1,  0,  0, $42, 0
-	dbsprite  0,  1,  0,  0, $43, 0
-	dbsprite  1,  1,  0,  0, $44, 0
-	dbsprite  2,  1,  0,  0, $45, 0
-	dbsprite  3,  1,  0,  0, $46, 0
+	dbsprite -3, -3,  0,  4, $00, 0
+	dbsprite -2, -3,  0,  4, $01, 0
+	dbsprite -1, -3,  0,  4, $02, 0
+	dbsprite  0, -3,  0,  4, $03, 0
+	dbsprite  1, -3,  0,  4, $04, 0
+	dbsprite -3, -2,  0,  4, $10, 0
+	dbsprite -2, -2,  0,  4, $11, 0
+	dbsprite -1, -2,  0,  4, $12, 0
+	dbsprite  0, -2,  0,  4, $13, 0
+	dbsprite  1, -2,  0,  4, $14, 0
+	dbsprite -3, -1,  0,  4, $20, 0
+	dbsprite -2, -1,  0,  4, $21, 0
+	dbsprite -1, -1,  0,  4, $22, 0
+	dbsprite  0, -1,  0,  4, $23, 0
+	dbsprite  1, -1,  0,  4, $24, 0
+	dbsprite  2, -1,  0,  4, $25, 0
+	dbsprite -3,  0,  0,  4, $30, 0
+	dbsprite -2,  0,  0,  4, $31, 0
+	dbsprite -1,  0,  0,  4, $32, 0
+	dbsprite  0,  0,  0,  4, $33, 0
+	dbsprite  1,  0,  0,  4, $34, 0
+	dbsprite  2,  0,  0,  4, $35, 0
+	dbsprite  3,  0,  0,  4, $36, 0
+	dbsprite -3,  1,  0,  4, $40, 0
+	dbsprite -2,  1,  0,  4, $41, 0
+	dbsprite -1,  1,  0,  4, $42, 0
+	dbsprite  0,  1,  0,  4, $43, 0
+	dbsprite  1,  1,  0,  4, $44, 0
+	dbsprite  2,  1,  0,  4, $45, 0
+	dbsprite  3,  1,  0,  4, $46, 0
 
 .OAMData_GSIntroNote:
 	db 2
