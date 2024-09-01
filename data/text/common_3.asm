@@ -1,29 +1,34 @@
-_OakText6::
-	text "Now, what did you"
-	line "say your name was?"
+_IvySpeech2::
+	text "Just to make sure"
+	line "that you're okay…"
+	
+	para "Tell me your name."
 	prompt
 
-_OakText7::
-	text "<PLAYER>, are you"
-	line "ready?"
+_IvySpeech3::
+	text "That's right! Good"
+	line "to know you're"
+	cont "still with us,"
+	cont "<PLAYER>."
+	prompt
 
-if !DEF(_DEBUG)
-	para "Your very own"
+_IvySpeech7::
+	text "Your very own"
 	line "#MON story is"
 	cont "about to unfold."
 
-	para "You'll face fun"
-	line "times and tough"
-	cont "challenges."
+	para "In return for me"
+	line "giving you your"
+	cont "very first #MON"
+	cont "you'll be running"
+	cont "a small errand for"
+	cont "me."
+	
+	para "I'll tell you more"
+	line "when you reach my"
+	cont "lab."
 
-	para "A world of dreams"
-	line "and adventures"
-
-	para "with #MON"
-	line "awaits! Let's go!"
-endc
-	para "I'll be seeing you"
-	line "later!"
+	para "Off you go!"
 	done
 
 _ClockTimeMayBeWrongText::

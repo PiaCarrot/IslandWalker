@@ -109,6 +109,8 @@
 	const MUSIC_INTRO_BATTLE
 ; Title
 	const MUSIC_GET_BADGE
+; ORANGE
+	const MUSIC_ROUTE_24_GBS
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

@@ -1390,24 +1390,36 @@ _MayRegisterItemText::
 	line "on SELECT Button."
 	done
 
-_OakText1::
-	text "Hello! Sorry to"
-	line "keep you waiting!"
+_IvySpeech1::
+	text "Finally awake,"
+	line "sleepyhead?"
 
 if !DEF(_DEBUG)
 	para "Welcome to the"
-	line "world of #MON!"
+	line "wonderful world of"
+	cont "#MON!"
 
-	para "My name is OAK."
+	para "It's me, PROFESSOR"
+	line "IVY, a researcher"
+	cont "of #MON here on"
+	cont "VALENCIA ISLAND."
 
-	para "People call me the"
-	line "#MON PROF."
+	para "Today is the day"
+	line "you set off on"
+	cont "your journey to be"
+	cont "a #MON TRAINER!"
+	
+	para "What are #MON,"
+	line "you ask?"
+	
+	para "You must still be"
+	line "half asleep…"
 endc
 	prompt
 
-_OakText2::
-	text "This world is in-"
-	line "habited by crea-"
+_IvySpeech4::
+	text "This world is full"
+	line "mysterious crea-"
 	cont "tures that we call"
 	cont "#MON.@"
 	text_end
@@ -1416,27 +1428,24 @@ _OakText3::
 	text_promptbutton
 	text_end
 
-_OakText4::
-	text "People and #MON"
-	line "live together by"
+_IvySpeech5::
+	text "#MON live by"
+	line "our side, and we"
+	cont "utilize them in"
+	cont "many ways."
 
-	para "supporting each"
-	line "other."
-
-	para "Some people play"
-	line "with #MON, some"
-	cont "battle with them."
+	para "Some work with"
+	line "them to accomplish"
+	cont "great feats, and"
+	cont "many battle with"
+	cont "them."
 	prompt
 
-_OakText5::
-	text "But we don't know"
-	line "everything about"
-	cont "#MON yet."
-
-	para "There are still"
-	line "many mysteries to"
-	cont "solve."
-
-	para "That's why I study"
-	line "#MON every day."
+_IvySpeech6::
+	text "There is still so"
+	line "much that we don't"
+	cont "know about them,"
+	cont "but they hold the"
+	cont "answers to all of"
+	cont "life's questions."
 	prompt

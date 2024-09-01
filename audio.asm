@@ -150,6 +150,7 @@ SECTION "Extra Songs 2", ROMX
 INCLUDE "audio/music/postcredits.asm"
 INCLUDE "audio/music/RBY/introbattle.asm"
 INCLUDE "audio/music/Title/getbadge.asm"
+INCLUDE "audio/music/Orange/route24gbs.asm"
 
 
 SECTION "Sound Effects", ROMX

@@ -544,7 +544,7 @@ OakSpeech:
 	call FadeToBlack
 	call ClearTilemap
 
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_ROUTE_24_GBS
 	call PlayMusic
 
 	ld c, 31
@@ -560,14 +560,32 @@ OakSpeech:
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, OakText1
+	ld hl, IvySpeech1
 	call PrintText
-if !DEF(_DEBUG)
+
+;	call RotateThreePalettesRight ; TODO check this
 	ld c, 15
 	call FadeToWhite
 	call ClearTilemap
 
-	ld hl, WOOPER
+	xor a
+	ld [wCurPartySpecies], a
+	farcall DrawIntroPlayerPic
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+	ld hl, IvySpeech2
+	call PrintText
+	call NamePlayer
+	ld hl, IvySpeech3
+	call PrintText
+	
+	ld c, 15
+	call FadeToWhite
+	call ClearTilemap
+
+	ld hl, BUTTERFREE
 	call GetPokemonIDFromIndex
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
@@ -586,9 +604,9 @@ if !DEF(_DEBUG)
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, OakText2
+	ld hl, IvySpeech4
 	call PrintText
-	ld hl, OakText4
+	ld hl, IvySpeech5
 	call PrintText
 	ld c, 15
 	call FadeToWhite
@@ -604,10 +622,16 @@ if !DEF(_DEBUG)
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, OakText5
+	ld hl, IvySpeech6
 	call PrintText
 ;	call RotateThreePalettesRight ; TODO check this
+
+	ld c, 15
+	call FadeToWhite
 	call ClearTilemap
+
+	call LoadFontsExtra
+	call WaitBGMap
 
 	xor a
 	ld [wCurPartySpecies], a
@@ -616,45 +640,46 @@ if !DEF(_DEBUG)
 	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
-endc
-	ld hl, OakText6
+	ld hl, IvySpeech7
 	call PrintText
-	call NamePlayer
-	ld hl, OakText7
-	jmp PrintText
+	ret
 
-OakText1:
-	text_far _OakText1
+IvySpeech1:
+	text_far _IvySpeech1
 	text_end
 
-OakText2:
-	text_far _OakText2
+IvySpeech2:
+	text_far _IvySpeech2
+	text_end
+
+OakText3:
+	text_far _OakText3
+	text_end
+
+IvySpeech3:
+	text_far _IvySpeech3
+	text_end
+
+IvySpeech4:
+	text_far _IvySpeech4
 	text_asm
-	ld hl, WOOPER
+	ld hl, BUTTERFREE
 	call GetPokemonIDFromIndex
 	call PlayMonCry
 	call WaitSFX
 	ld hl, OakText3
 	ret
 
-OakText3:
-	text_far _OakText3
+IvySpeech5:
+	text_far _IvySpeech5
 	text_end
 
-OakText4:
-	text_far _OakText4
+IvySpeech6:
+	text_far _IvySpeech6
 	text_end
 
-OakText5:
-	text_far _OakText5
-	text_end
-
-OakText6:
-	text_far _OakText6
-	text_end
-
-OakText7:
-	text_far _OakText7
+IvySpeech7:
+	text_far _IvySpeech7
 	text_end
 
 NamePlayer:
@@ -697,9 +722,9 @@ NamePlayer:
 	jmp InitName
 
 .Chris:
-	db "CHRIS@@@@@@"
+	db "INDIGO@@@@@"
 .Kris:
-	db "KRIS@@@@@@@"
+	db "ORANGE@@@@@"
 
 StorePlayerName:
 	ld a, "@"
