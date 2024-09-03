@@ -547,11 +547,6 @@ OakSpeech:
 	call DelayFrame
 	call DisableLCD
 	
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
-	
 ; Turn BG Map update off
 	xor a
 	ldh [hBGMapMode], a
@@ -627,10 +622,6 @@ OakSpeech:
 	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
 	call EnableLCD
 
-	ld hl, wLYOverrides
-	ld bc, wLYOverridesEnd - wLYOverrides
-	xor a
-	call ByteFill
 	call NewGame_IvyLeftEye
 	call NewGame_IvyRightEye
 	ld de, MUSIC_ROUTE_24_GBS
