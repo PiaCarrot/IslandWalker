@@ -64,6 +64,14 @@ SpriteAnimOAMData:
 	spriteanimoam $00, .OAMData_TitleDragonite           ; SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_1
 	spriteanimoam $07, .OAMData_TitleDragonite           ; SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_2
 	spriteanimoam $50, .OAMData_TitleDragonite           ; SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_3
+	spriteanimoam $00, .OAMData_NewGameIvyLeftEye        ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_LEFT_EYE_1
+	spriteanimoam $02, .OAMData_NewGameIvyLeftEye        ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_LEFT_EYE_2
+	spriteanimoam $04, .OAMData_NewGameIvyLeftEye        ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_LEFT_EYE_3
+	spriteanimoam $06, .OAMData_NewGameIvyLeftEye        ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_LEFT_EYE_4
+	spriteanimoam $00, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_1
+	spriteanimoam $02, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_2
+	spriteanimoam $04, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_3
+	spriteanimoam $06, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_4
 	spriteanimoam $f8, .OAMData_GSTitleTrail             ; SPRITE_ANIM_OAMSET_GS_TITLE_TRAIL_1
 	spriteanimoam $fa, .OAMData_GSTitleTrail             ; SPRITE_ANIM_OAMSET_GS_TITLE_TRAIL_2
 	spriteanimoam $00, .OAMData_TextEntryCursor          ; SPRITE_ANIM_OAMSET_TEXT_ENTRY_CURSOR
@@ -209,6 +217,12 @@ SpriteAnimOAMData:
 	dbsprite -2,  0,  4,  0, $10, 1
 	dbsprite -1,  0,  4,  0, $11, 1
 	dbsprite  0,  0,  4,  0, $12, 1
+	
+.OAMData_NewGameIvyLeftEye:
+.OAMData_NewGameIvyRightEye:
+	db 2
+	dbsprite -1, 0, 0, 0, $00, 0
+	dbsprite  0, 0, 0, 0, $01, 0
 
 .OAMData_TitleMarillWait:
     db 8

@@ -86,6 +86,8 @@ SpriteAnimFrameData:
 	dw .Frameset_TitleMarillPressA
 	dw .Frameset_TitleMarillTail
 	dw .Frameset_TitleDragonite
+	dw .Frameset_NewGameIvyLeftEye
+	dw .Frameset_NewGameIvyRightEye
 	dw .Frameset_PCCursor
 	dw .Frameset_PCCursorItem
 	dw .Frameset_PCQuick
@@ -421,6 +423,27 @@ SpriteAnimFrameData:
 .Frameset_TitleMarillPressA:
 	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_1,  32
 	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_2,  32
+	dorestart
+	
+.Frameset_NewGameIvyLeftEye:
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 32
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_2, 16
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_3, 16
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_4, 16
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_3, 16
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_2, 16
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 32
+	dorestart
+	
+
+.Frameset_NewGameIvyRightEye:
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 32
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_2, 16
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_3, 16
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_4, 16
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_3, 16
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_2, 16
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 32
 	dorestart
 
 .Frameset_TitleMarillTail:

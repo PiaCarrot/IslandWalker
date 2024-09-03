@@ -541,24 +541,113 @@ Continue_DisplayGameTime:
 OakSpeech:
 	farcall InitClock
 	ld c, 31
-	call FadeToBlack
+	call FadeToWhite
 	call ClearTilemap
+	
+	call DisableLCD
+	
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wLYOverrides)
+	ldh [rSVBK], a
+	
+; Turn BG Map update off
+	xor a
+	ldh [hBGMapMode], a
+	
+	ldh [hMapAnims], a
+	ldh [hSCY], a
+	ldh [hSCX], a
 
+	farcall ClearSpriteAnims
+	
+	ld a, 1
+	ldh [rVBK], a
+
+	ld hl, IvySpeechTilesGFX
+	ld de, vTiles2
+	ld a, BANK(IntroGFX)
+	call FarDecompress
+	
+; Back to VRAM bank 0
+	xor a
+	ldh [rVBK], a
+
+	ld hl, IvySpeechTilesGFX2
+	ld de, vTiles2 tile $10
+	ld a, BANK(IntroGFX)
+	call FarDecompress
+
+	ld hl, IvySpeechTilesGFX3
+	ld de, vTiles0
+	ld a, BANK(IntroGFX)
+	call FarDecompress
+
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	ld a, $0F
+	rst ByteFill
+
+	ld hl, IvySpeechTilesTilemap
+	ld bc, IvySpeechTilesTilemapEnd - IvySpeechTilesTilemap
+	call NewGame_CopyMapTilesOrAttr
+
+	ld hl, IvySpeechTilesPalettes
+	ld de, wBGPals1
+	ld bc, 7 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+
+	ld hl, IvySpeechTilesPalettes
+	ld de, wOBPals1
+	ld bc, 1 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	
+	ld a, [rVBK]
+	push af
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, IvySpeechTilesAttrmap
+	ld bc, IvySpeechTilesAttrmapEnd - IvySpeechTilesAttrmap
+	call NewGame_CopyMapTilesOrAttr
+	pop af
+	ldh [rVBK], a
+	
+	ld hl, wSpriteAnimDict
+	xor a ; SPRITE_ANIM_DICT_DEFAULT and tile offset $00
+	ld [hli], a
+	ld [hl], a
+	ld hl, rLCDC
+	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
+	call EnableLCD
+	
+	farcall PlaySpriteAnimations
+	ld hl, wLYOverrides
+	ld bc, wLYOverridesEnd - wLYOverrides
+	xor a
+	call ByteFill
+	call NewGame_IvyLeftEye
+	call NewGame_IvyRightEye
 	ld de, MUSIC_ROUTE_24_GBS
 	call PlayMusic
+	
+	ld c, 255
+	call DelayFrames
 
-	ld c, 31
-	call FadeToWhite
+	; xor a
+	; ld [wCurPartySpecies], a
+	; ld a, POKEMON_PROF
+	; ld [wTrainerClass], a
+	; call Intro_PrepTrainerPic
 
-	xor a
-	ld [wCurPartySpecies], a
-	ld a, POKEMON_PROF
-	ld [wTrainerClass], a
-	call Intro_PrepTrainerPic
-
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
-	call GetSGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	; ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	; call GetSGBLayout
+	; call Intro_RotatePalettesLeftFrontpic
 
 	ld hl, IvySpeech1
 	call PrintText
@@ -642,6 +731,18 @@ OakSpeech:
 	call Intro_RotatePalettesLeftFrontpic
 	ld hl, IvySpeech7
 	call PrintText
+	ret
+	
+NewGame_IvyLeftEye:
+	depixel 13, 3
+	ld a, SPRITE_ANIM_OBJ_NEW_GAME_IVY_LEFT_EYE
+	call InitSpriteAnimStruct
+	ret
+
+NewGame_IvyRightEye:
+	depixel 16, 3
+	ld a, SPRITE_ANIM_OBJ_NEW_GAME_IVY_RIGHT_EYE
+	call InitSpriteAnimStruct
 	ret
 
 IvySpeech1:
@@ -1173,6 +1274,44 @@ DeleteSaveData:
 ResetClock:
 	farcall _ResetClock
 	jmp Init
+	
+NewGame_CopyMapTilesOrAttr:
+	debgcoord 0, 0
+.loop_tile_copy_2
+	push bc
+	ld c, 20
+.loop_tile_copy
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .loop_tile_copy
+	pop bc
+	push hl
+	ld hl, -20
+	add hl, bc
+	ld b, h
+	ld c, l
+	ld hl, BG_MAP_WIDTH - 20
+	add hl, de
+	ld d, h
+	ld e, l
+	pop hl
+	ld a, b
+	or c
+	jr nz, .loop_tile_copy_2
+	ret
+
+IvySpeechTilesTilemap:
+INCBIN "gfx/new_game/IvySpeechTiles.tilemap"
+IvySpeechTilesTilemapEnd:
+
+IvySpeechTilesAttrmap:
+INCBIN "gfx/new_game/IvySpeechTiles.attrmap"
+IvySpeechTilesAttrmapEnd:
+
+IvySpeechTilesPalettes:
+INCLUDE "gfx/new_game/IvySpeechTiles.pal"
 
 GameInit::
 	farcall TryLoadSaveData

@@ -1419,9 +1419,9 @@ endc
 
 _IvySpeech4::
 	text "This world is full"
-	line "mysterious crea-"
-	cont "tures that we call"
-	cont "#MON.@"
+	line "of mysterious"
+	cont "creatures that we"
+	cont "call #MON.@"
 	text_end
 
 _OakText3::

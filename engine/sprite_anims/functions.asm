@@ -66,6 +66,8 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_TitleMarillPressA
 	dw SpriteAnimFunc_TitleMarillTail
 	dw SpriteAnimFunc_TitleDragonite
+	dw SpriteAnimFunc_NewGameIvyLeftEye
+	dw SpriteAnimFunc_NewGameIvyRightEye
 	dw SpriteAnimFunc_PcCursor
 	dw SpriteAnimFunc_PcQuick
 	dw SpriteAnimFunc_PcMode
@@ -808,6 +810,8 @@ SpriteAnimFunc_GSIntroShellder:
 	call DeinitializeSprite
 	ret
 
+SpriteAnimFunc_NewGameIvyLeftEye:
+SpriteAnimFunc_NewGameIvyRightEye:
 SpriteAnimFunc_TitlePressA:
 	ld a, [wGlobalAnimYOffset]
 	ld hl, SPRITEANIMSTRUCT_YCOORD

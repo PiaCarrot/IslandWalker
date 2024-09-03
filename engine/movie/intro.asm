@@ -956,7 +956,6 @@ IntroScene8_1:
 	ld c, 31
 	call DelayFrames
 	ret
-	ret
 
 IntroScene8_2:
 ; Wait a sec, and then fade to RocketBallScene
