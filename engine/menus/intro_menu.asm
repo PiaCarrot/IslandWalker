@@ -543,7 +543,8 @@ OakSpeech:
 	ld c, 31
 	call FadeToWhite
 	call ClearTilemap
-	
+	farcall PlaySpriteAnimations
+	call DelayFrame
 	call DisableLCD
 	
 	ldh a, [rSVBK]
@@ -625,8 +626,7 @@ OakSpeech:
 	ld hl, rLCDC
 	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
 	call EnableLCD
-	
-	farcall PlaySpriteAnimations
+
 	ld hl, wLYOverrides
 	ld bc, wLYOverridesEnd - wLYOverrides
 	xor a
@@ -635,9 +635,12 @@ OakSpeech:
 	call NewGame_IvyRightEye
 	ld de, MUSIC_ROUTE_24_GBS
 	call PlayMusic
-	
-	ld c, 255
-	call DelayFrames
+.loop
+	farcall PlaySpriteAnimations
+	call GetJoypad
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jr z, .loop
 
 	; xor a
 	; ld [wCurPartySpecies], a
@@ -734,13 +737,13 @@ OakSpeech:
 	ret
 	
 NewGame_IvyLeftEye:
-	depixel 13, 3
+	depixel 5, 15
 	ld a, SPRITE_ANIM_OBJ_NEW_GAME_IVY_LEFT_EYE
 	call InitSpriteAnimStruct
 	ret
 
 NewGame_IvyRightEye:
-	depixel 16, 3
+	depixel 5, 18
 	ld a, SPRITE_ANIM_OBJ_NEW_GAME_IVY_RIGHT_EYE
 	call InitSpriteAnimStruct
 	ret
