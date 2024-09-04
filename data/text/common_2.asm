@@ -1391,7 +1391,12 @@ _MayRegisterItemText::
 	done
 
 _IvySpeech1::
-	text "Welcome to the"
+	text "Now that I have"
+	line "your attention, I"
+	cont "can continue with"
+	cont "my lecture…"
+	
+	para "Welcome to the"
 	line "wonderful world of"
 	cont "#MON!"
 
