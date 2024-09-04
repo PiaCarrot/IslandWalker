@@ -108,10 +108,10 @@ _OakTimeWokeUpText::
 	line "<……><……><……><……><……><……>"
 
 	para "Zzz… Hm? Wha…?"
-	line "You woke me up!"
+	line "Uh, I fell asleep…"
 
-	para "Will you check the"
-	line "clock for me?"
+	para "Let me check the"
+	line "clock…"
 	prompt
 
 _OakTimeWhatTimeIsItText::

@@ -60,6 +60,7 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_GSIntroChikoritaTotodile
 	dw SpriteAnimFunc_GSIntroCyndaquil
 	dw SpriteAnimFunc_TitlePressA
+	dw SpriteAnimFunc_NewGamePressA
 	dw SpriteAnimFunc_TitleLogoPalmLeft
 	dw SpriteAnimFunc_TitleLogoPalmRight
 	dw SpriteAnimFunc_TitleMarillWait
@@ -813,6 +814,7 @@ SpriteAnimFunc_GSIntroShellder:
 SpriteAnimFunc_NewGameIvyLeftEye:
 SpriteAnimFunc_NewGameIvyRightEye:
 SpriteAnimFunc_TitlePressA:
+SpriteAnimFunc_NewGamePressA:
 	ld a, [wGlobalAnimYOffset]
 	ld hl, SPRITEANIMSTRUCT_YCOORD
 	add hl, bc

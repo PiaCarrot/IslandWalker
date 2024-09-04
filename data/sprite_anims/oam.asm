@@ -52,6 +52,8 @@ SpriteAnimOAMData:
 	spriteanimoam $42, .OAMData_GSIntroStarter           ; SPRITE_ANIM_OAMSET_GS_INTRO_TOTODILE
 	spriteanimoam $cc, .OAMData_TitlePressA              ; SPRITE_ANIM_OAMSET_TITLE_PRESS_A_1
 	spriteanimoam $bc, .OAMData_TitlePressA              ; SPRITE_ANIM_OAMSET_TITLE_PRESS_A_2
+	spriteanimoam $10, .OAMData_NewGamePressA            ; SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_1
+	spriteanimoam $14, .OAMData_NewGamePressA            ; SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_2
 	spriteanimoam $d0, .OAMData_TitleLogoPalmLeft        ; SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_LEFT
 	spriteanimoam $d3, .OAMData_TitleLogoPalmRight       ; SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_RIGHT
 	spriteanimoam $b0, .OAMData_TitleMarillWait          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_WAIT_1
@@ -207,6 +209,13 @@ SpriteAnimOAMData:
     dbsprite 0, 0,  0,  -2, $01, 1
     dbsprite 1, 0,  0,  -2, $02, 1
     dbsprite 2, 0,  0,  -2, $03, 1
+
+.OAMData_NewGamePressA:
+    db 4
+    dbsprite -1, 0, 0,  -2, $00, 0
+    dbsprite 0, 0,  0,  -2, $01, 0
+    dbsprite 1, 0,  0,  -2, $02, 0
+    dbsprite 2, 0,  0,  -2, $03, 0
 
 .OAMData_TitleLogoPalmLeft:
 .OAMData_TitleLogoPalmRight:

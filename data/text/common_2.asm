@@ -1389,17 +1389,21 @@ _MayRegisterItemText::
 	para "registered for use"
 	line "on SELECT Button."
 	done
+	
+_IvySpeech0::
+	text "Five more minutes…"
+	line "<……><……><……><……><……><……>"
+	
+	para "Hey, it's time to"
+	line "wake up!"
+	prompt
 
 _IvySpeech1::
-	text "Finally awake,"
-	line "sleepyhead?"
-
-if !DEF(_DEBUG)
-	para "Welcome to the"
+	text "Welcome to the"
 	line "wonderful world of"
 	cont "#MON!"
 
-	para "It's me, PROFESSOR"
+	para "I am PROFESSOR"
 	line "IVY, a researcher"
 	cont "of #MON here on"
 	cont "VALENCIA ISLAND."
@@ -1414,7 +1418,6 @@ if !DEF(_DEBUG)
 	
 	para "You must still be"
 	line "half asleep…"
-endc
 	prompt
 
 _IvySpeech4::

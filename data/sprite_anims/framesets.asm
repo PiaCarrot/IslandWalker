@@ -80,6 +80,7 @@ SpriteAnimFrameData:
 	dw .Frameset_GSIntroCyndaquil
 	dw .Frameset_GSIntroTotodile
 	dw .Frameset_TitlePressA
+	dw .Frameset_NewGamePressA
 	dw .Frameset_TitleLogoPalmLeft
 	dw .Frameset_TitleLogoPalmRight
 	dw .Frameset_TitleMarillWait
@@ -491,6 +492,17 @@ SpriteAnimFrameData:
 .Frameset_TitlePressA:
 	oamframe SPRITE_ANIM_OAMSET_TITLE_PRESS_A_1,  16
 	oamframe SPRITE_ANIM_OAMSET_TITLE_PRESS_A_2,  16
+	dorestart
+
+.Frameset_NewGamePressA:
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_1,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_1,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_1,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_1,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_2,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_2,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_2,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_2,  56
 	dorestart
 
 .Frameset_TitleLogoPalmLeft:

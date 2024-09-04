@@ -540,6 +540,8 @@ Continue_DisplayGameTime:
 
 OakSpeech:
 	farcall InitClock
+	ld hl, IvySpeech0
+	call PrintText
 	ld c, 31
 	call FadeToWhite
 	call ClearTilemap
@@ -624,6 +626,7 @@ OakSpeech:
 
 	call NewGame_IvyLeftEye
 	call NewGame_IvyRightEye
+	call NewGame_InitPressA
 	ld de, MUSIC_ROUTE_24_GBS
 	call PlayMusic
 .loop
@@ -632,16 +635,21 @@ OakSpeech:
 	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jr z, .loop
+	
+	ld c, 15
+	call FadeToWhite
+	farcall ClearSpriteAnims
+	call ClearTilemap
 
-	; xor a
-	; ld [wCurPartySpecies], a
-	; ld a, POKEMON_PROF
-	; ld [wTrainerClass], a
-	; call Intro_PrepTrainerPic
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, POKEMON_PROF
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
 
-	; ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
-	; call GetSGBLayout
-	; call Intro_RotatePalettesLeftFrontpic
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_RotatePalettesLeftFrontpic
 
 	ld hl, IvySpeech1
 	call PrintText
@@ -738,6 +746,16 @@ NewGame_IvyRightEye:
 	ld a, SPRITE_ANIM_OBJ_NEW_GAME_IVY_RIGHT_EYE
 	call InitSpriteAnimStruct
 	ret
+	
+NewGame_InitPressA:
+	depixel 19, 03
+	ld a, SPRITE_ANIM_OBJ_NEW_GAME_PRESS_A
+	call InitSpriteAnimStruct
+	ret
+
+IvySpeech0:
+	text_far _IvySpeech0
+	text_end
 
 IvySpeech1:
 	text_far _IvySpeech1
