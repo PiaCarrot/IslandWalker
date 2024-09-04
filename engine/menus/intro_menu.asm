@@ -540,12 +540,9 @@ Continue_DisplayGameTime:
 
 OakSpeech:
 	farcall InitClock
-	ld hl, IvySpeech0
-	call PrintText
 	ld c, 31
 	call FadeToWhite
 	call ClearTilemap
-	farcall PlaySpriteAnimations
 	call DelayFrame
 	call DisableLCD
 	
@@ -635,10 +632,12 @@ OakSpeech:
 	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jr z, .loop
-	
+	ld de, SFX_READ_TEXT_2
+	call PlaySFX
 	ld c, 15
 	call FadeToWhite
 	farcall ClearSpriteAnims
+	call ClearSprites
 	call ClearTilemap
 
 	xor a
@@ -748,14 +747,10 @@ NewGame_IvyRightEye:
 	ret
 	
 NewGame_InitPressA:
-	depixel 19, 03
+	depixel 03, 03
 	ld a, SPRITE_ANIM_OBJ_NEW_GAME_PRESS_A
 	call InitSpriteAnimStruct
 	ret
-
-IvySpeech0:
-	text_far _IvySpeech0
-	text_end
 
 IvySpeech1:
 	text_far _IvySpeech1

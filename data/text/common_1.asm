@@ -141,24 +141,53 @@ _OakTimeMinutesQuestionMarkText::
 _OakTimeOversleptText::
 	text "!"
 	line "I overslept!"
+	cont "<……><……><……><……><……><……>"
+	cont "<……><……><……><……><……><……>"
+	
+	para "Five more minutes…"
+	line "<……><……><……><……><……><……>"
+	
+	para "Hey, it's time to"
+	line "wake up!"
 	done
 
 _OakTimeYikesText::
 	text "!"
 	line "Yikes! I over-"
 	cont "slept!"
+	cont "<……><……><……><……><……><……>"
+	
+	para "Five more minutes…"
+	line "<……><……><……><……><……><……>"
+	
+	para "Hey, it's time to"
+	line "wake up!"
 	done
 
 _OakTimeSoDarkText::
 	text "!"
 	line "No wonder it's so"
 	cont "dark!"
+	cont "<……><……><……><……><……><……>"
+	
+	para "Five more minutes…"
+	line "<……><……><……><……><……><……>"
+	
+	para "Hey, it's time to"
+	line "wake up!"
 	done
 
 _OakTimeNappedText::
 	text "!"
 	line "I napped for"
 	cont "too long!"
+	cont "<……><……><……><……><……><……>"
+	
+	para "Five more minutes…"
+	line "<……><……><……><……><……><……>"
+	
+	para "Hey, it's time to"
+	line "wake up!"
 	done
 
 _OakTimeWhatDayIsItText::

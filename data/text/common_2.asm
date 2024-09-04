@@ -1389,14 +1389,6 @@ _MayRegisterItemText::
 	para "registered for use"
 	line "on SELECT Button."
 	done
-	
-_IvySpeech0::
-	text "Five more minutes…"
-	line "<……><……><……><……><……><……>"
-	
-	para "Hey, it's time to"
-	line "wake up!"
-	prompt
 
 _IvySpeech1::
 	text "Welcome to the"

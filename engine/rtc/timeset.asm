@@ -50,7 +50,7 @@ endc
 	ld bc, wTimeSetBufferEnd - wTimeSetBuffer
 	xor a
 	rst ByteFill
-	ld a, 10 ; default hour = 10 AM
+	ld a, 12 ; default hour = 12 PM
 	ld [wInitHourBuffer], a
 
 .loop
