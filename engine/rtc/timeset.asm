@@ -120,6 +120,7 @@ endc
 	call WaitPressAorB_BlinkCursor
 	pop af
 	ldh [hInMenu], a
+	call SetDayOfWeek
 	ret
 
 .ClearScreen:
@@ -387,14 +388,14 @@ SetDayOfWeek:
 	call LoadStandardMenuHeader
 	ld hl, .OakTimeWhatDayIsItText
 	call PrintText
-	hlcoord 9, 3
+	hlcoord 9, 7
 	lb bc, 2, 9
 	call Textbox
-	hlcoord 14, 3
+	hlcoord 14, 7
 	ld [hl], TIMESET_UP_ARROW
-	hlcoord 14, 6
+	hlcoord 14, 10
 	ld [hl], TIMESET_DOWN_ARROW
-	hlcoord 10, 5
+	hlcoord 10, 9
 	call .PlaceWeekdayString
 	call ApplyTilemap
 	ld c, 10
@@ -415,6 +416,8 @@ SetDayOfWeek:
 	call LoadStandardFont
 	pop af
 	ldh [hInMenu], a
+	ld hl, .ConfirmOakDaySetText
+	call PrintText
 	ret
 
 .GetJoypadAction:
@@ -462,10 +465,10 @@ SetDayOfWeek:
 .finish_dpad
 	xor a
 	ldh [hBGMapMode], a
-	hlcoord 10, 4
+	hlcoord 10, 8
 	lb bc, 2, 9
 	call ClearBox
-	hlcoord 10, 5
+	hlcoord 10, 9
 	call .PlaceWeekdayString
 	call WaitBGMap
 	and a
@@ -506,6 +509,17 @@ SetDayOfWeek:
 
 .OakTimeWhatDayIsItText:
 	text_far _OakTimeWhatDayIsItText
+	text_end
+
+
+.ConfirmOakDaySetText:
+	text_asm
+	hlcoord 1, 14
+	ld hl, .OakDaySetText
+	ret
+	
+.OakDaySetText:
+	text_far _OakDaySetText
 	text_end
 
 .ConfirmWeekdayText:

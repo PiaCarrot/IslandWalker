@@ -25,8 +25,12 @@ _IvySpeech7::
 	cont "me."
 	
 	para "I'll tell you more"
-	line "when you reach my"
-	cont "lab."
+	line "after you get your"
+	cont "things at home."
+	
+	para "Come back to the"
+	line "lab when you're"
+	cont "ready!"
 
 	para "Off you go!"
 	done

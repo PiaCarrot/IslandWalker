@@ -618,15 +618,15 @@ SpriteAnimFrameData:
 	oamdelete
 
 .Frameset_GSIntroChikorita:
-	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_CHIKORITA, 24
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_CHIKORITA, 48
 	oamdelete
 
 .Frameset_GSIntroCyndaquil:
-	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_CYNDAQUIL, 24, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_CYNDAQUIL, 48, OAM_X_FLIP
 	oamdelete
 
 .Frameset_GSIntroTotodile:
-	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_TOTODILE, 24
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_TOTODILE, 48
 	oamdelete 
 
 .Frameset_PCCursor:

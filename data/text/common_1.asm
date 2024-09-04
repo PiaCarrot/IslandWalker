@@ -108,18 +108,19 @@ _OakTimeWokeUpText::
 	line "<……><……><……><……><……><……>"
 
 	para "Zzz… Hm? Wha…?"
-	line "Uh, I fell asleep…"
+	line "Uh, I dozed off…"
 
 	para "Let me check the"
 	line "clock…"
 	prompt
 
 _OakTimeWhatTimeIsItText::
-	text "What time is it?"
+	text "What time does it"
+	line "say? Let's see…"
 	done
 
 _OakTimeWhatHoursText::
-	text "What?@"
+	text "Eh?@"
 	text_end
 
 _OakTimeHoursQuestionMarkText::
@@ -141,53 +142,24 @@ _OakTimeMinutesQuestionMarkText::
 _OakTimeOversleptText::
 	text "!"
 	line "I overslept!"
-	cont "<……><……><……><……><……><……>"
-	cont "<……><……><……><……><……><……>"
-	
-	para "Five more minutes…"
-	line "<……><……><……><……><……><……>"
-	
-	para "Hey, it's time to"
-	line "wake up!"
 	done
 
 _OakTimeYikesText::
 	text "!"
 	line "Yikes! I over-"
 	cont "slept!"
-	cont "<……><……><……><……><……><……>"
-	
-	para "Five more minutes…"
-	line "<……><……><……><……><……><……>"
-	
-	para "Hey, it's time to"
-	line "wake up!"
 	done
 
 _OakTimeSoDarkText::
 	text "!"
 	line "No wonder it's so"
 	cont "dark!"
-	cont "<……><……><……><……><……><……>"
-	
-	para "Five more minutes…"
-	line "<……><……><……><……><……><……>"
-	
-	para "Hey, it's time to"
-	line "wake up!"
 	done
 
 _OakTimeNappedText::
 	text "!"
 	line "I napped for"
 	cont "too long!"
-	cont "<……><……><……><……><……><……>"
-	
-	para "Five more minutes…"
-	line "<……><……><……><……><……><……>"
-	
-	para "Hey, it's time to"
-	line "wake up!"
 	done
 
 _OakTimeWhatDayIsItText::
@@ -197,6 +169,17 @@ _OakTimeWhatDayIsItText::
 _OakTimeIsItText::
 	text ", is it?"
 	done
+	
+_OakDaySetText::
+	text "<……><……><……><……><……><……>"
+	line "<……><……><……><……><……><……>"
+	
+	para "Five more minutes…"
+	line "<……><……><……><……><……><……>"
+	
+	para "Hey, it's time to"
+	line "wake up!"
+	prompt
 
 _NothingToChooseText::
 	text "There's nothing to"

@@ -1413,7 +1413,6 @@ SpriteAnimFunc_GSIntroChikoritaTotodile:
 	ret nc
 
 	inc [hl]
-	inc [hl]
 	ld d, $90
 	farcall Sine
 
@@ -1424,7 +1423,6 @@ SpriteAnimFunc_GSIntroChikoritaTotodile:
 	ld hl, SPRITEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
-	inc [hl]
 	inc [hl]
 	ld d, $90
 	farcall Cosine
@@ -1459,7 +1457,6 @@ SpriteAnimFunc_GSIntroCyndaquil:
 	cp $3c
 	ret nc
 	inc [hl]
-	inc [hl]
 	ld d, $90
 	farcall Sine
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
@@ -1468,7 +1465,6 @@ SpriteAnimFunc_GSIntroCyndaquil:
 	ld hl, SPRITEANIMSTRUCT_VAR2
 	add hl, bc
 	ld a, [hl]
-	inc [hl]
 	inc [hl]
 	ld d, $90
 	farcall Cosine

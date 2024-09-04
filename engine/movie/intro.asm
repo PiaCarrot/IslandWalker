@@ -1280,6 +1280,8 @@ Intro_FlashMonPalette:
 	ret
 
 Intro_FlashSilhouette:
+	ld c, 100
+	call DelayFrames
 	lb de, %11111111, %11111111
 	call DmgToCgbObjPals
 	ld a, %00111111
@@ -1364,7 +1366,7 @@ endr
 ; db vtile offset, width, height; dwcoord x, y
 ; mouth closed
 	db $00, 8, 8
-	dwcoord 7, 2
+	dwcoord 6, 2
 
 Intro_DrawBackground:
 	ld b, BG_MAP_WIDTH / 2
