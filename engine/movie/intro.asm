@@ -1158,7 +1158,9 @@ IntroScene12:
 	inc [hl]
 	ld a, $80
 	ld [wIntroFrameCounter1], a
-	ld c, 175
+	ld c, 255
+	call DelayFrames
+	ld c, 200
 	call DelayFrames
 	ret
 
@@ -1280,7 +1282,7 @@ Intro_FlashMonPalette:
 	ret
 
 Intro_FlashSilhouette:
-	ld c, 100
+	ld c, 12
 	call DelayFrames
 	lb de, %11111111, %11111111
 	call DmgToCgbObjPals
