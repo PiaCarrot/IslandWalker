@@ -1131,7 +1131,6 @@ Mimic:
 	checkobedience
 	usedmovetext
 	doturn
-	checkhit
 	mimic
 	endmove
 
@@ -1289,7 +1288,6 @@ PainSplit:
 	checkobedience
 	usedmovetext
 	doturn
-	checkhit
 	painsplit
 	endmove
 
@@ -2073,4 +2071,25 @@ DefenseCurl:
 	raisesub
 	statupmessage
 	statupfailtext
+	endmove
+
+LowKick:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	lowkick
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
 	endmove

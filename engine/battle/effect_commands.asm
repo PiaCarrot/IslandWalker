@@ -2972,8 +2972,8 @@ HitSelfInConfusion:
 	dec hl
 	dec hl
 	ld a, [hli]
-	ld l, [hl]
 	ld h, a
+	ld l, [hl]
 	call TruncateHL_BC
 	ld d, 40
 	pop af
@@ -6848,3 +6848,5 @@ CheckMoveInList:
 	pop de
 	pop bc
 	ret
+
+INCLUDE "engine/battle/move_effects/low_kick.asm"

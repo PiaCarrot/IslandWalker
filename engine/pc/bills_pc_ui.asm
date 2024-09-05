@@ -725,7 +725,7 @@ WriteIconPaletteData:
 	push hl
 	push de
 	push bc
-	ld bc, wBufferMonDVs
+	ld bc, wBufferMonShiny
 	farcall CheckShininess
 	ld a, [wBufferMonAltSpecies]
 	ld c, a
@@ -999,7 +999,7 @@ _GetCursorMon:
 	; Prepare frontpic. Split into decompression + loading to make sure we
 	; refresh the pokepic and the palette in a single frame (decompression
 	; is unpredictable, but bpp copy can be relied upon).
-	ld hl, wBufferMonDVs
+	ld hl, wBufferMonIVs
 	predef GetUnownLetter
 	ld a, [wBufferMonAltSpecies]
 	ld [wCurPartySpecies], a
@@ -1095,7 +1095,7 @@ _GetCursorMon:
 	call FillBoxWithByte
 
 	; Colors
-	ld bc, wBufferMonDVs
+	ld bc, wBufferMonShiny
 	ld a, [wBufferMonAltSpecies]
 	farcall GetMonNormalOrShinyPalettePointer
 	ld de, wBillsPC_PokepicPal
@@ -1181,7 +1181,7 @@ _GetCursorMon:
 	; Shiny
 	push hl
 	push bc
-	ld bc, wBufferMonDVs
+	ld bc, wBufferMonShiny
 	farcall CheckShininess
 	pop bc
 	pop hl

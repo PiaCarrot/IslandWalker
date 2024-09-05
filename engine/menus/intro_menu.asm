@@ -146,6 +146,9 @@ _ResetWRAM:
 	ld hl, wNumBalls
 	call .InitList
 
+	ld hl, wNumBerries
+	call .InitList
+
 	ld hl, wNumPCItems
 	call .InitList
 
@@ -538,56 +541,103 @@ Continue_DisplayGameTime:
 OakSpeech:
 	farcall InitClock
 	ld c, 31
-	call FadeToBlack
+	call FadeToWhite
 	call ClearTilemap
+	call DelayFrame
+	call DisableLCD
+	
+; Turn BG Map update off
+	xor a
+	ldh [hBGMapMode], a
+	
+	ldh [hMapAnims], a
+	ldh [hSCY], a
+	ldh [hSCX], a
 
-	ld de, MUSIC_ROUTE_30
+	farcall ClearSpriteAnims
+	
+	ld a, 1
+	ldh [rVBK], a
+
+	ld hl, IvySpeechTilesGFX
+	ld de, vTiles2
+	ld a, BANK(IntroGFX)
+	call FarDecompress
+	
+; Back to VRAM bank 0
+	xor a
+	ldh [rVBK], a
+
+	ld hl, IvySpeechTilesGFX2
+	ld de, vTiles2 tile $10
+	ld a, BANK(IntroGFX)
+	call FarDecompress
+
+	ld hl, IvySpeechTilesGFX3
+	ld de, vTiles0
+	ld a, BANK(IntroGFX)
+	call FarDecompress
+
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	ld a, $0F
+	rst ByteFill
+
+	ld hl, IvySpeechTilesTilemap
+	ld bc, IvySpeechTilesTilemapEnd - IvySpeechTilesTilemap
+	call NewGame_CopyMapTilesOrAttr
+
+	ld hl, IvySpeechTilesPalettes
+	ld de, wBGPals1
+	ld bc, 7 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+
+	ld hl, IvySpeechTilesPalettes
+	ld de, wOBPals1
+	ld bc, 1 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	
+	ld a, [rVBK]
+	push af
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, IvySpeechTilesAttrmap
+	ld bc, IvySpeechTilesAttrmapEnd - IvySpeechTilesAttrmap
+	call NewGame_CopyMapTilesOrAttr
+	pop af
+	ldh [rVBK], a
+	
+	ld hl, wSpriteAnimDict
+	xor a ; SPRITE_ANIM_DICT_DEFAULT and tile offset $00
+	ld [hli], a
+	ld [hl], a
+	ld hl, rLCDC
+	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
+	call EnableLCD
+
+	call NewGame_IvyLeftEye
+	call NewGame_IvyRightEye
+	call NewGame_InitPressA
+	ld de, MUSIC_ROUTE_24_GBS
 	call PlayMusic
-
-	ld c, 31
-	call FadeToWhite
-
-	xor a
-	ld [wCurPartySpecies], a
-	ld a, POKEMON_PROF
-	ld [wTrainerClass], a
-	call Intro_PrepTrainerPic
-
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
-	call GetSGBLayout
-	call Intro_RotatePalettesLeftFrontpic
-
-	ld hl, OakText1
-	call PrintText
-if !DEF(_DEBUG)
+.loop
+	farcall PlaySpriteAnimations
+	call GetJoypad
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jr z, .loop
+	ld de, SFX_READ_TEXT_2
+	call PlaySFX
 	ld c, 15
 	call FadeToWhite
-	call ClearTilemap
-
-	ld hl, WOOPER
-	call GetPokemonIDFromIndex
-	ld [wCurSpecies], a
-	ld [wCurPartySpecies], a
-	call GetBaseData
-
-	hlcoord 6, 4
-	call PrepMonFrontpic
-
-	xor a
-	ld [wTempMonDVs], a
-	ld [wTempMonDVs + 1], a
-	ld [wTempMonDVs + 2], a
-
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
-	call GetSGBLayout
-	call Intro_RotatePalettesLeftFrontpic
-
-	ld hl, OakText2
-	call PrintText
-	ld hl, OakText4
-	call PrintText
-	ld c, 15
-	call FadeToWhite
+	farcall ClearSpriteAnims
+	call ClearSprites
 	call ClearTilemap
 
 	xor a
@@ -600,9 +650,12 @@ if !DEF(_DEBUG)
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, OakText5
+	ld hl, IvySpeech1
 	call PrintText
+
 ;	call RotateThreePalettesRight ; TODO check this
+	ld c, 15
+	call FadeToWhite
 	call ClearTilemap
 
 	xor a
@@ -612,45 +665,129 @@ if !DEF(_DEBUG)
 	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
-endc
-	ld hl, OakText6
+	ld hl, IvySpeech2
 	call PrintText
 	call NamePlayer
-	ld hl, OakText7
-	jmp PrintText
+	ld hl, IvySpeech3
+	call PrintText
+	
+	ld c, 15
+	call FadeToWhite
+	call ClearTilemap
 
-OakText1:
-	text_far _OakText1
+	ld hl, BUTTERFREE
+	call GetPokemonIDFromIndex
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	call GetBaseData
+
+	hlcoord 6, 4
+	call PrepMonFrontpic
+
+	xor a
+	ld [wTempMonIVs], a
+	ld [wTempMonIVs + 1], a
+	ld [wTempMonIVs + 2], a
+	ld [wTempMonIVs + 3], a
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+
+	ld hl, IvySpeech4
+	call PrintText
+	ld hl, IvySpeech5
+	call PrintText
+	ld c, 15
+	call FadeToWhite
+	call ClearTilemap
+
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, POKEMON_PROF
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+
+	ld hl, IvySpeech6
+	call PrintText
+;	call RotateThreePalettesRight ; TODO check this
+
+	ld c, 15
+	call FadeToWhite
+	call ClearTilemap
+
+	call LoadFontsExtra
+	call WaitBGMap
+
+	xor a
+	ld [wCurPartySpecies], a
+	farcall DrawIntroPlayerPic
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+	ld hl, IvySpeech7
+	call PrintText
+	ret
+	
+NewGame_IvyLeftEye:
+	depixel 5, 15
+	ld a, SPRITE_ANIM_OBJ_NEW_GAME_IVY_LEFT_EYE
+	call InitSpriteAnimStruct
+	ret
+
+NewGame_IvyRightEye:
+	depixel 5, 18
+	ld a, SPRITE_ANIM_OBJ_NEW_GAME_IVY_RIGHT_EYE
+	call InitSpriteAnimStruct
+	ret
+	
+NewGame_InitPressA:
+	depixel 03, 03
+	ld a, SPRITE_ANIM_OBJ_NEW_GAME_PRESS_A
+	call InitSpriteAnimStruct
+	ret
+
+IvySpeech1:
+	text_far _IvySpeech1
 	text_end
 
-OakText2:
-	text_far _OakText2
+IvySpeech2:
+	text_far _IvySpeech2
+	text_end
+
+OakText3:
+	text_far _OakText3
+	text_end
+
+IvySpeech3:
+	text_far _IvySpeech3
+	text_end
+
+IvySpeech4:
+	text_far _IvySpeech4
 	text_asm
-	ld hl, WOOPER
+	ld hl, BUTTERFREE
 	call GetPokemonIDFromIndex
 	call PlayMonCry
 	call WaitSFX
 	ld hl, OakText3
 	ret
 
-OakText3:
-	text_far _OakText3
+IvySpeech5:
+	text_far _IvySpeech5
 	text_end
 
-OakText4:
-	text_far _OakText4
+IvySpeech6:
+	text_far _IvySpeech6
 	text_end
 
-OakText5:
-	text_far _OakText5
-	text_end
-
-OakText6:
-	text_far _OakText6
-	text_end
-
-OakText7:
-	text_far _OakText7
+IvySpeech7:
+	text_far _IvySpeech7
 	text_end
 
 NamePlayer:
@@ -693,9 +830,9 @@ NamePlayer:
 	jmp InitName
 
 .Chris:
-	db "CHRIS@@@@@@"
+	db "INDIGO@@@@@"
 .Kris:
-	db "KRIS@@@@@@@"
+	db "ORANGE@@@@@"
 
 StorePlayerName:
 	ld a, "@"
@@ -866,7 +1003,7 @@ DEF NUM_TITLESCREENOPTIONS EQU const_value
 IntroSequence:
 	farcall SplashScreen
 	jr c, StartTitleScreen
-	farcall CrystalIntro
+	farcall GoldSilverIntro
 
 	; fallthrough
 
@@ -935,7 +1072,7 @@ RunTitleScreen:
 	bit 7, a
 	jr nz, .done_title
 	call TitleScreenScene
-	farcall SuicuneFrameIterator
+	farcall PlaySpriteAnimations
 	call DelayFrame
 	and a
 	ret
@@ -964,49 +1101,49 @@ TitleScreenScene:
 TitleScreenEntrance:
 ; Animate the logo:
 ; Move each line by 4 pixels until our count hits 0.
-	ldh a, [hSCX]
-	and a
-	jr z, .done
-	sub 4
-	ldh [hSCX], a
+	; ldh a, [hSCX]
+	; and a
+	; jr z, .done
+	; sub 4
+	; ldh [hSCX], a
 
 ; Lay out a base (all lines scrolling together).
-	ld e, a
-	ld hl, wLYOverrides
-	ld bc, 8 * 10 ; logo height
-	rst ByteFill
+	; ld e, a
+	; ld hl, wLYOverrides
+	; ld bc, 8 * 10 ; logo height
+	; rst ByteFill
 
 ; Reversed signage for every other line's position.
 ; This is responsible for the interlaced effect.
-	ld a, e
-	cpl
-	inc a
+	; ld a, e
+	; cpl
+	; inc a
 
-	ld b, 8 * 10 / 2 ; logo height / 2
-	ld hl, wLYOverrides + 1
-.loop
-	ld [hli], a
-	inc hl
-	dec b
-	jr nz, .loop
+	; ld b, 8 * 10 / 2 ; logo height / 2
+	; ld hl, wLYOverrides + 1
+; .loop
+	; ld [hli], a
+	; inc hl
+	; dec b
+	; jr nz, .loop
 
-	farjp AnimateTitleCrystal
+	; farjp AnimateTitleCrystal
 
-.done
+; .done
 ; Next scene
 	ld hl, wJumptableIndex
 	inc [hl]
-	ld hl, rIE
-	res LCD_STAT, [hl]
-	xor a
-	ldh [hLCDCPointer], a
+	; ld hl, rIE
+	; res LCD_STAT, [hl]
+	; xor a
+	; ldh [hLCDCPointer], a
 
 ; Play the title screen music.
 	ld de, MUSIC_TITLE
 	call PlayMusic
 
-	ld a, $88
-	ldh [hWY], a
+	; ld a, $88
+	; ldh [hWY], a
 	ret
 
 TitleScreenTimer:
@@ -1077,10 +1214,11 @@ TitleScreenMain:
 ; Press Start or A to start the game.
 .check_start
 	ld a, [hl]
-	and START | A_BUTTON
+	and A_BUTTON
 	ret z
-	ld a, TITLESCREENOPTION_MAIN_MENU
-	jr .done
+	farcall _TitleScreenPressedA
+	ret
+
 
 .delete_save_data
 	ld a, TITLESCREENOPTION_DELETE_SAVE_DATA
@@ -1143,32 +1281,44 @@ DeleteSaveData:
 ResetClock:
 	farcall _ResetClock
 	jmp Init
+	
+NewGame_CopyMapTilesOrAttr:
+	debgcoord 0, 0
+.loop_tile_copy_2
+	push bc
+	ld c, 20
+.loop_tile_copy
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .loop_tile_copy
+	pop bc
+	push hl
+	ld hl, -20
+	add hl, bc
+	ld b, h
+	ld c, l
+	ld hl, BG_MAP_WIDTH - 20
+	add hl, de
+	ld d, h
+	ld e, l
+	pop hl
+	ld a, b
+	or c
+	jr nz, .loop_tile_copy_2
+	ret
 
-Copyright:
-	call ClearTilemap
-	call LoadFontsExtra
-	ld de, CopyrightGFX
-	ld hl, vTiles2 tile $60
-	lb bc, BANK(CopyrightGFX), 29
-	call Request2bpp
-	hlcoord 2, 7
-	ld de, CopyrightString
-	jmp PlaceString
+IvySpeechTilesTilemap:
+INCBIN "gfx/new_game/IvySpeechTiles.tilemap"
+IvySpeechTilesTilemapEnd:
 
-CopyrightString:
-	; ©1995-2001 Nintendo
-	db   $60, $61, $62, $63, $64, $65, $66
-	db   $67, $68, $69, $6a, $6b, $6c
+IvySpeechTilesAttrmap:
+INCBIN "gfx/new_game/IvySpeechTiles.attrmap"
+IvySpeechTilesAttrmapEnd:
 
-	; ©1995-2001 Creatures inc.
-	next $60, $61, $62, $63, $64, $65, $66
-	db   $6d, $6e, $6f, $70, $71, $72, $7a, $7b, $7c
-
-	; ©1995-2001 GAME FREAK inc.
-	next $60, $61, $62, $63, $64, $65, $66
-	db   $73, $74, $75, $76, $77, $78, $79, $7a, $7b, $7c
-
-	db "@"
+IvySpeechTilesPalettes:
+INCLUDE "gfx/new_game/IvySpeechTiles.pal"
 
 GameInit::
 	farcall TryLoadSaveData

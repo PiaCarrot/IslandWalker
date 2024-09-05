@@ -108,18 +108,19 @@ _OakTimeWokeUpText::
 	line "<……><……><……><……><……><……>"
 
 	para "Zzz… Hm? Wha…?"
-	line "You woke me up!"
+	line "Uh, I dozed off…"
 
-	para "Will you check the"
-	line "clock for me?"
+	para "Let me check the"
+	line "clock…"
 	prompt
 
 _OakTimeWhatTimeIsItText::
-	text "What time is it?"
+	text "What time does it"
+	line "say? Let's see…"
 	done
 
 _OakTimeWhatHoursText::
-	text "What?@"
+	text "Eh?@"
 	text_end
 
 _OakTimeHoursQuestionMarkText::
@@ -168,6 +169,17 @@ _OakTimeWhatDayIsItText::
 _OakTimeIsItText::
 	text ", is it?"
 	done
+	
+_OakDaySetText::
+	text "<……><……><……><……><……><……>"
+	line "<……><……><……><……><……><……>"
+	
+	para "Five more minutes…"
+	line "<……><……><……><……><……><……>"
+	
+	para "Hey, it's time to"
+	line "wake up!"
+	prompt
 
 _NothingToChooseText::
 	text "There's nothing to"

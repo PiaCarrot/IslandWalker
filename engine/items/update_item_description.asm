@@ -16,6 +16,12 @@ UpdateItemBallDescription:
 	ld l, a
 	jr UpdateDescription16bit
 
+UpdateItemBerryDescription:
+	ld a, [wMenuSelection]
+	ld h, HIGH(FIRST_BERRY_ITEM)
+	ld l, a
+	jr UpdateDescription16bit
+
 UpdateKeyItemDescription:
 	ld a, [wMenuSelection]
 	ld h, HIGH(FIRST_KEY_ITEM)

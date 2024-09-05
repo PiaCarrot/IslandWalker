@@ -245,14 +245,14 @@ _CGB_StatsScreenHPPals:
 	add hl, bc
 	call LoadPalette_White_Col1_Col2_Black ; hp palette
 	ld a, [wCurPartySpecies]
-	ld bc, wTempMonDVs
+	ld bc, wTempMonShiny
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_White_Col1_Col2_Black ; mon palette
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; exp palette
 	ld hl, StatsScreenPagePals
 	ld de, wBGPals1 palette 3
-	ld bc, 3 palettes ; pink, green, and blue page palettes
+	ld bc, 4 palettes ; pink, green, blue, and orange page palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	call WipeAttrmap
@@ -267,19 +267,24 @@ _CGB_StatsScreenHPPals:
 	ld a, $2 ; exp palette
 	rst ByteFill
 
-	hlcoord 13, 5, wAttrmap
+	hlcoord 11, 5, wAttrmap
 	lb bc, 2, 2
 	ld a, $3 ; pink page palette
 	call FillBoxCGB
 
-	hlcoord 15, 5, wAttrmap
+	hlcoord 13, 5, wAttrmap
 	lb bc, 2, 2
 	ld a, $4 ; green page palette
 	call FillBoxCGB
 
-	hlcoord 17, 5, wAttrmap
+	hlcoord 15, 5, wAttrmap
 	lb bc, 2, 2
 	ld a, $5 ; blue page palette
+	call FillBoxCGB
+
+	hlcoord 17, 5, wAttrmap
+	lb bc, 2, 2
+	ld a, $6 ; orange page palette
 	call FillBoxCGB
 
 	call ApplyAttrmap
@@ -395,7 +400,7 @@ BillsPC_PreviewTheme:
 	farjp BillsPC_SetPals
 
 .GetMonPalette:
-	ld bc, wTempMonDVs
+	ld bc, wTempMonShiny
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 .GotPalette:
@@ -523,7 +528,7 @@ _CGB_GSIntro:
 	call LoadHLPaletteIntoDE
 	ld hl, .ShellderLaprasOBPals
 	ld de, wOBPals1
-	ld bc, 2 palettes
+	ld bc, 8 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 	jmp WipeAttrmap
@@ -553,7 +558,17 @@ INCLUDE "gfx/intro/gs_shellder_lapras_ob.pal"
 	ld a, PREDEFPAL_GS_INTRO_STARTERS_TRANSITION
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
-	jmp WipeAttrmap
+	ld hl, GSBallPal
+	ld de, wBGPals1
+	ld bc, 1 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	call ApplyPals
+	call WipeAttrmap
+	jmp ApplyAttrmap
+	
+GSBallPal:
+INCLUDE "gfx/intro/gsball.pal"
 
 _CGB_BetaPoker:
 	ld hl, BetaPokerPals
@@ -602,7 +617,7 @@ _CGB_Evolution:
 	jr .got_palette
 
 .pokemon
-	ld hl, wPartyMon1DVs
+	ld hl, wPartyMon1Shiny
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [wCurPartyMon]
 	rst AddNTimes
@@ -1043,7 +1058,7 @@ INCLUDE "gfx/splash/ditto.pal"
 _CGB_PlayerOrMonFrontpicPals:
 	ld de, wBGPals1
 	ld a, [wCurPartySpecies]
-	ld bc, wTempMonDVs
+	ld bc, wTempMonShiny
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	call WipeAttrmap
@@ -1075,7 +1090,7 @@ _CGB_TradeTube:
 _CGB_TrainerOrMonFrontpicPals:
 	ld de, wBGPals1
 	ld a, [wCurPartySpecies]
-	ld bc, wTempMonDVs
+	ld bc, wTempMonShiny
 	call GetFrontpicPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	call WipeAttrmap

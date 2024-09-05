@@ -1076,8 +1076,8 @@ CardFlip_CheckWinCondition:
 .AddCoinPlaySFX:
 	ld hl, wCoins
 	ld a, [hli]
-	ld l, [hl]
 	ld h, a
+	ld l, [hl]
 	inc hl
 	ld a, h
 	ld [wCoins], a

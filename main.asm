@@ -116,7 +116,7 @@ INCLUDE "engine/menus/trainer_card.asm"
 INCLUDE "engine/events/prof_oaks_pc.asm"
 INCLUDE "engine/overworld/decorations.asm"
 INCLUDE "engine/pokemon/level_up_happiness.asm"
-INCLUDE "engine/battle/read_trainer_dvs.asm"
+INCLUDE "engine/battle/read_trainer_ivs.asm"
 INCLUDE "engine/battle/returntobattle_useball.asm"
 INCLUDE "engine/battle/consume_held_item.asm"
 INCLUDE "data/moves/effects.asm"
@@ -238,6 +238,7 @@ INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/names.asm"
+INCLUDE "engine/pokemon/natures.asm"
 
 
 SECTION "Crystal Phone Text", ROMX
@@ -447,12 +448,12 @@ INCLUDE "engine/events/print_unown_2.asm"
 INCLUDE "engine/games/card_flip.asm"
 INCLUDE "engine/games/unown_puzzle.asm"
 INCLUDE "engine/games/memory_game.asm"
+INCLUDE "engine/movie/splash.asm"
 
 
 SECTION "bank39", ROMX
 
 INCLUDE "engine/menus/options_menu.asm"
-INCLUDE "engine/movie/splash.asm"
 INCLUDE "engine/movie/intro.asm"
 
 
@@ -678,9 +679,22 @@ INCLUDE "engine/gfx/sprite_palettes.asm"
 INCLUDE "engine/gfx/dynamic_pals.asm"
 
 
+SECTION "Abilities", ROMX
+
+INCLUDE "engine/abilities/ability_prints.asm"
+
 SECTION "Fade System", ROMX
 
 INCLUDE "engine/gfx/fade.asm"
+
+
+SECTION "Pokemon Body Data", ROMX
+
+INCLUDE "data/pokemon/body_data.asm"
+
+SECTION "Intro GFX", ROMX
+
+INCLUDE "gfx/intro/intro_gfx.asm"
 
 
 SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]

@@ -53,19 +53,42 @@ SpriteAnimFrameData:
 	dw .Frameset_MobileTradeSentPulse
 	dw .Frameset_MobileTradeOTPulse
 	dw .Frameset_MobileTradePing
-	dw .Frameset_IntroSuicune
-	dw .Frameset_IntroSuicune2
-	dw .Frameset_IntroPichu
-	dw .Frameset_IntroWooper
-	dw .Frameset_IntroUnown1
-	dw .Frameset_IntroUnown2
-	dw .Frameset_IntroUnown3
-	dw .Frameset_IntroUnown4
-	dw .Frameset_IntroUnownF2
-	dw .Frameset_IntroSuicuneAway
-	dw .Frameset_IntroUnownF
+	dw .Frameset_GSIntroBubble
+	dw .Frameset_GSIntroShellder
+	dw .Frameset_GSIntroShellderEyes
+	dw .Frameset_GSIntroMagikarp
+	dw .Frameset_GSIntroMagikarpStripes
+	dw .Frameset_GSIntroMagikarpMask
+	dw .Frameset_GSIntroMagikarpSaucy
+	dw .Frameset_GSIntroMagikarpShiny
+	dw .Frameset_GSIntroLuvdisc
+	dw .Frameset_GSIntroLapras
+	dw .Frameset_GSIntroWingull
+	dw .Frameset_GSIntroNote
+	dw .Frameset_GSIntroInvisibleNote
+	dw .Frameset_GSIntroJigglypuff
+	dw .Frameset_GSIntroJigglypuff2
+	dw .Frameset_GSIntroPikachu
+	dw .Frameset_GSIntroPikachu2
 	dw .Frameset_CelebiLeft
 	dw .Frameset_CelebiRight
+	dw .Frameset_GSIntroPikachu3
+	dw .Frameset_GSIntroPikachuTail
+	dw .Frameset_GSIntroPikachuTail2
+	dw .Frameset_GSIntroFireball
+	dw .Frameset_GSIntroChikorita
+	dw .Frameset_GSIntroCyndaquil
+	dw .Frameset_GSIntroTotodile
+	dw .Frameset_TitlePressA
+	dw .Frameset_NewGamePressA
+	dw .Frameset_TitleLogoPalmLeft
+	dw .Frameset_TitleLogoPalmRight
+	dw .Frameset_TitleMarillWait
+	dw .Frameset_TitleMarillPressA
+	dw .Frameset_TitleMarillTail
+	dw .Frameset_TitleDragonite
+	dw .Frameset_NewGameIvyLeftEye
+	dw .Frameset_NewGameIvyRightEye
 	dw .Frameset_PCCursor
 	dw .Frameset_PCCursorItem
 	dw .Frameset_PCQuick
@@ -381,67 +404,187 @@ SpriteAnimFrameData:
 	oamframe SPRITE_ANIM_OAMSET_MOBILE_TRADE_PING_3,  2
 	oamdelete
 
-.Frameset_IntroSuicune:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_1,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_2,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_3,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_4,  3
-	oamrestart
+.Frameset_GSIntroBubble:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_BUBBLE_1,  8
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_BUBBLE_2,  8
+	dorestart
 
-.Frameset_IntroSuicune2:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_4,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_1,  7
-	oamend
+.Frameset_GSIntroShellder:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_1,  8
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2,  8
+	dorestart
 
-.Frameset_IntroPichu:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_PICHU_1, 32
-	oamframe SPRITE_ANIM_OAMSET_INTRO_PICHU_2,  7
-	oamframe SPRITE_ANIM_OAMSET_INTRO_PICHU_3,  7
-	oamend
+.Frameset_TitleMarillWait:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_WAIT_1,  32
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_1,  32
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_WAIT_2,  32
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_1,  32
+	dorestart
 
-.Frameset_IntroWooper:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_WOOPER,  3
-	oamend
+.Frameset_TitleMarillPressA:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_1,  32
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_2,  32
+	dorestart
+	
+.Frameset_NewGameIvyLeftEye:
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_2, 24
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_3, 24
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_4, 24
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_3, 24
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_2, 24
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_LEFT_EYE_1, 56
+	dorestart
+	
 
-.Frameset_IntroUnown1:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_1,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_2,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_3,  7
-	oamdelete
+.Frameset_NewGameIvyRightEye:
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_2, 24
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_3, 24
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_4, 24
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_3, 24
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_2, 24
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_RIGHT_EYE_1, 56
+	dorestart
 
-.Frameset_IntroUnown2:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_1,  3, OAM_X_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_2,  3, OAM_X_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_3,  7, OAM_X_FLIP
-	oamdelete
+.Frameset_TitleMarillTail:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_1,  32
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_2,  32
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_3,  24
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_2,  32
+	oamframe SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_1,  32
+	endanim
 
-.Frameset_IntroUnown3:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_1,  3, OAM_Y_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_2,  3, OAM_Y_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_3,  7, OAM_Y_FLIP
-	oamdelete
+.Frameset_GSIntroShellderEyes:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_EYES_1,  8
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_EYES_2,  8
+	dorestart
 
-.Frameset_IntroUnown4:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_1,  3, OAM_X_FLIP, OAM_Y_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_2,  3, OAM_X_FLIP, OAM_Y_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_3,  7, OAM_X_FLIP, OAM_Y_FLIP
-	oamdelete
+.Frameset_GSIntroWingull:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_WINGULL_1,  8
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_WINGULL_2,  8
+	dorestart
 
-.Frameset_IntroUnownF2:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_1,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_2,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_3,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_4,  7
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_5,  7
-	oamend
+.Frameset_TitlePressA:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_PRESS_A_1,  16
+	oamframe SPRITE_ANIM_OAMSET_TITLE_PRESS_A_2,  16
+	dorestart
 
-.Frameset_IntroSuicuneAway:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_AWAY,  3
-	oamend
+.Frameset_NewGamePressA:
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_1,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_1,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_1,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_1,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_2,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_2,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_2,  56
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_2,  56
+	dorestart
 
-.Frameset_IntroUnownF:
-	oamwait 0
-	oamend
+.Frameset_TitleLogoPalmLeft:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_LEFT,  32
+	dorestart
+
+.Frameset_TitleLogoPalmRight:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_RIGHT,  32
+	dorestart
+
+.Frameset_TitleDragonite:
+	oamframe SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_1,  12
+	oamframe SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_2,  12
+	oamframe SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_1,  12
+	oamframe SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_3,  12
+	dorestart
+
+.Frameset_GSIntroMagikarp:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_1,  1, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_2,  1, OAM_X_FLIP
+	dorestart
+
+.Frameset_GSIntroMagikarpStripes:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_STRIPES_1,  1, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_STRIPES_2,  1, OAM_X_FLIP
+	dorestart
+
+.Frameset_GSIntroMagikarpMask:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_MASK_1,  1, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_MASK_2,  1, OAM_X_FLIP
+	dorestart
+
+.Frameset_GSIntroMagikarpSaucy:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SAUCY_1,  1, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SAUCY_2,  1, OAM_X_FLIP
+	dorestart
+
+.Frameset_GSIntroMagikarpShiny:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SHINY_1,  1, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SHINY_2,  1, OAM_X_FLIP
+	dorestart
+
+.Frameset_GSIntroLuvdisc:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LUVDISC_1,  8, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LUVDISC_2,  8, OAM_X_FLIP
+	dorestart
+
+.Frameset_GSIntroLapras:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_1,  7
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_2,  7
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_3,  7
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_1,  7
+	dorestart
+
+.Frameset_GSIntroNote:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_NOTE,  8
+	endanim
+
+.Frameset_GSIntroInvisibleNote:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_INVISIBLE_NOTE,  8
+	endanim
+
+.Frameset_GSIntroJigglypuff:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_1, 25, OAM_X_FLIP
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_3,  9
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_1, 25
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_3,  9
+	dorestart
+
+.Frameset_GSIntroJigglypuff2:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_2, 32
+	endanim
+
+.Frameset_GSIntroPikachu:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_1,  4
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_2,  5
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_4,  4
+	dorestart
+
+.Frameset_GSIntroPikachu2:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_2,  8
+	endanim
 
 .Frameset_CelebiLeft:
 	oamframe SPRITE_ANIM_OAMSET_CELEBI_1,  8
@@ -452,6 +595,39 @@ SpriteAnimFrameData:
 	oamframe SPRITE_ANIM_OAMSET_CELEBI_1,  8, OAM_X_FLIP
 	oamframe SPRITE_ANIM_OAMSET_CELEBI_2,  8, OAM_X_FLIP
 	oamend
+
+.Frameset_GSIntroPikachu3:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_3, 32
+	endanim
+
+.Frameset_GSIntroPikachuTail:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_TAIL_1,  3
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_TAIL_2,  3
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_TAIL_3,  3
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_TAIL_2,  3
+	dorestart
+
+.Frameset_GSIntroPikachuTail2:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_PIKACHU_TAIL_1, 31
+	endanim
+
+.Frameset_GSIntroFireball:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_SMALL_FIREBALL,  1
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_MED_FIREBALL,  1
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_BIG_FIREBALL,  1
+	oamdelete
+
+.Frameset_GSIntroChikorita:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_CHIKORITA, 32
+	oamdelete
+
+.Frameset_GSIntroCyndaquil:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_CYNDAQUIL, 32, OAM_X_FLIP
+	oamdelete
+
+.Frameset_GSIntroTotodile:
+	oamframe SPRITE_ANIM_OAMSET_GS_INTRO_TOTODILE, 32
+	oamdelete 
 
 .Frameset_PCCursor:
 	oamframe SPRITE_ANIM_OAMSET_PC_CURSOR, 32

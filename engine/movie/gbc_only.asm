@@ -27,6 +27,12 @@ GBCOnlyScreen:
 	ld hl, vTiles1
 	lb bc, BANK(Font), $80
 	call Get1bpp
+	
+	ld b, SCGB_GAMEFREAK_LOGO
+	call GetSGBLayout
+	call SetDefaultBGPAndOBP
+	ld c, 10
+	call DelayFrames
 
 	call DrawGBCOnlyScreen
 

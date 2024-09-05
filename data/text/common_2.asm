@@ -492,6 +492,40 @@ _WhitedOutText::
 	line "out!"
 	done
 
+_WhitedOutToWildMonText::
+	text "<PLAYER> is out of"
+	line "useable #MON!"
+
+	para "<PLAYER> panicked"
+	line "and dropped"
+	cont "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text "…"
+
+	para "<……><……><……>"
+	line "<……><……><……>"
+
+	para "<PLAYER> whited"
+	line "out!"
+	done
+
+_WhitedOutToTrainerText::
+	text "<PLAYER> is out of"
+	line "useable #MON!"
+
+	para "<PLAYER> paid"
+	line "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text " to the"
+	cont "winner…"
+
+	para "<……><……><……>"
+	line "<……><……><……>"
+
+	para "<PLAYER> whited"
+	line "out!"
+	done
+
 _ItemfinderItemNearbyText::
 	text "Yes! ITEMFINDER"
 	line "indicates there's"
@@ -1356,53 +1390,62 @@ _MayRegisterItemText::
 	line "on SELECT Button."
 	done
 
-_OakText1::
-	text "Hello! Sorry to"
-	line "keep you waiting!"
-
-if !DEF(_DEBUG)
+_IvySpeech1::
+	text "Now that I have"
+	line "your attention, I"
+	cont "can continue with"
+	cont "my lecture…"
+	
 	para "Welcome to the"
-	line "world of #MON!"
+	line "wonderful world of"
+	cont "#MON!"
 
-	para "My name is OAK."
+	para "I am PROFESSOR"
+	line "IVY, a researcher"
+	cont "of #MON here on"
+	cont "VALENCIA ISLAND."
 
-	para "People call me the"
-	line "#MON PROF."
-endc
+	para "Today is the day"
+	line "you set off on"
+	cont "your journey to be"
+	cont "a #MON TRAINER!"
+	
+	para "What are #MON,"
+	line "you ask?"
+	
+	para "You must still be"
+	line "half asleep…"
 	prompt
 
-_OakText2::
-	text "This world is in-"
-	line "habited by crea-"
-	cont "tures that we call"
-	cont "#MON.@"
+_IvySpeech4::
+	text "This world is full"
+	line "of mysterious"
+	cont "creatures that we"
+	cont "call #MON.@"
 	text_end
 
 _OakText3::
 	text_promptbutton
 	text_end
 
-_OakText4::
-	text "People and #MON"
-	line "live together by"
+_IvySpeech5::
+	text "#MON live by"
+	line "our side, and we"
+	cont "utilize them in"
+	cont "many ways."
 
-	para "supporting each"
-	line "other."
-
-	para "Some people play"
-	line "with #MON, some"
-	cont "battle with them."
+	para "Some work with"
+	line "them to accomplish"
+	cont "great feats, and"
+	cont "many battle with"
+	cont "them."
 	prompt
 
-_OakText5::
-	text "But we don't know"
-	line "everything about"
-	cont "#MON yet."
-
-	para "There are still"
-	line "many mysteries to"
-	cont "solve."
-
-	para "That's why I study"
-	line "#MON every day."
+_IvySpeech6::
+	text "There is still so"
+	line "much that we don't"
+	cont "know about them,"
+	cont "but they hold the"
+	cont "answers to all of"
+	cont "life's questions."
 	prompt

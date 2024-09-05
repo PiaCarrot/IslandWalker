@@ -105,6 +105,12 @@
 	const MUSIC_SUICUNE_BATTLE               ; 64
 	const MUSIC_BATTLE_TOWER_LOBBY           ; 65
 	const MUSIC_MOBILE_CENTER                ; 66
+; RBY
+	const MUSIC_INTRO_BATTLE
+; Title
+	const MUSIC_GET_BADGE
+; ORANGE
+	const MUSIC_ROUTE_24_GBS
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

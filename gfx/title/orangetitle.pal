@@ -1,0 +1,25 @@
+; palette 0
+	RGB 15, 24, 31
+	RGB 16, 19, 07
+	RGB 11, 17, 18
+	RGB 09, 14, 02
+; palette 1
+	RGB 31, 31, 31
+	RGB 22, 29, 31
+	RGB 15, 24, 31
+	RGB 11, 20, 27
+; palette 2 logo
+	RGB 15, 24, 31
+	RGB 26, 19, 00
+	RGB 31, 26, 01
+	RGB 01, 02, 25
+; palette 3 version text
+	RGB 31, 31, 31
+	RGB 31, 21, 01
+	RGB 21, 11, 02
+	RGB 15, 24, 31
+; palette 4 odd bits of overlap on logo
+	RGB 15, 24, 31
+	RGB 31, 26, 01
+	RGB 21, 11, 02
+	RGB 01, 02, 25

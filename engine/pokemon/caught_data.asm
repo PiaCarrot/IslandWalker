@@ -73,11 +73,7 @@ CheckPartyFullAfterContest:
 	dec a
 	ld hl, wPartyMon1CaughtLocation
 	call GetPartyLocation
-	ld a, [hl]
-	and CAUGHT_GENDER_MASK
-	ld b, LANDMARK_NATIONAL_PARK
-	or b
-	ld [hl], a
+	ld [hl], LANDMARK_NATIONAL_PARK
 	xor a
 	ld [wContestMonSpecies], a
 	and a ; BUGCONTEST_CAUGHT_MON
@@ -128,11 +124,7 @@ CheckPartyFullAfterContest:
 	ld [wCurPartyLevel], a
 	call SetBoxMonCaughtData
 	ld hl, wBufferMonCaughtLocation
-	ld a, [hl]
-	and CAUGHT_GENDER_MASK
-	ld b, LANDMARK_NATIONAL_PARK
-	or b
-	ld [hl], a
+	ld [hl], LANDMARK_NATIONAL_PARK
 	farcall UpdateStorageBoxMonFromTemp
 	xor a
 	ld [wContestMon], a
@@ -157,7 +149,7 @@ CaughtAskNicknameText:
 SetCaughtData:
 	ld a, [wPartyCount]
 	dec a
-	ld hl, wPartyMon1CaughtLevel
+	ld hl, wPartyMon1CaughtData
 	call GetPartyLocation
 SetBoxmonOrEggmonCaughtData:
 	ld a, [wTimeOfDay]
@@ -165,6 +157,17 @@ SetBoxmonOrEggmonCaughtData:
 	rrca
 	rrca
 	and CAUGHT_TIME_MASK
+	ld b, a
+	ld a, [wCurItem]
+	push hl
+	call GetItemIndexFromID
+	ld a, l
+	pop hl
+	inc a
+	or b
+	ld [hli], a
+	ld a, [wPlayerGender]
+	rrca ; shift bit 0 (PLAYERGENDER_FEMALE_F) to bit 7 (CAUGHT_GENDER_MASK)
 	ld b, a
 	ld a, [wCurPartyLevel]
 	or b
@@ -186,10 +189,6 @@ SetBoxmonOrEggmonCaughtData:
 
 .NotPokecenter2F:
 	call GetWorldMapLocation
-	ld b, a
-	ld a, [wPlayerGender]
-	rrca ; shift bit 0 (PLAYERGENDER_FEMALE_F) to bit 7 (CAUGHT_GENDER_MASK)
-	or b
 	ld [hl], a
 	ret
 

@@ -35,7 +35,7 @@ MovesGen1:
 	move EFFECT_NORMAL_HIT,         40, NORMAL,        100, 35,   0      ;SCRATCH
 	move EFFECT_NORMAL_HIT,         55, NORMAL,        100, 30,   0      ;VICEGRIP
 	move EFFECT_OHKO,                0, NORMAL,         30,  5,   0      ;GUILLOTINE
-	move EFFECT_RAZOR_WIND,         80, NORMAL,         75, 10,   0      ;RAZOR_WIND
+	move EFFECT_RAZOR_WIND,         80, NORMAL,        100, 10,   0      ;RAZOR_WIND
 	move EFFECT_ATTACK_UP_2,         0, NORMAL,        100, 30,   0      ;SWORDS_DANCE
 	move EFFECT_NORMAL_HIT,         50, NORMAL,         95, 30,   0      ;CUT
 	move EFFECT_GUST,               40, FLYING,        100, 35,   0      ;GUST
@@ -89,7 +89,7 @@ MovesGen1:
 	move EFFECT_NORMAL_HIT,         35, FLYING,        100, 35,   0      ;PECK
 	move EFFECT_NORMAL_HIT,         80, FLYING,        100, 20,   0      ;DRILL_PECK
 	move EFFECT_RECOIL_HIT,         80, FIGHTING,       80, 25,   0      ;SUBMISSION
-	move EFFECT_FLINCH_HIT,         50, FIGHTING,       90, 20,  30      ;LOW_KICK
+	move EFFECT_LOW_KICK,           50, FIGHTING,      100, 20,  30      ;LOW_KICK
 	move EFFECT_COUNTER,             1, FIGHTING,      100, 20,   0      ;COUNTER
 	move EFFECT_LEVEL_DAMAGE,        1, FIGHTING,      100, 20,   0      ;SEISMIC_TOSS
 	move EFFECT_NORMAL_HIT,         80, NORMAL,        100, 15,   0      ;STRENGTH

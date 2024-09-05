@@ -13,12 +13,25 @@ SpriteAnimOAMData:
 	spriteanimoam $5c, .OAMData_1x1_Palette0             ; SPRITE_ANIM_OAMSET_GS_INTRO_BUBBLE_2
 	spriteanimoam $6c, .OAMData_GSIntroShellder          ; SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_1
 	spriteanimoam $6e, .OAMData_GSIntroShellder          ; SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2
+	spriteanimoam $A8, .OAMData_GSIntroShellderEyes      ; SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_EYES_1
+	spriteanimoam $AA, .OAMData_GSIntroShellderEyes      ; SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_EYES_2
 	spriteanimoam $2d, .OAMData_GSIntroMagikarp          ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_1
 	spriteanimoam $4d, .OAMData_GSIntroMagikarp          ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_2
-	spriteanimoam $60, .OAMData_GSIntroLapras            ; SPRITE_ANIM_OAMSET_GS_INTRO_UNUSED_LAPRAS
+	spriteanimoam $66, .OAMData_GSIntroMagikarpStripes   ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_STRIPES_1
+	spriteanimoam $86, .OAMData_GSIntroMagikarpStripes   ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_STRIPES_2
+	spriteanimoam $69, .OAMData_GSIntroMagikarpMask      ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_MASK_1
+	spriteanimoam $89, .OAMData_GSIntroMagikarpMask      ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_MASK_2
+	spriteanimoam $8c, .OAMData_GSIntroMagikarpSaucy     ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SAUCY_1
+	spriteanimoam $ac, .OAMData_GSIntroMagikarpSaucy     ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SAUCY_2
+	spriteanimoam $80, .OAMData_GSIntroMagikarpShiny     ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SHINY_1
+	spriteanimoam $a0, .OAMData_GSIntroMagikarpShiny     ; SPRITE_ANIM_OAMSET_GS_INTRO_MAGIKARP_SHINY_2
+	spriteanimoam $60, .OAMData_GSIntroLuvdisc           ; SPRITE_ANIM_OAMSET_GS_INTRO_LUVDISC_1
+	spriteanimoam $62, .OAMData_GSIntroLuvdisc           ; SPRITE_ANIM_OAMSET_GS_INTRO_LUVDISC_2
 	spriteanimoam $00, .OAMData_GSIntroLapras            ; SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_1
 	spriteanimoam $00, .OAMData_GSIntroLapras            ; SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_2
 	spriteanimoam $06, .OAMData_GSIntroLapras            ; SPRITE_ANIM_OAMSET_GS_INTRO_LAPRAS_3
+	spriteanimoam $00, .OAMData_GSIntroWingull           ; SPRITE_ANIM_OAMSET_GS_INTRO_WINGULL_1
+	spriteanimoam $10, .OAMData_GSIntroWingull           ; SPRITE_ANIM_OAMSET_GS_INTRO_WINGULL_2
 	spriteanimoam $0c, .OAMData_GSIntroNote              ; SPRITE_ANIM_OAMSET_GS_INTRO_NOTE
 	spriteanimoam $0d, .OAMData_1x1_Palette0             ; SPRITE_ANIM_OAMSET_GS_INTRO_INVISIBLE_NOTE
 	spriteanimoam $00, .OAMData_GSIntroJigglypuffPikachu ; SPRITE_ANIM_OAMSET_GS_INTRO_JIGGLYPUFF_1
@@ -37,6 +50,30 @@ SpriteAnimOAMData:
 	spriteanimoam $10, .OAMData_GSIntroStarter           ; SPRITE_ANIM_OAMSET_GS_INTRO_CHIKORITA
 	spriteanimoam $29, .OAMData_GSIntroStarter           ; SPRITE_ANIM_OAMSET_GS_INTRO_CYNDAQUIL
 	spriteanimoam $42, .OAMData_GSIntroStarter           ; SPRITE_ANIM_OAMSET_GS_INTRO_TOTODILE
+	spriteanimoam $cc, .OAMData_TitlePressA              ; SPRITE_ANIM_OAMSET_TITLE_PRESS_A_1
+	spriteanimoam $bc, .OAMData_TitlePressA              ; SPRITE_ANIM_OAMSET_TITLE_PRESS_A_2
+	spriteanimoam $10, .OAMData_NewGamePressA            ; SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_1
+	spriteanimoam $14, .OAMData_NewGamePressA            ; SPRITE_ANIM_OAMSET_NEW_GAME_PRESS_A_2
+	spriteanimoam $d0, .OAMData_TitleLogoPalmLeft        ; SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_LEFT
+	spriteanimoam $d3, .OAMData_TitleLogoPalmRight       ; SPRITE_ANIM_OAMSET_TITLE_LOGO_PALM_RIGHT
+	spriteanimoam $b0, .OAMData_TitleMarillWait          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_WAIT_1
+	spriteanimoam $b4, .OAMData_TitleMarillWait          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_WAIT_2
+	spriteanimoam $98, .OAMData_TitleMarillPressA        ; SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_1
+	spriteanimoam $b8, .OAMData_TitleMarillPressA        ; SPRITE_ANIM_OAMSET_TITLE_MARILL_PRESS_A_2
+	spriteanimoam $68, .OAMData_TitleMarillTail          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_1
+	spriteanimoam $6A, .OAMData_TitleMarillTail          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_2
+	spriteanimoam $6C, .OAMData_TitleMarillTail          ; SPRITE_ANIM_OAMSET_TITLE_MARILL_TAIL_3
+	spriteanimoam $00, .OAMData_TitleDragonite           ; SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_1
+	spriteanimoam $07, .OAMData_TitleDragonite           ; SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_2
+	spriteanimoam $50, .OAMData_TitleDragonite           ; SPRITE_ANIM_OAMSET_TITLE_DRAGONITE_3
+	spriteanimoam $00, .OAMData_NewGameIvyLeftEye        ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_LEFT_EYE_1
+	spriteanimoam $02, .OAMData_NewGameIvyLeftEye        ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_LEFT_EYE_2
+	spriteanimoam $04, .OAMData_NewGameIvyLeftEye        ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_LEFT_EYE_3
+	spriteanimoam $06, .OAMData_NewGameIvyLeftEye        ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_LEFT_EYE_4
+	spriteanimoam $08, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_1
+	spriteanimoam $0A, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_2
+	spriteanimoam $0C, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_3
+	spriteanimoam $0E, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_4
 	spriteanimoam $f8, .OAMData_GSTitleTrail             ; SPRITE_ANIM_OAMSET_GS_TITLE_TRAIL_1
 	spriteanimoam $fa, .OAMData_GSTitleTrail             ; SPRITE_ANIM_OAMSET_GS_TITLE_TRAIL_2
 	spriteanimoam $00, .OAMData_TextEntryCursor          ; SPRITE_ANIM_OAMSET_TEXT_ENTRY_CURSOR
@@ -165,6 +202,90 @@ SpriteAnimOAMData:
 	dbsprite  0, -1,  0,  0, $01, 0
 	dbsprite -1,  0,  0,  0, $10, 0
 	dbsprite  0,  0,  0,  0, $11, 0
+
+.OAMData_TitlePressA:
+    db 4
+    dbsprite -1, 0, 0,  -2, $00, 1
+    dbsprite 0, 0,  0,  -2, $01, 1
+    dbsprite 1, 0,  0,  -2, $02, 1
+    dbsprite 2, 0,  0,  -2, $03, 1
+
+.OAMData_NewGamePressA:
+    db 4
+    dbsprite -1, 0, 0,  -2, $00, 0
+    dbsprite 0, 0,  0,  -2, $01, 0
+    dbsprite 1, 0,  0,  -2, $02, 0
+    dbsprite 2, 0,  0,  -2, $03, 0
+
+.OAMData_TitleLogoPalmLeft:
+.OAMData_TitleLogoPalmRight:
+    db 6
+	dbsprite -2, -1,  4,  0, $00, 1
+	dbsprite -1, -1,  4,  0, $01, 1
+	dbsprite  0, -1,  4,  0, $02, 1
+	dbsprite -2,  0,  4,  0, $10, 1
+	dbsprite -1,  0,  4,  0, $11, 1
+	dbsprite  0,  0,  4,  0, $12, 1
+	
+.OAMData_NewGameIvyLeftEye:
+	db 2
+	dbsprite -1, 0, 1, 4, $00, 0
+	dbsprite  0, 0, 1, 4, $01, 0
+
+.OAMData_NewGameIvyRightEye:
+	db 2
+	dbsprite -1, 0, 0, -1, $00, 0
+	dbsprite  0, 0, 0, -1, $01, 0
+
+.OAMData_TitleMarillWait:
+    db 8
+	dbsprite -3, -1,  2,  0, $00, 2
+	dbsprite -2, -1,  2,  0, $01, 2
+	dbsprite -1, -1,  2,  0, $02, 2
+	dbsprite  0, -1,  2,  0, $03, 2
+	dbsprite -3,  0,  2,  0, $10, 2
+	dbsprite -2,  0,  2,  0, $11, 2
+	dbsprite -1,  0,  2,  0, $12, 2
+	dbsprite  0,  0,  2,  0, $13, 2
+
+.OAMData_TitleMarillPressA:
+    db 8
+	dbsprite -3, -1,  2,  0, $00, 2
+	dbsprite -2, -1,  2,  0, $01, 2
+	dbsprite -1, -1,  2,  0, $02, 2
+	dbsprite  0, -1,  2,  0, $03, 2
+	
+	dbsprite -3,  0,  2,  0, $10, 2
+	dbsprite -2,  0,  2,  0, $11, 2
+	dbsprite -1,  0,  2,  0, $12, 2
+	dbsprite  0,  0,  2,  0, $13, 2
+
+.OAMData_TitleMarillTail:
+	db 6
+	dbsprite -1, -1, -2, 2, $00, 2
+	dbsprite  0, -1, -2, 2, $01, 2
+	dbsprite -1,  0, -2, 2, $10, 2
+	dbsprite  0,  0, -2, 2, $11, 2
+	dbsprite -1,  1, -2, 2, $20, 2
+	dbsprite  0,  1, -2, 2, $21, 2
+
+.OAMData_GSIntroShellderEyes:
+	db 4
+	dbsprite -1, -1,  0,  0, $00, 7
+	dbsprite  0, -1,  0,  0, $01, 7
+	dbsprite -1,  0,  0,  0, $10, 7
+	dbsprite  0,  0,  0,  0, $11, 7
+
+.OAMData_GSIntroLuvdisc:
+	db 4
+	dbsprite -1, -1,  0,  0, $00, 2
+	dbsprite  0, -1,  0,  0, $01, 2
+	dbsprite -1,  0,  0,  0, $10, 2
+	dbsprite  0,  0,  0,  0, $11, 2
+
+.OAMData_GSIntroWingull:
+	db 1
+	dbsprite 0, 0,  0,  0, $2c, 0
 
 .OAMData_GSGameFreakLogoStar:
 	db 4
@@ -377,6 +498,42 @@ SpriteAnimOAMData:
 	dbsprite -1,  0,  4,  0, $11, 1
 	dbsprite  0,  0,  4,  0, $12, 1
 
+.OAMData_GSIntroMagikarpStripes:
+	db 6
+	dbsprite -2, -1,  4,  0, $00, 3
+	dbsprite -1, -1,  4,  0, $01, 3
+	dbsprite  0, -1,  4,  0, $02, 3
+	dbsprite -2,  0,  4,  0, $10, 3
+	dbsprite -1,  0,  4,  0, $11, 3
+	dbsprite  0,  0,  4,  0, $12, 3
+
+.OAMData_GSIntroMagikarpMask:
+	db 6
+	dbsprite -2, -1,  4,  0, $00, 4
+	dbsprite -1, -1,  4,  0, $01, 4
+	dbsprite  0, -1,  4,  0, $02, 4
+	dbsprite -2,  0,  4,  0, $10, 4
+	dbsprite -1,  0,  4,  0, $11, 4
+	dbsprite  0,  0,  4,  0, $12, 4
+
+.OAMData_GSIntroMagikarpSaucy:
+	db 6
+	dbsprite -2, -1,  4,  0, $00, 5
+	dbsprite -1, -1,  4,  0, $01, 5
+	dbsprite  0, -1,  4,  0, $02, 5
+	dbsprite -2,  0,  4,  0, $10, 5
+	dbsprite -1,  0,  4,  0, $11, 5
+	dbsprite  0,  0,  4,  0, $12, 5
+
+.OAMData_GSIntroMagikarpShiny:
+	db 6
+	dbsprite -2, -1,  4,  0, $00, 6
+	dbsprite -1, -1,  4,  0, $01, 6
+	dbsprite  0, -1,  4,  0, $02, 6
+	dbsprite -2,  0,  4,  0, $10, 6
+	dbsprite -1,  0,  4,  0, $11, 6
+	dbsprite  0,  0,  4,  0, $12, 6
+
 .OAMData_GSIntroLapras:
 	db 29
 	dbsprite -3, -3,  0,  0, $00, 0
@@ -408,6 +565,39 @@ SpriteAnimOAMData:
 	dbsprite  0,  2,  0,  0, $53, 0 | PRIORITY
 	dbsprite  1,  2,  0,  0, $54, 0 | PRIORITY
 	dbsprite  2,  2,  0,  0, $55, 0 | PRIORITY
+
+.OAMData_TitleDragonite:
+	db 30
+	dbsprite -3, -3,  0,  4, $00, 0
+	dbsprite -2, -3,  0,  4, $01, 0
+	dbsprite -1, -3,  0,  4, $02, 0
+	dbsprite  0, -3,  0,  4, $03, 0
+	dbsprite  1, -3,  0,  4, $04, 0
+	dbsprite -3, -2,  0,  4, $10, 0
+	dbsprite -2, -2,  0,  4, $11, 0
+	dbsprite -1, -2,  0,  4, $12, 0
+	dbsprite  0, -2,  0,  4, $13, 0
+	dbsprite  1, -2,  0,  4, $14, 0
+	dbsprite -3, -1,  0,  4, $20, 0
+	dbsprite -2, -1,  0,  4, $21, 0
+	dbsprite -1, -1,  0,  4, $22, 0
+	dbsprite  0, -1,  0,  4, $23, 0
+	dbsprite  1, -1,  0,  4, $24, 0
+	dbsprite  2, -1,  0,  4, $25, 0
+	dbsprite -3,  0,  0,  4, $30, 0
+	dbsprite -2,  0,  0,  4, $31, 0
+	dbsprite -1,  0,  0,  4, $32, 0
+	dbsprite  0,  0,  0,  4, $33, 0
+	dbsprite  1,  0,  0,  4, $34, 0
+	dbsprite  2,  0,  0,  4, $35, 0
+	dbsprite  3,  0,  0,  4, $36, 0
+	dbsprite -3,  1,  0,  4, $40, 0
+	dbsprite -2,  1,  0,  4, $41, 0
+	dbsprite -1,  1,  0,  4, $42, 0
+	dbsprite  0,  1,  0,  4, $43, 0
+	dbsprite  1,  1,  0,  4, $44, 0
+	dbsprite  2,  1,  0,  4, $45, 0
+	dbsprite  3,  1,  0,  4, $46, 0
 
 .OAMData_GSIntroNote:
 	db 2

@@ -17,15 +17,23 @@ MACRO box_struct
 \1SpdEV::          db
 \1SpclAtkEV::      db
 \1SpclDefEV::      db
-\1Padding::        ds 4
-\1DVs::            dw
+\1IVs::            ds 4
+\1Personality::
+\1Shiny::
+\1Ability::
+\1Nature::         db
+\1Gender::
+\1IsEgg::
+\1ExtraBit::
+\1Form::           db
 \1PP::             ds NUM_MOVES
 \1Happiness::      db
 \1PokerusStatus::  db
 \1CaughtData::
 \1CaughtTime::
-\1CaughtLevel::    db
+\1CaughtBall::     db
 \1CaughtGender::
+\1CaughtLevel::    db
 \1CaughtLocation:: db
 \1Level::          db
 \1BoxEnd::
@@ -36,7 +44,6 @@ MACRO savemon_struct
 \1ItemLow::        db
 \1MovesLow::       ds NUM_MOVES
 \1ID::             dw
-\1IsEgg::
 \1Exp::            ds 3
 \1EVs::
 \1HPEV::           db
@@ -45,16 +52,24 @@ MACRO savemon_struct
 \1SpdEV::          db
 \1SpclAtkEV::      db
 \1SpclDefEV::      db
-\1Padding::        ds 4
-\1DVs::            dw
+\1IVs::            ds 4
+\1Personality::
+\1Shiny::
+\1Ability::
+\1Nature::         db
+\1Gender::
+\1IsEgg::
+\1ExtraBit::
+\1Form::           db
 \1MovesHigh::
 \1PPUps::          ds NUM_MOVES
 \1Happiness::      db
 \1PokerusStatus::  db
 \1CaughtData::
 \1CaughtTime::
-\1CaughtLevel::    db
+\1CaughtBall::     db
 \1CaughtGender::
+\1CaughtLevel::    db
 \1CaughtLocation:: db
 \1Level::          db
 \1SpeciesHigh::    db
@@ -127,25 +142,33 @@ MACRO red_party_struct
 ENDM
 
 MACRO battle_struct
-\1Species::   db
-\1Item::      db
-\1Moves::     ds NUM_MOVES
-\1DVs::       dw
-\1PP::        ds NUM_MOVES
-\1Happiness:: db
-\1Level::     db
-\1Status::    ds 2
-\1HP::        dw
-\1MaxHP::     dw
+\1Species::     db
+\1Item::        db
+\1Moves::       ds NUM_MOVES
+\1IVs::         ds 4
+\1Personality::
+\1Shiny::
+\1Ability::
+\1Nature::      db
+\1Gender::
+\1IsEgg::
+\1ExtraBit::
+\1Form::        db
+\1PP::          ds NUM_MOVES
+\1Happiness::   db
+\1Level::       db
+\1Status::      ds 2
+\1HP::          dw
+\1MaxHP::       dw
 \1Stats:: ; big endian
-\1Attack::    dw
-\1Defense::   dw
-\1Speed::     dw
-\1SpclAtk::   dw
-\1SpclDef::   dw
+\1Attack::      dw
+\1Defense::     dw
+\1Speed::       dw
+\1SpclAtk::     dw
+\1SpclDef::     dw
 \1Type::
-\1Type1::     db
-\1Type2::     db
+\1Type1::       db
+\1Type2::       db
 \1StructEnd::
 ENDM
 
@@ -267,7 +290,7 @@ MACRO roam_struct
 \1MapGroup::  db
 \1MapNumber:: db
 \1HP::        db
-\1DVs::       dw
+\1IVs::       ds 4
 ENDM
 
 MACRO bugcontestwinner
@@ -277,11 +300,11 @@ MACRO bugcontestwinner
 ENDM
 
 MACRO hof_mon
-\1Species::  dw
-\1ID::       dw
-\1DVs::      dw
-\1Level::    db
-\1Nickname:: ds MON_NAME_LENGTH - 1
+\1Species::     dw
+\1ID::          dw
+\1Personality:: dw
+\1Level::       db
+\1Nickname::    ds MON_NAME_LENGTH - 1
 \1End::
 ENDM
 
@@ -309,7 +332,15 @@ MACRO trademon
 \1Nickname::    ds MON_NAME_LENGTH
 \1SenderName::  ds NAME_LENGTH
 \1OTName::      ds NAME_LENGTH
-\1DVs::         dw
+\1IVs::         dw
+\1Personality::
+\1Shiny::
+\1Ability::
+\1Nature::      db
+\1Gender::
+\1IsEgg::
+\1ExtraBit::
+\1Form::        db
 \1ID::          dw
 \1CaughtData::  db
 \1End::

@@ -430,6 +430,7 @@ DayCareManOutside:
 	text_end
 
 DayCare_GiveEgg:
+	call DayCare_GenerateEgg
 	ld a, [wEggMonLevel]
 	ld [wCurPartyLevel], a
 	ld hl, wPartyCount
@@ -519,8 +520,6 @@ DayCare_InitBreeding:
 	ld a, [wBreedingCompatibility]
 	and a
 	ret z
-	inc a
-	ret z
 	ld hl, wDayCareMan
 	set DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
 .loop
@@ -528,8 +527,9 @@ DayCare_InitBreeding:
 	cp 150
 	jr c, .loop
 	ld [wStepsToEgg], a
-; fallthrough
-.UselessJump:
+	ret
+
+DayCare_GenerateEgg:
 	xor a
 	ld hl, wEggMon
 	ld bc, BOXMON_STRUCT_LENGTH
@@ -540,10 +540,14 @@ DayCare_InitBreeding:
 	ld hl, wEggMonOT
 	ld bc, NAME_LENGTH
 	rst ByteFill
-	ld a, [wBreedMon1DVs]
-	ld [wTempMonDVs], a
-	ld a, [wBreedMon1DVs + 1]
-	ld [wTempMonDVs + 1], a
+	ld a, [wBreedMon1IVs]
+	ld [wTempMonIVs], a
+	ld a, [wBreedMon1IVs + 1]
+	ld [wTempMonIVs + 1], a
+	ld a, [wBreedMon1IVs + 2]
+	ld [wTempMonIVs + 2], a
+	ld a, [wBreedMon1IVs + 3]
+	ld [wTempMonIVs + 3], a
 	ld a, [wBreedMon1Species]
 	ld [wCurPartySpecies], a
 	ld a, TEMPMON
@@ -553,7 +557,7 @@ DayCare_InitBreeding:
 	ld c, a
 	ld a, [wBreedMon1Species]
 	cp c
-	ld a, $1
+	ld a, 1
 	jr z, .LoadWhichBreedmonIsTheMother
 	ld a, [wBreedMon2Species]
 	cp c
@@ -611,72 +615,112 @@ DayCare_InitBreeding:
 	ld [hli], a
 	ldh a, [hMultiplicand + 2]
 	ld [hl], a
+
+	; Zero EVs
 	xor a
-	ld b, wEggMonDVs - wEggMonEVs
+	ld b, wEggMonIVs - wEggMonEVs
 	ld hl, wEggMonEVs
 .loop2
 	ld [hli], a
 	dec b
 	jr nz, .loop2
-	ld hl, DITTO
-	call GetPokemonIDFromIndex
-	ld b, a
-	ld hl, wEggMonDVs
+
+	; Set random IVs
+	ld hl, wEggMonIVs
 	call Random
 	ld [hli], a
-	ld [wTempMonDVs], a
 	call Random
-	ld [hld], a
-	ld [wTempMonDVs + 1], a
-	ld de, wBreedMon1DVs
-	ld a, [wBreedMon1Species]
-	cp b
-	jr z, .GotDVs
-	ld de, wBreedMon2DVs
-	ld a, [wBreedMon2Species]
-	cp b
-	jr z, .GotDVs
-	ld a, TEMPMON
-	ld [wMonType], a
-	push hl
-	farcall GetGender
-	pop hl
-	ld de, wBreedMon1DVs
-	ld bc, wBreedMon2DVs
-	jr c, .SkipDVs
-	jr z, .ParentCheck2
-	ld a, [wBreedMotherOrNonDitto]
-	and a
-	jr z, .GotDVs
-	ld d, b
-	ld e, c
-	jr .GotDVs
-
-.ParentCheck2:
-	ld a, [wBreedMotherOrNonDitto]
-	and a
-	jr nz, .GotDVs
-	ld d, b
-	ld e, c
-
-.GotDVs:
-	ld a, [de]
-	inc de
-	and $f
-	ld b, a
-	ld a, [hl]
-	and $f0
-	add b
 	ld [hli], a
-	ld a, [de]
-	and $7
-	ld b, a
-	ld a, [hl]
-	and $f8
-	add b
+	call Random
+	ld [hli], a
+	call Random
 	ld [hl], a
 
-.SkipDVs:
+	; Normal IV inheritance is 3 random IVs from the parents
+	; at random.
+	lb bc, 3, %000000 ; Already inherited
+
+	; Do the rest of the IVs
+.iv_inherit_loop
+	ld a, 12
+	call RandomRange
+	srl a
+	push af
+	ld a, 2
+	ld hl, wBreedMon1IVs
+	call c, GetParentAddr
+	pop af
+	ld e, a
+	call InheritIV
+	jr z, .iv_inherit_loop
+
+	; Zero the personality data
+	xor a
+	ld [wEggMonPersonality], a
+	ld [wEggMonPersonality + 1], a
+
+	; TODO: Breeding abilities
+
+	call Random
+	and a
+	jr nz, .not_shiny ; 255/256 not shiny
+
+	; Shiny. Shiny rate after the above pass is:
+	; 1/16 - Usual
+	ld a, 16
+	call RandomRange
+	ld b, a
+	ld c, 1
+	ld a, b
+	cp c
+	jr nc, .not_shiny
+	ld a, SHINY_MASK
+	ld hl, wEggMonShiny
+	or [hl]
+	ld [hl], a
+.not_shiny
+
+	; Nature
+	ld hl , wEggMonNature
+	ld a, NUM_NATURES
+	call RandomRange
+	and NATURE_MASK
+	or [hl]
+	ld [hl], a
+
+	; Gender
+	ld hl, wEggMonGender
+	call Random
+	and 1
+	rrca
+	or [hl]
+	ld [hl], a
+
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, BaseData
+	ld a, BANK(BaseData)
+	call LoadIndirectPointer
+	ld bc, BASE_GENDER
+	add hl, bc
+	call GetFarByte
+	cp -1
+	jr z, .genderless_or_male
+	cp GENDER_F100
+	jr z, .female
+	ld b, a
+	ld hl, wEggMonGender
+	call Random
+	cp b
+	jr c, .female
+	jr nz, .genderless_or_male
+.female
+	set MON_GENDER_F, [hl]
+.genderless_or_male
+
+
 	ld hl, wStringBuffer1
 	ld de, wMonOrItemNameBuffer
 	ld bc, NAME_LENGTH
@@ -735,3 +779,151 @@ Daycare_CheckAlternateOffspring:
 .alternate_offspring_table
 	dw NIDORAN_F, NIDORAN_M
 	dw -1
+
+GetParentAddr:
+; if a = 2, get parent 2 instead of 1 (assumed on hl). Best used in
+; conjuction with CheckParentItem.
+	cp 2
+	ret nz
+	push bc
+	ld bc, wBreedMon2 - wBreedMon1
+	add hl, bc
+	pop bc
+	ret
+
+InheritIV: ; TODO actually adapt this for IVs
+; Inherit IV e (0=HP, 1=Atk, 2=Def, 3=Speed, 4=Sp.Atk, 5=Sp.Def)
+; from parent IVs in hl. Returns nz if we can't inherit anything else.
+; b: inheritance counts left, c: already inherited bitfield
+; Preserves de+hl
+	; Figure out if we can inherit the IV
+	; Have we inherited as much as we can?
+	ld a, b
+	and a
+	jmp z, .cant_inherit_any_more
+
+	; Have we inherited every stat?
+	ld a, c
+	cp %111111
+	jmp z, .cant_inherit_any_more
+
+	; Have we already inherited the given stat?
+	push de
+	ld d, %000001
+	inc e
+.iv_check_loop
+	dec e
+	jr z, .got_iv_bit
+	sla d
+	jr .iv_check_loop
+.got_iv_bit
+	ld a, d
+	and c
+	ld a, d
+	pop de
+	jr nz, .cant_inherit_this_stat
+
+	; Mark the stat as inherited and decrease inherit counter
+	or c
+	ld c, a
+	dec b
+
+	; Inherit the stat
+	; inc/dec doesn't alter carry flag
+	; IVs are stored as %0SSa_aaaa, %sssd_dddd, %0HHt_tttt, %hhhf_ffff
+	; Hh=HP, a=Atk, d=Def, Ss=Speed, t=SpAtk, f=SpDef
+	ld a, e
+	push de
+	push hl
+	ld de, wEggMonIVs
+	bit 0, a ; Test if a is odd
+	push de
+	; current HL is Parent, DE is Egg, if a is odd, swap
+	call nz, SwapHLDE
+	inc a
+	dec a
+	jr z, .HP
+	dec a
+	jr z, .Atk
+	dec a
+	jr z, .Def
+	dec a
+	jr z, .Speed
+	dec a
+	jr z, .SpAtk
+; SpDef
+	call GetSpecialDefenseIV
+	ld h, a
+	pop de
+	inc de
+	inc de
+	inc de
+	jr .set_simple_egg_iv
+
+.SpAtk
+	call GetSpecialAttackIV
+	ld h, a
+	pop de
+	inc de
+	inc de
+	jr .set_simple_egg_iv
+
+.Def
+	call GetDefenseIV
+	ld h, a
+	pop de
+	inc de
+	jr .set_simple_egg_iv
+
+.Atk
+	call GetAttackIV
+	ld h, a
+	pop de
+.set_simple_egg_iv
+	ld a, [de]
+	and %11100000
+	or h
+	ld [de], a
+	jr .inherit_done
+
+.Speed
+	call GetSpeedIV
+	ld h, a
+	pop de
+	jr .set_split_egg_iv
+
+.HP
+	call GetHPIV
+	ld h, a
+	pop de
+	inc de
+	inc de
+.set_split_egg_iv
+	ld a, [de]
+	and %00011111
+	ld l, a
+	ld a, h
+	and %11000
+	rla
+	rla
+	or l
+	ld [de], a
+	inc de
+	ld a, [de]
+	and %00011111
+	ld l, a
+	ld a, h
+	and %00111
+	swap a
+	rla
+	or l
+	ld [de], a
+.inherit_done
+	pop hl
+	pop de
+.cant_inherit_this_stat
+	xor a
+	ret
+.cant_inherit_any_more
+	or 1
+	ret
