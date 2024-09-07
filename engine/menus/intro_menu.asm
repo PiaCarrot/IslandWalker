@@ -649,6 +649,18 @@ OakSpeech:
 	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
+	
+	ld hl, IvySpeechShirtPalette
+	ld de, wOBPals1 palette 2
+	ld bc, 1 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	call NewGame_IvyShirt
+	call NewGame_IvyBall
+	call NewGame_IvyShoes
+	farcall PlaySpriteAnimations
 
 	ld hl, IvySpeech1
 	call PrintText
@@ -656,6 +668,8 @@ OakSpeech:
 ;	call RotateThreePalettesRight ; TODO check this
 	ld c, 15
 	call FadeToWhite
+	farcall ClearSpriteAnims
+	call ClearSprites
 	call ClearTilemap
 
 	xor a
@@ -711,6 +725,18 @@ OakSpeech:
 	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
+	
+	ld hl, IvySpeechShirtPalette
+	ld de, wOBPals1 palette 2
+	ld bc, 1 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	call NewGame_IvyShirt
+	call NewGame_IvyBall
+	call NewGame_IvyShoes
+	farcall PlaySpriteAnimations
 
 	ld hl, IvySpeech6
 	call PrintText
@@ -718,6 +744,8 @@ OakSpeech:
 
 	ld c, 15
 	call FadeToWhite
+	farcall ClearSpriteAnims
+	call ClearSprites
 	call ClearTilemap
 
 	call LoadFontsExtra
@@ -749,6 +777,24 @@ NewGame_IvyRightEye:
 NewGame_InitPressA:
 	depixel 03, 03
 	ld a, SPRITE_ANIM_OBJ_NEW_GAME_PRESS_A
+	call InitSpriteAnimStruct
+	ret
+
+NewGame_IvyShirt:
+	depixel 09, 09
+	ld a, SPRITE_ANIM_OBJ_NEW_GAME_IVY_SHIRT
+	call InitSpriteAnimStruct
+	ret
+
+NewGame_IvyBall:
+	depixel 09, 11
+	ld a, SPRITE_ANIM_OBJ_NEW_GAME_IVY_BALL
+	call InitSpriteAnimStruct
+	ret
+
+NewGame_IvyShoes:
+	depixel 12, 10
+	ld a, SPRITE_ANIM_OBJ_NEW_GAME_IVY_SHOES
 	call InitSpriteAnimStruct
 	ret
 
@@ -1319,6 +1365,12 @@ IvySpeechTilesAttrmapEnd:
 
 IvySpeechTilesPalettes:
 INCLUDE "gfx/new_game/IvySpeechTiles.pal"
+
+IvySpeechShirtPalette:
+	RGB 31, 31, 31
+	RGB 25, 16, 17
+	RGB 31, 00, 00
+	RGB 00, 00, 00
 
 GameInit::
 	farcall TryLoadSaveData

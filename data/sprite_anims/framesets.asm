@@ -89,6 +89,9 @@ SpriteAnimFrameData:
 	dw .Frameset_TitleDragonite
 	dw .Frameset_NewGameIvyLeftEye
 	dw .Frameset_NewGameIvyRightEye
+	dw .Frameset_NewGameIvyShirt
+	dw .Frameset_NewGameIvyBall
+	dw .Frameset_NewGameIvyShoes
 	dw .Frameset_PCCursor
 	dw .Frameset_PCCursorItem
 	dw .Frameset_PCQuick
@@ -159,6 +162,18 @@ SpriteAnimFrameData:
 	oamframe SPRITE_ANIM_OAMSET_TEXT_ENTRY_CURSOR_BIG,  1
 	oamwait 1
 	oamrestart
+	
+.Frameset_NewGameIvyShirt:
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_SHIRT,  32
+	oamend
+
+.Frameset_NewGameIvyBall:
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_BALL,  32
+	oamend
+
+.Frameset_NewGameIvyShoes:
+	oamframe SPRITE_ANIM_OAMSET_NEW_GAME_IVY_SHOES,  32
+	oamend
 
 .Frameset_GameFreakLogo:
 	oamframe SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_1,  12

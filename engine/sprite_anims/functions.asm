@@ -69,6 +69,9 @@ DoSpriteAnimFrame:
 	dw SpriteAnimFunc_TitleDragonite
 	dw SpriteAnimFunc_NewGameIvyLeftEye
 	dw SpriteAnimFunc_NewGameIvyRightEye
+	dw SpriteAnimFunc_NewGameIvyShirt
+	dw SpriteAnimFunc_NewGameIvyBall
+	dw SpriteAnimFunc_NewGameIvyShoes
 	dw SpriteAnimFunc_PcCursor
 	dw SpriteAnimFunc_PcQuick
 	dw SpriteAnimFunc_PcMode
@@ -815,6 +818,9 @@ SpriteAnimFunc_NewGameIvyLeftEye:
 SpriteAnimFunc_NewGameIvyRightEye:
 SpriteAnimFunc_TitlePressA:
 SpriteAnimFunc_NewGamePressA:
+SpriteAnimFunc_NewGameIvyShirt:
+SpriteAnimFunc_NewGameIvyBall:
+SpriteAnimFunc_NewGameIvyShoes:
 	ld a, [wGlobalAnimYOffset]
 	ld hl, SPRITEANIMSTRUCT_YCOORD
 	add hl, bc

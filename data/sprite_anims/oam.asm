@@ -74,6 +74,9 @@ SpriteAnimOAMData:
 	spriteanimoam $0A, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_2
 	spriteanimoam $0C, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_3
 	spriteanimoam $0E, .OAMData_NewGameIvyRightEye       ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_RIGHT_EYE_4
+	spriteanimoam $18, .OAMData_NewGameIvyShirt       	 ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_SHIRT
+	spriteanimoam $1A, .OAMData_NewGameIvyBall       	 ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_BALL
+	spriteanimoam $1B, .OAMData_NewGameIvyShoes       	 ; SPRITE_ANIM_OAMSET_NEW_GAME_IVE_SHOES
 	spriteanimoam $f8, .OAMData_GSTitleTrail             ; SPRITE_ANIM_OAMSET_GS_TITLE_TRAIL_1
 	spriteanimoam $fa, .OAMData_GSTitleTrail             ; SPRITE_ANIM_OAMSET_GS_TITLE_TRAIL_2
 	spriteanimoam $00, .OAMData_TextEntryCursor          ; SPRITE_ANIM_OAMSET_TEXT_ENTRY_CURSOR
@@ -236,6 +239,20 @@ SpriteAnimOAMData:
 	db 2
 	dbsprite -1, 0, 0, -1, $00, 0
 	dbsprite  0, 0, 0, -1, $01, 0
+
+.OAMData_NewGameIvyShoes:
+	db 2
+	dbsprite -1, 0, 0, 0, $00, 2
+	dbsprite  0, 0, 0, 0, $01, 2
+	
+.OAMData_NewGameIvyShirt:
+	db 2
+	dbsprite  0, -1, 4, 4, $00, 2
+	dbsprite  0, 0, 4, 4, $01, 2
+
+.OAMData_NewGameIvyBall:
+	db 1
+	dbsprite  0, 0, 6, 1, $00, 2
 
 .OAMData_TitleMarillWait:
     db 8
