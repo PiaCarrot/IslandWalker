@@ -1220,8 +1220,9 @@ TitleScreenMain:
 	ld [hl], e
 
 ; Save data can be deleted by pressing Up + B + Select.
+	call JoyTextDelay
 	call GetJoypad
-	ld hl, hJoyDown
+	ld hl, hJoyLast
 	ld a, [hl]
 	or ~(D_UP + B_BUTTON + SELECT)
 	inc a

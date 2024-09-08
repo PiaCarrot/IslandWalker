@@ -103,7 +103,6 @@ _TitleScreen:
 .NoMarillSpawn
 	call Title_InitPressA
 	jmp SFXChannelsOff
-
 DrawTitleGraphic:
 ; input:
 ;   hl: draw location
