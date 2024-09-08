@@ -2414,12 +2414,11 @@ Pokedex_GetArea:
 	ld [hli], a ; tile id
 	inc de
 	push bc
-	ld c, PAL_OW_RED
+	ld c, PAL_OW_PURPLE
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .male
-	assert PAL_OW_RED + 1 == PAL_OW_BLUE
-	inc c
+	ld c, PAL_OW_RED
 .male
 	ld a, c
 	ld [hli], a ; attributes

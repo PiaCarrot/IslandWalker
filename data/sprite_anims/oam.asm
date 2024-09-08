@@ -452,10 +452,10 @@ SpriteAnimOAMData:
 
 .OAMData_RedWalk:
 	db 4
-	dbsprite -1, -1,  0,  0, $00, PAL_OW_RED
-	dbsprite  0, -1,  0,  0, $01, PAL_OW_RED
-	dbsprite -1,  0,  0,  0, $02, PAL_OW_RED
-	dbsprite  0,  0,  0,  0, $03, PAL_OW_RED
+	dbsprite -1, -1,  0,  0, $00, PAL_OW_PURPLE
+	dbsprite  0, -1,  0,  0, $01, PAL_OW_PURPLE
+	dbsprite -1,  0,  0,  0, $02, PAL_OW_PURPLE
+	dbsprite  0,  0,  0,  0, $03, PAL_OW_PURPLE
 
 .OAMData_TradeMonIcon:
 	db 4
@@ -466,10 +466,10 @@ SpriteAnimOAMData:
 
 .OAMData_MagnetTrain:
 	db 4
-	dbsprite -1, -1,  0,  0, $00, PAL_OW_RED | PRIORITY
-	dbsprite  0, -1,  0,  0, $01, PAL_OW_RED | PRIORITY
-	dbsprite -1,  0,  0,  0, $02, PAL_OW_RED | PRIORITY
-	dbsprite  0,  0,  0,  0, $03, PAL_OW_RED | PRIORITY
+	dbsprite -1, -1,  0,  0, $00, PAL_OW_PURPLE | PRIORITY
+	dbsprite  0, -1,  0,  0, $01, PAL_OW_PURPLE | PRIORITY
+	dbsprite -1,  0,  0,  0, $02, PAL_OW_PURPLE | PRIORITY
+	dbsprite  0,  0,  0,  0, $03, PAL_OW_PURPLE | PRIORITY
 
 .OAMData_PartyMonWithMail1:
 	db 4
@@ -931,10 +931,10 @@ SpriteAnimOAMData:
 
 .OAMData_BlueWalk:
 	db 4
-	dbsprite -1, -1,  0,  0, $00, PAL_OW_BLUE
-	dbsprite  0, -1,  0,  0, $01, PAL_OW_BLUE
-	dbsprite -1,  0,  0,  0, $02, PAL_OW_BLUE
-	dbsprite  0,  0,  0,  0, $03, PAL_OW_BLUE
+	dbsprite -1, -1,  0,  0, $00, PAL_OW_ORANGE
+	dbsprite  0, -1,  0,  0, $01, PAL_OW_ORANGE
+	dbsprite -1,  0,  0,  0, $02, PAL_OW_ORANGE
+	dbsprite  0,  0,  0,  0, $03, PAL_OW_ORANGE
 
 .OAMData_MobileTradeCableBulge:
 	db 1

@@ -775,7 +775,7 @@ NewGame_IvyRightEye:
 	ret
 	
 NewGame_InitPressA:
-	depixel 03, 03
+	depixel 18, 03
 	ld a, SPRITE_ANIM_OBJ_NEW_GAME_PRESS_A
 	call InitSpriteAnimStruct
 	ret
@@ -1009,11 +1009,11 @@ Intro_PlacePlayerSprite:
 	inc de
 	ld [hli], a ; tile id
 
-	ld b, PAL_OW_RED
+	ld b, PAL_OW_PURPLE
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .male
-	ld b, PAL_OW_BLUE
+	ld b, PAL_OW_RED
 .male
 	ld a, b
 	ld [wNeededPalIndex], a

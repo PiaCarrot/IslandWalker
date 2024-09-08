@@ -227,7 +227,7 @@ _CGB_PokegearPals:
 	call FarCopyWRAM
 	ld hl, PokegearOBPals
 	ld de, wOBPals1
-	ld bc, 2 palettes
+	ld bc, 8 palettes
 	call FarCopyColorWRAM
 	call ApplyPals
 	ld a, TRUE
@@ -1150,6 +1150,6 @@ _CGB_Plain:
 Gen1DiplomaPalette:
 INCLUDE "gfx/diploma/plain.pal" ; todo: replace this polished port
 
-PokegearOBPals:
+PokegearOBPals: ;TODO: Look into this and naming screen for proper Indigo and Orange palettes
 INCLUDE "gfx/icons/icons.pal" ; todo: replace this polished port
 
