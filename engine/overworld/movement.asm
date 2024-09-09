@@ -695,6 +695,8 @@ NormalStep:
 	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc
 	ld a, [hl]
+	cp COLL_PUDDLE
+	jr z, .splash_puddle
 	call CheckSuperTallGrassTile
 	jr z, .shake_grass
 
@@ -703,6 +705,11 @@ NormalStep:
 
 .shake_grass
 	call ShakeGrass
+	jr .skip_grass
+
+.splash_puddle
+	call SplashPuddle
+	; fallthrough
 
 .skip_grass
 	ld hl, wCenteredObject

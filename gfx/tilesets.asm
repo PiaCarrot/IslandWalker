@@ -638,3 +638,23 @@ INCBIN "data/tilesets/omanyte_word_room_attributes.bin.lz"
 
 TilesetAerodactylWordRoomAttr::
 INCBIN "data/tilesets/aerodactyl_word_room_attributes.bin.lz"
+
+SECTION "Tileset Data 12", ROMX
+
+TilesetValenciaMandarinNorthvTiles2GFX::
+INCBIN "gfx/tilesets/valencia_mandarin_north.2bpp.vtiles2.lz"
+
+TilesetValenciaMandarinNorthvTiles5GFX::
+INCBIN "gfx/tilesets/valencia_mandarin_north.2bpp.vtiles5.lz"
+
+TilesetValenciaMandarinNorthvTiles4GFX::
+INCBIN "gfx/tilesets/valencia_mandarin_north.2bpp.vtiles4.lz"
+
+TilesetValenciaMandarinNorthAttr::
+INCBIN "data/tilesets/valencia_mandarin_north_attributes.bin.lz"
+
+TilesetValenciaMandarinNorthMeta::
+INCBIN "data/tilesets/valencia_mandarin_north_metatiles.bin.lz"
+
+TilesetValenciaMandarinNorthColl::
+INCLUDE "data/tilesets/valencia_mandarin_north_collision.asm"

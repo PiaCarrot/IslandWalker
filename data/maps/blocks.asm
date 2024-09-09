@@ -897,4 +897,7 @@ BattleTowerOutside_Blocks:
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.ablk"
 
+ValenciaIsland_Blocks:
+	INCBIN "maps/ValenciaIsland.ablk"
+
 ENDSECTION

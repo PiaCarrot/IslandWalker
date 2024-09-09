@@ -120,6 +120,10 @@ CheckGrassTile::
 .nope
 	scf
 	ret
+	
+CheckPuddleTile::
+	cp COLL_PUDDLE
+	ret
 
 CheckSuperTallGrassTile::
 	cp COLL_LONG_GRASS

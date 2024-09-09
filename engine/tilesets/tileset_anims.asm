@@ -84,10 +84,8 @@ TilesetJohtoAnim::
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
-	dw WhirlpoolFrames1, AnimateWhirlpoolTile
-	dw WhirlpoolFrames2, AnimateWhirlpoolTile
-	dw WhirlpoolFrames3, AnimateWhirlpoolTile
-	dw WhirlpoolFrames4, AnimateWhirlpoolTile
+	dw WhirlpoolFramesTop, AnimateWhirlpoolTiles
+	dw WhirlpoolFramesBottom, AnimateWhirlpoolTiles
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
@@ -175,6 +173,28 @@ TilesetTowerAnim::
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetValenciaMandarinNorthAnim:
+	dw vTiles2 tile $7e, WriteTileToBuffer
+	dw RSEWaterFrames, AnimateRSEWaterTiles
+	dw ShoreWaterFrames, AnimateShoreWaterTiles
+	dw DiveWaterFrames, AnimateDiveWaterTiles
+	dw RockTopsFrames, AnimateRockTopsTiles
+	dw RockLeftFrames, AnimateRockLeftTiles
+	dw RockBotLeftFrames, AnimateRockBotLeftTiles
+	dw RockBotRightFrames, AnimateRockBotRightTiles
+	dw RockRightFrames, AnimateRockRightTiles
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  AnimateFlowerTile
+	dw WhirlpoolFramesTop, AnimateWhirlpoolTiles
+	dw WhirlpoolFramesBottom, AnimateWhirlpoolTiles
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  DoNothing
+	dw vTiles2 tile $7e, WriteTileFromBuffer
+	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
 TilesetBattleTowerOutsideAnim::
@@ -388,6 +408,91 @@ AnimateWaterTile:
 
 .WaterTileFrames:
 	INCBIN "gfx/tilesets/water/water.2bpp"
+	
+AnimateRSEWaterTiles:
+AnimateDiveWaterTiles:
+AnimateShoreWaterTiles:
+AnimateRockTopsTiles:
+AnimateRockLeftTiles:
+AnimateRockBotLeftTiles:
+AnimateRockBotRightTiles:
+AnimateRockRightTiles:
+; Draw two RSE water tiles for the current frame in VRAM tile at de.
+; based on AnimateWhirlpoolTiles, but with 8 frames
+
+; Struct:
+;     VRAM address
+;    Address of the first tile
+
+; Does two tiles at a time.
+
+; Save sp in bc (see WriteTile).
+    ld hl, sp+$0
+    ld b, h
+    ld c, l
+
+; de = VRAM address
+    ld l, e
+    ld h, d
+    ld e, [hl]
+    inc hl
+    ld d, [hl]
+    inc hl
+; Tile address is now at hl.
+
+; Get the tile for this frame.
+    ld a, [wTileAnimationTimer]
+    and %111 ; 8 frames x2
+    swap a  ; * 16 bytes per tile
+    sla a   ; * 2 tiles
+
+    add [hl]
+    inc hl
+    ld h, [hl]
+    ld l, a
+    adc h
+    sub l
+    ld h, a
+
+; Stack now points to the desired frame.
+    ld sp, hl
+
+    ld l, e
+    ld h, d
+
+    jmp WriteTwoTiles
+	
+RSEWaterFrames: dw vTiles2 tile $16, RSEWaterTiles
+
+RSEWaterTiles: INCBIN "gfx/tilesets/water/rse.2bpp"
+
+DiveWaterFrames: dw vTiles2 tile $26, DiveWaterTiles
+
+DiveWaterTiles: INCBIN "gfx/tilesets/water/dive.2bpp"
+
+ShoreWaterFrames: dw vTiles2 tile $06, ShoreWaterTiles
+
+ShoreWaterTiles: INCBIN "gfx/tilesets/water/shore.2bpp"
+
+RockTopsFrames: dw vTiles2 tile $29, RockTopsTiles
+
+RockTopsTiles: INCBIN "gfx/tilesets/water/rocktops.2bpp"
+
+RockLeftFrames: dw vTiles2 tile $39, RockLeftTiles
+
+RockLeftTiles: INCBIN "gfx/tilesets/water/rockleft.2bpp"
+
+RockBotLeftFrames: dw vTiles2 tile $58, RockBotLeftTiles
+
+RockBotLeftTiles: INCBIN "gfx/tilesets/water/rockbotleft.2bpp"
+
+RockBotRightFrames: dw vTiles2 tile $5A, RockBotRightTiles
+
+RockBotRightTiles: INCBIN "gfx/tilesets/water/rockbotright.2bpp"
+
+RockRightFrames: dw vTiles2 tile $49, RockRightTiles
+
+RockRightTiles: INCBIN "gfx/tilesets/water/rockright.2bpp"
 
 ForestTreeLeftAnimation:
 ; Save the stack pointer in bc for WriteTile to restore
@@ -716,29 +821,35 @@ StandingTileFrame:
 	inc [hl]
 	ret
 
-AnimateWhirlpoolTile:
-; Input de points to the destination in VRAM, then the source tile frames
+AnimateWhirlpoolTiles:
+; Update both whirlpool tiles using struct at de.
 
-; Save the stack pointer in bc for WriteTile to restore
-	ld hl, sp+0
+; Struct:
+; 	VRAM address
+;	Address of the first tile
+
+; Does two tiles at a time.
+
+; Save sp in bc (see WriteTwoTiles).
+	ld hl, sp+$0
 	ld b, h
 	ld c, l
 
-; de = the destination in VRAM
+; de = VRAM address
 	ld l, e
 	ld h, d
-	ld a, [hli]
-	ld e, a
-	ld a, [hli]
-	ld d, a
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	inc hl
+; Tile address is now at hl.
 
-; A cycle of 4 frames, updating every tick
+; Get the tile for this frame.
 	ld a, [wTileAnimationTimer]
-	srl a ; account for 60fps
-	and %11
+	and %11 ; 4 frames x2
+	swap a  ; * 16 bytes per tile
+	sla a   ; * 2 tiles
 
-; hl = the source tile frames + a * 16
-	swap a
 	add [hl]
 	inc hl
 	ld h, [hl]
@@ -747,11 +858,93 @@ AnimateWhirlpoolTile:
 	sub l
 	ld h, a
 
-; Write the tile graphic from hl (now sp) to de (now hl)
+; Stack now points to the desired frame.
 	ld sp, hl
+
 	ld l, e
 	ld h, d
+
+	jr WriteTwoTiles
+; fc696
+
+WriteTileFromBuffer: ; fc696
+; Write tiledata at wTileAnimBuffer to de.
+; wTileAnimBuffer is loaded to sp for WriteTile.
+
+	ld hl, sp+$0
+	ld b, h
+	ld c, l
+
+	ld hl, wTileAnimBuffer
+	ld sp, hl
+
+	ld h, d
+	ld l, e
 	jr WriteTile
+; fc6a2
+
+WriteTileToBuffer: ; fc6a2
+; Write tiledata de to wTileAnimBuffer.
+; de is loaded to sp for WriteTile.
+
+	ld hl, sp+$0
+	ld b, h
+	ld c, l
+
+	ld h, d
+	ld l, e
+	ld sp, hl
+
+	ld hl, wTileAnimBuffer
+
+	; fallthrough
+
+WriteTile: ; fc6ac
+; Write one 8x8 tile ($10 bytes) from sp to hl.
+
+; Warning: sp is saved in bc so we can abuse pop.
+; sp is restored to address bc. Save sp in bc before calling.
+
+	pop de
+	ld [hl], e
+	inc hl
+	ld [hl], d
+
+_FinishWritingSecondTile:
+rept 7
+	pop de
+	inc hl
+	ld [hl], e
+	inc hl
+	ld [hl], d
+endr
+
+; restore sp
+	ld h, b
+	ld l, c
+	ld sp, hl
+	ret
+; fc6d7
+	
+WriteTwoTiles:
+; Write two 8x8 tile ($20 bytes) from sp to hl.
+
+; Warning: sp is saved in bc so we can abuse pop.
+; sp is restored to address bc. Save sp in bc before calling.
+
+	pop de
+	ld [hl], e
+	inc hl
+	ld [hl], d
+
+rept 8
+	pop de
+	inc hl
+	ld [hl], e
+	inc hl
+	ld [hl], d
+endr
+	jr _FinishWritingSecondTile
 
 WriteTileFromAnimBuffer:
 ; Save the stack pointer in bc for WriteTile to restore
@@ -778,32 +971,6 @@ ReadTileToAnimBuffer:
 	ld sp, hl
 	ld hl, wTileAnimBuffer
 	; fallthrough
-
-WriteTile:
-; Write one tile from sp to hl.
-; The stack pointer has been saved in bc.
-
-; This function cannot be called, only jumped to,
-; because it relocates the stack pointer to quickly
-; copy data with a "pop slide".
-
-	pop de
-	ld [hl], e ; no-optimize *hl++|*hl-- = b|c|d|e
-	inc hl
-	ld [hl], d
-rept (LEN_2BPP_TILE - 2) / 2
-	pop de
-	inc hl
-	ld [hl], e ; no-optimize *hl++|*hl-- = b|c|d|e
-	inc hl
-	ld [hl], d
-endr
-
-; Restore the stack pointer from bc
-	ld h, b
-	ld l, c
-	ld sp, hl
-	ret
 
 AnimateWaterPalette:
 ; Transition between color values 0-2 for color 0 in palette 3.
@@ -942,12 +1109,8 @@ TowerPillarTile8:  INCBIN "gfx/tilesets/tower-pillar/8.2bpp"
 TowerPillarTile9:  INCBIN "gfx/tilesets/tower-pillar/9.2bpp"
 TowerPillarTile10: INCBIN "gfx/tilesets/tower-pillar/10.2bpp"
 
-WhirlpoolFrames1: dw vTiles2 tile $32, WhirlpoolTiles1
-WhirlpoolFrames2: dw vTiles2 tile $33, WhirlpoolTiles2
-WhirlpoolFrames3: dw vTiles2 tile $42, WhirlpoolTiles3
-WhirlpoolFrames4: dw vTiles2 tile $43, WhirlpoolTiles4
+WhirlpoolFramesTop: dw vTiles2 tile $14, WhirlpoolTilesTop
+WhirlpoolFramesBottom: dw vTiles2 tile $24, WhirlpoolTilesBottom
 
-WhirlpoolTiles1: INCBIN "gfx/tilesets/whirlpool/1.2bpp"
-WhirlpoolTiles2: INCBIN "gfx/tilesets/whirlpool/2.2bpp"
-WhirlpoolTiles3: INCBIN "gfx/tilesets/whirlpool/3.2bpp"
-WhirlpoolTiles4: INCBIN "gfx/tilesets/whirlpool/4.2bpp"
+WhirlpoolTilesTop: INCBIN "gfx/tilesets/whirlpool/top.2bpp"
+WhirlpoolTilesBottom: INCBIN "gfx/tilesets/whirlpool/bottom.2bpp"

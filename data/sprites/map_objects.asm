@@ -297,13 +297,13 @@ SpriteMovementData::
 	db 0 ; flags1
 	db 0 ; flags2
 	db SWIMMING ; palette flags
+	
+; SPRITEMOVEDATA_PUDDLE,
+	db SPRITEMOVEFN_PUDDLE
+	db DOWN
+	db OBJECT_ACTION_PUDDLE_SPLASH
+	db WONT_DELETE | FIXED_FACING | SLIDING | EMOTE_OBJECT ; flags1
+	db HIGH_PRIORITY ; flags2
+	db 0
 
 	assert_table_length NUM_SPRITEMOVEDATA
-
-; unused
-	db SPRITEMOVEFN_00 ; movement function
-	db DOWN ; facing
-	db OBJECT_ACTION_STAND ; action
-	db 0 ; flags1
-	db 0 ; flags2
-	db 0 ; palette flags
