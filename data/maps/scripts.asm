@@ -77,11 +77,15 @@ SECTION "Map Scripts 23", ROMX
 SECTION "Map Scripts 24", ROMX
 
 
+INCLUDE "maps/ValenciaIsland.asm"
+INCLUDE "maps/IvysLab.asm"
 
 SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/PlayersHouse2F.asm"
 INCLUDE "maps/PlayersHouse1F.asm"
-INCLUDE "maps/ValenciaIsland.asm"
+INCLUDE "maps/ValenciaNeighborHouse.asm"
+INCLUDE "maps/Route49.asm"
+INCLUDE "maps/Route49North.asm"
 
 ENDSECTION

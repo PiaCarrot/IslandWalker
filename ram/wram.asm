@@ -2790,7 +2790,10 @@ wPokecenter2FSceneID::                            db
 wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
 wTimeCapsuleSceneID::                             db
-wPlayersHouse1FSceneID::                          db
+wPlayersHouse1FSceneID::            db
+wIvysLabSceneID::                   db
+wValenciaIslandSceneID::            db
+wRoute49SceneID::                   db
 
 ; fight counts
 wJackFightCount::    db

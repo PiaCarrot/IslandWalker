@@ -87,6 +87,23 @@ SetSeenMonIndex::
 SetPokedexStatusMonIndex:
 	ld b, SET_FLAG
 	jr FlagActionBaseOne
+	
+ResetSeenAndCaughtMon::
+	call GetPokemonFlagIndex
+	push de
+	call ResetSeenMonIndex
+	pop de
+ResetCaughtMonIndex::
+	ld hl, wPokedexCaught
+	jr ResetPokedexStatusMonIndex
+
+ResetSeenMon::
+	call GetPokemonFlagIndex
+ResetSeenMonIndex::
+	ld hl, wPokedexSeen
+ResetPokedexStatusMonIndex:
+	ld b, RESET_FLAG
+	jr FlagActionBaseOne
 
 CheckCaughtMon::
 	call GetPokemonFlagIndex

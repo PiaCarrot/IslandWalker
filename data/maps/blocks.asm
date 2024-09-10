@@ -40,5 +40,18 @@ PlayersHouse2F_Blocks:
 
 ValenciaIsland_Blocks:
 	INCBIN "maps/ValenciaIsland.ablk"
+	
+IslandHouse_Blocks:
+ValenciaNeighborHouse_Blocks:
+	INCBIN "maps/IslandHouse.ablk"
+
+IvysLab_Blocks:
+	INCBIN "maps/IvysLab.ablk"
+
+Route49_Blocks:
+	INCBIN "maps/Route49.ablk"
+	
+Route49North_Blocks:
+	INCBIN "maps/Route49North.ablk"
 
 ENDSECTION

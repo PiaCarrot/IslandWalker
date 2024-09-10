@@ -282,6 +282,8 @@ INCLUDE "engine/gfx/player_gfx.asm"
 INCLUDE "engine/events/unown_walls.asm"
 INCLUDE "engine/events/buena.asm"
 INCLUDE "engine/events/dratini.asm"
+INCLUDE "engine/events/hidden_starter_1.asm"
+INCLUDE "engine/events/hidden_starter_2.asm"
 INCLUDE "engine/events/battle_tower/rules.asm"
 
 

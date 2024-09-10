@@ -96,9 +96,22 @@ MACRO connection
 	endc
 ENDM
 
-	map_attributes ValenciaIsland, VALENCIA_ISLAND, $00, 0
+	map_attributes ValenciaIsland, VALENCIA_ISLAND, $10, WEST
+	connection west, Route49, ROUTE_49, -2
+
+	map_attributes Route49, ROUTE_49, $10, NORTH | EAST
+	connection north, Route49North, ROUTE_49_NORTH, -1
+	connection east, ValenciaIsland, VALENCIA_ISLAND, 2
+
+	map_attributes Route49North, ROUTE_49_NORTH, $10, SOUTH ;NORTH | SOUTH | WEST
+;	connection north, Route51, ROUTE_51, 0
+	connection south, Route49, ROUTE_49, 1
+;	connection west, TangeloIsland, TANGELO_ISLAND, -1
+	
 	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
 	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
+	map_attributes IvysLab, IVYS_LAB, $00, 0
+	map_attributes ValenciaNeighborHouse, VALENCIA_NEIGHBOR_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0

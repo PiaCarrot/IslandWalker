@@ -6008,7 +6008,7 @@ LoadEnemyMon:
 ; These are the IVs we'll use if we're actually in a trainer battle
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .UpdateIVs
+	jp nz, .UpdateIVs
 
 ; Wild IVs
 ; Here's where the fun starts
@@ -6077,6 +6077,17 @@ LoadEnemyMon:
 
 .NotRoaming:
 ; Register a contains wBattleType
+
+	cp BATTLETYPE_TUTORIAL
+	jp nz, .GenerateIVs
+
+	ld a, [wPartyMon1IVs]
+	ld b, a
+	ld a, [wPartyMon1IVs + 1]
+	ld c, a
+	jr .UpdateIVs
+
+
 
 ; Forced shiny battle type
 ; Used by Red Gyarados at Lake of Rage

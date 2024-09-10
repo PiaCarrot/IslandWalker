@@ -202,7 +202,6 @@ TilesetHouseAnim::
 TilesetPlayersHouseAnim::
 TilesetPokecenterAnim::
 TilesetGateAnim::
-TilesetLabAnim::
 TilesetFacilityAnim::
 TilesetMartAnim::
 TilesetMansionAnim::
@@ -226,6 +225,19 @@ TilesetAerodactylWordRoomAnim::
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetLabAnim:
+	dw vTiles2 tile $22, AnimateWallWaterTile
+	dw vTiles2 tile $23, AnimateLabWaterTile
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
 DoneTileAnimation:
@@ -331,6 +343,66 @@ ScrollTileDown:
 	dec a
 	jr nz, .loop
 	ret
+	
+AnimateWallWaterTile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = .WaterTileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(.WallWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.WallWaterTileFrames)
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to de (now hl)
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jmp WriteTile
+
+.WallWaterTileFrames:
+	INCBIN "gfx/tilesets/lab/wall_water.2bpp"
+	
+AnimateLabWaterTile:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	and %110
+
+; hl = .WaterTileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	add LOW(.LabWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(.LabWaterTileFrames)
+	ld h, a
+
+; Write the tile graphic from hl (now sp) to de (now hl)
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jmp WriteTile
+
+.LabWaterTileFrames:
+	INCBIN "gfx/tilesets/lab/lab_water.2bpp"
 
 AnimateFountainTile:
 ; Save the stack pointer in bc for WriteTile to restore
