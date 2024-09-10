@@ -150,7 +150,49 @@ SECTION "Extra Songs 2", ROMX
 INCLUDE "audio/music/postcredits.asm"
 INCLUDE "audio/music/RBY/introbattle.asm"
 INCLUDE "audio/music/Title/getbadge.asm"
-INCLUDE "audio/music/Orange/route24gbs.asm"
+
+SECTION "Songs Regen", ROMX
+
+INCLUDE "audio/music/orange/tangelojungle.asm"
+INCLUDE "audio/music/orange/crystalcave.asm"
+INCLUDE "audio/music/orange/meetjessiejames.asm"
+INCLUDE "audio/music/orange/rocketmotto.asm"
+INCLUDE "audio/music/orange/pinkanisland.asm"
+INCLUDE "audio/music/orange/imakunitheme.asm"
+INCLUDE "audio/music/orange/traceybattle.asm"
+INCLUDE "audio/music/orange/marshadowbattle.asm"
+INCLUDE "audio/music/orange/PWTfinalorange.asm"
+
+SECTION "Songs Regen 2", ROMX
+INCLUDE "audio/music/orange/traceyencounter.asm"
+INCLUDE "audio/music/orange/route69heh.asm"
+INCLUDE "audio/music/orange/drakebattle.asm"
+INCLUDE "audio/music/orange/ascorbiaisland.asm"
+INCLUDE "audio/music/orange/route62.asm"
+INCLUDE "audio/music/orange/earlyorangeroute.asm"
+INCLUDE "audio/music/orange/crimsonroute.asm"
+INCLUDE "audio/music/orange/starterorangeroute.asm"
+INCLUDE "audio/music/orange/cityorange.asm"
+INCLUDE "audio/music/orange/valenciatown.asm"
+
+SECTION "Songs Regen 3", ROMX
+
+
+INCLUDE "audio/music/orange/looker.asm"
+INCLUDE "audio/music/orange/orangeencounter.asm"
+
+SECTION "Songs Monstarules", ROMX
+
+INCLUDE "audio/music/orange/crossbattle.asm"
+INCLUDE "audio/music/orange/orangewild.asm"
+INCLUDE "audio/music/orange/lugiassong.asm"
+INCLUDE "audio/music/orange/orangegymbattle.asm"
+INCLUDE "audio/music/orange/orangetrainerbattle.asm"
+INCLUDE "audio/music/orange/fourisland.asm"
+
+SECTION "Songs Other", ROMX
+INCLUDE "audio/music/orange/ridinglapras.asm" ;mmmm
+INCLUDE "audio/music/orange/route24gbs.asm"   ;TriteHexagon
 
 
 SECTION "Sound Effects", ROMX

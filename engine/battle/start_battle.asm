@@ -57,11 +57,11 @@ PlayBattleMusic:
 	and a
 	jr nz, .kantowild
 
-	ld de, MUSIC_JOHTO_WILD_BATTLE
+	ld de, MUSIC_ORANGEWILD
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jr c, .done ; not NITE_F or EVE_F
-	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
+	ld de, MUSIC_ORANGEWILD
 	jr .done
 
 .kantowild
@@ -93,7 +93,7 @@ PlayBattleMusic:
 
 	; IsGymLeader also counts CHAMPION, RED, and the Kanto gym leaders
 	; but they have been taken care of before this
-	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
+	ld de, MUSIC_ORANGE_ISLANDS_GYM_BATTLE
 	farcall IsGymLeader
 	jr c, .done
 
@@ -121,7 +121,7 @@ PlayBattleMusic:
 	jr nz, .kantotrainer
 
 .johtotrainer
-	ld de, MUSIC_JOHTO_TRAINER_BATTLE
+	ld de, MUSIC_ORANGE_TRAINER_BATTLE
 	jr .done
 
 .kantotrainer
