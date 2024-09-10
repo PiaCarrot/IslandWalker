@@ -259,6 +259,12 @@
 ; Elite Four and Champion
 
 ; Crystal-exclusive trainer flags
+	const EVENT_MOM_DEFEATED
+	const EVENT_DRAKE_DEFEATED
+	const EVENT_LUANA_DEFEATED
+	const EVENT_RUDY_DEFEATED
+	const EVENT_DANNY_DEFEATED
+	const EVENT_CISSY_DEFEATED
 
 ; Sprite visibility flags
 ; When these events are cleared, the sprite becomes visible; when set, the sprite is hidden.
