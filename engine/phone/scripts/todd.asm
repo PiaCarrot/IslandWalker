@@ -29,7 +29,7 @@ ToddPhoneCallerScript:
 	iftrue .TryForSale
 	checkflag ENGINE_TODD_SATURDAY_MORNING
 	iftrue .TryForSale
-	checkflag ENGINE_FLYPOINT_GOLDENROD
+	checkflag ENGINE_FLYPOINT_VALENCIA
 	iffalse .NoGoldenrod
 	farscall PhoneScript_Random2
 	ifequal 0, ToddWantsBattle

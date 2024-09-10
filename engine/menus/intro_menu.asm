@@ -328,13 +328,13 @@ Continue:
 	jr FinishContinueFunction
 
 .SpawnAfterE4:
-	ld a, SPAWN_NEW_BARK
+	ld a, SPAWN_VALENCIA
 	ld [wDefaultSpawnpoint], a
 	call PostCreditsSpawn
 	jr FinishContinueFunction
 
 SpawnAfterRed:
-	ld a, SPAWN_MT_SILVER
+	ld a, SPAWN_VALENCIA
 	ld [wDefaultSpawnpoint], a
 
 PostCreditsSpawn:

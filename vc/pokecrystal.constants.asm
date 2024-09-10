@@ -11,8 +11,8 @@ ENDM
 ; [print forbid 2]
 	vc_const A_BUTTON
 ; [print forbid 3]
-	vc_const MAPGROUP_CIANWOOD
-	vc_const MAP_CIANWOOD_PHOTO_STUDIO
+	vc_const MAPGROUP_NONE
+	vc_const MAP_NONE
 ; [print forbid 5]
 	vc_const NO_INPUT
 	vc_const B_BUTTON

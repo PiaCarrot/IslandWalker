@@ -31,7 +31,7 @@ LizPhoneCallerScript:
 .next:
 	farscall PhoneScript_Random2
 	ifequal 0, LizGossip
-	checkflag ENGINE_FLYPOINT_GOLDENROD
+	checkflag ENGINE_FLYPOINT_VALENCIA
 	iffalse .Generic
 	farscall PhoneScript_Random2
 	ifequal 0, LizWantsBattle

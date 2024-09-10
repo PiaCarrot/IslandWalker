@@ -57,7 +57,7 @@ WadePhoneCallerScript:
 	iftrue .next
 	farscall PhoneScript_Random2
 	ifequal 0, WadeHasItem2
-	checkflag ENGINE_FLYPOINT_GOLDENROD
+	checkflag ENGINE_FLYPOINT_VALENCIA
 	iffalse .next
 	farscall PhoneScript_Random2
 	ifequal 0, WadeWantsBattle2

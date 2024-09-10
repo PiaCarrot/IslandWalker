@@ -70,10 +70,10 @@ SpecialAerodactylChamber:
 
 	call GetMapAttributesPointer
 	ld a, h
-	cp HIGH(RuinsOfAlphAerodactylChamber_MapAttributes)
+	cp HIGH(ValenciaIsland_MapAttributes)
 	jr nz, .nope
 	ld a, l
-	cp LOW(RuinsOfAlphAerodactylChamber_MapAttributes)
+	cp LOW(ValenciaIsland_MapAttributes)
 	jr nz, .nope
 
 	ld de, EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
@@ -97,10 +97,10 @@ SpecialKabutoChamber:
 
 	call GetMapAttributesPointer
 	ld a, h
-	cp HIGH(RuinsOfAlphKabutoChamber_MapAttributes)
+	cp HIGH(ValenciaIsland_MapAttributes)
 	jr nz, .done
 	ld a, l
-	cp LOW(RuinsOfAlphKabutoChamber_MapAttributes)
+	cp LOW(ValenciaIsland_MapAttributes)
 	jr nz, .done
 
 	ld de, EVENT_WALL_OPENED_IN_KABUTO_CHAMBER

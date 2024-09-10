@@ -87,35 +87,9 @@ DEF NUM_FISHGROUPS EQU const_value - 1
 ; SpawnPoints indexes (see data/maps/spawn_points.asm)
 	const_def
 	const SPAWN_HOME
-	const SPAWN_DEBUG
 ; kanto
-	const SPAWN_PALLET
-	const SPAWN_VIRIDIAN
-	const SPAWN_PEWTER
-	const SPAWN_CERULEAN
-	const SPAWN_ROCK_TUNNEL
-	const SPAWN_VERMILION
-	const SPAWN_LAVENDER
-	const SPAWN_SAFFRON
-	const SPAWN_CELADON
-	const SPAWN_FUCHSIA
-	const SPAWN_CINNABAR
-	const SPAWN_INDIGO
 ; johto
-	const SPAWN_NEW_BARK
-	const SPAWN_CHERRYGROVE
-	const SPAWN_VIOLET
-	const SPAWN_UNION_CAVE
-	const SPAWN_AZALEA
-	const SPAWN_CIANWOOD
-	const SPAWN_GOLDENROD
-	const SPAWN_OLIVINE
-	const SPAWN_ECRUTEAK
-	const SPAWN_MAHOGANY
-	const SPAWN_LAKE_OF_RAGE
-	const SPAWN_BLACKTHORN
-	const SPAWN_MT_SILVER
-	const SPAWN_FAST_SHIP
+	const SPAWN_VALENCIA
 DEF NUM_SPAWNS EQU const_value
 
 DEF SPAWN_N_A EQU -1
@@ -124,32 +98,9 @@ DEF SPAWN_N_A EQU -1
 	const_def
 ; johto
 DEF JOHTO_FLYPOINT EQU const_value
-	const FLY_NEW_BARK
-	const FLY_CHERRYGROVE
-	const FLY_VIOLET
-	const FLY_AZALEA
-	const FLY_GOLDENROD
-	const FLY_ECRUTEAK
-	const FLY_OLIVINE
-	const FLY_CIANWOOD
-	const FLY_MAHOGANY
-	const FLY_LAKE_OF_RAGE
-	const FLY_BLACKTHORN
-	const FLY_MT_SILVER
+	const FLY_VALENCIA
 ; kanto
 DEF KANTO_FLYPOINT EQU const_value
-	const FLY_PALLET
-	const FLY_VIRIDIAN
-	const FLY_PEWTER
-	const FLY_CERULEAN
-	const FLY_VERMILION
-	const FLY_ROCK_TUNNEL
-	const FLY_LAVENDER
-	const FLY_CELADON
-	const FLY_SAFFRON
-	const FLY_FUCHSIA
-	const FLY_CINNABAR
-	const FLY_INDIGO
 DEF NUM_FLYPOINTS EQU const_value
 
 DEF MAX_OUTDOOR_SPRITES EQU 23 ; see engine/overworld/overworld.asm

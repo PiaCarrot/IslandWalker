@@ -6223,10 +6223,10 @@ LoadEnemyMon:
 
 .CheckMagikarpArea:
 	ld a, [wMapGroup]
-	cp GROUP_LAKE_OF_RAGE
+	cp GROUP_NONE
 	jr nz, .Happiness
 	ld a, [wMapNumber]
-	cp MAP_LAKE_OF_RAGE
+	cp MAP_NONE
 	jr nz, .Happiness
 ; 40% chance of not flooring
 	call Random
