@@ -21,13 +21,20 @@ CatchTutorial::
 	ld hl, wPlayerName
 	ld de, wMomsName
 	ld bc, NAME_LENGTH
-	rst CopyBytes
+	call CopyBytes
 ; Copy Dude's name to your name
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_49
+	jr nz, .IvyName
+	ld hl, .Lorelei
+	jr .Continue
+.IvyName
 	ld hl, .Dude
+.Continue
 	ld de, wPlayerName
 	ld bc, NAME_LENGTH
-	rst CopyBytes
-
+	call CopyBytes
+	
 	call .LoadDudeData
 
 	xor a
@@ -78,7 +85,10 @@ CatchTutorial::
 	ret
 
 .Dude:
-	db "DUDE@"
+	db "IVY@"
+
+.Lorelei:
+	db "PRIMA@"
 
 .AutoInput:
 	db NO_INPUT, $ff ; end

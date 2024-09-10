@@ -36,4 +36,5 @@ SpriteMons:
 	dw GYARADOS
 	dw LUGIA
 	dw HO_OH
+	dw DRATINI
 	assert_table_length NUM_POKEMON_SPRITES

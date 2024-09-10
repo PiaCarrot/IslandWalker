@@ -4,6 +4,8 @@ ChrisBackpic::
 INCBIN "gfx/player/chris_back.2bpp.lz"
 DudeBackpic::
 INCBIN "gfx/battle/dude.2bpp.lz"
+LoreleiBackpic::
+INCBIN "gfx/battle/lorelei.2bpp.lz"
 
 
 SECTION "Shrink Pics", ROMX

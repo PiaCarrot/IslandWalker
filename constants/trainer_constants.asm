@@ -698,6 +698,15 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const GRUNTF_3
 	const GRUNTF_4
 	const GRUNTF_5
+	
+	trainerclass LORELEI1 ; 44
+	const LORELEI_1
+
+	trainerclass LORELEI2 ; 45
+	const LORELEI_2
+
+	trainerclass LORELEI3 ; 46
+	const LORELEI_3
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE

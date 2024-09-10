@@ -778,3 +778,6 @@ INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 SECTION "Pics 20", ROMX
 
 KrisTrainerPic: INCBIN "gfx/trainers/kris.2bpp.lz"
+Lorelei1Pic:         INCBIN "gfx/trainers/lorelei1.2bpp.lz"
+Lorelei2Pic:         INCBIN "gfx/trainers/lorelei2.2bpp.lz"
+Lorelei3Pic:         INCBIN "gfx/trainers/lorelei3.2bpp.lz"

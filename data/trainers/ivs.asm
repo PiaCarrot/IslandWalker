@@ -68,6 +68,9 @@ TrainerClassIVs:
 	ivs 24, 18, 26, 26, 26, 26 ; BLUE
 	ivs 16, 18, 16, 16, 16, 16 ; OFFICER
 	ivs 18, 14, 28, 20, 16, 16 ; GRUNTF
+	ivs 16, 16, 16, 16, 16, 16 ; LORELEI1
+	ivs 25, 26, 24, 26, 26, 26 ; LORELEI2
+	ivs 25, 26, 24, 26, 26, 26 ; LORELEI3
 	ivs 16, 18, 16, 16, 16, 16 ; MYSTICALMAN
 	ivs 25, 26, 24, 26, 26, 26 ; KRIS
 	assert_table_length NUM_TRAINER_CLASSES

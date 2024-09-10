@@ -69,6 +69,9 @@ TrainerGroups:
 	dba BlueGroup
 	dba OfficerGroup
 	dba GruntFGroup
+	dba Lorelei1Group
+	dba Lorelei2Group
+	dba Lorelei3Group
 	dba MysticalmanGroup
 	dba KrisGroup
 	assert_table_length NUM_TRAINER_CLASSES

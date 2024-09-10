@@ -70,6 +70,9 @@ TrainerEncounterMusic::
 	db MUSIC_RIVAL_ENCOUNTER       ; blue
 	db MUSIC_HIKER_ENCOUNTER       ; officer
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntf
+	db MUSIC_ORANGE_ENCOUNTER       ; lorelei1
+	db MUSIC_ORANGE_ENCOUNTER       ; lorelei2
+	db MUSIC_ORANGE_ENCOUNTER       ; lorelei3
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_HIKER_ENCOUNTER       ; kris
 	assert_table_length NUM_TRAINER_CLASSES + 1

@@ -45,7 +45,7 @@ HiddenStarter2:
 ; Ask if Player wants to name their new Mon
 	call PrintText
 	call YesNoBox
-	jmp c, .skipnickname
+	jr c, .skipnickname
 
 ; Load the new nickname into wStringBuffer2
 	xor a ; PARTYMON

@@ -18,6 +18,7 @@ INCBIN "gfx/trainers/jasmine.gbcpal", middle_colors
 INCBIN "gfx/trainers/chuck.gbcpal", middle_colors
 INCBIN "gfx/trainers/clair.gbcpal", middle_colors
 INCBIN "gfx/trainers/rival1.gbcpal", middle_colors
+PokemonProfPalette:
 INCBIN "gfx/trainers/oak.gbcpal", middle_colors
 INCBIN "gfx/trainers/will.gbcpal", middle_colors
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
@@ -75,6 +76,10 @@ INCBIN "gfx/trainers/red.gbcpal", middle_colors
 INCBIN "gfx/trainers/blue.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
+Lorelei1Palette:
+INCBIN "gfx/trainers/lorelei1.gbcpal", middle_colors
+INCBIN "gfx/trainers/lorelei2.gbcpal", middle_colors
+INCBIN "gfx/trainers/lorelei3.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
 KrisPalette:
