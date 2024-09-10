@@ -44,16 +44,10 @@ MeetMomScript:
 	setevent EVENT_GOT_EEVEE_FROM_IVY
 .Continue
 	writetext MomChoseAltStarterText
-	promptbutton
-; replace with giveitem POKE_PAGER
-	getstring STRING_BUFFER_4, PokegearName
-	scall PlayersHouse1FReceiveItemStd
+	waitbutton
+	closetext
 	setscene SCENE_PLAYERSHOUSE1F_NOOP
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
-	; writetext MomGivesPokegearText
-	; promptbutton
-	; special SetDayOfWeek
-	; closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
@@ -227,8 +221,9 @@ ElmsLookingForYouText:
 	line "I meant to ask you"
 	cont "something! Your"
 	cont "AUNT PRIMA is"
-	cont "bringing a new doll"
-	cont "for your room!"
+	cont "coming over with a"
+	cont "new doll for your"
+	cont "room."
 	
 	para "Which do you like"
 	line "more? PIKACHU or"
@@ -239,26 +234,9 @@ MomChoseAltStarterText:
 	text "MOM: Good choice,"
 	line "kiddo!"
 	
-	para "Also, I wanted to"
-	line "give you this, so"
-	cont "mama can always"
-	cont "keep tabs on you!"
-	done
-
-MomGivesPokegearText:
-	text "#MON PAGER, or"
-	line "just #PAGE."
-
-	para "It allows people"
-	line "to send messages"
-	cont "to you, though you"
-	cont "can't reply back."
-
-	para "Technology is so"
-	line "crazy! One day we"
-	cont "call eachother and"
-	cont "listen to RADIO on"
-	cont "the go, I'm sure!"
+	para "Good luck out"
+	line "there! Make sure"
+	cont "to come visit!"
 	done
 
 MomDefaultText:
@@ -419,7 +397,7 @@ PlayersHouse1F_MapEvents:
 	bg_event  6,  1, BGEVENT_READ, PlayersHouse1FTVScript
 
 	def_object_events
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, -1
+	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MomScript, -1
 	object_event  8,  1, SPRITE_MOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RotomOvenScript, EVENT_ROTOM_OVEN_PURCHASED
 	object_event  4,  1, SPRITE_MOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RotomWashScript, EVENT_ROTOM_WASH_PURCHASED
 	object_event  2,  1, SPRITE_MOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RotomFrostScript, EVENT_ROTOM_FROST_PURCHASED
