@@ -383,9 +383,9 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  7, VALENCIA_ISLAND, 1
-	warp_event  7,  7, VALENCIA_ISLAND, 1
-	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
+	warp_event  2,  7, VALENCIA_ISLAND, 1
+	warp_event  3,  7, VALENCIA_ISLAND, 1
+	warp_event 11,  0, PLAYERS_HOUSE_2F, 1
 
 	def_coord_events
 	coord_event  8,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomLeftScript

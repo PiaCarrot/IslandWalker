@@ -551,12 +551,6 @@ INCBIN "data/tilesets/pokecenter_attributes.bin.lz"
 TilesetGateAttr::
 INCBIN "data/tilesets/gate_attributes.bin.lz"
 
-TilesetPortAttr::
-INCBIN "data/tilesets/port_attributes.bin.lz"
-
-TilesetLabAttr::
-INCBIN "data/tilesets/lab_attributes.bin.lz"
-
 
 SECTION "Tileset Data 10", ROMX
 
@@ -658,3 +652,9 @@ INCBIN "data/tilesets/valencia_mandarin_north_metatiles.bin.lz"
 
 TilesetValenciaMandarinNorthColl::
 INCLUDE "data/tilesets/valencia_mandarin_north_collision.asm"
+
+TilesetPortAttr::
+INCBIN "data/tilesets/port_attributes.bin.lz"
+
+TilesetLabAttr::
+INCBIN "data/tilesets/lab_attributes.bin.lz"
