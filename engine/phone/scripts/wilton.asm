@@ -51,9 +51,9 @@ WiltonWantsBattle:
 WiltonHasItem:
 	setflag ENGINE_WILTON_HAS_ITEM
 	getlandmarkname STRING_BUFFER_5, LANDMARK_ROUTE_44
-	clearevent EVENT_WILTON_HAS_ULTRA_BALL
-	clearevent EVENT_WILTON_HAS_GREAT_BALL
-	clearevent EVENT_WILTON_HAS_POKE_BALL
+	clearevent EVENT_DUMMY_OUT
+	clearevent EVENT_DUMMY_OUT
+	clearevent EVENT_DUMMY_OUT
 	random 5
 	ifequal 0, .UltraBall
 	random 3
@@ -61,15 +61,15 @@ WiltonHasItem:
 	sjump .PokeBall
 
 .UltraBall:
-	setevent EVENT_WILTON_HAS_ULTRA_BALL
+	setevent EVENT_DUMMY_OUT
 	sjump .FoundItem
 
 .GreatBall:
-	setevent EVENT_WILTON_HAS_GREAT_BALL
+	setevent EVENT_DUMMY_OUT
 	sjump .FoundItem
 
 .PokeBall:
-	setevent EVENT_WILTON_HAS_POKE_BALL
+	setevent EVENT_DUMMY_OUT
 
 .FoundItem:
 	farsjump PhoneScript_FoundItem_Male

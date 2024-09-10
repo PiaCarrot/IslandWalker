@@ -34,7 +34,7 @@ TullyPhoneCallerScript:
 	iftrue .Generic
 	farscall PhoneScript_Random3
 	ifequal 0, TullyWantsBattle
-	checkevent EVENT_TULLY_GAVE_WATER_STONE
+	checkevent EVENT_DUMMY_OUT
 	iftrue .WaterStone
 	farscall PhoneScript_Random2
 	ifequal 0, TullyFoundWaterStone

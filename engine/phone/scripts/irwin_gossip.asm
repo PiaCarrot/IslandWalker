@@ -1,23 +1,23 @@
 IrwinRumorScript:
-	checkevent EVENT_OPENED_MT_SILVER
+	checkevent EVENT_DUMMY_OUT
 	iftrue .MtSilver
-	checkevent EVENT_FOUGHT_SNORLAX
+	checkevent EVENT_DUMMY_OUT
 	iftrue .Snorlax
-	checkevent EVENT_GOT_PASS_FROM_COPYCAT
+	checkevent EVENT_DUMMY_OUT
 	iftrue .TrainPass
 	checkflag ENGINE_MARSHBADGE
 	iftrue .MarshBadge
 	checkflag ENGINE_FLYPOINT_VALENCIA
 	iftrue .VermilionCity
-	checkevent EVENT_BEAT_ELITE_FOUR
+	checkevent EVENT_DUMMY_OUT
 	iftrue .EliteFour
 	checkflag ENGINE_RISINGBADGE
 	iftrue .RisingBadge
-	checkevent EVENT_CLEARED_RADIO_TOWER
+	checkevent EVENT_DUMMY_OUT
 	iftrue .RadioTower
-	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
+	checkevent EVENT_DUMMY_OUT
 	iftrue .RocketHideout
-	checkevent EVENT_JASMINE_RETURNED_TO_GYM
+	checkevent EVENT_DUMMY_OUT
 	iftrue .JasmineReturned
 	checkflag ENGINE_FOGBADGE
 	iftrue .FogBadge

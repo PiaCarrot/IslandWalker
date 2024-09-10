@@ -18,13 +18,13 @@ HoOhChamber:
 	endc
 	ret nz
 	call GetMapAttributesPointer ; pointless?
-	ld de, EVENT_WALL_OPENED_IN_HO_OH_CHAMBER
+	ld de, EVENT_DUMMY_OUT
 	ld b, SET_FLAG
 	jmp EventFlagAction
 
 OmanyteChamber:
 	call GetMapAttributesPointer ; pointless?
-	ld de, EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER
+	ld de, EVENT_DUMMY_OUT
 	ld b, CHECK_FLAG
 	call EventFlagAction
 	ld a, c
@@ -60,7 +60,7 @@ OmanyteChamber:
 
 .open
 	call GetMapAttributesPointer ; pointless?
-	ld de, EVENT_WALL_OPENED_IN_OMANYTE_CHAMBER
+	ld de, EVENT_DUMMY_OUT
 	ld b, SET_FLAG
 	jmp EventFlagAction
 
@@ -76,7 +76,7 @@ SpecialAerodactylChamber:
 	cp LOW(ValenciaIsland_MapAttributes)
 	jr nz, .nope
 
-	ld de, EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
+	ld de, EVENT_DUMMY_OUT
 	ld b, SET_FLAG
 	call EventFlagAction
 
@@ -103,7 +103,7 @@ SpecialKabutoChamber:
 	cp LOW(ValenciaIsland_MapAttributes)
 	jr nz, .done
 
-	ld de, EVENT_WALL_OPENED_IN_KABUTO_CHAMBER
+	ld de, EVENT_DUMMY_OUT
 	ld b, SET_FLAG
 	call EventFlagAction
 

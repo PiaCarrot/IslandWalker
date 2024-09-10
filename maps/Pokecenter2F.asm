@@ -58,7 +58,7 @@ Script_BattleRoomClosed:
 
 LinkReceptionistScript_Trade:
 if !DEF(_DEBUG)
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_IVY
 	iffalse Script_TradeCenterClosed
 endc
 	opentext
@@ -122,7 +122,7 @@ endc
 
 LinkReceptionistScript_Battle:
 if !DEF(_DEBUG)
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_IVY
 	iffalse Script_BattleRoomClosed
 endc
 	opentext
@@ -194,7 +194,7 @@ Script_TimeCapsuleClosed:
 
 LinkReceptionistScript_TimeCapsule:
 IF !DEF(_DEBUG)
-	checkevent EVENT_MET_BILL
+	checkevent EVENT_GOT_A_POKEMON_FROM_IVY
 	iftrue Script_TimeCapsuleClosed
 	checkflag ENGINE_TIME_CAPSULE
 	iftrue Script_TimeCapsuleClosed

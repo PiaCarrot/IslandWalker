@@ -36,7 +36,7 @@ TiffanyPhoneCallerScript:
 	iftrue .Generic
 	farscall PhoneScript_Random3
 	ifequal 0, TiffanyWantsBattle
-	checkevent EVENT_TIFFANY_GAVE_PINK_BOW
+	checkevent EVENT_DUMMY_OUT
 	iftrue .PinkBow
 	farscall PhoneScript_Random2
 	ifequal 0, TiffanyHasPinkBow
