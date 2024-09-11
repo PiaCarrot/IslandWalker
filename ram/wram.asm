@@ -2792,6 +2792,7 @@ wColosseumSceneID::                               db
 wTimeCapsuleSceneID::                             db
 wPlayersHouse1FSceneID::            db
 wIvysLabSceneID::                   db
+wIvysLabB1SceneID::                   db
 wValenciaIslandSceneID::            db
 wRoute49SceneID::                   db
 

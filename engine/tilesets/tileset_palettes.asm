@@ -20,6 +20,8 @@ LoadSpecialMapPalette:
 	jr z, .radio_tower
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
+	cp TILESET_LAB
+	jr z, .lab
 	jr .do_nothing
 
 .darkness
@@ -58,6 +60,11 @@ LoadSpecialMapPalette:
 
 .mansion_mobile
 	call LoadMansionPalette
+	scf
+	ret
+	
+.lab
+	call LoadLabPalette
 	scf
 	ret
 
@@ -114,6 +121,16 @@ LoadHousePalette:
 
 HousePalette:
 INCLUDE "gfx/tilesets/house.pal"
+
+LoadLabPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, LabPalette
+	ld bc, 8 palettes
+	jmp FarCopyWRAM
+	
+LabPalette:
+INCLUDE "gfx/tilesets/lab.pal"
 
 LoadRadioTowerPalette:
 	ld a, BANK(wBGPals1)

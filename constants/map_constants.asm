@@ -40,6 +40,7 @@ ENDM
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7
 	map_const VALENCIA_ISLAND,                       24,  24 ; 13
 	map_const IVYS_LAB,									    8,  5
+	map_const IVYS_LAB_B1,									    4,  3
 	map_const VALENCIA_NEIGHBOR_HOUSE,					    4,  4
 	map_const ROUTE_49,									   20, 24
 	map_const ROUTE_49_NORTH,							    16, 28

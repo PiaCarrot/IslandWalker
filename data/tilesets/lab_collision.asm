@@ -26,3 +26,12 @@
 	tilecoll COUNTER, COUNTER, COUNTER, WALL ; 19
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 1a
 	tilecoll COUNTER, COUNTER, WALL, COUNTER ; 1b
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1c
+	tilecoll FLOOR, FLOOR, LADDER, FLOOR ; 1d
+	tilecoll FLOOR, FLOOR, LADDER, FLOOR ; 1e
+	tilecoll WALL, WALL, WALL, WALL ; 1f
+	tilecoll WALL, WALL, WALL, WALL ; 20
+	tilecoll WALL, WALL, WALL, WALL ; 21
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 22
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 23
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 24

@@ -48,6 +48,9 @@ ValenciaNeighborHouse_Blocks:
 IvysLab_Blocks:
 	INCBIN "maps/IvysLab.ablk"
 
+IvysLabB1_Blocks:
+	INCBIN "maps/IvysLabB1.ablk"
+
 Route49_Blocks:
 	INCBIN "maps/Route49.ablk"
 	

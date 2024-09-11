@@ -7,28 +7,36 @@
 
 IvysLab_MapScripts:
 	def_scene_scripts
-	scene_script .MeetIvy, SCENE_IVYS_LAB_MEET_IVY
-	scene_script .CantLeaveIvysLab, SCENE_IVYSLAB_CANT_LEAVE
-	scene_script .ComeBackFromAltStarter, SCENE_IVYSLAB_ALT_STARTER
-	scene_script .IvysLabNoOp, SCENE_IVYSLAB_NOOP
+	scene_script MeetIvy, SCENE_IVYS_LAB_MEET_IVY
+	scene_script CantLeaveIvysLab, SCENE_IVYSLAB_CANT_LEAVE
+	scene_script ComeBackFromAltStarter, SCENE_IVYSLAB_ALT_STARTER
+	scene_script IvysLabNoOp, SCENE_IVYSLAB_NOOP
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, IvysBasementCallback
 
-.MeetIvy:
-	priorityjump .WalkUpToIvy
+IvysBasementCallback:	
+	checkevent EVENT_IVYS_BASEMENT_OPENED
+	iffalse .Done
+	changeblock  0,  4, $1D
+.Done:
+	endcallback
+
+MeetIvy:
+	priorityjump WalkUpToIvy
 	end
 	
-.CantLeaveIvysLab:
+CantLeaveIvysLab:
 	end
 	
-.ComeBackFromAltStarter:
-	priorityjump .ComeBackFromAltStarterScript
+ComeBackFromAltStarter:
+	priorityjump ComeBackFromAltStarterScript
 	end
 	
-.IvysLabNoOp:
+IvysLabNoOp:
 	end
 	
-.WalkUpToIvy:
+WalkUpToIvy:
 	applymovement PLAYER, IvysLab_WalkUpToIvyMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
 	turnobject ELMSLAB_ELM, DOWN
@@ -50,25 +58,8 @@ IvysLab_MapScripts:
 	turnobject ELMSLAB_ELM, DOWN
 	end
 	
-.ComeBackFromAltStarterScript:
-	turnobject PLAYER, UP
-	turnobject ELMSLAB_ELM, DOWN
-	opentext
-	writetext IvyAfterGettingStarterText
-	waitbutton
-	writetext IvysLabGotDexText
-	playsound SFX_ITEM
-	waitsfx
-	setflag ENGINE_POKEDEX
-	waitbutton
-	writetext IvyAfterGettingStarterText2
-	waitbutton
-	closetext
-	setevent EVENT_GOT_A_POKEMON_FROM_IVY
-	setevent EVENT_MET_CROSS_ON_VALENCIA
-	setscene SCENE_IVYSLAB_NOOP
-	setmapscene ROUTE_49, SCENE_ROUTE_49_AUNT_PRIMA
-	end
+ComeBackFromAltStarterScript:
+	sjump ElmDirectionsScript
 	
 LabTryToLeaveScript:
 	turnobject ELMSLAB_ELM, LEFT
@@ -149,8 +140,6 @@ ProfessorIvyScript:
 	opentext
 	checkevent EVENT_GS_BALL_IVY
 	iftrue .IvyAfterGSBall
-	checkevent EVENT_GS_BALL_ENCOUNTER
-	iffalse .ShowGSBallToIvy
 	checkevent EVENT_GOT_A_POKEMON_FROM_IVY
 	iftrue .GotPokemonAlreadyIvy
 	writetext IvyText_ChooseAPokemon
@@ -207,6 +196,8 @@ CharmanderPokeBallScript:
 ;	readvar VAR_FACING
 ;	ifequal RIGHT, ElmDirectionsScript
 	applymovement PLAYER, AfterCharmanderMovement
+	special FadeOutToBlack
+	warp IVYS_LAB, 2, 5
 	sjump ElmDirectionsScript
 
 SquirtlePokeBallScript:
@@ -235,6 +226,8 @@ SquirtlePokeBallScript:
 	givepoke SQUIRTLE, PLAIN_FORM, 5, BERRY ;ORAN_BERRY
 	closetext
 	applymovement PLAYER, AfterSquirtleMovement
+	special FadeOutToBlack
+	warp IVYS_LAB, 2, 5
 	sjump ElmDirectionsScript
 
 BulbasaurPokeBallScript:
@@ -263,6 +256,8 @@ BulbasaurPokeBallScript:
 	givepoke BULBASAUR, PLAIN_FORM, 5, BERRY ;ORAN_BERRY
 	closetext
 	applymovement PLAYER, AfterBulbasaurMovement
+	special FadeOutToBlack
+	warp IVYS_LAB, 2, 5
 	sjump ElmDirectionsScript
 	
 DidntChooseStarterScript:
@@ -279,7 +274,8 @@ LookAtElmPokeBallScript:
 	end
 	
 ElmDirectionsScript:
-	turnobject PLAYER, LEFT
+	turnobject PLAYER, UP
+	turnobject ELMSLAB_ELM, DOWN
 	opentext
 	writetext IvyAfterGettingStarterText
 	waitbutton
@@ -295,6 +291,22 @@ ElmDirectionsScript:
 	setevent EVENT_GOT_A_POKEMON_FROM_IVY
 	setscene SCENE_IVYSLAB_NOOP
 	setmapscene ROUTE_49, SCENE_ROUTE_49_AUNT_PRIMA
+	turnobject PLAYER, LEFT
+	turnobject ELMSLAB_ELM, LEFT
+	playsound SFX_EXIT_BUILDING
+	changeblock  0,  4, $1D
+	setevent EVENT_IVYS_BASEMENT_OPENED
+	setmapscene IVYS_LAB_B1, SCENE_IVYS_LAB_BASEMENT_GS_BALL
+	opentext
+	writetext IvyAfterGettingStarterText3
+	waitbutton
+	closetext
+	follow ELMSLAB_ELM, PLAYER
+	applymovement ELMSLAB_ELM, AfterStarterMovementIvy
+	playsound SFX_ENTER_DOOR
+	special FadeOutToWhite
+	waitsfx
+	warp IVYS_LAB_B1, 0, 5
 	end
 	
 IvysLabBookShelf:
@@ -434,10 +446,9 @@ IvyGSBallText:
 	done
 	
 IvyGSBallText2:
-	text "IVY: If I hear"
-	line "anything about the"
-	cont "GS BALL, I'll page"
-	cont "you."
+	text "IVY: Keep me up to"
+	line "date on that GS"
+	cont "BALL!"
 	done
 
 IvysLabTrashcan:
@@ -594,8 +605,8 @@ IvyAfterGettingStarterText:
 	cont "you reach TANGELO"
 	cont "ISLAND."
 	
-	para "One more thing for"
-	line "you: A #DEX!"
+	para "Take this also:"
+	line "A #DEX!"
 	done
 	
 IvyAfterGettingStarterText2:
@@ -605,6 +616,21 @@ IvyAfterGettingStarterText2:
 	cont "aiding #MON"
 	cont "research all"
 	cont "around the world!"
+	
+	para "One more thing,"
+	line "before you go."
+	
+	para "CHARITY!"
+	done
+	
+IvyAfterGettingStarterText3:
+	text "In return for that"
+	line "#MON, you'll be"
+	cont "running an errand"
+	cont "for me."
+	
+	para "Follow me down-"
+	line "stairs."
 	done
 
 IvysLabBookShelfText:
@@ -651,6 +677,12 @@ IvysLab_WalkUpToIvyMovement:
 	step UP
 	step_end
 	
+AfterStarterMovementIvy:
+	step LEFT
+	step LEFT
+	step DOWN
+	step_end
+
 IvyMovement1:
 	step UP
 	step UP
@@ -729,6 +761,7 @@ IvysLab_MapEvents:
 	def_warp_events
 	warp_event  2,  7, VALENCIA_ISLAND, 4
 	warp_event  3,  7, VALENCIA_ISLAND, 4
+	warp_event  0,  5, IVYS_LAB_B1, 1
 
 	def_coord_events
 	coord_event  6,  2, SCENE_IVYSLAB_CANT_LEAVE, LabTryToLeaveScript

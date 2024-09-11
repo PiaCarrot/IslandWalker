@@ -79,6 +79,7 @@ SECTION "Map Scripts 24", ROMX
 
 INCLUDE "maps/ValenciaIsland.asm"
 INCLUDE "maps/IvysLab.asm"
+INCLUDE "maps/IvysLabB1.asm"
 
 SECTION "Map Scripts 25", ROMX
 
