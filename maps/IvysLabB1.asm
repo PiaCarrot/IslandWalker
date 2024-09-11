@@ -160,6 +160,9 @@ IvysLabBasementIvyLeavesMovement:
 	step LEFT
 	step LEFT
 	step_end
+	
+CharityScript:
+	jumptextfaceplayer CharityText
 
 IvysLabB1OldTV:
 	jumptext IvysLabB1OldTVText
@@ -176,6 +179,20 @@ IvysLabBasementTookGSBallText:
 	
 	para "Good luck on your"
 	line "travels, <PLAYER>!"
+	done
+	
+CharityText:
+	text "CHARITY: I tried"
+	line "everything to open"
+	cont "that GS BALL."
+	
+	para "Drills, lasers, a"
+	line "hammer, acid. Not"
+	cont "a thing worked!"
+	
+	para "Whoever made that"
+	line "thing is a down-"
+	cont "right genius!"
 	done
 
 IvysLabB1_MapEvents:
@@ -195,4 +212,4 @@ IvysLabB1_MapEvents:
 	def_object_events
 	object_event  3,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ProfessorIvyBasementScript, EVENT_GS_BALL_IVY
 	object_event  2,  1, SPRITE_GS_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, GSBallScript, EVENT_GS_BALL_ENCOUNTER
-	object_event  5,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  6,  4, SPRITE_AIDE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CharityScript, -1
