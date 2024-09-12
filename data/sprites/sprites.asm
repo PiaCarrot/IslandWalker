@@ -112,4 +112,5 @@ OverworldSprites:
 	overworld_sprite LoreleiSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite GSBallSpriteGFX, 4, STILL_SPRITE, PAL_OW_YELLOW
 	overworld_sprite AideSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite RocketBallSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	assert_table_length NUM_OVERWORLD_SPRITES

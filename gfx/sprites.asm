@@ -111,3 +111,4 @@ SECTION "Sprites 3", ROMX
 LoreleiSpriteGFX::   INCBIN "gfx/sprites/lorelei.2bpp"
 GSBallSpriteGFX::   INCBIN "gfx/sprites/gs_ball.2bpp"
 AideSpriteGFX::   INCBIN "gfx/sprites/aide.2bpp"
+RocketBallSpriteGFX::   INCBIN "gfx/sprites/rocket_ball.2bpp"
