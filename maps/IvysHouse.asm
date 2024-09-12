@@ -128,9 +128,36 @@ HopeSpecialPokemonText:
 	para "Anything else you"
 	line "wanna review?"
 	done
-
+	
 ValenciaFaithScript:
+	faceplayer
+	opentext
+	writetext FaithText
+	yesorno
+	iftrue .ChangeTime
+	closetext
 	end
+.ChangeTime:
+	special ClockResetter
+	reloadmap
+	closetext
+	end
+	
+FaithText:
+	text "FAITH: Best of"
+	line "luck on your adv-"
+	cont "enture, <PLAYER>!"
+
+	para "Please come see me"
+	line "if your watch gets"
+	cont "out of sync. I can"
+	cont "change the DATE"
+	cont "and TIME on it for"
+	cont "you."
+	
+	para "Would you like to"
+	line "change the TIME?"
+	done
 
 IvysHouse_MapEvents:
 	db 0, 0 ; filler
