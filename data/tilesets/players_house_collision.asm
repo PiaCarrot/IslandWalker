@@ -1,6 +1,6 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
 	tilecoll WINDOW, WALL, FLOOR, FLOOR ; 01
-	tilecoll WALL, WALL, FLOOR, TV ; 02
+	tilecoll WALL, WALL, WALL, TV ; 02
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 03
 	tilecoll WALL, WALL, WALL, WALL ; 04
 	tilecoll WALL, WALL, WALL, WALL ; 05
@@ -58,3 +58,6 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 39
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 3a
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3b
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 3c
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 3d
+	tilecoll WALL, WALL, WALL, WALL ; 3e

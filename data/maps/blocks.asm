@@ -51,6 +51,9 @@ IvysLab_Blocks:
 IvysLabB1_Blocks:
 	INCBIN "maps/IvysLabB1.ablk"
 
+IvysHouse_Blocks:
+	INCBIN "maps/IvysHouse.ablk"
+
 Route49_Blocks:
 	INCBIN "maps/Route49.ablk"
 	

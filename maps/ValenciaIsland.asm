@@ -580,7 +580,7 @@ ValenciaIsland_MapEvents:
 	def_warp_events
 	warp_event 15,  5, PLAYERS_HOUSE_1F, 1
 	warp_event  5, 19, VALENCIA_NEIGHBOR_HOUSE, 1
-	warp_event 19, 15, VALENCIA_NEIGHBOR_HOUSE, 1 ;IVYS_HOUSE
+	warp_event 19, 15, IVYS_HOUSE, 1
 	warp_event 29, 13, IVYS_LAB, 1
 
 	def_coord_events
