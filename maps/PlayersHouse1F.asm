@@ -32,11 +32,15 @@ MeetMomScript:
 	blackoutmod PLAYERS_HOUSE_2F
 	opentext
 	writetext ElmsLookingForYouText
+	waitbutton
+.PickADoll
+	writetext PickADollText
 	loadmenu .AltStarterMenuHeader
 	verticalmenu
 	closewindow
 	ifequal 1, .AltStarterPika
 	ifequal 2, .AltStarterEevee
+	ifequal 0, .PickADoll
 .AltStarterPika
 	setevent EVENT_GOT_PIKACHU_FROM_IVY
 	sjump .Continue
@@ -224,8 +228,10 @@ ElmsLookingForYouText:
 	cont "coming over with a"
 	cont "new doll for your"
 	cont "room."
+	done
 	
-	para "Which do you like"
+PickADollText:
+	text "Which do you like"
 	line "more? PIKACHU or"
 	cont "EEVEE?"
 	done
