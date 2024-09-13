@@ -124,8 +124,11 @@ TreeMonSet_Forest:
 	db -1
 
 TreeMonSet_Rock:
-	dbbw 90, 15, KRABBY
-	dbbw 10, 15, SHUCKLE
+	dbbw 60, 15, KRABBY
+	dbbw 30, 15, GEODUDE
+	dbbw 5, 15, SHUCKLE
+	dbbw 4, 15, SHUCKLE
+	dbbw 1, 15, SHUCKLE
 	db -1
 
 TreeMonSet_Sky1:

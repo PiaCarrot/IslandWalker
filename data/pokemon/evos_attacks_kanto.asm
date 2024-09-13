@@ -157,7 +157,7 @@ EvosAttacksPointers1::
 BulbasaurEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, IVYSAUR
 	db 0 ; no more evolutions
-	dbw 1, HEADBUTT
+	dbw 1, TACKLE
 	dbw 4, GROWL
 	dbw 7, LEECH_SEED
 	dbw 10, VINE_WHIP
