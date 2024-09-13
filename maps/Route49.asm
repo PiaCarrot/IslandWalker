@@ -270,10 +270,10 @@ Route49FreshWater:
 	itemball FRESH_WATER
 	
 Route49Swoop:
-;	jumpstd MonSkyScript
+	jumpstd MonSkyScript
 	
 Route49Depths:
-;	jumpstd MonDepthsScript
+	jumpstd MonDepthsScript
 
 Route49_MapEvents:
 	db 0, 0 ; filler
@@ -296,5 +296,5 @@ Route49_MapEvents:
 	object_event 20, 14, SPRITE_LORELEI, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_PASSED_LORELEI_R49
 	object_event  5, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route49Potion, EVENT_ROUTE_49_POTION
 	object_event 25, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route49FreshWater, EVENT_ROUTE_49_FRESHWATER
-	object_event  7,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_WANDER, 5, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Swoop, -1
-	object_event 30, 34, SPRITE_POKE_BALL, SPRITEMOVEDATA_SWIM_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Depths, -1
+	object_event  7,  8, SPRITE_SHADOW, SPRITEMOVEDATA_WANDER, 5, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Swoop, -1
+	object_event 30, 34, SPRITE_SHADOW, SPRITEMOVEDATA_SWIM_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Depths, -1

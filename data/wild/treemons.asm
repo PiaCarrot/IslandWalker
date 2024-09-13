@@ -9,8 +9,10 @@ TreeMons:
 	dw TreeMonSet_Lake
 	dw TreeMonSet_Forest
 	dw TreeMonSet_Rock
+	dw TreeMonSet_Sky1
+	dw TreeMonSet_Depths1
 	assert_table_length NUM_TREEMON_SETS
-	dw TreeMonSet_City ; unused
+	dw TreeMonSet_City
 
 ; Two tables each (common, rare).
 ; Structure:
@@ -19,20 +21,18 @@ TreeMons:
 TreeMonSet_City:
 TreeMonSet_Canyon:
 ; common
-	dbbw 50, 10, SPEAROW
-	dbbw 15, 10, SPEAROW
-	dbbw 15, 10, SPEAROW
-	dbbw 10, 10, AIPOM
-	dbbw  5, 10, AIPOM
-	dbbw  5, 10, AIPOM
+	dbbw 60, 10, SPINARAK
+	dbbw 30, 10, LEDYBA
+	dbbw 5, 10, AIPOM
+	dbbw 4, 10, LICKITUNG
+	dbbw 1, 10, LICKITUNG
 	db -1
 ; rare
-	dbbw 50, 10, SPEAROW
-	dbbw 15, 10, HERACROSS
-	dbbw 15, 10, HERACROSS
-	dbbw 10, 10, AIPOM
-	dbbw  5, 10, AIPOM
-	dbbw  5, 10, AIPOM
+	dbbw 60, 10, SPINARAK
+	dbbw 30, 10, LEDYBA
+	dbbw 5, 10, AIPOM
+	dbbw 4, 10, LICKITUNG
+	dbbw 1, 10, LICKITUNG
 	db -1
 
 TreeMonSet_Town:
@@ -109,23 +109,37 @@ TreeMonSet_Lake:
 
 TreeMonSet_Forest:
 ; common
-	dbbw 50, 10, HOOTHOOT
-	dbbw 15, 10, PINECO
-	dbbw 15, 10, PINECO
-	dbbw 10, 10, NOCTOWL
-	dbbw  5, 10, BUTTERFREE
-	dbbw  5, 10, BEEDRILL
+	dbbw 60, 2, SPINARAK
+	dbbw 30, 2, LEDYBA
+	dbbw 5, 2, AIPOM
+	dbbw 4, 2, LICKITUNG
+	dbbw 1, 2, LICKITUNG
 	db -1
 ; rare
-	dbbw 50, 10, HOOTHOOT
-	dbbw 15, 10, CATERPIE
-	dbbw 15, 10, WEEDLE
-	dbbw 10, 10, HOOTHOOT
-	dbbw  5, 10, METAPOD
-	dbbw  5, 10, KAKUNA
+	dbbw 60, 2, SPINARAK
+	dbbw 30, 2, LEDYBA
+	dbbw 5, 2, AIPOM
+	dbbw 4, 2, LICKITUNG
+	dbbw 1, 2, LICKITUNG
 	db -1
 
 TreeMonSet_Rock:
 	dbbw 90, 15, KRABBY
 	dbbw 10, 15, SHUCKLE
+	db -1
+
+TreeMonSet_Sky1:
+	dbbw 60, 4, SPEAROW
+	dbbw 30, 3, PIDGEY ;WINGULL
+	dbbw 5, 5, SPEAROW
+	dbbw 4, 4, PIDGEY ;WINGULL
+	dbbw 1, 5, PIDGEY ;WINGULL
+	db -1
+	
+TreeMonSet_Depths1:
+	dbbw 60, 4, REMORAID ;CARVANHA
+	dbbw 30, 3, REMORAID ;FINNEON
+	dbbw 5, 5, REMORAID ;CARVANHA
+	dbbw 4, 4, REMORAID ;FINNEON
+	dbbw 1, 5, REMORAID ;FINNEON
 	db -1

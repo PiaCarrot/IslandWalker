@@ -108,6 +108,7 @@
 	const SPRITE_GS_BALL ; 67
 	const SPRITE_AIDE ; 67
 	const SPRITE_ROCKET_BALL ; 67
+	const SPRITE_SHADOW ; 68
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

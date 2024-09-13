@@ -406,7 +406,7 @@ _HeadbuttNothingText::
 
 _AskHeadbuttText::
 	text "A #MON could be"
-	line "in this tree."
+	line "in the foliage."
 
 	para "Want to HEADBUTT"
 	line "it?"

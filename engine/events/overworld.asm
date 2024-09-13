@@ -1245,12 +1245,13 @@ HeadbuttFromMenuScript:
 	special UpdateTimePals
 
 HeadbuttScript:
-	callasm GetPartyNickname
-	writetext UseHeadbuttText
-
-	refreshmap
-	callasm ShakeHeadbuttTree
-
+ callasm GetPartyNickname
+    writetext UseHeadbuttText
+	closetext
+    special WaitSFX
+    playsound SFX_SANDSTORM
+	earthquake 12
+	pause 12
 	callasm TreeMonEncounter
 	iffalse .no_battle
 	closetext
@@ -1260,6 +1261,7 @@ HeadbuttScript:
 	end
 
 .no_battle
+	opentext
 	writetext HeadbuttNothingText
 	waitbutton
 	closetext
@@ -1314,6 +1316,48 @@ TryRockSmashFromMenu:
 	call FieldMoveFailed
 	ld a, $80
 	ret
+	
+SkyMonScript:
+	opentext
+	writetext SkyMonScriptText
+	disappear -2
+	playsound SFX_RAZOR_WIND
+	waitsfx
+	callasm SkyMonEncounter
+	readmem wTempWildMonSpecies
+	iffalse .done
+	randomwildmon
+	loadvar VAR_BATTLETYPE, BATTLETYPE_AIR
+	startbattle
+	reloadmapafterbattle
+.done
+	end
+	
+SkyMonScriptText:
+	text "Something attacked"
+	line "from the air!"
+	done
+	
+DepthsMonScript:
+	opentext
+	writetext DepthsMonScriptText
+	disappear -2
+	playsound SFX_RAZOR_WIND
+	waitsfx
+	callasm DepthsMonEncounter
+	readmem wTempWildMonSpecies
+	iffalse .done
+	randomwildmon
+	loadvar VAR_BATTLETYPE, BATTLETYPE_DEPTHS
+	startbattle
+	reloadmapafterbattle
+.done
+	end
+	
+DepthsMonScriptText:
+	text "Something attacked"
+	line "from the depths!"
+	done
 
 GetFacingObject:
 	farcall CheckFacingObject

@@ -24,8 +24,20 @@ HookedPokemonAttackedText:
 
 PokemonFellFromTreeText:
 	text_ram wEnemyMonNickname
-	text " fell"
-	line "out of the tree!"
+	text " emerged"
+	line "from the foliage!"
+	prompt
+	
+PokemonSwoopedFromSkyText:
+	text_ram wEnemyMonNickname
+	text " swooped"
+	line "down from the sky!"
+	prompt
+	
+PokemonAttackedFromDepthsText:
+	text_ram wEnemyMonNickname
+	text " attacked"
+	line "from the depths!"
 	prompt
 
 WildCelebiAppearedText:
