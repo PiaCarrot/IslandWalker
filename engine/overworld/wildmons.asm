@@ -104,7 +104,7 @@ FindNest:
 	ld a, [hli]
 	ldh [hMathBuffer + 1], a
 	inc hl
-	ld a, NUM_WATERMON
+	ld a, NUM_WATERMON * 3
 	call .SearchMapForMon
 	jr nc, .next_water
 	ld [de], a
@@ -321,8 +321,15 @@ _ChooseWildEncounter:
 	inc hl
 	push bc
 	call CheckOnWater
+	jr nz, .grassmon
+	inc hl
+	inc hl
+	call GetTimeOfDayNotEve
+	ld bc, NUM_WATERMON * 3
+	rst AddNTimes
 	ld de, WaterMonProbTable
 	jr z, .got_table
+.grassmon
 	inc hl
 	inc hl
 	call GetTimeOfDayNotEve
@@ -434,20 +441,6 @@ _ChooseWildEncounter:
 ; If the Pokemon is encountered by surfing, we need to give the levels some variety.
 	call CheckOnWater
 	jr nz, .ok
-; Check if we buff the wild mon, and by how much.
-	call Random
-	cp 35 percent
-	jr c, .ok
-	inc b
-	cp 65 percent
-	jr c, .ok
-	inc b
-	cp 85 percent
-	jr c, .ok
-	inc b
-	cp 95 percent
-	jr c, .ok
-	inc b
 ; Store the level
 .ok
 	ld a, b
@@ -741,7 +734,7 @@ InitRoamMons:
 
 CheckEncounterRoamMon:
 	push hl
-; Don't trigger an encounter if we're on water.
+; Don't trigger an encounter if we're on water. TODO: We might want Suicune and the Latis to be encounterable on WATER
 	call CheckOnWater
 	jr z, .DontEncounterRoamMon
 ; Load the current map group and number to de

@@ -260,11 +260,11 @@ DEF NUM_HOF_TEAMS EQU 30
 
 ; wild data
 
-DEF NUM_GRASSMON EQU 7 ; data/wild/*_grass.asm table size
-DEF NUM_WATERMON EQU 3 ; data/wild/*_water.asm table size
+DEF NUM_GRASSMON EQU 12 ; data/wild/*_grass.asm table size
+DEF NUM_WATERMON EQU 5 ; data/wild/*_water.asm table size
 
 DEF GRASS_WILDDATA_LENGTH EQU 2 + (1 + NUM_GRASSMON * 3) * 3
-DEF WATER_WILDDATA_LENGTH EQU 2 + (1 + NUM_WATERMON * 3) * 1
+DEF WATER_WILDDATA_LENGTH EQU 2 + (1 + NUM_WATERMON * 3) * 3
 DEF FISHGROUP_DATA_LENGTH EQU 1 + 2 * 3
 
 DEF NUM_ROAMMON_MAPS EQU 16 ; RoamMaps table size (see data/wild/roammon_maps.asm)
