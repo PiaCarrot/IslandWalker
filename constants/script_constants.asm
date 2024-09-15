@@ -195,9 +195,9 @@ DEF NUM_FLOORS EQU const_value
 	const EMOTE_HAPPY
 	const EMOTE_SAD
 	const EMOTE_HEART
-	const EMOTE_BOLT
+	const EMOTE_NERVOUS
 	const EMOTE_SLEEP
-	const EMOTE_FISH
+	const EMOTE_SING
 	const EMOTE_SHADOW
 	const EMOTE_ROD
 	const EMOTE_BOULDER_DUST
