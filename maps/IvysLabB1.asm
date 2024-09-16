@@ -80,17 +80,9 @@ IvyBasementIvyGSBallText:
 	cont "try. I don't know"
 	cont "a thing about it."
 	
-	para "There's not many"
-	line "#BALL crafters"
-	cont "left in the world,"
-	cont "and the masters,"
-	cont "even fewer."
-	
-	para "So, I propose that"
-	line "you will hold onto"
-	cont "it. On the other"
-	cont "end of the islands"
-	cont "is a place called"
+	para "On the other end"
+	line "of the islands is"
+	cont "a place called"
 	cont "HAMLIN ISLAND."
 	
 	para "A fellow #MON"
@@ -99,21 +91,14 @@ IvyBasementIvyGSBallText:
 	cont "soon."
 	
 	para "His name is SAMSON"
-	line "OAK. He's the cou-"
-	cont "sin of the esteem-"
-	cont "ed PROF. OAK of"
-	cont "the KANTO region."
+	line "OAK. He's a cousin"
+	cont "of the esteemed"
+	cont "PROF. OAK."
 	
 	para "Take the GS BALL"
 	line "to SAMSON. He has"
 	cont "agreed to take a"
 	cont "look at it."
-	
-	para "It isn't urgent."
-	line "He will be staying"
-	cont "the entire summer."
-	cont "Now, go ahead and"
-	cont "take it."
 	done
 
 IvysLabBasement_WalkUpToIvyMovement:
@@ -167,9 +152,77 @@ CharityScript:
 IvysLabB1OldTV:
 	jumptext IvysLabB1OldTVText
 	
+IvysLabB1PC:
+	opentext
+	writetext IvysLabB1PCText
+	yesorno
+	iftrue .ReadEmail
+	closetext
+	end
+	
+.ReadEmail:
+	writetext IvysLabB1PCText2
+	waitbutton
+	closetext
+	end
+	
 IvysLabB1OldTVText:
 	text "Looks like an old"
 	line "radar for sonar."
+	done
+	
+IvysLabB1PCText:
+	text "There's an email"
+	line "from a PROF. OAK."
+	cont "It looks really"
+	cont "long, do you want"
+	cont "to read it?"
+	done
+	
+IvysLabB1PCText2:
+	text "TO: PHILENA"
+	line "FROM: SAMUEL OAK"
+	
+	para "Regarding your in-"
+	line "quiry on this GS"
+	cont "BALL. Regrettably,"
+	cont "I have never heard"
+	cont "of such a #BALL."
+	
+	para "There's not many"
+	line "#BALL crafters"
+	cont "left in the world,"
+	cont "and the masters,"
+	cont "even fewer."
+	
+	para "My cousin SAMUEL"
+	line "is interested in"
+	cont "your research into"
+	cont "regional variants,"
+	cont "and will be coming"
+	cont "to the ORANGE IS-"
+	cont "LANDS to commence"
+	cont "his own research."
+	
+	para "He has expressed"
+	line "a keen interest in"
+	cont "this GS BALL, but"
+	cont "also in that new"
+	cont "TRAINER you spoke"
+	cont "of before."
+	
+	para "<PLAYER>, was it?"
+	line "Unfortunately, it"
+	cont "seems the blimp"
+	cont "service seems to"
+	cont "be out of order,"
+	cont "so he will have to"
+	cont "take a ship to"
+	cont "HAMLIN ISLAND."
+	
+	para "Please send some-"
+	line "one to HAMLIN ISL-"
+	cont "AND to meet him!"
 	done
 
 IvysLabBasementTookGSBallText:
@@ -208,6 +261,7 @@ IvysLabB1_MapEvents:
 	def_bg_events
 	bg_event  5,  1, BGEVENT_READ, IvysLabB1OldTV
 	bg_event  4,  1, BGEVENT_READ, IvysLabB1OldTV
+	bg_event  0,  1, BGEVENT_READ, IvysLabB1PC
 
 	def_object_events
 	object_event  3,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ProfessorIvyBasementScript, EVENT_GS_BALL_IVY

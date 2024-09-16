@@ -178,6 +178,7 @@ ItemDescriptionsKeyItems:
 	dw PassDesc         ; 0113
 	dw SquirtBottleDesc ; 0114
 	dw RainbowWingDesc  ; 0115
+	dw SecretStashDesc  ; 0115
 .IndirectEnd:
 
 ItemDescriptionsBalls:
@@ -832,6 +833,10 @@ ParkBallDesc:
 RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
+
+SecretStashDesc:
+	db   "A bottle of prized"
+	next "SHAMOUTI SAKE.@"
 
 QuestionMarkDesc:
 	db   "?@"

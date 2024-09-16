@@ -288,7 +288,7 @@ TangeloPokeballGuyNoRoom:
 	done
 
 TangeloHiddenBigMushroom:
-	hiddenitem BRICK_PIECE, EVENT_TANGELO_HIDDEN_BIG_MUSHROOM
+	hiddenitem SECRET_STASH, EVENT_TANGELO_HIDDEN_BIG_MUSHROOM
 	
 TangeloHiddenTinyMushroom:
 	hiddenitem TINYMUSHROOM, EVENT_TANGELO_HIDDEN_TINY_MUSHROOM

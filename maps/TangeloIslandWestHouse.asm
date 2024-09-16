@@ -63,7 +63,7 @@ TangeloWestHouseOldmanScript:
 .Sidequest:
 	checkevent EVENT_TANGELO_OLD_MAN_SIDEQUEST_STARTED
 	iffalse .HaventStartedSidequestYet
-	checkitem BRICK_PIECE ;SECRET_STASH
+	checkitem SECRET_STASH
 	iftrue .HaveSecretStashInHand
 	opentext
 	writetext TangeloWestHouseSidequestText2
@@ -102,7 +102,7 @@ TangeloWestHouseOldmanScript:
 	verbosegiveitem NUGGET
 	iffalse .NoRoom
 	closetext
-	takeitem BRICK_PIECE ;SECRET_STASH
+	takeitem SECRET_STASH
 	setevent EVENT_TANGELO_OLD_MAN_GIVEN_STASH
 	end
 
@@ -289,7 +289,7 @@ TangeloWestHouseCooltrainerFScript:
 	end
 	
 .CheckForTheStash
-	checkitem BRICK_PIECE
+	checkitem SECRET_STASH
 	iftrue .SnitchesGetStitches	
 	opentext
 	writetext TangeloWestHouseCooltrainerFText
@@ -329,7 +329,7 @@ TangeloWestHouseCooltrainerFScript:
 	verbosegiveitem NUGGET
 	iffalse .NoRoom
 	closetext
-	takeitem BRICK_PIECE ;SECRET_STASH
+	takeitem SECRET_STASH
 	setevent EVENT_TANGELO_GAVE_GRANDAUGHTER_STASH
 	end
 	

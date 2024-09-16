@@ -198,6 +198,7 @@ ItemEffectsKeyItems:
 	dw NoEffect           ; PASS
 	dw SquirtbottleEffect ; SQUIRTBOTTLE
 	dw NoEffect           ; RAINBOW_WING
+	dw NoEffect           ; SECRET_STASH
 .IndirectEnd:
 
 ItemEffectsBalls:
