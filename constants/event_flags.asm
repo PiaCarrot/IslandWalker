@@ -33,6 +33,7 @@
 	const EVENT_TANGELO_GAVE_GRANDAUGHTER_STASH
 	const EVENT_TANGELO_OLD_MAN_GIVEN_STASH
 	const EVENT_TANGELO_OLD_MAN_SIDEQUEST_STARTED
+	const EVENT_GOT_CYNDAQUIL_FROM_TANGELO
 ; Johto hidden items
 	const EVENT_ROUTE_49_HIDDEN_POTION
 	const EVENT_ROUTE_49_HIDDEN_STAR_PIECE
@@ -210,7 +211,7 @@
 ; Blackbelt
 
 ; Beauty
-
+	const EVENT_BEAT_BEAUTY_ROSE
 ; Johto Gym Leaders
 
 ; Kanto Gym Leaders
@@ -232,7 +233,7 @@
 ; Hiker
 
 ; Bug Catcher
-
+	const EVENT_BEAT_BUG_CATCHER_ASHTON
 ; Officer
 
 ; CooltrainerM
@@ -254,7 +255,8 @@
 ; SwimmerM
 
 ; Youngster
-
+	const EVENT_BEAT_YOUNGSTER_DONNY
+	const EVENT_BEAT_YOUNGSTER_JAVI
 ; Teacher
 
 ; Elite Four and Champion

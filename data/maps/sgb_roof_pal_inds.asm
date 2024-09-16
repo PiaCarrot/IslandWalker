@@ -5,4 +5,5 @@ MapGroupRoofSGBPalInds:
 	table_width 1, MapGroupRoofSGBPalInds
 	db PREDEFPAL_ROUTES
 	db PREDEFPAL_NEW_BARK
+	db PREDEFPAL_CHERRYGROVE
 	assert_table_length NUM_MAP_GROUPS + 1

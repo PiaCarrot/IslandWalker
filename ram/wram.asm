@@ -2795,6 +2795,7 @@ wIvysLabSceneID::                   db
 wIvysLabB1SceneID::                   db
 wValenciaIslandSceneID::            db
 wRoute49SceneID::                   db
+wTangeloIslandSceneID::             db
 
 ; fight counts
 wJackFightCount::    db

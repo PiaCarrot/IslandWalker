@@ -59,5 +59,42 @@ Route49_Blocks:
 	
 Route49North_Blocks:
 	INCBIN "maps/Route49North.ablk"
+	
+TangeloIsland_Blocks:
+	INCBIN "maps/TangeloIsland.ablk"
+	
+TraditionalHouse_Blocks:
+	INCBIN "maps/TraditionalHouse.ablk"
+	
+AlteringCave_Blocks:
+	INCBIN "maps/AlteringCave.ablk"
+	
+Route50_Blocks:
+	INCBIN "maps/Route50.ablk"
+	
+Route51_Blocks:
+	INCBIN "maps/Route51.ablk"
+
+MikanIsland_Blocks:
+	INCBIN "maps/MikanIsland.ablk"
+
+TangeloJungle_Blocks:
+	INCBIN "maps/TangeloJungle.ablk"
+
+BeachHouse1_Blocks:
+TangeloIslandNorthHouse_Blocks:
+TangeloIslandWestHouse_Blocks:
+	INCBIN "maps/BeachHouse1.ablk"
+
+BeachHouse2_Blocks:
+TangeloIslandEastHouse_Blocks:
+	INCBIN "maps/BeachHouse2.ablk"
+
+BeachHouse3_Blocks:
+TangeloIslandSouthHouse_Blocks:
+	INCBIN "maps/BeachHouse3.ablk"
+
+BeachHouseTrad_Blocks:
+	INCBIN "maps/BeachHouseTrad.ablk"
 
 ENDSECTION

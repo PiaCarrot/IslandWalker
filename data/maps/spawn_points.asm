@@ -9,7 +9,8 @@ SpawnPoints:
 	table_width 4, SpawnPoints
 
 	spawn PLAYERS_HOUSE_2F,            3,  3
-	spawn VALENCIA_ISLAND,        1, 1
+	spawn VALENCIA_ISLAND,        15, 6
+	spawn TANGELO_ISLAND,               15,  8
 
 	spawn N_A,                        -1, -1
 

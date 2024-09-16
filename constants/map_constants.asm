@@ -50,5 +50,18 @@ ENDM
 	map_const COLOSSEUM,                                    5,  4 ;  3
 	map_const TIME_CAPSULE,                                 5,  4 ;  4
 	endgroup
+	
+	newgroup TANGELO
+	map_const TANGELO_ISLAND,							   20, 20
+	map_const ALTERING_CAVE,							   15, 14
+	map_const TANGELO_ISLAND_NORTH_HOUSE,					4,  4
+	map_const TANGELO_ISLAND_EAST_HOUSE,					4,  4
+	map_const TANGELO_ISLAND_WEST_HOUSE,					4,  4
+	map_const TANGELO_ISLAND_SOUTH_HOUSE,					4,  4
+	map_const ROUTE_50,										11, 27
+	map_const ROUTE_51,										20, 20
+	map_const MIKAN_ISLAND,									17, 17
+	map_const TANGELO_JUNGLE,								20, 20
+	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

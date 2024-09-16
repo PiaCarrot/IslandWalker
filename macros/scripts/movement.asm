@@ -225,5 +225,10 @@ MACRO bike_step
 ENDM
 
 	const_skip 3
+	
+	const movement_jump_in_place ; $5b
+MACRO jump_in_place
+	db movement_jump_in_place
+ENDM
 
 DEF NUM_MOVEMENT_CMDS EQU const_value

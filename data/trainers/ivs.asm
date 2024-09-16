@@ -71,6 +71,7 @@ TrainerClassIVs:
 	ivs 16, 16, 16, 16, 16, 16 ; LORELEI1
 	ivs 25, 26, 24, 26, 26, 26 ; LORELEI2
 	ivs 25, 26, 24, 26, 26, 26 ; LORELEI3
+	ivs 26, 26, 26, 26, 26, 26 ; TRACEY1
 	ivs 16, 18, 16, 16, 16, 16 ; MYSTICALMAN
 	ivs 25, 26, 24, 26, 26, 26 ; KRIS
 	assert_table_length NUM_TRAINER_CLASSES

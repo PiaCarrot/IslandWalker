@@ -14,4 +14,5 @@ MapScenes::
 	scene_var IVYS_LAB_B1,                                 wIvysLabB1SceneID
 	scene_var VALENCIA_ISLAND,                             wValenciaIslandSceneID
 	scene_var ROUTE_49,              		               wRoute49SceneID
+	scene_var TANGELO_ISLAND,              	               wTangeloIslandSceneID
 	db -1 ; end

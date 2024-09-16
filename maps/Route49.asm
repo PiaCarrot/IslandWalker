@@ -78,7 +78,7 @@ Route49Lorelei:
 	waitbutton
 	closetext
 	setscene SCENE_ROUTE_49_NOOP
-;	setmapscene TANGELO_ISLAND, SCENE_TANGELO_ISLAND_MARILL_1
+	setmapscene TANGELO_ISLAND, SCENE_TANGELO_ISLAND_MARILL_1
 	applymovement ROUTE_49_LORELEI, Route49LoreleiMovement2
 	disappear ROUTE_49_LORELEI
 	setevent EVENT_PASSED_LORELEI_R49

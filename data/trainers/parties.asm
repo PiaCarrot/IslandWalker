@@ -1942,9 +1942,10 @@ PokemaniacGroup:
 
 GruntMGroup:
 	next_list_item ; GRUNTM (1)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 14
-	dw KOFFING
+	db "GRUNT@", TRAINERTYPE_MOVES
+	db 5
+	dw SPEAROW
+	dw LEER, GROWL, NO_MOVE, NO_MOVE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (2)
@@ -5285,6 +5286,18 @@ Lorelei3Group:
 	db  5
 	dw SMOOCHUM
 	dw POUND, NO_MOVE, NO_MOVE, NO_MOVE
+	db -1 ; end
+	end_list_items
+	
+Tracey1Group:
+	next_list_item ; TRACEY1 (1)
+	db "TRACEY@", TRAINERTYPE_MOVES
+	db 5
+	dw MARILL
+	dw TACKLE, DEFENSE_CURL, NO_MOVE, NO_MOVE
+	db 3
+	dw VENONAT
+	dw TACKLE, DISABLE, FORESIGHT, NO_MOVE
 	db -1 ; end
 	end_list_items
 

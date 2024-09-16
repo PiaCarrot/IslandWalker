@@ -110,8 +110,8 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const ERIKA1
 
 	trainerclass YOUNGSTER ; 16
-	const JOEY1
-	const MIKEY
+	const DONNY
+	const JAVI
 	const ALBERT
 	const GORDON
 	const SAMUEL
@@ -240,7 +240,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const CARA
 
 	trainerclass BEAUTY ; 1d
-	const VICTORIA
+	const ROSE
 	const SAMANTHA
 	const JULIE ; unused
 	const JACLYN ; unused
@@ -328,7 +328,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const SABRINA1
 
 	trainerclass BUG_CATCHER ; 24
-	const DON
+	const ASHTON
 	const ROB
 	const ED
 	const WADE1
@@ -707,6 +707,9 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
 	trainerclass LORELEI3 ; 46
 	const LORELEI_3
+
+	trainerclass TRACEY1 ; 46
+	const TRACEY_1
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE

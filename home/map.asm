@@ -1242,11 +1242,11 @@ _LoadTilesetGFX2:
 
 	; These tilesets support dynamic per-mapgroup roof tiles.
 	ld a, [wMapTileset]
-	cp TILESET_JOHTO
+	cp TILESET_VALENCIA_MANDARIN_NORTH
 	jr z, .load_roof
-	cp TILESET_JOHTO_MODERN
+	cp TILESET_MIKAN_ISLAND
 	jr z, .load_roof
-	cp TILESET_BATTLE_TOWER_OUTSIDE
+	cp TILESET_GATE ;is this ok to remove?
 	ret nz
 ; fallthrough
 .load_roof

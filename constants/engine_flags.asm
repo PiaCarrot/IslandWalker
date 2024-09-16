@@ -65,6 +65,7 @@
 ; wVisitedSpawns
 	const ENGINE_FLYPOINT_PLAYERS_HOUSE
 	const ENGINE_FLYPOINT_VALENCIA
+	const ENGINE_FLYPOINT_TANGELO
 ; wLuckyNumberShowFlag
 	const ENGINE_LUCKY_NUMBER_SHOW
 ; wStatusFlags2

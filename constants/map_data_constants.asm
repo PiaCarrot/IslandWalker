@@ -90,6 +90,7 @@ DEF NUM_FISHGROUPS EQU const_value - 1
 ; kanto
 ; johto
 	const SPAWN_VALENCIA
+	const SPAWN_TANGELO
 DEF NUM_SPAWNS EQU const_value
 
 DEF SPAWN_N_A EQU -1
@@ -99,6 +100,7 @@ DEF SPAWN_N_A EQU -1
 ; johto
 DEF JOHTO_FLYPOINT EQU const_value
 	const FLY_VALENCIA
+	const FLY_TANGELO
 ; kanto
 DEF KANTO_FLYPOINT EQU const_value
 DEF NUM_FLYPOINTS EQU const_value

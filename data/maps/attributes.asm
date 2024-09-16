@@ -103,16 +103,36 @@ ENDM
 	connection north, Route49North, ROUTE_49_NORTH, -1
 	connection east, ValenciaIsland, VALENCIA_ISLAND, 2
 
-	map_attributes Route49North, ROUTE_49_NORTH, $10, SOUTH ;NORTH | SOUTH | WEST
-;	connection north, Route51, ROUTE_51, 0
+	map_attributes Route49North, ROUTE_49_NORTH, $10, NORTH | SOUTH | WEST
+	connection north, Route51, ROUTE_51, 0
 	connection south, Route49, ROUTE_49, 1
-;	connection west, TangeloIsland, TANGELO_ISLAND, -1
+	connection west, TangeloIsland, TANGELO_ISLAND, -1
+	
+	map_attributes TangeloIsland, TANGELO_ISLAND, $10, NORTH | EAST
+	connection north, Route50, ROUTE_50, 9
+	connection east, Route49North, ROUTE_49_NORTH, 1
+
+	map_attributes Route50, ROUTE_50, $01, SOUTH | EAST
+	connection south, TangeloIsland, TANGELO_ISLAND, -9
+	connection east, Route51, ROUTE_51, 7
+
+	map_attributes Route51, ROUTE_51, $01, SOUTH | WEST
+	connection south, Route49North, ROUTE_49_NORTH, 0
+	connection west, Route50, ROUTE_50, -7
+
+	map_attributes MikanIsland, MIKAN_ISLAND, $C8, 0
 	
 	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
 	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
 	map_attributes IvysLab, IVYS_LAB, $00, 0
 	map_attributes IvysLabB1, IVYS_LAB_B1, $00, 0
 	map_attributes ValenciaNeighborHouse, VALENCIA_NEIGHBOR_HOUSE, $00, 0
+	map_attributes AlteringCave, ALTERING_CAVE, $03, 0
+	map_attributes TangeloJungle, TANGELO_JUNGLE, $01, 0
+	map_attributes TangeloIslandNorthHouse, TANGELO_ISLAND_NORTH_HOUSE, $00, 0
+	map_attributes TangeloIslandEastHouse, TANGELO_ISLAND_EAST_HOUSE, $00, 0
+	map_attributes TangeloIslandWestHouse, TANGELO_ISLAND_WEST_HOUSE, $00, 0
+	map_attributes TangeloIslandSouthHouse, TANGELO_ISLAND_SOUTH_HOUSE, $00, 0
 	map_attributes IvysHouse, IVYS_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0

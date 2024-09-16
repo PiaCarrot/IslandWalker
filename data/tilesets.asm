@@ -14,41 +14,15 @@ Tilesets::
 ; entries correspond to TILESET_* constants (see constants/tileset_constants.asm)
 	table_width TILESET_LENGTH, Tilesets
 	tileset Tileset0
-	tileset TilesetJohto
-	tileset TilesetJohtoModern
-	tileset TilesetKanto
-	tileset TilesetBattleTowerOutside
-	tileset TilesetHouse
-	tileset TilesetPlayersHouse
 	tileset TilesetPokecenter
-	tileset TilesetGate
-	tileset TilesetPort
-	tileset TilesetLab
-	tileset TilesetFacility
 	tileset TilesetMart
-	tileset TilesetMansion
-	tileset TilesetGameCorner
-	tileset TilesetEliteFourRoom
-	tileset TilesetTraditionalHouse
-	tileset TilesetTrainStation
-	tileset TilesetChampionsRoom
-	tileset TilesetLighthouse
-	tileset TilesetPlayersRoom
+	tileset TilesetGate
 	tileset TilesetPokeComCenter
-	tileset TilesetBattleTowerInside
-	tileset TilesetTower
-	tileset TilesetCave
-	tileset TilesetPark
-	tileset TilesetRuinsOfAlph
-	tileset TilesetRadioTower
-	tileset TilesetUnderground
-	tileset TilesetIcePath
-	tileset TilesetDarkCave
-	tileset TilesetForest
-	tileset TilesetBetaWordRoom
-	tileset TilesetHoOhWordRoom
-	tileset TilesetKabutoWordRoom
-	tileset TilesetOmanyteWordRoom
-	tileset TilesetAerodactylWordRoom
+	tileset TilesetPlayersHouse
+	tileset TilesetPlayersRoom
 	tileset TilesetValenciaMandarinNorth
+	tileset TilesetLab
+	tileset TilesetCave1
+	tileset TilesetMikanIsland
+	tileset TilesetBeachHouse
 	assert_table_length NUM_TILESETS + 1

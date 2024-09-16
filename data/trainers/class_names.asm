@@ -70,6 +70,7 @@ TrainerClassNames::
 	li "AUNT"
 	li "ELITE FOUR"
 	li "ELITE FOUR"
+	li "#WATCHER"
 	li "MYSTICALMAN"
 	li "<PKMN> TRAINER"
 

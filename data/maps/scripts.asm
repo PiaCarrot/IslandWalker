@@ -73,6 +73,16 @@ SECTION "Map Scripts 22", ROMX
 
 SECTION "Map Scripts 23", ROMX
 
+INCLUDE "maps/TangeloIsland.asm"
+INCLUDE "maps/AlteringCave.asm"
+INCLUDE "maps/MikanIsland.asm"
+INCLUDE "maps/TangeloIslandNorthHouse.asm"
+INCLUDE "maps/TangeloIslandEastHouse.asm"
+INCLUDE "maps/TangeloIslandWestHouse.asm"
+INCLUDE "maps/TangeloIslandSouthHouse.asm"
+INCLUDE "maps/Route50.asm"
+INCLUDE "maps/Route51.asm"
+INCLUDE "maps/TangeloJungle.asm"
 
 SECTION "Map Scripts 24", ROMX
 
