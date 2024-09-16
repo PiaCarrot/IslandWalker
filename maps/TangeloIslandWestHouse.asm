@@ -279,16 +279,24 @@ TangeloWestHouseCooltrainerFScript:
 	iftrue .QuestFailed
 	checkevent EVENT_TANGELO_GAVE_GRANDAUGHTER_STASH
 	iftrue .GaveGrandaughterStash
-	checkitem BRICK_PIECE
-	iftrue .SnitchesGetStitches
+	checkevent EVENT_TANGELO_OLD_MAN_SIDEQUEST_STARTED
+	iftrue .CheckForTheStash
 	faceplayer
 	opentext
 	writetext TangeloWestHouseCooltrainerFText
 	waitbutton
 	closetext
-	giveitem BRICK_PIECE
 	end
 	
+.CheckForTheStash
+	checkitem BRICK_PIECE
+	iftrue .SnitchesGetStitches	
+	opentext
+	writetext TangeloWestHouseCooltrainerFText
+	waitbutton
+	closetext
+	end
+
 .QuestFailed
 	faceplayer
 	opentext
