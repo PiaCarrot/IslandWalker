@@ -187,7 +187,7 @@ IvysLabB1PCText2:
 	line "quiry on this GS"
 	cont "BALL. Regrettably,"
 	cont "I have never heard"
-	cont "of such a #BALL."
+	cont "of this phenomena."
 	
 	para "There's not many"
 	line "#BALL crafters"

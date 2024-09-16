@@ -1,4 +1,11 @@
 	object_const_def
+	const ALTERING_CAVE_ROCK_1
+	const ALTERING_CAVE_ROCK_2
+	const ALTERING_CAVE_ROCK_3
+	const ALTERING_CAVE_ROCK_4
+	const ALTERING_CAVE_ROCK_5
+	const ALTERING_CAVE_ROCK_6
+	const ALTERING_CAVE_SECRET_STASH
 
 AlteringCave_MapScripts:
 	def_scene_scripts
@@ -7,6 +14,9 @@ AlteringCave_MapScripts:
 	
 AlteringCaveRock:
 	jumpstd SmashRockScript
+	
+AlteringCaveSecretStash:
+	itemball SECRET_STASH
 
 AlteringCave_MapEvents:
 	db 0, 0 ; filler
@@ -25,3 +35,4 @@ AlteringCave_MapEvents:
 	object_event 23, 11, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AlteringCaveRock, -1
 	object_event 25, 12, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AlteringCaveRock, -1
 	object_event  4, 15, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AlteringCaveRock, -1
+	object_event 17, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AlteringCaveSecretStash, EVENT_ALTERING_CAVE_SECRET_STASH
