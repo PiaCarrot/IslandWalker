@@ -13,11 +13,13 @@ TangeloWestHouseOldmanScript:
 	iftrue .FailedQuest
 	checkevent EVENT_TANGELO_OLD_MAN_GIVEN_STASH
 	iftrue .QuestCompleted
-	checkevent EVENT_TANGELO_OLD_MAN_SIDEQUEST_STARTED
+	checktime DAY
 	iftrue .Sidequest
-	readvar VAR_HOUR
-	ifequal 12, .Sidequest
+	checktime MORN | EVE | NITE
+	iftrue .RegularDialogue
 .RegularDialogue:
+	checkevent EVENT_TANGELO_OLD_MAN_SIDEQUEST_STARTED
+	iftrue .WaitTillShesGone
 	readvar VAR_FACING
 	ifequal RIGHT, .HeCantHearYou
 	opentext
@@ -59,10 +61,16 @@ TangeloWestHouseOldmanScript:
 	end
 	
 .Sidequest:
+	checkevent EVENT_TANGELO_OLD_MAN_SIDEQUEST_STARTED
+	iffalse .HaventStartedSidequestYet
 	checkitem BRICK_PIECE ;SECRET_STASH
 	iftrue .HaveSecretStashInHand
-	checkevent EVENT_TANGELO_OLD_MAN_SIDEQUEST_STARTED
-	iftrue .ShortRecapText
+	opentext
+	writetext TangeloWestHouseSidequestText2
+	waitbutton
+	closetext
+	end
+.HaventStartedSidequestYet
 	opentext
 	writetext TangeloWestHouseSidequestText
 	waitbutton
@@ -70,16 +78,12 @@ TangeloWestHouseOldmanScript:
 	setevent EVENT_TANGELO_OLD_MAN_SIDEQUEST_STARTED
 	end
 	
-.ShortRecapText:
-	opentext
-	writetext TangeloWestHouseSidequestText2
-	waitbutton
-	closetext
-	end
-	
 .HaveSecretStashInHand:
-	readvar VAR_HOUR
-	ifequal 12, .GiveSecretStash
+	checktime DAY
+	iftrue .GiveSecretStash
+	checktime MORN | EVE | NITE
+	iftrue .WaitTillShesGone
+.WaitTillShesGone
 	opentext
 	writetext TangeloWestHouseSidequestText6
 	waitbutton
@@ -245,7 +249,7 @@ TangeloWestHouseSidequestText8:
 	cont "coming to me."
 	
 	para "I'm sure it was a"
-	line "bit of trouble to"
+	line "bit of a pain to"
 	cont "get this. Here is"
 	cont "something for your"
 	cont "troubles."
@@ -282,6 +286,7 @@ TangeloWestHouseCooltrainerFScript:
 	writetext TangeloWestHouseCooltrainerFText
 	waitbutton
 	closetext
+	giveitem BRICK_PIECE
 	end
 	
 .QuestFailed
@@ -362,8 +367,8 @@ TangeloWestHouseLedgerText:
 	text "TODAYS CHORES"
 	line "Don't forget to go"
 	cont "grocery shopping"
-	cont "at 12PM today!"
-	cont "Be back by 1PM to"
+	cont "at 10AM today!"
+	cont "Be back by 5PM to"
 	cont "give Grampy his"
 	cont "GREEN TEA."
 	done
@@ -400,5 +405,5 @@ TangeloIslandWestHouse_MapEvents:
 
 	def_object_events
 	object_event  7,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, TangeloWestHouseOldmanScript, -1
-	object_event  5,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, 13, 11, PAL_OW_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloWestHouseCooltrainerFScript, -1
+	object_event  5,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, MORN | EVE| NITE, PAL_OW_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloWestHouseCooltrainerFScript, -1
 	object_event 3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloWestHouseLedgerScript, -1
