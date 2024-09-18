@@ -146,7 +146,7 @@ ConvertBerriesToBerryJuice:
 	ld a, [hl]
 	push hl
 	call GetItemIndexFromID
-	cphl16 BERRY
+	cphl16 ORAN_BERRY
 	pop hl
 	jr z, .convertToJuice
 

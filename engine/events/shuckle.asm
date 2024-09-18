@@ -28,7 +28,7 @@ GiveShuckle:
 	ld hl, wPartyMon1Item
 	rst AddNTimes
 	push hl
-	ld hl, BERRY
+	ld hl, ORAN_BERRY
 	call GetItemIDFromIndex
 	pop hl
 	ld [hl], a

@@ -224,16 +224,88 @@ ItemEffectsBerries:
 	dw NoEffect            ; WHT_APRICORN
 	dw NoEffect            ; BLK_APRICORN
 	dw NoEffect            ; PNK_APRICORN
-	dw StatusHealingEffect ; PSNCUREBERRY
-	dw StatusHealingEffect ; PRZCUREBERRY
-	dw StatusHealingEffect ; BURNT_BERRY
-	dw StatusHealingEffect ; ICE_BERRY
-	dw BitterBerryEffect   ; BITTER_BERRY
-	dw StatusHealingEffect ; MINT_BERRY
-	dw StatusHealingEffect ; MIRACLEBERRY
-	dw RestorePPEffect     ; MYSTERYBERRY
-	dw RestoreHPEffect     ; BERRY
-	dw RestoreHPEffect     ; GOLD_BERRY
+	dw NoEffect            ; BRN_APRICORN
+	dw StatusHealingEffect ; PECHA_BERRY
+	dw StatusHealingEffect ; CHERI_BERRY
+	dw StatusHealingEffect ; ASPEAR_BERRY
+	dw StatusHealingEffect ; RAWST_BERRY
+	dw BitterBerryEffect   ; PERSIM_BERRY
+	dw StatusHealingEffect ; CHESTO_BERRY
+	dw StatusHealingEffect ; LUM_BERRY
+	dw RestorePPEffect     ; LEPPA_BERRY
+	dw RestoreHPEffect     ; ORAN_BERRY
+	dw RestoreHPEffect     ; SITRUS_BERRY
+	dw NoEffect            ; FIGY_BERRY
+	dw NoEffect            ; WIKI_BERRY
+	dw NoEffect            ; MAGO_BERRY
+	dw NoEffect            ; AGUAV_BERRY
+	dw NoEffect            ; IAPAPA_BERRY
+	dw NoEffect            ; POMEG_BERRY
+	dw NoEffect            ; KELPSY_BERRY
+	dw NoEffect            ; QUALOT_BERRY
+	dw NoEffect            ; HONDEW_BERRY
+	dw NoEffect            ; GREPA_BERRY
+	dw NoEffect            ; TAMATO_BERRY
+	dw NoEffect            ; OCCA_BERRY
+	dw NoEffect            ; PASSHO_BERRY
+	dw NoEffect            ; WACAN_BERRY
+	dw NoEffect            ; RINDO_BERRY
+	dw NoEffect            ; YACHE_BERRY
+	dw NoEffect            ; CHOPLE_BERRY
+	dw NoEffect            ; KEBIA_BERRY
+	dw NoEffect            ; SHUCA_BERRY
+	dw NoEffect            ; COBA_BERRY
+	dw NoEffect            ; PAYAPA_BERRY
+	dw NoEffect            ; TANGA_BERRY
+	dw NoEffect            ; CHARTI_BERRY
+	dw NoEffect            ; KASIB_BERRY
+	dw NoEffect            ; HABAN_BERRY
+	dw NoEffect            ; COLBUR_BERRY
+	dw NoEffect            ; BABIRI_BERRY
+	dw NoEffect            ; CHILAN_BERRY
+	dw NoEffect            ; ROSELI_BERRY
+	dw NoEffect            ; LIECHI_BERRY
+	dw NoEffect            ; GANLON_BERRY
+	dw NoEffect            ; SALAC_BERRY
+	dw NoEffect            ; PETAYA_BERRY
+	dw NoEffect            ; APICOT_BERRY
+	dw NoEffect            ; LANSAT_BERRY
+	dw NoEffect            ; STARF_BERRY
+	dw NoEffect            ; KEE_BERRY
+	dw NoEffect            ; MARANGABERRY
+	dw NoEffect            ; ENIGMA_BERRY
+	dw NoEffect            ; MICLE_BERRY
+	dw NoEffect            ; CUSTAP_BERRY
+	dw NoEffect            ; JABOCA_BERRY
+	dw NoEffect            ; ROWAP_BERRY
+	dw NoEffect            ; EGGANT_BERRY
+	dw NoEffect            ; UNYINN_BERRY GINEMA
+	dw RestorePPEffect     ; HOPO_BERRY
+	dw StatusHealingEffect ; PUMKIN_BERRY
+	dw StatusHealingEffect ; CAREEP_BERRY TOUGA
+	dw StatusHealingEffect ; BITMEL_BERRY YAGO
+	dw BitterBerryEffect   ; DRASH_BERRY
+	dw NoEffect            ; RAZZ_BERRY
+	dw NoEffect            ; BLUK_BERRY
+	dw NoEffect            ; NANAB_BERRY
+	dw NoEffect            ; WEPEAR_BERRY
+	dw NoEffect            ; PINAP_BERRY
+	dw NoEffect            ; CORNN_BERRY
+	dw NoEffect            ; MAGOST_BERRY
+	dw NoEffect            ; RABUTA_BERRY
+	dw NoEffect            ; NOMEL_BERRY
+	dw NoEffect            ; SPELON_BERRY
+	dw NoEffect            ; PAMTRE_BERRY
+	dw NoEffect            ; WATMEL_BERRY
+	dw NoEffect            ; DURIN_BERRY
+	dw NoEffect            ; BELUE_BERRY
+	dw NoEffect            ; STRIB_BERRY
+	dw NoEffect            ; TILOTA_BERRY CHILAN
+	dw NoEffect            ; NUTPEA_BERRY
+	dw NoEffect            ; KRAU_BERRY   KUO
+	dw NoEffect            ; LIGARC_BERRY NINIKU
+	dw NoEffect            ; TOTAPO_BERRY TOPO
+	dw NoEffect            ; PINKAN_BERRY
 .IndirectEnd:
 
 PokeBallEffect:
@@ -2606,7 +2678,11 @@ RestorePP:
 	ld a, [wTempRestorePPItem]
 	push hl
 	call GetItemIndexFromID
-	cphl16 MYSTERYBERRY
+	cphl16 LEPPA_BERRY
+	pop hl
+	jr z, .restore_some
+	call GetItemIndexFromID
+	cphl16 HOPO_BERRY
 	pop hl
 	jr z, .restore_some
 

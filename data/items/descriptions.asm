@@ -204,16 +204,89 @@ ItemDescriptionsBerries:
 	dw WhtApricornDesc  ; 0304
 	dw BlkApricornDesc  ; 0305
 	dw PnkApricornDesc  ; 0306
-	dw PsnCureBerryDesc ; 0307
-	dw PrzCureBerryDesc ; 0308
-	dw BurntBerryDesc   ; 0309
-	dw IceBerryDesc     ; 030A
-	dw BitterBerryDesc  ; 030B
-	dw MintBerryDesc    ; 030C
-	dw MiracleBerryDesc ; 030D
-	dw MysteryBerryDesc ; 030E
-	dw BerryDesc        ; 030F
-	dw GoldBerryDesc    ; 0310
+	dw BrnApricornDesc  ; 0307
+	dw PechaBerryDesc   ; 0308
+	dw CheriBerryDesc   ; 0309
+	dw AspearBerryDesc  ; 030A
+	dw RawstBerryDesc   ; 030B
+	dw PersimBerryDesc  ; 030C
+	dw ChestoBerryDesc  ; 030D
+	dw LumBerryDesc     ; 030E
+	dw LeppaBerryDesc   ; 030F
+	dw OranBerryDesc    ; 0310
+	dw SitrusBerryDesc  ; 0311
+	dw FigyBerryDesc    ; 0312
+	dw WikiBerryDesc    ; 0313
+	dw MagoBerryDesc    ; 0314
+	dw AguavBerryDesc   ; 0315
+	dw IapapaBerryDesc  ; 0316
+	dw PomegBerryDesc   ; 0317
+	dw KelpsyBerryDesc  ; 0318
+	dw QualotBerryDesc  ; 0319
+	dw HondewBerryDesc  ; 031A
+	dw GrepaBerryDesc   ; 031B
+	dw TamatoBerryDesc  ; 031C
+	dw OccaBerryDesc    ; 031D
+	dw PasshoBerryDesc  ; 031E
+	dw WacanBerryDesc   ; 031F
+	dw RindoBerryDesc   ; 0320
+	dw YacheBerryDesc   ; 0321
+	dw ChopleBerryDesc  ; 0322
+	dw KebiaBerryDesc   ; 0323
+	dw ShucaBerryDesc   ; 0324
+	dw CobaBerryDesc    ; 0325
+	dw PayapaBerryDesc  ; 0326
+	dw TangaBerryDesc   ; 0327
+	dw ChartiBerryDesc  ; 0328
+	dw KasibBerryDesc   ; 0329
+	dw HabanBerryDesc   ; 032A
+	dw ColburBerryDesc  ; 032B
+	dw BabiriBerryDesc  ; 032C
+	dw ChilanBerryDesc  ; 032D
+	dw RoseliBerryDesc  ; 032E
+	dw LiechiBerryDesc  ; 032F
+	dw GanlonBerryDesc  ; 0330
+	dw SalacBerryDesc   ; 0331
+	dw PetayaBerryDesc  ; 0332
+	dw ApicotBerryDesc  ; 0333
+	dw LansatBerryDesc  ; 0334
+	dw StarfBerryDesc   ; 0335
+	dw KeeBerryDesc     ; 0336
+	dw MarangaBerryDesc ; 0337
+	dw EnigmaBerryDesc  ; 0338
+	dw MicleBerryDesc   ; 0339
+	dw CustapBerryDesc  ; 033A
+	dw JabocaBerryDesc  ; 033B
+	dw RowapBerryDesc   ; 033C
+	dw EggantBerryDesc  ; 033D
+	dw UnyinnBerryDesc  ; 033E
+	dw HopoBerryDesc    ; 033F Same as LeppaBerryDesc
+	dw PumkinBerryDesc  ; 0340 Same as AspearBerryDesc
+	dw CareepBerryDesc  ; 0341 Same as PersimBerryDesc
+	dw BitmelBerryDesc  ; 0342 Same as RawstBerryDesc
+	dw DrashBerryDesc   ; 0343 Same as PechaBerryDesc
+	dw RazzBerryDesc    ; 0344
+	dw BlukBerryDesc    ; 0345
+	dw NanabBerryDesc   ; 0346
+	dw WepearBerryDesc  ; 0347
+	dw PinapBerryDesc   ; 0348
+	dw CornnBerryDesc   ; 0349
+	dw MagostBerryDesc  ; 034A
+	dw RabutaBerryDesc  ; 034B
+	dw NomelBerryDesc   ; 034C
+	dw SpelonBerryDesc  ; 034D
+	dw PamtreBerryDesc  ; 034E
+	dw WatmelBerryDesc  ; 034F
+	dw DurinBerryDesc   ; 0350
+	dw BelueBerryDesc   ; 0351
+	dw StribBerryDesc   ; 0352
+	dw TilotaBerryDesc  ; 0353
+	dw NutpeaBerryDesc  ; 0354
+	dw KrauBerryDesc    ; 0355
+	dw LigarcBerryDesc  ; 0356
+	dw TotapoBerryDesc  ; 0357
+	dw PinkanBerryDesc  ; 0358
+
 .IndirectEnd:
 
 MasterBallDesc:
@@ -488,7 +561,8 @@ QuickClawDesc:
 	db   "Raises 1st strike"
 	next "ratio. (HOLD)@"
 
-PsnCureBerryDesc:
+DrashBerryDesc:
+PechaBerryDesc:
 	db   "A self-cure for"
 	next "poison. (HOLD)@"
 
@@ -504,15 +578,17 @@ SharpBeakDesc:
 	db   "Powers up flying-"
 	next "type moves. (HOLD)@"
 
-PrzCureBerryDesc:
+CheriBerryDesc:
 	db   "A self-cure for"
 	next "paralysis. (HOLD)@"
 
-BurntBerryDesc:
+PumkinBerryDesc:
+AspearBerryDesc:
 	db   "A self-cure for"
 	next "freezing. (HOLD)@"
 
-IceBerryDesc:
+BitmelBerryDesc:
+RawstBerryDesc:
 	db   "A self-heal for a"
 	next "burn. (HOLD)@"
 
@@ -524,11 +600,12 @@ KingsRockDesc:
 	db   "May make the foe"
 	next "flinch. (HOLD)@"
 
-BitterBerryDesc:
+CareepBerryDesc:
+PersimBerryDesc:
 	db   "A self-cure for"
 	next "confusion. (HOLD)@"
 
-MintBerryDesc:
+ChestoBerryDesc:
 	db   "A self-awakening"
 	next "for sleep. (HOLD)@"
 
@@ -587,6 +664,10 @@ PnkApricornDesc:
 	db   "A pink APRICORN."
 	next "@"
 
+BrnApricornDesc:
+	db   "A brown APRICORN."
+	next "@"
+
 BlackGlassesDesc:
 	db   "Powers up dark-"
 	next "type moves. (HOLD)@"
@@ -615,7 +696,7 @@ MagnetDesc:
 	db   "Boosts electric-"
 	next "type moves. (HOLD)@"
 
-MiracleBerryDesc:
+LumBerryDesc:
 	db   "Cures all status"
 	next "problems. (HOLD)@"
 
@@ -742,7 +823,8 @@ LeftoversDesc:
 	db   "Restores HP during"
 	next "battle. (HOLD)@"
 
-MysteryBerryDesc:
+HopoBerryDesc:
+LeppaBerryDesc:
 	db   "A self-restore"
 	next "for PP. (HOLD)@"
 
@@ -814,11 +896,11 @@ UpGradeDesc:
 	db   "A mysterious box"
 	next "made by SILPH CO.@"
 
-BerryDesc:
+OranBerryDesc:
 	db   "A self-restore"
 	next "item. (10HP, HOLD)@"
 
-GoldBerryDesc:
+SitrusBerryDesc:
 	db   "A self-restore"
 	next "item. (30HP, HOLD)@"
 
@@ -880,3 +962,198 @@ MusicMailDesc:
 MirageMailDesc:
 	db   "MEW-print MAIL."
 	next "(HOLD)@"
+
+WikiBerryDesc:
+MagoBerryDesc:
+AguavBerryDesc:
+IapapaBerryDesc:
+FigyBerryDesc:
+	db   "A self-restore"
+	next "item. (33PC, HOLD)@"
+
+PomegBerryDesc:
+	db   "Lowers HP EVs and"
+	next "raises friendship.@"
+
+KelpsyBerryDesc:
+	db   "Lowers ATK EVs and"
+	next "raises friendship.@"
+
+QualotBerryDesc:
+	db   "Lowers DEF EVs and"
+	next "raises friendship.@"
+
+HondewBerryDesc:
+	db   "Lowers SPA EVs and"
+	next "raises friendship.@"
+
+GrepaBerryDesc:
+	db   "Lowers SPD EVs and"
+	next "raises friendship.@"
+
+TamatoBerryDesc:
+	db   "Lowers SPE EVs and"
+	next "raises friendship.@"
+
+OccaBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive FIRE move.@"
+
+PasshoBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive WATER move.@"
+
+WacanBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive ELECT. move.@"
+
+RindoBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive GRASS move.@"
+
+YacheBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive ICE move.@"
+
+ChopleBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive FIGHT. move.@"
+
+KebiaBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive POISON move.@"
+
+ShucaBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive GROUND move.@"
+
+CobaBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive FLYING move.@"
+
+PayapaBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive PSYCH. move.@"
+
+TangaBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive BUG move.@"
+
+ChartiBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive ROCK move.@"
+
+KasibBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive GHOST move.@"
+
+HabanBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive DRAGON move.@"
+
+ColburBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive DARK move.@"
+
+BabiriBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive STEEL move.@"
+
+ChilanBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive NORMAL move.@"
+
+RoseliBerryDesc:
+	db   "1/2 dmg from effe-"
+	next "ctive FAIRY move.@"
+
+LiechiBerryDesc:
+	db   "Raises ATTACK when"
+	next "low HP (HOLD)@"
+
+GanlonBerryDesc:
+	db   "Raises DEFENSE"
+	next "when low HP (HOLD)@"
+
+SalacBerryDesc:
+	db   "Raises SPEED when"
+	next "low HP (HOLD)@"
+
+PetayaBerryDesc:
+	db   "Raises SP.ATTACK"
+	next "when low HP (HOLD)@"
+
+ApicotBerryDesc:
+	db   "Raises SP.DEFENSE"
+	next "when low HP (HOLD)@"
+
+LansatBerryDesc:
+	db   "Raises crit rate"
+	next "when low HP (HOLD)@"
+
+StarfBerryDesc:
+	db   "Raises random stat"
+	next "when low HP (HOLD)@"
+
+KeeBerryDesc:
+	db   "Raises DEF if hit"
+	next "by physical.@"
+
+MarangaBerryDesc:
+	db   "Raises SP.DEF if"
+	next "hit by special.@"
+
+EnigmaBerryDesc:
+	db   "Restores HP if hit"
+	next "super effectively.@"
+
+MicleBerryDesc:
+	db   "Raises accuracy if"
+	next "low HP next move.@"
+
+CustapBerryDesc:
+	db   "Raises priority if"
+	next "low HP next move.@"
+
+JabocaBerryDesc:
+	db   "Hurts attacker if"
+	next "hit by physical.@"
+
+RowapBerryDesc:
+	db   "Hurts attacker if"
+	next "hit by special.@"
+
+EggantBerryDesc:
+	db   "A self-cure for"
+	next "infatuation.(HOLD)@"
+
+UnyinnBerryDesc:
+	db   "Raises a lowered"
+	next "stat. (HOLD)@"
+
+RazzBerryDesc:
+BlukBerryDesc:
+NanabBerryDesc:
+WepearBerryDesc:
+PinapBerryDesc:
+CornnBerryDesc:
+MagostBerryDesc:
+RabutaBerryDesc:
+NomelBerryDesc:
+SpelonBerryDesc:
+PamtreBerryDesc:
+WatmelBerryDesc:
+DurinBerryDesc:
+BelueBerryDesc:
+StribBerryDesc:
+TilotaBerryDesc:
+NutpeaBerryDesc:
+KrauBerryDesc:
+LigarcBerryDesc:
+TotapoBerryDesc:
+	db   "A rare berry."
+	next "Sell.@"
+
+PinkanBerryDesc:
+	db   "Makes #MON"
+	next "turn PINK!@"

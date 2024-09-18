@@ -40,7 +40,6 @@ ROMX $02
 ROMX $03
 	"bank3"
 	"VWF"
-	"mobile5C"
 ROMX $04
 	"bank4"
 	"Battle Animation Data"

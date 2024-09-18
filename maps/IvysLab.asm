@@ -191,7 +191,7 @@ CharmanderPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke CHARMANDER, PLAIN_FORM, 5, BERRY ;ORAN_BERRY
+	givepoke CHARMANDER, PLAIN_FORM, 5, ORAN_BERRY
 	closetext
 ;	readvar VAR_FACING
 ;	ifequal RIGHT, ElmDirectionsScript
@@ -223,7 +223,7 @@ SquirtlePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke SQUIRTLE, PLAIN_FORM, 5, BERRY ;ORAN_BERRY
+	givepoke SQUIRTLE, PLAIN_FORM, 5, ORAN_BERRY
 	closetext
 	applymovement PLAYER, AfterSquirtleMovement
 	special FadeOutToBlack
@@ -253,7 +253,7 @@ BulbasaurPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke BULBASAUR, PLAIN_FORM, 5, BERRY ;ORAN_BERRY
+	givepoke BULBASAUR, PLAIN_FORM, 5, ORAN_BERRY
 	closetext
 	applymovement PLAYER, AfterBulbasaurMovement
 	special FadeOutToBlack

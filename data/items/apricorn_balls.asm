@@ -7,4 +7,5 @@ ApricornBalls:
 	dw WHT_APRICORN
 	dw BLK_APRICORN
 	dw PNK_APRICORN
+	dw BRN_APRICORN
 	dw -1

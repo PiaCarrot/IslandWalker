@@ -195,7 +195,7 @@ IvysLabB1PCText2:
 	cont "and the masters,"
 	cont "even fewer."
 	
-	para "My cousin SAMUEL"
+	para "My cousin SAMSON"
 	line "is interested in"
 	cont "your research into"
 	cont "regional variants,"

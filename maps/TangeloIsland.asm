@@ -163,7 +163,7 @@ LaprasScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke LAPRAS, 5, BERRY ;ORAN_BERRY
+	givepoke LAPRAS, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_LAPRAS_OBTAINED
 	disappear TANGELO_ISLAND_LAPRAS_2
