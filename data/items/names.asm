@@ -173,18 +173,46 @@ KeyItemNames::
 
 BallNames::
 	list_start BallNames
-	li "MASTER BALL" ; 0200
-	li "ULTRA BALL"  ; 0201
-	li "GREAT BALL"  ; 0202
-	li "POKé BALL"   ; 0203 VWF can't print "# BALL"
-	li "HEAVY BALL"  ; 0204
-	li "LEVEL BALL"  ; 0205
-	li "LURE BALL"   ; 0206
-	li "FAST BALL"   ; 0207
-	li "FRIEND BALL" ; 0208
-	li "MOON BALL"   ; 0209
-	li "LOVE BALL"   ; 020A
-	li "PARK BALL"   ; 020B
+	li "MASTER BALL"  ; 0200
+	li "ULTRA BALL"   ; 0201
+	li "GREAT BALL"   ; 0202
+	li "POKé BALL"    ; 0203 VWF can't print "# BALL"
+	li "HEAVY BALL"   ; 0204
+	li "LEVEL BALL"   ; 0205
+	li "LURE BALL"    ; 0206
+	li "FAST BALL"    ; 0207
+	li "FRIEND BALL"  ; 0208
+	li "MOON BALL"    ; 0209
+	li "LOVE BALL"    ; 020A
+	li "SPORT BALL"   ; 020B
+	li "SAFARI BALL"  ; 020C
+	li "NET BALL"     ; 020D
+	li "DIVE BALL"    ; 020E
+	li "NEST BALL"    ; 020F
+	li "REPEAT BALL"  ; 0210
+	li "TIMER BALL"   ; 0211
+	li "LUXURY BALL"  ; 0212
+	li "PREMIER BALL" ; 0213
+	li "DUSK BALL"    ; 0214
+	li "HEAL BALL"    ; 0215
+	li "QUICK BALL"   ; 0216
+	li "CHERISH BALL" ; 0217
+	li "PARK BALL"    ; 0218
+	li "DREAM BALL"   ; 0219
+	li "BEAST BALL"   ; 021A
+	li "STRANGE BALL" ; 021B
+	li "POKé BALL"    ; 021C
+	li "GREAT BALL"   ; 021D
+	li "ULTRA BALL"   ; 021E
+	li "HEAVY BALL"   ; 021F
+	li "LEADEN BALL"  ; 0220
+	li "GIGATON BALL" ; 0221
+	li "FEATHER BALL" ; 0222
+	li "WING BALL"    ; 0223
+	li "JET BALL"     ; 0224
+	li "ORIGIN BALL"  ; 0225
+	li "ROCKET BALL"  ; 0226
+	li "GS BALL"      ; 0227
 	assert_list_length NUM_BALL_ITEM_POCKET
 
 BerryNames::

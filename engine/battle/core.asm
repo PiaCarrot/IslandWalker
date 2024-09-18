@@ -4862,7 +4862,7 @@ BattleMenu_Pack:
 	jr .UseItem
 
 .contest
-	ld hl, PARK_BALL
+	ld hl, SPORT_BALL
 	call GetItemIDFromIndex
 	ld [wCurItem], a
 	call DoItemEffect

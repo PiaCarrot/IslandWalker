@@ -164,7 +164,7 @@ DEF FIRST_KEY_ITEM EQU const_value
 	const MYSTERY_EGG  ; 0109
 	const CLEAR_BELL   ; 010A
 	const SILVER_WING  ; 010B
-	const GS_BALL      ; 010C
+	const GS_BALL_KEY  ; 010C
 	const BLUE_CARD    ; 010D
 	const CARD_KEY     ; 010E
 	const MACHINE_PART ; 010F
@@ -191,7 +191,35 @@ DEF FIRST_BALL_ITEM EQU const_value
 	const FRIEND_BALL  ; 0208
 	const MOON_BALL    ; 0209
 	const LOVE_BALL    ; 020A
-	const PARK_BALL    ; 020B
+	const SPORT_BALL   ; 020B
+	const SAFARI_BALL  ; 020C
+	const NET_BALL     ; 020D
+	const DIVE_BALL    ; 020E
+	const NEST_BALL    ; 020F
+	const REPEAT_BALL  ; 0210
+	const TIMER_BALL   ; 0211
+	const LUXURY_BALL  ; 0212
+	const PREMIER_BALL ; 0213
+	const DUSK_BALL    ; 0214
+	const HEAL_BALL    ; 0215
+	const QUICK_BALL   ; 0216
+	const CHERISH_BALL ; 0217
+	const PARK_BALL    ; 0218
+	const DREAM_BALL   ; 0219
+	const BEAST_BALL   ; 021A
+	const STRANGE_BALL ; 021B
+	const POKE_BALL_H  ; 021C
+	const GREAT_BALL_H ; 021D
+	const ULTRA_BALL_H ; 021E
+	const HEAVY_BALL_H ; 021F
+	const LEADEN_BALL  ; 0220
+	const GIGATON_BALL ; 0221
+	const FEATHER_BALL ; 0222
+	const WING_BALL    ; 0223
+	const JET_BALL     ; 0224
+	const ORIGIN_BALL  ; 0225
+	const ROCKET_BALL  ; 0226
+	const GS_BALL      ; 0227
 DEF NUM_BALL_ITEM_POCKET EQU const_value - FIRST_BALL_ITEM
 assert NUM_BALL_ITEM_POCKET <= $ff
 
@@ -408,6 +436,6 @@ DEF USE_SCRIPT_VAR EQU $00
 DEF ITEM_FROM_MEM  EQU $ffff
 
 ; leftovers from red
-DEF SAFARI_BALL    EQU $08 ; MOON_STONE
+DEF SAFARI_BALL_RED    EQU $08 ; MOON_STONE
 DEF MOON_STONE_RED EQU $0a ; BURN_HEAL
 DEF FULL_HEAL_RED  EQU $34 ; X_SPEED

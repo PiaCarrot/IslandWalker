@@ -213,7 +213,35 @@ ItemEffectsBalls:
 	dw PokeBallEffect ; FRIEND_BALL
 	dw PokeBallEffect ; MOON_BALL
 	dw PokeBallEffect ; LOVE_BALL
+	dw PokeBallEffect ; SPORT_BALL
+	dw PokeBallEffect ; SAFARI_BALL
+	dw PokeBallEffect ; NET_BALL
+	dw PokeBallEffect ; DIVE_BALL
+	dw PokeBallEffect ; NEST_BALL
+	dw PokeBallEffect ; REPEAT_BALL
+	dw PokeBallEffect ; TIMER_BALL
+	dw PokeBallEffect ; LUXURY_BALL
+	dw PokeBallEffect ; PREMIER_BALL
+	dw PokeBallEffect ; DUSK_BALL
+	dw PokeBallEffect ; HEAL_BALL
+	dw PokeBallEffect ; QUICK_BALL
+	dw PokeBallEffect ; CHERISH_BALL
 	dw PokeBallEffect ; PARK_BALL
+	dw PokeBallEffect ; DREAM_BALL
+	dw PokeBallEffect ; BEAST_BALL
+	dw PokeBallEffect ; STRANGE_BALL
+	dw PokeBallEffect ; POKE_BALL_H
+	dw PokeBallEffect ; GREAT_BALL_H
+	dw PokeBallEffect ; ULTRA_BALL_H
+	dw PokeBallEffect ; HEAVY_BALL_H
+	dw PokeBallEffect ; LEADEN_BALL 
+	dw PokeBallEffect ; GIGATON_BALL
+	dw PokeBallEffect ; FEATHER_BALL
+	dw PokeBallEffect ; WING_BALL
+	dw PokeBallEffect ; JET_BALL
+	dw PokeBallEffect ; ORIGIN_BALL
+	dw PokeBallEffect ; ROCKET_BALL
+	dw PokeBallEffect ; GS_BALL
 .IndirectEnd:
 
 ItemEffectsBerries:
@@ -841,7 +869,7 @@ PokeBallEffect:
 	cp BATTLETYPE_DEBUG
 	ret z
 	cp BATTLETYPE_CONTEST
-	jr z, .used_park_ball
+	jr z, .used_sport_ball
 
 	ld a, [wWildMon]
 	and a
@@ -856,7 +884,7 @@ PokeBallEffect:
 	ld [wItemQuantityChange], a
 	jmp TossItem
 
-.used_park_ball
+.used_sport_ball
 	ld hl, wParkBallsRemaining
 	dec [hl]
 	ret
@@ -873,7 +901,7 @@ BallMultiplierFunctionTable:
 	dw FAST_BALL,   FastBallMultiplier
 	dw MOON_BALL,   MoonBallMultiplier
 	dw LOVE_BALL,   LoveBallMultiplier
-	dw PARK_BALL,   ParkBallMultiplier
+	dw SPORT_BALL,  SportBallMultiplier
 	dw -1 ; end
 
 UltraBallMultiplier:
@@ -885,7 +913,7 @@ UltraBallMultiplier:
 
 SafariBallMultiplier:
 GreatBallMultiplier:
-ParkBallMultiplier:
+SportBallMultiplier:
 ; multiply catch rate by 1.5
 	ld a, b
 	srl a

@@ -119,7 +119,7 @@ IvysLabBasementCantLeaveMovement2:
 	
 GSBallScript:
 	opentext
-	verbosegiveitem GS_BALL
+	verbosegiveitem GS_BALL_KEY
 	closetext
 	disappear IVYS_BASEMENT_GS_BALL
 	setevent EVENT_GS_BALL_ENCOUNTER
