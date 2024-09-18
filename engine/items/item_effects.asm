@@ -173,6 +173,29 @@ ItemEffects1:
 	dw NoEffect            ; ITEM_DC
 	dw NoEffect            ; ITEM_C3
 	dw NoEffect            ; ITEM_FA
+	dw EvoStoneEffect      ; SHINY_STONE
+	dw EvoStoneEffect      ; DUSK_STONE
+	dw EvoStoneEffect      ; DAWN_STONE
+	dw EvoStoneEffect      ; ICE_STONE 
+	dw EvoStoneEffect      ; BLK_AUGURITE
+	dw EvoStoneEffect      ; PEAT_BLOCK
+	dw EvoStoneEffect      ; SWEET_APPLE
+	dw EvoStoneEffect      ; TART_APPLE
+	dw EvoStoneEffect      ; SYRUPY_APPLE
+	dw EvoStoneEffect      ; GALAR_CUFF
+	dw EvoStoneEffect      ; GALAR_WREATH
+	dw EvoStoneEffect      ; HOLY_ARMOR
+	dw EvoStoneEffect      ; CURSED_ARMOR
+	dw EvoStoneEffect      ; ELECTIRIZER
+	dw EvoStoneEffect      ; MAGMARIZER
+	dw EvoStoneEffect      ; PROTECTOR
+	dw EvoStoneEffect      ; DUBIOUS_DISC
+	dw EvoStoneEffect      ; OVAL_STONE
+	dw EvoStoneEffect      ; PRISM_SCALE
+	dw EvoStoneEffect      ; RAZOR_CLAW
+	dw EvoStoneEffect      ; RAZOR_FANG
+	dw EvoStoneEffect      ; REAPER_CLOTH
+	dw EvoStoneEffect      ; LINKING_CORD
 .IndirectEnd:
 
 ItemEffectsKeyItems:
@@ -310,9 +333,9 @@ ItemEffectsBerries:
 	dw NoEffect            ; UNYINN_BERRY GINEMA
 	dw RestorePPEffect     ; HOPO_BERRY
 	dw StatusHealingEffect ; PUMKIN_BERRY
-	dw StatusHealingEffect ; CAREEP_BERRY TOUGA
+	dw BitterBerryEffect   ; CAREEP_BERRY TOUGA
 	dw StatusHealingEffect ; BITMEL_BERRY YAGO
-	dw BitterBerryEffect   ; DRASH_BERRY
+	dw StatusHealingEffect ; DRASH_BERRY
 	dw NoEffect            ; RAZZ_BERRY
 	dw NoEffect            ; BLUK_BERRY
 	dw NoEffect            ; NANAB_BERRY

@@ -148,6 +148,30 @@
 	const ITEM_DC      ; 008C
 	const ITEM_C3      ; 008D
 	const ITEM_FA      ; 008E
+	const SHINY_STONE  ; 008F
+	const DUSK_STONE   ; 009A
+	const DAWN_STONE   ; 009B
+	const ICE_STONE    ; 009C
+	const BLK_AUGURITE ; 009D
+	const PEAT_BLOCK   ; 009E
+	const SWEET_APPLE  ; 009F
+	const TART_APPLE   ; 00A0
+	const SYRUPY_APPLE ; 00A1
+	const GALAR_CUFF   ; 00A2
+	const GALAR_WREATH ; 00A3
+	const HOLY_ARMOR   ; 00A4 AUSPICIOUS ARMOR
+	const CURSED_ARMOR ; 00A5 MALICIOUS ARMOR
+	const ELECTIRIZER  ; 00A6
+	const MAGMARIZER   ; 00A7
+	const PROTECTOR    ; 00A8
+	const DUBIOUS_DISC ; 00A9
+	const OVAL_STONE   ; 00AA
+	const PRISM_SCALE  ; 00AB
+	const RAZOR_CLAW   ; 00AC
+	const RAZOR_FANG   ; 00AD
+	const REAPER_CLOTH ; 00AE
+	const LINKING_CORD ; 00AF
+;	const FAIRYFEATHER ; 00B0
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.

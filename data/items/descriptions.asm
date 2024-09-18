@@ -153,6 +153,29 @@ ItemDescriptions1:
 	dw QuestionMarkDesc ; 008C
 	dw QuestionMarkDesc ; 008D
 	dw QuestionMarkDesc ; 008E
+	dw ShinyStoneDesc     ; 008F
+	dw DuskStoneDesc      ; 009A
+	dw DawnStoneDesc      ; 009B
+	dw IceStoneDesc       ; 009C
+	dw BlkAuguriteDesc    ; 009D
+	dw PeatBlockDesc      ; 009E
+	dw SweetAppleDesc     ; 009F
+	dw TartAppleDesc      ; 00A0
+	dw SyrupyAppleDesc    ; 00A1
+	dw GalarCuffDesc      ; 00A2
+	dw GalarWreathDesc    ; 00A3
+	dw HolyArmorDesc      ; 00A4 Auspicious Armor
+	dw CursedArmorDesc    ; 00A5 Malicious Armor
+	dw ElectirizerDesc    ; 00A6
+	dw MagmarizerDesc     ; 00A7
+	dw ProtectorDesc      ; 00A8
+	dw DubiousDiscDesc    ; 00A9
+	dw OvalStoneDesc      ; 00AA
+	dw PrismScaleDesc     ; 00AB
+	dw RazorClawDesc      ; 00AC
+	dw RazorFangDesc      ; 00AD
+	dw ReaperClothDesc    ; 00AE
+	dw LinkingCordDesc    ; 00AF
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -222,7 +245,6 @@ ItemDescriptionsBalls:
 	dw OriginBallDesc  ; 0225
 	dw RocketBallDesc  ; 0226
 	dw GSBallDesc      ; 0227
-
 .IndirectEnd:
 
 ItemDescriptionsBerries:
@@ -315,7 +337,6 @@ ItemDescriptionsBerries:
 	dw LigarcBerryDesc  ; 0356
 	dw TotapoBerryDesc  ; 0357
 	dw PinkanBerryDesc  ; 0358
-
 .IndirectEnd:
 
 MasterBallDesc:
@@ -628,6 +649,7 @@ PoisonBarbDesc:
 	db   "Powers up poison-"
 	next "type moves. (HOLD)@"
 
+RazorFangDesc:
 KingsRockDesc:
 	db   "May make the foe"
 	next "flinch. (HOLD)@"
@@ -839,6 +861,7 @@ BerryJuiceDesc:
 	db   "Restores #MON"
 	next "HP by 20.@"
 
+RazorClawDesc:
 ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (HOLD)@"
@@ -1270,3 +1293,87 @@ OriginBallDesc:
 RocketBallDesc:
 	db   "A powerful BALL"
 	next "that #MON hate.@"
+	
+ShinyStoneDesc:
+	db   "Evolves certain"
+	next "kinds of #MON.@"
+
+DuskStoneDesc:
+	db   "Evolves certain"
+	next "kinds of #MON.@"
+
+DawnStoneDesc:
+	db   "Evolves certain"
+	next "kinds of #MON.@"
+
+IceStoneDesc:
+	db   "Evolves certain"
+	next "kinds of #MON.@"
+
+BlkAuguriteDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+PeatBlockDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+SweetAppleDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+TartAppleDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+SyrupyAppleDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+GalarCuffDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+GalarWreathDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+HolyArmorDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+CursedArmorDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+ElectirizerDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+MagmarizerDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+ProtectorDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+DubiousDiscDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+OvalStoneDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+PrismScaleDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+ReaperClothDesc:
+	db   "Evolves a certain"
+	next "kind of #MON.@"
+
+LinkingCordDesc:
+	db   "Evolves certain"
+	next "kinds of #MON.@"

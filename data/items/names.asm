@@ -142,6 +142,29 @@ ItemNames::
 	li "TERU-SAMA"    ; 008C
 	li "TERU-SAMA"    ; 008D
 	li "TERU-SAMA"    ; 008E
+	li "SHINY STONE"  ; 008F
+	li "DUSK STONE"   ; 009A
+	li "DAWN STONE"   ; 009B
+	li "ICE STONE"    ; 009C
+	li "BLK AUGURITE" ; 009D
+	li "PEAT BLOCK"   ; 009E
+	li "SWEET APPLE"  ; 009F
+	li "TART APPLE"   ; 00A0
+	li "SYRUPY APPLE" ; 00A1
+	li "GALAR CUFF"   ; 00A2
+	li "GALAR WREATH" ; 00A3
+	li "HOLY ARMOR"   ; 00A4 AUSPICIOUS ARMOR
+	li "CURSED ARMOR" ; 00A5 MALICIOUS ARMOR
+	li "ELECTIRIZER"  ; 00A6
+	li "MAGMARIZER"   ; 00A7
+	li "PROTECTOR"    ; 00A8
+	li "DUBIOUS DISC" ; 00A9
+	li "OVAL STONE"   ; 00AA
+	li "PRISM SCALE"  ; 00AB
+	li "RAZOR CLAW"   ; 00AC
+	li "RAZOR FANG"   ; 00AD
+	li "REAPER CLOTH" ; 00AE
+	li "LINKING CORD" ; 00AF
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::
