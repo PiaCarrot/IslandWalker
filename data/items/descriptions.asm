@@ -176,6 +176,46 @@ ItemDescriptions1:
 	dw RazorFangDesc      ; 00AD
 	dw ReaperClothDesc    ; 00AE
 	dw LinkingCordDesc    ; 00AF
+	dw FairyFeatherDesc   ; 00B0
+	dw QuickPowderDesc    ; 00B1
+	dw EvioliteDesc       ; 00B2
+	dw SoulDewDesc        ; 00B3
+	dw SootheBellDesc     ; 00B4
+	dw MirrorHerbDesc     ; 00B5
+	dw MentalHerbDesc     ; 00B6
+	dw PowerHerbDesc      ; 00B7
+	dw WhiteHerbDesc      ; 00B8
+	dw FullIncenseDesc    ; 00B9
+	dw LaxIncenseDesc     ; 00BA
+	dw LuckIncenseDesc    ; 00BB
+	dw OddIncenseDesc     ; 00BC
+	dw PureIncenseDesc    ; 00BD
+	dw RockIncenseDesc    ; 00BE
+	dw RoseIncenseDesc    ; 00BF
+	dw SeaIncenseDesc     ; 00C0
+	dw WaveIncenseDesc    ; 00C1
+	dw MachoBraceDesc     ; 00C2
+	dw PowerAnkletDesc    ; 00C3
+	dw PowerBandDesc      ; 00C4
+	dw PowerBeltDesc      ; 00C5
+	dw PowerBracerDesc    ; 00C6
+	dw PowerLensDesc      ; 00C7
+	dw PowerWeightDesc    ; 00C8
+	dw HeartScaleDesc     ; 00C9
+	dw BlueShardDesc      ; 00CA
+	dw GreenShardDesc     ; 00CB
+	dw RedShardDesc       ; 00CC
+	dw YellowShardDesc    ; 00CD
+	dw RareBoneDesc       ; 00CE
+	dw BalmmushroomDesc   ; 00CF
+	dw BigNuggetDesc      ; 00D0
+	dw CometShardDesc     ; 00D1
+	dw PearlStringDesc    ; 00D2
+	dw BeachGlassDesc     ; 00D3
+	dw PrettyShellDesc    ; 00D4
+	dw TinyBambooDesc     ; 00D5
+	dw BigBambooDesc      ; 00D6
+
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -681,6 +721,7 @@ SilverPowderDesc:
 BluApricornDesc:
 	db   "A blue APRICORN.@"
 
+LuckIncenseDesc:
 AmuletCoinDesc:
 	db   "Doubles monetary"
 	next "earnings. (HOLD)@"
@@ -691,14 +732,18 @@ YlwApricornDesc:
 GrnApricornDesc:
 	db   "A green APRICORN.@"
 
+PureIncenseDesc:
 CleanseTagDesc:
 	db   "Helps repel wild"
 	next "#MON. (HOLD)@"
 
+SeaIncenseDesc:
+WaveIncenseDesc:
 MysticWaterDesc:
 	db   "Powers up water-"
 	next "type moves. (HOLD)@"
 
+OddIncenseDesc:
 TwistedSpoonDesc:
 	db   "Powers up psychic-"
 	next "type moves. (HOLD)@"
@@ -782,6 +827,7 @@ BlueCardDesc:
 	db   "Card to save"
 	next "points.@"
 
+RoseIncenseDesc:
 MiracleSeedDesc:
 	db   "Powers up grass-"
 	next "type moves. (HOLD)@"
@@ -810,6 +856,7 @@ RevivalHerbDesc:
 	db   "Revives fainted"
 	next "#MON. Bitter.@"
 
+RockIncenseDesc:
 HardStoneDesc:
 	db   "Powers up rock-"
 	next "type moves. (HOLD)@"
@@ -1181,10 +1228,12 @@ RowapBerryDesc:
 	db   "Hurts attacker if"
 	next "hit by special.@"
 
+MentalHerbDesc:
 EggantBerryDesc:
 	db   "A self-cure for"
 	next "infatuation.(HOLD)@"
 
+WhiteHerbDesc:
 UnyinnBerryDesc:
 	db   "Raises a lowered"
 	next "stat. (HOLD)@"
@@ -1377,3 +1426,124 @@ ReaperClothDesc:
 LinkingCordDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
+	
+FairyFeatherDesc:
+	db   "Powers up FAIRY-"
+	next "type moves. (HOLD)@"
+
+QuickPowderDesc:
+	db   "Raises SPEED of"
+	next "DITTO. (HOLD)@"
+
+EvioliteDesc:
+	db   "Boosts defenses of"
+	next "unevolved #MON.@"
+
+SoulDewDesc:
+	db   "Boosts specials of"
+	next "a certain #MON.@"
+
+SootheBellDesc:
+	db   "Boosts friendship"
+	next "of #MON.@"
+
+MirrorHerbDesc:
+	db   "Copy enemy if stat"
+	next "increases.(HOLD)@"
+
+PowerHerbDesc:
+	db   "Skip charging of a"
+	next "attack.(HOLD)@"
+
+FullIncenseDesc:
+	db   "Force user to go"
+	next "last.(HOLD)@"
+
+LaxIncenseDesc:
+	db   "Reduces accuracy"
+	next "of foe.(HOLD)@"
+
+MachoBraceDesc:
+	db   "Lowers SPEED but"
+	next "promotes growth.@"
+
+PowerAnkletDesc:
+	db   "Lowers SPEED but"
+	next "promotes SPEED.@"
+
+PowerBandDesc:
+	db   "Lowers SPEED but"
+	next "promotes SP.DEF.@"
+
+PowerBeltDesc:
+	db   "Lowers SPEED but"
+	next "promotes DEFENSE.@"
+
+PowerBracerDesc:
+	db   "Lowers SPEED but"
+	next "promotes ATTACK.@"
+
+PowerLensDesc:
+	db   "Lowers SPEED but"
+	next "promotes SP.ATK.@"
+
+PowerWeightDesc:
+	db   "Lowers speed but"
+	next "promotes HP.@"
+
+HeartScaleDesc:
+	db   "A heart-shaped"
+	next "scale. Sell low.@"
+
+BlueShardDesc:
+	db   "A tiny blue shard."
+	next "Sell low.@"
+
+GreenShardDesc:
+	db   "A tiny green"
+	next "shard. Sell low.@"
+
+RedShardDesc:
+	db   "A tiny red shard."
+	next "Sell low.@"
+
+YellowShardDesc:
+	db   "A tiny yellow"
+	next "shard. Sell low.@"
+
+RareBoneDesc:
+	db   "A rare fossil of"
+	next "sorts. Sell high.@"
+
+BalmmushroomDesc:
+	db   "A very rare mush-"
+	next "room. Sell high.@"
+
+BigNuggetDesc:
+	db   "Made of pure gold."
+	next "Sell very high.@"
+
+CometShardDesc:
+	db   "Shard of a comet."
+	next "Sell very high.@"
+
+PearlStringDesc:
+	db   "Very large pearls."
+	next "Sell very high.@"
+
+BeachGlassDesc:
+	db   "Round, colored"
+	next "glass. Sell.@"
+
+PrettyShellDesc:
+	db   "A tropical shell."
+	next "Sell high.@"
+
+TinyBambooDesc:
+	db   "A small piece of"
+	next "bamboo. Sell low.@"
+
+BigBambooDesc:
+	db   "A big piece of"
+	next "bamboo. Sell.@"
+

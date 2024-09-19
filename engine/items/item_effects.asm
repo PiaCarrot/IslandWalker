@@ -196,6 +196,45 @@ ItemEffects1:
 	dw EvoStoneEffect      ; RAZOR_FANG
 	dw EvoStoneEffect      ; REAPER_CLOTH
 	dw EvoStoneEffect      ; LINKING_CORD
+	dw NoEffect            ; FAIRYFEATHER
+	dw NoEffect            ; QUICK_POWDER
+	dw NoEffect            ; EVIOLITE
+	dw NoEffect            ; SOUL_DEW
+	dw NoEffect            ; SOOTHE_BELL
+	dw NoEffect            ; MIRROR_HERB
+	dw NoEffect            ; MENTAL_HERB
+	dw NoEffect            ; POWER_HERB
+	dw NoEffect            ; WHITE_HERB
+	dw NoEffect            ; FULL_INCENSE
+	dw NoEffect            ; LAX_INCENSE
+	dw NoEffect            ; LUCK_INCENSE
+	dw NoEffect            ; ODD_INCENSE
+	dw NoEffect            ; PURE_INCENSE
+	dw NoEffect            ; ROCK_INCENSE
+	dw NoEffect            ; ROSE_INCENSE
+	dw NoEffect            ; SEA_INCENSE
+	dw NoEffect            ; WAVE_INCENSE
+	dw NoEffect            ; MACHO_BRACE
+	dw NoEffect            ; POWER_ANKLET
+	dw NoEffect            ; POWER_BAND
+	dw NoEffect            ; POWER_BELT
+	dw NoEffect            ; POWER_BRACER
+	dw NoEffect            ; POWER_LENS
+	dw NoEffect            ; POWER_WEIGHT
+	dw NoEffect            ; HEART_SCALE
+	dw NoEffect            ; BLUE_SHARD
+	dw NoEffect            ; GREEN_SHARD
+	dw NoEffect            ; RED_SHARD
+	dw NoEffect            ; YELLOW_SHARD
+	dw NoEffect            ; RARE_BONE
+	dw NoEffect            ; BALMMUSHROOM
+	dw NoEffect            ; BIG_NUGGET
+	dw NoEffect            ; COMET_SHARD
+	dw NoEffect            ; PEARL_STRING
+	dw NoEffect            ; BEACH_GLASS
+	dw NoEffect            ; PRETTY_SHELL
+	dw NoEffect            ; TINY_BAMBOO
+	dw NoEffect            ; BIG_BAMBOO
 .IndirectEnd:
 
 ItemEffectsKeyItems:

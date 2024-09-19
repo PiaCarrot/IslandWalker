@@ -171,7 +171,45 @@
 	const RAZOR_FANG   ; 00AD
 	const REAPER_CLOTH ; 00AE
 	const LINKING_CORD ; 00AF
-;	const FAIRYFEATHER ; 00B0
+	const FAIRYFEATHER ; 00B0
+	const QUICK_POWDER ; 00B1
+	const EVIOLITE     ; 00B2
+	const SOUL_DEW     ; 00B3
+	const SOOTHE_BELL  ; 00B4
+	const MIRROR_HERB  ; 00B5
+	const MENTAL_HERB  ; 00B6
+	const POWER_HERB   ; 00B7
+	const WHITE_HERB   ; 00B8
+	const FULL_INCENSE ; 00B9
+	const LAX_INCENSE  ; 00BA
+	const LUCK_INCENSE ; 00BB
+	const ODD_INCENSE  ; 00BC
+	const PURE_INCENSE ; 00BD
+	const ROCK_INCENSE ; 00BE
+	const ROSE_INCENSE ; 00BF
+	const SEA_INCENSE  ; 00C0
+	const WAVE_INCENSE ; 00C1
+	const MACHO_BRACE  ; 00C2
+	const POWER_ANKLET ; 00C3
+	const POWER_BAND   ; 00C4
+	const POWER_BELT   ; 00C5
+	const POWER_BRACER ; 00C6
+	const POWER_LENS   ; 00C7
+	const POWER_WEIGHT ; 00C8
+	const HEART_SCALE  ; 00C9
+	const BLUE_SHARD   ; 00CA
+	const GREEN_SHARD  ; 00CB
+	const RED_SHARD    ; 00CC
+	const YELLOW_SHARD ; 00CD
+	const RARE_BONE    ; 00CE
+	const BALMMUSHROOM ; 00CF
+	const BIG_NUGGET   ; 00D0
+	const COMET_SHARD  ; 00D1
+	const PEARL_STRING ; 00D2
+	const BEACH_GLASS  ; 00D3
+	const PRETTY_SHELL ; 00D4
+	const TINY_BAMBOO  ; 00D5
+	const BIG_BAMBOO   ; 00D6
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.
