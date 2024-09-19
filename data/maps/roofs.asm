@@ -12,8 +12,9 @@ MapGroupRoofs:
 ; values are indexes for Roofs (see below)
 	table_width 1, MapGroupRoofs
 	db -1             ;  0
-	db ROOF_NEW_BARK  ; 1 (Valencia)
-	db ROOF_NEW_BARK  ;  3 (Tangelo)
+	db ROOF_NEW_BARK  ;  1 (Valencia)
+	db ROOF_NEW_BARK  ;  2 (Tangelo)
+	db ROOF_NEW_BARK  ;  3 (Mikan)
 	assert_table_length NUM_MAP_GROUPS + 1
 
 Roofs:

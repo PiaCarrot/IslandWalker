@@ -96,5 +96,8 @@ TangeloIslandSouthHouse_Blocks:
 
 BeachHouseTrad_Blocks:
 	INCBIN "maps/BeachHouseTrad.ablk"
+	
+Route52_Blocks:
+	INCBIN "maps/Route52.ablk"
 
 ENDSECTION

@@ -120,7 +120,11 @@ ENDM
 	connection south, Route49North, ROUTE_49_NORTH, 0
 	connection west, Route50, ROUTE_50, -7
 
-	map_attributes MikanIsland, MIKAN_ISLAND, $C8, 0
+	map_attributes Route52, ROUTE_52, $10, NORTH
+	connection south, MikanIsland, MIKAN_ISLAND, 0
+
+	map_attributes MikanIsland, MIKAN_ISLAND, $C8, SOUTH
+	connection south, Route52, ROUTE_52, 0
 	
 	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
 	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0

@@ -555,6 +555,9 @@ TangeloPlayerMovement2:
 	step DOWN
 	step_end
 
+TangeloIslandFruitTree:
+	fruittree FRUITTREE_TANGELO_ISLAND_1
+
 TangeloIsland_MapEvents:
 	db 0, 0 ; filler
 
@@ -594,3 +597,4 @@ TangeloIsland_MapEvents:
 	object_event 20,  5, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LaprasScript, EVENT_LAPRAS_OBTAINED
 	object_event 21, 11, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloBerrySellerScript, -1
 	object_event 26,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloBallGuyScript, -1
+	object_event 30, 30, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloIslandFruitTree, -1

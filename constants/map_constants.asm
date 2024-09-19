@@ -60,8 +60,12 @@ ENDM
 	map_const TANGELO_ISLAND_SOUTH_HOUSE,					4,  4
 	map_const ROUTE_50,										11, 27
 	map_const ROUTE_51,										20, 20
-	map_const MIKAN_ISLAND,									17, 17
 	map_const TANGELO_JUNGLE,								20, 20
+	endgroup
+	
+	newgroup MIKAN
+	map_const ROUTE_52,										13, 32
+	map_const MIKAN_ISLAND,									17, 17
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

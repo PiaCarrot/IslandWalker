@@ -126,6 +126,12 @@ BugcatcherAshtonAfterText:
 	cont "of the foliage."
 	done
 
+Route50FruitTree1:
+	fruittree FRUITTREE_ROUTE_50_1
+	
+Route50FruitTree2:
+	fruittree FRUITTREE_ROUTE_50_2
+
 Route50_MapEvents:
 	db 0, 0 ; filler
 
@@ -140,3 +146,6 @@ Route50_MapEvents:
 	object_event  5, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerYoungsterJavi, -1
 	object_event 14, 26, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyRose, -1
 	object_event  6,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerBugcatcherAshton, -1
+	object_event 10,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route50FruitTree1, -1
+	object_event 16, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route50FruitTree2, -1
+

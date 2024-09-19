@@ -274,6 +274,12 @@ Route49Swoop:
 	
 Route49Depths:
 	jumpstd MonDepthsScript
+	
+Route49FruitTree1:
+	fruittree FRUITTREE_ROUTE_49_1
+	
+Route49FruitTree2:
+	fruittree FRUITTREE_ROUTE_49_2
 
 Route49_MapEvents:
 	db 0, 0 ; filler
@@ -298,3 +304,5 @@ Route49_MapEvents:
 	object_event 25, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route49FreshWater, EVENT_ROUTE_49_FRESHWATER
 	object_event  7,  8, SPRITE_SHADOW, SPRITEMOVEDATA_WANDER, 5, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Swoop, -1
 	object_event 30, 34, SPRITE_SHADOW, SPRITEMOVEDATA_SWIM_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Depths, -1
+	object_event 24,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49FruitTree1, -1
+	object_event 10, 24, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49FruitTree2, -1
