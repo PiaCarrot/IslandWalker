@@ -7,7 +7,7 @@
 	const_def
 	const NO_ITEM      ; 0000
 	const BRIGHTPOWDER ; 0001
-	const TOWN_MAP     ; 0002
+	const TOWN_MAP_RED ; 0002
 	const MOON_STONE   ; 0003
 	const ANTIDOTE     ; 0004
 	const BURN_HEAL    ; 0005
@@ -53,7 +53,7 @@
 	const ITEM_32      ; 002D
 	const X_DEFEND     ; 002E
 	const X_SPEED      ; 002F
-	const X_SPECIAL    ; 0030
+	const X_SP_ATK     ; 0030
 	const POKE_FLUTE   ; 0031
 	const EXP_SHARE    ; 0032
 	const SILVER_LEAF  ; 0033
@@ -210,6 +210,10 @@
 	const PRETTY_SHELL ; 00D4
 	const TINY_BAMBOO  ; 00D5
 	const BIG_BAMBOO   ; 00D6
+	const X_SP_DEF     ; 00D7
+	const PP_MAX       ; 00D8
+	const PEWTER_ARARE ; 00D9
+	const SEVENTH_TANGHULU ; 00DA
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.
@@ -237,6 +241,7 @@ DEF FIRST_KEY_ITEM EQU const_value
 	const SQUIRTBOTTLE ; 0114
 	const RAINBOW_WING ; 0115
 	const SECRET_STASH ; 0116
+	const SEA_MAP      ; 0117
 DEF NUM_KEY_ITEM_POCKET EQU const_value - FIRST_KEY_ITEM
 assert NUM_KEY_ITEM_POCKET <= $ff
 

@@ -10,7 +10,7 @@ MysteryGiftItems:
 	dw X_ATTACK
 	dw PERSIM_BERRY
 	dw DIRE_HIT
-	dw X_SPECIAL
+	dw X_SP_ATK
 	dw X_ACCURACY
 	dw EON_MAIL
 	dw MORPH_MAIL

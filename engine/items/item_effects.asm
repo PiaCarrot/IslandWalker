@@ -78,7 +78,7 @@ ItemEffects1:
 	dw NoEffect            ; ITEM_32
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
-	dw XItemEffect         ; X_SPECIAL
+	dw XItemEffect         ; X_SP_ATK
 	dw PokeFluteEffect     ; POKE_FLUTE
 	dw NoEffect            ; EXP_SHARE
 	dw NoEffect            ; SILVER_LEAF
@@ -235,6 +235,10 @@ ItemEffects1:
 	dw NoEffect            ; PRETTY_SHELL
 	dw NoEffect            ; TINY_BAMBOO
 	dw NoEffect            ; BIG_BAMBOO
+	dw XItemEffect         ; X_SP_DEF
+	dw RestorePPEffect     ; PP_MAX
+	dw StatusHealingEffect ; PEWTER_ARARE
+	dw StatusHealingEffect ; SEVENTH_TANGHULU
 .IndirectEnd:
 
 ItemEffectsKeyItems:
@@ -261,6 +265,7 @@ ItemEffectsKeyItems:
 	dw SquirtbottleEffect ; SQUIRTBOTTLE
 	dw NoEffect           ; RAINBOW_WING
 	dw NoEffect           ; SECRET_STASH
+	dw TownMapEffect      ; SEA_MAP
 .IndirectEnd:
 
 ItemEffectsBalls:
@@ -1339,7 +1344,15 @@ ReturnToBattle_UseBall:
 	farjp _ReturnToBattle_UseBall
 
 TownMapEffect:
-	farjp PokegearMap
+	call FadeToMenu
+	farcall _TownMap
+	call ExitMenu
+	xor a
+	ldh [hBGMapMode], a
+	farcall Pack_InitGFX
+	farcall WaitBGMap_DrawPackGFX
+	farcall Pack_InitColors
+	ret
 
 BicycleEffect:
 	jmp BikeFunction

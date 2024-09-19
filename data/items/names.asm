@@ -47,7 +47,7 @@ ItemNames::
 	li "TERU-SAMA"    ; 002D
 	li "X DEFEND"     ; 002E
 	li "X SPEED"      ; 002F
-	li "X SPECIAL"    ; 0030
+	li "X SP.ATK"     ; 0030
 	li "TERU-SAMA"    ; 0031
 	li "EXP. SHARE"   ; 0032
 	li "SILVER LEAF"  ; 0033
@@ -204,6 +204,10 @@ ItemNames::
 	li "PRETTY SHELL" ; 00D4
 	li "TINY BAMBOO"  ; 00D5
 	li "BIG BAMBOO"   ; 00D6
+	li "X SP.DEF"     ; 00D7
+	li "PP MAX"       ; 00D8
+	li "PEWTER ARARE" ; 00D9
+	li "7TH TANGHULU" ; 00DA
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::
@@ -231,6 +235,7 @@ KeyItemNames::
 	li "SQUIRTBOTTLE" ; 0114
 	li "RAINBOW WING" ; 0115
 	li "SECRET STASH" ; 0116
+	li "SEA MAP"      ; 0117
 	assert_list_length NUM_KEY_ITEM_POCKET
 
 BallNames::

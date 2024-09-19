@@ -247,48 +247,6 @@ CharityText:
 	line "thing is a down-"
 	cont "right genius!"
 	done
-	
-TestScript:
-	giveitem FAIRYFEATHER ; 00B0
-	giveitem QUICK_POWDER ; 00B1
-	giveitem EVIOLITE     ; 00B2
-	giveitem SOUL_DEW     ; 00B3
-	giveitem SOOTHE_BELL  ; 00B4
-	giveitem MIRROR_HERB  ; 00B5
-	giveitem MENTAL_HERB  ; 00B6
-	giveitem POWER_HERB   ; 00B7
-	giveitem WHITE_HERB   ; 00B8
-	giveitem FULL_INCENSE ; 00B9
-	giveitem LAX_INCENSE  ; 00BA
-	giveitem LUCK_INCENSE ; 00BB
-	giveitem ODD_INCENSE  ; 00BC
-	giveitem PURE_INCENSE ; 00BD
-	giveitem ROCK_INCENSE ; 00BE
-	giveitem ROSE_INCENSE ; 00BF
-	giveitem SEA_INCENSE  ; 00C0
-	giveitem WAVE_INCENSE ; 00C1
-	giveitem MACHO_BRACE  ; 00C2
-	giveitem POWER_ANKLET ; 00C3
-	giveitem POWER_BAND   ; 00C4
-	giveitem POWER_BELT   ; 00C5
-	giveitem POWER_BRACER ; 00C6
-	giveitem POWER_LENS   ; 00C7
-	giveitem POWER_WEIGHT ; 00C8
-	giveitem HEART_SCALE  ; 00C9
-	giveitem BLUE_SHARD   ; 00CA
-	giveitem GREEN_SHARD  ; 00CB
-	giveitem RED_SHARD    ; 00CC
-	giveitem YELLOW_SHARD ; 00CD
-	giveitem RARE_BONE    ; 00CE
-	giveitem BALMMUSHROOM ; 00CF
-	giveitem BIG_NUGGET   ; 00D0
-	giveitem COMET_SHARD  ; 00D1
-	giveitem PEARL_STRING ; 00D2
-	giveitem BEACH_GLASS  ; 00D3
-	giveitem PRETTY_SHELL ; 00D4
-	giveitem TINY_BAMBOO  ; 00D5
-	giveitem BIG_BAMBOO   ; 00D6
-	end
 
 IvysLabB1_MapEvents:
 	db 0, 0 ; filler
@@ -309,4 +267,3 @@ IvysLabB1_MapEvents:
 	object_event  3,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ProfessorIvyBasementScript, EVENT_GS_BALL_IVY
 	object_event  2,  1, SPRITE_GS_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, GSBallScript, EVENT_GS_BALL_ENCOUNTER
 	object_event  6,  4, SPRITE_AIDE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CharityScript, -1
-	object_event  7,  5, SPRITE_AIDE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TestScript, -1

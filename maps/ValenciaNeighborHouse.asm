@@ -14,7 +14,7 @@ ValenciaNeighborScript:
 	iftrue .AlreadyGotTownMap
 	writetext ValenciaNeighborGiveTownMap
 	waitbutton
-	verbosegiveitem TOWN_MAP
+	verbosegiveitem SEA_MAP
 	setevent EVENT_GOT_TOWN_MAP
 	disappear VALENCIA_NEIGHBOR_MAP
 .AlreadyGotTownMap

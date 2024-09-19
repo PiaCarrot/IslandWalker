@@ -58,7 +58,7 @@ ItemDescriptions1:
 	dw QuestionMarkDesc ; 002D
 	dw XDefendDesc      ; 002E
 	dw XSpeedDesc       ; 002F
-	dw XSpecialDesc     ; 0030
+	dw XSpAtkDesc       ; 0030
 	dw QuestionMarkDesc ; 0031
 	dw ExpShareDesc     ; 0032
 	dw SilverLeafDesc   ; 0033
@@ -215,6 +215,10 @@ ItemDescriptions1:
 	dw PrettyShellDesc    ; 00D4
 	dw TinyBambooDesc     ; 00D5
 	dw BigBambooDesc      ; 00D6
+	dw XSpAtkDesc         ; 00D7
+	dw PPMaxDesc          ; 00D8
+	dw PewterArareDesc    ; 00D9
+	dw SeventhTanghuluDesc    ; 00DA
 
 .IndirectEnd:
 
@@ -241,7 +245,8 @@ ItemDescriptionsKeyItems:
 	dw PassDesc         ; 0113
 	dw SquirtBottleDesc ; 0114
 	dw RainbowWingDesc  ; 0115
-	dw SecretStashDesc  ; 0115
+	dw SecretStashDesc  ; 0116
+	dw SeaMapDesc       ; 0117
 .IndirectEnd:
 
 ItemDescriptionsBalls:
@@ -574,9 +579,13 @@ XSpeedDesc:
 	db   "Raises SPEED."
 	next "(1 BTL)@"
 
-XSpecialDesc:
+XSpAtkDesc:
 	db   "Raises SPECIAL"
 	next "ATTACK. (1 BTL)@"
+
+XSpDefDesc:
+	db   "Raises SPECIAL"
+	next "DEFENSE. (1 BTL)@"
 
 CoinCaseDesc:
 	db   "Holds up to 9,999"
@@ -609,6 +618,10 @@ SuperRodDesc:
 PPUpDesc:
 	db   "Raises max PP of"
 	next "a selected move.@"
+
+PPMaxDesc:
+	db   "Raise PP of a move"
+	next "to its maximum.@"
 
 EtherDesc:
 	db   "Restores PP of one"
@@ -1546,4 +1559,15 @@ TinyBambooDesc:
 BigBambooDesc:
 	db   "A big piece of"
 	next "bamboo. Sell.@"
+	
+SeaMapDesc:
+	db   "A map of the"
+	next "ORANGE ISLANDS.@"
+	
+PewterArareDesc:
+	db   "PEWTER CITY speci-"
+	next "alty. Cure status.@"
 
+SeventhTanghuluDesc:
+	db   "A local specialty"
+	next "that cures status.@"

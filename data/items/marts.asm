@@ -109,7 +109,7 @@ MartGoldenrod2F2:
 MartGoldenrod3F:
 	db 7 ; # items
 	dw X_SPEED
-	dw X_SPECIAL
+	dw X_SP_ATK
 	dw X_DEFEND
 	dw X_ATTACK
 	dw DIRE_HIT
@@ -317,7 +317,7 @@ MartCeladon5F2:
 	dw X_ATTACK
 	dw X_DEFEND
 	dw X_SPEED
-	dw X_SPECIAL
+	dw X_SP_ATK
 
 MartFuchsia:
 	db 7 ; # items
