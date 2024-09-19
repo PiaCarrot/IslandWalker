@@ -163,7 +163,7 @@ LaprasScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke LAPRAS, 5, ORAN_BERRY
+	givepoke LAPRAS, PLAIN_FORM, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_LAPRAS_OBTAINED
 	disappear TANGELO_ISLAND_LAPRAS_2
@@ -213,32 +213,32 @@ TangeloCenterSign:
 	jumptext TangeloCenterSignText
 	
 TangeloBerrySellerScript:
-	; faceplayer
-	; opentext
-	; checkevent EVENT_BERRY_SELLER_PINKAN
-	; iftrue .PinkanBerryShop
-	; checkitem PINKAN_BERRY
-	; iftrue .GivePinkanBerry
-; .RefusedPinkanBerry
-	; pokemart MARTTYPE_STANDARD, MART_BERRY_SELLER
-	; closetext
-	; end
+	faceplayer
+	opentext
+	checkevent EVENT_BERRY_SELLER_PINKAN
+	iftrue .PinkanBerryShop
+	checkitem PINKAN_BERRY
+	iftrue .GivePinkanBerry
+.RefusedPinkanBerry
+	pokemart MARTTYPE_STANDARD, MART_BERRY_SELLER
+	closetext
+	end
 	
-; .GivePinkanBerry
-	; writetext BerrySellerGotPinkText
-	; yesorno
-	; iftrue .GavePinkanBerry
-	; sjump .RefusedPinkanBerry
-; .GavePinkanBerry
-	; writetext BerrySellerGavePinkText
-	; waitbutton
-	; closetext
-	; takeitem PINKAN_BERRY
-	; setevent EVENT_BERRY_SELLER_PINKAN
-	; end
-; .PinkanBerryShop
-	; pokemart MARTTYPE_STANDARD, MART_BERRY_SELLER_PINKAN
-	; closetext
+.GivePinkanBerry
+	writetext BerrySellerGotPinkText
+	yesorno
+	iftrue .GavePinkanBerry
+	sjump .RefusedPinkanBerry
+.GavePinkanBerry
+	writetext BerrySellerGavePinkText
+	waitbutton
+	closetext
+	takeitem PINKAN_BERRY
+	setevent EVENT_BERRY_SELLER_PINKAN
+	end
+.PinkanBerryShop
+	pokemart MARTTYPE_STANDARD, MART_BERRY_SELLER_PINKAN
+	closetext
 	end
 	
 TangeloBallGuyScript:
@@ -253,7 +253,7 @@ TangeloBallGuyScript:
 .day_morn
 	writetext TangeloBallGuyDayText
 	waitbutton
-	verbosegiveitem POKE_BALL ;HEAL_BALL
+	verbosegiveitem HEAL_BALL
 	iffalse .NoRoom
 	writetext TangeloBallGuyAlreadyGotText
 	waitbutton
@@ -263,7 +263,7 @@ TangeloBallGuyScript:
 .nite
 	writetext TangeloBallGuyNightText
 	waitbutton
-	verbosegiveitem POKE_BALL ;DUSK_BALL
+	verbosegiveitem DUSK_BALL
 	iffalse .NoRoom
 	writetext TangeloBallGuyAlreadyGotText
 	waitbutton

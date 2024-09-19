@@ -67,7 +67,7 @@ CyndaquilPokeballTangeloScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke CYNDAQUIL, 5, ORAN_BERRY
+	givepoke CYNDAQUIL, PLAIN_FORM, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_GOT_CYNDAQUIL_FROM_TANGELO
 	disappear TANGELO_SOUTH_HOUSE_POKEBALL

@@ -131,6 +131,49 @@ Route50FruitTree1:
 	
 Route50FruitTree2:
 	fruittree FRUITTREE_ROUTE_50_2
+	
+Route50Antidote:
+	itemball ANTIDOTE
+
+Route50Pokeball:
+	itemball POKE_BALL
+	
+Route50HiddenPokeball:
+	hiddenitem POKE_BALL, EVENT_ROUTE_50_HIDDEN_POKE_BALL
+	
+Route50HiddenPrettyShell:
+	hiddenitem PRETTY_SHELL, EVENT_ROUTE_50_HIDDEN_PRETTY_SHELL
+	
+Route50Sign:
+	jumptext Route50SignText
+
+TrainerTipsRoute50Sign:
+	jumptext TrainerTipsRoute50SignText
+
+Route50SignText:
+	text "ROUTE 50"
+	done
+
+TrainerTipsRoute50SignText:
+	text "TRAINER TIPS"
+	
+	para "Don't throw your"
+	line "#BALL at a"
+	cont "trainer's #MON!"
+	
+	para "Stealing is stric-"
+	line "tly prohibited!"
+	done
+	
+Route50CooltrainerScript:
+	jumptextfaceplayer Route50CooltrainerText
+	
+Route50CooltrainerText:
+	text "To go any further,"
+	line "you'll need a boat"
+	cont "or a #MON that"
+	cont "can SURF."
+	done	
 
 Route50_MapEvents:
 	db 0, 0 ; filler
@@ -140,6 +183,10 @@ Route50_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  3, 47, BGEVENT_READ, Route50Sign
+	bg_event 13, 29, BGEVENT_READ, TrainerTipsRoute50Sign
+	bg_event 12,  4, BGEVENT_ITEM, Route50HiddenPokeball
+	bg_event 16, 48, BGEVENT_ITEM, Route50HiddenPrettyShell
 
 	def_object_events
 	object_event  0, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerYoungsterDonny, -1
@@ -148,4 +195,7 @@ Route50_MapEvents:
 	object_event  6,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerBugcatcherAshton, -1
 	object_event 10,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route50FruitTree1, -1
 	object_event 16, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route50FruitTree2, -1
+	object_event 11, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route50Antidote, EVENT_ROUTE_50_ANTIDOTE
+	object_event 10, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route50Pokeball, EVENT_ROUTE_50_POKE_BALL
+	object_event 19, 35, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route50CooltrainerScript, -1
 
