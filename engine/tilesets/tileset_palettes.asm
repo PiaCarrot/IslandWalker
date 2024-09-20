@@ -64,6 +64,18 @@ LoadEightBGPalettes:
 	call FarCopyColorWRAM
 	scf
 	ret
+	
+LoadEightTimeOfDayOBPalettes:
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
+LoadEightOBPalettes:
+	ld de, wOBPals1
+	ld bc, 8 palettes
+	call FarCopyColorWRAM
+	scf
+	ret
 
 LoadDarknessPalette:
 	ld a, BANK(wBGPals1)
@@ -105,12 +117,5 @@ LoadBeachHousePalette:
 BeachHousePalette:
 INCLUDE "gfx/tilesets/beach_house.pal"
 
-LoadGate2FPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, Gate2FPalette
-	ld bc, 8 palettes
-	jmp FarCopyWRAM
-	
 Gate2FPalette:
 INCLUDE "gfx/tilesets/gate2f.pal"
