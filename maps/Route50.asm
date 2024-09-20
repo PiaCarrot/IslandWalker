@@ -3,6 +3,11 @@
 	const YOUNGSTER_JAVI
 	const BEAUTY_ROSE
 	const BUG_CATCHER_ASHTON
+	const ROUTE_50_FRUITTREE_1
+	const ROUTE_50_FRUITTREE_2
+	const ROUTE_50_ANTIDOTE
+	const ROUTE_50_POKEBALL
+	const ROUTE_50_COOLTRAINER
 
 Route50_MapScripts:
 	def_scene_scripts

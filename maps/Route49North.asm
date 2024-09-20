@@ -1,4 +1,9 @@
 	object_const_def
+	const ROUTE_49_NORTH_FRUITTREE1
+	const ROUTE_49_NORTH_FRUITTREE2
+	const ROUTE_49_NORTH_LASS
+	const ROUTE_49_NORTH_BEACH_GLASS
+	const ROUTE_49_NORTH_ETHER
 
 Route49North_MapScripts:
 	def_scene_scripts

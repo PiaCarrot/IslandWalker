@@ -84,6 +84,8 @@ INCLUDE "maps/TangeloIslandSouthHouse.asm"
 INCLUDE "maps/Route50.asm"
 INCLUDE "maps/Route51.asm"
 INCLUDE "maps/TangeloJungle.asm"
+INCLUDE "maps/TangeloJungleRoute51Gate.asm"
+INCLUDE "maps/TangeloJungleRoute51Gate2F.asm"
 
 SECTION "Map Scripts 24", ROMX
 

@@ -4,6 +4,9 @@
 	const ROUTE_49_POTION
 	const ROUTE_49_FRESH_WATER
 	const ROUTE_49_SWOOPING_WINGULL
+	const ROUTE_49_DEPTHS
+	const ROUTE_49_FRUITTREE1
+	const ROUTE_49_FRUITTREE2
 
 Route49_MapScripts:
 	def_scene_scripts

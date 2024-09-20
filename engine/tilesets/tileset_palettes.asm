@@ -14,6 +14,8 @@ LoadSpecialMapPalette:
 	jr z, .lab
 	cp TILESET_BEACH_HOUSE
 	jr z, .beach_house
+	cp TILESET_GATE
+	jr z, .check2f
 	jr .do_nothing
 
 .darkness
@@ -35,9 +37,32 @@ LoadSpecialMapPalette:
 	call LoadBeachHousePalette
 	scf
 	ret
+	
+.check2f
+	ld a, [wMapNumber]
+	cp MAP_TANGELO_JUNGLE_ROUTE_51_GATE_2F
+	jr z, .colorglass
+	jr .do_nothing
+	
+.colorglass
+	ld hl, Gate2FPalette
+	jr z, LoadEightTimeOfDayBGPalettes
+	ret
 
 .do_nothing
 	and a
+	ret
+	
+LoadEightTimeOfDayBGPalettes:
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
+LoadEightBGPalettes:
+	ld de, wBGPals1
+	ld bc, 8 palettes
+	call FarCopyColorWRAM
+	scf
 	ret
 
 LoadDarknessPalette:
@@ -79,3 +104,13 @@ LoadBeachHousePalette:
 	
 BeachHousePalette:
 INCLUDE "gfx/tilesets/beach_house.pal"
+
+LoadGate2FPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, Gate2FPalette
+	ld bc, 8 palettes
+	jmp FarCopyWRAM
+	
+Gate2FPalette:
+INCLUDE "gfx/tilesets/gate2f.pal"

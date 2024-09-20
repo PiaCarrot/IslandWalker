@@ -1246,7 +1246,6 @@ _LoadTilesetGFX2:
 	jr z, .load_roof
 	cp TILESET_MIKAN_ISLAND
 	jr z, .load_roof
-	cp TILESET_GATE ;is this ok to remove?
 	ret nz
 ; fallthrough
 .load_roof

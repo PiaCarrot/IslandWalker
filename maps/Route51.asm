@@ -1,4 +1,11 @@
 	object_const_def
+	const ROUTE_51_FRUITTREE_1
+	const ROUTE_51_ITEM_1
+	const ROUTE_51_ITEM_2
+	const ROUTE_51_ITEM_3
+	const ROUTE_51_TM_BALL
+	const ROUTE_51_YOUNGSTER
+	const ROUTE_51_HIKER
 
 Route51_MapScripts:
 	def_scene_scripts
@@ -57,6 +64,8 @@ Route51_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event 12,  2, TANGELO_JUNGLE_ROUTE_51_GATE, 1
+	warp_event 12,  3, TANGELO_JUNGLE_ROUTE_51_GATE, 2
 
 	def_coord_events
 

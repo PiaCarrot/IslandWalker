@@ -12,8 +12,12 @@ NSGate_Blocks:
 PlayersHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.ablk"
 
+TangeloJungleRoute51Gate_Blocks:
 EWGate_Blocks:
 	INCBIN "maps/EastWestGate.ablk"
+
+TangeloJungleRoute51Gate2F_Blocks:
+	INCBIN "maps/EastWestGate2F.ablk"
 
 SECTION "Map Blocks 2", ROMX
 

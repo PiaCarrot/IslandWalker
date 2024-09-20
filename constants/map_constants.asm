@@ -60,6 +60,8 @@ ENDM
 	map_const TANGELO_ISLAND_SOUTH_HOUSE,					4,  4
 	map_const ROUTE_50,										11, 27
 	map_const ROUTE_51,										20, 20
+	map_const TANGELO_JUNGLE_ROUTE_51_GATE,					6, 6
+	map_const TANGELO_JUNGLE_ROUTE_51_GATE_2F,					6, 6
 	map_const TANGELO_JUNGLE,								20, 20
 	endgroup
 	
