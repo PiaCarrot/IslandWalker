@@ -58,6 +58,7 @@ ENDM
 	map_const TANGELO_ISLAND_EAST_HOUSE,					4,  4
 	map_const TANGELO_ISLAND_WEST_HOUSE,					4,  4
 	map_const TANGELO_ISLAND_SOUTH_HOUSE,					4,  4
+	map_const TANGELO_ISLAND_POKECENTER_1F,					4,  4
 	map_const ROUTE_50,										11, 27
 	map_const ROUTE_51,										20, 20
 	map_const TANGELO_JUNGLE_ROUTE_51_GATE,					6, 6

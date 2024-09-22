@@ -140,6 +140,7 @@ ENDM
 	map_attributes TangeloIslandEastHouse, TANGELO_ISLAND_EAST_HOUSE, $00, 0
 	map_attributes TangeloIslandWestHouse, TANGELO_ISLAND_WEST_HOUSE, $00, 0
 	map_attributes TangeloIslandSouthHouse, TANGELO_ISLAND_SOUTH_HOUSE, $00, 0
+	map_attributes TangeloIslandPokecenter1F, TANGELO_ISLAND_POKECENTER_1F, $00, 0
 	map_attributes IvysHouse, IVYS_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0

@@ -570,6 +570,7 @@ TangeloIsland_MapEvents:
 	warp_event 27, 15, TANGELO_ISLAND_EAST_HOUSE, 1
 	warp_event 17, 15, TANGELO_ISLAND_WEST_HOUSE, 1
 	warp_event 19, 33, TANGELO_ISLAND_SOUTH_HOUSE, 1
+	warp_event 15,  7, TANGELO_ISLAND_POKECENTER_1F, 2
 
 	def_coord_events
 	coord_event 31, 10, SCENE_TANGELO_ISLAND_MARILL_1, TangeloMarillNeedsHelpScript

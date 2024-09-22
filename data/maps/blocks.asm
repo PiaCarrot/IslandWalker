@@ -27,6 +27,7 @@ SECTION "Map Blocks 2", ROMX
 Mart_Blocks:
 	INCBIN "maps/Mart.ablk"
 
+TangeloIslandPokecenter1F_Blocks:
 Pokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.ablk"
 
