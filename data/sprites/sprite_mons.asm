@@ -37,4 +37,7 @@ SpriteMons:
 	dw LUGIA
 	dw HO_OH
 	dw DRATINI
+	dw CHIKORITA
+	dw CYNDAQUIL
+	dw TOTODILE
 	assert_table_length NUM_POKEMON_SPRITES

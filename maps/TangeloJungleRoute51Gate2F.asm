@@ -86,7 +86,8 @@ TangeloJungleRoute51Gate2FYoungsterText:
 	cont "the BUG #MON."
 	
 	para "Big mistake! I got"
-	line "bit by a CARVANHA!"
+	line "bit by something!"
+	cont "I'm still sore…"
 	done
 
 TangeloJungleRoute51Gate2FLassScript:

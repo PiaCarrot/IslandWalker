@@ -11,6 +11,7 @@ TreeMons:
 	dw TreeMonSet_Rock
 	dw TreeMonSet_Sky1
 	dw TreeMonSet_Depths1
+	dw TreeMonSet_Depths2
 	assert_table_length NUM_TREEMON_SETS
 	dw TreeMonSet_City
 
@@ -145,4 +146,12 @@ TreeMonSet_Depths1:
 	dbbw 5, 5, REMORAID ;CARVANHA
 	dbbw 4, 4, REMORAID ;FINNEON
 	dbbw 1, 5, REMORAID ;FINNEON
+	db -1
+	
+TreeMonSet_Depths2:
+	dbbw 60, 15, REMORAID
+	dbbw 30, 16, REMORAID
+	dbbw 5,  15, REMORAID
+	dbbw 4,  16, REMORAID
+	dbbw 1,  17, REMORAID
 	db -1

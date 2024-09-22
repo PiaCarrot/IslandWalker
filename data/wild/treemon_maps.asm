@@ -18,5 +18,6 @@ SkyMonMaps:
 	db -1
 	
 DepthsMonMaps:
-	treemon_map ROUTE_49, TREEMON_SET_DEPTHS_1
+	treemon_map ROUTE_49, TREEMON_SET_DEPTHS_2
+	treemon_map TANGELO_JUNGLE, TREEMON_SET_DEPTHS_1
 	db -1

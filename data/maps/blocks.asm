@@ -18,6 +18,9 @@ EWGate_Blocks:
 
 TangeloJungleRoute51Gate2F_Blocks:
 	INCBIN "maps/EastWestGate2F.ablk"
+	
+TangeloJungleHouse_Blocks:
+	INCBIN "maps/TraditionalBeachHouse.ablk"
 
 SECTION "Map Blocks 2", ROMX
 

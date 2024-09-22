@@ -69,6 +69,6 @@ TangeloJungleRoute51Gate_MapEvents:
 	bg_event  1,  9, BGEVENT_ITEM, TangeloJungleRoute51GateHiddenNetBall
 
 	def_object_events
-	object_event  9,  4, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, MORN | DAY| EVE, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TangeloJungleRoute51GateJennyDayScript, -1
-	object_event  9,  4, SPRITE_OFFICER_F_BORED, SPRITEMOVEDATA_STILL, 0, 0, -1, NITE, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TangeloJungleRoute51GateJennyNiteScript, -1
+	object_event  9,  3, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, MORN | DAY| EVE, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TangeloJungleRoute51GateJennyDayScript, -1
+	object_event  9,  3, SPRITE_OFFICER_F_BORED, SPRITEMOVEDATA_STILL, 0, 0, -1, NITE, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TangeloJungleRoute51GateJennyNiteScript, -1
 	object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TangeloJungleRoute51GateSightseerScript, -1

@@ -135,6 +135,7 @@ ENDM
 	map_attributes TangeloJungle, TANGELO_JUNGLE, $01, 0
 	map_attributes TangeloJungleRoute51Gate, TANGELO_JUNGLE_ROUTE_51_GATE, $00, 0
 	map_attributes TangeloJungleRoute51Gate2F, TANGELO_JUNGLE_ROUTE_51_GATE_2F, $00, 0
+	map_attributes TangeloJungleHouse, TANGELO_JUNGLE_HOUSE, $00, 0
 	map_attributes TangeloIslandNorthHouse, TANGELO_ISLAND_NORTH_HOUSE, $00, 0
 	map_attributes TangeloIslandEastHouse, TANGELO_ISLAND_EAST_HOUSE, $00, 0
 	map_attributes TangeloIslandWestHouse, TANGELO_ISLAND_WEST_HOUSE, $00, 0
