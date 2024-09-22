@@ -15,7 +15,7 @@ TangeloIslandPokecenter1F_MapEvents:
 	def_warp_events
 	warp_event  2,  7, TANGELO_ISLAND, 6
 	warp_event  3,  7, TANGELO_ISLAND, 6
-	warp_event  7,  0, POKECENTER_2F, 1
+	warp_event  9,  0, POKECENTER_2F, 1
 
 	def_coord_events
 

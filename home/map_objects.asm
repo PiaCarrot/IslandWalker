@@ -145,8 +145,6 @@ CheckHeadbuttTreeTile::
 
 CheckCounterTile::
 	cp COLL_COUNTER
-	ret z
-	cp COLL_COUNTER_98
 	ret
 
 CheckPitTile::

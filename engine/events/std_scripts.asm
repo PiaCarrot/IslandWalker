@@ -58,6 +58,7 @@ StdScripts::
 	add_stdscript HappinessCheckScript
 	add_stdscript MonSkyScript
 	add_stdscript MonDepthsScript
+	add_stdscript Pokecenter2FSignScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -1756,6 +1757,9 @@ MonSkyScript:
 	
 MonDepthsScript:
 	farsjump DepthsMonScript
+	
+Pokecenter2FSignScript:
+	farjumptext Pokecenter2FSignText
 
 Movement_ContestResults_WalkAfterWarp:
 	step RIGHT
