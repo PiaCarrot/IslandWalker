@@ -24,8 +24,8 @@ TangeloJungleHouse_Blocks:
 
 SECTION "Map Blocks 2", ROMX
 
-Mart_Blocks:
-	INCBIN "maps/Mart.ablk"
+TangeloIslandPokemart_Blocks:
+	INCBIN "maps/PokeMart.ablk"
 
 TangeloIslandPokecenter1F_Blocks:
 Pokecenter1F_Blocks:

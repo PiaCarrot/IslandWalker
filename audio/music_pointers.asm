@@ -140,5 +140,7 @@ Music:
 	dba Music_OrangeWild
 	dba Music_OrangeEncounter
 	dba Music_FourIsland
+; rse
+	dba Music_PokemonMart ;Mmmmm
 
 	assert_table_length NUM_MUSIC_SONGS

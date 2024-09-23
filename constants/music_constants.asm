@@ -139,6 +139,8 @@
 	const MUSIC_ORANGEWILD
 	const MUSIC_ORANGE_ENCOUNTER
 	const MUSIC_FOUR_ISLAND
+; RSE
+	const MUSIC_POKEMON_MART
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

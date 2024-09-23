@@ -192,6 +192,7 @@ INCLUDE "audio/music/orange/fourisland.asm"
 
 SECTION "Songs Other", ROMX
 INCLUDE "audio/music/orange/ridinglapras.asm" ;mmmm
+INCLUDE "audio/music/rse/rspokemart.asm" ;mmmm
 INCLUDE "audio/music/orange/route24gbs.asm"   ;TriteHexagon
 
 

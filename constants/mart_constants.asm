@@ -10,4 +10,5 @@
 	const_def
 	const MART_BERRY_SELLER
 	const MART_BERRY_SELLER_PINKAN
+	const MART_TANGELO
 DEF NUM_MARTS EQU const_value
