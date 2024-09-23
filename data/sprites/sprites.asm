@@ -118,4 +118,5 @@ OverworldSprites:
 	overworld_sprite MarillWalkSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite OfficerFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite OfficerFBoredSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite PCGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
 	assert_table_length NUM_OVERWORLD_SPRITES
