@@ -141,5 +141,54 @@
 	const STENCH
 ; Randomly may find an item after battle
 	const PICKUP
+	
+; Gen IV
+    const TANGLED_FEET
+    const MOTOR_DRIVE
+    const RIVALRY
+    const STEADFAST
+    const SNOW_CLOAK
+    const GLUTTONY
+    const ANGER_POINT
+    const UNBURDEN
+    const HEATPROOF
+    const SIMPLE
+    const DRY_SKIN
+    const DOWNLOAD
+    const IRON_FIST
+    const POISON_HEAL
+    const ADAPTABILITY
+    const SKILL_LINK
+    const HYDRATION
+    const SOLAR_POWER
+    const QUICK_FEET
+    const NORMALIZE
+    const SNIPER
+    const MAGIC_GUARD
+    const NO_GUARD
+    const STALL
+    const TECHNICIAN
+    const LEAF_GUARD
+    const KLUTZ
+    const MOLD_BREAKER
+    const SUPER_LUCK
+    const AFTERMATH
+    const ANTICIPATION
+    const FOREWARN
+    const UNAWARE
+    const TINTED_LENS
+    const FILTER
+    const SOLID_ROCK
+    const SLOW_START
+    const SCRAPPY
+    const STORM_DRAIN
+    const ICE_BODY
+    const SNOW_WARNING
+    const HONEY_GATHER
+    const FRISK
+    const RECKLESS
+    const MULTITYPE
+    const FLOWER_GIFT
+    const BAD_DREAMS
 
 DEF NUM_ABILITIES EQU const_value - 1

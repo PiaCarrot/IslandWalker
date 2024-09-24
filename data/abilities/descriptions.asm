@@ -82,6 +82,54 @@ AbilityDescriptions:
 	dw IlluminateDesc
 	dw StenchDesc
 	dw PickupDesc
+	dw TangledFeetDesc
+	dw MotorDriveDesc
+	dw RivalryDesc
+	dw SteadfastDesc
+	dw SnowCloakDesc
+	dw GluttonyDesc
+	dw AngerPointDesc
+	dw UnburdenDesc
+	dw HeatproofDesc
+	dw SimpleDesc
+	dw DrySkinDesc
+	dw DownloadDesc
+	dw IronFistDesc
+	dw PoisonHealDesc
+	dw AdaptabilityDesc
+	dw SkillLinkDesc
+	dw HydrationDesc
+	dw SolarPowerDesc
+	dw QuickFeetDesc
+	dw NormalizeDesc
+	dw SniperDesc
+	dw MagicGuardDesc
+	dw NoGuardDesc
+	dw StallDesc
+	dw TechnicianDesc
+	dw LeafGuardDesc
+	dw KlutzDesc
+	dw MoldBreakerDesc
+	dw SuperLuckDesc
+	dw AftermathDesc
+	dw AnticipationDesc
+	dw ForewarnDesc
+	dw UnawareDesc
+	dw TintedLensDesc
+	dw FilterDesc
+	dw SolidRockDesc
+	dw SlowStartDesc
+	dw ScrappyDesc
+	dw StormDrainDesc
+	dw IceBodyDesc
+	dw SnowWarningDesc
+	dw HoneyGatherDesc
+	dw FriskDesc
+	dw RecklessDesc
+	dw MultitypeDesc
+	dw FlowerGiftDesc
+	dw BadDreamsDesc
+
 
 ; Actual descriptions start here
 NoAbilityDesc:
@@ -375,3 +423,188 @@ StenchDesc:
 PickupDesc:
 	db    "May find items"
 	next1 "after battles.@"
+	
+TangledFeetDesc:
+    db    "Boosts EVASIVENESS"
+    next1 "if CONFUSED.@"
+
+MotorDriveDesc:
+    db    "Boosts SPEED if"
+    next1 "hit by electicity.@"
+
+RivalryDesc:
+    db    "Deals damage based"
+    next1 "on foe's gender.@"
+
+SteadfastDesc:
+    db    "Boosts SPEED upon"
+    next1 "flinching.@"
+
+SnowCloakDesc:
+    db    "Boosts EVASIVENESS"
+    next1 "in HAIL.@"
+
+GluttonyDesc:
+    db    "Consumes BERRIES"
+    next1 "early.@"
+
+AngerPointDesc:
+    db    "Maxes ATTACK on"
+    next1 "critical-hit.@"
+
+UnburdenDesc:
+    db    "Boosts SPEED upon"
+    next1 "held item usage.@"
+
+HeatproofDesc:
+    db    "Cuts the damage of"
+    next1 "FIRE moves.@"
+
+SimpleDesc:
+    db    "Doubles all stat"
+    next1 "changes.@"
+
+DrySkinDesc:
+    db    "Loses HP in heat,"
+    next1 "gains HP in water.@"
+
+DownloadDesc:
+    db    "Tactically adjusts"
+    next1 "damaging stats.@"
+
+IronFistDesc:
+    db    "Boosts power of"
+    next1 "punching moves.@"
+
+PoisonHealDesc:
+    db    "Restores HP when"
+    next1 "POISONED.@"
+
+AdaptabilityDesc:
+    db    "Increases STAB"
+    next1 "damage.@"
+
+SkillLinkDesc:
+    db    "Multi-strike moves"
+    next1 "hit all 5 times.@"
+
+HydrationDesc:
+    db    "Heals statuses in"
+    next1 "rain.@"
+
+SolarPowerDesc:
+    db    "Raises SP.ATK in"
+    next1 "sun, but cuts HP.@"
+
+QuickFeetDesc:
+    db    "Boosts SPEED if"
+    next1 "status afflicted.@"
+
+NormalizeDesc:
+    db    "All moves become"
+    next1 "NORMAL-type.@"
+
+SniperDesc:
+    db    "Boosts critical"
+    next1 "hit damage.@"
+
+MagicGuardDesc:
+    db    "Protects against"
+    next1 "indirect damage.@"
+
+NoGuardDesc:
+    db    "All moves will"
+    next1 "hit.@"
+
+StallDesc:
+    db    "Always will move"
+    next1 "last.@"
+
+TechnicianDesc:
+    db    "Boosts the weaker"
+    next1 "moves.@"
+
+LeafGuardDesc:
+    db    "Protects against"
+    next1 "statuses in sun.@"
+
+KlutzDesc:
+    db    "Cannot use held"
+    next1 "items.@"
+
+MoldBreakerDesc:
+    db    "Ignores abilities"
+    next1 "that block moves.@"
+
+SuperLuckDesc:
+    db    "Boosts critical"
+    next1 "hit ratio.@"
+
+AftermathDesc:
+    db    "Damages attackers"
+    next1 "upon fainting.@"
+
+AnticipationDesc:
+    db    "Senses dangerous"
+    next1 "moves.@"
+
+ForewarnDesc:
+    db    "Detects a foe's"
+    next1 "move.@"
+
+UnawareDesc:
+    db    "Ignores stat"
+    next1 "changes.@"
+
+TintedLensDesc:
+    db    "Boosts 'not very"
+    next1 "effective' moves.@"
+
+FilterDesc:
+SolidRockDesc:
+    db    "Cuts dmg of super"
+    next1 "effective moves.@"
+
+SlowStartDesc:
+    db    "Temporarily halves"
+    next1 "ATTACK and SPEED.@"
+
+ScrappyDesc:
+    db    "Hits GHOST #MON"
+    next1 "with all moves.@"
+
+StormDrainDesc:
+    db    "Absorbs WATER"
+    next1 "moves.@"
+
+IceBodyDesc:
+    db    "May cause FREEZING"
+    next1 "on contact.@"
+
+SnowWarningDesc:
+    db    "Causes a hailstorm"
+    next1 "upon entrance.@"
+
+HoneyGatherDesc:
+    db    "May find HONEY"
+    next1 "after battles.@"
+
+FriskDesc:
+    db    "Identifies foe's"
+    next1 "held ITEM.@"
+
+RecklessDesc:
+    db    "Boosts recoil"
+    next1 "causing moves.@"
+
+MultitypeDesc:
+    db    "Changes type to"
+    next1 "match held PLATE.@"
+
+FlowerGiftDesc:
+    db    "Powers up #MON"
+    next1 "when sunny.@"
+
+BadDreamsDesc:
+    db    "Inflicts damage to"
+    next1 "SLEEPING #MON.@"

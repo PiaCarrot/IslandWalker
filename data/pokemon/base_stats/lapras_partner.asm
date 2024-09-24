@@ -1,6 +1,6 @@
 	db 0 ; species ID placeholder
 
-	db 100,  65,  70,  60,  65,  85
+	db 100,  65,  65,  60,  65,  75
 	evs  2,   0,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/lapras_partner/front.dimensions"
-	db WATER_ABSORB, SHELL_ARMOR ; wBaseAbility1, wBaseAbility2 HYDRATION, HYDRATION
+	db HYDRATION, HYDRATION ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
