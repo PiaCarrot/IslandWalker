@@ -253,5 +253,6 @@ PokemonBodyData:
 	dw 1701, 4760 ; LUGIA
 	dw 1206, 4390 ; HO_OH
 	dw 200, 110   ; CELEBI
+	dw 802, 4850  ; LAPRAS PARTNER
 	assert_table_length NUM_POKEMON
 

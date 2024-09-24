@@ -253,4 +253,5 @@ NewPokedexOrder:
 	dw MEWTWO
 	dw MEW
 	dw CELEBI
+	dw LAPRAS_PARTNER
 	assert_table_length NUM_POKEMON

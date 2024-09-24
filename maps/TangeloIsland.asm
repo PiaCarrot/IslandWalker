@@ -166,7 +166,7 @@ LaprasScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke LAPRAS, PLAIN_FORM, 5, ORAN_BERRY
+	givepoke LAPRAS_PARTNER, PLAIN_FORM, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_LAPRAS_OBTAINED
 	disappear TANGELO_ISLAND_LAPRAS_2
@@ -373,6 +373,15 @@ TraceyTangeloText1:
 	cont "to make a great"
 	cont "sketch."
 	
+	para "This LAPRAS is a"
+	line "juvenile. It must"
+	cont "have separated"
+	cont "from its herd."
+	
+	para "What to do…?"
+	
+	para "…"
+	
 	para "Since we're here…"
 	done
 	
@@ -392,6 +401,10 @@ TraceyTangeloText3:
 	line "has been staring"
 	cont "at you this whole"
 	cont "time!"
+	
+	para "Maybe you should"
+	line "take it along with"
+	cont "you."
 	
 	para "Later, <PLAYER>!"
 	done

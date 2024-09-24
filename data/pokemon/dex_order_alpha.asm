@@ -253,4 +253,5 @@ AlphabeticalPokedexOrder:
 	dw YANMA
 	dw ZAPDOS
 	dw ZUBAT
+	dw LAPRAS_PARTNER
 	assert_table_length NUM_POKEMON
