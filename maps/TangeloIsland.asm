@@ -170,6 +170,11 @@ LaprasScript:
 	closetext
 	setevent EVENT_LAPRAS_OBTAINED
 	disappear TANGELO_ISLAND_LAPRAS_2
+	opentext
+	writetext GetSurfHMText
+	waitbutton
+	verbosegiveitem HM_SURF
+	closetext
 	end
 	
 .NoRoom:
@@ -191,9 +196,10 @@ TraceyTangeloScript:
 	winlosstext TangeloTraceyWinText, TangeloTraceyLossText
 	setlasttalked TANGELO_ISLAND_TRACEY_2
 	loadtrainer TRACEY1, TRACEY_1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmapafterbattle
+	reloadmap
 	sjump .AfterBattle
 	
 .AfterBattle:
@@ -205,6 +211,8 @@ TraceyTangeloScript:
 	applymovement PLAYER, TraceyBattlePlayerMovement
 	applymovement TANGELO_ISLAND_TRACEY_2, TraceyTangeloMovement
 	disappear TANGELO_ISLAND_TRACEY_2
+	special HealParty
+	special FadeOutMusic
 	playmapmusic
 	setevent EVENT_TRACEY_BATTLE_TANGELO
 	end
@@ -359,15 +367,13 @@ TangeloCenterSignText:
 	done
 	
 TraceyTangeloText1:
-	text "TRACEY: Yo!"
-	line "LAPRAS is fully"
+	text "TRACEY: Hey!"
+	line "LAPRAS looks fully"
 	cont "healed! I was able"
 	cont "to make a great"
 	cont "sketch."
 	
-	para "But the reason I"
-	line "waited up for you"
-	cont "was because…"
+	para "Since we're here…"
 	done
 	
 TraceyTangeloText2:
@@ -379,15 +385,7 @@ TraceyTangeloText2:
 	
 TraceyTangeloText3:
 	text "TRACEY: Not bad!"
-	line "By the way, I"
-	cont "didn't catch your"
-	cont "name."
-	
-	para "… … …"
-	
-	para "TRACEY: So your"
-	line "name is <PLAYER>!"
-	cont "Well, hopefully I"
+	line "Well, hopefully I"
 	cont "will seeya around!"
 	
 	para "By the way, LAPRAS"
@@ -473,6 +471,12 @@ TangeloTraceyWinText:
 	
 TangeloTraceyLossText:
 	text "Are you ok?"
+	done
+	
+GetSurfHMText:
+	text "Hey! There's some-"
+	line "thing floating in"
+	cont "the pool!"
 	done
 	
 MarillHopMovement:

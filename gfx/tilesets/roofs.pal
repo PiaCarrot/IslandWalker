@@ -4,14 +4,14 @@
 	RGB 18,16,16, 09,08,08 ; eve
 
 ; group 1 (valencia)
-	RGB 20,31,14, 11,23,05 ; morn/day
-	RGB 09,13,08, 06,09,04 ; nite
-	RGB 17,24,10, 09,18,03 ; eve
+	RGB 18,05,12, 13,02,09 ; morn/day
+	RGB 09,02,06, 06,01,05 ; nite
+	RGB 15,04,11, 10,01,07 ; eve
 
 ; group 2 (tangelo)
-	RGB 20,31,14, 11,23,05 ; morn/day
-	RGB 09,13,08, 06,09,04 ; nite
-	RGB 17,24,10, 09,18,03 ; eve
+	RGB 31,07,06, 27,04,03 ; morn/day
+	RGB 17,04,02, 12,02,01 ; nite
+	RGB 25,06,05, 20,03,02 ; eve
 
 ; group 3 (mikan)
 	RGB 20,31,14, 11,23,05 ; morn/day

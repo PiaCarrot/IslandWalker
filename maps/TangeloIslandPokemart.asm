@@ -21,11 +21,11 @@ TangeloIslandMartBugCatcherScript:
 	jumptextfaceplayer TangeloIslandMartBugCatcherText
 
 TangeloIslandMartCooltrainerMText:
-	text "So some #BALLs"
+	text "So some # BALLs"
 	line "work better than"
 	cont "others…"
 	
-	para "#BALL is the"
+	para "# BALL is the"
 	line "gold standard, but"
 	cont "DUSK BALL is super"
 	cont "good at NIGHT."
@@ -54,6 +54,9 @@ TangeloIslandMartBugCatcherText:
 	cont "can help a lot!"
 	done
 
+TangeloMartHiddenPremierBall:
+	hiddenitem PREMIER_BALL, EVENT_TANGELO_MART_HIDDEN_PREMIER_BALL
+
 TangeloIslandPokemart_MapEvents:
 	db 0, 0 ; filler
 
@@ -64,6 +67,7 @@ TangeloIslandPokemart_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  9,  7, BGEVENT_ITEM, TangeloMartHiddenPremierBall
 
 	def_object_events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloIslandMartClerkScript, -1
