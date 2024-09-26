@@ -217,8 +217,8 @@ TangeloJungle_MapEvents:
 	bg_event  7,  7, BGEVENT_ITEM, TangeloJungleHiddenSuperPotion
 
 	def_object_events
-	object_event  0, 38, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloJungleFruitTree1, -1
-	object_event 38, 12, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloJungleFruitTree2, -1
+	object_event  0, 38, SPRITE_BERRY_H_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TangeloJungleFruitTree1, -1
+	object_event 38, 12, SPRITE_BERRY_BETA_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GRAY, OBJECTTYPE_SCRIPT, 0, TangeloJungleFruitTree2, -1
 	object_event 37, 24, SPRITE_SHADOW, SPRITEMOVEDATA_SWIM_WANDER, 4, 4, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloJungleDepths, -1
 	object_event 28, 12, SPRITE_SHADOW, SPRITEMOVEDATA_SWIM_WANDER, 4, 4, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloJungleDepths, -1
 	object_event 16, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TangeloJungleAntidote, EVENT_TANGELO_JUNGLE_ANTIDOTE

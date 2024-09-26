@@ -27,6 +27,6 @@ MikanIsland_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 24, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree1, -1
-	object_event 24, 27, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree2, -1
-	object_event 24, 28, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree3, -1
+	object_event 24, 26, SPRITE_BERRY_GAMMA_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_TEAL, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree1, -1
+	object_event 24, 27, SPRITE_BERRY_F_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree2, -1
+	object_event 24, 28, SPRITE_BERRY_R_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GRAY, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree3, -1
