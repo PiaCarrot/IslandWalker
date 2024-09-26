@@ -233,7 +233,7 @@
 	tilecoll WALL, WALL, WALL, DOOR ; e8
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e9
 	tilecoll WALL, WALL, WALL, WALL ; ea
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; eb
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; eb
 	tilecoll WALL, WALL, WALL, WALL ; ec
 	tilecoll WALL, WALL, WALL, DOOR ; ed
 	tilecoll WALL, WALL, WALL, WALL ; ee
@@ -251,3 +251,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; fa
 	tilecoll WALL, WALL, WALL, WALL ; fb
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; fc
+	tilecoll WALL, WALL, WALL, WALL ; fd

@@ -115,4 +115,7 @@ BeachHouseTrad_Blocks:
 Route52_Blocks:
 	INCBIN "maps/Route52.ablk"
 
+MikanThicket_Blocks:
+	INCBIN "maps/MikanThicket.ablk"
+
 ENDSECTION

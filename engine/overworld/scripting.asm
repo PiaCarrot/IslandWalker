@@ -235,6 +235,7 @@ ScriptCommandTable:
 	dw Script_loaditemindex              ; ac
 	dw Script_checkmaplockeditems        ; ad
 	dw Script_givepokemove               ; ae
+	dw Script_berrysound               ; af
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -516,6 +517,14 @@ Script_specialsound:
 	ld de, SFX_GET_TM
 	jr z, .play
 	ld de, SFX_ITEM
+.play
+	call PlaySFX
+	jmp WaitSFX
+
+Script_berrysound:
+	farcall CheckItemPocket
+	ld a, [wItemAttributeValue]
+	ld de, SFX_BERRY_FANFARE
 .play
 	call PlaySFX
 	jmp WaitSFX

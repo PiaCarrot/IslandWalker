@@ -1103,4 +1103,9 @@ MACRO givepokemove
 	assert (\3 >= 0) && (\3 < 4), "givepokemove Move Number \3 is not 0-3!"
 ENDM
 
+	const berrysound_command ; $af
+MACRO berrysound
+	db berrysound_command
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

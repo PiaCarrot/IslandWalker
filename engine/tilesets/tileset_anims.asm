@@ -85,7 +85,6 @@ TilesetLabAnim:
 	dw NULL,  DoneTileAnimation
 	
 TilesetMikanIslandAnim:
-	dw vTiles2 tile $7e, WriteTileToBuffer
 	dw SteamTileFrames, AnimateSteamTile
 	dw SteamTile2Frames, AnimateSteamTile2
 	dw RSEWaterFrames, AnimateRSEWaterTiles
@@ -104,7 +103,6 @@ TilesetMikanIslandAnim:
 	dw WhirlpoolFramesBottom, AnimateWhirlpoolTiles
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  DoNothing
-	dw vTiles2 tile $7e, WriteTileFromBuffer
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 	
@@ -1114,10 +1112,11 @@ AnimateSteamTile:
 SteamTileFrames:
 	INCBIN "gfx/tilesets/steam/1.2bpp"
 	INCBIN "gfx/tilesets/steam/2.2bpp"
+	INCBIN "gfx/tilesets/steam/2.2bpp"
+	INCBIN "gfx/tilesets/steam/3.2bpp"
 	INCBIN "gfx/tilesets/steam/3.2bpp"
 	INCBIN "gfx/tilesets/steam/4.2bpp"
-	INCBIN "gfx/tilesets/steam/5.2bpp"
-	INCBIN "gfx/tilesets/steam/5.2bpp"
+	INCBIN "gfx/tilesets/steam/4.2bpp"
 	INCBIN "gfx/tilesets/steam/5.2bpp"
 	INCBIN "gfx/tilesets/steam/5.2bpp"
 	
@@ -1146,12 +1145,13 @@ AnimateSteamTile2:
 SteamTile2Frames:
 	INCBIN "gfx/tilesets/steam/5.2bpp"
 	INCBIN "gfx/tilesets/steam/5.2bpp"
-	INCBIN "gfx/tilesets/steam/5.2bpp"
-	INCBIN "gfx/tilesets/steam/1.2bpp"
-	INCBIN "gfx/tilesets/steam/2.2bpp"
-	INCBIN "gfx/tilesets/steam/3.2bpp"
 	INCBIN "gfx/tilesets/steam/4.2bpp"
-	INCBIN "gfx/tilesets/steam/5.2bpp"
+	INCBIN "gfx/tilesets/steam/4.2bpp"
+	INCBIN "gfx/tilesets/steam/3.2bpp"
+	INCBIN "gfx/tilesets/steam/3.2bpp"
+	INCBIN "gfx/tilesets/steam/2.2bpp"
+	INCBIN "gfx/tilesets/steam/2.2bpp"
+	INCBIN "gfx/tilesets/steam/1.2bpp"
 
 FlickeringCaveEntrancePalette:
 ; Don't update the palette on DMG

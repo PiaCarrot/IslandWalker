@@ -293,3 +293,75 @@ Sfx_Puddle_Ch5:
 	sound __, 16, $98, $0700
 	soundinput $8
 	endchannel
+	
+Sfx_BerryFanfare:
+	channel_count 4
+	channel 5, Sfx_BerryFanfare_Ch1
+	channel 6, Sfx_BerryFanfare_Ch2
+	channel 7, Sfx_BerryFanfare_Ch3
+	channel 8, Sfx_BerryFanfare_Ch4
+
+Sfx_BerryFanfare_Ch1:
+	toggle_sfx
+	tempo $8E
+	volume 7, 7
+	stereo_panning TRUE, TRUE
+	duty_cycle 2
+	pitch_slide 1, 2, A_
+	octave 5
+	note_type 12, 8, 1
+	note C_, 1
+	rest 3
+	pitch_slide 1, 5, A#
+	octave 4
+	note_type 8, 8, 1
+	note F_, 1
+	rest 1
+	pitch_slide 1, 5, C#
+	note C_, 1
+	rest 3
+	pitch_slide 1, 2, D#
+	octave 3
+	note_type 12, 8, 1
+	note A_, 1
+	rest 3
+	pitch_slide 1, 6, D_
+	note G_, 1
+	rest 3
+	sound_ret
+
+Sfx_BerryFanfare_Ch2:
+	toggle_sfx
+	duty_cycle 2
+	octave 4
+	note_type 12, 12, 2
+	note F_, 4
+	octave 5
+	note_type 8, 12, 1
+	note C_, 2
+	note D_, 2
+	note C_, 2
+	volume_envelope 12, 3
+	note F_, 6
+	rest 2
+	sound_ret
+
+Sfx_BerryFanfare_Ch3:
+	toggle_sfx
+	octave 3
+	note_type 12, 1, 0
+	note A_, 4
+	note_type 8, 1, 0
+	note A#, 2
+	note A#, 2
+	note A#, 2
+	note A_, 6
+	rest 2
+	sound_ret
+	
+Sfx_BerryFanfare_Ch4:
+	toggle_sfx
+	sfx_toggle_noise 4
+	drum_speed 12
+	rest 16
+	sound_ret

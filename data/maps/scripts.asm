@@ -77,6 +77,7 @@ INCLUDE "maps/MikanIslandPokecenter1F.asm"
 INCLUDE "maps/MikanIslandPokemart.asm"
 INCLUDE "maps/MikanIslandHouse.asm"
 INCLUDE "maps/MikanIslandBerryMasterHouse.asm"
+INCLUDE "maps/MikanThicket.asm"
 
 SECTION "Map Scripts 23", ROMX
 
