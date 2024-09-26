@@ -63,14 +63,21 @@ ENDM
 	map_const ROUTE_50,										11, 27
 	map_const ROUTE_51,										20, 20
 	map_const TANGELO_JUNGLE_ROUTE_51_GATE,					6, 6
-	map_const TANGELO_JUNGLE_ROUTE_51_GATE_2F,					6, 6
+	map_const TANGELO_JUNGLE_ROUTE_51_GATE_2F,			    6, 6
+	map_const TANGELO_JUNGLE_ROUTE_52_GATE,					6, 6
+	map_const TANGELO_JUNGLE_ROUTE_52_GATE_2F,				6, 6
 	map_const TANGELO_JUNGLE,								20, 20
 	map_const TANGELO_JUNGLE_HOUSE,						    4, 4
 	endgroup
 	
 	newgroup MIKAN
 	map_const ROUTE_52,										13, 32
-	map_const MIKAN_ISLAND,									17, 17
+	map_const MIKAN_ISLAND,									18, 17
+	map_const ROUTE_52_POKECENTER_1F,					    5,  4
+	map_const MIKAN_ISLAND_POKECENTER_1F,					5,  4
+	map_const MIKAN_ISLAND_POKEMART,					    5,  4
+	map_const MIKAN_ISLAND_HOUSE,						    4,  4
+	map_const MIKAN_ISLAND_BERRY_MASTER_HOUSE,			    4,  4
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

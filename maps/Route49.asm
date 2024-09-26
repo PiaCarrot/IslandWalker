@@ -152,8 +152,8 @@ Route49LoreleiText1:
 	done
 	
 Route49LoreleiText2:
-	text "PRIMA: Eheh…"
-	line "#BALLS!"
+	text "PRIMA: Fufu…"
+	line "# BALLS!"
 	para "You throw them at"
 	line "Wild #MON to"
 	cont "capture them."
@@ -182,15 +182,9 @@ Route49LoreleiText5:
 
 Route49LoreleiText6:
 	text "Anyway, I should"
-	line "get going. Here,"
-	cont "let me see your"
-	cont "#PAGE so I can"
-	cont "send you messages!"
+	line "get going."
 	
-	para "… … …"
-	
-	para "Ok! I'll see you"
-	line "later!"
+	para "Good luck!"
 	done
 	
 Route49NoPokeMovement1:
@@ -265,6 +259,9 @@ Route49HiddenPotion:
 	
 Route49HiddenStarPiece:
 	hiddenitem STAR_PIECE, EVENT_ROUTE_49_HIDDEN_STAR_PIECE
+
+Route49HiddenRevive:
+	hiddenitem REVIVE, EVENT_ROUTE_49_HIDDEN_REVIVE
 	
 Route49Potion:
 	itemball POTION
@@ -298,7 +295,8 @@ Route49_MapEvents:
 	bg_event 31, 11, BGEVENT_READ, Route49Sign
 	bg_event 23, 15, BGEVENT_READ, TrainerTipsRoute49Sign
 	bg_event 18,  6, BGEVENT_ITEM, Route49HiddenPotion
-	bg_event  4, 30, BGEVENT_ITEM, Route49HiddenStarPiece
+	bg_event 20, 38, BGEVENT_ITEM, Route49HiddenStarPiece
+	bg_event  4, 30, BGEVENT_ITEM, Route49HiddenRevive
 
 	def_object_events
 	object_event 33, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ValenciaCooltrainerScript, -1

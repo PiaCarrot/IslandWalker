@@ -219,6 +219,7 @@ ItemDescriptions1:
 	dw PPMaxDesc          ; 00D8
 	dw PewterArareDesc    ; 00D9
 	dw SeventhTanghuluDesc    ; 00DA
+	dw LeaderCrestDesc    ; 00DB
 
 .IndirectEnd:
 
@@ -1571,3 +1572,7 @@ PewterArareDesc:
 SeventhTanghuluDesc:
 	db   "A local specialty"
 	next "that cures status.@"
+
+LeaderCrestDesc:
+	db   "A shard of an old"
+	next "blade.@"

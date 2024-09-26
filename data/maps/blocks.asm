@@ -6,6 +6,7 @@ Pokecenter2F_Blocks:
 House1_Blocks:
 	INCBIN "maps/House1.ablk"
 
+TangeloJungleRoute52Gate_Blocks:
 NSGate_Blocks:
 	INCBIN "maps/NorthSouthGate.ablk"
 
@@ -17,17 +18,23 @@ EWGate_Blocks:
 	INCBIN "maps/EastWestGate.ablk"
 
 TangeloJungleRoute51Gate2F_Blocks:
+TangeloJungleRoute52Gate2F_Blocks:
 	INCBIN "maps/EastWestGate2F.ablk"
 	
 TangeloJungleHouse_Blocks:
+MikanIslandBerryMasterHouse_Blocks:
+MikanIslandHouse_Blocks:
 	INCBIN "maps/TraditionalBeachHouse.ablk"
 
 SECTION "Map Blocks 2", ROMX
 
 TangeloIslandPokemart_Blocks:
+MikanIslandPokemart_Blocks:
 	INCBIN "maps/PokeMart.ablk"
 
 TangeloIslandPokecenter1F_Blocks:
+Route52Pokecenter1F_Blocks:
+MikanIslandPokecenter1F_Blocks:
 Pokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.ablk"
 

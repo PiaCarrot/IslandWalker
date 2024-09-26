@@ -1,6 +1,6 @@
 	db 0 ; species ID placeholder
 
-	db 100,  65,  65,  60,  65,  75
+	db 110,  65,  65,  60,  65,  75
 	evs  2,   0,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
@@ -13,7 +13,7 @@
 	INCBIN "gfx/pokemon/lapras_partner/front.dimensions"
 	db HYDRATION, HYDRATION ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
-	db GROWTH_SLOW ; growth rate
+	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset

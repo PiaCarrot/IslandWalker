@@ -72,6 +72,11 @@ SECTION "Map Scripts 22", ROMX
 
 INCLUDE "maps/MikanIsland.asm"
 INCLUDE "maps/Route52.asm"
+INCLUDE "maps/Route52Pokecenter1F.asm"
+INCLUDE "maps/MikanIslandPokecenter1F.asm"
+INCLUDE "maps/MikanIslandPokemart.asm"
+INCLUDE "maps/MikanIslandHouse.asm"
+INCLUDE "maps/MikanIslandBerryMasterHouse.asm"
 
 SECTION "Map Scripts 23", ROMX
 
@@ -88,6 +93,8 @@ INCLUDE "maps/Route51.asm"
 INCLUDE "maps/TangeloJungle.asm"
 INCLUDE "maps/TangeloJungleRoute51Gate.asm"
 INCLUDE "maps/TangeloJungleRoute51Gate2F.asm"
+INCLUDE "maps/TangeloJungleRoute52Gate.asm"
+INCLUDE "maps/TangeloJungleRoute52Gate2F.asm"
 INCLUDE "maps/TangeloJungleHouse.asm"
 
 SECTION "Map Scripts 24", ROMX

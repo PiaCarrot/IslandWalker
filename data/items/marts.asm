@@ -4,6 +4,8 @@ Marts:
 	dw MartBerrySeller
 	dw MartBerryPinkan
 	dw MartTangelo
+	dw MartMikan
+	dw MartXItem
 	assert_table_length NUM_MARTS
 
 MartBerrySeller:
@@ -30,6 +32,30 @@ MartTangelo:
 	dw PARLYZ_HEAL
 	dw NET_BALL
 	dw SURF_MAIL
+
+MartMikan:
+	db 10 ; # items
+	dw POKE_BALL
+	dw HEAL_BALL
+	dw DUSK_BALL
+	dw POTION
+	dw REPEL
+	dw ANTIDOTE
+	dw BURN_HEAL
+	dw PARLYZ_HEAL
+	dw QUICK_BALL
+	dw FLOWER_MAIL
+
+MartXItem:
+	db 8 ; # items
+	dw X_ATTACK
+	dw X_DEFEND
+	dw X_SPEED
+	dw X_SP_ATK
+	dw X_SP_DEF
+	dw X_ACCURACY
+	dw DIRE_HIT
+	dw GUARD_SPEC
 
 DefaultMart:
 	db 2 ; # items

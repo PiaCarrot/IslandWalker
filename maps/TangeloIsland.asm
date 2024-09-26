@@ -152,7 +152,7 @@ TangeloMarillScript:
 	
 LaprasScript:
 	opentext
-	cry LAPRAS
+	cry LAPRAS_PARTNER
 	writetext LaprasText
 	yesorno
 	iftrue .ObtainedLapras
@@ -175,6 +175,7 @@ LaprasScript:
 	waitbutton
 	verbosegiveitem HM_SURF
 	closetext
+	setevent EVENT_HM_03_SURF
 	end
 	
 .NoRoom:

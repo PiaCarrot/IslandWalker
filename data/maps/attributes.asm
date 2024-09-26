@@ -121,7 +121,7 @@ ENDM
 	connection west, Route50, ROUTE_50, -7
 
 	map_attributes Route52, ROUTE_52, $10, NORTH
-	connection south, MikanIsland, MIKAN_ISLAND, 0
+	connection north, MikanIsland, MIKAN_ISLAND, 0
 
 	map_attributes MikanIsland, MIKAN_ISLAND, $C8, SOUTH
 	connection south, Route52, ROUTE_52, 0
@@ -135,6 +135,8 @@ ENDM
 	map_attributes TangeloJungle, TANGELO_JUNGLE, $01, 0
 	map_attributes TangeloJungleRoute51Gate, TANGELO_JUNGLE_ROUTE_51_GATE, $00, 0
 	map_attributes TangeloJungleRoute51Gate2F, TANGELO_JUNGLE_ROUTE_51_GATE_2F, $00, 0
+	map_attributes TangeloJungleRoute52Gate, TANGELO_JUNGLE_ROUTE_52_GATE, $00, 0
+	map_attributes TangeloJungleRoute52Gate2F, TANGELO_JUNGLE_ROUTE_52_GATE_2F, $00, 0
 	map_attributes TangeloJungleHouse, TANGELO_JUNGLE_HOUSE, $00, 0
 	map_attributes TangeloIslandNorthHouse, TANGELO_ISLAND_NORTH_HOUSE, $00, 0
 	map_attributes TangeloIslandEastHouse, TANGELO_ISLAND_EAST_HOUSE, $00, 0
@@ -142,6 +144,11 @@ ENDM
 	map_attributes TangeloIslandSouthHouse, TANGELO_ISLAND_SOUTH_HOUSE, $00, 0
 	map_attributes TangeloIslandPokecenter1F, TANGELO_ISLAND_POKECENTER_1F, $00, 0
 	map_attributes TangeloIslandPokemart, TANGELO_ISLAND_POKEMART, $00, 0
+	map_attributes Route52Pokecenter1F, ROUTE_52_POKECENTER_1F, $00, 0
+	map_attributes MikanIslandPokecenter1F, MIKAN_ISLAND_POKECENTER_1F, $00, 0
+	map_attributes MikanIslandPokemart, MIKAN_ISLAND_POKEMART, $00, 0
+	map_attributes MikanIslandHouse, MIKAN_ISLAND_HOUSE, $00, 0
+	map_attributes MikanIslandBerryMasterHouse, MIKAN_ISLAND_BERRY_MASTER_HOUSE, $00, 0
 	map_attributes IvysHouse, IVYS_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0

@@ -239,6 +239,7 @@ ItemEffects1:
 	dw RestorePPEffect     ; PP_MAX
 	dw StatusHealingEffect ; PEWTER_ARARE
 	dw StatusHealingEffect ; SEVENTH_TANGHULU
+	dw EvoStoneEffect      ; LEADER_CREST
 .IndirectEnd:
 
 ItemEffectsKeyItems:

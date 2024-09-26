@@ -364,7 +364,7 @@ endc
 	and a
 	jr nz, .ExitWater
 
-	ld a, STEP_WALK
+	ld a, STEP_RUN
 	call .DoStep
 	scf
 	ret

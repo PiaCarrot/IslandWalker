@@ -208,6 +208,7 @@ ItemNames::
 	li "PP MAX"       ; 00D8
 	li "PEWTER ARARE" ; 00D9
 	li "7TH TANGHULU" ; 00DA
+	li "LEADER CREST" ; 00DB
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::

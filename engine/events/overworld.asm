@@ -400,6 +400,7 @@ SurfFromMenuScript:
 	special UpdateTimePals
 
 UsedSurfScript:
+	opentext
 	writetext UsedSurfText ; "used SURF!"
 	waitbutton
 	closetext
@@ -498,9 +499,12 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
-	call CheckEngineFlag
-	jr c, .quit
+	ld de, EVENT_HM_03_SURF
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	ret z
 
 	ld hl, SURF
 	call CheckPartyMoveIndex
@@ -514,8 +518,8 @@ TrySurfOW::
 	ld [wSurfingPlayerState], a
 	call GetPartyNickname
 
-	ld a, BANK(AskSurfScript)
-	ld hl, AskSurfScript
+	ld a, BANK(UsedSurfScript)
+	ld hl, UsedSurfScript
 	call CallScript
 
 	scf
@@ -524,18 +528,6 @@ TrySurfOW::
 .quit
 	xor a
 	ret
-
-AskSurfScript:
-	opentext
-	writetext AskSurfText
-	yesorno
-	iftrue UsedSurfScript
-	closetext
-	end
-
-AskSurfText:
-	text_far _AskSurfText
-	text_end
 
 FlyFunction:
 	call FieldMoveJumptableReset
