@@ -1,5 +1,7 @@
 	object_const_def
 	const ROUTE_52_BERRY_TREE
+	const ROUTE_52_ITEMBALL_1
+	const ROUTE_52_ITEMBALL_2
 
 Route52_MapScripts:
 	def_scene_scripts

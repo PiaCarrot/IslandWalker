@@ -295,73 +295,72 @@ Sfx_Puddle_Ch5:
 	endchannel
 	
 Sfx_BerryFanfare:
-	channel_count 4
-	channel 5, Sfx_BerryFanfare_Ch1
-	channel 6, Sfx_BerryFanfare_Ch2
-	channel 7, Sfx_BerryFanfare_Ch3
-	channel 8, Sfx_BerryFanfare_Ch4
+	musicheader 4, 5, Sfx_BerryFanfare_Ch1
+	musicheader 1, 6, Sfx_BerryFanfare_Ch2
+	musicheader 1, 7, Sfx_BerryFanfare_Ch3
+	musicheader 1, 8, Sfx_BerryFanfare_Ch4
 
 Sfx_BerryFanfare_Ch1:
-	toggle_sfx
+	togglesfx
 	tempo $8E
-	volume 7, 7
-	stereo_panning TRUE, TRUE
-	duty_cycle 2
-	pitch_slide 1, 2, A_
+	volume $77
+	stereopanning $77
+	dutycycle 2
+	slidepitchto 1, 6, A_
 	octave 5
-	note_type 12, 8, 1
+	notetype $C, $81
 	note C_, 1
-	rest 3
-	pitch_slide 1, 5, A#
+	note __, 3
+	slidepitchto 1, 3, A#
 	octave 4
-	note_type 8, 8, 1
+	notetype $8, $81
 	note F_, 1
-	rest 1
-	pitch_slide 1, 5, C#
+	note __, 1
+	slidepitchto 1, 3, C#
 	note C_, 1
-	rest 3
-	pitch_slide 1, 2, D#
+	note __, 3
+	slidepitchto 1, 6, D#
 	octave 3
-	note_type 12, 8, 1
+	notetype $C, $81
 	note A_, 1
-	rest 3
-	pitch_slide 1, 6, D_
+	note __, 3
+	slidepitchto 1, 2, D_
 	note G_, 1
-	rest 3
-	sound_ret
+	note __, 3
+	endchannel
 
 Sfx_BerryFanfare_Ch2:
-	toggle_sfx
-	duty_cycle 2
+	togglesfx
+	dutycycle 2
 	octave 4
-	note_type 12, 12, 2
+	notetype $C, $C2
 	note F_, 4
 	octave 5
-	note_type 8, 12, 1
+	notetype $8, $C1
 	note C_, 2
 	note D_, 2
 	note C_, 2
-	volume_envelope 12, 3
+	intensity $C3
 	note F_, 6
-	rest 2
-	sound_ret
+	endchannel
 
 Sfx_BerryFanfare_Ch3:
-	toggle_sfx
+	togglesfx
 	octave 3
-	note_type 12, 1, 0
+	notetype $C, $10
 	note A_, 4
-	note_type 8, 1, 0
+	notetype $8, $10
 	note A#, 2
 	note A#, 2
 	note A#, 2
 	note A_, 6
-	rest 2
-	sound_ret
-	
+	endchannel
+
 Sfx_BerryFanfare_Ch4:
-	toggle_sfx
-	sfx_toggle_noise 4
-	drum_speed 12
-	rest 16
-	sound_ret
+    togglesfx
+	sfxtogglenoise $4
+	notetype $c
+	note __, 16
+	endchannel
+
+

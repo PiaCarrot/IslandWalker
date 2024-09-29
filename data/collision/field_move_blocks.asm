@@ -2,6 +2,7 @@
 CutTreeBlockPointers:
 ; tileset, block list pointer
 	dbw TILESET_VALENCIA_MANDARIN_NORTH,        .orange1
+	dbw TILESET_MIKAN_ISLAND,        .orange1
 	db -1 ; end
 	
 .orange1:
@@ -20,6 +21,7 @@ CutTreeBlockPointers:
 ; these blocks all use COLL_WHIRLPOOL in one quadrant
 WhirlpoolBlockPointers:
 	dbw TILESET_VALENCIA_MANDARIN_NORTH, .orange1
+	dbw TILESET_MIKAN_ISLAND, .orange1
 	db -1 ; end
 	
 .orange1:
