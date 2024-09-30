@@ -123,6 +123,7 @@ SightseerSpriteGFX::   	   INCBIN "gfx/sprites/sightseer.2bpp"
 BugManiacSpriteGFX::   	   INCBIN "gfx/sprites/bug_maniac.2bpp"
 ShellSpriteGFX::   	   INCBIN "gfx/sprites/shell.2bpp"
 MayorSpriteGFX::   	   INCBIN "gfx/sprites/mayor.2bpp"
+TangeloJungleSceneSpriteGFX::   	   INCBIN "gfx/sprites/tangelojunglescene.2bpp"
 
 SECTION "Sprites Berry Trees", ROMX
 BerryTypeA1SpriteGFX::           INCBIN "gfx/sprites/berries/type_a_1.2bpp"

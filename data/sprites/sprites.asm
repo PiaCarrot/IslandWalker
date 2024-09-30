@@ -119,11 +119,11 @@ OverworldSprites:
 	overworld_sprite OfficerFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite OfficerFBoredSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite PCGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
-	overworld_sprite CissySpriteGFX, 4, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite SightseerSpriteGFX, 4, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite BugManiacSpriteGFX, 4, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite CissySpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite SightseerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite BugManiacSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite ShellSpriteGFX, 4, STILL_SPRITE, PAL_OW_TEAL
-	overworld_sprite MayorSpriteGFX, 4, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite MayorSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite BerryTypeA1SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeA2SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeB1SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
@@ -190,5 +190,6 @@ OverworldSprites:
 	overworld_sprite BerryTypeZeta2SpriteGFX,    4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeEta1SpriteGFX,     4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeEta2SpriteGFX,     4, STILL_SPRITE, PAL_OW_TREE
+	overworld_sprite TangeloJungleSceneSpriteGFX,     12, WALKING_SPRITE, PAL_OW_GREEN
 
 	assert_table_length NUM_OVERWORLD_SPRITES

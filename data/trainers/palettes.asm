@@ -81,6 +81,7 @@ INCBIN "gfx/trainers/lorelei1.gbcpal", middle_colors
 INCBIN "gfx/trainers/lorelei2.gbcpal", middle_colors
 INCBIN "gfx/trainers/lorelei3.gbcpal", middle_colors
 INCBIN "gfx/trainers/tracey1.gbcpal", middle_colors
+INCBIN "gfx/trainers/cross1.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
 KrisPalette:

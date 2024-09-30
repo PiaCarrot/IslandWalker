@@ -5300,6 +5300,15 @@ Tracey1Group:
 	dw TACKLE, DISABLE, FORESIGHT, NO_MOVE
 	db -1 ; end
 	end_list_items
+	
+Cross1Group:
+	next_list_item ; CROSS1 (1)
+	db "CROSS@", TRAINERTYPE_MOVES
+	db 9
+	dw GEODUDE ; ROCKRUFF
+	dw TACKLE, SAND_ATTACK, BITE, ROCK_THROW
+	db -1 ; end
+	end_list_items
 
 MysticalmanGroup:
 	next_list_item ; MYSTICALMAN (1)

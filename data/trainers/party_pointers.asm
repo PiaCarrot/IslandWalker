@@ -73,6 +73,7 @@ TrainerGroups:
 	dba Lorelei2Group
 	dba Lorelei3Group
 	dba Tracey1Group
+	dba Cross1Group
 	dba MysticalmanGroup
 	dba KrisGroup
 	assert_table_length NUM_TRAINER_CLASSES

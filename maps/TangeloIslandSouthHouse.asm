@@ -15,6 +15,7 @@ CyndaquilGiftScript:
 	writetext CyndaquilGiftText1
 	waitbutton
 	closetext
+	setevent EVENT_TALKED_TO_TANGELO_GENTLEMAN
 	end
 	
 .AlreadyGotCyndaquil
@@ -54,9 +55,20 @@ CyndaquilGiftText2:
 	
 CyndaquilPokeballTangeloScript:
 	opentext
+	checkevent EVENT_TALKED_TO_TANGELO_GENTLEMAN
+	iffalse .TalkToMeFirst
+	cry CYNDAQUIL
+	waitsfx
 	writetext CyndaquilPokeballTangeloText
 	yesorno
 	iftrue .ObtainedCyndaquil
+	closetext
+	end
+	
+.TalkToMeFirst:
+	turnobject TANGELO_SOUTH_HOUSE_GENTLEMAN, LEFT
+	writetext TangeloGentlemanText2
+	waitbutton
 	closetext
 	end
 	
@@ -80,13 +92,14 @@ CyndaquilPokeballTangeloScript:
 	end
 	
 CyndaquilPokeballTangeloText:
-	text "As you look at the"
-	line "#BALL, the man"
-	cont "nods in approval."
-
-	para "CYNDAQUIL seems"
+	text "CYNDAQUIL seems"
 	line "eager to join you."
 	cont "Take CYNDAQUIL?"
+	done
+	
+TangeloGentlemanText2:
+	text "Oh, hello there!"
+	line "Let's have a chat!"
 	done
 	
 CyndaquilPartyFullText:
@@ -113,4 +126,4 @@ TangeloIslandSouthHouse_MapEvents:
 
 	def_object_events
 	object_event  6,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CyndaquilGiftScript, -1
-	object_event  2,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeballTangeloScript, EVENT_GOT_CYNDAQUIL_FROM_TANGELO
+	object_event  2,  3, SPRITE_CYNDAQUIL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeballTangeloScript, EVENT_GOT_CYNDAQUIL_FROM_TANGELO

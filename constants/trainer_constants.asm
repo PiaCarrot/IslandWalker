@@ -711,6 +711,9 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	trainerclass TRACEY1 ; 46
 	const TRACEY_1
 
+	trainerclass CROSS1 ; 46
+	const CROSS_1
+
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
 

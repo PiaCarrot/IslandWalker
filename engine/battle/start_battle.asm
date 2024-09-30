@@ -104,7 +104,7 @@ PlayBattleMusic:
 
 	ld de, MUSIC_CROSS_BATTLE
 	ld a, [wOtherTrainerClass]
-	cp RIVAL1
+	cp CROSS1
 	jr z, .done
 	cp RIVAL2
 	jr nz, .othertrainer

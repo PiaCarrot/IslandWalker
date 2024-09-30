@@ -6,6 +6,9 @@
 	const TANGELO_JUNGLE_ANTIDOTE
 	const TANGELO_JUNGLE_POTION
 	const TANGELO_JUNGLE_CROSS
+	const TANGELO_JUNGLE_CUTSCENE_BUG_CATCHER
+	const TANGELO_JUNGLE_CUTSCENE_ROCKRUFF
+	const TANGELO_JUNGLE_CUTSCENE_CATERPIE
 
 TangeloJungle_MapScripts:
 	def_scene_scripts
@@ -45,8 +48,26 @@ TangeloJungleSignText:
 	done
 	
 TangeloJungleCrossScript:
+	cry GEODUDE
+	waitsfx
+	cry CATERPIE
+	waitsfx
+	playsound SFX_TACKLE
+	applymovement TANGELO_JUNGLE_CUTSCENE_CATERPIE, TangeloJungleRockruffShovesCaterpieMovement
+	turnobject TANGELO_JUNGLE_CUTSCENE_BUG_CATCHER, RIGHT
+	opentext
+	writetext TangeloJungleCaterpieText
+	waitbutton
+	closetext
+	disappear TANGELO_JUNGLE_CUTSCENE_CATERPIE
+	applymovement TANGELO_JUNGLE_CUTSCENE_BUG_CATCHER, TangeloJungleBugCatcherMovement
+	disappear TANGELO_JUNGLE_CUTSCENE_BUG_CATCHER
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	pause 15
 	faceplayer
 	showemote EMOTE_SAD, TANGELO_JUNGLE_CROSS, 15
+	turnobject TANGELO_JUNGLE_CUTSCENE_ROCKRUFF, LEFT
 	special FadeOutMusic
 	pause 15
 	playmusic MUSIC_RIVAL_ENCOUNTER
@@ -59,11 +80,12 @@ TangeloJungleCrossScript:
 	closetext
 	winlosstext TangeloJungleCrossWinText, TangeloJungleCrossLossText
 	setlasttalked TANGELO_JUNGLE_CROSS
-	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
+	loadtrainer CROSS1, CROSS_1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmap
+	disappear TANGELO_JUNGLE_CUTSCENE_ROCKRUFF
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
 	
@@ -135,8 +157,10 @@ TangeloCrossDratiniText:
 TangeloCrossEncounterText:
 	text "???: Huh?"
 
-	para "Who's the weakling"
-	line "in my way here?"
+	para "What's your name?"
+	line "you don't look as"
+	cont "weak as these BUG"
+	cont "CATCHERs."
 
 	para "… … …"
 	
@@ -159,13 +183,13 @@ TangeloCrossEncounterText:
 	done
 	
 TangeloJungleCrossWinText:
-	text "Finally, somebody"
-	line "worth battling!"
+	text "Huh? There's no"
+	line "way!"
 	done
 	
 TangeloJungleCrossLossText:
-	text "Thanks for the"
-	line "EXP. Points…"
+	text "It's already over?"
+	line "Pathetic…"
 	done
 	
 TangeloJungleCrossText_HeWon:
@@ -190,6 +214,11 @@ TangeloJungleCrossText_HeLost:
 	para "Remember this,"
 	line "<PLAYER>!"
 	done
+	
+TangeloJungleCaterpieText:
+	text "Gah! CATERPIE just"
+	line "can't hack it!"
+	done
 
 CrossJungle_Movement:
 	step RIGHT
@@ -197,6 +226,19 @@ CrossJungle_Movement:
 	step RIGHT
 	step RIGHT
 	step UP
+	step_end
+
+TangeloJungleBugCatcherMovement:
+	step RIGHT
+	step UP
+	step_end
+	
+TangeloJungleRockruffShovesCaterpieMovement:
+	turn_head DOWN
+	fix_facing
+	jump_step RIGHT
+	remove_fixed_facing
+	turn_head UP
 	step_end
 
 TangeloJungle_MapEvents:
@@ -224,3 +266,6 @@ TangeloJungle_MapEvents:
 	object_event 16, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TangeloJungleAntidote, EVENT_TANGELO_JUNGLE_ANTIDOTE
 	object_event 28, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TangeloJunglePotion, EVENT_TANGELO_JUNGLE_POTION
 	object_event 15,  6, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_ORANGE, OBJECTTYPE_SCRIPT, 0, TangeloJungleCrossScript, EVENT_CROSS_BATTLE_TANGELO_JUNGLE
+	object_event 18,  6, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CROSS_BATTLE_TANGELO_JUNGLE
+	object_event 16,  6, SPRITE_TANGELO_JUNGLE_SCENE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CROSS_BATTLE_TANGELO_JUNGLE
+	object_event 17,  6, SPRITE_TANGELO_JUNGLE_SCENE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CROSS_BATTLE_TANGELO_JUNGLE

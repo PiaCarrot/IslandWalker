@@ -65,6 +65,7 @@ TotodileTangeloScript:
 	end
 	
 .TalkToMeFirst
+	turnobject PLAYER, LEFT
 	writetext TotodileTangeloText2
 	waitbutton
 	closetext

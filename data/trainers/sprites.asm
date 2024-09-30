@@ -71,5 +71,6 @@ BTTrainerClassSprites:
 	db SPRITE_LORELEI
 	db SPRITE_LORELEI
 	db SPRITE_TRACEY
+	db SPRITE_RIVAL
 	db SPRITE_KRIS
 	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN

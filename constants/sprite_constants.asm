@@ -185,6 +185,7 @@
 	const SPRITE_BERRY_ZETA_2
 	const SPRITE_BERRY_ETA_1
 	const SPRITE_BERRY_ETA_2
+	const SPRITE_TANGELO_JUNGLE_SCENE
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
