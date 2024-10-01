@@ -109,11 +109,14 @@ TangeloJungleCrossScript:
 	playmapmusic
 	moveobject TANGELO_JUNGLE_CUTSCENE_OFFICER, 19, 5
 	appear TANGELO_JUNGLE_CUTSCENE_OFFICER
+	pause 15
 	playsound SFX_EXIT_BUILDING
 	waitsfx
-	pause 15
 	applymovement TANGELO_JUNGLE_CUTSCENE_OFFICER, JennyJungle_Movement
+	pause 15
+	turnobject TANGELO_JUNGLE_CUTSCENE_OFFICER, LEFT
 	showemote EMOTE_SHOCK, TANGELO_JUNGLE_CUTSCENE_OFFICER, 15
+	applymovement TANGELO_JUNGLE_CUTSCENE_OFFICER, JennyJungle_Movement2
 	opentext
 	writetext TangeloOfficerText
 	waitbutton
@@ -288,6 +291,9 @@ CrossJungle_Movement:
 
 JennyJungle_Movement:
 	step DOWN
+	step_end
+
+JennyJungle_Movement2:
 	step LEFT
 	step LEFT
 	step LEFT

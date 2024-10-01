@@ -1,5 +1,7 @@
 	object_const_def
 	const ROUTE_52_POKECENTER1F_NURSE
+	const ROUTE_52_POKECENTER1F_BUG_CATCHER_SIMON
+	const ROUTE_52_POKECENTER1F_CATERPIE
 
 Route52Pokecenter1F_MapScripts:
 	def_scene_scripts
@@ -22,7 +24,44 @@ Route52PCCaterpieText:
 	done
 
 Route52PCBugCatcherScript:
+	opentext
+	writetext BugCatcherSimonText1
+	waitbutton
+	closetext
+	cry CATERPIE
+	waitsfx
+	faceplayer
+	showemote EMOTE_SHOCK, ROUTE_52_POKECENTER1F_BUG_CATCHER_SIMON, 15
+	opentext
+	writetext BugCatcherSimonText2
+	waitbutton
+	closetext
+	turnobject ROUTE_52_POKECENTER1F_BUG_CATCHER_SIMON, LEFT
 	end
+
+BugCatcherSimonText1:
+	text "It's ok, CATERPIE!"
+	line "You tried the best"
+	cont "you could. He was"
+	cont "just strong…"
+	done
+	
+BugCatcherSimonText2:
+	text "Oh, hello there!"
+	line "CATERPIE and I are"
+	cont "hunting for BUG"
+	cont "#MON!"
+	
+	para "We lost a fight to"
+	line "this really strong"
+	cont "TRAINER…"
+	
+	para "CATERPIE is really"
+	line "down… But I know"
+	cont "someday, CATERPIE"
+	cont "will be a really"
+	cont "great #MON!"
+	done
 
 Route52Pokecenter1F_MapEvents:
 	db 0, 0 ; filler
