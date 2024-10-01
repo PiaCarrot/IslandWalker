@@ -17,7 +17,7 @@ TangeloJungleRoute52GateTVText:
 	done
 	
 TangeloJungleRoute52GateJennyDayScript:
-	jumptext TangeloJungleRoute52GateJennyDayText
+	jumptextfaceplayer TangeloJungleRoute52GateJennyDayText
 	
 TangeloJungleRoute52GateJennyDayText:
 	text "Hello, trainer."

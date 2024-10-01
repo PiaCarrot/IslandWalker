@@ -9,6 +9,7 @@
 	const TANGELO_JUNGLE_CUTSCENE_BUG_CATCHER
 	const TANGELO_JUNGLE_CUTSCENE_ROCKRUFF
 	const TANGELO_JUNGLE_CUTSCENE_CATERPIE
+	const TANGELO_JUNGLE_CUTSCENE_OFFICER
 
 TangeloJungle_MapScripts:
 	def_scene_scripts
@@ -65,9 +66,10 @@ TangeloJungleCrossScript:
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	pause 15
-	faceplayer
 	showemote EMOTE_SAD, TANGELO_JUNGLE_CROSS, 15
+	faceplayer
 	turnobject TANGELO_JUNGLE_CUTSCENE_ROCKRUFF, LEFT
+	showemote EMOTE_SHOCK, TANGELO_JUNGLE_CROSS, 15
 	special FadeOutMusic
 	pause 15
 	playmusic MUSIC_RIVAL_ENCOUNTER
@@ -87,7 +89,7 @@ TangeloJungleCrossScript:
 	reloadmap
 	disappear TANGELO_JUNGLE_CUTSCENE_ROCKRUFF
 	iftrue .AfterVictorious
-	sjump .AfterYourDefeat
+	sjump .AfterDefeat
 	
 .MetCrossOnValencia:
 	writetext TangeloCrossDratiniText
@@ -99,19 +101,53 @@ TangeloJungleCrossScript:
 	writetext TangeloJungleCrossText_HeWon
 	waitbutton
 	closetext
-	sjump .FinishRival
+	applymovement TANGELO_JUNGLE_CROSS, CrossJungle_Movement
+	disappear TANGELO_JUNGLE_CROSS
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	special FadeOutMusic
+	playmapmusic
+	moveobject TANGELO_JUNGLE_CUTSCENE_OFFICER, 19, 5
+	appear TANGELO_JUNGLE_CUTSCENE_OFFICER
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	pause 15
+	applymovement TANGELO_JUNGLE_CUTSCENE_OFFICER, JennyJungle_Movement
+	showemote EMOTE_SHOCK, TANGELO_JUNGLE_CUTSCENE_OFFICER, 15
+	opentext
+	writetext TangeloOfficerText
+	waitbutton
+	closetext
+	special FadeOutToBlack
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInFromBlack
+	special RestartMapMusic
+	opentext
+	writetext TangeloOfficerKeepAtItText
+	waitbutton
+	closetext
+	applymovement TANGELO_JUNGLE_CUTSCENE_OFFICER, CrossJungle_Movement
+	disappear TANGELO_JUNGLE_CUTSCENE_OFFICER
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	setevent EVENT_CROSS_BATTLE_TANGELO_JUNGLE
+	end
 
-.AfterYourDefeat:
+.AfterDefeat:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext TangeloJungleCrossText_HeLost
 	waitbutton
 	closetext
-.FinishRival:
 	applymovement TANGELO_JUNGLE_CROSS, CrossJungle_Movement
 	disappear TANGELO_JUNGLE_CROSS
 	playsound SFX_ENTER_DOOR
 	waitsfx
+	special FadeOutMusic
 	special HealParty
 	setevent EVENT_CROSS_BATTLE_TANGELO_JUNGLE
 	playmapmusic
@@ -199,7 +235,7 @@ TangeloJungleCrossText_HeWon:
 	line "optimistic!"
 	
 	para "See you around, if"
-	line "can even squeak a"
+	line "you can squeak a"
 	cont "badge in!"
 	done
 
@@ -219,6 +255,28 @@ TangeloJungleCaterpieText:
 	text "Gah! CATERPIE just"
 	line "can't hack it!"
 	done
+	
+TangeloOfficerText:
+	text "Are you ok?"
+	line "I thought I heard"
+	cont "a #MON BATTLE"
+	cont "out here!"
+	
+	para "It's a long walk"
+	line "back to TANGELO"
+	cont "ISLAND, so I'll"
+	cont "heal your party"
+	cont "just this once!"
+	done
+	
+TangeloOfficerKeepAtItText:
+	text "There!"
+
+	para "Your #MON are"
+	line "looking good!"
+
+	para "Good luck, kid."
+	done
 
 CrossJungle_Movement:
 	step RIGHT
@@ -226,6 +284,14 @@ CrossJungle_Movement:
 	step RIGHT
 	step RIGHT
 	step UP
+	step_end
+
+JennyJungle_Movement:
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
 	step_end
 
 TangeloJungleBugCatcherMovement:
@@ -269,3 +335,4 @@ TangeloJungle_MapEvents:
 	object_event 18,  6, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CROSS_BATTLE_TANGELO_JUNGLE
 	object_event 16,  6, SPRITE_TANGELO_JUNGLE_SCENE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CROSS_BATTLE_TANGELO_JUNGLE
 	object_event 17,  6, SPRITE_TANGELO_JUNGLE_SCENE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CROSS_BATTLE_TANGELO_JUNGLE
+	object_event 39, 39, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CROSS_BATTLE_TANGELO_JUNGLE

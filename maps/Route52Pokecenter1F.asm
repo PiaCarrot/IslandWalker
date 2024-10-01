@@ -8,6 +8,21 @@ Route52Pokecenter1F_MapScripts:
 
 Route52Pokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
+	
+Route52PCCaterpieScript:
+	opentext
+	writetext Route52PCCaterpieText
+	cry CATERPIE
+	waitbutton
+	closetext
+	end
+	
+Route52PCCaterpieText:
+	text "CATERPIE: Puii…"
+	done
+
+Route52PCBugCatcherScript:
+	end
 
 Route52Pokecenter1F_MapEvents:
 	db 0, 0 ; filler
@@ -23,3 +38,5 @@ Route52Pokecenter1F_MapEvents:
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route52Pokecenter1FNurseScript, -1
+	object_event  9,  5, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route52PCBugCatcherScript, -1
+	object_event  8,  5, SPRITE_WEEDLE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route52PCCaterpieScript, -1
