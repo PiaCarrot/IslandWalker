@@ -240,6 +240,7 @@ ItemEffects1:
 	dw StatusHealingEffect ; PEWTER_ARARE
 	dw StatusHealingEffect ; SEVENTH_TANGHULU
 	dw EvoStoneEffect      ; LEADER_CREST
+	dw NoEffect            ; SPIDER_SILK
 .IndirectEnd:
 
 ItemEffectsKeyItems:

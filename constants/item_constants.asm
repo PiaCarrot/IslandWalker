@@ -215,6 +215,7 @@
 	const PEWTER_ARARE ; 00D9
 	const SEVENTH_TANGHULU ; 00DA
 	const LEADER_CREST ; 00DB
+	const SPIDER_SILK  ; 00DC
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.

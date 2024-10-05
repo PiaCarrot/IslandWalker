@@ -220,6 +220,7 @@ ItemDescriptions1:
 	dw PewterArareDesc    ; 00D9
 	dw SeventhTanghuluDesc    ; 00DA
 	dw LeaderCrestDesc    ; 00DB
+	dw SpiderSilkDesc    ; 00DB
 
 .IndirectEnd:
 
@@ -1576,3 +1577,7 @@ SeventhTanghuluDesc:
 LeaderCrestDesc:
 	db   "A shard of an old"
 	next "blade.@"
+	
+SpiderSilkDesc:
+	db   "Tough silk that is"
+	next "hard to rip. Sell.@"

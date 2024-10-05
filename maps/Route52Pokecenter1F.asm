@@ -39,6 +39,9 @@ Route52PCBugCatcherScript:
 	turnobject ROUTE_52_POKECENTER1F_BUG_CATCHER_SIMON, LEFT
 	end
 
+;TODO: Add a postgame fight here with Bug Catcher Simon
+;Team of BUG types (Butterfree, Ninjask, Heracross, Ribombee, Shuckle, Yanmega)
+
 BugCatcherSimonText1:
 	text "It's ok, CATERPIE!"
 	line "You tried the best"

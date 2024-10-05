@@ -1,6 +1,6 @@
 	object_const_def
 	const MIKAN_ISLAND_POKECENTER1F_NURSE
-	const MIKAN_ISLAND_POKECENTER1F_PC_GUY
+	const MIKAN_ISLAND_POKECENTER1F_PC_GIRL
 
 MikanIslandPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -14,12 +14,14 @@ MikanIslandPokecenter1FPCGuyScript:
 	jumptextfaceplayer MikanIslandPokecenter1FPCGuyText
 	
 MikanIslandPokecenter1FPCGuyText:
-	text "SURF starts off as"
-	line "a weak attack, but"
-	cont "as your #MON"
-	cont "bonds with you, it"
-	cont "becomes much more"
-	cont "powerful!"
+	text "Where do #MON"
+	line "come from?"
+	
+	para "Do they lay eggs?"
+	line "I heard that's what"
+	cont "a PROFESSOR from a"
+	cont "place called JOHTO"
+	cont "is researching!"
 	done
 
 MikanIslandPokecenter1F_MapEvents:
@@ -36,4 +38,4 @@ MikanIslandPokecenter1F_MapEvents:
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MikanIslandPokecenter1FNurseScript, -1
-	object_event  0,  6, SPRITE_PC_GUY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MikanIslandPokecenter1FPCGuyScript, -1
+	object_event  0,  6, SPRITE_PC_GIRL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MikanIslandPokecenter1FPCGuyScript, -1

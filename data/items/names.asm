@@ -209,6 +209,7 @@ ItemNames::
 	li "PEWTER ARARE" ; 00D9
 	li "7TH TANGHULU" ; 00DA
 	li "LEADER CREST" ; 00DB
+	li "SPIDER SILK"  ; 00DC
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::
@@ -216,7 +217,7 @@ KeyItemNames::
 	li "BICYCLE"      ; 0100
 	li "COIN CASE"    ; 0101
 	li "ITEMFINDER"   ; 0102
-	li "OLD ROD"      ; 0103
+	li "BAMBOO ROD"   ; 0103
 	li "GOOD ROD"     ; 0104
 	li "SUPER ROD"    ; 0105
 	li "RED SCALE"    ; 0106

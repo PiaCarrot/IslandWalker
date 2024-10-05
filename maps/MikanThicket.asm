@@ -40,8 +40,8 @@ MikanThicketHiddenRareCandy:
 MikanThicketCarbos:
 	itemball CARBOS
 
-MikanThicketQuickBall:
-	itemball QUICK_BALL
+MikanThicketRoseIncense:
+	itemball ROSE_INCENSE
 	
 MikanThicketTMSwordsDance:
 	end
@@ -75,5 +75,5 @@ MikanThicket_MapEvents:
 	object_event 20, 20, SPRITE_BERRY_M_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MikanThicketFruitTree1, -1
 	object_event 12,  6, SPRITE_BERRY_I_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_SCRIPT, 0, MikanThicketFruitTree2, -1
 	object_event 29, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MikanThicketCarbos, EVENT_MIKAN_THICKET_CARBOS
-	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MikanThicketQuickBall, EVENT_MIKAN_THICKET_QUICK_BALL
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MikanThicketRoseIncense, EVENT_MIKAN_THICKET_ROSE_INCENSE
 	object_event 16, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_ITEMBALL, 0, MikanThicketTMSwordsDance, EVENT_TM_75_SWORDS_DANCE
