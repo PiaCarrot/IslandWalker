@@ -7,7 +7,7 @@
 	db BUG, POISON ; type
 	db 90 ; catch rate
 	db 134 ; base exp
-	dw NO_ITEM, NO_ITEM ; items
+	dw SPIDER_SILK, SPIDER_SILK ; items
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/ariados/front.dimensions"
