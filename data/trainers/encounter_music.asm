@@ -25,56 +25,57 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
 	db MUSIC_ROCKET_ENCOUNTER      ; scientist
 	db MUSIC_OFFICER_ENCOUNTER     ; erika
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; youngster
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; schoolboy
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; bird_keeper
-	db MUSIC_LASS_ENCOUNTER        ; lass
-	db MUSIC_LASS_ENCOUNTER        ; janine
-	db MUSIC_HIKER_ENCOUNTER       ; cooltrainerm
-	db MUSIC_BEAUTY_ENCOUNTER      ; cooltrainerf
-	db MUSIC_BEAUTY_ENCOUNTER      ; beauty
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; pokemaniac
+	db MUSIC_ORANGE_ENCOUNTER   ; youngster
+	db MUSIC_ORANGE_ENCOUNTER   ; schoolboy
+	db MUSIC_ORANGE_ENCOUNTER   ; bird_keeper
+	db MUSIC_ORANGE_ENCOUNTER        ; lass
+	db MUSIC_ORANGE_ENCOUNTER        ; janine
+	db MUSIC_ORANGE_ENCOUNTER       ; cooltrainerm
+	db MUSIC_ORANGE_ENCOUNTER      ; cooltrainerf
+	db MUSIC_ORANGE_ENCOUNTER      ; beauty
+	db MUSIC_ORANGE_ENCOUNTER  ; pokemaniac
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntm
-	db MUSIC_HIKER_ENCOUNTER       ; gentleman
-	db MUSIC_BEAUTY_ENCOUNTER      ; skier
-	db MUSIC_BEAUTY_ENCOUNTER      ; teacher
-	db MUSIC_BEAUTY_ENCOUNTER      ; sabrina
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; bug_catcher
-	db MUSIC_HIKER_ENCOUNTER       ; fisher
-	db MUSIC_HIKER_ENCOUNTER       ; swimmerm
+	db MUSIC_ORANGE_ENCOUNTER       ; gentleman
+	db MUSIC_ORANGE_ENCOUNTER      ; skier
+	db MUSIC_ORANGE_ENCOUNTER      ; teacher
+	db MUSIC_ORANGE_ENCOUNTER      ; sabrina
+	db MUSIC_ORANGE_ENCOUNTER   ; bug_catcher
+	db MUSIC_ORANGE_ENCOUNTER       ; fisher
+	db MUSIC_ORANGE_ENCOUNTER       ; swimmerm
 	db MUSIC_BEAUTY_ENCOUNTER      ; swimmerf
-	db MUSIC_HIKER_ENCOUNTER       ; sailor
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; super_nerd
+	db MUSIC_ORANGE_ENCOUNTER       ; sailor
+	db MUSIC_ORANGE_ENCOUNTER  ; super_nerd
 	db MUSIC_RIVAL_ENCOUNTER       ; rival2
-	db MUSIC_HIKER_ENCOUNTER       ; guitarist
-	db MUSIC_HIKER_ENCOUNTER       ; hiker
-	db MUSIC_HIKER_ENCOUNTER       ; biker
+	db MUSIC_ORANGE_ENCOUNTER       ; guitarist
+	db MUSIC_ORANGE_ENCOUNTER       ; hiker
+	db MUSIC_ORANGE_ENCOUNTER       ; biker
 	db MUSIC_OFFICER_ENCOUNTER     ; blaine
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; burglar
-	db MUSIC_HIKER_ENCOUNTER       ; firebreather
-	db MUSIC_POKEMANIAC_ENCOUNTER  ; juggler
-	db MUSIC_HIKER_ENCOUNTER       ; blackbelt_t
+	db MUSIC_ORANGE_ENCOUNTER  ; burglar
+	db MUSIC_ORANGE_ENCOUNTER       ; firebreather
+	db MUSIC_ORANGE_ENCOUNTER  ; juggler
+	db MUSIC_ORANGE_ENCOUNTER       ; blackbelt_t
 	db MUSIC_ROCKET_ENCOUNTER      ; executivem
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; psychic_t
-	db MUSIC_LASS_ENCOUNTER        ; picnicker
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; camper
+	db MUSIC_ORANGE_ENCOUNTER   ; psychic_t
+	db MUSIC_ORANGE_ENCOUNTER        ; picnicker
+	db MUSIC_ORANGE_ENCOUNTER   ; camper
 	db MUSIC_ROCKET_ENCOUNTER      ; executivef
-	db MUSIC_SAGE_ENCOUNTER        ; sage
-	db MUSIC_SAGE_ENCOUNTER        ; medium
-	db MUSIC_HIKER_ENCOUNTER       ; boarder
-	db MUSIC_HIKER_ENCOUNTER       ; pokefanm
-	db MUSIC_KIMONO_ENCOUNTER      ; kimono_girl
-	db MUSIC_LASS_ENCOUNTER        ; twins
-	db MUSIC_BEAUTY_ENCOUNTER      ; pokefanf
+	db MUSIC_ORANGE_ENCOUNTER        ; sage
+	db MUSIC_ORANGE_ENCOUNTER        ; medium
+	db MUSIC_ORANGE_ENCOUNTER       ; boarder
+	db MUSIC_ORANGE_ENCOUNTER       ; pokefanm
+	db MUSIC_ORANGE_ENCOUNTER      ; kimono_girl
+	db MUSIC_ORANGE_ENCOUNTER        ; twins
+	db MUSIC_ORANGE_ENCOUNTER      ; pokefanf
 	db MUSIC_HIKER_ENCOUNTER       ; red
 	db MUSIC_RIVAL_ENCOUNTER       ; blue
-	db MUSIC_HIKER_ENCOUNTER       ; officer
+	db MUSIC_ORANGE_ENCOUNTER       ; officer
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntf
 	db MUSIC_ORANGE_ENCOUNTER       ; lorelei1
 	db MUSIC_ORANGE_ENCOUNTER       ; lorelei2
 	db MUSIC_ORANGE_ENCOUNTER       ; lorelei3
 	db MUSIC_TRACEY_ENCOUNTER       ; tracey1
 	db MUSIC_RIVAL_ENCOUNTER       ; cross1
+	db MUSIC_ORANGE_ENCOUNTER       ; bug_catcher_f
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_HIKER_ENCOUNTER       ; kris
 	assert_table_length NUM_TRAINER_CLASSES + 1

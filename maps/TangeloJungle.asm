@@ -10,6 +10,7 @@
 	const TANGELO_JUNGLE_CUTSCENE_ROCKRUFF
 	const TANGELO_JUNGLE_CUTSCENE_CATERPIE
 	const TANGELO_JUNGLE_CUTSCENE_OFFICER
+	const TANGELO_JUNGLE_BUG_CATCHER_F_MICA
 
 TangeloJungle_MapScripts:
 	def_scene_scripts
@@ -312,6 +313,143 @@ TangeloJungleRockruffShovesCaterpieMovement:
 	remove_fixed_facing
 	turn_head UP
 	step_end
+	
+BugCatcherFMicaScript:
+	trainer BUG_CATCHER_F, MICA, EVENT_BEAT_BUG_CATCHER_F_MICA, BugCatcherFMicaSeenText, BugCatcherFMicaBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugCatcherFMicaAfterText
+	waitbutton
+	closetext
+	end
+	
+BugCatcherFMicaSeenText:
+	text "BUGs don't scare"
+	line "me one bit! They"
+	cont "are cute!"
+	done
+
+BugCatcherFMicaBeatenText:
+	text "BUGs are cute,"
+	line "unlike you! Bleh!"
+	done
+
+BugCatcherFMicaAfterText:
+	text "I catch all of my"
+	line "cuties in HEAL"
+	cont "BALLs!"
+	done
+	
+BugCatcherFHannahScript:
+	trainer BUG_CATCHER_F, HANNAH, EVENT_BEAT_BUG_CATCHER_F_HANNAH, BugCatcherFHannahSeenText, BugCatcherFHannahBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugCatcherFHannahAfterText
+	waitbutton
+	closetext
+	end
+	
+BugCatcherFHannahSeenText:
+	text "Gotta crawl, gotta"
+	line "crawl, to the ugly"
+	cont "BUG ball…"
+	done
+
+BugCatcherFHannahBeatenText:
+	text "I was singing!"
+	done
+
+BugCatcherFHannahAfterText:
+	text "TANGELO JUNGLE"
+	line "is a BUG CATCHER's"
+	cont "paradise!"
+	done
+	
+BugCatcherOwenScript:
+	trainer BUG_CATCHER, OWEN, EVENT_BEAT_BUG_CATCHER_OWEN, BugCatcherOwenSeenText, BugCatcherOwenBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugCatcherOwenAfterText
+	waitbutton
+	closetext
+	end
+	
+BugCatcherOwenSeenText:
+	text "LEDYBA? CUTIEFLY?"
+	line "I don't need BUGs"
+	cont "like that!"
+	done
+
+BugCatcherOwenBeatenText:
+	text "I can't worm my"
+	line "way out of this!"
+	done
+
+BugCatcherOwenAfterText:
+	text "HANNAH caught all"
+	line "the cool BUGs this"
+	cont "morning…"
+	done
+	
+BugCatcherEricScript:
+	trainer BUG_CATCHER, ERIC, EVENT_BEAT_BUG_CATCHER_ERIC, BugCatcherEricSeenText, BugCatcherEricBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugCatcherEricAfterText
+	waitbutton
+	closetext
+	end
+	
+BugCatcherEricSeenText:
+	text "Where?!"
+	done
+
+BugCatcherEricBeatenText:
+	text "Where can I find"
+	line "VENONAT?!"
+	done
+
+BugCatcherEricAfterText:
+	text "My friend RYAN has"
+	line "a VENONAT. He only"
+	cont "hunts at night…"
+	done
+	
+BugCatcherRyanScript:
+	trainer BUG_CATCHER, RYAN, EVENT_BEAT_BUG_CATCHER_RYAN, BugCatcherRyanSeenText, BugCatcherRyanBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugCatcherRyanAfterText
+	waitbutton
+	closetext
+	end
+	
+BugCatcherRyanSeenText:
+	text "If you beat me, I"
+	line "will let you in on"
+	cont "a little secret!"
+	done
+
+BugCatcherRyanBeatenText:
+	text "Ack! Okay, I'll"
+	line "spill the beans!"
+	done
+
+BugCatcherRyanAfterText:
+	text "SPIDER SILK comes"
+	line "from SPINARAK! It's"
+	cont "worth a lot!"
+	done
 
 TangeloJungle_MapEvents:
 	db 0, 0 ; filler
@@ -342,3 +480,8 @@ TangeloJungle_MapEvents:
 	object_event 16,  6, SPRITE_TANGELO_JUNGLE_SCENE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CROSS_BATTLE_TANGELO_JUNGLE
 	object_event 17,  6, SPRITE_TANGELO_JUNGLE_SCENE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CROSS_BATTLE_TANGELO_JUNGLE
 	object_event 39, 39, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CROSS_BATTLE_TANGELO_JUNGLE
+	object_event  0,  8, SPRITE_SIGHTSEER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, BugCatcherFMicaScript, -1
+	object_event  9, 36, SPRITE_SIGHTSEER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 3, BugCatcherFHannahScript, -1
+	object_event 14, 35, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, BugCatcherOwenScript, -1
+	object_event  0, 29, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, BugCatcherEricScript, -1
+	object_event 11, 18, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, BugCatcherRyanScript, -1

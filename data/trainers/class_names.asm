@@ -72,6 +72,7 @@ TrainerClassNames::
 	li "ELITE FOUR"
 	li "<PKMN> WATCHER"
 	li "<PKMN> TRAINER"
+	li "BUG CATCHER"
 	li "MYSTICALMAN"
 	li "<PKMN> TRAINER"
 

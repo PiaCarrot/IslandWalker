@@ -117,6 +117,6 @@ TangeloJungleRoute51Gate2F_MapEvents:
 	bg_event  7,  3, BGEVENT_READ, TangeloJungleRoute51Gate2FBinoculars
 
 	def_object_events
-	object_event  3,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloJungleRoute51Gate2FBugCatcherScript, -1
+	object_event  3,  8, SPRITE_BUG_MANIAC, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloJungleRoute51Gate2FBugCatcherScript, -1
 	object_event  6,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TangeloJungleRoute51Gate2FYoungsterScript, -1
 	object_event  9,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TangeloJungleRoute51Gate2FLassScript, -1

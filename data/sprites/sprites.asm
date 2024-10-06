@@ -108,7 +108,7 @@ OverworldSprites:
 	overworld_sprite SuicuneSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite EnteiSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite RaikouSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
-	overworld_sprite StandingYoungsterSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite WalkingSwimmerGirlSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LoreleiSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite GSBallSpriteGFX, 4, STILL_SPRITE, PAL_OW_YELLOW
 	overworld_sprite AideSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
@@ -124,6 +124,7 @@ OverworldSprites:
 	overworld_sprite BugManiacSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite ShellSpriteGFX, 4, STILL_SPRITE, PAL_OW_TEAL
 	overworld_sprite MayorSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite TangeloJungleSceneSpriteGFX,     12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite BerryTypeA1SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeA2SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeB1SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
@@ -190,6 +191,5 @@ OverworldSprites:
 	overworld_sprite BerryTypeZeta2SpriteGFX,    4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeEta1SpriteGFX,     4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeEta2SpriteGFX,     4, STILL_SPRITE, PAL_OW_TREE
-	overworld_sprite TangeloJungleSceneSpriteGFX,     12, WALKING_SPRITE, PAL_OW_GREEN
 
 	assert_table_length NUM_OVERWORLD_SPRITES

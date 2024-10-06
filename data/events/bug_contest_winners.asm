@@ -26,55 +26,55 @@ BugContestant_BugCatcherDon:
 	dw CATERPIE,   226
 
 BugContestant_BugCatcherEd:
-	db BUG_CATCHER, ED
+	db BUG_CATCHER, ASHTON
 	dw BUTTERFREE, 286
 	dw BUTTERFREE, 251
 	dw CATERPIE,   237
 
 BugContestant_CooltrainerMNick:
-	db COOLTRAINERM, NICK
+	db BUG_CATCHER, ASHTON
 	dw SCYTHER,    357
 	dw BUTTERFREE, 349
 	dw PINSIR,     368
 
 BugContestant_PokefanMWilliam:
-	db POKEFANM, WILLIAM
+	db BUG_CATCHER, ASHTON
 	dw PINSIR,     332
 	dw BUTTERFREE, 324
 	dw VENONAT,    321
 
 BugContestant_BugCatcherBenny:
-	db BUG_CATCHER, BUG_CATCHER_BENNY
+	db BUG_CATCHER, ASHTON
 	dw BUTTERFREE, 318
 	dw WEEDLE,     295
 	dw CATERPIE,   285
 
 BugContestant_CamperBarry:
-	db CAMPER, BARRY
+	db BUG_CATCHER, ASHTON
 	dw PINSIR,     366
 	dw VENONAT,    329
 	dw KAKUNA,     314
 
 BugContestant_PicnickerCindy:
-	db PICNICKER, CINDY
+	db BUG_CATCHER, ASHTON
 	dw BUTTERFREE, 341
 	dw METAPOD,    301
 	dw CATERPIE,   264
 
 BugContestant_BugCatcherJosh:
-	db BUG_CATCHER, JOSH
+	db BUG_CATCHER, ASHTON
 	dw SCYTHER,    326
 	dw BUTTERFREE, 292
 	dw METAPOD,    282
 
 BugContestant_YoungsterSamuel:
-	db YOUNGSTER, SAMUEL
+	db BUG_CATCHER, ASHTON
 	dw WEEDLE,     270
 	dw PINSIR,     282
 	dw CATERPIE,   251
 
 BugContestant_SchoolboyKipp:
-	db SCHOOLBOY, KIPP
+	db BUG_CATCHER, ASHTON
 	dw VENONAT,    267
 	dw PARAS,      254
 	dw KAKUNA,     259

@@ -91,71 +91,7 @@
 	const EVENT_GAVE_KURT_PNK_APRICORN
 	const EVENT_GAVE_KURT_BRN_APRICORN
 ; Phone events
-	const EVENT_JACK_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_HUEY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_GOT_PROTEIN_FROM_HUEY
-	const EVENT_GOT_HP_UP_FROM_JOEY
-	const EVENT_GOT_CARBOS_FROM_VANCE
-	const EVENT_GOT_IRON_FROM_PARRY
-	const EVENT_GOT_CALCIUM_FROM_ERIN
-	const EVENT_KENJI_ON_BREAK
-	const EVENT_GAVEN_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_BETH_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_REENA_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_JOEY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_WADE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_RALPH_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_LIZ_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_TODD_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_GINA_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_IRWIN_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_ALAN_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const_skip ; unused
-	const_skip ; unused
-	const EVENT_DANA_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_CHAD_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_TULLY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_BRENT_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused
-	const EVENT_TIFFANY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_WILTON_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_KENJI_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_PARRY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
 	const EVENT_BUENA_OFFERED_HER_PHONE_NUMBER_NO_BLUE_CARD
-	const_skip ; unused
 ; Ruins of Alph puzzles
 
 ; Decorations
@@ -265,11 +201,17 @@
 ; GruntF
 
 ; Lass
+	const EVENT_BEAT_LASS_MARIBELLE
+	const EVENT_BEAT_LASS_MILLIE
+	const EVENT_BEAT_LASS_SANDY
 
 ; Hiker
 
 ; Bug Catcher
 	const EVENT_BEAT_BUG_CATCHER_ASHTON
+	const EVENT_BEAT_BUG_CATCHER_OWEN
+	const EVENT_BEAT_BUG_CATCHER_ERIC
+	const EVENT_BEAT_BUG_CATCHER_RYAN
 ; Officer
 
 ; CooltrainerM
@@ -293,7 +235,13 @@
 ; Youngster
 	const EVENT_BEAT_YOUNGSTER_DONNY
 	const EVENT_BEAT_YOUNGSTER_JAVI
+	const EVENT_BEAT_YOUNGSTER_ALEX
+	const EVENT_BEAT_YOUNGSTER_JEBADIAH
 ; Teacher
+
+; Bug Catcher F
+	const EVENT_BEAT_BUG_CATCHER_F_MICA
+	const EVENT_BEAT_BUG_CATCHER_F_HANNAH
 
 ; Elite Four and Champion
 

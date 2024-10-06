@@ -105,7 +105,6 @@ KurtOutsideSpriteGFX::         INCBIN "gfx/sprites/kurt_outside.2bpp"
 SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp"
 EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
 RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
-StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
 
 SECTION "Sprites 3", ROMX
 LoreleiSpriteGFX::   INCBIN "gfx/sprites/lorelei.2bpp"
@@ -124,6 +123,7 @@ BugManiacSpriteGFX::   	   INCBIN "gfx/sprites/bug_maniac.2bpp"
 ShellSpriteGFX::   	   INCBIN "gfx/sprites/shell.2bpp"
 MayorSpriteGFX::   	   INCBIN "gfx/sprites/mayor.2bpp"
 TangeloJungleSceneSpriteGFX::   	   INCBIN "gfx/sprites/tangelojunglescene.2bpp"
+WalkingSwimmerGirlSpriteGFX::   INCBIN "gfx/sprites/walking_swimmer_girl.2bpp"
 
 SECTION "Sprites Berry Trees", ROMX
 BerryTypeA1SpriteGFX::           INCBIN "gfx/sprites/berries/type_a_1.2bpp"
