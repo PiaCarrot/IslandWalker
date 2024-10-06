@@ -30,8 +30,9 @@ TangeloJungleRoute52GateJennyNiteScript:
 	
 TangeloJungleRoute52GateJennyNiteText:
 	text "I'm so tired…"
+
 	para "I just want a hot"
-	cont "bath in the MIKAN"
+	line "bath in the MIKAN"
 	cont "HOT SPRINGS…"
 	
 	para "…With a bottle of"
