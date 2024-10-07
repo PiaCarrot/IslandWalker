@@ -42,7 +42,7 @@ TrainerEncounterMusic::
 	db MUSIC_ORANGE_ENCOUNTER   ; bug_catcher
 	db MUSIC_ORANGE_ENCOUNTER       ; fisher
 	db MUSIC_ORANGE_ENCOUNTER       ; swimmerm
-	db MUSIC_BEAUTY_ENCOUNTER      ; swimmerf
+	db MUSIC_ORANGE_ENCOUNTER      ; swimmerf
 	db MUSIC_ORANGE_ENCOUNTER       ; sailor
 	db MUSIC_ORANGE_ENCOUNTER  ; super_nerd
 	db MUSIC_RIVAL_ENCOUNTER       ; rival2

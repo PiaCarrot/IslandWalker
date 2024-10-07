@@ -147,7 +147,9 @@
 
 ; Trainer flags
 ; Swimmer F
-
+	const EVENT_BEAT_SWIMMER_F_DAHLIA
+	const EVENT_BEAT_SWIMMER_F_MAYA
+	const EVENT_BEAT_SWIMMER_F_ZOEY
 ; Bird Keeper
 
 ; Boarder
@@ -231,7 +233,8 @@
 ; Skier
 
 ; SwimmerM
-
+	const EVENT_BEAT_SWIMMER_M_CHAD
+	const EVENT_BEAT_SWIMMER_M_LUKE
 ; Youngster
 	const EVENT_BEAT_YOUNGSTER_DONNY
 	const EVENT_BEAT_YOUNGSTER_JAVI

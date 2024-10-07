@@ -1067,7 +1067,7 @@ LassGroup:
 	next_list_item ; LASS (3)
 	db "SANDY@", TRAINERTYPE_NORMAL
 	db 5
-	dw SNUBBULL
+	dw SUNKERN ; Do not replace
 	db -1 ; end
 
 	end_list_items
@@ -2239,346 +2239,40 @@ FisherGroup:
 
 SwimmerMGroup:
 	next_list_item ; SWIMMERM (1)
-	db "HAROLD@", TRAINERTYPE_NORMAL
-	db 32
+	db "CHAD@", TRAINERTYPE_NORMAL
+	db 6
 	dw REMORAID
-	db 30
-	dw SEADRA
+	db 5
+	dw TENTACOOL
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (2)
-	db "SIMON@", TRAINERTYPE_NORMAL
-	db 20
-	dw TENTACOOL
-	db 20
-	dw TENTACOOL
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (3)
-	db "RANDALL@", TRAINERTYPE_NORMAL
-	db 18
-	dw SHELLDER
-	db 20
-	dw WARTORTLE
-	db 18
-	dw SHELLDER
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (4)
-	db "CHARLIE@", TRAINERTYPE_NORMAL
-	db 21
-	dw SHELLDER
-	db 19
-	dw TENTACOOL
-	db 19
-	dw TENTACRUEL
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (5)
-	db "GEORGE@", TRAINERTYPE_NORMAL
-	db 16
-	dw TENTACOOL
-	db 17
-	dw TENTACOOL
-	db 16
-	dw TENTACOOL
-	db 19
-	dw STARYU
-	db 17
-	dw TENTACOOL
-	db 19
-	dw REMORAID
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (6)
-	db "BERKE@", TRAINERTYPE_NORMAL
-	db 23
-	dw QWILFISH
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (7)
-	db "KIRK@", TRAINERTYPE_NORMAL
-	db 20
-	dw GYARADOS
-	db 20
-	dw GYARADOS
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (8)
-	db "MATHEW@", TRAINERTYPE_NORMAL
-	db 23
-	dw KRABBY
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (9)
-	db "HAL@", TRAINERTYPE_NORMAL
-	db 24
-	dw SEEL
-	db 25
-	dw DEWGONG
-	db 24
-	dw SEEL
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (10)
-	db "PATON@", TRAINERTYPE_NORMAL
-	db 26
-	dw PILOSWINE
-	db 26
-	dw PILOSWINE
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (11)
-	db "DARYL@", TRAINERTYPE_NORMAL
-	db 24
-	dw SHELLDER
-	db 25
-	dw CLOYSTER
-	db 24
-	dw SHELLDER
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (12)
-	db "WALTER@", TRAINERTYPE_NORMAL
-	db 15
-	dw HORSEA
-	db 15
-	dw HORSEA
-	db 20
-	dw SEADRA
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (13)
-	db "TONY@", TRAINERTYPE_NORMAL
-	db 13
-	dw STARYU
-	db 18
-	dw STARMIE
-	db 16
-	dw HORSEA
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (14)
-	db "JEROME@", TRAINERTYPE_NORMAL
-	db 26
-	dw SEADRA
-	db 28
-	dw TENTACOOL
-	db 30
-	dw TENTACRUEL
-	db 28
+	db "LUKE@", TRAINERTYPE_NORMAL
+	db 6
 	dw GOLDEEN
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (15)
-	db "TUCKER@", TRAINERTYPE_NORMAL
-	db 30
-	dw SHELLDER
-	db 34
-	dw CLOYSTER
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (16)
-	db "RICK@", TRAINERTYPE_NORMAL
-	db 13
-	dw STARYU
-	db 18
-	dw STARMIE
-	db 16
-	dw HORSEA
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (17)
-	db "CAMERON@", TRAINERTYPE_NORMAL
-	db 34
-	dw MARILL
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (18)
-	db "SETH@", TRAINERTYPE_NORMAL
-	db 29
-	dw QUAGSIRE
-	db 29
-	dw OCTILLERY
-	db 32
-	dw QUAGSIRE
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (19)
-	db "JAMES@", TRAINERTYPE_NORMAL
-	db 13
-	dw STARYU
-	db 18
-	dw STARMIE
-	db 16
-	dw HORSEA
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (20)
-	db "LEWIS@", TRAINERTYPE_NORMAL
-	db 13
-	dw STARYU
-	db 18
-	dw STARMIE
-	db 16
-	dw HORSEA
-	db -1 ; end
-
-	next_list_item ; SWIMMERM (21)
-	db "PARKER@", TRAINERTYPE_NORMAL
-	db 32
-	dw HORSEA
-	db 32
-	dw HORSEA
-	db 35
-	dw SEADRA
+	db 5
+	dw TENTACOOL
 	db -1 ; end
 
 	end_list_items
 
 SwimmerFGroup:
 	next_list_item ; SWIMMERF (1)
-	db "ELAINE@", TRAINERTYPE_NORMAL
-	db 21
+	db "DAHLIA@", TRAINERTYPE_NORMAL
+	db 5
 	dw STARYU
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (2)
-	db "PAULA@", TRAINERTYPE_NORMAL
-	db 19
+	next_list_item ; SWIMMERF (1)
+	db "MAYA@", TRAINERTYPE_NORMAL
+	db 5
 	dw STARYU
-	db 19
-	dw SHELLDER
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (3)
-	db "KAYLEE@", TRAINERTYPE_NORMAL
-	db 18
-	dw GOLDEEN
-	db 20
-	dw GOLDEEN
-	db 20
-	dw SEAKING
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (4)
-	db "SUSIE@", TRAINERTYPE_MOVES
-	db 20
-	dw PSYDUCK
-	dw SCRATCH, TAIL_WHIP, DISABLE, CONFUSION
-	db 22
-	dw GOLDEEN
-	dw PECK, TAIL_WHIP, SUPERSONIC, HORN_ATTACK
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (5)
-	db "DENISE@", TRAINERTYPE_NORMAL
-	db 22
-	dw SEEL
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (6)
-	db "KARA@", TRAINERTYPE_NORMAL
-	db 20
+	next_list_item ; SWIMMERF (1)
+	db "ZOEY@", TRAINERTYPE_NORMAL
+	db 5
 	dw STARYU
-	db 20
-	dw STARMIE
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (7)
-	db "WENDY@", TRAINERTYPE_MOVES
-	db 21
-	dw HORSEA
-	dw BUBBLE, SMOKESCREEN, LEER, WATER_GUN
-	db 21
-	dw HORSEA
-	dw DRAGON_RAGE, SMOKESCREEN, LEER, WATER_GUN
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (8)
-	db "LISA@", TRAINERTYPE_NORMAL
-	db 28
-	dw JYNX
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (9)
-	db "JILL@", TRAINERTYPE_NORMAL
-	db 28
-	dw DEWGONG
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (10)
-	db "MARY@", TRAINERTYPE_NORMAL
-	db 20
-	dw SEAKING
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (11)
-	db "KATIE@", TRAINERTYPE_NORMAL
-	db 33
-	dw DEWGONG
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (12)
-	db "DAWN@", TRAINERTYPE_NORMAL
-	db 34
-	dw SEAKING
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (13)
-	db "TARA@", TRAINERTYPE_NORMAL
-	db 20
-	dw SEAKING
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (14)
-	db "NICOLE@", TRAINERTYPE_NORMAL
-	db 29
-	dw MARILL
-	db 29
-	dw MARILL
-	db 32
-	dw LAPRAS
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (15)
-	db "LORI@", TRAINERTYPE_NORMAL
-	db 32
-	dw STARMIE
-	db 32
-	dw STARMIE
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (16)
-	db "JODY@", TRAINERTYPE_NORMAL
-	db 20
-	dw SEAKING
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (17)
-	db "NIKKI@", TRAINERTYPE_NORMAL
-	db 28
-	dw SEEL
-	db 28
-	dw SEEL
-	db 28
-	dw SEEL
-	db 28
-	dw DEWGONG
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (18)
-	db "DIANA@", TRAINERTYPE_NORMAL
-	db 37
-	dw GOLDUCK
-	db -1 ; end
-
-	next_list_item ; SWIMMERF (19)
-	db "BRIANA@", TRAINERTYPE_NORMAL
-	db 35
-	dw SEAKING
-	db 35
-	dw SEAKING
 	db -1 ; end
 
 	end_list_items

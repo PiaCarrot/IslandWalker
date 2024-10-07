@@ -235,6 +235,8 @@ MikanIsland_MapEvents:
 	warp_event 27, 25, MIKAN_ISLAND_BERRY_MASTER_HOUSE, 1
 	warp_event 32,  0, MIKAN_THICKET, 1
 	warp_event 33,  0, MIKAN_THICKET, 2
+	warp_event 14,  9, MIKAN_GYM, 1
+	warp_event 15,  9, MIKAN_GYM, 2
 	def_coord_events
 
 	def_bg_events

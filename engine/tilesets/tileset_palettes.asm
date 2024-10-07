@@ -14,6 +14,8 @@ LoadSpecialMapPalette:
 	jr z, .lab
 	cp TILESET_BEACH_HOUSE
 	jr z, .beach_house
+	cp TILESET_MIKAN_GYM
+	jr z, .mikan_gym
 	cp TILESET_GATE
 	jr z, .check2f
 	jr .do_nothing
@@ -35,6 +37,11 @@ LoadSpecialMapPalette:
 	
 .beach_house
 	call LoadBeachHousePalette
+	scf
+	ret
+	
+.mikan_gym
+	call LoadMikanGymPalette
 	scf
 	ret
 	
@@ -116,6 +123,16 @@ LoadBeachHousePalette:
 	
 BeachHousePalette:
 INCLUDE "gfx/tilesets/beach_house.pal"
+
+LoadMikanGymPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, MikanGymPalette
+	ld bc, 8 palettes
+	jmp FarCopyWRAM
+	
+MikanGymPalette:
+INCLUDE "gfx/tilesets/mikan_gym.pal"
 
 Gate2FPalette:
 INCLUDE "gfx/tilesets/gate2f.pal"

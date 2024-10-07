@@ -166,8 +166,13 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	trainerclass FISHER ; 25
 
 	trainerclass SWIMMERM ; 26
+	const CHAD
+	const LUKE
 
 	trainerclass SWIMMERF ; 27
+	const DAHLIA
+	const MAYA
+	const ZOEY
 
 	trainerclass SAILOR ; 28
 

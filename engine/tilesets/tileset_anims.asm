@@ -65,6 +65,7 @@ TilesetMartAnim::
 TilesetPlayersRoomAnim::
 TilesetPokeComCenterAnim::
 TilesetBeachHouseAnim:
+TilesetMikanGymAnim:
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation

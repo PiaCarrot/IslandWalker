@@ -27,6 +27,25 @@ TilesetPlayersRoomColl::
 INCLUDE "data/tilesets/players_room_collision.asm"
 
 
+TilesetMikanGymvTiles2GFX::
+INCBIN "gfx/tilesets/mikan_gym.2bpp.vtiles2.lz"
+
+TilesetMikanGymvTiles5GFX::
+INCBIN "gfx/tilesets/mikan_gym.2bpp.vtiles5.lz"
+
+TilesetMikanGymvTiles4GFX::
+INCBIN "gfx/tilesets/mikan_gym.2bpp.vtiles4.lz"
+
+TilesetMikanGymAttr::
+INCBIN "data/tilesets/mikan_gym_attributes.bin.lz"
+
+TilesetMikanGymMeta::
+INCBIN "data/tilesets/mikan_gym_metatiles.bin.lz"
+
+TilesetMikanGymColl::
+INCLUDE "data/tilesets/mikan_gym_collision.asm"
+
+
 SECTION "Tileset Data 2", ROMX
 
 TilesetPokecentervTiles2GFX::

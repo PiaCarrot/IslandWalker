@@ -150,6 +150,7 @@ ENDM
 	map_attributes MikanIslandHouse, MIKAN_ISLAND_HOUSE, $00, 0
 	map_attributes MikanIslandBerryMasterHouse, MIKAN_ISLAND_BERRY_MASTER_HOUSE, $00, 0
 	map_attributes MikanThicket, MIKAN_THICKET, $C8, 0
+	map_attributes MikanGym, MIKAN_GYM, $00, 0
 	map_attributes IvysHouse, IVYS_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0

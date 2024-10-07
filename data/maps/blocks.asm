@@ -118,4 +118,7 @@ Route52_Blocks:
 MikanThicket_Blocks:
 	INCBIN "maps/MikanThicket.ablk"
 
+MikanGym_Blocks:
+	INCBIN "maps/MikanGym.ablk"
+
 ENDSECTION

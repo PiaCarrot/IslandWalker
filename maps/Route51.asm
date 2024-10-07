@@ -59,6 +59,92 @@ Route51YoungsterText:
 	cont "to find stronger"
 	cont "#MON!"
 	done
+	
+YoungsterAlexScript:
+	trainer YOUNGSTER, ALEX, EVENT_BEAT_YOUNGSTER_ALEX, YoungsterAlexSeenText, YoungsterAlexBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext YoungsterAlexAfterText
+	waitbutton
+	closetext
+	end
+	
+YoungsterAlexSeenText:
+	text "You look beatable!"
+	line "Battle me!"
+	done
+
+YoungsterAlexBeatenText:
+	text "Tch. Guess I was"
+	line "wrong…"
+	done
+
+YoungsterAlexAfterText:
+	text "I saw something"
+	line "shine on top of"
+	cont "that hill!"
+	done
+	
+YoungsterJebadiahScript:
+	trainer YOUNGSTER, JEBADIAH, EVENT_BEAT_YOUNGSTER_JEBADIAH, YoungsterJebadiahSeenText, YoungsterJebadiahBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext YoungsterJebadiahAfterText
+	waitbutton
+	closetext
+	end
+	
+YoungsterJebadiahSeenText:
+	text "I've trained all"
+	line "week for this! You"
+	cont "don't stand even a"
+	cont "crumb of a chance,"
+	cont "buddy!"
+	done
+
+YoungsterJebadiahBeatenText:
+	text "Aw, man! I need to"
+	line "train more…"
+	done
+
+YoungsterJebadiahAfterText:
+	text "I guess my train-" 
+	line "ing wasn't enough…"
+	cont "I need to rethink"
+	cont "my strategy!"
+	done
+	
+LassMaribelleScript:
+	trainer LASS, MARIBELLE, EVENT_BEAT_LASS_MARIBELLE, LassMaribelleSeenText, LassMaribelleBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LassMaribelleAfterText
+	waitbutton
+	closetext
+	end
+	
+LassMaribelleSeenText:
+	text "Are you taking on"
+	line "the ORANGE CREW?"
+	cont "Me too!"
+	done
+
+LassMaribelleBeatenText:
+	text "I guess I need to"
+	line "train…"
+	done
+
+LassMaribelleAfterText:
+	text "The ORANGE CREW…" 
+	line "I hear they are"
+	cont "very strong!"
+	done
 
 Route51_MapEvents:
 	db 0, 0 ; filler
@@ -80,3 +166,6 @@ Route51_MapEvents:
 	object_event 28, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_ITEMBALL, 0, Route51TMFocusBlast, EVENT_TM_52_FOCUS_BLAST
 	object_event 16, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route51YoungsterScript, -1
 	object_event 23,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Route51HikerScript, -1
+	object_event 10, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, YoungsterAlexScript, -1
+	object_event 22, 21, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, YoungsterJebadiahScript, -1
+	object_event 14,  5, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_TRAINER, 3, LassMaribelleScript, -1
