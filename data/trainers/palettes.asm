@@ -9,7 +9,7 @@ TrainerPalettes:
 PlayerPalette:
 INCLUDE "gfx/player/chris.pal"
 
-INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
+INCBIN "gfx/trainers/cissy.gbcpal", middle_colors
 INCBIN "gfx/trainers/whitney.gbcpal", middle_colors
 INCBIN "gfx/trainers/bugsy.gbcpal", middle_colors
 INCBIN "gfx/trainers/morty.gbcpal", middle_colors

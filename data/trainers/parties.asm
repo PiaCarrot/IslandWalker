@@ -9,15 +9,21 @@
 
 SECTION "Enemy Trainer Parties 1", ROMX
 
-FalknerGroup:
-	next_list_item ; FALKNER (1)
-	db "FALKNER@", TRAINERTYPE_MOVES
-	db 7
-	dw PIDGEY
-	dw TACKLE, MUD_SLAP, NO_MOVE, NO_MOVE
-	db 9
-	dw PIDGEOTTO
-	dw TACKLE, MUD_SLAP, GUST, NO_MOVE
+CissyGroup:
+	next_list_item ; CISSY (1)
+	db "CISSY@", TRAINERTYPE_ITEM_MOVES
+	db 14
+	dw HORSEA
+	dw RINDO_BERRY
+	dw BUBBLE, SMOKESCREEN, DISABLE, LEER
+	db 15
+	dw CORSOLA ; GALARIAN
+	dw COLBUR_BERRY
+	dw EMBER, LICK, WHIRLPOOL, HARDEN ;replace Ember with Willowisp and Lick with Astonish
+	db 16
+	dw WARTORTLE
+	dw ORAN_BERRY ; FLAME_ORB
+	dw BITE, TACKLE, WATER_GUN, HAZE ;replace Bite with Fling and Tackle with Facade
 	db -1 ; end
 
 	end_list_items
@@ -1508,6 +1514,14 @@ BeautyGroup:
 	dw SENTRET
 	db -1 ; end
 
+	next_list_item ; BEAUTY (2)
+	db "YEVON@", TRAINERTYPE_NORMAL
+	db 6
+	dw SENTRET ; FEEBAS
+	db 6
+	dw SEEL
+	db -1 ; end
+
 	end_list_items
 
 PokemaniacGroup:
@@ -2002,237 +2016,11 @@ BugCatcherGroup:
 
 FisherGroup:
 	next_list_item ; FISHER (1)
-	db "JUSTIN@", TRAINERTYPE_NORMAL
-	db 5
-	dw MAGIKARP
-	db 5
-	dw MAGIKARP
-	db 15
-	dw MAGIKARP
-	db 5
-	dw MAGIKARP
-	db -1 ; end
-
-	next_list_item ; FISHER (2)
-	db "RALPH@", TRAINERTYPE_NORMAL
-	db 10
-	dw GOLDEEN
-	db -1 ; end
-
-	next_list_item ; FISHER (3)
-	db "ARNOLD@", TRAINERTYPE_NORMAL
-	db 34
-	dw TENTACRUEL
-	db -1 ; end
-
-	next_list_item ; FISHER (4)
-	db "KYLE@", TRAINERTYPE_NORMAL
-	db 28
-	dw SEAKING
-	db 31
-	dw POLIWHIRL
-	db 31
-	dw SEAKING
-	db -1 ; end
-
-	next_list_item ; FISHER (5)
-	db "HENRY@", TRAINERTYPE_NORMAL
+	db "PIKE@", TRAINERTYPE_NORMAL
+	db 7
+	dw REMORAID
 	db 8
 	dw POLIWAG
-	db 8
-	dw POLIWAG
-	db -1 ; end
-
-	next_list_item ; FISHER (6)
-	db "MARVIN@", TRAINERTYPE_NORMAL
-	db 10
-	dw MAGIKARP
-	db 10
-	dw GYARADOS
-	db 15
-	dw MAGIKARP
-	db 15
-	dw GYARADOS
-	db -1 ; end
-
-	next_list_item ; FISHER (7)
-	db "TULLY@", TRAINERTYPE_NORMAL
-	db 18
-	dw QWILFISH
-	db -1 ; end
-
-	next_list_item ; FISHER (8)
-	db "ANDRE@", TRAINERTYPE_NORMAL
-	db 27
-	dw GYARADOS
-	db -1 ; end
-
-	next_list_item ; FISHER (9)
-	db "RAYMOND@", TRAINERTYPE_NORMAL
-	db 22
-	dw MAGIKARP
-	db 22
-	dw MAGIKARP
-	db 22
-	dw MAGIKARP
-	db 22
-	dw MAGIKARP
-	db -1 ; end
-
-	next_list_item ; FISHER (10)
-	db "WILTON@", TRAINERTYPE_NORMAL
-	db 23
-	dw GOLDEEN
-	db 23
-	dw GOLDEEN
-	db 25
-	dw SEAKING
-	db -1 ; end
-
-	next_list_item ; FISHER (11)
-	db "EDGAR@", TRAINERTYPE_MOVES
-	db 25
-	dw REMORAID
-	dw LOCK_ON, PSYBEAM, AURORA_BEAM, BUBBLEBEAM
-	db 25
-	dw REMORAID
-	dw LOCK_ON, PSYBEAM, AURORA_BEAM, BUBBLEBEAM
-	db -1 ; end
-
-	next_list_item ; FISHER (12)
-	db "JONAH@", TRAINERTYPE_NORMAL
-	db 25
-	dw SHELLDER
-	db 29
-	dw OCTILLERY
-	db 25
-	dw REMORAID
-	db 29
-	dw CLOYSTER
-	db -1 ; end
-
-	next_list_item ; FISHER (13)
-	db "MARTIN@", TRAINERTYPE_NORMAL
-	db 32
-	dw REMORAID
-	db 32
-	dw REMORAID
-	db -1 ; end
-
-	next_list_item ; FISHER (14)
-	db "STEPHEN@", TRAINERTYPE_NORMAL
-	db 25
-	dw MAGIKARP
-	db 25
-	dw MAGIKARP
-	db 31
-	dw QWILFISH
-	db 31
-	dw TENTACRUEL
-	db -1 ; end
-
-	next_list_item ; FISHER (15)
-	db "BARNEY@", TRAINERTYPE_NORMAL
-	db 30
-	dw GYARADOS
-	db 30
-	dw GYARADOS
-	db 30
-	dw GYARADOS
-	db -1 ; end
-
-	next_list_item ; FISHER (16)
-	db "RALPH@", TRAINERTYPE_NORMAL
-	db 17
-	dw GOLDEEN
-	db -1 ; end
-
-	next_list_item ; FISHER (17)
-	db "RALPH@", TRAINERTYPE_NORMAL
-	db 17
-	dw QWILFISH
-	db 19
-	dw GOLDEEN
-	db -1 ; end
-
-	next_list_item ; FISHER (18)
-	db "TULLY@", TRAINERTYPE_NORMAL
-	db 23
-	dw QWILFISH
-	db -1 ; end
-
-	next_list_item ; FISHER (19)
-	db "TULLY@", TRAINERTYPE_NORMAL
-	db 32
-	dw GOLDEEN
-	db 32
-	dw GOLDEEN
-	db 32
-	dw QWILFISH
-	db -1 ; end
-
-	next_list_item ; FISHER (20)
-	db "WILTON@", TRAINERTYPE_NORMAL
-	db 29
-	dw GOLDEEN
-	db 29
-	dw GOLDEEN
-	db 32
-	dw SEAKING
-	db -1 ; end
-
-	next_list_item ; FISHER (21)
-	db "SCOTT@", TRAINERTYPE_NORMAL
-	db 30
-	dw QWILFISH
-	db 30
-	dw QWILFISH
-	db 34
-	dw SEAKING
-	db -1 ; end
-
-	next_list_item ; FISHER (22)
-	db "WILTON@", TRAINERTYPE_MOVES
-	db 34
-	dw SEAKING
-	dw SUPERSONIC, WATERFALL, FLAIL, FURY_ATTACK
-	db 34
-	dw SEAKING
-	dw SUPERSONIC, WATERFALL, FLAIL, FURY_ATTACK
-	db 38
-	dw REMORAID
-	dw PSYBEAM, AURORA_BEAM, BUBBLEBEAM, HYPER_BEAM
-	db -1 ; end
-
-	next_list_item ; FISHER (23)
-	db "RALPH@", TRAINERTYPE_NORMAL
-	db 30
-	dw QWILFISH
-	db 32
-	dw GOLDEEN
-	db -1 ; end
-
-	next_list_item ; FISHER (24)
-	db "RALPH@", TRAINERTYPE_MOVES
-	db 35
-	dw QWILFISH
-	dw TOXIC, MINIMIZE, SURF, PIN_MISSILE
-	db 39
-	dw SEAKING
-	dw ENDURE, FLAIL, FURY_ATTACK, WATERFALL
-	db -1 ; end
-
-	next_list_item ; FISHER (25)
-	db "TULLY@", TRAINERTYPE_MOVES
-	db 34
-	dw SEAKING
-	dw SUPERSONIC, RAIN_DANCE, WATERFALL, FURY_ATTACK
-	db 34
-	dw SEAKING
-	dw SUPERSONIC, RAIN_DANCE, WATERFALL, FURY_ATTACK
-	db 37
-	dw QWILFISH
-	dw ROLLOUT, SURF, PIN_MISSILE, TAKE_DOWN
 	db -1 ; end
 
 	end_list_items
@@ -2254,6 +2042,20 @@ SwimmerMGroup:
 	dw TENTACOOL
 	db -1 ; end
 
+	next_list_item ; SWIMMERM (3)
+	db "BRAD@", TRAINERTYPE_NORMAL
+	db 8
+	dw SQUIRTLE
+	db 8
+	dw WOOPER
+	db -1 ; end
+
+	next_list_item ; SWIMMERM (4)
+	db "LOGAN@", TRAINERTYPE_NORMAL
+	db 9
+	dw WOOPER
+	db -1 ; end
+
 	end_list_items
 
 SwimmerFGroup:
@@ -2263,16 +2065,30 @@ SwimmerFGroup:
 	dw STARYU
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (1)
+	next_list_item ; SWIMMERF (2)
 	db "MAYA@", TRAINERTYPE_NORMAL
 	db 5
 	dw STARYU
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (1)
+	next_list_item ; SWIMMERF (3)
 	db "ZOEY@", TRAINERTYPE_NORMAL
 	db 5
 	dw STARYU
+	db -1 ; end
+
+	next_list_item ; SWIMMERF (4)
+	db "ALLIE@", TRAINERTYPE_NORMAL
+	db 8
+	dw STARYU
+	db 7
+	dw TOTODILE
+	db -1 ; end
+
+	next_list_item ; SWIMMERF (5)
+	db "MORGAN@", TRAINERTYPE_NORMAL
+	db 9
+	dw CORSOLA
 	db -1 ; end
 
 	end_list_items

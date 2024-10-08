@@ -131,7 +131,7 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
-	ld de, ENGINE_HIVEBADGE
+	ld de, ENGINE_SEARUBYBADGE
 	call CheckBadge
 	jr c, .nohivebadge
 	call CheckMapForSomethingToCut
@@ -278,7 +278,7 @@ FlashFunction:
 	ret
 
 .CheckUseFlash:
-	ld de, ENGINE_ZEPHYRBADGE
+	ld de, ENGINE_CORALEYEBADGE
 	call CheckBadge
 	jr c, .nozephyrbadge
 	push hl
@@ -344,9 +344,12 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	ld de, ENGINE_FOGBADGE
-	call CheckBadge
-	jr c, .nofogbadge
+	ld de, EVENT_HM_03_SURF
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	ret z
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .cannotsurf
@@ -946,7 +949,7 @@ StrengthFunction:
 	ret
 
 .TryStrength:
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_SPIKESHELLBADGE
 	call CheckBadge
 	jr c, .Failed
 	jr .UseStrength
@@ -1036,7 +1039,7 @@ TryStrengthOW:
 	call CheckPartyMoveIndex
 	jr c, .nope
 
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_SPIKESHELLBADGE
 	call CheckEngineFlag
 	jr c, .nope
 
@@ -1768,7 +1771,7 @@ TryCutOW::
 	call CheckPartyMoveIndex
 	jr c, .cant_cut
 
-	ld de, ENGINE_HIVEBADGE
+	ld de, ENGINE_SEARUBYBADGE
 	call CheckEngineFlag
 	jr c, .cant_cut
 

@@ -69,7 +69,6 @@ OverworldSprites:
 	overworld_sprite ScientistSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KimonoGirlSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SageSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite UnusedGuySpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite GentlemanSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BlackBeltSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ReceptionistSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
@@ -125,6 +124,7 @@ OverworldSprites:
 	overworld_sprite ShellSpriteGFX, 4, STILL_SPRITE, PAL_OW_TEAL
 	overworld_sprite MayorSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite TangeloJungleSceneSpriteGFX,     12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite WalkingSwimmerGuySpriteGFX,     12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BerryTypeA1SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeA2SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeB1SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE

@@ -65,13 +65,21 @@ TilesetMartAnim::
 TilesetPlayersRoomAnim::
 TilesetPokeComCenterAnim::
 TilesetBeachHouseAnim:
-TilesetMikanGymAnim:
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
+
+TilesetMikanGymAnim:
+	dw SteamTileFrames, AnimateSteamTile
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+
 TilesetLabAnim:
 	dw vTiles2 tile $22, AnimateWallWaterTile
 	dw vTiles2 tile $23, AnimateLabWaterTile

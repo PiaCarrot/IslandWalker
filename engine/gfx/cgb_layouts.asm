@@ -689,7 +689,7 @@ _CGB_TrainerCard:
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, FALKNER ; KRIS
+	ld a, CISSY ; KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, BUGSY
@@ -740,7 +740,7 @@ _CGB_TrainerCard:
 	ld [hl], $1
 	hlcoord 3, 10, wAttrmap
 	lb bc, 3, 3
-	ld a, $1 ; falkner
+	ld a, $1 ; cissy
 	call FillBoxCGB
 	hlcoord 7, 10, wAttrmap
 	lb bc, 3, 3
@@ -798,7 +798,7 @@ _CGB_TrainerCardKanto:
 	xor a ; CHRIS & MISTY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, FALKNER ; KRIS
+	ld a, CISSY ; KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, BROCK

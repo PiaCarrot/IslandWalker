@@ -2,7 +2,7 @@ TrainerClassIVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	table_width 4, TrainerClassIVs
 	;  atk,def,spd,spc
-	ivs 16, 18, 20, 14, 14, 14 ; FALKNER
+	ivs 16, 16, 16, 16, 16, 16 ; CISSY
 	ivs 16, 16, 16, 16, 16, 16 ; WHITNEY
 	ivs 16, 18, 16, 16, 16, 16 ; BUGSY
 	ivs 16, 18, 16, 16, 16, 16 ; MORTY

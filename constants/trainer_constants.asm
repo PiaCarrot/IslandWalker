@@ -27,8 +27,8 @@ DEF CHRIS EQU __trainer_class__
 	const PHONECONTACT_BUENA
 DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
-	trainerclass FALKNER ; 1
-	const FALKNER1
+	trainerclass CISSY ; 1
+	const CISSY1
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
@@ -113,6 +113,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
 	trainerclass BEAUTY ; 1d
 	const ROSE
+	const YEVON
 
 	trainerclass POKEMANIAC ; 1e
 
@@ -164,15 +165,20 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const RYAN
 
 	trainerclass FISHER ; 25
+	const PIKE
 
 	trainerclass SWIMMERM ; 26
 	const CHAD
 	const LUKE
+	const BRAD
+	const LOGAN
 
 	trainerclass SWIMMERF ; 27
 	const DAHLIA
 	const MAYA
 	const ZOEY
+	const ALLIE
+	const MORGAN
 
 	trainerclass SAILOR ; 28
 

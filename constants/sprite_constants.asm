@@ -64,7 +64,6 @@
 	const SPRITE_SCIENTIST ; 3c
 	const SPRITE_KIMONO_GIRL ; 3d
 	const SPRITE_SAGE ; 3e
-	const SPRITE_UNUSED_GUY ; 3f
 	const SPRITE_GENTLEMAN ; 40
 	const SPRITE_BLACK_BELT ; 41
 	const SPRITE_RECEPTIONIST ; 42
@@ -120,6 +119,7 @@
 	const SPRITE_SHELL ; 74
 	const SPRITE_MAYOR ; 75
 	const SPRITE_TANGELO_JUNGLE_SCENE ; 76
+	const SPRITE_WALKING_SWIMMER_GUY ; 77
 	
 ; sprites_berries not split yet
 	const SPRITE_BERRY_A_1
