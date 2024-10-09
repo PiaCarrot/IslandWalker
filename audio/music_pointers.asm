@@ -140,6 +140,7 @@ Music:
 	dba Music_OrangeWild
 	dba Music_OrangeEncounter
 	dba Music_FourIsland
+	dba Music_RanchTheme
 ; rse
 	dba Music_PokemonMart ;Mmmmm
 

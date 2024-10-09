@@ -194,6 +194,7 @@ SECTION "Songs Other", ROMX
 INCLUDE "audio/music/orange/ridinglapras.asm" ;mmmm
 INCLUDE "audio/music/rse/rspokemart.asm" ;mmmm
 INCLUDE "audio/music/orange/route24gbs.asm"   ;TriteHexagon
+INCLUDE "audio/music/orange/ranchtheme.asm"
 
 
 SECTION "Sound Effects", ROMX

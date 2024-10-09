@@ -80,6 +80,7 @@ ENDM
 	map_const MIKAN_ISLAND_BERRY_MASTER_HOUSE,			    4,  4
 	map_const MIKAN_THICKET,			                    15, 15
 	map_const MIKAN_GYM,			                    10, 10
+	map_const MIKAN_RANCH,			                    10, 10
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

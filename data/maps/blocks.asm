@@ -121,4 +121,7 @@ MikanThicket_Blocks:
 MikanGym_Blocks:
 	INCBIN "maps/MikanGym.ablk"
 
+MikanRanch_Blocks:
+	INCBIN "maps/MikanRanch.ablk"
+
 ENDSECTION
