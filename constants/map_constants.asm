@@ -81,6 +81,8 @@ ENDM
 	map_const MIKAN_THICKET,			                    15, 15
 	map_const MIKAN_GYM,			                    10, 10
 	map_const MIKAN_RANCH,			                    10, 10
+	map_const MIKAN_RANCH_BARN,			                    5, 4
+	map_const MIKAN_RANCH_HOUSE,			                5, 4
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

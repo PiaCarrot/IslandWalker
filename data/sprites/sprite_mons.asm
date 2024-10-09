@@ -8,7 +8,6 @@ SpriteMons:
 	dw SHELLDER
 	dw ODDISH
 	dw GENGAR
-	dw ZUBAT
 	dw MAGIKARP
 	dw SQUIRTLE
 	dw TOGEPI
@@ -26,6 +25,7 @@ SpriteMons:
 	dw EKANS
 	dw PARAS
 	dw TENTACOOL
+	dw MILTANK
 	dw TAUROS
 	dw MACHOP
 	dw VOLTORB

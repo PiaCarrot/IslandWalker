@@ -238,6 +238,13 @@ MikanSwimmerGirlText:
 	line "thing dumb, just"
 	cont "ignore him."
 	done
+	
+MikanIslandRanchSign:
+	jumptext MikanIslandRanchSignText
+	
+MikanIslandRanchSignText:
+	text "← MIKAN RANCH"
+	done
 
 MikanIsland_MapEvents:
 	db 0, 0 ; filler
@@ -260,6 +267,7 @@ MikanIsland_MapEvents:
 	bg_event 29, 26, BGEVENT_READ, MikanIslandBerryMasterSign
 	bg_event  6, 18, BGEVENT_ITEM, MikanIslandHiddenRevive
 	bg_event 35, 12, BGEVENT_ITEM, MikanIslandHiddenSuperPotion
+	bg_event  2, 24, BGEVENT_READ, MikanIslandRanchSign
 
 	def_object_events
 	object_event 24, 26, SPRITE_BERRY_GAMMA_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_TEAL, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree1, -1

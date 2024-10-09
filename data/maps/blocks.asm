@@ -67,6 +67,7 @@ IvysLabB1_Blocks:
 	INCBIN "maps/IvysLabB1.ablk"
 
 IvysHouse_Blocks:
+MikanRanchHouse_Blocks:
 	INCBIN "maps/IvysHouse.ablk"
 
 Route49_Blocks:
@@ -123,5 +124,8 @@ MikanGym_Blocks:
 
 MikanRanch_Blocks:
 	INCBIN "maps/MikanRanch.ablk"
+
+MikanRanchBarn_Blocks:
+	INCBIN "maps/MikanRanchBarn.ablk"
 
 ENDSECTION
