@@ -3,6 +3,17 @@
 	const MIKAN_GYM_MALE_GUARD
 	const MIKAN_GYM_FEMALE_GUARD
 	const MIKAN_GYM_CISSY
+	const MIKAN_GYM_SWIMMER_ALLIE
+	const MIKAN_GYM_SWIMMER_MORGAN
+	const MIKAN_GYM_BEAUTY_YEVON
+	const MIKAN_GYM_SWIMMER_BRAD
+	const MIKAN_GYM_SWIMMER_LOGAN
+	const MIKAN_GYM_FISHER_PIKE
+	const MIKAN_GYM_SLOWPOKE_1
+	const MIKAN_GYM_SLOWPOKE_2
+	const MIKAN_GYM_SLOWPOKE_3
+	const MIKAN_GYM_SLOWPOKE_4
+	const MIKAN_GYM_SENTA
 
 MikanGym_MapScripts:
 	def_scene_scripts
@@ -419,17 +430,82 @@ FisherPikeAfterText:
 	cont "I think he still"
 	cont "has the scar!"
 	done
+	
+MikanSentaScript:
+	faceplayer
+	opentext
+	checkevent EVENT_CISSY_DEFEATED
+	iftrue .SentaLeavesGym
+	writetext MikanGymSentaText1
+	waitbutton
+	closetext
+	end
+	
+.SentaLeavesGym:
+	writetext MikanGymSentaText2
+	waitbutton
+	closetext
+	readvar VAR_FACING
+	ifequal LEFT, .WalkAroundYou
+	applymovement MIKAN_GYM_SENTA, SentaGym_Movement1
+.SentaExit: ;fallthrough
+	disappear MIKAN_GYM_SENTA
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	setevent EVENT_SENTA_LEAVES_GYM
+	end
+	
+.WalkAroundYou:
+	applymovement MIKAN_GYM_SENTA, SentaGym_Movement2
+	sjump .SentaExit
+	
+
+MikanGymSentaText1:
+	text "SENTA: My sister,"
+	line "CISSY, is the"
+	cont "strongest trainer"
+	cont "I know!"
+
+	para "Fat chance you can"
+	line "beat her!"
+	done
+
+MikanGymSentaText2:	
+	text "SENTA: Huh? CISSY"
+	line "lost?"
+
+	para "You must have just"
+	line "cheated!"
+
+	para "Hmph!"
+	
+	para "I won't accept"
+	line "your victory…"
+	cont "Unless you beat"
+	cont "the ORANGE CREW!"
+	
+	para "I'm going home!"
+	done
+	
+SentaGym_Movement1:
+	step RIGHT
+	step DOWN
+	step_end
+	
+SentaGym_Movement2:
+	step DOWN
+	step RIGHT
+	turn_head DOWN
+	step_end
 
 MikanGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  8, 19, MIKAN_ISLAND, 7
 	warp_event  9, 19, MIKAN_ISLAND, 7
 	warp_event 10, 19, MIKAN_ISLAND, 8
-	warp_event 11, 19, MIKAN_ISLAND, 8
-	warp_event  5,  2, MIKAN_GYM, 6
-	warp_event 11, 17, MIKAN_GYM, 6
+	warp_event  5,  2, MIKAN_GYM, 4
+	warp_event 12, 18, MIKAN_GYM, 4
 	def_coord_events
 
 	def_bg_events
@@ -437,7 +513,7 @@ MikanGym_MapEvents:
 	bg_event 13, 18, BGEVENT_READ, MikanGymSign
 
 	def_object_events
-	object_event  9, 16, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MikanGymGuideScript, -1
+	object_event 10, 16, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MikanGymGuideScript, -1
 	object_event  2, 16, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MikanGymMaleGuardScript, EVENT_MIKAN_GYM_PLAYER_IS_MALE
 	object_event 17, 16, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MikanGymFemaleGuardScript, EVENT_MIKAN_GYM_PLAYER_IS_FEMALE
 	object_event  9,  1, SPRITE_CISSY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MikanGymCissyScript, -1
@@ -447,3 +523,8 @@ MikanGym_MapEvents:
 	object_event  3, 12, SPRITE_WALKING_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, SwimmerMBradScript, -1
 	object_event  2,  7, SPRITE_WALKING_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, SwimmerMLoganScript, -1
 	object_event  6,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, FisherPikeScript, -1
+	object_event 12, 10, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  3,  5, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  1,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 18,  9, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  8, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, MikanSentaScript, EVENT_SENTA_LEAVES_GYM

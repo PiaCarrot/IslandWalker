@@ -9,6 +9,7 @@ DEF MIKAN_ISLAND_SPIDER_SILK_PRICE EQU 500
 	const MIKAN_ISLAND_KIMONO_GIRL
 	const MIKAN_ISLAND_BLACKBELT
 	const MIKAN_ISLAND_GRANNY
+	const MIKAN_ISLAND_SWIMMER_F
 
 MikanIsland_MapScripts:
 	def_scene_scripts
@@ -224,6 +225,19 @@ MikanBlackbeltText:
 	cont "weakened if they"
 	cont "get burned!"
 	done
+	
+MikanSwimmerGirlScript:
+	jumptextfaceplayer MikanSwimmerGirlText
+	
+MikanSwimmerGirlText:
+	text "CISSY's brother,"
+	line "SENTA, is pretty"
+	cont "arrogant."
+
+	para "If he says some-"
+	line "thing dumb, just"
+	cont "ignore him."
+	done
 
 MikanIsland_MapEvents:
 	db 0, 0 ; filler
@@ -256,3 +270,4 @@ MikanIsland_MapEvents:
 	object_event 20, 19, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MikanKimonoGirlScript, -1
 	object_event 11, 20, SPRITE_BLACK_BELT, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GRAY, OBJECTTYPE_SCRIPT, 0, MikanBlackbeltScript, -1
 	object_event  7, 24, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MikanGrannyScript, -1
+	object_event 17, 25, SPRITE_WALKING_SWIMMER_GIRL, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MikanSwimmerGirlScript, -1
