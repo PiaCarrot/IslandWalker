@@ -238,6 +238,7 @@ KeyItemNames::
 	li "RAINBOW WING" ; 0115
 	li "SECRET STASH" ; 0116
 	li "SEA MAP"      ; 0117
+	li "BERRY LOG"    ; 0118
 	assert_list_length NUM_KEY_ITEM_POCKET
 
 BallNames::

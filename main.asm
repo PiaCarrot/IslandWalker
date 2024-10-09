@@ -562,6 +562,9 @@ SECTION "Miscellaneous Text", ROMX
 
 INCLUDE "data/items/names.asm"
 INCLUDE "engine/items/print_item_description.asm"
+
+SECTION "Move Names", ROMX
+
 INCLUDE "data/moves/names.asm"
 
 

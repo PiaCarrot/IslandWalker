@@ -249,6 +249,7 @@ ItemDescriptionsKeyItems:
 	dw RainbowWingDesc  ; 0115
 	dw SecretStashDesc  ; 0116
 	dw SeaMapDesc       ; 0117
+	dw BerryLogDesc     ; 0118
 .IndirectEnd:
 
 ItemDescriptionsBalls:
@@ -1576,8 +1577,12 @@ SeventhTanghuluDesc:
 
 LeaderCrestDesc:
 	db   "A shard of an old"
-	next "blade.@"
+	next "blade. Sell.@"
 	
 SpiderSilkDesc:
 	db   "Tough silk that is"
 	next "hard to rip. Sell.@"
+	
+BerryLogDesc:
+	db   "Has information on"
+	next "various BERRIES.@"
