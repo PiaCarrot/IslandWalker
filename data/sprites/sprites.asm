@@ -103,7 +103,6 @@ OverworldSprites:
 	overworld_sprite SilverTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_EMOTE_GRAY
 	overworld_sprite KrisSpriteGFX, 12, WALKING_SPRITE, PAL_OW_ORANGE
 	overworld_sprite KrisBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_ORANGE
-	overworld_sprite KurtOutsideSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SuicuneSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite EnteiSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite RaikouSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
@@ -123,8 +122,9 @@ OverworldSprites:
 	overworld_sprite BugManiacSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite ShellSpriteGFX, 4, STILL_SPRITE, PAL_OW_TEAL
 	overworld_sprite MayorSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite TangeloJungleSceneSpriteGFX,     12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite TangeloJungleSceneSpriteGFX,     12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite WalkingSwimmerGuySpriteGFX,     12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite SentaSpriteGFX,     12, WALKING_SPRITE, PAL_OW_YELLOW
 	overworld_sprite BerryTypeA1SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeA2SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite BerryTypeB1SpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE

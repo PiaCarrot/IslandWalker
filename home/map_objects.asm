@@ -16,7 +16,9 @@ GetSpriteVTile::
 	push de
 	push bc
 	ldh [hUsedSpriteIndex], a
+	push bc
 	farcall GetSprite
+	pop bc
 	ld hl, wSpriteFlags
 	res 5, [hl]
 	ldh a, [hObjectStructIndex]
@@ -27,16 +29,16 @@ GetSpriteVTile::
 .continue
 	add a
 	add a
-	ld b, a
-	add b
-	add b
+	ld d, a
+	add a, d
+	add a, d
 	ldh [hUsedSpriteTile], a
 	push af
 	farcall GetUsedSprite
 	pop af
-	ld b, a
+	ld d, a
 	xor a
-	ld a, b
+	ld a, d
 	ld hl, wSpriteFlags
 	bit 5, [hl]
 	jr nz, .using_vbk1
