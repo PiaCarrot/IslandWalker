@@ -111,6 +111,32 @@ MikanRanchMooMooSellerNoRoomText:
 	
 MikanRanchHiddenRevive:
 	hiddenitem REVIVE, EVENT_MIKAN_RANCH_HIDDEN_REVIVE
+	
+MikanRanchBarnHay:
+	jumptext MikanRanchBarnHayText
+	
+MikanRanchBarnHayText:
+	text "A pile of hay. It"
+	line "must be tasty to"
+	cont "the #MON here."
+	done
+	
+MikanRanchBarnMilkJug:
+	jumptext MikanRanchBarnMilkJugText
+	
+MikanRanchBarnMilkJugText:
+	text "A jug used to hold"
+	line "yummy MOOMOO MILK!"
+	done
+	
+MikanRanchBarnTrough:
+	jumptext MikanRanchBarnTroughText
+	
+MikanRanchBarnTroughText:
+	text "A trough, filled"
+	line "with MIKAN SPRING"
+	cont "WATER."
+	done
 
 MikanRanchBarn_MapEvents:
 	db 0, 0 ; filler
@@ -122,10 +148,21 @@ MikanRanchBarn_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  4, BGEVENT_ITEM, MikanRanchHiddenRevive
+	bg_event  2,  3, BGEVENT_ITEM, MikanRanchHiddenRevive
+	bg_event  0,  4, BGEVENT_READ, MikanRanchBarnHay
+	bg_event  1,  7, BGEVENT_READ, MikanRanchBarnHay
+	bg_event  2,  1, BGEVENT_READ, MikanRanchBarnMilkJug
+	bg_event  2,  6, BGEVENT_READ, MikanRanchBarnMilkJug
+	bg_event  8,  4, BGEVENT_READ, MikanRanchBarnMilkJug
+	bg_event  8,  3, BGEVENT_READ, MikanRanchBarnTrough
+	bg_event  8,  1, BGEVENT_READ, MikanRanchBarnTrough
+	bg_event  5,  1, BGEVENT_READ, MikanRanchBarnTrough
+	bg_event  4,  1, BGEVENT_READ, MikanRanchBarnTrough
+	bg_event  1,  1, BGEVENT_READ, MikanRanchBarnTrough
+	bg_event  0,  1, BGEVENT_READ, MikanRanchBarnTrough
 
 	def_object_events
-	object_event  0,  3, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnMiltankScript, -1
-	object_event  7,  1, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnMiltankScript, -1
-	object_event  3,  1, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnTaurosScript, -1
+	object_event  3,  1, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnMiltankScript, -1
+	object_event  9,  2, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnMiltankScript, -1
+	object_event  0,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnTaurosScript, -1
 	object_event  5,  3, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MikanRanchMooMooSellerScript, -1
