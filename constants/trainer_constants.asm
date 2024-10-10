@@ -166,6 +166,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
 	trainerclass FISHER ; 25
 	const PIKE
+	const BOBBY
 
 	trainerclass SWIMMERM ; 26
 	const CHAD
@@ -266,6 +267,9 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	trainerclass BUG_CATCHER_F ; 49
 	const MICA
 	const HANNAH
+	
+	trainerclass ATHLETE ; 50
+	const TOMMY
 
 	trainerclass MYSTICALMAN ; 
 	const EUSINE

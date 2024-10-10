@@ -259,6 +259,8 @@ MikanIsland_MapEvents:
 	warp_event 14,  9, MIKAN_GYM, 1
 	warp_event 15,  9, MIKAN_GYM, 2
 	warp_event  1,  3, ARIAS_HOUSE, 1
+	warp_event 29, 20, MIKAN_ISLAND_ROUTE_53_GATE_1F, 3
+	warp_event 29, 21, MIKAN_ISLAND_ROUTE_53_GATE_1F, 4
 	def_coord_events
 
 	def_bg_events
@@ -272,7 +274,7 @@ MikanIsland_MapEvents:
 
 	def_object_events
 	object_event 24, 26, SPRITE_BERRY_GAMMA_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_TEAL, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree1, -1
-	object_event 24, 27, SPRITE_BERRY_F_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree2, -1
+	object_event 24, 27, SPRITE_BERRY_I_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree2, -1
 	object_event 24, 28, SPRITE_BERRY_R_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GRAY, OBJECTTYPE_SCRIPT, 0, MikanIslandFruitTree3, -1
 	object_event  8,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MikanIslandWhiteHerb, EVENT_MIKAN_ISLAND_WHITE_HERB
 	object_event 15,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MikanIslandTinyBamboo, EVENT_MIKAN_ISLAND_TINY_BAMBOO

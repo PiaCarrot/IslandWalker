@@ -178,6 +178,7 @@
 
 ; Fisher
 	const EVENT_BEAT_FISHER_PIKE
+	const EVENT_BEAT_FISHER_BOBBY
 ; Twins
 
 ; Schoolboy
@@ -258,6 +259,9 @@
 ; Bug Catcher F
 	const EVENT_BEAT_BUG_CATCHER_F_MICA
 	const EVENT_BEAT_BUG_CATCHER_F_HANNAH
+	
+; Athlete
+	const EVENT_BEAT_ATHLETE_TOMMY
 
 ; Elite Four and Champion
 
@@ -303,6 +307,8 @@
 	const EVENT_MIKAN_ISLAND_WHITE_HERB
 	const EVENT_MIKAN_ISLAND_TINY_BAMBOO
 	const EVENT_MIKAN_RANCH_NUGGET
+	const EVENT_ROUTE_53_GREAT_BALL
+	const EVENT_ROUTE_53_SUPER_POTION
 ; TMs (not necessarily all itemballs)
 	const EVENT_TM_01_FOCUS_PUNCH
 	const EVENT_TM_02_DRAGON_CLAW

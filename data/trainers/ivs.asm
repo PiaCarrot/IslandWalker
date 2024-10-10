@@ -74,6 +74,7 @@ TrainerClassIVs:
 	ivs 26, 26, 26, 26, 26, 26 ; TRACEY1
 	ivs 26, 26, 26, 26, 26, 26 ; CROSS1
 	ivs 16, 18, 16, 16, 16, 16 ; BUG_CATCHER_F
+	ivs 16, 18, 16, 31, 16, 16 ; ATHLETE 31 speed IVs
 	ivs 16, 18, 16, 16, 16, 16 ; MYSTICALMAN
 	ivs 25, 26, 24, 26, 26, 26 ; KRIS
 	assert_table_length NUM_TRAINER_CLASSES

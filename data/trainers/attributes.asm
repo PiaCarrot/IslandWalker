@@ -434,6 +434,12 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_STATUS
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
+; Athlete
+	dw NO_ITEM, NO_ITEM ; items
+	db 10 ; base reward
+	dw AI_BASIC | AI_SETUP | AI_STATUS
+	dw CONTEXT_USE | SWITCH_SOMETIMES
+
 ; Mysticalman
 	dw NO_ITEM, NO_ITEM ; items
 	db 25 ; base reward

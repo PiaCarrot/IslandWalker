@@ -203,7 +203,7 @@
 	tilecoll WATER, WATER, WATER, WATER ; ca
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cb
 	tilecoll WALL, WALL, WALL, WALL ; cc
-	tilecoll WALL, WALL, WALL, WALL ; cd
+	tilecoll WALL, WALL, FLOOR, FLOOR ; cd
 	tilecoll WATER, WATER, WATER, WATER ; ce
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; cf
 	tilecoll WATER, WATER, WATER, WATER ; d0

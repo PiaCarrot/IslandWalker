@@ -75,5 +75,6 @@ BTTrainerClassGenders:
 	db MALE   ; TRACEY1
 	db MALE   ; CROSS1
 	db FEMALE ; BUG_CATCHER_F
+	db MALE   ; ATHLETE
 	db FEMALE ; KRIS
 	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN

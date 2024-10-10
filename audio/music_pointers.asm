@@ -142,6 +142,7 @@ Music:
 	dba Music_FourIsland
 	dba Music_RanchTheme
 	dba Music_CrossEncounter
+	dba Music_SomeRouteOrange
 ; rse
 	dba Music_PokemonMart ;Mmmmm
 

@@ -2023,6 +2023,14 @@ FisherGroup:
 	dw POLIWAG
 	db -1 ; end
 
+	next_list_item ; FISHER (2)
+	db "BOBBY@", TRAINERTYPE_NORMAL
+	db 9
+	dw CHINCHOU
+	db 10
+	dw TENTACOOL
+	db -1 ; end
+
 	end_list_items
 
 SwimmerMGroup:
@@ -4366,6 +4374,15 @@ BugCatcherFGroup:
 	dw LEDYBA
 	db 4
 	dw LEDYBA ; CUTIEFLY
+	db -1 ; end
+
+	end_list_items
+	
+AthleteGroup:
+	next_list_item ; ATHLETE (1)
+	db "TOMMY@", TRAINERTYPE_NORMAL
+	db 11
+	dw DODUO
 	db -1 ; end
 
 	end_list_items

@@ -14,11 +14,13 @@ PlayersHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.ablk"
 
 TangeloJungleRoute51Gate_Blocks:
+MikanIslandRoute53Gate1F_Blocks:
 EWGate_Blocks:
 	INCBIN "maps/EastWestGate.ablk"
 
 TangeloJungleRoute51Gate2F_Blocks:
 TangeloJungleRoute52Gate2F_Blocks:
+MikanIslandRoute53Gate2F_Blocks:
 	INCBIN "maps/EastWestGate2F.ablk"
 	
 TangeloJungleHouse_Blocks:
@@ -118,6 +120,9 @@ BeachHouseTrad_Blocks:
 	
 Route52_Blocks:
 	INCBIN "maps/Route52.ablk"
+	
+Route53_Blocks:
+	INCBIN "maps/Route53.ablk"
 
 MikanThicket_Blocks:
 	INCBIN "maps/MikanThicket.ablk"

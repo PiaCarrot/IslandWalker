@@ -129,6 +129,10 @@ ENDM
 
 	map_attributes MikanRanch, MIKAN_RANCH, $C8, EAST
 	connection east, MikanIsland, MIKAN_ISLAND, -5
+
+	map_attributes Route53, ROUTE_53, $10, 0
+	
+
 	
 	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
 	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
@@ -160,6 +164,8 @@ ENDM
 	map_attributes AriasHouse, ARIAS_HOUSE, $00, 0
 	map_attributes MikanThicketHouse, MIKAN_THICKET_HOUSE, $00, 0
 	map_attributes CissysHouse, CISSYS_HOUSE, $00, 0
+	map_attributes MikanIslandRoute53Gate1F, MIKAN_ISLAND_ROUTE_53_GATE_1F, $00, 0
+	map_attributes MikanIslandRoute53Gate2F, MIKAN_ISLAND_ROUTE_53_GATE_2F, $00, 0
 	map_attributes IvysHouse, IVYS_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0

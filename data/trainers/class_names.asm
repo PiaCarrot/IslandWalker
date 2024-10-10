@@ -73,6 +73,7 @@ TrainerClassNames::
 	li "<PKMN> WATCHER"
 	li "<PKMN> TRAINER"
 	li "BUG CATCHER"
+	li "ATHLETE"
 	li "MYSTICALMAN"
 	li "<PKMN> TRAINER"
 

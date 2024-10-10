@@ -787,3 +787,4 @@ LaprasPartnerFrontpic:    INCBIN "gfx/pokemon/lapras_partner/front.animated.2bpp
 LaprasPartnerBackpic:     INCBIN "gfx/pokemon/lapras_partner/back.2bpp.lz"
 BugCatcherFPic:     INCBIN "gfx/trainers/bug_catcher_f.2bpp.lz"
 CissyPic:     INCBIN "gfx/trainers/cissy.2bpp.lz"
+AthletePic:     INCBIN "gfx/trainers/athlete.2bpp.lz"

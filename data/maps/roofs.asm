@@ -16,6 +16,7 @@ MapGroupRoofs:
 	db ROOF_SHINGLED  ;  1 (Valencia)
 	db ROOF_SHINGLED  ;  2 (Tangelo)
 	db ROOF_AZALEA  ;  3 (Mikan)
+	db ROOF_SHINGLED  ;  3 (MandarinNorthSunburst)
 	assert_table_length NUM_MAP_GROUPS + 1
 
 Roofs:

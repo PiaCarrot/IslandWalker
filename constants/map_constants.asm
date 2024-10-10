@@ -79,13 +79,19 @@ ENDM
 	map_const MIKAN_ISLAND_HOUSE,						    4,  4
 	map_const MIKAN_ISLAND_BERRY_MASTER_HOUSE,			    4,  4
 	map_const MIKAN_THICKET,			                    15, 15
-	map_const MIKAN_GYM,			                    10, 10
-	map_const MIKAN_RANCH,			                    10, 10
+	map_const MIKAN_GYM,			                        10, 10
+	map_const MIKAN_RANCH,			                        10, 10
 	map_const MIKAN_RANCH_BARN,			                    5, 4
 	map_const MIKAN_RANCH_HOUSE,			                5, 4
-	map_const ARIAS_HOUSE,			                4, 4
+	map_const ARIAS_HOUSE,			                        4, 4
 	map_const MIKAN_THICKET_HOUSE,			                4, 4
-	map_const CISSYS_HOUSE,			                4, 4
+	map_const CISSYS_HOUSE,			                        4, 4
+	endgroup
+	
+	newgroup MANDARIN_NORTH
+	map_const MIKAN_ISLAND_ROUTE_53_GATE_1F,				6, 6
+	map_const MIKAN_ISLAND_ROUTE_53_GATE_2F,			    6, 6
+	map_const ROUTE_53,										31, 9
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

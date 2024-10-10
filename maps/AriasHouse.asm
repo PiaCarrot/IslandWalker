@@ -22,8 +22,8 @@ AriasHouseLunaScript:
 ;Loot Table:
 ;Nothing 40%
 ;Stardust 20%
-;Moon Ball 20%
-;Star Piece 10%
+;Star Piece 20%
+;Comet Shard 10%
 ;Moon Stone 10%
 	
 .RollForLunaLoot
@@ -575,13 +575,13 @@ Gossip5Text2:
 	
 LunaSpinHopMovement:
 	turn_head DOWN
-	step_sleep 8
+	step_sleep 4
 	turn_head LEFT
-	step_sleep 8
+	step_sleep 4
 	turn_head UP
-	step_sleep 8
+	step_sleep 4
 	turn_head RIGHT
-	step_sleep 8
+	step_sleep 4
 	turn_head DOWN
 	step_sleep 16
 	step_end
