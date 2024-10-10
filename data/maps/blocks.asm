@@ -24,6 +24,7 @@ TangeloJungleRoute52Gate2F_Blocks:
 TangeloJungleHouse_Blocks:
 MikanIslandBerryMasterHouse_Blocks:
 MikanIslandHouse_Blocks:
+MikanThicketHouse_Blocks:
 	INCBIN "maps/TraditionalBeachHouse.ablk"
 
 SECTION "Map Blocks 2", ROMX
@@ -58,6 +59,7 @@ ValenciaIsland_Blocks:
 	
 IslandHouse_Blocks:
 ValenciaNeighborHouse_Blocks:
+CissysHouse_Blocks:
 	INCBIN "maps/IslandHouse.ablk"
 
 IvysLab_Blocks:

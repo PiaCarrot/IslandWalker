@@ -475,6 +475,7 @@ InitializeEventsScript:
 	setevent EVENT_DECO_BED_1
 	setevent EVENT_DECO_POSTER_1
 	setevent EVENT_MYSTERY_GIFT_DELIVERY_GUY
+	setevent EVENT_SENTA_AT_HOME
 	setevent EVENT_INITIALIZED_EVENTS
 	endcallback
 

@@ -52,7 +52,6 @@ AriasHouseLunaScript:
 .Stardust:
 	verbosegiveitem STARDUST
 	iffalse .NoRoom
-	waitbutton
 	closetext
 	clearevent EVENT_LUNA_HAS_A_ITEM_FOR_YOU
 	turnobject MIKAN_ISLAND_LUNA, DOWN
@@ -61,7 +60,6 @@ AriasHouseLunaScript:
 .CometShard:
 	verbosegiveitem COMET_SHARD
 	iffalse .NoRoom
-	waitbutton
 	closetext
 	clearevent EVENT_LUNA_HAS_A_ITEM_FOR_YOU
 	turnobject MIKAN_ISLAND_LUNA, DOWN
@@ -70,7 +68,6 @@ AriasHouseLunaScript:
 .MoonStone:
 	verbosegiveitem MOON_STONE
 	iffalse .NoRoom
-	waitbutton
 	closetext
 	clearevent EVENT_LUNA_HAS_A_ITEM_FOR_YOU
 	turnobject MIKAN_ISLAND_LUNA, DOWN
@@ -79,7 +76,6 @@ AriasHouseLunaScript:
 .StarPiece:
 	verbosegiveitem STAR_PIECE
 	iffalse .NoRoom
-	waitbutton
 	closetext
 	clearevent EVENT_LUNA_HAS_A_ITEM_FOR_YOU
 	turnobject MIKAN_ISLAND_LUNA, DOWN
@@ -153,7 +149,7 @@ AriasHouseAriaScript:
 	closetext
 	applymovement MIKAN_ISLAND_LUNA, LunaSpinHopMovement
 	cry CLEFAIRY
-	faceplayer
+	turnobject MIKAN_ISLAND_ARIA, DOWN
 	opentext
 	writetext Gossip1Text3
 	waitbutton
@@ -173,7 +169,7 @@ AriasHouseAriaScript:
 	writetext LunaText
 	waitbutton
 	closetext
-	faceplayer
+	turnobject MIKAN_ISLAND_ARIA, DOWN
 	opentext
 	writetext Gossip2Text2
 	waitbutton
@@ -204,7 +200,7 @@ AriasHouseAriaScript:
 	opentext
 	writetext Gossip4Text2
 	waitbutton
-	faceplayer
+	turnobject MIKAN_ISLAND_ARIA, DOWN
 	writetext GossipEndText
 	waitbutton
 	closetext
@@ -220,7 +216,7 @@ AriasHouseAriaScript:
 	opentext
 	writetext Gossip5Text2
 	waitbutton
-	faceplayer
+	turnobject MIKAN_ISLAND_ARIA, DOWN
 	writetext GossipEndText
 	waitbutton
 	closetext
@@ -291,7 +287,7 @@ Gossip1Text2:
 	para "LUNA: Piipii? Pii…"
 
 Gossip1Text3:
-	para "ARIA: Hmm… Wonder"
+	text "ARIA: Hmm… Wonder"
 	line "if she's trying to"
 	cont "tell us something."
 	done
@@ -312,7 +308,7 @@ Gossip2Text:
 	cont "this, this girl in"
 	cont "KANTO claims to"
 	cont "have seen a flying"
-	cont "#MON. Spherical,"
+	cont "#MON. Round,"
 	cont "with a pink body"
 	cont "and flower petals"
 	cont "printed on it!"
@@ -321,7 +317,7 @@ Gossip2Text:
 	cont "Many are skeptics,"
 	cont "but you should"
 	cont "believe everyone"
-	cont "who seems sincere,"
+	cont "who seems sincere"
 	cont "I think!"
 	cont "Like, why would"
 	cont "she lie about"
@@ -428,7 +424,7 @@ Gossip3Text:
 	line "constellation"
 	cont "looks like a"
 	cont "MACHOKE holding"
-	cont "a SEVIPER...Dunno"
+	cont "a SEVIPER… Dunno"
 	cont "how that one got"
 	cont "approved."
 
@@ -561,7 +557,7 @@ Gossip5Text:
 	cont "a decade before."
 	cont "Hmm, probably"
 	cont "around when you"
-	cont "were born...? Maybe"
+	cont "were born…? Maybe"
 	cont "you came to the"
 	cont "ORANGE ISLANDS"
 	cont "from space, my"
@@ -587,7 +583,6 @@ LunaSpinHopMovement:
 	turn_head RIGHT
 	step_sleep 8
 	turn_head DOWN
-	jump_in_place
 	step_sleep 16
 	step_end
 

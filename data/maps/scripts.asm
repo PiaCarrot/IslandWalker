@@ -83,6 +83,8 @@ INCLUDE "maps/MikanRanch.asm"
 INCLUDE "maps/MikanRanchBarn.asm"
 INCLUDE "maps/MikanRanchHouse.asm"
 INCLUDE "maps/AriasHouse.asm"
+INCLUDE "maps/MikanThicketHouse.asm"
+INCLUDE "maps/CissysHouse.asm"
 
 SECTION "Map Scripts 23", ROMX
 

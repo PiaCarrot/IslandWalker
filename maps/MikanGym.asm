@@ -453,6 +453,7 @@ MikanSentaScript:
 	playsound SFX_EXIT_BUILDING
 	waitsfx
 	setevent EVENT_SENTA_LEAVES_GYM
+	clearevent EVENT_SENTA_AT_HOME
 	end
 	
 .WalkAroundYou:

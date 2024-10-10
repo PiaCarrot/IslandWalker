@@ -59,6 +59,8 @@ MikanThicket_MapEvents:
 	def_warp_events
 	warp_event 14, 29, MIKAN_ISLAND, 5
 	warp_event 15, 29, MIKAN_ISLAND, 6
+	warp_event  5,  5, MIKAN_THICKET_HOUSE, 1
+	warp_event 23,  7, CISSYS_HOUSE, 1
 	def_coord_events
 
 	def_bg_events
