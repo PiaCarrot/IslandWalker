@@ -38,10 +38,10 @@ AriasHouseLunaScript:
 	ifequal 3, .Nothing
 	ifequal 4, .Stardust
 	ifequal 5, .Stardust
-	ifequal 6, .MoonBall
-	ifequal 7, .MoonBall
-	ifequal 8, .StarPiece
-	ifequal 9, .MoonStone	
+	ifequal 6, .StarPiece
+	ifequal 7, .StarPiece
+	ifequal 8, .CometShard
+	ifequal 9, .MoonStone
 	
 .Nothing:
 	closetext
@@ -58,8 +58,8 @@ AriasHouseLunaScript:
 	turnobject MIKAN_ISLAND_LUNA, DOWN
 	end
 
-.MoonBall:
-	verbosegiveitem MOON_BALL
+.CometShard:
+	verbosegiveitem COMET_SHARD
 	iffalse .NoRoom
 	waitbutton
 	closetext
