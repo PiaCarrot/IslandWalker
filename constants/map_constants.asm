@@ -83,6 +83,7 @@ ENDM
 	map_const MIKAN_RANCH,			                    10, 10
 	map_const MIKAN_RANCH_BARN,			                    5, 4
 	map_const MIKAN_RANCH_HOUSE,			                5, 4
+	map_const ARIAS_HOUSE,			                4, 4
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

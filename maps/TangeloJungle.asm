@@ -88,7 +88,7 @@ TangeloJungleCrossScript:
 	showemote EMOTE_SHOCK, TANGELO_JUNGLE_CROSS, 15
 	special FadeOutMusic
 	pause 15
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_CROSS_ENCOUNTER
 	opentext
 	checkevent EVENT_GOT_DRATINI_FROM_IVY
 	iftrue .MetCrossOnValencia
@@ -112,7 +112,7 @@ TangeloJungleCrossScript:
 	sjump .CrossBattle
 	
 .AfterVictorious:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_CROSS_ENCOUNTER
 	opentext
 	writetext TangeloJungleCrossText_HeWon
 	waitbutton
@@ -157,7 +157,7 @@ TangeloJungleCrossScript:
 	end
 
 .AfterDefeat:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_CROSS_ENCOUNTER
 	opentext
 	writetext TangeloJungleCrossText_HeLost
 	waitbutton

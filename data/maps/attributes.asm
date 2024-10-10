@@ -157,6 +157,7 @@ ENDM
 	map_attributes MikanGym, MIKAN_GYM, $00, 0
 	map_attributes MikanRanchBarn, MIKAN_RANCH_BARN, $00, 0
 	map_attributes MikanRanchHouse, MIKAN_RANCH_HOUSE, $00, 0
+	map_attributes AriasHouse, ARIAS_HOUSE, $00, 0
 	map_attributes IvysHouse, IVYS_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0

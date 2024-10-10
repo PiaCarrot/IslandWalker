@@ -110,6 +110,7 @@ BeachHouse3_Blocks:
 TangeloIslandSouthHouse_Blocks:
 	INCBIN "maps/BeachHouse3.ablk"
 
+AriasHouse_Blocks:
 BeachHouseTrad_Blocks:
 	INCBIN "maps/BeachHouseTrad.ablk"
 	

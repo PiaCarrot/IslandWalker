@@ -258,6 +258,7 @@ MikanIsland_MapEvents:
 	warp_event 33,  0, MIKAN_THICKET, 2
 	warp_event 14,  9, MIKAN_GYM, 1
 	warp_event 15,  9, MIKAN_GYM, 2
+	warp_event  1,  3, ARIAS_HOUSE, 1
 	def_coord_events
 
 	def_bg_events
