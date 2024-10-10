@@ -16,8 +16,6 @@ LoadSpecialMapPalette:
 	jr z, .beach_house
 	cp TILESET_MIKAN_GYM
 	jr z, .mikan_gym
-	cp TILESET_GATE
-	jr z, .check2f
 	jr .do_nothing
 
 .darkness
@@ -43,17 +41,6 @@ LoadSpecialMapPalette:
 .mikan_gym
 	call LoadMikanGymPalette
 	scf
-	ret
-	
-.check2f
-	ld a, [wMapNumber]
-	cp MAP_TANGELO_JUNGLE_ROUTE_51_GATE_2F
-	jr z, .colorglass
-	jr .do_nothing
-	
-.colorglass
-	ld hl, Gate2FPalette
-	jr z, LoadEightTimeOfDayBGPalettes
 	ret
 
 .do_nothing
@@ -133,6 +120,3 @@ LoadMikanGymPalette:
 	
 MikanGymPalette:
 INCLUDE "gfx/tilesets/mikan_gym.pal"
-
-Gate2FPalette:
-INCLUDE "gfx/tilesets/gate2f.pal"

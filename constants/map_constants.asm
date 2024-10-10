@@ -92,6 +92,8 @@ ENDM
 	map_const MIKAN_ISLAND_ROUTE_53_GATE_1F,				6, 6
 	map_const MIKAN_ISLAND_ROUTE_53_GATE_2F,			    6, 6
 	map_const ROUTE_53,										31, 9
+	map_const ROUTE_54,										11, 17
+	map_const MANDARIN_NORTH,								18, 17
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

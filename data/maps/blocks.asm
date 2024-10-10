@@ -123,6 +123,12 @@ Route52_Blocks:
 	
 Route53_Blocks:
 	INCBIN "maps/Route53.ablk"
+	
+Route54_Blocks:
+	INCBIN "maps/Route54.ablk"
+	
+MandarinNorth_Blocks:
+	INCBIN "maps/MandarinNorth.ablk"
 
 MikanThicket_Blocks:
 	INCBIN "maps/MikanThicket.ablk"

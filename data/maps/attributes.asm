@@ -130,7 +130,15 @@ ENDM
 	map_attributes MikanRanch, MIKAN_RANCH, $C8, EAST
 	connection east, MikanIsland, MIKAN_ISLAND, -5
 
-	map_attributes Route53, ROUTE_53, $10, 0
+	map_attributes Route53, ROUTE_53, $10, NORTH
+	connection north, Route54, ROUTE_54, 20
+
+	map_attributes Route54, ROUTE_54, $10, NORTH | SOUTH
+	connection north, MandarinNorth, MANDARIN_NORTH, -4
+	connection south, Route53, ROUTE_53, -20
+
+	map_attributes MandarinNorth, MANDARIN_NORTH, $01, SOUTH
+	connection south, Route54, ROUTE_54, 4
 	
 
 	

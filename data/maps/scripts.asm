@@ -70,6 +70,8 @@ SECTION "Map Scripts 21", ROMX
 INCLUDE "maps/MikanIslandRoute53Gate1F.asm"
 INCLUDE "maps/MikanIslandRoute53Gate2F.asm"
 INCLUDE "maps/Route53.asm"
+INCLUDE "maps/Route54.asm"
+INCLUDE "maps/MandarinNorth.asm"
 
 SECTION "Map Scripts 22", ROMX
 
