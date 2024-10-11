@@ -15,3 +15,4 @@ MandarinNorth_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event 14,  8, SPRITE_LOOKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
