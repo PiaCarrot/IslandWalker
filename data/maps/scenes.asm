@@ -15,4 +15,5 @@ MapScenes::
 	scene_var VALENCIA_ISLAND,                             wValenciaIslandSceneID
 	scene_var ROUTE_49,              		               wRoute49SceneID
 	scene_var TANGELO_ISLAND,              	               wTangeloIslandSceneID
+	scene_var MANDARIN_NORTH,              	               wMandarinNorthSceneID
 	db -1 ; end

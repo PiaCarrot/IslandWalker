@@ -15,7 +15,12 @@ MikanIsland_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, MikanIslandFlypointCallback
 	
+MikanIslandFlypointCallback:
+	setflag ENGINE_FLYPOINT_MIKAN
+	endcallback
+
 MikanIslandFruitTree1:
 	fruittree FRUITTREE_MIKAN_ISLAND_1
 	

@@ -162,6 +162,7 @@ MikanGymCissyScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_CORALEYEBADGE
+	setmapscene MANDARIN_NORTH, SCENE_MANDARIN_NORTH_LOOKER
 .FightDone:
 	checkevent EVENT_TM_61_WILL_O_WISP
 	iftrue .GotWillOWisp

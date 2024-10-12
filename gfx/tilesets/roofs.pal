@@ -18,7 +18,7 @@
 	RGB 10,04,03, 07,04,02 ; nite
 	RGB 16,08,05, 12,06,04 ; eve
 
-; group 3 (mikan)
-	RGB 20,05,05, 17,08,02 ; morn/day
-	RGB 10,04,03, 07,04,02 ; nite
-	RGB 16,08,05, 12,06,04 ; eve
+; group 4 (mandarin north)
+	RGB 11,25,15, 08,22,13 ; morn/day
+	RGB 03,08,06, 05,11,07 ; nite
+	RGB 08,19,12, 06,15,10 ; eve

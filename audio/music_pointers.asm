@@ -143,6 +143,7 @@ Music:
 	dba Music_RanchTheme
 	dba Music_CrossEncounter
 	dba Music_SomeRouteOrange
+	dba Music_CianwoodCity
 ; rse
 	dba Music_PokemonMart ;Mmmmm
 

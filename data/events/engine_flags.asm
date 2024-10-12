@@ -76,6 +76,8 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_HOME
 	engine_flag wVisitedSpawns, SPAWN_VALENCIA
 	engine_flag wVisitedSpawns, SPAWN_TANGELO
+	engine_flag wVisitedSpawns, SPAWN_MIKAN
+	engine_flag wVisitedSpawns, SPAWN_MANDARIN_NORTH
 
 	engine_flag wLuckyNumberShowFlag, LUCKYNUMBERSHOW_GAME_OVER_F
 
