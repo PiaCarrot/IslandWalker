@@ -142,4 +142,7 @@ MikanRanch_Blocks:
 MikanRanchBarn_Blocks:
 	INCBIN "maps/MikanRanchBarn.ablk"
 
+AbandonedHouse_Blocks:
+	INCBIN "maps/AbandonedHouse.ablk"
+
 ENDSECTION

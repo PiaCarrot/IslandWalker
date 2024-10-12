@@ -269,6 +269,7 @@ ItemEffectsKeyItems:
 	dw NoEffect           ; SECRET_STASH
 	dw TownMapEffect      ; SEA_MAP
 	dw NoEffect           ; BERRY_LOG (Effect not Implemented Yet)
+	dw NoEffect           ; EXCEL_SCOPE
 .IndirectEnd:
 
 ItemEffectsBalls:

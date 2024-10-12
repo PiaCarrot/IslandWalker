@@ -72,6 +72,7 @@ INCLUDE "maps/MikanIslandRoute53Gate2F.asm"
 INCLUDE "maps/Route53.asm"
 INCLUDE "maps/Route54.asm"
 INCLUDE "maps/MandarinNorth.asm"
+INCLUDE "maps/AbandonedHouse.asm"
 
 SECTION "Map Scripts 22", ROMX
 

@@ -250,6 +250,7 @@ ItemDescriptionsKeyItems:
 	dw SecretStashDesc  ; 0116
 	dw SeaMapDesc       ; 0117
 	dw BerryLogDesc     ; 0118
+	dw ExcelScopeDesc     ; 0119
 .IndirectEnd:
 
 ItemDescriptionsBalls:
@@ -1586,3 +1587,7 @@ SpiderSilkDesc:
 BerryLogDesc:
 	db   "Has information on"
 	next "various BERRIES.@"
+	
+ExcelScopeDesc:
+	db   "Reveals the unseen"
+	next "when prompted.@"

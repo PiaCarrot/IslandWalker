@@ -474,6 +474,7 @@ TangeloJungle_MapEvents:
 	warp_event 33, 39, TANGELO_JUNGLE_ROUTE_51_GATE, 4
 	warp_event 33,  5, TANGELO_JUNGLE_HOUSE, 1
 	warp_event 19,  5, TANGELO_JUNGLE_ROUTE_52_GATE, 3
+	warp_event 20,  5, TANGELO_JUNGLE_ROUTE_52_GATE, 4
 
 	def_coord_events
 

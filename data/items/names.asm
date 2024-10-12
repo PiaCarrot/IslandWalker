@@ -239,6 +239,7 @@ KeyItemNames::
 	li "SECRET STASH" ; 0116
 	li "SEA MAP"      ; 0117
 	li "BERRY LOG"    ; 0118
+	li "EXCEL SCOPE"  ; 0119
 	assert_list_length NUM_KEY_ITEM_POCKET
 
 BallNames::

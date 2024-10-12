@@ -245,6 +245,7 @@ DEF FIRST_KEY_ITEM EQU const_value
 	const SECRET_STASH ; 0116
 	const SEA_MAP      ; 0117
 	const BERRY_LOG    ; 0118
+	const EXCEL_SCOPE    ; 0119
 DEF NUM_KEY_ITEM_POCKET EQU const_value - FIRST_KEY_ITEM
 assert NUM_KEY_ITEM_POCKET <= $ff
 

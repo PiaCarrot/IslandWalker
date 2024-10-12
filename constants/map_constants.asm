@@ -94,6 +94,7 @@ ENDM
 	map_const ROUTE_53,										31, 9
 	map_const ROUTE_54,										11, 17
 	map_const MANDARIN_NORTH,								18, 17
+	map_const ABANDONED_HOUSE,								4, 4
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

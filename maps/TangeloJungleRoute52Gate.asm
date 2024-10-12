@@ -48,7 +48,7 @@ TangeloJungleRoute52Gate_MapEvents:
 	warp_event  5,  2, ROUTE_52, 1
 	warp_event  6,  2, ROUTE_52, 2
 	warp_event  5, 11, TANGELO_JUNGLE, 4
-	warp_event  6, 11, TANGELO_JUNGLE, 4
+	warp_event  6, 11, TANGELO_JUNGLE, 5
 	warp_event  2,  2, TANGELO_JUNGLE_ROUTE_52_GATE_2F, 1
 
 	def_coord_events
