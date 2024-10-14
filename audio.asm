@@ -198,6 +198,7 @@ INCLUDE "audio/music/rse/rspokemart.asm" ;mmmm
 INCLUDE "audio/music/orange/route24gbs.asm"   ;TriteHexagon
 INCLUDE "audio/music/orange/ranchtheme.asm"
 INCLUDE "audio/music/hgss/cianwoodcity.asm" ;???
+INCLUDE "audio/music/orange/rockethq.asm"
 
 
 SECTION "Sound Effects", ROMX

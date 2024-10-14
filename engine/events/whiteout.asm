@@ -68,6 +68,8 @@ BattleBGMap:
 
 LoseWhiteOutMoney:
 ; Lose money proportional to your badges and highest-level Pokémon.
+	xor a
+	ld [wSpinning], a
 	ld hl, wMoney
 ; Check if we have any money
 	ld a, [hli]

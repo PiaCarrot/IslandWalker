@@ -255,7 +255,7 @@ ENDM
 	dict "<PARA>",    Paragraph
 	dict "<MOM>",     PrintMomsName
 	dict "<PLAYER>",  PrintPlayerName
-	dict "<RIVAL>",   PrintRivalName
+	dict "<CODE>",    PrintRivalName
 	dict "<ROUTE>",   PlaceJPRoute
 	dict "<WATASHI>", PlaceWatashi
 	dict "<KOKO_WA>", PlaceKokoWa

@@ -72,11 +72,18 @@ NameRival:
 	ld de, wRivalName
 	farcall _NamingScreen
 	ld hl, wRivalName
-	ld de, .DefaultName
+	ld de, .Indigo
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .Male
+	ld de, .Orange
+.Male:
 	jmp InitName
 
-.DefaultName:
-	db "SILVER@"
+.Indigo:
+	db "145@@@@@@@@"
+.Orange:
+	db "004@@@@@@@@"
 
 NameRater:
 	farjp _NameRater

@@ -116,7 +116,7 @@ MandarinNorthLookerMovement3:
 	step_end
 	
 MandarinNorthLookerText1:
-	text "???: No. 000…"
+	text "???: <№>.000…"
 	line "It appears, I have"
 	cont "been noticed…"
 	
@@ -158,7 +158,7 @@ MandarinNorthLookerText3:
 	
 	para "LOOKER: Tell me,"
 	line "does the letter"
-	cont "'R' tickle your"
+	cont "'<BOLD_R>' tickle your"
 	cont "conscience in the"
 	cont "slightest? That's"
 	cont "right, I'm in"
@@ -192,7 +192,7 @@ MandarinNorthCooltrainerText1:
 	line "and left, out of"
 	cont "the blue."
 	
-	para "My poor HOUNDY…"
+	para "My poor GROWLITHE…"
 	line "Where did you go?"
 	done
 
@@ -200,7 +200,7 @@ MandarinNorthCooltrainerText2:
 	text "The #MON are"
 	line "back!"
 	
-	para "My HOUNDY returned"
+	para "GROWLITHE returned"
 	line "as cheerful as can"
 	cont "be!"
 	done
@@ -424,7 +424,7 @@ MandarinNorthRadioTowerSign:
 	jumptext MandarinNorthRadioTowerSignText
 	
 MandarinNorthRadioTowerSignText:
-	text "RATICATE RADIO"
+	text "<BOLD_R>ATICATE RADIO"
 	para "Coming soon to an"
 	line "island near you!"
 	done
@@ -434,12 +434,72 @@ MandarinNorthHiddenHyperPotion:
 
 MandarinNorthHiddenDuskBall:
 	hiddenitem DUSK_BALL, EVENT_MANDARIN_NORTH_HIDDEN_DUSK_BALL
+	
+MandarinNorthGrowlitheScript:
+	opentext
+	writetext MandarinNorthGrowlitheText
+	cry GROWLITHE
+	waitbutton
+	closetext
+	end
+	
+MandarinNorthGrowlitheText:
+	text "GROWLITHE: Bark!"
+	done
+
+MandarinNorthVoltorbScript:
+	opentext
+	writetext MandarinNorthVoltorbText
+	cry VOLTORB
+	waitbutton
+	closetext
+	end
+	
+MandarinNorthVoltorbText:
+	text "VOLTORB: Bzzt!"
+	done
+
+MandarinNorthPoliwagScript:
+	opentext
+	writetext MandarinNorthPoliwagText
+	cry POLIWAG
+	waitbutton
+	closetext
+	end
+	
+MandarinNorthPoliwagText:
+	text "POLIWAG: Poi!"
+	done
+
+MandarinNorthGrimerScript:
+	opentext
+	writetext MandarinNorthGrimerText
+	cry GRIMER
+	waitbutton
+	closetext
+	end
+	
+MandarinNorthGrimerText:
+	text "GRIMER: Grimey!"
+	done
+	
+MandarinNorthRareCandy:
+	itemball RARE_CANDY
+	
+MandarinNorthTMDarkPulse:
+	end
 
 MandarinNorth_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  5, 21, ABANDONED_HOUSE, 1
+	warp_event 13, 15, MANDARIN_NORTH_HOUSE, 1
+	warp_event 25, 19, MANDARIN_NORTH_CUT_MASTER_HOUSE, 1
+	warp_event 25,  9, MANDARIN_NORTH_NAME_RATER_HOUSE, 1
+	warp_event 15, 21, MANDARIN_NORTH_POKECENTER_1F, 1
+	warp_event 21, 21, MANDARIN_NORTH_POKEMART, 1
+	warp_event 12,  7, RATICATE_RADIO_B1F, 1
 
 	def_coord_events
 	coord_event 15, 10, SCENE_MANDARIN_NORTH_LOOKER, MandarinNorthLookerScript
@@ -457,8 +517,14 @@ MandarinNorth_MapEvents:
 
 	def_object_events
 	object_event 14,  8, SPRITE_LOOKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MANDARIN_NORTH_MET_LOOKER
-	object_event 12, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_SCRIPT, 0, MandarinNorthCooltrainerScript, -1
+	object_event 16, 17, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_SCRIPT, 0, MandarinNorthCooltrainerScript, -1
 	object_event  9, 25, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GRAY, OBJECTTYPE_SCRIPT, 0, MandarinNorthZoruaScript, EVENT_MANDARIN_NORTH_OLD_LADY_HELPED
 	object_event 35,  0, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_ORANGE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MANDARIN_NORTH_CROSS_LEAVING_CUT_MASTER
-	object_event 19, 19, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MandarinNorthTeacherMScript, -1
-	object_event 18, 13, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MandarinNorthPokefanFScript, -1
+	object_event 12, 19, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MandarinNorthTeacherMScript, -1
+	object_event 18, 10, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MandarinNorthPokefanFScript, -1
+	object_event 17, 17, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MandarinNorthGrowlitheScript, EVENT_MANDARIN_NORTH_CLEARED_RADIO_TOWER
+	object_event 27, 23, SPRITE_VOLTORB, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MandarinNorthVoltorbScript, EVENT_MANDARIN_NORTH_CLEARED_RADIO_TOWER
+	object_event 17, 10, SPRITE_POLIWAG, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MandarinNorthPoliwagScript, EVENT_MANDARIN_NORTH_CLEARED_RADIO_TOWER
+	object_event 25, 14, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MandarinNorthGrimerScript, EVENT_MANDARIN_NORTH_CLEARED_RADIO_TOWER
+	object_event 29, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MandarinNorthRareCandy, EVENT_MANDARIN_NORTH_RARE_CANDY
+	object_event  9,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_ITEMBALL, 0, MandarinNorthTMDarkPulse, EVENT_TM_79_DARK_PULSE

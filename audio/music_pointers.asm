@@ -144,6 +144,7 @@ Music:
 	dba Music_CrossEncounter
 	dba Music_SomeRouteOrange
 	dba Music_CianwoodCity
+	dba Music_RocketHQ
 ; rse
 	dba Music_PokemonMart ;Mmmmm
 

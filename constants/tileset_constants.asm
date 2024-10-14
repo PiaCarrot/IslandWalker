@@ -12,6 +12,7 @@
 	const TILESET_MIKAN_ISLAND
 	const TILESET_BEACH_HOUSE
 	const TILESET_MIKAN_GYM
+	const TILESET_ROCKET_HIDEOUT
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

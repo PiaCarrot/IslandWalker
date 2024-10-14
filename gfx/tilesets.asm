@@ -250,5 +250,23 @@ INCBIN "data/tilesets/valencia_mandarin_north_metatiles.bin.lz"
 TilesetValenciaMandarinNorthColl::
 INCLUDE "data/tilesets/valencia_mandarin_north_collision.asm"
 
+TilesetRocketHideoutvTiles2GFX::
+INCBIN "gfx/tilesets/rocket_hideout.2bpp.vtiles2.lz"
+
+TilesetRocketHideoutvTiles5GFX::
+INCBIN "gfx/tilesets/rocket_hideout.2bpp.vtiles5.lz"
+
+TilesetRocketHideoutvTiles4GFX::
+INCBIN "gfx/tilesets/rocket_hideout.2bpp.vtiles4.lz"
+
+TilesetRocketHideoutAttr::
+INCBIN "data/tilesets/rocket_hideout_attributes.bin.lz"
+
+TilesetRocketHideoutMeta::
+INCBIN "data/tilesets/rocket_hideout_metatiles.bin.lz"
+
+TilesetRocketHideoutColl::
+INCLUDE "data/tilesets/rocket_hideout_collision.asm"
+
 TilesetLabAttr::
 INCBIN "data/tilesets/lab_attributes.bin.lz"

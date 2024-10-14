@@ -72,6 +72,14 @@ TilesetBeachHouseAnim:
 	dw NULL,  DoneTileAnimation
 	
 
+TilesetRocketHideoutAnim:
+	dw RocketHideoutMachineTileFrames, AnimateRadarTile
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+
 TilesetMikanGymAnim:
 	dw SteamTileFrames, AnimateSteamTile
 	dw NULL,  DoNothing ; WaitTileAnimation
@@ -1128,6 +1136,39 @@ SteamTileFrames:
 	INCBIN "gfx/tilesets/steam/4.2bpp"
 	INCBIN "gfx/tilesets/steam/5.2bpp"
 	INCBIN "gfx/tilesets/steam/5.2bpp"
+
+AnimateRadarTile:
+; No parameters.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+$0
+	ld b, h
+	ld c, l
+
+; Alternate tile graphic every frame
+	ld a, [wTileAnimationTimer]
+	and %111
+	swap a ; << 4 (16 bytes)
+	ld e, a
+	ld d, 0
+	ld hl, RocketHideoutMachineTileFrames
+	add hl, de
+	ld sp, hl
+
+	ld hl, vTiles2 tile $13
+
+	jmp WriteTile
+
+RocketHideoutMachineTileFrames:
+	INCBIN "gfx/tilesets/rocket_hideout/machine/1.2bpp"
+	INCBIN "gfx/tilesets/rocket_hideout/machine/1.2bpp"
+	INCBIN "gfx/tilesets/rocket_hideout/machine/2.2bpp"
+	INCBIN "gfx/tilesets/rocket_hideout/machine/2.2bpp"
+	INCBIN "gfx/tilesets/rocket_hideout/machine/3.2bpp"
+	INCBIN "gfx/tilesets/rocket_hideout/machine/3.2bpp"
+	INCBIN "gfx/tilesets/rocket_hideout/machine/4.2bpp"
+	INCBIN "gfx/tilesets/rocket_hideout/machine/4.2bpp"
+	INCBIN "gfx/tilesets/rocket_hideout/machine/1.2bpp"
 	
 AnimateSteamTile2:
 ; No parameters.

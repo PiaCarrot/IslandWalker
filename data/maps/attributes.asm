@@ -175,6 +175,13 @@ ENDM
 	map_attributes MikanIslandRoute53Gate1F, MIKAN_ISLAND_ROUTE_53_GATE_1F, $00, 0
 	map_attributes MikanIslandRoute53Gate2F, MIKAN_ISLAND_ROUTE_53_GATE_2F, $00, 0
 	map_attributes AbandonedHouse, ABANDONED_HOUSE, $00, 0
+	map_attributes MandarinNorthHouse, MANDARIN_NORTH_HOUSE, $00, 0
+	map_attributes MandarinNorthCutMasterHouse, MANDARIN_NORTH_CUT_MASTER_HOUSE, $00, 0
+	map_attributes MandarinNorthNameRaterHouse, MANDARIN_NORTH_NAME_RATER_HOUSE, $00, 0
+	map_attributes MandarinNorthPokecenter1F, MANDARIN_NORTH_POKECENTER_1F, $00, 0
+	map_attributes MandarinNorthPokemart, MANDARIN_NORTH_POKEMART, $00, 0
+	map_attributes RaticateRadioB1F, RATICATE_RADIO_B1F, $00, 0
+	map_attributes RaticateRadioB2F, RATICATE_RADIO_B2F, $00, 0
 	map_attributes IvysHouse, IVYS_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0

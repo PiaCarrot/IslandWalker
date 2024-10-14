@@ -26,4 +26,5 @@ Tilesets::
 	tileset TilesetMikanIsland
 	tileset TilesetBeachHouse
 	tileset TilesetMikanGym
+	tileset TilesetRocketHideout
 	assert_table_length NUM_TILESETS + 1

@@ -23,7 +23,7 @@
 	charmap "@",         $50 ; string terminator
 	charmap "<PARA>",    $51
 	charmap "<PLAYER>",  $52 ; wPlayerName
-	charmap "<RIVAL>",   $53 ; wRivalName
+	charmap "<CODE>",    $53 ; wCodeName
 	charmap "#",         $54 ; "POKé"
 	charmap "<CONT>",    $55
 	charmap "<……>",      $56 ; "……"
@@ -126,6 +126,8 @@
 
 	charmap "↑",         $c0
 	charmap "↓",         $c1
+	charmap "<№>",       $c2
+	charmap "<BOLD_R>",  $c3
 
 	charmap "′",         $ce
 	charmap "″",         $cf

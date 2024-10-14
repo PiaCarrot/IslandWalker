@@ -479,6 +479,11 @@ OWPlayerInput:
 ; Can't perform button actions while sliding on ice.
 	farcall CheckStandingOnIce
 	jr c, .NoAction
+	
+; Can't perform button actions while spinning.
+	ld a, [wSpinning]
+	and a
+	jr nz, .NoAction
 
 	call CheckAPressOW
 	jr c, .Action

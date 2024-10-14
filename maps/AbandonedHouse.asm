@@ -29,8 +29,10 @@ MandarinNorthZoruaCallback:
 
 MandarinNorthExcelScopeReaction:
 	text "An odd presence is"
-	line "felt. Use EXCEL"
-	cont "SCOPE?"
+	line "felt."
+	
+	para "Do you want to use"
+	line "the EXCEL SCOPE?"
 	done
 	
 AbandonedHouseZoruaScript:

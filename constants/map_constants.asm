@@ -95,6 +95,13 @@ ENDM
 	map_const ROUTE_54,										11, 17
 	map_const MANDARIN_NORTH,								18, 17
 	map_const ABANDONED_HOUSE,								4, 4
+	map_const MANDARIN_NORTH_HOUSE,					        4,  4
+	map_const MANDARIN_NORTH_CUT_MASTER_HOUSE,					4,  4
+	map_const MANDARIN_NORTH_NAME_RATER_HOUSE,					4,  4
+	map_const MANDARIN_NORTH_POKECENTER_1F,					5,  4
+	map_const MANDARIN_NORTH_POKEMART,					    5,  4
+	map_const RATICATE_RADIO_B1F,					    20,  20
+	map_const RATICATE_RADIO_B2F,					    7,  7
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

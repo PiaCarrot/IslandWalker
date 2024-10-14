@@ -6,6 +6,7 @@ Marts:
 	dw MartTangelo
 	dw MartMikan
 	dw MartXItem
+	dw MartMandarinNorth
 	assert_table_length NUM_MARTS
 
 MartBerrySeller:
@@ -56,6 +57,20 @@ MartXItem:
 	dw X_ACCURACY
 	dw DIRE_HIT
 	dw GUARD_SPEC
+
+MartMandarinNorth:
+	db 11 ; # items
+	dw POKE_BALL
+	dw GREAT_BALL
+	dw DUSK_BALL
+	dw POTION
+	dw SUPER_POTION
+	dw REPEL
+	dw ANTIDOTE
+	dw BURN_HEAL
+	dw PARLYZ_HEAL
+	dw NEST_BALL
+	dw PORTRAITMAIL
 
 DefaultMart:
 	db 2 ; # items

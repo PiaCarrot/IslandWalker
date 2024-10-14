@@ -73,7 +73,7 @@ NamingScreen:
 ; entries correspond to NAME_* constants
 	dw .Pokemon
 	dw .Player
-	dw .Rival
+	dw .Codename
 	dw .Mom
 	dw .Box
 	dw .Tomodachi
@@ -147,17 +147,17 @@ NamingScreen:
 .PlayerNameString:
 	db "YOUR NAME?@"
 
-.Rival:
-	ld de, RivalSpriteGFX
-	ld b, BANK(RivalSpriteGFX)
+.Codename: ; TODO: add the ability to select numbers for a codename.
+	ld de, LookerSpriteGFX
+	ld b, BANK(LookerSpriteGFX)
 	call .LoadSprite
 	hlcoord 5, 2
-	ld de, .RivalNameString
+	ld de, .CodeNameString
 	rst PlaceString
 	jmp .StoreSpriteIconParams
 
-.RivalNameString:
-	db "RIVAL'S NAME?@"
+.CodeNameString:
+	db "CODENAME?@"
 
 .Mom:
 	ld de, MomSpriteGFX
@@ -263,6 +263,18 @@ NamingScreen_IsTargetBox:
 	push af
 	ld a, [wNamingScreenType]
 	sub NAME_BOX - 1
+	ld b, a
+	pop af
+	dec b
+	pop bc
+	ret
+
+NamingScreen_IsTargetCodeName:
+; Return z if [wNamingScreenType] == NAME_CODE.
+	push bc
+	push af
+	ld a, [wNamingScreenType]
+	sub NAME_RIVAL - 1
 	ld b, a
 	pop af
 	dec b
@@ -464,10 +476,22 @@ NamingScreenJoypadLoop:
 	xor 1
 	ld [hl], a
 	jr z, .upper
+	call NamingScreen_IsTargetCodeName
+	jr z, .codelower
 	ld de, NameInputLower
 	jmp NamingScreen_ApplyTextInputMode
 
+.codelower
+	ld de, CodeNameInputLower
+	jmp NamingScreen_ApplyTextInputMode
+
 .upper
+	call NamingScreen_IsTargetCodeName
+	jr z, .codeupper
+	ld de, NameInputUpper
+	jmp NamingScreen_ApplyTextInputMode
+	
+.codeupper
 	ld de, NameInputUpper
 	jmp NamingScreen_ApplyTextInputMode
 

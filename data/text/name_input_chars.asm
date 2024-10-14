@@ -31,3 +31,10 @@ BoxNameInputUpper:
 	db "× ( ) : ; [ ] <PK> <MN>"
 	db "- ? ! ♂ ♀ / . , &"
 	db "lower  DEL   END "
+
+CodeNameInputLower:
+	db "a b c d e f g h i"
+	db "j k l m n o p q r"
+	db "s t u v w x y z 0"
+	db "1 2 3 4 5 6 7 8 9"
+	db "UPPER  DEL   END "

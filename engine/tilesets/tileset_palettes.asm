@@ -16,6 +16,8 @@ LoadSpecialMapPalette:
 	jr z, .beach_house
 	cp TILESET_MIKAN_GYM
 	jr z, .mikan_gym
+	cp TILESET_ROCKET_HIDEOUT
+	jr z, .rocket_hideout
 	jr .do_nothing
 
 .darkness
@@ -34,12 +36,24 @@ LoadSpecialMapPalette:
 	ret
 	
 .beach_house
+	ld a, [wMapGroup]
+	cp GROUP_ABANDONED_HOUSE
+	jr nz, .loadbeachhousepal
+	ld a, [wMapNumber]
+	cp MAP_ABANDONED_HOUSE
+	jr z, .do_nothing
+.loadbeachhousepal
 	call LoadBeachHousePalette
 	scf
 	ret
 	
 .mikan_gym
 	call LoadMikanGymPalette
+	scf
+	ret
+	
+.rocket_hideout
+	call LoadRocketHideoutPalette
 	scf
 	ret
 
@@ -120,3 +134,13 @@ LoadMikanGymPalette:
 	
 MikanGymPalette:
 INCLUDE "gfx/tilesets/mikan_gym.pal"
+
+LoadRocketHideoutPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, RocketHideoutPalette
+	ld bc, 8 palettes
+	jmp FarCopyWRAM
+	
+RocketHideoutPalette:
+INCLUDE "gfx/tilesets/rocket_hideout.pal"

@@ -13,4 +13,5 @@
 	const MART_TANGELO
 	const MART_MIKAN
 	const MART_X_ITEM
+	const MART_MANDARIN_NORTH
 DEF NUM_MARTS EQU const_value

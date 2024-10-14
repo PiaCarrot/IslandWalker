@@ -33,11 +33,13 @@ SECTION "Map Blocks 2", ROMX
 
 TangeloIslandPokemart_Blocks:
 MikanIslandPokemart_Blocks:
+MandarinNorthPokemart_Blocks:
 	INCBIN "maps/PokeMart.ablk"
 
 TangeloIslandPokecenter1F_Blocks:
 Route52Pokecenter1F_Blocks:
 MikanIslandPokecenter1F_Blocks:
+MandarinNorthPokecenter1F_Blocks:
 Pokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.ablk"
 
@@ -104,10 +106,13 @@ TangeloJungle_Blocks:
 BeachHouse1_Blocks:
 TangeloIslandNorthHouse_Blocks:
 TangeloIslandWestHouse_Blocks:
+MandarinNorthHouse_Blocks:
+MandarinNorthCutMasterHouse_Blocks:
 	INCBIN "maps/BeachHouse1.ablk"
 
 BeachHouse2_Blocks:
 TangeloIslandEastHouse_Blocks:
+MandarinNorthNameRaterHouse_Blocks:
 	INCBIN "maps/BeachHouse2.ablk"
 
 BeachHouse3_Blocks:
@@ -144,5 +149,11 @@ MikanRanchBarn_Blocks:
 
 AbandonedHouse_Blocks:
 	INCBIN "maps/AbandonedHouse.ablk"
+
+RaticateRadioB1F_Blocks:
+	INCBIN "maps/RaticateRadioB1F.ablk"
+
+RaticateRadioB2F_Blocks:
+	INCBIN "maps/RaticateRadioB2F.ablk"
 
 ENDSECTION

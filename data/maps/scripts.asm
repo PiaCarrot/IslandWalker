@@ -73,6 +73,13 @@ INCLUDE "maps/Route53.asm"
 INCLUDE "maps/Route54.asm"
 INCLUDE "maps/MandarinNorth.asm"
 INCLUDE "maps/AbandonedHouse.asm"
+INCLUDE "maps/MandarinNorthHouse.asm"
+INCLUDE "maps/MandarinNorthCutMasterHouse.asm"
+INCLUDE "maps/MandarinNorthNameRaterHouse.asm"
+INCLUDE "maps/MandarinNorthPokecenter1F.asm"
+INCLUDE "maps/MandarinNorthPokemart.asm"
+INCLUDE "maps/RaticateRadioB1F.asm"
+INCLUDE "maps/RaticateRadioB2F.asm"
 
 SECTION "Map Scripts 22", ROMX
 

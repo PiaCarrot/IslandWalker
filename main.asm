@@ -53,7 +53,6 @@ SECTION "bank4", ROMX
 INCLUDE "engine/items/pack.asm"
 INCLUDE "engine/overworld/time.asm"
 INCLUDE "engine/items/tmhm2.asm"
-INCLUDE "engine/menus/naming_screen.asm"
 INCLUDE "engine/events/misc_scripts.asm"
 INCLUDE "engine/events/heal_machine_anim.asm"
 INCLUDE "engine/events/whiteout.asm"
@@ -100,6 +99,7 @@ INCLUDE "engine/tilesets/mapgroup_roofs.asm"
 SECTION "Clock Reset", ROMX
 
 INCLUDE "engine/rtc/restart_clock.asm"
+INCLUDE "engine/menus/naming_screen.asm"
 
 
 SECTION "bank9", ROMX
