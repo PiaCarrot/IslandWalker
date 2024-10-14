@@ -153,14 +153,14 @@ CollisionPermissionTable::
 	db WALL_TILE         ; COLL_TOWN_MAP
 	db WALL_TILE         ; COLL_MART_SHELF
 	db WALL_TILE         ; COLL_TV
-	db WALL_TILE         ; COLL_COUNTER_98
+	db WALL_TILE         ; COLL_PC_2F_SIGN
 	db WALL_TILE         ; 99
 	db WALL_TILE         ; 9a
 	db WALL_TILE         ; 9b
-	db WALL_TILE         ; COLL_9C
+	db WALL_TILE         ; COLL_SINISTER_MACHINE
 	db WALL_TILE         ; COLL_WINDOW
 	db WALL_TILE         ; 9e
-	db WALL_TILE         ; COLL_INCENSE_BURNER
+	db WALL_TILE         ; COLL_PERSIAN_STATUE
 	db LAND_TILE         ; COLL_HOP_RIGHT
 	db LAND_TILE         ; COLL_HOP_LEFT
 	db LAND_TILE         ; COLL_HOP_UP

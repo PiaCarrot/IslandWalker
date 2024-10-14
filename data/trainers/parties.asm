@@ -575,44 +575,9 @@ LtSurgeGroup:
 
 ScientistGroup:
 	next_list_item ; SCIENTIST (1)
-	db "ROSS@", TRAINERTYPE_NORMAL
-	db 22
-	dw KOFFING
-	db 22
-	dw KOFFING
-	db -1 ; end
-
-	next_list_item ; SCIENTIST (2)
-	db "MITCH@", TRAINERTYPE_NORMAL
-	db 24
-	dw DITTO
-	db -1 ; end
-
-	next_list_item ; SCIENTIST (3)
-	db "JED@", TRAINERTYPE_NORMAL
-	db 20
-	dw MAGNEMITE
-	db 20
-	dw MAGNEMITE
-	db 20
-	dw MAGNEMITE
-	db -1 ; end
-
-	next_list_item ; SCIENTIST (4)
-	db "MARC@", TRAINERTYPE_NORMAL
-	db 27
-	dw MAGNEMITE
-	db 27
-	dw MAGNEMITE
-	db 27
-	dw MAGNEMITE
-	db -1 ; end
-
-	next_list_item ; SCIENTIST (5)
-	db "RICH@", TRAINERTYPE_MOVES
-	db 30
-	dw PORYGON
-	dw CONVERSION, CONVERSION2, RECOVER, TRI_ATTACK
+	db "NAMBA@", TRAINERTYPE_NORMAL
+	db 15
+	dw ELEKID
 	db -1 ; end
 
 	end_list_items
@@ -1635,257 +1600,43 @@ GruntMGroup:
 	db "GRUNT@", TRAINERTYPE_MOVES
 	db 5
 	dw SPEAROW
-	dw LEER, GROWL, NO_MOVE, NO_MOVE
+	dw LEER, PECK, GROWL, NO_MOVE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (2)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 7
+	db "AGENT@", TRAINERTYPE_NORMAL
+	db 10
 	dw RATTATA
-	db 9
+	db 10
 	dw ZUBAT
-	db 9
+	db 10
 	dw ZUBAT
 	db -1 ; end
 
 	next_list_item ; GRUNTM (3)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24
-	dw RATICATE
-	db 24
-	dw RATICATE
+	db 13
+	dw BEEDRILL
 	db -1 ; end
 
 	next_list_item ; GRUNTM (4)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 23
+	db "AGENT@", TRAINERTYPE_NORMAL
+	db 11
 	dw GRIMER
-	db 23
-	dw GRIMER
-	db 25
-	dw MUK
+	db 11
+	dw KOFFING
 	db -1 ; end
 
 	next_list_item ; GRUNTM (5)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 21
-	dw RATTATA
-	db 21
-	dw RATTATA
-	db 23
-	dw RATTATA
-	db 23
-	dw RATTATA
-	db 23
-	dw RATTATA
+	db 12
+	dw HITMONCHAN
 	db -1 ; end
 
 	next_list_item ; GRUNTM (6)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26
-	dw ZUBAT
-	db 26
-	dw ZUBAT
-	db -1 ; end
-
-	next_list_item ; GRUNTM (7)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 23
-	dw KOFFING
-	db 23
-	dw GRIMER
-	db 23
-	dw ZUBAT
-	db 23
-	dw RATTATA
-	db -1 ; end
-
-	next_list_item ; GRUNTM (8)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26
-	dw WEEZING
-	db -1 ; end
-
-	next_list_item ; GRUNTM (9)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24
-	dw RATICATE
-	db 26
-	dw KOFFING
-	db -1 ; end
-
-	next_list_item ; GRUNTM (10)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 22
-	dw ZUBAT
-	db 24
-	dw GOLBAT
-	db 22
-	dw GRIMER
-	db -1 ; end
-
-	next_list_item ; GRUNTM (11)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 23
-	dw MUK
-	db 23
-	dw KOFFING
-	db 25
-	dw RATTATA
-	db -1 ; end
-
-	next_list_item ; GRUNTM (12)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 33
-	dw HOUNDOUR
-	db -1 ; end
-
-	next_list_item ; GRUNTM (13)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 27
-	dw RATTATA
-	db -1 ; end
-
-	next_list_item ; GRUNTM (14)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24
-	dw RATICATE
-	db 24
-	dw GOLBAT
-	db -1 ; end
-
-	next_list_item ; GRUNTM (15)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26
-	dw GRIMER
-	db 23
-	dw WEEZING
-	db -1 ; end
-
-	next_list_item ; GRUNTM (16)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 16
-	dw RATTATA
-	db 16
-	dw RATTATA
-	db 16
-	dw RATTATA
-	db 16
-	dw RATTATA
-	db -1 ; end
-
-	next_list_item ; GRUNTM (17)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 18
-	dw GOLBAT
-	db -1 ; end
-
-	next_list_item ; GRUNTM (18)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 17
-	dw RATTATA
-	db 17
-	dw ZUBAT
-	db 17
-	dw RATTATA
-	db -1 ; end
-
-	next_list_item ; GRUNTM (19)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 18
-	dw VENONAT
-	db 18
-	dw VENONAT
-	db -1 ; end
-
-	next_list_item ; GRUNTM (20)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 17
-	dw DROWZEE
-	db 19
-	dw ZUBAT
-	db -1 ; end
-
-	next_list_item ; GRUNTM (21)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 16
-	dw ZUBAT
-	db 17
-	dw GRIMER
-	db 18
-	dw RATTATA
-	db -1 ; end
-
-	next_list_item ; GRUNTM (22)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 36
-	dw GOLBAT
-	db -1 ; end
-
-	next_list_item ; GRUNTM (23)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 30
-	dw KOFFING
-	db -1 ; end
-
-	next_list_item ; GRUNTM (24)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 25
-	dw KOFFING
-	db 25
-	dw KOFFING
-	db -1 ; end
-
-	next_list_item ; GRUNTM (25)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24
-	dw KOFFING
-	db 24
-	dw MUK
-	db -1 ; end
-
-	next_list_item ; GRUNTM (26)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 15
-	dw RATTATA
-	db 15
-	dw RATTATA
-	db -1 ; end
-
-	next_list_item ; GRUNTM (27)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 22
-	dw ZUBAT
-	db -1 ; end
-
-	next_list_item ; GRUNTM (28)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 19
-	dw RATICATE
-	db -1 ; end
-
-	next_list_item ; GRUNTM (29)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 9
-	dw RATTATA
-	db 9
-	dw RATTATA
-	db -1 ; end
-
-	next_list_item ; GRUNTM (30)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 25
-	dw GOLBAT
-	db 25
-	dw GOLBAT
-	db 30
-	dw ARBOK
-	db -1 ; end
-
-	next_list_item ; GRUNTM (31)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 30
-	dw GOLBAT
+	db 14
+	dw SPEAROW
 	db -1 ; end
 
 	end_list_items
@@ -4266,47 +4017,27 @@ OfficerGroup:
 
 GruntFGroup:
 	next_list_item ; GRUNTF (1)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 9
+	db "AGENT@", TRAINERTYPE_NORMAL
+	db 12
 	dw ZUBAT
-	db 11
+	db 12
 	dw EKANS
 	db -1 ; end
 
 	next_list_item ; GRUNTF (2)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26
-	dw ARBOK
+	db "AGENT@", TRAINERTYPE_NORMAL
+	db 13
+	dw LICKITUNG
 	db -1 ; end
 
 	next_list_item ; GRUNTF (3)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 25
-	dw GLOOM
-	db 25
-	dw GLOOM
-	db -1 ; end
-
-	next_list_item ; GRUNTF (4)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 21
-	dw EKANS
-	db 23
+	db "AGENT@", TRAINERTYPE_NORMAL
+	db 11
+	dw RATTATA
+	db 11
+	dw KOFFING
+	db 11
 	dw ODDISH
-	db 21
-	dw EKANS
-	db 24
-	dw GLOOM
-	db -1 ; end
-
-	next_list_item ; GRUNTF (5)
-	db "GRUNT@", TRAINERTYPE_MOVES
-	db 18
-	dw EKANS
-	dw WRAP, LEER, POISON_STING, BITE
-	db 18
-	dw GLOOM
-	dw ABSORB, SWEET_SCENT, STUN_SPORE, SLEEP_POWDER
 	db -1 ; end
 
 	end_list_items

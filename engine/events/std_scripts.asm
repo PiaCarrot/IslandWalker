@@ -9,7 +9,7 @@ StdScripts::
 	add_stdscript PictureBookshelfScript
 	add_stdscript MagazineBookshelfScript
 	add_stdscript TeamRocketOathScript
-	add_stdscript IncenseBurnerScript
+	add_stdscript PersianStatueScript
 	add_stdscript MerchandiseShelfScript
 	add_stdscript TownMapScript
 	add_stdscript WindowScript
@@ -59,6 +59,7 @@ StdScripts::
 	add_stdscript MonSkyScript
 	add_stdscript MonDepthsScript
 	add_stdscript Pokecenter2FSignScript
+	add_stdscript SinisterMachineSignScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -192,8 +193,8 @@ MagazineBookshelfScript:
 TeamRocketOathScript:
 	farjumptext TeamRocketOathText
 
-IncenseBurnerScript:
-	farjumptext IncenseBurnerText
+PersianStatueScript:
+	farjumptext PersianStatueText
 
 MerchandiseShelfScript:
 	farjumptext MerchandiseShelfText
@@ -746,6 +747,9 @@ MonDepthsScript:
 	
 Pokecenter2FSignScript:
 	farjumptext Pokecenter2FSignText
+	
+SinisterMachineSignScript:
+	farjumptext SinisterMachineSignText
 
 Movement_ContestResults_WalkAfterWarp:
 	step RIGHT

@@ -14,6 +14,7 @@ TileCollisionStdScripts:
 	stdcoll COLL_MART_SHELF,     MerchandiseShelfScript
 	stdcoll COLL_TV,             TVScript
 	stdcoll COLL_WINDOW,         WindowScript
-	stdcoll COLL_INCENSE_BURNER, IncenseBurnerScript
+	stdcoll COLL_PERSIAN_STATUE, PersianStatueScript
 	stdcoll COLL_PC_2F_SIGN,     Pokecenter2FSignScript
+	stdcoll COLL_SINISTER_MACHINE,     SinisterMachineSignScript
 	db -1 ; end

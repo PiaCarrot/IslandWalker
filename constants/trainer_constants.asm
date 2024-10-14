@@ -85,6 +85,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const LT_SURGE1
 
 	trainerclass SCIENTIST ; 14
+	const NAMBA_1
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
@@ -118,37 +119,14 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	trainerclass POKEMANIAC ; 1e
 
 	trainerclass GRUNTM ; 1f
-	const GRUNTM_1
-	const GRUNTM_2
-	const GRUNTM_3
-	const GRUNTM_4
-	const GRUNTM_5
-	const GRUNTM_6
-	const GRUNTM_7
-	const GRUNTM_8
-	const GRUNTM_9
-	const GRUNTM_10
-	const GRUNTM_11
-	const GRUNTM_12 ; unused
-	const GRUNTM_13
-	const GRUNTM_14
-	const GRUNTM_15
-	const GRUNTM_16
-	const GRUNTM_17
-	const GRUNTM_18
-	const GRUNTM_19
-	const GRUNTM_20
-	const GRUNTM_21
-	const GRUNTM_22 ; unused
-	const GRUNTM_23 ; unused
-	const GRUNTM_24
-	const GRUNTM_25
-	const GRUNTM_26 ; unused
-	const GRUNTM_27 ; unused
-	const GRUNTM_28
-	const GRUNTM_29
-	const GRUNTM_30 ; unused
-	const GRUNTM_31
+;Tangelo
+	const GRUNTM_1 ; SPEAROW PUNK
+;RaticateRadioTower
+	const AGENTM_1
+	const BEEDRILL_GRUNT_1 ; BEEDRILL PUNK
+	const AGENTM_2 
+	const HITMONCHAN_GRUNT_1 ; HITMONCHAN PUNK
+	const SPEAROW_GRUNT_1 ; SPEAROW PUNK
 
 	trainerclass GENTLEMAN ; 20
 
@@ -243,11 +221,9 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	trainerclass OFFICER ; 41
 
 	trainerclass GRUNTF ; 42
-	const GRUNTF_1
-	const GRUNTF_2
-	const GRUNTF_3
-	const GRUNTF_4
-	const GRUNTF_5
+	const AGENTF_1
+	const AGENTF_2
+	const AGENTF_3
 	
 	trainerclass LORELEI1 ; 44
 	const LORELEI_1

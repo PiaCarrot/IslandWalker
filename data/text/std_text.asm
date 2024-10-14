@@ -163,11 +163,9 @@ TeamRocketOathText:
 	cont "TEAM ROCKET!"
 	done
 
-IncenseBurnerText:
-	text "What is this?"
-
-	para "Oh, it's an"
-	line "incense burner!"
+PersianStatueText:
+	text "It's eyes are shut"
+	line "tight…"
 	done
 
 MerchandiseShelfText:
@@ -407,4 +405,9 @@ Pokecenter2FSignText:
 	text "Visit upstairs to"
 	line "trade and battle"
 	cont "with friends!"
+	done
+	
+SinisterMachineSignText:
+	text "Sinister looking"
+	line "machinery…"
 	done
