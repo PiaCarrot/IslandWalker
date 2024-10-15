@@ -4152,7 +4152,7 @@ CassidyGroup:
 	
 ButchCassidyGroup:
 	next_list_item ;BUTCH & CASSIDY (1)
-	db "& BUTCH@", TRAINERTYPE_MOVES
+	db "& CASSIDY@", TRAINERTYPE_MOVES
 	db 21
 	dw DROWZEE
 	dw PSYBEAM, DISABLE, HEADBUTT, HYPNOSIS

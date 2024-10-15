@@ -2800,6 +2800,7 @@ wRoute49SceneID::                   db
 wTangeloIslandSceneID::             db
 wMandarinNorthSceneID::             db
 wRaticateRadioB1FSceneID::             db
+wRaticateRadioB2FSceneID::             db
 
 ; fight counts
 wJackFightCount::    db

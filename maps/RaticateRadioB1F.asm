@@ -727,9 +727,7 @@ RaticateRadioB1FCassidyScript:
 	turnobject PLAYER, DOWN
 	sjump .FinishScript
 	end
-	
 
-	
 .WalkAroundYou:
 	applymovement RATICATE_RADIO_B1F_CASSIDY, RaticateRadioB1FCassidyMovement
 	sjump .ResumeScript

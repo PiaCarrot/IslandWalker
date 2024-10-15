@@ -76,7 +76,7 @@ TrainerClassNames::
 	li "ATHLETE"
 	li "TOP AGENT"
 	li "TOP AGENT"
-	li "& CASSIDY"
+	li "BUTCH"
 	li "DETECTIVE"
 	li "MYSTICALMAN"
 	li "<PKMN> TRAINER"

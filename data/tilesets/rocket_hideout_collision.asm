@@ -101,3 +101,4 @@
 	tilecoll PC, COUNTER, FLOOR, FLOOR ; 64
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 65
 	tilecoll COUNTER, WALL, FLOOR, FLOOR ; 66
+	tilecoll FLOOR, SPIN_UP, FLOOR, SPIN_UP ; 67

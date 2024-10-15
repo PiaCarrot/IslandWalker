@@ -182,6 +182,14 @@ ValenciaIslandAltStarterEventCutTreeCallback:
 	endcallback
 	
 ValenciaYoungsterScript:
+	opentext
+	givepoke LAPRAS_PARTNER, PLAIN_FORM, 20, ORAN_BERRY
+	givepoke PIKACHU, PLAIN_FORM, 21, ORAN_BERRY
+	givepoke FURRET, PLAIN_FORM, 20, ORAN_BERRY
+	giveitem HM_SURF
+	closetext
+	warp MANDARIN_NORTH, 2, 5
+	end
 	jumptextfaceplayer ValenciaYoungsterText
 
 ; PhoneCallScript: ;currently unused

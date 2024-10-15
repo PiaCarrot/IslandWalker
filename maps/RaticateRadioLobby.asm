@@ -82,7 +82,11 @@ RaticateRadioLobbyReceptionistScript:
 	loadtrainer GRUNTF, AGENTF_4
 	startbattle
 	reloadmapafterbattle
+	special FadeOutToBlack
+	special ReloadSpritesNoPalettes
 	disappear RATICATE_RADIO_LOBBY_RECEPTIONIST
+	pause 15
+	special FadeInFromBlack
 	setevent EVENT_BEAT_AGENTF_4
 	end
 	
