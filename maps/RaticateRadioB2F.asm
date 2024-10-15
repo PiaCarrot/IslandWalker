@@ -25,6 +25,7 @@ RaticateRadioB2FHiddenBlackglasses:
 	hiddenitem BLACKGLASSES, EVENT_RATICATE_RADIO_B2F_HIDDEN_BLACKGLASSES
 	
 RaticateRadioB2FDrowzeeScript:
+	turnobject PLAYER, UP
 	opentext
 	writetext RaticateRadioB2FLookerText1
 	waitbutton

@@ -86,6 +86,12 @@ PlayBattleMusic:
 	jr z, .done
 	cp SCIENTIST
 	jr z, .done
+	cp BUTCH
+	jr z, .done
+	cp CASSIDY
+	jr z, .done
+	cp BUTCHCASSIDY
+	jr z, .done
 	
 
 	ld de, MUSIC_TRACEY_BATTLE
