@@ -16,4 +16,5 @@ MapScenes::
 	scene_var ROUTE_49,              		               wRoute49SceneID
 	scene_var TANGELO_ISLAND,              	               wTangeloIslandSceneID
 	scene_var MANDARIN_NORTH,              	               wMandarinNorthSceneID
+	scene_var RATICATE_RADIO_B1F,              	           wRaticateRadioB1FSceneID
 	db -1 ; end

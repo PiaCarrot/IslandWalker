@@ -76,6 +76,10 @@ TrainerGroups:
 	dba Cross1Group
 	dba BugCatcherFGroup
 	dba AthleteGroup
+	dba ButchGroup
+	dba CassidyGroup
+	dba ButchCassidyGroup
+	dba LookerGroup
 	dba MysticalmanGroup
 	dba KrisGroup
 	assert_table_length NUM_TRAINER_CLASSES

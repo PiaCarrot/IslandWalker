@@ -102,6 +102,7 @@ ENDM
 	map_const MANDARIN_NORTH_POKEMART,					    5,  4
 	map_const RATICATE_RADIO_B1F,					    20,  20
 	map_const RATICATE_RADIO_B2F,					    7,  7
+	map_const RATICATE_RADIO_LOBBY,					    6,  6
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

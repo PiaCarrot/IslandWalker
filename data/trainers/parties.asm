@@ -4040,6 +4040,12 @@ GruntFGroup:
 	dw ODDISH
 	db -1 ; end
 
+	next_list_item ; GRUNTF (4) Receptionist
+	db "AGENT@", TRAINERTYPE_NORMAL
+	db 11
+	dw MAGNEMITE
+	db -1 ; end
+
 	end_list_items
 	
 Lorelei1Group:
@@ -4114,6 +4120,52 @@ AthleteGroup:
 	db "TOMMY@", TRAINERTYPE_NORMAL
 	db 11
 	dw DODUO
+	db -1 ; end
+
+	end_list_items
+	
+ButchGroup:
+	next_list_item ; BUTCH (1)
+	db "BUTCH@", TRAINERTYPE_MOVES
+	db 17
+	dw SHELLDER
+	dw PROTECT, SUPERSONIC, TACKLE, BARRIER ; TODO: Replace Tackle with icicle spear
+	db 18
+	dw MANKEY
+	dw KARATE_CHOP, LEER, FOCUS_ENERGY, FURY_SWIPES
+	db -1 ; end
+
+	end_list_items
+	
+CassidyGroup:
+	next_list_item ; CASSIDY (1)
+	db "CASSIDY@", TRAINERTYPE_MOVES
+	db 18
+	dw RATICATE
+	dw HYPER_FANG, TAIL_WHIP, BITE, PURSUIT
+	db 16
+	dw TENTACOOL
+	dw POISON_STING, SUPERSONIC, WATER_GUN, NO_MOVE
+	db -1 ; end
+
+	end_list_items
+	
+ButchCassidyGroup:
+	next_list_item ;BUTCH & CASSIDY (1)
+	db "& BUTCH@", TRAINERTYPE_MOVES
+	db 21
+	dw DROWZEE
+	dw PSYBEAM, DISABLE, HEADBUTT, HYPNOSIS
+	db -1 ; end
+
+	end_list_items
+	
+LookerGroup:
+	next_list_item ;LOOKER (1)
+	db "LOOKER@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
 	db -1 ; end
 
 	end_list_items

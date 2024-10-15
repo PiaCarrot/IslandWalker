@@ -17,7 +17,7 @@ SpriteMons:
 	dw PIKACHU
 	dw CLEFAIRY
 	dw CHARMANDER
-	dw JYNX
+	dw DROWZEE
 	dw STARMIE
 	dw BULBASAUR
 	dw JIGGLYPUFF

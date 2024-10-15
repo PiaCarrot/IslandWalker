@@ -69,7 +69,6 @@ MandarinNorthLookerScript:
 	writetext MandarinNorthLookerText3
 	waitbutton
 	closetext
-	special FadeOutMusic
 	applymovement MANDARIN_NORTH_LOOKER, MandarinNorthLookerMovement3
 	disappear MANDARIN_NORTH_LOOKER
 	playsound SFX_ENTER_DOOR
@@ -499,7 +498,8 @@ MandarinNorth_MapEvents:
 	warp_event 25,  9, MANDARIN_NORTH_NAME_RATER_HOUSE, 1
 	warp_event 15, 21, MANDARIN_NORTH_POKECENTER_1F, 1
 	warp_event 21, 21, MANDARIN_NORTH_POKEMART, 1
-	warp_event 12,  7, RATICATE_RADIO_B1F, 1
+	warp_event 12,  7, RATICATE_RADIO_LOBBY, 1
+	warp_event 13,  7, RATICATE_RADIO_LOBBY, 2
 
 	def_coord_events
 	coord_event 15, 10, SCENE_MANDARIN_NORTH_LOOKER, MandarinNorthLookerScript

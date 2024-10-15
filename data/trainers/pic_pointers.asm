@@ -76,6 +76,10 @@ TrainerPicPointers::
 	dba Cross1Pic
 	dba BugCatcherFPic
 	dba AthletePic
+	dba ButchPic
+	dba CassidyPic
+	dba ButchCassidyPic
+	dba LookerPic
 	dba MysticalmanPic
 	dba KrisTrainerPic
 	assert_table_length NUM_TRAINER_CLASSES

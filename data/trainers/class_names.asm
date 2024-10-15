@@ -74,6 +74,10 @@ TrainerClassNames::
 	li "<PKMN> TRAINER"
 	li "BUG CATCHER"
 	li "ATHLETE"
+	li "TOP AGENT"
+	li "TOP AGENT"
+	li "& CASSIDY"
+	li "DETECTIVE"
 	li "MYSTICALMAN"
 	li "<PKMN> TRAINER"
 

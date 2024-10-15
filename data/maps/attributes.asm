@@ -182,6 +182,7 @@ ENDM
 	map_attributes MandarinNorthPokemart, MANDARIN_NORTH_POKEMART, $00, 0
 	map_attributes RaticateRadioB1F, RATICATE_RADIO_B1F, $00, 0
 	map_attributes RaticateRadioB2F, RATICATE_RADIO_B2F, $00, 0
+	map_attributes RaticateRadioLobby, RATICATE_RADIO_LOBBY, $00, 0
 	map_attributes IvysHouse, IVYS_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0

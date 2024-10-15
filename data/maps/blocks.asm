@@ -156,4 +156,7 @@ RaticateRadioB1F_Blocks:
 RaticateRadioB2F_Blocks:
 	INCBIN "maps/RaticateRadioB2F.ablk"
 
+RaticateRadioLobby_Blocks:
+	INCBIN "maps/RaticateRadioLobby.ablk"
+
 ENDSECTION

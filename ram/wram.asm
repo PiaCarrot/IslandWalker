@@ -2799,6 +2799,7 @@ wValenciaIslandSceneID::            db
 wRoute49SceneID::                   db
 wTangeloIslandSceneID::             db
 wMandarinNorthSceneID::             db
+wRaticateRadioB1FSceneID::             db
 
 ; fight counts
 wJackFightCount::    db

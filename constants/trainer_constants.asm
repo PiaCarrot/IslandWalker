@@ -224,6 +224,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const AGENTF_1
 	const AGENTF_2
 	const AGENTF_3
+	const AGENTF_4 ; RECEPTIONIST
 	
 	trainerclass LORELEI1 ; 44
 	const LORELEI_1
@@ -246,6 +247,18 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	
 	trainerclass ATHLETE ; 50
 	const TOMMY
+	
+	trainerclass BUTCH ; 51
+	const BUTCH_1
+	
+	trainerclass CASSIDY ; 52
+	const CASSIDY_1
+	
+	trainerclass BUTCHCASSIDY ; 52
+	const BUTCH_CASSIDY_1
+	
+	trainerclass LOOKER ; 52
+	const LOOKER_1
 
 	trainerclass MYSTICALMAN ; 
 	const EUSINE

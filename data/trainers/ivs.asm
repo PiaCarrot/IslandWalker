@@ -75,6 +75,10 @@ TrainerClassIVs:
 	ivs 26, 26, 26, 26, 26, 26 ; CROSS1
 	ivs 16, 18, 16, 16, 16, 16 ; BUG_CATCHER_F
 	ivs 16, 18, 16, 31, 16, 16 ; ATHLETE 31 speed IVs
+	ivs 18, 14, 28, 20, 16, 16 ; BUTCH
+	ivs 18, 14, 28, 20, 16, 16 ; CASSIDY
+	ivs 18, 14, 28, 20, 16, 16 ; BUTCHCASSIDY
+	ivs 16, 18, 16, 16, 16, 16 ; LOOKER
 	ivs 16, 18, 16, 16, 16, 16 ; MYSTICALMAN
 	ivs 25, 26, 24, 26, 26, 26 ; KRIS
 	assert_table_length NUM_TRAINER_CLASSES

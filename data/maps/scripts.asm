@@ -80,6 +80,7 @@ INCLUDE "maps/MandarinNorthPokecenter1F.asm"
 INCLUDE "maps/MandarinNorthPokemart.asm"
 INCLUDE "maps/RaticateRadioB1F.asm"
 INCLUDE "maps/RaticateRadioB2F.asm"
+INCLUDE "maps/RaticateRadioLobby.asm"
 
 SECTION "Map Scripts 22", ROMX
 

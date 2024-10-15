@@ -77,6 +77,10 @@ TrainerEncounterMusic::
 	db MUSIC_RIVAL_ENCOUNTER       ; cross1
 	db MUSIC_ORANGE_ENCOUNTER       ; bug_catcher_f
 	db MUSIC_ORANGE_ENCOUNTER       ; athlete
+	db MUSIC_ROCKET_ENCOUNTER      ; butch
+	db MUSIC_ROCKET_ENCOUNTER      ; cassidy
+	db MUSIC_ROCKET_ENCOUNTER      ; butch and cassidy
+	db MUSIC_LOOKER      ; looker
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_HIKER_ENCOUNTER       ; kris
 	assert_table_length NUM_TRAINER_CLASSES + 1
