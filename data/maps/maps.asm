@@ -17,10 +17,11 @@ ENDM
 MapGroupPointers::
 ; pointers to the first map of each map group
 	table_width 2, MapGroupPointers
-	dw MapGroup_Valencia     ; 24
-	dw MapGroup_Tangelo       ;  4
-	dw MapGroup_Mikan       ;  4
+	dw MapGroup_Valencia     ; 1
+	dw MapGroup_Tangelo       ;  2
+	dw MapGroup_Mikan       ;  3
 	dw MapGroup_MandarinNorth  ;  4
+	dw MapGroup_Sunburst  ;  5
 	assert_table_length NUM_MAP_GROUPS
 
 MapGroup_Valencia:
@@ -96,4 +97,11 @@ MapGroup_MandarinNorth:
 	map RaticateRadioB2F, TILESET_ROCKET_HIDEOUT, DUNGEON, LANDMARK_AZALEA_TOWN, MUSIC_ROCKET_HQ, FALSE, PALETTE_DAY, FISHGROUP_SHORE
 	map RaticateRadioLobby, TILESET_ROCKET_HIDEOUT, DUNGEON, LANDMARK_AZALEA_TOWN, MUSIC_CIANWOOD_CITY, FALSE, PALETTE_DAY, FISHGROUP_SHORE
 	assert_table_length NUM_MANDARIN_NORTH_MAPS
+	
+MapGroup_Sunburst:
+	table_width MAP_LENGTH, MapGroup_Sunburst
+	map SunburstIsland, TILESET_VALENCIA_MANDARIN_NORTH, TOWN, LANDMARK_GOLDENROD_CITY, MUSIC_SLATEPORT_CITY, FALSE, PALETTE_AUTO, FISHGROUP_OCEAN
+	map SunburstIslandPokecenter1F, TILESET_POKECENTER, INDOOR, LANDMARK_GOLDENROD_CITY, MUSIC_POKEMON_CENTER, FALSE, PALETTE_DAY, FISHGROUP_SHORE
+	map MateosHouse, TILESET_MATEOS_HOUSE, INDOOR, LANDMARK_GOLDENROD_CITY, MUSIC_SLATEPORT_CITY, FALSE, PALETTE_DAY, FISHGROUP_SHORE
+	assert_table_length NUM_SUNBURST_MAPS
 

@@ -22,3 +22,8 @@
 	RGB 11,25,15, 08,22,13 ; morn/day
 	RGB 03,08,06, 05,11,07 ; nite
 	RGB 08,19,12, 06,15,10 ; eve
+
+; group 4 (sunburst)
+	RGB 11,25,15, 08,22,13 ; morn/day
+	RGB 03,08,06, 05,11,07 ; nite
+	RGB 08,19,12, 06,15,10 ; eve

@@ -27,4 +27,6 @@ Tilesets::
 	tileset TilesetBeachHouse
 	tileset TilesetMikanGym
 	tileset TilesetRocketHideout
+	tileset TilesetMoroIsland
+	tileset TilesetMateosHouse
 	assert_table_length NUM_TILESETS + 1

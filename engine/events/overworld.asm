@@ -131,8 +131,12 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
-	ld de, ENGINE_SEARUBYBADGE
-	call CheckBadge
+	ld de, EVENT_HM_01_CUT
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	ret z
 	jr c, .nohivebadge
 	call CheckMapForSomethingToCut
 	jr c, .nothingtocut
@@ -278,8 +282,12 @@ FlashFunction:
 	ret
 
 .CheckUseFlash:
-	ld de, ENGINE_CORALEYEBADGE
-	call CheckBadge
+	ld de, EVENT_TM_70_FLASH
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	ret z
 	jr c, .nozephyrbadge
 	push hl
 	farcall SpecialAerodactylChamber
@@ -1771,8 +1779,12 @@ TryCutOW::
 	call CheckPartyMoveIndex
 	jr c, .cant_cut
 
-	ld de, ENGINE_SEARUBYBADGE
-	call CheckEngineFlag
+	ld de, EVENT_HM_01_CUT
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	ret z
 	jr c, .cant_cut
 
 	ld a, BANK(AskCutScript)

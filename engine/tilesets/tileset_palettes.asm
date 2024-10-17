@@ -18,6 +18,8 @@ LoadSpecialMapPalette:
 	jr z, .mikan_gym
 	cp TILESET_ROCKET_HIDEOUT
 	jr z, .rocket_hideout
+	cp TILESET_MATEOS_HOUSE
+	jr z, .mateos_house
 	jr .do_nothing
 
 .darkness
@@ -54,6 +56,11 @@ LoadSpecialMapPalette:
 	
 .rocket_hideout
 	call LoadRocketHideoutPalette
+	scf
+	ret
+	
+.mateos_house
+	call LoadMateosHousePalette
 	scf
 	ret
 
@@ -144,3 +151,13 @@ LoadRocketHideoutPalette:
 	
 RocketHideoutPalette:
 INCLUDE "gfx/tilesets/rocket_hideout.pal"
+
+LoadMateosHousePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, MateosHousePalette
+	ld bc, 8 palettes
+	jmp FarCopyWRAM
+	
+MateosHousePalette:
+INCLUDE "gfx/tilesets/mateos_house.pal"

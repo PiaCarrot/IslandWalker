@@ -105,4 +105,10 @@ ENDM
 	map_const RATICATE_RADIO_LOBBY,					    6,  6
 	endgroup
 
+	newgroup SUNBURST
+	map_const SUNBURST_ISLAND,								20, 25
+	map_const SUNBURST_ISLAND_POKECENTER_1F,					5,  4
+	map_const MATEOS_HOUSE,					6,  6
+	endgroup
+
 DEF NUM_MAP_GROUPS EQU const_value ; 1

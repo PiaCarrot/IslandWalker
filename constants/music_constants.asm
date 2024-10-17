@@ -146,6 +146,7 @@
 	const MUSIC_ROCKET_HQ
 ; RSE
 	const MUSIC_POKEMON_MART
+	const MUSIC_SLATEPORT_CITY
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

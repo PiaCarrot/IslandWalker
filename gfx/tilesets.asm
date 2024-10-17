@@ -270,3 +270,41 @@ INCLUDE "data/tilesets/rocket_hideout_collision.asm"
 
 TilesetLabAttr::
 INCBIN "data/tilesets/lab_attributes.bin.lz"
+
+SECTION "Tileset Data 13", ROMX
+
+TilesetMoroIslandvTiles2GFX::
+INCBIN "gfx/tilesets/moro_island.2bpp.vtiles2.lz"
+
+TilesetMoroIslandvTiles5GFX::
+INCBIN "gfx/tilesets/moro_island.2bpp.vtiles5.lz"
+
+TilesetMoroIslandvTiles4GFX::
+INCBIN "gfx/tilesets/moro_island.2bpp.vtiles4.lz"
+
+TilesetMoroIslandAttr::
+INCBIN "data/tilesets/moro_island_attributes.bin.lz"
+
+TilesetMoroIslandMeta::
+INCBIN "data/tilesets/moro_island_metatiles.bin.lz"
+
+TilesetMoroIslandColl::
+INCLUDE "data/tilesets/moro_island_collision.asm"
+
+TilesetMateosHousevTiles2GFX::
+INCBIN "gfx/tilesets/mateos_house.2bpp.vtiles2.lz"
+
+TilesetMateosHousevTiles5GFX::
+INCBIN "gfx/tilesets/mateos_house.2bpp.vtiles5.lz"
+
+TilesetMateosHousevTiles4GFX::
+INCBIN "gfx/tilesets/mateos_house.2bpp.vtiles4.lz"
+
+TilesetMateosHouseAttr::
+INCBIN "data/tilesets/mateos_house_attributes.bin.lz"
+
+TilesetMateosHouseMeta::
+INCBIN "data/tilesets/mateos_house_metatiles.bin.lz"
+
+TilesetMateosHouseColl::
+INCLUDE "data/tilesets/mateos_house_collision.asm"

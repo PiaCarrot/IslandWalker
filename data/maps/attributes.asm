@@ -130,8 +130,9 @@ ENDM
 	map_attributes MikanRanch, MIKAN_RANCH, $C8, EAST
 	connection east, MikanIsland, MIKAN_ISLAND, -5
 
-	map_attributes Route53, ROUTE_53, $10, NORTH
+	map_attributes Route53, ROUTE_53, $10, NORTH | SOUTH
 	connection north, Route54, ROUTE_54, 20
+	connection south, SunburstIsland, SUNBURST_ISLAND, 11
 
 	map_attributes Route54, ROUTE_54, $10, NORTH | SOUTH
 	connection north, MandarinNorth, MANDARIN_NORTH, -4
@@ -139,6 +140,9 @@ ENDM
 
 	map_attributes MandarinNorth, MANDARIN_NORTH, $01, SOUTH
 	connection south, Route54, ROUTE_54, 4
+
+	map_attributes SunburstIsland, SUNBURST_ISLAND, $10, NORTH
+	connection north, Route53, ROUTE_53, -11
 	
 
 	
@@ -179,6 +183,8 @@ ENDM
 	map_attributes MandarinNorthCutMasterHouse, MANDARIN_NORTH_CUT_MASTER_HOUSE, $00, 0
 	map_attributes MandarinNorthNameRaterHouse, MANDARIN_NORTH_NAME_RATER_HOUSE, $00, 0
 	map_attributes MandarinNorthPokecenter1F, MANDARIN_NORTH_POKECENTER_1F, $00, 0
+	map_attributes SunburstIslandPokecenter1F, SUNBURST_ISLAND_POKECENTER_1F, $00, 0
+	map_attributes MateosHouse, MATEOS_HOUSE, $00, 0
 	map_attributes MandarinNorthPokemart, MANDARIN_NORTH_POKEMART, $00, 0
 	map_attributes RaticateRadioB1F, RATICATE_RADIO_B1F, $00, 0
 	map_attributes RaticateRadioB2F, RATICATE_RADIO_B2F, $00, 0

@@ -147,5 +147,6 @@ Music:
 	dba Music_RocketHQ
 ; rse
 	dba Music_PokemonMart ;Mmmmm
+	dba Music_SlateportCity ;Mmmmm
 
 	assert_table_length NUM_MUSIC_SONGS

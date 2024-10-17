@@ -37,7 +37,8 @@ _AnimateTileset::
 
 Tileset0Anim::
 TilesetValenciaMandarinNorthAnim:
-	dw vTiles2 tile $7e, WriteTileToBuffer
+TilesetMoroIslandAnim:
+	dw vTiles2 tile $13, WriteTileToBuffer
 	dw RSEWaterFrames, AnimateRSEWaterTiles
 	dw ShoreWaterFrames, AnimateShoreWaterTiles
 	dw DiveWaterFrames, AnimateDiveWaterTiles
@@ -54,7 +55,7 @@ TilesetValenciaMandarinNorthAnim:
 	dw WhirlpoolFramesBottom, AnimateWhirlpoolTiles
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  DoNothing
-	dw vTiles2 tile $7e, WriteTileFromBuffer
+	dw vTiles2 tile $13, WriteTileFromBuffer
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
@@ -74,6 +75,14 @@ TilesetBeachHouseAnim:
 
 TilesetRocketHideoutAnim:
 	dw RocketHideoutMachineTileFrames, AnimateRadarTile
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+
+TilesetMateosHouseAnim::
+	dw FireTileFrames, AnimateFireTile
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
@@ -1169,6 +1178,39 @@ RocketHideoutMachineTileFrames:
 	INCBIN "gfx/tilesets/rocket_hideout/machine/4.2bpp"
 	INCBIN "gfx/tilesets/rocket_hideout/machine/4.2bpp"
 	INCBIN "gfx/tilesets/rocket_hideout/machine/1.2bpp"
+
+AnimateFireTile:
+; No parameters.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+$0
+	ld b, h
+	ld c, l
+
+; Alternate tile graphic every frame
+	ld a, [wTileAnimationTimer]
+	and %111
+	swap a ; << 4 (16 bytes)
+	ld e, a
+	ld d, 0
+	ld hl, FireTileFrames
+	add hl, de
+	ld sp, hl
+
+	ld hl, vTiles2 tile $44
+
+	jmp WriteTile
+
+FireTileFrames:
+	INCBIN "gfx/tilesets/fire/1.2bpp"
+	INCBIN "gfx/tilesets/fire/1.2bpp"
+	INCBIN "gfx/tilesets/fire/2.2bpp"
+	INCBIN "gfx/tilesets/fire/2.2bpp"
+	INCBIN "gfx/tilesets/fire/3.2bpp"
+	INCBIN "gfx/tilesets/fire/3.2bpp"
+	INCBIN "gfx/tilesets/fire/4.2bpp"
+	INCBIN "gfx/tilesets/fire/4.2bpp"
+	INCBIN "gfx/tilesets/fire/1.2bpp"
 	
 AnimateSteamTile2:
 ; No parameters.

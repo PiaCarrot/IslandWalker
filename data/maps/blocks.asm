@@ -40,6 +40,7 @@ TangeloIslandPokecenter1F_Blocks:
 Route52Pokecenter1F_Blocks:
 MikanIslandPokecenter1F_Blocks:
 MandarinNorthPokecenter1F_Blocks:
+SunburstIslandPokecenter1F_Blocks:
 Pokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.ablk"
 
@@ -158,5 +159,11 @@ RaticateRadioB2F_Blocks:
 
 RaticateRadioLobby_Blocks:
 	INCBIN "maps/RaticateRadioLobby.ablk"
+
+SunburstIsland_Blocks:
+	INCBIN "maps/SunburstIsland.ablk"
+
+MateosHouse_Blocks:
+	INCBIN "maps/MateosHouse.ablk"
 
 ENDSECTION
