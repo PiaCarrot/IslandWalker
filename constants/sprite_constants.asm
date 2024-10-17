@@ -20,7 +20,7 @@
 	const SPRITE_ELM ; 10
 	const SPRITE_WILL ; 11
 	const SPRITE_LOOKER ; 12
-	const SPRITE_WHITNEY ; 13
+	const SPRITE_MATEO ; 13
 	const SPRITE_BUGSY ; 14
 	const SPRITE_MORTY ; 15
 	const SPRITE_CHUCK ; 16

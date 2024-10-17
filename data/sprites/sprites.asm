@@ -25,7 +25,7 @@ OverworldSprites:
 	overworld_sprite ElmSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite WillSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite LookerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite WhitneySpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite MateoSpriteGFX, 12, WALKING_SPRITE, PAL_OW_TEAL
 	overworld_sprite BugsySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite MortySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ChuckSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED

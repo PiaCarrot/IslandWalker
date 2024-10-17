@@ -2,7 +2,7 @@ BTTrainerClassSprites:
 ; entries correspond to trainer classes
 	table_width 1, BTTrainerClassSprites
 	db SPRITE_CISSY
-	db SPRITE_WHITNEY
+	db SPRITE_MATEO
 	db SPRITE_BUGSY
 	db SPRITE_MORTY
 	db SPRITE_PRYCE
