@@ -19,9 +19,6 @@ MateosHouseBrockScene:
 	end
 	
 MateosHouseBrockSceneScript:
-	turnobject MATEOS_HOUSE_BROCK, DOWN
-	showemote EMOTE_SHOCK, MATEOS_HOUSE_BROCK, 15
-	turnobject MATEOS_HOUSE_BROCK, UP
 	opentext
 	writetext MateosHouseBrockText1
 	waitbutton

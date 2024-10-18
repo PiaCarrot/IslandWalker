@@ -73,13 +73,15 @@ TilesetBeachHouseAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetCrystalCaveAnim:
-	dw vTiles2 tile $13, WriteTileToBuffer
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
 	dw RSEWaterFrames, AnimateRSEWaterTiles
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
-	dw NULL,  DoNothing ; WaitTileAnimation
-	dw NULL,  DoNothing ; WaitTileAnimation
-	dw vTiles2 tile $13, WriteTileFromBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $40, ScrollTileDown
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 

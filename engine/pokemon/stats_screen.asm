@@ -444,7 +444,7 @@ StatsScreen_PlaceVerticalDivider: ; unreferenced
 StatsScreen_PlaceHorizontalDivider:
 	hlcoord 0, 7
 	ld b, SCREEN_WIDTH
-	ld a, $62 ; horizontal divider (empty HP/exp bar)
+	ld a, "_" ; horizontal divider (empty HP/exp bar)
 .loop
 	ld [hli], a
 	dec b
@@ -453,9 +453,9 @@ StatsScreen_PlaceHorizontalDivider:
 
 StatsScreen_PlacePageSwitchArrows:
 	hlcoord 10, 6
-	ld [hl], "◀"
+	ld [hl], "←"
 	hlcoord 19, 6
-	ld [hl], "▶"
+	ld [hl], "→"
 	ret
 
 StatsScreen_PlaceShinyIcon:
@@ -519,7 +519,7 @@ LoadPinkPage:
 	ld b, $0
 	predef DrawPlayerHP
 	hlcoord 8, 9
-	ld [hl], $41 ; right HP/exp bar end cap
+	ld [hl], $32 ; right HP/exp bar end cap
 	ld de, .Status_Type
 	hlcoord 0, 12
 	rst PlaceString
@@ -589,9 +589,9 @@ LoadPinkPage:
 	ld de, wTempMonExp + 2
 	predef FillInExpBar
 	hlcoord 10, 16
-	ld [hl], $40 ; left exp bar end cap
+	ld [hl], $34 ; left exp bar end cap
 	hlcoord 19, 16
-	ld [hl], $41 ; right exp bar end cap
+	ld [hl], $33 ; right exp bar end cap
 	ret
 
 .PrintNextLevel:

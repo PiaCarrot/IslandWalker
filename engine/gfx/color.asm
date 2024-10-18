@@ -233,7 +233,7 @@ ApplyHPBarPals:
 .PartyMenu:
 	ld e, c
 	inc e
-	hlcoord 11, 1, wAttrmap
+	hlcoord 13, 1, wAttrmap
 	ld bc, 2 * SCREEN_WIDTH
 	ld a, [wCurPartyMon]
 .loop
@@ -244,7 +244,7 @@ ApplyHPBarPals:
 	jr .loop
 
 .done
-	lb bc, 2, 8
+	lb bc, 2, 6
 	ld a, e
 	jmp FillBoxCGB
 
@@ -511,7 +511,7 @@ CGB_ApplyPartyMenuHPPals:
 	ld a, [de]
 	inc a
 	ld e, a
-	hlcoord 11, 2, wAttrmap
+	hlcoord 13, 2, wAttrmap
 	ld bc, 2 * SCREEN_WIDTH
 	ld a, [wSGBPals]
 .loop
@@ -521,7 +521,7 @@ CGB_ApplyPartyMenuHPPals:
 	dec a
 	jr .loop
 .done
-	lb bc, 2, 8
+	lb bc, 2, 6
 	ld a, e
 	jmp FillBoxCGB
 

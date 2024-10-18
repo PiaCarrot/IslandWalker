@@ -175,16 +175,20 @@ _CGB_FinishBattleScreenLayout:
 	ld a, PAL_BATTLE_BG_ENEMY
 	call FillBoxCGB
 	hlcoord 0, 0, wAttrmap
-	lb bc, 4, 10
+	lb bc, 4, 11
+	ld a, $4
+	call FillBoxCGB
+	hlcoord 9, 7, wAttrmap
+	lb bc, 5, 11
+	ld a, $4
+	call FillBoxCGB
+	hlcoord 4, 2, wAttrmap
+	lb bc, 1, 6
 	ld a, PAL_BATTLE_BG_ENEMY_HP
 	call FillBoxCGB
-	hlcoord 10, 7, wAttrmap
-	lb bc, 5, 10
+	hlcoord 12, 9, wAttrmap
+	lb bc, 1, 6
 	ld a, PAL_BATTLE_BG_PLAYER_HP
-	call FillBoxCGB
-	hlcoord 10, 11, wAttrmap
-	lb bc, 1, 9
-	ld a, PAL_BATTLE_BG_EXP
 	call FillBoxCGB
 	hlcoord 0, 12, wAttrmap
 	ld bc, 6 * SCREEN_WIDTH
@@ -266,6 +270,11 @@ _CGB_StatsScreenHPPals:
 	ld bc, 10
 	ld a, $2 ; exp palette
 	rst ByteFill
+	
+	hlcoord 0, 9, wAttrmap
+	ld bc, 2
+	ld a, $2
+	call ByteFill
 
 	hlcoord 11, 5, wAttrmap
 	lb bc, 2, 2
@@ -599,9 +608,15 @@ _CGB_MapPals:
 	ret
 
 _CGB_PartyMenu:
-	ld hl, PalPacket_PartyMenu + 1
-	call CopyFourPalettes
-	call InitPartyMenuBGPal0
+	ld de, wBGPals1
+	ld hl, ExpBarPalette
+	call LoadPalette_White_Col1_Col2_Black
+	ld hl, HPBarPals
+	call LoadPalette_White_Col1_Col2_Black
+	ld hl, HPBarPals + 4
+	call LoadPalette_White_Col1_Col2_Black
+	ld hl, HPBarPals + 8
+	call LoadPalette_White_Col1_Col2_Black
 	call InitPartyMenuBGPal7
 	call InitPartyMenuOBPals
 	jmp ApplyAttrmap
