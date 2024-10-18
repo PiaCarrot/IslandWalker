@@ -7,6 +7,11 @@ Marts:
 	dw MartMikan
 	dw MartXItem
 	dw MartMandarinNorth
+	dw MartEnergyGuru
+	dw MartSunburstStones
+	dw MartSurvival
+	dw MartIncense
+	dw MartHerbs
 	assert_table_length NUM_MARTS
 
 MartBerrySeller:
@@ -71,6 +76,54 @@ MartMandarinNorth:
 	dw PARLYZ_HEAL
 	dw NEST_BALL
 	dw PORTRAITMAIL
+
+MartEnergyGuru:
+	db 7 ; # items
+	dw PROTEIN
+	dw IRON
+	dw CARBOS
+	dw ZINC
+	dw CALCIUM
+	dw HP_UP
+	dw PP_UP
+
+MartSunburstStones:
+	db 4 ; # items
+	dw FIRE_STONE
+	dw WATER_STONE
+	dw LEAF_STONE
+	dw THUNDERSTONE
+
+MartSurvival:
+	db 5 ; # items
+	dw ESCAPE_ROPE
+	dw REPEL
+	dw SUPER_REPEL
+	dw POKE_DOLL
+	dw FRESH_WATER
+
+MartIncense:
+	db 9 ; # items
+	dw SEA_INCENSE
+	dw LAX_INCENSE
+	dw ROSE_INCENSE
+	dw PURE_INCENSE
+	dw ROCK_INCENSE
+	dw ODD_INCENSE
+	dw LUCK_INCENSE
+	dw FULL_INCENSE
+	dw WAVE_INCENSE
+
+MartHerbs:
+	db 8 ; # items
+	dw ENERGYPOWDER
+	dw ENERGY_ROOT
+	dw HEAL_POWDER
+	dw REVIVAL_HERB
+	dw MIRROR_HERB
+	dw MENTAL_HERB
+	dw POWER_HERB
+	dw WHITE_HERB
 
 DefaultMart:
 	db 2 ; # items

@@ -126,6 +126,8 @@ INCLUDE "maps/SunburstIslandPokecenter1F.asm"
 INCLUDE "maps/ValenciaIsland.asm"
 INCLUDE "maps/IvysLab.asm"
 INCLUDE "maps/MateosHouse.asm"
+INCLUDE "maps/GlassBlowersHouse1.asm"
+INCLUDE "maps/GlassBlowersHouse2.asm"
 
 
 SECTION "Map Scripts 25", ROMX

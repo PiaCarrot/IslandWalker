@@ -185,6 +185,8 @@ ENDM
 	map_attributes MandarinNorthPokecenter1F, MANDARIN_NORTH_POKECENTER_1F, $00, 0
 	map_attributes SunburstIslandPokecenter1F, SUNBURST_ISLAND_POKECENTER_1F, $00, 0
 	map_attributes MateosHouse, MATEOS_HOUSE, $00, 0
+	map_attributes GlassBlowersHouse1, GLASSBLOWERS_HOUSE_1, $00, 0
+	map_attributes GlassBlowersHouse2, GLASSBLOWERS_HOUSE_2, $00, 0
 	map_attributes MandarinNorthPokemart, MANDARIN_NORTH_POKEMART, $00, 0
 	map_attributes RaticateRadioB1F, RATICATE_RADIO_B1F, $00, 0
 	map_attributes RaticateRadioB2F, RATICATE_RADIO_B2F, $00, 0

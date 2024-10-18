@@ -13,6 +13,7 @@ SpawnPoints:
 	spawn TANGELO_ISLAND,               15,  8
 	spawn MIKAN_ISLAND,               7,  30
 	spawn MANDARIN_NORTH,               15,  22
+	spawn SUNBURST_ISLAND,               27,  10
 
 	spawn N_A,                        -1, -1
 

@@ -2801,6 +2801,8 @@ wTangeloIslandSceneID::             db
 wMandarinNorthSceneID::             db
 wRaticateRadioB1FSceneID::             db
 wRaticateRadioB2FSceneID::             db
+wSunburstIslandSceneID::             db
+wMateosHouseSceneID::             db
 
 ; fight counts
 wJackFightCount::    db

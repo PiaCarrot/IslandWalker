@@ -109,6 +109,8 @@ ENDM
 	map_const SUNBURST_ISLAND,								20, 25
 	map_const SUNBURST_ISLAND_POKECENTER_1F,					5,  4
 	map_const MATEOS_HOUSE,					6,  6
+	map_const GLASSBLOWERS_HOUSE_1,					4,  4
+	map_const GLASSBLOWERS_HOUSE_2,					4,  4
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

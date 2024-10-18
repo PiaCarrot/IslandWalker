@@ -166,4 +166,8 @@ SunburstIsland_Blocks:
 MateosHouse_Blocks:
 	INCBIN "maps/MateosHouse.ablk"
 
+GlassBlowersHouse1_Blocks:
+GlassBlowersHouse2_Blocks:
+	INCBIN "maps/GlassBlowersHouse.ablk"
+
 ENDSECTION
