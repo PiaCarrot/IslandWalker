@@ -317,6 +317,24 @@ SunburstBrockMovement2:
 	step RIGHT
 	step_end
 
+SunburstHiddenRareCandy:
+	hiddenitem RARE_CANDY, EVENT_SUNBURST_HIDDEN_RARE_CANDY
+
+SunburstHiddenPrettyShell:
+	hiddenitem PRETTY_SHELL, EVENT_SUNBURST_HIDDEN_PRETTY_SHELL
+
+SunburstHiddenBigMushroom:
+	hiddenitem BIG_MUSHROOM, EVENT_SUNBURST_HIDDEN_BIG_MUSHROOM
+
+SunburstHiddenPearl:
+	hiddenitem PEARL, EVENT_SUNBURST_HIDDEN_PEARL
+
+SunburstHiddenSunStone:
+	hiddenitem SUN_STONE, EVENT_SUNBURST_HIDDEN_SUN_STONE
+	
+SunburstIslandGreatBall:
+	itemball GREAT_BALL
+
 SunburstIsland_MapEvents:
 	db 0, 0 ; filler
 
@@ -337,6 +355,11 @@ SunburstIsland_MapEvents:
 	bg_event  8,  9, BGEVENT_READ, SunburstMateosShopSign
 	bg_event 25, 31, BGEVENT_READ, SunburstArtisansCaveSign
 	bg_event 15,  9, BGEVENT_READ, SunburstCurioShopSign
+	bg_event  6, 23, BGEVENT_ITEM, SunburstHiddenRareCandy
+	bg_event 12, 44, BGEVENT_ITEM, SunburstHiddenPrettyShell
+	bg_event  8, 39, BGEVENT_ITEM, SunburstHiddenBigMushroom
+	bg_event  0, 15, BGEVENT_ITEM, SunburstHiddenPearl
+	bg_event 21, 13, BGEVENT_ITEM, SunburstHiddenSunStone
 
 	def_object_events
 	object_event  2, 38, SPRITE_BIG_ONIX, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, PAL_NPC_COPY_BG_GRAY, OBJECTTYPE_SCRIPT, 0, OnixRockScript, -1
@@ -352,3 +375,4 @@ SunburstIsland_MapEvents:
 	object_event  0, 49, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_REMOVE_SUNBURST_CUT_TREES
 	object_event  1, 49, SPRITE_MATEO, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_TEAL, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_REMOVE_SUNBURST_CUT_TREES
 	object_event 25, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, SunburstYellowScript, EVENT_RATICATE_RADIO_VACATED
+	object_event 29, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SunburstIslandGreatBall, EVENT_SUNBURST_GREAT_BALL
