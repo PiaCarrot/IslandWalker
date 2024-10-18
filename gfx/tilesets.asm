@@ -308,3 +308,21 @@ INCBIN "data/tilesets/mateos_house_metatiles.bin.lz"
 
 TilesetMateosHouseColl::
 INCLUDE "data/tilesets/mateos_house_collision.asm"
+
+TilesetCrystalCavevTiles2GFX::
+INCBIN "gfx/tilesets/crystal_cave.2bpp.vtiles2.lz"
+
+TilesetCrystalCavevTiles5GFX::
+INCBIN "gfx/tilesets/crystal_cave.2bpp.vtiles5.lz"
+
+TilesetCrystalCavevTiles4GFX::
+INCBIN "gfx/tilesets/crystal_cave.2bpp.vtiles4.lz"
+
+TilesetCrystalCaveAttr::
+INCBIN "data/tilesets/crystal_cave_attributes.bin.lz"
+
+TilesetCrystalCaveMeta::
+INCBIN "data/tilesets/crystal_cave_metatiles.bin.lz"
+
+TilesetCrystalCaveColl::
+INCLUDE "data/tilesets/crystal_cave_collision.asm"

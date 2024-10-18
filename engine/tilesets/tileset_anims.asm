@@ -71,7 +71,17 @@ TilesetBeachHouseAnim:
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoneTileAnimation
-	
+
+TilesetCrystalCaveAnim:
+	dw vTiles2 tile $13, WriteTileToBuffer
+	dw RSEWaterFrames, AnimateRSEWaterTiles
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw vTiles2 tile $13, WriteTileFromBuffer
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
 
 TilesetRocketHideoutAnim:
 	dw RocketHideoutMachineTileFrames, AnimateRadarTile

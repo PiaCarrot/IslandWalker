@@ -251,9 +251,7 @@ SunburstIslandBrockScript:
 	follow SUNBURST_BROCK, SUNBURST_MATEO
 	applymovement SUNBURST_BROCK, SunburstBrockMovement2
 	special RestartMapMusic
-	moveobject SUNBURST_BROCK, 0, 49
 	disappear SUNBURST_BROCK
-	moveobject SUNBURST_MATEO, 0, 49
 	disappear SUNBURST_MATEO
 	setscene SCENE_SUNBURST_ISLAND_NOOP
 	setevent EVENT_REMOVE_SUNBURST_CUT_TREES
@@ -327,6 +325,8 @@ SunburstIsland_MapEvents:
 	warp_event  5,  9, MATEOS_HOUSE, 1
 	warp_event  9, 23, GLASSBLOWERS_HOUSE_1, 1
 	warp_event 13, 23, GLASSBLOWERS_HOUSE_2, 1
+	warp_event 28, 31, CRYSTAL_CAVE_GATE, 1
+	warp_event 32, 39, CRYSTAL_CAVE_1F, 1
 
 	def_coord_events
 	coord_event 15, 40, SCENE_SUNBURST_ISLAND_BROCK, SunburstIslandBrockScript

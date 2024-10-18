@@ -128,6 +128,9 @@ INCLUDE "maps/IvysLab.asm"
 INCLUDE "maps/MateosHouse.asm"
 INCLUDE "maps/GlassBlowersHouse1.asm"
 INCLUDE "maps/GlassBlowersHouse2.asm"
+INCLUDE "maps/CrystalCave1F.asm"
+INCLUDE "maps/CrystalCaveB1F.asm"
+INCLUDE "maps/CrystalCaveGate.asm"
 
 
 SECTION "Map Scripts 25", ROMX

@@ -29,4 +29,5 @@ Tilesets::
 	tileset TilesetRocketHideout
 	tileset TilesetMoroIsland
 	tileset TilesetMateosHouse
+	tileset TilesetCrystalCave
 	assert_table_length NUM_TILESETS + 1

@@ -15,6 +15,7 @@
 	const TILESET_ROCKET_HIDEOUT
 	const TILESET_MORO_ISLAND
 	const TILESET_MATEOS_HOUSE
+	const TILESET_CRYSTAL_CAVE
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

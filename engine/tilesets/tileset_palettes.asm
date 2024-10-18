@@ -20,6 +20,8 @@ LoadSpecialMapPalette:
 	jr z, .rocket_hideout
 	cp TILESET_MATEOS_HOUSE
 	jr z, .mateos_house
+	cp TILESET_CRYSTAL_CAVE
+	jr z, .crystal_cave
 	jr .do_nothing
 
 .darkness
@@ -61,6 +63,11 @@ LoadSpecialMapPalette:
 	
 .mateos_house
 	call LoadMateosHousePalette
+	scf
+	ret
+	
+.crystal_cave
+	call LoadCrystalCavePalette
 	scf
 	ret
 
@@ -161,3 +168,13 @@ LoadMateosHousePalette:
 	
 MateosHousePalette:
 INCLUDE "gfx/tilesets/mateos_house.pal"
+
+LoadCrystalCavePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, CrystalCavePalette
+	ld bc, 8 palettes
+	jmp FarCopyWRAM
+	
+CrystalCavePalette:
+INCLUDE "gfx/tilesets/crystal_cave.pal"

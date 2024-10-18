@@ -170,4 +170,13 @@ GlassBlowersHouse1_Blocks:
 GlassBlowersHouse2_Blocks:
 	INCBIN "maps/GlassBlowersHouse.ablk"
 
+CrystalCave1F_Blocks:
+	INCBIN "maps/CrystalCave1F.ablk"
+
+CrystalCaveB1F_Blocks:
+	INCBIN "maps/CrystalCaveB1F.ablk"
+
+CrystalCaveGate_Blocks:
+	INCBIN "maps/CrystalCaveGate.ablk"
+
 ENDSECTION
