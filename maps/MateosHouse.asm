@@ -6,6 +6,7 @@
 	const MATEOS_HOUSE_MATEO
 	const MATEOS_HOUSE_MARISSA
 	const MATEOS_HOUSE_BROCK
+	const MATEOS_HOUSE_MATEO2
 
 MateosHouse_MapScripts:
 	def_scene_scripts
@@ -123,7 +124,7 @@ MateosHouseBrockText1:
 	
 	para "???: MR. BROCK, I-"
 	
-	para "BROCK: Hahaha! No"
+	para "BROCK: Fwahaha! No"
 	line "problems! Consider"
 	cont "that CRYSTAL ONIX"
 	cont "found!"
@@ -244,9 +245,31 @@ MateosHouseMateoMovement:
 MarissaScript:
 	faceplayer
 	opentext
+	checkevent EVENT_MATEOS_PASSION_RESTORED
+	iffalse .Yay
 	writetext MarissaText1
 	waitbutton
 	closetext
+	end
+	
+.Yay
+	checkevent EVENT_DECO_BIG_ONIX_DOLL
+	iffalse .GiveBigOnixDoll
+	writetext MarissaText2
+	waitbutton
+	closetext
+	end
+	
+.GiveBigOnixDoll:
+	writetext MarissaText3
+	waitbutton
+	playsound SFX_ITEM
+	writetext GotBigOnixText
+	waitsfx
+	writetext GotBigOnixText2
+	waitbutton
+	closetext
+	setevent EVENT_DECO_BIG_ONIX_DOLL
 	end
 	
 MarissaText1:
@@ -255,6 +278,43 @@ MarissaText1:
 	cont "ONIX! I don't want"
 	cont "grandpa's shop to"
 	cont "close down…"
+	done
+	
+MarissaText2:
+	text "MARISSA: Yay! Big"
+	line "bro is sculpting"
+	cont "again!"
+	
+	para "Thank you!"
+	done
+	
+MarissaText3:
+	text "MARISSA: Yay! Big"
+	line "bro is sculpting"
+	cont "again!"
+	
+	para "Thank you! He said"
+	line "you can have this!"
+	done
+	
+MateoScript:
+	jumptext MateoScriptText1
+	
+MateoScriptText1:
+	text "He seems hard at"
+	line "work. Best not to"
+	cont "disturb him!"
+	done
+	
+GotBigOnixText:
+	text "<PLAYER> received"
+	line "an ONIX SCULPTURE!"
+	done
+
+GotBigOnixText2:	
+	text "Set it up at home"
+	line "when you get the"
+	cont "chance!"
 	done
 
 MateosHouse_MapEvents:
@@ -278,3 +338,4 @@ MateosHouse_MapEvents:
 	object_event  6,  8, SPRITE_MATEO, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_TEAL, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MATEO_LEFT_SHOP
 	object_event  7,  8, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MarissaScript, -1
 	object_event  6,  9, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BROCK_LEFT_SHOP
+	object_event  6,  5, SPRITE_MATEO, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_TEAL, OBJECTTYPE_SCRIPT, 0, MateoScript, EVENT_MATEOS_PASSION_RESTORED

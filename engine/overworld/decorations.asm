@@ -1030,16 +1030,46 @@ DecorationDesc_OrnamentOrConsole:
 	text_end
 
 DecorationDesc_GiantOrnament:
-	ld b, BANK(.BigDollScript)
-	ld de, .BigDollScript
+	ld a, [wDecoBigDoll]
+	ld hl, DecorationDesc_GiantOrnamentPointers
+	ld de, 3
+	call IsInArray
+	jr c, .nope
+	ld de, DecorationDesc_NullGiantOrnament
+	ld b, BANK(DecorationDesc_NullGiantOrnament)
 	ret
 
-.BigDollScript:
+.nope
+	ld b, BANK(DecorationDesc_NullGiantOrnament)
+	inc hl
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	ret
+
+DecorationDesc_GiantOrnamentPointers:
+	dbw DECO_BIG_SNORLAX_DOLL, DecorationDesc_SnorlaxDoll
+	dbw DECO_BIG_ONIX_DOLL, DecorationDesc_OnixSculpture
+	dbw DECO_BIG_LAPRAS_DOLL, DecorationDesc_LaprasDoll
+	db -1
+	
+DecorationDesc_SnorlaxDoll:
+DecorationDesc_LaprasDoll:
 	jumptext .LookGiantDecoText
 
 .LookGiantDecoText:
 	text_far _LookGiantDecoText
 	text_end
+	
+DecorationDesc_OnixSculpture:
+	jumptext .LookOnixSculptureDecoText
+
+.LookOnixSculptureDecoText:
+	text_far _LookOnixSculptureDecoText
+	text_end
+
+DecorationDesc_NullGiantOrnament:
+	end
 
 ToggleMaptileDecorations:
 	; tile coordinates work the same way as for changeblock

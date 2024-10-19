@@ -20,4 +20,5 @@ MapScenes::
 	scene_var RATICATE_RADIO_B2F,              	           wRaticateRadioB2FSceneID
 	scene_var SUNBURST_ISLAND,              	           wSunburstIslandSceneID
 	scene_var MATEOS_HOUSE,              	               wMateosHouseSceneID
+	scene_var CRYSTAL_CAVE_B1F,              	               wCrystalCaveB1FSceneID
 	db -1 ; end

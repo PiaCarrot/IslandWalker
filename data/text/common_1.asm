@@ -263,6 +263,13 @@ _LookGiantDecoText::
 	line "fluffy and cuddly."
 	done
 
+_LookOnixSculptureDecoText::
+	text "A huge sculpture"
+	line "of the CRYSTAL"
+	cont "ONIX. It looks so"
+	cont "life-like!"
+	done
+
 _MomHiHowAreYouText::
 	text "Hi, <PLAYER>!"
 	line "How are you?"

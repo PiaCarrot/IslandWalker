@@ -302,6 +302,7 @@
 	const EVENT_RUDY_DEFEATED
 	const EVENT_DANNY_DEFEATED
 	const EVENT_CISSY_DEFEATED
+	const EVENT_CRYSTAL_CAVE_BROCK_DEFEATED
 
 ; Sprite visibility flags
 ; When these events are cleared, the sprite becomes visible; when set, the sprite is hidden.
@@ -465,6 +466,10 @@
 	const EVENT_MATEO_LEFT_SHOP
 	const EVENT_BROCK_LEFT_SHOP
 	const EVENT_REMOVE_SUNBURST_CUT_TREES
+	const EVENT_CRYSTAL_CAVE_1F_SCENE
+	const EVENT_CRYSTAL_CAVE_B1F_SCENE
+	const EVENT_CRYSTAL_CAVE_B1F_SCENE2
+	const EVENT_CRYSTAL_ONIX_ENCOUNTER
 ; Kanto people
 
 ; Kanto itemballs

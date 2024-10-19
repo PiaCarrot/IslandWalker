@@ -12,6 +12,7 @@
 	const SUNBURST_BROCK
 	const SUNBURST_MATEO
 	const SUNBURST_YELLOW
+	const SUNBURST_GREATBALL
 
 SunburstIsland_MapScripts:
 	def_scene_scripts
@@ -263,7 +264,7 @@ SunburstIslandBrockText1:
 	done
 	
 SunburstIslandBrockText2:
-	text "BROCK: Hahaha!"
+	text "BROCK: Fwahaha!"
 	line "So, there was a"
 	cont "clearing past the"
 	cont "brush."

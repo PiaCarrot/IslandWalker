@@ -2803,6 +2803,7 @@ wRaticateRadioB1FSceneID::             db
 wRaticateRadioB2FSceneID::             db
 wSunburstIslandSceneID::             db
 wMateosHouseSceneID::             db
+wCrystalCaveB1FSceneID::             db
 
 ; fight counts
 wJackFightCount::    db
