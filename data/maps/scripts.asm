@@ -131,6 +131,7 @@ INCLUDE "maps/GlassBlowersHouse2.asm"
 INCLUDE "maps/CrystalCave1F.asm"
 INCLUDE "maps/CrystalCaveB1F.asm"
 INCLUDE "maps/CrystalCaveGate.asm"
+INCLUDE "maps/CurioShop.asm"
 
 
 SECTION "Map Scripts 25", ROMX

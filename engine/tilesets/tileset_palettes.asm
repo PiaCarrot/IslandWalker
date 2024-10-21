@@ -22,6 +22,8 @@ LoadSpecialMapPalette:
 	jr z, .mateos_house
 	cp TILESET_CRYSTAL_CAVE
 	jr z, .crystal_cave
+	cp TILESET_PLAYERS_HOUSE
+	jr z, .check_for_curio_shop
 	jr .do_nothing
 
 .darkness
@@ -68,6 +70,17 @@ LoadSpecialMapPalette:
 	
 .crystal_cave
 	call LoadCrystalCavePalette
+	scf
+	ret
+	
+.check_for_curio_shop
+	ld a, [wMapGroup]
+	cp GROUP_CURIO_SHOP
+	jr nz, .do_nothing
+	ld a, [wMapNumber]
+	cp MAP_CURIO_SHOP
+	jr nz, .do_nothing
+	call LoadCurioShopPal
 	scf
 	ret
 
@@ -178,3 +191,13 @@ LoadCrystalCavePalette:
 	
 CrystalCavePalette:
 INCLUDE "gfx/tilesets/crystal_cave.pal"
+
+LoadCurioShopPal:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, CurioShopPalette
+	ld bc, 8 palettes
+	jmp FarCopyWRAM
+	
+CurioShopPalette:
+INCLUDE "gfx/tilesets/curio_shop.pal"

@@ -114,6 +114,7 @@ ENDM
 	map_const CRYSTAL_CAVE_1F,					18,  16
 	map_const CRYSTAL_CAVE_B1F,					18,  14
 	map_const CRYSTAL_CAVE_GATE,					10,  4
+	map_const CURIO_SHOP,					5,  5
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

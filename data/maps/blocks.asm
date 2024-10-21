@@ -179,4 +179,7 @@ CrystalCaveB1F_Blocks:
 CrystalCaveGate_Blocks:
 	INCBIN "maps/CrystalCaveGate.ablk"
 
+CurioShop_Blocks:
+	INCBIN "maps/CurioShop.ablk"
+
 ENDSECTION

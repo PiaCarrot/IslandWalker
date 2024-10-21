@@ -190,6 +190,7 @@ ENDM
 	map_attributes CrystalCave1F, CRYSTAL_CAVE_1F, $01, 0
 	map_attributes CrystalCaveB1F, CRYSTAL_CAVE_B1F, $01, 0
 	map_attributes CrystalCaveGate, CRYSTAL_CAVE_GATE, $01, 0
+	map_attributes CurioShop, CURIO_SHOP, $00, 0
 	map_attributes MandarinNorthPokemart, MANDARIN_NORTH_POKEMART, $00, 0
 	map_attributes RaticateRadioB1F, RATICATE_RADIO_B1F, $00, 0
 	map_attributes RaticateRadioB2F, RATICATE_RADIO_B2F, $00, 0
