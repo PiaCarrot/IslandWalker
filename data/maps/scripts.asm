@@ -81,6 +81,8 @@ INCLUDE "maps/MandarinNorthPokemart.asm"
 INCLUDE "maps/RaticateRadioB1F.asm"
 INCLUDE "maps/RaticateRadioB2F.asm"
 INCLUDE "maps/RaticateRadioLobby.asm"
+INCLUDE "maps/Route68South.asm"
+INCLUDE "maps/MillsweetCamp.asm"
 
 SECTION "Map Scripts 22", ROMX
 
@@ -130,8 +132,8 @@ INCLUDE "maps/GlassBlowersHouse1.asm"
 INCLUDE "maps/GlassBlowersHouse2.asm"
 INCLUDE "maps/CrystalCave1F.asm"
 INCLUDE "maps/CrystalCaveB1F.asm"
-INCLUDE "maps/CrystalCaveGate.asm"
 INCLUDE "maps/CurioShop.asm"
+INCLUDE "maps/SunburstHouse.asm"
 
 
 SECTION "Map Scripts 25", ROMX
@@ -143,5 +145,6 @@ INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/ValenciaNeighborHouse.asm"
 INCLUDE "maps/Route49.asm"
 INCLUDE "maps/Route49North.asm"
+INCLUDE "maps/CrystalCaveGate.asm"
 
 ENDSECTION

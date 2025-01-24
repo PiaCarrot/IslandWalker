@@ -47,13 +47,13 @@ MomPhoneInTown:
 	sjump MomSavingMoney
 
 .violet
-	getlandmarkname STRING_BUFFER_4, LANDMARK_SPROUT_TOWER
+	getlandmarkname STRING_BUFFER_4, LANDMARK_FAST_SHIP
 	sjump MomPhoneLandmark
 .azalea
-	getlandmarkname STRING_BUFFER_4, LANDMARK_SLOWPOKE_WELL
+	getlandmarkname STRING_BUFFER_4, LANDMARK_FAST_SHIP
 	sjump MomPhoneLandmark
 .goldenrod
-	getlandmarkname STRING_BUFFER_4, LANDMARK_RADIO_TOWER
+	getlandmarkname STRING_BUFFER_4, LANDMARK_FAST_SHIP
 	sjump MomPhoneLandmark
 
 MomPhoneOnRoute:

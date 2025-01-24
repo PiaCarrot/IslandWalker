@@ -103,6 +103,8 @@ ENDM
 	map_const RATICATE_RADIO_B1F,					    20,  20
 	map_const RATICATE_RADIO_B2F,					    7,  7
 	map_const RATICATE_RADIO_LOBBY,					    6,  6
+	map_const ROUTE_68_SOUTH,					    25,  10
+	map_const MILLSWEET_CAMP,					    16,  10
 	endgroup
 
 	newgroup SUNBURST
@@ -115,6 +117,7 @@ ENDM
 	map_const CRYSTAL_CAVE_B1F,					18,  14
 	map_const CRYSTAL_CAVE_GATE,					10,  4
 	map_const CURIO_SHOP,					5,  5
+	map_const SUNBURST_HOUSE,					4,  4
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

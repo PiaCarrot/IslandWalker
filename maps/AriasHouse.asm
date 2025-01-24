@@ -149,7 +149,7 @@ AriasHouseAriaScript:
 	closetext
 	applymovement MIKAN_ISLAND_LUNA, LunaSpinHopMovement
 	cry CLEFAIRY
-	turnobject MIKAN_ISLAND_ARIA, DOWN
+	faceplayer
 	opentext
 	writetext Gossip1Text3
 	waitbutton
@@ -169,7 +169,7 @@ AriasHouseAriaScript:
 	writetext LunaText
 	waitbutton
 	closetext
-	turnobject MIKAN_ISLAND_ARIA, DOWN
+	faceplayer
 	opentext
 	writetext Gossip2Text2
 	waitbutton
@@ -200,7 +200,7 @@ AriasHouseAriaScript:
 	opentext
 	writetext Gossip4Text2
 	waitbutton
-	turnobject MIKAN_ISLAND_ARIA, DOWN
+	faceplayer
 	writetext GossipEndText
 	waitbutton
 	closetext
@@ -216,7 +216,7 @@ AriasHouseAriaScript:
 	opentext
 	writetext Gossip5Text2
 	waitbutton
-	turnobject MIKAN_ISLAND_ARIA, DOWN
+	faceplayer
 	writetext GossipEndText
 	waitbutton
 	closetext
@@ -285,6 +285,7 @@ Gossip1Text2:
 	cont "space!"
 
 	para "LUNA: Piipii? Pii…"
+	done
 
 Gossip1Text3:
 	text "ARIA: Hmm… Wonder"

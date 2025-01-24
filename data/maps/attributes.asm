@@ -138,8 +138,16 @@ ENDM
 	connection north, MandarinNorth, MANDARIN_NORTH, -4
 	connection south, Route53, ROUTE_53, -20
 
-	map_attributes MandarinNorth, MANDARIN_NORTH, $01, SOUTH
+	map_attributes MandarinNorth, MANDARIN_NORTH, $01, NORTH | SOUTH
+	connection north, Route68South, ROUTE_68_SOUTH, 1
 	connection south, Route54, ROUTE_54, 4
+
+	map_attributes Route68South, ROUTE_68_SOUTH, $10, NORTH | SOUTH
+	connection north, MillsweetCamp, MILLSWEET_CAMP, 2
+	connection south, MandarinNorth, MANDARIN_NORTH, -1
+
+	map_attributes MillsweetCamp, MILLSWEET_CAMP, $01, SOUTH
+	connection south, Route68South, ROUTE_68_SOUTH, -2
 
 	map_attributes SunburstIsland, SUNBURST_ISLAND, $10, NORTH
 	connection north, Route53, ROUTE_53, -11
@@ -191,6 +199,7 @@ ENDM
 	map_attributes CrystalCaveB1F, CRYSTAL_CAVE_B1F, $01, 0
 	map_attributes CrystalCaveGate, CRYSTAL_CAVE_GATE, $01, 0
 	map_attributes CurioShop, CURIO_SHOP, $00, 0
+	map_attributes SunburstHouse, SUNBURST_HOUSE, $00, 0
 	map_attributes MandarinNorthPokemart, MANDARIN_NORTH_POKEMART, $00, 0
 	map_attributes RaticateRadioB1F, RATICATE_RADIO_B1F, $00, 0
 	map_attributes RaticateRadioB2F, RATICATE_RADIO_B2F, $00, 0

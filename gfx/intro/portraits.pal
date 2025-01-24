@@ -12,7 +12,7 @@
 
 ; PAL 2 Indigo Portrait
 	RGB 31, 31, 31
-	RGB 26, 19, 12
+	RGB 30, 20, 15
 	RGB 17, 08, 15
 	RGB 00, 00, 00
 

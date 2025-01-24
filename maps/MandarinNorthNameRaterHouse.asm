@@ -26,4 +26,4 @@ MandarinNorthNameRaterHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GRAY, OBJECTTYPE_SCRIPT, 0, MandarinNorthNameRater, -1
+	object_event  2,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GRAY, OBJECTTYPE_SCRIPT, 0, MandarinNorthNameRater, -1

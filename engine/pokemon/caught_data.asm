@@ -73,7 +73,7 @@ CheckPartyFullAfterContest:
 	dec a
 	ld hl, wPartyMon1CaughtLocation
 	call GetPartyLocation
-	ld [hl], LANDMARK_NATIONAL_PARK
+	ld [hl], LANDMARK_SPECIAL
 	xor a
 	ld [wContestMonSpecies], a
 	and a ; BUGCONTEST_CAUGHT_MON
@@ -124,7 +124,7 @@ CheckPartyFullAfterContest:
 	ld [wCurPartyLevel], a
 	call SetBoxMonCaughtData
 	ld hl, wBufferMonCaughtLocation
-	ld [hl], LANDMARK_NATIONAL_PARK
+	ld [hl], LANDMARK_SPECIAL
 	farcall UpdateStorageBoxMonFromTemp
 	xor a
 	ld [wContestMon], a

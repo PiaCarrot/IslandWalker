@@ -347,6 +347,7 @@ SunburstIsland_MapEvents:
 	warp_event 28, 31, CRYSTAL_CAVE_GATE, 1
 	warp_event 32, 39, CRYSTAL_CAVE_1F, 1
 	warp_event 17,  9, CURIO_SHOP, 1
+	warp_event 23,  9, SUNBURST_HOUSE, 1
 
 	def_coord_events
 	coord_event 15, 40, SCENE_SUNBURST_ISLAND_BROCK, SunburstIslandBrockScript

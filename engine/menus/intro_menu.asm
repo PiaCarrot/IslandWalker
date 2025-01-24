@@ -61,7 +61,7 @@ NewGame:
 	call OakSpeech
 	call InitializeWorld
 
-	ld a, LANDMARK_NEW_BARK_TOWN
+	ld a, LANDMARK_VALENCIA_ISLAND
 	ld [wPrevLandmark], a
 
 	ld a, SPAWN_HOME

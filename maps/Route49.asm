@@ -296,7 +296,7 @@ Route49_MapEvents:
 	bg_event 23, 15, BGEVENT_READ, TrainerTipsRoute49Sign
 	bg_event 18,  6, BGEVENT_ITEM, Route49HiddenPotion
 	bg_event 20, 38, BGEVENT_ITEM, Route49HiddenStarPiece
-	bg_event  4, 30, BGEVENT_ITEM, Route49HiddenRevive
+	bg_event  5, 20, BGEVENT_ITEM, Route49HiddenRevive
 
 	def_object_events
 	object_event 33, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ValenciaCooltrainerScript, -1

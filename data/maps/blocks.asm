@@ -113,6 +113,7 @@ MandarinNorthCutMasterHouse_Blocks:
 
 BeachHouse2_Blocks:
 TangeloIslandEastHouse_Blocks:
+SunburstHouse_Blocks:
 MandarinNorthNameRaterHouse_Blocks:
 	INCBIN "maps/BeachHouse2.ablk"
 
@@ -181,5 +182,11 @@ CrystalCaveGate_Blocks:
 
 CurioShop_Blocks:
 	INCBIN "maps/CurioShop.ablk"
+
+Route68South_Blocks:
+	INCBIN "maps/Route68South.ablk"
+
+MillsweetCamp_Blocks:
+	INCBIN "maps/MillsweetCamp.ablk"
 
 ENDSECTION

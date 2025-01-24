@@ -123,9 +123,12 @@ MomPhoneHangUpText:
 MomPhoneNoPokemonText:
 	text "Hello?"
 
-	para "Oh, hi, <PLAYER>!"
-	line "Wasn't PROF.ELM"
-	cont "waiting for you?"
+	para "Oh! Hey, kiddo!"
+	line "How's your journey"
+	cont "going?"
+	
+	para "Rooting for you,"
+	line "kiddo!"
 	done
 
 MomPhoneNoPokedexText:

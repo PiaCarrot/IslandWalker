@@ -8,52 +8,26 @@ Landmarks:
 ; entries correspond to constants/landmark_constants.asm
 	table_width 4, Landmarks
 	landmark  -8, -16, SpecialMapName
-	landmark 140, 100, NewBarkTownName
-	landmark 128, 100, Route29Name
-	landmark 100, 100, CherrygroveCityName
-	landmark 100,  80, Route30Name
-	landmark  96,  60, Route31Name
-	landmark  84,  60, VioletCityName
-	landmark  85,  58, SproutTowerName
-	landmark  84,  92, Route32Name
-	landmark  76,  76, RuinsOfAlphName
-	landmark  84, 124, UnionCaveName
-	landmark  82, 124, Route33Name
-	landmark  68, 124, AzaleaTownName
-	landmark  70, 122, SlowpokeWellName
-	landmark  52, 120, IlexForestName
-	landmark  52, 112, Route34Name
-	landmark  52,  92, GoldenrodCityName
-	landmark  50,  92, RadioTowerName
-	landmark  52,  76, Route35Name
-	landmark  52,  60, NationalParkName
-	landmark  64,  60, Route36Name
-	landmark  68,  52, Route37Name
-	landmark  68,  44, EcruteakCityName
-	landmark  70,  42, TinTowerName
-	landmark  66,  42, BurnedTowerName
-	landmark  52,  44, Route38Name
-	landmark  36,  48, Route39Name
-	landmark  36,  60, OlivineCityName
-	landmark  38,  62, LighthouseName
-	landmark  28,  56, BattleTowerName
-	landmark  28,  64, Route40Name
-	landmark  28,  92, WhirlIslandsName
-	landmark  28, 100, Route41Name
-	landmark  20, 100, CianwoodCityName
-	landmark  92,  44, Route42Name
-	landmark  84,  44, MtMortarName
-	landmark 108,  44, MahoganyTownName
-	landmark 108,  36, Route43Name
-	landmark 108,  28, LakeOfRageName
-	landmark 120,  44, Route44Name
-	landmark 130,  38, IcePathName
-	landmark 132,  44, BlackthornCityName
-	landmark 132,  36, DragonsDenName
-	landmark 132,  64, Route45Name
-	landmark 112,  72, DarkCaveName
-	landmark 124,  88, Route46Name
-	landmark 148,  68, SilverCaveName
+	landmark 140, 100, ValenciaIslandName
+	landmark 128, 100, Route49Name
+	landmark 100, 100, TangeloIslandName
+	landmark 100, 100, AlteringCaveName
+	landmark 100,  80, Route50Name
+	landmark  96,  60, Route51Name
+	landmark  84,  60, TangeloJungleName
+	landmark  85,  58, Route52Name
+	landmark  84,  92, MikanIslandName
+	landmark  76,  76, MikanRanchName
+	landmark  84, 124, MikanThicketName
+	landmark  82, 124, Route53Name
+	landmark  82, 124, Route54Name
+	landmark  68, 124, MandarinNorthName
+	landmark  70, 122, RaticateRadioName
+	landmark  52, 120, SunburstIslandName
+	landmark  52, 112, CrystalCaveName
+
+	landmark 124,  88, Route68Name
+	landmark 148,  68, MillsweetCampName
 	assert_table_length KANTO_LANDMARK
 	landmark  52, 108, PalletTownName
 	landmark  52,  92, Route1Name
@@ -105,6 +79,27 @@ Landmarks:
 	landmark  20,  68, Route28Name
 	landmark 140, 116, FastShipName
 	assert_table_length NUM_LANDMARKS
+	
+ValenciaIslandName:     db "VALENCIA ISLAND@"
+Route49Name:     db "ROUTE 49@"
+TangeloIslandName:     db "TANGELO ISLAND@"
+AlteringCaveName:     db "ALTERING CAVE@"
+Route50Name:     db "ROUTE 50@"
+Route51Name:     db "ROUTE 51@"
+TangeloJungleName:     db "TANGELO JUNGLE@"
+Route52Name:     db "ROUTE 52@"
+MikanIslandName:     db "MIKAN ISLAND@"
+MikanRanchName:     db "MIKAN RANCH@"
+MikanThicketName:     db "MIKAN THICKET@"
+Route53Name:     db "ROUTE 53@"
+Route54Name:     db "ROUTE 54@"
+MandarinNorthName:     db "MANDARIN NORTH@"
+RaticateRadioName:     db "RATICATE RADIO@"
+SunburstIslandName:     db "SUNBURST ISLAND@"
+CrystalCaveName:     db "CRYSTAL CAVE@"
+
+Route68Name:     db "ROUTE 68@"
+MillsweetCampName:     db "MILLSWEET CAMP@"
 
 NewBarkTownName:     db "NEW BARK<BSP>TOWN@"
 CherrygroveCityName: db "CHERRYGROVE<BSP>CITY@"

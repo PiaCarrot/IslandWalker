@@ -221,7 +221,7 @@ TownMap_InitCursorAndPlayerIconPositions:
 
 .FastShip:
 	ld [wPokegearMapPlayerIconLandmark], a
-	ld a, LANDMARK_NEW_BARK_TOWN
+	ld a, LANDMARK_VALENCIA_ISLAND
 	ld [wPokegearMapCursorLandmark], a
 	ret
 
@@ -543,7 +543,7 @@ PokegearMap_KantoMap:
 	jr PokegearMap_ContinueMap
 
 PokegearMap_JohtoMap:
-	lb de, LANDMARK_SILVER_CAVE, LANDMARK_NEW_BARK_TOWN
+	lb de, LANDMARK_MILLSWEET_CAMP, LANDMARK_VALENCIA_ISLAND
 PokegearMap_ContinueMap:
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -1409,7 +1409,7 @@ RadioChannels:
 
 .RuinsOfAlphRadio:
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LANDMARK_RUINS_OF_ALPH
+	cp LANDMARK_SPECIAL
 	jr nz, .NoSignal
 	jmp LoadStation_UnownRadio
 
@@ -1443,11 +1443,11 @@ RadioChannels:
 	bit STATUSFLAGS_ROCKET_SIGNAL_F, a
 	jr z, .NoSignal
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LANDMARK_MAHOGANY_TOWN
+	cp LANDMARK_SPECIAL
 	jr z, .ok
-	cp LANDMARK_ROUTE_43
+	cp LANDMARK_SPECIAL
 	jr z, .ok
-	cp LANDMARK_LAKE_OF_RAGE
+	cp LANDMARK_SPECIAL
 	jr nz, .NoSignal
 .ok
 	jmp LoadStation_EvolutionRadio
