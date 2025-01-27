@@ -105,6 +105,7 @@ ENDM
 	map_const RATICATE_RADIO_LOBBY,					    6,  6
 	map_const ROUTE_68_SOUTH,					    25,  10
 	map_const MILLSWEET_CAMP,					    16,  10
+	map_const MILLSWEET_LAB,					    6,  5
 	endgroup
 
 	newgroup SUNBURST

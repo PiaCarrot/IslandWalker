@@ -159,24 +159,9 @@ FastShipGFX:
 INCBIN "gfx/pokegear/fast_ship.2bpp"
 
 InitPokegearModeIndicatorArrow:
-	depixel 4, 2, 4, 0
-	ld a, SPRITE_ANIM_OBJ_POKEGEAR_ARROW
-	call InitSpriteAnimStruct
-	ld hl, SPRITEANIMSTRUCT_TILE_ID
-	add hl, bc
-	ld [hl], $0
 	ret
 
 AnimatePokegearModeIndicatorArrow:
-	ld hl, wPokegearCard
-	ld e, [hl]
-	ld d, 0
-	ld hl, .XCoords
-	add hl, de
-	ld a, [hl]
-	ld hl, SPRITEANIMSTRUCT_XOFFSET
-	add hl, bc
-	ld [hl], a
 	ret
 
 .XCoords:
@@ -226,7 +211,7 @@ TownMap_InitCursorAndPlayerIconPositions:
 	ret
 
 Pokegear_InitJumptableIndices:
-	ld a, POKEGEARSTATE_CLOCKINIT
+	ld a, POKEGEARSTATE_PHONEINIT
 	ld [wJumptableIndex], a
 	xor a ; POKEGEARCARD_CLOCK
 	ld [wPokegearCard], a
@@ -298,50 +283,22 @@ InitPokegearTilemap:
 	dw .Radio
 
 .Clock:
-	ld de, ClockTilemapRLE
+	ld de, PhoneTilemapRLE
 	call Pokegear_LoadTilemapRLE
-	hlcoord 12, 1
-	ld de, .switch
-	rst PlaceString
 	hlcoord 0, 12
 	lb bc, 4, 18
 	call Textbox
-	jmp Pokegear_UpdateClock
+	call .PlacePhoneBars
+	jmp PokegearPhone_UpdateDisplayList
 
 .switch
 	db " SWITCH▶@"
 
 .Map:
-	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LANDMARK_FAST_SHIP
-	jr z, .johto
-	cp KANTO_LANDMARK
-	jr nc, .kanto
-.johto
-	ld e, 0
-	jr .ok
-
-.kanto
-	ld e, 1
-.ok
-	call PokegearMap
-	ld a, $07
-	ld bc, SCREEN_WIDTH - 2
-	hlcoord 1, 2
-	rst ByteFill
-	hlcoord 0, 2
-	ld [hl], $06
-	hlcoord 19, 2
-	ld [hl], $17
-	ld a, [wPokegearMapCursorLandmark]
-	jmp PokegearMap_UpdateLandmarkName
+	ret
 
 .Radio:
-	ld de, RadioTilemapRLE
-	call Pokegear_LoadTilemapRLE
-	hlcoord 0, 12
-	lb bc, 4, 18
-	jmp Textbox
+	ret
 
 .Phone:
 	ld de, PhoneTilemapRLE
@@ -353,67 +310,20 @@ InitPokegearTilemap:
 	jmp PokegearPhone_UpdateDisplayList
 
 .PlacePhoneBars:
-	hlcoord 17, 1
-	ld a, $3c
-	ld [hli], a
-	inc a
-	ld [hl], a
-	hlcoord 17, 2
-	inc a
-	ld [hli], a
-	call GetMapPhoneService
-	and a
-	ret nz
-	hlcoord 18, 2
-	ld [hl], $3f
 	ret
 
 Pokegear_FinishTilemap:
-	hlcoord 0, 0
-	ld bc, $8
-	ld a, $4f
-	rst ByteFill
-	hlcoord 0, 1
-	ld bc, $8
-	ld a, $4f
-	rst ByteFill
-	ld de, wPokegearFlags
-	ld a, [de]
-	bit POKEGEAR_MAP_CARD_F, a
-	call nz, .PlaceMapIcon
-	ld a, [de]
-	bit POKEGEAR_PHONE_CARD_F, a
-	call nz, .PlacePhoneIcon
-	ld a, [de]
-	bit POKEGEAR_RADIO_CARD_F, a
-	call nz, .PlaceRadioIcon
-	hlcoord 0, 0
-	ld a, $46
-	jr .PlacePokegearCardIcon
+	ret
 
 .PlaceMapIcon:
-	hlcoord 2, 0
-	ld a, $40
-	jr .PlacePokegearCardIcon
+	ret
 
 .PlacePhoneIcon:
-	hlcoord 4, 0
-	ld a, $44
-	jr .PlacePokegearCardIcon
+	ret
 
 .PlaceRadioIcon:
-	hlcoord 6, 0
-	ld a, $42
+	ret
 .PlacePokegearCardIcon:
-	ld [hli], a
-	inc a
-	ld [hld], a
-	ld bc, $14
-	add hl, bc
-	add $f
-	ld [hli], a
-	inc a
-	ld [hld], a
 	ret
 
 PokegearJumptable:
@@ -543,7 +453,7 @@ PokegearMap_KantoMap:
 	jr PokegearMap_ContinueMap
 
 PokegearMap_JohtoMap:
-	lb de, LANDMARK_MILLSWEET_CAMP, LANDMARK_VALENCIA_ISLAND
+	lb de, LANDMARK_FIRE_ISLAND, LANDMARK_VALENCIA_ISLAND
 PokegearMap_ContinueMap:
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -668,19 +578,17 @@ PokegearMap_InitCursor:
 	ret
 
 PokegearMap_UpdateLandmarkName:
-	push af
-	hlcoord 8, 0
-	lb bc, 2, 12
-	call ClearBox
-	pop af
 	ld e, a
-	push de
+PokegearMap_PrintLandmarkName:
+	hlcoord 0, 0
+	lb bc, 1, SCREEN_WIDTH
+	call ClearBox
 	farcall GetLandmarkName
-	pop de
-	farcall TownMap_ConvertLineBreakCharacters
-	hlcoord 8, 0
-	ld [hl], $34
-	ret
+	hlcoord 0, 0
+	ld a, $3E
+	ld [hli], a
+	ld de, wStringBuffer1
+	jp PlaceString
 
 PokegearMap_UpdateCursorPosition:
 	push bc
@@ -790,21 +698,13 @@ PokegearPhone_Joypad:
 	jmp PokegearPhone_GetDPad
 
 .left
-	ld a, [wPokegearFlags]
-	bit POKEGEAR_MAP_CARD_F, a
-	jr z, .no_map
-	lb bc, POKEGEARCARD_MAP, POKEGEARSTATE_MAPCHECKREGION
-	jr .switch_page
-
+	ret
 .no_map
 	lb bc, POKEGEARCARD_CLOCK, POKEGEARSTATE_CLOCKINIT
 	jr .switch_page
 
 .right
-	ld a, [wPokegearFlags]
-	bit POKEGEAR_RADIO_CARD_F, a
-	ret z
-	lb bc, POKEGEARCARD_RADIO, POKEGEARSTATE_RADIOINIT
+	ret
 .switch_page
 	jmp Pokegear_SwitchPage
 
@@ -1814,16 +1714,8 @@ _TownMap:
 	ld [hl], $06
 	hlcoord 7, 0
 	ld [hl], $17
-	hlcoord 7, 1
-	ld [hl], $16
-	hlcoord 7, 2
-	ld [hl], $26
 	ld a, $07
 	ld bc, NAME_LENGTH
-	hlcoord 8, 2
-	rst ByteFill
-	hlcoord 19, 2
-	ld [hl], $17
 	ld a, [wTownMapCursorLandmark]
 	call PokegearMap_UpdateLandmarkName
 	jmp TownMapPals

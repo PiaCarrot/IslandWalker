@@ -187,50 +187,18 @@ ValenciaYoungsterScript:
 	givepoke PIKACHU, PLAIN_FORM, 21, ORAN_BERRY
 	givepoke FURRET, PLAIN_FORM, 20, ORAN_BERRY
 	giveitem HM_SURF
+	giveitem SEA_MAP
 	givemoney YOUR_MONEY, 999999
+	setflag ENGINE_POKEGEAR
+	setflag ENGINE_PHONE_CARD
+	addcellnum PHONE_MOM
+	addcellnum PHONE_ELM
+	addcellnum PHONE_NANU
+	addcellnum PHONE_YELLOW
 	closetext
 	warp SUNBURST_ISLAND, 15, 15
 	end
 	jumptextfaceplayer ValenciaYoungsterText
-
-; PhoneCallScript: ;currently unused
-	; pause 10
-	; playsound SFX_CALL
-	; waitsfx
-	; pause 10
-	; playsound SFX_CALL
-	; waitsfx
-	; opentext
-	; writetext PhoneCallTest1
-	; waitsfx
-	; promptbutton
-	; writetext PhoneCallTest2
-	; promptbutton
-	; closetext
-	; checkevent EVENT_GOT_PIKACHU_FROM_IVY
-	; iftrue .GetPikachuDoll
-	; setevent EVENT_DECO_EEVEE_DOLL
-	; sjump .Continue
-; .GetPikachuDoll
-	; setevent EVENT_DECO_PIKACHU_DOLL
-; .Continue
-	; setevent EVENT_DECO_BIG_LAPRAS_DOLL
-	; end
-	
-PhoneCallTest1:
-	text "… … …"
-	line "A new message!"
-	done
-	
-PhoneCallTest2:
-	text "MOM: Hey kiddo!"
-	line "LORI dropped your"
-	cont "new DOLL off!"
-	cont "She also got you"
-	cont "something extra!"
-	cont "Check your PC when"
-	cont "you get home."
-	done
 
 ValenciaTechnologyGuyScript:
 	jumptextfaceplayer ValenciaTechnologyGuyText	

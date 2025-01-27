@@ -6,6 +6,8 @@
 	const PHONE_BILL
 	const PHONE_ELM
 	const PHONE_BUENA
+	const PHONE_NANU
+	const PHONE_YELLOW
 DEF NUM_PHONE_CONTACTS EQU const_value - 1
 
 ; SpecialPhoneCallList indexes (see data/phone/special_calls.asm)

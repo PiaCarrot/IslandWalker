@@ -17,4 +17,6 @@ PhoneContacts:
 	phone TRAINER_NONE, PHONECONTACT_BILL,     N_A,                       ANYTIME, BillPhoneCalleeScript,    0,       BillPhoneCallerScript
 	phone TRAINER_NONE, PHONECONTACT_ELM,      N_A,                  ANYTIME, ElmPhoneCalleeScript,     0,       ElmPhoneCallerScript
 	phone TRAINER_NONE, PHONECONTACT_BUENA,    N_A, ANYTIME, BuenaPhoneCalleeScript,   ANYTIME, BuenaPhoneCallerScript
+	phone TRAINER_NONE, PHONECONTACT_NANU,    N_A, ANYTIME, NanuPhoneCalleeScript,   0, UnusedPhoneScript
+	phone TRAINER_NONE, PHONECONTACT_YELLOW,    N_A, ANYTIME, YellowPhoneCalleeScript,   0, UnusedPhoneScript
 	assert_table_length NUM_PHONE_CONTACTS + 1

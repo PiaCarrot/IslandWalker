@@ -189,4 +189,7 @@ Route68South_Blocks:
 MillsweetCamp_Blocks:
 	INCBIN "maps/MillsweetCamp.ablk"
 
+MillsweetLab_Blocks:
+	INCBIN "maps/MillsweetLab.ablk"
+
 ENDSECTION

@@ -51,7 +51,7 @@ ProtostarLogoPlay:
 	call FarCopyColorWRAM
 	ld c, 31
 	call FadePalettes
-	ld de, MUSIC_MYSTICALMAN_ENCOUNTER
+	ld de, MUSIC_SPLASH_MUSIC
 	call PlayMusic
 .loop
 	call JoyTextDelay

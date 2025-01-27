@@ -337,6 +337,8 @@ INCLUDE "engine/phone/scripts/unused.asm"
 INCLUDE "engine/phone/scripts/mom.asm"
 INCLUDE "engine/phone/scripts/bill.asm"
 INCLUDE "engine/phone/scripts/elm.asm"
+INCLUDE "engine/phone/scripts/nanu.asm"
+INCLUDE "engine/phone/scripts/yellow.asm"
 INCLUDE "engine/events/trainer_scripts.asm"
 
 

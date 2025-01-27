@@ -200,6 +200,7 @@ INCLUDE "audio/music/orange/ranchtheme.asm"
 INCLUDE "audio/music/hgss/cianwoodcity.asm" ;???
 INCLUDE "audio/music/orange/rockethq.asm"
 INCLUDE "audio/music/rse/slateportcity.asm" ;mmmm
+INCLUDE "audio/music/Title/splash.asm" ;piacrt
 
 
 SECTION "Sound Effects", ROMX

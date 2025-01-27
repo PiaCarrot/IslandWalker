@@ -5,26 +5,26 @@
 	RGB 00, 00, 00
 ; earth
 	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 00, 00, 31
-	RGB 00, 00, 00
+	RGB 31, 25, 01
+	RGB 10, 23, 23
+	RGB 23, 10, 02
 ; mountain
 	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 15, 07, 00
-	RGB 00, 00, 00
+	RGB 31, 25, 01
+	RGB 23, 10, 02
+	RGB 23, 10, 02
 ; city (boy)
 	RGB 28, 31, 20
-	RGB 31, 15, 00
-	RGB 15, 07, 00
+	RGB 31, 00, 00
+	RGB 10, 23, 23
 	RGB 00, 00, 00
 ; point of interest
 	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 00, 00, 31
-	RGB 31, 00, 00
+	RGB 31, 25, 01
+	RGB 10, 23, 23
+	RGB 23, 10, 02
 ; mountain point of interest
 	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 15, 07, 00
+	RGB 31, 25, 01
+	RGB 23, 10, 02
 	RGB 31, 00, 00

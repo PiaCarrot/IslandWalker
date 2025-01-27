@@ -145,6 +145,7 @@ Music:
 	dba Music_SomeRouteOrange
 	dba Music_CianwoodCity
 	dba Music_RocketHQ
+	dba Music_SplashMusic ; piacrt
 ; rse
 	dba Music_PokemonMart ;Mmmmm
 	dba Music_SlateportCity ;Mmmmm

@@ -112,6 +112,9 @@ RaticateRadioB2FDrowzeeScript:
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_PHONE_CARD
 	addcellnum PHONE_MOM
+	addcellnum PHONE_ELM
+	addcellnum PHONE_NANU
+	addcellnum PHONE_YELLOW
 	writetext YellowGivesPokegearText
 	waitbutton
 	closetext
