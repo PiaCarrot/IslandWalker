@@ -194,7 +194,7 @@ StartMenu::
 .SaveString:     db "SAVE@"
 .OptionString:   db "OPTION@"
 .ExitString:     db "EXIT@"
-.PokegearString: db "<POKE>GEAR@"
+.PokegearString: db "CALL@"
 .QuitString:     db "QUIT@"
 
 .PokedexDesc:
@@ -210,8 +210,8 @@ StartMenu::
 	next "items@"
 
 .PokegearDesc:
-	db   "Trainer's"
-	next "key device@"
+	db   "Make a"
+	next "call@"
 
 .StatusDesc:
 	db   "Your own"

@@ -61,8 +61,8 @@ MillsweetCampFisher3Text:
 	text "Nothing but small"
 	line "fry…"
 	
-	para "The scientist in"
-	line "that house there"
+	para "The guy in that"
+	line "house there"
 	cont "measures MAGIKARP."
 	
 	para "I'm trying to beat"
@@ -74,6 +74,7 @@ MillsweetCamp_MapEvents:
 
 	def_warp_events
 	warp_event  1,  5, MILLSWEET_LAB, 1
+	warp_event 23,  9, MILLSWEET_MAGIKARP_HOUSE, 1
 
 	def_coord_events
 

@@ -71,49 +71,6 @@ MomDeterminedText:
 	line "be OK, right?"
 	done
 
-MomCheckBalanceText:
-	text "By the way, you've"
-	line "saved up ¥@"
-	text_ram wStringBuffer3
-	text "."
-
-	para "Do you want to"
-	line "keep on saving?"
-	done
-
-MomImportantToSaveText:
-	text "It's important to"
-	line "save your money."
-	done
-
-MomYoureNotSavingText:
-	text "Oh, <PLAYER>,"
-	line "you're not saving"
-
-	para "any money. Would"
-	line "you like to save?"
-	done
-
-MomYouveSavedText:
-	text "By the way, you've"
-	line "saved up ¥@"
-	text_ram wStringBuffer3
-	text "."
-
-	para "Want to start"
-	line "saving again?"
-	done
-
-MomOKIllSaveText:
-	text "OK. I'll save your"
-	line "money."
-	done
-
-MomPhoneWontSaveMoneyText:
-	text "OK. I won't save"
-	line "your money."
-	done
-
 MomPhoneHangUpText:
 	text "<PLAYER>, keep it"
 	line "up! I'm rooting"
@@ -149,20 +106,4 @@ MomPhoneNoGymQuestText:
 
 	para "your errand come"
 	line "on home, dear."
-	done
-
-MomPhoneLectureText:
-	text "Hello?"
-
-	para "…… <PLAYER>?"
-	line "I heard from PROF."
-
-	para "ELM that you went"
-	line "on a long trip."
-
-	para "I wish you would"
-	line "have told me…"
-
-	para "What about money?"
-	line "Should I save it?"
 	done

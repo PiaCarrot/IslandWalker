@@ -4,7 +4,7 @@ NanuPhoneCalleeScript:
 	sjump PhoneScript_NanuHangUpText
 	
 NanuInitialCallText:
-	text "000: <№>.<CODE>…"
+	text "<№>.<CODE>…"
 	line "First of all, I"
 	cont "want to welcome"
 	cont "you to the team."
@@ -20,6 +20,6 @@ PhoneScript_NanuHangUpText:
 	end
 	
 NanuHangUpText:
-	text "000: Stay always"
+	text "Stay always"
 	line "vigilant."
 	done

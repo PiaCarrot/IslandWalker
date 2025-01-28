@@ -106,6 +106,7 @@ ENDM
 	map_const ROUTE_68_SOUTH,					    25,  10
 	map_const MILLSWEET_CAMP,					    16,  10
 	map_const MILLSWEET_LAB,					    6,  5
+	map_const MILLSWEET_MAGIKARP_HOUSE,				4,  4
 	endgroup
 
 	newgroup SUNBURST

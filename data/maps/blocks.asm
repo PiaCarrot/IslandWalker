@@ -65,6 +65,7 @@ ValenciaIsland_Blocks:
 IslandHouse_Blocks:
 ValenciaNeighborHouse_Blocks:
 CissysHouse_Blocks:
+MillsweetMagikarpHouse_Blocks:
 	INCBIN "maps/IslandHouse.ablk"
 
 IvysLab_Blocks:

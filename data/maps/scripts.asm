@@ -84,6 +84,7 @@ INCLUDE "maps/RaticateRadioLobby.asm"
 INCLUDE "maps/Route68South.asm"
 INCLUDE "maps/MillsweetCamp.asm"
 INCLUDE "maps/MillsweetLab.asm"
+INCLUDE "maps/MillsweetMagikarpHouse.asm"
 
 SECTION "Map Scripts 22", ROMX
 

@@ -22,6 +22,7 @@ FishGroups:
 	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super
 	fishgroup 50 percent + 1, .Remoraid_Old,         .Remoraid_Good,         .Remoraid_Super
 	fishgroup 50 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
+	fishgroup 50 percent + 1, .Magikarp_Old, .Magikarp_Good, .Magikarp_Super
 	assert_table_length NUM_FISHGROUPS
 
 .Shore_Old:
@@ -206,6 +207,21 @@ FishGroups:
 	dbbw  70 percent,     7, TIME_GROUP
 	dbbw  90 percent + 1, 40, MAGIKARP
 	dbbw 100 percent,     40, REMORAID
+
+.Magikarp_Old:
+	dbbw  70 percent + 1, 10, MAGIKARP
+	dbbw  85 percent + 1, 10, MAGIKARP
+	dbbw 100 percent,     10, MAGIKARP
+.Magikarp_Good:
+	dbbw  35 percent,     20, MAGIKARP
+	dbbw  70 percent,     20, MAGIKARP
+	dbbw  90 percent + 1, 20, MAGIKARP
+	dbbw 100 percent,     14, TIME_GROUP
+.Magikarp_Super:
+	dbbw  40 percent,     40, MAGIKARP
+	dbbw  70 percent,     15, TIME_GROUP
+	dbbw  90 percent + 1, 40, MAGIKARP
+	dbbw 100 percent,     40, MAGIKARP
 
 TimeFishGroups:
 	;     day             nite

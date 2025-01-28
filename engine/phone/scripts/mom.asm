@@ -2,8 +2,6 @@ MomPhoneCalleeScript:
 	checkevent EVENT_DUMMY_OUT
 	iftrue .started_quest
 	checkevent EVENT_DUMMY_OUT
-	iftrue MomPhoneLectureScript
-	checkevent EVENT_DUMMY_OUT
 	iftrue MomPhoneNoGymQuestScript
 	checkevent EVENT_DUMMY_OUT
 	iftrue MomPhoneNoPokedexScript
@@ -23,7 +21,7 @@ MomPhoneCalleeScript:
 MomPhoneLandmark:
 	farwritetext MomPhoneLandmarkText
 	promptbutton
-	sjump MomSavingMoney
+	end
 
 MomPhoneInTown:
 	readvar VAR_MAPGROUP
@@ -34,17 +32,17 @@ MomPhoneInTown:
 	ifequal GROUP_NONE, .goldenrod
 	farwritetext MomPhoneGenericAreaText
 	promptbutton
-	sjump MomSavingMoney
+	end
 
 .newbark
 	farwritetext MomPhoneNewBarkText
 	promptbutton
-	sjump MomSavingMoney
+	end
 
 .cherrygrove
 	farwritetext MomPhoneCherrygroveText
 	promptbutton
-	sjump MomSavingMoney
+	end
 
 .violet
 	getlandmarkname STRING_BUFFER_4, LANDMARK_FAST_SHIP
@@ -59,61 +57,12 @@ MomPhoneInTown:
 MomPhoneOnRoute:
 	farwritetext MomOtherAreaText
 	promptbutton
-	sjump MomSavingMoney
+	end
 
 MomPhoneOther:
 	farwritetext MomDeterminedText
-	promptbutton
-; fallthrough
-MomSavingMoney:
-	checkflag ENGINE_MOM_SAVING_MONEY
-	iffalse .NotSaving
-	checkmoney MOMS_MONEY, 0
-	ifequal HAVE_MORE, .SavingHasMoney
-	sjump .SavingNoMoney
+	end
 
-.NotSaving:
-	checkmoney MOMS_MONEY, 0
-	ifequal HAVE_MORE, .HasMoney
-	sjump .NoMoney
-
-.SavingHasMoney:
-	getmoney STRING_BUFFER_3, MOMS_MONEY
-	farwritetext MomCheckBalanceText
-	yesorno
-	iftrue MomPhoneSaveMoneyScript
-	sjump MomPhoneWontSaveMoneyScript
-
-.SavingNoMoney:
-	farwritetext MomImportantToSaveText
-	yesorno
-	iftrue MomPhoneSaveMoneyScript
-	sjump MomPhoneWontSaveMoneyScript
-
-.NoMoney:
-	farwritetext MomYoureNotSavingText
-	yesorno
-	iftrue MomPhoneSaveMoneyScript
-	sjump MomPhoneWontSaveMoneyScript
-
-.HasMoney:
-	getmoney STRING_BUFFER_3, MOMS_MONEY
-	farwritetext MomYouveSavedText
-	yesorno
-	iftrue MomPhoneSaveMoneyScript
-	sjump MomPhoneWontSaveMoneyScript
-
-MomPhoneSaveMoneyScript:
-	setflag ENGINE_MOM_SAVING_MONEY
-	farwritetext MomOKIllSaveText
-	promptbutton
-	sjump MomPhoneHangUpScript
-
-MomPhoneWontSaveMoneyScript:
-	clearflag ENGINE_MOM_SAVING_MONEY
-	farwritetext MomPhoneWontSaveMoneyText
-	promptbutton
-; fallthrough
 MomPhoneHangUpScript:
 	farwritetext MomPhoneHangUpText
 	end
@@ -129,12 +78,3 @@ MomPhoneNoPokedexScript:
 MomPhoneNoGymQuestScript:
 	farwritetext MomPhoneNoGymQuestText
 	end
-
-MomPhoneLectureScript:
-	setevent EVENT_DUMMY_OUT
-	setflag ENGINE_MOM_ACTIVE
-	specialphonecall SPECIALCALL_NONE
-	farwritetext MomPhoneLectureText
-	yesorno
-	iftrue MomPhoneSaveMoneyScript
-	sjump MomPhoneWontSaveMoneyScript
