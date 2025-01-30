@@ -26,6 +26,6 @@ ENDM
 	townmappals EARTH,     EARTH,     EARTH,     EARTH,     EARTH,     EARTH,     EARTH,     EARTH
 	townmappals EARTH,     EARTH,     EARTH,     BORDER,     BORDER,     BORDER,     BORDER,     BORDER
 	townmappals CITY,     CITY,     CITY,     CITY,     CITY,     CITY,     CITY,     CITY
-	townmappals BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER
+	townmappals BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   EARTH,   EARTH
 	townmappals BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER
 	townmappals BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER

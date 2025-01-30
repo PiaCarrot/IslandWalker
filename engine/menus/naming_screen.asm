@@ -147,10 +147,14 @@ NamingScreen:
 .PlayerNameString:
 	db "YOUR NAME?@"
 
-.Codename: ; TODO: add the ability to select numbers for a codename.
+.Codename:
 	ld de, LookerSpriteGFX
 	ld b, BANK(LookerSpriteGFX)
 	call .LoadSprite
+	ld a, PAL_OW_BROWN
+	ld [wNeededPalIndex], a
+    ld de, wOBPals1 palette 4
+    farcall CopySpritePal
 	hlcoord 5, 2
 	ld de, .CodeNameString
 	rst PlaceString
@@ -222,14 +226,15 @@ NamingScreen:
 	ld [hl], a
 	pop de
 	ld b, SPRITE_ANIM_OBJ_RED_WALK
-	ld a, d
-	cp HIGH(KrisSpriteGFX)
-	jr nz, .not_kris
-	ld a, e
-	cp LOW(KrisSpriteGFX)
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
 	jr nz, .not_kris
 	ld b, SPRITE_ANIM_OBJ_BLUE_WALK
 .not_kris
+	ld a, PAL_OW_PURPLE
+	ld [wNeededPalIndex], a
+    ld de, wOBPals1 palette 5
+    farcall CopySpritePal
 	ld a, b
 	depixel 4, 4, 4, 0
 	jmp InitSpriteAnimStruct

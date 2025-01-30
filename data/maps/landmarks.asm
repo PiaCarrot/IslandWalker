@@ -8,81 +8,82 @@ Landmarks:
 ; entries correspond to constants/landmark_constants.asm
 	table_width 4, Landmarks
 	landmark  -8, -16, SpecialMapName
-	landmark 42, 122, ValenciaIslandName
-	landmark 34, 120, Route49Name
-	landmark 17, 114, TangeloIslandName
+	landmark 44, 124, ValenciaIslandName
+	landmark 36, 116, Route49Name
+	landmark 20, 116, TangeloIslandName
 	landmark 11, 112, AlteringCaveName
-	landmark 18, 107, Route50Name
-	landmark 23, 106, Route51Name
-	landmark 17, 103, TangeloJungleName
-	landmark 18, 94, Route52Name
-	landmark 17, 74, MikanIslandName
-	landmark  76,  76, MikanRanchName
-	landmark  84, 124, MikanThicketName
-	landmark  82, 124, Route53Name
-	landmark  82, 124, Route54Name
-	landmark  68, 124, MandarinNorthName
-	landmark  70, 122, RaticateRadioName
-	landmark  52, 120, SunburstIslandName
-	landmark  52, 112, CrystalCaveName
-	landmark  52, 112, Route55Name
-	landmark  52, 112, PinkanIslandName
-	landmark  52, 112, Route56Name
-	landmark  52, 112, FukuharaNo4Name
-	landmark  52, 112, KinnowIslandName
-	landmark  52, 112, Route57Name
-	landmark  52, 112, OvaleIslandName
-	landmark  52, 112, Route58Name
-	landmark  52, 112, NavelIslandName
-	landmark  52, 112, SevenGrapefruitsName
-	landmark  52, 112, Route59Name
-	landmark  52, 112, MoroIslandName
-	landmark  52, 112, Route60Name
-	landmark  52, 112, GoldenIslandName
-	landmark  52, 112, Route61Name
-	landmark  52, 112, MurcottIslandName
-	landmark  52, 112, SatsumaIslandName
-	landmark  52, 112, MandarinPortName
-	landmark  52, 112, Route62Name
-	landmark  52, 112, YamberaName
-	landmark  52, 112, MandarinDesertName
-	landmark  52, 112, TrovitopolisName
-	landmark  52, 112, PokeballFactoryName
-	landmark  52, 112, CityHallName
-	landmark  52, 112, TrovitaIslandName
-	landmark  52, 112, CleopatraIslandName
-	landmark  52, 112, Route63Name
-	landmark  52, 112, AscorbiaIslandName
-	landmark  52, 112, InterpolHqName
-	landmark  52, 112, HeartScaleCoveName
-	landmark  52, 112, Route64Name
-	landmark  52, 112, Route65Name
-	landmark  52, 112, ButwalIslandName
-	landmark  52, 112, Route66Name
-	landmark  52, 112, KumquatIslandName
-	landmark  52, 112, Route67Name
-	landmark  52, 112, RindIslandName
-	landmark  52, 112, MillsweetCampName
-	landmark  52, 112, Route68Name
-	landmark  52, 112, TrifoliateIslandName
-	landmark  52, 112, Route69Name
-	landmark  52, 112, VictoryRoadOrangeName
-	landmark  52, 112, PummeloIslandName
-	landmark  52, 112, PummeloStadiumName
-	landmark  52, 112, Route70Name
-	landmark  52, 112, TarrocoIslandName
-	landmark  52, 112, Route71Name
-	landmark  52, 112, RaymondsHideoutName
-	landmark  52, 112, HamlinIslandName
-	landmark  52, 112, HamlinFieldsName
-	landmark  52, 112, ShamoutiIslandName
-	landmark  52, 112, ShamoutiBayName
-	landmark  52, 112, ShamoutiJungleName
-	landmark  52, 112, ShamoutiShrineName
-	landmark  52, 112, LightningIslandName
-	landmark  52, 112, IceIslandName
-	landmark  52, 112, FireIslandName
-;	landmark  52, 112, FlyingFortressName
+	landmark 20, 108, Route50Name
+	landmark 28, 108, Route51Name
+	landmark 24, 108, TangeloJungleName
+	landmark 28, 96, Route52Name
+	landmark 28, 76, MikanIslandName
+	landmark  20,  76, MikanRanchName
+	landmark  28, 68, MikanThicketName
+	landmark  40, 76, Route53Name
+	landmark  44, 68, Route54Name
+	landmark  44, 60, MandarinNorthName
+	landmark  42, 58, RaticateRadioName
+	landmark  44, 84, SunburstIslandName
+	landmark  52, 92, CrystalCaveName
+	landmark  52, 108, Route55Name
+	landmark  68, 108, PinkanIslandName
+	landmark  88, 108, Route56Name
+	landmark  100, 108, FukuharaNo4Name
+	landmark  108, 100, KinnowIslandName
+	landmark  116, 108, KinnowShowboatName
+	landmark  124, 92, Route57Name
+	landmark  124, 72, OvaleIslandName
+	landmark  136, 68, Route58Name
+	landmark  148, 68, NavelIslandName
+	landmark  148, 92, SevenGrapefruitsName
+	landmark  148, 100, Route59Name
+	landmark  148, 108, MoroIslandName
+	landmark  140, 116, Route60Name
+	landmark  132, 124, GoldenIslandName
+	landmark  132, 132, Route61Name
+	landmark  148, 132, MurcottIslandName
+	landmark  132, 140, SatsumaIslandName
+	landmark  116, 132, MandarinPortName
+	landmark  100, 132, Route62Name
+	landmark  100, 140, YamberaName
+	landmark  92, 132, MandarinDesertName
+	landmark  84, 124, TrovitopolisName
+	landmark  92, 116, PokeballFactoryName
+	landmark  85, 124, CityHallName
+	landmark  68, 132, TrovitaIslandName
+	landmark  120, 48, CleopatraIslandName
+	landmark  140, 36, Route63Name
+	landmark  156, 20, AscorbiaIslandName
+	landmark  158, 18, InterpolHqName
+	landmark  148, 20, HeartScaleCoveName
+	landmark  140, 20, Route64Name
+	landmark  124, 28, Route65Name
+	landmark  120, 16, ButwalIslandName
+	landmark  100, 20, Route66Name
+	landmark  92, 36, KumquatIslandName
+	landmark  68, 36, Route67Name
+	landmark  52, 36, RindIslandName
+	landmark  44, 36, MillsweetCampName
+	landmark  28, 36, Route68Name
+	landmark  12, 36, TrifoliateIslandName
+	landmark  12, 28, Route69Name
+	landmark  12, 20, VictoryRoadOrangeName
+	landmark  28, 20, PummeloIslandName
+	landmark  26, 18, PummeloStadiumName
+	landmark  44, 20, Route70Name
+	landmark  56, 20, TarrocoIslandName
+	landmark  68, 20, Route71Name
+	landmark  68, 16, RaymondsHideoutName
+	landmark  84, 16, HamlinIslandName
+	landmark  84, 20, HamlinFieldsName
+	landmark  84, 60, ShamoutiIslandName
+	landmark  76, 60, ShamoutiBayName
+	landmark  76, 68, ShamoutiJungleName
+	landmark  92, 68, ShamoutiShrineName
+	landmark  76, 76, LightningIslandName
+	landmark  92, 76, IceIslandName
+	landmark  100, 68, FireIslandName
+;	landmark  108, 76, FlyingFortressName
 	assert_table_length KANTO_LANDMARK
 	landmark  52, 108, PalletTownName
 	landmark  52,  92, Route1Name
@@ -152,64 +153,65 @@ MandarinNorthName:     db "MANDARIN NORTH@"
 RaticateRadioName:     db "RATICATE RADIO@"
 SunburstIslandName:     db "SUNBURST ISLAND@"
 CrystalCaveName:     db "CRYSTAL CAVE@"
-Route55Name:     db "@"
-PinkanIslandName:     db "@"
-Route56Name:     db "@"
-FukuharaNo4Name:     db "@"
-KinnowIslandName:     db "@"
-Route57Name:     db "@"
-OvaleIslandName:     db "@"
-Route58Name:     db "@"
-NavelIslandName:     db "@"
-SevenGrapefruitsName:     db "@"
-Route59Name:     db "@"
-MoroIslandName:     db "@"
-Route60Name:     db "@"
-GoldenIslandName:     db "@"
-Route61Name:     db "@"
-MurcottIslandName:     db "@"
-SatsumaIslandName:     db "@"
-MandarinPortName:     db "@"
-Route62Name:     db "@"
-YamberaName:     db "@"
-MandarinDesertName:     db "@"
-TrovitopolisName:     db "@"
-PokeballFactoryName:     db "@"
-CityHallName:     db "@"
-TrovitaIslandName:     db "@"
-CleopatraIslandName:     db "@"
-Route63Name:     db "@"
-AscorbiaIslandName:     db "@"
-InterpolHqName:     db "@"
-HeartScaleCoveName:     db "@"
-Route64Name:     db "@"
-Route65Name:     db "@"
-ButwalIslandName:     db "@"
-Route66Name:     db "@"
-KumquatIslandName:     db "@"
-Route67Name:     db "@"
-RindIslandName:     db "@"
+Route55Name:     db "ROUTE 55@"
+PinkanIslandName:     db "PINKAN ISLAND@"
+Route56Name:     db "ROUTE 56@"
+FukuharaNo4Name:     db "FUKUHARA NO.4@"
+KinnowIslandName:     db "KINNOW ISLAND@"
+KinnowShowboatName:     db "KINNOW SHOWBOAT@"
+Route57Name:     db "ROUTE 57@"
+OvaleIslandName:     db "OVALE ISLAND@"
+Route58Name:     db "ROUTE 58@"
+NavelIslandName:     db "NAVEL ISLAND@"
+SevenGrapefruitsName:     db "SEVEN GRAPEFRUITS@"
+Route59Name:     db "ROUTE 59@"
+MoroIslandName:     db "MORO ISLAND@"
+Route60Name:     db "ROUTE 60@"
+GoldenIslandName:     db "GOLDEN ISLAND@"
+Route61Name:     db "ROUTE 61@"
+MurcottIslandName:     db "MURCOTT ISLAND@"
+SatsumaIslandName:     db "SATSUMA ISLAND@"
+MandarinPortName:     db "MANDARIN PORT@"
+Route62Name:     db "ROUTE 62@"
+YamberaName:     db "YAMBERA VILLAGE@"
+MandarinDesertName:     db "MANDARIN DESERT@"
+TrovitopolisName:     db "TROVITOPOLIS@"
+PokeballFactoryName:     db "#BALL FACTORY@"
+CityHallName:     db "CITY HALL@"
+TrovitaIslandName:     db "TROVITA ISLAND@"
+CleopatraIslandName:     db "CLEOPATRA ISLAND@"
+Route63Name:     db "ROUTE 63@"
+AscorbiaIslandName:     db "ASCORBIA ISLAND@"
+InterpolHqName:     db "INTERPOL HQ@"
+HeartScaleCoveName:     db "HEART SCALE COVE@"
+Route64Name:     db "ROUTE 64@"
+Route65Name:     db "ROUTE 65@"
+ButwalIslandName:     db "BUTWAL ISLAND@"
+Route66Name:     db "ROUTE 66@"
+KumquatIslandName:     db "KUMQUAT ISLAND@"
+Route67Name:     db "ROUTE 67@"
+RindIslandName:     db "RIND ISLAND@"
 MillsweetCampName:     db "MILLSWEET CAMP@"
 Route68Name:     db "ROUTE 68@"
-TrifoliateIslandName:     db "@"
-Route69Name:     db "@"
-VictoryRoadOrangeName:     db "@"
-PummeloIslandName:     db "@"
-PummeloStadiumName:     db "@"
-Route70Name:     db "@"
-TarrocoIslandName:     db "@"
-Route71Name:     db "@"
-RaymondsHideoutName:     db "@"
-HamlinIslandName:     db "@"
-HamlinFieldsName:     db "@"
-ShamoutiIslandName:     db "@"
-ShamoutiBayName:     db "@"
-ShamoutiJungleName:     db "@"
-ShamoutiShrineName:     db "@"
-LightningIslandName:     db "@"
-IceIslandName:     db "@"
-FireIslandName:     db "@"
-;FlyingFortressName:     db "@"
+TrifoliateIslandName:     db "TRIFOLIATE ISLAND@"
+Route69Name:     db "ROUTE 69@"
+VictoryRoadOrangeName:     db "VICTORY ROAD@"
+PummeloIslandName:     db "PUMMELO ISLAND@"
+PummeloStadiumName:     db "PUMMELO STADIUM@"
+Route70Name:     db "ROUTE 70@"
+TarrocoIslandName:     db "TARROCO ISLAND@"
+Route71Name:     db "ROUTE 71@"
+RaymondsHideoutName:     db "RAYMOND'S HIDEOUT@"
+HamlinIslandName:     db "HAMLIN ISLAND@"
+HamlinFieldsName:     db "HAMLIN FIELDS@"
+ShamoutiIslandName:     db "SHAMOUTI ISLAND@"
+ShamoutiBayName:     db "SHAMOUTI BAY@"
+ShamoutiJungleName:     db "SHAMOUTI JUNGLE@"
+ShamoutiShrineName:     db "SHAMOUTI SHRINE@"
+LightningIslandName:     db "LIGHTNING ISLAND@"
+IceIslandName:     db "ICE ISLAND@"
+FireIslandName:     db "FIRE ISLAND@"
+;FlyingFortressName:     db "FLYING FORTRESS@"
 
 NewBarkTownName:     db "NEW BARK<BSP>TOWN@"
 CherrygroveCityName: db "CHERRYGROVE<BSP>CITY@"
