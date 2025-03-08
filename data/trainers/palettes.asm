@@ -10,10 +10,10 @@ PlayerPalette:
 INCLUDE "gfx/player/chris.pal"
 
 INCBIN "gfx/trainers/cissy.gbcpal", middle_colors
-INCBIN "gfx/trainers/whitney.gbcpal", middle_colors
-INCBIN "gfx/trainers/bugsy.gbcpal", middle_colors
-INCBIN "gfx/trainers/morty.gbcpal", middle_colors
-INCBIN "gfx/trainers/pryce.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/rudy.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/danny.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/luana.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/drake.gbcpal", middle_colors
 INCBIN "gfx/trainers/jasmine.gbcpal", middle_colors
 INCBIN "gfx/trainers/chuck.gbcpal", middle_colors
 INCBIN "gfx/trainers/clair.gbcpal", middle_colors
@@ -88,6 +88,22 @@ INCBIN "gfx/trainers/butch.gbcpal", middle_colors
 INCBIN "gfx/trainers/cassidy.gbcpal", middle_colors
 INCBIN "gfx/trainers/butch_cassidy.gbcpal", middle_colors
 INCBIN "gfx/trainers/looker.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/jessie.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/james.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/jessie_james.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/mayor.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/yellow.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/flint.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/cyan_m.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/cyan_f.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/lackey.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/crook.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/raymond.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/maizie.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/lawrence.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/imakuni.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/imakuni_neo.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/imakuni_slow.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
 KrisPalette:

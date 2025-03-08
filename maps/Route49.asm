@@ -296,7 +296,7 @@ Route49_MapEvents:
 	bg_event 23, 15, BGEVENT_READ, TrainerTipsRoute49Sign
 	bg_event 18,  6, BGEVENT_ITEM, Route49HiddenPotion
 	bg_event 20, 38, BGEVENT_ITEM, Route49HiddenStarPiece
-	bg_event  5, 20, BGEVENT_ITEM, Route49HiddenRevive
+	bg_event  6, 31, BGEVENT_ITEM, Route49HiddenRevive
 
 	def_object_events
 	object_event 33, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ValenciaCooltrainerScript, -1
@@ -306,4 +306,4 @@ Route49_MapEvents:
 	object_event  7,  8, SPRITE_SHADOW, SPRITEMOVEDATA_WANDER, 5, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Swoop, -1
 	object_event 30, 34, SPRITE_SHADOW, SPRITEMOVEDATA_SWIM_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Depths, -1
 	object_event 24,  4, SPRITE_BERRY_G_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_SCRIPT, 0, Route49FruitTree1, -1
-	object_event 10, 24, SPRITE_BERRY_Q_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route49FruitTree2, -1
+	object_event 12, 24, SPRITE_BERRY_Q_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route49FruitTree2, -1

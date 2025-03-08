@@ -79,6 +79,22 @@ TrainerClassIVs:
 	ivs 18, 14, 28, 20, 16, 16 ; CASSIDY
 	ivs 18, 14, 28, 20, 16, 16 ; BUTCHCASSIDY
 	ivs 16, 18, 16, 16, 16, 16 ; LOOKER
+	ivs 18, 14, 28, 20, 16, 16 ; JESSIE
+	ivs 18, 14, 28, 20, 16, 16 ; JAMES
+	ivs 18, 14, 28, 20, 16, 16 ; JESSIEJAMES
+	ivs 25, 26, 24, 26, 26, 26 ; MAYOR
+	ivs 16, 18, 16, 16, 16, 16 ; YELLOW
+	ivs 18, 14, 28, 20, 16, 16 ; FLINT
+	ivs 26, 26, 26, 26, 26, 26 ; CYANM
+	ivs 26, 26, 26, 26, 26, 26 ; CYANF
+	ivs 16, 18, 16, 16, 16, 16 ; LACKEY
+	ivs 16, 18, 16, 16, 16, 16 ; CROOK
+	ivs 16, 18, 16, 16, 16, 16 ; RAYMOND
+	ivs 16, 18, 16, 16, 16, 16 ; MAIZIE
+	ivs 31, 31, 31, 31, 31, 31 ; LAWRENCE
+	ivs 04, 04, 04, 04, 04, 04 ; IMAKUNI
+	ivs 04, 04, 04, 04, 04, 04 ; IMAKUNI
+	ivs 04, 04, 04, 04, 04, 04 ; IMAKUNI
 	ivs 16, 18, 16, 16, 16, 16 ; MYSTICALMAN
 	ivs 25, 26, 24, 26, 26, 26 ; KRIS
 	assert_table_length NUM_TRAINER_CLASSES

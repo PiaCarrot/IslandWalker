@@ -167,7 +167,7 @@ IntroScene1:
 	call Intro_InitShellders
 	call Intro_InitShelldersEyes
 	call Intro_InitLuvDisc
-	ld de, MUSIC_NONE
+	ld de, MUSIC_ORANGE_TITLE
 	call PlayMusic
 	ret
 
@@ -1106,7 +1106,7 @@ IntroScene10:
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
-	ld de, MUSIC_INTRO_BATTLE
+	ld de, MUSIC_ORANGE_TITLE_2
 	call PlayMusic
 	ret
 
@@ -1160,7 +1160,7 @@ IntroScene12:
 	ld [wIntroFrameCounter1], a
 	ld c, 255
 	call DelayFrames
-	ld c, 200
+	ld c, 225
 	call DelayFrames
 	ret
 

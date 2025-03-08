@@ -183,9 +183,12 @@ ValenciaIslandAltStarterEventCutTreeCallback:
 	
 ValenciaYoungsterScript:
 	opentext
-	givepoke LAPRAS_PARTNER, PLAIN_FORM, 20, ORAN_BERRY
-	givepoke PIKACHU, PLAIN_FORM, 21, ORAN_BERRY
-	givepoke FURRET, PLAIN_FORM, 20, ORAN_BERRY
+	givepoke LAPRAS_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
+	givepoke PIKACHU, PLAIN_FORM, 100, ORAN_BERRY
+	givepoke FURRET, PLAIN_FORM, 100, ORAN_BERRY
+	givepoke MEWTWO, PLAIN_FORM, 100, ORAN_BERRY
+	givepoke MEW, PLAIN_FORM, 100, ORAN_BERRY
+	givepoke TYRANITAR, PLAIN_FORM, 100, ORAN_BERRY
 	giveitem HM_SURF
 	giveitem SEA_MAP
 	givemoney YOUR_MONEY, 999999
@@ -196,6 +199,9 @@ ValenciaYoungsterScript:
 	addcellnum PHONE_NANU
 	addcellnum PHONE_YELLOW
 	closetext
+	loadtrainer MAYOR, MAYOR_1
+	startbattle
+	reloadmapafterbattle
 	warp SUNBURST_ISLAND, 15, 15
 	end
 	jumptextfaceplayer ValenciaYoungsterText

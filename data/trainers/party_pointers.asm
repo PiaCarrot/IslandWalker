@@ -80,6 +80,22 @@ TrainerGroups:
 	dba CassidyGroup
 	dba ButchCassidyGroup
 	dba LookerGroup
+	dba JessieGroup
+	dba JamesGroup
+	dba JessieJamesGroup
+	dba MayorGroup
+	dba YellowGroup
+	dba FlintGroup
+	dba CyanMGroup
+	dba CyanFGroup
+	dba LackeyGroup
+	dba CrookGroup
+	dba RaymondGroup
+	dba MaizieGroup
+	dba LawrenceGroup
+	dba ImakuniGroup
+	dba ImakuniNeoGroup
+	dba ImakuniSlowGroup
 	dba MysticalmanGroup
 	dba KrisGroup
 	assert_table_length NUM_TRAINER_CLASSES

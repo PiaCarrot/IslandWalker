@@ -81,6 +81,22 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; cassidy
 	db MUSIC_ROCKET_ENCOUNTER      ; butch and cassidy
 	db MUSIC_LOOKER      ; looker
+	db MUSIC_ROCKET_ENCOUNTER      ; jessie
+	db MUSIC_ROCKET_ENCOUNTER      ; james
+	db MUSIC_ROCKET_ENCOUNTER      ; jessiejames
+	db MUSIC_ROCKET_ENCOUNTER      ; mayor
+	db MUSIC_CLAIR      ; yellow
+	db MUSIC_OFFICER_ENCOUNTER      ; flint
+	db MUSIC_ORANGE_ENCOUNTER      ; cyanm
+	db MUSIC_ORANGE_ENCOUNTER      ; cyanf
+	db MUSIC_ORANGE_ENCOUNTER      ; lackey
+	db MUSIC_ORANGE_ENCOUNTER      ; crook
+	db MUSIC_ORANGE_ENCOUNTER      ; raymond
+	db MUSIC_ORANGE_ENCOUNTER      ; maizie
+	db MUSIC_ORANGE_ENCOUNTER      ; lawrence
+	db MUSIC_IMAKUNI_THEME      ; imakuni
+	db MUSIC_IMAKUNI_THEME      ; neo
+	db MUSIC_IMAKUNI_THEME      ; slow
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_HIKER_ENCOUNTER       ; kris
 	assert_table_length NUM_TRAINER_CLASSES + 1

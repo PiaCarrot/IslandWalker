@@ -51,6 +51,16 @@ WantsToBattleText::
 	text "<ENEMY>"
 	line "wants to battle!"
 	prompt
+	
+PluralWantToBattleText::
+	text "<ENEMY>"
+	line "want to battle!"
+	prompt
+	
+ImakuniWantToBattleText::
+	text "<ENEMY>"
+	line "appeared!"
+	prompt
 
 BattleText_WildFled:
 	text "Wild @"
@@ -189,6 +199,16 @@ BattleText_EnemyWasDefeated:
 	text "<ENEMY>"
 	line "was defeated!"
 	prompt
+	
+BattleText_PluralEnemyWereDefeated:
+	text "<ENEMY>"
+	line "were defeated!"
+	prompt
+	
+BattleText_ImakuniEnemyWereDefeated:
+	text "<ENEMY>"
+	line "fainted!"
+	prompt
 
 TiedAgainstText:
 	text "Tied against"
@@ -233,6 +253,16 @@ BattleText_EnemyIsAboutToUseWillPlayerChangeMon:
 	text_ram wEnemyMonNickname
 	text "."
 
+	para "Will <PLAYER>"
+	line "change #MON?"
+	done
+	
+BattleText_PluralEnemyAreAboutToUseWillPlayerChangePkmn:
+	text "<ENEMY>"
+	line "are about to use"
+	cont "@"
+	text_ram wEnemyMonNickname
+	text "."
 	para "Will <PLAYER>"
 	line "change #MON?"
 	done

@@ -102,7 +102,6 @@ Music:
 	dba Music_MobileAdapter
 	dba Music_BuenasPassword
 	dba Music_LookMysticalMan
-	dba Music_CrystalOpening
 	dba Music_BattleTowerTheme
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
@@ -146,6 +145,10 @@ Music:
 	dba Music_CianwoodCity
 	dba Music_RocketHQ
 	dba Music_SplashMusic ; piacrt
+	dba Music_OrangeTitle ; regen
+	dba Music_OrangeTitle2 ; regen
+	dba Music_RocketBossBattle ; piacrt
+	dba Music_SirdBattle ; monsta
 ; rse
 	dba Music_PokemonMart ;Mmmmm
 	dba Music_SlateportCity ;Mmmmm

@@ -80,6 +80,22 @@ TrainerPicPointers::
 	dba CassidyPic
 	dba ButchCassidyPic
 	dba LookerPic
+	dba JessiePic
+	dba JamesPic
+	dba JessieJamesPic
+	dba MayorPic
+	dba YellowPic
+	dba FlintPic
+	dba CyanMPic
+	dba CyanFPic
+	dba LackeyPic
+	dba CrookPic
+	dba RaymondPic
+	dba MaiziePic
+	dba LawrencePic
+	dba ImakuniPic
+	dba ImakuniNeoPic
+	dba ImakuniSlowPic
 	dba MysticalmanPic
 	dba KrisTrainerPic
 	assert_table_length NUM_TRAINER_CLASSES

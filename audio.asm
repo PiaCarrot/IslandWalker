@@ -131,7 +131,6 @@ SECTION "Songs 5", ROMX
 INCLUDE "audio/music/mobileadaptermenu.asm"
 INCLUDE "audio/music/buenaspassword.asm"
 INCLUDE "audio/music/lookmysticalman.asm"
-INCLUDE "audio/music/crystalopening.asm"
 INCLUDE "audio/music/battletowertheme.asm"
 INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"
@@ -182,6 +181,8 @@ INCLUDE "audio/music/orange/looker.asm"
 INCLUDE "audio/music/orange/orangeencounter.asm"
 INCLUDE "audio/music/orange/crossencounter.asm"
 INCLUDE "audio/music/orange/routeextra.asm"
+INCLUDE "audio/music/Title/orange-title.asm"
+INCLUDE "audio/music/Title/orange-title-part2.asm"
 
 SECTION "Songs Monstarules", ROMX
 
@@ -201,6 +202,8 @@ INCLUDE "audio/music/hgss/cianwoodcity.asm" ;???
 INCLUDE "audio/music/orange/rockethq.asm"
 INCLUDE "audio/music/rse/slateportcity.asm" ;mmmm
 INCLUDE "audio/music/Title/splash.asm" ;piacrt
+INCLUDE "audio/music/orange/rocketboss.asm"
+INCLUDE "audio/music/orange/sirdbattle.asm"
 
 
 SECTION "Sound Effects", ROMX

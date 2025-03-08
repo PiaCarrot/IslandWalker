@@ -35,7 +35,7 @@ MagikarpLengthRaterScript:
 .GetReward:
 	writetext MagikarpLengthRaterText_Memento
 	promptbutton
-	verbosegiveitem ELIXIR
+	verbosegiveitem PP_MAX
 	iffalse .NoRoom
 	writetext MagikarpLengthRaterText_Bonus
 	waitbutton
@@ -109,14 +109,12 @@ MagikarpLengthRaterText_Bonus:
 	done
 
 MagikarpLengthRaterText_TooShort:
-	text "Wow! This one is"
-	line "outstanding!"
+	text "Hmm…"
+	line "No good!"
 
-	para "…I wish I could"
-	line "say that, but I've"
-
-	para "seen a bigger one"
-	line "before."
+	para "My grandma's caught"
+	line "bigger ones than"
+	cont "that!"
 	done
 
 MagikarpLengthRaterText_NotMagikarp:

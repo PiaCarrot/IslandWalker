@@ -29,8 +29,8 @@ CissyGroup:
 	end_list_items
 
 WhitneyGroup:
-	next_list_item ; WHITNEY (1)
-	db "WHITNEY@", TRAINERTYPE_MOVES
+	next_list_item ; RUDY (1)
+	db "RUDY@", TRAINERTYPE_MOVES
 	db 18
 	dw CLEFAIRY
 	dw DOUBLESLAP, MIMIC, ENCORE, METRONOME
@@ -42,8 +42,8 @@ WhitneyGroup:
 	end_list_items
 
 BugsyGroup:
-	next_list_item ; BUGSY (1)
-	db "BUGSY@", TRAINERTYPE_MOVES
+	next_list_item ; DANNY (1)
+	db "DANNY@", TRAINERTYPE_MOVES
 	db 14
 	dw METAPOD
 	dw TACKLE, STRING_SHOT, HARDEN, NO_MOVE
@@ -58,8 +58,8 @@ BugsyGroup:
 	end_list_items
 
 MortyGroup:
-	next_list_item ; MORTY (1)
-	db "MORTY@", TRAINERTYPE_MOVES
+	next_list_item ; LUANA (1)
+	db "LUANA@", TRAINERTYPE_MOVES
 	db 21
 	dw GASTLY
 	dw LICK, SPITE, MEAN_LOOK, CURSE
@@ -77,8 +77,8 @@ MortyGroup:
 	end_list_items
 
 PryceGroup:
-	next_list_item ; PRYCE (1)
-	db "PRYCE@", TRAINERTYPE_MOVES
+	next_list_item ; DRAKE (1)
+	db "DRAKE@", TRAINERTYPE_MOVES
 	db 27
 	dw SEEL
 	dw HEADBUTT, ICY_WIND, AURORA_BEAM, REST
@@ -4061,12 +4061,41 @@ Lorelei2Group:
 
 Lorelei3Group:
 	next_list_item ; ELITE FOUR (1)
-	db "LORELEI@", TRAINERTYPE_MOVES
-	db  5
-	dw SMOOCHUM
-	dw POUND, NO_MOVE, NO_MOVE, NO_MOVE
+	db "LORELEI@", TRAINERTYPE_ITEM_MOVES
+
+	db 75
+	dw DEWGONG
+	dw LEFTOVERS
+	dw SURF, ICE_BEAM, DOUBLE_TEAM, NO_MOVE
+
+	db 75
+	dw SLOWBRO
+	dw SITRUS_BERRY
+	dw ICE_BEAM, SURF, AMNESIA, CURSE
+
+	db 74
+	dw CLOYSTER
+	dw NEVERMELTICE
+	dw RAIN_DANCE, SURF, ICE_BEAM, SUPERSONIC
+
+	db 74
+	dw PILOSWINE
+	dw QUICK_CLAW
+	dw EARTHQUAKE, BLIZZARD, DOUBLE_EDGE, ROCK_SLIDE
+
+	db 77
+	dw JYNX
+	dw BRIGHTPOWDER
+	dw PSYCHIC_M, ICE_BEAM, LOVELY_KISS, ATTRACT
+
+	db 78
+	dw LAPRAS
+	dw MYSTIC_WATER
+	dw PSYCHIC_M, THUNDER, SURF, ICE_BEAM
 	db -1 ; end
+
 	end_list_items
+
 	
 Tracey1Group:
 	next_list_item ; TRACEY1 (1)
@@ -4154,6 +4183,180 @@ ButchCassidyGroup:
 LookerGroup:
 	next_list_item ;LOOKER (1)
 	db "LOOKER@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+JessieGroup:
+	next_list_item ;JESSIE (1)
+	db "JESSIE@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+JamesGroup:
+	next_list_item ;JAMES (1)
+	db "JAMES@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+JessieJamesGroup:
+	next_list_item ;JESSIEJAMES (1)
+	db "& JAMES@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+MayorGroup:
+	next_list_item ;MAYOR (1)
+	db "MAYOR@", TRAINERTYPE_ITEM_MOVES
+
+	db 50
+	dw LICKITUNG ; OWN_TEMPO
+	dw BERSERK_GENE ; SERUM R
+	dw ROLLOUT, SLAM, DISABLE, SCREECH
+
+	db 54
+	dw HOUNDOOM
+	dw LEFTOVERS
+	dw FLAMETHROWER, CRUNCH, BEAT_UP, ROAR
+
+	db 55
+	dw RATTATA ; SPINDA OWN TEMPO
+	dw BERSERK_GENE ; SERUM R
+	dw DIZZY_PUNCH, HYPNOSIS, PSYCHIC_M, SHADOW_BALL
+	db -1 ; end
+	
+; TODO: GALARIAN SLOWBRO/SNEASEL/MIGHTYENA/HONCHKROW... 
+
+	end_list_items
+	
+YellowGroup:
+	next_list_item ;YELLOW (1)
+	db "YELLOW@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+FlintGroup:
+	next_list_item ;FLINT (1)
+	db "FLINT@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+CyanMGroup:
+	next_list_item ;CYAN_M (1)
+	db "CYAN@", TRAINERTYPE_MOVES
+	db 55
+	dw PIKACHU
+	dw THUNDERBOLT, SLAM, THUNDER, FLY
+	db -1 ; end
+
+	end_list_items
+	
+CyanFGroup:
+	next_list_item ;CYAN_F (1)
+	db "CYAN@", TRAINERTYPE_MOVES
+	db 55
+	dw PIKACHU
+	dw THUNDERBOLT, SLAM, THUNDER, FLY
+	db -1 ; end
+
+	end_list_items
+	
+LackeyGroup:
+	next_list_item ;LACKEY (1)
+	db "LACKEY@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+CrookGroup:
+	next_list_item ;CROOK (1)
+	db "CROOK@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+RaymondGroup:
+	next_list_item ;RAYMOND (1)
+	db "RAYMOND@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+MaizieGroup:
+	next_list_item ;MAIZIE (1)
+	db "MAIZIE@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+LawrenceGroup:
+	next_list_item ;LAWRENCE (1)
+	db "LAWRENCE@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+ImakuniGroup:
+	next_list_item ;IMAKUNI (1)
+	db "IMAKUNI?@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+ImakuniNeoGroup:
+	next_list_item ;IMAKUNINEO (1)
+	db "NEO?@", TRAINERTYPE_MOVES
+	db 18
+	dw GROWLITHE
+	dw EMBER, FORESIGHT, ROAR, BITE
+	db -1 ; end
+
+	end_list_items
+	
+ImakuniSlowGroup:
+	next_list_item ;IMAKUNI_SLOW (1)
+	db "IMAKUNI!?@", TRAINERTYPE_MOVES
 	db 18
 	dw GROWLITHE
 	dw EMBER, FORESIGHT, ROAR, BITE

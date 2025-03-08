@@ -80,5 +80,21 @@ BTTrainerClassGenders:
 	db FEMALE   ; CASSIDY
 	db MALE   ; BUTCHCASSIDY
 	db MALE   ; LOOKER
+	db FEMALE   ; JESSIE
+	db MALE   ; JAMES
+	db MALE   ; JESSIEJAMES
+	db MALE   ; MAYOR
+	db FEMALE   ; YELLOW
+	db MALE   ; FLINT
+	db MALE   ; CYANM
+	db FEMALE   ; CYANF
+	db MALE   ; LACKEY
+	db MALE   ; CROOK
+	db MALE   ; RAYMOND
+	db FEMALE   ; MAIZIE
+	db MALE   ; LAWRENCE
+	db MALE   ; IMAKUNI
+	db MALE   ; IMAKUNI
+	db MALE   ; IMAKUNI
 	db FEMALE ; KRIS
 	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN

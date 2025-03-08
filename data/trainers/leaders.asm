@@ -6,17 +6,10 @@
 
 GymLeaders:
 	db CISSY
-	db WHITNEY
-	db BUGSY
-	db MORTY
-	db PRYCE
-	db JASMINE
-	db CHUCK
-	db CLAIR
-	db WILL
-	db BRUNO
-	db KAREN
-	db KOGA
+	db RUDY
+	db DANNY
+	db LUANA
+	db DRAKE
 	db CHAMPION
 	db RED
 ; fallthrough
@@ -29,4 +22,24 @@ KantoGymLeaders:
 	db SABRINA
 	db BLAINE
 	db BLUE
+	db FLINT
+	db BRUNO
+	db WILL
+	db KAREN
+	db KOGA
+	db LORELEI3
+	db MAYOR
+	db -1
+TeamRocket:
+	db GRUNTM
+	db GRUNTF
+	db EXECUTIVEM
+	db EXECUTIVEF
+	db SCIENTIST
+	db BUTCH
+	db CASSIDY
+	db BUTCHCASSIDY
+	db JESSIE
+	db JAMES
+	db JESSIEJAMES
 	db -1

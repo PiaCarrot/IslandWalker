@@ -32,17 +32,17 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	trainerclass CISSY ; 1
 	const CISSY1
 
-	trainerclass WHITNEY ; 2
-	const WHITNEY1
+	trainerclass RUDY ; 2
+	const RUDY1
 
-	trainerclass BUGSY ; 3
-	const BUGSY1
+	trainerclass DANNY ; 3
+	const DANNY1
 
-	trainerclass MORTY ; 4
-	const MORTY1
+	trainerclass LUANA ; 4
+	const LUANA1
 
-	trainerclass PRYCE ; 5
-	const PRYCE1
+	trainerclass DRAKE ; 5
+	const DRAKE1
 
 	trainerclass JASMINE ; 6
 	const JASMINE1
@@ -256,11 +256,59 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	trainerclass CASSIDY ; 52
 	const CASSIDY_1
 	
-	trainerclass BUTCHCASSIDY ; 52
+	trainerclass BUTCHCASSIDY ; 53
 	const BUTCH_CASSIDY_1
 	
-	trainerclass LOOKER ; 52
+	trainerclass LOOKER ; 54
 	const LOOKER_1
+	
+	trainerclass JESSIE ; 55
+	const JESSIE_1
+	
+	trainerclass JAMES ; 56
+	const JAMES_1
+
+	trainerclass JESSIEJAMES ; 57
+	const JESSIEJAMES_1
+
+	trainerclass MAYOR ; 58
+	const MAYOR_1
+
+	trainerclass YELLOW ; 59
+	const YELLOW_1
+
+	trainerclass FLINT ; 60
+	const FLINT_1
+
+	trainerclass CYAN_M ; 61
+	const CYAN_M_1
+
+	trainerclass CYAN_F ; 62
+	const CYAN_F_1
+
+	trainerclass LACKEY ; 52
+	const LACKEY_1
+
+	trainerclass CROOK ; 52
+	const CROOK_1
+
+	trainerclass RAYMOND ; 52
+	const RAYMOND_1
+
+	trainerclass MAIZIE ; 52
+	const MAIZIE_1
+
+	trainerclass LAWRENCE ; 52
+	const LAWRENCE_1
+
+	trainerclass IMAKUNI ; 52
+	const IMAKUNI_1
+
+	trainerclass IMAKUNINEO ; 52
+	const IMAKUNI_NEO_1
+
+	trainerclass IMAKUNI_SLOW ; 52
+	const IMAKUNI_SLOW_1
 
 	trainerclass MYSTICALMAN ; 
 	const EUSINE

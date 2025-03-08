@@ -1,5 +1,6 @@
 SECTION "Map Scripts 1", ROMX
 
+INCLUDE "maps/ValenciaIsland.asm"
 
 SECTION "Map Scripts 2", ROMX
 
@@ -127,7 +128,6 @@ SECTION "Map Scripts 24", ROMX
 
 INCLUDE "maps/SunburstIsland.asm"
 INCLUDE "maps/SunburstIslandPokecenter1F.asm"
-INCLUDE "maps/ValenciaIsland.asm"
 INCLUDE "maps/IvysLab.asm"
 INCLUDE "maps/MateosHouse.asm"
 INCLUDE "maps/GlassBlowersHouse1.asm"

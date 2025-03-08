@@ -75,27 +75,28 @@ PlayBattleMusic:
 	cp RED
 	jr z, .done
 
-	ld de, MUSIC_ROCKET_BATTLE
-	cp GRUNTM
+	ld de, MUSIC_DRAKE_BATTLE
+	cp DRAKE
 	jr z, .done
-	cp GRUNTF
+
+	ld de, MUSIC_ROCKET_BOSS_BATTLE
+	cp MAYOR
 	jr z, .done
-	cp EXECUTIVEM
-	jr z, .done
-	cp EXECUTIVEF
-	jr z, .done
-	cp SCIENTIST
-	jr z, .done
-	cp BUTCH
-	jr z, .done
-	cp CASSIDY
-	jr z, .done
-	cp BUTCHCASSIDY
-	jr z, .done
-	
 
 	ld de, MUSIC_TRACEY_BATTLE
 	cp TRACEY1
+	jr z, .done
+
+	ld de, MUSIC_SIRD_BATTLE
+	cp LAWRENCE
+	jr z, .done
+
+	ld de, MUSIC_IMAKUNI_THEME
+	cp IMAKUNI
+	jr z, .done
+	cp IMAKUNINEO
+	jr z, .done
+	cp IMAKUNI_SLOW
 	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
@@ -106,6 +107,10 @@ PlayBattleMusic:
 	; but they have been taken care of before this
 	ld de, MUSIC_ORANGE_ISLANDS_GYM_BATTLE
 	farcall IsGymLeader
+	jr c, .done
+
+	ld de, MUSIC_ROCKET_BATTLE
+	farcall IsTeamRocket
 	jr c, .done
 
 	ld de, MUSIC_CROSS_BATTLE

@@ -2340,8 +2340,16 @@ WinTrainerBattle:
 	and a
 	ld a, b
 	call z, PlayVictoryMusic
+
 	farcall Battle_GetTrainerName
+	call CheckPluralTrainer
+	ld hl, BattleText_PluralEnemyWereDefeated
+	jr z, .PlaceBattleEndText
+	call CheckImakuniTrainer
+	ld hl, BattleText_ImakuniEnemyWereDefeated
+	jr z, .PlaceBattleEndText
 	ld hl, BattleText_EnemyWasDefeated
+.PlaceBattleEndText
 	call StdBattleTextbox
 
 	ld a, [wLinkMode]
@@ -2558,6 +2566,10 @@ PlayVictoryMusic:
 
 IsKantoGymLeader:
 	ld hl, KantoGymLeaders
+	jr IsGymLeaderCommon
+
+IsTeamRocket:
+	ld hl, TeamRocket
 	jr IsGymLeaderCommon
 
 IsGymLeader:
@@ -3401,9 +3413,15 @@ CheckWhetherToAskSwitch:
 OfferSwitch:
 	ld a, [wCurPartyMon]
 	push af
+
 	farcall Battle_GetTrainerName
+	call CheckPluralTrainer
+	ld hl, BattleText_PluralEnemyAreAboutToUseWillPlayerChangePkmn
+	jr z, .PlaceBattleChangeText
 	ld hl, BattleText_EnemyIsAboutToUseWillPlayerChangeMon
+.PlaceBattleChangeText
 	call StdBattleTextbox
+
 	lb bc, 1, 7
 	call PlaceYesNoBox
 	ld a, [wMenuCursorY]
@@ -8986,6 +9004,12 @@ BattleStartMessage:
 
 	farcall Battle_GetTrainerName
 
+	call CheckPluralTrainer
+	ld hl, PluralWantToBattleText
+	jr z, .PrintBattleStartText
+	call CheckImakuniTrainer
+	ld hl, ImakuniWantToBattleText
+	jr z, .PrintBattleStartText
 	ld hl, WantsToBattleText
 	jr .PrintBattleStartText
 
@@ -9050,6 +9074,22 @@ BattleStartMessage:
 	farcall BattleStart_TrainerHuds
 	pop hl
 	jmp StdBattleTextbox
+	
+CheckPluralTrainer:
+	ld a, [wOtherTrainerClass]
+	cp BUTCHCASSIDY
+	ret z
+	cp JESSIEJAMES
+	ret
+	
+CheckImakuniTrainer:
+	ld a, [wOtherTrainerClass]
+	cp IMAKUNI
+	ret z
+	cp IMAKUNINEO
+	ret z
+	cp IMAKUNI_SLOW
+	ret
 
 GetWeatherImage:
 	ld a, [wBattleWeather]
