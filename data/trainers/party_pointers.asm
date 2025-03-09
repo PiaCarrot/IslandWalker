@@ -96,6 +96,7 @@ TrainerGroups:
 	dba ImakuniGroup
 	dba ImakuniNeoGroup
 	dba ImakuniSlowGroup
+	dba GreenGroup
 	dba MysticalmanGroup
 	dba KrisGroup
 	assert_table_length NUM_TRAINER_CLASSES

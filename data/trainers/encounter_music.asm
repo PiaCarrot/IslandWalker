@@ -97,6 +97,7 @@ TrainerEncounterMusic::
 	db MUSIC_IMAKUNI_THEME      ; imakuni
 	db MUSIC_IMAKUNI_THEME      ; neo
 	db MUSIC_IMAKUNI_THEME      ; slow
+	db MUSIC_RIVAL_ENCOUNTER       ; green
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_HIKER_ENCOUNTER       ; kris
 	assert_table_length NUM_TRAINER_CLASSES + 1

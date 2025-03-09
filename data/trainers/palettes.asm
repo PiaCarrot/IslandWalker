@@ -104,6 +104,7 @@ INCBIN "gfx/trainers/orange/lawrence.gbcpal", middle_colors
 INCBIN "gfx/trainers/orange/imakuni.gbcpal", middle_colors
 INCBIN "gfx/trainers/orange/imakuni_neo.gbcpal", middle_colors
 INCBIN "gfx/trainers/orange/imakuni_slow.gbcpal", middle_colors
+INCBIN "gfx/trainers/orange/green.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
 KrisPalette:

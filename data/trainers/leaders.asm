@@ -29,6 +29,7 @@ KantoGymLeaders:
 	db KOGA
 	db LORELEI3
 	db MAYOR
+	db GREEN
 	db -1
 TeamRocket:
 	db GRUNTM

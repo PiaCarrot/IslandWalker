@@ -95,6 +95,7 @@ TrainerClassIVs:
 	ivs 04, 04, 04, 04, 04, 04 ; IMAKUNI
 	ivs 04, 04, 04, 04, 04, 04 ; IMAKUNI
 	ivs 04, 04, 04, 04, 04, 04 ; IMAKUNI
+	ivs 31, 31, 31, 31, 31, 31 ; GREEN
 	ivs 16, 18, 16, 16, 16, 16 ; MYSTICALMAN
 	ivs 25, 26, 24, 26, 26, 26 ; KRIS
 	assert_table_length NUM_TRAINER_CLASSES

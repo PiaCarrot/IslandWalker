@@ -95,4 +95,5 @@ BTTrainerClassSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_SUPER_NERD
 	db SPRITE_KRIS
+	db SPRITE_KRIS
 	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN

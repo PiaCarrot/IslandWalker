@@ -94,6 +94,7 @@ TrainerClassNames::
 	li "WILD"
 	li "WILD IMAKUNI"
 	li "WILD"
+	li "<PKMN> TRAINER"
 	li "MYSTICALMAN"
 	li "<PKMN> TRAINER"
 

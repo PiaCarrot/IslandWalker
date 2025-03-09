@@ -96,5 +96,6 @@ BTTrainerClassGenders:
 	db MALE   ; IMAKUNI
 	db MALE   ; IMAKUNI
 	db MALE   ; IMAKUNI
+	db FEMALE   ; GREEN
 	db FEMALE ; KRIS
 	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN

@@ -199,7 +199,7 @@ ValenciaYoungsterScript:
 	addcellnum PHONE_NANU
 	addcellnum PHONE_YELLOW
 	closetext
-	loadtrainer MAYOR, MAYOR_1
+	loadtrainer GREEN, GREEN_1
 	startbattle
 	reloadmapafterbattle
 	warp SUNBURST_ISLAND, 15, 15

@@ -310,6 +310,9 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	trainerclass IMAKUNI_SLOW ; 52
 	const IMAKUNI_SLOW_1
 
+	trainerclass GREEN ; 52
+	const GREEN_1
+
 	trainerclass MYSTICALMAN ; 
 	const EUSINE
 

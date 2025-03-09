@@ -33,7 +33,6 @@ INCLUDE "audio/music/route1.asm"
 INCLUDE "audio/music/route3.asm"
 INCLUDE "audio/music/route12.asm"
 INCLUDE "audio/music/kantogymbattle.asm"
-INCLUDE "audio/music/kantotrainerbattle.asm"
 INCLUDE "audio/music/kantowildbattle.asm"
 INCLUDE "audio/music/pokemoncenter.asm"
 INCLUDE "audio/music/looklass.asm"
@@ -204,6 +203,12 @@ INCLUDE "audio/music/rse/slateportcity.asm" ;mmmm
 INCLUDE "audio/music/Title/splash.asm" ;piacrt
 INCLUDE "audio/music/orange/rocketboss.asm"
 INCLUDE "audio/music/orange/sirdbattle.asm"
+INCLUDE "audio/music/RBY/seviitrainerbattle.asm"
+
+
+SECTION "Songs Other 2", ROMX
+INCLUDE "audio/music/kantotrainerbattle.asm" ;updated by zumi
+INCLUDE "audio/music/orange/wcsbattle.asm" ;zumi
 
 
 SECTION "Sound Effects", ROMX

@@ -60,13 +60,13 @@ PlayBattleMusic:
 	ld de, MUSIC_ORANGEWILD
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jr c, .done ; not NITE_F or EVE_F
+	jp c, .done ; not NITE_F or EVE_F
 	ld de, MUSIC_ORANGEWILD
-	jr .done
+	jp .done
 
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
-	jr .done
+	jp .done
 
 .trainermusic
 	ld de, MUSIC_CHAMPION_BATTLE
@@ -89,6 +89,14 @@ PlayBattleMusic:
 
 	ld de, MUSIC_SIRD_BATTLE
 	cp LAWRENCE
+	jr z, .done
+
+	ld de, MUSIC_SEVII_BATTLE
+	cp GREEN
+	jr z, .done
+
+	ld de, MUSIC_BLUE_BATTLE
+	cp BLUE
 	jr z, .done
 
 	ld de, MUSIC_IMAKUNI_THEME

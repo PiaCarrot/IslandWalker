@@ -96,6 +96,7 @@ TrainerPicPointers::
 	dba ImakuniPic
 	dba ImakuniNeoPic
 	dba ImakuniSlowPic
+	dba GreenPic
 	dba MysticalmanPic
 	dba KrisTrainerPic
 	assert_table_length NUM_TRAINER_CLASSES

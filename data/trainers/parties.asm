@@ -4363,6 +4363,44 @@ ImakuniSlowGroup:
 	db -1 ; end
 
 	end_list_items
+	
+GreenGroup:
+	next_list_item ;GREEN (1)
+	db "GREEN@", TRAINERTYPE_ITEM_MOVES
+
+	db 50
+	dw CLEFABLE 
+	dw LEFTOVERS
+	dw LIGHT_SCREEN, REFLECT, TRI_ATTACK, TOXIC
+
+	db 50
+	dw GENGAR 
+	dw SPELL_TAG
+	dw SHADOW_BALL, SLUDGE_BOMB, NO_MOVE, NO_MOVE
+
+	db 50
+	dw STARMIE 
+	dw TWISTEDSPOON
+	dw PSYCHIC_M, RAPID_SPIN, NO_MOVE, NO_MOVE
+
+	db 50
+	dw NINETALES 
+	dw CHARCOAL
+	dw FIRE_BLAST, HYPER_BEAM, NO_MOVE, NO_MOVE
+
+	db 50
+	dw KANGASKHAN 
+	dw PINK_BOW
+	dw DIZZY_PUNCH, THUNDERPUNCH, NO_MOVE, NO_MOVE
+
+	db 50
+	dw VENUSAUR 
+	dw MIRACLE_SEED
+	dw PETAL_DANCE, HEADBUTT, NO_MOVE, NO_MOVE
+
+	db -1 ; end
+
+	end_list_items
 
 MysticalmanGroup:
 	next_list_item ; MYSTICALMAN (1)

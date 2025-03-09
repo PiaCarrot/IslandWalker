@@ -149,6 +149,8 @@ Music:
 	dba Music_OrangeTitle2 ; regen
 	dba Music_RocketBossBattle ; piacrt
 	dba Music_SirdBattle ; monsta
+	dba Music_SeviiTrainerBattle ; monsta
+	dba Music_WCSBattleBW ; Pigu + Pikalaxalt
 ; rse
 	dba Music_PokemonMart ;Mmmmm
 	dba Music_SlateportCity ;Mmmmm
