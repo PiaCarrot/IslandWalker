@@ -71,13 +71,13 @@ PlayBattleMusic:
 .trainermusic
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
-	jr z, .done
+	jp z, .done
 	cp RED
-	jr z, .done
+	jp z, .done
 
 	ld de, MUSIC_DRAKE_BATTLE
 	cp DRAKE
-	jr z, .done
+	jp z, .done
 
 	ld de, MUSIC_ROCKET_BOSS_BATTLE
 	cp MAYOR
@@ -93,6 +93,8 @@ PlayBattleMusic:
 
 	ld de, MUSIC_SEVII_BATTLE
 	cp GREEN
+	jr z, .done
+	cp YELLOW
 	jr z, .done
 
 	ld de, MUSIC_BLUE_BATTLE

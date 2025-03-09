@@ -82,7 +82,7 @@ TrainerClassNames::
 	li "TOP AGENT"
 	li "JESSIE"
 	li "THE"
-	li "OFFICER"
+	li "DETECTIVE"
 	li "LEADER"
 	li "<PKMN> TRAINER"
 	li "<PKMN> TRAINER"
