@@ -4042,9 +4042,18 @@ GruntFGroup:
 Lorelei1Group:
 	next_list_item ; AUNT (1)
 	db "PRIMA@", TRAINERTYPE_MOVES
-	db  5
+	db 17
 	dw SMOOCHUM
-	dw POUND, NO_MOVE, NO_MOVE, NO_MOVE
+	dw POUND, ICY_WIND, SWEET_KISS, ATTRACT
+
+	db 15
+	dw SWINUB
+	dw ENDURE, ICY_WIND, MUD_SLAP, NO_MOVE
+
+	db 19
+	dw SHELLDER
+	dw AURORA_BEAM, SUPERSONIC, TACKLE, BARRIER
+
 	db -1 ; end
 
 	end_list_items

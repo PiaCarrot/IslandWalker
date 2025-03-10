@@ -151,6 +151,9 @@ Music:
 	dba Music_SirdBattle ; monsta
 	dba Music_SeviiTrainerBattle ; monsta
 	dba Music_WCSBattleBW ; Pigu + Pikalaxalt
+	dba Music_MidgameOrangeRoute ; regen
+	dba Music_OrangeDive ; regen
+	dba Music_LegendRed ; regen
 ; rse
 	dba Music_PokemonMart ;Mmmmm
 	dba Music_SlateportCity ;Mmmmm

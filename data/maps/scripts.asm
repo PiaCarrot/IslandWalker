@@ -4,6 +4,8 @@ INCLUDE "maps/ValenciaIsland.asm"
 
 SECTION "Map Scripts 2", ROMX
 
+INCLUDE "maps/Route55.asm"
+INCLUDE "maps/PinkanIsland.asm"
 
 SECTION "Map Scripts 3", ROMX
 

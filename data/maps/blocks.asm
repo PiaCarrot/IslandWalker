@@ -192,5 +192,11 @@ MillsweetCamp_Blocks:
 
 MillsweetLab_Blocks:
 	INCBIN "maps/MillsweetLab.ablk"
+	
+Route55_Blocks:
+	INCBIN "maps/Route55.ablk"
+
+PinkanIsland_Blocks:
+	INCBIN "maps/PinkanIsland.ablk"
 
 ENDSECTION

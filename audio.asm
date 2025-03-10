@@ -182,6 +182,9 @@ INCLUDE "audio/music/orange/crossencounter.asm"
 INCLUDE "audio/music/orange/routeextra.asm"
 INCLUDE "audio/music/Title/orange-title.asm"
 INCLUDE "audio/music/Title/orange-title-part2.asm"
+INCLUDE "audio/music/orange/squishy.asm"
+INCLUDE "audio/music/orange/orangedive.asm"
+INCLUDE "audio/music/orange/sm-legendred.asm"
 
 SECTION "Songs Monstarules", ROMX
 

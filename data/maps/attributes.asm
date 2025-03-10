@@ -153,6 +153,11 @@ ENDM
 	connection north, Route53, ROUTE_53, -11
 	
 
+	map_attributes Route55, ROUTE_55, $10, EAST
+	connection east, PinkanIsland, PINKAN_ISLAND, 8
+
+	map_attributes PinkanIsland, PINKAN_ISLAND, $10, WEST
+	connection west, Route55, ROUTE_55, -8
 	
 	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
 	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0

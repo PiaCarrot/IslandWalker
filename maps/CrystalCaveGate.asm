@@ -66,11 +66,16 @@ NoRoomForHardStoneText:
 	line "for it."
 	done
 
+CrystalCaveGateSootheBell:
+	itemball SOOTHE_BELL
+
 CrystalCaveGate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  5, SUNBURST_ISLAND, 5
+	warp_event 10, 11, CRYSTAL_CAVE_1F, 3
+	warp_event 17, 15, ROUTE_55, 1
 
 	def_coord_events
 
@@ -79,3 +84,4 @@ CrystalCaveGate_MapEvents:
 	def_object_events
 	object_event  9,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CrystalCaveGateGlassBlower1Script, EVENT_CRYSTAL_CAVE_B1F_SCENE
 	object_event  6,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CrystalCaveGateGlassBlower2Script, EVENT_MATEOS_PASSION_RESTORED
+	object_event  6,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CrystalCaveGateSootheBell, EVENT_CRYSTAL_CAVE_GATE_SOOTHE_BELL

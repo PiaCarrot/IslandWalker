@@ -117,9 +117,14 @@ ENDM
 	map_const GLASSBLOWERS_HOUSE_2,					4,  4
 	map_const CRYSTAL_CAVE_1F,					18,  16
 	map_const CRYSTAL_CAVE_B1F,					18,  14
-	map_const CRYSTAL_CAVE_GATE,					10,  4
+	map_const CRYSTAL_CAVE_GATE,					10,  10
 	map_const CURIO_SHOP,					5,  5
 	map_const SUNBURST_HOUSE,					4,  4
+	endgroup
+
+	newgroup KINNOW
+	map_const PINKAN_ISLAND,								20, 18
+	map_const ROUTE_55,					26,  30
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

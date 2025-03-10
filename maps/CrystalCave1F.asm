@@ -93,6 +93,7 @@ CrystalCave1F_MapEvents:
 	def_warp_events
 	warp_event 13, 23, SUNBURST_ISLAND, 6
 	warp_event 11,  3, CRYSTAL_CAVE_B1F, 1
+	warp_event 18,  1, CRYSTAL_CAVE_GATE, 2
 
 	def_coord_events
 

@@ -96,6 +96,10 @@ PlayBattleMusic:
 	jr z, .done
 	cp YELLOW
 	jr z, .done
+	cp LORELEI1
+	jr z, .done
+	cp LORELEI2
+	jr z, .done
 
 	ld de, MUSIC_BLUE_BATTLE
 	cp BLUE
