@@ -131,47 +131,48 @@ JohtoGrassWildMons:
 	dbw 3, HOOTHOOT
 	end_grass_wildmons
 	
-	def_grass_wildmons ALTERING_CAVE
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	def_grass_wildmons ALTERING_CAVE ; Not accessible until you get Cut, Swarms change the encounters here
+	db 7 percent, 7 percent, 7 percent ; 7 is just a reference to the gen 3 encounter rate
 	; morn
-	dbw 2, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 3, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 2, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 3, ZUBAT
+	; Swarm list: MAREEP, AIPOM, PINECO, TEDDIURSA, HOUNDOUR, STANTLER, SMEARGLE
+	dbw 10, ZUBAT                   ; 20%
+	dbw 12, ZUBAT                   ; 20%
+	dbw  8, ZUBAT                   ; 10%
+	dbw 14, ZUBAT                   ; 10%
+	dbw 10, ZUBAT                   ; 10%
+	dbw 12, ZUBAT                   ; 10%
+	dbw 16, ZUBAT                   ;  5%
+	dbw  6, ZUBAT                   ;  5%
+	dbw  8, ZUBAT                   ;  4% You can see how gen 3 uses these probabilities to make
+	dbw 14, ZUBAT                   ;  4% A 5% encounter for lvl 16, 6, 8, and 14 equally
+	dbw  8, ZUBAT                   ;  1% Not including the 20% and 10% rates
+	dbw 14, ZUBAT                   ;  1% But you can abuse it =)
 	; day
-	dbw 2, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 3, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 2, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 3, ZUBAT
+	dbw 10, ZUBAT                   ; 20%
+	dbw 12, ZUBAT                   ; 20%
+	dbw  8, ZUBAT                   ; 10%
+	dbw 14, ZUBAT                   ; 10%
+	dbw 10, ZUBAT                   ; 10%
+	dbw 12, ZUBAT                   ; 10%
+	dbw 16, ZUBAT                   ;  5%
+	dbw  6, ZUBAT                   ;  5%
+	dbw  8, ZUBAT                   ;  4%
+	dbw 14, ZUBAT                   ;  4%
+	dbw  8, ZUBAT                   ;  1%
+	dbw 14, ZUBAT                   ;  1%
 	; nite
-	dbw 2, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 3, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 2, ZUBAT
-	dbw 2, ZUBAT
-	dbw 3, ZUBAT
-	dbw 3, ZUBAT
+	dbw 10, ZUBAT                   ; 20%
+	dbw 12, ZUBAT                   ; 20%
+	dbw  8, ZUBAT                   ; 10%
+	dbw 14, ZUBAT                   ; 10%
+	dbw 10, ZUBAT                   ; 10%
+	dbw 12, ZUBAT                   ; 10%
+	dbw 16, ZUBAT                   ;  5%
+	dbw  6, ZUBAT                   ;  5%
+	dbw  8, ZUBAT                   ;  4%
+	dbw 14, ZUBAT                   ;  4%
+	dbw  8, ZUBAT                   ;  1%
+	dbw 14, ZUBAT                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons PINKAN_ISLAND
