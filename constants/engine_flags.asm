@@ -76,7 +76,6 @@
 ; wDailyFlags1
 	const ENGINE_KURT_MAKING_BALLS
 	const ENGINE_DAILY_BUG_CONTEST
-	const ENGINE_QWILFISH_SWARM
 	const ENGINE_TIME_CAPSULE
 	const ENGINE_ALL_FRUIT_TREES
 	const ENGINE_GOT_SHUCKIE_TODAY
@@ -164,6 +163,10 @@
 ; wPlayerSpriteSetupFlags
 	const ENGINE_KRIS_IN_CABLE_CLUB
 ; wSwarmFlags
-	const ENGINE_DUNSPARCE_SWARM
-	const ENGINE_YANMA_SWARM
+	const ENGINE_SWARM ; grassy
+	const ENGINE_ALT_SWARM ; fiery
+	const ENGINE_ALT_SWARM_2 ; chilly
+	const ENGINE_ALT_SWARM_3 ; zappy
+	const ENGINE_ALT_SWARM_4 ; lovely
+	const ENGINE_ALT_SWARM_5 ; crunchy
 DEF NUM_ENGINE_FLAGS EQU const_value

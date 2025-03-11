@@ -130,5 +130,91 @@ JohtoGrassWildMons:
 	dbw 3, PARAS
 	dbw 3, HOOTHOOT
 	end_grass_wildmons
+	
+	def_grass_wildmons ALTERING_CAVE
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 2, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 3, ZUBAT
+	; day
+	dbw 2, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 3, ZUBAT
+	; nite
+	dbw 2, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 2, ZUBAT
+	dbw 2, ZUBAT
+	dbw 3, ZUBAT
+	dbw 3, ZUBAT
+	end_grass_wildmons
+
+	def_grass_wildmons PINKAN_ISLAND
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 2, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 3, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 2, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 3, DITTO
+	; day
+	dbw 2, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 3, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 2, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 3, DITTO
+	; nite
+	dbw 2, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 3, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 2, DITTO
+	dbw 2, DITTO
+	dbw 3, DITTO
+	dbw 3, DITTO
+	end_grass_wildmons
 
 	db -1 ; end

@@ -452,7 +452,7 @@ MikanBerryGDIntroductionText:
 	done
 	
 MikanBerryGDWhatKindShouldIMakeText:
-	text "What #BLOCK"
+	text "Which #BLOCK"
 	line "should I make?"
 	done
 	

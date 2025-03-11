@@ -639,8 +639,6 @@ Script_fruittree:
 
 Script_swarm:
 	rst GetScriptByte
-	ld c, a
-	rst GetScriptByte
 	ld d, a
 	rst GetScriptByte
 	ld e, a

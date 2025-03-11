@@ -586,10 +586,45 @@ LoadWildMonDataPointer:
 	jr z, _WaterWildmonLookup
 
 _GrassWildmonLookup:
+	ld hl, wSwarmFlags ; check if the alt flag is set
+	bit SWARMFLAGS_ALT_SWARM_5_F, [hl]
+	jr z, .check_alt_flag_4
+	ld hl, SwarmGrassWildMonsAlt5
+	jp .cont 
+.check_alt_flag_4
+	ld hl, wSwarmFlags ; check if the alt flag is set
+	bit SWARMFLAGS_ALT_SWARM_4_F, [hl]
+	jr z, .check_alt_flag_3
+	ld hl, SwarmGrassWildMonsAlt4
+	jp .cont 
+.check_alt_flag_3
+	ld hl, wSwarmFlags ; check if the alt flag is set
+	bit SWARMFLAGS_ALT_SWARM_3_F, [hl]
+	jr z, .check_alt_flag_2
+	ld hl, SwarmGrassWildMonsAlt3
+	jp .cont 
+.check_alt_flag_2
+	ld hl, wSwarmFlags ; check if the alt flag is set
+	bit SWARMFLAGS_ALT_SWARM_2_F, [hl]
+	jr z, .check_alt_flag_1
+	ld hl, SwarmGrassWildMonsAlt2
+	jp .cont 
+.check_alt_flag_1
+	ld hl, wSwarmFlags ; check if the alt flag is set
+	bit SWARMFLAGS_ALT_SWARM_F, [hl]
+	jr z, .check_normal_flag ; if not, then check for the normal swarm flag too
+	ld hl, SwarmGrassWildMonsAlt
+	jp .cont 
+.check_normal_flag
+	ld hl, wSwarmFlags ; check if the flag is set
+    bit SWARMFLAGS_SWARM_F, [hl]
+    jr z, .no_swarm ; if not, then skip generating a swarm
 	ld hl, SwarmGrassWildMons
+.cont
 	ld bc, GRASS_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
 	ret c
+.no_swarm
 	ld hl, JohtoGrassWildMons
 	ld de, KantoGrassWildMons
 	call _JohtoWildmonCheck
@@ -617,32 +652,10 @@ _JohtoWildmonCheck:
 
 _SwarmWildmonCheck:
 	call CopyCurrMapDE
-	push hl
-	ld hl, wSwarmFlags
-	bit SWARMFLAGS_DUNSPARCE_SWARM_F, [hl]
-	pop hl
-	jr z, .CheckYanma
-	ld a, [wDunsparceMapGroup]
-	cp d
-	jr nz, .CheckYanma
-	ld a, [wDunsparceMapNumber]
-	cp e
-	jr nz, .CheckYanma
-	call LookUpWildmonsForMapDE
-	jr nc, _NoSwarmWildmon
-	scf
-	ret
-
-.CheckYanma:
-	push hl
-	ld hl, wSwarmFlags
-	bit SWARMFLAGS_YANMA_SWARM_F, [hl]
-	pop hl
-	jr z, _NoSwarmWildmon
-	ld a, [wYanmaMapGroup]
+	ld a, [wSwarmMapGroup]
 	cp d
 	jr nz, _NoSwarmWildmon
-	ld a, [wYanmaMapNumber]
+	ld a, [wSwarmMapNumber]
 	cp e
 	jr nz, _NoSwarmWildmon
 	call LookUpWildmonsForMapDE
@@ -1180,3 +1193,4 @@ INCLUDE "data/wild/kanto_grass.asm"
 INCLUDE "data/wild/kanto_water.asm"
 INCLUDE "data/wild/swarm_grass.asm"
 INCLUDE "data/wild/swarm_water.asm"
+INCLUDE "data/wild/swarm_grass_alt.asm"
