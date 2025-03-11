@@ -326,3 +326,23 @@ INCBIN "data/tilesets/crystal_cave_metatiles.bin.lz"
 
 TilesetCrystalCaveColl::
 INCLUDE "data/tilesets/crystal_cave_collision.asm"
+
+TilesetKinnowvTiles2GFX::
+INCBIN "gfx/tilesets/kinnow.2bpp.vtiles2.lz"
+
+TilesetKinnowvTiles5GFX::
+INCBIN "gfx/tilesets/kinnow.2bpp.vtiles5.lz"
+
+TilesetKinnowvTiles4GFX::
+INCBIN "gfx/tilesets/kinnow.2bpp.vtiles4.lz"
+
+TilesetKinnowAttr::
+INCBIN "data/tilesets/kinnow_attributes.bin.lz"
+
+SECTION "Tileset Data 14", ROMX
+
+TilesetKinnowMeta::
+INCBIN "data/tilesets/kinnow_metatiles.bin.lz"
+
+TilesetKinnowColl::
+INCLUDE "data/tilesets/kinnow_collision.asm"

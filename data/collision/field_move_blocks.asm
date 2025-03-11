@@ -3,6 +3,7 @@ CutTreeBlockPointers:
 ; tileset, block list pointer
 	dbw TILESET_VALENCIA_MANDARIN_NORTH,        .orange1
 	dbw TILESET_MIKAN_ISLAND,        .orange2
+	dbw TILESET_KINNOW,        .orange1
 	db -1 ; end
 	
 .orange1:

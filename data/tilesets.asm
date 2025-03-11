@@ -30,4 +30,5 @@ Tilesets::
 	tileset TilesetMoroIsland
 	tileset TilesetMateosHouse
 	tileset TilesetCrystalCave
+	tileset TilesetKinnow
 	assert_table_length NUM_TILESETS + 1

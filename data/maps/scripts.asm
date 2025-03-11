@@ -65,6 +65,7 @@ SECTION "Map Scripts 19", ROMX
 
 SECTION "Map Scripts 20", ROMX
 
+INCLUDE "maps/MikanIslandBerryMasterHouse.asm"
 
 
 SECTION "Map Scripts 21", ROMX
@@ -97,7 +98,6 @@ INCLUDE "maps/Route52Pokecenter1F.asm"
 INCLUDE "maps/MikanIslandPokecenter1F.asm"
 INCLUDE "maps/MikanIslandPokemart.asm"
 INCLUDE "maps/MikanIslandHouse.asm"
-INCLUDE "maps/MikanIslandBerryMasterHouse.asm"
 INCLUDE "maps/MikanThicket.asm"
 INCLUDE "maps/MikanGym.asm"
 INCLUDE "maps/MikanRanch.asm"

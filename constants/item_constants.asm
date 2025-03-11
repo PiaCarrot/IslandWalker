@@ -216,6 +216,12 @@
 	const SEVENTH_TANGHULU ; 00DA
 	const LEADER_CREST ; 00DB
 	const SPIDER_SILK  ; 00DC
+	const GRASSY_BLOCK  ; 00DD
+	const FIERY_BLOCK  ; 00DE
+	const CHILLY_BLOCK  ; 00DF
+	const ZAPPY_BLOCK  ; 00E0
+	const LOVELY_BLOCK  ; 00E1
+	const CRUNCHYBLOCK  ; 00E2
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.

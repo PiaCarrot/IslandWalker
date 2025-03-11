@@ -221,6 +221,12 @@ ItemDescriptions1:
 	dw SeventhTanghuluDesc    ; 00DA
 	dw LeaderCrestDesc    ; 00DB
 	dw SpiderSilkDesc    ; 00DB
+	dw BlockDesc    ; 00DB
+	dw BlockDesc    ; 00DB
+	dw BlockDesc    ; 00DB
+	dw BlockDesc    ; 00DB
+	dw BlockDesc    ; 00DB
+	dw BlockDesc    ; 00DB
 
 .IndirectEnd:
 
@@ -1591,3 +1597,7 @@ BerryLogDesc:
 ExcelScopeDesc:
 	db   "Reveals the unseen"
 	next "when prompted.@"
+
+BlockDesc:
+	db   "A #BLOCK made"
+	next "of BERRIES.@"

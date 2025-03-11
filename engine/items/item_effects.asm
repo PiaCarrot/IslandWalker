@@ -241,6 +241,12 @@ ItemEffects1:
 	dw StatusHealingEffect ; SEVENTH_TANGHULU
 	dw EvoStoneEffect      ; LEADER_CREST
 	dw NoEffect            ; SPIDER_SILK
+	dw NoEffect            ; GRASSY_BLOCK
+	dw NoEffect            ; FIERY_BLOCK
+	dw NoEffect            ; CHILLY_BLOCK
+	dw NoEffect            ; ZAPPY_BLOCK
+	dw NoEffect            ; LOVELY_BLOCK
+	dw NoEffect            ; CRUNCHYBLOCK
 .IndirectEnd:
 
 ItemEffectsKeyItems:

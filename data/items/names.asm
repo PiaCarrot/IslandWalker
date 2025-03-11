@@ -210,6 +210,12 @@ ItemNames::
 	li "7TH TANGHULU" ; 00DA
 	li "LEADER CREST" ; 00DB
 	li "SPIDER SILK"  ; 00DC
+	li "GRASSY BLOCK"  ; 00DC
+	li "FIERY BLOCK"  ; 00DC
+	li "CHILLY BLOCK"  ; 00DC
+	li "ZAPPY BLOCK"  ; 00DC
+	li "LOVELY BLOCK"  ; 00DC
+	li "CRUNCHYBLOCK"  ; 00DC
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::

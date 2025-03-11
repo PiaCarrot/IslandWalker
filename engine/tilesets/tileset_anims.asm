@@ -38,6 +38,7 @@ _AnimateTileset::
 Tileset0Anim::
 TilesetValenciaMandarinNorthAnim:
 TilesetMoroIslandAnim:
+TilesetKinnowAnim:
 	dw vTiles2 tile $13, WriteTileToBuffer
 	dw RSEWaterFrames, AnimateRSEWaterTiles
 	dw ShoreWaterFrames, AnimateShoreWaterTiles
