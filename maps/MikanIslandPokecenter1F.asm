@@ -32,12 +32,10 @@ MikanIslandPCSailorScript:
 MikanIslandPCSailorText:
 	text "I hear there's a"
 	line "cave on an island" 
-	cont "where the #MON"
-	cont "that appear are"
-	cont "different every"
-	cont "day!"
+	cont "that appeared out"
+	cont "of nowhere!"
 	
-	para "Such a wonderous"
+	para "Such a wondrous"
 	line "place…"
 	cont "I wonder where it"
 	cont "could be hidden?"

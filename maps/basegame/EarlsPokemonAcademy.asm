@@ -109,7 +109,7 @@ AcademyBlackboard:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	dn 3, 2 ; rows, columns
-	db 5 ; spacing
+	db 1 ; spacing
 	dba .Text
 	dbw BANK(@), NULL
 

@@ -33,7 +33,7 @@ AlteringCaveFeederScript:
 .WhatBlock
 	writetext AlteringCaveFeederWhatKindText
 	loadmenu .AlteringCaveFeederMenuHeader
-	verticalmenu
+	_2dmenu
 	closewindow
 	ifequal 1, .GRASSY
 	ifequal 2, .FIERY
@@ -42,7 +42,10 @@ AlteringCaveFeederScript:
 	ifequal 5, .LOVELY
 	ifequal 6, .CRUNCHY
 	ifequal 0, .NEVERMIND
-.GRASSY
+	closetext
+	end
+
+.GRASSY:
 	checkitem GRASSY_BLOCK
 	iffalse .DontHaveBlock
 	clearflag ENGINE_SWARM
@@ -62,7 +65,7 @@ AlteringCaveFeederScript:
 	waitbutton
 	setevent EVENT_BLOCK_IN_ALTERING_CAVE
 	sjump .NEVERMIND
-.FIERY
+.FIERY:
 	checkitem FIERY_BLOCK
 	iffalse .DontHaveBlock
 	clearflag ENGINE_SWARM
@@ -82,7 +85,7 @@ AlteringCaveFeederScript:
 	waitbutton
 	setevent EVENT_BLOCK_IN_ALTERING_CAVE
 	sjump .NEVERMIND
-.CHILLY
+.CHILLY:
 	checkitem CHILLY_BLOCK
 	iffalse .DontHaveBlock
 	clearflag ENGINE_SWARM
@@ -102,7 +105,7 @@ AlteringCaveFeederScript:
 	waitbutton
 	setevent EVENT_BLOCK_IN_ALTERING_CAVE
 	sjump .NEVERMIND
-.ZAPPY
+.ZAPPY:
 	checkitem ZAPPY_BLOCK
 	iffalse .DontHaveBlock
 	clearflag ENGINE_SWARM
@@ -122,7 +125,7 @@ AlteringCaveFeederScript:
 	waitbutton
 	setevent EVENT_BLOCK_IN_ALTERING_CAVE
 	sjump .NEVERMIND
-.LOVELY
+.LOVELY:
 	checkitem LOVELY_BLOCK
 	iffalse .DontHaveBlock
 	clearflag ENGINE_SWARM
@@ -142,7 +145,7 @@ AlteringCaveFeederScript:
 	waitbutton
 	setevent EVENT_BLOCK_IN_ALTERING_CAVE
 	sjump .NEVERMIND
-.CRUNCHY
+.CRUNCHY:
 	checkitem CRUNCHYBLOCK
 	iffalse .DontHaveBlock
 	clearflag ENGINE_SWARM
@@ -162,9 +165,30 @@ AlteringCaveFeederScript:
 	waitbutton
 	setevent EVENT_BLOCK_IN_ALTERING_CAVE
 	sjump .NEVERMIND
-.NEVERMIND
+.NEVERMIND:
 	closetext
 	end
+	
+.AlteringCaveFeederMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 4, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 7
+	dw .AlteringCaveFeederMenuData
+	db 1 ; default option
+
+.AlteringCaveFeederMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 3, 2 ; items
+	db 8 ; spacing
+	dba .Text
+	dbw BANK(@), NULL
+
+.Text:
+	db "GRASSY@"
+	db "FIERY@"
+	db "CHILLY@"
+	db "ZAPPY@"
+	db "LOVELY@"
+	db "CRUNCHY@"
 	
 .DontHaveBlock:
 	writetext AlteringCaveDontHaveBlockText
@@ -192,24 +216,6 @@ AlteringCaveFeederScript:
 	writetext RemovedBlockAlteringCaveFeederText
 	waitbutton
 .IDontWantToRemoveIt
-	closetext
-	end
-	
-.AlteringCaveFeederMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 5
-	dw .AlteringCaveFeederMenuData
-	db 1 ; default option
-
-.AlteringCaveFeederMenuData:
-	db STATICMENU_CURSOR | STATICMENU_WRAP ; flags
-	db 6 ; items
-	db "GRASSY BLOCK@"
-	db "FIERY BLOCK@"
-	db "CHILLY BLOCK@"
-	db "ZAPPY BLOCK@"
-	db "LOVELY BLOCK@"
-	db "CRUNCHYBLOCK@"
 	closetext
 	end
 	
