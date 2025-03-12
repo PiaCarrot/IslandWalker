@@ -227,6 +227,10 @@ ItemDescriptions1:
 	dw BlockDesc    ; 00DB
 	dw BlockDesc    ; 00DB
 	dw BlockDesc    ; 00DB
+	dw AncientPotteryDesc    ; 00DB
+	dw AncientPotteryDesc    ; 00DB
+	dw AncientPotteryDesc    ; 00DB
+	dw ClayShardDesc    ; 00DB
 
 .IndirectEnd:
 
@@ -1601,3 +1605,11 @@ ExcelScopeDesc:
 BlockDesc:
 	db   "A #BLOCK made"
 	next "of BERRIES.@"
+
+AncientPotteryDesc:
+	db   "Very old pottery."
+	next "Sell high.@"
+
+ClayShardDesc:
+	db   "Intricate design."
+	next "Sell low.@"

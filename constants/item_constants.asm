@@ -222,6 +222,10 @@
 	const ZAPPY_BLOCK  ; 00E0
 	const LOVELY_BLOCK  ; 00E1
 	const CRUNCHYBLOCK  ; 00E2
+	const ANCIENT_VASE  ; 00E3
+	const ANCIENT_CUP  ; 00E4
+	const ANCIENT_JAR  ; 00E5
+	const CLAY_SHARD  ; 00E6
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.
