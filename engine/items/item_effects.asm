@@ -247,6 +247,10 @@ ItemEffects1:
 	dw NoEffect            ; ZAPPY_BLOCK
 	dw NoEffect            ; LOVELY_BLOCK
 	dw NoEffect            ; CRUNCHYBLOCK
+	dw NoEffect            ; ANCIENT_VASE
+	dw NoEffect            ; ANCIENT_CUP
+	dw NoEffect            ; ANCIENT_JAR
+	dw NoEffect            ; CLAY_SHARD
 .IndirectEnd:
 
 ItemEffectsKeyItems:

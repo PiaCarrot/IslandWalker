@@ -216,6 +216,10 @@ ItemNames::
 	li "ZAPPY BLOCK"  ; 00DC
 	li "LOVELY BLOCK"  ; 00DC
 	li "CRUNCHYBLOCK"  ; 00DC
+	li "ANCIENT VASE"  ; 00DC
+	li "ANCIENT CUP"  ; 00DC
+	li "ANCIENT JAR"  ; 00DC
+	li "CLAY SHARD"  ; 00DC
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::

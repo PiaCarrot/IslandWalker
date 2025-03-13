@@ -32,7 +32,7 @@ PinkanIslandFeederScript:
 .WhatBlock
 	writetext PinkanIslandFeederWhatKindText
 	loadmenu .PinkanIslandFeederMenuHeader
-	verticalmenu
+	_2dmenu
 	closewindow
 	ifequal 1, .GRASSY
 	ifequal 2, .FIERY
@@ -41,6 +41,8 @@ PinkanIslandFeederScript:
 	ifequal 5, .LOVELY
 	ifequal 6, .CRUNCHY
 	ifequal 0, .NEVERMIND
+	closetext
+	end
 .GRASSY
 	checkitem GRASSY_BLOCK
 	iffalse .DontHaveBlock
@@ -165,6 +167,27 @@ PinkanIslandFeederScript:
 	closetext
 	end
 	
+.PinkanIslandFeederMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 4, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 7
+	dw .PinkanIslandFeederMenuData
+	db 1 ; default option
+
+.PinkanIslandFeederMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 3, 2 ; items
+	db 8 ; spacing
+	dba .Text
+	dbw BANK(@), NULL
+
+.Text:
+	db "GRASSY@"
+	db "FIERY@"
+	db "CHILLY@"
+	db "ZAPPY@"
+	db "LOVELY@"
+	db "CRUNCHY@"
+	
 .DontHaveBlock:
 	writetext PinkanIslandDontHaveBlockText
 	waitbutton
@@ -191,24 +214,6 @@ PinkanIslandFeederScript:
 	writetext RemovedBlockPinkanFeederText
 	waitbutton
 .IDontWantToRemoveIt
-	closetext
-	end
-	
-.PinkanIslandFeederMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 5
-	dw .PinkanIslandFeederMenuData
-	db 1 ; default option
-
-.PinkanIslandFeederMenuData:
-	db STATICMENU_CURSOR | STATICMENU_WRAP ; flags
-	db 6 ; items
-	db "GRASSY BLOCK@"
-	db "FIERY BLOCK@"
-	db "CHILLY BLOCK@"
-	db "ZAPPY BLOCK@"
-	db "LOVELY BLOCK@"
-	db "CRUNCHYBLOCK@"
 	closetext
 	end
 	
