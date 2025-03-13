@@ -1,5 +1,5 @@
 BugCatchingContestantEventFlagTable:
-	table_width 2, BugCatchingContestantEventFlagTable
+	table_width 2
 	dw EVENT_DUMMY_OUT
 	dw EVENT_DUMMY_OUT
 	dw EVENT_DUMMY_OUT

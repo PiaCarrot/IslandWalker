@@ -1,5 +1,5 @@
 ItemNames::
-	list_start ItemNames
+	list_start
 	li "BRIGHTPOWDER" ; 0001
 	li "TERU-SAMA"    ; 0002
 	li "MOON STONE"   ; 0003
@@ -219,7 +219,7 @@ ItemNames::
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::
-	list_start KeyItemNames
+	list_start
 	li "BICYCLE"      ; 0100
 	li "COIN CASE"    ; 0101
 	li "ITEMFINDER"   ; 0102
@@ -249,32 +249,32 @@ KeyItemNames::
 	assert_list_length NUM_KEY_ITEM_POCKET
 
 BallNames::
-	list_start BallNames
+	list_start
 	li "MASTER BALL"  ; 0200
 	li "ULTRA BALL"   ; 0201
 	li "GREAT BALL"   ; 0202
 	li "POKé BALL"    ; 0203 VWF can't print "# BALL"
-	li "HEAVY BALL"   ; 0204
-	li "LEVEL BALL"   ; 0205
-	li "LURE BALL"    ; 0206
-	li "FAST BALL"    ; 0207
-	li "FRIEND BALL"  ; 0208
-	li "MOON BALL"    ; 0209
-	li "LOVE BALL"    ; 020A
-	li "SPORT BALL"   ; 020B
-	li "SAFARI BALL"  ; 020C
-	li "NET BALL"     ; 020D
-	li "DIVE BALL"    ; 020E
-	li "NEST BALL"    ; 020F
-	li "REPEAT BALL"  ; 0210
-	li "TIMER BALL"   ; 0211
-	li "LUXURY BALL"  ; 0212
-	li "PREMIER BALL" ; 0213
-	li "DUSK BALL"    ; 0214
-	li "HEAL BALL"    ; 0215
-	li "QUICK BALL"   ; 0216
-	li "CHERISH BALL" ; 0217
-	li "PARK BALL"    ; 0218
+	li "SAFARI BALL"  ; 0204
+	li "NET BALL"     ; 0205
+	li "DIVE BALL"    ; 0206
+	li "NEST BALL"    ; 0207
+	li "REPEAT BALL"  ; 0208
+	li "TIMER BALL"   ; 0209
+	li "LUXURY BALL"  ; 020A
+	li "PREMIER BALL" ; 020B
+	li "FAST BALL"    ; 020C
+	li "LEVEL BALL"   ; 020D
+	li "LURE BALL"    ; 020E
+	li "HEAVY BALL"   ; 020F
+	li "LOVE BALL"    ; 0210
+	li "FRIEND BALL"  ; 0211
+	li "MOON BALL"    ; 0212
+	li "PARK BALL"    ; 0213
+	li "SPORT BALL"   ; 0214
+	li "DUSK BALL"    ; 0215
+	li "HEAL BALL"    ; 0216
+	li "QUICK BALL"   ; 0217
+	li "CHERISH BALL" ; 0218
 	li "DREAM BALL"   ; 0219
 	li "BEAST BALL"   ; 021A
 	li "STRANGE BALL" ; 021B
@@ -293,7 +293,7 @@ BallNames::
 	assert_list_length NUM_BALL_ITEM_POCKET
 
 BerryNames::
-	list_start BerryNames
+	list_start
 	li "RED APRICORN" ; 0300
 	li "BLU APRICORN" ; 0301
 	li "YLW APRICORN" ; 0302

@@ -1,5 +1,5 @@
 Pokered_MonIndices:
-	table_width 1, Pokered_MonIndices
+	table_width 1
 	db RHYDON
 	db KANGASKHAN
 	db NIDORAN_M
@@ -254,4 +254,4 @@ Pokered_MonIndices:
 	db WOBBUFFET
 	db WOBBUFFET
 	db LAPRAS
-	assert_table_length NUM_POKEMON + 1
+	assert_table_length NUM_POKEMON

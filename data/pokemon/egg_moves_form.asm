@@ -1,13 +1,13 @@
-SECTION "Egg Moves 3", ROMX
+SECTION "Egg Moves 4", ROMX
 
-EggMovePointers3::
+FormsEggMovePointers::
 	dw LaprasPartnerEggMoves
 .IndirectEnd::
 
 LaprasPartnerEggMoves:
 	dw AURORA_BEAM
 	dw FORESIGHT
-NoEggMoves3:
+NoEggMoves4:
 	dw -1 ; end
 
 ENDSECTION

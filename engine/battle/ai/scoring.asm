@@ -54,7 +54,7 @@ AI_Basic:
 	and a
 	jr nz, .discourage
 
-; Dismiss Safeguard if it's already active.
+; Dismiss status moves if the player is Safeguarded.
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
 	jr z, .checkmove
@@ -385,6 +385,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
+	dbw EFFECT_HAIL,             AI_Smart_Hail
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1824,17 +1825,17 @@ AI_Smart_Curse:
 	jr z, .ghost_curse
 
 	call AICheckEnemyHalfHP
-	jr nc, .encourage
+	jr nc, .discourage
 
 	ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL + 4
-	jr nc, .encourage
+	jr nc, .discourage
 	cp BASE_STAT_LEVEL + 2
 	ret nc
 
 	ld a, [wBattleMonType1]
 	cp GHOST
-	jr z, .greatly_encourage
+	jr z, .greatly_discourage
 	cp SPECIAL
 	ret nc
 	ld a, [wBattleMonType2]
@@ -1846,12 +1847,12 @@ AI_Smart_Curse:
 	dec [hl]
 	ret
 
-.approve
+.highly_discourage
 	inc [hl]
 	inc [hl]
-.greatly_encourage
+.greatly_discourage
 	inc [hl]
-.encourage
+.discourage
 	inc [hl]
 	ret
 
@@ -1868,7 +1869,7 @@ AI_Smart_Curse:
 	push hl
 	call AICheckLastPlayerMon
 	pop hl
-	jr nz, .approve
+	jr nz, .highly_discourage
 
 	jr .ghost_continue
 
@@ -1880,10 +1881,10 @@ AI_Smart_Curse:
 
 .ghost_continue
 	call AICheckEnemyQuarterHP
-	jr nc, .approve
+	jr nc, .highly_discourage
 
 	call AICheckEnemyHalfHP
-	jr nc, .greatly_encourage
+	jr nc, .greatly_discourage
 
 	call AICheckEnemyMaxHP
 	ret nc
@@ -2070,6 +2071,45 @@ AI_Smart_Sandstorm:
 	db ROCK
 	db GROUND
 	db STEEL
+	db -1 ; end
+
+AI_Smart_Hail:
+; Greatly discourage this move if the player is immune to Hail damage.
+	ld a, [wBattleMonType1]
+	cp ICE
+	jr z, .greatly_discourage
+
+	ld a, [wBattleMonType2]
+	cp ICE
+	jr z, .greatly_discourage
+
+; Discourage this move if player's HP is below 50%.
+	call AICheckPlayerHalfHP
+	jr nc, .discourage
+
+; Encourage move if AI has good Hail moves
+	push hl
+	ld hl, .GoodHailMoves
+	call AIHasMoveInArray
+	pop hl
+	jr c, .encourage
+
+; 50% chance to encourage this move otherwise.
+	call AI_50_50
+	ret c
+
+.encourage
+	dec [hl]
+	ret
+
+.greatly_discourage
+	inc [hl]
+.discourage
+	inc [hl]
+	ret
+
+.GoodHailMoves
+	db BLIZZARD
 	db -1 ; end
 
 AI_Smart_Endure:

@@ -264,27 +264,27 @@ ItemDescriptionsBalls:
 	dw UltraBallDesc   ; 0201
 	dw GreatBallDesc   ; 0202
 	dw PokeBallDesc    ; 0203
-	dw HeavyBallDesc   ; 0204
-	dw LevelBallDesc   ; 0205
-	dw LureBallDesc    ; 0206
-	dw FastBallDesc    ; 0207
-	dw FriendBallDesc  ; 0208
-	dw MoonBallDesc    ; 0209
-	dw LoveBallDesc    ; 020A
-	dw SportBallDesc   ; 020B
-	dw SafariBallDesc  ; 020C
-	dw NetBallDesc     ; 020D
-	dw DiveBallDesc    ; 020E
-	dw NestBallDesc    ; 020F
-	dw RepeatBallDesc  ; 0210
-	dw TimerBallDesc   ; 0211
-	dw LuxuryBallDesc  ; 0212
-	dw PremierBallDesc ; 0213
-	dw DuskBallDesc    ; 0214
-	dw HealBallDesc    ; 0215
-	dw QuickBallDesc   ; 0216
-	dw CherishBallDesc ; 0217
-	dw ParkBallDesc    ; 0218
+	dw SafariBallDesc  ; 0204
+	dw NetBallDesc     ; 0205
+	dw DiveBallDesc    ; 0206
+	dw NestBallDesc    ; 0207
+	dw RepeatBallDesc  ; 0208
+	dw TimerBallDesc   ; 0209
+	dw LuxuryBallDesc  ; 020A
+	dw PremierBallDesc ; 020B
+	dw FastBallDesc    ; 020C
+	dw LevelBallDesc   ; 020D
+	dw LureBallDesc    ; 020E
+	dw HeavyBallDesc   ; 020F
+	dw LoveBallDesc    ; 0210
+	dw FriendBallDesc  ; 0211
+	dw MoonBallDesc    ; 0212
+	dw ParkBallDesc    ; 0213
+	dw SportBallDesc   ; 0214
+	dw DuskBallDesc    ; 0215
+	dw HealBallDesc    ; 0216
+	dw QuickBallDesc   ; 0217
+	dw CherishBallDesc ; 0218
 	dw DreamBallDesc   ; 0219
 	dw BeastBallDesc   ; 021A
 	dw StrangeBallDesc ; 021B
@@ -394,6 +394,10 @@ ItemDescriptionsBerries:
 	dw PinkanBerryDesc  ; 0358
 .IndirectEnd:
 
+BrightpowderDesc:
+	db   "Lowers the foe's"
+	next "accuracy. (HOLD)@"
+
 MasterBallDesc:
 	db   "The best BALL. It"
 	next "never misses.@"
@@ -402,10 +406,6 @@ UltraBallHDesc:
 UltraBallDesc:
 	db   "A BALL with a high"
 	next "rate of success.@"
-
-BrightpowderDesc:
-	db   "Lowers the foe's"
-	next "accuracy. (HOLD)@"
 
 GreatBallHDesc:
 GreatBallDesc:
@@ -416,6 +416,73 @@ PokeBallHDesc:
 PokeBallDesc:
 	db   "An item for catch-"
 	next "ing #MON.@"
+
+SafariBallDesc:
+	db   "The BALL used in"
+	next "the SAFARI ZONE.@"
+
+NetBallDesc:
+	db   "A BALL for WATER"
+	next "and BUG #MON.@"
+
+DiveBallDesc:
+	db   "A BALL for #MON"
+	next "living underwater.@"
+
+NestBallDesc:
+	db   "A BALL for catch-"
+	next "ing weaker #MON.@"
+
+RepeatBallDesc:
+	db   "A BALL for #MON"
+	next "previously caught.@"
+
+TimerBallDesc:
+	db   "Improves with more"
+	next "turns in battle.@"
+
+LuxuryBallDesc:
+	db   "Makes #MON grow"
+	next "friendly quicker.@"
+
+PremierBallDesc:
+	db   "Commemorative BALL"
+	next "made for events.@"
+
+FastBallDesc:
+	db   "A BALL for catch-"
+	next "ing fast #MON.@"
+
+LevelBallDesc:
+	db   "A BALL for lower-"
+	next "level #MON.@"
+
+LureBallDesc:
+	db   "A BALL for #MON"
+	next "hooked by a ROD.@"
+
+HeavyBallHDesc:
+LeadenBallDesc:
+GigatonBallDesc:
+HeavyBallDesc:
+	db   "A BALL for catch-"
+	next "ing heavy #MON.@"
+
+LoveBallDesc:
+	db   "For catching the"
+	next "opposite gender.@"
+
+FriendBallDesc:
+	db   "A BALL that makes"
+	next "#MON friendly.@"
+
+MoonBallDesc:
+	db   "A BALL for MOON"
+	next "STONE evolvers.@"
+
+ParkBallDesc:
+	db   "The Bug-Catching"
+	next "Contest BALL.@"
 
 BicycleDesc:
 	db   "A collapsible bike"
@@ -965,44 +1032,13 @@ SacredAshDesc:
 	db   "Fully revives all"
 	next "fainted #MON.@"
 
-HeavyBallHDesc:
-LeadenBallDesc:
-GigatonBallDesc:
-HeavyBallDesc:
-	db   "A BALL for catch-"
-	next "ing heavy #MON.@"
-
 FlowerMailDesc:
 	db   "Flower-print MAIL."
 	next "(HOLD)@"
 
-LevelBallDesc:
-	db   "A BALL for lower-"
-	next "level #MON.@"
-
-LureBallDesc:
-	db   "A BALL for #MON"
-	next "hooked by a ROD.@"
-
-FastBallDesc:
-	db   "A BALL for catch-"
-	next "ing fast #MON.@"
-
 LightBallDesc:
 	db   "An odd, electrical"
 	next "orb. (HOLD)@"
-
-FriendBallDesc:
-	db   "A BALL that makes"
-	next "#MON friendly.@"
-
-MoonBallDesc:
-	db   "A BALL for MOON"
-	next "STONE evolvers.@"
-
-LoveBallDesc:
-	db   "For catching the"
-	next "opposite gender.@"
 
 NormalBoxDesc:
 	db   "Open it and see"

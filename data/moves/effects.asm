@@ -1531,7 +1531,7 @@ Endure:
 	endmove
 
 Rollout:
-	checkcurl
+	checkrollout
 	checkobedience
 	doturn
 	usedmovetext
@@ -2071,6 +2071,13 @@ DefenseCurl:
 	raisesub
 	statupmessage
 	statupfailtext
+	endmove
+
+Hail:
+	checkobedience
+	usedmovetext
+	doturn
+	starthail
 	endmove
 
 LowKick:

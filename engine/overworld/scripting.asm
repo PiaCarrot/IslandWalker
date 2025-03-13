@@ -59,7 +59,7 @@ RunScriptCommand:
 
 ScriptCommandTable:
 ; entries correspond to *_command constants (see macros/scripts/events.asm)
-	table_width 2, ScriptCommandTable
+	table_width 2
 	dw Script_scall                      ; 00
 	dw Script_farscall                   ; 01
 	dw Script_memcall                    ; 02
@@ -1139,7 +1139,7 @@ Script_reloadmapafterbattle:
 	jmp ScriptJump
 
 .notblackedout
-	bit 0, d
+	bit BATTLESCRIPT_WILD_F, d
 	jr z, .was_wild
 	farcall MomTriesToBuySomething
 	jr .done
@@ -1344,7 +1344,7 @@ Script_sdefer:
 	rst GetScriptByte
 	ld [wDeferredScriptAddr + 1], a
 	ld hl, wScriptFlags
-	set 3, [hl]
+	set RUN_DEFERRED_SCRIPT, [hl]
 	ret
 
 Script_checkscene:
@@ -2203,7 +2203,7 @@ Script_end:
 	ld a, SCRIPT_OFF
 	ld [wScriptMode], a
 	ld hl, wScriptFlags
-	res 0, [hl]
+	res UNUSED_SCRIPT_FLAG_0, [hl]
 	jmp StopScript
 
 Script_endcallback:
@@ -2211,7 +2211,7 @@ Script_endcallback:
 	jr c, .dummy
 .dummy
 	ld hl, wScriptFlags
-	res 0, [hl]
+	res UNUSED_SCRIPT_FLAG_0, [hl]
 	jmp StopScript
 
 ExitScriptSubroutine:
@@ -2251,7 +2251,7 @@ Script_endall:
 	ld a, SCRIPT_OFF
 	ld [wScriptMode], a
 	ld hl, wScriptFlags
-	res 0, [hl]
+	res UNUSED_SCRIPT_FLAG_0, [hl]
 	jmp StopScript
 
 Script_halloffame:

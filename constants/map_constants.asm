@@ -35,20 +35,20 @@ ENDM
 ; - scripts and events (see data/maps/scripts.asm)
 	const_def
 
-	newgroup VALENCIA  
-	map_const PLAYERS_HOUSE_1F,                             6,  4 ;  6
-	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7
-	map_const VALENCIA_ISLAND,                       24,  24 ; 13
-	map_const IVYS_LAB,									    8,  5
-	map_const IVYS_LAB_B1,									    4,  3
-	map_const VALENCIA_NEIGHBOR_HOUSE,					    4,  4
-	map_const IVYS_HOUSE,					                5,  4
-	map_const ROUTE_49,									   20, 24
-	map_const ROUTE_49_NORTH,							    16, 28
-	map_const POKECENTER_2F,                                8,  4 ;  1
-	map_const TRADE_CENTER,                                 5,  4 ;  2
-	map_const COLOSSEUM,                                    5,  4 ;  3
-	map_const TIME_CAPSULE,                                 5,  4 ;  4
+	newgroup VALENCIA                                             ;  1
+	map_const PLAYERS_HOUSE_1F,                             6,  4 ;  1
+	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  2
+	map_const VALENCIA_ISLAND,                             24, 24 ;  3
+	map_const IVYS_LAB,                                     8,  5 ;  4
+	map_const IVYS_LAB_B1,                                  4,  3 ;  5
+	map_const VALENCIA_NEIGHBOR_HOUSE,                      4,  4 ;  6
+	map_const IVYS_HOUSE,                                   5,  4 ;  7
+	map_const ROUTE_49,                                    20, 24 ;  8
+	map_const ROUTE_49_NORTH,                              16, 28 ;  9
+	map_const POKECENTER_2F,                                8,  4 ; 10
+	map_const TRADE_CENTER,                                 5,  4 ; 11
+	map_const COLOSSEUM,                                    5,  4 ; 12
+	map_const TIME_CAPSULE,                                 5,  4 ; 13
 	endgroup
 	
 	newgroup TANGELO

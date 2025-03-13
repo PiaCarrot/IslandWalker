@@ -35,17 +35,11 @@ MACRO maskbits
 ; 	cp 26
 ; 	jr nc, .loop
 	assert 0 < (\1) && (\1) <= $100, "bitmask must be 8-bit"
-	DEF x = 1
-	rept 8
-		if x + 1 < (\1)
-			DEF x = (x << 1) | 1
-		endc
-	endr
+	DEF x = (1 << BITWIDTH((\1) - 1)) - 1
 	if _NARG == 2
-		and x << (\2)
-	else
-		and x
+		DEF x <<= \2
 	endc
+	and x
 ENDM
 
 MACRO smartcp
@@ -59,11 +53,17 @@ ENDM
 MACRO cphl16
 ; arg1: 16 bit register
 ; arg2: value to compare to
-	ld a, h
-	smartcp HIGH(\1)
-	jr c, .done\@
-	jr nz, .done\@
-	ld a, l
-	smartcp LOW(\1)
+	IF \1 == 0
+		ld a, h
+		or l
+		jp z, .done\@
+	ELSE
+		ld a, h
+		smartcp HIGH(\1)
+		jr c, .done\@
+		jr nz, .done\@
+		ld a, l
+		smartcp LOW(\1)
+	ENDC
 .done\@
 ENDM

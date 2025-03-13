@@ -475,7 +475,7 @@ wEnemyEvaLevel::  db
 
 wEnemyTurnsTaken::  db
 wPlayerTurnsTaken:: db
-	ds 1
+wTotalBattleTurns::      db
 
 wPlayerSubstituteHP:: db
 wEnemySubstituteHP::  db
@@ -515,6 +515,7 @@ wAlreadyFailed:: db
 wBattleParticipantsIncludingFainted:: db
 wBattleLowHealthAlarm:: db
 wPlayerMinimized:: db
+
 wPlayerScreens::
 ; bit
 ; 0 spikes
@@ -1534,10 +1535,7 @@ wJoypadDisable::
 
 wPendingOverworldGraphics:: db
 
-wInBattleTowerBattle::
-; 0 not in BattleTower-Battle
-; 1 BattleTower-Battle
-	db
+wInBattleTowerBattle:: db
 
 wOverworldDelaySkip::
 ; amount of overworld frames to skip DelayFrame for
@@ -2434,7 +2432,7 @@ wUnownLetter:: db
 
 wMoveSelectionMenuType:: db
 
-; corresponds to the data/pokemon/base_stats/*.asm contents
+; corresponds to the data/pokemon/base_stats/*/*.asm contents
 wCurBaseData::
 wBaseSpecies:: db
 wBaseStats::
@@ -2479,7 +2477,7 @@ wWaterEncounterRate:: db
 wListMoves_MoveIndicesBuffer:: ds NUM_MOVES
 wPutativeTMHMMove:: db
 wInitListType:: db
-wBattleHasJustStarted:: db
+ds 1
 
 wNamedObjectIndex::
 wTextDecimalByte::
@@ -2568,6 +2566,7 @@ wMapStatus:: db
 wMapEventStatus:: db
 
 wScriptFlags::
+; bit 2: running script
 ; bit 3: run deferred script
 	db
 wEnabledPlayerEvents::
@@ -2701,7 +2700,7 @@ wObjectMasks:: ds NUM_OBJECTS
 
 wVariableSprites:: ds $100 - SPRITE_VARS
 
-wEnteredMapFromContinue:: db
+wMapNameSignFlags:: db
 
 wTimeOfDayPal:: db
 wTimeOfDayPalFlags:: db

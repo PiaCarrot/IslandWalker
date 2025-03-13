@@ -1,6 +1,6 @@
 MoveEffectsPointers:
 ; entries correspond to EFFECT_* constants
-	table_width 2, MoveEffectsPointers
+	table_width 2
 	dw NormalHit
 	dw DoSleep
 	dw PoisonHit
@@ -158,5 +158,7 @@ MoveEffectsPointers:
 	dw BeatUp
 	dw Fly
 	dw DefenseCurl
+	dw FreezeHit ; for Blizzard, purposefully with different EFFECT_* constant
+	dw Hail
 	dw LowKick
 	assert_table_length NUM_MOVE_EFFECTS
