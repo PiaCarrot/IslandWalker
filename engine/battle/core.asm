@@ -142,6 +142,12 @@ WildFled_EnemyFled_LinkBattleCanceled:
 
 BattleTurn:
 .loop
+	ld hl, wTotalBattleTurns
+	inc [hl]
+	jr nz, .done_turn_increment
+	dec [hl]
+
+.done_turn_increment
 	call CheckContestBattleOver
 	ret c
 
@@ -197,8 +203,6 @@ BattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	ret nz
-	ld hl, wTotalBattleTurns
-	inc [hl]
 	jr .loop
 
 HandleBetweenTurnEffects:
@@ -3456,6 +3460,7 @@ LoadEnemyMonToSwitchTo:
 
 CheckWhetherToAskSwitch:
 	ld a, [wTotalBattleTurns]
+	and a
 	jr z, .return_nc
 	ld a, [wPartyCount]
 	dec a

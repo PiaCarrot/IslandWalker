@@ -13,9 +13,20 @@ GetTrainerIVs:
 	add hl, bc
 	add hl, bc
 
+	ld bc, wTempIVs
+	push bc
 	ld a, [hli]
-	ld b, a
-	ld c, [hl]
+	ld [bc], a
+	inc bc
+	ld a, [hli]
+	ld [bc], a
+	inc bc
+	ld a, [hli]
+	ld [bc], a
+	inc bc
+	ld a, [hl]
+	ld [bc], a
+	pop bc
 
 	pop hl
 	ret
