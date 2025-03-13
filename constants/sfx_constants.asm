@@ -95,7 +95,7 @@
 	const SFX_SING                        ; 5c
 	const SFX_HYPER_BEAM                  ; 5d
 	const SFX_SHINE                       ; 5e
-	const SFX_UNKNOWN_5F                  ; 5f
+	const SFX_METAL_SOUND                 ; 5f
 	const SFX_UNKNOWN_60                  ; 60
 	const SFX_UNKNOWN_61                  ; 61
 	const SFX_SWITCH_POCKETS              ; 62
@@ -208,6 +208,7 @@
 	const SFX_TWO_PC_BEEPS                ; cc
 	const SFX_4_NOTE_DITTY                ; cd
 	const SFX_TWINKLE                     ; ce
-	const SFX_PUDDLE
-	const SFX_BERRY_FANFARE
+	const SFX_PUDDLE                      ; cf
+	const SFX_BERRY_FANFARE               ; d0
+	const SFX_GRASS_WHISTLE               ; d1
 DEF NUM_SFX EQU const_value

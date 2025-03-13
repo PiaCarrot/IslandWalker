@@ -32,7 +32,7 @@ GoldSilverIntro:
 
 ; check done flag
 	ld a, [wIntroJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .Finish
 
 	farcall PlaySpriteAnimations

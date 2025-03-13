@@ -1,6 +1,6 @@
 Marts:
 ; entries correspond to MART_* constants (see constants/mart_constants.asm)
-	table_width 2, Marts
+	table_width 2
 	dw MartBerrySeller
 	dw MartBerryPinkan
 	dw MartTangelo

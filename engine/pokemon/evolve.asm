@@ -82,18 +82,18 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_LEVEL
 	jmp z, .level
 
+	cp EVOLVE_PV
+	jmp z, .pv
+
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
 
 ; EVOLVE_STAT
-	call GetNextEvoAttackByte
-	ld c, a
-	ld a, [wTempMonLevel]
-	cp c
-	jmp c, .skip_evolution_species_parameter
+	call GetEvoLevel
+	jmp c, .skip_evolution_species_parameter_byte
 
 	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter
+	jmp z, .skip_evolution_species_parameter_byte
 
 	push hl
 	ld de, wTempMonAttack
@@ -116,10 +116,10 @@ EvolveAfterBattle_MasterLoop:
 .happiness
 	ld a, [wTempMonHappiness]
 	cp HAPPINESS_TO_EVOLVE
-	jmp c, .skip_evolution_species_parameter
+	jmp c, .skip_evolution_species_parameter_byte
 
 	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter
+	jmp z, .skip_evolution_species_parameter_byte
 
 	call GetNextEvoAttackByte
 	cp TR_ANYTIME
@@ -130,58 +130,40 @@ EvolveAfterBattle_MasterLoop:
 ; TR_EVENITE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jmp c, .skip_half_species_parameter ; MORN_F or DAY_F < NITE_F
-	jr .proceed
+	jmp c, .skip_evolution_species ; MORN_F or DAY_F < NITE_F
+	jmp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jmp nc, .skip_half_species_parameter ; NITE_F or EVE_F >= NITE_F
+	jmp nc, .skip_evolution_species ; NITE_F or EVE_F >= NITE_F
 	jr .proceed
 
 .trade
 	ld a, [wLinkMode]
+	cp LINK_TIMECAPSULE
+	jmp z, .skip_evolution_species_parameter_word
+
 	and a
-	jmp z, .skip_evolution_species_parameter
+	jmp z, .skip_evolution_species_parameter_word
 
 	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter
+	jmp z, .skip_evolution_species_parameter_word
 
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
-	push hl
-	ld h, a
-	ld l, b
-	call GetItemIDFromIndex
-	ld b, a
-	pop hl
+	call GetEvoItem
 	inc a
 	jr z, .proceed
-	dec a
-
-	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
-	jmp z, .skip_half_species_parameter
 
 	ld a, [wTempMonItem]
 	cp b
-	jmp nz, .skip_half_species_parameter
+	jmp nz, .skip_evolution_species
 
 	xor a
 	ld [wTempMonItem], a
 	jr .proceed
 
 .item
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
-	push hl
-	ld h, a
-	ld l, b
-	call GetItemIDFromIndex
-	ld b, a
-	pop hl
+	call GetEvoItem
 	ld a, [wCurItem]
 	cp b
 	jmp nz, .skip_evolution_species
@@ -194,11 +176,38 @@ EvolveAfterBattle_MasterLoop:
 	jmp nz, .skip_evolution_species
 	jr .proceed
 
-.level
+.pv
+	call GetEvoLevel
+	jmp c, .skip_evolution_species_parameter_word
+
+	call IsMonHoldingEverstone
+	jmp z, .skip_evolution_species_parameter_word
+
+	push hl
+
+	ld hl, wTempMonPersonality
+	ld a, [hli]
+	ldh [hDividend], a
+	ld a, [hl]
+	ldh [hDividend + 1], a
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 2
+	call Divide
+	ldh a, [hRemainder]
+
+	pop hl
+
+	cp 4
+
+	jr c, .proceed ; low_pv
+
 	call GetNextEvoAttackByte
-	ld b, a
-	ld a, [wTempMonLevel]
-	cp b
+	call GetNextEvoAttackByte
+	jr .proceed
+
+.level
+	call GetEvoLevel
 	jmp c, .skip_evolution_species
 	call IsMonHoldingEverstone
 	jmp z, .skip_evolution_species
@@ -310,6 +319,29 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTempSpecies]
 	call SetSeenAndCaughtMon
 
+	; Check if party is full
+	ld a, [wPartyCount]
+	cp PARTY_LENGTH
+	jr z, .skip_shedinja
+
+	ld a, [wEvolutionOldSpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(NINCADA)
+	if HIGH(NINCADA) == 0
+		or h
+	else
+		jr nz, .skip_shedinja
+		if HIGH(NINCADA) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(NINCADA)
+		endc
+	endc
+	call z, GiveShedinja
+
+.skip_shedinja
 	ld a, [wTempSpecies]
 	call GetPokemonIndexFromID
 	ld a, l
@@ -328,7 +360,7 @@ EvolveAfterBattle_MasterLoop:
 	jr nz, .skip_unown
 	ld hl, wTempMonForm
 	predef GetUnownLetter
-	farcall UpdateUnownDex
+	call UpdateUnownDex
 
 .skip_unown
 	pop de
@@ -342,12 +374,19 @@ EvolveAfterBattle_MasterLoop:
 
 .dont_evolve_check
 	ld a, b
-	cp EVOLVE_STAT
-	jr nz, .skip_evolution_species_parameter
+	cp EVOLVE_PV
+	jr z, .skip_evolution_two_species_parameter_byte
+	cp EVOLVE_LEVEL
+	jr z, .skip_evolution_species_parameter_byte
+	cp EVOLVE_HAPPINESS
+	jr z, .skip_evolution_species_parameter_byte
+	jr .skip_evolution_species_parameter_word
+
+.skip_evolution_two_species_parameter_byte
 	inc hl
-.skip_evolution_species_parameter
+.skip_evolution_species_parameter_word
 	inc hl
-.skip_half_species_parameter
+.skip_evolution_species_parameter_byte
 	inc hl
 .skip_evolution_species
 	inc hl
@@ -647,13 +686,17 @@ SkipEvolutions::
 	inc hl
 	and a
 	ret z
-	cp EVOLVE_STAT
-	jr z, .inc_hl
-	cp EVOLVE_TRADE
-	jr z, .inc_hl
-	cp EVOLVE_ITEM
-	jr nz, .no_extra_skip
-.inc_hl
+	cp EVOLVE_PV
+	jr z, .two_extra_skips
+	cp EVOLVE_LEVEL
+	jr z, .no_extra_skip
+	cp EVOLVE_HAPPINESS
+	jr z, .no_extra_skip
+	jr .one_extra_skip
+
+.two_extra_skips
+	inc hl
+.one_extra_skip
 	inc hl
 .no_extra_skip
 	inc hl
@@ -673,19 +716,15 @@ DetermineEvolutionItemResults::
 	call GetNextEvoAttackByte
 	and a
 	ret z
-	cp EVOLVE_STAT
-	jr z, .skip_species_two_parameters
+	cp EVOLVE_PV
+	jr z, .skip_two_species_parameter_byte
+	cp EVOLVE_LEVEL
+	jr z, .skip_species_parameter_byte
+	cp EVOLVE_HAPPINESS
+	jr z, .skip_species_parameter_byte
 	cp EVOLVE_ITEM
-	jr nz, .skip_species_parameter
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
-	push hl
-	ld h, a
-	ld l, b
-	call GetItemIDFromIndex
-	ld b, a
-	pop hl
+	jr nz, .skip_species_parameter_word
+	call GetEvoItem
 	ld a, [wCurItem]
 	cp b
 	jr nz, .skip_species
@@ -695,11 +734,11 @@ DetermineEvolutionItemResults::
 	ld e, l
 	ret
 
-.skip_species_two_parameters
+.skip_two_species_parameter_byte
 	inc hl
-.skip_species_parameter
+.skip_species_parameter_word
 	inc hl
-.skip_half_species_parameter
+.skip_species_parameter_byte
 	inc hl
 .skip_species
 	inc hl
@@ -710,4 +749,77 @@ GetNextEvoAttackByte:
 	ldh a, [hTemp]
 	call GetFarByte
 	inc hl
+	ret
+
+GiveShedinja:
+; Generate Evolved Mon's OT Name
+	push hl
+	ld a, [wCurPartyMon]
+	ld bc, NAME_LENGTH
+	ld hl, wPartyMonOTs
+	call AddNTimes
+	ld e, l
+	ld d, h
+	pop hl
+	push de
+; Add Shedinja to Party
+	xor a ; PARTYMON
+	ld [wMonType], a
+	ld hl, SHEDINJA
+	call GetPokemonIDFromIndex
+	ld [wCurPartySpecies], a
+	predef TryAddMonToParty
+; Get Evolved Mon's OT Name and set
+; the OT Name of the new Shedinja
+	pop de
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMonOTs
+	call SkipNames
+	call CopyName2
+; Starting at Move 1 in the Pokemon Data Structure,
+; transfer the Evolved Mon's bytes up to Level to
+; the new Shedinja
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1Moves
+	call AddNTimes
+	push hl
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Moves
+	call AddNTimes
+	ld e, l
+	ld d, h
+	pop hl
+.loop
+	ld a, [de]
+	ld [hli], a
+	inc de
+	inc b
+	ld a, b
+	cp MON_LEVEL
+	jr nz, .loop
+; Set the approprite Caught Data for Shedinja
+	farjp SetGiftPartyMonCaughtData
+
+GetEvoItem:
+; Return evolution item in register b
+	call GetNextEvoAttackByte
+	ld b, a
+	call GetNextEvoAttackByte
+	push hl
+	ld h, a
+	ld l, b
+	call GetItemIDFromIndex
+	ld b, a
+	pop hl
+	ret
+
+GetEvoLevel:
+	call GetNextEvoAttackByte
+	ld b, a
+	ld a, [wTempMonLevel]
+	cp b
 	ret

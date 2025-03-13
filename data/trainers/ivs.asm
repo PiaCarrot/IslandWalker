@@ -1,6 +1,6 @@
 TrainerClassIVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
-	table_width 4, TrainerClassIVs
+	table_width 4
 	;  atk,def,spd,spc
 	ivs 16, 16, 16, 16, 16, 16 ; CISSY
 	ivs 16, 16, 16, 16, 16, 16 ; WHITNEY

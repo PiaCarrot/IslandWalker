@@ -16,17 +16,17 @@ ENDM
 
 MapGroupPointers::
 ; pointers to the first map of each map group
-	table_width 2, MapGroupPointers
-	dw MapGroup_Valencia     ; 1
+	table_width 2
+	dw MapGroup_Valencia      ;  1
 	dw MapGroup_Tangelo       ;  2
-	dw MapGroup_Mikan       ;  3
-	dw MapGroup_MandarinNorth  ;  4
-	dw MapGroup_Sunburst  ;  5
-	dw MapGroup_Kinnow  ;  6
+	dw MapGroup_Mikan         ;  3
+	dw MapGroup_MandarinNorth ;  4
+	dw MapGroup_Sunburst      ;  5
+	dw MapGroup_Kinnow        ;  6
 	assert_table_length NUM_MAP_GROUPS
 
 MapGroup_Valencia:
-	table_width MAP_LENGTH, MapGroup_Valencia
+	table_width MAP_LENGTH
 	map PlayersHouse1F, TILESET_PLAYERS_HOUSE, INDOOR, LANDMARK_VALENCIA_ISLAND, MUSIC_VALENCIA_TOWN, FALSE, PALETTE_DAY, FISHGROUP_SHORE
 	map PlayersHouse2F, TILESET_PLAYERS_ROOM, INDOOR, LANDMARK_VALENCIA_ISLAND, MUSIC_VALENCIA_TOWN, FALSE, PALETTE_DAY, FISHGROUP_SHORE
 	map ValenciaIsland, TILESET_VALENCIA_MANDARIN_NORTH, TOWN, LANDMARK_VALENCIA_ISLAND, MUSIC_VALENCIA_TOWN, FALSE, PALETTE_AUTO, FISHGROUP_OCEAN

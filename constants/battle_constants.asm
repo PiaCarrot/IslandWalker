@@ -24,6 +24,11 @@ DEF EFFECTIVE          EQU 10
 DEF NOT_VERY_EFFECTIVE EQU 05
 DEF NO_EFFECT          EQU 00
 
+; wTypeModifier
+DEF EFFECTIVENESS_MASK EQU %01111111
+	const_def 7
+	shift_const STAB_DAMAGE
+
 ; enemy AI behavior
 DEF BASE_AI_SWITCH_SCORE EQU 10
 
@@ -216,6 +221,7 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 	const SCREENS_SAFEGUARD
 	const SCREENS_LIGHT_SCREEN
 	const SCREENS_REFLECT
+	const SCREENS_UNUSED
 
 ; values in wBattleWeather
 	const_def
@@ -223,9 +229,11 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 	const WEATHER_RAIN
 	const WEATHER_SUN
 	const WEATHER_SANDSTORM
+	const WEATHER_HAIL
 	const WEATHER_RAIN_END
 	const WEATHER_SUN_END
 	const WEATHER_SANDSTORM_END
+	const WEATHER_HAIL_END
 
 ; wBattleAction
 	const_def

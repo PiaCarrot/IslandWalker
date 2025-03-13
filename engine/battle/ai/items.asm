@@ -681,8 +681,8 @@ AI_Switch:
 	call PrintText
 
 .skiptext
-	ld a, 1
-	ld [wBattleHasJustStarted], a
+	xor a
+	ld [wTotalBattleTurns], a
 	farcall NewEnemyMonStatus
 	farcall ResetEnemyStatLevels
 	ld hl, wPlayerSubStatus1
@@ -690,10 +690,10 @@ AI_Switch:
 	farcall EnemySwitch
 	farcall ResetBattleParticipants
 	xor a
-	ld [wBattleHasJustStarted], a
+	ld [wTotalBattleTurns], a
 	ld a, [wLinkMode]
 	and a
-	ret nz
+	ret z
 	scf
 	ret
 

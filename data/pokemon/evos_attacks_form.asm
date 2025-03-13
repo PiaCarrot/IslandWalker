@@ -1,6 +1,6 @@
-SECTION "Evolutions and Attacks 3", ROMX
+SECTION "Evolutions and Attacks 4", ROMX
 
-EvosAttacksPointers3::
+FormsEvosAttacksPointers::
 	dw LaprasPartnerEvosAttacks
 .IndirectEnd::
 

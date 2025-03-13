@@ -6,7 +6,7 @@ ENDM
 
 Landmarks:
 ; entries correspond to constants/landmark_constants.asm
-	table_width 4, Landmarks
+	table_width 4
 	landmark  -8, -16, SpecialMapName
 	landmark 44, 124, ValenciaIslandName
 	landmark 36, 116, Route49Name

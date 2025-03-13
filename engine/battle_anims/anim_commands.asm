@@ -23,7 +23,7 @@ _PlayBattleAnim:
 
 	ld c, VBLANK_CUTSCENE
 	ldh a, [rKEY1]
-	bit 7, a ; check CGB double speed mode
+	bit KEY1_DBLSPEED, a
 	jr nz, .got_speed
 	ld c, VBLANK_CUTSCENE_CGB
 
@@ -182,9 +182,15 @@ BattleAnimRequestPals:
 	jmp nz, BattleAnim_SetOBPals
 	ret
 
+BattleAnimCmd_ClearEnemyHud:
+	ldh a, [hBattleTurn]
+	xor 1
+	jr ClearActorHud.continue
+
 ClearActorHud:
 	ldh a, [hBattleTurn]
 	and a
+.continue
 	jr z, .player
 
 	hlcoord 1, 0
@@ -291,7 +297,7 @@ RunBattleAnimCommand:
 
 BattleAnimCommands::
 ; entries correspond to anim_* constants (see macros/scripts/battle_anims.asm)
-	table_width 2, BattleAnimCommands
+	table_width 2
 	dw BattleAnimCmd_Obj               ; d0
 	dw BattleAnimCmd_1GFX              ; d1
 	dw BattleAnimCmd_2GFX              ; d2
@@ -330,7 +336,7 @@ BattleAnimCommands::
 	dw BattleAnimCmd_OBP1              ; f3
 	dw BattleAnimCmd_KeepSprites       ; f4
 	dw BattleAnimCmd_KeepSpritesAndOAM ; f5
-	dw DoNothing ; BattleAnimCmd_F6    ; f6
+	dw BattleAnimCmd_ClearEnemyHud     ; f6
 	dw DoNothing ; BattleAnimCmd_F7    ; f7
 	dw BattleAnimCmd_IfParamEqual      ; f8
 	dw BattleAnimCmd_SetVar            ; f9
@@ -1356,7 +1362,7 @@ PlayHitSound:
 
 .okay
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	ret z
 
 	cp EFFECTIVE

@@ -26,7 +26,7 @@ LoadSGBLayoutCGB:
 
 CGBLayoutJumptable:
 ; entries correspond to SCGB_* constants (see constants/scgb_constants.asm)
-	table_width 2, CGBLayoutJumptable
+	table_width 2
 	dw _CGB_BattleGrayscale
 	dw _CGB_BattleColors
 	dw _CGB_PokegearPals
@@ -77,11 +77,17 @@ _CGB_BattleGrayscale:
 	call CopyPalettes
 	jmp _CGB_FinishBattleScreenLayout
 
-	SetDefaultBattlePalette:
+SetDefaultBattlePalette:
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wTempBattleMonSpecies)
 	ldh [rSVBK], a
+	call .do_it
+	pop af
+	ldh [rSVBK], a
+	ret
+
+.do_it
 	ld a, b
 	and a ; PAL_BATTLE_BG_PLAYER
 	jr z, SetBattlePal_Player
@@ -108,10 +114,7 @@ _CGB_BattleGrayscale:
 	ld hl, BattleObjectPals - 1 palettes
 	ld bc, 1 palettes
 	rst AddNTimes
-	call FarCopyWRAM
-	pop af
-	ldh [rSVBK], a
-	ret
+	jmp FarCopyWRAM
 
 SetBattlePal_Player:
 	call GetBattlemonBackpicPalettePointer

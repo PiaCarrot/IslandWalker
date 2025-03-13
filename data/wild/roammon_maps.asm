@@ -13,7 +13,7 @@ MACRO roam_map
 ENDM
 
 RoamMaps:
-	list_start RoamMaps
+	list_start
 	; start map, ...other maps
 	roam_map NONE, NONE
 	roam_map NONE, NONE

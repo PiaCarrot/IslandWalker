@@ -1,6 +1,6 @@
 FruitTreeItems:
 ; entries correspond to FRUITTREE_* constants
-	table_width 2, FruitTreeItems
+	table_width 2
 	dw PASSHO_BERRY      ; FRUITTREE_MIKAN_ISLAND_1
 	dw EGGANT_BERRY      ; FRUITTREE_MIKAN_ISLAND_2
 	dw CAREEP_BERRY      ; FRUITTREE_MIKAN_ISLAND_3

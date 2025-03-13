@@ -6,8 +6,7 @@ DoBattle:
 	ld [wBattleParticipantsIncludingFainted], a
 	ld [wBattlePlayerAction], a
 	ld [wBattleEnded], a
-	inc a
-	ld [wBattleHasJustStarted], a
+	ld [wTotalBattleTurns], a
 	ld hl, wOTPartyMon1HP
 	ld bc, PARTYMON_STRUCT_LENGTH - 1
 	ld d, BATTLEACTION_SWITCH1 - 1
@@ -143,13 +142,18 @@ WildFled_EnemyFled_LinkBattleCanceled:
 
 BattleTurn:
 .loop
+	ld hl, wTotalBattleTurns
+	inc [hl]
+	jr nz, .done_turn_increment
+	dec [hl]
+
+.done_turn_increment
 	call CheckContestBattleOver
 	ret c
 
 	xor a
 	ld [wPlayerIsSwitching], a
 	ld [wEnemyIsSwitching], a
-	ld [wBattleHasJustStarted], a
 	ld [wPlayerJustGotFrozen], a
 	ld [wEnemyJustGotFrozen], a
 	ld [wCurDamage], a
@@ -1701,20 +1705,30 @@ HandleWeather:
 
 	ld hl, wWeatherCount
 	dec [hl]
-	jr z, .ended
+	jr nz, .continues
 
+; ended
+	ld hl, .WeatherEndedMessages
+	call .PrintWeatherMessage
+	xor a
+	ld [wBattleWeather], a
+	ret
+
+.continues
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
+	call .PlayWeatherAnimation
 
+;check_sandstorm
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
-	ret nz
+	jr nz, .check_hail
 
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .enemy_first
 
-; player first
+.player_first
 	call SetPlayerTurn
 	call .SandstormDamage
 	call SetEnemyTurn
@@ -1724,6 +1738,7 @@ HandleWeather:
 	call SetEnemyTurn
 	call .SandstormDamage
 	call SetPlayerTurn
+	jr .SandstormDamage
 
 .SandstormDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3
@@ -1754,23 +1769,83 @@ HandleWeather:
 	ret z
 
 	call SwitchTurnCore
-	xor a
-	ld [wNumHits], a
-	ld de, ANIM_IN_SANDSTORM
-	call Call_PlayBattleAnim
 	call SwitchTurnCore
-	call GetEighthMaxHP
+	call GetSixteenthMaxHP
 	call SubtractHPFromUser
 
 	ld hl, SandstormHitsText
 	jmp StdBattleTextbox
 
-.ended
-	ld hl, .WeatherEndedMessages
-	call .PrintWeatherMessage
-	xor a
-	ld [wBattleWeather], a
-	ret
+.check_hail
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	ret nz
+
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .enemy_first_hail
+
+; player first
+	call SetPlayerTurn
+	call .HailDamage
+	call SetEnemyTurn
+	jr .HailDamage
+
+.enemy_first_hail
+	call SetEnemyTurn
+	call .HailDamage
+	call SetPlayerTurn
+
+.HailDamage:
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVar
+	bit SUBSTATUS_UNDERGROUND, a
+	ret nz
+
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok1
+	ld hl, wEnemyMonType1
+.ok1
+	ld a, [hli]
+	cp ICE
+	ret z
+
+	ld a, [hl]
+	cp ICE
+	ret z
+
+	call SwitchTurnCore
+	call SwitchTurnCore
+	call GetSixteenthMaxHP
+	call SubtractHPFromUser
+
+	ld hl, PeltedByHailText
+	jp StdBattleTextbox
+
+
+.PlayWeatherAnimation:
+	xor a ; uses one byte of ROM, compared to two for "ld a, 1"
+	ld [wNumHits], a
+	call SetPlayerTurn
+	ld hl, .WeatherAnimations
+	ld a, [wBattleWeather]
+	dec a
+	ld b, 0
+	ld c, a
+	add hl, bc
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	jmp Call_PlayBattleAnim
+
+.WeatherAnimations:
+	dw RAIN_DANCE
+	dw SUNNY_DAY
+	dw SANDSTORM
+	dw HAIL
 
 .PrintWeatherMessage:
 	ld a, [wBattleWeather]
@@ -1789,12 +1864,14 @@ HandleWeather:
 	dw BattleText_RainContinuesToFall
 	dw BattleText_TheSunlightIsStrong
 	dw BattleText_TheSandstormRages
+	dw BattleText_HailContinuesToFall
 
 .WeatherEndedMessages:
 ; entries correspond to WEATHER_* constants
 	dw BattleText_TheRainStopped
 	dw BattleText_TheSunlightFaded
 	dw BattleText_TheSandstormSubsided
+	dw BattleText_TheHailStopped
 
 SubtractHPFromTarget:
 	call SubtractHP
@@ -2357,7 +2434,7 @@ WinTrainerBattle:
 	ret nz
 
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	bit IN_BATTLE_TOWER_BATTLE_F, a
 	jr nz, .battle_tower
 
 	call BattleWinSlideInEnemyTrainerFrontpic
@@ -2855,7 +2932,7 @@ LostBattle:
 	ld [wBattleEnded], a
 
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	bit IN_BATTLE_TOWER_BATTLE_F, a
 	jr nz, .battle_tower
 
 	ld a, [wBattleType]
@@ -3098,17 +3175,17 @@ CheckWhetherSwitchmonIsPredetermined:
 .not_linked
 	ld a, [wEnemySwitchMonIndex]
 	and a
-	jr z, .check_wBattleHasJustStarted
+	jr z, .check_wTotalBattleTurns
 
 	dec a
 	ld b, a
 	jr .return_carry
 
-.check_wBattleHasJustStarted
-	ld a, [wBattleHasJustStarted]
+.check_wTotalBattleTurns
+	ld a, [wTotalBattleTurns]
 	and a
 	ld b, 0
-	jr nz, .return_carry
+	jr z, .return_carry
 
 	and a
 	ret
@@ -3382,8 +3459,8 @@ LoadEnemyMonToSwitchTo:
 	ret
 
 CheckWhetherToAskSwitch:
-	ld a, [wBattleHasJustStarted]
-	dec a
+	ld a, [wTotalBattleTurns]
+	and a
 	jr z, .return_nc
 	ld a, [wPartyCount]
 	dec a
@@ -3582,9 +3659,9 @@ CheckIfCurPartyMonIsFitToFight:
 	or [hl]
 	ret nz
 
-	ld a, [wBattleHasJustStarted]
+	ld a, [wTotalBattleTurns]
 	and a
-	jr nz, .finish_fail
+	jr z, .finish_fail
 	ld hl, wPartySpecies
 	ld a, [wCurPartyMon]
 	ld c, a
@@ -5912,9 +5989,9 @@ LoadEnemyMon:
 	and a
 	jmp nz, InitEnemyMon
 
-; and also not in a BattleTower-Battle
+; and also not in a Battle Tower battle
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	bit IN_BATTLE_TOWER_BATTLE_F, a
 	jmp nz, InitEnemyMon
 
 ; Make sure everything knows what species we're working with
@@ -6189,11 +6266,13 @@ LoadEnemyMon:
 	ld a, NUM_UNOWN
 	ld hl, wEnemyMonForm
 	call BattleRandomRange
+	inc a
 	and FORM_MASK
 	ld [hl], a
-	;predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
 ; If combined with forced shiny battletype, causes an infinite loop
+	predef GetUnownLetter
+	ld a, [wUnownLetter]
 	call CheckUnownLetter
 	jr nc, .GenerateUnownLetter ; try again
 	jr .Happiness ; skip the Magikarp check
@@ -6239,7 +6318,7 @@ LoadEnemyMon:
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 4
-	jr nc, .GenerateIVs
+	jmp nc, .GenerateIVs
 
 ; 20% chance of skipping this check
 	call Random
@@ -6911,7 +6990,7 @@ _BattleRandom::
 	ld [wLinkBattleRNCount], a
 
 ; If we haven't hit the end yet, we're good
-	cp 10 - 1 ; Exclude last value. See the closing comment
+	cp SERIAL_RNS_LENGTH - 1 ; Exclude last value. See the closing comment
 	ld a, [hl]
 	pop bc
 	pop hl
@@ -6927,7 +7006,7 @@ _BattleRandom::
 	xor a
 	ld [wLinkBattleRNCount], a
 	ld hl, wLinkBattleRNs
-	ld b, 10 ; number of seeds
+	ld b, SERIAL_RNS_LENGTH ; number of seeds
 
 ; Generate next number in the sequence for each seed
 ; a[n+1] = (a[n] * 5 + 1) % 256
@@ -6993,7 +7072,7 @@ GiveExperiencePoints:
 	ret nz
 
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	bit IN_BATTLE_TOWER_BATTLE_F, a
 	ret nz
 
 	call .EvenlyDivideExpAmongParticipants
@@ -7671,11 +7750,11 @@ SendOutMonText:
 	jr z, .not_linked
 
 ; If we're in a LinkBattle print just "Go <PlayerMon>"
-; unless DoBattle already set [wBattleHasJustStarted]
+; unless DoBattle already set [wTotalBattleTurns] to 0
 	ld hl, GoMonText
-	ld a, [wBattleHasJustStarted]
+	ld a, [wTotalBattleTurns]
 	and a
-	jr nz, .skip_to_textbox
+	jr z, .skip_to_textbox
 
 .not_linked
 ; Depending on the HP of the enemy mon, the game prints a different text
@@ -8321,7 +8400,7 @@ CheckPayDay:
 	ld hl, BattleText_PlayerPickedUpPayDayMoney
 	call StdBattleTextbox
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	bit IN_BATTLE_TOWER_BATTLE_F, a
 	ret z
 	call ClearTilemap
 	jmp ClearBGPalettes
@@ -9106,6 +9185,10 @@ GetWeatherImage:
 	ld de, SandstormWeatherImage
 	ld b, PAL_BATTLE_OB_BROWN
 	cp WEATHER_SANDSTORM
+	jr z, .done
+	ld de, HailWeatherImage
+	ld b, PAL_BATTLE_OB_BLUE
+	cp WEATHER_HAIL
 	ret nz
 
 .done

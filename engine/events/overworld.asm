@@ -8,13 +8,13 @@ FieldMoveJumptable:
 	ld a, [wFieldMoveJumptableIndex]
 	call JumpTable
 	ld [wFieldMoveJumptableIndex], a
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .okay
 	and a
 	ret
 
 .okay
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	scf
 	ret
 
@@ -121,7 +121,7 @@ CutFunction:
 	ld hl, .Jumptable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -144,7 +144,7 @@ CutFunction:
 	ret
 
 .nohivebadge
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .nothingtocut
@@ -154,13 +154,13 @@ CutFunction:
 .DoCut:
 	ld hl, Script_CutFromMenu
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailCut:
 	ld hl, CutNothingText
 	call MenuTextboxBackup
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 UseCutText:
@@ -277,7 +277,7 @@ INCLUDE "data/collision/field_move_blocks.asm"
 
 FlashFunction:
 	call .CheckUseFlash
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -298,16 +298,16 @@ FlashFunction:
 	jr nz, .notadarkcave
 .useflash
 	call UseFlash
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .notadarkcave
 	call FieldMoveFailed
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .nozephyrbadge
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 UseFlash:
@@ -341,7 +341,7 @@ SurfFunction:
 	ld hl, .Jumptable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -377,7 +377,7 @@ SurfFunction:
 	ld a, $1
 	ret
 .nofogbadge
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 .alreadyfail
 	ld a, $3
@@ -392,19 +392,19 @@ SurfFunction:
 	call GetPartyNickname
 	ld hl, SurfFromMenuScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailSurf:
 	ld hl, CantSurfText
 	call MenuTextboxBackup
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .AlreadySurfing:
 	ld hl, AlreadySurfingText
 	call MenuTextboxBackup
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 SurfFromMenuScript:
@@ -546,7 +546,7 @@ FlyFunction:
 	ld hl, .Jumptable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -579,7 +579,7 @@ FlyFunction:
 	ret
 
 .nostormbadge
-	ld a, $82
+	ld a, JUMPTABLE_EXIT | $2
 	ret
 
 .indoors
@@ -589,18 +589,18 @@ FlyFunction:
 .illegal
 	call CloseWindow
 	call WaitBGMap
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .DoFly:
 	ld hl, .FlyScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailFly:
 	call FieldMoveFailed
-	ld a, $82
+	ld a, JUMPTABLE_EXIT | $2
 	ret
 
 .FlyScript:
@@ -630,25 +630,25 @@ FlyFunction:
 
 WaterfallFunction:
 	call .TryWaterfall
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
 .TryWaterfall:
 	ld de, ENGINE_RISINGBADGE
 	call CheckBadge
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret c
 	call CheckMapCanWaterfall
 	jr c, .failed
 	ld hl, Script_WaterfallFromMenu
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .failed
 	call FieldMoveFailed
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 CheckMapCanWaterfall:
@@ -757,7 +757,7 @@ EscapeRopeOrDig:
 	ld hl, .DigTable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -801,14 +801,14 @@ EscapeRopeOrDig:
 	jr nz, .escaperope
 	ld hl, .UsedDigScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .escaperope
 	farcall SpecialKabutoChamber
 	ld hl, .UsedEscapeRopeScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailDig:
@@ -821,7 +821,7 @@ EscapeRopeOrDig:
 	call CloseWindow
 
 .failescaperope
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .UseDigText:
@@ -876,7 +876,7 @@ TeleportFunction:
 	ld hl, .Jumptable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -908,13 +908,13 @@ TeleportFunction:
 	call GetPartyNickname
 	ld hl, .TeleportScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailTeleport:
 	ld hl, .CantUseTeleportText
 	call MenuTextboxBackup
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .TeleportReturnText:
@@ -952,7 +952,7 @@ TeleportFunction:
 
 StrengthFunction:
 	call .TryStrength
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -967,13 +967,13 @@ StrengthFunction:
 	text_end
 
 .Failed:
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .UseStrength:
 	ld hl, Script_StrengthFromMenu
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 SetStrengthFlag:
@@ -1074,7 +1074,7 @@ WhirlpoolFunction:
 	ld hl, .Jumptable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1097,18 +1097,18 @@ WhirlpoolFunction:
 	ret
 
 .noglacierbadge
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .DoWhirlpool:
 	ld hl, Script_WhirlpoolFromMenu
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FailWhirlpool:
 	call FieldMoveFailed
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 UseWhirlpoolText:
@@ -1216,7 +1216,7 @@ AskWhirlpoolText:
 
 HeadbuttFunction:
 	call TryHeadbuttFromMenu
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1227,12 +1227,12 @@ TryHeadbuttFromMenu:
 
 	ld hl, HeadbuttFromMenuScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .no_tree
 	call FieldMoveFailed
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 UseHeadbuttText:
@@ -1299,7 +1299,7 @@ AskHeadbuttText:
 
 RockSmashFunction:
 	call TryRockSmashFromMenu
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1312,12 +1312,12 @@ TryRockSmashFromMenu:
 
 	ld hl, RockSmashFromMenuScript
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .no_rock
 	call FieldMoveFailed
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 	
 SkyMonScript:
@@ -1455,7 +1455,7 @@ FishFunction:
 	ld hl, .FishTable
 	call FieldMoveJumptable
 	jr nc, .loop
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
@@ -1510,7 +1510,7 @@ FishFunction:
 	ret
 
 .FailFish:
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .FishGotSomething:
@@ -1518,7 +1518,7 @@ FishFunction:
 	ld [wFishingResult], a
 	ld hl, Script_GotABite
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FishNoBite:
@@ -1526,7 +1526,7 @@ FishFunction:
 	ld [wFishingResult], a
 	ld hl, Script_NotEvenANibble
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 .FishNoFish:
@@ -1534,7 +1534,7 @@ FishFunction:
 	ld [wFishingResult], a
 	ld hl, Script_NotEvenANibble2
 	call QueueScript
-	ld a, $81
+	ld a, JUMPTABLE_EXIT | $1
 	ret
 
 Script_NotEvenANibble:
@@ -1640,7 +1640,7 @@ RodNothingText:
 
 BikeFunction:
 	call .TryBike
-	and $7f
+	and JUMPTABLE_INDEX_MASK
 	ld [wFieldMoveSucceeded], a
 	ret
 
