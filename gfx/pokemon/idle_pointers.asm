@@ -2,7 +2,7 @@ AnimationIdlePointers::
     indirect_table 2, 1
     indirect_entries JOHTO_POKEMON - 1, AnimationIdlePointers1
     indirect_entries HOENN_POKEMON - 1, AnimationIdlePointers2
-	indirect_entries FORMS_POKEMON - 1, AnimationIdlePointers3
+	indirect_entries FORM_POKEMON - 1, AnimationIdlePointers3
     indirect_entries NUM_POKEMON, FormsAnimationIdlePointers
     indirect_entries UNOWN_OFFSET, AnimationIdlePointersUnown
     indirect_table_end

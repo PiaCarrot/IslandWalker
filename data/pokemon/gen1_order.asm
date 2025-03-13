@@ -253,5 +253,4 @@ Pokered_MonIndices:
 	db QWILFISH
 	db WOBBUFFET
 	db WOBBUFFET
-	db LAPRAS
-	assert_table_length NUM_POKEMON
+	assert_table_length HOENN_POKEMON

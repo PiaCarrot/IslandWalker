@@ -417,38 +417,6 @@ PokeBallDesc:
 	db   "An item for catch-"
 	next "ing #MON.@"
 
-SafariBallDesc:
-	db   "The BALL used in"
-	next "the SAFARI ZONE.@"
-
-NetBallDesc:
-	db   "A BALL for WATER"
-	next "and BUG #MON.@"
-
-DiveBallDesc:
-	db   "A BALL for #MON"
-	next "living underwater.@"
-
-NestBallDesc:
-	db   "A BALL for catch-"
-	next "ing weaker #MON.@"
-
-RepeatBallDesc:
-	db   "A BALL for #MON"
-	next "previously caught.@"
-
-TimerBallDesc:
-	db   "Improves with more"
-	next "turns in battle.@"
-
-LuxuryBallDesc:
-	db   "Makes #MON grow"
-	next "friendly quicker.@"
-
-PremierBallDesc:
-	db   "Commemorative BALL"
-	next "made for events.@"
-
 FastBallDesc:
 	db   "A BALL for catch-"
 	next "ing fast #MON.@"
@@ -479,10 +447,6 @@ FriendBallDesc:
 MoonBallDesc:
 	db   "A BALL for MOON"
 	next "STONE evolvers.@"
-
-ParkBallDesc:
-	db   "The Bug-Catching"
-	next "Contest BALL.@"
 
 BicycleDesc:
 	db   "A collapsible bike"

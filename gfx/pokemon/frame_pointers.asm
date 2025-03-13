@@ -2,7 +2,7 @@ FramesPointers:
 	indirect_table 2, 1
 	indirect_entries JOHTO_POKEMON - 1, FramePointers1
 	indirect_entries HOENN_POKEMON - 1, FramePointers2
-	indirect_entries FORMS_POKEMON - 1, FramePointers3
+	indirect_entries FORM_POKEMON - 1, FramePointers3
 	indirect_entries NUM_POKEMON, FormsFramePointers
     indirect_entries UNOWN_OFFSET, FramePointersUnown
 	indirect_table_end
