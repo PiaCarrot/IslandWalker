@@ -25,7 +25,7 @@ exclude = {
 }
 
 if len(sys.argv) != 2:
-	print(f'Usage: {sys.argv[0]} pokecrystal.sym', file=sys.stderr)
+	print(f'Usage: {sys.argv[0]} pokeiw.sym', file=sys.stderr)
 	exit(1)
 
 sym_banks = {}
