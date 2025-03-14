@@ -4429,7 +4429,7 @@ BattleAnimFunc_AirCutter:
 	add hl, bc
 	ld a, [hl]
 	ld d, $10
-	call Sine
+	xcall Sine
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	bit 7, a

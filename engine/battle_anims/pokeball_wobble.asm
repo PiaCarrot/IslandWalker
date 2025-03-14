@@ -37,8 +37,9 @@ GetPokeBallWobble:
 	; Check how many wobbles we've done so far. If this would've been our 4th,
 	; we've successfully caught the Pokémon.
 	ld c, 0 ; shake
-	ld hl, wThrownBallWobbleCount
-	inc [hl]
+	ld a, [wThrownBallWobbleCount]
+	inc a ; no-optimize Inefficient WRAM increment/decrement needed in reg a
+	ld [wThrownBallWobbleCount], a
 	cp 4
 	ret c
 	inc c ; captured

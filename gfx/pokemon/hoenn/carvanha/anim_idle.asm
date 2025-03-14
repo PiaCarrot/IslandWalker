@@ -3,5 +3,5 @@
 	frame 4, 06
 	dorepeat 1
 	frame 0, 08
-	frame 3, 08	
+	frame 3, 08
 	endanim

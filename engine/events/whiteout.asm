@@ -116,7 +116,7 @@ LoseWhiteOutMoney:
 	ld de, hMoneyTemp
 	ld hl, hProduct + 1
 	ld bc, 3
-	call CopyBytes
+	rst CopyBytes
 	ld de, wMoney
 	ld bc, hMoneyTemp
 	push bc
@@ -126,7 +126,7 @@ LoseWhiteOutMoney:
 	ld hl, wMoney
 	ld de, hMoneyTemp
 	ld bc, 3
-	call CopyBytes
+	rst CopyBytes
 .not_enough
 	pop de
 	pop bc

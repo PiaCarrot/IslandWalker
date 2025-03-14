@@ -257,7 +257,7 @@ PokemonNames::
 	db "LUGIA@@@@@"
 	db "HO-OH@@@@@"
 	db "CELEBI@@@@"
-; Hoenn	
+; Hoenn
 	db "TREECKO@@@"
 	db "GROVYLE@@@"
 	db "SCEPTILE@@"

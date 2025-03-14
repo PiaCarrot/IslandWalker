@@ -448,7 +448,7 @@ PokeBallEffect:
 	ld a, [wOTPartyMon1Species]
 	ld [wWildMon], a
 
-	farcall GetModifiedCaptureRate	
+	farcall GetModifiedCaptureRate
 
 	ld d, a
 	push de
@@ -811,7 +811,7 @@ PokeBallEffect:
 .return_from_capture
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
-	ret z
+	jr z, .tutorial_capture_return
 	cp BATTLETYPE_DEBUG
 	ret z
 	cp BATTLETYPE_CONTEST
@@ -829,6 +829,11 @@ PokeBallEffect:
 	inc a
 	ld [wItemQuantityChange], a
 	jmp TossItem
+
+.tutorial_capture_return
+	ld a, [wEnemyMonSpecies]
+	ld [wWildMon], a
+	ret
 
 .used_sport_ball
 	ld hl, wParkBallsRemaining

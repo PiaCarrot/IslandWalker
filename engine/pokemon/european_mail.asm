@@ -39,7 +39,7 @@ INCBIN "gfx/font/spanish_italian.1bpp"
 
 ConvertFrenchGermanMailToEnglish:
 ; Called when sending French or German mail
-; Remaps 's from French/German character set to English 
+; Remaps 's from French/German character set to English
 ; Converts c' d' j' from French/German character set to unused values in English
 	ld b, sPartyMon1MailAuthor - sPartyMon1Mail
 	ld h, d
@@ -69,7 +69,7 @@ ConvertFrenchGermanMailToEnglish:
 
 ConvertEnglishMailToFrenchGerman:
 ; Called when receiving French or German mail
-; Remaps 's from English character set to French/German 
+; Remaps 's from English character set to French/German
 ; Converts unused values from English character set back to c' d' j' in French/German
 	ld b, sPartyMon1MailAuthor - sPartyMon1Mail
 	ld h, d

@@ -24,14 +24,14 @@ CalcAbility_StatsScreen:
 PrintAbility:
 	ld de, .AbilityString1
 	hlcoord 0, 8
-	call PlaceString
+	rst PlaceString
 	call CalcAbility_StatsScreen
 	ld hl, AbilityNames
 	call GetNthString
 	ld d, h
 	ld e, l
 	hlcoord 4, 9
-	call PlaceString
+	rst PlaceString
 	call CalcAbility_StatsScreen
 	push bc
 	ld bc, AbilityDescriptions

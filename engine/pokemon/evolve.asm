@@ -757,7 +757,7 @@ GiveShedinja:
 	ld a, [wCurPartyMon]
 	ld bc, NAME_LENGTH
 	ld hl, wPartyMonOTs
-	call AddNTimes
+	rst AddNTimes
 	ld e, l
 	ld d, h
 	pop hl
@@ -784,12 +784,12 @@ GiveShedinja:
 	ld a, [wPartyCount]
 	dec a
 	ld hl, wPartyMon1Moves
-	call AddNTimes
+	rst AddNTimes
 	push hl
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Moves
-	call AddNTimes
+	rst AddNTimes
 	ld e, l
 	ld d, h
 	pop hl

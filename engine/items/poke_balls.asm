@@ -27,7 +27,7 @@ GetModifiedCaptureRate:
 	ld e, [hl]
 	ld h, d
 	ld l, e
-	
+
 	; Save M for later division
 	push hl
 	add hl, de
@@ -429,7 +429,7 @@ LoveBallMultiplier:
 	farcall CheckOppositeGender
 	ret c ; genderless
 	ret z ; same gender
-	
+
 	ln a, 8, 1 ; x8
 	jmp MultiplyAndDivide
 

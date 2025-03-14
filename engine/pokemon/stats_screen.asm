@@ -759,14 +759,14 @@ LoadOrangePage:
 	; Place "Nature:"
 	ld de, .NatureString1
 	hlcoord 0, 13
-	call PlaceString
+	rst PlaceString
 
 	; Snag our nature
 	push bc
 	ld a, [wCurPartyMon]
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld hl, wPartyMon1Personality
-	call AddNTimes
+	rst AddNTimes
 	ld a, [hl]
 	and NATURE_MASK
 	ld b, a
@@ -777,9 +777,6 @@ LoadOrangePage:
 
 .NatureString1
 	db "Nature:@"
-
-HelloWorldString:
-	db "Hello world!@"
 
 IDNoString:
 	db "<ID>№.@"
