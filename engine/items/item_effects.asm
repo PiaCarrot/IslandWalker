@@ -801,17 +801,19 @@ PokeBallEffect:
 
 .FinishTutorial:
 	ld hl, Text_GotchaMonWasCaught
+	jr .got_text
 
 .shake_and_break_free
 	xor a
 	ld [wWildMon], a
+.got_text
 	call PrintText
 	call ClearSprites
 
 .return_from_capture
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial_capture_return
+	ret z
 	cp BATTLETYPE_DEBUG
 	ret z
 	cp BATTLETYPE_CONTEST
@@ -829,11 +831,6 @@ PokeBallEffect:
 	inc a
 	ld [wItemQuantityChange], a
 	jmp TossItem
-
-.tutorial_capture_return
-	ld a, [wEnemyMonSpecies]
-	ld [wWildMon], a
-	ret
 
 .used_sport_ball
 	ld hl, wParkBallsRemaining
