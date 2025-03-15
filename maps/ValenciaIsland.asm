@@ -77,7 +77,7 @@ ValenciaIsland_MapScripts:
 	getmonname STRING_BUFFER_3, EEVEE
 	writetext ASIvyScriptText6
 	waitbutton
-	writetext ReceivedStarterText
+	farwritetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 .ContinueASPikaOrEevee2
@@ -104,7 +104,7 @@ ValenciaIsland_MapScripts:
 	getmonname STRING_BUFFER_3, PIKACHU
 	writetext ASIvyScriptText8
 	waitbutton
-	writetext ReceivedStarterText
+	farwritetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	sjump .ContinueASPikaOrEevee2
@@ -153,7 +153,7 @@ ValenciaIsland_MapScripts:
 	getmonname STRING_BUFFER_3, DRATINI
 	writetext ASIvyScriptText13
 	waitbutton
-	writetext ReceivedStarterText
+	farwritetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 ;Special to name starter
