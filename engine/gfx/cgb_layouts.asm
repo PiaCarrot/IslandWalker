@@ -277,7 +277,7 @@ _CGB_StatsScreenHPPals:
 	hlcoord 0, 9, wAttrmap
 	ld bc, 2
 	ld a, $2
-	call ByteFill
+	rst ByteFill
 
 	hlcoord 11, 5, wAttrmap
 	lb bc, 2, 2

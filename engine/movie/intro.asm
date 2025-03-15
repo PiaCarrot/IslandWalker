@@ -106,7 +106,7 @@ IntroScene1:
 	lb bc, 4, 0
 
 	xor a
-	call ByteFill
+	rst ByteFill
 	ld a, 0
 	ldh [rVBK], a
 	call Intro_ResetLYOverrides
@@ -1213,11 +1213,11 @@ Intro_BlankTilemapAndBGMap:
 	hlcoord 0, 0
 	ld bc, wTilemapEnd - wTilemap
 	xor a
-	call ByteFill
+	rst ByteFill
 	hlbgcoord 0, 0
 	ld bc, vBGMap1 - vBGMap0
 	xor a
-	call ByteFill
+	rst ByteFill
 	ret
 
 Intro_CheckSCYEvent:

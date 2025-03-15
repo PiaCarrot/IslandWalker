@@ -62,12 +62,12 @@ HiddenStarter2:
 	ld hl, wPartyMonNicknames
 	ld bc, MON_NAME_LENGTH
 	ld a, [wCurPartyMon]
-	call AddNTimes
+	rst AddNTimes
 	ld e, l
 	ld d, h
 	ld hl, wStringBuffer2
 	ld bc, MON_NAME_LENGTH
-	call CopyBytes
+	rst CopyBytes
 
 .skipnickname
 	ret

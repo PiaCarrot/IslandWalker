@@ -21,7 +21,7 @@ CatchTutorial::
 	ld hl, wPlayerName
 	ld de, wMomsName
 	ld bc, NAME_LENGTH
-	call CopyBytes
+	rst CopyBytes
 ; Copy Dude's name to your name
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_49
@@ -33,7 +33,7 @@ CatchTutorial::
 .Continue
 	ld de, wPlayerName
 	ld bc, NAME_LENGTH
-	call CopyBytes
+	rst CopyBytes
 	
 	call .LoadDudeData
 
