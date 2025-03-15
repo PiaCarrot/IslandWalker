@@ -1591,7 +1591,7 @@ GruntMGroup:
 	db "GRUNT@", TRAINERTYPE_MOVES
 	db 5
 	dw SPEAROW
-	dw LEER, PECK, GROWL, NO_MOVE
+	dw LEER, FALSE_SWIPE, GROWL, NO_MOVE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (2)
@@ -1619,9 +1619,10 @@ GruntMGroup:
 	db -1 ; end
 
 	next_list_item ; GRUNTM (5)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	db "GRUNT@", TRAINERTYPE_MOVES
 	db 12
 	dw HITMONCHAN
+	dw COMET_PUNCH, PURSUIT, FAKE_OUT, FORESIGHT
 	db -1 ; end
 
 	next_list_item ; GRUNTM (6)

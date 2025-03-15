@@ -507,10 +507,10 @@ GetIconBank:
 	jr .return
 .check_3
 	ld a, h
-	cp HIGH(BLAZIKEN) ; first species in "Mon Icons 3"
+	cp HIGH(POOCHYENA) ; first species in "Mon Icons 3"
 	jr c, .check_2
 	ld a, l
-	cp LOW(BLAZIKEN)
+	cp LOW(POOCHYENA)
 	jr c, .check_2
 	ld b, BANK("Mon Icons 3")
 	jr .return
