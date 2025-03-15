@@ -122,7 +122,7 @@ Intro_LoadMonPalette:
 	ld hl, PalPacket_Pal01
 	ld de, wSGBPals
 	ld bc, PALPACKET_LENGTH
-	call CopyBytes
+	rst CopyBytes
 	pop af
 	call GetMonPalettePointer
 	ld a, [hli]

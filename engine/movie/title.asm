@@ -95,7 +95,7 @@ _TitleScreen:
 	ld hl, wLYOverrides
 	ld bc, wLYOverridesEnd - wLYOverrides
 	xor a
-	call ByteFill
+	rst ByteFill
 	farcall CheckSave
 	jr nz, .NoMarillSpawn
 	call Title_InitMarillWait

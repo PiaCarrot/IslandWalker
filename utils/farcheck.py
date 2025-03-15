@@ -24,6 +24,10 @@ exclude = {
 'ram/wramx.asm',
 }
 
+def is_excluded_folder(filename):
+    # Exclude anything in the maps/basegame/ folder
+    return filename.startswith('maps/basegame/')
+
 if len(sys.argv) != 2:
 	print(f'Usage: {sys.argv[0]} pokeiw.sym', file=sys.stderr)
 	exit(1)
@@ -50,6 +54,9 @@ def get_label_bank(m, n=1):
 
 for filename in iglob('**/*.asm', recursive=True):
 	if filename in exclude:
+		continue
+	# Support excludes by folder
+	if is_excluded_folder(filename):
 		continue
 	cur_label = None
 	cur_bank = None
