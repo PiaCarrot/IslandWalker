@@ -274,62 +274,244 @@ DEF JOHTO_POKEMON EQU const_value
 	const CELEBI     ; fb
 DEF NUM_JOHTO_POKEMON EQU const_value - JOHTO_POKEMON
 DEF HOENN_POKEMON EQU const_value
-	const POOCHYENA  ; 105
-	const MIGHTYENA  ; 106
-	const ZIGZAGOON  ; 107
-	const LINOONE    ; 108
-	const WINGULL    ; 116
-	const PELIPPER   ; 117
-	const RALTS	     ; 118
-	const KIRLIA     ; 119
-	const GARDEVOIR  ; 11a
-	const SHROOMISH  ; 11d
-	const BRELOOM    ; 11e
-	const NINCADA    ; 122
-	const NINJASK    ; 123
-	const SHEDINJA   ; 124
-	const AZURILL    ; 12a
-	const ARON       ; 130
-	const LAIRON     ; 131
-	const AGGRON     ; 132
-	const CARVANHA   ; 13e
-	const SHARPEDO   ; 13f
-	const WAILMER    ; 140
-	const WAILORD    ; 141
-	const NUMEL      ; 142
-	const CAMERUPT   ; 143
-	const SPOINK     ; 145
-	const GRUMPIG    ; 146
-	const SPINDA     ; 147
-	const TRAPINCH   ; 148
-	const VIBRAVA    ; 149
-	const FLYGON     ; 14a
-	const SWABLU     ; 14d
-	const ALTARIA    ; 14e
-	const ZANGOOSE   ; 14f
-	const SEVIPER    ; 150
-	const FEEBAS     ; 15d
-	const MILOTIC    ; 15e
-	const KECLEON    ; 160
-	const SHUPPET    ; 161
-	const BANETTE    ; 162
-	const DUSKULL    ; 163
-	const DUSCLOPS   ; 164
-	const TROPIUS    ; 165
-	const CHIMECHO   ; 166
-	const WYNAUT     ; 168
-	const SNORUNT    ; 169
-	const GLALIE     ; 16a
-	const SPHEAL     ; 16b
-	const SEALEO     ; 16c
-	const WALREIN    ; 16d
-	const RELICANTH  ; 171
-	const LUVDISC    ; 172
-	const LATIAS     ; 17c
-	const LATIOS     ; 17d
+	const POOCHYENA  ; fc
+	const MIGHTYENA  ; fd
+	const ZIGZAGOON  ; fe
+	const LINOONE    ; ff
+	const WINGULL    ; 100
+	const PELIPPER   ; 101
+	const RALTS	     ; 102
+	const KIRLIA     ; 103
+	const GARDEVOIR  ; 104
+	const SHROOMISH  ; 105
+	const BRELOOM    ; 106
+	const NINCADA    ; 107
+	const NINJASK    ; 108
+	const SHEDINJA   ; 109
+	const AZURILL    ; 10a
+	const ARON       ; 10b
+	const LAIRON     ; 10c
+	const AGGRON     ; 10d
+	const CARVANHA   ; 10e
+	const SHARPEDO   ; 10f
+	const WAILMER    ; 110
+	const WAILORD    ; 111
+	const NUMEL      ; 112
+	const CAMERUPT   ; 113
+	const SPOINK     ; 114
+	const GRUMPIG    ; 115
+	const SPINDA     ; 116
+	const TRAPINCH   ; 117
+	const VIBRAVA    ; 118
+	const FLYGON     ; 119
+	const SWABLU     ; 11a
+	const ALTARIA    ; 11b
+	const ZANGOOSE   ; 11c
+	const SEVIPER    ; 11d
+	const FEEBAS     ; 11e
+	const MILOTIC    ; 11f
+	const KECLEON    ; 120
+	const SHUPPET    ; 121
+	const BANETTE    ; 122
+	const DUSKULL    ; 123
+	const DUSCLOPS   ; 124
+	const TROPIUS    ; 125
+	const CHIMECHO   ; 126
+	const WYNAUT     ; 127
+	const SNORUNT    ; 128
+	const GLALIE     ; 129
+	const SPHEAL     ; 12a
+	const SEALEO     ; 12b
+	const WALREIN    ; 12c
+	const RELICANTH  ; 12d
+	const LUVDISC    ; 12e
+	const LATIAS     ; 12f
+	const LATIOS     ; 130
 DEF NUM_HOENN_POKEMON EQU const_value - HOENN_POKEMON
+; DEF SINNOH_POKEMON EQU const_value
+	; const SHINX      ; 131
+	; const LUXIO      ; 132
+	; const LUXRAY     ; 133
+	; const CHERUBI    ; 134
+	; const CHERRIM    ; 135
+	; const AMBIPOM    ; 136
+	; const MISMAGIUS  ; 137
+	; const HONCHKROW  ; 138
+	; const CHINGLING  ; 139
+	; const BONSLY     ; 13a
+	; const MIME_JR    ; 13b
+	; const HAPPINY    ; 13c
+	; const CHATOT     ; 13d
+	; const MUNCHLAX   ; 13e
+	; const RIOLU      ; 13f
+	; const LUCARIO    ; 140
+	; const CROAGUNK   ; 141
+	; const TOXICROAK  ; 142
+	; const CARNIVINE  ; 143
+	; const FINNEON    ; 145
+	; const LUMINEON   ; 146
+	; const MANTYKE    ; 147
+	; const WEAVILE    ; 148
+	; const MAGNEZONE  ; 149
+	; const LICKILICKY ; 14a
+	; const RHYPERIOR  ; 14b
+	; const TANGROWTH  ; 14c
+	; const ELECTIVIRE ; 14d
+	; const MAGMORTAR  ; 14e
+	; const TOGEKISS   ; 14f
+	; const YANMEGA    ; 150
+	; const LEAFEON    ; 151
+	; const GLACEON    ; 152
+	; const GLISCOR    ; 153
+	; const MAMOSWINE  ; 154
+	; const PORYGON_Z  ; 155
+	; const GALLADE    ; 156
+	; const DUSKNOIR   ; 157
+	; const FROSLASS   ; 158
+	; const ROTOM      ; 159
+	; const PHIONE     ; 15a
+	; const MANAPHY    ; 15b
+; DEF NUM_SINNOH_POKEMON EQU const_value - SINNOH_POKEMON
+; DEF OTHER_POKEMON EQU const_value
+	; const FERROSEED  ; 15c
+	; const FERROTHORN ; 15d
+	; const STUNFISK   ; 15e
+	; const PAWNIARD   ; 15f
+	; const BISHARP    ; 160
+	; const ZORUA      ; 161
+	; const ZORUARK    ; 162
+	; const SKRELP     ; 163
+	; const DRAGALGE   ; 164
+	; const CLAUNCHER  ; 165
+	; const CLAWITZER  ; 166
+	; const SYLVEON    ; 167
+	; const PANCHAM    ; 168
+	; const PANGORO    ; 169
+	; const INKAY      ; 16a
+	; const MALAMAR    ; 16b
+	; const NOIBAT     ; 16c
+	; const NOIVERN    ; 16d
+	; const HONEDGE    ; 16e
+	; const DOUBLADE   ; 16f
+	; const AEGISLASH  ; 170
+	; const GOOMY      ; 171
+	; const SLIGGOO    ; 172
+	; const GOODRA     ; 173
+	; const ROCKRUFF   ; 174
+	; const LYCANROC   ; 175
+	; const CUTIEFLY   ; 176
+	; const RIBOMBEE   ; 177
+	; const PIKIPEK    ; 178
+	; const TRUMBEAK   ; 179
+	; const TOUCANNON  ; 17a
+	; const MIMIKYU    ; 17b
+	; const SANDYGHAST ; 17c
+	; const PALLOSAND  ; 17d
+	; const SALANDIT   ; 17e
+	; const SALAZZLE   ; 17f
+	; const MAREANIE   ; 180
+	; const TOXAPEX    ; 181
+	; const TURTONATOR ; 182
+	; const DHELMISE   ; 183
+	; const PINCURCHIN ; 184
+	; const CRAMORANT  ; 185
+	; const ARROKUDA   ; 186
+	; const BARRASKEWDA ; 187
+	; const APPLIN     ; 188
+	; const FLAPPLE    ; 189
+	; const APPLETUN   ; 18a
+	; const GIMMIGHOUL ; 18b
+	; const GHOLDENGO  ; 18c
+	; const ANNIHILAPE ; 18d
+	; const DUDUNSPARCE ; 18e
+	; const GIRAFARIG  ; 18f
+	; const KINGAMBIT  ; 190
+	; const DIPPLIN    ; 191
+	; const HYDRAPPLE  ; 192
+	; const CHARCADET  ; 193
+	; const ARMAROUGE  ; 194
+	; const CERULEDGE  ; 195
+	; const CLODSIRE   ; 196
+	; const CURSOLA    ; 197
+	; const PERRSERKER ; 198
+	; const SIRFETCH_D ; 199
+	; const MR__RIME   ; 19a
+	; const OBSTAGOON  ; 19b
+	; const OVERQWIL   ; 19c
+	; const SNEASLER   ; 19d
+	; const KLEAVOR    ; 19e
+	; const URSALUNA   ; 19f
+	; const WYRDEER    ; 1a0
+	; const MARSHADOW  ; 1a1
+	; const MELTAN     ; 1a2
+	; const MELMETAL   ; 1a3
+; DEF NUM_OTHER_POKEMON EQU const_value - OTHER_POKEMON
 DEF FORM_POKEMON EQU const_value
-	const LAPRAS_PARTNER ; 183
+	const LAPRAS_PARTNER      ; 1a4
+	; const RATATTA_ALOLA       ; 1a5
+	; const RATICATE_ALOLA      ; 1a6
+	; const RAICHU_ALOLA        ; 1a7
+	; const SANDSHREW_ALOLA     ; 1a8
+	; const SANDSLASH_ALOLA     ; 1a9
+	; const DIGLETT_ALOLA       ; 1aa
+	; const DUGTRIO_ALOLA       ; 1ab
+	; const GRIMER_ALOLA        ; 1ac
+	; const MUK_ALOLA           ; 1ad
+	; const GEODUDE_ALOLA       ; 1ae
+	; const GRAVELLER_ALOLA     ; 1af
+	; const GOLEM_ALOLA         ; 1b0
+	; const VULPIX_ALOLA        ; 1b1
+	; const NINETALES_ALOLA     ; 1b2
+	; const MAROWAK_ALOLA       ; 1b3
+	; const EXEGGUTOR_ALOLA     ; 1b4
+	; const MEOWTH_ALOLA        ; 1b5
+	; const PERSIAN_ALOLA       ; 1b6
+	; const PONYTA_GALAR        ; 1b7
+	; const RAPIDASH_GALAR      ; 1b8
+	; const FARFETCH_D_GALAR    ; 1b9
+	; const MR__MIME_GALAR      ; 1ba
+	; const WEEZING_GALAR       ; 1bb
+	; const ZIGZAGOON_GALAR     ; 1bc
+	; const LINOONE_GALAR       ; 1bd
+	; const STUNFISK_GALAR      ; 1be
+	; const CORSOLA_GALAR       ; 1bf
+	; const MEOWTH_GALAR        ; 1c0
+	; const SLOWPOKE_GALAR      ; 1c1
+	; const SLOWBRO_GALAR       ; 1c2
+	; const SLOWKING_GALAR      ; 1c3
+	; const ARTICUNO_GALAR      ; 1c4
+	; const ZAPDOS_GALAR        ; 1c5
+	; const MOLTRES_GALAR       ; 1c6
+	; const GROWLITHE_HISUI     ; 1c7
+	; const ARCANINE_HISUI      ; 1c8
+	; const VOLTORB_HISUI       ; 1c9
+	; const ELECTRODE_HISUI     ; 1ca
+	; const QWILFISH_HISUI      ; 1cb
+	; const SNEASEL_HISUI       ; 1cc
+	; const ZORUA_HISUI         ; 1cd
+	; const ZOROARK_HISUI       ; 1ce
+	; const SLIGGOO_HISUI       ; 1cf
+	; const GOODRA_HISUI        ; 1d0
+	; const TYPHLOSION_HISUI    ; 1d1
+	; const WOOPER_PALDEA       ; 1d2
+	; const TAUROS_COMBAT       ; 1d3
+	; const TAUROS_BLAZE        ; 1d4
+	; const TAUROS_AQUA         ; 1d5
+	; const CATERPIE_VALENCIA   ; 1d6
+	; const METAPOD_VALENCIA    ; 1d7
+	; const BUTTERFREE_VALENCIA ; 1d8
+	; const ODDISH_VALENCIA     ; 1d9
+	; const GLOOM_VALENCIA      ; 1da
+	; const VILEPLUME_VALENCIA  ; 1db
+	; const BELOSSOM_VALENCIA   ; 1dc
+	; const BELLSPROUT_VALENCIA ; 1dd
+	; const WEEPINBELL_VALENCIA ; 1de
+	; const VICTREEBEL_VALENCIA ; 1df
+	; const PARAS_VALENCIA      ; 1e0
+	; const PARASECT_VALENCIA   ; 1e1
+	; const ONIX_CRYSTAL        ; 1e2
+	; const STEELIX_CRYSTAL     ; 1e3
+	; const URSALUNA_BLOODMOON  ; 1e4
 DEF NUM_FORM_POKEMON EQU const_value - FORM_POKEMON
 DEF NUM_POKEMON EQU const_value - 1
 
@@ -381,5 +563,47 @@ endc
 	const UNOWN_EXCLAMATION ; 27
 	const UNOWN_QUESTION    ; 28
 DEF NUM_UNOWN EQU const_value - 1 ; 28
+
+; Magikarp forms
+; indexes for:
+; - MagikarpPicPointers (see data/pokemon/magikarp_pic_pointers.asm)
+; - AnimationPointersMagikarp (see gfx/pokemon/magikarp_anim_pointers.asm)
+; - MagikarpAnimationIdlePointers (see gfx/pokemon/magikarp_idle_pointers.asm)
+; - MagikarpBitmasksPointers (see gfx/pokemon/magikarp_bitmask_pointers.asm)
+; - MagikarpFramesPointers (see gfx/pokemon/magikarp_frame_pointers.asm)
+	; const_def 1
+	; const MAGIKARP_PLAIN           ;  1
+	; const MAGIKARP_SKELLY          ;  2
+	; const MAGIKARP_CALICO_OW       ;  3
+	; const MAGIKARP_CALICO_OWB      ;  4
+	; const MAGIKARP_CALICO_WO       ;  5
+	; const MAGIKARP_CALICO_OG       ;  6
+	; const MAGIKARP_ORANGE_2_TONE   ;  7
+	; const MAGIKARP_ORANGE_ORCA     ;  8
+	; const MAGIKARP_ORANGE_DAPPLE   ;  9
+	; const MAGIKARP_PINK_2_TONE     ; 10
+	; const MAGIKARP_PINK_ORCA       ; 11
+	; const MAGIKARP_PINK_DAPPLE     ; 12
+	; const MAGIKARP_GRAY_BUBBLE     ; 13
+	; const MAGIKARP_GRAY_DIAMOND    ; 14
+	; const MAGIKARP_GRAY_PATCH      ; 15
+	; const MAGIKARP_PURPLE_BUBBLE   ; 16
+	; const MAGIKARP_PURPLE_DIAMOND  ; 17
+	; const MAGIKARP_PURPLE_PATCH    ; 18
+	; const MAGIKARP_APRICOT_TIGER   ; 19
+	; const MAGIKARP_APRICOT_ZEBRA   ; 20
+	; const MAGIKARP_APRICOT_STRIPE  ; 21
+	; const MAGIKARP_BROWN_TIGER     ; 22
+	; const MAGIKARP_BROWN_ZEBRA     ; 23
+	; const MAGIKARP_BROWN_STRIPE    ; 24
+	; const MAGIKARP_ORANGE_FOREHEAD ; 25
+	; const MAGIKARP_ORANGE_MASK     ; 26
+	; const MAGIKARP_BLACK_FOREHEAD  ; 27
+	; const MAGIKARP_BLACK_MASK      ; 28
+	; const MAGIKARP_BLUE_SAUCY      ; 29
+	; const MAGIKARP_BLUE_RAIN       ; 30
+	; const MAGIKARP_VIOLET_SAUCY    ; 31
+	; const MAGIKARP_VIOLET_RAIN     ; 32
+; DEF NUM_MAGIKARP EQU const_value - 1 ; 32
 
 DEF UNOWN_OFFSET EQU NUM_POKEMON + NUM_UNOWN
