@@ -154,6 +154,14 @@ Music:
 	dba Music_MidgameOrangeRoute ; regen
 	dba Music_OrangeDive ; regen
 	dba Music_LegendRed ; regen
+	dba Music_EarlyOrangeRouteNight ; regen
+	dba Music_CityOrangeNight ; regen
+	dba Music_MidgameOrangeRouteNight ; regen
+	dba Music_OrangeWildNight ; monsta
+	dba Music_StarterOrangeRouteNight ; regen
+	dba Music_SomeRouteOrangeNight ; regen
+	dba Music_SlateportCityNight ; mmmmm
+	dba Music_PinkanIslandNight ; regen
 ; rse
 	dba Music_PokemonMart ;Mmmmm
 	dba Music_SlateportCity ;Mmmmm

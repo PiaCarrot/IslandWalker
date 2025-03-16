@@ -156,6 +156,7 @@ INCLUDE "audio/music/orange/crystalcave.asm"
 INCLUDE "audio/music/orange/meetjessiejames.asm"
 INCLUDE "audio/music/orange/rocketmotto.asm"
 INCLUDE "audio/music/orange/pinkanisland.asm"
+INCLUDE "audio/music/orange/pinkanislandnight.asm"
 INCLUDE "audio/music/orange/imakunitheme.asm"
 INCLUDE "audio/music/orange/traceybattle.asm"
 INCLUDE "audio/music/orange/marshadowbattle.asm"
@@ -172,6 +173,9 @@ INCLUDE "audio/music/orange/crimsonroute.asm"
 INCLUDE "audio/music/orange/starterorangeroute.asm"
 INCLUDE "audio/music/orange/cityorange.asm"
 INCLUDE "audio/music/orange/valenciatown.asm"
+INCLUDE "audio/music/orange/cityorangenight.asm"
+INCLUDE "audio/music/orange/routeorangeexnight.asm"
+INCLUDE "audio/music/orange/starterorangeroutenight.asm"
 
 SECTION "Songs Regen 3", ROMX
 
@@ -185,6 +189,8 @@ INCLUDE "audio/music/Title/orange-title-part2.asm"
 INCLUDE "audio/music/orange/squishy.asm"
 INCLUDE "audio/music/orange/orangedive.asm"
 INCLUDE "audio/music/orange/sm-legendred.asm"
+INCLUDE "audio/music/orange/squishynight.asm"
+INCLUDE "audio/music/orange/routeextranight.asm"
 
 SECTION "Songs Monstarules", ROMX
 
@@ -194,6 +200,7 @@ INCLUDE "audio/music/orange/lugiassong.asm"
 INCLUDE "audio/music/orange/orangegymbattle.asm"
 INCLUDE "audio/music/orange/orangetrainerbattle.asm"
 INCLUDE "audio/music/orange/fourisland.asm"
+INCLUDE "audio/music/orange/orangewildnight.asm"
 
 SECTION "Songs Other", ROMX
 INCLUDE "audio/music/orange/ridinglapras.asm" ;mmmm
@@ -207,6 +214,7 @@ INCLUDE "audio/music/Title/splash.asm" ;piacrt
 INCLUDE "audio/music/orange/rocketboss.asm"
 INCLUDE "audio/music/orange/sirdbattle.asm"
 INCLUDE "audio/music/RBY/seviitrainerbattle.asm"
+INCLUDE "audio/music/rse/slateportcitynight.asm"  ;mmmm
 
 
 SECTION "Songs Other 2", ROMX

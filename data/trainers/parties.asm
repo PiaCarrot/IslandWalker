@@ -623,6 +623,14 @@ YoungsterGroup:
 	dw RATTATA
 	db -1 ; end
 
+	next_list_item ; YOUNGSTER (5)
+	db "JOSEPH@", TRAINERTYPE_NORMAL
+	db 15
+	dw SPINDA
+	db 17
+	dw ZIGZAGOON
+	db -1 ; end
+
 	end_list_items
 
 SECTION "Enemy Trainer Parties 2", ROMX
@@ -4148,8 +4156,18 @@ BugCatcherFGroup:
 AthleteGroup:
 	next_list_item ; ATHLETE (1)
 	db "TOMMY@", TRAINERTYPE_NORMAL
-	db 11
+	db 13
 	dw DODUO
+	db -1 ; end
+
+	next_list_item ; ATHLETE (2)
+	db "ZACK@", TRAINERTYPE_NORMAL
+	db 16
+	dw DODUO
+	db 14
+	dw AIPOM
+	db 14
+	dw NINCADA
 	db -1 ; end
 
 	end_list_items

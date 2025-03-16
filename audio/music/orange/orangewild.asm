@@ -9,6 +9,7 @@ Music_OrangeWild_Ch1:
 	volume $77
 	stereopanning $77
 	dutycycle 1
+.body:
 	octave 5
 	notetype $C, $D1
 	note C_, 1
@@ -265,6 +266,7 @@ Music_OrangeWild_Ch1_loop:
 
 Music_OrangeWild_Ch2:
 	dutycycle 1
+.body:
 	octave 3
 	notetype $C, $D4
 	note C_, 1
@@ -551,6 +553,7 @@ Music_OrangeWild_Ch2_loop:
 
 Music_OrangeWild_Ch3:
 	dutycycle 8
+.body:
 	octave 3
 	notetype $C, $18
 	note C_, 1
@@ -1229,6 +1232,7 @@ Music_OrangeWild_Ch3_loop:
 Music_OrangeWild_Ch4:
 	togglenoise 3
 	notetype $C
+.body:
 	note C_, 2
 	note __, 2
 	note C_, 2

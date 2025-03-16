@@ -10,6 +10,7 @@ Music_CityOrange_Ch1:
 	stereopanning $f
 	tone $0002
 Music_CityOrange_Ch1_loop:
+.body:
 	dutycycle 1
 	octave 3
 	notetype $C, $93
@@ -411,6 +412,7 @@ Music_CityOrange_Ch2:
 	note A_, 1
 	note __, 1
 Music_CityOrange_Ch2_loop:
+.body:
 	tone $0000
 	dutycycle 0
 	notetype $C, $52
@@ -732,6 +734,7 @@ Music_CityOrange_Ch2_loop:
 Music_CityOrange_Ch3:
 Music_CityOrange_Ch3_loop:
 	dutycycle 4
+.body:
 	octave 3
 	notetype $C, $14
 	note A_, 2

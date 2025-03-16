@@ -10,6 +10,7 @@ Music_MidgameOrangeRoute_Ch1:
 	stereopanning $f
 	dutycycle 1
 	tone $0002
+.body:
 	vibrato $10, $26
 	octave 3
 	notetype $C, $A3
@@ -178,6 +179,7 @@ Music_MidgameOrangeRoute_Ch2:
 	dutycycle 1
 	stereopanning $f0
 	tone $0001
+.body:
 	vibrato $10, $22
 	octave 3
 	notetype $C, $C3
@@ -383,6 +385,7 @@ Music_MidgameOrangeRoute_Ch2_loop:
 	loopchannel 0, Music_MidgameOrangeRoute_Ch2_loop
 
 Music_MidgameOrangeRoute_Ch3:
+.body:
 	dutycycle 9
 	octave 3
 	notetype $C, $19

@@ -97,6 +97,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const JAVI
 	const ALEX
 	const JEBADIAH
+	const JOSEPH
 
 	trainerclass SCHOOLBOY ; 17
 
@@ -249,6 +250,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	
 	trainerclass ATHLETE ; 50
 	const TOMMY
+	const ZACK
 	
 	trainerclass BUTCH ; 51
 	const BUTCH_1

@@ -61,7 +61,7 @@ PlayBattleMusic:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jp c, .done ; not NITE_F or EVE_F
-	ld de, MUSIC_ORANGEWILD
+	ld de, MUSIC_ORANGEWILD_NIGHT
 	jp .done
 
 .kantowild

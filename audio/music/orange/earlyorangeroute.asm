@@ -10,8 +10,8 @@ Music_EarlyOrangeRoute_Ch1:
 	stereopanning $f
 	notetype $C, $00
 	note __, 4
-Music_EarlyOrangeRoute_Ch1_loop:
 	dutycycle 1
+Music_EarlyOrangeRoute_Ch1_loop:
 	tone $0001
 	notetype $C, $A2
 	vibrato $00, $13
