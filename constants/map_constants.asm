@@ -125,6 +125,7 @@ ENDM
 	newgroup KINNOW
 	map_const PINKAN_ISLAND,								20, 18
 	map_const ROUTE_55,					26,  30
+	map_const ROUTE_55_MANIACS_HOUSE,					4,  4
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

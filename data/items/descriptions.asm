@@ -231,6 +231,16 @@ ItemDescriptions1:
 	dw AncientPotteryDesc    ; 00DB
 	dw AncientPotteryDesc    ; 00DB
 	dw ClayShardDesc    ; 00DB
+	dw CrystalChunkDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
 
 .IndirectEnd:
 
@@ -1613,3 +1623,11 @@ AncientPotteryDesc:
 ClayShardDesc:
 	db   "Intricate design."
 	next "Sell low.@"
+
+CrystalChunkDesc:
+	db   "Crystalline chunk."
+	next "Sell high.@"
+
+GemstoneDesc:
+	db   "A large jewel."
+	next "Sell high.@"

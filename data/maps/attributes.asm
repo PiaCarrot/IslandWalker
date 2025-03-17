@@ -212,6 +212,7 @@ ENDM
 	map_attributes IvysHouse, IVYS_HOUSE, $00, 0
 	map_attributes MillsweetLab, MILLSWEET_LAB, $00, 0
 	map_attributes MillsweetMagikarpHouse, MILLSWEET_MAGIKARP_HOUSE, $00, 0
+	map_attributes Route55ManiacsHouse, ROUTE_55_MANIACS_HOUSE, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0

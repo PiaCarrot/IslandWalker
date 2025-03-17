@@ -238,7 +238,7 @@ ItemEffects1:
 	dw XItemEffect         ; X_SP_DEF
 	dw RestorePPEffect     ; PP_MAX
 	dw StatusHealingEffect ; PEWTER_ARARE
-	dw StatusHealingEffect ; SEVENTH_TANGHULU
+	dw StatusHealingEffect ; SEVENTH_HEAVEN
 	dw EvoStoneEffect      ; LEADER_CREST
 	dw NoEffect            ; SPIDER_SILK
 	dw NoEffect            ; GRASSY_BLOCK
@@ -251,6 +251,16 @@ ItemEffects1:
 	dw NoEffect            ; ANCIENT_CUP
 	dw NoEffect            ; ANCIENT_JAR
 	dw NoEffect            ; CLAY_SHARD
+	dw NoEffect            ; HUGE_CRYSTAL
+	dw NoEffect            ; BIG_JADE
+	dw NoEffect            ; BIG_EMERALD
+	dw NoEffect            ; BIG_RUBY
+	dw NoEffect            ; BIG_SAPPHIRE
+	dw NoEffect            ; BIG_AMETHYST
+	dw NoEffect            ; BIG_TOPAZ
+	dw NoEffect            ; BIG_GARNET
+	dw NoEffect            ; BIG_ONYX
+	dw NoEffect            ; BIG_DIAMOND
 .IndirectEnd:
 
 ItemEffectsKeyItems:

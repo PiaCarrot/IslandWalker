@@ -213,19 +213,29 @@
 	const X_SP_DEF     ; 00D7
 	const PP_MAX       ; 00D8
 	const PEWTER_ARARE ; 00D9
-	const SEVENTH_TANGHULU ; 00DA
+	const SEVENTH_HEAVEN ; 00DA This is an alcoholic beverage made with Grapefruit peel. The lady who sells it gives you a nonalcoholic version.
 	const LEADER_CREST ; 00DB
 	const SPIDER_SILK  ; 00DC
-	const GRASSY_BLOCK  ; 00DD
+	const GRASSY_BLOCK ; 00DD
 	const FIERY_BLOCK  ; 00DE
-	const CHILLY_BLOCK  ; 00DF
+	const CHILLY_BLOCK ; 00DF
 	const ZAPPY_BLOCK  ; 00E0
-	const LOVELY_BLOCK  ; 00E1
-	const CRUNCHYBLOCK  ; 00E2
-	const ANCIENT_VASE  ; 00E3
+	const LOVELY_BLOCK ; 00E1
+	const CRUNCHYBLOCK ; 00E2
+	const ANCIENT_VASE ; 00E3
 	const ANCIENT_CUP  ; 00E4
 	const ANCIENT_JAR  ; 00E5
-	const CLAY_SHARD  ; 00E6
+	const CLAY_SHARD   ; 00E6
+	const HUGE_CRYSTAL ; 00E7
+	const LARGE_JADE   ; 00E8
+	const BIG_EMERALD  ; 00E9
+	const GIANT_RUBY   ; 00EA
+	const BIG_SAPPHIRE ; 00EB
+	const BIG_AMETHYST ; 00EC
+	const HUGE_TOPAZ   ; 00ED
+	const LARGE_GARNET ; 00EE
+	const GIANT_ONYX   ; 00EF
+	const HUGE_DIAMOND ; 00F0
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.

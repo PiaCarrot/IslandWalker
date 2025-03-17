@@ -707,7 +707,10 @@ _CGB_TrainerCard:
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, CISSY ; KRIS
+	ld a, KRIS
+	call GetTrainerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, CISSY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, DANNY
@@ -719,19 +722,21 @@ _CGB_TrainerCard:
 	ld a, LUANA
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
+	ld hl, .StarPalette
+	call LoadPalette_White_Col1_Col2_Black
 	ld hl, .BadgePalettes
 	ld bc, 8 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
-	; fill screen with opposite-gender palette for the card border
+	; fill screen with same-gender palette for the card border
 	hlcoord 0, 0, wAttrmap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, [wPlayerGender]
 	and a
-	ld a, $1 ; kris
+	ld a, $0 ; kris
 	jr z, .got_gender
-	xor a ; chris
+	ld a, $1 ; indigo
 .got_gender
 	rst ByteFill
 	; fill trainer sprite area with same-gender palette
@@ -744,54 +749,35 @@ _CGB_TrainerCard:
 	ld a, $1 ; kris
 .got_gender2
 	call FillBoxCGB
+	hlcoord 3, 11, wAttrmap
+	lb bc, 3, 3
+	ld a, $2 ; cissy
+	call FillBoxCGB
+	hlcoord 7, 11, wAttrmap
+	lb bc, 3, 3
+	ld a, $3 ; bugsy
+	call FillBoxCGB
+	hlcoord 11, 11, wAttrmap
+	lb bc, 3, 3
+	ld a, $4 ; whitney
+	call FillBoxCGB
+	hlcoord 15, 11, wAttrmap
+	lb bc, 3, 3
+	ld a, $5 ; morty
+	call FillBoxCGB
 	; top-right corner still uses the border's palette
-	hlcoord 18, 1, wAttrmap
-	ld [hl], $1
-	hlcoord 3, 10, wAttrmap
-	lb bc, 3, 3
-	ld a, $1 ; cissy
-	call FillBoxCGB
-	hlcoord 7, 10, wAttrmap
-	lb bc, 3, 3
-	ld a, $2 ; bugsy
-	call FillBoxCGB
-	hlcoord 11, 10, wAttrmap
-	lb bc, 3, 3
-	ld a, $3 ; whitney
-	call FillBoxCGB
-	hlcoord 15, 10, wAttrmap
-	lb bc, 3, 3
-	ld a, $4 ; morty
-	call FillBoxCGB
-	hlcoord 3, 13, wAttrmap
-	lb bc, 3, 3
-	ld a, $5 ; chuck
-	call FillBoxCGB
-	hlcoord 7, 13, wAttrmap
-	lb bc, 3, 3
-	ld a, $6 ; jasmine
-	call FillBoxCGB
-	hlcoord 11, 13, wAttrmap
-	lb bc, 3, 3
-	ld a, $7 ; pryce
-	call FillBoxCGB
-	; clair uses kris's palette
+ 	hlcoord 18, 1, wAttrmap
 	ld a, [wPlayerGender]
 	and a
-	push af
+	ld a, $0 ; kris
 	jr z, .got_gender3
-	hlcoord 15, 13, wAttrmap
-	lb bc, 3, 3
-	ld a, $1
-	call FillBoxCGB
+	ld a, $1 ; chris
 .got_gender3
-	pop af
-	ld c, $0
-	jr nz, .got_gender4
-	inc c
-.got_gender4
-	ld a, c
-	hlcoord 18, 1, wAttrmap
+; stars
+	hlcoord 11, 4, wAttrmap
+	lb bc, 3, 3
+	ld a, $6
+	call FillBoxCGB
 	ld [hl], a
 	call ApplyAttrmap
 	call ApplyPals
@@ -801,6 +787,10 @@ _CGB_TrainerCard:
 
 .BadgePalettes:
 INCLUDE "gfx/trainer_card/johto_badges.pal"
+
+.StarPalette:
+	RGB 31, 16, 01
+	RGB 31, 16, 01
 
 _CGB_TrainerCardKanto:
 	ld de, wBGPals1
@@ -833,7 +823,7 @@ _CGB_TrainerCardKanto:
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
-	; fill screen with opposite-gender palette for the card border
+	; fill screen with same-gender palette for the card border
 	hlcoord 0, 0, wAttrmap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, [wPlayerGender]

@@ -68,7 +68,7 @@ Text_MillionDollarSunburstGlass:
 	cont "CRYSTALWARE!"
 
 	para "For the low price"
-	line "of ¥1,000,000!"
+	line "of ¥10,000,000!"
 
 	para "I'm sure your MOM"
 	line "would be delighted"

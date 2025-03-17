@@ -5,7 +5,7 @@ Music_EarlyOrangeRouteNight:
 	channel 3, Music_EarlyOrangeRouteNight_Ch3
 
 Music_EarlyOrangeRouteNight_Ch1:
-	tempo 225
+	tempo 210
 	volume $77
 	stereopanning $f
 	notetype $C, $00

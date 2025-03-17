@@ -24,6 +24,6 @@ Music_OrangeWildNight_Ch3:
 	sound_loop 0, Music_OrangeWild_Ch3.body
 
 Music_OrangeWildNight_Ch4:
-	toggle_noise 3
+	toggle_noise 9
 	drum_speed 12
 	sound_loop 0, Music_OrangeWild_Ch4.body

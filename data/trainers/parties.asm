@@ -1850,6 +1850,22 @@ SwimmerFGroup:
 	dw CORSOLA
 	db -1 ; end
 
+	next_list_item ; SWIMMERF (6)
+	db "LARA@", TRAINERTYPE_NORMAL
+	db 14
+	dw LUVDISC
+	db 14
+	dw LUVDISC
+	db 14
+	dw HORSEA
+	db -1 ; end
+
+	next_list_item ; SWIMMERF (7)
+	db "MINNIE@", TRAINERTYPE_NORMAL
+	db 18
+	dw FEEBAS
+	db -1 ; end
+
 	end_list_items
 
 SailorGroup:

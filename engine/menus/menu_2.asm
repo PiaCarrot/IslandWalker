@@ -94,18 +94,18 @@ PlaceMoneyTextbox:
 	ld de, SCREEN_WIDTH + 1
 	add hl, de
 	ld de, wMoney
-	lb bc, PRINTNUM_MONEY | 3, 6
+	lb bc, PRINTNUM_MONEY | 3, 7
 	jmp PrintNum
 
 MoneyTopRightMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 11, 0, SCREEN_WIDTH - 1, 2
+	menu_coords 10, 0, SCREEN_WIDTH - 1, 2
 	dw NULL
 	db 1 ; default option
 
 MoneyBottomLeftMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 11, 8, 13
+	menu_coords 0, 11, 9, 13
 	dw NULL
 	db 1 ; default option
 
@@ -145,7 +145,7 @@ DisplayMoneyAndCoinBalance:
 	jmp PrintNum
 
 MoneyString:
-	db "MONEY@"
+	db "#@"
 CoinString:
 	db "COIN@"
 ShowMoney_TerminatorString:

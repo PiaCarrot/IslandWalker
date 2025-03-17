@@ -25,7 +25,7 @@ Music_SlateportCityNight_Ch3:
 	sound_loop 0, Music_SlateportCity_Ch3_loop
 
 Music_SlateportCityNight_Ch4:
-	toggle_noise 3
+	toggle_noise 9
 	notetype $6
 	note D#, 4
 	note D_, 4

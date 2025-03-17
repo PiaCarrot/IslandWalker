@@ -116,7 +116,14 @@ TrainerCard_Page1_LoadGFX:
 	lb bc, BANK(CardStatusGFX), 86
 	call Request2bpp
 	call TrainerCard_Page1_PrintDexCaught_GameTime
+	hlcoord 0, 17
+	ld de, .BorderBalls
+	call TrainerCardSetup_PlaceTilemapString
 	jr TrainerCard_IncrementJumptable
+	
+
+.BorderBalls:
+	db $25, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $25, -1 ; ____________>
 
 TrainerCard_Page1_Joypad:
 	call TrainerCard_Page1_PrintGameTime
@@ -148,7 +155,13 @@ TrainerCard_Page2_LoadGFX:
 	call Request2bpp
 	ld hl, TrainerCard_JohtoBadgesOAM
 	call TrainerCard_Page2_3_InitObjectsAndStrings
-	jr TrainerCard_IncrementJumptable
+	hlcoord 0, 17
+	ld de, .BorderBalls
+	call TrainerCardSetup_PlaceTilemapString
+	jp TrainerCard_IncrementJumptable
+
+.BorderBalls:
+	db $25, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $25, -1 ; ____________>
 
 TrainerCard_Page2_Joypad:
 	ld hl, TrainerCard_JohtoBadgesOAM
@@ -233,6 +246,49 @@ TrainerCard_PrintTopHalfOfCard:
 	hlcoord 0, 0
 	ld d, 5
 	call TrainerCard_InitBorder
+	hlcoord 11, 4
+	push hl
+	ld de, EVENT_DRAKE_DEFEATED ; Became Champion
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	pop hl
+	ld a, c
+	and a
+	jr z, .nostar1
+	ld a, $26
+	ld [hli], a
+.nostar1
+	push hl
+	ld de, EVENT_LUANA_DEFEATED ; Won the World Tournament
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	pop hl
+	ld a, c
+	and a
+	jr z, .nostar2
+	ld a, $26
+	ld [hli], a
+.nostar2
+	push hl
+	ld de, EVENT_RUDY_DEFEATED
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	pop hl
+	ld a, c
+	and a
+	jr z, .nostar3
+	ld a, $26
+	ld [hli], a
+; TODO: COMPLETE THE DEX
+	; push hl
+	; ld hl, PokedexCaught
+	; ld b, EndPokedexCaught - PokedexCaught
+	; call CountSetBits
+	; pop hl
+	; cp NUM_POKEMON
+	; jr c, .nostar3
+	; ld [hl], $26
+.nostar3
 	hlcoord 2, 2
 	ld de, .Name_Money
 	rst PlaceString
@@ -246,12 +302,12 @@ TrainerCard_PrintTopHalfOfCard:
 	ld de, wPlayerID
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	call PrintNum
-	hlcoord 7, 6
+	hlcoord 6, 7
 	ld de, wMoney
-	lb bc, PRINTNUM_MONEY | 3, 6
+	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
-	hlcoord 1, 3
-	ld de, .HorizontalDivider
+	hlcoord 0, 0
+	ld de, .BorderBalls
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord 14, 1
 	lb bc, 5, 7
@@ -262,13 +318,13 @@ TrainerCard_PrintTopHalfOfCard:
 .Name_Money:
 	db   "NAME/"
 	next ""
-	next "MONEY@"
+	next "<PK><MN> Dollars:@"
 
 .ID_No:
 	db $27, $28, -1 ; ID NO
 
-.HorizontalDivider:
-	db $25, $25, $25, $25, $25, $25, $25, $25, $25, $25, $25, $25, $26, -1 ; ____________>
+.BorderBalls:
+	db $25, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $25, -1 ; ____________>
 
 TrainerCard_Page1_PrintDexCaught_GameTime:
 	hlcoord 2, 10
@@ -575,22 +631,22 @@ TrainerCard_JohtoBadgesOAM:
 	dw wJohtoBadges
 
 	; Zephyrbadge
-	db $68, $18, 0
+	db $78, $24, 0
 	db $00, $20, $24, $20 | (1 << 7)
 	db $00, $20, $24, $20 | (1 << 7)
 
 	; Hivebadge
-	db $68, $38, 1
+	db $78, $44, 1
 	db $04, $20, $24, $20 | (1 << 7)
 	db $04, $20, $24, $20 | (1 << 7)
 
 	; Plainbadge
-	db $68, $58, 2
+	db $78, $62, 2
 	db $08, $20, $24, $20 | (1 << 7)
 	db $08, $20, $24, $20 | (1 << 7)
 
 	; Fogbadge
-	db $68, $78, 3
+	db $78, $82, 3
 	db $0c, $20, $24, $20 | (1 << 7)
 	db $0c, $20, $24, $20 | (1 << 7)
 
@@ -666,6 +722,7 @@ TrainerCard_KantoBadgesOAM:
 	db $1c | (1 << 7), $20 | (1 << 7), $24, $20
 
 CardStatusGFX: INCBIN "gfx/trainer_card/card_status.2bpp"
+CardPokeballGFX: INCBIN "gfx/trainer_card/pokeball.2bpp"
 
 LeaderGFX:  INCBIN "gfx/trainer_card/johto_leaders.2bpp"
 LeaderGFX2: INCBIN "gfx/trainer_card/kanto_leaders.2bpp"

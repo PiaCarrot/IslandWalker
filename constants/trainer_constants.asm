@@ -161,6 +161,8 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const ZOEY
 	const ALLIE
 	const MORGAN
+	const LARA
+	const MINNIE
 
 	trainerclass SAILOR ; 28
 

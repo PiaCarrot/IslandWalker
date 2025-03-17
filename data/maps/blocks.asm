@@ -195,6 +195,9 @@ MillsweetLab_Blocks:
 	
 Route55_Blocks:
 	INCBIN "maps/Route55.ablk"
+	
+Route55ManiacsHouse_Blocks:
+	INCBIN "maps/Route55ManiacsHouse.ablk"
 
 PinkanIsland_Blocks:
 	INCBIN "maps/PinkanIsland.ablk"

@@ -6,6 +6,7 @@ SECTION "Map Scripts 2", ROMX
 
 INCLUDE "maps/Route55.asm"
 INCLUDE "maps/PinkanIsland.asm"
+INCLUDE "maps/Route55ManiacsHouse.asm"
 
 SECTION "Map Scripts 3", ROMX
 
