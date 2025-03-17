@@ -722,7 +722,6 @@ TrainerCard_KantoBadgesOAM:
 	db $1c | (1 << 7), $20 | (1 << 7), $24, $20
 
 CardStatusGFX: INCBIN "gfx/trainer_card/card_status.2bpp"
-CardPokeballGFX: INCBIN "gfx/trainer_card/pokeball.2bpp"
 
 LeaderGFX:  INCBIN "gfx/trainer_card/johto_leaders.2bpp"
 LeaderGFX2: INCBIN "gfx/trainer_card/kanto_leaders.2bpp"
