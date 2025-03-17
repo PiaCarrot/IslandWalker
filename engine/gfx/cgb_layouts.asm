@@ -774,7 +774,7 @@ _CGB_TrainerCard:
 	ld a, $1 ; chris
 .got_gender3
 ; stars
-	hlcoord 11, 4, wAttrmap
+	hlcoord 11, 3, wAttrmap
 	lb bc, 3, 3
 	ld a, $6
 	call FillBoxCGB
@@ -813,6 +813,9 @@ _CGB_TrainerCardKanto:
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld hl, .StarPalette
+	call LoadPalette_White_Col1_Col2_Black
+	ld a, ERIKA
+	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld hl, .BadgePalettes
 	ld bc, 8 palettes
@@ -873,7 +876,7 @@ _CGB_TrainerCardKanto:
 	call FillBoxCGB
 	; top-right corner still uses the border's palette
 ; stars
-	hlcoord 11, 4, wAttrmap
+	hlcoord 11, 3, wAttrmap
 	lb bc, 3, 3
 	ld a, $6
 	call FillBoxCGB

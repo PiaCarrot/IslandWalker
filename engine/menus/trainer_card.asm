@@ -218,7 +218,13 @@ TrainerCard_Page3_LoadGFX:
 	lb bc, BANK(BadgeGFX2), 44
 	call Request2bpp
 	call TrainerCard_Page2_3_InitObjectsAndStrings
+	hlcoord 0, 17
+	ld de, .BorderBalls
+	call TrainerCardSetup_PlaceTilemapString
 	jmp TrainerCard_IncrementJumptable
+
+.BorderBalls:
+	db $25, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $23, $25, -1 ; ____________>
 
 TrainerCard_Page3_Joypad:
 	ld hl, TrainerCard_KantoBadgesOAM
@@ -246,7 +252,7 @@ TrainerCard_PrintTopHalfOfCard:
 	hlcoord 0, 0
 	ld d, 5
 	call TrainerCard_InitBorder
-	hlcoord 11, 4
+	hlcoord 11, 3
 	push hl
 	ld de, EVENT_DRAKE_DEFEATED ; Became Champion
 	ld b, CHECK_FLAG
@@ -290,19 +296,22 @@ TrainerCard_PrintTopHalfOfCard:
 	; ld [hl], $26
 .nostar3
 	hlcoord 2, 2
-	ld de, .Name_Money
+	ld de, .NameString
 	rst PlaceString
-	hlcoord 2, 4
+	hlcoord 2, 5
+	ld de, .DollarsString
+	rst PlaceString
+	hlcoord 2, 3
 	ld de, .ID_No
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord 7, 2
 	ld de, wPlayerName
 	rst PlaceString
-	hlcoord 5, 4
+	hlcoord 5, 3
 	ld de, wPlayerID
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	call PrintNum
-	hlcoord 6, 7
+	hlcoord 6, 6
 	ld de, wMoney
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
@@ -315,10 +324,11 @@ TrainerCard_PrintTopHalfOfCard:
 	ldh [hGraphicStartTile], a
 	predef_jump PlaceGraphic
 
-.Name_Money:
-	db   "NAME/"
-	next ""
-	next "<PK><MN> Dollars:@"
+.NameString:
+	db   "NAME/@"
+
+.DollarsString:
+	db   "<PK><MN> Dollars:@"
 
 .ID_No:
 	db $27, $28, -1 ; ID NO
@@ -631,22 +641,22 @@ TrainerCard_JohtoBadgesOAM:
 	dw wJohtoBadges
 
 	; Zephyrbadge
-	db $78, $24, 0
+	db $68, $18, 0
 	db $00, $20, $24, $20 | (1 << 7)
 	db $00, $20, $24, $20 | (1 << 7)
 
 	; Hivebadge
-	db $78, $44, 1
+	db $68, $38, 1
 	db $04, $20, $24, $20 | (1 << 7)
 	db $04, $20, $24, $20 | (1 << 7)
 
 	; Plainbadge
-	db $78, $62, 2
+	db $68, $58, 2
 	db $08, $20, $24, $20 | (1 << 7)
 	db $08, $20, $24, $20 | (1 << 7)
 
 	; Fogbadge
-	db $78, $82, 3
+	db $68, $78, 3
 	db $0c, $20, $24, $20 | (1 << 7)
 	db $0c, $20, $24, $20 | (1 << 7)
 
