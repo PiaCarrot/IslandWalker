@@ -703,6 +703,7 @@ _CGB_UnownPuzzle:
 	jmp ApplyAttrmap
 
 _CGB_TrainerCard:
+	; load BG palettes
 	ld de, wBGPals1
 	xor a ; CHRIS
 	call GetTrainerPalettePointer
@@ -724,61 +725,33 @@ _CGB_TrainerCard:
 	call LoadPalette_White_Col1_Col2_Black
 	ld hl, .StarPalette
 	call LoadPalette_White_Col1_Col2_Black
+
+	; load OB palettes
 	ld hl, .BadgePalettes
 	ld bc, 8 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
-	; fill screen with same-gender palette for the card border
-	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	ld a, [wPlayerGender]
-	and a
-	ld a, $0 ; kris
-	jr z, .got_gender
-	ld a, $1 ; indigo
-.got_gender
-	rst ByteFill
-	; fill trainer sprite area with same-gender palette
-	hlcoord 14, 1, wAttrmap
-	lb bc, 7, 5
-	ld a, [wPlayerGender]
-	and a
-	ld a, $0 ; no-optimize a = 0 chris
-	jr z, .got_gender2
-	ld a, $1 ; kris
-.got_gender2
-	call FillBoxCGB
-	hlcoord 3, 11, wAttrmap
+	call TrainerCard_Common
+
+	; fill leader faces with palettes
+	hlcoord 3, 9, wAttrmap
 	lb bc, 3, 3
 	ld a, $2 ; cissy
 	call FillBoxCGB
-	hlcoord 7, 11, wAttrmap
+	hlcoord 7, 9, wAttrmap
 	lb bc, 3, 3
 	ld a, $3 ; bugsy
 	call FillBoxCGB
-	hlcoord 11, 11, wAttrmap
+	hlcoord 11, 9, wAttrmap
 	lb bc, 3, 3
 	ld a, $4 ; whitney
 	call FillBoxCGB
-	hlcoord 15, 11, wAttrmap
+	hlcoord 15, 9, wAttrmap
 	lb bc, 3, 3
 	ld a, $5 ; morty
 	call FillBoxCGB
-	; top-right corner still uses the border's palette
- 	hlcoord 18, 1, wAttrmap
-	ld a, [wPlayerGender]
-	and a
-	ld a, $0 ; kris
-	jr z, .got_gender3
-	ld a, $1 ; chris
-.got_gender3
-; stars
-	hlcoord 11, 3, wAttrmap
-	lb bc, 3, 3
-	ld a, $6
-	call FillBoxCGB
-	ld [hl], a
+
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
@@ -793,6 +766,7 @@ INCLUDE "gfx/trainer_card/johto_badges.pal"
 	RGB 31, 16, 01
 
 _CGB_TrainerCardKanto:
+	; load BG palettes
 	ld de, wBGPals1
 	xor a ; INDIGO AND KOGA
 	call GetTrainerPalettePointer
@@ -817,44 +791,29 @@ _CGB_TrainerCardKanto:
 	ld a, ERIKA
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
+
+	; load OB palettes
 	ld hl, .BadgePalettes
 	ld bc, 8 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
-	; fill screen with same-gender palette for the card border
-	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	ld a, [wPlayerGender]
-	and a
-	ld a, $0 ; kris
-	jr z, .got_gender
-	ld a, $1 ; chris
-.got_gender
-	rst ByteFill
-	; fill trainer sprite area with same-gender palette
-	hlcoord 14, 1, wAttrmap
-	lb bc, 7, 5
-	ld a, [wPlayerGender]
-	and a
-	ld a, $0 ; no-optimize a = 0 chris
-	jr z, .got_gender2
-	ld a, $1 ; kris
-.got_gender2
-	call FillBoxCGB
-	hlcoord 3, 10, wAttrmap
+	call TrainerCard_Common
+
+	; fill leader faces with palettes
+	hlcoord 3, 9, wAttrmap
 	lb bc, 3, 3
 	ld a, $2 ; brock
 	call FillBoxCGB
-	hlcoord 7, 10, wAttrmap
+	hlcoord 7, 9, wAttrmap
 	lb bc, 3, 3
 	ld a, $1 ; misty
 	call FillBoxCGB
-	hlcoord 11, 10, wAttrmap
+	hlcoord 11, 9, wAttrmap
 	lb bc, 3, 3
 	ld a, $3 ; lt.surge
 	call FillBoxCGB
-	hlcoord 15, 10, wAttrmap
+	hlcoord 15, 9, wAttrmap
 	lb bc, 3, 3
 	ld a, $5 ; erika
 	call FillBoxCGB
@@ -874,20 +833,7 @@ _CGB_TrainerCardKanto:
 	lb bc, 3, 3
 	ld a, $4 ; flint
 	call FillBoxCGB
-	; top-right corner still uses the border's palette
-; stars
-	hlcoord 11, 3, wAttrmap
-	lb bc, 3, 3
-	ld a, $6
-	call FillBoxCGB
-	ld a, [wPlayerGender]
-	and a
-	ld a, $0 ; kris
-	jr z, .got_gender3
-	ld a, $1 ; chris
-.got_gender3
-	hlcoord 18, 1, wAttrmap
-	ld [hl], a
+
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
@@ -895,13 +841,42 @@ _CGB_TrainerCardKanto:
 	ret
 
 .StarPalette:
-	RGB 31, 31, 31
 	RGB 31, 16, 01
 	RGB 31, 16, 01
-	RGB 00, 00, 00
 
 .BadgePalettes:
 INCLUDE "gfx/trainer_card/kanto_badges.pal"
+
+TrainerCard_Common:
+	; fill screen with same-gender palette for the card border
+	hlcoord 0, 0, wAttrmap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	call .GetGender
+	rst ByteFill
+
+	; bottom-right corner
+	or X_FLIP | Y_FLIP
+	ldcoord_a 1, SCREEN_HEIGHT - 2, wAttrmap
+
+	; trainer pic
+	hlcoord 14, 1, wAttrmap
+	lb bc, 7, 5
+	call .GetGender
+	call FillBoxCGB
+
+	; stars
+	hlcoord 11, 4, wAttrmap
+	lb bc, 2, 3
+	ld a, $6
+	jmp FillBoxCGB
+
+.GetGender:
+	ld a, [wPlayerGender]
+	and a
+	ld a, $1 ; indigo/chris
+	ret nz
+	dec a ;  0 = orange/kris
+	ret
 
 _CGB_MoveList:
 	ld de, wBGPals1

@@ -43,8 +43,6 @@
 
 	charmap "<DO>",      $70 ; hiragana small do, unused
 	charmap "◀",         $71
-	charmap "<ID>",      $72
-	charmap "№",         $75
 	charmap "_",         $76
 
 ; Actual characters (from other graphics files)
@@ -126,8 +124,13 @@
 
 	charmap "↑",         $c0
 	charmap "↓",         $c1
-	charmap "<№>",       $c2
+	charmap "№",         $c2
+	charmap "<№>",       $c2 ; redundant
 	charmap "<BOLD_R>",  $c3
+	charmap "<ID>",      $c4
+
+	charmap "<TC1>",     $cc
+	charmap "<TC2>",     $cd
 
 	charmap "′",         $ce
 	charmap "″",         $cf

@@ -79,11 +79,6 @@ GetCardPic:
 	ld de, vTiles2 tile $00
 	ld bc, $23 tiles
 	ld a, BANK(ChrisCardPic) ; aka BANK(KrisCardPic)
-	call FarCopyBytes
-	ld hl, TrainerCardGFX
-	ld de, vTiles2 tile $23
-	ld bc, 6 tiles
-	ld a, BANK(TrainerCardGFX)
 	jmp FarCopyBytes
 
 ChrisCardPic:
@@ -91,9 +86,6 @@ INCBIN "gfx/trainer_card/chris_card.2bpp"
 
 KrisCardPic:
 INCBIN "gfx/trainer_card/kris_card.2bpp"
-
-TrainerCardGFX:
-INCBIN "gfx/trainer_card/trainer_card.2bpp"
 
 GetPlayerBackpic:
 	ld a, [wPlayerGender]
