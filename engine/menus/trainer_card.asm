@@ -50,8 +50,7 @@ TrainerCard:
 	ld a, BANK(TrainerCardGFX)
 	call FarCopyBytes
 
-	call TrainerCard_InitBorder
-	call TrainerCard_PrintTopHalfOfCard
+	call TrainerCard_InitCard
 	call EnableLCD
 	call WaitBGMap
 
@@ -199,39 +198,60 @@ TrainerCard_Page2_Joypad:
 	ld [wJumptableIndex], a
 	ret
 
-TrainerCard_InitBorder:
-	ld a, $25
-	ldcoord_a SCREEN_WIDTH - 2, 1
-	ldcoord_a 1, SCREEN_HEIGHT - 2
+TrainerCard_InitCard:
+; print trainer pic
+	hlcoord 14, 1
+	lb bc, 5, 7
+	xor a
+	ldh [hGraphicStartTile], a
+	predef PlaceGraphic
+
+; print border
 	hlcoord 0, 0
-	dec a ; $24
-	call .top_bottom
-	dec a ; $23
-	ld e, SCREEN_HEIGHT - 2
-	ld bc, SCREEN_WIDTH - 2
-.loop
+	; top edge
+	ld a, $23
+	ld c, SCREEN_WIDTH - 2
+.top_loop
 	ld [hli], a
-	add hl, bc
-	ld [hli], a
-	dec e
-	jr nz, .loop
-	inc a
-.top_bottom:
-	ld [hli], a
-	dec a ; $23
-	ld e, SCREEN_WIDTH - 2
-.top_bottom_loop
-	ld [hli], a
-	dec e
-	jr nz, .top_bottom_loop
+	dec c
+	jr nz, .top_loop
+	; top-right corner
 	inc a ; $24
 	ld [hli], a
-	ret
+	ld [hli], a
+	; sides
+	dec a ; $23
+	ld de, SCREEN_WIDTH - 2
+	ld c, SCREEN_HEIGHT - 2
+.sides_loop
+	ld [hli], a
+	add hl, de
+	ld [hli], a
+	dec c
+	jr nz, .sides_loop
+	; bottom-left corner
+	inc a ; $24
+	ld [hli], a
+	ld [hli], a
+	; bottom edge
+	dec a ; $23
+	ld c, SCREEN_WIDTH - 2
+.bottom_loop
+	ld [hli], a
+	dec c
+	jr nz, .bottom_loop
+	; outer corners
+	inc a ; $24
+	ldcoord_a SCREEN_WIDTH - 1, 1
+	ldcoord_a 0, SCREEN_HEIGHT - 2
+	; inner corners
+	inc a ; $25
+	ldcoord_a SCREEN_WIDTH - 2, 1
+	ldcoord_a 1, SCREEN_HEIGHT - 2
 
-TrainerCard_PrintTopHalfOfCard:
 ; print labels
 	hlcoord 2, 2
-	ld de, TrainerCard_NameIDPokedexString
+	ld de, .NameIDPokedexString
 	rst PlaceString
 
 ; print name
@@ -260,27 +280,6 @@ TrainerCard_PrintTopHalfOfCard:
 	lb bc, 2, 3
 	call PrintNum
 	pop bc
-
-; print divider line
-	hlcoord 1, 7
-	ld a, "<TC1>"
-	ld c, 12
-.divider_loop
-	ld [hli], a
-	dec c
-	jr nz, .divider_loop
-	inc a ; "<TC2>"
-	ld [hl], a
-
-; print "BADGES>"
-	hlcoord 2, 8
-	ld a, $2a
-	ld c, 5
-.badge_loop
-	ld [hli], a
-	inc a
-	dec c
-	jr nz, .badge_loop
 
 ; print stars
 	call TrainerCard_CountStars
@@ -316,12 +315,33 @@ TrainerCard_PrintTopHalfOfCard:
 	ld [hl], a
 .zero_stars
 
-; print trainer pic
-	hlcoord 14, 1
-	lb bc, 5, 7
-	xor a
-	ldh [hGraphicStartTile], a
-	predef_jump PlaceGraphic
+; print divider line
+	hlcoord 1, 7
+	ld a, "<TC1>"
+	ld c, 12
+.divider_loop
+	ld [hli], a
+	dec c
+	jr nz, .divider_loop
+	inc a ; "<TC2>"
+	ld [hl], a
+
+; print "BADGES>"
+	hlcoord 2, 8
+	ld a, $2a
+	ld c, 5
+.badge_loop
+	ld [hli], a
+	inc a
+	dec c
+	jr nz, .badge_loop
+
+	ret
+
+.NameIDPokedexString:
+	db   "NAME/"
+	next "<ID>№."
+	next "#DEX@"
 
 TrainerCard_CountStars:
 	xor a
@@ -358,11 +378,6 @@ TrainerCard_CountStars:
 	ld hl, wTrainerCardStarCounter
 	inc [hl]
 	ret
-
-TrainerCard_NameIDPokedexString:
-	db   "NAME/"
-	next "<ID>№."
-	next "#DEX@"
 
 TrainerCard_ClearBottomHalfOfCard:
 	hlcoord 2, 9

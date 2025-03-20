@@ -854,9 +854,18 @@ TrainerCard_Common:
 	call .GetGender
 	rst ByteFill
 
-	; bottom-right corner
-	or X_FLIP | Y_FLIP
+	; corners
+	push af
+	or Y_FLIP
+	ldcoord_a SCREEN_WIDTH - 1, 1, wAttrmap
+	ldcoord_a 1, SCREEN_HEIGHT - 1, wAttrmap
+	pop af
+	or X_FLIP
+	ldcoord_a SCREEN_WIDTH - 2, 0, wAttrmap
+	ldcoord_a 0, SCREEN_HEIGHT - 2, wAttrmap
+	or Y_FLIP
 	ldcoord_a 1, SCREEN_HEIGHT - 2, wAttrmap
+	ldcoord_a 0, SCREEN_HEIGHT - 1, wAttrmap
 
 	; trainer pic
 	hlcoord 14, 1, wAttrmap
