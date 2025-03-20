@@ -1337,7 +1337,6 @@ NEXTU
 ; trainer card badges
 wTrainerCardBadgeFrameCounter:: db
 wTrainerCardBadgeTileID:: db
-wTrainerCardBadgeAttributes:: db
 
 NEXTU
 ; slot machine
@@ -1850,6 +1849,13 @@ wLinkBattleRecordName::   ds NAME_LENGTH
 wLinkBattleRecordWins::   dw
 wLinkBattleRecordLosses:: dw
 wLinkBattleRecordDraws::  dw
+
+
+SECTION UNION "Miscellaneous WRAM 1", WRAMX
+
+; trainer card
+wTrainerCardStarCounter:: db
+wTrainerCardBadgePaletteAddr:: dw
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
