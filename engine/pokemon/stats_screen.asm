@@ -755,12 +755,25 @@ LoadBluePage:
 
 ; TODO - Load and print nature
 LoadOrangePage:
+; print "ABILITY:"
+	hlcoord 1, 8
+	ld a, $47
+	ld c, 6
+.ability_loop
+	ld [hli], a
+	inc a
+	dec c
+	jr nz, .ability_loop
+; print "NATURE:"
+	hlcoord 1, 13
+	ld a, $42
+	ld c, 5
+.nature_loop
+	ld [hli], a
+	inc a
+	dec c
+	jr nz, .nature_loop
 	farcall PrintAbility
-	; Place "Nature:"
-	ld de, .NatureString1
-	hlcoord 0, 13
-	rst PlaceString
-
 	; Snag our nature
 	push bc
 	ld a, [wCurPartyMon]
@@ -776,7 +789,7 @@ LoadOrangePage:
 	ret
 
 .NatureString1
-	db "Nature:@"
+	db "NATURE:@"
 
 IDNoString:
 	db "<ID>№.@"

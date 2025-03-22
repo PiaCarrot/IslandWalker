@@ -22,9 +22,6 @@ CalcAbility_StatsScreen:
 ; Prints the ability for our stats screen
 ; Blended mix of code from Delta, MAE, and PC
 PrintAbility:
-	ld de, .AbilityString1
-	hlcoord 0, 8
-	rst PlaceString
 	call CalcAbility_StatsScreen
 	ld hl, AbilityNames
 	call GetNthString
@@ -43,11 +40,8 @@ PrintAbility:
 	ld d, [hl]
 	ld e, a
 	pop bc
-	hlcoord 0, 10
+	hlcoord 1, 10
 	jp PlaceString
-
-.AbilityString1:
-	db "Ability:@"
 
 INCLUDE "data/abilities/names.asm"
 INCLUDE "data/abilities/descriptions.asm"

@@ -93,5 +93,5 @@ StatsScreen_LoadFont:
 LoadStatsScreenPageTilesGFX:
 	ld de, StatsScreenPageTilesGFX
 	ld hl, vTiles2 tile $31
-	lb bc, BANK(StatsScreenPageTilesGFX), 17
+	lb bc, BANK(StatsScreenPageTilesGFX), 28
 	jmp Get2bppViaHDMA
