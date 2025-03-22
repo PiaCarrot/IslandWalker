@@ -7,6 +7,9 @@ DoBattle:
 	ld [wBattlePlayerAction], a
 	ld [wBattleEnded], a
 	ld [wTotalBattleTurns], a
+	ld a, TRACE
+	ld [wBattleMonTracedAbility], a ; Load these with TRACE as a placeholder...
+	ld [wEnemyMonTracedAbility], a
 	ld hl, wOTPartyMon1HP
 	ld bc, PARTYMON_STRUCT_LENGTH - 1
 	ld d, BATTLEACTION_SWITCH1 - 1
@@ -53,9 +56,9 @@ DoBattle:
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
-	jr z, .tutorial_debug
+	jp z, .tutorial_debug
 	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial_debug
+	jp z, .tutorial_debug
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -95,10 +98,58 @@ DoBattle:
 	call SpikesDamage
 	ld a, [wLinkMode]
 	and a
-	jr z, BattleTurn
+	jr nz, .linked_or_something
+; Wipe traced ability
+	ld a, TRACE
+	ld [wBattleMonTracedAbility], a
 	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
-	jr nz, BattleTurn
+	jr z, .linked_or_something
+; Entrance ability check
+	ld de, wBattleMonSpeed
+	ld hl, wEnemyMonSpeed
+	ld c, 2
+	call CompareBytes
+	jr z, .speed_tie
+	jr nc, .player_first
+	jr .enemy_first
+.speed_tie
+	call BattleRandom
+	cp 50 percent + 1
+	jr c, .player_first
+	jr .enemy_first
+.player_first
+	call SetPlayerTurn
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Entrance_Ability
+	call SetEnemyTurn
+	ld a, [wEnemyMonSpecies]
+	ld b, 1
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	farcall Check_Entrance_Ability
+	call SetPlayerTurn
+	jr BattleTurn
+.enemy_first
+	call SetEnemyTurn
+	ld a, [wEnemyMonSpecies]
+	ld b, 1
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	farcall Check_Entrance_Ability
+	call SetPlayerTurn
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Entrance_Ability
+	jr BattleTurn
+ 
+; I don't quite care about abilities yet here.
+.linked_or_something
 	xor a
 	ld [wEnemySwitchMonIndex], a
 	call NewEnemyMonStatus
@@ -1826,9 +1877,10 @@ HandleWeather:
 
 
 .PlayWeatherAnimation:
+	call SetPlayerTurn
+.weather_ability_skip
 	xor a ; uses one byte of ROM, compared to two for "ld a, 1"
 	ld [wNumHits], a
-	call SetPlayerTurn
 	ld hl, .WeatherAnimations
 	ld a, [wBattleWeather]
 	dec a
@@ -2143,6 +2195,51 @@ DoubleSwitch:
 	call PlayerPartyMonEntrance
 	ld a, $1
 	call EnemyPartyMonEntrance
+; Wipe traced ability
+	ld a, TRACE
+	ld [wBattleMonTracedAbility], a
+	ld [wEnemyMonTracedAbility], a
+; Entrance ability check
+	ld de, wBattleMonSpeed
+	ld hl, wEnemyMonSpeed
+	ld c, 2
+	call CompareBytes
+	jr z, .speed_tie
+	jr nc, .player_first
+	jr .enemy_first
+.speed_tie
+	call BattleRandom
+	cp 50 percent + 1
+	jr c, .player_first
+	jr .enemy_first
+.player_first
+	call SetPlayerTurn
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Entrance_Ability
+	call SetEnemyTurn
+	ld a, [wEnemyMonSpecies]
+	ld b, 1
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	farcall Check_Entrance_Ability
+	call SetPlayerTurn
+	jp BattleTurn
+.enemy_first
+	call SetEnemyTurn
+	ld a, [wEnemyMonSpecies]
+	ld b, 1
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	farcall Check_Entrance_Ability
+	call SetPlayerTurn
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Entrance_Ability
 	jr .done
 
 .player_1
@@ -2401,6 +2498,15 @@ EnemyPartyMonEntrance:
 	call ResetBattleParticipants
 	call SetEnemyTurn
 	call SpikesDamage
+; Wipe traced ability
+	ld a, TRACE
+	ld [wEnemyMonTracedAbility], a
+; Entrance ability check
+	ld a, [wEnemyMonSpecies]
+	ld b, 1
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	farcall Check_Entrance_Ability
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2828,6 +2934,12 @@ ForcePlayerMonChoice:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
+; New Player Mon Entrance Ability
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Entrance_Ability
 	ld a, $1
 	and a
 	ld c, a
@@ -4013,6 +4125,12 @@ SwitchPlayerMon:
 	call NewBattleMonStatus
 	call BreakAttraction
 	call SendOutPlayerMon
+; New Player Mon Entrance Ability
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Entrance_Ability
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	ld hl, wEnemyMonHP
@@ -5218,6 +5336,12 @@ BattleMonEntrance:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
+; Player Mon Entrance Ability
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Entrance_Ability
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5241,6 +5365,12 @@ PassedBattleMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
+	; New Player Mon Entrance Ability
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Entrance_Ability
 	jmp SpikesDamage
 
 BattleMenu_Run:

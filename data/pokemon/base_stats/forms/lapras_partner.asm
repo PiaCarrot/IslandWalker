@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/forms/lapras_partner/front.dimensions"
-	db HYDRATION, HYDRATION ; wBaseAbility1, wBaseAbility2
+	db SNOW_WARNING, SNOW_WARNING ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups

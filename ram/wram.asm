@@ -341,6 +341,10 @@ wBattleMonNickname:: ds MON_NAME_LENGTH
 
 wBattleMon:: battle_struct wBattleMon
 
+; Traced abilities get stored.
+wEnemyMonTracedAbility:: db
+wBattleMonTracedAbility:: db
+
 ; intro water/grass/fire cutscene data
 	ds 4
 wIntroJumptableIndex:: db
