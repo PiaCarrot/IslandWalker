@@ -165,19 +165,27 @@ RangiIslandSignText:
 	text "RANGI ISLAND"
 	line "HERE LIES 9BIT"
 	done
+	
+ZigsDigsSign:
+	jumptext ZigsDigsSignText
+	
+ZigsDigsSignText:
+	text "ZIG'S DIGS BAR"
+	done
 
 Route55_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 14,  5, CRYSTAL_CAVE_GATE, 3
-	warp_event 13, 47, ROUTE_55_MANIACS_HOUSE, 1
+	warp_event 15, 47, ROUTE_55_MANIACS_HOUSE, 1
 
 	def_coord_events
 
 	def_bg_events
 	bg_event 17, 13, BGEVENT_READ, Route55Sign
 	bg_event 47, 11, BGEVENT_READ, RangiIslandSign
+	bg_event 13, 47, BGEVENT_READ, ZigsDigsSign
 
 	def_object_events
 	object_event 25, 53, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route55SuperPotion, EVENT_ROUTE_55_SUPER_POTION
