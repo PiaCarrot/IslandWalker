@@ -166,6 +166,7 @@ ItemDescriptions1:
 	dw BlockDesc    ; 00DB
 	dw BlockDesc    ; 00DB
 	dw BlockDesc    ; 00DB
+	dw AuroraOrbDesc    ; 00DB
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -441,6 +442,10 @@ ItemDescriptionsValuable:
 	dw GemstoneDesc    ; 00DB
 	dw GemstoneDesc    ; 00DB
 	dw GemstoneDesc    ; 00DB
+	dw SilverCapDesc
+	dw GoldCapDesc
+	dw GoldDustDesc
+	dw GoldStatueDesc
 .IndirectEnd:
 
 BrightpowderDesc:
@@ -1051,6 +1056,10 @@ FlowerMailDesc:
 
 LightBallDesc:
 	db   "An odd, electrical"
+	next "orb. (HOLD)@"
+
+AuroraOrbDesc:
+	db   "A beautiful, cold"
 	next "orb. (HOLD)@"
 
 NormalBoxDesc:
@@ -1674,3 +1683,19 @@ MintDesc:
 AbilityUpDesc:
 	db   "Changes ABILITY if"
 	next "possible.@"
+
+SilverCapDesc:
+	db   "A silver bottle"
+	next "cap.@"
+
+GoldCapDesc:
+	db   "A golden bottle"
+	next "cap.@"
+
+GoldDustDesc:
+	db   "Fine gold dust."
+	next "Sell.@"
+
+GoldStatueDesc:
+	db   "Worshipper's idol."
+	next "Sell very high.@"

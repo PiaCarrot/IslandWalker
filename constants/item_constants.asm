@@ -157,6 +157,7 @@
 	const ZAPPY_BLOCK  ; 00E0
 	const LOVELY_BLOCK ; 00E1
 	const CRUNCHYBLOCK ; 00E2
+	const AURORA_ORB
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.
@@ -441,6 +442,10 @@ DEF FIRST_VALUABLE_ITEM EQU const_value
 	const LARGE_GARNET ; 00EE
 	const GIANT_ONYX   ; 00EF
 	const HUGE_DIAMOND ; 00F0
+	const SILVER_CAP
+	const GOLD_CAP
+	const GOLD_DUST
+	const GOLD_STATUE
 DEF NUM_VALUABLE_ITEM_POCKET EQU const_value - FIRST_VALUABLE_ITEM
 assert NUM_VALUABLE_ITEM_POCKET <= $ff
 

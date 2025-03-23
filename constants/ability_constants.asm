@@ -151,7 +151,6 @@
     const GLUTTONY
     const ANGER_POINT
     const UNBURDEN
-    const HEATPROOF
     const SIMPLE
     const DRY_SKIN
     const DOWNLOAD
@@ -166,10 +165,8 @@
     const SNIPER
     const MAGIC_GUARD
     const NO_GUARD
-    const STALL
     const TECHNICIAN
     const LEAF_GUARD
-    const KLUTZ
     const MOLD_BREAKER
     const SUPER_LUCK
     const AFTERMATH
@@ -179,7 +176,6 @@
     const TINTED_LENS
     const FILTER
     const SOLID_ROCK
-    const SLOW_START
     const SCRAPPY
     const STORM_DRAIN
     const ICE_BODY
@@ -187,8 +183,76 @@
     const HONEY_GATHER
     const FRISK
     const RECKLESS
-    const MULTITYPE
     const FLOWER_GIFT
-    const BAD_DREAMS
+; Gen V+
+	const SHEER_FORCE
+	const CONTRARY
+	const UNNERVE ; Exclusive to Mewtwo
+	const DEFIANT
+	const CURSED_BODY
+	const WEAK_ARMOR
+	const MULTISCALE
+	const TOXIC_BOOST
+	const HARVEST
+	const OVERCOAT
+	const POISON_TOUCH
+	const REGENERATOR
+	const SAND_RUSH
+	const ANALYTIC ; Exclusive to Magnezone
+	const ILLUSION ; GL Whoever attempts to program this
+	const IMPOSTER ; Exclusive to Ditto and Mew
+	const INFILTRATOR
+	const MOXIE ; Exclusive to Gyarados
+	const RATTLED
+	const MAGIC_BOUNCE
+	const SAP_SIPPER
+	const IRON_BARBS
+	const PROTEAN
+	const FUR_COAT
+	const BULLETPROOF
+	const COMPETITIVE
+	const STANCE_CHANGE
+	const MEGA_LAUNCHER
+	const TOUGH_CLAWS
+	const PIXILATE
+	const GOOEY
+	const WATER_COMPACTION
+	const MERCILESS
+	const STEELWORKER
+	const BERSERK
+	const SLUSH_RUSH
+	const GALVANIZE
+	const SURGE_SURFER
+	const DISGUISE
+	const CORROSION
+	const TANGLING_HAIR
+	const POWER_OF_ALCHEMY
+	const ELECTRIC_SURGE
+	const PSYCHIC_SURGE
+	const MISTY_SURGE
+	const GRASSY_SURGE
+	const GULP_MISSILE
+	const RIPEN
+	const MIMICRY
+	const SCREEN_CLEANER
+	const STEELY_SPIRIT
+	const PERISH_BODY
+	const NEUTRALIZING_GAS
+	const PASTEL_VEIL
+	const QUICK_DRAW
+	const CURIOUS_MEDICINE
+	const WIND_POWER
+	const GOOD_AS_GOLD
+	const CUD_CHEW
+	const SHARPNESS
+	const SUPREME_OVERLORD
+	const ARMOR_TAIL
+	const MINDS_EYE
+	const SUPERSWEET_SYRUP
+	const CRYSTAL_BODY ; Dry Skin for Crystal Onix
+	const PERSISTANCE ; Torrent ability for Partner Eevee (Normal)
+	const OVERCHARGED ; Torrent ability for Partner Pikachu (Electric)
+	const DRAGOON ; Torrent ability for Partner Dratini (Dragon)
+	const COIN_COLLECTOR ; Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves.
 
 DEF NUM_ABILITIES EQU const_value - 1

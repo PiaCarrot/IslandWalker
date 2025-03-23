@@ -151,6 +151,7 @@ ItemNames::
 	li "ZAPPY BLOCK"  ; 00DC
 	li "LOVELY BLOCK" ; 00DC
 	li "CRUNCHYBLOCK" ; 00DC
+	li "AURORA ORB" ; 00DC
 	assert_list_length NUM_ITEM_POCKET
 	
 KeyItemNames::
@@ -431,4 +432,8 @@ ValuableItemNames::
 	li "LARGE GARNET" ; 00DC
 	li "GIANT ONYX"   ; 00DC
 	li "HUGE DIAMOND" ; 00DC
+	li "SILVER CAP"
+	li "GOLD CAP"
+	li "GOLD DUST"
+	li "GOLD STATUE"
 	assert_list_length NUM_VALUABLE_ITEM_POCKET

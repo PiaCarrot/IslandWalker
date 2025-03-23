@@ -90,7 +90,6 @@ AbilityDescriptions:
 	dw GluttonyDesc
 	dw AngerPointDesc
 	dw UnburdenDesc
-	dw HeatproofDesc
 	dw SimpleDesc
 	dw DrySkinDesc
 	dw DownloadDesc
@@ -105,10 +104,8 @@ AbilityDescriptions:
 	dw SniperDesc
 	dw MagicGuardDesc
 	dw NoGuardDesc
-	dw StallDesc
 	dw TechnicianDesc
 	dw LeafGuardDesc
-	dw KlutzDesc
 	dw MoldBreakerDesc
 	dw SuperLuckDesc
 	dw AftermathDesc
@@ -118,7 +115,6 @@ AbilityDescriptions:
 	dw TintedLensDesc
 	dw FilterDesc
 	dw SolidRockDesc
-	dw SlowStartDesc
 	dw ScrappyDesc
 	dw StormDrainDesc
 	dw IceBodyDesc
@@ -126,10 +122,76 @@ AbilityDescriptions:
 	dw HoneyGatherDesc
 	dw FriskDesc
 	dw RecklessDesc
-	dw MultitypeDesc
 	dw FlowerGiftDesc
-	dw BadDreamsDesc
-
+	dw SheerForceDesc  
+	dw ContraryDesc  
+	dw UnnerveDesc  
+	dw DefiantDesc  
+	dw CursedBodyDesc  
+	dw WeakArmorDesc  
+	dw MultiscaleDesc  
+	dw ToxicBoostDesc  
+	dw HarvestDesc  
+	dw OvercoatDesc  
+	dw PoisonTouchDesc  
+	dw RegeneratorDesc  
+	dw SandRushDesc  
+	dw AnalyticDesc  
+	dw IllusionDesc  
+	dw ImposterDesc  
+	dw InfiltratorDesc  
+	dw MoxieDesc  
+	dw RattledDesc  
+	dw MagicBounceDesc  
+	dw SapSipperDesc  
+	dw IronBarbsDesc  
+	dw ProteanDesc  
+	dw FurCoatDesc  
+	dw BulletproofDesc  
+	dw CompetitiveDesc  
+	dw StanceChangeDesc  
+	dw MegaLauncherDesc  
+	dw ToughClawsDesc  
+	dw PixilateDesc  
+	dw GooeyDesc  
+	dw WaterCompactionDesc  
+	dw MercilessDesc  
+	dw SteelworkerDesc  
+	dw BerserkDesc  
+	dw SlushRushDesc  
+	dw GalvanizeDesc  
+	dw SurgeSurferDesc  
+	dw DisguiseDesc  
+	dw CorrosionDesc  
+	dw TanglingHairDesc  
+	dw PowerOfAlchemyDesc  
+	dw ElectricSurgeDesc  
+	dw PsychicSurgeDesc  
+	dw MistySurgeDesc  
+	dw GrassySurgeDesc  
+	dw GulpMissileDesc  
+	dw RipenDesc  
+	dw MimicryDesc  
+	dw ScreenCleanerDesc  
+	dw SteelySpiritDesc  
+	dw PerishBodyDesc  
+	dw NeutralizingGasDesc  
+	dw PastelVeilDesc  
+	dw QuickDrawDesc  
+	dw CuriousMedicineDesc  
+	dw WindPowerDesc  
+	dw GoodAsGoldDesc  
+	dw CudChewDesc  
+	dw SharpnessDesc  
+	dw SupremeOverlordDesc
+	dw ArmorTailDesc
+	dw MindsEyeDesc
+	dw SupersweetSyrupDesc
+	dw DrySkinDesc
+	dw PersistanceDesc
+	dw OverchargedDesc
+	dw DragoonDesc
+	dw CoinCollectorDesc
 
 ; Actual descriptions start here
 NoAbilityDesc:
@@ -171,12 +233,12 @@ MarvelScaleDesc:
 	next1 "status afflicted.@"
 
 PlusDesc:
-	db    "Boosts SP.ATK in"
-	next1 "presence of MINUS.@"
+	db    "Constantly raises"
+	next1 "the SP. ATK stat.@"
 
 MinusDesc:
-	db    "Boosts SP.ATK in"
-	next1 "presence of PLUS.@"
+	db    "Constantly raises"
+	next1 "the SP. DEF stat.@"
 
 CompoundeyesDesc:
 	db    "Boosts ACCURACY"
@@ -336,6 +398,7 @@ FlameBodyDesc:
 	db    "May cause a BURN"
 	next1 "on contact.@"
 
+PoisonTouchDesc:
 PoisonPointDesc:
 	db    "May cause POISON-"
 	next1 "ING on contact.@"
@@ -400,6 +463,10 @@ IntimidateDesc:
 	db    "Cuts the foe's"
 	next1 "ATTACK.@"
 
+SupersweetSyrupDesc:
+	db    "Lowers the foe's"
+	next1 "EVASION.@"
+
 TraceDesc:
 	db    "Copies the foe's"
 	next1 "ability.@"
@@ -455,10 +522,6 @@ AngerPointDesc:
 UnburdenDesc:
     db    "Boosts SPEED upon"
     next1 "held item usage.@"
-
-HeatproofDesc:
-    db    "Cuts the damage of"
-    next1 "FIRE moves.@"
 
 SimpleDesc:
     db    "Doubles all stat"
@@ -516,10 +579,6 @@ NoGuardDesc:
     db    "All moves will"
     next1 "hit.@"
 
-StallDesc:
-    db    "Always will move"
-    next1 "last.@"
-
 TechnicianDesc:
     db    "Boosts the weaker"
     next1 "moves.@"
@@ -527,10 +586,6 @@ TechnicianDesc:
 LeafGuardDesc:
     db    "Protects against"
     next1 "statuses in sun.@"
-
-KlutzDesc:
-    db    "Cannot use held"
-    next1 "items.@"
 
 MoldBreakerDesc:
     db    "Ignores abilities"
@@ -565,10 +620,6 @@ SolidRockDesc:
     db    "Cuts dmg of super"
     next1 "effective moves.@"
 
-SlowStartDesc:
-    db    "Temporarily halves"
-    next1 "ATTACK and SPEED.@"
-
 ScrappyDesc:
     db    "Hits GHOST #MON"
     next1 "with all moves.@"
@@ -597,14 +648,267 @@ RecklessDesc:
     db    "Boosts recoil"
     next1 "causing moves.@"
 
-MultitypeDesc:
-    db    "Changes type to"
-    next1 "match held PLATE.@"
-
 FlowerGiftDesc:
     db    "Powers up #MON"
     next1 "when sunny.@"
 
-BadDreamsDesc:
-    db    "Inflicts damage to"
-    next1 "SLEEPING #MON.@"
+PersistanceDesc:
+	db    "Boosts NORMAL"
+	next1 "moves in a pinch.@"
+
+OverchargedDesc:
+	db    "Boosts ELECTRIC"
+	next1 "moves in a pinch.@"
+
+DragoonDesc:
+	db    "Boosts DRAGON"
+	next1 "moves in a pinch.@"
+
+CoinCollectorDesc:
+	db    "Collects old coins"
+	next1 "after battle.@"
+	
+SheerForceDesc:
+	db    "Power up moves but"
+	next1 "removes effects.@"
+
+ContraryDesc:
+	db    "Reverses stat"
+	next1 "changes.@"
+
+UnnerveDesc:
+	db    "Foe is unable to"
+	next1 "eat BERRIES.@"
+
+DefiantDesc:
+	db    "ATK boosts sharply"
+	next1 "when stats lower.@"
+
+CursedBodyDesc:
+	db    "May disable a move"
+	next1 "that damages it.@"
+
+WeakArmorDesc:
+	db    "Lowers DEF on hit,"
+	next1 "but SPEED boosts.@"
+
+MultiscaleDesc:
+	db    "Tankier when full"
+	next1 "HP.@"
+
+ToxicBoostDesc:
+	db    "Powers up physical"
+	next1 "if poisoned.@"
+
+HarvestDesc:
+	db    "May forage a BERRY"
+	next1 "after battle.@"
+
+OvercoatDesc:
+	db    "Ignores SANDSTORM,"
+	next1 "powders & spores.@"
+
+RegeneratorDesc:
+	db    "Restores HP when"
+	next1 "withdrawn.@"
+
+SandRushDesc:
+	db    "Boosts SPEED in"
+	next1 "SANDSTORM.@"
+
+AnalyticDesc:
+	db    "Boosts power if it"
+	next1 "moves last.@"
+
+IllusionDesc:
+	db    "Disguises as last"
+	next1 "party member.@"
+
+ImposterDesc:
+	db    "Transforms itself"
+	next1 "to its foe.@"
+
+InfiltratorDesc:
+	db    "Ignores barriers,"
+	next1 "screens, etc.@"
+
+MoxieDesc:
+	db    "Boosts ATK when it"
+	next1 "KOs a foe.@"
+
+RattledDesc:
+	db    "Boosts SPEED when"
+	next1 "scared.@"
+
+MagicBounceDesc:
+	db    "Reflects status"
+	next1 "moves.@"
+
+SapSipperDesc:
+	db    "When hit by GRASS,"
+	next1 "ATTACK boosts.@"
+
+IronBarbsDesc:
+	db    "Damage attacker if"
+	next1 "hit directly.@"
+
+ProteanDesc:
+	db    "Can change TYPE to"
+	next1 "move its using.@"
+
+FurCoatDesc:
+	db    "Halves damage from"
+	next1 "physical moves.@"
+
+BulletproofDesc:
+	db    "Protects user from"
+	next1 "ball & bomb moves.@"
+
+CompetitiveDesc:
+	db    "SP. ATK sharply up"
+	next1 "when stats lower.@"
+
+StanceChangeDesc:
+	db    "Changes form to"
+	next1 "fit strategy.@"
+
+MegaLauncherDesc:
+	db    "Powers up pulse"
+	next1 "moves.@"
+
+ToughClawsDesc:
+	db    "Powers up direct"
+	next1 "contact moves.@"
+
+PixilateDesc:
+	db    "NORMAL moves turn"
+	next1 "FAIRY.@"
+
+WaterCompactionDesc:
+	db    "Boosts DEF sharply"
+	next1 "if hit by WATER.@"
+
+MercilessDesc:
+	db    "If poisoned, all"
+	next1 "attacks crit.@"
+
+SteelworkerDesc:
+	db    "Powers up STEEL"
+	next1 "moves.@"
+
+BerserkDesc:
+	db    "Boosts SP. ATK if"
+	next1 "huge damage taken.@"
+
+SlushRushDesc:
+	db    "Boosts SPEED in"
+	next1 "HAIL or SNOW.@"
+
+GalvanizeDesc:
+	db    "NORMAL moves turn"
+	next1 "ELECTRIC.@"
+
+SurgeSurferDesc:
+	db    "Doubles SPEED on"
+	next1 "ELECTRIC TERRAIN.@"
+
+DisguiseDesc:
+	db    "Protects the user"
+	next1 "once for 10% HP.@"
+
+CorrosionDesc:
+	db    "Poisons regardless"
+	next1 "of immunity.@"
+
+GooeyDesc:
+TanglingHairDesc:
+	db    "Contact with user"
+	next1 "lowers foe SPEED.@"
+
+PowerOfAlchemyDesc:
+	db    "Synthesizes rare"
+	next1 "items sometimes.@"
+
+ElectricSurgeDesc:
+	db    "Creates an"
+	next1 "ELECTRIC TERRAIN.@"
+
+PsychicSurgeDesc:
+	db    "Creates a PSYCHIC"
+	next1 "TERRAIN.@"
+
+MistySurgeDesc:
+	db    "Creates a MISTY"
+	next1 "TERRAIN.@"
+ 
+GrassySurgeDesc:
+	db    "Creates a GRASSY"
+	next1 "TERRAIN.@"
+ 
+GulpMissileDesc:
+	db    "Retaliates after"
+	next1 "SURF or DIVE.@"
+
+RipenDesc:
+	db    "Ripens BERRIES and"
+	next1 "doubles effect.@"
+
+MimicryDesc:
+	db    "Changes TYPE based"
+	next1 "on TERRAIN.@"
+
+ScreenCleanerDesc:
+	db    "Nullifies screen"
+	next1 "moves on switch.@"
+
+SteelySpiritDesc:
+	db    "Powers up STEEL"
+	next1 "moves.@"
+
+PerishBodyDesc:
+	db    "Both user and foe"
+	next1 "faint in 3 turns.@"
+
+NeutralizingGasDesc:
+	db    "Suppresses effects"
+	next1 "of ABILITIES.@"
+
+PastelVeilDesc:
+	db    "Immune to being"
+	next1 "poisoned.@"
+
+QuickDrawDesc:
+	db    "Sometimes allows"
+	next1 "user to go first.@"
+
+CuriousMedicineDesc:
+	db    "Cures status"
+	next1 "when swapped in.@"
+
+WindPowerDesc:
+	db    "Gets charged when"
+	next1 "hit by wind.@"
+
+GoodAsGoldDesc:
+	db    "Fully immune to"
+	next1 "status effects.@"
+
+CudChewDesc:
+	db    "Reuses BERRY once"
+	next1 "at end of turn.@"
+
+SharpnessDesc:
+	db    "Powers up slicing"
+	next1 "moves.@"
+
+SupremeOverlordDesc:
+	db    "Gets more powerful"
+	next1 "as party faints.@"
+
+ArmorTailDesc:
+	db    "Makes enemy unable"
+	next1 "to use priority.@"
+
+MindsEyeDesc:
+	db    "Ignore accuracy and"
+	next1 "can hit GHOSTs.@"

@@ -186,6 +186,7 @@ ItemEffects1:
 	dw NoEffect            ; ZAPPY_BLOCK
 	dw NoEffect            ; LOVELY_BLOCK
 	dw NoEffect            ; CRUNCHYBLOCK
+	dw NoEffect            ; AURORA_ORB
 .IndirectEnd:
 
 ItemEffectsKeyItems:
@@ -461,6 +462,10 @@ ItemEffectsValuableItems:
 	dw NoEffect            ; BIG_GARNET
 	dw NoEffect            ; BIG_ONYX
 	dw NoEffect            ; BIG_DIAMOND
+	dw NoEffect            ; SILVER_CAP
+	dw NoEffect            ; GOLD_CAP
+	dw NoEffect            ; GOLD_DUST
+	dw NoEffect            ; GOLD_STATUE
 .IndirectEnd:
 
 PokeBallEffect:
