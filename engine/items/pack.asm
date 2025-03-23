@@ -823,7 +823,7 @@ BattlePack:
 	ld [wBerryPocketScrollPosition], a
 	ld a, [wMenuCursorY]
 	ld [wBerryPocketCursor], a
-	lb bc, PACKSTATE_INITBALLSPOCKET, PACKSTATE_INITKEYITEMSPOCKET ; left / right
+	lb bc, PACKSTATE_INITBALLSPOCKET, PACKSTATE_INITMEDICINEITEMSPOCKET ; left / right
 	call Pack_InterpretJoypad
 	ret c
 	jp ItemSubmenu
@@ -1053,11 +1053,11 @@ DepositSellPack:
 ; entries correspond to *_POCKET constants
 	dw .ItemsPocket
 	dw .BallsPocket
-	dw .KeyItemsPocket
-	dw .TMHMPocket
 	dw .BerryPocket
 	dw .MedicinePocket
 	dw .ValuablePocket
+	dw .KeyItemsPocket
+	dw .TMHMPocket
 
 .ItemsPocket:
 	xor a ; ITEM_POCKET
