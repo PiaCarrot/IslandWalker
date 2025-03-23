@@ -369,7 +369,32 @@ DEF FIRST_MEDICINE_ITEM EQU const_value
 	const SACRED_ASH   ; 0075
 	const PP_MAX       ; 00D8
 	const PEWTER_ARARE ; 00D9
-	const SEVENTH_HEAVEN ; 00DA This is an alcoholic beverage made with Grapefruit peel. The lady who sells it gives you a nonalcoholic version.
+	const SEVENTH_HEAVEN
+	const LONELY_MINT
+	const ADAMANT_MINT
+	const NAUGHTY_MINT
+	const BRAVE_MINT
+	const BOLD_MINT
+	const IMPISH_MINT
+	const LAX_MINT
+	const RELAXED_MINT
+	const MODEST_MINT
+	const MILD_MINT
+	const RASH_MINT
+	const QUIET_MINT
+	const CALM_MINT
+	const GENTLE_MINT
+	const CAREFUL_MINT
+	const SASSY_MINT
+	const TIMID_MINT
+	const HASTY_MINT
+	const JOLLY_MINT
+	const NAIVE_MINT
+	const SERIOUS_MINT
+	const HARDY_MINT
+	const DOCILE_MINT
+	const BASHFUL_MINT
+	const QUIRKY_MINT
 DEF NUM_MEDICINE_ITEM_POCKET EQU const_value - FIRST_MEDICINE_ITEM
 assert NUM_MEDICINE_ITEM_POCKET <= $ff
 

@@ -361,6 +361,31 @@ MedicineItemNames::
 	li "PP MAX"       ; 00D8
 	li "PEWTER ARARE" ; 00D9
 	li "″7TH HEAVEN″"   ; 00DA
+	li "LONELY_MINT"
+	li "ADAMANT_MINT"
+	li "NAUGHTY_MINT"
+	li "BRAVE_MINT"
+	li "BOLD_MINT"
+	li "IMPISH_MINT"
+	li "LAX_MINT"
+	li "RELAXED_MINT"
+	li "MODEST_MINT"
+	li "MILD_MINT"
+	li "RASH_MINT"
+	li "QUIET_MINT"
+	li "CALM_MINT"
+	li "GENTLE_MINT"
+	li "CAREFUL_MINT"
+	li "SASSY_MINT"
+	li "TIMID_MINT"
+	li "HASTY_MINT"
+	li "JOLLY_MINT"
+	li "NAIVE_MINT"
+	li "SERIOUS_MINT"
+	li "HARDY_MINT"
+	li "DOCILE_MINT"
+	li "BASHFUL_MINT"
+	li "QUIRKY_MINT"
 	assert_list_length NUM_MEDICINE_ITEM_POCKET
 
 ValuableItemNames::

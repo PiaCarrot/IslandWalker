@@ -372,6 +372,31 @@ ItemDescriptionsMedicine:
 	dw PPMaxDesc          ; 00D8
 	dw PewterArareDesc    ; 00D9
 	dw SeventhTanghuluDesc    ; 00DA
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
+	dw MintDesc
 .IndirectEnd:
 
 ItemDescriptionsValuable:
@@ -1640,3 +1665,7 @@ CrystalChunkDesc:
 GemstoneDesc:
 	db   "A large jewel."
 	next "Sell high.@"
+
+MintDesc:
+	db   "A MINT that can"
+	next "change NATURE.@"

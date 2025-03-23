@@ -392,6 +392,31 @@ ItemEffectsMedicineItems:
 	dw RestorePPEffect     ; PP_MAX
 	dw StatusHealingEffect ; PEWTER_ARARE
 	dw StatusHealingEffect ; SEVENTH_HEAVEN
+	dw NoEffect ; LONELY_MINT
+	dw NoEffect ; ADAMANT_MINT
+	dw NoEffect ; NAUGHTY_MINT
+	dw NoEffect ; BRAVE_MINT
+	dw NoEffect ; BOLD_MINT
+	dw NoEffect ; IMPISH_MINT
+	dw NoEffect ; LAX_MINT
+	dw NoEffect ; RELAXED_MINT
+	dw NoEffect ; MODEST_MINT
+	dw NoEffect ; MILD_MINT
+	dw NoEffect ; RASH_MINT
+	dw NoEffect ; QUIET_MINT
+	dw NoEffect ; CALM_MINT
+	dw NoEffect ; GENTLE_MINT
+	dw NoEffect ; CAREFUL_MINT
+	dw NoEffect ; SASSY_MINT
+	dw NoEffect ; TIMID_MINT
+	dw NoEffect ; HASTY_MINT
+	dw NoEffect ; JOLLY_MINT
+	dw NoEffect ; NAIVE_MINT
+	dw NoEffect ; SERIOUS_MINT
+	dw NoEffect ; HARDY_MINT
+	dw NoEffect ; DOCILE_MINT
+	dw NoEffect ; BASHFUL_MINT
+	dw NoEffect ; QUIRKY_MINT
 .IndirectEnd:
 
 ItemEffectsValuableItems:
