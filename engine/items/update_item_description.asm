@@ -22,6 +22,18 @@ UpdateItemBerryDescription:
 	ld l, a
 	jr UpdateDescription16bit
 
+UpdateItemMedicineDescription:
+	ld a, [wMenuSelection]
+	ld h, HIGH(FIRST_MEDICINE_ITEM)
+	ld l, a
+	jr UpdateDescription16bit
+
+UpdateItemValuableDescription:
+	ld a, [wMenuSelection]
+	ld h, HIGH(FIRST_VALUABLE_ITEM)
+	ld l, a
+	jr UpdateDescription16bit
+
 UpdateKeyItemDescription:
 	ld a, [wMenuSelection]
 	ld h, HIGH(FIRST_KEY_ITEM)

@@ -191,6 +191,9 @@ ValenciaYoungsterScript:
 	givepoke TYRANITAR, PLAIN_FORM, 100, ORAN_BERRY
 	giveitem HM_SURF
 	giveitem SEA_MAP
+	giveitem NUGGET
+	giveitem ETHER
+	giveitem AGUAV_BERRY
 	giveitem GRASSY_BLOCK, 99
 	giveitem FIERY_BLOCK, 99
 	giveitem CHILLY_BLOCK, 99

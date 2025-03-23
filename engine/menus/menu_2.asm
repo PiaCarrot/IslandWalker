@@ -22,6 +22,20 @@ PlaceMenuItemBerryName:
 	ld l, a
 	jr _PlaceSimpleMenuQuantity16bit
 
+PlaceMenuItemMedicineName:
+	push de
+	ld a, [wMenuSelection]
+	ld h, HIGH(FIRST_MEDICINE_ITEM)
+	ld l, a
+	jr _PlaceSimpleMenuQuantity16bit
+
+PlaceMenuItemValuableName:
+	push de
+	ld a, [wMenuSelection]
+	ld h, HIGH(FIRST_VALUABLE_ITEM)
+	ld l, a
+	jr _PlaceSimpleMenuQuantity16bit
+
 PlaceMenuKeyItemName:
 	push de
 	ld a, [wMenuSelection]
@@ -47,6 +61,20 @@ PlaceMenuItemBerryQuantity:
 	push de
 	ld a, [wMenuSelection]
 	ld h, HIGH(FIRST_BERRY_ITEM)
+	ld l, a
+	jr _PlaceMenuQuantity16bit
+
+PlaceMenuItemMedicineQuantity:
+	push de
+	ld a, [wMenuSelection]
+	ld h, HIGH(FIRST_MEDICINE_ITEM)
+	ld l, a
+	jr _PlaceMenuQuantity16bit
+
+PlaceMenuItemValuableQuantity:
+	push de
+	ld a, [wMenuSelection]
+	ld h, HIGH(FIRST_VALUABLE_ITEM)
 	ld l, a
 	jr _PlaceMenuQuantity16bit
 

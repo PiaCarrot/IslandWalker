@@ -7,6 +7,10 @@ ItemDescriptions:
 	indirect_entries (FIRST_BALL_ITEM - 1) + NUM_BALL_ITEM_POCKET, ItemDescriptionsBalls
 	indirect_entries FIRST_BERRY_ITEM - 1 ; sparse Table
 	indirect_entries (FIRST_BERRY_ITEM - 1) + NUM_BERRY_ITEM_POCKET, ItemDescriptionsBerries
+	indirect_entries FIRST_MEDICINE_ITEM - 1 ; sparse Table
+	indirect_entries (FIRST_MEDICINE_ITEM - 1) + NUM_MEDICINE_ITEM_POCKET, ItemDescriptionsMedicine
+	indirect_entries FIRST_VALUABLE_ITEM - 1 ; sparse Table
+	indirect_entries (FIRST_VALUABLE_ITEM - 1) + NUM_VALUABLE_ITEM_POCKET, ItemDescriptionsValuable
 	indirect_table_end
 
 ItemDescriptions1:
@@ -14,46 +18,22 @@ ItemDescriptions1:
 	dw BrightpowderDesc ; 0001
 	dw QuestionMarkDesc ; 0002
 	dw MoonStoneDesc    ; 0003
-	dw AntidoteDesc     ; 0004
-	dw BurnHealDesc     ; 0005
-	dw IceHealDesc      ; 0006
-	dw AwakeningDesc    ; 0007
-	dw ParlyzHealDesc   ; 0008
-	dw FullRestoreDesc  ; 0009
-	dw MaxPotionDesc    ; 000A
-	dw HyperPotionDesc  ; 000B
-	dw SuperPotionDesc  ; 000C
-	dw PotionDesc       ; 000D
 	dw EscapeRopeDesc   ; 000E
 	dw RepelDesc        ; 000F
-	dw MaxElixerDesc    ; 0010
 	dw FireStoneDesc    ; 0011
 	dw ThunderStoneDesc ; 0012
 	dw WaterStoneDesc   ; 0013
 	dw QuestionMarkDesc ; 0014
-	dw HPUpDesc         ; 0015
-	dw ProteinDesc      ; 0016
-	dw IronDesc         ; 0017
-	dw CarbosDesc       ; 0018
 	dw LuckyPunchDesc   ; 0019
-	dw CalciumDesc      ; 001A
-	dw RareCandyDesc    ; 001B
 	dw XAccuracyDesc    ; 001C
 	dw LeafStoneDesc    ; 001D
 	dw MetalPowderDesc  ; 001E
-	dw NuggetDesc       ; 001F
 	dw PokeDollDesc     ; 0020
-	dw FullHealDesc     ; 0021
-	dw ReviveDesc       ; 0022
-	dw MaxReviveDesc    ; 0023
 	dw GuardSpecDesc    ; 0024
 	dw SuperRepelDesc   ; 0025
 	dw MaxRepelDesc     ; 0026
 	dw DireHitDesc      ; 0027
 	dw QuestionMarkDesc ; 0028
-	dw FreshWaterDesc   ; 0029
-	dw SodaPopDesc      ; 002A
-	dw LemonadeDesc     ; 002B
 	dw XAttackDesc      ; 002C
 	dw QuestionMarkDesc ; 002D
 	dw XDefendDesc      ; 002E
@@ -61,20 +41,11 @@ ItemDescriptions1:
 	dw XSpAtkDesc       ; 0030
 	dw QuestionMarkDesc ; 0031
 	dw ExpShareDesc     ; 0032
-	dw SilverLeafDesc   ; 0033
-	dw PPUpDesc         ; 0034
-	dw EtherDesc        ; 0035
-	dw MaxEtherDesc     ; 0036
-	dw ElixerDesc       ; 0037
-	dw MoomooMilkDesc   ; 0038
 	dw QuickClawDesc    ; 0039
-	dw GoldLeafDesc     ; 003A
 	dw SoftSandDesc     ; 003B
 	dw SharpBeakDesc    ; 003C
 	dw PoisonBarbDesc   ; 003D
 	dw KingsRockDesc    ; 003E
-	dw TinyMushroomDesc ; 003F
-	dw BigMushroomDesc  ; 0040
 	dw SilverPowderDesc ; 0041
 	dw QuestionMarkDesc ; 0042
 	dw AmuletCoinDesc   ; 0043
@@ -84,34 +55,22 @@ ItemDescriptions1:
 	dw BlackbeltDesc    ; 0047
 	dw QuestionMarkDesc ; 0048
 	dw BlackGlassesDesc ; 0049
-	dw SlowpokeTailDesc ; 004A
 	dw PinkBowDesc      ; 004B
 	dw StickDesc        ; 004C
 	dw SmokeBallDesc    ; 004D
 	dw NeverMeltIceDesc ; 004E
 	dw MagnetDesc       ; 004F
-	dw PearlDesc        ; 0050
-	dw BigPearlDesc     ; 0051
 	dw EverStoneDesc    ; 0052
 	dw SpellTagDesc     ; 0053
-	dw RageCandyBarDesc ; 0054
 	dw MiracleSeedDesc  ; 0055
 	dw ThickClubDesc    ; 0056
 	dw FocusBandDesc    ; 0057
 	dw QuestionMarkDesc ; 0058
-	dw EnergyPowderDesc ; 0059
-	dw EnergyRootDesc   ; 005A
-	dw HealPowderDesc   ; 005B
-	dw RevivalHerbDesc  ; 005C
 	dw HardStoneDesc    ; 005D
 	dw LuckyEggDesc     ; 005E
-	dw StardustDesc     ; 005F
-	dw StarPieceDesc    ; 0060
 	dw QuestionMarkDesc ; 0061
 	dw QuestionMarkDesc ; 0062
-	dw ZincDesc         ; 0063
 	dw CharcoalDesc     ; 0064
-	dw BerryJuiceDesc   ; 0065
 	dw ScopeLensDesc    ; 0066
 	dw QuestionMarkDesc ; 0067
 	dw QuestionMarkDesc ; 0068
@@ -127,7 +86,6 @@ ItemDescriptions1:
 	dw QuestionMarkDesc ; 0072
 	dw QuestionMarkDesc ; 0073
 	dw QuestionMarkDesc ; 0074
-	dw SacredAshDesc    ; 0075
 	dw FlowerMailDesc   ; 0076
 	dw QuestionMarkDesc ; 0077
 	dw LightBallDesc    ; 0078
@@ -139,7 +97,6 @@ ItemDescriptions1:
 	dw UpGradeDesc      ; 007E
 	dw QuestionMarkDesc ; 007F
 	dw QuestionMarkDesc ; 0080
-	dw BrickPieceDesc   ; 0081
 	dw SurfMailDesc     ; 0082
 	dw LiteBlueMailDesc ; 0083
 	dw PortraitMailDesc ; 0084
@@ -201,47 +158,14 @@ ItemDescriptions1:
 	dw PowerBracerDesc    ; 00C6
 	dw PowerLensDesc      ; 00C7
 	dw PowerWeightDesc    ; 00C8
-	dw HeartScaleDesc     ; 00C9
-	dw BlueShardDesc      ; 00CA
-	dw GreenShardDesc     ; 00CB
-	dw RedShardDesc       ; 00CC
-	dw YellowShardDesc    ; 00CD
-	dw RareBoneDesc       ; 00CE
-	dw BalmmushroomDesc   ; 00CF
-	dw BigNuggetDesc      ; 00D0
-	dw CometShardDesc     ; 00D1
-	dw PearlStringDesc    ; 00D2
-	dw BeachGlassDesc     ; 00D3
-	dw PrettyShellDesc    ; 00D4
-	dw TinyBambooDesc     ; 00D5
-	dw BigBambooDesc      ; 00D6
 	dw XSpAtkDesc         ; 00D7
-	dw PPMaxDesc          ; 00D8
-	dw PewterArareDesc    ; 00D9
-	dw SeventhTanghuluDesc    ; 00DA
 	dw LeaderCrestDesc    ; 00DB
-	dw SpiderSilkDesc    ; 00DB
 	dw BlockDesc    ; 00DB
 	dw BlockDesc    ; 00DB
 	dw BlockDesc    ; 00DB
 	dw BlockDesc    ; 00DB
 	dw BlockDesc    ; 00DB
 	dw BlockDesc    ; 00DB
-	dw AncientPotteryDesc    ; 00DB
-	dw AncientPotteryDesc    ; 00DB
-	dw AncientPotteryDesc    ; 00DB
-	dw ClayShardDesc    ; 00DB
-	dw CrystalChunkDesc    ; 00DB
-	dw GemstoneDesc    ; 00DB
-	dw GemstoneDesc    ; 00DB
-	dw GemstoneDesc    ; 00DB
-	dw GemstoneDesc    ; 00DB
-	dw GemstoneDesc    ; 00DB
-	dw GemstoneDesc    ; 00DB
-	dw GemstoneDesc    ; 00DB
-	dw GemstoneDesc    ; 00DB
-	dw GemstoneDesc    ; 00DB
-
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -406,6 +330,91 @@ ItemDescriptionsBerries:
 	dw LigarcBerryDesc  ; 0356
 	dw TotapoBerryDesc  ; 0357
 	dw PinkanBerryDesc  ; 0358
+.IndirectEnd:
+
+ItemDescriptionsMedicine:
+	dw AntidoteDesc     ; 0004
+	dw BurnHealDesc     ; 0005
+	dw IceHealDesc      ; 0006
+	dw AwakeningDesc    ; 0007
+	dw ParlyzHealDesc   ; 0008
+	dw FullRestoreDesc  ; 0009
+	dw MaxPotionDesc    ; 000A
+	dw HyperPotionDesc  ; 000B
+	dw SuperPotionDesc  ; 000C
+	dw PotionDesc       ; 000D
+	dw MaxElixerDesc    ; 0010
+	dw HPUpDesc         ; 0015
+	dw ProteinDesc      ; 0016
+	dw IronDesc         ; 0017
+	dw CarbosDesc       ; 0018
+	dw CalciumDesc      ; 001A
+	dw RareCandyDesc    ; 001B
+	dw FullHealDesc     ; 0021
+	dw ReviveDesc       ; 0022
+	dw MaxReviveDesc    ; 0023
+	dw FreshWaterDesc   ; 0029
+	dw SodaPopDesc      ; 002A
+	dw LemonadeDesc     ; 002B
+	dw PPUpDesc         ; 0034
+	dw EtherDesc        ; 0035
+	dw MaxEtherDesc     ; 0036
+	dw ElixerDesc       ; 0037
+	dw MoomooMilkDesc   ; 0038
+	dw RageCandyBarDesc ; 0054
+	dw EnergyPowderDesc ; 0059
+	dw EnergyRootDesc   ; 005A
+	dw HealPowderDesc   ; 005B
+	dw RevivalHerbDesc  ; 005C
+	dw ZincDesc         ; 0063
+	dw BerryJuiceDesc   ; 0065
+	dw SacredAshDesc    ; 0075
+	dw PPMaxDesc          ; 00D8
+	dw PewterArareDesc    ; 00D9
+	dw SeventhTanghuluDesc    ; 00DA
+.IndirectEnd:
+
+ItemDescriptionsValuable:
+	dw NuggetDesc       ; 001F
+	dw SilverLeafDesc   ; 0033
+	dw GoldLeafDesc     ; 003A
+	dw TinyMushroomDesc ; 003F
+	dw BigMushroomDesc  ; 0040
+	dw SlowpokeTailDesc ; 004A
+	dw PearlDesc        ; 0050
+	dw BigPearlDesc     ; 0051
+	dw StardustDesc     ; 005F
+	dw StarPieceDesc    ; 0060
+	dw BrickPieceDesc   ; 0081
+	dw HeartScaleDesc     ; 00C9
+	dw BlueShardDesc      ; 00CA
+	dw GreenShardDesc     ; 00CB
+	dw RedShardDesc       ; 00CC
+	dw YellowShardDesc    ; 00CD
+	dw RareBoneDesc       ; 00CE
+	dw BalmmushroomDesc   ; 00CF
+	dw BigNuggetDesc      ; 00D0
+	dw CometShardDesc     ; 00D1
+	dw PearlStringDesc    ; 00D2
+	dw BeachGlassDesc     ; 00D3
+	dw PrettyShellDesc    ; 00D4
+	dw TinyBambooDesc     ; 00D5
+	dw BigBambooDesc      ; 00D6
+	dw SpiderSilkDesc    ; 00DB
+	dw AncientPotteryDesc    ; 00DB
+	dw AncientPotteryDesc    ; 00DB
+	dw AncientPotteryDesc    ; 00DB
+	dw ClayShardDesc    ; 00DB
+	dw CrystalChunkDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
+	dw GemstoneDesc    ; 00DB
 .IndirectEnd:
 
 BrightpowderDesc:

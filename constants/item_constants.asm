@@ -9,46 +9,22 @@
 	const BRIGHTPOWDER ; 0001
 	const TOWN_MAP_RED ; 0002
 	const MOON_STONE   ; 0003
-	const ANTIDOTE     ; 0004
-	const BURN_HEAL    ; 0005
-	const ICE_HEAL     ; 0006
-	const AWAKENING    ; 0007
-	const PARLYZ_HEAL  ; 0008
-	const FULL_RESTORE ; 0009
-	const MAX_POTION   ; 000A
-	const HYPER_POTION ; 000B
-	const SUPER_POTION ; 000C
-	const POTION       ; 000D
 	const ESCAPE_ROPE  ; 000E
 	const REPEL        ; 000F
-	const MAX_ELIXIR   ; 0010
 	const FIRE_STONE   ; 0011
 	const THUNDERSTONE ; 0012
 	const WATER_STONE  ; 0013
 	const ITEM_19      ; 0014
-	const HP_UP        ; 0015
-	const PROTEIN      ; 0016
-	const IRON         ; 0017
-	const CARBOS       ; 0018
 	const LUCKY_PUNCH  ; 0019
-	const CALCIUM      ; 001A
-	const RARE_CANDY   ; 001B
 	const X_ACCURACY   ; 001C
 	const LEAF_STONE   ; 001D
 	const METAL_POWDER ; 001E
-	const NUGGET       ; 001F
 	const POKE_DOLL    ; 0020
-	const FULL_HEAL    ; 0021
-	const REVIVE       ; 0022
-	const MAX_REVIVE   ; 0023
 	const GUARD_SPEC   ; 0024
 	const SUPER_REPEL  ; 0025
 	const MAX_REPEL    ; 0026
 	const DIRE_HIT     ; 0027
 	const ITEM_2D      ; 0028
-	const FRESH_WATER  ; 0029
-	const SODA_POP     ; 002A
-	const LEMONADE     ; 002B
 	const X_ATTACK     ; 002C
 	const ITEM_32      ; 002D
 	const X_DEFEND     ; 002E
@@ -56,20 +32,11 @@
 	const X_SP_ATK     ; 0030
 	const POKE_FLUTE   ; 0031
 	const EXP_SHARE    ; 0032
-	const SILVER_LEAF  ; 0033
-	const PP_UP        ; 0034
-	const ETHER        ; 0035
-	const MAX_ETHER    ; 0036
-	const ELIXIR       ; 0037
-	const MOOMOO_MILK  ; 0038
 	const QUICK_CLAW   ; 0039
-	const GOLD_LEAF    ; 003A
 	const SOFT_SAND    ; 003B
 	const SHARP_BEAK   ; 003C
 	const POISON_BARB  ; 003D
 	const KINGS_ROCK   ; 003E
-	const TINYMUSHROOM ; 003F
-	const BIG_MUSHROOM ; 0040
 	const SILVERPOWDER ; 0041
 	const ITEM_5A      ; 0042
 	const AMULET_COIN  ; 0043
@@ -79,34 +46,22 @@
 	const BLACK_BELT_I ; 0047
 	const ITEM_64      ; 0048
 	const BLACKGLASSES ; 0049
-	const SLOWPOKETAIL ; 004A
 	const PINK_BOW     ; 004B
 	const STICK        ; 004C
 	const SMOKE_BALL   ; 004D
 	const NEVERMELTICE ; 004E
 	const MAGNET       ; 004F
-	const PEARL        ; 0050
-	const BIG_PEARL    ; 0051
 	const EVERSTONE    ; 0052
 	const SPELL_TAG    ; 0053
-	const RAGECANDYBAR ; 0054
 	const MIRACLE_SEED ; 0055
 	const THICK_CLUB   ; 0056
 	const FOCUS_BAND   ; 0057
 	const ITEM_78      ; 0058
-	const ENERGYPOWDER ; 0059
-	const ENERGY_ROOT  ; 005A
-	const HEAL_POWDER  ; 005B
-	const REVIVAL_HERB ; 005C
 	const HARD_STONE   ; 005D
 	const LUCKY_EGG    ; 005E
-	const STARDUST     ; 005F
-	const STAR_PIECE   ; 0060
 	const ITEM_87      ; 0061
 	const ITEM_88      ; 0062
-	const ZINC         ; 0063
 	const CHARCOAL     ; 0064
-	const BERRY_JUICE  ; 0065
 	const SCOPE_LENS   ; 0066
 	const ITEM_8D      ; 0067
 	const ITEM_8E      ; 0068
@@ -122,7 +77,6 @@
 	const ITEM_99      ; 0072
 	const ITEM_9A      ; 0073
 	const ITEM_9B      ; 0074
-	const SACRED_ASH   ; 0075
 	const FLOWER_MAIL  ; 0076
 	const ITEM_A2      ; 0077
 	const LIGHT_BALL   ; 0078
@@ -134,7 +88,6 @@
 	const UP_GRADE     ; 007E
 	const ITEM_B0      ; 007F
 	const ITEM_B3      ; 0080
-	const BRICK_PIECE  ; 0081
 	const SURF_MAIL    ; 0082
 	const LITEBLUEMAIL ; 0083
 	const PORTRAITMAIL ; 0084
@@ -196,46 +149,14 @@
 	const POWER_BRACER ; 00C6
 	const POWER_LENS   ; 00C7
 	const POWER_WEIGHT ; 00C8
-	const HEART_SCALE  ; 00C9
-	const BLUE_SHARD   ; 00CA
-	const GREEN_SHARD  ; 00CB
-	const RED_SHARD    ; 00CC
-	const YELLOW_SHARD ; 00CD
-	const RARE_BONE    ; 00CE
-	const BALMMUSHROOM ; 00CF
-	const BIG_NUGGET   ; 00D0
-	const COMET_SHARD  ; 00D1
-	const PEARL_STRING ; 00D2
-	const BEACH_GLASS  ; 00D3
-	const PRETTY_SHELL ; 00D4
-	const TINY_BAMBOO  ; 00D5
-	const BIG_BAMBOO   ; 00D6
 	const X_SP_DEF     ; 00D7
-	const PP_MAX       ; 00D8
-	const PEWTER_ARARE ; 00D9
-	const SEVENTH_HEAVEN ; 00DA This is an alcoholic beverage made with Grapefruit peel. The lady who sells it gives you a nonalcoholic version.
 	const LEADER_CREST ; 00DB
-	const SPIDER_SILK  ; 00DC
 	const GRASSY_BLOCK ; 00DD
 	const FIERY_BLOCK  ; 00DE
 	const CHILLY_BLOCK ; 00DF
 	const ZAPPY_BLOCK  ; 00E0
 	const LOVELY_BLOCK ; 00E1
 	const CRUNCHYBLOCK ; 00E2
-	const ANCIENT_VASE ; 00E3
-	const ANCIENT_CUP  ; 00E4
-	const ANCIENT_JAR  ; 00E5
-	const CLAY_SHARD   ; 00E6
-	const HUGE_CRYSTAL ; 00E7
-	const LARGE_JADE   ; 00E8
-	const BIG_EMERALD  ; 00E9
-	const GIANT_RUBY   ; 00EA
-	const BIG_SAPPHIRE ; 00EB
-	const BIG_AMETHYST ; 00EC
-	const HUGE_TOPAZ   ; 00ED
-	const LARGE_GARNET ; 00EE
-	const GIANT_ONYX   ; 00EF
-	const HUGE_DIAMOND ; 00F0
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.
@@ -407,6 +328,95 @@ DEF FIRST_BERRY_ITEM EQU const_value
 	const PINKAN_BERRY ; 0358
 DEF NUM_BERRY_ITEM_POCKET EQU const_value - FIRST_BERRY_ITEM
 assert NUM_BERRY_ITEM_POCKET <= $ff
+
+	const_align 8 ; Medicine items assume the value of HIGH(FIRST_MEDICINE_ITEM) when storing in bag.
+DEF FIRST_MEDICINE_ITEM EQU const_value
+	const ANTIDOTE     ; 0004
+	const BURN_HEAL    ; 0005
+	const ICE_HEAL     ; 0006
+	const AWAKENING    ; 0007
+	const PARLYZ_HEAL  ; 0008
+	const FULL_RESTORE ; 0009
+	const MAX_ELIXIR   ; 0010
+	const MAX_POTION   ; 000A
+	const HYPER_POTION ; 000B
+	const SUPER_POTION ; 000C
+	const POTION       ; 000D
+	const HP_UP        ; 0015
+	const PROTEIN      ; 0016
+	const IRON         ; 0017
+	const CARBOS       ; 0018
+	const CALCIUM      ; 001A
+	const RARE_CANDY   ; 001B
+	const FULL_HEAL    ; 0021
+	const REVIVE       ; 0022
+	const MAX_REVIVE   ; 0023
+	const FRESH_WATER  ; 0029
+	const SODA_POP     ; 002A
+	const LEMONADE     ; 002B
+	const PP_UP        ; 0034
+	const ETHER        ; 0035
+	const MAX_ETHER    ; 0036
+	const ELIXIR       ; 0037
+	const MOOMOO_MILK  ; 0038
+	const RAGECANDYBAR ; 0054
+	const ENERGYPOWDER ; 0059
+	const ENERGY_ROOT  ; 005A
+	const HEAL_POWDER  ; 005B
+	const REVIVAL_HERB ; 005C
+	const ZINC         ; 0063
+	const BERRY_JUICE  ; 0065
+	const SACRED_ASH   ; 0075
+	const PP_MAX       ; 00D8
+	const PEWTER_ARARE ; 00D9
+	const SEVENTH_HEAVEN ; 00DA This is an alcoholic beverage made with Grapefruit peel. The lady who sells it gives you a nonalcoholic version.
+DEF NUM_MEDICINE_ITEM_POCKET EQU const_value - FIRST_MEDICINE_ITEM
+assert NUM_MEDICINE_ITEM_POCKET <= $ff
+
+	const_align 8 ; Valuable items assume the value of HIGH(FIRST_VALUABLE_ITEM) when storing in bag.
+DEF FIRST_VALUABLE_ITEM EQU const_value
+	const NUGGET       ; 001F
+	const SILVER_LEAF  ; 0033
+	const GOLD_LEAF    ; 003A
+	const TINYMUSHROOM ; 003F
+	const BIG_MUSHROOM ; 0040
+	const SLOWPOKETAIL ; 004A
+	const PEARL        ; 0050
+	const BIG_PEARL    ; 0051
+	const STARDUST     ; 005F
+	const STAR_PIECE   ; 0060
+	const BRICK_PIECE  ; 0081
+	const HEART_SCALE  ; 00C9
+	const BLUE_SHARD   ; 00CA
+	const GREEN_SHARD  ; 00CB
+	const RED_SHARD    ; 00CC
+	const YELLOW_SHARD ; 00CD
+	const RARE_BONE    ; 00CE
+	const BALMMUSHROOM ; 00CF
+	const BIG_NUGGET   ; 00D0
+	const COMET_SHARD  ; 00D1
+	const PEARL_STRING ; 00D2
+	const BEACH_GLASS  ; 00D3
+	const PRETTY_SHELL ; 00D4
+	const TINY_BAMBOO  ; 00D5
+	const BIG_BAMBOO   ; 00D6
+	const SPIDER_SILK  ; 00DC
+	const ANCIENT_VASE ; 00E3
+	const ANCIENT_CUP  ; 00E4
+	const ANCIENT_JAR  ; 00E5
+	const CLAY_SHARD   ; 00E6
+	const HUGE_CRYSTAL ; 00E7
+	const LARGE_JADE   ; 00E8
+	const BIG_EMERALD  ; 00E9
+	const GIANT_RUBY   ; 00EA
+	const BIG_SAPPHIRE ; 00EB
+	const BIG_AMETHYST ; 00EC
+	const HUGE_TOPAZ   ; 00ED
+	const LARGE_GARNET ; 00EE
+	const GIANT_ONYX   ; 00EF
+	const HUGE_DIAMOND ; 00F0
+DEF NUM_VALUABLE_ITEM_POCKET EQU const_value - FIRST_VALUABLE_ITEM
+assert NUM_VALUABLE_ITEM_POCKET <= $ff
 
 DEF NUM_ITEMS EQU const_value - 1
 

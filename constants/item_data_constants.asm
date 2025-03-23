@@ -14,10 +14,12 @@ DEF ITEMATTR_STRUCT_LENGTH EQU _RS
 ; item types
 	const_def 1
 	const ITEM     ; 1
-	const KEY_ITEM ; 2
-	const BALL     ; 3
-	const TM_HM    ; 4
-	const BERRIES  ; 5
+	const KEY_ITEM ; 4
+	const BALL     ; 5
+	const TM_HM    ; 6
+	const BERRIES  ; 7
+	const MEDICINE ; 2
+	const VALUABLE ; 3
 DEF NUM_ITEM_TYPES EQU const_value - 1
 
 ; item menu types
@@ -44,12 +46,16 @@ DEF NO_LIMITS EQU 0
 	const KEY_ITEM_POCKET ; 2
 	const TM_HM_POCKET    ; 3
 	const BERRY_POCKET    ; 4
+	const MEDICINE_POCKET    ; 5
+	const VALUABLE_POCKET    ; 6
 DEF NUM_POCKETS EQU const_value
 
-DEF MAX_ITEMS     EQU 40
+DEF MAX_ITEMS     EQU 20
 DEF MAX_BALLS     EQU 12
 DEF MAX_KEY_ITEMS EQU 25
 DEF MAX_BERRIES   EQU 17
+DEF MAX_MEDICINE   EQU 20
+DEF MAX_VALUABLE   EQU 15
 DEF MAX_PC_ITEMS  EQU 50
 
 DEF MAX_ITEM_STACK EQU 99

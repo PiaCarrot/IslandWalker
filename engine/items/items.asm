@@ -16,6 +16,8 @@ _ReceiveItem::
 	dw .Ball
 	dw .TMHM
 	dw .Berry
+	dw .Medicine
+	dw .Valuable
 
 .Item:
 	ld h, d
@@ -33,6 +35,14 @@ _ReceiveItem::
 
 .Berry:
 	ld hl, wNumBerries
+	jmp PutItemInPocketLow
+
+.Medicine:
+	ld hl, wNumMedicine
+	jmp PutItemInPocketLow
+
+.Valuable:
+	ld hl, wNumValuable
 	jmp PutItemInPocketLow
 
 .TMHM:
@@ -61,6 +71,8 @@ _TossItem::
 	dw .Ball
 	dw .TMHM
 	dw .Berry
+	dw .Medicine
+	dw .Valuable
 
 .Ball:
 	ld hl, wNumBalls
@@ -68,6 +80,14 @@ _TossItem::
 
 .Berry:
 	ld hl, wNumBerries
+	jmp RemoveItemFromPocketLow
+
+.Valuable:
+	ld hl, wNumValuable
+	jmp RemoveItemFromPocketLow
+
+.Medicine:
+	ld hl, wNumMedicine
 	jmp RemoveItemFromPocketLow
 
 .TMHM:
@@ -108,9 +128,19 @@ _CheckItem::
 	dw .Ball
 	dw .TMHM
 	dw .Berry
+	dw .Medicine
+	dw .Valuable
 
 .Ball:
 	ld hl, wNumBalls
+	jmp CheckTheItemLow
+
+.Medicine:
+	ld hl, wNumMedicine
+	jmp CheckTheItemLow
+
+.Valuable:
+	ld hl, wNumValuable
 	jmp CheckTheItemLow
 
 .Berry:
@@ -173,6 +203,24 @@ GetPocketCapacity:
 	ret z
 
 .not_berries
+	ld c, MAX_MEDICINE
+	ld a, e
+	cp LOW(wNumMedicine)
+	jr nz, .not_medicine
+	ld a, d
+	cp HIGH(wNumMedicine)
+	ret z
+
+.not_medicine
+	ld c, MAX_VALUABLE
+	ld a, e
+	cp LOW(wNumValuable)
+	jr nz, .not_valuable
+	ld a, d
+	cp HIGH(wNumValuable)
+	ret z
+
+.not_valuable
 	ld c, MAX_BALLS
 	ret
 

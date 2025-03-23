@@ -2050,6 +2050,8 @@ wKeyItemsPocketCursor:: db
 wBallsPocketCursor::    db
 wTMHMPocketCursor::     db
 wBerryPocketCursor::    db
+wMedicinePocketCursor::    db
+wValuablePocketCursor::    db
 
 wPCItemsScrollPosition::        db
 wItemsPocketScrollPosition::    db
@@ -2057,6 +2059,8 @@ wKeyItemsPocketScrollPosition:: db
 wBallsPocketScrollPosition::    db
 wTMHMPocketScrollPosition::     db
 wBerryPocketScrollPosition::    db
+wMedicinePocketScrollPosition::    db
+wValuablePocketScrollPosition::    db
 
 wSwitchMon::
 wSwitchItem::
@@ -2561,6 +2565,8 @@ wDudeNumItems:: db
 wDudeItems:: ds 2 * 4 + 1
 
 wDudeNumBerries::
+wDudeNumMedicine::
+wDudeNumValuable::
 wDudeNumKeyItems:: db
 wDudeKeyItems:: ds 18 + 1
 
@@ -2769,6 +2775,12 @@ wBalls:: ds MAX_BALLS * 2 + 1
 
 wNumBerries:: db
 wBerries:: ds MAX_BERRIES * 2 + 1
+
+wNumMedicine:: db
+wMedicine:: ds MAX_MEDICINE * 2 + 1
+
+wNumValuable:: db
+wValuable:: ds MAX_VALUABLE * 2 + 1
 
 wNumPCItems:: db
 wPCItems:: ds MAX_PC_ITEMS * 3 + 1

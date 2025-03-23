@@ -176,6 +176,10 @@ GetItemName::
 	ld c, l
 	pop hl
 
+	cphl16 FIRST_VALUABLE_ITEM
+	jr nc, .Valuable
+	cphl16 FIRST_MEDICINE_ITEM
+	jr nc, .Medicine
 	cphl16 FIRST_BERRY_ITEM
 	jr nc, .Berries
 	cphl16 FIRST_BALL_ITEM
@@ -198,6 +202,20 @@ GetItemName::
 	ld b, h
 	ld c, l
 	ld hl, BerryNames
+	jr .get_nth_string_16
+.Medicine
+	ld hl, -(FIRST_MEDICINE_ITEM)
+	add hl, bc
+	ld b, h
+	ld c, l
+	ld hl, MedicineItemNames
+	jr .get_nth_string_16
+.Valuable
+	ld hl, -(FIRST_VALUABLE_ITEM)
+	add hl, bc
+	ld b, h
+	ld c, l
+	ld hl, ValuableItemNames
 	jr .get_nth_string_16
 .Balls
 	ld hl, -(FIRST_BALL_ITEM)

@@ -567,6 +567,30 @@ CheckItemPocketConversion:
 	ret
 
 .not_berry_pocket
+	cp MEDICINE_POCKET
+	jr nz, .not_medicine_pocket
+	ld a, [wCurItem]
+	push hl
+	ld h, HIGH(FIRST_MEDICINE_ITEM)
+	ld l, a
+	call GetItemIDFromIndex
+	pop hl
+	ld [wCurItem], a
+	ret
+
+.not_medicine_pocket
+	cp VALUABLE_POCKET
+	jr nz, .not_valuable_pocket
+	ld a, [wCurItem]
+	push hl
+	ld h, HIGH(FIRST_VALUABLE_ITEM)
+	ld l, a
+	call GetItemIDFromIndex
+	pop hl
+	ld [wCurItem], a
+	ret
+
+.not_valuable_pocket
 	cp KEY_ITEM_POCKET
 	ret nz
 	ld a, [wCurItem]

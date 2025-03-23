@@ -3,46 +3,22 @@ ItemNames::
 	li "BRIGHTPOWDER" ; 0001
 	li "TERU-SAMA"    ; 0002
 	li "MOON STONE"   ; 0003
-	li "ANTIDOTE"     ; 0004
-	li "BURN HEAL"    ; 0005
-	li "ICE HEAL"     ; 0006
-	li "AWAKENING"    ; 0007
-	li "PARLYZ HEAL"  ; 0008
-	li "FULL RESTORE" ; 0009
-	li "MAX POTION"   ; 000A
-	li "HYPER POTION" ; 000B
-	li "SUPER POTION" ; 000C
-	li "POTION"       ; 000D
 	li "ESCAPE ROPE"  ; 000E
 	li "REPEL"        ; 000F
-	li "MAX ELIXIR"   ; 0010
 	li "FIRE STONE"   ; 0011
 	li "THUNDERSTONE" ; 0012
 	li "WATER STONE"  ; 0013
 	li "TERU-SAMA"    ; 0014
-	li "HP UP"        ; 0015
-	li "PROTEIN"      ; 0016
-	li "IRON"         ; 0017
-	li "CARBOS"       ; 0018
 	li "LUCKY PUNCH"  ; 0019
-	li "CALCIUM"      ; 001A
-	li "RARE CANDY"   ; 001B
 	li "X ACCURACY"   ; 001C
 	li "LEAF STONE"   ; 001D
 	li "METAL POWDER" ; 001E
-	li "NUGGET"       ; 001F
 	li "POKé DOLL"    ; 0020 VWF can't print "# DOLL"
-	li "FULL HEAL"    ; 0021
-	li "REVIVE"       ; 0022
-	li "MAX REVIVE"   ; 0023
 	li "GUARD SPEC."  ; 0024
 	li "SUPER REPEL"  ; 0025
 	li "MAX REPEL"    ; 0026
 	li "DIRE HIT"     ; 0027
 	li "TERU-SAMA"    ; 0028
-	li "FRESH WATER"  ; 0029
-	li "SODA POP"     ; 002A
-	li "LEMONADE"     ; 002B
 	li "X ATTACK"     ; 002C
 	li "TERU-SAMA"    ; 002D
 	li "X DEFEND"     ; 002E
@@ -50,20 +26,11 @@ ItemNames::
 	li "X SP.ATK"     ; 0030
 	li "TERU-SAMA"    ; 0031
 	li "EXP. SHARE"   ; 0032
-	li "SILVER LEAF"  ; 0033
-	li "PP UP"        ; 0034
-	li "ETHER"        ; 0035
-	li "MAX ETHER"    ; 0036
-	li "ELIXIR"       ; 0037
-	li "MOOMOO MILK"  ; 0038
 	li "QUICK CLAW"   ; 0039
-	li "GOLD LEAF"    ; 003A
 	li "SOFT SAND"    ; 003B
 	li "SHARP BEAK"   ; 003C
 	li "POISON BARB"  ; 003D
 	li "KING'S ROCK"  ; 003E
-	li "TINYMUSHROOM" ; 003F
-	li "BIG MUSHROOM" ; 0040
 	li "SILVERPOWDER" ; 0041
 	li "TERU-SAMA"    ; 0042
 	li "AMULET COIN"  ; 0043
@@ -73,34 +40,22 @@ ItemNames::
 	li "BLACK BELT"   ; 0047
 	li "TERU-SAMA"    ; 0048
 	li "BLACKGLASSES" ; 0049
-	li "SLOWPOKETAIL" ; 004A
 	li "PINK BOW"     ; 004B
 	li "STICK"        ; 004C
 	li "SMOKE BALL"   ; 004D
 	li "NEVERMELTICE" ; 004E
 	li "MAGNET"       ; 004F
-	li "PEARL"        ; 0050
-	li "BIG PEARL"    ; 0051
 	li "EVERSTONE"    ; 0052
 	li "SPELL TAG"    ; 0053
-	li "RAGECANDYBAR" ; 0054
 	li "MIRACLE SEED" ; 0055
 	li "THICK CLUB"   ; 0056
 	li "FOCUS BAND"   ; 0057
 	li "TERU-SAMA"    ; 0058
-	li "ENERGYPOWDER" ; 0059
-	li "ENERGY ROOT"  ; 005A
-	li "HEAL POWDER"  ; 005B
-	li "REVIVAL HERB" ; 005C
 	li "HARD STONE"   ; 005D
 	li "LUCKY EGG"    ; 005E
-	li "STARDUST"     ; 005F
-	li "STAR PIECE"   ; 0060
 	li "TERU-SAMA"    ; 0061
 	li "TERU-SAMA"    ; 0062
-	li "ZINC"         ; 0063
 	li "CHARCOAL"     ; 0064
-	li "BERRY JUICE"  ; 0065
 	li "SCOPE LENS"   ; 0066
 	li "TERU-SAMA"    ; 0067
 	li "TERU-SAMA"    ; 0068
@@ -116,7 +71,6 @@ ItemNames::
 	li "TERU-SAMA"    ; 0072
 	li "TERU-SAMA"    ; 0073
 	li "TERU-SAMA"    ; 0074
-	li "SACRED ASH"   ; 0075
 	li "FLOWER MAIL"  ; 0076
 	li "TERU-SAMA"    ; 0077
 	li "LIGHT BALL"   ; 0078
@@ -128,7 +82,6 @@ ItemNames::
 	li "UP-GRADE"     ; 007E
 	li "TERU-SAMA"    ; 007F
 	li "TERU-SAMA"    ; 0080
-	li "BRICK PIECE"  ; 0081
 	li "SURF MAIL"    ; 0082
 	li "LITEBLUEMAIL" ; 0083
 	li "PORTRAITMAIL" ; 0084
@@ -190,48 +143,16 @@ ItemNames::
 	li "POWER BRACER" ; 00C6
 	li "POWER LENS"   ; 00C7
 	li "POWER WEIGHT" ; 00C8
-	li "HEART SCALE"  ; 00C9
-	li "BLUE SHARD"   ; 00CA
-	li "GREEN SHARD"  ; 00CB
-	li "RED SHARD"    ; 00CC
-	li "YELLOW SHARD" ; 00CD
-	li "RARE BONE"    ; 00CE
-	li "BALMMUSHROOM" ; 00CF
-	li "BIG NUGGET"   ; 00D0
-	li "COMET SHARD"  ; 00D1
-	li "PEARL STRING" ; 00D2
-	li "BEACH GLASS"  ; 00D3
-	li "PRETTY SHELL" ; 00D4
-	li "TINY BAMBOO"  ; 00D5
-	li "BIG BAMBOO"   ; 00D6
 	li "X SP.DEF"     ; 00D7
-	li "PP MAX"       ; 00D8
-	li "PEWTER ARARE" ; 00D9
-	li "″7TH HEAVEN″"   ; 00DA
 	li "LEADER CREST" ; 00DB
-	li "SPIDER SILK"  ; 00DC
 	li "GRASSY BLOCK" ; 00DC
 	li "FIERY BLOCK"  ; 00DC
 	li "CHILLY BLOCK" ; 00DC
 	li "ZAPPY BLOCK"  ; 00DC
 	li "LOVELY BLOCK" ; 00DC
 	li "CRUNCHYBLOCK" ; 00DC
-	li "ANCIENT VASE" ; 00DC
-	li "ANCIENT CUP"  ; 00DC
-	li "ANCIENT JAR"  ; 00DC
-	li "CLAY SHARD"   ; 00DC
-	li "HUGE CRYSTAL" ; 00DC
-	li "LARGE JADE"   ; 00DC
-	li "BIG EMERALD"  ; 00DC
-	li "GIANT RUBY"   ; 00DC
-	li "BIG SAPPHIRE" ; 00DC
-	li "BIG AMETHYST" ; 00DC
-	li "HUGE TOPAZ"   ; 00DC
-	li "LARGE GARNET" ; 00DC
-	li "GIANT ONYX"   ; 00DC
-	li "HUGE DIAMOND" ; 00DC
 	assert_list_length NUM_ITEM_POCKET
-
+	
 KeyItemNames::
 	list_start
 	li "BICYCLE"      ; 0100
@@ -398,3 +319,90 @@ BerryNames::
 	li "TOTAPO BERRY" ; 0357 TOPO
 	li "PINKAN BERRY" ; 0358
 	assert_list_length NUM_BERRY_ITEM_POCKET
+	
+MedicineItemNames::
+	list_start
+	li "ANTIDOTE"     ; 0004
+	li "BURN HEAL"    ; 0005
+	li "ICE HEAL"     ; 0006
+	li "AWAKENING"    ; 0007
+	li "PARLYZ HEAL"  ; 0008
+	li "FULL RESTORE" ; 0009
+	li "MAX POTION"   ; 000A
+	li "HYPER POTION" ; 000B
+	li "SUPER POTION" ; 000C
+	li "POTION"       ; 000D
+	li "MAX ELIXIR"   ; 0010
+	li "HP UP"        ; 0015
+	li "PROTEIN"      ; 0016
+	li "IRON"         ; 0017
+	li "CARBOS"       ; 0018
+	li "CALCIUM"      ; 001A
+	li "RARE CANDY"   ; 001B
+	li "FULL HEAL"    ; 0021
+	li "REVIVE"       ; 0022
+	li "MAX REVIVE"   ; 0023
+	li "FRESH WATER"  ; 0029
+	li "SODA POP"     ; 002A
+	li "LEMONADE"     ; 002B
+	li "PP UP"        ; 0034
+	li "ETHER"        ; 0035
+	li "MAX ETHER"    ; 0036
+	li "ELIXIR"       ; 0037
+	li "MOOMOO MILK"  ; 0038
+	li "RAGECANDYBAR" ; 0054
+	li "ENERGYPOWDER" ; 0059
+	li "ENERGY ROOT"  ; 005A
+	li "HEAL POWDER"  ; 005B
+	li "REVIVAL HERB" ; 005C
+	li "ZINC"         ; 0063
+	li "BERRY JUICE"  ; 0065
+	li "SACRED ASH"   ; 0075
+	li "PP MAX"       ; 00D8
+	li "PEWTER ARARE" ; 00D9
+	li "″7TH HEAVEN″"   ; 00DA
+	assert_list_length NUM_MEDICINE_ITEM_POCKET
+
+ValuableItemNames::
+	list_start
+	li "NUGGET"       ; 001F
+	li "SILVER LEAF"  ; 0033
+	li "GOLD LEAF"    ; 003A
+	li "TINYMUSHROOM" ; 003F
+	li "BIG MUSHROOM" ; 0040
+	li "SLOWPOKETAIL" ; 004A
+	li "PEARL"        ; 0050
+	li "BIG PEARL"    ; 0051
+	li "STARDUST"     ; 005F
+	li "STAR PIECE"   ; 0060
+	li "BRICK PIECE"  ; 0081
+	li "HEART SCALE"  ; 00C9
+	li "BLUE SHARD"   ; 00CA
+	li "GREEN SHARD"  ; 00CB
+	li "RED SHARD"    ; 00CC
+	li "YELLOW SHARD" ; 00CD
+	li "RARE BONE"    ; 00CE
+	li "BALMMUSHROOM" ; 00CF
+	li "BIG NUGGET"   ; 00D0
+	li "COMET SHARD"  ; 00D1
+	li "PEARL STRING" ; 00D2
+	li "BEACH GLASS"  ; 00D3
+	li "PRETTY SHELL" ; 00D4
+	li "TINY BAMBOO"  ; 00D5
+	li "BIG BAMBOO"   ; 00D6
+	li "SPIDER SILK"  ; 00DC
+	li "ANCIENT VASE" ; 00DC
+	li "ANCIENT CUP"  ; 00DC
+	li "ANCIENT JAR"  ; 00DC
+	li "CLAY SHARD"   ; 00DC
+	li "HUGE CRYSTAL" ; 00DC
+	li "LARGE JADE"   ; 00DC
+	li "BIG EMERALD"  ; 00DC
+	li "GIANT RUBY"   ; 00DC
+	li "BIG SAPPHIRE" ; 00DC
+	li "BIG AMETHYST" ; 00DC
+	li "HUGE TOPAZ"   ; 00DC
+	li "LARGE GARNET" ; 00DC
+	li "GIANT ONYX"   ; 00DC
+	li "HUGE DIAMOND" ; 00DC
+	assert_list_length NUM_VALUABLE_ITEM_POCKET
