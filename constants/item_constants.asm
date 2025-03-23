@@ -337,11 +337,11 @@ DEF FIRST_MEDICINE_ITEM EQU const_value
 	const AWAKENING    ; 0007
 	const PARLYZ_HEAL  ; 0008
 	const FULL_RESTORE ; 0009
-	const MAX_ELIXIR   ; 0010
 	const MAX_POTION   ; 000A
 	const HYPER_POTION ; 000B
 	const SUPER_POTION ; 000C
 	const POTION       ; 000D
+	const MAX_ELIXIR   ; 0010
 	const HP_UP        ; 0015
 	const PROTEIN      ; 0016
 	const IRON         ; 0017
