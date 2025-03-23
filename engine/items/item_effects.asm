@@ -417,6 +417,7 @@ ItemEffectsMedicineItems:
 	dw NoEffect ; DOCILE_MINT
 	dw NoEffect ; BASHFUL_MINT
 	dw NoEffect ; QUIRKY_MINT
+	dw NoEffect ; ABILITY_UP
 .IndirectEnd:
 
 ItemEffectsValuableItems:

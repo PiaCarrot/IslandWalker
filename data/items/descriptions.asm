@@ -397,6 +397,7 @@ ItemDescriptionsMedicine:
 	dw MintDesc
 	dw MintDesc
 	dw MintDesc
+	dw AbilityUpDesc
 .IndirectEnd:
 
 ItemDescriptionsValuable:
@@ -1669,3 +1670,7 @@ GemstoneDesc:
 MintDesc:
 	db   "A MINT that can"
 	next "change NATURE.@"
+
+AbilityUpDesc:
+	db   "Changes ABILITY if"
+	next "possible.@"
