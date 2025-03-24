@@ -466,6 +466,8 @@ ItemEffectsValuableItems:
 	dw NoEffect            ; GOLD_CAP
 	dw NoEffect            ; GOLD_DUST
 	dw NoEffect            ; GOLD_STATUE
+	dw NoEffect            ; HONEY
+	dw NoEffect            ; SWEET_HONEY
 .IndirectEnd:
 
 PokeBallEffect:

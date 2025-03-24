@@ -81,3 +81,204 @@ CheckForHiddenItems:
 	call GetFarByte
 	inc hl
 	ret
+	
+RockItemEncounter:
+	ld a, [wMapNumber]
+	cp MAP_ALTERING_CAVE
+	jr z, .SpecialRockItems
+	ld hl, .RockItems
+.continue
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+
+.ok
+	ld a, [hli]
+	inc a
+	jr z, .done
+	ld a, [hli]
+.done
+	ld [wScriptVar], a
+	ret
+	
+.RockItems:
+	dbw 1, MAX_REVIVE
+	dbw 2, THICK_CLUB
+	dbw 4, NUGGET
+	dbw 6, STAR_PIECE
+	dbw 12, BIG_PEARL
+	dbw 18, ETHER
+	dbw 24, HARD_STONE
+	dbw 24, SOFT_SAND
+	dbw 48, PEARL
+	dbw 64, BRICK_PIECE
+	db -1
+	
+.SpecialRockItems:
+	ld hl, .LoadSpecialRockItems
+	jr .continue
+	
+.LoadSpecialRockItems:
+	dbw 1, RARE_CANDY
+	dbw 2, POTION ;SHINY_STONE
+	dbw 4, POTION ;DAWN_STONE
+	dbw 6, POTION ;DUSK_STONE
+	dbw 12, THUNDERSTONE
+	dbw 18, LEAF_STONE
+	dbw 24, WATER_STONE
+	dbw 24, FIRE_STONE
+	dbw 48, SUN_STONE
+	dbw 64, MOON_STONE
+	db -1
+	
+FishItemEncounter:
+	ld a, [wFishingRodUsed]
+	cp $0
+	jr z, .OldRodItems
+	cp $1
+	jr z, .GoodRodItems
+	cp $2
+	jr z, .SuperRodItems
+	cp $3
+	jr z, .ItemfinderRodItems
+.OldRodItems
+	ld hl, .OldRodItemTable
+	jr .continue
+.GoodRodItems
+	ld hl, .GoodRodItemTable
+	jr .continue
+.SuperRodItems
+	ld hl, .SuperRodItemTable
+	jr .continue
+.ItemfinderRodItems
+	ld hl, .ItemfinderRodItemTable
+.continue
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+
+.ok
+	ld a, [hli]
+	inc a
+	jr z, .done
+	ld a, [hli]
+.done
+	ld [wScriptVar], a
+	ret
+	
+.OldRodItemTable:
+	dbw 1, PEARL
+	dbw 1, POTION
+	dbw 2, POKE_BALL
+	dbw 4, POTION
+	dbw 6, STARDUST
+	dbw 8, POKE_BALL
+	dbw 12, EVERSTONE
+	dbw 12, POTION
+	dbw 24, PEARL
+	dbw 48, POKE_BALL
+	db -1
+	
+.GoodRodItemTable:
+	dbw 1, STAR_PIECE
+	dbw 1, SUPER_POTION
+	dbw 2, GREAT_BALL
+	dbw 4, SUPER_POTION
+	dbw 6, STARDUST
+	dbw 8, GREAT_BALL
+	dbw 12, SUPER_POTION
+	dbw 12, STARDUST
+	dbw 24, PEARL
+	dbw 48, POKE_BALL
+	db -1
+	
+.SuperRodItemTable:
+	dbw 1, RARE_CANDY
+	dbw 1, NUGGET
+	dbw 2, ULTRA_BALL
+	dbw 4, STAR_PIECE
+	dbw 6, BIG_PEARL
+	dbw 8, GREAT_BALL
+	dbw 12, DRAGON_SCALE
+	dbw 12, MYSTIC_WATER
+	dbw 24, PEARL
+	dbw 48, POKE_BALL
+	db -1
+	
+.ItemfinderRodItemTable:
+	dbw 1, NUGGET
+	dbw 1, STAR_PIECE
+	dbw 2, PP_UP
+	dbw 4, KINGS_ROCK
+	dbw 6, BIG_PEARL
+	dbw 8, ULTRA_BALL
+	dbw 12, HYPER_POTION
+	dbw 12, STARDUST
+	dbw 24, PEARL
+	dbw 48, BRICK_PIECE
+	db -1
+
+TreeItemEncounter:
+	ld a, [wMapGroup]
+	cp MAP_MIKAN_ISLAND
+	jr z, .checkmikanmaps
+	jr .notspecialtree
+.checkmikanmaps
+	ld a, [wMapNumber]
+	cp MAP_MIKAN_ISLAND
+	jr z, .bambootrees
+	cp MAP_MIKAN_THICKET
+	jr z, .bambootrees
+.notspecialtree
+	ld hl, .TreeItems
+	jr .continue
+.bambootrees
+	ld hl, .BambooTreeItems
+.continue
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+
+.ok
+	ld a, [hli]
+	inc a
+	jr z, .done
+	ld a, [hli]
+.done
+	ld [wScriptVar], a
+	ret
+	
+.TreeItems:
+	dbw 16, BLK_APRICORN
+	dbw 16, RED_APRICORN
+	dbw 16, BLU_APRICORN
+	dbw 16, YLW_APRICORN
+	dbw 16, GRN_APRICORN
+	dbw 16, WHT_APRICORN
+	dbw 16, PNK_APRICORN
+	db -1
+	
+.BambooTreeItems:
+	dbw 1, LARGE_JADE
+	dbw 1, BIG_BAMBOO
+	dbw 2, SPIDER_SILK
+	dbw 4, BIG_BAMBOO
+	dbw 6, SPIDER_SILK
+	dbw 8, BIG_BAMBOO
+	dbw 12, TINY_BAMBOO
+	dbw 12, SPIDER_SILK
+	dbw 24, TINY_BAMBOO
+	dbw 48, TINY_BAMBOO
+	db -1

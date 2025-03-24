@@ -436,4 +436,6 @@ ValuableItemNames::
 	li "GOLD CAP"
 	li "GOLD DUST"
 	li "GOLD STATUE"
+	li "HONEY"
+	li "SWEET HONEY"
 	assert_list_length NUM_VALUABLE_ITEM_POCKET

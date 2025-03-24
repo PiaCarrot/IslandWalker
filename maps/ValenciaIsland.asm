@@ -191,15 +191,11 @@ ValenciaYoungsterScript:
 	givepoke TYRANITAR, PLAIN_FORM, 100, ORAN_BERRY
 	giveitem HM_SURF
 	giveitem SEA_MAP
-	giveitem NUGGET
-	giveitem ETHER
-	giveitem AGUAV_BERRY
-	giveitem GRASSY_BLOCK, 99
-	giveitem FIERY_BLOCK, 99
-	giveitem CHILLY_BLOCK, 99
-	giveitem ZAPPY_BLOCK, 99
-	giveitem LOVELY_BLOCK, 99
-	giveitem CRUNCHYBLOCK, 99
+	giveitem ITEMFINDER
+	giveitem OLD_ROD
+	giveitem GOOD_ROD
+	giveitem SUPER_ROD
+	giveitem HM_ROCK_SMASH
 	givemoney YOUR_MONEY, 999999
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_PHONE_CARD

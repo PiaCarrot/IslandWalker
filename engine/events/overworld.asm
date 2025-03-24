@@ -1248,7 +1248,7 @@ HeadbuttFromMenuScript:
 	special UpdateTimePals
 
 HeadbuttScript:
- callasm GetPartyNickname
+	callasm GetPartyNickname
     writetext UseHeadbuttText
 	closetext
     special WaitSFX
@@ -1264,10 +1264,18 @@ HeadbuttScript:
 	end
 
 .no_battle
+	callasm TreeItemEncounter
+	iffalse .no_item
+	opentext
+	verbosegiveitem ITEM_FROM_MEM
+	closetext
+	sjump .end
+.no_item
 	opentext
 	writetext HeadbuttNothingText
 	waitbutton
 	closetext
+.end
 	end
 
 TryHeadbuttOW::
@@ -1400,11 +1408,19 @@ RockSmashScript:
 
 	callasm RockMonEncounter
 	readmem wTempWildMonSpecies
-	iffalse .done
+	iffalse .no_battle
 	randomwildmon
 	startbattle
 	reloadmapafterbattle
-.done
+	end
+	
+.no_battle
+	callasm RockItemEncounter
+	iffalse .no_item
+	opentext
+	verbosegiveitem ITEM_FROM_MEM
+	closetext
+.no_item
 	end
 
 MovementData_RockSmash:
@@ -1492,6 +1508,8 @@ FishFunction:
 .goodtofish
 	ld d, a
 	ld a, [wFishingRodUsed]
+	cp $3
+	jr z, .ItemfinderRod
 	ld e, a
 	farcall Fish
 	ld a, d
@@ -1521,6 +1539,7 @@ FishFunction:
 	ld a, JUMPTABLE_EXIT | $1
 	ret
 
+.ItemfinderRod:
 .FishNoBite:
 	ld a, $2
 	ld [wFishingResult], a
@@ -1538,13 +1557,67 @@ FishFunction:
 	ret
 
 Script_NotEvenANibble:
+	callasm FishItemEncounter
+	iffalse .no_item
+	scall Script_FishCastRod
+	callasm Fishing_CheckFacingUp
+	iffalse .NotFacingUp
+	applymovement PLAYER, .Movement_FacingUp
+.NotFacingUp:
+	applymovement PLAYER, .Movement_NotFacingUp
+	pause 40
+	applymovement PLAYER, .Movement_RestoreRod
+	writetext RodBiteText
+	callasm PutTheRodAway
+	callasm FishItemEncounter
+	iffalse .line_snapped
+	writetext FishedAnItemText
+	waitbutton
+	verbosegiveitem ITEM_FROM_MEM
+	sjump Script_NotEvenANibble_FallThrough
+.no_item
 	scall Script_FishCastRod
 	writetext RodNothingText
 	sjump Script_NotEvenANibble_FallThrough
+.line_snapped
+	writetext LineSnappedText
+	playsound SFX_RAZOR_WIND
+	waitbutton
+	sjump Script_NotEvenANibble_FallThrough
+	
+.Movement_NotFacingUp:
+	fish_got_bite
+	fish_got_bite
+	fish_got_bite
+	fish_got_bite
+	show_emote
+	step_end
+
+.Movement_FacingUp:
+	fish_got_bite
+	fish_got_bite
+	fish_got_bite
+	fish_got_bite
+	step_sleep 1
+	show_emote
+	step_end
+	
+.Movement_RestoreRod:
+	hide_emote
+	fish_cast_rod
+	step_end
 
 Script_NotEvenANibble2:
 	scall Script_FishCastRod
 	writetext RodNothingText
+	
+LineSnappedText:
+	text "The line snapped…"
+	done
+	
+FishedAnItemText:
+	text "Snagged an item!"
+	done
 
 Script_NotEvenANibble_FallThrough:
 	loademote EMOTE_SHADOW

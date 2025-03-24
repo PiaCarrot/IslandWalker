@@ -1,4 +1,12 @@
 ItemFinder:
+	call GetFacingTileCoord
+	call GetTilePermission
+	cp WATER_TILE
+	jr nz, .RegularItemfinderFunction
+	ld e, $3
+	farcall FishFunction
+	jr .end
+.RegularItemfinderFunction
 	farcall CheckForHiddenItems
 	jr c, .found_something
 	ld hl, .Script_FoundNothing
@@ -11,6 +19,7 @@ ItemFinder:
 	call QueueScript
 	ld a, $1
 	ld [wItemEffectSucceeded], a
+.end
 	ret
 
 .ItemfinderSound:

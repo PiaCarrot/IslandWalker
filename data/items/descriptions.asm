@@ -446,6 +446,8 @@ ItemDescriptionsValuable:
 	dw GoldCapDesc
 	dw GoldDustDesc
 	dw GoldStatueDesc
+	dw HoneyDesc
+	dw SweetHoneyDesc
 .IndirectEnd:
 
 BrightpowderDesc:
@@ -1699,3 +1701,11 @@ GoldDustDesc:
 GoldStatueDesc:
 	db   "Worshipper's idol."
 	next "Sell very high.@"
+
+HoneyDesc:
+	db   "Can attract wild"
+	next "#MON.@"
+
+SweetHoneyDesc:
+	db   "Prized for flavor."
+	next "Sell high.@"

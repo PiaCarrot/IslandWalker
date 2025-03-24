@@ -792,10 +792,6 @@ MercilessDesc:
 	db    "If poisoned, all"
 	next1 "attacks crit.@"
 
-SteelworkerDesc:
-	db    "Powers up STEEL"
-	next1 "moves.@"
-
 BerserkDesc:
 	db    "Boosts SP. ATK if"
 	next1 "huge damage taken.@"
@@ -861,6 +857,7 @@ ScreenCleanerDesc:
 	db    "Nullifies screen"
 	next1 "moves on switch.@"
 
+SteelworkerDesc:
 SteelySpiritDesc:
 	db    "Powers up STEEL"
 	next1 "moves.@"

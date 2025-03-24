@@ -248,6 +248,7 @@ SentretEvosAttacks:
 	; dbw 31, FOLLOW_ME
 	dbw 40, REST
 	dbw 49, AMNESIA
+	dbw 100, HEADBUTT
 	db 0 ; no more level-up moves
 
 FurretEvosAttacks:
