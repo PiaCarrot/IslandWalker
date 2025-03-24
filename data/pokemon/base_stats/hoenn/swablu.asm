@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/swablu/front.dimensions"
-	db NATURAL_CURE, NATURAL_CURE ; wBaseAbility1, wBaseAbility2
+	db NATURAL_CURE, CLOUD_NINE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_ERRATIC ; growth rate
 	dn EGG_FLYING, EGG_DRAGON ; egg groups

@@ -11,7 +11,7 @@
 	db GENDER_F12_5 ; gender ratio
 	db 35 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/jolteon/front.dimensions"
-	db VOLT_ABSORB, VOLT_ABSORB ; wBaseAbility1, wBaseAbility2
+	db VOLT_ABSORB, QUICK_FEET ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups

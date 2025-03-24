@@ -11,7 +11,7 @@
 	db GENDER_F12_5 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/blastoise/front.dimensions"
-	db TORRENT, TORRENT ; wBaseAbility1, wBaseAbility2
+	db TORRENT, RAIN_DISH ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_WATER_1 ; egg groups

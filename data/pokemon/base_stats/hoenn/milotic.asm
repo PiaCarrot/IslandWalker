@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/milotic/front.dimensions"
-	db MARVEL_SCALE, MARVEL_SCALE ; wBaseAbility1, wBaseAbility2
+	db COMPETITIVE, MARVEL_SCALE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_ERRATIC ; growth rate
 	dn EGG_WATER_1, EGG_DRAGON ; egg groups

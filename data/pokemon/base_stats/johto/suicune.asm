@@ -11,7 +11,7 @@
 	db GENDER_UNKNOWN ; gender ratio
 	db 80 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/suicune/front.dimensions"
-	db PRESSURE, PRESSURE ; wBaseAbility1, wBaseAbility2
+	db INNER_FOCUS, WATER_ABSORB ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups

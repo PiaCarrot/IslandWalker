@@ -11,7 +11,7 @@
 	db GENDER_UNKNOWN ; gender ratio
 	db 120 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/lugia/front.dimensions"
-	db PRESSURE, PRESSURE ; wBaseAbility1, wBaseAbility2
+	db PRESSURE, MULTISCALE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups

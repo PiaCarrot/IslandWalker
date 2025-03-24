@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/rhydon/front.dimensions"
-	db LIGHTNINGROD, ROCK_HEAD ; wBaseAbility1, wBaseAbility2
+	db RECKLESS, ROCK_HEAD ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_GROUND ; egg groups

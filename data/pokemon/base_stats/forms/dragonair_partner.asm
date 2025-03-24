@@ -7,14 +7,14 @@
 	db DRAGON, DRAGON ; type
 	db 45 ; catch rate
 	db 144 ; base exp
-	dw NO_ITEM, DRAGON_SCALE ; items
+	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/dragonair/front.dimensions"
-	db SHED_SKIN, MARVEL_SCALE ; wBaseAbility1, wBaseAbility2
+	db DRAGOON, DRAGOON ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
-	db GROWTH_SLOW ; growth rate
-	dn EGG_WATER_1, EGG_DRAGON ; egg groups
+	db GROWTH_MEDIUM_SLOW ; growth rate
+	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
 	tmhm WATER_PULSE, TOXIC, HAIL, HIDDEN_POWER, SUNNY_DAY, ICE_BEAM, BLIZZARD, HYPER_BEAM, PROTECT, RAIN_DANCE, SAFEGUARD, FRUSTRATION, IRON_TAIL, THUNDERBOLT, THUNDER, RETURN, DOUBLE_TEAM, SHOCK_WAVE, FLAMETHROWER, FIRE_BLAST, FACADE, SECRET_POWER, REST, ATTRACT, SURF, WATERFALL

@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/seviper/front.dimensions"
-	db SHED_SKIN, SHED_SKIN ; wBaseAbility1, wBaseAbility2
+	db SHED_SKIN, INFILTRATOR ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_FLUCTUATING ; growth rate
 	dn EGG_GROUND, EGG_DRAGON ; egg groups

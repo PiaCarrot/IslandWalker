@@ -415,8 +415,8 @@ DEF NUM_HOENN_POKEMON EQU const_value - HOENN_POKEMON
 	; const DHELMISE   ; 183
 	; const PINCURCHIN ; 184
 	; const CRAMORANT  ; 185
-	; const ARROKUDA   ; 186
-	; const BARRASKEWDA ; 187
+	; const WIGLETT    ; 186
+	; const WUGTRIO    ; 187
 	; const APPLIN     ; 188
 	; const FLAPPLE    ; 189
 	; const APPLETUN   ; 18a
@@ -512,6 +512,19 @@ DEF FORM_POKEMON EQU const_value
 	; const ONIX_CRYSTAL        ; 1e2
 	; const STEELIX_CRYSTAL     ; 1e3
 	; const URSALUNA_BLOODMOON  ; 1e4
+	; const EEVEE_PARTNER  ; 1e5
+	; const PIKACHU_PARTNER  ; 1e6
+	; const DRATINI_PARTNER  ; 1e7
+	; const DRAGONAIR_PARTNER  ; 1e8
+	; const DRAGONITE_PARTNER  ; 1e9
+	; const ROCKRUFF_OWN_TEMPO  ; 1ea
+	; const GIMMIGHOUL_ROAMING  ; 1eb
+	; const MEOWTH_ROCKET  ; 1ec
+	; const ROTOM_HEAT  ; 1ed
+	; const ROTOM_WASH  ; 1ee
+	; const ROTOM_FROST  ; 1ef
+	; const ROTOM_FAN  ; 1f0
+	; const ROTOM_MOW  ; 1f1
 DEF NUM_FORM_POKEMON EQU const_value - FORM_POKEMON
 DEF NUM_POKEMON EQU const_value - 1
 

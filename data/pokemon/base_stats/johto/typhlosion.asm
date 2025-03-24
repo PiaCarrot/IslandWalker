@@ -11,7 +11,7 @@
 	db GENDER_F12_5 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/typhlosion/front.dimensions"
-	db BLAZE, BLAZE ; wBaseAbility1, wBaseAbility2
+	db BLAZE, FLASH_FIRE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups

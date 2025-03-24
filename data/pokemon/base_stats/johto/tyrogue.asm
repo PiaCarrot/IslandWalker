@@ -11,7 +11,7 @@
 	db GENDER_F0 ; gender ratio
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/tyrogue/front.dimensions"
-	db GUTS, GUTS ; wBaseAbility1, wBaseAbility2
+	db GUTS, STEADFAST ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups

@@ -11,7 +11,7 @@
 	db GENDER_F100 ; gender ratio
 	db 120 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/latias/front.dimensions"
-	db LEVITATE, LEVITATE ; wBaseAbility1, wBaseAbility2
+	db LEVITATE, PSYCHIC_SURGE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups

@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/ninjask/front.dimensions"
-	db SPEED_BOOST, SPEED_BOOST ; wBaseAbility1, wBaseAbility2
+	db SPEED_BOOST, INFILTRATOR ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_ERRATIC ; growth rate
 	dn EGG_BUG, EGG_BUG ; egg groups

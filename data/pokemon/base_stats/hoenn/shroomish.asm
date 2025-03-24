@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/shroomish/front.dimensions"
-	db EFFECT_SPORE, EFFECT_SPORE ; wBaseAbility1, wBaseAbility2
+	db EFFECT_SPORE, POISON_HEAL ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_FLUCTUATING ; growth rate
 	dn EGG_FAIRY, EGG_PLANT ; egg groups

@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/wingull/front.dimensions"
-	db KEEN_EYE, KEEN_EYE ; wBaseAbility1, wBaseAbility2
+	db KEEN_EYE, HYDRATION ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_WATER_1, EGG_FLYING ; egg groups

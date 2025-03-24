@@ -11,7 +11,7 @@
 	db GENDER_F75 ; gender ratio
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/wigglytuff/front.dimensions"
-	db CUTE_CHARM, CUTE_CHARM ; wBaseAbility1, wBaseAbility2
+	db CUTE_CHARM, COMPETITIVE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_FAST ; growth rate
 	dn EGG_FAIRY, EGG_FAIRY ; egg groups

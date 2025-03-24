@@ -11,7 +11,7 @@
 	db GENDER_F0 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/nidoking/front.dimensions"
-	db POISON_POINT, POISON_POINT ; wBaseAbility1, wBaseAbility2
+	db POISON_POINT, RIVALRY ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_GROUND ; egg groups
