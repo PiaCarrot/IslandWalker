@@ -22,7 +22,7 @@ HiddenStarter1:
 
 ; Load DRATINI if proper flag set
 .dratini
-	ld hl, DRATINI
+	ld hl, DRATINI_PARTNER
 	jr .cont
 
 ; Load PIKACHU if proper flag set

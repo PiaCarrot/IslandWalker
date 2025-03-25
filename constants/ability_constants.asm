@@ -254,5 +254,6 @@
 	const OVERCHARGED ; Torrent ability for Partner Pikachu (Electric)
 	const DRAGOON ; Torrent ability for Partner Dratini (Dragon)
 	const COIN_COLLECTOR ; Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves.
+	const BATTLE_BOND ; Partner Dragonite's special ability, based on Gen IX Battle Bond
 
 DEF NUM_ABILITIES EQU const_value - 1

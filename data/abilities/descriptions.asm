@@ -909,3 +909,7 @@ ArmorTailDesc:
 MindsEyeDesc:
 	db    "Ignore accuracy and"
 	next1 "can hit GHOSTs.@"
+
+BattleBondDesc:
+	db    "ATK, SP. ATK & SPD"
+	next1 "raise on KO.@"

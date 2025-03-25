@@ -117,7 +117,6 @@ AbilityNames::
 	db "TINTED LENS@"
 	db "FILTER@"
 	db "SOLID ROCK@"
-	db "SLOW START@"
 	db "SCRAPPY@"
 	db "STORM DRAIN@"
 	db "ICE BODY@"

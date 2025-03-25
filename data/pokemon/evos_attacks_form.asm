@@ -21,18 +21,26 @@ LaprasPartnerEvosAttacks:
 	db 0 ; no more level-up moves
 
 DratiniPartnerEvosAttacks:
-	dbbw EVOLVE_LEVEL, 30, DRAGONAIR
+	dbbw EVOLVE_LEVEL, 30, DRAGONAIR ;DRAGONAIR_PARTNER
 	db 0 ; no more evolutions
-	dbw 1, LEER
 	dbw 1, WRAP
-	dbw 8, THUNDER_WAVE
-	dbw 15, TWISTER
-	dbw 22, DRAGON_RAGE
-	dbw 29, SLAM
-	dbw 36, AGILITY
-	dbw 43, SAFEGUARD
-	dbw 50, OUTRAGE
-	dbw 57, HYPER_BEAM
+	dbw 1, LEER
+	dbw 7, THUNDER_WAVE
+	dbw 11, TWISTER
+	dbw 15, DRAGONBREATH
+	dbw 19, BARRIER
+	dbw 21, SLAM
+	dbw 25, AGILITY
+	dbw 27, HAZE
+	dbw 31, DRAGON_RAGE ; DRAGON_TAIL
+	dbw 35, DRAGON_RAGE ; AQUA_TAIL
+	dbw 41, DRAGON_RAGE ; DRAGON_RUSH
+	dbw 45, SAFEGUARD
+	dbw 51, DRAGON_DANCE
+	dbw 55, OUTRAGE
+	dbw 61, HYPER_BEAM
+	dbw 65, HYDRO_PUMP
+	dbw 70, EXTREMESPEED
 	db 0 ; no more level-up moves
 
 ENDSECTION
