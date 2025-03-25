@@ -194,3 +194,4 @@ AbilityNames::
 	db "OVERCHARGED@"
 	db "DRAGOON@"
 	db "COIN COLLECTOR@"
+	db "BATTLE BOND@"
