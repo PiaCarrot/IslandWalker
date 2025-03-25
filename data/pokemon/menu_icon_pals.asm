@@ -319,4 +319,5 @@ MonMenuIconPals:
 	icon_pals RED,    RED    ; LATIOS
 ; Forms
 	icon_pals BLUE,   TEAL   ; LAPRAS
+	icon_pals BLUE,   PURPLE ; DRATINI
 	assert_table_length NUM_POKEMON

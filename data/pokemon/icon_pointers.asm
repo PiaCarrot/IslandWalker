@@ -314,4 +314,5 @@ IconPointers:
 	dw LatiosIcon
 ; forms
 	dw LaprasIcon
+	dw DratiniIcon
 	assert_table_length NUM_POKEMON + 1

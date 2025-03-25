@@ -307,4 +307,5 @@ AlphabeticalPokedexOrder:
 	dw ZIGZAGOON
 	dw ZUBAT
 	dw LAPRAS_PARTNER
+	dw DRATINI_PARTNER
 	assert_table_length NUM_POKEMON

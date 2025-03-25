@@ -315,4 +315,5 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   238,  129 ; LATIOS
 ; Forms
 	mon_cry CRY_LAPRAS,       80,  256 ; LAPRAS PARTNER
+	mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI
 	assert_table_length NUM_POKEMON

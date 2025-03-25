@@ -313,4 +313,5 @@ PokemonNames::
 	db "LATIOS@@@@"
 ; Forms
 	db "LAPRAS@@@@"
+	db "DRATINI@@@"
 	assert_table_length NUM_POKEMON

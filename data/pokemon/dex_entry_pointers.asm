@@ -310,4 +310,5 @@ PokedexDataPointerTable:
 	dba LatiosPokedexEntry
 ; Forms
 	dba LaprasPartnerPokedexEntry
+	dba DratiniPartnerPokedexEntry
 	assert_table_length NUM_POKEMON

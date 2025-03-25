@@ -307,4 +307,5 @@ NewPokedexOrder:
 	dw LATIAS
 	dw LATIOS
 	dw LAPRAS_PARTNER
+	dw DRATINI_PARTNER
 	assert_table_length NUM_POKEMON

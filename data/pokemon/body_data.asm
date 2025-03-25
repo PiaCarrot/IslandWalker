@@ -311,4 +311,5 @@ PokemonBodyData:
 	dw 607, 1323   ; LATIOS
 ; Forms
 	dw 802, 4850  ; LAPRAS PARTNER
+	dw 511, 70     ; DRATINI PARTNER
 	assert_table_length NUM_POKEMON

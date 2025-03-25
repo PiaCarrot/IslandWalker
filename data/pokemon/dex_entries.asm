@@ -329,3 +329,4 @@ LatiosPokedexEntry::     INCLUDE "data/pokemon/dex_entries/hoenn/latios.asm"
 SECTION "Pokedex Entries 385-448", ROMX
 
 LaprasPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/lapras_partner.asm"
+DratiniPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dratini_partner.asm"

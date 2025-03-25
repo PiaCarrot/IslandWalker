@@ -630,4 +630,6 @@ PokemonPicPointers::
 ; Forms
 	dba LaprasPartnerFrontpic
 	dba LaprasPartnerBackpic
+	dba DratiniPartnerFrontpic
+	dba DratiniPartnerBackpic
 	assert_table_length NUM_POKEMON + 1

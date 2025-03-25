@@ -5184,14 +5184,14 @@ BattleMenuPKMN_Loop:
 Battle_StatsScreen:
 	call DisableLCD
 
-	ld hl, vTiles2 tile $31
+	ld hl, vTiles2 tile $43
 	ld de, vTiles0
-	ld bc, $11 tiles
+	ld bc, $23 tiles
 	rst CopyBytes
 
 	ld hl, vTiles2
-	ld de, vTiles0 tile $11
-	ld bc, $31 tiles
+	ld de, vTiles0 tile $23
+	ld bc, $43 tiles
 	rst CopyBytes
 
 	call EnableLCD
@@ -5206,13 +5206,13 @@ Battle_StatsScreen:
 	call DisableLCD
 
 	ld hl, vTiles0
-	ld de, vTiles2 tile $31
-	ld bc, $11 tiles
+	ld de, vTiles2 tile $43
+	ld bc, $23 tiles
 	rst CopyBytes
 
-	ld hl, vTiles0 tile $11
+	ld hl, vTiles0 tile $23
 	ld de, vTiles2
-	ld bc, $31 tiles
+	ld bc, $43 tiles
 	rst CopyBytes
 
 	jmp EnableLCD

@@ -310,4 +310,5 @@ INCBIN "gfx/footprints/hoenn/latias.1bpp"
 INCBIN "gfx/footprints/hoenn/latios.1bpp"
 ; Forms
 INCBIN "gfx/footprints/kanto/lapras.1bpp"
+INCBIN "gfx/footprints/kanto/dratini.1bpp"
 	assert_table_length NUM_POKEMON

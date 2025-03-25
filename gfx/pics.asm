@@ -619,7 +619,8 @@ ZigzagoonFrontpic:        INCBIN "gfx/pokemon/hoenn/zigzagoon/front.animated.2bp
 ZigzagoonBackpic:         INCBIN "gfx/pokemon/hoenn/zigzagoon/back.2bpp.lz"
 LinooneFrontpic:          INCBIN "gfx/pokemon/hoenn/linoone/front.animated.2bpp.lz"
 LinooneBackpic:           INCBIN "gfx/pokemon/hoenn/linoone/back.2bpp.lz"
-
+DratiniPartnerFrontpic: INCBIN "gfx/pokemon/forms/dratini_partner/front.animated.2bpp.lz"
+DratiniPartnerBackpic:  INCBIN "gfx/pokemon/forms/dratini_partner/back.2bpp.lz"
 
 SECTION "Pokemon Pics 23", ROMX
 
