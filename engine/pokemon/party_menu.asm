@@ -749,6 +749,7 @@ PrintPartyMenuActionText:
 	dw .RevitalizedText
 	dw .GrewToLevelText
 	dw .CameToItsSensesText
+	dw .NatureChangedText
 
 .RecoveredSomeHPText:
 	text_far _RecoveredSomeHPText
@@ -788,6 +789,10 @@ PrintPartyMenuActionText:
 
 .CameToItsSensesText:
 	text_far _CameToItsSensesText
+	text_end
+
+.NatureChangedText:
+	text_far _NatureChangedText
 	text_end
 
 .PrintText:

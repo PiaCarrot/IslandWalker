@@ -103,6 +103,12 @@ _CameToItsSensesText::
 	line "to its senses."
 	done
 
+_NatureChangedText::
+	text_ram wStringBuffer1
+	text "'s NATURE"
+	line "changed!"
+	done
+
 _OakTimeWokeUpText::
 	text "<……><……><……><……><……><……>"
 	line "<……><……><……><……><……><……>"

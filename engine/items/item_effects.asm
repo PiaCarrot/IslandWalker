@@ -393,31 +393,31 @@ ItemEffectsMedicineItems:
 	dw RestorePPEffect     ; PP_MAX
 	dw StatusHealingEffect ; PEWTER_ARARE
 	dw StatusHealingEffect ; SEVENTH_HEAVEN
-	dw NoEffect ; LONELY_MINT
-	dw NoEffect ; ADAMANT_MINT
-	dw NoEffect ; NAUGHTY_MINT
-	dw NoEffect ; BRAVE_MINT
-	dw NoEffect ; BOLD_MINT
-	dw NoEffect ; IMPISH_MINT
-	dw NoEffect ; LAX_MINT
-	dw NoEffect ; RELAXED_MINT
-	dw NoEffect ; MODEST_MINT
-	dw NoEffect ; MILD_MINT
-	dw NoEffect ; RASH_MINT
-	dw NoEffect ; QUIET_MINT
-	dw NoEffect ; CALM_MINT
-	dw NoEffect ; GENTLE_MINT
-	dw NoEffect ; CAREFUL_MINT
-	dw NoEffect ; SASSY_MINT
-	dw NoEffect ; TIMID_MINT
-	dw NoEffect ; HASTY_MINT
-	dw NoEffect ; JOLLY_MINT
-	dw NoEffect ; NAIVE_MINT
-	dw NoEffect ; SERIOUS_MINT
-	dw NoEffect ; HARDY_MINT
-	dw NoEffect ; DOCILE_MINT
-	dw NoEffect ; BASHFUL_MINT
-	dw NoEffect ; QUIRKY_MINT
+	dw MintEffect ; LONELY_MINT
+	dw MintEffect ; ADAMANT_MINT
+	dw MintEffect ; NAUGHTY_MINT
+	dw MintEffect ; BRAVE_MINT
+	dw MintEffect ; BOLD_MINT
+	dw MintEffect ; IMPISH_MINT
+	dw MintEffect ; LAX_MINT
+	dw MintEffect ; RELAXED_MINT
+	dw MintEffect ; MODEST_MINT
+	dw MintEffect ; MILD_MINT
+	dw MintEffect ; RASH_MINT
+	dw MintEffect ; QUIET_MINT
+	dw MintEffect ; CALM_MINT
+	dw MintEffect ; GENTLE_MINT
+	dw MintEffect ; CAREFUL_MINT
+	dw MintEffect ; SASSY_MINT
+	dw MintEffect ; TIMID_MINT
+	dw MintEffect ; HASTY_MINT
+	dw MintEffect ; JOLLY_MINT
+	dw MintEffect ; NAIVE_MINT
+	dw MintEffect ; SERIOUS_MINT
+	dw MintEffect ; HARDY_MINT
+	dw MintEffect ; DOCILE_MINT
+	dw MintEffect ; BASHFUL_MINT
+	dw MintEffect ; QUIRKY_MINT
 	dw NoEffect ; ABILITY_UP
 .IndirectEnd:
 
@@ -2033,6 +2033,99 @@ XItemEffect:
 	farjp ChangeHappiness
 
 INCLUDE "data/items/x_stats.asm"
+
+; MintEffect:
+;MON_NATURE
+;Choose a Pokémon to use it on
+	; ld b, PARTYMENUACTION_HEALING_ITEM
+	; call UseItem_SelectMon
+;Exit early if the player canceled
+	; jr c, Mint_ExitMenu
+
+;Mint has no effect if the Nature is the same
+	; ld a, MON_NATURE
+	; call GetPartyParamLocation
+	; ld a, [hl]
+	; and NATURE_MASK
+	; jp nz, NoEffectMessage
+
+;Change the Nature
+	; ld a, [hl]
+	; or NATURE_MASK
+	; ld [hl], a
+
+;Play a sound effect
+	; call Play_SFX_FULL_HEAL
+
+;Describe the effect
+	; ld a, PARTYMENUTEXT_NATURE_TEXT
+	; ld [wPartyMenuActionText], a
+	; call ItemActionTextWaitButton
+;Use up the Mint
+	; call UseDisposableItem
+	; jp ClearPalettes
+	
+MintEffect:
+    ld b, PARTYMENUACTION_HEALING_ITEM
+    call UseItem_SelectMon
+    jr c, Mint_ExitMenu
+    ld a, [wCurItem]
+    call GetItemIndexFromID
+    ld b, h
+    ld c, l
+    ld hl, .get_nature
+    ld de, 3
+    call IsInWordArray
+    inc hl
+    ld c, [hl]
+    ret c
+    ld a, MON_NATURE
+    call GetPartyParamLocation
+    ld a, [hl]
+    and ~NATURE_MASK
+    or c
+    ld [hl], a
+	call Play_SFX_FULL_HEAL
+    ld a, PARTYMENUTEXT_NATURE_TEXT
+    ld [wPartyMenuActionText], a
+    call ItemActionTextWaitButton
+    call UseDisposableItem
+    jp ClearPalettes
+
+.get_nature
+    dwb HARDY_MINT, HARDY
+    dwb LONELY_MINT, LONELY
+    dwb BRAVE_MINT, BRAVE
+    dwb ADAMANT_MINT, ADAMANT
+    dwb NAUGHTY_MINT, NAUGHTY
+    dwb BOLD_MINT, BOLD
+    dwb DOCILE_MINT, DOCILE
+    dwb RELAXED_MINT, RELAXED
+    dwb IMPISH_MINT, IMPISH
+    dwb LAX_MINT, LAX
+    dwb TIMID_MINT, TIMID
+    dwb HASTY_MINT, HASTY
+    dwb SERIOUS_MINT, SERIOUS
+    dwb JOLLY_MINT, JOLLY
+    dwb NAIVE_MINT, NAIVE
+    dwb MODEST_MINT, MODEST
+    dwb MILD_MINT, MILD
+    dwb QUIET_MINT, QUIET
+    dwb BASHFUL_MINT, BASHFUL
+    dwb RASH_MINT, RASH
+    dwb CALM_MINT, CALM
+    dwb GENTLE_MINT, GENTLE
+    dwb SASSY_MINT, SASSY
+    dwb CAREFUL_MINT, CAREFUL
+    dwb QUIRKY_MINT, QUIRKY
+    db -1
+	
+Mint_ExitMenu:
+; wItemEffectSucceeded of 0 means it was canceled
+; it's set to 1 by default before calling PinkanBerry
+	xor a
+	ld [wItemEffectSucceeded], a
+	jp ClearPalettes
 
 PokeFluteEffect:
 	ld a, [wBattleMode]

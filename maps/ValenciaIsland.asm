@@ -196,6 +196,15 @@ ValenciaYoungsterScript:
 	giveitem GOOD_ROD
 	giveitem SUPER_ROD
 	giveitem HM_ROCK_SMASH
+	giveitem LONELY_MINT, 5
+	giveitem ADAMANT_MINT, 5
+	giveitem NAUGHTY_MINT, 5
+	giveitem BRAVE_MINT, 5
+	giveitem BOLD_MINT, 5
+	giveitem IMPISH_MINT, 5
+	giveitem LAX_MINT, 5
+	giveitem RELAXED_MINT, 5
+	giveitem MODEST_MINT, 5
 	givemoney YOUR_MONEY, 999999
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_PHONE_CARD
