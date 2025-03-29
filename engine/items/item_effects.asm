@@ -2066,59 +2066,60 @@ INCLUDE "data/items/x_stats.asm"
 	; jp ClearPalettes
 	
 MintEffect:
-    ld b, PARTYMENUACTION_HEALING_ITEM
-    call UseItem_SelectMon
-    jr c, Mint_ExitMenu
-    ld a, [wCurItem]
-    call GetItemIndexFromID
-    ld b, h
-    ld c, l
-    ld hl, .get_nature
-    ld de, 3
-    call IsInWordArray
-    inc hl
-    ld c, [hl]
-    ret c
-    ld a, MON_NATURE
-    call GetPartyParamLocation
-    ld a, [hl]
-    and ~NATURE_MASK
-    or c
-    ld [hl], a
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	jr c, Mint_ExitMenu
+	ld a, [wCurItem]
+	call GetItemIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, .get_nature
+	ld de, 3
+	call IsInWordArray
+	inc hl
+	inc hl
+	ld c, [hl]
+	ret nc
+	ld a, MON_NATURE
+	call GetPartyParamLocation
+	ld a, [hl]
+	and ~NATURE_MASK
+	or c
+	ld [hl], a
 	call Play_SFX_FULL_HEAL
-    ld a, PARTYMENUTEXT_NATURE_TEXT
-    ld [wPartyMenuActionText], a
-    call ItemActionTextWaitButton
-    call UseDisposableItem
-    jp ClearPalettes
+	ld a, PARTYMENUTEXT_NATURE_TEXT
+	ld [wPartyMenuActionText], a
+	call ItemActionTextWaitButton
+	call UseDisposableItem
+	jp ClearPalettes
 
 .get_nature
-    dwb HARDY_MINT, HARDY
-    dwb LONELY_MINT, LONELY
-    dwb BRAVE_MINT, BRAVE
-    dwb ADAMANT_MINT, ADAMANT
-    dwb NAUGHTY_MINT, NAUGHTY
-    dwb BOLD_MINT, BOLD
-    dwb DOCILE_MINT, DOCILE
-    dwb RELAXED_MINT, RELAXED
-    dwb IMPISH_MINT, IMPISH
-    dwb LAX_MINT, LAX
-    dwb TIMID_MINT, TIMID
-    dwb HASTY_MINT, HASTY
-    dwb SERIOUS_MINT, SERIOUS
-    dwb JOLLY_MINT, JOLLY
-    dwb NAIVE_MINT, NAIVE
-    dwb MODEST_MINT, MODEST
-    dwb MILD_MINT, MILD
-    dwb QUIET_MINT, QUIET
-    dwb BASHFUL_MINT, BASHFUL
-    dwb RASH_MINT, RASH
-    dwb CALM_MINT, CALM
-    dwb GENTLE_MINT, GENTLE
-    dwb SASSY_MINT, SASSY
-    dwb CAREFUL_MINT, CAREFUL
-    dwb QUIRKY_MINT, QUIRKY
-    db -1
+	dwb HARDY_MINT, HARDY
+	dwb LONELY_MINT, LONELY
+	dwb BRAVE_MINT, BRAVE
+	dwb ADAMANT_MINT, ADAMANT
+	dwb NAUGHTY_MINT, NAUGHTY
+	dwb BOLD_MINT, BOLD
+	dwb DOCILE_MINT, DOCILE
+	dwb RELAXED_MINT, RELAXED
+	dwb IMPISH_MINT, IMPISH
+	dwb LAX_MINT, LAX
+	dwb TIMID_MINT, TIMID
+	dwb HASTY_MINT, HASTY
+	dwb SERIOUS_MINT, SERIOUS
+	dwb JOLLY_MINT, JOLLY
+	dwb NAIVE_MINT, NAIVE
+	dwb MODEST_MINT, MODEST
+	dwb MILD_MINT, MILD
+	dwb QUIET_MINT, QUIET
+	dwb BASHFUL_MINT, BASHFUL
+	dwb RASH_MINT, RASH
+	dwb CALM_MINT, CALM
+	dwb GENTLE_MINT, GENTLE
+	dwb SASSY_MINT, SASSY
+	dwb CAREFUL_MINT, CAREFUL
+	dwb QUIRKY_MINT, QUIRKY
+	db -1
 	
 Mint_ExitMenu:
 ; wItemEffectSucceeded of 0 means it was canceled
