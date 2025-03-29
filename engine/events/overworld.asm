@@ -1569,6 +1569,7 @@ Script_NotEvenANibble:
 	applymovement PLAYER, .Movement_RestoreRod
 	writetext RodBiteText
 	callasm PutTheRodAway
+	opentext
 	callasm FishItemEncounter
 	iffalse .line_snapped
 	writetext FishedAnItemText
