@@ -107,8 +107,8 @@ RockItemEncounter:
     inc a
     jr z, .done
     ld a, [hli]
-    ld l, [hl]
-    ld h, a
+    ld h, [hl]
+    ld l, a
     call GetItemIDFromIndex
 .done
     ld [wScriptVar], a
