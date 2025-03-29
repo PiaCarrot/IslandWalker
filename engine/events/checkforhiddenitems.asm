@@ -142,43 +142,34 @@ RockItemEncounter:
 	
 FishItemEncounter:
 	ld a, [wFishingRodUsed]
-	cp $0
-	jr z, .OldRodItems
-	cp $1
-	jr z, .GoodRodItems
-	cp $2
-	jr z, .SuperRodItems
-	cp $3
-	jr z, .ItemfinderRodItems
-.OldRodItems
+	and a
 	ld hl, .OldRodItemTable
-	jr .continue
-.GoodRodItems
+	jr z, .OldRodItems
+	dec a
 	ld hl, .GoodRodItemTable
-	jr .continue
-.SuperRodItems
+	jr z, .GoodRodItems
+	dec a
 	ld hl, .SuperRodItemTable
-	jr .continue
-.ItemfinderRodItems
+	jr z, .SuperRodItems
 	ld hl, .ItemfinderRodItemTable
 .continue
 	call Random
 .loop
-    sub [hl]
-    jr c, .ok
-    inc hl
-    inc hl
-    inc hl
-    jr .loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	inc hl
+	jr .loop
 
 .ok
-    ld a, [hli]
-    inc a
-    jr z, .done
-    ld a, [hli]
-    ld h, [hl]
-    ld l, a
-    call GetItemIDFromIndex
+	ld a, [hli]
+	inc a
+	jr z, .done
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call GetItemIDFromIndex
 .done
     ld [wScriptVar], a
     ret
