@@ -164,20 +164,24 @@ FishItemEncounter:
 .continue
 	call Random
 .loop
-	sub [hl]
-	jr c, .ok
-	inc hl
-	inc hl
-	jr .loop
+    sub [hl]
+    jr c, .ok
+    inc hl
+    inc hl
+    inc hl
+    jr .loop
 
 .ok
-	ld a, [hli]
-	inc a
-	jr z, .done
-	ld a, [hli]
+    ld a, [hli]
+    inc a
+    jr z, .done
+    ld a, [hli]
+    ld h, [hl]
+    ld l, a
+    call GetItemIDFromIndex
 .done
-	ld [wScriptVar], a
-	ret
+    ld [wScriptVar], a
+    ret
 	
 .OldRodItemTable:
 	dbw 1, PEARL
@@ -250,17 +254,21 @@ TreeItemEncounter:
 .continue
 	call Random
 .loop
-	sub [hl]
-	jr c, .ok
-	inc hl
-	inc hl
-	jr .loop
+    sub [hl]
+    jr c, .ok
+    inc hl
+    inc hl
+    inc hl
+    jr .loop
 
 .ok
-	ld a, [hli]
-	inc a
-	jr z, .done
-	ld a, [hli]
+    ld a, [hli]
+    inc a
+    jr z, .done
+    ld a, [hli]
+    ld h, [hl]
+    ld l, a
+    call GetItemIDFromIndex
 .done
 	ld [wScriptVar], a
 	ret
