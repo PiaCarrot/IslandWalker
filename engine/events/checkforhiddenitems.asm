@@ -144,13 +144,13 @@ FishItemEncounter:
 	ld a, [wFishingRodUsed]
 	and a
 	ld hl, .OldRodItemTable
-	jr z, .OldRodItems
+	jr z, .continue
 	dec a
 	ld hl, .GoodRodItemTable
-	jr z, .GoodRodItems
+	jr z, .continue
 	dec a
 	ld hl, .SuperRodItemTable
-	jr z, .SuperRodItems
+	jr z, .continue
 	ld hl, .ItemfinderRodItemTable
 .continue
 	call Random
@@ -227,21 +227,18 @@ FishItemEncounter:
 	db -1
 
 TreeItemEncounter:
-	ld a, [wMapGroup]
+    ld a, [wMapGroup]
 	cp MAP_MIKAN_ISLAND
-	jr z, .checkmikanmaps
-	jr .notspecialtree
-.checkmikanmaps
-	ld a, [wMapNumber]
-	cp MAP_MIKAN_ISLAND
-	jr z, .bambootrees
-	cp MAP_MIKAN_THICKET
-	jr z, .bambootrees
+	jr nz, .notspecialtree
+    ld a, [wMapNumber]
+    cp MAP_MIKAN_THICKET
+    ld hl, .BambooTreeItems
+    jr z, .continue
+    cp MAP_MIKAN_ISLAND
+    ld hl, .BambooTreeItems
+    jr z, .continue
 .notspecialtree
 	ld hl, .TreeItems
-	jr .continue
-.bambootrees
-	ld hl, .BambooTreeItems
 .continue
 	call Random
 .loop
