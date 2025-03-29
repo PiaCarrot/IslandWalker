@@ -65,8 +65,8 @@ MikanThicket_MapEvents:
 
 	def_bg_events
 	bg_event 26,  6, BGEVENT_ITEM, MikanThicketHiddenTinyBamboo1
-	bg_event 18, 16, BGEVENT_ITEM, MikanThicketHiddenTinyBamboo2
-	bg_event  0, 14, BGEVENT_ITEM, MikanThicketHiddenTinyBamboo3
+	bg_event 25, 24, BGEVENT_ITEM, MikanThicketHiddenTinyBamboo2
+	bg_event 12,  9, BGEVENT_ITEM, MikanThicketHiddenTinyBamboo3
 	bg_event 28, 10, BGEVENT_ITEM, MikanThicketHiddenBigBamboo1
 	bg_event  6, 19, BGEVENT_ITEM, MikanThicketHiddenBigBamboo2
 	bg_event 25, 14, BGEVENT_ITEM, MikanThicketHiddenNugget

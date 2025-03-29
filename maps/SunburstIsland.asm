@@ -359,7 +359,7 @@ SunburstIsland_MapEvents:
 	bg_event 25, 31, BGEVENT_READ, SunburstArtisansCaveSign
 	bg_event 15,  9, BGEVENT_READ, SunburstCurioShopSign
 	bg_event  6, 23, BGEVENT_ITEM, SunburstHiddenRareCandy
-	bg_event 12, 44, BGEVENT_ITEM, SunburstHiddenPrettyShell
+	bg_event 23, 38, BGEVENT_ITEM, SunburstHiddenPrettyShell
 	bg_event  8, 39, BGEVENT_ITEM, SunburstHiddenBigMushroom
 	bg_event  0, 15, BGEVENT_ITEM, SunburstHiddenPearl
 	bg_event 21, 13, BGEVENT_ITEM, SunburstHiddenSunStone

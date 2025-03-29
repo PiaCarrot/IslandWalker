@@ -480,8 +480,8 @@ TangeloJungle_MapEvents:
 
 	def_bg_events
 	bg_event 29, 37, BGEVENT_READ, TangeloJungleSign
-	bg_event  8, 24, BGEVENT_ITEM, TangeloJungleHiddenFullHeal
-	bg_event 14, 12, BGEVENT_ITEM, TangeloJungleHiddenTinyMushroom
+	bg_event 23, 23, BGEVENT_ITEM, TangeloJungleHiddenFullHeal
+	bg_event  9, 14, BGEVENT_ITEM, TangeloJungleHiddenTinyMushroom
 	bg_event  7,  7, BGEVENT_ITEM, TangeloJungleHiddenSuperPotion
 
 	def_object_events

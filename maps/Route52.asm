@@ -265,7 +265,7 @@ Route52_MapEvents:
 	def_bg_events
 	bg_event  8, 10, BGEVENT_ITEM, Route52HiddenGreatBall
 	bg_event 21, 30, BGEVENT_ITEM, Route52HiddenPearl
-	bg_event 18, 50, BGEVENT_ITEM, Route52HiddenBurnHeal
+	bg_event  7, 52, BGEVENT_ITEM, Route52HiddenBurnHeal
 	bg_event  7, 35, BGEVENT_READ, Route52Sign
 	bg_event  5, 55, BGEVENT_READ, TrainerTipsRoute52Sign
 

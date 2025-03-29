@@ -190,7 +190,7 @@ Route50_MapEvents:
 	def_bg_events
 	bg_event  3, 47, BGEVENT_READ, Route50Sign
 	bg_event 13, 29, BGEVENT_READ, TrainerTipsRoute50Sign
-	bg_event 12,  4, BGEVENT_ITEM, Route50HiddenPokeball
+	bg_event  9, 16, BGEVENT_ITEM, Route50HiddenPokeball
 	bg_event 16, 48, BGEVENT_ITEM, Route50HiddenPrettyShell
 
 	def_object_events

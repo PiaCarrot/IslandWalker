@@ -88,7 +88,7 @@ RockItemEncounter:
 	jr nz, .not_altering_cave
     ld a, [wMapNumber]
     cp MAP_ALTERING_CAVE
-    ld hl, .LoadSpecialRockItems
+    ld hl, .LoadAlteringCaveRockItems
     jr z, .continue
 .not_altering_cave
     ld hl, .RockItems
@@ -114,30 +114,30 @@ RockItemEncounter:
     ld [wScriptVar], a
     ret
     
-.RockItems:
-    dbw 1, MAX_REVIVE
-    dbw 2, THICK_CLUB
-    dbw 4, NUGGET
-    dbw 6, STAR_PIECE
-    dbw 12, BIG_PEARL
-    dbw 18, ETHER
-    dbw 24, HARD_STONE
-    dbw 24, SOFT_SAND
-    dbw 48, PEARL
-    dbw 64, BRICK_PIECE
+.LoadAlteringCaveRockItems:
+    dbw  1, HUGE_DIAMOND
+    dbw  2, MOON_STONE
+    dbw 14, STAR_PIECE
+    dbw 20, ETHER
+    dbw 25, RED_SHARD
+    dbw 25, GREEN_SHARD
+    dbw 25, BLUE_SHARD
+    dbw 25, YELLOW_SHARD
+    dbw 51, REVIVE
+    dbw 64, STARDUST
     db -1
     
-.LoadSpecialRockItems:
-    dbw 1, RARE_CANDY
-    dbw 2, POTION ;SHINY_STONE
-    dbw 4, POTION ;DAWN_STONE
-    dbw 6, POTION ;DUSK_STONE
-    dbw 12, THUNDERSTONE
-    dbw 18, LEAF_STONE
-    dbw 24, WATER_STONE
-    dbw 24, FIRE_STONE
-    dbw 48, SUN_STONE
-    dbw 64, MOON_STONE
+.RockItems:
+	dbw  7, MAX_REVIVE
+    dbw 14, RARE_BONE
+    dbw 21, MAX_ETHER
+    dbw 21, HARD_STONE
+    dbw 21, SOFT_SAND
+    dbw 28, HEART_SCALE
+    dbw 28, ETHER
+    dbw 35, STARDUST
+    dbw 35, BRICK_PIECE
+    dbw 42, REVIVE
     db -1
 	
 FishItemEncounter:
@@ -262,24 +262,29 @@ TreeItemEncounter:
 	ret
 	
 .TreeItems:
-	dbw 16, BLK_APRICORN
-	dbw 16, RED_APRICORN
-	dbw 16, BLU_APRICORN
-	dbw 16, YLW_APRICORN
-	dbw 16, GRN_APRICORN
-	dbw 16, WHT_APRICORN
-	dbw 16, PNK_APRICORN
+	dbw 1, LEAF_STONE
+	dbw 1, MIRACLE_SEED
+	dbw 2, GOLD_LEAF
+	dbw 4, SILVER_LEAF
+	dbw 8, BLK_APRICORN
+	dbw 8, RED_APRICORN
+	dbw 8, BLU_APRICORN
+	dbw 8, YLW_APRICORN
+	dbw 8, GRN_APRICORN
+	dbw 8, WHT_APRICORN
+	dbw 8, PNK_APRICORN
 	db -1
 	
 .BambooTreeItems:
-	dbw 1, LARGE_JADE
-	dbw 1, BIG_BAMBOO
-	dbw 2, SPIDER_SILK
-	dbw 4, BIG_BAMBOO
-	dbw 6, SPIDER_SILK
+	dbw 1, LEADER_CREST
+	dbw 1, MIRACLE_SEED
+	dbw 2, GOLD_LEAF
+	dbw 4, SILVER_LEAF
 	dbw 8, BIG_BAMBOO
-	dbw 12, TINY_BAMBOO
-	dbw 12, SPIDER_SILK
-	dbw 24, TINY_BAMBOO
-	dbw 48, TINY_BAMBOO
+	dbw 8, TINY_BAMBOO
+	dbw 8, BIG_BAMBOO
+	dbw 8, TINY_BAMBOO
+	dbw 8, TINY_BAMBOO
+	dbw 8, BIG_BAMBOO
+	dbw 8, TINY_BAMBOO
 	db -1

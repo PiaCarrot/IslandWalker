@@ -45,7 +45,7 @@ ItemEffects1:
 	dw EvoStoneEffect      ; WATER_STONE
 	dw NoEffect            ; ITEM_19
 	dw NoEffect            ; LUCKY_PUNCH
-	dw XAccuracyEffect     ; X_ACCURACY
+	dw XItemEffect         ; X_ACCURACY
 	dw EvoStoneEffect      ; LEAF_STONE
 	dw NoEffect            ; METAL_POWDER
 	dw PokeDollEffect      ; POKE_DOLL
@@ -187,6 +187,7 @@ ItemEffects1:
 	dw NoEffect            ; LOVELY_BLOCK
 	dw NoEffect            ; CRUNCHYBLOCK
 	dw NoEffect            ; AURORA_ORB
+	dw XItemEffect         ; X_EVADE
 .IndirectEnd:
 
 ItemEffectsKeyItems:
@@ -420,6 +421,11 @@ ItemEffectsMedicineItems:
 	dw MintEffect ; QUIRKY_MINT
 	dw AbilityUp ; ABILITY_UP
 	dw PinkCure ; PINK_CURE
+	; dw RareCandyEffect ; EXP_CANDY_XS
+	; dw RareCandyEffect ; EXP_CANDY_S
+	; dw RareCandyEffect ; EXP_CANDY_M
+	; dw RareCandyEffect ; EXP_CANDY_L
+	; dw RareCandyEffect ; EXP_CANDY_XL
 .IndirectEnd:
 
 ItemEffectsValuableItems:
@@ -469,6 +475,7 @@ ItemEffectsValuableItems:
 	dw NoEffect            ; GOLD_STATUE
 	dw NoEffect            ; HONEY
 	dw NoEffect            ; SWEET_HONEY
+	dw NoEffect            ; CANDYTRUFFLE
 .IndirectEnd:
 
 PokeBallEffect:
@@ -1960,13 +1967,6 @@ UseRepel:
 RepelUsedEarlierIsStillInEffectText:
 	text_far _RepelUsedEarlierIsStillInEffectText
 	text_end
-
-XAccuracyEffect:
-	ld hl, wPlayerSubStatus4
-	bit SUBSTATUS_X_ACCURACY, [hl]
-	jmp nz, WontHaveAnyEffect_NotUsedMessage
-	set SUBSTATUS_X_ACCURACY, [hl]
-	jmp UseItemText
 
 PokeDollEffect:
 	ld a, [wBattleMode]

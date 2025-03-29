@@ -158,6 +158,7 @@
 	const LOVELY_BLOCK ; 00E1
 	const CRUNCHYBLOCK ; 00E2
 	const AURORA_ORB
+	const X_EVADE
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.
@@ -398,6 +399,11 @@ DEF FIRST_MEDICINE_ITEM EQU const_value
 	const QUIRKY_MINT
 	const ABILITY_UP
 	const PINK_CURE
+	; const EXP_CANDY_XS
+	; const EXP_CANDY_S
+	; const EXP_CANDY_M
+	; const EXP_CANDY_L
+	; const EXP_CANDY_XL
 DEF NUM_MEDICINE_ITEM_POCKET EQU const_value - FIRST_MEDICINE_ITEM
 assert NUM_MEDICINE_ITEM_POCKET <= $ff
 
@@ -449,6 +455,7 @@ DEF FIRST_VALUABLE_ITEM EQU const_value
 	const GOLD_STATUE
 	const HONEY
 	const SWEET_HONEY
+	const CANDYTRUFFLE
 DEF NUM_VALUABLE_ITEM_POCKET EQU const_value - FIRST_VALUABLE_ITEM
 assert NUM_VALUABLE_ITEM_POCKET <= $ff
 

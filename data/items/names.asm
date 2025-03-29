@@ -152,6 +152,7 @@ ItemNames::
 	li "LOVELY BLOCK" ; 00DC
 	li "CRUNCHYBLOCK" ; 00DC
 	li "AURORA ORB" ; 00DC
+	li "X EVADE" ; 00DC
 	assert_list_length NUM_ITEM_POCKET
 	
 KeyItemNames::
@@ -389,6 +390,11 @@ MedicineItemNames::
 	li "QUIRKY MINT"
 	li "ABILITY UP"
 	li "PINK CURE"
+	; li "EXP CANDY XS"
+	; li "EXP CANDY S"
+	; li "EXP CANDY M"
+	; li "EXP CANDY L"
+	; li "EXP CANDY XL"
 	assert_list_length NUM_MEDICINE_ITEM_POCKET
 
 ValuableItemNames::
@@ -439,4 +445,5 @@ ValuableItemNames::
 	li "GOLD STATUE"
 	li "HONEY"
 	li "SWEET HONEY"
+	li "CANDYTRUFFLE"
 	assert_list_length NUM_VALUABLE_ITEM_POCKET

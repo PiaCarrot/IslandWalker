@@ -512,8 +512,8 @@ MandarinNorth_MapEvents:
 	bg_event 24, 20, BGEVENT_READ, MandarinNorthCutMasterSign
 	bg_event 23,  9, BGEVENT_READ, MandarinNorthNameRaterSign
 	bg_event 10,  8, BGEVENT_READ, MandarinNorthRadioTowerSign
-	bg_event  6, 24, BGEVENT_ITEM, MandarinNorthHiddenHyperPotion
-	bg_event 10, 10, BGEVENT_ITEM, MandarinNorthHiddenDuskBall
+	bg_event  2, 16, BGEVENT_ITEM, MandarinNorthHiddenHyperPotion
+	bg_event 10, 21, BGEVENT_ITEM, MandarinNorthHiddenDuskBall
 
 	def_object_events
 	object_event 14,  8, SPRITE_LOOKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MANDARIN_NORTH_MET_LOOKER

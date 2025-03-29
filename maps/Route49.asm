@@ -294,8 +294,8 @@ Route49_MapEvents:
 	def_bg_events
 	bg_event 31, 11, BGEVENT_READ, Route49Sign
 	bg_event 23, 15, BGEVENT_READ, TrainerTipsRoute49Sign
-	bg_event 18,  6, BGEVENT_ITEM, Route49HiddenPotion
-	bg_event 20, 38, BGEVENT_ITEM, Route49HiddenStarPiece
+	bg_event 16, 16, BGEVENT_ITEM, Route49HiddenPotion
+	bg_event  3, 44, BGEVENT_ITEM, Route49HiddenStarPiece
 	bg_event  6, 31, BGEVENT_ITEM, Route49HiddenRevive
 
 	def_object_events

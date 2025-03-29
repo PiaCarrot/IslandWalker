@@ -167,6 +167,7 @@ ItemDescriptions1:
 	dw BlockDesc    ; 00DB
 	dw BlockDesc    ; 00DB
 	dw AuroraOrbDesc    ; 00DB
+	dw XEvadeDesc    ; 00DB
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -400,6 +401,11 @@ ItemDescriptionsMedicine:
 	dw MintDesc
 	dw AbilityUpDesc
 	dw PinkCureDesc
+	; dw ExpCandyXSDesc
+	; dw ExpCandySDesc
+	; dw ExpCandyMDesc
+	; dw ExpCandyLDesc
+	; dw ExpCandyXLDesc
 .IndirectEnd:
 
 ItemDescriptionsValuable:
@@ -449,6 +455,7 @@ ItemDescriptionsValuable:
 	dw GoldStatueDesc
 	dw HoneyDesc
 	dw SweetHoneyDesc
+	dw CandyTruffleDesc
 .IndirectEnd:
 
 BrightpowderDesc:
@@ -1714,3 +1721,31 @@ SweetHoneyDesc:
 PinkCureDesc:
 	db   "Reverses effect of"
 	next "PINKAN BERRY.@"
+
+XEvadeDesc:
+	db   "Raises EVASION."
+	next "(1 BTL)@"
+
+CandyTruffleDesc:
+	db   "A sweet truffle."
+	next "Sell low.@"
+
+; ExpCandyXSDesc:
+	; db   "Grants a tiny"
+	; next "amount of EXP.@"
+
+; ExpCandySDesc:
+	; db   "Grants a small"
+	; next "amount of EXP.@"
+
+; ExpCandyMDesc:
+	; db   "Grants a decent"
+	; next "amount of EXP.@"
+
+; ExpCandyLDesc:
+	; db   "Grants a large"
+	; next "amount of EXP.@"
+
+; ExpCandyXLDesc:
+	; db   "Grants a huge"
+	; next "amount of EXP.@"

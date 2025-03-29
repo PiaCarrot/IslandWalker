@@ -273,7 +273,7 @@ MikanIsland_MapEvents:
 	bg_event 13, 19, BGEVENT_READ, MikanIslandGymSign
 	bg_event  0,  4, BGEVENT_READ, MikanIslandAriaSign
 	bg_event 29, 26, BGEVENT_READ, MikanIslandBerryMasterSign
-	bg_event  6, 18, BGEVENT_ITEM, MikanIslandHiddenRevive
+	bg_event 11, 12, BGEVENT_ITEM, MikanIslandHiddenRevive
 	bg_event 35, 12, BGEVENT_ITEM, MikanIslandHiddenSuperPotion
 	bg_event  2, 24, BGEVENT_READ, MikanIslandRanchSign
 
