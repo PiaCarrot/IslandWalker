@@ -228,7 +228,7 @@ FishItemEncounter:
 
 TreeItemEncounter:
     ld a, [wMapGroup]
-	cp MAP_MIKAN_ISLAND
+	cp GROUP_MIKAN_ISLAND
 	jr nz, .notspecialtree
     ld a, [wMapNumber]
     cp MAP_MIKAN_THICKET
