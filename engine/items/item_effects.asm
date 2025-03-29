@@ -418,7 +418,7 @@ ItemEffectsMedicineItems:
 	dw MintEffect ; DOCILE_MINT
 	dw MintEffect ; BASHFUL_MINT
 	dw MintEffect ; QUIRKY_MINT
-	dw NoEffect ; ABILITY_UP
+	dw AbilityUp ; ABILITY_UP
 	dw PinkCure ; PINK_CURE
 .IndirectEnd:
 
@@ -2095,6 +2095,44 @@ PinkCure:
 	call UseDisposableItem
 	jp ClearPalettes
 	
+AbilityUp:
+; Choose a Pokémon to use it on
+    ld b, PARTYMENUACTION_HEALING_ITEM
+    call UseItem_SelectMon
+; Exit early if the player canceled
+    jp c, AbilityUp_ExitMenu
+    
+; Is it Ability1?
+    ld a, MON_ABILITY
+    call GetPartyParamLocation
+    ld a, [hl]
+    and ABILITY_MASK
+    jp z, .ChangeToAbility2
+    
+; Change to Ability1
+    ld a, [hl]
+    and ~ABILITY_MASK ; reset ability bits only
+    ld [hl], a
+    jp .finish
+    
+.ChangeToAbility2
+    ld a, [hl]
+    and ~ABILITY_MASK
+    or %00100000
+    ld [hl], a    
+
+.finish
+; Play a sound effect
+    call Play_SFX_FULL_HEAL
+; Describe the effect
+    ld a, PARTYMENUTEXT_CHANGE_ABILITY
+    ld [wPartyMenuActionText], a
+    call ItemActionTextWaitButton
+; Use up the ABILITY UP
+    call UseDisposableItem
+    jp ClearPalettes	
+
+	
 MintEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
@@ -2153,6 +2191,7 @@ MintEffect:
 	
 PinkanBerry_ExitMenu:
 PinkCure_ExitMenu:
+AbilityUp_ExitMenu:
 Mint_ExitMenu:
 ; wItemEffectSucceeded of 0 means it was canceled
 ; it's set to 1 by default before calling PinkanBerry

@@ -752,6 +752,7 @@ PrintPartyMenuActionText:
 	dw .NatureChangedText
 	dw .BecamePinkText
 	dw .CuredPinkText
+	dw .ChangedAbilityText
 
 .RecoveredSomeHPText:
 	text_far _RecoveredSomeHPText
@@ -803,6 +804,10 @@ PrintPartyMenuActionText:
 
 .CuredPinkText:
 	text_far _CuredPinkText
+	text_end
+
+.ChangedAbilityText:
+	text_far _ChangedAbilityText
 	text_end
 
 .PrintText:

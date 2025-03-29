@@ -121,6 +121,12 @@ _CuredPinkText::
 	line "its PINKNESS!"
 	done
 
+_ChangedAbilityText::
+	text_ram wStringBuffer1
+	text " changed"
+	line "ABILITIES!"
+	done
+
 _OakTimeWokeUpText::
 	text "<……><……><……><……><……><……>"
 	line "<……><……><……><……><……><……>"
