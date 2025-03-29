@@ -132,7 +132,7 @@ DoBattle:
 	ld hl, wEnemyMonPersonality
 	farcall Check_Entrance_Ability
 	call SetPlayerTurn
-	jr BattleTurn
+	jp BattleTurn
 .enemy_first
 	call SetEnemyTurn
 	ld a, [wEnemyMonSpecies]
@@ -172,7 +172,7 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	ld a, [wLinkMode]
 	and a
 	ld hl, BattleText_WildFled
-	jr z, .print_text
+	jr z, .check_run_away
 
 	ld a, [wBattleResult]
 	and BATTLERESULT_BITMASK
@@ -190,6 +190,17 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	ld a, 1
 	ld [wBattleEnded], a
 	ret
+	
+.check_run_away:
+	ld hl, wEnemyMonPersonality
+	ld a, [wEnemyMonSpecies]
+	ld b, 1
+	ld c, a
+	farcall Check_Flee_Ability
+	ld hl, BattleText_EnemyFled
+	jr z, .print_text
+	farcall Check_Flee_Ability.PrintRunawayText
+	jr .skip_text
 
 BattleTurn:
 .loop
@@ -811,7 +822,24 @@ TryEnemyFlee:
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .Stay
+	
+; We need to check Run Away here
+	ld a, [wEnemyMonSpecies]
+	ld b, 1
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	farcall Check_Flee_Ability
+	jr nz, .run_away_skips
+	
 
+; We also need to check if the player's ability is a trap ability.
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Trap_Ability
+	jr nz, .Stay
+ 
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .Stay
@@ -820,6 +848,7 @@ TryEnemyFlee:
 	and a
 	jr nz, .Stay
 
+.run_away_skips
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP_MASK
 	jr nz, .Stay
@@ -3816,6 +3845,22 @@ TryToRunAwayFromBattle:
 	ld a, [wBattleMode]
 	dec a
 	jmp nz, .cant_run_from_trainer
+	
+; Surpise, the enemy is here!
+	ld a, [wEnemyMonSpecies]
+	ld b, 1
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	farcall Check_Trap_Ability
+	jmp nz, .ability_fleeing_prevented
+	
+; Run Away is guaranteed.
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Flee_Ability
+	jp nz, .fled
 
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
@@ -3919,6 +3964,7 @@ TryToRunAwayFromBattle:
 
 .print_inescapable_text
 	call StdBattleTextbox
+.ability_fleeing_prevented ; We already printed something, just keep going.
 	ld a, TRUE
 	ld [wFailedToFlee], a
 	call LoadTilemapToTempTilemap
@@ -3959,8 +4005,20 @@ TryToRunAwayFromBattle:
 	call WaitPlaySFX
 	pop de
 	call WaitSFX
+	ld a, [wBattleMonSpecies]
+	ld b, 0
+	ld c, a
+	ld hl, wBattleMonPersonality
+	farcall Check_Flee_Ability
+	jr nz, .fled_using_run_away
 	ld hl, BattleText_GotAwaySafely
 	call StdBattleTextbox
+	jr .done_flee
+
+
+.fled_using_run_away
+	farcall Check_Flee_Ability.PrintRunawayText
+.done_flee
 	call WaitSFX
 	call LoadTilemapToTempTilemap
 	scf
@@ -5184,14 +5242,14 @@ BattleMenuPKMN_Loop:
 Battle_StatsScreen:
 	call DisableLCD
 
-	ld hl, vTiles2 tile $43
+	ld hl, vTiles2 tile $31
 	ld de, vTiles0
 	ld bc, $23 tiles
 	rst CopyBytes
 
 	ld hl, vTiles2
 	ld de, vTiles0 tile $23
-	ld bc, $43 tiles
+	ld bc, $31 tiles
 	rst CopyBytes
 
 	call EnableLCD
@@ -5206,13 +5264,13 @@ Battle_StatsScreen:
 	call DisableLCD
 
 	ld hl, vTiles0
-	ld de, vTiles2 tile $43
+	ld de, vTiles2 tile $31
 	ld bc, $23 tiles
 	rst CopyBytes
 
-	ld hl, vTiles0 tile $23
+	ld hl, vTiles0 tile $11
 	ld de, vTiles2
-	ld bc, $43 tiles
+	ld bc, $31 tiles
 	rst CopyBytes
 
 	jmp EnableLCD
@@ -5231,6 +5289,13 @@ TryPlayerSwitch:
 	ld a, [wPlayerWrapCount]
 	and a
 	jr nz, .trapped
+; Check the opponent's ability for things like Arena Trap
+	ld a, [wEnemyMonSpecies]
+	ld b, 1
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	farcall Check_Trap_Ability
+	jr nz, .ability_trapped
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
 	jr z, .try_switch
@@ -5238,6 +5303,7 @@ TryPlayerSwitch:
 .trapped
 	ld hl, BattleText_MonCantBeRecalled
 	call StdBattleTextbox
+.ability_trapped
 	jmp BattleMenuPKMN_Loop
 
 .try_switch
@@ -6363,6 +6429,12 @@ LoadEnemyMon:
 	ld hl, wEnemyMonNature
 	call BattleRandomRange
 	and NATURE_MASK
+	or [hl]
+	ld [hl], a
+	
+; generate personality
+	call BattleRandom
+	and ABILITY_MASK
 	or [hl]
 	ld [hl], a
 

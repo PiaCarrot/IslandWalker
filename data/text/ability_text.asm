@@ -65,3 +65,19 @@ AbilityText_TracedTheAbilityEnemy:
     text_ram wStringBuffer1
     text "!"
     prompt
+	
+AbilityText_RunAway:
+    text "<TARGET>" ; Because the turn swaps, this matters.
+    line "fled using RUN"
+    cont "AWAY!"
+    prompt
+	
+AbilityText_PreventedEscapeAbility: ; OK, because switching and escaping can get hairy with inconsistent GF code, this needs to be called out as such... 
+    text "Enemy @"
+    text_ram wEnemyMonNickname
+    text ""
+    line "prevents escape"
+    cont "with @"
+    text_ram wStringBuffer1
+    text "!"
+    prompt
