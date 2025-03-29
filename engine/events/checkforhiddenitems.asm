@@ -83,57 +83,62 @@ CheckForHiddenItems:
 	ret
 	
 RockItemEncounter:
-	ld a, [wMapNumber]
-	cp MAP_ALTERING_CAVE
-	jr z, .SpecialRockItems
-	ld hl, .RockItems
+    ld a, [wMapGroup]
+	cp GROUP_ALTERING_CAVE
+	jr nz, .not_altering_cave
+    ld a, [wMapNumber]
+    cp MAP_ALTERING_CAVE
+    ld hl, .LoadSpecialRockItems
+    jr z, .continue
+.not_altering_cave
+    ld hl, .RockItems
 .continue
-	call Random
+    call Random
 .loop
-	sub [hl]
-	jr c, .ok
-	inc hl
-	inc hl
-	jr .loop
+    sub [hl]
+    jr c, .ok
+    inc hl
+    inc hl
+    inc hl
+    jr .loop
 
 .ok
-	ld a, [hli]
-	inc a
-	jr z, .done
-	ld a, [hli]
+    ld a, [hli]
+    inc a
+    jr z, .done
+    ld a, [hli]
+    ld l, [hl]
+    ld h, a
+    call GetItemIDFromIndex
 .done
-	ld [wScriptVar], a
-	ret
-	
+    ld [wScriptVar], a
+    ret
+    
 .RockItems:
-	dbw 1, MAX_REVIVE
-	dbw 2, THICK_CLUB
-	dbw 4, NUGGET
-	dbw 6, STAR_PIECE
-	dbw 12, BIG_PEARL
-	dbw 18, ETHER
-	dbw 24, HARD_STONE
-	dbw 24, SOFT_SAND
-	dbw 48, PEARL
-	dbw 64, BRICK_PIECE
-	db -1
-	
-.SpecialRockItems:
-	ld hl, .LoadSpecialRockItems
-	jr .continue
-	
+    dbw 1, MAX_REVIVE
+    dbw 2, THICK_CLUB
+    dbw 4, NUGGET
+    dbw 6, STAR_PIECE
+    dbw 12, BIG_PEARL
+    dbw 18, ETHER
+    dbw 24, HARD_STONE
+    dbw 24, SOFT_SAND
+    dbw 48, PEARL
+    dbw 64, BRICK_PIECE
+    db -1
+    
 .LoadSpecialRockItems:
-	dbw 1, RARE_CANDY
-	dbw 2, POTION ;SHINY_STONE
-	dbw 4, POTION ;DAWN_STONE
-	dbw 6, POTION ;DUSK_STONE
-	dbw 12, THUNDERSTONE
-	dbw 18, LEAF_STONE
-	dbw 24, WATER_STONE
-	dbw 24, FIRE_STONE
-	dbw 48, SUN_STONE
-	dbw 64, MOON_STONE
-	db -1
+    dbw 1, RARE_CANDY
+    dbw 2, POTION ;SHINY_STONE
+    dbw 4, POTION ;DAWN_STONE
+    dbw 6, POTION ;DUSK_STONE
+    dbw 12, THUNDERSTONE
+    dbw 18, LEAF_STONE
+    dbw 24, WATER_STONE
+    dbw 24, FIRE_STONE
+    dbw 48, SUN_STONE
+    dbw 64, MOON_STONE
+    db -1
 	
 FishItemEncounter:
 	ld a, [wFishingRodUsed]
