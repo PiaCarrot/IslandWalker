@@ -399,6 +399,7 @@ ItemDescriptionsMedicine:
 	dw MintDesc
 	dw MintDesc
 	dw AbilityUpDesc
+	dw PinkCureDesc
 .IndirectEnd:
 
 ItemDescriptionsValuable:
@@ -1709,3 +1710,7 @@ HoneyDesc:
 SweetHoneyDesc:
 	db   "Prized for flavor."
 	next "Sell high.@"
+
+PinkCureDesc:
+	db   "Reverses effect of"
+	next "PINKAN BERRY.@"

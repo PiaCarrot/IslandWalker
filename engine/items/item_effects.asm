@@ -350,7 +350,7 @@ ItemEffectsBerries:
 	dw NoEffect            ; KRAU_BERRY   KUO
 	dw NoEffect            ; LIGARC_BERRY NINIKU
 	dw NoEffect            ; TOTAPO_BERRY TOPO
-	dw NoEffect            ; PINKAN_BERRY
+	dw PinkanBerry         ; PINKAN_BERRY
 .IndirectEnd:
 
 ItemEffectsMedicineItems:
@@ -419,6 +419,7 @@ ItemEffectsMedicineItems:
 	dw MintEffect ; BASHFUL_MINT
 	dw MintEffect ; QUIRKY_MINT
 	dw NoEffect ; ABILITY_UP
+	dw PinkCure ; PINK_CURE
 .IndirectEnd:
 
 ItemEffectsValuableItems:
@@ -2034,36 +2035,65 @@ XItemEffect:
 
 INCLUDE "data/items/x_stats.asm"
 
-; MintEffect:
-;MON_NATURE
-;Choose a Pokémon to use it on
-	; ld b, PARTYMENUACTION_HEALING_ITEM
-	; call UseItem_SelectMon
-;Exit early if the player canceled
-	; jr c, Mint_ExitMenu
+PinkanBerry:
+; Choose a Pokémon to use it on
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+; Exit early if the player canceled
+	jp c, PinkanBerry_ExitMenu
 
-;Mint has no effect if the Nature is the same
-	; ld a, MON_NATURE
-	; call GetPartyParamLocation
-	; ld a, [hl]
-	; and NATURE_MASK
-	; jp nz, NoEffectMessage
+; Pinkan Berry has no effect on already-pink mons
+	ld a, MON_PINK
+	call GetPartyParamLocation
+	ld a, [hl]
+	and PINK_MASK
+	jp nz, NoEffectMessage
 
-;Change the Nature
-	; ld a, [hl]
-	; or NATURE_MASK
-	; ld [hl], a
+; Make it pink
+	ld a, [hl]
+	or PINK_MASK
+	ld [hl], a
 
-;Play a sound effect
-	; call Play_SFX_FULL_HEAL
+; Play a sound effect
+	call Play_SFX_FULL_HEAL
 
-;Describe the effect
-	; ld a, PARTYMENUTEXT_NATURE_TEXT
-	; ld [wPartyMenuActionText], a
-	; call ItemActionTextWaitButton
-;Use up the Mint
-	; call UseDisposableItem
-	; jp ClearPalettes
+; Describe the effect
+	ld a, PARTYMENUTEXT_MAKE_PINK
+	ld [wPartyMenuActionText], a
+	call ItemActionTextWaitButton
+; Use up the Pinkan Berry
+	call UseDisposableItem
+	jp ClearPalettes
+	
+PinkCure:
+; Choose a Pokémon to use it on
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+; Exit early if the player canceled
+	jp c, PinkCure_ExitMenu
+
+; Pink Cure has no effect on not-pink mons
+	ld a, MON_PINK
+	call GetPartyParamLocation
+	ld a, [hl]
+	and PINK_MASK
+	jp z, NoEffectMessage
+
+; Make it not pink
+	ld a, [hl]
+	and $ff - PINK_MASK
+	ld [hl], a
+
+; Play a sound effect
+	call Play_SFX_FULL_HEAL
+
+; Describe the effect
+	ld a, PARTYMENUTEXT_MAKE_NOT_PINK
+	ld [wPartyMenuActionText], a
+	call ItemActionTextWaitButton
+; Use up the Pink Cure
+	call UseDisposableItem
+	jp ClearPalettes
 	
 MintEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -2121,6 +2151,8 @@ MintEffect:
 	dwb QUIRKY_MINT, QUIRKY
 	db -1
 	
+PinkanBerry_ExitMenu:
+PinkCure_ExitMenu:
 Mint_ExitMenu:
 ; wItemEffectSucceeded of 0 means it was canceled
 ; it's set to 1 by default before calling PinkanBerry

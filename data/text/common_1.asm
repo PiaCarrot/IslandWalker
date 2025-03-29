@@ -109,6 +109,18 @@ _NatureChangedText::
 	line "changed!"
 	done
 
+_BecamePinkText::
+	text_ram wStringBuffer1
+	text " turned"
+	line "PINK!"
+	done
+
+_CuredPinkText::
+	text_ram wStringBuffer1
+	text " lost"
+	line "its PINKNESS!"
+	done
+
 _OakTimeWokeUpText::
 	text "<……><……><……><……><……><……>"
 	line "<……><……><……><……><……><……>"

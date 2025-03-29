@@ -116,6 +116,8 @@ DEF NUM_PARTYMENUACTIONS EQU const_value
 	const PARTYMENUTEXT_LEVEL_UP
 	const PARTYMENUTEXT_HEAL_CONFUSION
 	const PARTYMENUTEXT_NATURE_TEXT
+	const PARTYMENUTEXT_MAKE_PINK
+	const PARTYMENUTEXT_MAKE_NOT_PINK
 
 ; Naming types (see engine/menus/naming_screen.asm)
 	const_def

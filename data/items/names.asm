@@ -388,6 +388,7 @@ MedicineItemNames::
 	li "BASHFUL MINT"
 	li "QUIRKY MINT"
 	li "ABILITY UP"
+	li "PINK CURE"
 	assert_list_length NUM_MEDICINE_ITEM_POCKET
 
 ValuableItemNames::

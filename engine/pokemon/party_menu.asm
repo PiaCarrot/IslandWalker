@@ -750,6 +750,8 @@ PrintPartyMenuActionText:
 	dw .GrewToLevelText
 	dw .CameToItsSensesText
 	dw .NatureChangedText
+	dw .BecamePinkText
+	dw .CuredPinkText
 
 .RecoveredSomeHPText:
 	text_far _RecoveredSomeHPText
@@ -793,6 +795,14 @@ PrintPartyMenuActionText:
 
 .NatureChangedText:
 	text_far _NatureChangedText
+	text_end
+
+.BecamePinkText:
+	text_far _BecamePinkText
+	text_end
+
+.CuredPinkText:
+	text_far _CuredPinkText
 	text_end
 
 .PrintText:
