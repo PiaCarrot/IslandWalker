@@ -645,6 +645,10 @@ SECTION "Intro GFX", ROMX
 
 INCLUDE "gfx/intro/intro_gfx.asm"
 
+SECTION "Item Icons", ROMX
+
+INCLUDE "gfx/items.asm"
+
 
 SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
 

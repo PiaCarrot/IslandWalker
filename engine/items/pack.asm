@@ -1566,7 +1566,7 @@ Pack_InitGFX:
 ; Background (blue if male, pink if female)
 	hlcoord 0, 1
 	ld bc, 11 * SCREEN_WIDTH
-	ld a, $24
+	ld a, $29
 	rst ByteFill
 ; This is where the items themselves will be listed.
 	hlcoord 5, 1
@@ -1582,15 +1582,40 @@ Pack_InitGFX:
 	call DrawPocketName
 	call DrawPocketGFX
 	call PlacePackGFX
+; Place the item icon border
+	hlcoord 0, 7
+	ld de, .ItemIconString
+	ld bc, SCREEN_WIDTH - 5
+.loop2
+	ld a, [de]
+	and a
+	jr nz, .continue
+	add hl, bc
+	jr .next
+.continue
+	cp $ff
+	jr z, .ok2
+	ld [hli], a
+.next
+	inc de
+	jr .loop2
+.ok2
 ; Place the textbox for displaying the item description
 	hlcoord 0, SCREEN_HEIGHT - 4 - 2
 	lb bc, 4, SCREEN_WIDTH - 2
 	call Textbox
 	call EnableLCD
 	jmp DrawPackGFX
+	
+.ItemIconString:
+	db $BA, $BB, $BB, $BB, $BC, $0
+	db $BD, $1F, $20, $21, $BD, $0
+	db $BD, $22, $23, $24, $BD, $0
+	db $BD, $25, $26, $27, $BD, $0
+	db $BE, $BB, $BB, $BB, $BF, $ff
 
 PlacePackGFX:
-	hlcoord 0, 5
+	hlcoord 0, 4
 	ld a, $50
 	ld de, SCREEN_WIDTH - 5
 	ld b, 3
@@ -1741,7 +1766,7 @@ ItemsPocketMenuHeader:
 	dbw 0, wNumItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 PC_Mart_ItemsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1756,7 +1781,7 @@ PC_Mart_ItemsPocketMenuHeader:
 	dbw 0, wNumItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 KeyItemsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
