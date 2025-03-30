@@ -18,160 +18,160 @@ UpdateItemIconAndDescription::
 	ret
 	
 ItemIconPointers:
-    dw NoItemIcon
-    dw BrightpowderIcon
-    dw NoItemIcon
-    dw MoonStoneIcon
-    dw EscapeRopeIcon
-    dw RepelIcon
-    dw FireStoneIcon
-    dw ThunderStoneIcon
-    dw WaterStoneIcon
-    dw NoItemIcon
-    dw LuckyPunchIcon
-    dw XAccuracyIcon
-    dw LeafStoneIcon
-    dw BrightpowderIcon
-    dw PokeDollIcon
-    dw XAccuracyIcon
-    dw RepelIcon
-    dw RepelIcon
-    dw XAccuracyIcon
-    dw NoItemIcon
-    dw XAccuracyIcon
-    dw NoItemIcon
-    dw XAccuracyIcon
-    dw XAccuracyIcon
-    dw XAccuracyIcon
-    dw NoItemIcon
-    dw ExpShareIcon
-    dw QuickClawIcon
-    dw BrightpowderIcon
-    dw SharpBeakIcon
-    dw PoisonBarbIcon
-    dw KingsRockIcon
-    dw SilverPowderIcon
-    dw NoItemIcon
-    dw AmuletCoinIcon
-    dw CleanseTagIcon
-    dw MysticWaterIcon
-    dw TwistedSpoonIcon
-    dw BlackbeltIcon
-    dw NoItemIcon
-    dw BlackGlassesIcon
-    dw PinkBowIcon
-    dw StickIcon
-    dw SmokeBallIcon
-    dw NeverMeltIceIcon
-    dw MagnetIcon
-    dw EverStoneIcon
-    dw SpellTagIcon
-    dw MiracleSeedIcon
-    dw ThickClubIcon
-    dw FocusBandIcon
-    dw NoItemIcon
-    dw HardStoneIcon
-    dw LuckyEggIcon
-    dw NoItemIcon
-    dw NoItemIcon
-    dw CharcoalIcon
-    dw ScopeLensIcon
-    dw NoItemIcon
-    dw NoItemIcon
-    dw MetalCoatIcon
-    dw DragonFangIcon
-    dw NoItemIcon
-    dw LeftoversIcon
-    dw NoItemIcon
-    dw NoItemIcon
-    dw NoItemIcon
-    dw DragonScaleIcon
-    dw BerserkGeneIcon
-    dw NoItemIcon
-    dw NoItemIcon
-    dw NoItemIcon
-    dw MailIcon
-    dw NoItemIcon
-    dw MailIcon
-    dw GorgeousBoxIcon
-    dw GorgeousBoxIcon
-    dw SunStoneIcon
-    dw PolkadotBowIcon
-    dw NoItemIcon
-    dw UpGradeIcon
-    dw NoItemIcon
-    dw NoItemIcon
-    dw MailIcon
-    dw MailIcon
-    dw MailIcon
-    dw MailIcon
-    dw MailIcon
-    dw MailIcon
-    dw MailIcon
-    dw MailIcon
-    dw MailIcon
-    dw NoItemIcon
-    dw NoItemIcon
-    dw NoItemIcon
-    dw NoItemIcon
-    dw ShinyStoneIcon
-    dw DuskStoneIcon
-    dw DawnStoneIcon
-    dw IceStoneIcon
-    dw BlkAuguriteIcon
-    dw PeatBlockIcon
-    dw SweetAppleIcon
-    dw SweetAppleIcon
-    dw SweetAppleIcon
-    dw GalarCuffIcon
-    dw GalarWreathIcon
-    dw HolyArmorIcon
-    dw CursedArmorIcon
-    dw ElectirizerIcon
-    dw MagmarizerIcon
-    dw ProtectorIcon
-    dw DubiousDiscIcon
-    dw OvalStoneIcon
-    dw PrismScaleIcon
-    dw RazorClawIcon
-    dw RazorFangIcon
-    dw ReaperClothIcon
-    dw LinkingCordIcon
-    dw FairyFeatherIcon
-    dw BrightpowderIcon
-    dw EvioliteIcon
-    dw SoulDewIcon
-    dw SootheBellIcon
-    dw MirrorHerbIcon
-    dw HerbIcon
-    dw HerbIcon
-    dw HerbIcon
-    dw FullIncenseIcon
-    dw LaxIncenseIcon
-    dw LuckIncenseIcon
-    dw OddIncenseIcon
-    dw PureIncenseIcon
-    dw RockIncenseIcon
-    dw RoseIncenseIcon
-    dw SeaIncenseIcon
-    dw WaveIncenseIcon
-    dw MachoBraceIcon
-    dw PowerAnkletIcon
-    dw PowerBandIcon
-    dw PowerBeltIcon
-    dw PowerBracerIcon
-    dw PowerLensIcon
-    dw PowerWeightIcon
-    dw XAccuracyIcon
-    dw LeaderCrestIcon
-    dw BlockIcon
-    dw BlockIcon
-    dw BlockIcon
-    dw BlockIcon
-    dw BlockIcon
-    dw BlockIcon
-    dw LightBallIcon
-    dw XAccuracyIcon
+    dw NoItemIcon ; NO ITEM
+    dw BrightpowderIcon ; BRIGHTPOWDER
+    dw NoItemIcon ; TOWN_MAP_RED
+    dw MoonStoneIcon ; MOON_STONE
+    dw EscapeRopeIcon ; ESCAPE_ROPE
+    dw RepelIcon ; REPEL
+    dw FireStoneIcon ; FIRE_STONE
+    dw ThunderStoneIcon ; THUNDERSTONE
+    dw WaterStoneIcon ; WATER_STONE
+    dw NoItemIcon ; ITEM_19
+    dw LuckyPunchIcon ; LUCKY_PUNCH
+    dw XAccuracyIcon ; X_ACCURACY
+    dw LeafStoneIcon ; LEAF_STONE
+    dw BrightpowderIcon ; METAL_POWDER
+    dw PokeDollIcon ; POKE_DOLL
+    dw XAccuracyIcon ; GUARD_SPEC
+    dw RepelIcon ; SUPER_REPEL
+    dw RepelIcon ; MAX_REPEL
+    dw XAccuracyIcon ; DIRE_HIT
+    dw NoItemIcon ; ITEM_2D
+    dw XAccuracyIcon ; X_ATTACK
+    dw NoItemIcon ; ITEM_32
+    dw XAccuracyIcon ; X_DEFEND
+    dw XAccuracyIcon ; X_SPEED
+    dw XAccuracyIcon ; X_SP_ATK
+    dw NoItemIcon ; POKE_FLUTE
+    dw ExpShareIcon ; EXP_SHARE
+    dw QuickClawIcon ; QUICK_CLAW
+    dw BrightpowderIcon ; SOFT_SAND
+    dw SharpBeakIcon ; SHARP_BEAK
+    dw PoisonBarbIcon ; POISON_BARB
+    dw KingsRockIcon ; KINGS_ROCK
+    dw SilverPowderIcon ; SILVERPOWDER
+    dw NoItemIcon ; ITEM_5A
+    dw AmuletCoinIcon ; AMULET_COIN
+    dw CleanseTagIcon ; CLEANSE_TAG
+    dw MysticWaterIcon ; MYSTIC_WATER
+    dw TwistedSpoonIcon ; TWISTEDSPOON
+    dw BlackbeltIcon ; BLACK_BELT_I
+    dw NoItemIcon ; ITEM_64
+    dw BlackGlassesIcon ; BLACKGLASSES
+    dw PinkBowIcon ; PINK_BOW
+    dw StickIcon ; STICK
+    dw SmokeBallIcon ; SMOKE_BALL
+    dw NeverMeltIceIcon ; NEVERMELTICE
+    dw MagnetIcon ; MAGNET
+    dw EverStoneIcon ; EVERSTONE
+    dw SpellTagIcon ; SPELL_TAG
+    dw MiracleSeedIcon ; MIRACLE_SEED
+    dw ThickClubIcon ; THICK_CLUB
+    dw FocusBandIcon ; FOCUS_BAND
+    dw NoItemIcon ; ITEM_78
+    dw HardStoneIcon ; HARD_STONE
+    dw LuckyEggIcon ; LUCKY_EGG
+    dw NoItemIcon ; ITEM_87
+    dw NoItemIcon ; ITEM_88
+    dw CharcoalIcon ; CHARCOAL
+    dw ScopeLensIcon ; SCOPE_LENS
+    dw NoItemIcon ; ITEM_8D
+    dw NoItemIcon ; ITEM_8E
+    dw MetalCoatIcon ; METAL_COAT
+    dw DragonFangIcon ; DRAGON_FANG
+    dw NoItemIcon ; ITEM_91
+    dw LeftoversIcon ; LEFTOVERS
+    dw NoItemIcon ; ITEM_93
+    dw NoItemIcon ; ITEM_94
+    dw NoItemIcon ; ITEM_95
+    dw DragonScaleIcon ; DRAGON_SCALE
+    dw BerserkGeneIcon ; BERSERK_GENE
+    dw NoItemIcon ; ITEM_99
+    dw NoItemIcon ; ITEM_9A
+    dw NoItemIcon ; ITEM_9B
+    dw MailIcon ; FLOWER_MAIL
+    dw NoItemIcon ; ITEM_A2
+    dw LightBallIcon ; LIGHT_BALL
+    dw GorgeousBoxIcon ; NORMAL_BOX
+    dw GorgeousBoxIcon ; GORGEOUS_BOX
+    dw SunStoneIcon ; SUN_STONE
+    dw PolkadotBowIcon ; POLKADOT_BOW
+    dw NoItemIcon ; ITEM_AB
+    dw UpGradeIcon ; UP_GRADE
+    dw NoItemIcon ; ITEM_B0
+    dw NoItemIcon ; ITEM_B3
+    dw MailIcon ; SURF_MAIL
+    dw MailIcon ; LITEBLUEMAIL
+    dw MailIcon ; PORTRAITMAIL
+    dw MailIcon ; LOVELY_MAIL
+    dw MailIcon ; EON_MAIL
+    dw MailIcon ; MORPH_MAIL
+    dw MailIcon ; BLUESKY_MAIL
+    dw MailIcon ; MUSIC_MAIL
+    dw MailIcon ; MIRAGE_MAIL
+    dw NoItemIcon ; ITEM_BE
+    dw NoItemIcon ; ITEM_DC
+    dw NoItemIcon ; ITEM_C3
+    dw NoItemIcon ; ITEM_FA
+    dw ShinyStoneIcon ; SHINY_STONE
+    dw DuskStoneIcon ; DUSK_STONE
+    dw DawnStoneIcon ; DAWN_STONE
+    dw IceStoneIcon ; ICE_STONE
+    dw BlkAuguriteIcon ; BLK_AUGURITE
+    dw PeatBlockIcon ; PEAT_BLOCK
+    dw SweetAppleIcon ; SWEET_APPLE
+    dw SweetAppleIcon ; TART_APPLE
+    dw SweetAppleIcon ; SYRUPY_APPLE
+    dw GalarCuffIcon ; GALAR_CUFF
+    dw GalarWreathIcon ; GALAR_WREATH
+    dw HolyArmorIcon ; HOLY_ARMOR
+    dw CursedArmorIcon ; CURSED_ARMOR
+    dw ElectirizerIcon ; ELECTIRIZER
+    dw MagmarizerIcon ; MAGMARIZER
+    dw ProtectorIcon ; PROTECTOR
+    dw DubiousDiscIcon ; DUBIOUS_DISC
+    dw OvalStoneIcon ; OVAL_STONE
+    dw PrismScaleIcon ; PRISM_SCALE
+    dw RazorClawIcon ; RAZOR_CLAW
+    dw RazorFangIcon ; RAZOR_FANG
+    dw ReaperClothIcon ; REAPER_CLOTH
+    dw LinkingCordIcon ; LINKING_CORD
+    dw FairyFeatherIcon ; FAIRYFEATHER
+    dw BrightpowderIcon ; QUICK_POWDER
+    dw EvioliteIcon ; EVIOLITE
+    dw SoulDewIcon ; SOUL_DEW
+    dw SootheBellIcon ; SOOTHE_BELL
+    dw MirrorHerbIcon ; MIRROR_HERB
+    dw HerbIcon ; MENTAL_HERB
+    dw HerbIcon ; POWER_HERB
+    dw HerbIcon ; WHITE_HERB
+    dw FullIncenseIcon ; FULL_INCENSE
+    dw LaxIncenseIcon ; LAX_INCENSE
+    dw LuckIncenseIcon ; LUCK_INCENSE
+    dw OddIncenseIcon ; ODD_INCENSE
+    dw PureIncenseIcon ; PURE_INCENSE
+    dw RockIncenseIcon ; ROCK_INCENSE
+    dw RoseIncenseIcon ; ROSE_INCENSE
+    dw SeaIncenseIcon ; SEA_INCENSE
+    dw WaveIncenseIcon ; WAVE_INCENSE
+    dw MachoBraceIcon ; MACHO_BRACE
+    dw PowerAnkletIcon ; POWER_ANKLET
+    dw PowerBandIcon ; POWER_BAND
+    dw PowerBeltIcon ; POWER_BELT
+    dw PowerBracerIcon ; POWER_BRACER
+    dw PowerLensIcon ; POWER_LENS
+    dw PowerWeightIcon ; POWER_WEIGHT
+    dw XAccuracyIcon ; X_SP_DEF
+    dw LeaderCrestIcon ; LEADER_CREST
+    dw BlockIcon ; GRASSY_BLOCK
+    dw BlockIcon ; FIERY_BLOCK
+    dw BlockIcon ; CHILLY_BLOCK
+    dw BlockIcon ; ZAPPY_BLOCK
+    dw BlockIcon ; LOVELY_BLOCK
+    dw BlockIcon ; CRUNCHYBLOCK
+    dw LightBallIcon ; AURORA_ORB
+    dw XAccuracyIcon ; X_EVADE
 
 SECTION "Item Icons 1", ROMX
 NoItemIcon: INCBIN "gfx/items/no_item.2bpp.lz"
