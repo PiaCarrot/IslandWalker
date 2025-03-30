@@ -1129,8 +1129,12 @@ INCLUDE "gfx/mystery_gift/mystery_gift.pal"
 
 LoadItemIconPalette:
 	ld a, [wCurItem]
-LoadItemIconPaletteFromA:
 	ld bc, ItemIconPalettes
+	jp LoadIconPalette
+LoadKeyItemIconPalette:
+	ld a, [wCurItem]
+	ld bc, KeyItemIconPalettes
+	jp LoadIconPalette
 LoadIconPalette:
 	ld l, a
 	ld h, 0
@@ -1609,6 +1613,86 @@ ItemIconPalettes:
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; X_EVADE
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+	
+KeyItemIconPalettes:
+; BICYCLE
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; COIN_CASE
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; ITEMFINDER
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; OLD_ROD
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; GOOD_ROD
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; SUPER_ROD
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; RED_SCALE
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; SECRETPOTION
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; S_S_TICKET
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; MYSTERY_EGG
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; CLEAR_BELL
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; SILVER_WING
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; GS_BALL_KEY
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; BLUE_CARD
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; CARD_KEY
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; MACHINE_PART
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; EGG_TICKET
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; LOST_ITEM
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; BASEMENT_KEY
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; PASS
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; SQUIRTBOTTLE
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; RAINBOW_WING
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; SECRET_STASH
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; SEA_MAP
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; BERRY_LOG
+	RGB 20, 20, 20
+	RGB 10, 10, 10
+; EXCEL_SCOPE
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 

@@ -1796,7 +1796,7 @@ KeyItemsPocketMenuHeader:
 	dbw 0, wNumKeyItems
 	dba PlaceMenuKeyItemName
 	dba PlaceMenuKeyItemQuantity
-	dba UpdateKeyItemDescription
+	dba UpdateKeyItemIconAndDescription
 
 PC_Mart_KeyItemsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1811,7 +1811,7 @@ PC_Mart_KeyItemsPocketMenuHeader:
 	dbw 0, wNumKeyItems
 	dba PlaceMenuKeyItemName
 	dba PlaceMenuKeyItemQuantity
-	dba UpdateKeyItemDescription
+	dba UpdateKeyItemIconAndDescription
 
 BallsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags

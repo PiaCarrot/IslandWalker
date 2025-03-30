@@ -17,6 +17,25 @@ UpdateItemIconAndDescription::
 	call WaitBGMap
 	ret
 	
+UpdateKeyItemIconAndDescription::
+	farcall UpdateKeyItemDescription
+	ld hl, KeyItemIconPointers
+	ld a, [wCurSpecies]
+	ld e, a
+	ld d, 0
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, vTiles2 tile $1f
+	lb bc, BANK(NoItemIcon), $9
+	call DecompressRequest2bpp
+	farcall LoadKeyItemIconPalette
+	call SetDefaultBGPAndOBP
+	call WaitBGMap
+	ret
+	
 ItemIconPointers:
     dw NoItemIcon ; NO ITEM
     dw BrightpowderIcon ; BRIGHTPOWDER
@@ -172,6 +191,34 @@ ItemIconPointers:
     dw BlockIcon ; CRUNCHYBLOCK
     dw LightBallIcon ; AURORA_ORB
     dw XAccuracyIcon ; X_EVADE
+	
+KeyItemIconPointers:
+	dw NoItemIcon ; BICYCLE
+	dw NoItemIcon ; COIN_CASE
+	dw NoItemIcon ; ITEMFINDER
+	dw NoItemIcon ; OLD_ROD
+	dw NoItemIcon ; GOOD_ROD
+	dw NoItemIcon ; SUPER_ROD
+	dw NoItemIcon ; RED_SCALE
+	dw NoItemIcon ; SECRETPOTION
+	dw NoItemIcon ; S_S_TICKET
+	dw NoItemIcon ; MYSTERY_EGG
+	dw NoItemIcon ; CLEAR_BELL
+	dw NoItemIcon ; SILVER_WING
+	dw NoItemIcon ; GS_BALL_KEY
+	dw NoItemIcon ; BLUE_CARD
+	dw NoItemIcon ; CARD_KEY
+	dw NoItemIcon ; MACHINE_PART
+	dw NoItemIcon ; EGG_TICKET
+	dw NoItemIcon ; LOST_ITEM
+	dw NoItemIcon ; BASEMENT_KEY
+	dw NoItemIcon ; PASS
+	dw NoItemIcon ; SQUIRTBOTTLE
+	dw NoItemIcon ; RAINBOW_WING
+	dw NoItemIcon ; SECRET_STASH
+	dw NoItemIcon ; SEA_MAP
+	dw NoItemIcon ; BERRY_LOG
+	dw NoItemIcon ; EXCEL_SCOPE
 
 SECTION "Item Icons 1", ROMX
 NoItemIcon: INCBIN "gfx/items/no_item.2bpp.lz"
