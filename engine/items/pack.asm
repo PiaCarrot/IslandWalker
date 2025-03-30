@@ -1826,7 +1826,7 @@ BallsPocketMenuHeader:
 	dbw 0, wNumBalls
 	dba PlaceMenuItemBallName
 	dba PlaceMenuItemBallQuantity
-	dba UpdateItemBallDescription
+	dba UpdateItemBallIconAndDescription
 
 PC_Mart_BallsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1841,7 +1841,7 @@ PC_Mart_BallsPocketMenuHeader:
 	dbw 0, wNumBalls
 	dba PlaceMenuItemBallName
 	dba PlaceMenuItemBallQuantity
-	dba UpdateItemBallDescription
+	dba UpdateItemBallIconAndDescription
 
 BerryPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1856,7 +1856,7 @@ BerryPocketMenuHeader:
 	dbw 0, wNumBerries
 	dba PlaceMenuItemBerryName
 	dba PlaceMenuItemBerryQuantity
-	dba UpdateItemBerryDescription
+	dba UpdateBerryIconAndDescription
 
 PC_Mart_BerryPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1871,7 +1871,7 @@ PC_Mart_BerryPocketMenuHeader:
 	dbw 0, wNumBerries
 	dba PlaceMenuItemBerryName
 	dba PlaceMenuItemBerryQuantity
-	dba UpdateItemBerryDescription
+	dba UpdateBerryIconAndDescription
 
 MedicinePocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1886,7 +1886,7 @@ MedicinePocketMenuHeader:
 	dbw 0, wNumMedicine
 	dba PlaceMenuItemMedicineName
 	dba PlaceMenuItemMedicineQuantity
-	dba UpdateItemMedicineDescription
+	dba UpdateMedicineIconAndDescription
 
 PC_Mart_MedicinePocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1901,7 +1901,7 @@ PC_Mart_MedicinePocketMenuHeader:
 	dbw 0, wNumMedicine
 	dba PlaceMenuItemMedicineName
 	dba PlaceMenuItemMedicineQuantity
-	dba UpdateItemMedicineDescription
+	dba UpdateMedicineIconAndDescription
 
 ValuablePocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1916,7 +1916,7 @@ ValuablePocketMenuHeader:
 	dbw 0, wNumValuable
 	dba PlaceMenuItemValuableName
 	dba PlaceMenuItemValuableQuantity
-	dba UpdateItemValuableDescription
+	dba UpdateValuableIconAndDescription
 
 PC_Mart_ValuablePocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1931,7 +1931,7 @@ PC_Mart_ValuablePocketMenuHeader:
 	dbw 0, wNumValuable
 	dba PlaceMenuItemValuableName
 	dba PlaceMenuItemValuableQuantity
-	dba UpdateItemValuableDescription
+	dba UpdateValuableIconAndDescription
 
 AskThrowAwayText:
 	text_far _AskThrowAwayText
