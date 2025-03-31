@@ -1,14 +1,38 @@
 UpdateItemIconAndDescription::
 	farcall UpdateItemDescription
-	ld hl, ItemIconPointers1
+	jr UpdateItemIcon
+
+UpdateKeyItemIconAndDescription::
+	farcall UpdateKeyItemDescription
+	jr UpdateItemIcon
+
+UpdateItemBallIconAndDescription::
+	farcall UpdateItemBallDescription
+	jr UpdateItemIcon
+	
+UpdateBerryIconAndDescription::
+	farcall UpdateItemBerryDescription
+	jr UpdateItemIcon
+
+UpdateMedicineIconAndDescription::
+	farcall UpdateItemMedicineDescription
+	jr UpdateItemIcon
+
+UpdateValuableIconAndDescription::
+	farcall UpdateItemValuableDescription
+; fallthrough														
+UpdateItemIcon:
 	ld a, [wCurSpecies]
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	call GetItemIndexFromID
+	ld b, h
+	ld c, l
+	ld a, BANK(ItemIconPointers)
+	ld hl, ItemIconPointers
+	call LoadDoubleIndirectPointer
+	jr nz, .ok
+	ld a, BANK(NoItemIcon)
+	ld hl, NoItemIcon
+.ok
 	ld de, vTiles2 tile $1f
 	lb bc, BANK(NoItemIcon), $9
 	call DecompressRequest2bpp
@@ -17,104 +41,9 @@ UpdateItemIconAndDescription::
 	call WaitBGMap
 	ret
 	
-UpdateKeyItemIconAndDescription::
-	farcall UpdateKeyItemDescription
-	ld hl, KeyItemIconPointers
-	ld a, [wCurSpecies]
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, vTiles2 tile $1f
-	lb bc, BANK(NoItemIcon), $9
-	call DecompressRequest2bpp
-	call LoadKeyItemIconPalette
-	call SetDefaultBGPAndOBP
-	call WaitBGMap
-	ret
-	
-UpdateItemBallIconAndDescription::
-	farcall UpdateItemBallDescription
-	ld hl, BallsIconPointers
-	ld a, [wCurSpecies]
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, vTiles2 tile $1f
-	lb bc, BANK(NoItemIcon), $9
-	call DecompressRequest2bpp
-	call LoadBallsIconPalette
-	call SetDefaultBGPAndOBP
-	call WaitBGMap
-	ret
-	
-UpdateBerryIconAndDescription::
-	farcall UpdateItemBerryDescription
-	ld hl, BerriesIconPointers
-	ld a, [wCurSpecies]
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, vTiles2 tile $1f
-	lb bc, BANK(NoItemIcon), $9
-	call DecompressRequest2bpp
-	call LoadBerryIconPalette
-	call SetDefaultBGPAndOBP
-	call WaitBGMap
-	ret
-	
-UpdateMedicineIconAndDescription::
-	farcall UpdateItemMedicineDescription
-	ld hl, MedicineIconsPointers
-	ld a, [wCurSpecies]
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, vTiles2 tile $1f
-	lb bc, BANK(NoItemIcon), $9
-	call DecompressRequest2bpp
-	call LoadMedicineIconPalette
-	call SetDefaultBGPAndOBP
-	call WaitBGMap
-	ret
-	
-UpdateValuableIconAndDescription::
-	farcall UpdateItemValuableDescription
-	ld hl, ValuablesIconsPointers
-	ld a, [wCurSpecies]
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, vTiles2 tile $1f
-	lb bc, BANK(NoItemIcon), $9
-	call DecompressRequest2bpp
-	call LoadValuablesIconPalette
-	call SetDefaultBGPAndOBP
-	call WaitBGMap
-	ret
-	
 ItemIconPointers:
 	indirect_table 2, 1
-	indirect_entries NUM_ITEM_POCKET + 1, ItemIconPointers1
+	indirect_entries NUM_ITEM_POCKET, ItemIconPointers1
 	indirect_entries FIRST_KEY_ITEM - 1; sparse Table
 	indirect_entries (FIRST_KEY_ITEM - 1) + NUM_KEY_ITEM_POCKET, KeyItemIconPointers
 	indirect_entries FIRST_BALL_ITEM - 1 ; sparse Table
@@ -128,7 +57,6 @@ ItemIconPointers:
 	indirect_table_end
 	
 ItemIconPointers1:
-    dw NoItemIcon ; NO_ITEM
     dw BrightpowderIcon ; BRIGHTPOWDER
     dw NoItemIcon ; TOWN_MAP_RED
     dw MoonStoneIcon ; MOON_STONE
@@ -568,65 +496,42 @@ ValuablesIconsPointers:
 .IndirectEnd:
 
 LoadItemIconPalette:
-	ld a, [wCurItem]
-	ld bc, ItemIconPalettes1
-	jp LoadIconPalette
-LoadKeyItemIconPalette:
-	ld a, [wCurItem]
-	ld bc, KeyItemIconPalettes
-	jp LoadIconPalette
-LoadBallsIconPalette:
-	ld a, [wCurItem]
-	ld bc, BallsIconPalettes
-	jp LoadIconPalette
-LoadBerryIconPalette:
-	ld a, [wCurItem]
-	ld bc, BerryIconPalettes
-	jp LoadIconPalette
-LoadMedicineIconPalette:
-	ld a, [wCurItem]
-	ld bc, MedicineIconPalettes
-	jp LoadIconPalette
-LoadValuablesIconPalette:
-	ld a, [wCurItem]
-	ld bc, ValuablesIconPalettes
-	jp LoadIconPalette
-LoadIconPalette:
-	ld l, a
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	add hl, bc
-LoadIconPaletteFromHL:
+	ld a, [wCurSpecies]
+	call GetItemIndexFromID
+	ld b, h
+	ld c, l
+	ld a, BANK(ItemIconPalettes)
+	ld hl, ItemIconPalettes
+	call LoadIndirectPointer
+	jr nz, .ok
+	ld a, BANK(NoItemPalette)
+	ld hl, NoItemPalette
+.ok
 	ld de, wBGPals1 palette 7 + 2
 	ld bc, 4
-	call FarCopyColorWRAM
-	ld hl, BlackColor
-	ld bc, 2
 	jmp FarCopyColorWRAM
 	
-BlackColor:
-	RGB 00, 00, 00
-	
-; ItemIconPalettes:
-	; indirect_table 2, 2
-	; indirect_entries NUM_ITEM_POCKET, ItemIconPalettes1
-	; indirect_entries FIRST_KEY_ITEM - 1; sparse Table
-	; indirect_entries (FIRST_KEY_ITEM - 1) + NUM_KEY_ITEM_POCKET, KeyItemIconPalettes
-	; indirect_entries FIRST_BALL_ITEM - 1 ; sparse Table
-	; indirect_entries (FIRST_BALL_ITEM - 1) + NUM_BALL_ITEM_POCKET, BallsIconPalettes
-	; indirect_entries FIRST_BERRY_ITEM - 1 ; sparse Table
-	; indirect_entries (FIRST_BERRY_ITEM - 1) + NUM_BERRY_ITEM_POCKET, BerryIconPalettes
-	; indirect_entries FIRST_MEDICINE_ITEM - 1 ; sparse Table
-	; indirect_entries (FIRST_MEDICINE_ITEM - 1) + NUM_MEDICINE_ITEM_POCKET, MedicineIconPalettes
-	; indirect_entries FIRST_VALUABLE_ITEM - 1 ; sparse Table
-	; indirect_entries (FIRST_VALUABLE_ITEM - 1) + NUM_VALUABLE_ITEM_POCKET, ValuablesIconPalettes
-	; indirect_table_end
+ItemIconPalettes:
+	indirect_table 4, 1
+	indirect_entries NUM_ITEM_POCKET, ItemIconPalettes1
+	indirect_entries FIRST_KEY_ITEM - 1; sparse Table
+	indirect_entries (FIRST_KEY_ITEM - 1) + NUM_KEY_ITEM_POCKET, KeyItemIconPalettes
+	indirect_entries FIRST_BALL_ITEM - 1 ; sparse Table
+	indirect_entries (FIRST_BALL_ITEM - 1) + NUM_BALL_ITEM_POCKET, BallsIconPalettes
+	indirect_entries FIRST_BERRY_ITEM - 1 ; sparse Table
+	indirect_entries (FIRST_BERRY_ITEM - 1) + NUM_BERRY_ITEM_POCKET, BerryIconPalettes
+	indirect_entries FIRST_MEDICINE_ITEM - 1 ; sparse Table
+	indirect_entries (FIRST_MEDICINE_ITEM - 1) + NUM_MEDICINE_ITEM_POCKET, MedicineIconPalettes
+	indirect_entries FIRST_VALUABLE_ITEM - 1 ; sparse Table
+	indirect_entries (FIRST_VALUABLE_ITEM - 1) + NUM_VALUABLE_ITEM_POCKET, ValuablesIconPalettes
+	indirect_table_end
 
-ItemIconPalettes1:
-; NO ITEM
+NoItemPalette:
+	; NO ITEM
 	RGB 20, 20, 20
 	RGB 10, 10, 10
+
+ItemIconPalettes1:
 ; BRIGHTPOWDER
 	RGB 21, 28, 21
 	RGB 09, 14, 09
@@ -1086,9 +991,7 @@ ItemIconPalettes1:
 ; X_EVADE
 	RGB 20, 20, 20
 	RGB 10, 10, 10
-;.IndirectEnd:
-;.IndirectEnd:
-;.IndirectEnd:
+.IndirectEnd:
 	
 KeyItemIconPalettes:
 ; BICYCLE
@@ -1169,7 +1072,7 @@ KeyItemIconPalettes:
 ; EXCEL_SCOPE
 	RGB 20, 20, 20
 	RGB 10, 10, 10
-;.IndirectEnd:
+.IndirectEnd:
 	
 BallsIconPalettes:
 ; MASTER_BALL
@@ -1292,7 +1195,7 @@ BallsIconPalettes:
 ; GS_BALL
 	RGB 20, 20, 20
 	RGB 10, 10, 10
-;.IndirectEnd:
+.IndirectEnd:
 	
 BerryIconPalettes:
 ; GS_BALL
@@ -1562,7 +1465,7 @@ BerryIconPalettes:
 ; GS_BALL
 	RGB 20, 20, 20
 	RGB 10, 10, 10
-;.IndirectEnd:
+.IndirectEnd:
 
 MedicineIconPalettes:
 ; GS_BALL
@@ -1763,7 +1666,7 @@ MedicineIconPalettes:
 ; GS_BALL
 	RGB 20, 20, 20
 	RGB 10, 10, 10
-;.IndirectEnd:
+.IndirectEnd:
 
 ValuablesIconPalettes:
 ; GS_BALL
@@ -1907,6 +1810,7 @@ ValuablesIconPalettes:
 ; GS_BALL
 	RGB 20, 20, 20
 	RGB 10, 10, 10
+.IndirectEnd:
 
 SECTION "Item Icons 1", ROMX
 NoItemIcon: INCBIN "gfx/items/no_item.2bpp.lz"

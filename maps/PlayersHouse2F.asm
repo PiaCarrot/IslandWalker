@@ -78,9 +78,18 @@ PlayersHouseRadioScript:
 
 PlayersHouseBookshelfScript:
 	if DEF(_DEBUG)
-	loadwildmon AZUMARILL, 100
-	startbattle
-	reloadmapafterbattle
+	; loadwildmon AZUMARILL, 100
+	; startbattle
+	; reloadmapafterbattle
+	;	; Grant All Pokemon
+	giveitem BRIGHTPOWDER
+	giveitem ESCAPE_ROPE
+	giveitem MOON_STONE
+	giveitem SUN_STONE
+	giveitem LEAF_STONE
+	giveitem FIRE_STONE
+	giveitem THUNDERSTONE
+	giveitem WATER_STONE
 	end
 else
 	jumpstd PictureBookshelfScript
