@@ -377,72 +377,72 @@ BerriesIconPointers:
 .IndirectEnd:
 
 MedicineIconsPointers:
-	dw NoItemIcon ; ANTIDOTE     ; 0004
-	dw NoItemIcon ; BURN_HEAL    ; 0005
-	dw NoItemIcon ; ICE_HEAL     ; 0006
-	dw NoItemIcon ; AWAKENING    ; 0007
-	dw NoItemIcon ; PARLYZ_HEAL  ; 0008
-	dw NoItemIcon ; FULL_RESTORE ; 0009
-	dw NoItemIcon ; MAX_POTION   ; 000A
-	dw NoItemIcon ; HYPER_POTION ; 000B
-	dw NoItemIcon ; SUPER_POTION ; 000C
-	dw NoItemIcon ; POTION       ; 000D
-	dw NoItemIcon ; MAX_ELIXIR   ; 0010
-	dw NoItemIcon ; HP_UP        ; 0015
-	dw NoItemIcon ; PROTEIN      ; 0016
-	dw NoItemIcon ; IRON         ; 0017
-	dw NoItemIcon ; CARBOS       ; 0018
-	dw NoItemIcon ; CALCIUM      ; 001A
-	dw NoItemIcon ; RARE_CANDY   ; 001B
-	dw NoItemIcon ; FULL_HEAL    ; 0021
-	dw NoItemIcon ; REVIVE       ; 0022
-	dw NoItemIcon ; MAX_REVIVE   ; 0023
-	dw NoItemIcon ; FRESH_WATER  ; 0029
-	dw NoItemIcon ; SODA_POP     ; 002A
-	dw NoItemIcon ; LEMONADE     ; 002B
-	dw NoItemIcon ; PP_UP        ; 0034
-	dw NoItemIcon ; ETHER        ; 0035
-	dw NoItemIcon ; MAX_ETHER    ; 0036
-	dw NoItemIcon ; ELIXIR       ; 0037
-	dw NoItemIcon ; MOOMOO_MILK  ; 0038
-	dw NoItemIcon ; RAGECANDYBAR ; 0054
-	dw NoItemIcon ; ENERGYPOWDER ; 0059
-	dw NoItemIcon ; ENERGY_ROOT  ; 005A
-	dw NoItemIcon ; HEAL_POWDER  ; 005B
-	dw NoItemIcon ; REVIVAL_HERB ; 005C
-	dw NoItemIcon ; ZINC         ; 0063
-	dw NoItemIcon ; BERRY_JUICE  ; 0065
-	dw NoItemIcon ; SACRED_ASH   ; 0075
-	dw NoItemIcon ; PP_MAX       ; 00D8
-	dw NoItemIcon ; PEWTER_ARARE ; 00D9
-	dw NoItemIcon ; SEVENTH_HEAVEN
-	dw NoItemIcon ; LONELY_MINT
-	dw NoItemIcon ; ADAMANT_MINT
-	dw NoItemIcon ; NAUGHTY_MINT
-	dw NoItemIcon ; BRAVE_MINT
-	dw NoItemIcon ; BOLD_MINT
-	dw NoItemIcon ; IMPISH_MINT
-	dw NoItemIcon ; LAX_MINT
-	dw NoItemIcon ; RELAXED_MINT
-	dw NoItemIcon ; MODEST_MINT
-	dw NoItemIcon ; MILD_MINT
-	dw NoItemIcon ; RASH_MINT
-	dw NoItemIcon ; QUIET_MINT
-	dw NoItemIcon ; CALM_MINT
-	dw NoItemIcon ; GENTLE_MINT
-	dw NoItemIcon ; CAREFUL_MINT
-	dw NoItemIcon ; SASSY_MINT
-	dw NoItemIcon ; TIMID_MINT
-	dw NoItemIcon ; HASTY_MINT
-	dw NoItemIcon ; JOLLY_MINT
-	dw NoItemIcon ; NAIVE_MINT
-	dw NoItemIcon ; SERIOUS_MINT
-	dw NoItemIcon ; HARDY_MINT
-	dw NoItemIcon ; DOCILE_MINT
-	dw NoItemIcon ; BASHFUL_MINT
-	dw NoItemIcon ; QUIRKY_MINT
-	dw NoItemIcon ; ABILITY_UP
-	dw NoItemIcon ; PINK_CURE
+	dw AntidoteIcon ; ANTIDOTE     ; 0004
+	dw AntidoteIcon ; BURN_HEAL    ; 0005
+	dw AntidoteIcon ; ICE_HEAL     ; 0006
+	dw AntidoteIcon ; AWAKENING    ; 0007
+	dw AntidoteIcon ; PARLYZ_HEAL  ; 0008
+	dw MaxPotionIcon ; FULL_RESTORE ; 0009
+	dw MaxPotionIcon ; MAX_POTION   ; 000A
+	dw PotionIcon ; HYPER_POTION ; 000B
+	dw PotionIcon ; SUPER_POTION ; 000C
+	dw PotionIcon ; POTION       ; 000D
+	dw EtherIcon ; MAX_ELIXIR   ; 0010
+	dw HPUpIcon ; HP_UP        ; 0015
+	dw VitaminIcon ; PROTEIN      ; 0016
+	dw VitaminIcon ; IRON         ; 0017
+	dw VitaminIcon ; CARBOS       ; 0018
+	dw VitaminIcon ; CALCIUM      ; 001A
+	dw RareCandyIcon ; RARE_CANDY   ; 001B
+	dw FullHealIcon ; FULL_HEAL    ; 0021
+	dw ReviveIcon ; REVIVE       ; 0022
+	dw MaxReviveIcon ; MAX_REVIVE   ; 0023
+	dw FreshWaterIcon ; FRESH_WATER  ; 0029
+	dw SodaPopIcon ; SODA_POP     ; 002A
+	dw LemonadeIcon ; LEMONADE     ; 002B
+	dw PPUpIcon ; PP_UP        ; 0034
+	dw EtherIcon ; ETHER        ; 0035
+	dw EtherIcon ; MAX_ETHER    ; 0036
+	dw EtherIcon ; ELIXIR       ; 0037
+	dw MoomooMilkIcon ; MOOMOO_MILK  ; 0038
+	dw RagecandybarIcon ; RAGECANDYBAR ; 0054
+	dw SilverPowderIcon ; ENERGYPOWDER ; 0059
+	dw EnergyRootIcon ; ENERGY_ROOT  ; 005A
+	dw SilverPowderIcon ; HEAL_POWDER  ; 005B
+	dw RevivalHerbIcon ; REVIVAL_HERB ; 005C
+	dw VitaminIcon ; ZINC         ; 0063
+	dw BerryJuiceIcon ; BERRY_JUICE  ; 0065
+	dw BrightpowderIcon ; SACRED_ASH   ; 0075
+	dw PPMaxIcon ; PP_MAX       ; 00D8
+	dw PewterArareIcon ; PEWTER_ARARE ; 00D9
+	dw SeventhHeavenIcon ; SEVENTH_HEAVEN
+	dw MintIcon ; LONELY_MINT
+	dw MintIcon ; ADAMANT_MINT
+	dw MintIcon ; NAUGHTY_MINT
+	dw MintIcon ; BRAVE_MINT
+	dw MintIcon ; BOLD_MINT
+	dw MintIcon ; IMPISH_MINT
+	dw MintIcon ; LAX_MINT
+	dw MintIcon ; RELAXED_MINT
+	dw MintIcon ; MODEST_MINT
+	dw MintIcon ; MILD_MINT
+	dw MintIcon ; RASH_MINT
+	dw MintIcon ; QUIET_MINT
+	dw MintIcon ; CALM_MINT
+	dw MintIcon ; GENTLE_MINT
+	dw MintIcon ; CAREFUL_MINT
+	dw MintIcon ; SASSY_MINT
+	dw MintIcon ; TIMID_MINT
+	dw MintIcon ; HASTY_MINT
+	dw MintIcon ; JOLLY_MINT
+	dw MintIcon ; NAIVE_MINT
+	dw MintIcon ; SERIOUS_MINT
+	dw MintIcon ; HARDY_MINT
+	dw MintIcon ; DOCILE_MINT
+	dw MintIcon ; BASHFUL_MINT
+	dw MintIcon ; QUIRKY_MINT
+	dw AbilityUpIcon ; ABILITY_UP
+	dw AntidoteIcon ; PINK_CURE
 .IndirectEnd:
 
 ValuablesIconsPointers:
@@ -1468,204 +1468,204 @@ BerryIconPalettes:
 .IndirectEnd:
 
 MedicineIconPalettes:
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; GS_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+; ANTIDOTE
+	RGB 31, 29, 12
+	RGB 31, 22, 05
+; BURN_HEAL
+	RGB 17, 30, 17
+	RGB 13, 26, 13
+; ICE_HEAL
+	RGB 31, 23, 22
+	RGB 30, 17, 17
+; AWAKENING
+	RGB 16, 29, 31
+	RGB 11, 24, 26
+; PARLYZ_HEAL
+	RGB 31, 31, 18
+	RGB 27, 27, 11
+; FULL_RESTORE
+	RGB 22, 22, 16
+	RGB 15, 24, 04
+; MAX_POTION
+	RGB 22, 22, 24
+	RGB 08, 19, 28
+; HYPER_POTION
+	RGB 24, 27, 29
+	RGB 31, 12, 21
+; SUPER_POTION
+	RGB 28, 23, 13
+	RGB 24, 12, 11
+; POTION
+	RGB 20, 25, 23
+	RGB 16, 12, 21
+; MAX_ELIXIR
+	RGB 26, 26, 11
+	RGB 14, 24, 24
+; HP_UP
+	RGB 13, 20, 29
+	RGB 18, 11, 07
+; PROTEIN
+	RGB 30, 20, 00
+	RGB 18, 11, 07
+; IRON
+	RGB 06, 20, 00
+	RGB 18, 11, 07
+; CARBOS
+	RGB 05, 20, 30
+	RGB 18, 11, 07
+; CALCIUM
+	RGB 30, 08, 00
+	RGB 18, 11, 07
+; RARE_CANDY
+	RGB 15, 18, 29
+	RGB 10, 12, 24
+; FULL_HEAL
+	RGB 27, 29, 00
+	RGB 21, 23, 00
+; REVIVE
+	RGB 28, 28, 15
+	RGB 20, 20, 07
+; MAX_REVIVE
+	RGB 28, 28, 15
+	RGB 20, 20, 07
+; FRESH_WATER
+	RGB 18, 20, 27
+	RGB 08, 16, 06
+; SODA_POP
+	RGB 13, 23, 28
+	RGB 07, 16, 22
+; LEMONADE
+	RGB 31, 24, 19
+	RGB 24, 24, 16
+; PP_UP
+	RGB 23, 11, 23
+	RGB 18, 11, 07
+; ETHER
+	RGB 20, 24, 24
+	RGB 19, 13, 20
+; MAX_ETHER
+	RGB 25, 25, 27
+	RGB 16, 24, 14
+; ELIXIR
+	RGB 25, 25, 16
+	RGB 24, 16, 14
+; MOOMOO_MILK
+	RGB 28, 28, 22
+	RGB 22, 13, 22
+; RAGECANDYBAR
+	RGB 13, 19, 08
+	RGB 20, 08, 06
+; ENERGYPOWDER
+	RGB 27, 27, 19
+	RGB 24, 14, 14
+; ENERGY_ROOT
+	RGB 28, 25, 16
+	RGB 25, 19, 10
+; HEAL_POWDER
+	RGB 11, 21, 11
+	RGB 29, 29, 12
+; REVIVAL_HERB
+	RGB 22, 28, 14
+	RGB 14, 20, 10
+; ZINC
+	RGB 16, 27, 00
+	RGB 18, 11, 07
+; BERRY_JUICE
+	RGB 21, 23, 12
+	RGB 11, 13, 02
+; SACRED_ASH
+	RGB 19, 19, 19
+	RGB 21, 21, 05
+; PP_MAX
+	RGB 31, 28, 11
+	RGB 11, 18, 07
+; PEWTER_ARARE
+	RGB 28, 21, 07
+	RGB 17, 13, 03
+; SEVENTH_HEAVEN
+	RGB 28, 20, 03
+	RGB 23, 11, 02
+; LONELY_MINT
+	RGB 31, 22, 21
+	RGB 31, 09, 09
+; ADAMANT_MINT
+	RGB 31, 22, 21
+	RGB 31, 09, 09
+; NAUGHTY_MINT
+	RGB 31, 22, 21
+	RGB 31, 09, 09
+; BRAVE_MINT
+	RGB 31, 22, 21
+	RGB 31, 09, 09
+; BOLD_MINT
+	RGB 21, 23, 31
+	RGB 12, 14, 31
+; IMPISH_MINT
+	RGB 21, 23, 31
+	RGB 12, 14, 31
+; LAX_MINT
+	RGB 21, 23, 31
+	RGB 12, 14, 31
+; RELAXED_MINT
+	RGB 21, 23, 31
+	RGB 12, 14, 31
+; MODEST_MINT
+	RGB 24, 28, 29
+	RGB 05, 23, 28
+; MILD_MINT
+	RGB 24, 28, 29
+	RGB 05, 23, 28
+; RASH_MINT
+	RGB 24, 28, 29
+	RGB 05, 23, 28
+; QUIET_MINT
+	RGB 24, 28, 29
+	RGB 05, 23, 28
+; CALM_MINT
+	RGB 30, 25, 28
+	RGB 31, 15, 24
+; GENTLE_MINT
+	RGB 30, 25, 28
+	RGB 31, 15, 24
+; CAREFUL_MINT
+	RGB 30, 25, 28
+	RGB 31, 15, 24
+; SASSY_MINT
+	RGB 30, 25, 28
+	RGB 31, 15, 24
+; TIMID_MINT
+	RGB 23, 31, 19
+	RGB 12, 25, 12
+; HASTY_MINT
+	RGB 23, 31, 19
+	RGB 12, 25, 12
+; JOLLY_MINT
+	RGB 23, 31, 19
+	RGB 12, 25, 12
+; NAIVE_MINT
+	RGB 23, 31, 19
+	RGB 12, 25, 12
+; SERIOUS_MINT
+	RGB 31, 31, 30
+	RGB 31, 30, 22
+; HARDY_MINT
+	RGB 31, 31, 30
+	RGB 31, 30, 22
+; DOCILE_MINT
+	RGB 31, 31, 30
+	RGB 31, 30, 22
+; BASHFUL_MINT
+	RGB 31, 31, 30
+	RGB 31, 30, 22
+; QUIRKY_MINT
+	RGB 31, 31, 30
+	RGB 31, 30, 22
+; ABILITY_UP
+	RGB 13, 21, 29
+	RGB 21, 13, 31
+; PINK_CURE
+	RGB 30, 25, 28
+	RGB 31, 15, 24
 .IndirectEnd:
 
 ValuablesIconPalettes:
@@ -1907,3 +1907,27 @@ PowerLensIcon: INCBIN "gfx/items/power_lens.2bpp.lz"
 PowerWeightIcon: INCBIN "gfx/items/power_weight.2bpp.lz"
 LeaderCrestIcon: INCBIN "gfx/items/leader_crest.2bpp.lz"
 BlockIcon: INCBIN "gfx/items/pokeblock.2bpp.lz"
+AntidoteIcon: INCBIN "gfx/items/antidote.2bpp.lz"
+SeventhHeavenIcon: INCBIN "gfx/items/seventh_heaven.2bpp.lz"
+FullHealIcon: INCBIN "gfx/items/full_heal.2bpp.lz"
+PotionIcon: INCBIN "gfx/items/potion.2bpp.lz"
+MaxPotionIcon: INCBIN "gfx/items/max_potion.2bpp.lz"
+ReviveIcon: INCBIN "gfx/items/revive.2bpp.lz"
+MaxReviveIcon: INCBIN "gfx/items/max_revive.2bpp.lz"
+EtherIcon: INCBIN "gfx/items/ether.2bpp.lz"
+VitaminIcon: INCBIN "gfx/items/vitamin.2bpp.lz"
+HPUpIcon: INCBIN "gfx/items/hp_up.2bpp.lz"
+RagecandybarIcon: INCBIN "gfx/items/ragecandybar.2bpp.lz"
+RareCandyIcon: INCBIN "gfx/items/rare_candy.2bpp.lz"
+PPUpIcon: INCBIN "gfx/items/pp_up.2bpp.lz"
+PPMaxIcon: INCBIN "gfx/items/pp_max.2bpp.lz"
+PewterArareIcon: INCBIN "gfx/items/pewtercrunch.2bpp.lz"
+MintIcon: INCBIN "gfx/items/mint_leaf.2bpp.lz"
+AbilityUpIcon: INCBIN "gfx/items/ability_cap.2bpp.lz"
+MoomooMilkIcon: INCBIN "gfx/items/moomoo_milk.2bpp.lz"
+SodaPopIcon: INCBIN "gfx/items/soda_pop.2bpp.lz"
+EnergyRootIcon: INCBIN "gfx/items/energy_root.2bpp.lz"
+LemonadeIcon: INCBIN "gfx/items/lemonade.2bpp.lz"
+FreshWaterIcon: INCBIN "gfx/items/fresh_water.2bpp.lz"
+RevivalHerbIcon: INCBIN "gfx/items/revival_herb.2bpp.lz"
+BerryJuiceIcon: INCBIN "gfx/items/berry_juice.2bpp.lz"
