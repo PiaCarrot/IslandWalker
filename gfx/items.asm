@@ -12,7 +12,24 @@ UpdateItemBallIconAndDescription::
 	
 UpdateBerryIconAndDescription::
 	farcall UpdateItemBerryDescription
-	jr UpdateItemIcon
+	ld a, [wCurSpecies]
+	call GetItemIndexFromID
+	ld b, h
+	ld c, l
+	ld a, BANK(ItemIconPointers)
+	ld hl, ItemIconPointers
+	call LoadDoubleIndirectPointer
+	jr nz, .ok
+	ld a, BANK(NoBerryIcon)
+	ld hl, NoBerryIcon
+.ok
+	ld de, vTiles2 tile $1f
+	lb bc, BANK(NoBerryIcon), $9
+	call DecompressRequest2bpp
+	call LoadItemIconPalette
+	call SetDefaultBGPAndOBP
+	call WaitBGMap
+	ret
 
 UpdateMedicineIconAndDescription::
 	farcall UpdateItemMedicineDescription
@@ -213,7 +230,7 @@ ItemIconPointers1:
 .IndirectEnd:
 	
 KeyItemIconPointers:
-	dw NoItemIcon ; BICYCLE
+	dw SkateboardIcon ; BICYCLE
 	dw NoItemIcon ; COIN_CASE
 	dw NoItemIcon ; ITEMFINDER
 	dw NoItemIcon ; OLD_ROD
@@ -225,7 +242,7 @@ KeyItemIconPointers:
 	dw NoItemIcon ; MYSTERY_EGG
 	dw NoItemIcon ; CLEAR_BELL
 	dw NoItemIcon ; SILVER_WING
-	dw NoItemIcon ; GS_BALL_KEY
+	dw GSBallIcon ; GS_BALL_KEY
 	dw NoItemIcon ; BLUE_CARD
 	dw NoItemIcon ; CARD_KEY
 	dw NoItemIcon ; MACHINE_PART
@@ -242,138 +259,138 @@ KeyItemIconPointers:
 .IndirectEnd:
 	
 BallsIconPointers:
-	dw NoItemIcon ; MASTER_BALL
-	dw NoItemIcon ; ULTRA_BALL
-	dw NoItemIcon ; GREAT_BALL
-	dw NoItemIcon ; POKE_BALL
-	dw NoItemIcon ; SAFARI_BALL
-	dw NoItemIcon ; NET_BALL
-	dw NoItemIcon ; DIVE_BALL
-	dw NoItemIcon ; NEST_BALL
-	dw NoItemIcon ; REPEAT_BALL
-	dw NoItemIcon ; TIMER_BALL
-	dw NoItemIcon ; LUXURY_BALL
-	dw NoItemIcon ; PREMIER_BALL
-	dw NoItemIcon ; FAST_BALL
-	dw NoItemIcon ; LEVEL_BALL
-	dw NoItemIcon ; LURE_BALL
-	dw NoItemIcon ; HEAVY_BALL
-	dw NoItemIcon ; LOVE_BALL
-	dw NoItemIcon ; FRIEND_BALL
-	dw NoItemIcon ; MOON_BALL
-	dw NoItemIcon ; PARK_BALL
-	dw NoItemIcon ; SPORT_BALL
-	dw NoItemIcon ; DUSK_BALL
-	dw NoItemIcon ; HEAL_BALL
-	dw NoItemIcon ; QUICK_BALL
-	dw NoItemIcon ; CHERISH_BALL
-	dw NoItemIcon ; DREAM_BALL
-	dw NoItemIcon ; BEAST_BALL
-	dw NoItemIcon ; STRANGE_BALL
-	dw NoItemIcon ; POKE_BALL_H
-	dw NoItemIcon ; GREAT_BALL_H
-	dw NoItemIcon ; ULTRA_BALL_H
-	dw NoItemIcon ; HEAVY_BALL_H
-	dw NoItemIcon ; LEADEN_BALL
-	dw NoItemIcon ; GIGATON_BALL
-	dw NoItemIcon ; FEATHER_BALL
-	dw NoItemIcon ; WING_BALL
-	dw NoItemIcon ; JET_BALL
-	dw NoItemIcon ; ORIGIN_BALL
-	dw NoItemIcon ; ROCKET_BALL
-	dw NoItemIcon ; GS_BALL
+	dw MasterBallIcon ; MASTER_BALL
+	dw UltraBallIcon ; ULTRA_BALL
+	dw GreatBallIcon ; GREAT_BALL
+	dw PokeBallIcon ; POKE_BALL
+	dw SafariBallIcon ; SAFARI_BALL
+	dw NetBallIcon ; NET_BALL
+	dw DiveBallIcon ; DIVE_BALL
+	dw NestBallIcon ; NEST_BALL
+	dw RepeatBallIcon ; REPEAT_BALL
+	dw TimerBallIcon ; TIMER_BALL
+	dw LuxuryBallIcon ; LUXURY_BALL
+	dw PremierBallIcon ; PREMIER_BALL
+	dw FastBallIcon ; FAST_BALL
+	dw LevelBallIcon ; LEVEL_BALL
+	dw LureBallIcon ; LURE_BALL
+	dw HeavyBallIcon ; HEAVY_BALL
+	dw LoveBallIcon ; LOVE_BALL
+	dw FriendBallIcon ; FRIEND_BALL
+	dw MoonBallIcon ; MOON_BALL
+	dw ParkBallIcon ; PARK_BALL
+	dw SportBallIcon ; SPORT_BALL
+	dw DuskBallIcon ; DUSK_BALL
+	dw HealBallIcon ; HEAL_BALL
+	dw QuickBallIcon ; QUICK_BALL
+	dw CherishBallIcon ; CHERISH_BALL
+	dw DreamBallIcon ; DREAM_BALL
+	dw BeastBallIcon ; BEAST_BALL
+	dw StrangeBallIcon ; STRANGE_BALL
+	dw PokeBallHIcon ; POKE_BALL_H
+	dw GreatBallHIcon ; GREAT_BALL_H
+	dw UltraBallHIcon ; ULTRA_BALL_H
+	dw HeavyBallHIcon ; HEAVY_BALL_H
+	dw LeadenBallIcon ; LEADEN_BALL
+	dw GigatonBallIcon ; GIGATON_BALL
+	dw FeatherBallIcon ; FEATHER_BALL
+	dw WingBallIcon ; WING_BALL
+	dw JetBallIcon ; JET_BALL
+	dw OriginBallIcon ; ORIGIN_BALL
+	dw RocketBallIcon ; ROCKET_BALL
+	dw GSBallIcon ; GS_BALL
 .IndirectEnd:
 	
 BerriesIconPointers:
-	dw NoItemIcon ; RED_APRICORN ; 0300
-	dw NoItemIcon ; BLU_APRICORN ; 0301
-	dw NoItemIcon ; YLW_APRICORN ; 0302
-	dw NoItemIcon ; GRN_APRICORN ; 0303
-	dw NoItemIcon ; WHT_APRICORN ; 0304
-	dw NoItemIcon ; BLK_APRICORN ; 0305
-	dw NoItemIcon ; PNK_APRICORN ; 0306
-	dw NoItemIcon ; BRN_APRICORN ; 0307
-	dw NoItemIcon ; PECHA_BERRY  ; 0308
-	dw NoItemIcon ; CHERI_BERRY  ; 0309
-	dw NoItemIcon ; ASPEAR_BERRY ; 030A
-	dw NoItemIcon ; RAWST_BERRY  ; 030B
-	dw NoItemIcon ; PERSIM_BERRY ; 030C
-	dw NoItemIcon ; CHESTO_BERRY ; 030D
-	dw NoItemIcon ; LUM_BERRY    ; 030E
-	dw NoItemIcon ; LEPPA_BERRY  ; 030F
-	dw NoItemIcon ; ORAN_BERRY   ; 0310
-	dw NoItemIcon ; SITRUS_BERRY ; 0311
-	dw NoItemIcon ; FIGY_BERRY   ; 0312
-	dw NoItemIcon ; WIKI_BERRY   ; 0313
-	dw NoItemIcon ; MAGO_BERRY   ; 0314
-	dw NoItemIcon ; AGUAV_BERRY  ; 0315
-	dw NoItemIcon ; IAPAPA_BERRY ; 0316
-	dw NoItemIcon ; POMEG_BERRY  ; 0317
-	dw NoItemIcon ; KELPSY_BERRY ; 0318
-	dw NoItemIcon ; QUALOT_BERRY ; 0319
-	dw NoItemIcon ; HONDEW_BERRY ; 031A
-	dw NoItemIcon ; GREPA_BERRY  ; 031B
-	dw NoItemIcon ; TAMATO_BERRY ; 031C
-	dw NoItemIcon ; OCCA_BERRY   ; 031D
-	dw NoItemIcon ; PASSHO_BERRY ; 031E
-	dw NoItemIcon ; WACAN_BERRY  ; 031F
-	dw NoItemIcon ; RINDO_BERRY  ; 0320
-	dw NoItemIcon ; YACHE_BERRY  ; 0321
-	dw NoItemIcon ; CHOPLE_BERRY ; 0322
-	dw NoItemIcon ; KEBIA_BERRY  ; 0323
-	dw NoItemIcon ; SHUCA_BERRY  ; 0324
-	dw NoItemIcon ; COBA_BERRY   ; 0325
-	dw NoItemIcon ; PAYAPA_BERRY ; 0326
-	dw NoItemIcon ; TANGA_BERRY  ; 0327
-	dw NoItemIcon ; CHARTI_BERRY ; 0328
-	dw NoItemIcon ; KASIB_BERRY  ; 0329
-	dw NoItemIcon ; HABAN_BERRY  ; 032A
-	dw NoItemIcon ; COLBUR_BERRY ; 032B
-	dw NoItemIcon ; BABIRI_BERRY ; 032C
-	dw NoItemIcon ; CHILAN_BERRY ; 032D
-	dw NoItemIcon ; ROSELI_BERRY ; 032E
-	dw NoItemIcon ; LIECHI_BERRY ; 032F
-	dw NoItemIcon ; GANLON_BERRY ; 0330
-	dw NoItemIcon ; SALAC_BERRY  ; 0331
-	dw NoItemIcon ; PETAYA_BERRY ; 0332
-	dw NoItemIcon ; APICOT_BERRY ; 0333
-	dw NoItemIcon ; LANSAT_BERRY ; 0334
-	dw NoItemIcon ; STARF_BERRY  ; 0335
-	dw NoItemIcon ; KEE_BERRY    ; 0336
-	dw NoItemIcon ; MARANGABERRY ; 0337
-	dw NoItemIcon ; ENIGMA_BERRY ; 0338
-	dw NoItemIcon ; MICLE_BERRY  ; 0339
-	dw NoItemIcon ; CUSTAP_BERRY ; 033A
-	dw NoItemIcon ; JABOCA_BERRY ; 033B
-	dw NoItemIcon ; ROWAP_BERRY  ; 033C
-	dw NoItemIcon ; EGGANT_BERRY ; 033D
-	dw NoItemIcon ; UNYINN_BERRY ; 033E EREADER GINEMA BERRY
-	dw NoItemIcon ; HOPO_BERRY   ; 033F
-	dw NoItemIcon ; PUMKIN_BERRY ; 0340
-	dw NoItemIcon ; CAREEP_BERRY ; 0341 EREADER TOUGA BERRY
-	dw NoItemIcon ; BITMEL_BERRY ; 0342 EREADER YAGO BERRY
-	dw NoItemIcon ; DRASH_BERRY  ; 0343
-	dw NoItemIcon ; RAZZ_BERRY   ; 0344
-	dw NoItemIcon ; BLUK_BERRY   ; 0345
-	dw NoItemIcon ; NANAB_BERRY  ; 0346
-	dw NoItemIcon ; WEPEAR_BERRY ; 0347
-	dw NoItemIcon ; PINAP_BERRY  ; 0348
-	dw NoItemIcon ; CORNN_BERRY  ; 0349
-	dw NoItemIcon ; MAGOST_BERRY ; 034A
-	dw NoItemIcon ; RABUTA_BERRY ; 034B
-	dw NoItemIcon ; NOMEL_BERRY  ; 034C
-	dw NoItemIcon ; SPELON_BERRY ; 034D
-	dw NoItemIcon ; PAMTRE_BERRY ; 034E
-	dw NoItemIcon ; WATMEL_BERRY ; 034F
-	dw NoItemIcon ; DURIN_BERRY  ; 0350
-	dw NoItemIcon ; BELUE_BERRY  ; 0351
-	dw NoItemIcon ; STRIB_BERRY  ; 0352
-	dw NoItemIcon ; TILOTA_BERRY ; 0353 EREADER CHILAN BERRY
-	dw NoItemIcon ; NUTPEA_BERRY ; 0354
-	dw NoItemIcon ; KRAU_BERRY   ; 0355 EREADER KUO BERRY
-	dw NoItemIcon ; LIGARC_BERRY ; 0356 EREADER NINIKU BERRY
-	dw NoItemIcon ; TOTAPO_BERRY ; 0357 EREADER TOPO BERRY
-	dw NoItemIcon ; PINKAN_BERRY ; 0358
+	dw ApricornIcon  ; 0300
+	dw ApricornIcon  ; 0301
+	dw ApricornIcon  ; 0302
+	dw ApricornIcon  ; 0303
+	dw ApricornIcon  ; 0304
+	dw ApricornIcon  ; 0305
+	dw ApricornIcon  ; 0306
+	dw ApricornIcon  ; 0307
+	dw PechaBerryIcon   ; 0308
+	dw CheriBerryIcon   ; 0309
+	dw AspearBerryIcon  ; 030A
+	dw RawstBerryIcon   ; 030B
+	dw PersimBerryIcon  ; 030C
+	dw ChestoBerryIcon  ; 030D
+	dw LumBerryIcon     ; 030E
+	dw LeppaBerryIcon   ; 030F
+	dw OranBerryIcon    ; 0310
+	dw SitrusBerryIcon  ; 0311
+	dw FigyBerryIcon    ; 0312
+	dw WikiBerryIcon    ; 0313
+	dw MagoBerryIcon    ; 0314
+	dw AguavBerryIcon   ; 0315
+	dw IapapaBerryIcon  ; 0316
+	dw PomegBerryIcon   ; 0317
+	dw KelpsyBerryIcon  ; 0318
+	dw QualotBerryIcon  ; 0319
+	dw HondewBerryIcon  ; 031A
+	dw GrepaBerryIcon   ; 031B
+	dw TamatoBerryIcon  ; 031C
+	dw OccaBerryIcon    ; 031D
+	dw PasshoBerryIcon  ; 031E
+	dw WacanBerryIcon   ; 031F
+	dw RindoBerryIcon   ; 0320
+	dw YacheBerryIcon   ; 0321
+	dw ChopleBerryIcon  ; 0322
+	dw KebiaBerryIcon   ; 0323
+	dw ShucaBerryIcon   ; 0324
+	dw CobaBerryIcon    ; 0325
+	dw PayapaBerryIcon  ; 0326
+	dw TangaBerryIcon   ; 0327
+	dw ChartiBerryIcon  ; 0328
+	dw KasibBerryIcon   ; 0329
+	dw HabanBerryIcon   ; 032A
+	dw ColburBerryIcon  ; 032B
+	dw BabiriBerryIcon  ; 032C
+	dw ChilanBerryIcon  ; 032D
+	dw RoseliBerryIcon  ; 032E
+	dw LiechiBerryIcon  ; 032F
+	dw GanlonBerryIcon  ; 0330
+	dw SalacBerryIcon   ; 0331
+	dw PetayaBerryIcon  ; 0332
+	dw ApicotBerryIcon  ; 0333
+	dw LansatBerryIcon  ; 0334
+	dw StarfBerryIcon   ; 0335
+	dw KeeBerryIcon     ; 0336
+	dw MarangaBerryIcon ; 0337
+	dw EnigmaBerryIcon  ; 0338
+	dw MicleBerryIcon   ; 0339
+	dw CustapBerryIcon  ; 033A
+	dw JabocaBerryIcon  ; 033B
+	dw RowapBerryIcon   ; 033C
+	dw EggantBerryIcon  ; 033D
+	dw UnyinnBerryIcon  ; 033E
+	dw HopoBerryIcon    ; 033F Same as LeppaBerryIcon
+	dw PumkinBerryIcon  ; 0340 Same as AspearBerryIcon
+	dw CareepBerryIcon  ; 0341 Same as PersimBerryIcon
+	dw BitmelBerryIcon  ; 0342 Same as RawstBerryIcon
+	dw DrashBerryIcon   ; 0343 Same as PechaBerryIcon
+	dw RazzBerryIcon    ; 0344
+	dw BlukBerryIcon    ; 0345
+	dw NanabBerryIcon   ; 0346
+	dw WepearBerryIcon  ; 0347
+	dw PinapBerryIcon   ; 0348
+	dw CornnBerryIcon   ; 0349
+	dw MagostBerryIcon  ; 034A
+	dw RabutaBerryIcon  ; 034B
+	dw NomelBerryIcon   ; 034C
+	dw SpelonBerryIcon  ; 034D
+	dw PamtreBerryIcon  ; 034E
+	dw WatmelBerryIcon  ; 034F
+	dw DurinBerryIcon   ; 0350
+	dw BelueBerryIcon   ; 0351
+	dw StribBerryIcon   ; 0352
+	dw TilotaBerryIcon  ; 0353
+	dw NutpeaBerryIcon  ; 0354
+	dw KrauBerryIcon    ; 0355
+	dw LigarcBerryIcon  ; 0356
+	dw TotapoBerryIcon  ; 0357
+	dw PinkanBerryIcon  ; 0358
 .IndirectEnd:
 
 MedicineIconsPointers:
@@ -995,164 +1012,164 @@ ItemIconPalettes1:
 	
 KeyItemIconPalettes:
 ; BICYCLE
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 22, 12, 12
+	RGB 12, 12, 12
 ; COIN_CASE
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 24, 21, 07
+	RGB 21, 07, 07
 ; ITEMFINDER
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 08, 17, 25
+	RGB 26, 12, 12
 ; OLD_ROD
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 24, 19, 08
+	RGB 19, 13, 01
 ; GOOD_ROD
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 22, 25, 08
+	RGB 25, 11, 07
 ; SUPER_ROD
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 18, 16, 16
+	RGB 10, 10, 17
 ; RED_SCALE
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 18, 18
+	RGB 29, 07, 07
 ; SECRETPOTION
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 23, 13, 04
+	RGB 28, 27, 02
 ; S_S_TICKET
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 12, 22, 29
+	RGB 06, 13, 17
 ; MYSTERY_EGG
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 29, 26, 18
+	RGB 08, 19, 11
 ; CLEAR_BELL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 29, 21, 13
+	RGB 23, 17, 08
 ; SILVER_WING
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 21, 24, 30
+	RGB 16, 19, 24
 ; GS_BALL_KEY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 28, 19, 05
+	RGB 15, 14, 16
 ; BLUE_CARD
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 15, 22, 31
+	RGB 07, 13, 31
 ; CARD_KEY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 14, 00
+	RGB 04, 15, 29
 ; MACHINE_PART
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 19, 19, 21
+	RGB 13, 13, 16
 ; EGG_TICKET
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; LOST_ITEM
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 20, 25
+	RGB 28, 15, 23
 ; BASEMENT_KEY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 20, 21, 23
+	RGB 11, 12, 16
 ; PASS
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 13, 23, 00
+	RGB 26, 13, 12
 ; SQUIRTBOTTLE
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 10, 15, 31
+	RGB 22, 18, 08
 ; RAINBOW_WING
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 29, 09, 08
+	RGB 17, 24, 13
 ; SECRET_STASH
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; SEA_MAP
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 27, 23, 17
+	RGB 22, 18, 13
 ; BERRY_LOG
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; EXCEL_SCOPE
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 17, 20, 17
+	RGB 13, 20, 27
 .IndirectEnd:
 	
 BallsIconPalettes:
 ; MASTER_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 12, 08, 18
+	RGB 28, 02, 16
 ; ULTRA_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 26, 07
+	RGB 07, 07, 08
 ; GREAT_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 00, 17, 25
+	RGB 30, 10, 06
 ; POKE_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 31, 31
+	RGB 30, 10, 06
 ; SAFARI_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 06, 15, 10
+	RGB 21, 21, 09
 ; NET_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 00, 22, 25
+	RGB 07, 07, 08
 ; DIVE_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 16, 25, 30
+	RGB 06, 13, 22
 ; NEST_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 30, 26, 12
+	RGB 00, 19, 07
 ; REPEAT_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 30, 08
+	RGB 30, 10, 06
 ; TIMER_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 07, 07, 08
+	RGB 30, 10, 06
 ; LUXURY_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 28, 03
+	RGB 31, 08, 00
 ; PREMIER_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 31, 31
+	RGB 30, 10, 06
 ; FAST_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 25, 08
+	RGB 31, 15, 00
 ; LEVEL_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 27, 04
+	RGB 30, 10, 06
 ; LURE_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 00, 19, 21
+	RGB 30, 10, 06
 ; HEAVY_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 07, 07, 08
+	RGB 00, 15, 21
 ; LOVE_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 25, 26
+	RGB 31, 16, 19
 ; FRIEND_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 07, 20, 00
+	RGB 30, 10, 06
 ; MOON_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 30, 24, 08
+	RGB 00, 21, 23
 ; PARK_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 00, 10, 10
+	RGB 14, 20, 05
 ; SPORT_BALL
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; DUSK_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 00, 20, 09
+	RGB 25, 00, 01
 ; HEAL_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 29, 10, 19
+	RGB 10, 17, 24
 ; QUICK_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 00, 16, 24
+	RGB 30, 29, 07
 ; CHERISH_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 06, 04
+	RGB 20, 07, 05
 ; DREAM_BALL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 16, 23
+	RGB 16, 12, 24
 ; BEAST_BALL
 	RGB 20, 20, 20
 	RGB 10, 10, 10
@@ -1199,62 +1216,62 @@ BallsIconPalettes:
 	
 BerryIconPalettes:
 ; RED_APRICORN
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 08, 06
+	RGB 21, 12, 05
 ; BLU_APRICORN
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 06, 15, 30
+	RGB 21, 12, 05
 ; YLW_APRICORN
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 30, 26, 06
+	RGB 21, 12, 05
 ; GRN_APRICORN
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 07, 24, 12
+	RGB 21, 12, 05
 ; WHT_APRICORN
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 23, 25, 27
+	RGB 21, 12, 05
 ; BLK_APRICORN
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 09, 09, 09
+	RGB 21, 12, 05
 ; PNK_APRICORN
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 18, 23
+	RGB 21, 12, 05
 ; BRN_APRICORN
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; PECHA_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 24, 19
+	RGB 29, 18, 14
 ; CHERI_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 29, 12, 10
+	RGB 15, 23, 09
 ; ASPEAR_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 30, 28, 10
+	RGB 25, 22, 09
 ; RAWST_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 18, 26, 26
+	RGB 16, 18, 21
 ; PERSIM_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 25, 19
+	RGB 28, 19, 14
 ; CHESTO_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 18, 14, 28
+	RGB 21, 21, 13
 ; LUM_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 18, 27, 09
+	RGB 10, 20, 09
 ; LEPPA_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 18, 06
+	RGB 25, 09, 06
 ; ORAN_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 10, 20, 30
+	RGB 13, 13, 23
 ; SITRUS_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 29, 13
+	RGB 28, 22, 08
 ; FIGY_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 29, 18, 06
+	RGB 23, 13, 08
 ; WIKI_BERRY
 	RGB 20, 20, 20
 	RGB 10, 10, 10
@@ -1268,23 +1285,23 @@ BerryIconPalettes:
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; POMEG_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 18, 06
+	RGB 25, 09, 06
 ; KELPSY_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 14, 21, 31
+	RGB 14, 12, 28
 ; QUALOT_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 26, 16
+	RGB 29, 19, 14
 ; HONDEW_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 18, 27, 09
+	RGB 10, 19, 09
 ; GREPA_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 28, 07
+	RGB 27, 23, 09
 ; TAMATO_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 18, 06
+	RGB 25, 09, 06
 ; OCCA_BERRY
 	RGB 20, 20, 20
 	RGB 10, 10, 10
@@ -1340,47 +1357,47 @@ BerryIconPalettes:
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; LIECHI_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 21, 09
+	RGB 26, 14, 06
 ; GANLON_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 19, 18, 25
+	RGB 14, 13, 20
 ; SALAC_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 15, 23, 14
+	RGB 09, 17, 09
 ; PETAYA_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 30, 20, 15
+	RGB 20, 17, 12
 ; APICOT_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 13, 16, 23
+	RGB 10, 13, 20
 ; LANSAT_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 29, 22, 18
+	RGB 25, 15, 11
 ; STARF_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 17, 25, 10
+	RGB 10, 18, 07
 ; KEE_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 22, 15
+	RGB 26, 12, 08
 ; MARANGABERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 23, 22, 06
+	RGB 16, 15, 06
 ; ENIGMA_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 25, 23, 20
+	RGB 16, 16, 16
 ; MICLE_BERRY
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; CUSTAP_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 30, 19, 12
+	RGB 29, 08, 06
 ; JABOCA_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 25, 23, 05
+	RGB 15, 12, 06
 ; ROWAP_BERRY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 05, 21, 22
+	RGB 02, 15, 16
 ; EGGANT_BERRY
 	RGB 20, 20, 20
 	RGB 10, 10, 10
@@ -1670,38 +1687,38 @@ MedicineIconPalettes:
 
 ValuablesIconPalettes:
 ; NUGGET
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 25, 09
+	RGB 19, 14, 02
 ; SILVER_LEAF
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 19, 24, 22
+	RGB 12, 16, 15
 ; GOLD_LEAF
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 25, 08
+	RGB 27, 18, 01
 ; TINYMUSHROOM
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 14, 11
+	RGB 26, 07, 04
 ; BIG_MUSHROOM
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 14, 11
+	RGB 26, 07, 04
 ; SLOWPOKETAIL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 23, 24
+	RGB 28, 14, 16
 ; PEARL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 19, 25, 24
+	RGB 15, 17, 17
 ; BIG_PEARL
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 19, 25, 24
+	RGB 15, 17, 17
 ; STARDUST
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 27, 14, 14
+	RGB 12, 19, 26
 ; STAR_PIECE
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 30, 20, 20
+	RGB 27, 14, 14
 ; BRICK_PIECE
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 22, 10
+	RGB 25, 12, 02
 ; HEART_SCALE
 	RGB 20, 20, 20
 	RGB 10, 10, 10
@@ -1721,17 +1738,17 @@ ValuablesIconPalettes:
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; BALMMUSHROOM
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 31, 10
+	RGB 29, 19, 05
 ; BIG_NUGGET
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 25, 09
+	RGB 19, 14, 02
 ; COMET_SHARD
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; PEARL_STRING
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 19, 25, 24
+	RGB 15, 17, 17
 ; BEACH_GLASS
 	RGB 20, 20, 20
 	RGB 10, 10, 10
@@ -1802,11 +1819,11 @@ ValuablesIconPalettes:
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; HONEY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 23, 09
+	RGB 29, 18, 00
 ; SWEET_HONEY
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 23, 09
+	RGB 29, 18, 00
 ; CANDYTRUFFLE
 	RGB 20, 20, 20
 	RGB 10, 10, 10
@@ -1931,3 +1948,129 @@ LemonadeIcon: INCBIN "gfx/items/lemonade.2bpp.lz"
 FreshWaterIcon: INCBIN "gfx/items/fresh_water.2bpp.lz"
 RevivalHerbIcon: INCBIN "gfx/items/revival_herb.2bpp.lz"
 BerryJuiceIcon: INCBIN "gfx/items/berry_juice.2bpp.lz"
+SkateboardIcon: INCBIN "gfx/items/skateboard.2bpp.lz"
+MasterBallIcon: INCBIN "gfx/items/master_ball.2bpp.lz"
+UltraBallIcon: INCBIN "gfx/items/ultra_ball.2bpp.lz"
+GreatBallIcon: INCBIN "gfx/items/great_ball.2bpp.lz"
+PokeBallIcon: INCBIN "gfx/items/poke_ball.2bpp.lz"
+SafariBallIcon: INCBIN "gfx/items/safari_ball.2bpp.lz"
+NetBallIcon: INCBIN "gfx/items/net_ball.2bpp.lz"
+DiveBallIcon: INCBIN "gfx/items/dive_ball.2bpp.lz"
+NestBallIcon: INCBIN "gfx/items/nest_ball.2bpp.lz"
+RepeatBallIcon: INCBIN "gfx/items/repeat_ball.2bpp.lz"
+TimerBallIcon: INCBIN "gfx/items/timer_ball.2bpp.lz"
+LuxuryBallIcon: INCBIN "gfx/items/luxury_ball.2bpp.lz"
+PremierBallIcon: INCBIN "gfx/items/premier_ball.2bpp.lz"
+FastBallIcon: INCBIN "gfx/items/fast_ball.2bpp.lz"
+LevelBallIcon: INCBIN "gfx/items/level_ball.2bpp.lz"
+LureBallIcon: INCBIN "gfx/items/lure_ball.2bpp.lz"
+HeavyBallIcon: INCBIN "gfx/items/heavy_ball.2bpp.lz"
+LoveBallIcon: INCBIN "gfx/items/love_ball.2bpp.lz"
+FriendBallIcon: INCBIN "gfx/items/friend_ball.2bpp.lz"
+MoonBallIcon: INCBIN "gfx/items/moon_ball.2bpp.lz"
+ParkBallIcon: INCBIN "gfx/items/park_ball.2bpp.lz"
+SportBallIcon: INCBIN "gfx/items/sport_ball.2bpp.lz"
+DuskBallIcon: INCBIN "gfx/items/dusk_ball.2bpp.lz"
+HealBallIcon: INCBIN "gfx/items/heal_ball.2bpp.lz"
+QuickBallIcon: INCBIN "gfx/items/quick_ball.2bpp.lz"
+CherishBallIcon: INCBIN "gfx/items/cherish_ball.2bpp.lz"
+DreamBallIcon: INCBIN "gfx/items/dream_ball.2bpp.lz"
+BeastBallIcon: INCBIN "gfx/items/beast_ball.2bpp.lz"
+StrangeBallIcon:
+PokeBallHIcon:
+GreatBallHIcon:
+UltraBallHIcon:
+HeavyBallHIcon:
+LeadenBallIcon:
+GigatonBallIcon:
+FeatherBallIcon:
+WingBallIcon:
+JetBallIcon:
+OriginBallIcon:
+RocketBallIcon: INCBIN "gfx/items/rocket_ball.2bpp.lz"
+GSBallIcon: INCBIN "gfx/items/gs_ball.2bpp.lz"
+HopoBerryIcon: INCBIN "gfx/items/hopo_berry.2bpp.lz"
+
+SECTION "Berry Icons", ROMX
+NoBerryIcon: INCBIN "gfx/items/no_item.2bpp.lz"
+PechaBerryIcon: INCBIN "gfx/items/pecha_berry.2bpp.lz"
+CheriBerryIcon: INCBIN "gfx/items/cheri_berry.2bpp.lz"
+AspearBerryIcon: INCBIN "gfx/items/aspear_berry.2bpp.lz"
+RawstBerryIcon: INCBIN "gfx/items/rawst_berry.2bpp.lz"
+PersimBerryIcon: INCBIN "gfx/items/persim_berry.2bpp.lz"
+ChestoBerryIcon: INCBIN "gfx/items/chesto_berry.2bpp.lz"
+LumBerryIcon: INCBIN "gfx/items/lum_berry.2bpp.lz"
+LeppaBerryIcon: INCBIN "gfx/items/leppa_berry.2bpp.lz"
+OranBerryIcon: INCBIN "gfx/items/oran_berry.2bpp.lz"
+SitrusBerryIcon: INCBIN "gfx/items/sitrus_berry.2bpp.lz"
+FigyBerryIcon: INCBIN "gfx/items/figy_berry.2bpp.lz"
+WikiBerryIcon: INCBIN "gfx/items/wiki_berry.2bpp.lz"
+MagoBerryIcon: INCBIN "gfx/items/mago_berry.2bpp.lz"
+AguavBerryIcon: INCBIN "gfx/items/aguav_berry.2bpp.lz"
+IapapaBerryIcon: INCBIN "gfx/items/iapapa_berry.2bpp.lz"
+PomegBerryIcon: INCBIN "gfx/items/pomeg_berry.2bpp.lz"
+KelpsyBerryIcon: INCBIN "gfx/items/kelpsy_berry.2bpp.lz"
+QualotBerryIcon: INCBIN "gfx/items/qualot_berry.2bpp.lz"
+HondewBerryIcon: INCBIN "gfx/items/hondew_berry.2bpp.lz"
+GrepaBerryIcon: INCBIN "gfx/items/grepa_berry.2bpp.lz"
+TamatoBerryIcon: INCBIN "gfx/items/tamato_berry.2bpp.lz"
+OccaBerryIcon: INCBIN "gfx/items/occa_berry.2bpp.lz"
+PasshoBerryIcon: INCBIN "gfx/items/passho_berry.2bpp.lz"
+WacanBerryIcon: INCBIN "gfx/items/wacan_berry.2bpp.lz"
+RindoBerryIcon: INCBIN "gfx/items/rindo_berry.2bpp.lz"
+YacheBerryIcon: INCBIN "gfx/items/yache_berry.2bpp.lz"
+ChopleBerryIcon: INCBIN "gfx/items/chople_berry.2bpp.lz"
+KebiaBerryIcon: INCBIN "gfx/items/kebia_berry.2bpp.lz"
+ShucaBerryIcon: INCBIN "gfx/items/shuca_berry.2bpp.lz"
+CobaBerryIcon: INCBIN "gfx/items/coba_berry.2bpp.lz"
+PayapaBerryIcon: INCBIN "gfx/items/payapa_berry.2bpp.lz"
+TangaBerryIcon: INCBIN "gfx/items/tanga_berry.2bpp.lz"
+ChartiBerryIcon: INCBIN "gfx/items/charti_berry.2bpp.lz"
+KasibBerryIcon: INCBIN "gfx/items/kasib_berry.2bpp.lz"
+HabanBerryIcon: INCBIN "gfx/items/haban_berry.2bpp.lz"
+ColburBerryIcon: INCBIN "gfx/items/colbur_berry.2bpp.lz"
+BabiriBerryIcon: INCBIN "gfx/items/babiri_berry.2bpp.lz"
+ChilanBerryIcon: INCBIN "gfx/items/chilan_berry.2bpp.lz"
+RoseliBerryIcon: INCBIN "gfx/items/roseli_berry.2bpp.lz"
+LiechiBerryIcon: INCBIN "gfx/items/liechi_berry.2bpp.lz"
+GanlonBerryIcon: INCBIN "gfx/items/ganlon_berry.2bpp.lz"
+SalacBerryIcon: INCBIN "gfx/items/salac_berry.2bpp.lz"
+PetayaBerryIcon: INCBIN "gfx/items/petaya_berry.2bpp.lz"
+ApicotBerryIcon: INCBIN "gfx/items/apicot_berry.2bpp.lz"
+LansatBerryIcon: INCBIN "gfx/items/lansat_berry.2bpp.lz"
+StarfBerryIcon: INCBIN "gfx/items/starf_berry.2bpp.lz"
+KeeBerryIcon: INCBIN "gfx/items/kee_berry.2bpp.lz"
+MarangaBerryIcon: INCBIN "gfx/items/maranga_berry.2bpp.lz"
+EnigmaBerryIcon: INCBIN "gfx/items/enigma_berry.2bpp.lz"
+MicleBerryIcon: INCBIN "gfx/items/micle_berry.2bpp.lz"
+CustapBerryIcon: INCBIN "gfx/items/custap_berry.2bpp.lz"
+JabocaBerryIcon: INCBIN "gfx/items/jaboca_berry.2bpp.lz"
+RowapBerryIcon: INCBIN "gfx/items/rowap_berry.2bpp.lz"
+EggantBerryIcon: INCBIN "gfx/items/eggant_berry.2bpp.lz"
+UnyinnBerryIcon: INCBIN "gfx/items/unyinn_berry.2bpp.lz"
+PumkinBerryIcon: INCBIN "gfx/items/pumkin_berry.2bpp.lz"
+CareepBerryIcon: INCBIN "gfx/items/careep_berry.2bpp.lz"
+BitmelBerryIcon: INCBIN "gfx/items/bitmel_berry.2bpp.lz"
+DrashBerryIcon: INCBIN "gfx/items/drash_berry.2bpp.lz"
+RazzBerryIcon: INCBIN "gfx/items/razz_berry.2bpp.lz"
+BlukBerryIcon: INCBIN "gfx/items/bluk_berry.2bpp.lz"
+NanabBerryIcon: INCBIN "gfx/items/nanab_berry.2bpp.lz"
+WepearBerryIcon: INCBIN "gfx/items/wepear_berry.2bpp.lz"
+PinapBerryIcon: INCBIN "gfx/items/pinap_berry.2bpp.lz"
+CornnBerryIcon: INCBIN "gfx/items/cornn_berry.2bpp.lz"
+MagostBerryIcon: INCBIN "gfx/items/magost_berry.2bpp.lz"
+RabutaBerryIcon: INCBIN "gfx/items/rabuta_berry.2bpp.lz"
+NomelBerryIcon: INCBIN "gfx/items/nomel_berry.2bpp.lz"
+SpelonBerryIcon: INCBIN "gfx/items/spelon_berry.2bpp.lz"
+PamtreBerryIcon: INCBIN "gfx/items/pamtre_berry.2bpp.lz"
+WatmelBerryIcon: INCBIN "gfx/items/watmel_berry.2bpp.lz"
+DurinBerryIcon: INCBIN "gfx/items/durin_berry.2bpp.lz"
+BelueBerryIcon: INCBIN "gfx/items/belue_berry.2bpp.lz"
+StribBerryIcon: INCBIN "gfx/items/strib_berry.2bpp.lz"
+TilotaBerryIcon: INCBIN "gfx/items/tilota_berry.2bpp.lz"
+NutpeaBerryIcon: INCBIN "gfx/items/nutpea_berry.2bpp.lz"
+KrauBerryIcon: INCBIN "gfx/items/krau_berry.2bpp.lz"
+LigarcBerryIcon: INCBIN "gfx/items/ligarc_berry.2bpp.lz"
+TotapoBerryIcon: INCBIN "gfx/items/totapo_berry.2bpp.lz"
+PinkanBerryIcon: INCBIN "gfx/items/pinkan_berry.2bpp.lz"
+ApricornIcon: INCBIN "gfx/items/apricorn.2bpp.lz"
