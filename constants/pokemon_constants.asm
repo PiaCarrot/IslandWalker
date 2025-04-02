@@ -512,9 +512,9 @@ DEF FORM_POKEMON EQU const_value
 	; const ONIX_CRYSTAL        ; 1e2
 	; const STEELIX_CRYSTAL     ; 1e3
 	; const URSALUNA_BLOODMOON  ; 1e4
-	const EEVEE_PARTNER  ; 1e5
-	const PIKACHU_PARTNER  ; 1e6
-	const DRATINI_PARTNER  ; 1e7
+	const DRATINI_PARTNER  ; 1e5
+	const EEVEE_PARTNER  ; 1e6
+	const PIKACHU_PARTNER  ; 1e7
 	; const DRAGONAIR_PARTNER  ; 1e8
 	; const DRAGONITE_PARTNER  ; 1e9
 	; const ROCKRUFF_OWN_TEMPO  ; 1ea

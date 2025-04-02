@@ -74,7 +74,7 @@ ValenciaIsland_MapScripts:
 	opentext
 	checkevent EVENT_GOT_PIKACHU_FROM_IVY
 	iftrue .ASPikachuScript2
-	getmonname STRING_BUFFER_3, EEVEE
+	getmonname STRING_BUFFER_3, EEVEE_PARTNER
 	writetext ASIvyScriptText6
 	waitbutton
 	farwritetext ReceivedStarterText
@@ -95,13 +95,12 @@ ValenciaIsland_MapScripts:
 	end
 	
 .ASPikachuScript
-	setevent EVENT_GOT_PIKACHU_FROM_IVY
 	;Special to encounter starter
 	special HiddenStarter1
 	sjump .ContinueASPikaOrEevee
 	
 .ASPikachuScript2
-	getmonname STRING_BUFFER_3, PIKACHU
+	getmonname STRING_BUFFER_3, PIKACHU_PARTNER
 	writetext ASIvyScriptText8
 	waitbutton
 	farwritetext ReceivedStarterText
@@ -150,7 +149,7 @@ ValenciaIsland_MapScripts:
 	disappear VALENCIA_ISLAND_DRATINI
 	turnobject VALENCIA_ISLAND_IVY, RIGHT
 	opentext
-	getmonname STRING_BUFFER_3, DRATINI
+	getmonname STRING_BUFFER_3, DRATINI_PARTNER
 	writetext ASIvyScriptText13
 	waitbutton
 	farwritetext ReceivedStarterText
@@ -184,9 +183,9 @@ ValenciaIslandAltStarterEventCutTreeCallback:
 ValenciaYoungsterScript:
 	opentext
 	givepoke LAPRAS_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
-	givepoke PIKACHU, PLAIN_FORM, 100, ORAN_BERRY
-	givepoke FURRET, PLAIN_FORM, 100, ORAN_BERRY
-	givepoke MEWTWO, PLAIN_FORM, 100, ORAN_BERRY
+	givepoke PIKACHU_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
+	givepoke EEVEE_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
+	givepoke DRATINI_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
 	givepoke MEW, PLAIN_FORM, 100, ORAN_BERRY
 	givepoke TYRANITAR, PLAIN_FORM, 100, ORAN_BERRY
 	giveitem HM_SURF
