@@ -307,4 +307,6 @@ FirstEvoStages::
 	dw LATIOS
 	dw LAPRAS_PARTNER
 	dw DRATINI_PARTNER
+	dw EEVEE_PARTNER
+	dw PIKACHU_PARTNER
 	assert_table_length NUM_POKEMON

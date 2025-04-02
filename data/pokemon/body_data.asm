@@ -312,4 +312,6 @@ PokemonBodyData:
 ; Forms
 	dw 802, 4850  ; LAPRAS PARTNER
 	dw 511, 70     ; DRATINI PARTNER
+	dw 100, 140    ; EEVEE PARTNER
+	dw 104, 130    ; PIKACHU PARTNER
 	assert_table_length NUM_POKEMON

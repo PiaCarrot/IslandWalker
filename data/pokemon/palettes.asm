@@ -648,4 +648,8 @@ INCBIN "gfx/pokemon/forms/lapras_partner/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/lapras_partner/shiny.pal"
 INCBIN "gfx/pokemon/forms/dratini_partner/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dratini_partner/shiny.pal"
+INCBIN "gfx/pokemon/forms/eevee_partner/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/eevee_partner/shiny.pal"
+INCBIN "gfx/pokemon/forms/pikachu_partner/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/pikachu_partner/shiny.pal"
 	assert_table_length NUM_POKEMON + 1

@@ -330,3 +330,5 @@ SECTION "Pokedex Entries 385-448", ROMX
 
 LaprasPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/lapras_partner.asm"
 DratiniPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dratini_partner.asm"
+EeveePartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/eevee_partner.asm"
+PikachuPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/pikachu_partner.asm"

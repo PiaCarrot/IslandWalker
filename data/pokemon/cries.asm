@@ -316,4 +316,6 @@ PokemonCries::
 ; Forms
 	mon_cry CRY_LAPRAS,       80,  256 ; LAPRAS PARTNER
 	mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI
+	mon_cry CRY_VENONAT,     136,  224 ; EEVEE
+	mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
 	assert_table_length NUM_POKEMON

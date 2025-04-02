@@ -314,4 +314,6 @@ PokemonNames::
 ; Forms
 	db "LAPRAS@@@@"
 	db "DRATINI@@@"
+	db "EEVEE@@@@@"
+	db "PIKACHU@@@"
 	assert_table_length NUM_POKEMON

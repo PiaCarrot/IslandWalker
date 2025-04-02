@@ -311,4 +311,6 @@ PokedexDataPointerTable:
 ; Forms
 	dba LaprasPartnerPokedexEntry
 	dba DratiniPartnerPokedexEntry
+	dba EeveePartnerPokedexEntry
+	dba PikachuPartnerPokedexEntry
 	assert_table_length NUM_POKEMON

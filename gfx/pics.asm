@@ -621,6 +621,10 @@ LinooneFrontpic:          INCBIN "gfx/pokemon/hoenn/linoone/front.animated.2bpp.
 LinooneBackpic:           INCBIN "gfx/pokemon/hoenn/linoone/back.2bpp.lz"
 DratiniPartnerFrontpic: INCBIN "gfx/pokemon/forms/dratini_partner/front.animated.2bpp.lz"
 DratiniPartnerBackpic:  INCBIN "gfx/pokemon/forms/dratini_partner/back.2bpp.lz"
+EeveePartnerFrontpic: INCBIN "gfx/pokemon/forms/eevee_partner/front.animated.2bpp.lz"
+EeveePartnerBackpic:  INCBIN "gfx/pokemon/forms/eevee_partner/back.2bpp.lz"
+PikachuPartnerFrontpic: INCBIN "gfx/pokemon/forms/pikachu_partner/front.animated.2bpp.lz"
+PikachuPartnerBackpic:  INCBIN "gfx/pokemon/forms/pikachu_partner/back.2bpp.lz"
 
 SECTION "Pokemon Pics 23", ROMX
 

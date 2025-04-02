@@ -17,7 +17,7 @@ HiddenStarter1:
 	jr nz, .pikachu
 	
 ; Load EEVEE to hl by default
-	ld hl, EEVEE
+	ld hl, EEVEE_PARTNER
 	jr .cont
 
 ; Load DRATINI if proper flag set
@@ -27,7 +27,7 @@ HiddenStarter1:
 
 ; Load PIKACHU if proper flag set
 .pikachu
-	ld hl, PIKACHU
+	ld hl, PIKACHU_PARTNER
 
 .cont
 ; Set wMonType to Party

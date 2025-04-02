@@ -320,4 +320,6 @@ MonMenuIconPals:
 ; Forms
 	icon_pals BLUE,   TEAL   ; LAPRAS
 	icon_pals BLUE,   PURPLE ; DRATINI
+	icon_pals BROWN,  GRAY   ; EEVEE
+	icon_pals RED,    RED    ; PIKACHU
 	assert_table_length NUM_POKEMON

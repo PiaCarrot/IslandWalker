@@ -315,4 +315,6 @@ IconPointers:
 ; forms
 	dw LaprasIcon
 	dw DratiniIcon
+	dw EeveeIcon
+	dw PikachuIcon
 	assert_table_length NUM_POKEMON + 1

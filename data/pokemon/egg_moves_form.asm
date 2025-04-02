@@ -3,6 +3,8 @@ SECTION "Egg Moves 4", ROMX
 FormsEggMovePointers::
 	dw LaprasPartnerEggMoves
 	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
 .IndirectEnd::
 
 LaprasPartnerEggMoves:
