@@ -463,53 +463,53 @@ MedicineIconsPointers:
 .IndirectEnd:
 
 ValuablesIconsPointers:
-	dw NoItemIcon ; NUGGET       ; 001F
-	dw NoItemIcon ; SILVER_LEAF  ; 0033
-	dw NoItemIcon ; GOLD_LEAF    ; 003A
-	dw NoItemIcon ; TINYMUSHROOM ; 003F
-	dw NoItemIcon ; BIG_MUSHROOM ; 0040
-	dw NoItemIcon ; SLOWPOKETAIL ; 004A
-	dw NoItemIcon ; PEARL        ; 0050
-	dw NoItemIcon ; BIG_PEARL    ; 0051
-	dw NoItemIcon ; STARDUST     ; 005F
-	dw NoItemIcon ; STAR_PIECE   ; 0060
-	dw NoItemIcon ; BRICK_PIECE  ; 0081
-	dw NoItemIcon ; HEART_SCALE  ; 00C9
-	dw NoItemIcon ; BLUE_SHARD   ; 00CA
-	dw NoItemIcon ; GREEN_SHARD  ; 00CB
-	dw NoItemIcon ; RED_SHARD    ; 00CC
-	dw NoItemIcon ; YELLOW_SHARD ; 00CD
-	dw NoItemIcon ; RARE_BONE    ; 00CE
-	dw NoItemIcon ; BALMMUSHROOM ; 00CF
-	dw NoItemIcon ; BIG_NUGGET   ; 00D0
-	dw NoItemIcon ; COMET_SHARD  ; 00D1
-	dw NoItemIcon ; PEARL_STRING ; 00D2
-	dw NoItemIcon ; BEACH_GLASS  ; 00D3
-	dw NoItemIcon ; PRETTY_SHELL ; 00D4
-	dw NoItemIcon ; TINY_BAMBOO  ; 00D5
-	dw NoItemIcon ; BIG_BAMBOO   ; 00D6
-	dw NoItemIcon ; SPIDER_SILK  ; 00DC
-	dw NoItemIcon ; ANCIENT_VASE ; 00E3
-	dw NoItemIcon ; ANCIENT_CUP  ; 00E4
-	dw NoItemIcon ; ANCIENT_JAR  ; 00E5
-	dw NoItemIcon ; CLAY_SHARD   ; 00E6
-	dw NoItemIcon ; HUGE_CRYSTAL ; 00E7
-	dw NoItemIcon ; LARGE_JADE   ; 00E8
-	dw NoItemIcon ; BIG_EMERALD  ; 00E9
-	dw NoItemIcon ; GIANT_RUBY   ; 00EA
-	dw NoItemIcon ; BIG_SAPPHIRE ; 00EB
-	dw NoItemIcon ; BIG_AMETHYST ; 00EC
-	dw NoItemIcon ; HUGE_TOPAZ   ; 00ED
-	dw NoItemIcon ; LARGE_GARNET ; 00EE
-	dw NoItemIcon ; GIANT_ONYX   ; 00EF
-	dw NoItemIcon ; HUGE_DIAMOND ; 00F0
-	dw NoItemIcon ; SILVER_CAP
-	dw NoItemIcon ; GOLD_CAP
-	dw NoItemIcon ; GOLD_DUST
-	dw NoItemIcon ; GOLD_STATUE
-	dw NoItemIcon ; HONEY
-	dw NoItemIcon ; SWEET_HONEY
-	dw NoItemIcon ; CANDYTRUFFLE
+	dw NuggetIcon ; NUGGET       ; 001F
+	dw LeafIcon ; SILVER_LEAF  ; 0033
+	dw LeafIcon ; GOLD_LEAF    ; 003A
+	dw TinyMushroomIcon ; TINYMUSHROOM ; 003F
+	dw BigMushroomIcon ; BIG_MUSHROOM ; 0040
+	dw SlowpokeTailIcon ; SLOWPOKETAIL ; 004A
+	dw PearlIcon ; PEARL        ; 0050
+	dw BigPearlIcon ; BIG_PEARL    ; 0051
+	dw BrightpowderIcon ; STARDUST     ; 005F
+	dw StarPieceIcon ; STAR_PIECE   ; 0060
+	dw ShardIcon ; BRICK_PIECE  ; 0081
+	dw HeartScaleIcon ; HEART_SCALE  ; 00C9
+	dw ShardIcon ; BLUE_SHARD   ; 00CA
+	dw ShardIcon ; GREEN_SHARD  ; 00CB
+	dw ShardIcon ; RED_SHARD    ; 00CC
+	dw ShardIcon ; YELLOW_SHARD ; 00CD
+	dw ThickClubIcon ; RARE_BONE    ; 00CE
+	dw BalmmushroomIcon ; BALMMUSHROOM ; 00CF
+	dw BigNuggetIcon ; BIG_NUGGET   ; 00D0
+	dw StarPieceIcon ; COMET_SHARD  ; 00D1
+	dw PearlStringIcon ; PEARL_STRING ; 00D2
+	dw BeachGlassIcon ; BEACH_GLASS  ; 00D3
+	dw PrettyShellIcon ; PRETTY_SHELL ; 00D4
+	dw TinyBambooIcon ; TINY_BAMBOO  ; 00D5
+	dw BigBambooIcon ; BIG_BAMBOO   ; 00D6
+	dw SpiderSilkIcon ; SPIDER_SILK  ; 00DC
+	dw AncientVaseIcon ; ANCIENT_VASE ; 00E3
+	dw AncientCupIcon ; ANCIENT_CUP  ; 00E4
+	dw AncientJarIcon ; ANCIENT_JAR  ; 00E5
+	dw ShardIcon ; CLAY_SHARD   ; 00E6
+	dw GemstoneIcon ; HUGE_CRYSTAL ; 00E7
+	dw GemstoneIcon ; LARGE_JADE   ; 00E8
+	dw GemstoneIcon ; BIG_EMERALD  ; 00E9
+	dw GemstoneIcon ; GIANT_RUBY   ; 00EA
+	dw GemstoneIcon ; BIG_SAPPHIRE ; 00EB
+	dw GemstoneIcon ; BIG_AMETHYST ; 00EC
+	dw GemstoneIcon ; HUGE_TOPAZ   ; 00ED
+	dw GemstoneIcon ; LARGE_GARNET ; 00EE
+	dw GemstoneIcon ; GIANT_ONYX   ; 00EF
+	dw GemstoneIcon ; HUGE_DIAMOND ; 00F0
+	dw BottleCapIcon ; SILVER_CAP
+	dw BottleCapIcon ; GOLD_CAP
+	dw SilverPowderIcon ; GOLD_DUST
+	dw GoldStatueIcon ; GOLD_STATUE
+	dw HoneyIcon ; HONEY
+	dw HoneyIcon ; SWEET_HONEY
+	dw CandyTruffleIcon ; CANDYTRUFFLE
 .IndirectEnd:
 
 LoadItemIconPalette:
@@ -1735,8 +1735,8 @@ ValuablesIconPalettes:
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; RARE_BONE
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 26, 26, 21
+	RGB 19, 19, 16
 ; BALMMUSHROOM
 	RGB 31, 31, 10
 	RGB 29, 19, 05
@@ -1813,11 +1813,11 @@ ValuablesIconPalettes:
 	RGB 20, 20, 20
 	RGB 10, 10, 10
 ; GOLD_DUST
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 25, 09
+	RGB 19, 14, 02
 ; GOLD_STATUE
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 31, 25, 09
+	RGB 19, 14, 02
 ; HONEY
 	RGB 31, 23, 09
 	RGB 29, 18, 00
@@ -1989,7 +1989,32 @@ JetBallIcon:
 OriginBallIcon:
 RocketBallIcon: INCBIN "gfx/items/rocket_ball.2bpp.lz"
 GSBallIcon: INCBIN "gfx/items/gs_ball.2bpp.lz"
-HopoBerryIcon: INCBIN "gfx/items/hopo_berry.2bpp.lz"
+NuggetIcon: INCBIN "gfx/items/nugget.2bpp.lz"
+LeafIcon: INCBIN "gfx/items/leaf.2bpp.lz"
+TinyMushroomIcon: INCBIN "gfx/items/tinymushroom.2bpp.lz"
+BigMushroomIcon: INCBIN "gfx/items/big_mushroom.2bpp.lz"
+SlowpokeTailIcon: INCBIN "gfx/items/slowpoketail.2bpp.lz"
+PearlIcon: INCBIN "gfx/items/pearl.2bpp.lz"
+BigPearlIcon: INCBIN "gfx/items/big_pearl.2bpp.lz"
+StarPieceIcon: INCBIN "gfx/items/star_piece.2bpp.lz"
+ShardIcon: INCBIN "gfx/items/brick_piece.2bpp.lz"
+HeartScaleIcon: INCBIN "gfx/items/heart_scale.2bpp.lz"
+BalmmushroomIcon: INCBIN "gfx/items/balmmushroom.2bpp.lz"
+BigNuggetIcon: INCBIN "gfx/items/big_nugget.2bpp.lz"
+PearlStringIcon: INCBIN "gfx/items/pearl_string.2bpp.lz"
+BeachGlassIcon: INCBIN "gfx/items/beach_glass.2bpp.lz"
+PrettyShellIcon: INCBIN "gfx/items/pretty_shell.2bpp.lz"
+TinyBambooIcon: INCBIN "gfx/items/tiny_bamboo.2bpp.lz"
+BigBambooIcon: INCBIN "gfx/items/big_bamboo.2bpp.lz"
+GemstoneIcon: INCBIN "gfx/items/gemstone.2bpp.lz"
+BottleCapIcon: INCBIN "gfx/items/bottle_cap.2bpp.lz"
+HoneyIcon: INCBIN "gfx/items/sweet_honey.2bpp.lz"
+CandyTruffleIcon: INCBIN "gfx/items/candy_truffle.2bpp.lz"
+SpiderSilkIcon: INCBIN "gfx/items/spider_silk.2bpp.lz"
+AncientVaseIcon: INCBIN "gfx/items/ancient_vase.2bpp.lz"
+AncientCupIcon: INCBIN "gfx/items/ancient_cup.2bpp.lz"
+AncientJarIcon: INCBIN "gfx/items/ancient_jar.2bpp.lz"
+GoldStatueIcon: INCBIN "gfx/items/gold_statue.2bpp.lz"
 
 SECTION "Berry Icons", ROMX
 NoBerryIcon: INCBIN "gfx/items/no_item.2bpp.lz"
@@ -2074,3 +2099,4 @@ LigarcBerryIcon: INCBIN "gfx/items/ligarc_berry.2bpp.lz"
 TotapoBerryIcon: INCBIN "gfx/items/totapo_berry.2bpp.lz"
 PinkanBerryIcon: INCBIN "gfx/items/pinkan_berry.2bpp.lz"
 ApricornIcon: INCBIN "gfx/items/apricorn.2bpp.lz"
+HopoBerryIcon: INCBIN "gfx/items/hopo_berry.2bpp.lz"
