@@ -125,9 +125,9 @@ $(foreach obj, $(pokeiw_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.asm))))
 endif
 
 
-pokeiw_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
-pokeiw_debug_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
-pokeiw_vc_opt      = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
+pokeiw_opt         = -Cjv -t PM_ORANGEIW -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
+pokeiw_debug_opt   = -Cjv -t PM_ORANGEIW -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
+pokeiw_vc_opt      = -Cjv -t PM_ORANGEIW -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
 
 .gbc: tools/bankends
 %.gbc: $$(%_obj) layout.link

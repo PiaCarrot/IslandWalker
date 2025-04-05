@@ -1277,7 +1277,7 @@ TutorialPack:
 	dbw 0, wDudeNumItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdateItemIconAndDescription
 
 .KeyItems:
 	ld a, KEY_ITEM_POCKET
@@ -1325,7 +1325,7 @@ TutorialPack:
 	dbw 0, wDudeNumBalls
 	dba PlaceMenuItemBallName
 	dba PlaceMenuItemBallQuantity
-	dba UpdateItemBallDescription
+	dba UpdateItemBallIconAndDescription
 
 .Berries:
 	ld a, BERRY_POCKET
