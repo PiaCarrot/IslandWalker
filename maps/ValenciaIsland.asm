@@ -182,12 +182,12 @@ ValenciaIslandAltStarterEventCutTreeCallback:
 	
 ValenciaYoungsterScript:
 	opentext
+	givepoke LATIAS, PLAIN_FORM, 100, SOUL_DEW
+	givepoke LATIOS, PLAIN_FORM, 100, SOUL_DEW
+	givepoke EEVEE_PARTNER, PLAIN_FORM, 100, SOUL_DEW
+	givepoke DRATINI_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
 	givepoke LAPRAS_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
 	givepoke PIKACHU_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
-	givepoke EEVEE_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
-	givepoke DRATINI_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
-	givepoke MEW, PLAIN_FORM, 100, ORAN_BERRY
-	givepoke TYRANITAR, PLAIN_FORM, 100, ORAN_BERRY
 	giveitem HM_SURF
 	giveitem SEA_MAP
 	giveitem ITEMFINDER
@@ -198,6 +198,7 @@ ValenciaYoungsterScript:
 	giveitem PINKAN_BERRY, 5
 	giveitem ABILITY_UP, 5
 	giveitem PINK_CURE, 5
+	giveitem LIGHT_BALL
 	givemoney YOUR_MONEY, 999999
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_PHONE_CARD

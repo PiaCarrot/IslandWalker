@@ -3109,6 +3109,26 @@ ConfusionDamageCalc:
 	and a
 	jr z, .DoneItem
 
+; Soul Dew boosts Psychic or Dragon moves
+	ld a, [hl]
+	call GetItemIndexFromID
+	cphl16 HIGH(SOUL_DEW)
+	jr nz, .NotSoulDew
+	ld a, MON_SPECIES
+	call GetPokemonIndexFromID
+	cp HIGH(LATIAS)
+	jr nz, .NotSoulDew
+	cp HIGH(LATIOS)
+	jr nz, .NotSoulDew
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp PSYCHIC_TYPE
+	jr z, .TypeBoost
+	cp DRAGON
+	jr z, .TypeBoost
+	jr .DoneItem
+; Other items boost one type each
+.NotSoulDew
 	ld hl, TypeBoostItems
 
 .NextItem:
@@ -3128,6 +3148,7 @@ ConfusionDamageCalc:
 	cp b
 	jr nz, .DoneItem
 
+.TypeBoost:
 ; * 100 + item effect amount
 	ld a, c
 	add 100
