@@ -153,6 +153,7 @@ ItemNames::
 	li "CRUNCHYBLOCK" ; 00DC
 	li "AURORA ORB" ; 00DC
 	li "X EVADE" ; 00DC
+	li "GLITTER MAIL" ; 00DC
 	assert_list_length NUM_ITEM_POCKET
 	
 KeyItemNames::

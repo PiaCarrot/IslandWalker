@@ -196,7 +196,7 @@ ValenciaYoungsterScript:
 	giveitem SUPER_ROD
 	giveitem HM_ROCK_SMASH
 	giveitem PINKAN_BERRY, 5
-	giveitem ABILITY_UP, 5
+	giveitem GLITTER_MAIL, 5
 	giveitem PINK_CURE, 5
 	giveitem LIGHT_BALL
 	givemoney YOUR_MONEY, 999999

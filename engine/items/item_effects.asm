@@ -188,6 +188,7 @@ ItemEffects1:
 	dw NoEffect            ; CRUNCHYBLOCK
 	dw NoEffect            ; AURORA_ORB
 	dw XItemEffect         ; X_EVADE
+	dw NoEffect            ; GLITTER_MAIL
 .IndirectEnd:
 
 ItemEffectsKeyItems:

@@ -168,6 +168,7 @@ ItemDescriptions1:
 	dw BlockDesc    ; 00DB
 	dw AuroraOrbDesc    ; 00DB
 	dw XEvadeDesc    ; 00DB
+	dw GlitterMailDesc ; 0084
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -1129,6 +1130,10 @@ SurfMailDesc:
 
 LiteBlueMailDesc:
 	db   "DRATINI-print"
+	next "MAIL. (HOLD)@"
+
+GlitterMailDesc:
+	db   "PIKACHU-print"
 	next "MAIL. (HOLD)@"
 
 PortraitMailDesc:

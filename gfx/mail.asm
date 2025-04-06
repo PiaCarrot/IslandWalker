@@ -104,3 +104,21 @@ INCBIN "gfx/mail/lovely_mail_border.1bpp"
 
 PortraitMailBorderGFX:
 INCBIN "gfx/mail/portraitmail_border.1bpp"
+
+GlitterMailBorderGFX:
+INCBIN "gfx/mail/glitter_mail_border.1bpp"
+
+MailPikachuStarGFX:
+INCBIN "gfx/mail/pikachu_star.1bpp"
+
+MailPikachuStar2BPPGFX:
+INCBIN "gfx/mail/pikachu_star_2bpp.2bpp.lz"
+
+GlitterMailLargeStarGFX:
+INCBIN "gfx/mail/large_star.1bpp"
+
+GlitterMailSmallStarGFX:
+INCBIN "gfx/mail/small_star.1bpp"
+
+GlitterMailNameLineGFX:
+INCBIN "gfx/mail/glitter_mail_name_line.1bpp"

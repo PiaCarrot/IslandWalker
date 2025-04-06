@@ -9,4 +9,5 @@ MailItems:
 	dw BLUESKY_MAIL
 	dw MUSIC_MAIL
 	dw MIRAGE_MAIL
+	dw GLITTER_MAIL
 	dw -1

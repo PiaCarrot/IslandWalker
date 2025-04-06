@@ -11,6 +11,7 @@
 	const BLUESKY_MAIL_INDEX ; 7
 	const MUSIC_MAIL_INDEX   ; 8
 	const MIRAGE_MAIL_INDEX  ; 9
+	const GLITTER_MAIL_INDEX  ; 10
 DEF NUM_MAIL EQU const_value
 
 ReadPartyMonMail:
@@ -147,6 +148,7 @@ MailGFXPointers:
 	dw BLUESKY_MAIL, LoadBlueSkyMailGFX
 	dw MUSIC_MAIL,   LoadMusicMailGFX
 	dw MIRAGE_MAIL,  LoadMirageMailGFX
+	dw GLITTER_MAIL, LoadGlitterMailGFX
 	assert_table_length NUM_MAIL
 	dw -1 ; end
 
@@ -689,7 +691,79 @@ LoadMirageMailGFX:
 	hlcoord 2, 11
 	call Mail_Draw16TileRow
 	pop hl
-	jr MailGFX_PlaceMessage
+	jp MailGFX_PlaceMessage
+	
+LoadGlitterMailGFX:
+	push bc
+	ld hl, vTiles2 tile $31
+	ld de, GlitterMailBorderGFX
+	ld c, 4 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld de, GlitterMailNameLineGFX
+	ld c, 2 * LEN_1BPP_TILE
+	call LoadMailGFX_Color2
+	ld de, MailPikachuStarGFX
+	ld c, 20 * LEN_1BPP_TILE
+	call LoadMailGFX_Color2
+	xor a
+	ld bc, 1 tiles
+	rst ByteFill
+	ld de, GlitterMailLargeStarGFX
+	ld c, 4 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld de, GlitterMailSmallStarGFX
+	ld c, 1 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	call DisableLCD
+	ld hl, MailPikachuStar2BPPGFX
+	ld de, vTiles2 tile $37
+	call Decompress
+	call EnableLCD
+
+	ld a, $31
+	hlcoord 0, 0
+	call Mail_Place18TileAlternatingRow
+	hlcoord 1, 17
+	call Mail_Place18TileAlternatingRow
+	ld a, $33
+	hlcoord 0, 1
+	call Mail_Place16TileAlternatingColumn
+	hlcoord 19, 0
+	call Mail_Place16TileAlternatingColumn
+	ld a, $35
+	hlcoord 2, 15
+	call Mail_Draw13TileRow
+	ld a, $37
+	hlcoord 15, 12
+	call Mail_Draw4x2Graphic
+	ld a, $3F
+	hlcoord 15, 14
+	call Mail_Draw4x2Graphic
+	ld a, $47
+	hlcoord 15, 16
+	call Mail_Draw4x1Graphic
+	call GlitterMail_PlaceIcons
+	pop hl
+	jmp MailGFX_PlaceMessage
+	
+GlitterMail_PlaceIcons:
+	ld a, $4c
+	hlcoord 2, 2
+	call Mail_Draw2x2Graphic
+	hlcoord 16, 2
+	call Mail_Draw2x2Graphic
+	hlcoord 9, 4
+	call Mail_Draw2x2Graphic
+	ld a, $50
+	hlcoord 5, 4
+	ld [hl], a
+	hlcoord 6, 2
+	ld [hl], a
+	hlcoord 12, 4
+	ld [hl], a
+	hlcoord 14, 2
+	ld [hl], a
+	ret
 
 MailGFX_GenerateMonochromeTilesColor2:
 .loop
@@ -883,6 +957,38 @@ Mail_Draw3x2Graphic:
 	ld [hli], a
 	inc a
 	ld [hl], a
+	ret
+
+Mail_Draw4x2Graphic:
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	ld bc, SCREEN_WIDTH - 3
+	add hl, bc
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	ret
+
+Mail_Draw4x1Graphic:
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	ld bc, SCREEN_WIDTH - 3
+	add hl, bc
 	ret
 
 LoadMailGFX_Color1:
