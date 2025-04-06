@@ -122,3 +122,21 @@ INCBIN "gfx/mail/small_star.1bpp"
 
 GlitterMailNameLineGFX:
 INCBIN "gfx/mail/glitter_mail_name_line.1bpp"
+
+TropicMailTextTileGFX:
+INCBIN "gfx/mail/tropic_mail_text_tile.1bpp"
+
+TropicMailBorderGFX:
+INCBIN "gfx/mail/tropic_mail_border.1bpp"
+
+TropicMailBellossomGFX:
+INCBIN "gfx/mail/bellossom.2bpp.lz"
+
+LargeFlower2bppGFX:
+INCBIN "gfx/mail/large_flower_2bpp.2bpp.lz"
+
+SmallFlower2bppGFX:
+INCBIN "gfx/mail/small_flower_2bpp.2bpp.lz"
+
+Mail_BlankTileGFX:
+INCBIN "gfx/mail/blank_tile.1bpp"

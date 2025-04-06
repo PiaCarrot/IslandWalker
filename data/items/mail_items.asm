@@ -10,4 +10,5 @@ MailItems:
 	dw MUSIC_MAIL
 	dw MIRAGE_MAIL
 	dw GLITTER_MAIL
+	dw TROPIC_MAIL
 	dw -1

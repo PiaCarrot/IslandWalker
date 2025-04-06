@@ -228,6 +228,7 @@ ItemIconPointers1:
     dw LightBallIcon ; AURORA_ORB
     dw XAccuracyIcon ; X_EVADE
     dw MailIcon ; GLITTER_MAIL
+    dw MailIcon ; TROPIC_MAIL
 .IndirectEnd:
 	
 KeyItemIconPointers:
@@ -1012,6 +1013,9 @@ ItemIconPalettes1:
 ; GLITTER_MAIL
 	RGB 25, 25, 13
 	RGB 19, 19, 09
+; TROPIC_MAIL
+	RGB 23, 30, 05
+	RGB 31, 31, 18
 .IndirectEnd:
 	
 KeyItemIconPalettes:

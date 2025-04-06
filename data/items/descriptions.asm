@@ -169,6 +169,7 @@ ItemDescriptions1:
 	dw AuroraOrbDesc    ; 00DB
 	dw XEvadeDesc    ; 00DB
 	dw GlitterMailDesc ; 0084
+	dw TropicMailDesc ; 0084
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -1061,6 +1062,7 @@ SacredAshDesc:
 	db   "Fully revives all"
 	next "fainted #MON.@"
 
+TropicMailDesc:
 FlowerMailDesc:
 	db   "Flower-print MAIL."
 	next "(HOLD)@"

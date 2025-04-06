@@ -12,6 +12,7 @@
 	const MUSIC_MAIL_INDEX   ; 8
 	const MIRAGE_MAIL_INDEX  ; 9
 	const GLITTER_MAIL_INDEX  ; 10
+	const TROPIC_MAIL_INDEX  ; 11
 DEF NUM_MAIL EQU const_value
 
 ReadPartyMonMail:
@@ -149,6 +150,7 @@ MailGFXPointers:
 	dw MUSIC_MAIL,   LoadMusicMailGFX
 	dw MIRAGE_MAIL,  LoadMirageMailGFX
 	dw GLITTER_MAIL, LoadGlitterMailGFX
+	dw TROPIC_MAIL,  LoadTropicMailGFX
 	assert_table_length NUM_MAIL
 	dw -1 ; end
 
@@ -764,6 +766,97 @@ GlitterMail_PlaceIcons:
 	hlcoord 14, 2
 	ld [hl], a
 	ret
+	
+LoadTropicMailGFX:
+	push bc
+	ld hl, vTiles2 tile $31
+	ld de, TropicMailBorderGFX
+	ld c, 1 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld hl, vTiles2 tile $32
+	ld de, TropicMailBorderGFX
+	ld c, 1 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld hl, vTiles2 tile $3C
+	ld de, TropicMailTextTileGFX
+	ld c, 1 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld hl, vTiles2 tile $45
+	ld de, Mail_BlankTileGFX
+	ld c, 1 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	call DisableLCD
+	ld hl, TropicMailBellossomGFX
+	ld de, vTiles2 tile $33
+	call Decompress
+	ld hl, LargeFlower2bppGFX
+	ld de, vTiles2 tile $3D
+	call Decompress
+	ld hl, SmallFlower2bppGFX
+	ld de, vTiles2 tile $41
+	call Decompress
+	call EnableLCD
+
+	hlcoord 0, 0
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld a, $45
+	rst ByteFill
+	ld a, $31
+	hlcoord 0, 0
+	call Mail_Draw20TileRow
+	hlcoord 0, 17
+	call Mail_Draw20TileRow
+	hlcoord 0, 15
+	call Mail_Draw20TileRow
+	hlcoord 0, 0
+	call MailPlace18TileColumn
+	hlcoord 19, 0
+	call MailPlace18TileColumn
+	hlcoord 1, 16
+	ld a, $3c ; underline
+	call Mail_Draw16TileRow
+	hlcoord 2, 5
+	call Mail_Draw16TileRow
+	hlcoord 2, 6
+	call Mail_Draw16TileRow
+	hlcoord 2, 7
+	call Mail_Draw16TileRow
+	hlcoord 2, 8
+	call Mail_Draw16TileRow
+	hlcoord 2, 9
+	call Mail_Draw16TileRow
+	hlcoord 2, 10
+	call Mail_Draw16TileRow
+	hlcoord 2, 11
+	call Mail_Draw16TileRow
+	hlcoord 2, 12
+	call Mail_Draw16TileRow
+	hlcoord 2, 13
+	call Mail_Draw16TileRow
+	ld a, $33
+	hlcoord 16, 14
+	call Mail_Draw3x2Graphic
+	ld a, $39
+	hlcoord 16, 16
+	call Mail_Draw3x1Graphic
+	ld a, $3D
+	hlcoord 2, 2
+	call Mail_Draw2x2Graphic
+	hlcoord 6, 1
+	call Mail_Draw2x2Graphic
+	hlcoord 12, 2
+	call Mail_Draw2x2Graphic
+	hlcoord 17, 2
+	call Mail_Draw2x2Graphic
+	ld a, $41
+	hlcoord 4, 3
+	call Mail_Draw2x2Graphic
+	hlcoord 14, 3
+	call Mail_Draw2x2Graphic
+	hlcoord 15, 1
+	call Mail_Draw2x2Graphic
+	pop hl
+	jmp MailGFX_PlaceMessage
 
 MailGFX_GenerateMonochromeTilesColor2:
 .loop
@@ -804,6 +897,9 @@ MailGFX_PlaceMessage:
 	jr z, .place_author
 	hlcoord 6, 14
 	cp MORPH_MAIL_INDEX
+	jr z, .place_author
+	hlcoord 6, 16
+	cp TROPIC_MAIL_INDEX
 	jr z, .place_author
 	hlcoord 5, 14
 
@@ -871,6 +967,23 @@ Mail_PlaceAlternatingRow:
 	ld [hl], a
 	pop af
 	ret
+	
+MailPlace18TileColumn:
+	push af
+	ld b, 18
+.loop
+	ld [hl], a
+	ld de, SCREEN_WIDTH
+	add hl, de
+	inc a
+	ld [hl], a
+	add hl, de
+	dec a
+	dec b
+	jr nz, .loop
+	ld [hl], a
+	pop af
+	ret
 
 Mail_Place14TileAlternatingColumn:
 	push af
@@ -902,6 +1015,10 @@ Mail_Draw13TileRow:
 
 Mail_Draw16TileRow:
 	ld b, 16
+	jr Mail_DrawRowLoop
+
+Mail_Draw20TileRow:
+	ld b, 20
 	jr Mail_DrawRowLoop
 
 Mail_DrawTopBottomBorder:
@@ -941,6 +1058,16 @@ Mail_Draw2x2Graphic:
 	inc a
 	ld [hl], a
 	pop af
+	ret
+
+Mail_Draw3x1Graphic:
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	ld bc, SCREEN_WIDTH - 2
+	add hl, bc
 	ret
 
 Mail_Draw3x2Graphic:

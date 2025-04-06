@@ -189,6 +189,7 @@ ItemEffects1:
 	dw NoEffect            ; AURORA_ORB
 	dw XItemEffect         ; X_EVADE
 	dw NoEffect            ; GLITTER_MAIL
+	dw NoEffect            ; TROPIC_MAIL
 .IndirectEnd:
 
 ItemEffectsKeyItems:
