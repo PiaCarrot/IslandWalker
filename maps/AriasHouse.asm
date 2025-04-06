@@ -23,7 +23,7 @@ AriasHouseLunaScript:
 ;Nothing 40%
 ;Stardust 20%
 ;Star Piece 20%
-;Comet Shard 10%
+;Glitter Mail 10%
 ;Moon Stone 10%
 	
 .RollForLunaLoot
@@ -40,7 +40,7 @@ AriasHouseLunaScript:
 	ifequal 5, .Stardust
 	ifequal 6, .StarPiece
 	ifequal 7, .StarPiece
-	ifequal 8, .CometShard
+	ifequal 8, .GlitterMail
 	ifequal 9, .MoonStone
 	
 .Nothing:
@@ -57,8 +57,8 @@ AriasHouseLunaScript:
 	turnobject MIKAN_ISLAND_LUNA, DOWN
 	end
 
-.CometShard:
-	verbosegiveitem COMET_SHARD
+.GlitterMail:
+	verbosegiveitem GLITTER_MAIL
 	iffalse .NoRoom
 	closetext
 	clearevent EVENT_LUNA_HAS_A_ITEM_FOR_YOU
