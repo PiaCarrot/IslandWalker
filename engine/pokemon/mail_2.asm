@@ -13,6 +13,7 @@
 	const MIRAGE_MAIL_INDEX  ; 9
 	const GLITTER_MAIL_INDEX  ; 10
 	const TROPIC_MAIL_INDEX  ; 11
+	const BREEZE_MAIL_INDEX  ; 12
 DEF NUM_MAIL EQU const_value
 
 ReadPartyMonMail:
@@ -151,6 +152,7 @@ MailGFXPointers:
 	dw MIRAGE_MAIL,  LoadMirageMailGFX
 	dw GLITTER_MAIL, LoadGlitterMailGFX
 	dw TROPIC_MAIL,  LoadTropicMailGFX
+	dw BREEZE_MAIL,  LoadBreezeMailGFX
 	assert_table_length NUM_MAIL
 	dw -1 ; end
 
@@ -858,6 +860,69 @@ LoadTropicMailGFX:
 	pop hl
 	jmp MailGFX_PlaceMessage
 
+LoadBreezeMailGFX:
+	push bc
+	ld hl, Mail_BetaHoppipPal
+	ld de, wBGPals1 palette 7
+	ld bc, 1 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	ld hl, vTiles2 tile $31
+	ld de, Mail_BreezeCloudGFX
+	ld c, 5 * LEN_1BPP_TILE
+	call LoadMailGFX_Color3
+	ld hl, vTiles2 tile $36
+	ld de, Mail_BreezeGrassGFX
+	ld c, 3 * LEN_1BPP_TILE
+	call LoadMailGFX_Color2
+	call DisableLCD
+	ld hl, Mail_Hoppip2bppGFX
+	ld de, vTiles2 tile $39
+	call Decompress
+	ld hl, Mail_BetaHoppip2bppGFX
+	ld de, vTiles2 tile $45
+	call Decompress
+	call EnableLCD
+	ld a, $31
+	hlcoord 0, 0
+	call Mail_Place20Tile3AlternatingRow
+	ld a, $32
+	hlcoord 19, 0
+	ld [hl], a
+
+	ld a, $37
+	hlcoord 0, 17
+	call Mail_Draw20TileRow
+	ld a, $36
+	hlcoord 0, 17
+	ld [hl], a
+	ld a, $38
+	hlcoord 19, 17
+	ld [hl], a
+	ld a, $39
+	hlcoord 6, 2
+	call Mail_Draw2x2Graphic
+	ld a, $3D
+	hlcoord 12, 1
+	call Mail_Draw2x2Graphic
+	ld a, $41
+	hlcoord 12, 4
+	call Mail_Draw2x2Graphic
+	ld a, $34
+	hlcoord 9, 2
+	call Mail_Draw2x1Graphic
+	ld a, $34
+	hlcoord 10, 3
+	call Mail_Draw2x1Graphic
+	ld a, $34
+	hlcoord 8, 4
+	call Mail_Draw2x1Graphic
+	ld a, $45
+	hlcoord 17, 16
+	call Mail_Draw2x2Graphic
+	pop hl
+	jmp MailGFX_PlaceMessage
+
 MailGFX_GenerateMonochromeTilesColor2:
 .loop
 	xor a
@@ -900,6 +965,8 @@ MailGFX_PlaceMessage:
 	jr z, .place_author
 	hlcoord 6, 16
 	cp TROPIC_MAIL_INDEX
+	jr z, .place_author
+	cp BREEZE_MAIL_INDEX
 	jr z, .place_author
 	hlcoord 5, 14
 
@@ -954,7 +1021,27 @@ Mail_Place14TileAlternatingRow:
 Mail_Place18TileAlternatingRow:
 	push af
 	ld b, 18 / 2
+	jr Mail_PlaceAlternatingRow
+
+Mail_Place20Tile3AlternatingRow:
+	push af
+	ld b, 20 / 3
 	; fallthrough
+
+Mail_Place3AlternatingRow:
+.loop
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	dec a
+	dec a
+	dec b
+	jr nz, .loop
+	ld [hl], a
+	pop af
+	ret
 
 Mail_PlaceAlternatingRow:
 .loop
@@ -983,6 +1070,22 @@ MailPlace18TileColumn:
 	jr nz, .loop
 	ld [hl], a
 	pop af
+	ret
+
+Mail_Draw2x2Palette7::
+	push de
+	ld a, 1
+	ld [rVBK], a
+	ld a, $07
+	ld de, SCREEN_WIDTH
+	ld [hl], a
+	inc hl
+	ld [hl], a
+	add hl, de
+	ld [hl], a
+	inc hl
+	ld [hl], a
+	pop de
 	ret
 
 Mail_Place14TileAlternatingColumn:
@@ -1059,6 +1162,17 @@ Mail_Draw2x2Graphic:
 	ld [hl], a
 	pop af
 	ret
+	
+Mail_Draw2x1Graphic:
+    push af
+    ld [hli], a        ; tile 1 (first column of the 2x1 graphic)
+    inc a              ; next tile (tile 2)
+    ld [hl], a
+    ld bc, SCREEN_WIDTH - 1
+    add hl, bc         ; move to the next line (go down by 1 row)
+    pop af
+    ret
+
 
 Mail_Draw3x1Graphic:
 	ld [hli], a
@@ -1165,3 +1279,9 @@ ItemIsMail::
 	ret
 
 INCLUDE "data/items/mail_items.asm"
+
+Mail_BetaHoppipPal:
+	RGB 07, 26, 31
+	RGB 00, 21, 00
+	RGB 00, 00, 00
+	RGB 29, 29, 29

@@ -140,3 +140,15 @@ INCBIN "gfx/mail/small_flower_2bpp.2bpp.lz"
 
 Mail_BlankTileGFX:
 INCBIN "gfx/mail/blank_tile.1bpp"
+
+Mail_BreezeCloudGFX:
+INCBIN "gfx/mail/breeze_cloud.1bpp"
+
+Mail_BreezeGrassGFX:
+INCBIN "gfx/mail/breeze_grass.1bpp"
+
+Mail_Hoppip2bppGFX:
+INCBIN "gfx/mail/hoppip.2bpp.lz"
+
+Mail_BetaHoppip2bppGFX:
+INCBIN "gfx/mail/beta_hoppip.2bpp.lz"

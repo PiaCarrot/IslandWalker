@@ -190,6 +190,7 @@ ItemEffects1:
 	dw XItemEffect         ; X_EVADE
 	dw NoEffect            ; GLITTER_MAIL
 	dw NoEffect            ; TROPIC_MAIL
+	dw NoEffect            ; BREEZE_MAIL
 .IndirectEnd:
 
 ItemEffectsKeyItems:

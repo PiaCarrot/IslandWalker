@@ -11,4 +11,5 @@ MailItems:
 	dw MIRAGE_MAIL
 	dw GLITTER_MAIL
 	dw TROPIC_MAIL
+	dw BREEZE_MAIL
 	dw -1

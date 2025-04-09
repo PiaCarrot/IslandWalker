@@ -161,6 +161,7 @@
 	const X_EVADE
 	const GLITTER_MAIL
 	const TROPIC_MAIL
+	const BREEZE_MAIL
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.

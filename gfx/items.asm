@@ -229,6 +229,7 @@ ItemIconPointers1:
     dw XAccuracyIcon ; X_EVADE
     dw MailIcon ; GLITTER_MAIL
     dw MailIcon ; TROPIC_MAIL
+    dw MailIcon ; BREEZE_MAIL
 .IndirectEnd:
 	
 KeyItemIconPointers:
@@ -1016,6 +1017,10 @@ ItemIconPalettes1:
 ; TROPIC_MAIL
 	RGB 23, 30, 05
 	RGB 31, 31, 18
+; TROPIC_MAIL
+	RGB 07, 26, 31
+	RGB 00, 21, 00
+
 .IndirectEnd:
 	
 KeyItemIconPalettes:

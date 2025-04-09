@@ -155,6 +155,7 @@ ItemNames::
 	li "X EVADE" ; 00DC
 	li "GLITTER MAIL" ; 00DC
 	li "TROPIC MAIL" ; 00DC
+	li "BREEZE MAIL" ; 00DC
 	assert_list_length NUM_ITEM_POCKET
 	
 KeyItemNames::

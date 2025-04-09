@@ -170,6 +170,7 @@ ItemDescriptions1:
 	dw XEvadeDesc    ; 00DB
 	dw GlitterMailDesc ; 0084
 	dw TropicMailDesc ; 0084
+	dw BreezeMailDesc ; 0084
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -1128,6 +1129,10 @@ BrickPieceDesc:
 
 SurfMailDesc:
 	db   "LAPRAS-print MAIL."
+	next "(HOLD)@"
+
+BreezeMailDesc:
+	db   "HOPPIP-print MAIL."
 	next "(HOLD)@"
 
 LiteBlueMailDesc:
