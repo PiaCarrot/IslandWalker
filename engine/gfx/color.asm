@@ -309,6 +309,15 @@ LoadMailPalettes:
 	call FarCopyWRAM
 	call ApplyPals
 	call WipeAttrmap
+	ld a, [wCurMailIndex]
+	cp BREEZE_MAIL_INDEX
+	jr nz, .not_breeze_mail
+	ld a, $7
+	ldcoord_a 17, 16, wAttrmap
+	ldcoord_a 18, 16, wAttrmap
+	ldcoord_a 17, 17, wAttrmap
+	ldcoord_a 18, 17, wAttrmap
+.not_breeze_mail
 	jmp ApplyAttrmap
 
 .MailPals:

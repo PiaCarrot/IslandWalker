@@ -883,6 +883,7 @@ LoadBreezeMailGFX:
 	ld de, vTiles2 tile $45
 	call Decompress
 	call EnableLCD
+
 	ld a, $31
 	hlcoord 0, 0
 	call Mail_Place20Tile3AlternatingRow
@@ -1070,22 +1071,6 @@ MailPlace18TileColumn:
 	jr nz, .loop
 	ld [hl], a
 	pop af
-	ret
-
-Mail_Draw2x2Palette7::
-	push de
-	ld a, 1
-	ld [rVBK], a
-	ld a, $07
-	ld de, SCREEN_WIDTH
-	ld [hl], a
-	inc hl
-	ld [hl], a
-	add hl, de
-	ld [hl], a
-	inc hl
-	ld [hl], a
-	pop de
 	ret
 
 Mail_Place14TileAlternatingColumn:
