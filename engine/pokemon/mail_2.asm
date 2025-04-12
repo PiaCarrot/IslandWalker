@@ -14,6 +14,7 @@
 	const GLITTER_MAIL_INDEX  ; 10
 	const TROPIC_MAIL_INDEX  ; 11
 	const BREEZE_MAIL_INDEX  ; 12
+	const POSTCARD_INDEX  ; 12
 DEF NUM_MAIL EQU const_value
 
 ReadPartyMonMail:
@@ -153,6 +154,7 @@ MailGFXPointers:
 	dw GLITTER_MAIL, LoadGlitterMailGFX
 	dw TROPIC_MAIL,  LoadTropicMailGFX
 	dw BREEZE_MAIL,  LoadBreezeMailGFX
+	dw POSTCARD,     LoadPostcardGFX
 	assert_table_length NUM_MAIL
 	dw -1 ; end
 
@@ -923,6 +925,78 @@ LoadBreezeMailGFX:
 	call Mail_Draw2x2Graphic
 	pop hl
 	jmp MailGFX_PlaceMessage
+	
+LoadPostcardGFX:
+	push bc
+	call DisableLCD
+	ld hl, PostcardGFX
+	ld de, vTiles2
+	call Decompress
+
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	xor a
+	rst ByteFill
+
+	ld hl, PostcardTilemap
+	ld bc, PostcardTilemapEnd - PostcardTilemap
+	call Mail_CopyMapTilesOrAttr
+
+	ld hl, PostcardPalettes
+	ld de, wBGPals1
+	ld bc, 7 palettes
+	call FarCopyColorWRAM
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+
+	ld a, [rVBK]
+	push af
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, PostcardAttrmap
+	ld bc, PostcardAttrmapEnd - PostcardAttrmap
+	call Mail_CopyMapTilesOrAttr
+	pop af
+	ldh [rVBK], a
+	call EnableLCD
+	pop hl
+	push bc
+	pop de
+
+	ld bc, MAIL_STRUCT_LENGTH
+	ld de, wTempMail
+	ld a, BANK(sPartyMail)
+	call OpenSRAM
+	rst CopyBytes
+	call CloseSRAM
+	ld hl, wTempMailAuthor
+	ld de, wMonOrItemNameBuffer
+	ld bc, NAME_LENGTH - 1
+	rst CopyBytes
+	ld a, "@"
+	ld [wTempMailAuthor], a
+	ld [wMonOrItemNameBuffer + NAME_LENGTH - 1], a
+	ld de, wTempMailMessage
+	hlcoord 1, 7
+	rst PlaceString
+	ld de, wMonOrItemNameBuffer
+	ld a, [de]
+	and a
+	ret z
+	hlcoord 6, 11
+	jmp PlaceString
+
+PostcardTilemap:
+INCBIN "gfx/mail/Postcard.tilemap"
+PostcardTilemapEnd:
+
+PostcardAttrmap:
+INCBIN "gfx/mail/Postcard.attrmap"
+PostcardAttrmapEnd:
+
+PostcardPalettes:
+INCLUDE "gfx/mail/Postcard.pal"
 
 MailGFX_GenerateMonochromeTilesColor2:
 .loop
@@ -963,6 +1037,9 @@ MailGFX_PlaceMessage:
 	jr z, .place_author
 	hlcoord 6, 14
 	cp MORPH_MAIL_INDEX
+	jr z, .place_author
+	hlcoord 6, 11
+	cp POSTCARD_INDEX
 	jr z, .place_author
 	hlcoord 6, 16
 	cp TROPIC_MAIL_INDEX
@@ -1270,3 +1347,30 @@ Mail_BetaHoppipPal:
 	RGB 00, 21, 00
 	RGB 00, 00, 00
 	RGB 29, 29, 29
+	
+Mail_CopyMapTilesOrAttr:
+	debgcoord 0, 0
+.loop_tile_copy_2
+	push bc
+	ld c, 20
+.loop_tile_copy
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .loop_tile_copy
+	pop bc
+	push hl
+	ld hl, -20
+	add hl, bc
+	ld b, h
+	ld c, l
+	ld hl, BG_MAP_WIDTH - 20
+	add hl, de
+	ld d, h
+	ld e, l
+	pop hl
+	ld a, b
+	or c
+	jr nz, .loop_tile_copy_2
+	ret

@@ -171,6 +171,7 @@ ItemDescriptions1:
 	dw GlitterMailDesc ; 0084
 	dw TropicMailDesc ; 0084
 	dw BreezeMailDesc ; 0084
+	dw PostcardDesc ; 0084
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -1130,6 +1131,10 @@ BrickPieceDesc:
 SurfMailDesc:
 	db   "LAPRAS-print MAIL."
 	next "(HOLD)@"
+
+PostcardDesc:
+	db   "A postcard from a"
+	next "distant land.@"
 
 BreezeMailDesc:
 	db   "HOPPIP-print MAIL."

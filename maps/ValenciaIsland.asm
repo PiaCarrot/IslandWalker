@@ -196,6 +196,7 @@ ValenciaYoungsterScript:
 	giveitem SUPER_ROD
 	giveitem HM_ROCK_SMASH
 	giveitem PINKAN_BERRY, 5
+	giveitem POSTCARD, 5
 	giveitem GLITTER_MAIL, 5
 	giveitem TROPIC_MAIL, 5
 	giveitem BREEZE_MAIL, 5

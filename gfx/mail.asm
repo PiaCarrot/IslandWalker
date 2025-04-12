@@ -152,3 +152,6 @@ INCBIN "gfx/mail/hoppip.2bpp.lz"
 
 Mail_BetaHoppip2bppGFX:
 INCBIN "gfx/mail/beta_hoppip.2bpp.lz"
+
+PostcardGFX:
+INCBIN "gfx/mail/postcard.2bpp.lz"

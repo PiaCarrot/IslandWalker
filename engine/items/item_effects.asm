@@ -191,6 +191,7 @@ ItemEffects1:
 	dw NoEffect            ; GLITTER_MAIL
 	dw NoEffect            ; TROPIC_MAIL
 	dw NoEffect            ; BREEZE_MAIL
+	dw NoEffect            ; POSTCARD
 .IndirectEnd:
 
 ItemEffectsKeyItems:

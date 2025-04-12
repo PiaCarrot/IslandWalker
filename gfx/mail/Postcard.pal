@@ -1,0 +1,41 @@
+; TEST
+	RGB 30, 26, 19
+	RGB 12, 17, 25
+	RGB 07, 12, 22
+	RGB 30, 30, 29
+
+; PAL 1 Orange Portrait
+	RGB 31, 31, 31
+	RGB 31, 22, 18
+	RGB 25, 13, 04
+	RGB 00, 00, 00
+
+; PAL 2 Indigo Portrait
+	RGB 31, 31, 31
+	RGB 30, 20, 15
+	RGB 17, 08, 15
+	RGB 00, 00, 00
+
+; PAL 3 Tracey Portrait
+	RGB 31, 31, 31
+	RGB 31, 22, 18
+	RGB 06, 16, 10
+	RGB 00, 00, 00
+
+; PAL 4 Cross Portrait
+	RGB 31, 31, 31
+	RGB 30, 20, 15
+	RGB 22, 09, 05
+	RGB 00, 00, 00
+
+; PAL 5 Ivy Portrait
+	RGB 31, 31, 31
+	RGB 31, 23, 23
+	RGB 19, 03, 18
+	RGB 00, 00, 00
+
+; PAL 6 Prima Portrait
+	RGB 31, 31, 31
+	RGB 29, 21, 22
+	RGB 23, 06, 09
+	RGB 00, 00, 00
