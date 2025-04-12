@@ -272,6 +272,9 @@ LoadStatsScreenPals:
 	ret
 
 LoadMailPalettes:
+	ld a, [wCurMailIndex]
+	cp CUSTOM_PALETTES_MAIL
+	ret nc ; postcards set their own palettes
 	ld l, e
 	ld h, 0
 	add hl, hl

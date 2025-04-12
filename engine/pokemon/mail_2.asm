@@ -11,10 +11,11 @@
 	const BLUESKY_MAIL_INDEX ; 7
 	const MUSIC_MAIL_INDEX   ; 8
 	const MIRAGE_MAIL_INDEX  ; 9
-	const GLITTER_MAIL_INDEX  ; 10
+	const GLITTER_MAIL_INDEX ; 10
 	const TROPIC_MAIL_INDEX  ; 11
 	const BREEZE_MAIL_INDEX  ; 12
-	const POSTCARD_INDEX  ; 12
+DEF CUSTOM_PALETTES_MAIL EQU const_value
+	const POSTCARD_INDEX     ; 13
 DEF NUM_MAIL EQU const_value
 
 ReadPartyMonMail:
@@ -928,19 +929,18 @@ LoadBreezeMailGFX:
 	
 LoadPostcardGFX:
 	push bc
-	call DisableLCD
+
 	ld hl, PostcardGFX
 	ld de, vTiles2
 	call Decompress
 
-	hlbgcoord 0, 0
-	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
-	xor a
-	rst ByteFill
+	call ClearTilemap
+	farcall WipeAttrmap
 
 	ld hl, PostcardTilemap
 	ld bc, PostcardTilemapEnd - PostcardTilemap
-	call Mail_CopyMapTilesOrAttr
+	decoord 0, 0
+	rst CopyBytes
 
 	ld hl, PostcardPalettes
 	ld de, wBGPals1
@@ -950,18 +950,13 @@ LoadPostcardGFX:
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 
-	ld a, [rVBK]
-	push af
-	ld a, 1
-	ldh [rVBK], a
 	ld hl, PostcardAttrmap
 	ld bc, PostcardAttrmapEnd - PostcardAttrmap
-	call Mail_CopyMapTilesOrAttr
-	pop af
-	ldh [rVBK], a
+	decoord 0, 0, wAttrmap
+	rst CopyBytes
+	farcall ApplyAttrmap
+
 	pop hl
-	call EnableLCD
-	ret
 	jmp MailGFX_PlaceMessage
 
 PostcardTilemap:
