@@ -959,33 +959,10 @@ LoadPostcardGFX:
 	call Mail_CopyMapTilesOrAttr
 	pop af
 	ldh [rVBK], a
-	call EnableLCD
 	pop hl
-	push bc
-	pop de
-
-	ld bc, MAIL_STRUCT_LENGTH
-	ld de, wTempMail
-	ld a, BANK(sPartyMail)
-	call OpenSRAM
-	rst CopyBytes
-	call CloseSRAM
-	ld hl, wTempMailAuthor
-	ld de, wMonOrItemNameBuffer
-	ld bc, NAME_LENGTH - 1
-	rst CopyBytes
-	ld a, "@"
-	ld [wTempMailAuthor], a
-	ld [wMonOrItemNameBuffer + NAME_LENGTH - 1], a
-	ld de, wTempMailMessage
-	hlcoord 1, 7
-	rst PlaceString
-	ld de, wMonOrItemNameBuffer
-	ld a, [de]
-	and a
-	ret z
-	hlcoord 6, 11
-	jmp PlaceString
+	call EnableLCD
+	ret
+	jmp MailGFX_PlaceMessage
 
 PostcardTilemap:
 INCBIN "gfx/mail/Postcard.tilemap"
@@ -1025,7 +1002,12 @@ MailGFX_PlaceMessage:
 	ld [wTempMailAuthor], a
 	ld [wMonOrItemNameBuffer + NAME_LENGTH - 1], a
 	ld de, wTempMailMessage
+	ld a, [wCurMailIndex]
+	hlcoord 1, 7
+	cp POSTCARD_INDEX
+	jr z, .continue
 	hlcoord 2, 7
+.continue
 	rst PlaceString
 	ld de, wMonOrItemNameBuffer
 	ld a, [de]
