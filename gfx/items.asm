@@ -231,6 +231,8 @@ ItemIconPointers1:
     dw MailIcon ; TROPIC_MAIL
     dw MailIcon ; BREEZE_MAIL
     dw MailIcon ; POSTCARD
+    dw MailIcon ; ROCKET_MAIL
+    dw MailIcon ; GOLD_MAIL
 .IndirectEnd:
 	
 KeyItemIconPointers:
@@ -1022,6 +1024,12 @@ ItemIconPalettes1:
 	RGB 07, 26, 31
 	RGB 00, 21, 00
 ; POSTCARD
+	RGB 12, 17, 25
+	RGB 30, 26, 19
+; ROCKET_MAIL
+	RGB 12, 17, 25
+	RGB 30, 26, 19
+; GOLD_MAIL
 	RGB 12, 17, 25
 	RGB 30, 26, 19
 

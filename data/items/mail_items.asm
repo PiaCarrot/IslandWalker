@@ -12,5 +12,7 @@ MailItems:
 	dw GLITTER_MAIL
 	dw TROPIC_MAIL
 	dw BREEZE_MAIL
+	dw ROCKET_MAIL
+	dw GOLD_MAIL
 	dw POSTCARD
 	dw -1

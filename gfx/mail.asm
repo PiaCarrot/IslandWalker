@@ -155,3 +155,30 @@ INCBIN "gfx/mail/beta_hoppip.2bpp.lz"
 
 PostcardGFX:
 INCBIN "gfx/mail/postcard.2bpp.lz"
+
+RocketMailBorderGFX:
+INCBIN "gfx/mail/rocket_mail_border.1bpp"
+
+MailMeowthGFX:
+INCBIN "gfx/mail/meowth.1bpp"
+
+MailBigRGFX:
+INCBIN "gfx/mail/big_r.1bpp"
+
+MailBigRBottomGFX:
+INCBIN "gfx/mail/big_r_bottom.1bpp"
+
+MailBigYenGFX:
+INCBIN "gfx/mail/big_yen.1bpp"
+
+MailBigYenBottomGFX:
+INCBIN "gfx/mail/big_yen_bottom.1bpp"
+
+MailSmallRGFX:
+INCBIN "gfx/mail/small_r.1bpp"
+
+MailSmallYenGFX:
+INCBIN "gfx/mail/small_yen.1bpp"
+
+Mail_GoldMailBorder2bppGFX:
+INCBIN "gfx/mail/gold_mail_border.2bpp.lz"

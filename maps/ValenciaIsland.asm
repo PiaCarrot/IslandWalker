@@ -197,8 +197,8 @@ ValenciaYoungsterScript:
 	giveitem HM_ROCK_SMASH
 	giveitem PINKAN_BERRY, 5
 	giveitem POSTCARD, 5
-	giveitem GLITTER_MAIL, 5
-	giveitem TROPIC_MAIL, 5
+	giveitem GOLD_MAIL, 5
+	giveitem ROCKET_MAIL, 5
 	giveitem BREEZE_MAIL, 5
 	giveitem PINK_CURE, 5
 	giveitem LIGHT_BALL

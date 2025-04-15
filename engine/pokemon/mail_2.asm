@@ -14,8 +14,10 @@
 	const GLITTER_MAIL_INDEX ; 10
 	const TROPIC_MAIL_INDEX  ; 11
 	const BREEZE_MAIL_INDEX  ; 12
+	const ROCKET_MAIL_INDEX  ; 13
+	const GOLD_MAIL_INDEX    ; 14
 DEF CUSTOM_PALETTES_MAIL EQU const_value
-	const POSTCARD_INDEX     ; 13
+	const POSTCARD_INDEX     ; 15
 DEF NUM_MAIL EQU const_value
 
 ReadPartyMonMail:
@@ -155,6 +157,8 @@ MailGFXPointers:
 	dw GLITTER_MAIL, LoadGlitterMailGFX
 	dw TROPIC_MAIL,  LoadTropicMailGFX
 	dw BREEZE_MAIL,  LoadBreezeMailGFX
+	dw ROCKET_MAIL,  LoadRocketMailGFX
+	dw GOLD_MAIL,    LoadGoldMailGFX
 	dw POSTCARD,     LoadPostcardGFX
 	assert_table_length NUM_MAIL
 	dw -1 ; end
@@ -927,6 +931,141 @@ LoadBreezeMailGFX:
 	pop hl
 	jmp MailGFX_PlaceMessage
 	
+LoadRocketMailGFX:
+	push bc
+	ld hl, vTiles2 tile $31
+	ld de, RocketMailBorderGFX
+	ld c, 4 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld de, MailMeowthGFX
+	ld c, 16 * LEN_1BPP_TILE
+	call LoadMailGFX_Color3
+	ld de, MailMeowthGFX
+	ld c, 16 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld hl, vTiles2 tile $01
+	ld de, MailBigRGFX
+	ld c, 18 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld de, MailBigRBottomGFX
+	ld c, 18 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld de, MailSmallRGFX
+	ld c, 2 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	xor a
+	ld bc, 1 tiles
+	rst ByteFill
+
+	ld a, $31
+	hlcoord 0, 0
+	call Mail_Place18TileAlternatingRow
+	hlcoord 1, 17
+	call Mail_Place18TileAlternatingRow
+	ld a, $33
+	hlcoord 0, 1
+	call Mail_Place16TileAlternatingColumn
+	hlcoord 19, 0
+	call Mail_Place16TileAlternatingColumn
+	ld a, $35
+	hlcoord 2, 2
+	call Mail_Draw4x2Graphic
+	ld a, $35
+	hlcoord 14, 2
+	call Mail_Draw4x2Graphic
+	ld a, $3D
+	hlcoord 2, 4
+	call Mail_Draw4x2Graphic
+	ld a, $3D
+	hlcoord 14, 4
+	call Mail_Draw4x2Graphic
+	ld a, $45
+	hlcoord 8, 2
+	call Mail_Draw4x2Graphic
+	ld a, $4D
+	hlcoord 8, 4
+	call Mail_Draw4x2Graphic
+	ld a, $01
+	hlcoord 13, 11
+	call Mail_Draw6x6Graphic
+	ld a, $25
+	hlcoord 2, 15
+	ld [hl], a
+	ld a, $26
+	hlcoord 3, 15
+	ld [hl], a
+	pop hl
+	jmp MailGFX_PlaceMessage
+	
+
+LoadGoldMailGFX:
+	push bc
+	ld hl, vTiles2 tile $35
+	ld de, MailMeowthGFX
+	ld c, 16 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld de, MailMeowthGFX
+	ld c, 16 * LEN_1BPP_TILE
+	call LoadMailGFX_Color3
+	ld hl, vTiles2 tile $01
+	ld de, MailBigYenGFX
+	ld c, 18 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld de, MailBigYenBottomGFX
+	ld c, 18 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	ld de, MailSmallYenGFX
+	ld c, 2 * LEN_1BPP_TILE
+	call LoadMailGFX_Color1
+	call DisableLCD
+	ld hl, Mail_GoldMailBorder2bppGFX
+	ld de, vTiles2 tile $31
+	call Decompress
+	call EnableLCD
+	xor a
+	ld bc, 1 tiles
+	rst ByteFill
+
+	ld a, $31
+	hlcoord 0, 0
+	call Mail_Place18TileAlternatingRow
+	hlcoord 1, 17
+	call Mail_Place18TileAlternatingRow
+	ld a, $33
+	hlcoord 0, 1
+	call Mail_Place16TileAlternatingColumn
+	hlcoord 19, 0
+	call Mail_Place16TileAlternatingColumn
+	ld a, $35
+	hlcoord 2, 2
+	call Mail_Draw4x2Graphic
+	ld a, $35
+	hlcoord 14, 2
+	call Mail_Draw4x2Graphic
+	ld a, $3D
+	hlcoord 2, 4
+	call Mail_Draw4x2Graphic
+	ld a, $3D
+	hlcoord 14, 4
+	call Mail_Draw4x2Graphic
+	ld a, $45
+	hlcoord 8, 2
+	call Mail_Draw4x2Graphic
+	ld a, $4D
+	hlcoord 8, 4
+	call Mail_Draw4x2Graphic
+	ld a, $01
+	hlcoord 13, 11
+	call Mail_Draw6x6Graphic
+	ld a, $25
+	hlcoord 2, 15
+	ld [hl], a
+	ld a, $26
+	hlcoord 3, 15
+	ld [hl], a
+	pop hl
+	jmp MailGFX_PlaceMessage
+
 LoadPostcardGFX:
 	push bc
 
@@ -1017,6 +1156,11 @@ MailGFX_PlaceMessage:
 	jr z, .place_author
 	hlcoord 6, 11
 	cp POSTCARD_INDEX
+	jr z, .place_author
+	hlcoord 4, 15
+	cp ROCKET_MAIL_INDEX
+	jr z, .place_author
+	cp GOLD_MAIL_INDEX
 	jr z, .place_author
 	hlcoord 6, 16
 	cp TROPIC_MAIL_INDEX
@@ -1259,6 +1403,86 @@ Mail_Draw4x2Graphic:
 	ld [hl], a
 	ret
 
+Mail_Draw6x6Graphic:
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	ld bc, SCREEN_WIDTH - 5
+	add hl, bc
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	add hl, bc
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	add hl, bc
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	add hl, bc
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	add hl, bc
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	ret
+
 Mail_Draw4x1Graphic:
 	ld [hli], a
 	inc a
@@ -1324,30 +1548,3 @@ Mail_BetaHoppipPal:
 	RGB 00, 21, 00
 	RGB 00, 00, 00
 	RGB 29, 29, 29
-	
-Mail_CopyMapTilesOrAttr:
-	debgcoord 0, 0
-.loop_tile_copy_2
-	push bc
-	ld c, 20
-.loop_tile_copy
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .loop_tile_copy
-	pop bc
-	push hl
-	ld hl, -20
-	add hl, bc
-	ld b, h
-	ld c, l
-	ld hl, BG_MAP_WIDTH - 20
-	add hl, de
-	ld d, h
-	ld e, l
-	pop hl
-	ld a, b
-	or c
-	jr nz, .loop_tile_copy_2
-	ret

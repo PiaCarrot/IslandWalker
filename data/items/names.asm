@@ -157,6 +157,8 @@ ItemNames::
 	li "TROPIC MAIL" ; 00DC
 	li "BREEZE MAIL" ; 00DC
 	li "POSTCARD" ; 00DC
+	li "ROCKET MAIL" ; 00DC
+	li "GOLD MAIL" ; 00DC
 	assert_list_length NUM_ITEM_POCKET
 	
 KeyItemNames::

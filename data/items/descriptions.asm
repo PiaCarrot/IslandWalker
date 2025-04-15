@@ -172,6 +172,8 @@ ItemDescriptions1:
 	dw TropicMailDesc ; 0084
 	dw BreezeMailDesc ; 0084
 	dw PostcardDesc ; 0084
+	dw RocketMailDesc ; 0084
+	dw GoldMailDesc ; 0084
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -1746,6 +1748,14 @@ XEvadeDesc:
 CandyTruffleDesc:
 	db   "A sweet truffle."
 	next "Sell low.@"
+
+RocketMailDesc:
+	db   "ROCKET-print MAIL."
+	next "(HOLD)@"
+
+GoldMailDesc:
+	db   "Expensive MAIL."
+	next "(HOLD)@"
 
 ; ExpCandyXSDesc:
 	; db   "Grants a tiny"
