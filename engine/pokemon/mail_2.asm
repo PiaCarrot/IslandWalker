@@ -1174,7 +1174,7 @@ MailGFX_PlaceMessage:
 	and a
 	ret z
 	ld a, [wCurMailIndex]
-	hlcoord 8, 16
+	hlcoord 7, 16
 	cp ZIGZAG_MAIL_INDEX
 	jr z, .place_author
 	hlcoord 8, 14
