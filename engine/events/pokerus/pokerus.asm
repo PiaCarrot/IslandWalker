@@ -1,5 +1,6 @@
 GivePokerusAndConvertBerries:
 	call ConvertBerriesToBerryJuice
+	call ConvertRocketMailToGoldMail
 	ld hl, wPartyMon1PokerusStatus
 	ld a, [wPartyCount]
 	ld b, a
@@ -18,9 +19,6 @@ GivePokerusAndConvertBerries:
 
 ; If we haven't been to Goldenrod City at least once,
 ; prevent the contraction of Pokerus.
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
-	ret z
 	call Random
 	ldh a, [hRandomAdd]
 	and a
@@ -122,11 +120,6 @@ GivePokerusAndConvertBerries:
 	ret
 
 ConvertBerriesToBerryJuice:
-; If we haven't been to Goldenrod City at least once,
-; prevent Shuckle from turning held Berry into Berry Juice.
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
-	ret z
 	call Random
 	cp 1 out_of 16 ; 6.25% chance
 	ret nc
@@ -165,6 +158,52 @@ ConvertBerriesToBerryJuice:
 .convertToJuice
 	push hl
 	ld hl, BERRY_JUICE
+	call GetItemIDFromIndex
+	pop hl
+	ld [hl], a
+	pop hl
+	pop af
+	jr .done
+
+ConvertRocketMailToGoldMail: ; TODO: Figure out how to update the MAIL visually while equipped
+	call Random
+	cp 1 out_of 4 ; 25% chance
+	ret nc
+	ld hl, LATIOS ; GHOLDENGO
+	call GetPokemonIDFromIndex
+	ld [wTempSpecies], a
+	ld hl, wPartyMons
+	ld a, [wPartyCount]
+.partyMonLoop
+	push af
+	push hl
+	ld a, [wTempSpecies]
+	cp [hl]
+	jr nz, .loopMon
+	ld bc, MON_ITEM
+	add hl, bc
+	ld a, [hl]
+	push hl
+	call GetItemIndexFromID
+	cphl16 ROCKET_MAIL
+	pop hl
+	jr z, .convertToGold
+
+.loopMon
+	pop hl
+	ld bc, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	pop af
+	dec a
+	jr nz, .partyMonLoop
+.done
+	xor a
+	ld [wTempSpecies], a
+	ret
+
+.convertToGold
+	push hl
+	ld hl, GOLD_MAIL
 	call GetItemIDFromIndex
 	pop hl
 	ld [hl], a

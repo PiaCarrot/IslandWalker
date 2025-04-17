@@ -174,6 +174,7 @@ ItemDescriptions1:
 	dw PostcardDesc ; 0084
 	dw RocketMailDesc ; 0084
 	dw GoldMailDesc ; 0084
+	dw ZigZagMailDesc ; 0084
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -1752,6 +1753,10 @@ CandyTruffleDesc:
 RocketMailDesc:
 	db   "ROCKET-print MAIL."
 	next "(HOLD)@"
+
+ZigZagMailDesc:
+	db   "ZIGZAGOON-print"
+	next "MAIL. (HOLD)@"
 
 GoldMailDesc:
 	db   "Expensive MAIL."

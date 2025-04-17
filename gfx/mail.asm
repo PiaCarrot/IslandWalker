@@ -182,3 +182,6 @@ INCBIN "gfx/mail/small_yen.1bpp"
 
 Mail_GoldMailBorder2bppGFX:
 INCBIN "gfx/mail/gold_mail_border.2bpp.lz"
+
+ZigZagMailGFX:
+INCBIN "gfx/mail/zigzag_mail.2bpp.lz"

@@ -159,6 +159,7 @@ ItemNames::
 	li "POSTCARD" ; 00DC
 	li "ROCKET MAIL" ; 00DC
 	li "GOLD MAIL" ; 00DC
+	li "ZIGZAG MAIL" ; 00DC
 	assert_list_length NUM_ITEM_POCKET
 	
 KeyItemNames::

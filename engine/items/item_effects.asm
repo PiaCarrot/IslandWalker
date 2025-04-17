@@ -194,6 +194,7 @@ ItemEffects1:
 	dw NoEffect            ; POSTCARD
 	dw NoEffect            ; ROCKET_MAIL
 	dw NoEffect            ; GOLD_MAIL
+	dw NoEffect            ; ZIGZAG_MAIL
 .IndirectEnd:
 
 ItemEffectsKeyItems:

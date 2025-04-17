@@ -16,8 +16,9 @@
 	const BREEZE_MAIL_INDEX  ; 12
 	const ROCKET_MAIL_INDEX  ; 13
 	const GOLD_MAIL_INDEX    ; 14
+	const ZIGZAG_MAIL_INDEX  ; 15
 DEF CUSTOM_PALETTES_MAIL EQU const_value
-	const POSTCARD_INDEX     ; 15
+	const POSTCARD_INDEX     ; 16
 DEF NUM_MAIL EQU const_value
 
 ReadPartyMonMail:
@@ -159,6 +160,7 @@ MailGFXPointers:
 	dw BREEZE_MAIL,  LoadBreezeMailGFX
 	dw ROCKET_MAIL,  LoadRocketMailGFX
 	dw GOLD_MAIL,    LoadGoldMailGFX
+	dw ZIGZAG_MAIL,  LoadZigZagMailGFX
 	dw POSTCARD,     LoadPostcardGFX
 	assert_table_length NUM_MAIL
 	dw -1 ; end
@@ -1066,6 +1068,27 @@ LoadGoldMailGFX:
 	pop hl
 	jmp MailGFX_PlaceMessage
 
+LoadZigZagMailGFX:
+	push bc
+
+	ld hl, ZigZagMailGFX
+	ld de, vTiles2
+	call Decompress
+
+	call ClearTilemap
+
+	ld hl, ZigZagMailTilemap
+	ld bc, ZigZagMailTilemapEnd - ZigZagMailTilemap
+	decoord 0, 0
+	rst CopyBytes
+
+	pop hl
+	jmp MailGFX_PlaceMessage
+
+ZigZagMailTilemap:
+INCBIN "gfx/mail/zigzag_mail.tilemap"
+ZigZagMailTilemapEnd:
+
 LoadPostcardGFX:
 	push bc
 
@@ -1140,6 +1163,9 @@ MailGFX_PlaceMessage:
 	hlcoord 1, 7
 	cp POSTCARD_INDEX
 	jr z, .continue
+	hlcoord 2, 9
+	cp ZIGZAG_MAIL_INDEX
+	jr z, .continue
 	hlcoord 2, 7
 .continue
 	rst PlaceString
@@ -1148,6 +1174,9 @@ MailGFX_PlaceMessage:
 	and a
 	ret z
 	ld a, [wCurMailIndex]
+	hlcoord 8, 16
+	cp ZIGZAG_MAIL_INDEX
+	jr z, .place_author
 	hlcoord 8, 14
 	cp PORTRAITMAIL_INDEX
 	jr z, .place_author

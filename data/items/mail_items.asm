@@ -14,5 +14,6 @@ MailItems:
 	dw BREEZE_MAIL
 	dw ROCKET_MAIL
 	dw GOLD_MAIL
+	dw ZIGZAG_MAIL
 	dw POSTCARD
 	dw -1
