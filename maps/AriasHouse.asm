@@ -435,7 +435,7 @@ Gossip3Text:
 	cont "It looks like the"
 	cont "letter 'S'!"
 
-	para "The KYORGRE"
+	para "The KYOGRE"
 	line "constellation is"
 	cont "by far the"
 	cont "largest of them,"
