@@ -168,6 +168,9 @@ if DEF(_DEBUG)
 	givepoke EEVEE, 19
 	givepoke AZURILL, 19
 	givepoke GOLBAT, 19
+	givepoke NINCADA, 19
+	givepoke WURMPLE, 19
+	givepoke WURMPLE, 19
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1

@@ -96,9 +96,9 @@ EvolveAfterBattle_MasterLoop:
 	jmp c, .skip_evolution_species ; MORN_F or DAY_F < NITE_F
 
 .happiness
-	ld a, [wTempMonHappiness]
-	cp HAPPINESS_TO_EVOLVE
-	jmp c, .skip_evolution_species
+	; ld a, [wTempMonHappiness]
+	; cp HAPPINESS_TO_EVOLVE
+	; jmp c, .skip_evolution_species
 
 	call IsMonHoldingEverstone
 	jmp nc, .skip_evolution_species ; NITE_F or EVE_F >= NITE_F
@@ -167,8 +167,7 @@ EvolveAfterBattle_MasterLoop:
 
 	jr c, .proceed ; low_pv
 
-	call GetNextEvoAttackByte
-	call GetNextEvoAttackByte
+	call GetNextEvoAttackWord
 	jr .proceed
 
 .stat
@@ -474,10 +473,7 @@ LearnLevelMoves:
 	ld b, a
 	ld a, [wCurPartyLevel]
 	cp b
-	call GetNextEvoAttackByte
-	ld e, a
-	call GetNextEvoAttackByte
-	ld d, a
+	call GetNextEvoAttackWord
 	jr nz, .find_move
 
 	push hl
@@ -713,10 +709,7 @@ DetermineEvolutionItemResults::
 	ld a, [wCurItem]
 	cp b
 	jr nz, .skip_species
-	ldh a, [hTemp]
-	call GetFarWord
-	ld d, h
-	ld e, l
+	call GetNextEvoAttackWord
 	ret
 
 .skip_two_species_parameter_byte
@@ -734,6 +727,13 @@ GetNextEvoAttackByte:
 	ldh a, [hTemp]
 	call GetFarByte
 	inc hl
+	ret
+	
+GetNextEvoAttackWord:
+	call GetNextEvoAttackByte
+	ld e, a
+	call GetNextEvoAttackByte
+	ld d, a
 	ret
 
 GiveShedinja:
@@ -791,12 +791,10 @@ GiveShedinja:
 
 GetEvoItem:
 ; Return evolution item in register b
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
+	call GetNextEvoAttackWord
 	push hl
-	ld h, a
-	ld l, b
+	ld h, d
+	ld l, e
 	call GetItemIDFromIndex
 	ld b, a
 	pop hl
