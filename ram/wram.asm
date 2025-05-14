@@ -2361,6 +2361,7 @@ wListMovesLineSpacing:: db
 wSwitchMonTo:: db
 wSwitchMonFrom:: db
 	ds 4
+wPokerusBuffer::
 wCurEnemyItem:: db
 
 NEXTU

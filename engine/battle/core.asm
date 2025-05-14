@@ -7097,15 +7097,15 @@ GiveExperiencePoints:
 	jmp z, .next_mon
 
 ; Give EVs
-; e = 0 for no Pokérus, 1 for Pokérus
-	ld e, 0
 	ld hl, MON_POKERUS
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .no_pokerus
-	inc e
-.no_pokerus
+	; if z, then a == 0 already
+	jr z, .got_pokerus
+	ld a, 1
+.got_pokerus
+	ld [wPokerusBuffer], a
 	ld hl, MON_EVS
 	add hl, bc
 	push bc
@@ -7119,6 +7119,8 @@ GiveExperiencePoints:
 	ld b, a
 	ld c, NUM_STATS ; six EVs
 .ev_loop
+	ld a, [wPokerusBuffer]
+	ld e, a
 	rlc b
 	rlc b
 	ld a, b
