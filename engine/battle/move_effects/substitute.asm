@@ -51,7 +51,7 @@ BattleCommand_Substitute:
 	ld hl, MadeSubstituteText
 	call StdBattleTextbox
 	jmp RefreshBattleHuds
-
+	
 .already_has_sub
 	call CheckUserIsCharging
 	call nz, BattleCommand_RaiseSub

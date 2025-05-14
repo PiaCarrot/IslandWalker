@@ -3541,7 +3541,8 @@ ShowSetEnemyMonAndSendOutAnimation:
 	ld a, OTPARTYMON
 	ld [wMonType], a
 	predef CopyMonToTempMon
-	call GetEnemyMonFrontpic
+	ld hl, BattleAnimCmd_DropSub
+	call GetEnemyMonFrontpic_DoAnim
 
 	xor a
 	ld [wNumHits], a
@@ -3581,7 +3582,22 @@ ShowSetEnemyMonAndSendOutAnimation:
 	call UpdateEnemyHUD
 	ld a, $1
 	ldh [hBGMapMode], a
-	ret
+
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret z
+
+	farcall CheckBattleScene
+	jr nc, AnimateSubOnEntry
+
+	ld hl, BattleAnimCmd_RaiseSub
+	jp GetEnemyMonFrontpic_DoAnim
+
+AnimateSubOnEntry:
+	ld a, 2 
+	ld [wBattleAnimParam], a
+	ld de, SUBSTITUTE
+	jp Call_PlayBattleAnim
 
 NewEnemyMonStatus:
 	xor a
@@ -4011,7 +4027,8 @@ SendOutPlayerMon:
 	call WaitBGMap
 	xor a
 	ldh [hBGMapMode], a
-	call GetBattleMonBackpic
+	ld hl, BattleAnimCmd_DropSub
+	call GetBattleMonBackpic_DoAnim
 	xor a
 	ldh [hGraphicStartTile], a
 	ld [wBattleMenuCursorPosition], a
@@ -4054,7 +4071,16 @@ SendOutPlayerMon:
 	call UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a
-	ret
+
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret z
+
+	farcall CheckBattleScene
+	jp nc, AnimateSubOnEntry
+
+	ld hl, BattleAnimCmd_RaiseSub
+	jp GetBattleMonBackpic_DoAnim
 
 NewBattleMonStatus:
 	xor a

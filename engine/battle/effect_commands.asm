@@ -2097,6 +2097,11 @@ BattleCommand_SwitchTurn:
 	ret
 
 BattleCommand_RaiseSub:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	cp EFFECT_BATON_PASS
+	ret z
+
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVar
 	bit SUBSTATUS_SUBSTITUTE, a
