@@ -403,7 +403,7 @@ LanturnEvosAttacks:
 	db 0 ; no more level-up moves
 
 PichuEvosAttacks:
-	evolve EVOLVE_HAPPINESS, TR_ANYTIME, PIKACHU
+	evolve EVOLVE_HAPPINESS, PIKACHU
 	db 0 ; no more evolutions
 	dbw 1, CHARM
 	dbw 1, THUNDERSHOCK
@@ -413,7 +413,7 @@ PichuEvosAttacks:
 	db 0 ; no more level-up moves
 
 CleffaEvosAttacks:
-	evolve EVOLVE_HAPPINESS, TR_ANYTIME, CLEFAIRY
+	evolve EVOLVE_HAPPINESS, CLEFAIRY
 	db 0 ; no more evolutions
 	dbw 1, CHARM
 	dbw 1, POUND
@@ -423,7 +423,7 @@ CleffaEvosAttacks:
 	db 0 ; no more level-up moves
 
 IgglybuffEvosAttacks:
-	evolve EVOLVE_HAPPINESS, TR_ANYTIME, JIGGLYPUFF
+	evolve EVOLVE_HAPPINESS, JIGGLYPUFF
 	db 0 ; no more evolutions
 	dbw 1, CHARM
 	dbw 1, SING
@@ -433,7 +433,7 @@ IgglybuffEvosAttacks:
 	db 0 ; no more level-up moves
 
 TogepiEvosAttacks:
-	evolve EVOLVE_HAPPINESS, TR_ANYTIME, TOGETIC
+	evolve EVOLVE_HAPPINESS, TOGETIC
 	db 0 ; no more evolutions
 	dbw 1, CHARM
 	dbw 1, GROWL

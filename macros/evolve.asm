@@ -12,6 +12,8 @@ MACRO evolve
         dw \2 ; item
         dw \3 ; species
     elif (\1) == EVOLVE_HAPPINESS
+        dw \2 ; species
+    elif (\1) == EVOLVE_HAPPINESS_TIME
         db \2 ; time
         dw \3 ; species
     elif (\1) == EVOLVE_STAT

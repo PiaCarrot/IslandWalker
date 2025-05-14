@@ -165,12 +165,9 @@ if DEF(_DEBUG)
 	; givepokemove HEADBUTT,   wPartyMon3, 2
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke WURMPLE, 19
-	givepoke WURMPLE, 19
-	givepoke WURMPLE, 19
-	givepoke WURMPLE, 19
-	givepoke WURMPLE, 19
-	givepoke WURMPLE, 19
+	givepoke EEVEE, 19
+	givepoke AZURILL, 19
+	givepoke GOLBAT, 19
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1

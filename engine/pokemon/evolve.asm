@@ -88,29 +88,19 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_STAT
 	jmp z, .stat
 
-; EVOLVE_HAPPINESS
+	cp EVOLVE_HAPPINESS
+	jr z, .happiness
+
+; EVOLVE_HAPPINESS_TIME
+	call GetEvoTime
+	jmp c, .skip_evolution_species ; MORN_F or DAY_F < NITE_F
+
+.happiness
 	ld a, [wTempMonHappiness]
 	cp HAPPINESS_TO_EVOLVE
-	jmp c, .skip_evolution_species_parameter_byte
+	jmp c, .skip_evolution_species
 
 	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter_byte
-
-	call GetNextEvoAttackByte
-	cp TR_ANYTIME
-	jmp z, .proceed
-	cp TR_MORNDAY
-	jr z, .happiness_daylight
-
-; TR_EVENITE
-	ld a, [wTimeOfDay]
-	cp NITE_F
-	jmp c, .skip_evolution_species ; MORN_F or DAY_F < NITE_F
-	jmp .proceed
-
-.happiness_daylight
-	ld a, [wTimeOfDay]
-	cp NITE_F
 	jmp nc, .skip_evolution_species ; NITE_F or EVE_F >= NITE_F
 	jmp .proceed
 
@@ -676,6 +666,8 @@ SkipEvolutions::
 	inc hl
 	and a
 	ret z
+	cp EVOLVE_HAPPINESS
+	jr z, .no_skip
 	cp EVOLVE_PV
 	jr z, .two_extra_skips
 	cp EVOLVE_LEVEL
@@ -690,6 +682,7 @@ SkipEvolutions::
 	inc hl
 .no_extra_skip
 	inc hl
+.no_skip
 	inc hl
 	inc hl
 	jr SkipEvolutions
@@ -706,6 +699,8 @@ DetermineEvolutionItemResults::
 	call GetNextEvoAttackByte
 	and a
 	ret z
+	cp EVOLVE_HAPPINESS
+	jr z, .skip_species
 	cp EVOLVE_PV
 	jr z, .skip_two_species_parameter_byte
 	cp EVOLVE_LEVEL
@@ -811,5 +806,18 @@ GetEvoLevel:
 	call GetNextEvoAttackByte
 	ld b, a
 	ld a, [wTempMonLevel]
+	cp b
+	ret
+
+GetEvoTime:
+	call GetNextEvoAttackByte
+	ld b, a
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	ld a, TR_MORNDAY
+	jr c, .compare
+	ld a, TR_EVENITE
+	
+.compare
 	cp b
 	ret

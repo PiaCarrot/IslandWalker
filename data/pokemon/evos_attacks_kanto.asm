@@ -717,7 +717,7 @@ ZubatEvosAttacks:
 	db 0 ; no more level-up moves
 
 GolbatEvosAttacks:
-	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, CROBAT
+	evolve EVOLVE_HAPPINESS, CROBAT
 	db 0 ; no more evolutions
 	dbw 1, ASTONISH
 	dbw 1, LEECH_LIFE
@@ -1775,7 +1775,7 @@ RhydonEvosAttacks:
 	db 0 ; no more level-up moves
 
 ChanseyEvosAttacks:
-	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, BLISSEY
+	evolve EVOLVE_HAPPINESS, BLISSEY
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, POUND
@@ -2060,8 +2060,8 @@ EeveeEvosAttacks:
 	evolve EVOLVE_ITEM, THUNDERSTONE, JOLTEON
 	evolve EVOLVE_ITEM, WATER_STONE, VAPOREON
 	evolve EVOLVE_ITEM, FIRE_STONE, FLAREON
-	dbbw EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
-	dbbw EVOLVE_HAPPINESS, TR_EVENITE, UMBREON
+	evolve EVOLVE_HAPPINESS_TIME, TR_MORNDAY, ESPEON
+	evolve EVOLVE_HAPPINESS_TIME, TR_EVENITE, UMBREON
 	db 0 ; no more evolutions
 	; dbw 1, HELPING_HAND
 	dbw 1, TACKLE
