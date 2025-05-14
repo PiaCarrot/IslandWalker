@@ -72,7 +72,7 @@ EvolveAfterBattle_MasterLoop:
 
 	ld a, b
 	cp EVOLVE_ITEM
-	jmp z, .item
+	jr z, .item
 
 	ld a, [wForceEvolution]
 	and a
@@ -85,35 +85,10 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_PV
 	jmp z, .pv
 
-	cp EVOLVE_HAPPINESS
-	jr z, .happiness
+	cp EVOLVE_STAT
+	jr z, .stat
 
-; EVOLVE_STAT
-	call GetEvoLevel
-	jmp c, .skip_evolution_species_parameter_byte
-
-	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter_byte
-
-	push hl
-	ld de, wTempMonAttack
-	ld hl, wTempMonDefense
-	ld c, 2
-	call CompareBytes
-	ld c, ATK_EQ_DEF
-	jr z, .got_tyrogue_evo
-	ld c, ATK_LT_DEF
-	jr c, .got_tyrogue_evo
-	ld c, ATK_GT_DEF
-.got_tyrogue_evo
-	pop hl
-
-	call GetNextEvoAttackByte
-	cp c
-	jmp nz, .skip_evolution_species
-	jmp .proceed
-
-.happiness
+; EVOLVE_HAPPINESS
 	ld a, [wTempMonHappiness]
 	cp HAPPINESS_TO_EVOLVE
 	jmp c, .skip_evolution_species_parameter_byte
@@ -137,7 +112,7 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jmp nc, .skip_evolution_species ; NITE_F or EVE_F >= NITE_F
-	jr .proceed
+	jmp .proceed
 
 .trade
 	ld a, [wLinkMode]
@@ -152,7 +127,7 @@ EvolveAfterBattle_MasterLoop:
 
 	call GetEvoItem
 	inc a
-	jr z, .proceed
+	jmp z, .proceed
 
 	ld a, [wTempMonItem]
 	cp b
@@ -175,6 +150,25 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jmp nz, .skip_evolution_species
 	jr .proceed
+
+.stat
+	push hl
+	ld de, wTempMonAttack
+	ld hl, wTempMonDefense
+	ld c, 2
+	call CompareBytes
+	ld c, ATK_EQ_DEF
+	jr z, .got_tyrogue_evo
+	ld c, ATK_LT_DEF
+	jr c, .got_tyrogue_evo
+	ld c, ATK_GT_DEF
+.got_tyrogue_evo
+	pop hl
+
+	call GetNextEvoAttackByte
+	cp c
+	jmp nz, .skip_evolution_species_parameter_byte
+	jr .level
 
 .pv
 	call GetEvoLevel

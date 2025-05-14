@@ -1259,9 +1259,9 @@ SmeargleEvosAttacks:
 	db 0 ; no more level-up moves
 
 TyrogueEvosAttacks:
-	evolve EVOLVE_STAT, 20, ATK_LT_DEF, HITMONCHAN
-	evolve EVOLVE_STAT, 20, ATK_GT_DEF, HITMONLEE
-	evolve EVOLVE_STAT, 20, ATK_EQ_DEF, HITMONTOP
+	evolve EVOLVE_STAT, ATK_LT_DEF, 20, HITMONCHAN
+	evolve EVOLVE_STAT, ATK_GT_DEF, 20, HITMONLEE
+	evolve EVOLVE_STAT, ATK_EQ_DEF, 20, HITMONTOP
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	db 0 ; no more level-up moves

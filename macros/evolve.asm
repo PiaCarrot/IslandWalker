@@ -15,8 +15,8 @@ MACRO evolve
         db \2 ; time
         dw \3 ; species
     elif (\1) == EVOLVE_STAT
-        db \2 ; level
-        db \3 ; stat
+        db \2 ; stat
+        db \3 ; level
         dw \4 ; species
     elif (\1) == EVOLVE_PV
         db \2 ; level

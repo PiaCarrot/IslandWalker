@@ -164,13 +164,12 @@ if DEF(_DEBUG)
 	; givepokemove HEADBUTT,   wPartyMon3, 2
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke NINCADA, 19
-	givepokemove QUICK_ATTACK,  wPartyMon1, 0
-	givepokemove SNATCH,  wPartyMon1, 1
-	givepokemove WHIRLWIND,  wPartyMon1, 2
-	givepokemove VITAL_THROW,  wPartyMon1, 3
-	givepoke NINCADA, 50
-	givepoke WURMPLE, 50
+	givepoke TYROGUE, 19
+	givepoke TYROGUE, 19
+	givepoke TYROGUE, 19
+	givepoke TYROGUE, 19
+	givepoke TYROGUE, 19
+	givepoke TYROGUE, 19
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1
