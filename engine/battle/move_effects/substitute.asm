@@ -5,6 +5,7 @@ BattleCommand_Substitute:
 	call GetBattleVar
 	bit SUBSTATUS_SUBSTITUTE, a
 	jr nz, .already_has_sub
+
 	farcall GetQuarterMaxHP
 	farcall CheckUserHasEnoughHP
 	jr nc, .too_weak_to_sub
@@ -14,11 +15,8 @@ BattleCommand_Substitute:
 	and a
 	jr z, .got_hp
 	ld hl, wEnemySubstituteHP
-.got_hp
 
-	ld a, b
-	ld [hli], a
-	ld [hl], c
+.got_hp
 	farcall SubtractHPFromUser
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
@@ -31,13 +29,13 @@ BattleCommand_Substitute:
 	jr z, .player
 	ld hl, wEnemyWrapCount
 	ld de, wEnemyTrappingMove
+
 .player
 	xor a
 	ld [hl], a
 	ld [de], a
 	call _CheckBattleScene
-	call c, BattleCommand_RaiseSubNoAnim
-	jr .finish
+	jr c, .no_anim
 
 	xor a
 	ld [wNumHits], a
@@ -45,11 +43,14 @@ BattleCommand_Substitute:
 	ld hl, SUBSTITUTE
 	call GetMoveIDFromIndex
 	call LoadAnim
+	jr .finish
+
+.no_anim
+	call BattleCommand_RaiseSubNoAnim
 .finish
 	ld hl, MadeSubstituteText
 	call StdBattleTextbox
 	jmp RefreshBattleHuds
-	
 
 .already_has_sub
 	call CheckUserIsCharging
