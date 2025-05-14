@@ -142,6 +142,12 @@ WildFled_EnemyFled_LinkBattleCanceled:
 
 BattleTurn:
 .loop
+	ld hl, wTotalBattleTurns
+	inc [hl]
+	jr nz, .done_turn_increment
+	dec [hl]
+
+.done_turn_increment
 	call CheckContestBattleOver
 	ret c
 
@@ -200,12 +206,6 @@ BattleTurn:
 	jr .loop
 
 HandleBetweenTurnEffects:
-	ld hl, wTotalBattleTurns
-	inc [hl]
-	jr nz, .done_turn_increment
-	dec [hl]
-
-.done_turn_increment
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .CheckEnemyFirst
@@ -828,6 +828,7 @@ CompareMovePriority:
 
 GetMovePriority:
 ; Return the priority (0-9) of move a.
+	push bc
 
 	call GetMoveIndexFromID
 	ld b, h
@@ -836,14 +837,13 @@ GetMovePriority:
 	ld hl, MoveEffectPriorities
 .loop
 	ld a, [hli]
-	cp -1 ; SPIT_UP cannot be a priorty move
+	cp -1
 	jr z, .default_priority
-	cp c
+	cp b
 	jr nz, .skip
 	ld a, [hli]
-	cp b
-	ld a, [hl]
-	ret z
+	cp c
+	jr z, .done
 	inc hl
 	jr .loop
 
@@ -853,7 +853,14 @@ GetMovePriority:
 	jr .loop
 
 .default_priority
-	ld a, BASE_PRIORITY
+	pop bc
+	xor a
+	ret
+
+.done
+	ld a, [hl]
+	xor $80 ; treat it as a signed byte
+	pop bc
 	ret
 
 INCLUDE "data/moves/effects_priorities.asm"
