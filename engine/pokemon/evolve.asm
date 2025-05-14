@@ -324,19 +324,19 @@ EvolveAfterBattle_MasterLoop:
 	cp PARTY_LENGTH
 	jr z, .skip_shedinja
 
-	ld a, [wEvolutionOldSpecies]
+	ld a, [wTempSpecies]
 	call GetPokemonIndexFromID
 	ld a, l
-	sub LOW(NINCADA)
-	if HIGH(NINCADA) == 0
+	sub LOW(NINJASK)
+	if HIGH(NINJASK) == 0
 		or h
 	else
 		jr nz, .skip_shedinja
-		if HIGH(NINCADA) == 1
+		if HIGH(NINJASK) == 1
 			dec h
 		else
 			ld a, h
-			cp HIGH(NINCADA)
+			cp HIGH(NINJASK)
 		endc
 	endc
 	call z, GiveShedinja
