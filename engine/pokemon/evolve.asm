@@ -83,10 +83,10 @@ EvolveAfterBattle_MasterLoop:
 	jmp z, .level
 
 	cp EVOLVE_PV
-	jmp z, .pv
+	jr z, .pv
 
 	cp EVOLVE_STAT
-	jr z, .stat
+	jmp z, .stat
 
 ; EVOLVE_HAPPINESS
 	ld a, [wTempMonHappiness]
@@ -127,7 +127,7 @@ EvolveAfterBattle_MasterLoop:
 
 	call GetEvoItem
 	inc a
-	jmp z, .proceed
+	jr z, .proceed
 
 	ld a, [wTempMonItem]
 	cp b
@@ -150,25 +150,6 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jmp nz, .skip_evolution_species
 	jr .proceed
-
-.stat
-	push hl
-	ld de, wTempMonAttack
-	ld hl, wTempMonDefense
-	ld c, 2
-	call CompareBytes
-	ld c, ATK_EQ_DEF
-	jr z, .got_tyrogue_evo
-	ld c, ATK_LT_DEF
-	jr c, .got_tyrogue_evo
-	ld c, ATK_GT_DEF
-.got_tyrogue_evo
-	pop hl
-
-	call GetNextEvoAttackByte
-	cp c
-	jmp nz, .skip_evolution_species_parameter_byte
-	jr .level
 
 .pv
 	call GetEvoLevel
@@ -199,6 +180,25 @@ EvolveAfterBattle_MasterLoop:
 	call GetNextEvoAttackByte
 	call GetNextEvoAttackByte
 	jr .proceed
+
+.stat
+	push hl
+	ld de, wTempMonAttack
+	ld hl, wTempMonDefense
+	ld c, 2
+	call CompareBytes
+	ld c, ATK_EQ_DEF
+	jr z, .got_tyrogue_evo
+	ld c, ATK_LT_DEF
+	jr c, .got_tyrogue_evo
+	ld c, ATK_GT_DEF
+.got_tyrogue_evo
+	pop hl
+
+	call GetNextEvoAttackByte
+	cp c
+	jmp nz, .skip_evolution_species_parameter_byte
+	; fallthrough
 
 .level
 	call GetEvoLevel
