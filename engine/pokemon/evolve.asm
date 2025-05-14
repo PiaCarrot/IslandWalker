@@ -442,11 +442,7 @@ CancelEvolution:
 
 IsMonHoldingEverstone:
 	push hl
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld a, [hl]
+	ld a, [wTempMonItem]
 	call GetItemIndexFromID
 	cphl16 EVERSTONE
 	pop hl
