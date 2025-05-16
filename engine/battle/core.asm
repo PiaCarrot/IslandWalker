@@ -828,7 +828,6 @@ CompareMovePriority:
 
 GetMovePriority:
 ; Return the priority (0-9) of move a.
-	push bc
 
 	call GetMoveIndexFromID
 	ld b, h
@@ -837,13 +836,14 @@ GetMovePriority:
 	ld hl, MoveEffectPriorities
 .loop
 	ld a, [hli]
-	cp -1
+	cp -1 ; SPIT_UP cannot be a priorty move
 	jr z, .default_priority
-	cp b
+	cp c
 	jr nz, .skip
 	ld a, [hli]
-	cp c
-	jr z, .done
+	cp b
+	ld a, [hl]
+	ret z
 	inc hl
 	jr .loop
 
@@ -853,14 +853,7 @@ GetMovePriority:
 	jr .loop
 
 .default_priority
-	pop bc
-	xor a
-	ret
-
-.done
-	ld a, [hl]
-	xor $80 ; treat it as a signed byte
-	pop bc
+	ld a, BASE_PRIORITY
 	ret
 
 INCLUDE "data/moves/effects_priorities.asm"
