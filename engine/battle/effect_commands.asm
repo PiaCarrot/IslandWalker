@@ -87,18 +87,12 @@ DoMove:
 	cp endturn_command
 	ret nc
 
-; The rest of the commands (01-af) are read from BattleCommandPointers.
-	push bc
-	dec a
+; The rest of the commands (00-ae) are read from BattleCommandPointers.
 	ld c, a
 	ld b, 0
 	ld hl, BattleCommandPointers
-	add hl, bc
-	add hl, bc
-	pop bc
-
 	ld a, BANK(BattleCommandPointers)
-	call GetFarWord
+	call LoadDoubleIndirectPointer
 
 	call .DoMoveEffectCommand
 

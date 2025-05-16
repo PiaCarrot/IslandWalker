@@ -4,7 +4,7 @@ MACRO command
 ENDM
 
 ; BattleCommandPointers indexes (see data/battle/effect_command_pointers.asm)
-	const_def 1
+	const_def 0
 	command checkturn               ; 01
 	command checkobedience          ; 02
 	command usedmovetext            ; 03
