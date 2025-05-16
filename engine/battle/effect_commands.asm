@@ -88,11 +88,13 @@ DoMove:
 	ret nc
 
 ; The rest of the commands (00-ae) are read from BattleCommandPointers.
+	push bc
 	ld c, a
 	ld b, 0
 	ld hl, BattleCommandPointers
 	ld a, BANK(BattleCommandPointers)
 	call LoadDoubleIndirectPointer
+	pop bc
 
 	call .DoMoveEffectCommand
 
