@@ -357,11 +357,13 @@ EvolveAfterBattle_MasterLoop:
 
 .dont_evolve_check
 	ld a, b
+	cp EVOLVE_HAPPINESS
+	jr z, .skip_evolution_species
 	cp EVOLVE_PV
 	jr z, .skip_evolution_two_species_parameter_byte
 	cp EVOLVE_LEVEL
 	jr z, .skip_evolution_species_parameter_byte
-	cp EVOLVE_HAPPINESS
+	cp EVOLVE_HAPPINESS_TIME
 	jr z, .skip_evolution_species_parameter_byte
 	jr .skip_evolution_species_parameter_word
 
@@ -668,7 +670,7 @@ SkipEvolutions::
 	jr z, .two_extra_skips
 	cp EVOLVE_LEVEL
 	jr z, .no_extra_skip
-	cp EVOLVE_HAPPINESS
+	cp EVOLVE_HAPPINESS_TIME
 	jr z, .no_extra_skip
 	jr .one_extra_skip
 
