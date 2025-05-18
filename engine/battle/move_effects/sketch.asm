@@ -110,10 +110,8 @@ BattleCommand_Sketch:
 	ld [hl], a
 .done_copy
 	call GetMoveName
-	call AnimateCurrentMove
-
 	ld hl, SketchedText
-	jmp StdBattleTextbox
+	jmp AnimateCurrentMoveText
 
 .fail
 	call AnimateFailedMove

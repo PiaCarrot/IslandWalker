@@ -5868,10 +5868,8 @@ BattleCommand_ResetStats:
 	pop af
 	ldh [hBattleTurn], a
 
-	call AnimateCurrentMove
-
 	ld hl, EliminatedStatsText
-	jmp StdBattleTextbox
+	jmp AnimateCurrentMoveText
 
 .Fill:
 	ld b, NUM_LEVEL_STATS
@@ -6105,9 +6103,8 @@ BattleCommand_ArenaTrap:
 ; Otherwise trap the opponent.
 
 	set SUBSTATUS_CANT_RUN, [hl]
-	call AnimateCurrentMove
 	ld hl, CantEscapeNowText
-	jmp StdBattleTextbox
+	jmp AnimateCurrentMoveText
 
 INCLUDE "engine/battle/move_effects/nightmare.asm"
 
@@ -6383,6 +6380,10 @@ AnimateCurrentMove:
 	call LoadMoveAnim
 	call BattleCommand_RaiseSub
 	jmp PopBCDEHL
+
+AnimateCurrentMoveText:
+	call AnimateCurrentMove
+	jmp StdBattleTextbox
 
 PlayDamageAnim:
 	ld a, BATTLE_VARS_MOVE_ANIM

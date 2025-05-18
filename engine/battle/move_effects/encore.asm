@@ -105,9 +105,8 @@ BattleCommand_Encore:
 	call GetMoveData
 
 .finish_move
-	call AnimateCurrentMove
 	ld hl, GotAnEncoreText
-	jmp StdBattleTextbox
+	jmp AnimateCurrentMoveText
 
 .failed
 	jmp PrintDidntAffect2

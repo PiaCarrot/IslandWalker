@@ -45,9 +45,8 @@ BattleCommand_Mimic:
 	add hl, bc
 	ld [hl], 5
 	call GetMoveName
-	call AnimateCurrentMove
 	ld hl, MimicLearnedMoveText
-	jmp StdBattleTextbox
+	jmp AnimateCurrentMoveText
 
 .fail
 	jmp FailMimic

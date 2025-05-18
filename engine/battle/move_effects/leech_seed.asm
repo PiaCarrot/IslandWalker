@@ -25,9 +25,8 @@ BattleCommand_LeechSeed:
 	bit SUBSTATUS_LEECH_SEED, [hl]
 	jr nz, .evaded
 	set SUBSTATUS_LEECH_SEED, [hl]
-	farcall AnimateCurrentMove
 	ld hl, WasSeededText
-	jmp StdBattleTextbox
+	farjp AnimateCurrentMoveText
 
 .grass
 	farcall AnimateFailedMove

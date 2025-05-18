@@ -41,6 +41,5 @@ BattleCommand_PsychUp:
 .calc_enemy_stats
 	call CalcEnemyStats
 .merge
-	call AnimateCurrentMove
 	ld hl, CopiedStatsText
-	jmp StdBattleTextbox
+	jmp AnimateCurrentMoveText

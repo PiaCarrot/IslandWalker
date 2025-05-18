@@ -7,6 +7,5 @@ BattleCommand_StartHail:
 	ld [wBattleWeather], a
 	ld a, 5
 	ld [wWeatherCount], a
-	call AnimateCurrentMove
 	ld hl, ItStartedToHailText
-	jmp StdBattleTextbox
+	jmp AnimateCurrentMoveText

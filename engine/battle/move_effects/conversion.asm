@@ -88,6 +88,5 @@ BattleCommand_Conversion:
 	ld [de], a
 	ld [wNamedObjectIndex], a
 	farcall GetTypeName
-	farcall AnimateCurrentMove
 	ld hl, TransformedTypeText
-	jmp StdBattleTextbox
+	farjp AnimateCurrentMoveText

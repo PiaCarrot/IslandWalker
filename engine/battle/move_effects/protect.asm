@@ -6,10 +6,8 @@ BattleCommand_Protect:
 	call GetBattleVarAddr
 	set SUBSTATUS_PROTECT, [hl]
 
-	farcall AnimateCurrentMove
-
 	ld hl, ProtectedItselfText
-	jmp StdBattleTextbox
+	farjp AnimateCurrentMoveText
 
 ProtectChance:
 	ld de, wPlayerProtectCount

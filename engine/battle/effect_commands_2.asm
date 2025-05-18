@@ -81,8 +81,7 @@ BattleCommand_Screen:
 	ld hl, ReflectEffectText
 
 .good
-	farcall AnimateCurrentMove
-	jmp StdBattleTextbox
+	farjp AnimateCurrentMoveText
 
 .failed
 	farjp BattleEffect_ButItFailed
