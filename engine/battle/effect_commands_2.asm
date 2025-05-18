@@ -8,15 +8,7 @@ BattleCommand_DoubleMinimizeDamage:
 	ld a, [hl]
 	and a
 	ret z
-	ld hl, wCurDamage + 1
-	sla [hl]
-	dec hl
-	rl [hl]
-	ret nc
-	ld a, $ff
-	ld [hli], a
-	ld [hl], a
-	ret
+	jr DoubleDamage
 
 BattleCommand_DoubleFlyingDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
