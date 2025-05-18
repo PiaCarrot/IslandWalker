@@ -38,12 +38,12 @@ DoubleDamage:
 	ret
 
 BattleCommand_SkipSunCharge:
-    ; mimicsuncharge
-        ld a, [wBattleWeather]
-        cp WEATHER_SUN
-        ret nz
-        ld b, charge_command
-        farjp SkipToBattleCommand
+; mimicsuncharge
+    ld a, [wBattleWeather]
+    cp WEATHER_SUN
+    ret nz
+    ld b, charge_command
+    farjp SkipToBattleCommand
         
 BattleCommand_Screen:
 	ld hl, wPlayerScreens
@@ -306,7 +306,11 @@ INCLUDE "engine/battle/move_effects/rage.asm"
 INCLUDE "engine/battle/move_effects/triple_kick.asm"
 
 INCLUDE "engine/battle/move_effects/low_kick.asm"
+
 INCLUDE "engine/battle/move_effects/frustration.asm"
+
 INCLUDE "engine/battle/move_effects/return.asm"
+
 INCLUDE "engine/battle/move_effects/pursuit.asm"
+
 INCLUDE "engine/battle/move_effects/pay_day.asm"
