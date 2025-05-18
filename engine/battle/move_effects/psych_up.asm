@@ -21,8 +21,7 @@ BattleCommand_PsychUp:
 	dec b
 	jr nz, .loop
 	pop hl
-	call AnimateFailedMove
-	jmp PrintButItFailed
+	jmp BattleEffect_ButItFailed
 
 .break
 	pop hl

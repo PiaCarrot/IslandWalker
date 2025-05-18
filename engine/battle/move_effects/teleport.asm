@@ -45,8 +45,7 @@ BattleCommand_Teleport:
 	jr nc, .run_away
 
 .failed
-	call AnimateFailedMove
-	jmp PrintButItFailed
+	jmp BattleEffect_ButItFailed
 
 .enemy_turn
 	; Can't teleport from a trainer battle

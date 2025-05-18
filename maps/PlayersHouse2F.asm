@@ -165,9 +165,9 @@ if DEF(_DEBUG)
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
 	givepoke NINJASK, 75
-	givepokemove RAIN_DANCE,  wPartyMon1, 0
-	givepokemove SUNNY_DAY,  wPartyMon1, 1
-	givepokemove THUNDER,  wPartyMon1, 2
+	givepokemove BELLY_DRUM,  wPartyMon1, 0
+	givepokemove MIST,  wPartyMon1, 1
+	givepokemove TELEPORT,  wPartyMon1, 2
 	givepokemove SOLARBEAM,  wPartyMon1, 3
 	givepoke NINCADA, 50
 	givepoke WURMPLE, 50

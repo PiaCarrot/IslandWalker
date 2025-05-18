@@ -77,8 +77,7 @@ BattleCommand_Curse:
 	jmp StdBattleTextbox
 
 .failed
-	call AnimateFailedMove
-	jmp PrintButItFailed
+	jmp BattleEffect_ButItFailed
 
 .cantraise
 

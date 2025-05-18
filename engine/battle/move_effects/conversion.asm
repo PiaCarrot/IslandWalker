@@ -59,8 +59,7 @@ BattleCommand_Conversion:
 	jr .loop2
 
 .fail
-	farcall AnimateFailedMove
-	farjp PrintButItFailed
+	farjp BattleEffect_ButItFailed
 
 .done
 .loop3

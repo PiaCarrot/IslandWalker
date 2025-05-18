@@ -6093,14 +6093,14 @@ BattleCommand_ArenaTrap:
 ; Doesn't work on an absent opponent.
 
 	call CheckHiddenOpponent
-	jr nz, .failed
+	jmp nz, BattleEffect_ButItFailed
 
 ; Don't trap if the opponent is already trapped.
 
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
 	bit SUBSTATUS_CANT_RUN, [hl]
-	jr nz, .failed
+	jmp nz, BattleEffect_ButItFailed
 
 ; Otherwise trap the opponent.
 
@@ -6108,10 +6108,6 @@ BattleCommand_ArenaTrap:
 	call AnimateCurrentMove
 	ld hl, CantEscapeNowText
 	jmp StdBattleTextbox
-
-.failed
-	call AnimateFailedMove
-	jmp PrintButItFailed
 
 INCLUDE "engine/battle/move_effects/nightmare.asm"
 

@@ -31,5 +31,4 @@ BattleCommand_Nightmare:
 	jmp StdBattleTextbox
 
 .failed
-	call AnimateFailedMove
-	jmp PrintButItFailed
+	jmp BattleEffect_ButItFailed

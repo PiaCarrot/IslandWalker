@@ -85,8 +85,7 @@ BattleCommand_Screen:
 	jmp StdBattleTextbox
 
 .failed
-	farcall AnimateFailedMove
-	farjp PrintButItFailed
+	farjp BattleEffect_ButItFailed
 
 BattleCommand_Recoil:
 	ld hl, wBattleMonMaxHP

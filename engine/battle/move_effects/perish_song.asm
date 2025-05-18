@@ -32,5 +32,4 @@ BattleCommand_PerishSong:
 	jmp StdBattleTextbox
 
 .failed
-	farcall AnimateFailedMove
-	farjp PrintButItFailed
+	farjp BattleEffect_ButItFailed
