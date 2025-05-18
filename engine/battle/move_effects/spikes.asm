@@ -15,10 +15,10 @@ BattleCommand_Spikes:
 
 	set SCREENS_SPIKES, [hl]
 
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 
 	ld hl, SpikesText
 	jmp StdBattleTextbox
 
 .failed
-	jmp FailMove
+	farjp FailMove

@@ -20,8 +20,8 @@ BattleCommand_Conversion2:
 	pop hl
 	cp CURSE_TYPE
 	jr z, .failed
-	call AnimateCurrentMove
-	call BattleCommand_SwitchTurn
+	farcall AnimateCurrentMove
+	farcall BattleCommand_SwitchTurn
 
 .loop
 	call BattleRandom
@@ -42,7 +42,7 @@ BattleCommand_Conversion2:
 	push hl
 	ld a, d
 	ld [hl], a
-	call BattleCheckTypeMatchup
+	farcall BattleCheckTypeMatchup
 	pop hl
 	pop af
 	ld [hl], a
@@ -50,7 +50,7 @@ BattleCommand_Conversion2:
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE
 	jr nc, .loop
-	call BattleCommand_SwitchTurn
+	farcall BattleCommand_SwitchTurn
 
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
@@ -59,4 +59,4 @@ BattleCommand_Conversion2:
 	jmp StdBattleTextbox
 
 .failed
-	jmp FailMove
+	farjp FailMove

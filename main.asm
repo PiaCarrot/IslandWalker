@@ -153,11 +153,6 @@ INCLUDE "engine/battle/start_battle.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
 
 
-SECTION "Effect Commands", ROMX
-
-INCLUDE "engine/battle/effect_commands.asm"
-
-
 SECTION "Enemy Trainers", ROMX
 
 INCLUDE "engine/battle/ai/items.asm"

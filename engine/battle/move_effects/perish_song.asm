@@ -27,10 +27,10 @@ BattleCommand_PerishSong:
 	ld [wEnemyPerishCount], a
 
 .done
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	ld hl, StartPerishText
 	jmp StdBattleTextbox
 
 .failed
-	call AnimateFailedMove
-	jmp PrintButItFailed
+	farcall AnimateFailedMove
+	farjp PrintButItFailed

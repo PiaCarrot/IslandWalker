@@ -16,7 +16,7 @@ BattleCommand_Spite:
 	ld b, a
 	push bc
 	ld bc, STRUGGLE
-	call CompareMove
+	farcall CompareMove
 	pop bc
 	jr z, .failed
 	ld c, -1
@@ -76,7 +76,7 @@ BattleCommand_Spite:
 	ld [hl], e
 .transformed
 	push de
-	call AnimateCurrentMove
+	farcall AnimateCurrentMove
 	pop de
 	ld a, d
 	ld [wTextDecimalByte], a
@@ -84,4 +84,4 @@ BattleCommand_Spite:
 	jmp StdBattleTextbox
 
 .failed
-	jmp PrintDidntAffect2
+	farjp PrintDidntAffect2

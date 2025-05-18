@@ -17,7 +17,7 @@ BattleCommand_GetMagnitude:
 	inc hl
 	ld a, [hl]
 	ld [wTextDecimalByte], a
-	call BattleCommand_MoveDelay
+	farcall BattleCommand_MoveDelay
 	ld hl, MagnitudeText
 	call StdBattleTextbox
 	pop de
