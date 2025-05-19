@@ -327,6 +327,7 @@ PCGiveItem:
 	farcall ItemIsMail
 	call c, ComposeMailMessage
 
+.done
 	ld hl, wItemFlags
 	res IN_BAG_F, [hl]
 	ret
