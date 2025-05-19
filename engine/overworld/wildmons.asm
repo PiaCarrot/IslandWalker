@@ -311,7 +311,9 @@ _ChooseWildEncounter:
 	; Don't check for roamer if we're doing type filtering.
 	push bc
 	ld a, c
-	add 1 ; we want to return carry if c is $ff so we can chain conditionals
+	add 1 ; no-optimize a++|a--
+
+	; we want to return carry if c is $ff so we can chain conditionals
 	call c, CheckEncounterRoamMon
 	pop bc
 	jmp c, .startwildbattle

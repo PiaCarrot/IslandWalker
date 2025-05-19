@@ -165,9 +165,7 @@ EvolveAfterBattle_MasterLoop:
 
 	cp 4
 
-	jr c, .proceed ; low_pv
-
-	call GetNextEvoAttackWord
+	call nc, GetNextEvoAttackWord ; high_pv
 	jr .proceed
 
 .stat
@@ -711,8 +709,7 @@ DetermineEvolutionItemResults::
 	ld a, [wCurItem]
 	cp b
 	jr nz, .skip_species
-	call GetNextEvoAttackWord
-	ret
+	jmp GetNextEvoAttackWord
 
 .skip_two_species_parameter_byte
 	inc hl
@@ -814,10 +811,11 @@ GetEvoTime:
 	ld b, a
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	ld a, TR_MORNDAY
-	jr c, .compare
-	ld a, TR_EVENITE
-	
-.compare
+
+	; a = carry ? TR_MORNDAY : TR_EVENITE
+	assert TR_MORNDAY + 1 == TR_EVENITE
+	sbc a
+	add TR_EVENITE
+
 	cp b
 	ret

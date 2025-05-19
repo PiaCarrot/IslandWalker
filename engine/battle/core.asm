@@ -1731,7 +1731,6 @@ HandleWeather:
 	call SetEnemyTurn
 	call .SandstormDamage
 	call SetPlayerTurn
-	jr .SandstormDamage
 
 .SandstormDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3

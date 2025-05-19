@@ -2468,7 +2468,6 @@ BattleCommand_CheckFaint:
 
 .multiple_hit_raise_sub
 	call BattleCommand_RaiseSub
-	jr EndMoveEffect
 
 EndMoveEffect:
 	ld hl, wBattleScriptBufferAddress

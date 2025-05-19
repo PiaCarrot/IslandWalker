@@ -325,10 +325,8 @@ PCGiveItem:
 	ld a, [wCurItem]
 	ld d, a
 	farcall ItemIsMail
-	jr nc, .done
-	call ComposeMailMessage
+	call c, ComposeMailMessage
 
-.done
 	ld hl, wItemFlags
 	res IN_BAG_F, [hl]
 	ret
