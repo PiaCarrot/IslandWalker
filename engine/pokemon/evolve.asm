@@ -96,9 +96,9 @@ EvolveAfterBattle_MasterLoop:
 	jmp c, .skip_evolution_species ; MORN_F or DAY_F < NITE_F
 
 .happiness
-	; ld a, [wTempMonHappiness]
-	; cp HAPPINESS_TO_EVOLVE
-	; jmp c, .skip_evolution_species
+	ld a, [wTempMonHappiness]
+	cp HAPPINESS_TO_EVOLVE
+	jmp c, .skip_evolution_species
 
 	call IsMonHoldingEverstone
 	jmp nc, .skip_evolution_species ; NITE_F or EVE_F >= NITE_F
