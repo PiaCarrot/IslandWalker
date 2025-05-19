@@ -66,7 +66,6 @@ ProtectChance:
 .failed
 	xor a
 	ld [de], a
-	farcall AnimateFailedMove
-	farcall PrintButItFailed
+	farcall BattleEffect_ButItFailed
 	scf
 	ret

@@ -4,8 +4,8 @@ BattleCommand_Sketch:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
-	call AnimateFailedMove
-	jmp PrintNothingHappened
+	ld hl, NothingHappenedText
+	jmp AnimateFailedMoveText
 
 .not_linked
 ; If the opponent has a substitute up, fail.
@@ -114,5 +114,5 @@ BattleCommand_Sketch:
 	jmp AnimateCurrentMoveText
 
 .fail
-	call AnimateFailedMove
-	jmp PrintDidntAffect
+	ld hl, DidntAffect1Text
+	jmp AnimateFailedMoveText

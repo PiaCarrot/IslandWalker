@@ -13,5 +13,5 @@ BattleCommand_LockOn:
 	jmp AnimateCurrentMoveText
 
 .fail
-	call AnimateFailedMove
-	jmp PrintDidntAffect
+	ld hl, DidntAffect1Text
+	jmp AnimateFailedMoveText

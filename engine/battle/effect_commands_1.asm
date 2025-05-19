@@ -3656,10 +3656,7 @@ BattleCommand_SleepTarget:
 	ret
 
 .fail
-	push hl
-	call AnimateFailedMove
-	pop hl
-	jmp StdBattleTextbox
+	jmp AnimateFailedMoveText
 
 .CheckAIRandomFail:
 	; Enemy turn
@@ -3801,10 +3798,7 @@ BattleCommand_Poison:
 	farjp UseHeldStatusHealingItem
 
 .failed
-	push hl
-	call AnimateFailedMove
-	pop hl
-	jmp StdBattleTextbox
+	jmp AnimateFailedMoveText
 
 .apply_poison
 	call AnimateCurrentMove
@@ -5645,18 +5639,16 @@ BattleCommand_Confuse:
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	call GetItemName
-	call AnimateFailedMove
 	ld hl, ProtectedByText
-	jmp StdBattleTextbox
+	jmp AnimateFailedMoveText
 
 .no_item_protection
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_CONFUSED, [hl]
 	jr z, .not_already_confused
-	call AnimateFailedMove
 	ld hl, AlreadyConfusedText
-	jmp StdBattleTextbox
+	jmp AnimateFailedMoveText
 
 .not_already_confused
 	call CheckSubstituteOpp
@@ -5732,9 +5724,8 @@ BattleCommand_Paralyze:
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	call GetItemName
-	call AnimateFailedMove
 	ld hl, ProtectedByText
-	jmp StdBattleTextbox
+	jmp AnimateFailedMoveText
 
 .no_item_protection
 	ldh a, [hBattleTurn]
@@ -5784,16 +5775,15 @@ BattleCommand_Paralyze:
 	jmp CallBattleCore
 
 .paralyzed
-	call AnimateFailedMove
 	ld hl, AlreadyParalyzedText
-	jmp StdBattleTextbox
+	jmp AnimateFailedMoveText
 
 .failed
 	jmp PrintDidntAffect2
 
 .didnt_affect
-	call AnimateFailedMove
-	jmp PrintDoesntAffect
+	ld hl, DoesntAffectText
+	jmp AnimateFailedMoveText
 
 CheckMoveTypeMatchesTarget:
 ; Compare move type to opponent type.
@@ -5956,9 +5946,8 @@ BattleCommand_Heal:
 	jmp StdBattleTextbox
 
 .hp_full
-	call AnimateFailedMove
 	ld hl, HPIsFullText
-	jmp StdBattleTextbox
+	jmp AnimateFailedMoveText
 
 INCLUDE "engine/battle/move_effects/transform.asm"
 
@@ -5998,10 +5987,6 @@ PrintDoesntAffect:
 	ld hl, DoesntAffectText
 	jmp StdBattleTextbox
 
-PrintNothingHappened:
-	ld hl, NothingHappenedText
-	jmp StdBattleTextbox
-
 TryPrintButItFailed:
 	ld a, [wAlreadyFailed]
 	and a
@@ -6021,10 +6006,6 @@ FailMimic:
 	ld hl, ButItFailedText ; 'but it failed!'
 	ld de, ItFailedText    ; 'it failed!'
 	jmp FailText_CheckOpponentProtect
-
-PrintDidntAffect:
-	ld hl, DidntAffect1Text
-	jmp StdBattleTextbox
 
 PrintDidntAffect2:
 	call AnimateFailedMove
@@ -6266,11 +6247,9 @@ BattleCommand_TimeBasedHealContinue:
 	jmp StdBattleTextbox
 
 .Full:
-	call AnimateFailedMove
-
-; 'hp is full!'
+	; 'hp is full!'
 	ld hl, HPIsFullText
-	jmp StdBattleTextbox
+	jmp AnimateFailedMoveText
 
 .Multipliers:
 	dw GetEighthMaxHP
@@ -6462,6 +6441,12 @@ AnimateFailedMove:
 	call BattleCommand_LowerSub
 	call BattleCommand_MoveDelay
 	jmp BattleCommand_RaiseSub
+
+AnimateFailedMoveText:
+	push hl
+	call AnimateFailedMove
+	pop hl
+	jmp StdBattleTextbox
 
 BattleCommand_MoveDelay:
 ; Wait 40 frames.

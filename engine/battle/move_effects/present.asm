@@ -67,9 +67,8 @@ BattleCommand_Present:
 	call BattleCommand_SwitchTurn
 	call _CheckBattleScene
 	jr nc, .do_animation
-	call AnimateFailedMove
 	ld hl, PresentFailedText
-	call StdBattleTextbox
+	call AnimateFailedMoveText
 .do_animation
 	jmp EndMoveEffect
 

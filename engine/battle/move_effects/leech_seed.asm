@@ -29,10 +29,11 @@ BattleCommand_LeechSeed:
 	farjp AnimateCurrentMoveText
 
 .grass
-	farcall AnimateFailedMove
-	farjp PrintDoesntAffect
+	ld hl, DoesntAffectText
+	jr .failed
 
 .evaded
-	farcall AnimateFailedMove
 	ld hl, EvadedText
-	jmp StdBattleTextbox
+
+.failed
+	farjp AnimateFailedMoveText

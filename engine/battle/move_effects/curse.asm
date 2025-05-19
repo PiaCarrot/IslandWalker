@@ -85,6 +85,5 @@ BattleCommand_Curse:
 
 	ld b, ABILITY + 1
 	call GetStatName
-	call AnimateFailedMove
 	ld hl, WontRiseAnymoreText
-	jmp StdBattleTextbox
+	jmp AnimateFailedMoveText
