@@ -33,8 +33,7 @@ InitGender:
 	ld a, [wMenuCursorY]
 	dec a
 	ld [wPlayerGender], a
-	ld c, 10
-	jmp DelayFrames
+	jmp Wait10Frames
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags

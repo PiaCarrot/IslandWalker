@@ -945,8 +945,7 @@ TextCommand_DOTS::
 	ldh a, [hJoyDown]
 	and A_BUTTON | B_BUTTON
 	jr nz, .next
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 .next
 	pop de
 	dec d
@@ -956,6 +955,10 @@ TextCommand_DOTS::
 	ld c, l
 	pop hl
 	ret
+
+Wait10Frames::
+	ld c, 10
+	jmp DelayFrames
 
 TextCommand_WAIT_BUTTON::
 ; wait for button press; don't show arrow

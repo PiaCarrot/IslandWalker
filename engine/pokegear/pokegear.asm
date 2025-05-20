@@ -864,8 +864,7 @@ PokegearPhone_MakePhoneCall:
 	ld a, [wPokegearPhoneSelectedPerson]
 	ld b, a
 	call MakePhoneCallFromPokegear
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 	ld hl, wOptions
 	set NO_TEXT_SCROLL, [hl]
 	ld a, $1

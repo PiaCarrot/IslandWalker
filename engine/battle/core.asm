@@ -7679,8 +7679,7 @@ AnimateExpBar:
 	call WaitSFX
 	ld de, SFX_EXP_BAR
 	call PlaySFX
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 	pop bc
 	ret
 

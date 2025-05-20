@@ -765,8 +765,7 @@ Intro_RotatePalettesLeftFrontpic:
 .loop
 	ld a, [hli]
 	call DmgToCgbBGPals
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 	dec b
 	jr nz, .loop
 	ret

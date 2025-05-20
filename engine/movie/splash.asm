@@ -20,8 +20,7 @@ SplashScreen:
 	ld b, SCGB_GAMEFREAK_LOGO
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 
 ; Draw copyright screen
 	farcall Copyright

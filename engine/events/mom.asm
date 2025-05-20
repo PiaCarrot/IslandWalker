@@ -132,7 +132,7 @@ BankOfMom:
 	ld [wMomBankDigitCursorPosition], a
 	call LoadStandardMenuHeader
 	call Mom_SetUpDepositMenu
-	call Mom_Wait10Frames
+	call Wait10Frames
 	call Mom_WithdrawDepositMenuJoypad
 	call CloseWindow
 	jr c, .CancelDeposit
@@ -196,7 +196,7 @@ BankOfMom:
 	ld [wMomBankDigitCursorPosition], a
 	call LoadStandardMenuHeader
 	call Mom_SetUpWithdrawMenu
-	call Mom_Wait10Frames
+	call Wait10Frames
 	call Mom_WithdrawDepositMenuJoypad
 	call CloseWindow
 	jr c, .CancelWithdraw
@@ -431,10 +431,6 @@ Mom_ContinueMenuSetup:
 	call PrintNum
 	call UpdateSprites
 	jmp CGBOnly_CopyTilemapAtOnce
-
-Mom_Wait10Frames:
-	ld c, 10
-	jmp DelayFrames
 
 Mom_WithdrawDepositMenuJoypad:
 .loop
