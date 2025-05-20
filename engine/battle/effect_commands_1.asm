@@ -1680,15 +1680,13 @@ BattleCommand_CheckHit:
 	bit SUBSTATUS_PROTECT, a
 	ret z
 
-	ld c, 40
-	call DelayFrames
+	call BattleCommand_MoveDelay
 
 ; 'protecting itself!'
 	ld hl, ProtectingItselfText
 	call StdBattleTextbox
 
-	ld c, 40
-	call DelayFrames
+	call BattleCommand_MoveDelay
 
 	ld a, 1
 	and a
