@@ -870,7 +870,6 @@ Battle_EnemyFirst:
 	call TryEnemyFlee
 	jmp c, WildFled_EnemyFled_LinkBattleCanceled
 	call SetEnemyTurn
-	ld a, $1
 	ld [wEnemyGoesFirst], a
 	farcall AI_SwitchOrTryItem
 	jr c, .switch_item
@@ -4035,7 +4034,6 @@ SendOutPlayerMon:
 	xor a
 	ld [wEnemyWrapCount], a
 	call SetPlayerTurn
-	xor a
 	ld [wNumHits], a
 	ld [wBattleAnimParam], a
 	ld de, ANIM_SEND_OUT_MON
@@ -9074,7 +9072,6 @@ BattleStartMessage:
 	xor a
 	ld [wNumHits], a
 	call SetEnemyTurn
-	ld a, 1
 	ld [wBattleAnimParam], a
 	ld de, ANIM_SEND_OUT_MON
 	call Call_PlayBattleAnim
