@@ -153,8 +153,7 @@ FarCopyRadioText::
 	ld a, [hli]
 	ld d, a
 	ld a, [hli]
-	ldh [hROMBank], a
-	ld [MBC3RomBank], a
+	rst Bankswitch
 	ld a, e
 	ld l, a
 	ld a, d
@@ -163,8 +162,7 @@ FarCopyRadioText::
 	ld bc, 2 * SCREEN_WIDTH
 	rst CopyBytes
 	pop af
-	ldh [hROMBank], a
-	ld [MBC3RomBank], a
+	rst Bankswitch
 	ret
 
 MobileTextBorder::

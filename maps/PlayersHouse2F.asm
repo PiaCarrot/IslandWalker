@@ -165,7 +165,7 @@ if DEF(_DEBUG)
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
 	givepoke NINJASK, 75
-	givepokemove TOXIC,  wPartyMon1, 0
+	givepokemove FLY,  wPartyMon1, 0
 	givepokemove PROTECT,  wPartyMon1, 1
 	givepokemove SPIKES,  wPartyMon1, 2
 	givepokemove SOLARBEAM,  wPartyMon1, 3

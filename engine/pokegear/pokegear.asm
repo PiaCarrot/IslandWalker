@@ -2463,10 +2463,7 @@ Pokedex_GetArea:
 	ret
 
 .clear
-	ld hl, wShadowOAM
-	ld bc, wShadowOAMEnd - wShadowOAM
-	xor a
-	rst ByteFill
+	call ClearSprites
 	scf
 	ret
 

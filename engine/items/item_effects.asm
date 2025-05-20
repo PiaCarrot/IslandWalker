@@ -920,9 +920,7 @@ RareCandy_StatBooster_GetParameters:
 	ld a, [hl]
 	ld [wCurPartyLevel], a
 	call GetBaseData
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	jmp GetNickname
+	jmp GetCurNickname
 
 RareCandyEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM

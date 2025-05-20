@@ -113,19 +113,14 @@ ChooseMonToLearnTMHM_NoRefresh:
 	ld de, SFX_WRONG
 	call PlaySFX
 	call WaitSFX
-	pop af
-	pop bc
-	pop de
-	pop hl
+	call PopAFBCDEHL
 	jr .loopback
 
 TeachTMHM:
 	predef CanLearnTMHMMove
 
 	push bc
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	call GetNickname
+	call GetCurNickname
 	pop bc
 
 	ld a, c

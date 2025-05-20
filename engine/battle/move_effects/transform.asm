@@ -89,10 +89,7 @@ BattleCommand_Transform:
 ; init the power points
 	ld bc, wBattleMonMoves - wBattleMonStructEnd
 	add hl, bc
-	push de
-	ld d, h
-	ld e, l
-	pop hl
+	call SwapHLDE
 	ld bc, wBattleMonPP - wBattleMonStructEnd
 	add hl, bc
 	ld b, NUM_MOVES

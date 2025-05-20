@@ -162,19 +162,7 @@ RunTradeAnimScript:
 	call DisableLCD
 	call LoadFontsBattleExtra
 	farcall ClearSpriteAnims
-	ldh a, [hCGB]
-	and a
-	jr z, .NotCGB
-	ld a, $1
-	ldh [rVBK], a
-	ld hl, STARTOF(VRAM)
-	ld bc, SIZEOF(VRAM)
-	xor a
-	rst ByteFill
-	xor a
-	ldh [rVBK], a
-
-.NotCGB:
+	call ClearVBank1
 	hlbgcoord 0, 0
 	ld bc, STARTOF(VRAM) + SIZEOF(VRAM) - vBGMap0
 	ld a, " "

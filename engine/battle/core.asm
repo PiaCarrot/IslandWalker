@@ -1514,9 +1514,7 @@ HandleFutureSight:
 	ld a, EFFECTIVE
 	ld [wTypeModifier], a
 	farcall DoMove
-	xor a
-	ld [wCurDamage], a
-	ld [wCurDamage + 1], a
+	call ResetDamage
 
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
@@ -7221,9 +7219,7 @@ GiveExperiencePoints:
 	ld [wStringBuffer2 + 1], a
 	ldh a, [hQuotient + 2]
 	ld [wStringBuffer2], a
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	call GetNickname
+	call GetCurNickname
 	ld hl, Text_MonGainedExpPoint
 	call BattleTextbox
 	ld a, [wStringBuffer2 + 1]

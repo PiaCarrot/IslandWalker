@@ -528,11 +528,7 @@ ContText::
 	ld de, .cont
 	ld b, h
 	ld c, l
-	rst PlaceString
-	ld h, b
-	ld l, c
-	pop de
-	jmp NextChar
+	jmp PlaceCommandCharacter
 
 .cont: db "<_CONT>@"
 
