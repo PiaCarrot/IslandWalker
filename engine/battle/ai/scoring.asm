@@ -1676,8 +1676,7 @@ AI_Smart_Conversion2:
 	call GetMoveAttribute
 	ld [wPlayerMoveStruct + MOVE_TYPE], a
 
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 
 	farcall BattleCheckTypeMatchup
 

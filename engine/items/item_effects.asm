@@ -314,8 +314,7 @@ PokeBallEffect:
 	ld [wFXAnimID], a
 	ld a, d
 	ld [wFXAnimID + 1], a
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 	ld [wThrownBallWobbleCount], a
 	ld [wNumHits], a
 	predef PlayBattleAnim
@@ -1266,8 +1265,7 @@ BitterBerryEffect:
 	jr z, .done
 
 	res SUBSTATUS_CONFUSED, [hl]
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 	call UseItemText
 
 	ld hl, ConfusedNoMoreText
@@ -1782,8 +1780,7 @@ XItemEffect:
 	inc hl
 	inc hl
 	ld b, [hl]
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 	ld [wAttackMissed], a
 	ld [wEffectFailed], a
 	farcall RaiseStat

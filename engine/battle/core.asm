@@ -4232,8 +4232,7 @@ PursuitSwitch:
 RecallPlayerMon:
 	ldh a, [hBattleTurn]
 	push af
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 	ld [wNumHits], a
 	ld de, ANIM_RETURN_MON
 	call Call_PlayBattleAnim
@@ -8067,8 +8066,7 @@ DropPlayerSub:
 GetBattleMonBackpic_DoAnim:
 	ldh a, [hBattleTurn]
 	push af
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 	ld a, BANK(BattleAnimCommands)
 	call FarCall_hl
 	pop af
