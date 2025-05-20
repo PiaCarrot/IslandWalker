@@ -136,9 +136,7 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	ld de, SFX_RUN
 	call WaitPlaySFX
 	call SetPlayerTurn
-	ld a, 1
-	ld [wBattleEnded], a
-	ret
+	jmp EndBattle
 
 BattleTurn:
 .loop
@@ -2085,9 +2083,7 @@ HandleEnemyMonFaint:
 	dec a
 	jr nz, .trainer
 
-	ld a, 1
-	ld [wBattleEnded], a
-	ret
+	jmp EndBattle
 
 .trainer
 	call CheckEnemyTrainerDefeated
@@ -2101,9 +2097,7 @@ HandleEnemyMonFaint:
 	call AskUseNextPokemon
 	jr nc, .dont_flee
 
-	ld a, 1
-	ld [wBattleEnded], a
-	ret
+	jmp EndBattle
 
 .dont_flee
 	call ForcePlayerMonChoice
@@ -2906,9 +2900,13 @@ ForcePickSwitchMonInBattle:
 	xor a
 	ret
 
-LostBattle:
+EndBattle:
 	ld a, 1
 	ld [wBattleEnded], a
+	ret
+
+LostBattle:
+	call EndBattle
 
 	ld a, [wInBattleTowerBattle]
 	bit IN_BATTLE_TOWER_BATTLE_F, a
