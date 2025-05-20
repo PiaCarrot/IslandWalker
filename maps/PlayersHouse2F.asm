@@ -164,8 +164,8 @@ if DEF(_DEBUG)
 	; givepokemove HEADBUTT,   wPartyMon3, 2
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke NINJASK, 75
-	givepokemove FLY,  wPartyMon1, 0
+	givepoke GENGAR, 75
+	givepokemove PRESENT,  wPartyMon1, 0
 	givepokemove PROTECT,  wPartyMon1, 1
 	givepokemove SPIKES,  wPartyMon1, 2
 	givepokemove SOLARBEAM,  wPartyMon1, 3

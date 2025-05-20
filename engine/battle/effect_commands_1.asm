@@ -159,8 +159,7 @@ BattleCommand_CheckTurn:
 	call StdBattleTextbox
 	call CantMove
 	call UpdateBattleMonInParty
-	ld hl, UpdatePlayerHUD
-	call CallBattleCore
+	farcall UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld hl, wPlayerSubStatus1
@@ -401,8 +400,7 @@ CheckEnemyTurn:
 	call StdBattleTextbox
 	call CantMove
 	call UpdateEnemyMonInParty
-	ld hl, UpdateEnemyHUD
-	call CallBattleCore
+	farcall UpdateEnemyHUD
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld hl, wEnemySubStatus1
@@ -632,8 +630,7 @@ HitConfusion:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	call z, PlayFXAnimID
 
-	ld hl, UpdatePlayerHUD
-	call CallBattleCore
+	farcall UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld c, TRUE
@@ -3966,8 +3963,7 @@ BattleCommand_BurnTarget:
 	call GetBattleVarAddr
 	set BRN, [hl]
 	call UpdateOpponentInParty
-	ld hl, ApplyBrnEffectOnAttack
-	call CallBattleCore
+	farcall ApplyBrnEffectOnAttack
 	ld de, ANIM_BRN
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
@@ -4078,14 +4074,12 @@ BattleCommand_ParalyzeTarget:
 	call GetBattleVarAddr
 	set PAR, [hl]
 	call UpdateOpponentInParty
-	ld hl, ApplyPrzEffectOnSpeed
-	call CallBattleCore
+	farcall ApplyPrzEffectOnSpeed
 	ld de, ANIM_PAR
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
 	call PrintParalyze
-	ld hl, UseHeldStatusHealingItem
-	jmp CallBattleCore
+	farjp UseHeldStatusHealingItem
 
 BattleCommand_AttackUp:
 	ld b, ATTACK
@@ -4267,10 +4261,7 @@ MinimizeDropSub:
 	call _CheckBattleScene
 	ret nc
 
-	xor a
-	ldh [hBGMapMode], a
-	call CallBattleCore
-	call WaitBGMap
+	call PlayerTurn
 	jmp BattleCommand_MoveDelay
 
 BattleCommand_AttackDown:
@@ -4759,24 +4750,22 @@ BattleCommand_RaiseSubNoAnim:
 	ld hl, GetBattleMonBackpic
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .PlayerTurn
+	jr z, PlayerTurn
 	ld hl, GetEnemyMonFrontpic
-.PlayerTurn:
-	xor a
-	ldh [hBGMapMode], a
-	call CallBattleCore
-	jmp WaitBGMap
+	jr PlayerTurn
 
 BattleCommand_LowerSubNoAnim:
 	ld hl, DropPlayerSub
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .PlayerTurn
+	jr z, PlayerTurn
 	ld hl, DropEnemySub
-.PlayerTurn:
+	; fallthrough
+PlayerTurn:
 	xor a
 	ldh [hBGMapMode], a
-	call CallBattleCore
+	ld a, BANK("Battle Core")
+	call FarCall_hl
 	jmp WaitBGMap
 
 CalcPlayerStats:
@@ -4787,16 +4776,13 @@ CalcPlayerStats:
 	ld a, NUM_BATTLE_STATS
 	call CalcBattleStats
 
-	ld hl, BadgeStatBoosts
-	call CallBattleCore
+	farcall BadgeStatBoosts
 
 	call BattleCommand_SwitchTurn
 
-	ld hl, ApplyPrzEffectOnSpeed
-	call CallBattleCore
+	farcall ApplyPrzEffectOnSpeed
 
-	ld hl, ApplyBrnEffectOnAttack
-	call CallBattleCore
+	farcall ApplyBrnEffectOnAttack
 
 	jmp BattleCommand_SwitchTurn
 
@@ -4810,11 +4796,9 @@ CalcEnemyStats:
 
 	call BattleCommand_SwitchTurn
 
-	ld hl, ApplyPrzEffectOnSpeed
-	call CallBattleCore
+	farcall ApplyPrzEffectOnSpeed
 
-	ld hl, ApplyBrnEffectOnAttack
-	call CallBattleCore
+	farcall ApplyBrnEffectOnAttack
 
 	jmp BattleCommand_SwitchTurn
 
@@ -5049,8 +5033,7 @@ BattleCommand_ForceSwitch:
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
-	ld hl, SpikesDamage
-	jmp CallBattleCore
+	farjp SpikesDamage
 
 .switch_fail
 	jmp .fail
@@ -5135,14 +5118,12 @@ BattleCommand_ForceSwitch:
 
 	ld a, d
 	ld [wCurPartyMon], a
-	ld hl, SwitchPlayerMon
-	call CallBattleCore
+	farcall SwitchPlayerMon
 
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
-	ld hl, SpikesDamage
-	jmp CallBattleCore
+	farjp SpikesDamage
 
 .fail
 	call BattleCommand_LowerSub
@@ -5687,8 +5668,7 @@ BattleCommand_FinishConfusingTarget:
 	cp HELD_HEAL_CONFUSION
 	ret nz
 .heal_confusion
-	ld hl, UseConfusionHealingItem
-	jmp CallBattleCore
+	farjp UseConfusionHealingItem
 
 BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 	ld a, BATTLE_VARS_MOVE_EFFECT
@@ -5759,12 +5739,10 @@ BattleCommand_Paralyze:
 	call GetBattleVarAddr
 	set PAR, [hl]
 	call UpdateOpponentInParty
-	ld hl, ApplyPrzEffectOnSpeed
-	call CallBattleCore
+	farcall ApplyPrzEffectOnSpeed
 	call UpdateBattleHuds
 	call PrintParalyze
-	ld hl, UseHeldStatusHealingItem
-	jmp CallBattleCore
+	farjp UseHeldStatusHealingItem
 
 .paralyzed
 	ld hl, AlreadyParalyzedText
@@ -5919,18 +5897,15 @@ BattleCommand_Heal:
 
 .not_rest
 	jr z, .restore_full_hp
-	ld hl, GetHalfMaxHP
-	call CallBattleCore
+	farcall GetHalfMaxHP
 	jr .finish
 
 .restore_full_hp
-	ld hl, GetMaxHP
-	call CallBattleCore
+	farcall GetMaxHP
 .finish
 	call AnimateCurrentMove
 	call BattleCommand_SwitchTurn
-	ld hl, RestoreHP
-	call CallBattleCore
+	farcall RestoreHP
 	call BattleCommand_SwitchTurn
 	call UpdateUserInParty
 	call RefreshBattleHuds
@@ -6424,10 +6399,6 @@ PlayOpponentBattleAnim:
 
 	call BattleCommand_SwitchTurn
 	jmp PopBCDEHL
-
-CallBattleCore:
-	ld a, BANK("Battle Core")
-	jmp FarCall_hl
 
 AnimateFailedMove:
 	call BattleCommand_LowerSub

@@ -68,10 +68,8 @@ BattleCommand_Curse:
 
 	set SUBSTATUS_CURSE, [hl]
 	call AnimateCurrentMove
-	ld hl, GetHalfMaxHP
-	call CallBattleCore
-	ld hl, SubtractHPFromUser
-	call CallBattleCore
+	farcall GetHalfMaxHP
+	farcall SubtractHPFromUser
 	call UpdateUserInParty
 	ld hl, PutACurseText
 	jmp StdBattleTextbox
