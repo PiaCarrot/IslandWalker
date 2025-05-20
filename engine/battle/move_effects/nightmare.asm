@@ -4,6 +4,11 @@ BattleCommand_Nightmare:
 	call CheckHiddenOpponent
 	jr nz, .failed
 
+; Can't hit a protected opponent
+
+	call CheckProtectedOpponent
+	jr nz, .failed
+
 ; Can't hit a substitute.
 
 	call CheckSubstituteOpp

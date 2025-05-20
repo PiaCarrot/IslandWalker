@@ -1672,9 +1672,7 @@ BattleCommand_CheckHit:
 
 .Protect:
 ; Return nz if the opponent is protected.
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_PROTECT, a
+	call CheckProtectedOpponent
 	ret z
 
 	call BattleCommand_MoveDelay
@@ -2301,9 +2299,7 @@ endr
 	jmp DoPlayerDamage
 
 FailText_CheckOpponentProtect:
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_PROTECT, a
+	call CheckProtectedOpponent
 	jr z, .not_protected
 	ld h, d
 	ld l, e
@@ -6246,6 +6242,12 @@ CheckHiddenOpponent:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	ret
+
+CheckProtectedOpponent:
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVar
+	bit SUBSTATUS_PROTECT, a
 	ret
 
 GetUserItem:
