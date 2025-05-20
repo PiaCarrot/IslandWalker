@@ -491,11 +491,14 @@ Paragraph::
 	lb bc, TEXTBOX_INNERH - 1, TEXTBOX_INNERW
 	call ClearBox
 	call UnloadBlinkingCursor
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
 	pop de
 	jmp NextChar
+
+Wait20Frames::
+	ld c, 20
+	jmp DelayFrames
 
 _ContText::
 	ld a, [wLinkMode]

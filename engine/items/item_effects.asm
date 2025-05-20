@@ -296,8 +296,7 @@ PokeBallEffect:
 	ld [wEnemyMonSpecies], a
 	ld [wWildMon], a
 
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 
 	ld a, [wCurItem]
 	ld [wBattleAnimParam], a

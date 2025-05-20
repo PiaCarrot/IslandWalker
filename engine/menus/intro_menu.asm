@@ -299,8 +299,7 @@ Continue:
 	call DisplaySaveInfoOnContinue
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	call ConfirmContinue
 	jmp c, CloseWindow
 	call Continue_CheckRTC_RestartClock
@@ -315,8 +314,7 @@ Continue:
 	call CloseWindow
 	call ClearTilemap
 	farcall ClearSavedObjPals
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	farcall JumpRoamMons
 	farcall CopyMysteryGiftReceivedDecorationsToPC
 	farcall ClockContinue

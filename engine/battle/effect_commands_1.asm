@@ -2346,8 +2346,7 @@ BattleCommand_CriticalText:
 	ld [wCriticalHit], a
 
 .wait
-	ld c, 20
-	jmp DelayFrames
+	jmp Wait20Frames
 
 .texts
 	dw CriticalHitText
@@ -5020,8 +5019,7 @@ BattleCommand_ForceSwitch:
 	hlcoord 1, 0
 	lb bc, 4, 10
 	call ClearBox
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	ld a, [wOTPartyCount]
 	ld b, a
 	ld a, [wCurOTMon]
@@ -5107,13 +5105,11 @@ BattleCommand_ForceSwitch:
 	ld a, $1
 	ld [wBattleAnimParam], a
 	call AnimateCurrentMove
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	hlcoord 9, 7
 	lb bc, 5, 11
 	call ClearBox
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	ld a, [wPartyCount]
 	ld b, a
 	ld a, [wCurBattleMon]
@@ -5160,8 +5156,7 @@ BattleCommand_ForceSwitch:
 	ld a, $1
 	ld [wBattleAnimParam], a
 	call AnimateCurrentMove
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	pop af
 
 	ld hl, FledInFearText

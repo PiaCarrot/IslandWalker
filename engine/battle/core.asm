@@ -1120,8 +1120,7 @@ ResidualDamage:
 
 .fainted
 	call RefreshBattleHuds
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	xor a
 	ret
 
@@ -9055,8 +9054,7 @@ BattleStartMessage:
 	call PlaySFX
 	call WaitSFX
 
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 
 	farcall Battle_GetTrainerName
 
