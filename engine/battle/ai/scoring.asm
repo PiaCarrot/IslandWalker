@@ -165,8 +165,7 @@ AI_Types:
 	push hl
 	push bc
 	push de
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	farcall BattleCheckTypeMatchup
 	pop de
 	pop bc
@@ -409,8 +408,7 @@ AI_Smart_Sleep:
 
 AI_Smart_LeechHit:
 	push hl
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	farcall BattleCheckTypeMatchup
 	pop hl
 
@@ -485,8 +483,7 @@ AI_Smart_LockOn:
 	cp 71 percent - 1
 	jr nc, .checkmove
 
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 
 	push hl
 	push bc
@@ -1301,8 +1298,7 @@ AI_Smart_Mimic:
 	ld a, [wLastPlayerCounterMove]
 	call AIGetEnemyMove
 
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	farcall BattleCheckTypeMatchup
 
 	ld a, [wTypeMatchup]
@@ -1636,8 +1632,7 @@ AI_Smart_PriorityHit:
 	jmp nz, AIDiscourageMove
 
 ; Greatly encourage this move if it will KO the player.
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	push hl
 	farcall EnemyAttackDamage
 	farcall BattleCommand_DamageCalc
@@ -2351,8 +2346,7 @@ AI_Smart_RapidSpin:
 
 AI_Smart_HiddenPower:
 	push hl
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 
 ; Calculate Hidden Power's type and base power based on enemy's IVs.
 	farcall HiddenPowerDamage
@@ -3075,8 +3069,7 @@ AI_Aggressive:
 INCLUDE "data/battle/ai/reckless_moves.asm"
 
 AIDamageCalc:
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_LOW_KICK
 	jr z, .low_kick
@@ -3187,8 +3180,7 @@ AI_Status:
 	push hl
 	push bc
 	push de
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	farcall BattleCheckTypeMatchup
 	pop de
 	pop bc

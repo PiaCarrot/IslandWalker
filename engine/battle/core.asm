@@ -9073,8 +9073,7 @@ BattleStartMessage:
 
 	xor a
 	ld [wNumHits], a
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	ld a, 1
 	ld [wBattleAnimParam], a
 	ld de, ANIM_SEND_OUT_MON
