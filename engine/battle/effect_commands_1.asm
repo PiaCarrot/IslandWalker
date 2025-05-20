@@ -3609,9 +3609,9 @@ BattleCommand_SleepTarget:
 
 	ld a, [wAttackMissed]
 	and a
-	jmp nz, PrintDidntAffect2
+	jmp nz, BattleEffect_DidntAffect
 
-	ld hl, DidntAffect1Text
+	ld hl, DidntAffectText
 	call .CheckAIRandomFail
 	jr c, .fail
 
@@ -3738,7 +3738,7 @@ BattleCommand_Poison:
 	jr .failed
 
 .do_poison
-	ld hl, DidntAffect1Text
+	ld hl, DidntAffectText
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	and a
@@ -5679,7 +5679,7 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 	ret z
 	cp EFFECT_SWAGGER
 	ret z
-	jmp PrintDidntAffect2
+	jmp BattleEffect_DidntAffect
 
 BattleCommand_Paralyze:
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -5749,7 +5749,7 @@ BattleCommand_Paralyze:
 	jmp AnimateFailedMoveText
 
 .failed
-	jmp PrintDidntAffect2
+	jmp BattleEffect_DidntAffect
 
 .didnt_affect
 	ld hl, DoesntAffectText
@@ -5974,11 +5974,9 @@ FailMimic:
 	ld de, ItFailedText    ; 'it failed!'
 	jmp FailText_CheckOpponentProtect
 
-PrintDidntAffect2:
-	call AnimateFailedMove
-	ld hl, DidntAffect1Text ; 'it didn't affect'
-	ld de, DidntAffect2Text ; 'it didn't affect'
-	jmp FailText_CheckOpponentProtect
+BattleEffect_DidntAffect:
+	ld hl, DidntAffectText
+	jmp AnimateFailedMoveText
 
 PrintParalyze:
 ; 'paralyzed! maybe it can't attack!'

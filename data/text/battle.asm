@@ -884,12 +884,7 @@ ItFailedText:
 	text "It failed!"
 	prompt
 
-DidntAffect1Text:
-	text "It didn't affect"
-	line "<TARGET>!"
-	prompt
-
-DidntAffect2Text:
+DidntAffectText:
 	text "It didn't affect"
 	line "<TARGET>!"
 	prompt
