@@ -709,7 +709,7 @@ DetermineEvolutionItemResults::
 	ld a, [wCurItem]
 	cp b
 	jr nz, .skip_species
-	jmp GetNextEvoAttackWord
+	jr GetNextEvoAttackWord
 
 .skip_two_species_parameter_byte
 	inc hl

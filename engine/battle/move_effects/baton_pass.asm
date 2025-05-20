@@ -35,7 +35,7 @@ BattleCommand_BatonPass:
 	ld hl, PassedBattleMonEntrance
 	call CallBattleCore
 
-	jmp ResetBatonPassStatus
+	jr ResetBatonPassStatus
 
 .Enemy:
 ; Wildmons don't have anything to switch to

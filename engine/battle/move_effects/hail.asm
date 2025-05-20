@@ -8,4 +8,4 @@ BattleCommand_StartHail:
 	ld a, 5
 	ld [wWeatherCount], a
 	ld hl, ItStartedToHailText
-	jmp AnimateCurrentMoveText
+	jr AnimateCurrentMoveText
