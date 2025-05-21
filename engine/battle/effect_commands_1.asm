@@ -3671,7 +3671,8 @@ BattleCommand_PoisonTarget:
 	ld a, [wTypeModifier]
 	and EFFECTIVENESS_MASK
 	ret z
-	call CheckIfTargetIsPoisonType
+	ld c, POISON
+	call CheckIfTargetMatchesType ; Don't freeze an Ice-type
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -3698,7 +3699,8 @@ BattleCommand_Poison:
 	and EFFECTIVENESS_MASK
 	jr z, .failed
 
-	call CheckIfTargetIsPoisonType
+	ld c, POISON
+	call CheckIfTargetMatchesType ; Don't freeze an Ice-type
 	jr z, .failed
 
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -3791,21 +3793,6 @@ BattleCommand_Poison:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_TOXIC
-	ret
-
-CheckIfTargetIsPoisonType:
-	ld de, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld de, wBattleMonType1
-.ok
-	ld a, [de]
-	inc de
-	cp POISON
-	ret z
-	ld a, [de]
-	cp POISON
 	ret
 
 PoisonOpponent:
@@ -3929,7 +3916,8 @@ BattleCommand_BurnTarget:
 	ld a, [wTypeModifier]
 	and EFFECTIVENESS_MASK
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
+	ld c, FIRE
+	call CheckIfTargetMatchesType ; Don't burn a Fire-type
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -3994,7 +3982,8 @@ BattleCommand_FreezeTarget:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
+	ld c, ICE
+	call CheckIfTargetMatchesType ; Don't freeze an Ice-type
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -5733,39 +5722,21 @@ BattleCommand_Paralyze:
 	ld hl, DoesntAffectText
 	jmp AnimateFailedMoveText
 
-CheckMoveTypeMatchesTarget:
-; Compare move type to opponent type.
-; Return z if matching the opponent type,
-; unless the move is Normal (Tri Attack).
-
-	push hl
-
-	ld hl, wEnemyMonType1
+CheckIfTargetMatchesType:
+; Compare type loaded in c to opponent type.
+; Return z if matching the opponent type.
+	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .ok
-	ld hl, wBattleMonType1
+	ld de, wBattleMonType1
 .ok
-
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	cp NORMAL
-	jr z, .normal
-
-	cp [hl]
-	jr z, .return
-
-	inc hl
-	cp [hl]
-
-.return
-	pop hl
-	ret
-
-.normal
-	ld a, 1
-	and a
-	pop hl
+	ld a, [de]
+	inc de
+	cp c ; currently loaded type
+	ret z
+	ld a, [de]
+	cp c ; currently loaded type
 	ret
 
 INCLUDE "engine/battle/move_effects/substitute.asm"
