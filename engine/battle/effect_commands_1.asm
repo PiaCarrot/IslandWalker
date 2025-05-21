@@ -1974,6 +1974,10 @@ BattleCommand_LowerSub:
 	ret
 
 BattleCommand_MoveAnim:
+	ld a, [wAttackMissed]
+	and a
+	jmp nz, AnimateFailedMove
+
 	call BattleCommand_LowerSub
 	call BattleCommand_MoveAnimNoSub
 	jmp BattleCommand_RaiseSub
@@ -1981,7 +1985,7 @@ BattleCommand_MoveAnim:
 BattleCommand_MoveAnimNoSub:
 	ld a, [wAttackMissed]
 	and a
-	jmp nz, BattleCommand_MoveDelay
+	jmp nz, AnimateFailedMove
 
 	ldh a, [hBattleTurn]
 	and a
@@ -2047,7 +2051,7 @@ BattleCommand_MoveAnimNoSub:
 BattleCommand_StatUpAnim:
 	ld a, [wAttackMissed]
 	and a
-	jmp nz, BattleCommand_MoveDelay
+	jmp nz, AnimateFailedMove
 
 	xor a
 	jr BattleCommand_StatUpDownAnim
@@ -2055,7 +2059,7 @@ BattleCommand_StatUpAnim:
 BattleCommand_StatDownAnim:
 	ld a, [wAttackMissed]
 	and a
-	jmp nz, BattleCommand_MoveDelay
+	jmp nz, AnimateFailedMove
 
 	ldh a, [hBattleTurn]
 	and a
@@ -5122,9 +5126,7 @@ BattleCommand_ForceSwitch:
 	farjp SpikesDamage
 
 .fail
-	call BattleCommand_LowerSub
-	call BattleCommand_MoveDelay
-	call BattleCommand_RaiseSub
+	call AnimateFailedMove
 	jmp PrintButItFailed
 
 .succeed
@@ -5448,8 +5450,7 @@ BattleCommand_Charge:
 	and SLP_MASK
 	jr z, .awake
 
-	call BattleCommand_MoveDelay
-	call BattleCommand_RaiseSub
+	call AnimateFailedMove
 	call PrintButItFailed
 	jmp EndMoveEffect
 
@@ -6119,9 +6120,8 @@ BattleCommand_CheckSafeguard:
 	ret z
 	ld a, 1
 	ld [wAttackMissed], a
-	call BattleCommand_MoveDelay
 	ld hl, SafeguardProtectText
-	call StdBattleTextbox
+	call AnimateFailedMoveText
 	jmp EndMoveEffect
 
 INCLUDE "engine/battle/move_effects/baton_pass.asm"
@@ -6401,20 +6401,15 @@ PlayOpponentBattleAnim:
 	jmp PopBCDEHL
 
 AnimateFailedMove:
-	call BattleCommand_LowerSub
-	call BattleCommand_MoveDelay
-	jmp BattleCommand_RaiseSub
-
-AnimateFailedMoveText:
-	push hl
-	call AnimateFailedMove
-	pop hl
-	jmp StdBattleTextbox
-
 BattleCommand_MoveDelay:
 ; Wait 40 frames.
 	ld c, 40
 	jmp DelayFrames
+
+AnimateFailedMoveText:
+DelayedMoveText:
+	call AnimateFailedMove
+	jmp StdBattleTextbox
 
 BattleCommand_ClearText:
 ; Used in multi-hit moves.

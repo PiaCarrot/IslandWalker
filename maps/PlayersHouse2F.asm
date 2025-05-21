@@ -165,10 +165,10 @@ if DEF(_DEBUG)
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
 	givepoke GENGAR, 75
-	givepokemove PRESENT,  wPartyMon1, 0
-	givepokemove PROTECT,  wPartyMon1, 1
-	givepokemove SPIKES,  wPartyMon1, 2
-	givepokemove SOLARBEAM,  wPartyMon1, 3
+	givepokemove SUBSTITUTE,  wPartyMon1, 0
+	givepokemove EARTHQUAKE,  wPartyMon1, 1
+	givepokemove SLEEP_TALK,  wPartyMon1, 2
+	givepokemove SPIKES,  wPartyMon1, 3
 	givepoke NINCADA, 50
 	givepoke WURMPLE, 50
 	; intro events
