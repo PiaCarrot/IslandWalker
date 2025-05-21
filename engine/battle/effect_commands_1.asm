@@ -1585,7 +1585,7 @@ BattleCommand_CheckHit:
 	call .DreamEater
 	jr z, .Miss
 
-	call .Protect
+	call CheckProtectedOpponent
 	jr nz, .Miss
 
 	call .DrainSub
@@ -1668,23 +1668,6 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	and SLP_MASK
-	ret
-
-.Protect:
-; Return nz if the opponent is protected.
-	call CheckProtectedOpponent
-	ret z
-
-	call BattleCommand_MoveDelay
-
-; 'protecting itself!'
-	ld hl, ProtectingItselfText
-	call StdBattleTextbox
-
-	call BattleCommand_MoveDelay
-
-	ld a, 1
-	and a
 	ret
 
 .LockOn:
@@ -2245,8 +2228,9 @@ BattleCommand_ApplyDamage:
 	ret
 
 GetFailureResultText:
+	ld de, ProtectingItselfText
+
 	ld hl, DoesntAffectText
-	ld de, DoesntAffectText
 	ld a, [wTypeModifier]
 	and EFFECTIVENESS_MASK
 	jr z, .got_text
@@ -2254,10 +2238,8 @@ GetFailureResultText:
 	call GetBattleVar
 	cp EFFECT_FUTURE_SIGHT
 	ld hl, ButItFailedText
-	ld de, ItFailedText
 	jr z, .got_text
 	ld hl, AttackMissedText
-	ld de, AttackMissed2Text
 	ld a, [wCriticalHit]
 	cp -1
 	jr nz, .got_text
@@ -5967,8 +5949,8 @@ FailMove:
 	; fallthrough
 
 FailMimic:
-	ld hl, ButItFailedText ; 'but it failed!'
-	ld de, ItFailedText    ; 'it failed!'
+	ld hl, ButItFailedText
+	ld de, ProtectingItselfText
 	jmp FailText_CheckOpponentProtect
 
 BattleEffect_DidntAffect:
