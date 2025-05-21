@@ -109,7 +109,7 @@ BattleCommand_Encore:
 	jmp AnimateCurrentMoveText
 
 .failed
-	jmp BattleEffect_DidntAffect
+	jmp BattleEffect_DidntAffectProtect
 
 .invalid_moves
 	dw NO_MOVE

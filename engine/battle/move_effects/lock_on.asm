@@ -13,4 +13,4 @@ BattleCommand_LockOn:
 	jmp AnimateCurrentMoveText
 
 .fail
-	jmp BattleEffect_DidntAffect
+	jmp BattleEffect_DidntAffectProtect

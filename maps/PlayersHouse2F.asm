@@ -164,11 +164,11 @@ if DEF(_DEBUG)
 	; givepokemove HEADBUTT,   wPartyMon3, 2
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke NINJASK, 75
+	givepoke NINCADA, 100
 	givepokemove SUBSTITUTE,  wPartyMon1, 0
 	givepokemove PROTECT,  wPartyMon1, 1
 	givepokemove SLEEP_TALK,  wPartyMon1, 2
-	givepokemove SPIKES,  wPartyMon1, 3
+	givepokemove HYPNOSIS,  wPartyMon1, 3
 	givepoke NINCADA, 50
 	givepoke WURMPLE, 50
 	; intro events
@@ -213,7 +213,7 @@ endc
 
 PlayersHouseBookshelfScript:
 	if DEF(_DEBUG)
-	loadwildmon NINJASK, 100
+	loadwildmon NINJASK, 80
 	startbattle
 	reloadmapafterbattle
 	end

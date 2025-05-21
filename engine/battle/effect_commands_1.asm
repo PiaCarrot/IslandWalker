@@ -3591,7 +3591,7 @@ BattleCommand_SleepTarget:
 
 	ld a, [wAttackMissed]
 	and a
-	jmp nz, BattleEffect_DidntAffect
+	jmp nz, BattleEffect_DidntAffectProtect
 
 	ld hl, DidntAffectText
 	call .CheckAIRandomFail
@@ -3694,7 +3694,6 @@ BattleCommand_PoisonTarget:
 	farjp UseHeldStatusHealingItem
 
 BattleCommand_Poison:
-	ld hl, DoesntAffectText
 	ld a, [wTypeModifier]
 	and EFFECTIVENESS_MASK
 	jr z, .failed
@@ -3773,7 +3772,7 @@ BattleCommand_Poison:
 	farjp UseHeldStatusHealingItem
 
 .failed
-	jmp AnimateFailedMoveText
+	jmp BattleEffect_DidntAffectProtect
 
 .apply_poison
 	call AnimateCurrentMove
@@ -5658,7 +5657,7 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 	ret z
 	cp EFFECT_SWAGGER
 	ret z
-	jmp BattleEffect_DidntAffect
+	jmp BattleEffect_DidntAffectProtect
 
 BattleCommand_Paralyze:
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -5728,7 +5727,7 @@ BattleCommand_Paralyze:
 	jmp AnimateFailedMoveText
 
 .failed
-	jmp BattleEffect_DidntAffect
+	jmp BattleEffect_DidntAffectProtect
 
 .didnt_affect
 	ld hl, DoesntAffectText
@@ -5956,6 +5955,12 @@ FailMimic:
 BattleEffect_DidntAffect:
 	ld hl, DidntAffectText
 	jmp AnimateFailedMoveText
+
+BattleEffect_DidntAffectProtect:
+	call AnimateFailedMove
+	ld hl, DidntAffectText
+	ld de, ProtectingItselfText
+	jmp FailText_CheckOpponentProtect
 
 PrintParalyze:
 ; 'paralyzed! maybe it can't attack!'
