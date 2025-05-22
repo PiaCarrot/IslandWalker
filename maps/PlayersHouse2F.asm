@@ -164,9 +164,9 @@ if DEF(_DEBUG)
 	; givepokemove HEADBUTT,   wPartyMon3, 2
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke NINCADA, 100
+	givepoke GENGAR, PLAIN_FORM, 100, BERRY_JUICE
 	givepokemove SUBSTITUTE,  wPartyMon1, 0
-	givepokemove PROTECT,  wPartyMon1, 1
+	givepokemove CURSE,  wPartyMon1, 1
 	givepokemove SLEEP_TALK,  wPartyMon1, 2
 	givepokemove HYPNOSIS,  wPartyMon1, 3
 	givepoke NINCADA, 50
