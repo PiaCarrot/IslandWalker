@@ -1900,57 +1900,28 @@ SubtractHP:
 	ret
 
 GetSixteenthMaxHP:
-	call GetQuarterMaxHP
-; quarter result
-	srl c
-	srl c
-; at least 1
-	ld a, c
-	and a
-	ret nz
-	inc c
-	ret
+; output: bc
+	call GetEighthMaxHP
+	jr HalveBC
 
 GetEighthMaxHP:
 ; output: bc
 	call GetQuarterMaxHP
-; assumes nothing can have 1024 or more hp
-; halve result
-	srl c
-; at least 1
-	ld a, c
-	and a
-	ret nz
-	inc c
-	ret
+	jr HalveBC
 
 GetQuarterMaxHP:
 ; output: bc
-	call GetMaxHP
-
-; quarter result
-	srl b
-	rr c
-	srl b
-	rr c
-
-; assumes nothing can have 1024 or more hp
-; at least 1
-	ld a, c
-	and a
-	ret nz
-	inc c
-	ret
+	call GetHalfMaxHP
+	jr HalveBC
 
 GetHalfMaxHP:
 ; output: bc
 	call GetMaxHP
 
-; halve result
+HalveBC:
 	srl b
 	rr c
-
-; at least 1
+FloorBC:
 	ld a, c
 	or b
 	ret nz
