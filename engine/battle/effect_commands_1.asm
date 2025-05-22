@@ -148,8 +148,6 @@ BattleCommand_CheckTurn:
 	and SLP_MASK
 	jr z, .woke_up
 
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_SLP
 	call FarPlayBattleAnimation
 	jr .fast_asleep
@@ -254,8 +252,6 @@ BattleCommand_CheckTurn:
 .confused
 	ld hl, IsConfusedText
 	call StdBattleTextbox
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_CONFUSED
 	call FarPlayBattleAnimation
 
@@ -282,8 +278,6 @@ BattleCommand_CheckTurn:
 
 	ld hl, InLoveWithText
 	call StdBattleTextbox
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_IN_LOVE
 	call FarPlayBattleAnimation
 
@@ -389,8 +383,6 @@ CheckEnemyTurn:
 
 	ld hl, FastAsleepText
 	call StdBattleTextbox
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_SLP
 	call FarPlayBattleAnimation
 	jr .fast_asleep
@@ -494,8 +486,6 @@ CheckEnemyTurn:
 	ld hl, IsConfusedText
 	call StdBattleTextbox
 
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_CONFUSED
 	call FarPlayBattleAnimation
 
@@ -516,9 +506,6 @@ CheckEnemyTurn:
 	call HitSelfInConfusion
 	call ConfusionDamageCalc
 	call BattleCommand_LowerSub
-
-	xor a
-	ld [wNumHits], a
 
 	; Flicker the monster pic unless flying or underground.
 	ld de, ANIM_HIT_CONFUSION
@@ -541,8 +528,6 @@ CheckEnemyTurn:
 
 	ld hl, InLoveWithText
 	call StdBattleTextbox
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_IN_LOVE
 	call FarPlayBattleAnimation
 
@@ -619,9 +604,6 @@ HitConfusion:
 	call HitSelfInConfusion
 	call ConfusionDamageCalc
 	call BattleCommand_LowerSub
-
-	xor a
-	ld [wNumHits], a
 
 	; Flicker the monster pic unless flying or underground.
 	ld de, ANIM_HIT_CONFUSION
@@ -1925,8 +1907,6 @@ BattleCommand_LowerSub:
 	call _CheckBattleScene
 	jr c, .mimic_anims
 
-	xor a
-	ld [wNumHits], a
 	inc a
 	ld [wBattleAnimParam], a
 	ld hl, SUBSTITUTE
@@ -2026,8 +2006,6 @@ BattleCommand_MoveAnimNoSub:
 	call SetMoveAnimationID
 	pop af
 	jr z, .play_anim
-	xor a
-	ld [wNumHits], a
 .play_anim
 	jmp PlaySelectedFXAnim
 
@@ -2081,8 +2059,6 @@ BattleCommand_RaiseSub:
 	call _CheckBattleScene
 	jmp c, BattleCommand_RaiseSubNoAnim
 
-	xor a
-	ld [wNumHits], a
 	ld a, $2
 	ld [wBattleAnimParam], a
 	ld hl, SUBSTITUTE
@@ -2417,8 +2393,6 @@ BattleCommand_CheckFaint:
 	call RefreshBattleHuds
 
 	call BattleCommand_SwitchTurn
-	xor a
-	ld [wNumHits], a
 	inc a
 	ld [wBattleAnimParam], a
 	ld hl, DESTINY_BOND
@@ -3905,8 +3879,6 @@ SapHealth:
 	jmp UpdateBattleMonInParty
 
 BattleCommand_BurnTarget:
-	xor a
-	ld [wNumHits], a
 	call CheckSubstituteOpp
 	ret nz
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -3968,8 +3940,6 @@ Defrost:
 	jmp StdBattleTextbox
 
 BattleCommand_FreezeTarget:
-	xor a
-	ld [wNumHits], a
 	call CheckSubstituteOpp
 	ret nz
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -4020,8 +3990,6 @@ BattleCommand_FreezeTarget:
 	ret
 
 BattleCommand_ParalyzeTarget:
-	xor a
-	ld [wNumHits], a
 	call CheckSubstituteOpp
 	ret nz
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -4950,8 +4918,6 @@ BattleCommand_ForceSwitch:
 
 .wild_force_flee
 	call UpdateBattleMonInParty
-	xor a
-	ld [wNumHits], a
 	inc a ; TRUE
 	ld [wForcedSwitch], a
 	call SetBattleDraw
@@ -5038,8 +5004,6 @@ BattleCommand_ForceSwitch:
 ; fallthrough
 .wild_succeed_playeristarget
 	call UpdateBattleMonInParty
-	xor a
-	ld [wNumHits], a
 	inc a ; TRUE
 	ld [wForcedSwitch], a
 	call SetBattleDraw
@@ -5435,8 +5399,6 @@ BattleCommand_Charge:
 	call nz, StdBattleTextbox
 
 	call BattleCommand_LowerSub
-	xor a
-	ld [wNumHits], a
 	inc a
 	ld [wBattleAnimParam], a
 	call LoadMoveAnim
@@ -6345,8 +6307,6 @@ PlayOpponentBattleAnim:
 	ld [wFXAnimID], a
 	ld a, d
 	ld [wFXAnimID + 1], a
-	xor a
-	ld [wNumHits], a
 
 	push hl
 	push de

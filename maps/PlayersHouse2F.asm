@@ -164,11 +164,11 @@ if DEF(_DEBUG)
 	; givepokemove HEADBUTT,   wPartyMon3, 2
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke GENGAR, PLAIN_FORM, 100, BERRY_JUICE
-	givepokemove SANDSTORM,  wPartyMon1, 0
-	givepokemove CURSE,  wPartyMon1, 1
-	givepokemove SLEEP_TALK,  wPartyMon1, 2
-	givepokemove HYPNOSIS,  wPartyMon1, 3
+	givepoke GENGAR, 50
+	givepokemove TWINEEDLE,  wPartyMon1, 0
+	givepokemove METRONOME,  wPartyMon1, 1
+	givepokemove GROWL,  wPartyMon1, 2
+	givepokemove PSYCHIC_M,  wPartyMon1, 3
 	givepoke NINCADA, 50
 	givepoke WURMPLE, 50
 	; intro events
@@ -213,7 +213,7 @@ endc
 
 PlayersHouseBookshelfScript:
 	if DEF(_DEBUG)
-	loadwildmon NINJASK, 80
+	loadwildmon NINJASK, 100
 	startbattle
 	reloadmapafterbattle
 	end
