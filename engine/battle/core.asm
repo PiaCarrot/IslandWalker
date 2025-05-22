@@ -1754,8 +1754,6 @@ HandleWeather:
 	cp STEEL
 	ret z
 
-	call SwitchTurnCore
-	call SwitchTurnCore
 	call GetSixteenthMaxHP
 	call SubtractHPFromUser
 
@@ -1802,8 +1800,6 @@ HandleWeather:
 	cp ICE
 	ret z
 
-	call SwitchTurnCore
-	call SwitchTurnCore
 	call GetSixteenthMaxHP
 	call SubtractHPFromUser
 
