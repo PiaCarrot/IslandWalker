@@ -73,7 +73,7 @@ BattleCommand_Transform:
 	ld [de], a
 	inc de
 ; move pointer to stats
-	ld bc, wBattleMonStats - wBattleMonPP
+	ld bc, wBattleMonStats - wBattleMonPersonality
 	add hl, bc
 	push hl
 	ld h, d

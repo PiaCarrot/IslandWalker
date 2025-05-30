@@ -728,21 +728,21 @@ NincadaEvosAttacks:
 
 NinjaskEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TOXIC
-	; dbw 1, LEECH_LIFE
-	; dbw 1, SAND_ATTACK
-	; dbw 1, SCRATCH
-	; dbw 5, LEECH_LIFE
-	; dbw 9, SAND_ATTACK
-	; dbw 14, FURY_SWIPES
-	; dbw 19, MIND_READER
-	; dbw 20, DOUBLE_TEAM
-	; dbw 20, FURY_CUTTER
-	; dbw 20, SCREECH
-	; dbw 25, SWORDS_DANCE
-	; dbw 31, SLASH
-	; dbw 38, AGILITY
-	; dbw 45, BATON_PASS
+	dbw 1, HARDEN
+	dbw 1, LEECH_LIFE
+	dbw 1, SAND_ATTACK
+	dbw 1, SCRATCH
+	dbw 5, LEECH_LIFE
+	dbw 9, SAND_ATTACK
+	dbw 14, FURY_SWIPES
+	dbw 19, MIND_READER
+	dbw 20, DOUBLE_TEAM
+	dbw 20, FURY_CUTTER
+	dbw 20, SCREECH
+	dbw 25, SWORDS_DANCE
+	dbw 31, SLASH
+	dbw 38, AGILITY
+	dbw 45, BATON_PASS
 	db 0 ; no more level-up moves
 
 ShedinjaEvosAttacks:
