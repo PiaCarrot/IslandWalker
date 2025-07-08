@@ -29,7 +29,7 @@ pokecrystal_vc_obj    := $(rom_obj:.o=_vc.o)
 
 ### Build tools
 
-ifeq (,$(shell which sha1sum))
+ifeq (,$(shell command -v sha1sum 2>/dev/null))
 SHA1 := shasum
 else
 SHA1 := sha1sum
@@ -169,6 +169,10 @@ gfx/trainers/%.2bpp: rgbgfx += --columns
 gfx/trainers/%.2bpp: gfx/trainers/%.png gfx/trainers/%.gbcpal
 	$(RGBGFX) $(rgbgfx) --colors gbc:$(word 2,$^) -o $@ $<
 
+# This is a special case for kris since we don't INCBIN her palette.
+gfx/trainers/kris.2bpp: gfx/trainers/kris.png gfx/trainers/kris.gbcpal
+	$(RGBGFX) $(rgbgfx) --colors gbc:$(word 2,$^) -o $@ $<
+
 # Egg does not have a back sprite, so it only uses front.gbcpal
 gfx/pokemon/egg/normal.gbcpal: gfx/pokemon/egg/front.gbcpal
 	tools/gbcpal $(tools/gbcpal) $@ $^
@@ -285,16 +289,15 @@ gfx/mobile/phone_tiles.2bpp: tools/gfx += --remove-whitespace
 gfx/mobile/pichu_animated.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/stadium2_n64.2bpp: tools/gfx += --trim-whitespace
 
-
 ### Catch-all graphics rules
 
 %.2bpp: %.png
-	$(RGBGFX) $(rgbgfx) -o $@ $<
+	$(RGBGFX) --colors dmg=e4 $(rgbgfx) -o $@ $<
 	$(if $(tools/gfx),\
 		tools/gfx $(tools/gfx) -o $@ $@ || $$($(RM) $@ && false))
 
 %.1bpp: %.png
-	$(RGBGFX) $(rgbgfx) --depth 1 -o $@ $<
+	$(RGBGFX) --colors dmg=e4 $(rgbgfx) --depth 1 -o $@ $<
 	$(if $(tools/gfx),\
 		tools/gfx $(tools/gfx) --depth 1 -o $@ $@ || $$($(RM) $@ && false))
 

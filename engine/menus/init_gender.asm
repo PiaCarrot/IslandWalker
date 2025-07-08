@@ -1,20 +1,20 @@
 InitCrystalData:
 	ld a, $1
-	ld [wd474], a
+	ld [wPlayerPrefecture], a
 	xor a
-	ld [wd473], a
+	ld [wPlayerAge], a
 	ld [wPlayerGender], a
-	ld [wd475], a
-	ld [wd476], a
-	ld [wd477], a
-	ld [wd478], a
+	ld [wPlayerPostalCode], a
+	ld [wPlayerPostalCode+1], a
+	ld [wPlayerPostalCode+2], a
+	ld [wPlayerPostalCode+3], a
 	ld [wd002], a
 	ld [wd003], a
-	ld a, [wd479]
+	ld a, [wCrystalFlags]
 	res 0, a ; ???
-	ld [wd479], a
+	ld [wCrystalFlags], a
 	res 1, a ; ???
-	ld [wd479], a
+	ld [wCrystalFlags], a
 	ret
 
 InitGender:
@@ -64,11 +64,11 @@ InitGenderScreen:
 	call InitCrystalData
 	call LoadFontsExtra
 	hlcoord 0, 0
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	xor a
 	rst ByteFill
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	xor a
 	jmp ByteFill
 

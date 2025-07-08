@@ -104,9 +104,9 @@ CheckTurn:
 BattleCommand_CheckTurn:
 ; Repurposed as hardcoded turn handling. Useless as a command.
 
-; Move $ff immediately ends the turn.
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
+	assert CANNOT_MOVE == $ff
 	inc a
 	jmp z, EndTurn
 
@@ -1953,13 +1953,13 @@ BattleCommand_MoveAnimNoSub:
 	ldh a, [hBattleTurn]
 	and a
 	ld de, wPlayerRolloutCount
-	ld a, BATTLEANIM_ENEMY_DAMAGE
+	ld a, ANIM_ENEMY_DAMAGE - BATTLE_AFTERANIMS
 	jr z, .got_rollout_count
 	ld de, wEnemyRolloutCount
-	ld a, BATTLEANIM_PLAYER_DAMAGE
+	ld a, ANIM_PLAYER_DAMAGE - BATTLE_AFTERANIMS
 
 .got_rollout_count
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_MULTI_HIT
@@ -2024,14 +2024,14 @@ BattleCommand_StatDownAnim:
 
 	ldh a, [hBattleTurn]
 	and a
-	ld a, BATTLEANIM_ENEMY_STAT_DOWN
+	ld a, ANIM_ENEMY_STAT_DOWN - BATTLE_AFTERANIMS
 	jr z, BattleCommand_StatUpDownAnim
-	ld a, BATTLEANIM_WOBBLE
+	ld a, ANIM_WOBBLE - BATTLE_AFTERANIMS
 
 	; fallthrough
 
 BattleCommand_StatUpDownAnim:
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	xor a
 	ld [wBattleAnimParam], a
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -6261,18 +6261,18 @@ PlayDamageAnim:
 
 	ldh a, [hBattleTurn]
 	and a
-	ld a, BATTLEANIM_ENEMY_DAMAGE
+	ld a, ANIM_ENEMY_DAMAGE - BATTLE_AFTERANIMS
 	jr z, .player
-	ld a, BATTLEANIM_PLAYER_DAMAGE
+	ld a, ANIM_PLAYER_DAMAGE - BATTLE_AFTERANIMS
 
 .player
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 
 	jr PlayUserBattleAnim
 
 LoadMoveAnim:
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar

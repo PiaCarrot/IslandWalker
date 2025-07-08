@@ -42,7 +42,7 @@ Crystal_FillBoxCGB:
 Crystal_WipeAttrmap:
 ; This is a copy of WipeAttrmap.
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	xor a
 	jmp ByteFill
 
@@ -123,7 +123,7 @@ _CrystalCGB_MobileLayout1:
 	call FarCopyWRAM
 	call Crystal_WipeAttrmap
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	xor a
 	rst ByteFill
 	hlcoord 0, 14, wAttrmap

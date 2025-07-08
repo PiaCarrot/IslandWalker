@@ -286,6 +286,6 @@ PushLYOverrides::
 	ld a, HIGH(wLYOverrides)
 	ld [wRequested2bppDest + 1], a
 
-	ld a, (wLYOverridesEnd - wLYOverrides) / LEN_2BPP_TILE
+	ld a, (wLYOverridesEnd - wLYOverrides) / TILE_SIZE
 	ld [wRequested2bppSize], a
 	ret

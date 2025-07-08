@@ -38,7 +38,7 @@ UpdateJoypad::
 
 ; We can only get four inputs at a time.
 ; We take d-pad first for no particular reason.
-	ld a, 1 << rJOYP_DPAD
+	ld a, JOYP_GET_CTRL_PAD
 	ldh [rJOYP], a
 ; Read twice to give the request time to take.
 	ldh a, [rJOYP]
@@ -47,7 +47,7 @@ UpdateJoypad::
 ; The Joypad register output is in the lo nybble (inversed).
 ; We make the hi nybble of our new container d-pad input.
 	cpl
-	and $f
+	and JOYP_INPUTS
 	swap a
 
 ; We'll keep this in b for now.
@@ -55,7 +55,7 @@ UpdateJoypad::
 
 ; Buttons make 8 total inputs (A, B, Select, Start).
 ; We can fit this into one byte.
-	ld a, 1 << rJOYP_BUTTONS
+	ld a, JOYP_GET_BUTTONS
 	ldh [rJOYP], a
 ; Wait for input to stabilize.
 rept 6
@@ -63,12 +63,12 @@ rept 6
 endr
 ; Buttons take the lo nybble.
 	cpl
-	and $f
+	and JOYP_INPUTS
 	or b
 	ld b, a
 
 ; Reset the joypad register since we're done with it.
-	ld a, (1 << rJOYP_BUTTONS) | (1 << rJOYP_DPAD)
+	ld a, JOYP_GET_NONE
 	ldh [rJOYP], a
 
 ; To get the delta we xor the last frame's input with the new one.
@@ -97,7 +97,7 @@ endr
 ; Now that we have the input, we can do stuff with it.
 
 ; For example, soft reset:
-	or ~(A_BUTTON | B_BUTTON | SELECT | START)
+	or ~PAD_BUTTONS
 	inc a
 	jmp z, Reset
 
@@ -266,7 +266,7 @@ JoyWaitAorB::
 	call DelayFrame
 	call GetJoypad
 	ldh a, [hJoyPressed]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	ret nz
 	call UpdateTimeAndPals
 	jr .loop
@@ -335,7 +335,7 @@ WaitPressAorB_BlinkCursor::
 
 	call JoyTextDelay
 	ldh a, [hJoyLast]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	jr z, .loop
 
 	pop af
@@ -348,7 +348,7 @@ SimpleWaitPressAorB::
 .loop
 	call JoyTextDelay
 	ldh a, [hJoyLast]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	jr z, .loop
 	ret
 
@@ -384,7 +384,7 @@ PromptButton::
 	call .blink_cursor
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	jr nz, .received_input
 	call UpdateTimeAndPals
 	ld a, $1

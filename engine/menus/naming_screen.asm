@@ -58,10 +58,10 @@ NamingScreen:
 
 .GetNamingScreenSetup:
 	ld a, [wNamingScreenType]
-	maskbits NUM_NAME_TYPES
+	maskbits NUM_NAMING_SCREEN_TYPES
 	ld e, a
 	ld d, 0
-	ld hl, .Jumptable
+	ld hl, NamingScreenJumptable
 	add hl, de
 	add hl, de
 	ld a, [hli]
@@ -69,16 +69,18 @@ NamingScreen:
 	ld l, a
 	jp hl
 
-.Jumptable:
-; entries correspond to NAME_* constants
+NamingScreenJumptable:
+; entries correspond to NAME_* constants (see constants/menu_constants.asm)
+	table_width 2
 	dw .Pokemon
 	dw .Player
 	dw .Rival
 	dw .Mom
 	dw .Box
-	dw .Tomodachi
+	dw .Friend
 	dw .Pokemon
 	dw .Pokemon
+	assert_table_length NUM_NAMING_SCREEN_TYPES
 
 .Pokemon:
 	ld a, [wCurPartySpecies]
@@ -194,13 +196,13 @@ NamingScreen:
 .BoxNameString:
 	db "BOX NAME?@"
 
-.Tomodachi:
+.Friend:
 	hlcoord 3, 2
-	ld de, .oTomodachi_no_namae_sutoringu
+	ld de, .FriendsNameString
 	rst PlaceString
 	jr .StoreSpriteIconParams
 
-.oTomodachi_no_namae_sutoringu
+.FriendsNameString:
 	db "おともだち　の　なまえは？@"
 
 .LoadSprite:
@@ -272,7 +274,7 @@ NamingScreen_IsTargetBox:
 NamingScreen_InitText:
 	call WaitTop
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, NAMINGSCREEN_BORDER
 	rst ByteFill
 	hlcoord 1, 1
@@ -408,16 +410,16 @@ NamingScreenJoypadLoop:
 .ReadButtons:
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .a
 	ld a, [hl]
-	and B_BUTTON
+	and PAD_B
 	jr nz, .b
 	ld a, [hl]
-	and START
+	and PAD_START
 	jr nz, .start
 	ld a, [hl]
-	and SELECT
+	and PAD_SELECT
 	jr nz, .select
 	ret
 
@@ -560,16 +562,16 @@ NamingScreen_AnimateCursor:
 .GetDPad:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .up
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .down
 	ld a, [hl]
-	and D_LEFT
+	and PAD_LEFT
 	jr nz, .left
 	ld a, [hl]
-	and D_RIGHT
+	and PAD_RIGHT
 	ret z
 	call NamingScreen_GetCursorPosition
 	and a
@@ -1059,16 +1061,16 @@ INCBIN "gfx/naming_screen/mail.2bpp"
 .process_joypad
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .a
 	ld a, [hl]
-	and B_BUTTON
+	and PAD_B
 	jr nz, .b
 	ld a, [hl]
-	and START
+	and PAD_START
 	jr nz, .start
 	ld a, [hl]
-	and SELECT
+	and PAD_SELECT
 	jr nz, .select
 	ret
 
@@ -1184,16 +1186,16 @@ ComposeMail_AnimateCursor:
 .GetDPad:
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .up
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .down
 	ld a, [hl]
-	and D_LEFT
+	and PAD_LEFT
 	jr nz, .left
 	ld a, [hl]
-	and D_RIGHT
+	and PAD_RIGHT
 	ret z
 	call ComposeMail_GetCursorPosition
 	and a

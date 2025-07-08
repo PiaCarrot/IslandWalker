@@ -315,7 +315,7 @@ PokeBallEffect:
 	ld [wFXAnimID + 1], a
 	call SetPlayerTurn
 	ld [wThrownBallWobbleCount], a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	predef PlayBattleAnim
 
 	ld a, [wThrownBallWobbleCount]
@@ -2254,7 +2254,7 @@ UseBallInTrainerBattle:
 	xor a
 	ld [wBattleAnimParam], a
 	ldh [hBattleTurn], a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	predef PlayBattleAnim
 	ld hl, BallBlockedText
 	call PrintText
