@@ -184,7 +184,7 @@ $(foreach png, $(unown_pngs),\
 	$(eval $(png:.png=.2bpp): $(png) gfx/pokemon/unown/normal.gbcpal))
 gfx/pokemon/unown/unown_%/back.2bpp: rgbgfx += --colors gbc:$(word 2,$^)
 gfx/pokemon/unown/unown_%/front.2bpp: rgbgfx += --colors gbc:$(word 2,$^)
-gfx/pokemon/unown/unown/normal.gbcpal: $(subst .png,.gbcpal,$(unown_pngs))
+gfx/pokemon/unown/normal.gbcpal: $(subst .png,.gbcpal,$(unown_pngs))
 	tools/gbcpal $(tools/gbcpal) $@ $^
 
 
