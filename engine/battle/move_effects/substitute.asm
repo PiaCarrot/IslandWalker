@@ -58,7 +58,7 @@ BattleCommand_Substitute:
 	jr c, .no_anim
 
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld [wBattleAnimParam], a
 	ld hl, SUBSTITUTE
 	call GetMoveIDFromIndex

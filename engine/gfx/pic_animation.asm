@@ -68,10 +68,10 @@ LoadMonAnimation:
 	jmp PokeAnim_InitPicAttributes
 
 SetUpPokeAnim:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wPokeAnimStruct)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [wPokeAnimSceneIndex]
 	ld c, a
 	ld b, 0
@@ -86,7 +86,7 @@ SetUpPokeAnim:
 	ld a, [wPokeAnimSceneIndex]
 	ld c, a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, c
 	and JUMPTABLE_EXIT
 	ret z
@@ -205,16 +205,16 @@ PokeAnim_StereoCry:
 	ret
 
 PokeAnim_DeinitFrames:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wPokeAnimCoord)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call PokeAnim_PlaceGraphic
 	farcall HDMATransferTilemapToWRAMBank3
 	call PokeAnim_SetVBank0
 	farcall HDMATransferAttrmapToWRAMBank3
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 AnimateMon_CheckIfPokemon:
@@ -231,10 +231,10 @@ AnimateMon_CheckIfPokemon:
 	ret
 
 PokeAnim_InitPicAttributes:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wPokeAnimStruct)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	push bc
 	push de
@@ -279,14 +279,14 @@ PokeAnim_InitPicAttributes:
 	ld [wPokeAnimFrontpicHeight], a
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 PokeAnim_InitAnim:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wPokeAnimIdleFlag)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	push bc
 	ld hl, wPokeAnimIdleFlag
 	ld bc, wPokeAnimStructEnd - wPokeAnimIdleFlag
@@ -301,7 +301,7 @@ PokeAnim_InitAnim:
 	call GetMonFramesPointer
 	call GetMonBitmaskPointer
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 PokeAnim_DoAnimScript:
@@ -767,16 +767,16 @@ PokeAnim_PlaceGraphic:
 	jmp ClearBox
 
 PokeAnim_SetVBank1:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wPokeAnimCoord)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	xor a
 	ldh [hBGMapMode], a
 	call .SetFlag
 	farcall HDMATransferAttrmapToWRAMBank3
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .SetFlag:
@@ -886,10 +886,10 @@ GetMonAnimPointer:
 	ret
 
 PokeAnim_GetFrontpicDims:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wCurPartySpecies)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	call GetBaseData
@@ -897,7 +897,7 @@ PokeAnim_GetFrontpicDims:
 	and $f
 	ld c, a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 GetMonFramesPointer:

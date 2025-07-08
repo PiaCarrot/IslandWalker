@@ -1,8 +1,8 @@
 LoadOpponentTrainerAndPokemon:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBT_OTTrainer)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	; Fill wBT_OTTrainer with zeros
 	xor a
@@ -80,7 +80,7 @@ LoadOpponentTrainerAndPokemon:
 	jr nz, .copy_bt_trainer_data_loop
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ret
 

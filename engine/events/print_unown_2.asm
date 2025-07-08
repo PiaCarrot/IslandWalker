@@ -22,7 +22,7 @@ RotateUnownFrontpic:
 	ld hl, wPrintedUnownTileDest
 	call .Copy
 	pop hl
-	ld bc, LEN_2BPP_TILE
+	ld bc, TILE_SIZE
 	add hl, bc
 	pop bc
 	inc c
@@ -43,7 +43,7 @@ RotateUnownFrontpic:
 	jmp CloseSRAM
 
 .Copy:
-	ld c, LEN_2BPP_TILE
+	ld c, TILE_SIZE
 .loop_copy
 	ld a, [hli]
 	ld [de], a

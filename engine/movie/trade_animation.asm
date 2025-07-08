@@ -1238,7 +1238,7 @@ TradeAnim_Wait80Frames:
 
 TradeAnim_BlankTilemap:
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, " "
 	jmp ByteFill
 

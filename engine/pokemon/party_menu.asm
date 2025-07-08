@@ -44,7 +44,7 @@ WritePartyMenuTilemap:
 	xor a
 	ldh [hBGMapMode], a
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, " "
 	rst ByteFill ; blank the tilemap
 	call GetPartyMenuQualityIndexes
@@ -594,7 +594,7 @@ InitPartyMenuWithCancel:
 
 .done
 	ld [wMenuCursorY], a
-	ld a, A_BUTTON | B_BUTTON
+	ld a, PAD_A | PAD_B
 	ld [wMenuJoypadFilter], a
 	ret
 
@@ -615,7 +615,7 @@ InitPartyMenuNoCancel:
 	ld a, 1
 .done
 	ld [wMenuCursorY], a
-	ld a, A_BUTTON | B_BUTTON
+	ld a, PAD_A | PAD_B
 	ld [wMenuJoypadFilter], a
 	ret
 
@@ -640,7 +640,7 @@ PartyMenuSelect:
 	ld [wPartyMenuCursor], a
 	ldh a, [hJoyLast]
 	ld b, a
-	bit B_BUTTON_F, b
+	bit B_PAD_B, b
 	jr nz, .exitmenu ; B button
 	ld a, [wMenuCursorY]
 	dec a

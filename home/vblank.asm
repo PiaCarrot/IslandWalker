@@ -172,12 +172,12 @@ VBlank_Cutscene::
 	xor a
 	ldh [rIF], a
 	ldh a, [rIE]
-	and 1 << LCD_STAT
+	and IE_STAT
 	ldh [rIE], a
 	; rerequest serial int if applicable (still disabled)
 	; request lcd stat
 	ld a, b
-	and (1 << SERIAL | 1 << LCD_STAT)
+	and IF_SERIAL | IF_STAT
 	ldh [rIF], a
 
 	ei
@@ -192,7 +192,7 @@ VBlank_Cutscene::
 	ldh [rIF], a
 	; enable ints besides joypad
 	ldh a, [rIE]
-	and 1 << LCD_STAT
+	and IF_STAT
 	or IE_DEFAULT
 	ldh [rIE], a
 	; rerequest ints
@@ -247,8 +247,9 @@ VBlank_CutsceneCGB::
 	xor a
 	ldh [rIF], a
 	ldh a, [rIE]
-	and 1 << LCD_STAT
+	and IE_STAT
 	ldh [rIE], a
+	assert IE_STAT == IF_STAT
 	ldh [rIF], a
 
 	ei
@@ -312,7 +313,7 @@ VBlank_Credits::
 	xor a
 	ldh [rIF], a
 	ldh a, [rIE]
-	and 1 << LCD_STAT
+	and IE_STAT
 	ldh [rIE], a
 	ldh [rIF], a
 

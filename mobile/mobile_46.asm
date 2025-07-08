@@ -9,10 +9,10 @@ _BattleTowerRoomMenu:
 	ld [wcd34], a
 	ld a, $4
 	ld [wc3f0], a
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK("Battle Tower RAM")
-	ldh [rSVBK], a
+	ldh [rWBK], a
 .loop
 	call JoyTextDelay
 	call Function118473
@@ -34,7 +34,7 @@ _BattleTowerRoomMenu:
 	xor a
 	ld [w3_d000], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call BattleTowerRoomMenu_Cleanup
 	call Function118180
 	jmp ReturnToMapFromSubmenu
@@ -53,10 +53,10 @@ Function118180:
 	ld bc, 22
 	rst CopyBytes
 
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(w3_d202)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld de, w3_d202
 	ld c, $96
@@ -74,7 +74,7 @@ Function118180:
 	rst CopyBytes
 .reset_banks
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jmp CloseSRAM
 
 .return_d3
@@ -109,7 +109,7 @@ BattleTowerRoomMenu_InitRAM:
 	ld a, [hl]
 	ld [wcd7f], a
 	set LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F, [hl]
-	ld a, (1 << SERIAL) | (1 << TIMER) | (1 << LCD_STAT) | (1 << VBLANK)
+	ld a, IE_SERIAL | IE_TIMER | IE_STAT | IE_VBLANK
 	ldh [rIE], a
 	ld a, $1
 	ldh [hMobileReceive], a
@@ -229,7 +229,7 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	ld a, $1
 	ld [wcd4f], a
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_HALL_OF_FAME_F, a
 	jr nz, .asm_11896b
@@ -248,7 +248,7 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	ld a, h
 	ld [wcd4c], a
 	ld a, BANK("Battle Tower RAM")
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call BattleTowerRoomMenu_IncrementJumptable
 
 BattleTowerRoomMenu_UpdatePickLevelMenu:
@@ -274,10 +274,10 @@ BattleTowerRoomMenu_UpdatePickLevelMenu:
 	ld e, a
 	ld a, h
 	ld d, a
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld bc, wStringBuffer3
 .asm_1189b5
 	ld a, [hli]
@@ -295,21 +295,21 @@ BattleTowerRoomMenu_UpdatePickLevelMenu:
 .asm_1189c4
 	ld [bc], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	hlcoord 13, 9
 	rst PlaceString
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and B_BUTTON
+	and PAD_B
 	jr nz, .b_button
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .a_button
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .d_down
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .d_up
 	ret
 
@@ -340,13 +340,13 @@ BattleTowerRoomMenu_UpdatePickLevelMenu:
 	and $fe
 	srl a
 	ld [wcf65], a
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call CloseWindow
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [wcd38]
 	and a
 	jr nz, .asm_118a30
@@ -364,13 +364,13 @@ BattleTowerRoomMenu_UpdatePickLevelMenu:
 	call PlayClickSFX
 
 .asm_118a3c
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call CloseWindow
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, $7
 	ld [wBattleTowerRoomMenuJumptableIndex], a
 	xor a
@@ -524,10 +524,10 @@ Strings_Ll0ToL40:
 	db "CANCEL@@"
 
 BattleTower_LevelCheck:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wPartyMons)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [wcd4f]
 	ld c, 10
 	call SimpleMultiply
@@ -554,7 +554,7 @@ BattleTower_LevelCheck:
 	dec a
 	jr nz, .party_loop
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	and a
 	ret
 
@@ -563,18 +563,18 @@ BattleTower_LevelCheck:
 	ld a, $4
 	ld [wBattleTowerRoomMenuJumptableIndex], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	scf
 	ret
 
 BattleTower_UbersCheck:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, [wcd4f]
 	cp 70 / 10
 	jr nc, .level_70_or_more
 	ld a, BANK(wPartyMons)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wPartyMon1Level
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld de, wPartySpecies
@@ -607,7 +607,7 @@ BattleTower_UbersCheck:
 	jr nz, .loop
 .level_70_or_more
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	and a
 	ret
 
@@ -631,7 +631,7 @@ BattleTower_UbersCheck:
 	ld a, $a
 	ld [wBattleTowerRoomMenuJumptableIndex], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	scf
 	ret
 
@@ -641,15 +641,15 @@ BattleTowerRoomMenu_IncrementJumptable:
 	ret
 
 BattleTowerRoomMenu2:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	ld [wcd8c], a
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	call .RunJumptable
 
 	ld a, [wcd8c]
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, $1
 	ldh [hBGMapMode], a
 	ret
@@ -893,16 +893,16 @@ BattleTowerRoomMenu2_PlaceYesNoMenu:
 BattleTowerRoomMenu2_UpdateYesNoMenu:
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .a_button
 	ld a, [hl]
-	and B_BUTTON
+	and PAD_B
 	jr nz, .b_button
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .d_up
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .d_down
 .asm_11a24c
 	call Function11a9f0
@@ -1271,16 +1271,16 @@ Function11a4fe:
 Function11a536:
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .asm_11a5a7
 	ld a, [hl]
-	and B_BUTTON
+	and PAD_B
 	jr nz, .asm_11a5a2
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .asm_11a564
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .asm_11a583
 .asm_11a54d
 	ld a, [wBattleTowerRoomMenu2JumptableIndex]
@@ -1487,7 +1487,7 @@ BattleTowerRoomMenu_WriteMessage:
 
 Function11a90f:
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call SpeechTextbox
 	ld a, $50
 	ld hl, wc320
@@ -1541,7 +1541,7 @@ Function11a90f:
 	ld hl, wc31a
 	inc [hl]
 	ld a, BANK("Battle Tower RAM")
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 Function11a971:
 	ld hl, wc31f

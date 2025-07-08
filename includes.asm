@@ -23,13 +23,10 @@ INCLUDE "macros/scripts/battle_anims.asm"
 INCLUDE "macros/scripts/oam_anims.asm"
 INCLUDE "macros/scripts/pic_anims.asm"
 
-INCLUDE "macros/legacy.asm"
-
-INCLUDE "constants/hardware_constants.asm"
+INCLUDE "constants/hardware.inc"
 INCLUDE "constants/deco_constants.asm"
 INCLUDE "constants/ram_constants.asm"
 INCLUDE "constants/misc_constants.asm"
-INCLUDE "constants/input_constants.asm"
 INCLUDE "constants/gfx_constants.asm"
 INCLUDE "constants/text_constants.asm"
 INCLUDE "constants/audio_constants.asm"
@@ -79,3 +76,5 @@ INCLUDE "constants/16_bit_locking_constants.asm" ; MUST come after the translati
 if DEF(_CRYSTAL_VC)
 INCLUDE "vc/pokecrystal.constants.asm"
 endc
+
+INCLUDE "macros/legacy.asm"

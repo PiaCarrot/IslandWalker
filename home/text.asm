@@ -29,14 +29,14 @@ ClearTilemap::
 
 	; Update the BG Map.
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	ret z
 	jmp WaitBGMap
 
 ClearScreen::
 	ld a, PAL_BG_TEXT
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	rst ByteFill
 	jr ClearTilemap
 
@@ -237,7 +237,7 @@ MACRO dict
 		jr nz, .not\@
 		ld a, \2
 	.not\@:
-	elif !STRCMP(STRSUB("\2", 1, 1), ".")
+	elif STRFIND("\2", ".") == 0
 		; Locals can use a short jump
 		jr z, \2
 	else
@@ -867,7 +867,7 @@ TextCommand_PAUSE::
 	push bc
 	call GetJoypad
 	ldh a, [hJoyDown]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	jr nz, .done
 	ld c, 30
 	call DelayFrames
@@ -932,7 +932,7 @@ TextCommand_DOTS::
 	ld [hli], a
 	call GetJoypad
 	ldh a, [hJoyDown]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	jr nz, .next
 	ld c, 10
 	call DelayFrames

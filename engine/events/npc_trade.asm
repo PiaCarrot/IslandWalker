@@ -417,6 +417,7 @@ PrintTradeText:
 
 TradeTexts:
 ; entries correspond to TRADE_DIALOG_* × TRADE_DIALOGSET_* constants
+	table_width 2
 ; TRADE_DIALOG_INTRO
 	dw NPCTradeIntroText1
 	dw NPCTradeIntroText2
@@ -442,6 +443,7 @@ TradeTexts:
 	dw NPCTradeAfterText2
 	dw NPCTradeAfterText4
 	dw NPCTradeAfterText3
+	assert_table_length NUM_TRADE_DIALOGS * NUM_TRADE_DIALOGSETS
 
 NPCTradeCableText:
 	text_far _NPCTradeCableText
