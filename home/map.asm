@@ -1021,7 +1021,7 @@ ScrollMapDown::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld bc, BG_MAP_WIDTH tiles
+	ld bc, TILEMAP_WIDTH tiles
 	add hl, bc
 ; cap d at HIGH(vBGMap0)
 	ld a, h
@@ -1107,7 +1107,7 @@ UpdateBGMapRow::
 	push de
 	call .iteration
 	pop de
-	ld a, BG_MAP_WIDTH
+	ld a, TILEMAP_WIDTH
 	add e
 	ld e, a
 
@@ -1139,7 +1139,7 @@ UpdateBGMapColumn::
 	ld [hli], a
 	ld a, d
 	ld [hli], a
-	ld a, BG_MAP_WIDTH
+	ld a, TILEMAP_WIDTH
 	add e
 	ld e, a
 	jr nc, .skip
@@ -1238,7 +1238,7 @@ _LoadTilesetGFX2:
 	pop af
 	ldh [rVBK], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	; These tilesets support dynamic per-mapgroup roof tiles.
 	ld a, [wMapTileset]

@@ -1022,7 +1022,7 @@ BattleAnimFunc_RazorLeaf:
 	call ReinitBattleAnimFrameset
 	ld hl, BATTLEANIMSTRUCT_OAMFLAGS
 	add hl, bc
-	res OAM_X_FLIP, [hl]
+	res B_OAM_XFLIP, [hl]
 .four
 .five
 .six
@@ -1207,7 +1207,7 @@ BattleAnimFunc_Surf:
 .zero
 	call BattleAnim_IncAnonJumptableIndex
 	ld hl, rIE
-	set LCD_STAT, [hl]
+	set B_IE_STAT, [hl]
 	ld a, LOW(rSCY)
 	ldh [hLCDCPointer], a
 	ld a, $58
@@ -1266,7 +1266,7 @@ BattleAnimFunc_Surf:
 	cp $70
 	jr c, .move_down
 	ld hl, rIE
-	res LCD_STAT, [hl]
+	res B_IE_STAT, [hl]
 	xor a
 	ldh [hLCDCPointer], a
 	ldh [hLYOverrideStart], a
@@ -2617,7 +2617,7 @@ BattleAnimFunc_String:
 	; Obj Param 0 flips when used by enemy
 	ld hl, BATTLEANIMSTRUCT_OAMFLAGS
 	add hl, bc
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 .not_param_zero
 	assert BATTLE_ANIM_FRAMESET_STRING_SHOT_1 + 1 == BATTLE_ANIM_FRAMESET_STRING_SHOT_2 \
 		&& BATTLE_ANIM_FRAMESET_STRING_SHOT_2 + 1 == BATTLE_ANIM_FRAMESET_STRING_SHOT_3

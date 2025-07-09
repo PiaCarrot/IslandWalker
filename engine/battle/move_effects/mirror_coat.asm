@@ -13,12 +13,12 @@ BattleCommand_MirrorCoat:
 	cp EFFECT_MIRROR_COAT
 	ret z
 
-	call BattleCommand_ResetTypeMatchup
+	farcall BattleCommand_ResetTypeMatchup
 	ld a, [wTypeMatchup]
 	and a
 	ret z
 
-	call CheckOpponentWentFirst
+	farcall CheckOpponentWentFirst
 	ret z
 
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP

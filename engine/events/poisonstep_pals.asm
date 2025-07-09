@@ -21,10 +21,10 @@ LoadPoisonBGPals:
 	farjp _UpdateTimePals
 
 .cgb
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals2)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wBGPals2
 	ld c, 4 palettes
 .loop
@@ -35,7 +35,7 @@ LoadPoisonBGPals:
 	dec c
 	jr nz, .loop
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ld c, 4

@@ -59,8 +59,7 @@ BattleCommand_Conversion:
 	jr .loop2
 
 .fail
-	call AnimateFailedMove
-	jmp PrintButItFailed
+	farjp BattleEffect_ButItFailed
 
 .done
 .loop3
@@ -89,6 +88,5 @@ BattleCommand_Conversion:
 	ld [de], a
 	ld [wNamedObjectIndex], a
 	farcall GetTypeName
-	call AnimateCurrentMove
 	ld hl, TransformedTypeText
-	jmp StdBattleTextbox
+	farjp AnimateCurrentMoveText

@@ -20,7 +20,7 @@ PlaceNextVWFChar::
 	ld hl, VWFWidths
 	add hl, de
 	ld b, [hl] ; b = width in pixels
-	; get VWFCharacterGFX + a * LEN_1BPP_TILE
+	; get VWFCharacterGFX + a * TILE_1BPP_SIZE
 	ld h, d
 	ld l, e
 	add hl, hl ; * 2

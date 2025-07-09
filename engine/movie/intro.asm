@@ -358,7 +358,7 @@ IntroScene3_Jumper:
 
 .scene3_5:
 	ld hl, rIE
-	res LCD_STAT, [hl]
+	res B_IE_STAT, [hl]
 	xor a
 	ldh [hLCDCPointer], a
 ; fallthrough

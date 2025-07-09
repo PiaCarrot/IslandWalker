@@ -4,6 +4,11 @@ BattleCommand_Nightmare:
 	call CheckHiddenOpponent
 	jr nz, .failed
 
+; Can't hit a protected opponent
+
+	call CheckProtectedOpponent
+	jr nz, .failed
+
 ; Can't hit a substitute.
 
 	call CheckSubstituteOpp
@@ -26,10 +31,8 @@ BattleCommand_Nightmare:
 ; Otherwise give the opponent a nightmare.
 
 	set SUBSTATUS_NIGHTMARE, [hl]
-	call AnimateCurrentMove
 	ld hl, StartedNightmareText
-	jmp StdBattleTextbox
+	jmp AnimateCurrentMoveText
 
 .failed
-	call AnimateFailedMove
-	jmp PrintButItFailed
+	jmp BattleEffect_ButItFailed

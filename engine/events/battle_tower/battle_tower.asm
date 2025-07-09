@@ -222,10 +222,10 @@ INCLUDE "data/battle_tower/unknown_levels.asm"
 
 CopyBTTrainer_FromBT_OT_TowBT_OTTemp:
 ; copy the BattleTower-Trainer data that lies at 'wBT_OTTrainer' to 'wBT_OTTemp'
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBT_OTTrainer)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, wBT_OTTrainer
 	ld de, wBT_OTTemp
@@ -233,7 +233,7 @@ CopyBTTrainer_FromBT_OT_TowBT_OTTemp:
 	rst CopyBytes
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld a, BANK(sBattleTowerChallengeState)
 	call OpenSRAM
@@ -398,27 +398,27 @@ SetBattleTowerChallengeState:
 SaveBattleTowerLevelGroup:
 	ld a, BANK(sBTChoiceOfLevelGroup)
 	call OpenSRAM
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBTChoiceOfLvlGroup)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [wBTChoiceOfLvlGroup]
 	ld [sBTChoiceOfLevelGroup], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jmp CloseSRAM
 
 LoadBattleTowerLevelGroup: ; Load level group choice
 	ld a, BANK(sBTChoiceOfLevelGroup)
 	call OpenSRAM
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBTChoiceOfLvlGroup)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [sBTChoiceOfLevelGroup]
 	ld [wBTChoiceOfLvlGroup], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jmp CloseSRAM
 
 BattleTower_CheckSaveFileExistsAndIsYours:
@@ -522,14 +522,14 @@ String_MysteryJP:
 	db "なぞナゾ@@" ; MYSTERY
 
 BattleTowerAction_0F:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(w3_d090)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [w3_d090]
 	ld [wScriptVar], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 BattleTowerAction_11:
@@ -568,17 +568,17 @@ BattleTowerAction_15:
 
 LoadOpponentTrainerAndPokemonWithOTSprite:
 	farcall LoadOpponentTrainerAndPokemon
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBT_OTTrainerClass)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wBT_OTTrainerClass
 	ld a, [hl]
 	dec a
 	ld c, a
 	ld b, 0
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, BTTrainerClassSprites
 	add hl, bc
 	ld a, [hl]

@@ -132,27 +132,29 @@ FarCopyColorWRAM::
 	ld a, BANK("GBC Video")
 	; fallthrough
 FarCopyWRAM::
+; copy bc bytes from hl to a:de
 	ldh [hTempBank], a
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ldh a, [hTempBank]
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	rst CopyBytes
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 GetFarWRAMByte::
+; retrieve a single byte from a:hl, and return it in a.
 	ldh [hTempBank], a
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ldh a, [hTempBank]
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [hl]
 	ldh [hFarByte], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ldh a, [hFarByte]
 	ret

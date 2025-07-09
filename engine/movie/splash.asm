@@ -26,8 +26,7 @@ SplashScreen:
 	ld de, wBGPals1
 	ld bc, 1 palettes
 	call FarCopyColorWRAM
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 
 ProtostarLogoPlay:
 ; Play GameFreak logo animation
