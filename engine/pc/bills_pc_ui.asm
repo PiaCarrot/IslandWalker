@@ -2256,11 +2256,14 @@ BillsPC_MoveItem:
 	inc a
 	or b
 	jr nz, .not_on_pack
-
+	ld hl, wItemFlags
+	set IN_BAG_F, [hl]
 	call BillsPC_PrepareTransistion
 	farcall GetItemToGive
 	push af
 	call BillsPC_ReturnFromTransistion
+	ld hl, wItemFlags
+	res IN_BAG_F, [hl]
 	pop af
 	ret z
 
