@@ -97,7 +97,7 @@ _SlotMachine:
 	ld hl, wOptions
 	res NO_TEXT_SCROLL, [hl]
 	ld hl, rLCDC
-	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
+	res B_LCDC_OBJ_SIZE, [hl] ; 8x8
 	ret
 
 .InitGFX:
@@ -142,7 +142,7 @@ _SlotMachine:
 	rst CopyBytes
 
 	ld hl, rLCDC
-	set rLCDC_SPRITE_SIZE, [hl] ; 8x16
+	set B_LCDC_OBJ_SIZE, [hl] ; 8x16
 	call EnableLCD
 	ld hl, wSlots
 	ld bc, wSlotsEnd - wSlots
@@ -296,7 +296,7 @@ SlotsAction_WaitStart:
 SlotsAction_WaitReel1:
 	ld hl, hJoypadSum
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	ret z
 	call SlotsAction_Next
 	call Slots_StopReel1
@@ -316,7 +316,7 @@ SlotsAction_WaitStopReel1:
 SlotsAction_WaitReel2:
 	ld hl, hJoypadSum
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	ret z
 	call SlotsAction_Next
 	call Slots_StopReel2
@@ -336,7 +336,7 @@ SlotsAction_WaitStopReel2:
 SlotsAction_WaitReel3:
 	ld hl, hJoypadSum
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	ret z
 	call SlotsAction_Next
 	call Slots_StopReel3
@@ -755,7 +755,7 @@ Slots_UpdateReelPositionAndOAM:
 	ld [hli], a ; tile id
 	srl a
 	srl a
-	set OAM_PRIORITY, a
+	set B_OAM_PRIO, a
 	ld [hli], a ; attributes
 
 	ld a, [wCurReelYCoord]
@@ -769,7 +769,7 @@ Slots_UpdateReelPositionAndOAM:
 	ld [hli], a ; tile id
 	srl a
 	srl a
-	set OAM_PRIORITY, a
+	set B_OAM_PRIO, a
 	ld [hli], a ; attributes
 	inc de
 	ld a, [wCurReelYCoord]

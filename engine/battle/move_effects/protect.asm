@@ -6,10 +6,8 @@ BattleCommand_Protect:
 	call GetBattleVarAddr
 	set SUBSTATUS_PROTECT, [hl]
 
-	call AnimateCurrentMove
-
 	ld hl, ProtectedItselfText
-	jmp StdBattleTextbox
+	farjp AnimateCurrentMoveText
 
 ProtectChance:
 	ld de, wPlayerProtectCount
@@ -19,7 +17,7 @@ ProtectChance:
 	ld de, wEnemyProtectCount
 .got_count
 
-	call CheckOpponentWentFirst
+	farcall CheckOpponentWentFirst
 	jr nz, .failed
 
 ; Can't have a substitute.
@@ -68,7 +66,6 @@ ProtectChance:
 .failed
 	xor a
 	ld [de], a
-	call AnimateFailedMove
-	call PrintButItFailed
+	farcall BattleEffect_ButItFailed
 	scf
 	ret

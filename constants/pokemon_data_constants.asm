@@ -246,12 +246,12 @@ DEF NUM_HOF_TEAMS EQU 30
 	const EVOLVE_ITEM
 	const EVOLVE_TRADE
 	const EVOLVE_HAPPINESS
+	const EVOLVE_HAPPINESS_TIME
 	const EVOLVE_STAT
 	const EVOLVE_PV
 
 ; EVOLVE_HAPPINESS triggers
 	const_def 1
-	const TR_ANYTIME
 	const TR_MORNDAY
 	const TR_EVENITE
 
@@ -275,7 +275,7 @@ DEF NUM_ROAMMON_MAPS EQU 16 ; RoamMaps table size (see data/wild/roammon_maps.as
 ; treemon sets
 ; TreeMons indexes (see data/wild/treemons.asm)
 	const_def
-	const TREEMON_SET_CITY
+	const TREEMON_SET_NONE
 	const TREEMON_SET_CANYON
 	const TREEMON_SET_TOWN
 	const TREEMON_SET_ROUTE

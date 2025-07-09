@@ -165,8 +165,7 @@ AI_Types:
 	push hl
 	push bc
 	push de
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	farcall BattleCheckTypeMatchup
 	pop de
 	pop bc
@@ -409,8 +408,7 @@ AI_Smart_Sleep:
 
 AI_Smart_LeechHit:
 	push hl
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	farcall BattleCheckTypeMatchup
 	pop hl
 
@@ -485,8 +483,7 @@ AI_Smart_LockOn:
 	cp 71 percent - 1
 	jr nc, .checkmove
 
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 
 	push hl
 	push bc
@@ -1092,10 +1089,10 @@ AI_Smart_Confuse:
 	ret c
 	call Random
 	cp 10 percent
-	jr c, .skipdiscourage
+	jr c, .discourage
 	inc [hl]
 
-.skipdiscourage
+.discourage
 ; Discourage again if player's HP is below 25%.
 	call AICheckPlayerQuarterHP
 	ret c
@@ -1257,12 +1254,12 @@ AI_Smart_Rage:
 
 ; If enemy's Rage is building, 50% chance to encourage this move.
 	call AI_50_50
-	jr c, .skipencourage
+	jr c, .encourage
 
 	dec [hl]
 
 ; Encourage this move based on Rage's counter.
-.skipencourage
+.encourage
 	ld a, [wEnemyRageCounter]
 	cp 2
 	ret c
@@ -1301,22 +1298,21 @@ AI_Smart_Mimic:
 	ld a, [wLastPlayerCounterMove]
 	call AIGetEnemyMove
 
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	farcall BattleCheckTypeMatchup
 
 	ld a, [wTypeMatchup]
 	cp EFFECTIVE
 	pop hl
 	jr c, .discourage
-	jr z, .skip_encourage
+	jr z, .encourage
 
 	call AI_50_50
-	jr c, .skip_encourage
+	jr c, .encourage
 
 	dec [hl]
 
-.skip_encourage
+.encourage
 	ld a, [wLastPlayerCounterMove]
 	push hl
 	ld hl, UsefulMoves
@@ -1636,8 +1632,7 @@ AI_Smart_PriorityHit:
 	jmp nz, AIDiscourageMove
 
 ; Greatly encourage this move if it will KO the player.
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	push hl
 	farcall EnemyAttackDamage
 	farcall BattleCommand_DamageCalc
@@ -1676,8 +1671,7 @@ AI_Smart_Conversion2:
 	call GetMoveAttribute
 	ld [wPlayerMoveStruct + MOVE_TYPE], a
 
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 
 	farcall BattleCheckTypeMatchup
 
@@ -2352,8 +2346,7 @@ AI_Smart_RapidSpin:
 
 AI_Smart_HiddenPower:
 	push hl
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 
 ; Calculate Hidden Power's type and base power based on enemy's IVs.
 	farcall HiddenPowerDamage
@@ -3076,8 +3069,7 @@ AI_Aggressive:
 INCLUDE "data/battle/ai/reckless_moves.asm"
 
 AIDamageCalc:
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_LOW_KICK
 	jr z, .low_kick
@@ -3132,6 +3124,7 @@ AI_Cautious:
 	pop hl
 	jr nc, .loop
 
+; BUG: "Cautious" AI may fail to discourage residual moves (see docs/bugs_and_glitches.md)
 	call Random
 	cp 90 percent + 1
 	ret nc
@@ -3188,8 +3181,7 @@ AI_Status:
 	push hl
 	push bc
 	push de
-	ld a, 1
-	ldh [hBattleTurn], a
+	call SetEnemyTurn
 	farcall BattleCheckTypeMatchup
 	pop de
 	pop bc

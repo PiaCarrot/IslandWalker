@@ -1,7 +1,7 @@
 LoadFishingGFX:
 	ldh a, [rVBK]
 	push af
-	ld a, $0
+	xor a
 	ldh [rVBK], a
 
 	ld de, FishingGFX

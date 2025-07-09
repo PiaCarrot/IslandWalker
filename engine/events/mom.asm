@@ -132,7 +132,7 @@ BankOfMom:
 	ld [wMomBankDigitCursorPosition], a
 	call LoadStandardMenuHeader
 	call Mom_SetUpDepositMenu
-	call Mom_Wait10Frames
+	call Wait10Frames
 	call Mom_WithdrawDepositMenuJoypad
 	call CloseWindow
 	jr c, .CancelDeposit
@@ -196,7 +196,7 @@ BankOfMom:
 	ld [wMomBankDigitCursorPosition], a
 	call LoadStandardMenuHeader
 	call Mom_SetUpWithdrawMenu
-	call Mom_Wait10Frames
+	call Wait10Frames
 	call Mom_WithdrawDepositMenuJoypad
 	call CloseWindow
 	jr c, .CancelWithdraw
@@ -432,19 +432,15 @@ Mom_ContinueMenuSetup:
 	call UpdateSprites
 	jmp CGBOnly_CopyTilemapAtOnce
 
-Mom_Wait10Frames:
-	ld c, 10
-	jmp DelayFrames
-
 Mom_WithdrawDepositMenuJoypad:
 .loop
 	call JoyTextDelay
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and B_BUTTON
+	and PAD_B
 	jr nz, .pressedB
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .pressedA
 	call .dpadaction
 	xor a
@@ -482,16 +478,16 @@ Mom_WithdrawDepositMenuJoypad:
 .dpadaction
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .incrementdigit
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .decrementdigit
 	ld a, [hl]
-	and D_LEFT
+	and PAD_LEFT
 	jr nz, .movecursorleft
 	ld a, [hl]
-	and D_RIGHT
+	and PAD_RIGHT
 	jr nz, .movecursorright
 	and a
 	ret

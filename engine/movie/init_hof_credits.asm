@@ -10,7 +10,7 @@ InitDisplayForHallOfFame:
 	ld a, " "
 	rst ByteFill
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	xor a
 	rst ByteFill
 	xor a
@@ -38,7 +38,7 @@ InitDisplayForRedCredits:
 	ld a, " "
 	rst ByteFill
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	xor a
 	rst ByteFill
 	ld hl, wBGPals1
@@ -58,10 +58,10 @@ InitDisplayForRedCredits:
 	jmp SetDefaultBGPAndOBP
 
 ResetDisplayBetweenHallOfFameMons:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wDecompressScratch
 	ld bc, wScratchAttrmap - wDecompressScratch
 	ld a, " "
@@ -71,5 +71,5 @@ ResetDisplayBetweenHallOfFameMons:
 	lb bc, 0, 4 tiles
 	call Request2bpp
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret

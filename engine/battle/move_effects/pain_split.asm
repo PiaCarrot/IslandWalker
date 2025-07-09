@@ -1,8 +1,9 @@
 BattleCommand_PainSplit:
-	ld a, [wAttackMissed]
-	and a
-	jmp nz, .ButItFailed
 	call CheckSubstituteOpp
+	jmp nz, .ButItFailed
+	call CheckHiddenOpponent
+	jmp nz, .ButItFailed
+	call CheckProtectedOpponent
 	jmp nz, .ButItFailed
 	call AnimateCurrentMove
 	ld hl, wBattleMonMaxHP + 1
@@ -88,4 +89,4 @@ BattleCommand_PainSplit:
 	ret
 
 .ButItFailed:
-	jmp PrintDidntAffect2
+	jmp BattleEffect_DidntAffectProtect

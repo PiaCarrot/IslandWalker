@@ -1,8 +1,10 @@
 NamesPointers::
 ; entries correspond to GetName constants (see constants/text_constants.asm); MON_NAME and MOVE_NAME are not handled by this table
+	table_width 3
 	dbw 0, wPartyMonOTs     ; PARTY_OT_NAME
 	dbw 0, wOTPartyMonOTs   ; ENEMY_OT_NAME
 	dba TrainerClassNames   ; TRAINER_NAME
+	assert_table_length NUM_NAME_TYPES - 3 ; TODO verify this is correct
 
 GetName::
 ; Return name wCurSpecies from name list wNamedObjectType in wStringBuffer1.

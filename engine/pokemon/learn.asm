@@ -1,8 +1,6 @@
 LearnMove:
 	call LoadTilemapToTempTilemap
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	call GetNickname
+	call GetCurNickname
 	ld hl, wStringBuffer1
 	ld de, wMonOrItemNameBuffer
 	ld bc, MON_NAME_LENGTH
@@ -163,7 +161,7 @@ ForgetMove:
 	call SafeLoadTempTilemapToTilemap
 	pop af
 	pop hl
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr nz, .cancel
 	push hl
 	ld a, [wMenuCursorY]

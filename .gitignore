@@ -16,8 +16,8 @@ gfx/pokemon/*/bitmask.asm
 gfx/pokemon/*/frames.asm
 gfx/pokemon/*/*/bitmask.asm
 gfx/pokemon/*/*/frames.asm
-!gfx/pokemon/unown/unown/bitmask.asm
-!gfx/pokemon/unown/unown/frames.asm
+!gfx/pokemon/unown/bitmask.asm
+!gfx/pokemon/unown/frames.asm
 
 # compiled roms
 *.gbc
@@ -34,13 +34,6 @@ gfx/pokemon/*/*/frames.asm
 # precompiled python
 *.pyc
 *$py.class
-
-# compare.sh
-baserom.txt
-pokecrystal.txt
-
-# used_space.py
-used_space.png
 
 # save game files
 *.sgm

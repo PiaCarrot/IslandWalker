@@ -926,12 +926,7 @@ ItFailedText:
 	text "It failed!"
 	prompt
 
-DidntAffect1Text:
-	text "It didn't affect"
-	line "<TARGET>!"
-	prompt
-
-DidntAffect2Text:
+DidntAffectText:
 	text "It didn't affect"
 	line "<TARGET>!"
 	prompt
@@ -1015,7 +1010,7 @@ ProtectedItselfText:
 ProtectingItselfText:
 	text "<TARGET>'s"
 	line "PROTECTING itself!"
-	done
+	prompt
 
 SpikesText:
 	text "SPIKES scattered"

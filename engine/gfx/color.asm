@@ -255,10 +255,10 @@ LoadStatsScreenPals:
 	ld b, 0
 	add hl, bc
 	add hl, bc
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [hli]
 	ld [wBGPals1 palette 0], a
 	ld [wBGPals1 palette 2], a
@@ -266,7 +266,7 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 0 + 1], a
 	ld [wBGPals1 palette 2 + 1], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call ApplyPals
 	ld a, $1
 	ret
@@ -359,10 +359,10 @@ GetPredefPal:
 LoadHLPaletteIntoDE:
 	ld c, 1 palettes
 LoadHLBytesIntoDE:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wOBPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 .loop
 	ld a, [hli]
 	ld [de], a
@@ -370,14 +370,14 @@ LoadHLBytesIntoDE:
 	dec c
 	jr nz, .loop
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 LoadPalette_White_Col1_Col2_Black:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld a, LOW(PALRGB_WHITE)
 	ld [de], a
@@ -386,7 +386,7 @@ LoadPalette_White_Col1_Col2_Black:
 	ld [de], a
 	inc de
 
-	ld c, 2 * PAL_COLOR_SIZE
+	ld c, 2 * COLOR_SIZE
 .loop
 	ld a, [hli]
 	ld [de], a
@@ -401,7 +401,7 @@ LoadPalette_White_Col1_Col2_Black:
 	inc de
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 FillBoxCGB:
@@ -426,10 +426,10 @@ ResetBGPals:
 	push de
 	push hl
 
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, wBGPals1
 	ld c, 1 palettes
@@ -448,7 +448,7 @@ ResetBGPals:
 	jr nz, .loop
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	pop hl
 	pop de
@@ -458,7 +458,7 @@ ResetBGPals:
 
 WipeAttrmap:
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	xor a
 	jmp ByteFill
 
@@ -471,7 +471,7 @@ ApplyPals:
 
 ApplyAttrmap:
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jr z, .UpdateVBank1
 	ldh a, [hBGMapMode]
 	push af
@@ -499,7 +499,7 @@ ApplyAttrmap:
 	inc de
 	dec c
 	jr nz, .col
-	ld a, BG_MAP_WIDTH - SCREEN_WIDTH
+	ld a, TILEMAP_WIDTH - SCREEN_WIDTH
 	add e
 	jr nc, .okay
 	inc d
@@ -755,7 +755,7 @@ InitCGBPals::
 	rst ByteFill
 	ld a, BANK(vTiles0)
 	ldh [rVBK], a
-	ld a, 1 << rBGPI_AUTO_INCREMENT
+	ld a, BGPI_AUTOINC
 	ldh [rBGPI], a
 	ld c, 4 * TILE_WIDTH
 .bgpals_loop
@@ -765,7 +765,7 @@ InitCGBPals::
 	ldh [rBGPD], a
 	dec c
 	jr nz, .bgpals_loop
-	ld a, 1 << rOBPI_AUTO_INCREMENT
+	ld a, OBPI_AUTOINC
 	ldh [rOBPI], a
 	ld c, 4 * TILE_WIDTH
 .obpals_loop
@@ -775,16 +775,16 @@ InitCGBPals::
 	ldh [rOBPD], a
 	dec c
 	jr nz, .obpals_loop
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wBGPals1
 	call .LoadWhitePals
 	ld hl, wBGPals2
 	call .LoadWhitePals
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .LoadWhitePals:
@@ -897,7 +897,7 @@ endr
 
 SGBBorder_PushBGPals:
 	call DisableLCD
-	ld a, %11100100
+	ld a, BGP_SGB_TRANSFER
 	ldh [rBGP], a
 	ld hl, PredefPals
 	ld de, vTiles1
@@ -914,7 +914,7 @@ SGBBorder_PushBGPals:
 
 SGBBorder_MorePalPushing:
 	call DisableLCD
-	ld a, $e4
+	ld a, BGP_SGB_TRANSFER
 	ldh [rBGP], a
 	ld de, vTiles1
 	ld bc, (6 + SCREEN_WIDTH + 6) * 5 * 2
@@ -948,7 +948,7 @@ SGBBorder_MorePalPushing:
 
 SGBBorder_YetMorePalPushing:
 	call DisableLCD
-	ld a, %11100100
+	ld a, BGP_SGB_TRANSFER
 	ldh [rBGP], a
 	ld de, vTiles1
 	ld b, $80
@@ -997,7 +997,7 @@ ClearBytes:
 DrawDefaultTiles:
 ; Draw 240 tiles (2/3 of the screen) from tiles in VRAM
 	hlbgcoord 0, 0 ; BG Map 0
-	ld de, BG_MAP_WIDTH - SCREEN_WIDTH
+	ld de, TILEMAP_WIDTH - SCREEN_WIDTH
 	ld a, $80 ; starting tile
 	ld c, 12 + 1
 .line
@@ -1030,7 +1030,7 @@ INCLUDE "gfx/sgb/pal_packets.asm"
 INCLUDE "data/sgb_ctrl_packets.asm"
 
 PredefPals:
-	table_width PALETTE_SIZE
+	table_width PAL_SIZE
 INCLUDE "gfx/sgb/predef.pal"
 	assert_table_length NUM_PREDEF_PALS
 
@@ -1079,10 +1079,10 @@ LoadMapPals:
 	add hl, de
 	ld e, l
 	ld d, h
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wBGPals1
 	ld b, 8
 .outer_loop
@@ -1111,7 +1111,7 @@ LoadMapPals:
 	dec b
 	jr nz, .outer_loop
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 .got_pals
 	ldh a, [rSVBK]
@@ -1167,7 +1167,7 @@ PartyMenuBGPalette:
 INCLUDE "gfx/stats/party_menu_bg.pal"
 
 BillsPC_ThemePals:
-	table_width PAL_COLOR_SIZE * 4
+	table_width COLOR_SIZE * 4
 INCLUDE "gfx/pc/themes.pal"
 	assert_table_length NUM_BILLS_PC_THEMES
 
@@ -1185,7 +1185,7 @@ TilesetBGPalette:
 INCLUDE "gfx/tilesets/bg_tiles.pal"
 
 RoofPals:
-	table_width PAL_COLOR_SIZE * 3 * 2
+	table_width COLOR_SIZE * 3 * 2
 INCLUDE "gfx/tilesets/roofs.pal"
 	assert_table_length NUM_MAP_GROUPS + 1
 

@@ -187,9 +187,7 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	ld de, SFX_RUN
 	call WaitPlaySFX
 	call SetPlayerTurn
-	ld a, 1
-	ld [wBattleEnded], a
-	ret
+	jmp EndBattle
 	
 .check_run_away:
 	ld hl, wEnemyMonPersonality
@@ -467,7 +465,7 @@ HandleBerserkGene:
 	bit SUBSTATUS_CONFUSED, a
 	ret nz
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld de, ANIM_CONFUSED
 	call Call_PlayBattleAnim_OnlyIfVisible
 	call SwitchTurnCore
@@ -908,7 +906,6 @@ CompareMovePriority:
 
 GetMovePriority:
 ; Return the priority (0-9) of move a.
-	push bc
 
 	call GetMoveIndexFromID
 	ld b, h
@@ -917,13 +914,14 @@ GetMovePriority:
 	ld hl, MoveEffectPriorities
 .loop
 	ld a, [hli]
-	cp -1
+	cp -1 ; SPIT_UP cannot be a priorty move
 	jr z, .default_priority
-	cp b
+	cp c
 	jr nz, .skip
 	ld a, [hli]
-	cp c
-	jr z, .done
+	cp b
+	ld a, [hl]
+	ret z
 	inc hl
 	jr .loop
 
@@ -933,14 +931,7 @@ GetMovePriority:
 	jr .loop
 
 .default_priority
-	pop bc
-	xor a
-	ret
-
-.done
-	ld a, [hl]
-	xor $80 ; treat it as a signed byte
-	pop bc
+	ld a, BASE_PRIORITY
 	ret
 
 INCLUDE "data/moves/effects_priorities.asm"
@@ -957,7 +948,6 @@ Battle_EnemyFirst:
 	call TryEnemyFlee
 	jmp c, WildFled_EnemyFled_LinkBattleCanceled
 	call SetEnemyTurn
-	ld a, $1
 	ld [wEnemyGoesFirst], a
 	farcall AI_SwitchOrTryItem
 	jr c, .switch_item
@@ -1105,7 +1095,7 @@ ResidualDamage:
 	pop de
 
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	call Call_PlayBattleAnim_OnlyIfVisible
 	call GetEighthMaxHP
 	ld de, wPlayerToxicCount
@@ -1145,7 +1135,7 @@ ResidualDamage:
 
 	call SwitchTurnCore
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld de, ANIM_SAP
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
@@ -1170,7 +1160,7 @@ ResidualDamage:
 	bit SUBSTATUS_NIGHTMARE, [hl]
 	jr z, .not_nightmare
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld de, ANIM_IN_NIGHTMARE
 	call Call_PlayBattleAnim_OnlyIfVisible
 	call GetQuarterMaxHP
@@ -1188,7 +1178,7 @@ ResidualDamage:
 	jr z, .not_cursed
 
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld de, ANIM_IN_NIGHTMARE
 	call Call_PlayBattleAnim_OnlyIfVisible
 	call GetQuarterMaxHP
@@ -1210,8 +1200,7 @@ ResidualDamage:
 
 .fainted
 	call RefreshBattleHuds
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	xor a
 	ret
 
@@ -1336,7 +1325,7 @@ HandleWrap:
 
 	call SwitchTurnCore
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	predef PlayBattleAnim
 	call SwitchTurnCore
 
@@ -1605,9 +1594,7 @@ HandleFutureSight:
 	ld a, EFFECTIVE
 	ld [wTypeModifier], a
 	farcall DoMove
-	xor a
-	ld [wCurDamage], a
-	ld [wCurDamage + 1], a
+	call ResetDamage
 
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
@@ -1818,7 +1805,6 @@ HandleWeather:
 	call SetEnemyTurn
 	call .SandstormDamage
 	call SetPlayerTurn
-	jr .SandstormDamage
 
 .SandstormDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3
@@ -1848,8 +1834,6 @@ HandleWeather:
 	cp STEEL
 	ret z
 
-	call SwitchTurnCore
-	call SwitchTurnCore
 	call GetSixteenthMaxHP
 	call SubtractHPFromUser
 
@@ -1896,8 +1880,6 @@ HandleWeather:
 	cp ICE
 	ret z
 
-	call SwitchTurnCore
-	call SwitchTurnCore
 	call GetSixteenthMaxHP
 	call SubtractHPFromUser
 
@@ -1909,7 +1891,7 @@ HandleWeather:
 	call SetPlayerTurn
 .weather_ability_skip
 	xor a ; uses one byte of ROM, compared to two for "ld a, 1"
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld hl, .WeatherAnimations
 	ld a, [wBattleWeather]
 	dec a
@@ -1995,57 +1977,28 @@ SubtractHP:
 	ret
 
 GetSixteenthMaxHP:
-	call GetQuarterMaxHP
-; quarter result
-	srl c
-	srl c
-; at least 1
-	ld a, c
-	and a
-	ret nz
-	inc c
-	ret
+; output: bc
+	call GetEighthMaxHP
+	jr HalveBC
 
 GetEighthMaxHP:
 ; output: bc
 	call GetQuarterMaxHP
-; assumes nothing can have 1024 or more hp
-; halve result
-	srl c
-; at least 1
-	ld a, c
-	and a
-	ret nz
-	inc c
-	ret
+	jr HalveBC
 
 GetQuarterMaxHP:
 ; output: bc
-	call GetMaxHP
-
-; quarter result
-	srl b
-	rr c
-	srl b
-	rr c
-
-; assumes nothing can have 1024 or more hp
-; at least 1
-	ld a, c
-	and a
-	ret nz
-	inc c
-	ret
+	call GetHalfMaxHP
+	jr HalveBC
 
 GetHalfMaxHP:
 ; output: bc
 	call GetMaxHP
 
-; halve result
+HalveBC:
 	srl b
 	rr c
-
-; at least 1
+FloorBC:
 	ld a, c
 	or b
 	ret nz
@@ -2076,6 +2029,20 @@ CheckUserHasEnoughHP:
 	and a
 	jr z, .ok
 	ld hl, wEnemyMonHP + 1
+.ok
+	ld a, c
+	sub [hl]
+	dec hl
+	ld a, b
+	sbc [hl]
+	ret
+
+CheckOpponentHasEnoughHP:
+	ld hl, wEnemyMonHP + 1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wBattleMonHP + 1
 .ok
 	ld a, c
 	sub [hl]
@@ -2175,9 +2142,7 @@ HandleEnemyMonFaint:
 	dec a
 	jr nz, .trainer
 
-	ld a, 1
-	ld [wBattleEnded], a
-	ret
+	jmp EndBattle
 
 .trainer
 	call CheckEnemyTrainerDefeated
@@ -2191,9 +2156,7 @@ HandleEnemyMonFaint:
 	call AskUseNextPokemon
 	jr nc, .dont_flee
 
-	ld a, 1
-	ld [wBattleEnded], a
-	ret
+	jmp EndBattle
 
 .dont_flee
 	call ForcePlayerMonChoice
@@ -3068,9 +3031,13 @@ ForcePickSwitchMonInBattle:
 	xor a
 	ret
 
-LostBattle:
+EndBattle:
 	ld a, 1
 	ld [wBattleEnded], a
+	ret
+
+LostBattle:
+	call EndBattle
 
 	ld a, [wInBattleTowerBattle]
 	bit IN_BATTLE_TOWER_BATTLE_F, a
@@ -3700,10 +3667,11 @@ ShowSetEnemyMonAndSendOutAnimation:
 	ld a, OTPARTYMON
 	ld [wMonType], a
 	predef CopyMonToTempMon
-	call GetEnemyMonFrontpic
+	ld hl, BattleAnimCmd_DropSub
+	call GetEnemyMonFrontpic_DoAnim
 
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld [wBattleAnimParam], a
 	call SetEnemyTurn
 	ld de, ANIM_SEND_OUT_MON
@@ -3740,7 +3708,22 @@ ShowSetEnemyMonAndSendOutAnimation:
 	call UpdateEnemyHUD
 	ld a, $1
 	ldh [hBGMapMode], a
-	ret
+
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret z
+
+	farcall CheckBattleScene
+	jr nc, AnimateSubOnEntry
+
+	ld hl, BattleAnimCmd_RaiseSub
+	jp GetEnemyMonFrontpic_DoAnim
+
+AnimateSubOnEntry:
+	ld a, 2 
+	ld [wBattleAnimParam], a
+	ld de, SUBSTITUTE
+	jp Call_PlayBattleAnim
 
 NewEnemyMonStatus:
 	xor a
@@ -4205,7 +4188,8 @@ SendOutPlayerMon:
 	call WaitBGMap
 	xor a
 	ldh [hBGMapMode], a
-	call GetBattleMonBackpic
+	ld hl, BattleAnimCmd_DropSub
+	call GetBattleMonBackpic_DoAnim
 	xor a
 	ldh [hGraphicStartTile], a
 	ld [wBattleMenuCursorPosition], a
@@ -4220,8 +4204,7 @@ SendOutPlayerMon:
 	xor a
 	ld [wEnemyWrapCount], a
 	call SetPlayerTurn
-	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld [wBattleAnimParam], a
 	ld de, ANIM_SEND_OUT_MON
 	call Call_PlayBattleAnim
@@ -4248,7 +4231,16 @@ SendOutPlayerMon:
 	call UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a
-	ret
+
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret z
+
+	farcall CheckBattleScene
+	jp nc, AnimateSubOnEntry
+
+	ld hl, BattleAnimCmd_RaiseSub
+	jp GetBattleMonBackpic_DoAnim
 
 NewBattleMonStatus:
 	xor a
@@ -4350,7 +4342,7 @@ PursuitSwitch:
 
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
-	ld [hl], $ff
+	ld [hl], CANNOT_MOVE
 
 	pop af
 	ld [wCurBattleMon], a
@@ -4408,9 +4400,8 @@ PursuitSwitch:
 RecallPlayerMon:
 	ldh a, [hBattleTurn]
 	push af
-	xor a
-	ldh [hBattleTurn], a
-	ld [wNumHits], a
+	call SetPlayerTurn
+	ld [wBattleAfterAnim], a
 	ld de, ANIM_RETURN_MON
 	call Call_PlayBattleAnim
 	pop af
@@ -4445,83 +4436,20 @@ HandleHPHealingItem:
 	ld a, b
 	cp HELD_BERRY
 	ret nz
-	ld de, wEnemyMonHP + 1
-	ld hl, wEnemyMonMaxHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .go
-	ld de, wBattleMonHP + 1
-	ld hl, wBattleMonMaxHP
 
-.go
-; If, and only if, Pokemon's HP is less than half max, use the item.
-; Store current HP in Buffer 3/4
 	push bc
-	ld a, [de]
-	ld [wHPBuffer2], a
-	add a
-	ld c, a
-	dec de
-	ld a, [de]
-	inc de
-	ld [wHPBuffer2 + 1], a
-	adc a
-	ld b, a
-	cp [hl]
-	ld a, c
+	call SwitchTurnCore
+	call GetHalfMaxHP
+	call SwitchTurnCore
+	call CheckOpponentHasEnoughHP
 	pop bc
-	jr z, .equal
-	jr c, .less
-	ret
-
-.equal
-	inc hl
-	cp [hl]
-	dec hl
-	ret nc
-
-.less
+	ret c
+	
 	call ItemRecoveryAnim
-	; store max HP in wHPBuffer1
-	ld a, [hli]
-	ld [wHPBuffer1 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer1], a
-	ld a, [de]
-	add c
-	ld [wHPBuffer3], a
-	ld c, a
-	dec de
-	ld a, [de]
-	adc 0
-	ld [wHPBuffer3 + 1], a
-	ld b, a
-	ld a, [hld]
-	cp c
-	ld a, [hl]
-	sbc b
-	jr nc, .okay
-	ld a, [hli]
-	ld [wHPBuffer3 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer3], a
 
-.okay
-	ld a, [wHPBuffer3 + 1]
-	ld [de], a
-	inc de
-	ld a, [wHPBuffer3]
-	ld [de], a
-	ldh a, [hBattleTurn]
-	ld [wWhichHPBar], a
-	and a
-	hlcoord 2, 2
-	jr z, .got_hp_bar_coords
-	hlcoord 10, 9
+	ld b, 0 ; item should restore HP equal to c
+	call RestoreHP
 
-.got_hp_bar_coords
-	ld [wWhichHPBar], a
-	predef AnimateHPBar
 UseOpponentItem:
 	call RefreshBattleHuds
 	farcall GetOpponentItem
@@ -4539,7 +4467,7 @@ ItemRecoveryAnim:
 	call EmptyBattleTextbox
 	call SwitchTurnCore
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	if HIGH(RECOVER)
 		ld a, HIGH(RECOVER)
 	endc
@@ -5538,15 +5466,15 @@ MoveSelectionScreen:
 	ld c, STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP
 	ld a, [wMoveSelectionMenuType]
 	dec a
-	ld b, D_DOWN | D_UP | A_BUTTON
+	ld b, PAD_DOWN | PAD_UP | PAD_A
 	jr z, .okay
 	dec a
-	ld b, D_DOWN | D_UP | A_BUTTON | B_BUTTON
+	ld b, PAD_DOWN | PAD_UP | PAD_A | PAD_B
 	jr z, .okay
 	ld a, [wLinkMode]
 	and a
 	jr nz, .okay
-	ld b, D_DOWN | D_UP | A_BUTTON | B_BUTTON | SELECT
+	ld b, PAD_DOWN | PAD_UP | PAD_A | PAD_B | PAD_SELECT
 
 .okay
 	ld a, b
@@ -5584,13 +5512,13 @@ MoveSelectionScreen:
 	ld a, $1
 	ldh [hBGMapMode], a
 	call ScrollingMenuJoypad
-	bit D_UP_F, a
+	bit B_PAD_UP, a
 	jr nz, .pressed_up
-	bit D_DOWN_F, a
+	bit B_PAD_DOWN, a
 	jr nz, .pressed_down
-	bit SELECT_F, a
+	bit B_PAD_SELECT, a
 	jmp nz, .pressed_select
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	; A button
 	push af
 
@@ -7302,15 +7230,15 @@ GiveExperiencePoints:
 	jmp z, .next_mon
 
 ; Give EVs
-; e = 0 for no Pokérus, 1 for Pokérus
-	ld e, 0
 	ld hl, MON_POKERUS
 	add hl, bc
 	ld a, [hl]
 	and a
-	jr z, .no_pokerus
-	inc e
-.no_pokerus
+	; if z, then a == 0 already
+	jr z, .got_pokerus
+	ld a, 1
+.got_pokerus
+	ld [wPokerusBuffer], a
 	ld hl, MON_EVS
 	add hl, bc
 	push bc
@@ -7324,6 +7252,8 @@ GiveExperiencePoints:
 	ld b, a
 	ld c, NUM_STATS ; six EVs
 .ev_loop
+	ld a, [wPokerusBuffer]
+	ld e, a
 	rlc b
 	rlc b
 	ld a, b
@@ -7438,9 +7368,7 @@ GiveExperiencePoints:
 	ld [wStringBuffer2 + 1], a
 	ldh a, [hQuotient + 2]
 	ld [wStringBuffer2], a
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	call GetNickname
+	call GetCurNickname
 	ld hl, Text_MonGainedExpPoint
 	call BattleTextbox
 	ld a, [wStringBuffer2 + 1]
@@ -7896,8 +7824,7 @@ AnimateExpBar:
 	call WaitSFX
 	ld de, SFX_EXP_BAR
 	call PlaySFX
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 	pop bc
 	ret
 
@@ -8278,8 +8205,7 @@ DropPlayerSub:
 GetBattleMonBackpic_DoAnim:
 	ldh a, [hBattleTurn]
 	push af
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 	ld a, BANK(BattleAnimCommands)
 	call FarCall_hl
 	pop af
@@ -8358,11 +8284,11 @@ BattleIntro:
 	ld b, SCGB_BATTLE_GRAYSCALE
 	call GetSGBLayout
 	ld hl, rLCDC
-	res rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap0/vBGMap2
+	res B_LCDC_WIN_MAP, [hl] ; select vBGMap0/vBGMap2
 	call InitBattleDisplay
 	call BattleStartMessage
 	ld hl, rLCDC
-	set rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap1/vBGMap3
+	set B_LCDC_WIN_MAP, [hl] ; select vBGMap1/vBGMap3
 	xor a
 	ldh [hBGMapMode], a
 	call EmptyBattleTextbox
@@ -8398,10 +8324,10 @@ InitEnemy:
 	jmp InitEnemyWildmon ; wild
 
 BackUpBGMap2:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wDecompressScratch
 	ld bc, $40 tiles ; vBGMap3 - vBGMap2
 	ld a, $2
@@ -8417,7 +8343,7 @@ BackUpBGMap2:
 	pop af
 	ldh [rVBK], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 InitEnemyTrainer:
@@ -8671,7 +8597,7 @@ _DisplayLinkRecord:
 	call CloseSRAM
 	hlcoord 0, 0, wAttrmap
 	xor a
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	rst ByteFill
 	call WaitBGMap2
 	ld b, SCGB_DIPLOMA
@@ -9154,23 +9080,23 @@ InitBattleDisplay:
 	ret
 
 .BlankBGMap:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, wDecompressScratch
-	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	ld bc, TILEMAP_AREA
 	ld a, " "
 	rst ByteFill
 
 	ld de, wDecompressScratch
 	hlbgcoord 0, 0
-	lb bc, BANK(@), (BG_MAP_WIDTH * BG_MAP_HEIGHT) / LEN_2BPP_TILE
+	lb bc, BANK(@), TILEMAP_AREA / TILE_SIZE
 	call Request2bpp
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .InitBackPic:
@@ -9217,10 +9143,10 @@ GetTrainerBackpic:
 	predef_jump DecompressGet2bpp
 
 CopyBackpic:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, vTiles0
 	ld de, vTiles2 tile $31
 	ldh a, [hROMBank]
@@ -9228,7 +9154,7 @@ CopyBackpic:
 	ld c, 7 * 7
 	call Get2bpp
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call .LoadTrainerBackpicAsOAM
 	ld a, $31
 	ldh [hGraphicStartTile], a
@@ -9280,8 +9206,7 @@ BattleStartMessage:
 	call PlaySFX
 	call WaitSFX
 
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 
 	farcall Battle_GetTrainerName
 
@@ -9299,10 +9224,8 @@ BattleStartMessage:
 	jr nc, .not_shiny
 
 	xor a
-	ld [wNumHits], a
-	ld a, 1
-	ldh [hBattleTurn], a
-	ld a, 1
+	ld [wBattleAfterAnim], a
+	call SetEnemyTurn
 	ld [wBattleAnimParam], a
 	ld de, ANIM_SEND_OUT_MON
 	call Call_PlayBattleAnim

@@ -50,17 +50,17 @@ Gen2ToGen1LinkComms:
 	call DelayFrames
 	xor a
 	ldh [hSerialSend], a
-	ld a, (0 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_INTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_START | SC_INTERNAL
 	ldh [rSC], a
 
 	call DelayFrame
 	xor a
 	ldh [hSerialSend], a
-	ld a, (0 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_INTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_START | SC_INTERNAL
 	ldh [rSC], a
 
 .player_1
@@ -76,7 +76,7 @@ endc
 	call DelayFrames
 	xor a
 	ldh [rIF], a
-	ld a, 1 << SERIAL
+	ld a, IE_SERIAL
 	ldh [rIE], a
 
 	ld hl, wLinkBattleRNPreamble
@@ -103,7 +103,7 @@ endc
 
 	xor a
 	ldh [rIF], a
-	ld a, (1 << JOYPAD) | (1 << SERIAL) | (1 << TIMER) | (1 << VBLANK)
+	ld a, IE_JOYPAD | IE_SERIAL | IE_TIMER | IE_VBLANK
 	ldh [rIE], a
 
 	call Link_CopyRandomNumbers
@@ -218,17 +218,17 @@ Gen2ToGen2LinkComms:
 	call DelayFrames
 	xor a
 	ldh [hSerialSend], a
-	ld a, (0 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_INTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_START | SC_INTERNAL
 	ldh [rSC], a
 
 	call DelayFrame
 	xor a
 	ldh [hSerialSend], a
-	ld a, (0 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_INTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_START | SC_INTERNAL
 	ldh [rSC], a
 
 .player_1
@@ -244,7 +244,7 @@ endc
 	call DelayFrames
 	xor a
 	ldh [rIF], a
-	ld a, 1 << SERIAL
+	ld a, IE_SERIAL
 	ldh [rIE], a
 
 	ld hl, wLinkBattleRNPreamble
@@ -286,7 +286,7 @@ endc
 
 	xor a
 	ldh [rIF], a
-	ld a, (1 << JOYPAD) | (1 << SERIAL) | (1 << TIMER) | (1 << VBLANK)
+	ld a, IE_JOYPAD | IE_SERIAL | IE_TIMER | IE_VBLANK
 	ldh [rIE], a
 	ld de, MUSIC_NONE
 	call PlayMusic
@@ -1627,7 +1627,7 @@ InitTradeMenuDisplay:
 LinkTrade_OTPartyMenu:
 	ld a, OTPARTYMON
 	ld [wMonType], a
-	ld a, A_BUTTON | D_UP | D_DOWN
+	ld a, PAD_A | PAD_UP | PAD_DOWN
 	ld [wMenuJoypadFilter], a
 	ld a, [wOTPartyCount]
 	ld [w2DMenuNumRows], a
@@ -1651,7 +1651,7 @@ LinkTradeOTPartymonMenuLoop:
 	ld a, d
 	and a
 	jmp z, LinkTradePartiesMenuMasterLoop
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr z, .not_a_button
 	ld a, INIT_ENEMYOT_LIST
 	ld [wInitListType], a
@@ -1661,7 +1661,7 @@ LinkTradeOTPartymonMenuLoop:
 	jmp LinkTradePartiesMenuMasterLoop
 
 .not_a_button
-	bit D_UP_F, a
+	bit B_PAD_UP, a
 	jr z, .not_d_up
 	ld a, [wMenuCursorY]
 	ld b, a
@@ -1683,7 +1683,7 @@ LinkTradeOTPartymonMenuLoop:
 	jr LinkTrade_PlayerPartyMenu
 
 .not_d_up
-	bit D_DOWN_F, a
+	bit B_PAD_DOWN, a
 	jmp z, LinkTradePartiesMenuMasterLoop
 	jmp LinkTradeOTPartymonMenuCheckCancel
 
@@ -1691,7 +1691,7 @@ LinkTrade_PlayerPartyMenu:
 	farcall InitMG_Mobile_LinkTradePalMap
 	xor a
 	ld [wMonType], a
-	ld a, A_BUTTON | D_UP | D_DOWN
+	ld a, PAD_A | PAD_UP | PAD_DOWN
 	ld [wMenuJoypadFilter], a
 	ld a, [wPartyCount]
 	ld [w2DMenuNumRows], a
@@ -1716,9 +1716,9 @@ LinkTradePartymonMenuLoop:
 	ld a, d
 	and a
 	jr z, LinkTradePartiesMenuMasterLoop
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, LinkTrade_TradeStatsMenu
-	bit D_DOWN_F, a
+	bit B_PAD_DOWN, a
 	jr z, .not_d_down
 	ld a, [wMenuCursorY]
 	dec a
@@ -1738,7 +1738,7 @@ LinkTradePartymonMenuLoop:
 	jmp LinkTrade_OTPartyMenu
 
 .not_d_down
-	bit D_UP_F, a
+	bit B_PAD_UP, a
 	jr z, LinkTradePartiesMenuMasterLoop
 	ld a, [wMenuCursorY]
 	ld b, a
@@ -1776,7 +1776,7 @@ LinkTrade_TradeStatsMenu:
 .joy_loop
 	ld a, " "
 	ldcoord_a 11, 16
-	ld a, A_BUTTON | B_BUTTON | D_RIGHT
+	ld a, PAD_A | PAD_B | PAD_RIGHT
 	ld [wMenuJoypadFilter], a
 	ld a, 1
 	ld [w2DMenuNumRows], a
@@ -1795,9 +1795,9 @@ LinkTrade_TradeStatsMenu:
 	ld [w2DMenuFlags1], a
 	ld [w2DMenuFlags2], a
 	call ScrollingMenuJoypad
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr nz, .d_right
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr z, .show_stats
 .b_button
 	pop af
@@ -1808,7 +1808,7 @@ LinkTrade_TradeStatsMenu:
 .d_right
 	ld a, " "
 	ldcoord_a 1, 16
-	ld a, A_BUTTON | B_BUTTON | D_LEFT
+	ld a, PAD_A | PAD_B | PAD_LEFT
 	ld [wMenuJoypadFilter], a
 	ld a, 1
 	ld [w2DMenuNumRows], a
@@ -1827,9 +1827,9 @@ LinkTrade_TradeStatsMenu:
 	ld [w2DMenuFlags1], a
 	ld [w2DMenuFlags2], a
 	call ScrollingMenuJoypad
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .joy_loop
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr nz, .b_button
 	jr .try_trade
 
@@ -1951,13 +1951,13 @@ LinkTradePartymonMenuCheckCancel:
 	ldh a, [hJoyLast]
 	and a
 	jr z, .loop2
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, .a_button
 	push af
 	ld a, " "
 	ldcoord_a 9, 17
 	pop af
-	bit D_UP_F, a
+	bit B_PAD_UP, a
 	jr z, .d_up
 	ld a, [wOTPartyCount]
 	ld [wMenuCursorY], a
@@ -1990,9 +1990,9 @@ ExitLinkCommunications:
 	ld [wUnusedLinkCommunicationByte], a
 	ldh [rSB], a
 	ldh [hSerialSend], a
-	ld a, (0 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_INTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_START | SC_INTERNAL
 	ldh [rSC], a
 	vc_hook ExitLinkCommunications_ret
 	ret
@@ -2073,7 +2073,7 @@ LinkTrade:
 	ld [w2DMenuFlags2], a
 	ld a, $20
 	ld [w2DMenuCursorOffsets], a
-	ld a, A_BUTTON | B_BUTTON
+	ld a, PAD_A | PAD_B
 	ld [wMenuJoypadFilter], a
 	ld a, 1
 	ld [wMenuCursorY], a
@@ -2084,7 +2084,7 @@ LinkTrade:
 	call ExitMenu
 	call WaitBGMap2
 	pop af
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr nz, .canceled
 	ld a, [wMenuCursorY]
 	dec a
@@ -2570,18 +2570,18 @@ WaitForOtherPlayerToExit:
 	xor a
 	ldh [rSB], a
 	ldh [hSerialReceive], a
-	ld a, (0 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_INTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_START | SC_INTERNAL
 	ldh [rSC], a
 	ld c, 3
 	call DelayFrames
 	xor a
 	ldh [rSB], a
 	ldh [hSerialReceive], a
-	ld a, (0 << rSC_ON) | (0 << rSC_CLOCK)
+	ld a, SC_EXTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (0 << rSC_CLOCK)
+	ld a, SC_START | SC_EXTERNAL
 	ldh [rSC], a
 	ld c, 3
 	call DelayFrames
@@ -2627,9 +2627,9 @@ SetBitsForTimeCapsuleRequest:
 	ldh [rSB], a
 	xor a
 	ldh [hSerialReceive], a
-	ld a, (0 << rSC_ON) | (0 << rSC_CLOCK)
+	ld a, SC_EXTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (0 << rSC_CLOCK)
+	ld a, SC_START | SC_EXTERNAL
 	ldh [rSC], a
 	xor a ; LINK_NULL
 	ld [wPlayerLinkAction], a
@@ -2644,9 +2644,9 @@ WaitForLinkedFriend:
 	ldh [rSB], a
 	xor a
 	ldh [hSerialReceive], a
-	ld a, (0 << rSC_ON) | (0 << rSC_CLOCK)
+	ld a, SC_EXTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (0 << rSC_CLOCK)
+	ld a, SC_START | SC_EXTERNAL
 	ldh [rSC], a
 	call DelayFrame
 	call DelayFrame
@@ -2669,9 +2669,9 @@ WaitForLinkedFriend:
 	ldh [rSB], a
 	xor a
 	ldh [hSerialReceive], a
-	ld a, (0 << rSC_ON) | (0 << rSC_CLOCK)
+	ld a, SC_EXTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (0 << rSC_CLOCK)
+	ld a, SC_START | SC_EXTERNAL
 ; This vc_hook causes the Virtual Console to set [hSerialConnectionStatus] to
 ; USING_INTERNAL_CLOCK, which allows the player to proceed past the link
 ; receptionist's "Please wait." It assumes that hSerialConnectionStatus is at
@@ -2692,9 +2692,9 @@ WaitForLinkedFriend:
 .not_done
 	ld a, USING_EXTERNAL_CLOCK
 	ldh [rSB], a
-	ld a, (0 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_INTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_START | SC_INTERNAL
 	ldh [rSC], a
 	call DelayFrame
 	jr .loop

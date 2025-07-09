@@ -23,7 +23,7 @@ TrainerCard:
 	bit JUMPTABLE_EXIT_F, a
 	jr nz, .quit
 	ldh a, [hJoyLast]
-	and B_BUTTON
+	and PAD_B
 	jr nz, .quit
 	call .RunJumptable
 	call DelayFrame
@@ -131,7 +131,7 @@ TrainerCard_Page1_Joypad:
 
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_RIGHT | A_BUTTON
+	and PAD_RIGHT | PAD_A
 	ret z
 	ld a, [wKantoBadges]
 	and a
@@ -184,10 +184,10 @@ TrainerCard_Page2_Joypad:
 
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_LEFT
+	and PAD_LEFT
 	jr nz, .previous_page
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	ret z
 	ld a, TRAINERCARDSTATE_QUIT
 	ld [wJumptableIndex], a
@@ -588,10 +588,10 @@ endr
 	db -1
 
 .facing2
-	dbsprite  0,  0,  0,  0, $01, 0 | X_FLIP
-	dbsprite  1,  0,  0,  0, $00, 0 | X_FLIP
-	dbsprite  0,  1,  0,  0, $03, 0 | X_FLIP
-	dbsprite  1,  1,  0,  0, $02, 0 | X_FLIP
+	dbsprite  0,  0,  0,  0, $01, 0 | OAM_XFLIP
+	dbsprite  1,  0,  0,  0, $00, 0 | OAM_XFLIP
+	dbsprite  0,  1,  0,  0, $03, 0 | OAM_XFLIP
+	dbsprite  1,  1,  0,  0, $02, 0 | OAM_XFLIP
 	db -1
 
 TrainerCard_OrangeBadgesOAM:

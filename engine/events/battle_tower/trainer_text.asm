@@ -3,10 +3,10 @@ BattleTowerText::
 ; 1: Intro text
 ; 2: Player lost
 ; 3: Player won
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBT_OTTrainerClass)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wBT_OTTrainerClass
 	ld a, [hl]
 	dec a
@@ -70,7 +70,7 @@ BattleTowerText::
 	ld h, a
 	bccoord 1, 14
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jmp PrintTextboxTextAt
 
 INCLUDE "data/trainers/genders.asm"

@@ -48,9 +48,9 @@ PrintLetterDelay::
 
 ; Wait one frame if holding A or B.
 	ldh a, [hJoyDown]
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, .delay
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr z, .wait
 
 .delay

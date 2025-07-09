@@ -364,6 +364,8 @@ DEF GEN3_MOVES EQU const_value - 1
 
 DEF NUM_ATTACKS EQU const_value - 1
 
+DEF CANNOT_MOVE EQU $ff
+
 	if NUM_ATTACKS > $3fff
 		fail "Too many moves defined!"
 	endc
@@ -380,6 +382,7 @@ DEF NUM_ATTACKS EQU const_value - 1
 	const ANIM_ENEMY_STAT_DOWN   ;  -6 (fffa)
 	const ANIM_ENEMY_DAMAGE      ;  -7 (fff9)
 	const ANIM_MISS              ;  -8 (fff8)
+	DEF BATTLE_AFTERANIMS EQU ANIM_MISS
 ; battle anims
 	const ANIM_IN_WHIRLPOOL      ;  -9 (fff7)
 	const ANIM_IN_NIGHTMARE      ;  -a (fff6)
@@ -398,14 +401,4 @@ DEF NUM_ATTACKS EQU const_value - 1
 	const ANIM_SNATCHED_MOVE	 ; -17 (ffe9)
 DEF NUM_BATTLE_ANIMS EQU -const_value - 1
 
-; wNumHits uses offsets from ANIM_MISS
-	const_def
-	const BATTLEANIM_NONE
-	const BATTLEANIM_ENEMY_DAMAGE
-	const BATTLEANIM_ENEMY_STAT_DOWN
-	const BATTLEANIM_PLAYER_STAT_DOWN
-	const BATTLEANIM_PLAYER_DAMAGE
-	const BATTLEANIM_WOBBLE
-	const BATTLEANIM_SHAKE
-	const BATTLEANIM_HIT_CONFUSION
-	const BATTLEANIM_SNATCHED
+; TODO: verify ANIM_SNATCHED_MOVE
