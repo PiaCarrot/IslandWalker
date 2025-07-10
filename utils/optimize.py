@@ -43,6 +43,8 @@ Line = namedtuple('Line', ['num', 'code', 'comment', 'comment_lower', 'text', 'c
 #     ld a, NUM_MOVES
 #     sub c
 SUPPRESS = 'no-optimize '
+# Emit GitHub-Actions annotations so errors show inline in PRs
+GHA_FMT = '::error file={f},line={l},col=1::{msg}'
 
 # A set of named patterns of suboptimal code
 #
@@ -690,9 +692,9 @@ def optimize(filename):
 						print(f'### {pattern_name} ###')
 						printed_this = True
 					if cur_label:
-						print(f'{filename}:{cur_label.num}:{cur_label.text}')
+						print(GHA_FMT.format(f=filename, l=cur_label.num, msg=cur_label.text))
 					for line in prev_lines:
-						print(f'{filename}:{line.num}:{line.text}')
+						print(GHA_FMT.format(f=filename, l=line.num, msg=line.text))
 					printed = True
 					prev_lines = []
 					state = 0
