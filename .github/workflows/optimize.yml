@@ -1,0 +1,35 @@
+# .github/workflows/optimize.yml
+name: Assembly-optimize
+
+on:
+  # run on pushes to main and on every pull-request
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Limit to repos with .asm so forks without GB-asm won’t waste a runner
+permissions:
+  contents: read
+
+jobs:
+  optimize-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'   # or the oldest version you need
+
+      - name: List changed ASM files
+        id: diff
+        run: |
+          echo "changed=$(git diff --name-only ${{github.event.before}} ${{github.sha}} -- '*.asm' | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
+
+      - name: Run optimize.py (fails build on issues)
+        if: steps.diff.outputs.changed != ''
+        run: |
+          python utils/optimize.py ${{steps.diff.outputs.changed}}
