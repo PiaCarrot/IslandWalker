@@ -4,9 +4,7 @@ name: Assembly-optimize
 on:
   # run on pushes to main and on every pull-request
   push:
-    branches: [main]
   pull_request:
-    branches: [main]
 
 # Limit to repos with .asm so forks without GB-asm won’t waste a runner
 permissions:
@@ -27,7 +25,14 @@ jobs:
       - name: List changed ASM files
         id: diff
         run: |
-          echo "changed=$(git diff --name-only ${{github.event.before}} ${{github.sha}} -- '*.asm' | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
+          # For pushes       → compare prior commit to HEAD
+          # For pull_request → compare base SHA to PR HEAD
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+          fi
+          echo "changed=$(git diff --name-only $BASE_SHA ${{ github.sha }} -- '*.asm' | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
 
       - name: Run optimize.py (fails build on issues)
         if: steps.diff.outputs.changed != ''
