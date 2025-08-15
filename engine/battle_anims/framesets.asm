@@ -97,5 +97,3 @@ GetBattleAnimFrame:
 	pop bc
 	add hl, de
 	ret
-
-INCLUDE "data/battle_anims/framesets.asm"

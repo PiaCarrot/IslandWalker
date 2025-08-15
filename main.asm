@@ -417,19 +417,26 @@ INCLUDE "data/moves/animation_pointers.asm"
 SECTION "Move Animation Framesets", ROMX
 
 INCLUDE "engine/battle_anims/framesets.asm"
+INCLUDE "data/battle_anims/framesets.asm"
 
 
 SECTION "Move Animation OAMs", ROMX
 
 INCLUDE "engine/battle_anims/anim_oam.asm"
+INCLUDE "data/battle_anims/oam.asm"
 
 
-SECTION "Move Animations", ROMX
+SECTION "Move Animation Commands", ROMX
 
 INCLUDE "engine/battle_anims/anim_commands.asm"
-INCLUDE "engine/battle_anims/core.asm"
 INCLUDE "engine/battle_anims/functions.asm"
+
+
+SECTION "Move Animation Objects", ROMX
+
+INCLUDE "engine/battle_anims/core.asm"
 INCLUDE "engine/battle_anims/load_gfx.asm"
+INCLUDE "data/battle_anims/objects.asm"
 INCLUDE "data/battle_anims/object_gfx.asm"
 
 

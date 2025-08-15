@@ -96,7 +96,7 @@ RunBattleAnimScript:
 
 .playframe
 	call RunBattleAnimCommand
-	call _ExecuteBGEffects
+	farcall ExecuteBGEffects
 	call BattleAnim_UpdateOAM_All
 	call PushLYOverrides
 	call BattleAnimRequestPals
@@ -584,7 +584,7 @@ BattleAnimCmd_Obj:
 	ld [wBattleObjectTempYCoord], a
 	call GetBattleAnimByte
 	ld [wBattleObjectTempParam], a
-	jmp QueueBattleAnimation
+	farjp QueueBattleAnimation
 
 BattleAnimCmd_BGEffect:
 	call GetBattleAnimByte
@@ -595,7 +595,7 @@ BattleAnimCmd_BGEffect:
 	ld [wBattleBGEffectTempTurn], a
 	call GetBattleAnimByte
 	ld [wBattleBGEffectTempParam], a
-	jmp _QueueBGEffect
+	farjp QueueBGEffect
 
 BattleAnimCmd_BGP:
 	call GetBattleAnimByte
@@ -662,7 +662,7 @@ endr
 	ld de, vTiles0 tile BATTLEANIM_BASE_TILE
 	add hl, de
 	ld a, [wBattleAnimByte]
-	call LoadBattleAnimGFX
+	farcall LoadBattleAnimGFX
 	ld a, [wBattleAnimGFXTempTileID]
 	add c
 	ld [wBattleAnimGFXTempTileID], a

@@ -213,5 +213,3 @@ InitBattleAnimBuffer:
 	dw SOFTBOILED
 	dw MILK_DRINK
 	dw -1
-
-INCLUDE "data/battle_anims/oam.asm"

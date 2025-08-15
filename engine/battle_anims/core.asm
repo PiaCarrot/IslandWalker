@@ -94,11 +94,3 @@ GetBattleAnimTileOffset:
 	pop bc
 	pop hl
 	ret
-
-_ExecuteBGEffects:
-	farjp ExecuteBGEffects
-
-_QueueBGEffect:
-	farjp QueueBGEffect
-
-INCLUDE "data/battle_anims/objects.asm"
