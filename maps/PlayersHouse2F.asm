@@ -166,7 +166,7 @@ if DEF(_DEBUG)
 	; misc pokemon for testing
 	givepoke GENGAR, 50
 	givepokemove TRANSFORM,  wPartyMon1, 0
-	givepokemove METRONOME,  wPartyMon1, 1
+	givepokemove RAIN_DANCE,  wPartyMon1, 1
 	givepokemove GROWL,  wPartyMon1, 2
 	givepokemove PSYCHIC_M,  wPartyMon1, 3
 	givepoke NINCADA, 50

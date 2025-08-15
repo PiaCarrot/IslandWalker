@@ -1818,8 +1818,8 @@ HandleWeather:
 	ld c, a
 	add hl, bc
 	add hl, bc
-	ld e, [hl]
-	inc hl
+	ld a, [hli]
+	ld e, a
 	ld d, [hl]
 	jmp Call_PlayBattleAnim
 
@@ -2059,11 +2059,7 @@ HandleEnemyMonFaint:
 
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .trainer
-
-	jmp EndBattle
-
-.trainer
+	jmp z, EndBattle
 	call CheckEnemyTrainerDefeated
 	jmp z, WinTrainerBattle
 
@@ -2073,11 +2069,7 @@ HandleEnemyMonFaint:
 	jr nz, .player_mon_not_fainted
 
 	call AskUseNextPokemon
-	jr nc, .dont_flee
-
-	jmp EndBattle
-
-.dont_flee
+	jmp c, EndBattle
 	call ForcePlayerMonChoice
 
 	ld a, BATTLEPLAYERACTION_USEITEM

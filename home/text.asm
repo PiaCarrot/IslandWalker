@@ -940,9 +940,7 @@ TextCommand_DOTS::
 	call GetJoypad
 	ldh a, [hJoyDown]
 	and PAD_A | PAD_B
-	jr nz, .next
-	call Wait10Frames
-.next
+	call z, Wait10Frames
 	pop de
 	dec d
 	jr nz, .loop
