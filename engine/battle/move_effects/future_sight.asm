@@ -68,7 +68,6 @@ BattleCommand_FutureSight:
 	jmp EndMoveEffect
 
 .failed
-	pop bc
 	call ResetDamage
 	call BattleEffect_ButItFailed
 	jmp EndMoveEffect
