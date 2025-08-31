@@ -498,7 +498,7 @@ DEF TM01 EQU const_value
 	add_tm HAIL         ; 0406
 	add_tm BULK_UP      ; 0407
 	add_tm BULLET_SEED  ; 0408
-	add_tm HIDDEN_POWER ; 0409
+        add_tm WORK_UP      ; 0409
 	add_tm SUNNY_DAY    ; 040A
 	add_tm TAUNT        ; 040B
 	add_tm ICE_BEAM     ; 040C
@@ -509,13 +509,13 @@ DEF TM01 EQU const_value
 	add_tm RAIN_DANCE   ; 0411
 	add_tm GIGA_DRAIN   ; 0412
 	add_tm SAFEGUARD    ; 0413
-	add_tm FRUSTRATION  ; 0414
+        add_tm DAZZLING_GLEAM ; 0414
 	add_tm SOLARBEAM    ; 0415
 	add_tm IRON_TAIL    ; 0416
 	add_tm THUNDERBOLT  ; 0417
 	add_tm THUNDER      ; 0418
 	add_tm EARTHQUAKE   ; 0419
-	add_tm RETURN       ; 041A
+        add_tm LOW_SWEEP    ; 041A
 	add_tm DIG          ; 041B
 	add_tm PSYCHIC_M    ; 041C
 	add_tm SHADOW_BALL  ; 041D
@@ -531,14 +531,56 @@ DEF TM01 EQU const_value
 	add_tm AERIAL_ACE   ; 0427
 	add_tm TORMENT      ; 0428
 	add_tm FACADE       ; 0429
-	add_tm SECRET_POWER ; 042A
+        add_tm VOLT_SWITCH  ; 042A
 	add_tm REST         ; 042B
 	add_tm ATTRACT      ; 042C
 	add_tm THIEF        ; 042D
 	add_tm STEEL_WING   ; 042E
 	add_tm SKILL_SWAP   ; 042F
-	add_tm SNATCH       ; 0430
+        add_tm SCALD        ; 0430
 	add_tm OVERHEAT     ; 0431
+        add_tm ROOST        ; 0432
+        add_tm FOCUS_BLAST  ; 0433
+        add_tm ENERGY_BALL  ; 0434
+        add_tm FALSE_SWIPE  ; 0435
+        add_tm BRINE        ; 0436
+        add_tm FLING        ; 0437
+        add_tm CHARGE_BEAM  ; 0438
+        add_tm ENDURE       ; 0439
+        add_tm DRAGON_PULSE ; 043A
+        add_tm DRAIN_PUNCH  ; 043B
+        add_tm WILL_O_WISP  ; 043C
+        add_tm BUG_BUZZ     ; 043D
+        add_tm NASTY_PLOT   ; 043E
+        add_tm EXPLOSION    ; 043F
+        add_tm SHADOW_CLAW  ; 0440
+        add_tm PAYBACK      ; 0441
+        add_tm RECYCLE      ; 0442
+        add_tm GIGA_IMPACT  ; 0443
+        add_tm ROCK_POLISH  ; 0444
+        add_tm FLASH        ; 0445
+        add_tm STONE_EDGE   ; 0446
+        add_tm AVALANCHE    ; 0447
+        add_tm THUNDER_WAVE ; 0448
+        add_tm GYRO_BALL    ; 0449
+        add_tm SWORDS_DANCE ; 044A
+        add_tm STEALTH_ROCK ; 044B
+        add_tm PSYCH_UP     ; 044C
+        add_tm SNARL        ; 044D
+        add_tm DARK_PULSE   ; 044E
+        add_tm ROCK_SLIDE   ; 044F
+        add_tm X_SCISSOR    ; 0450
+        add_tm SLEEP_TALK   ; 0451
+        add_tm BULLDOZE     ; 0452
+        add_tm POISON_JAB   ; 0453
+        add_tm DREAM_EATER  ; 0454
+        add_tm GRASS_KNOT   ; 0455
+        add_tm SWAGGER      ; 0456
+        add_tm PLUCK        ; 0457
+        add_tm U_TURN       ; 0458
+        add_tm SUBSTITUTE   ; 0459
+        add_tm FLASH_CANNON ; 045A
+        add_tm TRICK_ROOM   ; 045B
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
 MACRO add_hm
@@ -553,14 +595,15 @@ MACRO add_hm
 ENDM
 
 DEF HM01 EQU const_value
-	add_hm CUT          ; 0432
-	add_hm FLY          ; 0433
-	add_hm SURF         ; 0434
-	add_hm STRENGTH     ; 0435
-	add_hm FLASH        ; 0436
-	add_hm ROCK_SMASH   ; 0437
-	add_hm WATERFALL    ; 0438
-	add_hm DIVE         ; 0439
+        add_hm CUT          ; 0432
+        add_hm FLY          ; 0433
+       add_hm SURF         ; 0434
+       add_hm STRENGTH     ; 0435
+       add_hm WHIRLPOOL    ; 0437
+       add_hm ROCK_SMASH   ; 0438
+       add_hm WATERFALL    ; 0439
+       add_hm DIVE         ; 043A
+       add_hm ROCK_CLIMB   ; 043B
 DEF NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
 assert (NUM_TMS + NUM_HMS) < $ff, "TMs/HMs can't exceed 255 due to GetTMHMNumber."
@@ -575,9 +618,19 @@ MACRO add_mt
 ENDM
 
 DEF MT01 EQU const_value
-	add_mt FRENZY_PLANT
-	add_mt BLAST_BURN
-	add_mt HYDRO_CANNON
+        add_mt HIDDEN_POWER
+        add_mt FRUSTRATION
+        add_mt RETURN
+        add_mt SECRET_POWER
+        add_mt SNATCH
+        add_mt SILVER_WIND
+        add_mt EMBARGO
+        add_mt CAPTIVATE
+        add_mt NATURAL_GIFT
+        add_mt FRENZY_PLANT
+        add_mt BLAST_BURN
+       add_mt HYDRO_CANNON
+       add_mt DEFOG
 DEF NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 DEF NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS

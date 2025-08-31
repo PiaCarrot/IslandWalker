@@ -358,10 +358,131 @@ DEF GEN2_MOVES EQU const_value - 1
 	const ROCK_BLAST   ; 15c
 	const SHOCK_WAVE   ; 15d
 	const WATER_PULSE  ; 15e
-	const DOOM_DESIRE  ; 15f
-	const PSYCHO_BOOST ; 160
+        const DOOM_DESIRE  ; 15f
+        const PSYCHO_BOOST ; 160
 DEF GEN3_MOVES EQU const_value - 1
-
+        const ROOST
+        const GRAVITY
+        const MIRACLE_EYE
+        const WAKE_UP_SLAP
+        const HAMMER_ARM
+        const GYRO_BALL
+        const HEALING_WISH
+        const BRINE
+        const NATURAL_GIFT
+        const FEINT
+        const PLUCK
+        const TAILWIND
+        const ACUPRESSURE
+        const METAL_BURST
+        const U_TURN
+        const CLOSE_COMBAT
+        const PAYBACK
+        const ASSURANCE
+        const EMBARGO
+        const FLING
+        const PSYCHO_SHIFT
+        const TRUMP_CARD
+        const HEAL_BLOCK
+        const WRING_OUT
+        const POWER_TRICK
+        const GASTRO_ACID
+        const LUCKY_CHANT
+        const COPYCAT
+        const POWER_SWAP
+        const GUARD_SWAP
+        const PUNISHMENT
+        const LAST_RESORT
+        const WORRY_SEED
+        const SUCKER_PUNCH
+        const TOXIC_SPIKES
+        const HEART_SWAP
+        const AQUA_RING
+        const MAGNET_RISE
+        const FLARE_BLITZ
+        const FORCE_PALM
+        const AURA_SPHERE
+        const ROCK_POLISH
+        const POISON_JAB
+        const DARK_PULSE
+        const NIGHT_SLASH
+        const AQUA_TAIL
+        const SEED_BOMB
+        const AIR_SLASH
+        const X_SCISSOR
+        const BUG_BUZZ
+        const DRAGON_PULSE
+        const DRAGON_RUSH
+        const POWER_GEM
+        const DRAIN_PUNCH
+        const VACUUM_WAVE
+        const FOCUS_BLAST
+        const ENERGY_BALL
+        const BRAVE_BIRD
+        const EARTH_POWER
+        const SWITCHEROO
+        const GIGA_IMPACT
+        const NASTY_PLOT
+        const BULLET_PUNCH
+        const AVALANCHE
+        const ICE_SHARD
+        const SHADOW_CLAW
+        const THUNDER_FANG
+        const ICE_FANG
+        const FIRE_FANG
+        const SHADOW_SNEAK
+        const MUD_BOMB
+        const PSYCHO_CUT
+        const ZEN_HEADBUTT
+        const MIRROR_SHOT
+        const FLASH_CANNON
+        const ROCK_CLIMB
+        const DEFOG
+        const TRICK_ROOM
+        const DRACO_METEOR
+        const DISCHARGE
+        const LAVA_PLUME
+        const LEAF_STORM
+        const POWER_WHIP
+        const ROCK_WRECKER
+        const CROSS_POISON
+        const GUNK_SHOT
+        const IRON_HEAD
+        const MAGNET_BOMB
+        const STONE_EDGE
+        const CAPTIVATE
+        const STEALTH_ROCK
+        const GRASS_KNOT
+        const CHATTER
+        const JUDGMENT
+        const BUG_BITE
+        const CHARGE_BEAM
+        const WOOD_HAMMER
+        const AQUA_JET
+        const ATTACK_ORDER
+        const DEFEND_ORDER
+        const HEAL_ORDER
+        const HEAD_SMASH
+        const DOUBLE_HIT
+        const ROAR_OF_TIME
+        const SPACIAL_REND
+        const LUNAR_DANCE
+        const CRUSH_GRIP
+        const MAGMA_STORM
+        const DARK_VOID
+        const SEED_FLARE
+        const OMINOUS_WIND
+        const SHADOW_FORCE
+DEF GEN4_MOVES EQU const_value - 1
+        const WORK_UP
+       const DAZZLING_GLEAM
+DEF DAZZLINGGLEAM EQU DAZZLING_GLEAM
+        const LOW_SWEEP
+        const VOLT_SWITCH
+        const SCALD
+        const SNARL
+        const BULLDOZE
+DEF GEN5_MOVES EQU const_value - 1
 DEF NUM_ATTACKS EQU const_value - 1
 
 DEF CANNOT_MOVE EQU $ff
