@@ -46,7 +46,6 @@ PlayersHouseTMHMGiverScript:
         opentext
         writetext TMHMGiverIntroText
         promptbutton
-        callasm GiveAllTMsHMs
         setevent EVENT_PLAYERS_HOUSE_TMHM_GIVER
         disappear PLAYERSHOUSE2F_TMHM_GIVER
         writetext TMHMGiverAfterText
