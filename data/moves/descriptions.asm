@@ -497,9 +497,6 @@ MoveDescriptionsGen5:
 InvalidMoveDescription:
 	db "?@"
 
-PlaceholderDescription:
-        db "No description yet@"
-
 PoundDescription:
 	db   "Pounds with fore-"
 	next "legs or tail.@"
@@ -1912,10 +1909,11 @@ PsychoBoostDescription:
 	db   "Full-power. Lowers"
 	next "SPCL.ATK sharply.@"
 
-SECTION "Move Descriptions 2", ROMX
 RoostDescription:
 	db   "Heals the user by"
 	next "half its max HP.@"
+
+SECTION "Move Descriptions 2", ROMX
 
 GravityDescription:
 	db   "Grounds all foes"
