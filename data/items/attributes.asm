@@ -1092,6 +1092,8 @@ ItemHMAttributes:
         item_attribute 0, HELD_NONE, 0, CANT_SELECT | CANT_TOSS, TM_HM, ITEMMENU_PARTY, ITEMMENU_NOUSE
 ; HM08
         item_attribute 0, HELD_NONE, 0, CANT_SELECT | CANT_TOSS, TM_HM, ITEMMENU_PARTY, ITEMMENU_NOUSE
+; HM09
+        item_attribute 0, HELD_NONE, 0, CANT_SELECT | CANT_TOSS, TM_HM, ITEMMENU_PARTY, ITEMMENU_NOUSE
 .IndirectEnd::
 
 ItemMiscAttributes:

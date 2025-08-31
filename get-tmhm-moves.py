@@ -41,10 +41,16 @@ for file in filenames:
     print(f'Processing {name}')
 
     bdsp_moves = fetch_tm_moves(slug, 8, 'Brilliant Diamond')
-    # Check HGSS for Whirlpool
+    # Check HGSS for Whirlpool and Rock Climb
     hgss_moves = fetch_tm_moves(slug, 4, 'HeartGold &')
     if 'Whirlpool' in hgss_moves and 'Whirlpool' not in bdsp_moves:
         bdsp_moves.append('Whirlpool')
+    if 'Rock Climb' in hgss_moves and 'Rock Climb' not in bdsp_moves:
+        bdsp_moves.append('Rock Climb')
+    # Check ORAS for Dive
+    oras_moves = fetch_tm_moves(slug, 6, 'Omega Ruby')
+    if 'Dive' in oras_moves and 'Dive' not in bdsp_moves:
+        bdsp_moves.append('Dive')
 
     moves = [normalise(m) for m in bdsp_moves]
     move_string = ', '.join(moves)
