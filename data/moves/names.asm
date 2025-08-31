@@ -468,7 +468,7 @@ MoveNames::
         li "OMINOUS WIND"
         li "SHADOW FORCE"
         li "WORK UP"
-        li "DAZZLING GLEAM"
+        li "DAZZLINGLEAM"
         li "LOW SWEEP"
         li "VOLT SWITCH"
         li "SCALD"

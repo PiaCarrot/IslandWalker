@@ -1911,6 +1911,7 @@ DoomDesireDescription:
 PsychoBoostDescription:
 	db   "Full-power. Lowers"
 	next "SPCL.ATK sharply.@"
+
 SECTION "Move Descriptions 2", ROMX
 RoostDescription:
 	db   "Heals the user by"
@@ -2357,9 +2358,8 @@ OminousWindDescription:
 	next "raise all stats.@"
 
 ShadowForceDescription:
-	db   "User vanishes,"
-	next "avoids attacks"
-	next "hits through guard@"
+	db   "1st turn: Vanish"
+	next "2nd turn: Attack@"
 
 WorkUpDescription:
 	db   "Raises user's ATK"
