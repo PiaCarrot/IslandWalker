@@ -1,8 +1,9 @@
 	object_const_def
 	const PLAYERSHOUSE2F_CONSOLE
 	const PLAYERSHOUSE2F_DOLL_1
-	const PLAYERSHOUSE2F_DOLL_2
-	const PLAYERSHOUSE2F_BIG_DOLL
+         const PLAYERSHOUSE2F_DOLL_2
+         const PLAYERSHOUSE2F_BIG_DOLL
+        const PLAYERSHOUSE2F_TMHM_GIVER
 
 PlayersHouse2F_MapScripts:
 	def_scene_scripts
@@ -38,7 +39,20 @@ PlayersHouseBigDollScript:
 	describedecoration DECODESC_BIG_DOLL
 
 PlayersHouseGameConsoleScript:
-	describedecoration DECODESC_CONSOLE
+        describedecoration DECODESC_CONSOLE
+
+PlayersHouseTMHMGiverScript:
+        faceplayer
+        opentext
+        writetext TMHMGiverIntroText
+        promptbutton
+        callasm GiveAllTMsHMs
+        setevent EVENT_PLAYERS_HOUSE_TMHM_GIVER
+        disappear PLAYERSHOUSE2F_TMHM_GIVER
+        writetext TMHMGiverAfterText
+        waitbutton
+        closetext
+        end
 
 PlayersHousePosterScript:
 	conditional_event EVENT_PLAYERS_ROOM_POSTER, .Script
@@ -96,14 +110,24 @@ else
 endc
 
 PlayersHousePCScript:
-	opentext
-	special PlayersHousePC
-	iftrue .Warp
-	closetext
-	end
+        opentext
+        special PlayersHousePC
+        iftrue .Warp
+        closetext
+        end
 .Warp:
-	warp NONE, 0, 0
-	end
+        warp NONE, 0, 0
+        end
+
+TMHMGiverIntroText:
+        text "I'll give you"
+        line "every TM and HM!"
+        done
+
+TMHMGiverAfterText:
+        text "That's all of them!"
+        line "Use them wisely!"
+        done
 
 PlayersRadioText1:
 	text "PROF.OAK'S #MON"
@@ -141,6 +165,7 @@ PlayersHouse2F_MapEvents:
 
 	def_object_events
 	object_event  4,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseGameConsoleScript, EVENT_PLAYERS_HOUSE_2F_CONSOLE
-	object_event  4,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll1Script, EVENT_PLAYERS_HOUSE_2F_DOLL_1
-	object_event  5,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll2Script, EVENT_PLAYERS_HOUSE_2F_DOLL_2
-	object_event  0,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseBigDollScript, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
+        object_event  4,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll1Script, EVENT_PLAYERS_HOUSE_2F_DOLL_1
+        object_event  5,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll2Script, EVENT_PLAYERS_HOUSE_2F_DOLL_2
+        object_event  0,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseBigDollScript, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
+        object_event  2,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PlayersHouseTMHMGiverScript, EVENT_PLAYERS_HOUSE_TMHM_GIVER
