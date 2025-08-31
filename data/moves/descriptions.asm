@@ -364,132 +364,9 @@ MoveDescriptionsGen3:
 	dw DragonDanceDescription
 	dw RockBlastDescription
 	dw ShockWaveDescription
-	dw WaterPulseDescription
-	dw DoomDesireDescription
-	dw PsychoBoostDescription
-.IndirectEnd::
-MoveDescriptionsGen4:
-        dw RoostDescription
-        dw GravityDescription
-        dw MiracleEyeDescription
-        dw WakeUpSlapDescription
-        dw HammerArmDescription
-        dw GyroBallDescription
-        dw HealingWishDescription
-        dw BrineDescription
-        dw NaturalGiftDescription
-        dw FeintDescription
-        dw PluckDescription
-        dw TailwindDescription
-        dw AcupressureDescription
-        dw MetalBurstDescription
-        dw UTurnDescription
-        dw CloseCombatDescription
-        dw PaybackDescription
-        dw AssuranceDescription
-        dw EmbargoDescription
-        dw FlingDescription
-        dw PsychoShiftDescription
-        dw TrumpCardDescription
-        dw HealBlockDescription
-        dw WringOutDescription
-        dw PowerTrickDescription
-        dw GastroAcidDescription
-        dw LuckyChantDescription
-        dw CopycatDescription
-        dw PowerSwapDescription
-        dw GuardSwapDescription
-        dw PunishmentDescription
-        dw LastResortDescription
-        dw WorrySeedDescription
-        dw SuckerPunchDescription
-        dw ToxicSpikesDescription
-        dw HeartSwapDescription
-        dw AquaRingDescription
-        dw MagnetRiseDescription
-        dw FlareBlitzDescription
-        dw ForcePalmDescription
-        dw AuraSphereDescription
-        dw RockPolishDescription
-        dw PoisonJabDescription
-        dw DarkPulseDescription
-        dw NightSlashDescription
-        dw AquaTailDescription
-        dw SeedBombDescription
-        dw AirSlashDescription
-        dw XScissorDescription
-        dw BugBuzzDescription
-        dw DragonPulseDescription
-        dw DragonRushDescription
-        dw PowerGemDescription
-        dw DrainPunchDescription
-        dw VacuumWaveDescription
-        dw FocusBlastDescription
-        dw EnergyBallDescription
-        dw BraveBirdDescription
-        dw EarthPowerDescription
-        dw SwitcherooDescription
-        dw GigaImpactDescription
-        dw NastyPlotDescription
-        dw BulletPunchDescription
-        dw AvalancheDescription
-        dw IceShardDescription
-        dw ShadowClawDescription
-        dw ThunderFangDescription
-        dw IceFangDescription
-        dw FireFangDescription
-        dw ShadowSneakDescription
-        dw MudBombDescription
-        dw PsychoCutDescription
-        dw ZenHeadbuttDescription
-        dw MirrorShotDescription
-        dw FlashCannonDescription
-        dw RockClimbDescription
-        dw DefogDescription
-        dw TrickRoomDescription
-        dw DracoMeteorDescription
-        dw DischargeDescription
-        dw LavaPlumeDescription
-        dw LeafStormDescription
-        dw PowerWhipDescription
-        dw RockWreckerDescription
-        dw CrossPoisonDescription
-        dw GunkShotDescription
-        dw IronHeadDescription
-        dw MagnetBombDescription
-        dw StoneEdgeDescription
-        dw CaptivateDescription
-        dw StealthRockDescription
-        dw GrassKnotDescription
-        dw ChatterDescription
-        dw JudgmentDescription
-        dw BugBiteDescription
-        dw ChargeBeamDescription
-        dw WoodHammerDescription
-        dw AquaJetDescription
-        dw AttackOrderDescription
-        dw DefendOrderDescription
-        dw HealOrderDescription
-        dw HeadSmashDescription
-        dw DoubleHitDescription
-        dw RoarOfTimeDescription
-        dw SpacialRendDescription
-        dw LunarDanceDescription
-        dw CrushGripDescription
-        dw MagmaStormDescription
-        dw DarkVoidDescription
-        dw SeedFlareDescription
-        dw OminousWindDescription
-        dw ShadowForceDescription
-.IndirectEnd::
-MoveDescriptionsGen5:
-        dw WorkUpDescription
-        dw DazzlingGleamDescription
-        dw LowSweepDescription
-        dw VoltSwitchDescription
-        dw ScaldDescription
-        dw SnarlDescription
-        dw BulldozeDescription
+        dw WaterPulseDescription
+        dw DoomDesireDescription
+        dw PsychoBoostDescription
 .IndirectEnd::
 
 ; Gen 1
@@ -1906,18 +1783,143 @@ DoomDesireDescription:
 	next "hits on 3rd turn.@"
 
 PsychoBoostDescription:
-	db   "Full-power. Lowers"
-	next "SPCL.ATK sharply.@"
-
-RoostDescription:
-	db   "Heals the user by"
-	next "half its max HP.@"
+        db   "Full-power. Lowers"
+        next "SPCL.ATK sharply.@"
 
 SECTION "Move Descriptions 2", ROMX
 
+MoveDescriptionsGen4:
+        dw RoostDescription
+        dw GravityDescription
+        dw MiracleEyeDescription
+        dw WakeUpSlapDescription
+        dw HammerArmDescription
+        dw GyroBallDescription
+        dw HealingWishDescription
+        dw BrineDescription
+        dw NaturalGiftDescription
+        dw FeintDescription
+        dw PluckDescription
+        dw TailwindDescription
+        dw AcupressureDescription
+        dw MetalBurstDescription
+        dw UTurnDescription
+        dw CloseCombatDescription
+        dw PaybackDescription
+        dw AssuranceDescription
+        dw EmbargoDescription
+        dw FlingDescription
+        dw PsychoShiftDescription
+        dw TrumpCardDescription
+        dw HealBlockDescription
+        dw WringOutDescription
+        dw PowerTrickDescription
+        dw GastroAcidDescription
+        dw LuckyChantDescription
+        dw CopycatDescription
+        dw PowerSwapDescription
+        dw GuardSwapDescription
+        dw PunishmentDescription
+        dw LastResortDescription
+        dw WorrySeedDescription
+        dw SuckerPunchDescription
+        dw ToxicSpikesDescription
+        dw HeartSwapDescription
+        dw AquaRingDescription
+        dw MagnetRiseDescription
+        dw FlareBlitzDescription
+        dw ForcePalmDescription
+        dw AuraSphereDescription
+        dw RockPolishDescription
+        dw PoisonJabDescription
+        dw DarkPulseDescription
+        dw NightSlashDescription
+        dw AquaTailDescription
+        dw SeedBombDescription
+        dw AirSlashDescription
+        dw XScissorDescription
+        dw BugBuzzDescription
+        dw DragonPulseDescription
+        dw DragonRushDescription
+        dw PowerGemDescription
+        dw DrainPunchDescription
+        dw VacuumWaveDescription
+        dw FocusBlastDescription
+        dw EnergyBallDescription
+        dw BraveBirdDescription
+        dw EarthPowerDescription
+        dw SwitcherooDescription
+        dw GigaImpactDescription
+        dw NastyPlotDescription
+        dw BulletPunchDescription
+        dw AvalancheDescription
+        dw IceShardDescription
+        dw ShadowClawDescription
+        dw ThunderFangDescription
+        dw IceFangDescription
+        dw FireFangDescription
+        dw ShadowSneakDescription
+        dw MudBombDescription
+        dw PsychoCutDescription
+        dw ZenHeadbuttDescription
+        dw MirrorShotDescription
+        dw FlashCannonDescription
+        dw RockClimbDescription
+        dw DefogDescription
+        dw TrickRoomDescription
+        dw DracoMeteorDescription
+        dw DischargeDescription
+        dw LavaPlumeDescription
+        dw LeafStormDescription
+        dw PowerWhipDescription
+        dw RockWreckerDescription
+        dw CrossPoisonDescription
+        dw GunkShotDescription
+        dw IronHeadDescription
+        dw MagnetBombDescription
+        dw StoneEdgeDescription
+        dw CaptivateDescription
+        dw StealthRockDescription
+        dw GrassKnotDescription
+        dw ChatterDescription
+        dw JudgmentDescription
+        dw BugBiteDescription
+        dw ChargeBeamDescription
+        dw WoodHammerDescription
+        dw AquaJetDescription
+        dw AttackOrderDescription
+        dw DefendOrderDescription
+        dw HealOrderDescription
+        dw HeadSmashDescription
+        dw DoubleHitDescription
+        dw RoarOfTimeDescription
+        dw SpacialRendDescription
+        dw LunarDanceDescription
+        dw CrushGripDescription
+        dw MagmaStormDescription
+        dw DarkVoidDescription
+        dw SeedFlareDescription
+        dw OminousWindDescription
+        dw ShadowForceDescription
+.IndirectEnd::
+
+MoveDescriptionsGen5:
+        dw WorkUpDescription
+        dw DazzlingGleamDescription
+        dw LowSweepDescription
+        dw VoltSwitchDescription
+        dw ScaldDescription
+        dw SnarlDescription
+        dw BulldozeDescription
+.IndirectEnd::
+
+RoostDescription:
+        db   "Heals the user by"
+        next "half its max HP.@"
+
 GravityDescription:
-	db   "Grounds all foes"
-	next "stops high moves.@"
+        db   "Grounds all foes"
+        next "stops high moves.@"
 
 MiracleEyeDescription:
 	db   "Hits DARK foes and"
