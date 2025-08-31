@@ -14,10 +14,12 @@ ENDM
 Moves::
 ; entries correspond to constants/move_constants.asm
 	indirect_table MOVE_LENGTH - 1, 1
-	indirect_entries GEN1_MOVES, MovesGen1
-	indirect_entries GEN2_MOVES, MovesGen2
-	indirect_entries GEN3_MOVES, MovesGen3
-	indirect_table_end
+        indirect_entries GEN1_MOVES, MovesGen1
+        indirect_entries GEN2_MOVES, MovesGen2
+        indirect_entries GEN3_MOVES, MovesGen3
+        indirect_entries GEN4_MOVES, MovesGen4
+        indirect_entries NUM_ATTACKS, MovesGen5
+        indirect_table_end
 
 PUSHS
 
@@ -387,7 +389,137 @@ MovesGen3:
 	move EFFECT_ALWAYS_HIT,         60, ELECTRIC,      100, 20,   0      ;SHOCK_WAVE
 	move EFFECT_CONFUSE_HIT,        60, WATER,         100, 20,  20      ;WATER_PULSE
 	move EFFECT_NORMAL_HIT,        120, STEEL,          85,  5,   0      ;DOOM_DESIRE
-	move EFFECT_NORMAL_HIT,        140, PSYCHIC_TYPE,   90,  5,   0      ;PSYCHO_BOOST EFFECT_SELF_SPATK_DN_2_HIT
+        move EFFECT_NORMAL_HIT,        140, PSYCHIC_TYPE,   90,  5,   0      ;PSYCHO_BOOST EFFECT_SELF_SPATK_DN_2_HIT
+.IndirectEnd::
+
+SECTION "Moves Gen 4", ROMX
+
+MovesGen4:
+        move EFFECT_NORMAL_HIT,         0, FLYING,        100, 10,   0      ;ROOST
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;GRAVITY
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;MIRACLE_EYE
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;WAKE_UP_SLAP
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;HAMMER_ARM
+        move EFFECT_NORMAL_HIT,         1, STEEL,         100,  5,   0      ;GYRO_BALL
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;HEALING_WISH
+        move EFFECT_NORMAL_HIT,        65, WATER,         100, 10,   0      ;BRINE
+        move EFFECT_NORMAL_HIT,         1, NORMAL,        100, 15,   0      ;NATURAL_GIFT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;FEINT
+        move EFFECT_NORMAL_HIT,        60, FLYING,        100, 20,   0      ;PLUCK
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;TAILWIND
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;ACUPRESSURE
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;METAL_BURST
+        move EFFECT_NORMAL_HIT,        70, BUG,           100, 20,   0      ;U_TURN
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;CLOSE_COMBAT
+        move EFFECT_NORMAL_HIT,        50, DARK,          100, 10,   0      ;PAYBACK
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;ASSURANCE
+        move EFFECT_NORMAL_HIT,         0, DARK,          100, 15,   0      ;EMBARGO
+        move EFFECT_NORMAL_HIT,         1, DARK,          100, 10,   0      ;FLING
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;PSYCHO_SHIFT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;TRUMP_CARD
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;HEAL_BLOCK
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;WRING_OUT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;POWER_TRICK
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;GASTRO_ACID
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;LUCKY_CHANT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;COPYCAT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;POWER_SWAP
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;GUARD_SWAP
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;PUNISHMENT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;LAST_RESORT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;WORRY_SEED
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;SUCKER_PUNCH
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;TOXIC_SPIKES
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;HEART_SWAP
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;AQUA_RING
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;MAGNET_RISE
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;FLARE_BLITZ
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;FORCE_PALM
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;AURA_SPHERE
+        move EFFECT_NORMAL_HIT,         0, ROCK,          100, 20,   0      ;ROCK_POLISH
+        move EFFECT_NORMAL_HIT,        80, POISON,        100, 20,   0      ;POISON_JAB
+        move EFFECT_NORMAL_HIT,        80, DARK,          100, 15,   0      ;DARK_PULSE
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;NIGHT_SLASH
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;AQUA_TAIL
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;SEED_BOMB
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;AIR_SLASH
+        move EFFECT_NORMAL_HIT,        80, BUG,           100, 15,   0      ;X_SCISSOR
+        move EFFECT_NORMAL_HIT,        90, BUG,           100, 10,   0      ;BUG_BUZZ
+        move EFFECT_NORMAL_HIT,        85, DRAGON,        100, 10,   0      ;DRAGON_PULSE
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;DRAGON_RUSH
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;POWER_GEM
+        move EFFECT_NORMAL_HIT,        75, FIGHTING,      100, 10,   0      ;DRAIN_PUNCH
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;VACUUM_WAVE
+        move EFFECT_NORMAL_HIT,       120, FIGHTING,       70,  5,   0      ;FOCUS_BLAST
+        move EFFECT_NORMAL_HIT,        90, GRASS,         100, 10,   0      ;ENERGY_BALL
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;BRAVE_BIRD
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;EARTH_POWER
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;SWITCHEROO
+        move EFFECT_NORMAL_HIT,       150, NORMAL,         90,  5,   0      ;GIGA_IMPACT
+        move EFFECT_NORMAL_HIT,         0, DARK,          100, 20,   0      ;NASTY_PLOT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;BULLET_PUNCH
+        move EFFECT_NORMAL_HIT,        60, ICE,           100, 10,   0      ;AVALANCHE
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;ICE_SHARD
+        move EFFECT_NORMAL_HIT,        70, GHOST,         100, 15,   0      ;SHADOW_CLAW
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;THUNDER_FANG
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;ICE_FANG
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;FIRE_FANG
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;SHADOW_SNEAK
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;MUD_BOMB
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;PSYCHO_CUT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;ZEN_HEADBUTT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;MIRROR_SHOT
+        move EFFECT_NORMAL_HIT,        80, STEEL,         100, 10,   0      ;FLASH_CANNON
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;ROCK_CLIMB
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;DEFOG
+        move EFFECT_NORMAL_HIT,         0, PSYCHIC_TYPE,  100,  5,   0      ;TRICK_ROOM
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;DRACO_METEOR
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;DISCHARGE
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;LAVA_PLUME
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;LEAF_STORM
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;POWER_WHIP
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;ROCK_WRECKER
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;CROSS_POISON
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;GUNK_SHOT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;IRON_HEAD
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;MAGNET_BOMB
+        move EFFECT_NORMAL_HIT,       100, ROCK,           80,  5,   0      ;STONE_EDGE
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 20,   0      ;CAPTIVATE
+        move EFFECT_NORMAL_HIT,         0, ROCK,          100, 20,   0      ;STEALTH_ROCK
+        move EFFECT_NORMAL_HIT,         1, GRASS,         100, 20,   0      ;GRASS_KNOT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;CHATTER
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;JUDGMENT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;BUG_BITE
+        move EFFECT_NORMAL_HIT,        50, ELECTRIC,       90, 10,   0      ;CHARGE_BEAM
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;WOOD_HAMMER
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;AQUA_JET
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;ATTACK_ORDER
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;DEFEND_ORDER
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;HEAL_ORDER
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;HEAD_SMASH
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;DOUBLE_HIT
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;ROAR_OF_TIME
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;SPACIAL_REND
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;LUNAR_DANCE
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;CRUSH_GRIP
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;MAGMA_STORM
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;DARK_VOID
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;SEED_FLARE
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;OMINOUS_WIND
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 5,   0      ;SHADOW_FORCE
+
+.IndirectEnd::
+
+SECTION "Moves Gen 5", ROMX
+
+MovesGen5:
+        move EFFECT_NORMAL_HIT,         0, NORMAL,        100, 20,   0      ;WORK_UP
+        move EFFECT_NORMAL_HIT,        80, NORMAL,        100, 10,   0      ;DAZZLING_GLEAM
+        move EFFECT_NORMAL_HIT,        65, FIGHTING,      100, 20,   0      ;LOW_SWEEP
+        move EFFECT_NORMAL_HIT,        70, ELECTRIC,      100, 20,   0      ;VOLT_SWITCH
+        move EFFECT_NORMAL_HIT,        80, WATER,         100, 15,   0      ;SCALD
+        move EFFECT_NORMAL_HIT,        55, DARK,           95, 15,   0      ;SNARL
+        move EFFECT_NORMAL_HIT,        60, GROUND,        100, 20,   0      ;BULLDOZE
 .IndirectEnd::
 
 POPS

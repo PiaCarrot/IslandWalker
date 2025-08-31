@@ -1,10 +1,12 @@
 MoveDescriptions::
 ; entries correspond to move ids (see constants/move_constants.asm)
 	indirect_table 2, 1
-	indirect_entries GEN1_MOVES, MoveDescriptionsGen1
-	indirect_entries GEN2_MOVES, MoveDescriptionsGen2
-	indirect_entries GEN3_MOVES, MoveDescriptionsGen3
-	indirect_table_end
+        indirect_entries GEN1_MOVES, MoveDescriptionsGen1
+        indirect_entries GEN2_MOVES, MoveDescriptionsGen2
+        indirect_entries GEN3_MOVES, MoveDescriptionsGen3
+        indirect_entries GEN4_MOVES, MoveDescriptionsGen4
+        indirect_entries NUM_ATTACKS, MoveDescriptionsGen5
+        indirect_table_end
 
 MoveDescriptionsGen1:
 	dw PoundDescription
@@ -366,11 +368,137 @@ MoveDescriptionsGen3:
 	dw DoomDesireDescription
 	dw PsychoBoostDescription
 .IndirectEnd::
+MoveDescriptionsGen4:
+        dw RoostDescription
+        dw GravityDescription
+        dw MiracleEyeDescription
+        dw WakeUpSlapDescription
+        dw HammerArmDescription
+        dw GyroBallDescription
+        dw HealingWishDescription
+        dw BrineDescription
+        dw NaturalGiftDescription
+        dw FeintDescription
+        dw PluckDescription
+        dw TailwindDescription
+        dw AcupressureDescription
+        dw MetalBurstDescription
+        dw UTurnDescription
+        dw CloseCombatDescription
+        dw PaybackDescription
+        dw AssuranceDescription
+        dw EmbargoDescription
+        dw FlingDescription
+        dw PsychoShiftDescription
+        dw TrumpCardDescription
+        dw HealBlockDescription
+        dw WringOutDescription
+        dw PowerTrickDescription
+        dw GastroAcidDescription
+        dw LuckyChantDescription
+        dw CopycatDescription
+        dw PowerSwapDescription
+        dw GuardSwapDescription
+        dw PunishmentDescription
+        dw LastResortDescription
+        dw WorrySeedDescription
+        dw SuckerPunchDescription
+        dw ToxicSpikesDescription
+        dw HeartSwapDescription
+        dw AquaRingDescription
+        dw MagnetRiseDescription
+        dw FlareBlitzDescription
+        dw ForcePalmDescription
+        dw AuraSphereDescription
+        dw RockPolishDescription
+        dw PoisonJabDescription
+        dw DarkPulseDescription
+        dw NightSlashDescription
+        dw AquaTailDescription
+        dw SeedBombDescription
+        dw AirSlashDescription
+        dw XScissorDescription
+        dw BugBuzzDescription
+        dw DragonPulseDescription
+        dw DragonRushDescription
+        dw PowerGemDescription
+        dw DrainPunchDescription
+        dw VacuumWaveDescription
+        dw FocusBlastDescription
+        dw EnergyBallDescription
+        dw BraveBirdDescription
+        dw EarthPowerDescription
+        dw SwitcherooDescription
+        dw GigaImpactDescription
+        dw NastyPlotDescription
+        dw BulletPunchDescription
+        dw AvalancheDescription
+        dw IceShardDescription
+        dw ShadowClawDescription
+        dw ThunderFangDescription
+        dw IceFangDescription
+        dw FireFangDescription
+        dw ShadowSneakDescription
+        dw MudBombDescription
+        dw PsychoCutDescription
+        dw ZenHeadbuttDescription
+        dw MirrorShotDescription
+        dw FlashCannonDescription
+        dw RockClimbDescription
+        dw DefogDescription
+        dw TrickRoomDescription
+        dw DracoMeteorDescription
+        dw DischargeDescription
+        dw LavaPlumeDescription
+        dw LeafStormDescription
+        dw PowerWhipDescription
+        dw RockWreckerDescription
+        dw CrossPoisonDescription
+        dw GunkShotDescription
+        dw IronHeadDescription
+        dw MagnetBombDescription
+        dw StoneEdgeDescription
+        dw CaptivateDescription
+        dw StealthRockDescription
+        dw GrassKnotDescription
+        dw ChatterDescription
+        dw JudgmentDescription
+        dw BugBiteDescription
+        dw ChargeBeamDescription
+        dw WoodHammerDescription
+        dw AquaJetDescription
+        dw AttackOrderDescription
+        dw DefendOrderDescription
+        dw HealOrderDescription
+        dw HeadSmashDescription
+        dw DoubleHitDescription
+        dw RoarOfTimeDescription
+        dw SpacialRendDescription
+        dw LunarDanceDescription
+        dw CrushGripDescription
+        dw MagmaStormDescription
+        dw DarkVoidDescription
+        dw SeedFlareDescription
+        dw OminousWindDescription
+        dw ShadowForceDescription
+.IndirectEnd::
+MoveDescriptionsGen5:
+        dw WorkUpDescription
+        dw DazzlingGleamDescription
+        dw LowSweepDescription
+        dw VoltSwitchDescription
+        dw ScaldDescription
+        dw SnarlDescription
+        dw BulldozeDescription
+.IndirectEnd::
 
 ; Gen 1
 
 InvalidMoveDescription:
 	db "?@"
+
+PlaceholderDescription:
+        db "No description yet@"
 
 PoundDescription:
 	db   "Pounds with fore-"
@@ -1783,3 +1911,480 @@ DoomDesireDescription:
 PsychoBoostDescription:
 	db   "Full-power. Lowers"
 	next "SPCL.ATK sharply.@"
+SECTION "Move Descriptions 2", ROMX
+RoostDescription:
+	db   "Heals the user by"
+	next "half its max HP.@"
+
+GravityDescription:
+	db   "Grounds all foes"
+	next "stops high moves.@"
+
+MiracleEyeDescription:
+	db   "Hits DARK foes and"
+	next "removes evasion.@"
+
+WakeUpSlapDescription:
+	db   "Double power on"
+	next "sleeping target.@"
+
+HammerArmDescription:
+	db   "Powerful arm swing"
+	next "but lowers SPEED.@"
+
+GyroBallDescription:
+	db   "Power rises as the"
+	next "user moves slower.@"
+
+HealingWishDescription:
+	db   "User faints; next"
+	next "ally fully heals.@"
+
+BrineDescription:
+	db   "Power doubles on"
+	next "foes at 1/2 HP.@"
+
+NaturalGiftDescription:
+	db   "Power and type"
+	next "depend on berry.@"
+
+FeintDescription:
+	db   "Hits through"
+	next "protective moves.@"
+
+PluckDescription:
+	db   "Inflicts damage,"
+	next "eats foe's berry.@"
+
+TailwindDescription:
+	db   "For 3 turns, ally"
+	next "SPEED is doubled.@"
+
+AcupressureDescription:
+	db   "Sharply raises one"
+	next "random ally stat.@"
+
+MetalBurstDescription:
+	db   "Strikes back at"
+	next "last damage taken.@"
+
+UTurnDescription:
+	db   "Hits then switches"
+	next "user with ally.@"
+
+CloseCombatDescription:
+	db   "Reckless body blow"
+	next "drops DEF & SP.DEF@"
+
+PaybackDescription:
+	db   "Power doubles if"
+	next "user moves last.@"
+
+AssuranceDescription:
+	db   "Power doubles if"
+	next "foe already hurt.@"
+
+EmbargoDescription:
+	db   "Foe can't use any"
+	next "held items.@"
+
+FlingDescription:
+	db   "Throws held item"
+	next "effect varies.@"
+
+PsychoShiftDescription:
+	db   "Gives foe user's"
+	next "status problem.@"
+
+TrumpCardDescription:
+	db   "Power rises when"
+	next "PP is lower.@"
+
+HealBlockDescription:
+	db   "Stops the foe from"
+	next "healing 5 turns.@"
+
+WringOutDescription:
+	db   "Power drops as foe"
+	next "loses HP.@"
+
+PowerTrickDescription:
+	db   "Swaps user's ATK"
+	next "with its DEF.@"
+
+GastroAcidDescription:
+	db   "Nullifies target's"
+	next "ability.@"
+
+LuckyChantDescription:
+	db   "For 5 turns, stops"
+	next "critical hits.@"
+
+CopycatDescription:
+	db   "Uses the last move"
+	next "used by target.@"
+
+PowerSwapDescription:
+	db   "Swaps attack and"
+	next "SPCL.ATK changes.@"
+
+GuardSwapDescription:
+	db   "Swaps defense and"
+	next "SPCL.DEF changes.@"
+
+PunishmentDescription:
+	db   "Power rises with"
+	next "foe's stat boosts.@"
+
+LastResortDescription:
+	db   "Works only after"
+	next "other moves used.@"
+
+WorrySeedDescription:
+	db   "Gives foe INSOMNIA"
+	next "preventing sleep.@"
+
+SuckerPunchDescription:
+	db   "Strikes first if"
+	next "foe attacks now.@"
+
+ToxicSpikesDescription:
+	db   "Scatters poison"
+	next "spikes, poisons.@"
+
+HeartSwapDescription:
+	db   "User and foe swap"
+	next "stat changes.@"
+
+AquaRingDescription:
+	db   "A veil of water"
+	next "heals each turn.@"
+
+MagnetRiseDescription:
+	db   "Levitate 5 turns"
+	next "no ground moves.@"
+
+FlareBlitzDescription:
+	db   "Has recoil; may"
+	next "cause a burn.@"
+
+ForcePalmDescription:
+	db   "30% chance to"
+	next "paralyze the foe.@"
+
+AuraSphereDescription:
+	db   "Unerring aura shot"
+	next "never misses.@"
+
+RockPolishDescription:
+	db   "Hones the body"
+	next "doubles SPEED.@"
+
+PoisonJabDescription:
+	db   "May poison the foe"
+	next "with a sharp jab.@"
+
+DarkPulseDescription:
+	db   "20% chance to"
+	next "make foe flinch.@"
+
+NightSlashDescription:
+	db   "High critical hit"
+	next "rate with a slash.@"
+
+AquaTailDescription:
+	db   "Swings a water"
+	next "tail to strike.@"
+
+SeedBombDescription:
+	db   "Hurls a hard seed"
+	next "at the foe.@"
+
+AirSlashDescription:
+	db   "30% chance to"
+	next "make foe flinch.@"
+
+XScissorDescription:
+	db   "Slashes foe with"
+	next "crossed scythes.@"
+
+BugBuzzDescription:
+	db   "May lower foe's"
+	next "SPCL.DEF by sound.@"
+
+DragonPulseDescription:
+	db   "Fires a shock wave"
+	next "of draconic power.@"
+
+DragonRushDescription:
+	db   "20% chance to"
+	next "make foe flinch.@"
+
+PowerGemDescription:
+	db   "Fires a beam of"
+	next "sparkling gems.@"
+
+DrainPunchDescription:
+	db   "Drains half the"
+	next "damage inflicted.@"
+
+VacuumWaveDescription:
+	db   "Strikes first with"
+	next "a vacuum wave.@"
+
+FocusBlastDescription:
+	db   "May lower foe's"
+	next "SPCL.DEF by force.@"
+
+EnergyBallDescription:
+	db   "10% chance to drop"
+	next "foe's SPCL.DEF.@"
+
+BraveBirdDescription:
+	db   "A flying charge"
+	next "with heavy recoil.@"
+
+EarthPowerDescription:
+	db   "10% chance to drop"
+	next "foe's SPCL.DEF.@"
+
+SwitcherooDescription:
+	db   "Swaps held items"
+	next "with the target.@"
+
+GigaImpactDescription:
+	db   "User must recharge"
+	next "next turn.@"
+
+NastyPlotDescription:
+	db   "Sharply raises the"
+	next "user's SPCL.ATK.@"
+
+BulletPunchDescription:
+	db   "Strikes first with"
+	next "a quick punch.@"
+
+AvalancheDescription:
+	db   "Power doubles if"
+	next "user hurt first.@"
+
+IceShardDescription:
+	db   "Strikes first with"
+	next "a shard of ice.@"
+
+ShadowClawDescription:
+	db   "High critical hit"
+	next "ratio ghost slash.@"
+
+ThunderFangDescription:
+	db   "May paralyze or"
+	next "make foe flinch.@"
+
+IceFangDescription:
+	db   "May freeze or"
+	next "make foe flinch.@"
+
+FireFangDescription:
+	db   "May burn or"
+	next "make foe flinch.@"
+
+ShadowSneakDescription:
+	db   "Strikes first with"
+	next "a quick shadow.@"
+
+MudBombDescription:
+	db   "May lower accuracy"
+	next "with mud attack.@"
+
+PsychoCutDescription:
+	db   "High critical hit"
+	next "ratio psy blade.@"
+
+ZenHeadbuttDescription:
+	db   "20% chance to"
+	next "make foe flinch.@"
+
+MirrorShotDescription:
+	db   "May lower accuracy"
+	next "with a flash.@"
+
+FlashCannonDescription:
+	db   "10% chance to drop"
+	next "foe's SPCL.DEF.@"
+
+RockClimbDescription:
+	db   "20% chance to"
+	next "confuse the foe.@"
+
+DefogDescription:
+	db   "Clears hazards and"
+	next "lowers evasion.@"
+
+TrickRoomDescription:
+	db   "Slower #mon move"
+	next "first for 5 turns.@"
+
+DracoMeteorDescription:
+	db   "Huge blast lowers"
+	next "user's SPCL.ATK.@"
+
+DischargeDescription:
+	db   "Hits all; 30% to"
+	next "paralyze each foe.@"
+
+LavaPlumeDescription:
+	db   "Hits all; 30% to"
+	next "burn each foe.@"
+
+LeafStormDescription:
+	db   "Harsh storm lowers"
+	next "user's SPCL.ATK.@"
+
+PowerWhipDescription:
+	db   "Whips the foe with"
+	next "a long vine.@"
+
+RockWreckerDescription:
+	db   "User must recharge"
+	next "next turn.@"
+
+CrossPoisonDescription:
+	db   "High crit ratio"
+	next "may poison foe.@"
+
+GunkShotDescription:
+	db   "May poison the foe"
+	next "with filthy shot.@"
+
+IronHeadDescription:
+	db   "30% chance to"
+	next "make foe flinch.@"
+
+MagnetBombDescription:
+	db   "Magnetic bomb that"
+	next "never misses.@"
+
+StoneEdgeDescription:
+	db   "High critical hit"
+	next "ratio with stones.@"
+
+CaptivateDescription:
+	db   "Lowers SPCL.ATK if"
+	next "opposite gender.@"
+
+StealthRockDescription:
+	db   "Sets sharp rocks"
+	next "harm switch-ins.@"
+
+GrassKnotDescription:
+	db   "More damage to"
+	next "heavier targets.@"
+
+ChatterDescription:
+	db   "May confuse target"
+	next "with shocking cry.@"
+
+JudgmentDescription:
+	db   "Type changes by"
+	next "held plate.@"
+
+BugBiteDescription:
+	db   "Inflicts damage,"
+	next "eats foe's berry.@"
+
+ChargeBeamDescription:
+	db   "May raise SPCL.ATK"
+	next "after attack.@"
+
+WoodHammerDescription:
+	db   "Crashes with body"
+	next "but takes recoil.@"
+
+AquaJetDescription:
+	db   "Strikes first with"
+	next "a water jet.@"
+
+AttackOrderDescription:
+	db   "High crit ratio"
+	next "bug swarm strike.@"
+
+DefendOrderDescription:
+	db   "Raises user's DEF"
+	next "and SPCL.DEF.@"
+
+HealOrderDescription:
+	db   "Heals the user by"
+	next "half its max HP.@"
+
+HeadSmashDescription:
+	db   "Deals huge recoil"
+	next "to the user.@"
+
+DoubleHitDescription:
+	db   "Hits twice in one"
+	next "turn.@"
+
+RoarOfTimeDescription:
+	db   "User must recharge"
+	next "next turn.@"
+
+SpacialRendDescription:
+	db   "High crit ratio"
+	next "rending space.@"
+
+LunarDanceDescription:
+	db   "User faints; next"
+	next "ally fully heals.@"
+
+CrushGripDescription:
+	db   "More power on"
+	next "high-HP targets.@"
+
+MagmaStormDescription:
+	db   "Traps foe in lava"
+	next "for 4-5 turns.@"
+
+DarkVoidDescription:
+	db   "Puts the foe to"
+	next "sleep.@"
+
+SeedFlareDescription:
+	db   "40% chance to drop"
+	next "foe's SPCL.DEF.@"
+
+OminousWindDescription:
+	db   "Eerie wind may"
+	next "raise all stats.@"
+
+ShadowForceDescription:
+	db   "User vanishes,"
+	next "avoids attacks"
+	next "hits through guard@"
+
+WorkUpDescription:
+	db   "Raises user's ATK"
+	next "and SPCL.ATK.@"
+
+DazzlingGleamDescription:
+	db   "Hits all foes with"
+	next "a dazzling flash.@"
+
+LowSweepDescription:
+	db   "Lowers target's"
+	next "SPEED one stage.@"
+
+VoltSwitchDescription:
+	db   "Hits then switches"
+	next "user with ally.@"
+
+ScaldDescription:
+	db   "Boiling water may"
+	next "burn the target.@"
+
+SnarlDescription:
+	db   "Hits all foes and"
+	next "lowers SPCL.ATK.@"
+
+BulldozeDescription:
+	db   "Slams the ground"
+	next "lowers all SPEED.@"
