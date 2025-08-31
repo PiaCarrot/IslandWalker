@@ -116,13 +116,14 @@ GiveAllTMsHMs:
         dw TM_SUBSTITUTE
         dw TM_FLASH_CANNON
         dw TM_TRICK_ROOM
-        dw HM_CUT
-        dw HM_FLY
-        dw HM_SURF
-        dw HM_STRENGTH
-        dw HM_ROCK_SMASH
-        dw HM_WATERFALL
-        dw HM_DIVE
-        dw HM_WHIRLPOOL
+       dw HM_CUT
+       dw HM_FLY
+       dw HM_SURF
+       dw HM_STRENGTH
+       dw HM_WHIRLPOOL
+       dw HM_ROCK_SMASH
+       dw HM_WATERFALL
+       dw HM_DIVE
+       dw HM_ROCK_CLIMB
         dw 0
 

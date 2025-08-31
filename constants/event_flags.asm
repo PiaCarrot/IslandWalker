@@ -12,14 +12,15 @@
 	const EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 ; Johto Gym Leader TM gifts
 ; HMs (EVENT_GOT_HM07_WATERFALL is with the Johto itemballs)
-	const EVENT_HM_01_CUT
-	const EVENT_HM_02_FLY
-	const EVENT_HM_03_SURF
-	const EVENT_HM_04_STRENGTH
-	const EVENT_HM_05_WHIRLPOOL
-	const EVENT_HM_06_ROCK_SMASH
-	const EVENT_HM_07_WATERFALL
-	const EVENT_HM_08_ROCK_CLIMB
+        const EVENT_HM_01_CUT
+        const EVENT_HM_02_FLY
+        const EVENT_HM_03_SURF
+        const EVENT_HM_04_STRENGTH
+        const EVENT_HM_05_WHIRLPOOL
+        const EVENT_HM_06_ROCK_SMASH
+        const EVENT_HM_07_WATERFALL
+        const EVENT_HM_08_DIVE
+        const EVENT_HM_09_ROCK_CLIMB
 ; Rods
 	const EVENT_GOT_OLD_ROD
 	const EVENT_GOT_GOOD_ROD

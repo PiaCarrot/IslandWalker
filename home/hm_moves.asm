@@ -21,11 +21,13 @@ IsHMMove::
 	jmp IsInWordArray
 
 .HMMoves:
-	dw CUT
-	dw FLY
-	dw SURF
-	dw STRENGTH
-	dw FLASH
-	dw WATERFALL
-	dw WHIRLPOOL
-	dw -1 ; end
+       dw CUT
+       dw FLY
+       dw SURF
+       dw STRENGTH
+       dw WHIRLPOOL
+       dw ROCK_SMASH
+       dw WATERFALL
+       dw DIVE
+       dw ROCK_CLIMB
+       dw -1 ; end

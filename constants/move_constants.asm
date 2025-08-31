@@ -475,7 +475,8 @@ DEF GEN3_MOVES EQU const_value - 1
         const SHADOW_FORCE
 DEF GEN4_MOVES EQU const_value - 1
         const WORK_UP
-        const DAZZLING_GLEAM
+       const DAZZLING_GLEAM
+DEF DAZZLINGGLEAM EQU DAZZLING_GLEAM
         const LOW_SWEEP
         const VOLT_SWITCH
         const SCALD

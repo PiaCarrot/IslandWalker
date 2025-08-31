@@ -93,13 +93,14 @@ GiveAllTMsHMsScript:
         giveitem TM_U_TURN
         giveitem TM_SUBSTITUTE
         giveitem TM_FLASH_CANNON
-        giveitem TM_TRICK_ROOM
-        giveitem HM_CUT
-        giveitem HM_FLY
-        giveitem HM_SURF
-        giveitem HM_STRENGTH
-        giveitem HM_ROCK_SMASH
-        giveitem HM_WATERFALL
-        giveitem HM_DIVE
-        giveitem HM_WHIRLPOOL
-        end
+       giveitem TM_TRICK_ROOM
+       giveitem HM_CUT
+       giveitem HM_FLY
+       giveitem HM_SURF
+       giveitem HM_STRENGTH
+       giveitem HM_WHIRLPOOL
+       giveitem HM_ROCK_SMASH
+       giveitem HM_WATERFALL
+       giveitem HM_DIVE
+       giveitem HM_ROCK_CLIMB
+       end

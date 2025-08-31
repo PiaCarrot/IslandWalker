@@ -591,12 +591,13 @@ ENDM
 DEF HM01 EQU const_value
         add_hm CUT          ; 0432
         add_hm FLY          ; 0433
-        add_hm SURF         ; 0434
-        add_hm STRENGTH     ; 0435
-        add_hm ROCK_SMASH   ; 0437
-        add_hm WATERFALL    ; 0438
-        add_hm DIVE         ; 0439
-        add_hm WHIRLPOOL    ; 043A
+       add_hm SURF         ; 0434
+       add_hm STRENGTH     ; 0435
+       add_hm WHIRLPOOL    ; 0437
+       add_hm ROCK_SMASH   ; 0438
+       add_hm WATERFALL    ; 0439
+       add_hm DIVE         ; 043A
+       add_hm ROCK_CLIMB   ; 043B
 DEF NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
 assert (NUM_TMS + NUM_HMS) < $ff, "TMs/HMs can't exceed 255 due to GetTMHMNumber."
@@ -622,7 +623,8 @@ DEF MT01 EQU const_value
         add_mt NATURAL_GIFT
         add_mt FRENZY_PLANT
         add_mt BLAST_BURN
-        add_mt HYDRO_CANNON
+       add_mt HYDRO_CANNON
+       add_mt DEFOG
 DEF NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 DEF NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS
