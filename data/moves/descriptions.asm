@@ -1,10 +1,12 @@
 MoveDescriptions::
 ; entries correspond to move ids (see constants/move_constants.asm)
 	indirect_table 2, 1
-	indirect_entries GEN1_MOVES, MoveDescriptionsGen1
-	indirect_entries GEN2_MOVES, MoveDescriptionsGen2
-	indirect_entries GEN3_MOVES, MoveDescriptionsGen3
-	indirect_table_end
+        indirect_entries GEN1_MOVES, MoveDescriptionsGen1
+        indirect_entries GEN2_MOVES, MoveDescriptionsGen2
+        indirect_entries GEN3_MOVES, MoveDescriptionsGen3
+        indirect_entries GEN4_MOVES, MoveDescriptionsGen4
+        indirect_entries NUM_ATTACKS, MoveDescriptionsGen5
+        indirect_table_end
 
 MoveDescriptionsGen1:
 	dw PoundDescription
@@ -366,11 +368,24 @@ MoveDescriptionsGen3:
 	dw DoomDesireDescription
 	dw PsychoBoostDescription
 .IndirectEnd::
+MoveDescriptionsGen4:
+        rept GEN4_MOVES - GEN3_MOVES
+                dw PlaceholderDescription
+        endr
+.IndirectEnd::
+MoveDescriptionsGen5:
+        rept NUM_ATTACKS - GEN4_MOVES
+                dw PlaceholderDescription
+        endr
+.IndirectEnd::
 
 ; Gen 1
 
 InvalidMoveDescription:
 	db "?@"
+
+PlaceholderDescription:
+        db "No description yet@"
 
 PoundDescription:
 	db   "Pounds with fore-"
