@@ -742,7 +742,7 @@ INCBIN "gfx/pokemon/other/zorua/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/other/zorua/shiny.pal"
 INCBIN "gfx/pokemon/other/zoroark/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/other/zoroark/shiny.pal"
-INCBIN "gfx/pokemon/forms/lapras_partner/front.gbcpal", middle_colors
+INCBIN "gfx/pokemon/forms/lapras_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/lapras_partner/shiny.pal"
 INCBIN "gfx/pokemon/forms/dratini_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dratini_partner/shiny.pal"
