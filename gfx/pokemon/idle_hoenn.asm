@@ -96,6 +96,13 @@ AnimationIdlePointers3:
        dw RotomAnimationIdle
        dw PhioneAnimationIdle
        dw ManaphyAnimationIdle
+       dw FerroseedAnimationIdle
+       dw FerrothornAnimationIdle
+       dw StunfiskAnimationIdle
+       dw PawniardAnimationIdle
+       dw BisharpAnimationIdle
+       dw ZoruaAnimationIdle
+       dw ZoroarkAnimationIdle
 .IndirectEnd::
 
 PoochyenaAnimationIdle:     INCLUDE "gfx/pokemon/hoenn/poochyena/anim_idle.asm"
@@ -193,3 +200,10 @@ FroslassAnimationIdle:  INCLUDE "gfx/pokemon/sinnoh/froslass/anim_idle.asm"
 RotomAnimationIdle:     INCLUDE "gfx/pokemon/sinnoh/rotom/anim_idle.asm"
 PhioneAnimationIdle:    INCLUDE "gfx/pokemon/sinnoh/phione/anim_idle.asm"
 ManaphyAnimationIdle:   INCLUDE "gfx/pokemon/sinnoh/manaphy/anim_idle.asm"
+FerroseedAnimationIdle: INCLUDE "gfx/pokemon/other/ferroseed/anim_idle.asm"
+FerrothornAnimationIdle: INCLUDE "gfx/pokemon/other/ferrothorn/anim_idle.asm"
+StunfiskAnimationIdle: INCLUDE "gfx/pokemon/other/stunfisk/anim_idle.asm"
+PawniardAnimationIdle: INCLUDE "gfx/pokemon/other/pawniard/anim_idle.asm"
+BisharpAnimationIdle: INCLUDE "gfx/pokemon/other/bisharp/anim_idle.asm"
+ZoruaAnimationIdle:  INCLUDE "gfx/pokemon/other/zorua/anim_idle.asm"
+ZoroarkAnimationIdle: INCLUDE "gfx/pokemon/other/zoroark/anim_idle.asm"

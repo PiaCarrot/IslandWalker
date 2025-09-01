@@ -348,6 +348,13 @@ NewPokedexOrder:
        dw ROTOM
        dw PHIONE
        dw MANAPHY
+       dw FERROSEED
+       dw FERROTHORN
+       dw STUNFISK
+       dw PAWNIARD
+       dw BISHARP
+       dw ZORUA
+       dw ZOROARK
         dw LAPRAS_PARTNER
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER

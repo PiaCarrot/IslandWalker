@@ -96,6 +96,13 @@ EggMovePointers3::
        dw NoEggMoves3 ; ROTOM
        dw NoEggMoves3 ; PHIONE
        dw NoEggMoves3 ; MANAPHY
+       dw FerroseedEggMoves
+       dw NoEggMoves3 ; FERROTHORN
+       dw StunfiskEggMoves
+       dw PawniardEggMoves
+       dw NoEggMoves3 ; BISHARP
+       dw ZoruaEggMoves
+       dw NoEggMoves3 ; ZOROARK
 .IndirectEnd::
 
 PoochyenaEggMoves:
@@ -381,6 +388,49 @@ LuvdiscEggMoves:
 	dw SPLASH
 	dw SUPERSONIC
 	dw WATER_SPORT
+        dw -1 ; end
+
+FerroseedEggMoves:
+        dw LEECH_SEED
+        dw SPIKES
+        dw STEALTH_ROCK
+        dw GRAVITY
+        dw SEED_BOMB
+        dw BULLET_SEED
+        dw THUNDER_WAVE
+        dw -1 ; end
+
+StunfiskEggMoves:
+        dw ASTONISH
+        dw SPARK
+        dw YAWN
+        dw CURSE
+        dw PAIN_SPLIT
+        dw SPITE
+        dw -1 ; end
+
+PawniardEggMoves:
+        dw PSYCHO_CUT
+        dw STEALTH_ROCK
+        dw SUCKER_PUNCH
+        dw PURSUIT
+        dw HEADBUTT
+        dw MEAN_LOOK
+        dw REVENGE
+        dw FAINT_ATTACK
+        dw -1 ; end
+
+ZoruaEggMoves:
+        dw COUNTER
+        dw DARK_PULSE
+        dw DETECT
+        dw EXTRASENSORY
+        dw MEMENTO
+        dw SNATCH
+        dw SUCKER_PUNCH
+        dw CAPTIVATE
+        dw COPYCAT
+        dw -1 ; end
 NoEggMoves3:
 	dw -1 ; end
 

@@ -354,6 +354,13 @@ IconPointers:
        dw RotomIcon
        dw PhioneIcon
        dw ManaphyIcon
+       dw FerroseedIcon
+       dw FerrothornIcon
+       dw StunfiskIcon
+       dw PawniardIcon
+       dw BisharpIcon
+       dw ZoruaIcon
+       dw ZoroarkIcon
 ; forms
         dw LaprasIcon
         dw DratiniIcon

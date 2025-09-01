@@ -728,7 +728,21 @@ INCBIN "gfx/pokemon/sinnoh/phione/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/sinnoh/phione/shiny.pal"
 INCBIN "gfx/pokemon/sinnoh/manaphy/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/sinnoh/manaphy/shiny.pal"
-INCBIN "gfx/pokemon/forms/lapras_partner/normal.gbcpal", middle_colors
+INCBIN "gfx/pokemon/other/ferroseed/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/other/ferroseed/shiny.pal"
+INCBIN "gfx/pokemon/other/ferrothorn/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/other/ferrothorn/shiny.pal"
+INCBIN "gfx/pokemon/other/stunfisk/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/other/stunfisk/shiny.pal"
+INCBIN "gfx/pokemon/other/pawniard/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/other/pawniard/shiny.pal"
+INCBIN "gfx/pokemon/other/bisharp/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/other/bisharp/shiny.pal"
+INCBIN "gfx/pokemon/other/zorua/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/other/zorua/shiny.pal"
+INCBIN "gfx/pokemon/other/zoroark/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/other/zoroark/shiny.pal"
+INCBIN "gfx/pokemon/forms/lapras_partner/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/lapras_partner/shiny.pal"
 INCBIN "gfx/pokemon/forms/dratini_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dratini_partner/shiny.pal"

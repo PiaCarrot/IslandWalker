@@ -355,6 +355,13 @@ PokemonCries::
        mon_cry CRY_BULBASAUR,   238,  129 ; ROTOM
        mon_cry CRY_BULBASAUR,   238,  129 ; PHIONE
        mon_cry CRY_BULBASAUR,   238,  129 ; MANAPHY
+       mon_cry CRY_BULBASAUR,   238,  129 ; FERROSEED
+       mon_cry CRY_BULBASAUR,   238,  129 ; FERROTHORN
+       mon_cry CRY_BULBASAUR,   238,  129 ; STUNFISK
+       mon_cry CRY_BULBASAUR,   238,  129 ; PAWNIARD
+       mon_cry CRY_BULBASAUR,   238,  129 ; BISHARP
+       mon_cry CRY_BULBASAUR,   238,  129 ; ZORUA
+       mon_cry CRY_BULBASAUR,   238,  129 ; ZOROARK
 ; Forms
         mon_cry CRY_LAPRAS,       80,  256 ; LAPRAS PARTNER
         mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI

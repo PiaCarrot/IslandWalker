@@ -368,6 +368,13 @@ FroslassPokedexEntry::    INCLUDE "data/pokemon/dex_entries/sinnoh/froslass.asm"
 RotomPokedexEntry::    INCLUDE "data/pokemon/dex_entries/sinnoh/rotom.asm"
 PhionePokedexEntry::   INCLUDE "data/pokemon/dex_entries/sinnoh/phione.asm"
 ManaphyPokedexEntry::  INCLUDE "data/pokemon/dex_entries/sinnoh/manaphy.asm"
+FerroseedPokedexEntry::  INCLUDE "data/pokemon/dex_entries/other/ferroseed.asm"
+FerrothornPokedexEntry:: INCLUDE "data/pokemon/dex_entries/other/ferrothorn.asm"
+StunfiskPokedexEntry::   INCLUDE "data/pokemon/dex_entries/other/stunfisk.asm"
+PawniardPokedexEntry::   INCLUDE "data/pokemon/dex_entries/other/pawniard.asm"
+BisharpPokedexEntry::    INCLUDE "data/pokemon/dex_entries/other/bisharp.asm"
+ZoruaPokedexEntry::      INCLUDE "data/pokemon/dex_entries/other/zorua.asm"
+ZoroarkPokedexEntry::    INCLUDE "data/pokemon/dex_entries/other/zoroark.asm"
 
 SECTION "Pokedex Entries 385-448", ROMX
 
