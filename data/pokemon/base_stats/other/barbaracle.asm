@@ -1,0 +1,21 @@
+db 0 ; species ID placeholder
+
+db  72, 105, 115,  68,  54,  86
+evs  0,  2,  0,  0,  0,  0
+;   hp  atk  def  spd  sat  sdf
+
+db ROCK, WATER ; type
+db 45 ; catch rate
+db 175 ; base exp
+dw NO_ITEM, NO_ITEM ; items
+db GENDER_F50 ; gender ratio
+db 20 ; step cycles to hatch
+INCBIN "gfx/pokemon/other/barbaracle/front.dimensions"
+db TOUGH_CLAWS, SNIPER ; wBaseAbility1, wBaseAbility2
+dw NULL ; Padding left-over from the unused back pic
+db GROWTH_MEDIUM_FAST ; growth rate
+dn EGG_WATER_3, EGG_WATER_3 ; egg groups
+
+; tm/hm learnset
+	tmhm POISON_JAB, SANDSTORM, SWORDS_DANCE, GRASS_KNOT, FOCUS_BLAST, GIGA_IMPACT, SHADOW_CLAW, SUBSTITUTE, TORMENT, BULLDOZE, FRUSTRATION, AERIAL_ACE, SLUDGE_BOMB, SURF, DOUBLE_TEAM, STONE_EDGE, REST, ROCK_TOMB, SAFEGUARD, THIEF, HYPER_BEAM, EARTHQUAKE, DIG, FALSE_SWIPE, FACADE, SLEEP_TALK, TOXIC, BULK_UP, FLING, DIVE, X_SCISSOR, ROCK_POLISH, ROCK_SLIDE, BLIZZARD, EMBARGO, TAUNT, SWAGGER, RAIN_DANCE, SCALD, WHIRLPOOL, ICE_BEAM, PAYBACK, HIDDEN_POWER, ATTRACT, BRICK_BREAK, DRAGON_CLAW, RETURN, PROTECT
+; end
