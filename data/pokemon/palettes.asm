@@ -24,7 +24,7 @@ PokemonPalettes:
 ; Shiny palettes are defined directly, not generated.
 
 	; 2 middle palettes, normal and shiny, with 2 colors each
-	table_width PAL_COLOR_SIZE * 2 * 2
+	table_width COLOR_SIZE * 2 * 2
 
 ; 000
 	RGB 30, 22, 17
@@ -742,12 +742,12 @@ INCBIN "gfx/pokemon/other/zorua/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/other/zorua/shiny.pal"
 INCBIN "gfx/pokemon/other/zoroark/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/other/zoroark/shiny.pal"
-INCBIN "gfx/pokemon/forms/lapras_partner/front.gbcpal", middle_colors
+INCBIN "gfx/pokemon/forms/lapras_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/lapras_partner/shiny.pal"
-INCBIN "gfx/pokemon/forms/dratini_partner/front.gbcpal", middle_colors
+INCBIN "gfx/pokemon/forms/dratini_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dratini_partner/shiny.pal"
-INCBIN "gfx/pokemon/forms/eevee_partner/front.gbcpal", middle_colors
+INCBIN "gfx/pokemon/forms/eevee_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/eevee_partner/shiny.pal"
-INCBIN "gfx/pokemon/forms/pikachu_partner/front.gbcpal", middle_colors
+INCBIN "gfx/pokemon/forms/pikachu_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/pikachu_partner/shiny.pal"
 	assert_table_length NUM_POKEMON + 1

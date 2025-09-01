@@ -1,7 +1,8 @@
 ; Landmarks indexes (see data/maps/landmarks.asm)
 	const_def
 	const LANDMARK_SPECIAL           ; 00
-; Johto landmarks
+
+DEF JOHTO_LANDMARK EQU const_value
 	const LANDMARK_VALENCIA_ISLAND     ; 01
 	const LANDMARK_ROUTE_49          ; 02
 	const LANDMARK_TANGELO_ISLAND  ; 03
@@ -79,6 +80,8 @@
 	const LANDMARK_ICE_ISLAND
 	const LANDMARK_FIRE_ISLAND
 ;	const LANDMARK_FLYING_FORTRESS
+DEF JOHTO_LANDMARK_LAST EQU const_value - 1
+
 DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_PALLET_TOWN       ; 2f
 	const LANDMARK_ROUTE_1           ; 30
@@ -128,7 +131,11 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_ROUTE_27          ; 5c
 	const LANDMARK_TOHJO_FALLS       ; 5d
 	const LANDMARK_ROUTE_28          ; 5e
+DEF KANTO_LANDMARK_LAST EQU const_value - 1
+
+DEF OTHER_LANDMARK EQU const_value
 	const LANDMARK_FAST_SHIP         ; 5f
+
 DEF NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData

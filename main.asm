@@ -58,6 +58,7 @@ SECTION "bank4", ROMX
 INCLUDE "engine/items/pack.asm"
 INCLUDE "engine/overworld/time.asm"
 INCLUDE "engine/items/tmhm2.asm"
+INCLUDE "engine/menus/naming_screen.asm"
 INCLUDE "engine/events/misc_scripts.asm"
 INCLUDE "engine/events/heal_machine_anim.asm"
 INCLUDE "engine/events/whiteout.asm"
@@ -66,14 +67,10 @@ INCLUDE "engine/events/itemfinder.asm"
 INCLUDE "engine/menus/start_menu.asm"
 INCLUDE "engine/pokemon/mon_menu.asm"
 INCLUDE "engine/overworld/select_menu.asm"
-INCLUDE "engine/events/elevator.asm"
-INCLUDE "engine/events/bug_contest/contest.asm"
 INCLUDE "engine/events/repel.asm"
 INCLUDE "engine/events/hidden_item.asm"
 INCLUDE "engine/events/std_collision.asm"
-INCLUDE "engine/events/bug_contest/judging.asm"
 INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
-INCLUDE "engine/events/bug_contest/contest_2.asm"
 INCLUDE "engine/math/get_square_root.asm"
 
 
@@ -111,7 +108,10 @@ INCLUDE "engine/tilesets/mapgroup_roofs.asm"
 SECTION "Clock Reset", ROMX
 
 INCLUDE "engine/rtc/restart_clock.asm"
-INCLUDE "engine/menus/naming_screen.asm"
+INCLUDE "engine/events/elevator.asm"
+INCLUDE "engine/events/bug_contest/contest.asm"
+INCLUDE "engine/events/bug_contest/contest_2.asm"
+INCLUDE "engine/events/bug_contest/judging.asm"
 
 
 SECTION "bank9", ROMX
@@ -155,11 +155,6 @@ INCLUDE "engine/pokemon/print_move_description.asm"
 INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
-
-
-SECTION "Effect Commands", ROMX
-
-INCLUDE "engine/battle/effect_commands.asm"
 
 
 SECTION "Enemy Trainers", ROMX

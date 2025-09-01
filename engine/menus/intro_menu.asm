@@ -305,8 +305,7 @@ Continue:
 	call DisplaySaveInfoOnContinue
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	call ConfirmContinue
 	jmp c, CloseWindow
 	call Continue_CheckRTC_RestartClock
@@ -321,8 +320,7 @@ Continue:
 	call CloseWindow
 	call ClearTilemap
 	farcall ClearSavedObjPals
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	farcall JumpRoamMons
 	farcall CopyMysteryGiftReceivedDecorationsToPC
 	farcall ClockContinue
@@ -355,9 +353,9 @@ ConfirmContinue:
 	call DelayFrame
 	call GetJoypad
 	ld hl, hJoyPressed
-	bit A_BUTTON_F, [hl]
+	bit B_PAD_A, [hl]
 	ret nz
-	bit B_BUTTON_F, [hl]
+	bit B_PAD_B, [hl]
 	jr z, .loop
 	scf
 	ret
@@ -952,8 +950,7 @@ Intro_RotatePalettesLeftFrontpic:
 .loop
 	ld a, [hli]
 	call DmgToCgbBGPals
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 	dec b
 	jr nz, .loop
 	ret
@@ -1060,10 +1057,10 @@ IntroSequence:
 	; fallthrough
 
 StartTitleScreen:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	call .TitleScreen
 	call DelayFrame
@@ -1075,14 +1072,14 @@ StartTitleScreen:
 	call ClearBGPalettes
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, rLCDC
-	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
+	res B_LCDC_OBJ_SIZE, [hl] ; 8x8
 	call ClearScreen
 	call WaitBGMap2
 	ld hl, rIE
-	res LCD_STAT, [hl]
+	res B_IE_STAT, [hl]
 	xor a
 	ldh [hLCDCPointer], a
 	ldh [hSCX], a
@@ -1186,7 +1183,7 @@ TitleScreenEntrance:
 	ld hl, wJumptableIndex
 	inc [hl]
 	; ld hl, rIE
-	; res LCD_STAT, [hl]
+	; res B_IE_STAT, [hl]
 	; xor a
 	; ldh [hLCDCPointer], a
 
@@ -1230,7 +1227,7 @@ TitleScreenMain:
 	call GetJoypad
 	ld hl, hJoyLast
 	ld a, [hl]
-	or ~(D_UP + B_BUTTON + SELECT)
+	or ~(PAD_UP + PAD_B + PAD_SELECT)
 	inc a
 	jr z, .delete_save_data
 
@@ -1242,7 +1239,7 @@ TitleScreenMain:
 	jr z, .check_clock_reset
 
 	ld a, [hl]
-	or ~(D_DOWN + B_BUTTON + SELECT)
+	or ~(PAD_DOWN + PAD_B + PAD_SELECT)
 	inc a
 	jr nz, .check_start
 
@@ -1253,21 +1250,21 @@ TitleScreenMain:
 ; Keep Select pressed, and hold Left + Up.
 ; Then let go of Select.
 .check_clock_reset
-	bit SELECT_F, [hl]
+	bit B_PAD_SELECT, [hl]
 	jr nz, .check_start
 
 	xor a
 	ldh [hClockResetTrigger], a
 
 	ld a, [hl]
-	or ~(D_LEFT + D_UP)
+	or ~(PAD_LEFT + PAD_UP)
 	inc a
 	jr z, .reset_clock
 
 ; Press Start or A to start the game.
 .check_start
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	ret z
 	farcall _TitleScreenPressedA
 	ret

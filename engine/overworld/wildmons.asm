@@ -40,7 +40,7 @@ FindNest:
 ; e: 0 = Johto, 1 = Kanto
 ; wNamedObjectIndex: species
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	xor a
 	rst ByteFill
 	ld a, [wNamedObjectIndex]
@@ -147,7 +147,7 @@ FindNest:
 	call GetWorldMapLocation
 	ld c, a
 	hlcoord 0, 0
-	ld de, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld de, SCREEN_AREA
 .AppendNestLoop:
 	ld a, [hli]
 	cp c
@@ -311,7 +311,9 @@ _ChooseWildEncounter:
 	; Don't check for roamer if we're doing type filtering.
 	push bc
 	ld a, c
-	add 1 ; we want to return carry if c is $ff so we can chain conditionals
+	add 1 ; no-optimize a++|a--
+
+	; we want to return carry if c is $ff so we can chain conditionals
 	call c, CheckEncounterRoamMon
 	pop bc
 	jmp c, .startwildbattle

@@ -23,9 +23,9 @@ _SwitchPartyMons:
 	rst ByteFill
 	pop af
 	ld hl, wShadowOAMSprite00
-	ld bc, 4 * SPRITEOAMSTRUCT_LENGTH
+	ld bc, 4 * OBJ_SIZE
 	rst AddNTimes
-	ld de, SPRITEOAMSTRUCT_LENGTH
+	ld de, OBJ_SIZE
 	ld c, 4
 .gfx_loop
 	ld [hl], OAM_YCOORD_HIDDEN

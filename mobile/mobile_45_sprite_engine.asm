@@ -21,7 +21,7 @@ Function115dc3:
 	ld [wc305], a
 	ld a, $a0
 	ld hl, wShadowOAMSprite31
-	ld bc, 8 * SPRITEOAMSTRUCT_LENGTH
+	ld bc, 8 * OBJ_SIZE
 	jmp ByteFill
 
 Function115dd3:
@@ -30,7 +30,7 @@ Function115dd3:
 	ret z
 	ld a, $a0
 	ld hl, wShadowOAMSprite31
-	ld bc, 8 * SPRITEOAMSTRUCT_LENGTH
+	ld bc, 8 * OBJ_SIZE
 	rst ByteFill
 	call Function115e22
 	ld a, [wc309]
@@ -345,7 +345,7 @@ Function11619d:
 	jr c, .asm_1161b4
 	ld a, $a0
 	ld hl, wShadowOAM
-	ld bc, 25 * SPRITEOAMSTRUCT_LENGTH
+	ld bc, 25 * OBJ_SIZE
 	rst ByteFill
 
 .asm_1161b4
@@ -359,30 +359,30 @@ Function11619d:
 	dw Function116441
 
 Function11636e:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $5
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wBGPals2
 	ld de, wBGPals1
 	ld bc, 8 palettes
 	rst CopyBytes
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call SetDefaultBGPAndOBP
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, $a0
 	ld hl, wShadowOAM
-	ld bc, 16 * SPRITEOAMSTRUCT_LENGTH
+	ld bc, 16 * OBJ_SIZE
 	rst ByteFill
 	ld a, $90
 	ldh [hWY], a
 	call UpdateSprites
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	farcall HDMATransferTilemapAndAttrmap_Overworld
 	ld a, $8
 	ld [wMusicFade], a
@@ -395,28 +395,28 @@ Function11636e:
 	ret
 
 Function1163c0:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, $a0
 	ld hl, wShadowOAM
-	ld bc, 16 * SPRITEOAMSTRUCT_LENGTH
+	ld bc, 16 * OBJ_SIZE
 	rst ByteFill
 	call DelayFrame
 	farcall LoadStandingSpritesGFX
 	ld b, SCGB_MAPPALS
 	call GetSGBLayout
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $5
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wc320
 	ld de, wd030
 	ld bc, $0010
 	rst CopyBytes
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call SetDefaultBGPAndOBP
 	call DelayFrame
 	ld a, $90
@@ -424,7 +424,7 @@ Function1163c0:
 	call UpdateSprites
 	farcall LoadWalkingSpritesGFX
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	farcall HDMATransferTilemapAndAttrmap_Overworld
 	ld a, [wLinkMode]
 	cp LINK_MOBILE

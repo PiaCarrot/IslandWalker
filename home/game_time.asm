@@ -9,15 +9,15 @@ ResetGameTime::
 	ret
 
 GameTimer::
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wGameTime)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	call .Function
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .Function:

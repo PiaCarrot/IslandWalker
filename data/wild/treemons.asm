@@ -1,7 +1,7 @@
 TreeMons:
 ; entries correspond to TREEMON_SET_* constants
 	table_width 2
-	dw TreeMonSet_City
+	dw TreeMonSet_None
 	dw TreeMonSet_Canyon
 	dw TreeMonSet_Town
 	dw TreeMonSet_Route
@@ -13,13 +13,15 @@ TreeMons:
 	dw TreeMonSet_Depths1
 	dw TreeMonSet_Depths2
 	assert_table_length NUM_TREEMON_SETS
-	dw TreeMonSet_City
+	dw TreeMonSet_None
 
 ; Two tables each (common, rare).
 ; Structure:
 ;	db  %, species, level
 
-TreeMonSet_City:
+TreeMonSet_None:
+; no encounter data
+
 TreeMonSet_Canyon:
 ; common
 	dbbw 60, 10, SPINARAK

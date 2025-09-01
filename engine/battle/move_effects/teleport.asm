@@ -45,8 +45,7 @@ BattleCommand_Teleport:
 	jr nc, .run_away
 
 .failed
-	call AnimateFailedMove
-	jmp PrintButItFailed
+	jmp BattleEffect_ButItFailed
 
 .enemy_turn
 	; Can't teleport from a trainer battle
@@ -78,16 +77,13 @@ BattleCommand_Teleport:
 
 .run_away
 	call UpdateBattleMonInParty
-	xor a
-	ld [wNumHits], a
-	inc a
+	ld a, 1
 	ld [wForcedSwitch], a
 	ld [wBattleAnimParam], a
 	call SetBattleDraw
 	call BattleCommand_LowerSub
 	call LoadMoveAnim
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 	call SetBattleDraw
 
 	ld hl, FledFromBattleText

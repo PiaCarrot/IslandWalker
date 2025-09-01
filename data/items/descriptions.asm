@@ -169,6 +169,12 @@ ItemDescriptions1:
 	dw AuroraOrbDesc    ; 00DB
 	dw XEvadeDesc    ; 00DB
 	dw GlitterMailDesc ; 0084
+	dw TropicMailDesc ; 0084
+	dw BreezeMailDesc ; 0084
+	dw PostcardDesc ; 0084
+	dw RocketMailDesc ; 0084
+	dw GoldMailDesc ; 0084
+	dw ZigZagMailDesc ; 0084
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -1061,6 +1067,7 @@ SacredAshDesc:
 	db   "Fully revives all"
 	next "fainted #MON.@"
 
+TropicMailDesc:
 FlowerMailDesc:
 	db   "Flower-print MAIL."
 	next "(HOLD)@"
@@ -1126,6 +1133,14 @@ BrickPieceDesc:
 
 SurfMailDesc:
 	db   "LAPRAS-print MAIL."
+	next "(HOLD)@"
+
+PostcardDesc:
+	db   "A postcard from a"
+	next "distant land.@"
+
+BreezeMailDesc:
+	db   "HOPPIP-print MAIL."
 	next "(HOLD)@"
 
 LiteBlueMailDesc:
@@ -1734,6 +1749,18 @@ XEvadeDesc:
 CandyTruffleDesc:
 	db   "A sweet truffle."
 	next "Sell low.@"
+
+RocketMailDesc:
+	db   "ROCKET-print MAIL."
+	next "(HOLD)@"
+
+ZigZagMailDesc:
+	db   "ZIGZAGOON-print"
+	next "MAIL. (HOLD)@"
+
+GoldMailDesc:
+	db   "Expensive MAIL."
+	next "(HOLD)@"
 
 ; ExpCandyXSDesc:
 	; db   "Grants a tiny"

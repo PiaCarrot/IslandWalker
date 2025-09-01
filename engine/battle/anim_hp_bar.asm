@@ -234,7 +234,7 @@ HPBarAnim_BGMapUpdate:
 	ldh [hBGMapHalf], a
 	ld a, c
 	hlbgcoord 12, 2, vBGMap2
-	ld bc, BG_MAP_WIDTH * 2
+	ld bc, TILEMAP_WIDTH * 2
 	rst AddNTimes
 	ld a, [wCurHPAnimPal]
 	inc a
@@ -244,11 +244,11 @@ HPBarAnim_BGMapUpdate:
 	ldh [rVBK], a
 .waitnohb1
 	ldh a, [rSTAT]
-	and rSTAT_MODE_MASK ; wait until mode 1-3
+	and STAT_MODE ; wait until mode 1-3
 	jr z, .waitnohb1
 .waithbl1
 	ldh a, [rSTAT]
-	and rSTAT_MODE_MASK ; wait until mode 0
+	and STAT_MODE ; wait until mode 0
 	jr nz, .waithbl1
 	ld a, b
 	rept 7
@@ -279,11 +279,11 @@ HPBarAnim_BGMapUpdate:
 	di
 .waitnohb3
 	ldh a, [rSTAT]
-	and rSTAT_MODE_MASK ; wait until mode 1-3
+	and STAT_MODE ; wait until mode 1-3
 	jr z, .waitnohb3
 .waithb3
 	ldh a, [rSTAT]
-	and rSTAT_MODE_MASK ; wait until mode 0
+	and STAT_MODE ; wait until mode 0
 	jr nz, .waithb3
 	ld a, b
 	ldh [rBGPI], a

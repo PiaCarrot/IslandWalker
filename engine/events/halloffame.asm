@@ -243,7 +243,7 @@ AnimateHOFMonEntrance:
 	ld hl, wTempMonForm
 	predef GetUnownLetter
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, " "
 	rst ByteFill
 	ld de, vTiles2 tile $31
@@ -267,7 +267,7 @@ AnimateHOFMonEntrance:
 	xor a
 	ld [wBoxAlignment], a
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, " "
 	rst ByteFill
 	hlcoord 6, 5
@@ -322,13 +322,13 @@ _HallOfFamePC:
 	call JoyTextDelay
 	ld hl, hJoyLast
 	ld a, [hl]
-	and B_BUTTON
+	and PAD_B
 	jr nz, .b_button
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .a_button
 	ld a, [hl]
-	and START
+	and PAD_START
 	jr nz, .start_button
 	call DelayFrame
 	jr .loop
@@ -463,7 +463,7 @@ DisplayHOFMon:
 	ld a, "@"
 	ld [wStringBuffer2 + MON_NAME_LENGTH - 1], a
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, " "
 	rst ByteFill
 	hlcoord 0, 0
@@ -540,7 +540,7 @@ DisplayHOFMon:
 HOF_AnimatePlayerPic:
 	call ClearBGPalettes
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, " "
 	rst ByteFill
 	farcall GetPlayerBackpic
@@ -564,7 +564,7 @@ HOF_AnimatePlayerPic:
 	xor a
 	ld [wBoxAlignment], a
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, " "
 	rst ByteFill
 	farcall HOF_LoadTrainerFrontpic

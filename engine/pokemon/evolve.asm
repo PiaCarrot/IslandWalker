@@ -72,7 +72,7 @@ EvolveAfterBattle_MasterLoop:
 
 	ld a, b
 	cp EVOLVE_ITEM
-	jmp z, .item
+	jr z, .item
 
 	ld a, [wForceEvolution]
 	and a
@@ -83,61 +83,26 @@ EvolveAfterBattle_MasterLoop:
 	jmp z, .level
 
 	cp EVOLVE_PV
-	jmp z, .pv
+	jr z, .pv
+
+	cp EVOLVE_STAT
+	jmp z, .stat
 
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
 
-; EVOLVE_STAT
-	call GetEvoLevel
-	jmp c, .skip_evolution_species_parameter_byte
-
-	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter_byte
-
-	push hl
-	ld de, wTempMonAttack
-	ld hl, wTempMonDefense
-	ld c, 2
-	call CompareBytes
-	ld c, ATK_EQ_DEF
-	jr z, .got_tyrogue_evo
-	ld c, ATK_LT_DEF
-	jr c, .got_tyrogue_evo
-	ld c, ATK_GT_DEF
-.got_tyrogue_evo
-	pop hl
-
-	call GetNextEvoAttackByte
-	cp c
-	jmp nz, .skip_evolution_species
-	jmp .proceed
+; EVOLVE_HAPPINESS_TIME
+	call GetEvoTime
+	jmp c, .skip_evolution_species ; MORN_F or DAY_F < NITE_F
 
 .happiness
 	ld a, [wTempMonHappiness]
 	cp HAPPINESS_TO_EVOLVE
-	jmp c, .skip_evolution_species_parameter_byte
+	jmp c, .skip_evolution_species
 
 	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter_byte
-
-	call GetNextEvoAttackByte
-	cp TR_ANYTIME
-	jmp z, .proceed
-	cp TR_MORNDAY
-	jr z, .happiness_daylight
-
-; TR_EVENITE
-	ld a, [wTimeOfDay]
-	cp NITE_F
-	jmp c, .skip_evolution_species ; MORN_F or DAY_F < NITE_F
-	jmp .proceed
-
-.happiness_daylight
-	ld a, [wTimeOfDay]
-	cp NITE_F
 	jmp nc, .skip_evolution_species ; NITE_F or EVE_F >= NITE_F
-	jr .proceed
+	jmp .proceed
 
 .trade
 	ld a, [wLinkMode]
@@ -200,11 +165,27 @@ EvolveAfterBattle_MasterLoop:
 
 	cp 4
 
-	jr c, .proceed ; low_pv
+	call nc, GetNextEvoAttackWord ; high_pv
+	jr .proceed
+
+.stat
+	push hl
+	ld de, wTempMonAttack
+	ld hl, wTempMonDefense
+	ld c, 2
+	call CompareBytes
+	ld c, ATK_EQ_DEF
+	jr z, .got_tyrogue_evo
+	ld c, ATK_LT_DEF
+	jr c, .got_tyrogue_evo
+	ld c, ATK_GT_DEF
+.got_tyrogue_evo
+	pop hl
 
 	call GetNextEvoAttackByte
-	call GetNextEvoAttackByte
-	jr .proceed
+	cp c
+	jmp nz, .skip_evolution_species_parameter_byte
+	; fallthrough
 
 .level
 	call GetEvoLevel
@@ -222,9 +203,7 @@ EvolveAfterBattle_MasterLoop:
 	call GetFarWord
 	call GetPokemonIDFromIndex
 	ld [wEvolutionNewSpecies], a
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	call GetNickname
+	call GetCurNickname
 	call CopyName1
 	ld hl, EvolvingText
 	call PrintText
@@ -324,19 +303,19 @@ EvolveAfterBattle_MasterLoop:
 	cp PARTY_LENGTH
 	jr z, .skip_shedinja
 
-	ld a, [wEvolutionOldSpecies]
+	ld a, [wTempSpecies]
 	call GetPokemonIndexFromID
 	ld a, l
-	sub LOW(NINCADA)
-	if HIGH(NINCADA) == 0
+	sub LOW(NINJASK)
+	if HIGH(NINJASK) == 0
 		or h
 	else
 		jr nz, .skip_shedinja
-		if HIGH(NINCADA) == 1
+		if HIGH(NINJASK) == 1
 			dec h
 		else
 			ld a, h
-			cp HIGH(NINCADA)
+			cp HIGH(NINJASK)
 		endc
 	endc
 	call z, GiveShedinja
@@ -374,11 +353,13 @@ EvolveAfterBattle_MasterLoop:
 
 .dont_evolve_check
 	ld a, b
+	cp EVOLVE_HAPPINESS
+	jr z, .skip_evolution_species
 	cp EVOLVE_PV
 	jr z, .skip_evolution_two_species_parameter_byte
 	cp EVOLVE_LEVEL
 	jr z, .skip_evolution_species_parameter_byte
-	cp EVOLVE_HAPPINESS
+	cp EVOLVE_HAPPINESS_TIME
 	jr z, .skip_evolution_species_parameter_byte
 	jr .skip_evolution_species_parameter_word
 
@@ -448,11 +429,7 @@ CancelEvolution:
 
 IsMonHoldingEverstone:
 	push hl
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld a, [hl]
+	ld a, [wTempMonItem]
 	call GetItemIndexFromID
 	cphl16 EVERSTONE
 	pop hl
@@ -494,10 +471,7 @@ LearnLevelMoves:
 	ld b, a
 	ld a, [wCurPartyLevel]
 	cp b
-	call GetNextEvoAttackByte
-	ld e, a
-	call GetNextEvoAttackByte
-	ld d, a
+	call GetNextEvoAttackWord
 	jr nz, .find_move
 
 	push hl
@@ -686,11 +660,13 @@ SkipEvolutions::
 	inc hl
 	and a
 	ret z
+	cp EVOLVE_HAPPINESS
+	jr z, .no_skip
 	cp EVOLVE_PV
 	jr z, .two_extra_skips
 	cp EVOLVE_LEVEL
 	jr z, .no_extra_skip
-	cp EVOLVE_HAPPINESS
+	cp EVOLVE_HAPPINESS_TIME
 	jr z, .no_extra_skip
 	jr .one_extra_skip
 
@@ -700,6 +676,7 @@ SkipEvolutions::
 	inc hl
 .no_extra_skip
 	inc hl
+.no_skip
 	inc hl
 	inc hl
 	jr SkipEvolutions
@@ -716,6 +693,8 @@ DetermineEvolutionItemResults::
 	call GetNextEvoAttackByte
 	and a
 	ret z
+	cp EVOLVE_HAPPINESS
+	jr z, .skip_species
 	cp EVOLVE_PV
 	jr z, .skip_two_species_parameter_byte
 	cp EVOLVE_LEVEL
@@ -728,11 +707,7 @@ DetermineEvolutionItemResults::
 	ld a, [wCurItem]
 	cp b
 	jr nz, .skip_species
-	ldh a, [hTemp]
-	call GetFarWord
-	ld d, h
-	ld e, l
-	ret
+	jr GetNextEvoAttackWord
 
 .skip_two_species_parameter_byte
 	inc hl
@@ -749,6 +724,13 @@ GetNextEvoAttackByte:
 	ldh a, [hTemp]
 	call GetFarByte
 	inc hl
+	ret
+	
+GetNextEvoAttackWord:
+	call GetNextEvoAttackByte
+	ld e, a
+	call GetNextEvoAttackByte
+	ld d, a
 	ret
 
 GiveShedinja:
@@ -806,12 +788,10 @@ GiveShedinja:
 
 GetEvoItem:
 ; Return evolution item in register b
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
+	call GetNextEvoAttackWord
 	push hl
-	ld h, a
-	ld l, b
+	ld h, d
+	ld l, e
 	call GetItemIDFromIndex
 	ld b, a
 	pop hl
@@ -821,5 +801,19 @@ GetEvoLevel:
 	call GetNextEvoAttackByte
 	ld b, a
 	ld a, [wTempMonLevel]
+	cp b
+	ret
+
+GetEvoTime:
+	call GetNextEvoAttackByte
+	ld b, a
+	ld a, [wTimeOfDay]
+	cp NITE_F
+
+	; a = carry ? TR_MORNDAY : TR_EVENITE
+	assert TR_MORNDAY + 1 == TR_EVENITE
+	sbc a
+	add TR_EVENITE
+
 	cp b
 	ret

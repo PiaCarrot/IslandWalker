@@ -10,11 +10,11 @@ GetMonFrontpic:
 	ld [wCurSpecies], a
 	call IsAPokemon
 	ret c
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	call _GetFrontpic
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jmp CloseSRAM
 
 GetAnimatedFrontpic:
@@ -22,7 +22,7 @@ GetAnimatedFrontpic:
 	ld [wCurSpecies], a
 	call IsAPokemon
 	ret c
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	xor a
 	ldh [hBGMapMode], a
@@ -41,7 +41,7 @@ PrepareFrontpic:
 	push af
 	call _PrepareFrontpic
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 _PrepareFrontpic:
@@ -55,7 +55,7 @@ _PrepareFrontpic:
 	push bc
 	call GetFrontpicPointer
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, b
 	ld de, wDecompressScratch
 	call FarDecompress
@@ -228,12 +228,12 @@ GetMonBackpic:
 	call IsAPokemon
 	ret c
 
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	push de
 	call GetPicIndirectPointer
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	inc hl
 	inc hl
@@ -256,7 +256,7 @@ GetMonBackpic:
 	ld b, a
 	call Get2bpp
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 Intro_GetMonFrontpic:
@@ -289,10 +289,10 @@ GetTrainerPic:
 	dec a
 	ld bc, 3
 	rst AddNTimes
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	push de
 	ld a, BANK(TrainerPicPointers)
 	call GetFarByte
@@ -310,7 +310,7 @@ GetTrainerPic:
 	ld b, a
 	call Get2bpp
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call WaitBGMap
 	ld a, 1
 	ldh [hBGMapMode], a
@@ -319,10 +319,10 @@ GetTrainerPic:
 DecompressGet2bpp:
 ; Decompress lz data from b:hl to wDecompressScratch, then copy it to address de.
 
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	push de
 	push bc
@@ -337,7 +337,7 @@ DecompressGet2bpp:
 	call Get2bpp
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 FixBackpicAlignment:

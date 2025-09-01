@@ -182,7 +182,7 @@ ValenciaIslandAltStarterEventCutTreeCallback:
 	
 ValenciaYoungsterScript:
 	opentext
-	givepoke LATIAS, PLAIN_FORM, 100, SOUL_DEW
+	givepoke LATIAS, PLAIN_FORM, 100, ZIGZAG_MAIL
 	givepoke LATIOS, PLAIN_FORM, 100, SOUL_DEW
 	givepoke EEVEE_PARTNER, PLAIN_FORM, 100, SOUL_DEW
 	givepoke DRATINI_PARTNER, PLAIN_FORM, 100, ORAN_BERRY
@@ -196,7 +196,10 @@ ValenciaYoungsterScript:
 	giveitem SUPER_ROD
 	giveitem HM_ROCK_SMASH
 	giveitem PINKAN_BERRY, 5
-	giveitem GLITTER_MAIL, 5
+	giveitem POSTCARD, 5
+	giveitem GOLD_MAIL, 5
+	giveitem ROCKET_MAIL, 5
+	giveitem ZIGZAG_MAIL, 5
 	giveitem PINK_CURE, 5
 	giveitem LIGHT_BALL
 	givemoney YOUR_MONEY, 999999

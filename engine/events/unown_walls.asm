@@ -167,9 +167,9 @@ _DisplayUnownWords_FillAttr:
 	cp "@"
 	ret z
 	cp "Y"
-	; a = carry ? (VRAM_BANK_1 | PAL_BG_BROWN) : PAL_BG_BROWN
+	; a = carry ? (OAM_BANK1 | PAL_BG_BROWN) : PAL_BG_BROWN
 	sbc a
-	and VRAM_BANK_1
+	and OAM_BANK1
 	add PAL_BG_BROWN
 	call .PlaceSquare
 	inc hl

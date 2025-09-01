@@ -3,7 +3,7 @@ DEF MOBILE_TILES_PER_CYCLE EQU 6
 
 Get2bppViaHDMA::
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jmp z, Copy2bpp
 
 	homecall HDMATransfer2bpp
@@ -12,7 +12,7 @@ Get2bppViaHDMA::
 
 Get1bppViaHDMA::
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jmp z, Copy1bpp
 
 	homecall HDMATransfer1bpp
@@ -46,17 +46,17 @@ SafeHDMATransfer::
 
 	; load the source and target MSB and LSB
 	ld a, d
-	ldh [rHDMA1], a ; source MSB
+	ldh [rVDMA_SRC_HIGH], a ; source MSB
 	ld a, e
-	ldh [rHDMA2], a ; source LSB
+	ldh [rVDMA_SRC_LOW], a ; source LSB
 	ld a, h
-	ldh [rHDMA3], a ; target MSB
+	ldh [rVDMA_DEST_HIGH], a ; target MSB
 	ld a, l
-	ldh [rHDMA4], a ; target LSB
+	ldh [rVDMA_DEST_LOW], a ; target LSB
 
 	; if LCD is disabled, just run all of it
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jr nz, .lcd_enabled
 
 	ld a, c
@@ -115,10 +115,11 @@ LoadFontsExtra::
 	farjp LoadFrame
 
 DecompressRequest2bpp::
-	ld a, [rSVBK]
+; Load compressed 2bpp at b:hl to occupy c tiles of de.
+	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 
 	push de
 	push bc
@@ -134,7 +135,7 @@ DecompressRequest2bpp::
 	call Request2bpp
 
 	pop af
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ret
 
 FarCopyBytes::
@@ -299,7 +300,7 @@ Request2bpp::
 Get2bpp::
 ; copy c 2bpp tiles from b:de to hl
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jr nz, Request2bpp
 	; fallthrough
 
@@ -315,7 +316,7 @@ Copy2bpp:
 ; bank
 	ld a, b
 
-; bc = c * LEN_2BPP_TILE
+; bc = c * TILE_SIZE
 	push af
 	swap c
 	ld a, $f
@@ -330,7 +331,7 @@ Copy2bpp:
 
 GetMaybeOpaque1bpp::
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jr nz, _Request1bpp
 	jr _Copy1bpp
 
@@ -344,7 +345,7 @@ GetOpaque1bppFontTile::
 	lb bc, BANK(Font), 1
 GetOpaque1bpp::
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jr nz, RequestOpaque1bpp
 CopyOpaque1bpp:
 	ld a, 1
@@ -353,7 +354,7 @@ CopyOpaque1bpp:
 
 Get1bpp::
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jr nz, Request1bpp
 Copy1bpp::
 	xor a
@@ -459,11 +460,11 @@ HBlankCopy1bpp:
 	jr z, .waitNoHBlankOpaque
 .waitNoHBlank
 	ldh a, [rSTAT]
-	and rSTAT_MODE_MASK
+	and STAT_MODE
 	jr z, .waitNoHBlank
 .waitHBlank
 	ldh a, [rSTAT]
-	and rSTAT_MODE_MASK
+	and STAT_MODE
 	jr nz, .waitHBlank
 ; preloads r us
 	ld a, c
@@ -495,11 +496,11 @@ endr
 
 .waitNoHBlankOpaque
 	ldh a, [rSTAT]
-	and rSTAT_MODE_MASK
+	and STAT_MODE
 	jr z, .waitNoHBlankOpaque
 .waitHBlankOpaque
 	ldh a, [rSTAT]
-	and rSTAT_MODE_MASK
+	and STAT_MODE
 	jr nz, .waitHBlankOpaque
 ; preloads r us
 	ld a, $ff
@@ -560,7 +561,7 @@ WriteVCopyRegistersToHRAM:
 	ret
 
 VRAMToVRAMCopy::
-	lb bc, rSTAT_MODE_MASK, LOW(rSTAT) ; predefine for speed and size
+	lb bc, STAT_MODE, LOW(rSTAT) ; predefine for speed and size
 	jr .waitNoHBlank2
 .outerLoop2
 	ldh a, [rLY]

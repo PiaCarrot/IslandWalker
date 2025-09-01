@@ -65,8 +65,7 @@ endc
 	ld [hl], $2
 	hlcoord 4, 9
 	call DisplayHourOClock
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 
 .SetHourLoop:
 	call JoyTextDelay
@@ -95,8 +94,7 @@ endc
 	ld [hl], $2
 	hlcoord 12, 9
 	call DisplayMinutesWithMinString
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 
 .SetMinutesLoop:
 	call JoyTextDelay
@@ -127,7 +125,7 @@ endc
 	xor a
 	ldh [hBGMapMode], a
 	hlcoord 0, 0
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	xor a
 	rst ByteFill
 	ld a, $1
@@ -136,15 +134,15 @@ endc
 
 SetHour:
 	ldh a, [hJoyPressed]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .Confirm
 
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .up
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .down
 	call DelayFrame
 	and a
@@ -201,14 +199,14 @@ DisplayHourOClock:
 
 SetMinutes:
 	ldh a, [hJoyPressed]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .a_button
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .d_up
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .d_down
 	call DelayFrame
 	and a
@@ -398,8 +396,7 @@ SetDayOfWeek:
 	hlcoord 10, 9
 	call .PlaceWeekdayString
 	call ApplyTilemap
-	ld c, 10
-	call DelayFrames
+	call Wait10Frames
 .loop2
 	call JoyTextDelay
 	call .GetJoypadAction
@@ -422,7 +419,7 @@ SetDayOfWeek:
 
 .GetJoypadAction:
 	ldh a, [hJoyPressed]
-	and A_BUTTON
+	and PAD_A
 	jr z, .not_A
 	scf
 	ret
@@ -430,10 +427,10 @@ SetDayOfWeek:
 .not_A
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .d_up
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .d_down
 	call DelayFrame
 	and a

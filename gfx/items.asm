@@ -4,11 +4,29 @@ UpdateItemIconAndDescription::
 
 UpdateKeyItemIconAndDescription::
 	farcall UpdateKeyItemDescription
-	jr UpdateItemIcon
+	jr UpdateBallandKeyItemIcon
 
 UpdateItemBallIconAndDescription::
 	farcall UpdateItemBallDescription
-	jr UpdateItemIcon
+UpdateBallandKeyItemIcon:
+	ld a, [wCurSpecies]
+	call GetItemIndexFromID
+	ld b, h
+	ld c, l
+	ld a, BANK(ItemIconPointers)
+	ld hl, ItemIconPointers
+	call LoadDoubleIndirectPointer
+	jr nz, .ok
+	ld a, BANK(NoBallIcon)
+	ld hl, NoBallIcon
+.ok
+	ld de, vTiles2 tile $1f
+	lb bc, BANK(NoBallIcon), $9
+	call DecompressRequest2bpp
+	call LoadItemIconPalette
+	call SetDefaultBGPAndOBP
+	call WaitBGMap
+	ret
 	
 UpdateBerryIconAndDescription::
 	farcall UpdateItemBerryDescription
@@ -228,21 +246,27 @@ ItemIconPointers1:
     dw LightBallIcon ; AURORA_ORB
     dw XAccuracyIcon ; X_EVADE
     dw MailIcon ; GLITTER_MAIL
+    dw MailIcon ; TROPIC_MAIL
+    dw MailIcon ; BREEZE_MAIL
+    dw MailIcon ; POSTCARD
+    dw MailIcon ; ROCKET_MAIL
+    dw MailIcon ; GOLD_MAIL
+    dw MailIcon ; ZIGZAG_MAIL
 .IndirectEnd:
 	
 KeyItemIconPointers:
 	dw SkateboardIcon ; BICYCLE
-	dw NoItemIcon ; COIN_CASE
-	dw NoItemIcon ; ITEMFINDER
-	dw NoItemIcon ; OLD_ROD
-	dw NoItemIcon ; GOOD_ROD
-	dw NoItemIcon ; SUPER_ROD
+	dw CoinCaseIcon ; COIN_CASE
+	dw ItemfinderIcon ; ITEMFINDER
+	dw OldRodIcon ; OLD_ROD
+	dw GoodRodIcon ; GOOD_ROD
+	dw SuperRodIcon ; SUPER_ROD
 	dw NoItemIcon ; RED_SCALE
 	dw NoItemIcon ; SECRETPOTION
-	dw NoItemIcon ; S_S_TICKET
+	dw SSTicketIcon ; S_S_TICKET
 	dw NoItemIcon ; MYSTERY_EGG
 	dw NoItemIcon ; CLEAR_BELL
-	dw NoItemIcon ; SILVER_WING
+	dw SilverWingIcon ; SILVER_WING
 	dw GSBallIcon ; GS_BALL_KEY
 	dw NoItemIcon ; BLUE_CARD
 	dw NoItemIcon ; CARD_KEY
@@ -252,11 +276,11 @@ KeyItemIconPointers:
 	dw NoItemIcon ; BASEMENT_KEY
 	dw NoItemIcon ; PASS
 	dw NoItemIcon ; SQUIRTBOTTLE
-	dw NoItemIcon ; RAINBOW_WING
+	dw RainbowWingIcon ; RAINBOW_WING
 	dw NoItemIcon ; SECRET_STASH
-	dw NoItemIcon ; SEA_MAP
-	dw NoItemIcon ; BERRY_LOG
-	dw NoItemIcon ; EXCEL_SCOPE
+	dw SeaMapIcon ; SEA_MAP
+	dw BerryLogIcon ; BERRY_LOG
+	dw ExcelScopeIcon ; EXCEL_SCOPE
 .IndirectEnd:
 	
 BallsIconPointers:
@@ -1012,10 +1036,29 @@ ItemIconPalettes1:
 ; GLITTER_MAIL
 	RGB 25, 25, 13
 	RGB 19, 19, 09
+; TROPIC_MAIL
+	RGB 23, 30, 05
+	RGB 31, 31, 18
+; BREEZE_MAIL
+	RGB 07, 26, 31
+	RGB 00, 21, 00
+; POSTCARD
+	RGB 12, 17, 25
+	RGB 30, 26, 19
+; ROCKET_MAIL
+	RGB 00, 00, 00
+	RGB 30, 00, 00
+; GOLD_MAIL
+	RGB 00, 00, 00
+	RGB 30, 30, 00
+; ZIGZAG_MAIL
+	RGB 31, 24, 18
+	RGB 18, 12, 03
+
 .IndirectEnd:
 	
 KeyItemIconPalettes:
-; BICYCLE
+; SKATEBOARD
 	RGB 22, 12, 12
 	RGB 12, 12, 12
 ; COIN_CASE
@@ -1024,7 +1067,7 @@ KeyItemIconPalettes:
 ; ITEMFINDER
 	RGB 08, 17, 25
 	RGB 26, 12, 12
-; OLD_ROD
+; BAMBOO_ROD
 	RGB 24, 19, 08
 	RGB 19, 13, 01
 ; GOOD_ROD
@@ -1088,11 +1131,11 @@ KeyItemIconPalettes:
 	RGB 27, 23, 17
 	RGB 22, 18, 13
 ; BERRY_LOG
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+	RGB 07, 20, 05
+	RGB 07, 16, 06
 ; EXCEL_SCOPE
-	RGB 17, 20, 17
-	RGB 13, 20, 27
+	RGB 21, 21, 21
+	RGB 31, 00, 00
 .IndirectEnd:
 	
 BallsIconPalettes:
@@ -1952,7 +1995,47 @@ LemonadeIcon: INCBIN "gfx/items/lemonade.2bpp.lz"
 FreshWaterIcon: INCBIN "gfx/items/fresh_water.2bpp.lz"
 RevivalHerbIcon: INCBIN "gfx/items/revival_herb.2bpp.lz"
 BerryJuiceIcon: INCBIN "gfx/items/berry_juice.2bpp.lz"
+NuggetIcon: INCBIN "gfx/items/nugget.2bpp.lz"
+LeafIcon: INCBIN "gfx/items/leaf.2bpp.lz"
+TinyMushroomIcon: INCBIN "gfx/items/tinymushroom.2bpp.lz"
+BigMushroomIcon: INCBIN "gfx/items/big_mushroom.2bpp.lz"
+SlowpokeTailIcon: INCBIN "gfx/items/slowpoketail.2bpp.lz"
+PearlIcon: INCBIN "gfx/items/pearl.2bpp.lz"
+BigPearlIcon: INCBIN "gfx/items/big_pearl.2bpp.lz"
+StarPieceIcon: INCBIN "gfx/items/star_piece.2bpp.lz"
+ShardIcon: INCBIN "gfx/items/brick_piece.2bpp.lz"
+HeartScaleIcon: INCBIN "gfx/items/heart_scale.2bpp.lz"
+BalmmushroomIcon: INCBIN "gfx/items/balmmushroom.2bpp.lz"
+BigNuggetIcon: INCBIN "gfx/items/big_nugget.2bpp.lz"
+PearlStringIcon: INCBIN "gfx/items/pearl_string.2bpp.lz"
+BeachGlassIcon: INCBIN "gfx/items/beach_glass.2bpp.lz"
+PrettyShellIcon: INCBIN "gfx/items/pretty_shell.2bpp.lz"
+TinyBambooIcon: INCBIN "gfx/items/tiny_bamboo.2bpp.lz"
+BigBambooIcon: INCBIN "gfx/items/big_bamboo.2bpp.lz"
+GemstoneIcon: INCBIN "gfx/items/gemstone.2bpp.lz"
+BottleCapIcon: INCBIN "gfx/items/bottle_cap.2bpp.lz"
+HoneyIcon: INCBIN "gfx/items/sweet_honey.2bpp.lz"
+CandyTruffleIcon: INCBIN "gfx/items/candy_truffle.2bpp.lz"
+SpiderSilkIcon: INCBIN "gfx/items/spider_silk.2bpp.lz"
+AncientVaseIcon: INCBIN "gfx/items/ancient_vase.2bpp.lz"
+AncientCupIcon: INCBIN "gfx/items/ancient_cup.2bpp.lz"
+AncientJarIcon: INCBIN "gfx/items/ancient_jar.2bpp.lz"
+GoldStatueIcon: INCBIN "gfx/items/gold_statue.2bpp.lz"
+
+SECTION "Ball and Key Icons", ROMX
+NoBallIcon: INCBIN "gfx/items/no_item.2bpp.lz"
+CoinCaseIcon: INCBIN "gfx/items/coin_case.2bpp.lz"
+ItemfinderIcon: INCBIN "gfx/items/itemfinder.2bpp.lz"
+OldRodIcon: INCBIN "gfx/items/old_rod.2bpp.lz"
+GoodRodIcon: INCBIN "gfx/items/good_rod.2bpp.lz"
+SuperRodIcon: INCBIN "gfx/items/super_rod.2bpp.lz"
+SSTicketIcon: INCBIN "gfx/items/s_s_ticket.2bpp.lz"
+SilverWingIcon: INCBIN "gfx/items/silver_wing.2bpp.lz"
+RainbowWingIcon: INCBIN "gfx/items/rainbow_wing.2bpp.lz"
+SeaMapIcon: INCBIN "gfx/items/old_sea_map.2bpp.lz"
 SkateboardIcon: INCBIN "gfx/items/skateboard.2bpp.lz"
+ExcelScopeIcon: INCBIN "gfx/items/excel_scope.2bpp.lz"
+BerryLogIcon: INCBIN "gfx/items/berry_log.2bpp.lz"
 MasterBallIcon: INCBIN "gfx/items/master_ball.2bpp.lz"
 UltraBallIcon: INCBIN "gfx/items/ultra_ball.2bpp.lz"
 GreatBallIcon: INCBIN "gfx/items/great_ball.2bpp.lz"
@@ -1993,32 +2076,6 @@ JetBallIcon:
 OriginBallIcon:
 RocketBallIcon: INCBIN "gfx/items/rocket_ball.2bpp.lz"
 GSBallIcon: INCBIN "gfx/items/gs_ball.2bpp.lz"
-NuggetIcon: INCBIN "gfx/items/nugget.2bpp.lz"
-LeafIcon: INCBIN "gfx/items/leaf.2bpp.lz"
-TinyMushroomIcon: INCBIN "gfx/items/tinymushroom.2bpp.lz"
-BigMushroomIcon: INCBIN "gfx/items/big_mushroom.2bpp.lz"
-SlowpokeTailIcon: INCBIN "gfx/items/slowpoketail.2bpp.lz"
-PearlIcon: INCBIN "gfx/items/pearl.2bpp.lz"
-BigPearlIcon: INCBIN "gfx/items/big_pearl.2bpp.lz"
-StarPieceIcon: INCBIN "gfx/items/star_piece.2bpp.lz"
-ShardIcon: INCBIN "gfx/items/brick_piece.2bpp.lz"
-HeartScaleIcon: INCBIN "gfx/items/heart_scale.2bpp.lz"
-BalmmushroomIcon: INCBIN "gfx/items/balmmushroom.2bpp.lz"
-BigNuggetIcon: INCBIN "gfx/items/big_nugget.2bpp.lz"
-PearlStringIcon: INCBIN "gfx/items/pearl_string.2bpp.lz"
-BeachGlassIcon: INCBIN "gfx/items/beach_glass.2bpp.lz"
-PrettyShellIcon: INCBIN "gfx/items/pretty_shell.2bpp.lz"
-TinyBambooIcon: INCBIN "gfx/items/tiny_bamboo.2bpp.lz"
-BigBambooIcon: INCBIN "gfx/items/big_bamboo.2bpp.lz"
-GemstoneIcon: INCBIN "gfx/items/gemstone.2bpp.lz"
-BottleCapIcon: INCBIN "gfx/items/bottle_cap.2bpp.lz"
-HoneyIcon: INCBIN "gfx/items/sweet_honey.2bpp.lz"
-CandyTruffleIcon: INCBIN "gfx/items/candy_truffle.2bpp.lz"
-SpiderSilkIcon: INCBIN "gfx/items/spider_silk.2bpp.lz"
-AncientVaseIcon: INCBIN "gfx/items/ancient_vase.2bpp.lz"
-AncientCupIcon: INCBIN "gfx/items/ancient_cup.2bpp.lz"
-AncientJarIcon: INCBIN "gfx/items/ancient_jar.2bpp.lz"
-GoldStatueIcon: INCBIN "gfx/items/gold_statue.2bpp.lz"
 
 SECTION "Berry Icons", ROMX
 NoBerryIcon: INCBIN "gfx/items/no_item.2bpp.lz"

@@ -189,6 +189,12 @@ ItemEffects1:
 	dw NoEffect            ; AURORA_ORB
 	dw XItemEffect         ; X_EVADE
 	dw NoEffect            ; GLITTER_MAIL
+	dw NoEffect            ; TROPIC_MAIL
+	dw NoEffect            ; BREEZE_MAIL
+	dw NoEffect            ; POSTCARD
+	dw NoEffect            ; ROCKET_MAIL
+	dw NoEffect            ; GOLD_MAIL
+	dw NoEffect            ; ZIGZAG_MAIL
 .IndirectEnd:
 
 ItemEffectsKeyItems:
@@ -532,8 +538,7 @@ PokeBallEffect:
 	ld [wEnemyMonSpecies], a
 	ld [wWildMon], a
 
-	ld c, 20
-	call DelayFrames
+	call Wait20Frames
 
 	ld a, [wCurItem]
 	ld [wBattleAnimParam], a
@@ -550,10 +555,9 @@ PokeBallEffect:
 	ld [wFXAnimID], a
 	ld a, d
 	ld [wFXAnimID + 1], a
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 	ld [wThrownBallWobbleCount], a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	predef PlayBattleAnim
 
 	ld a, [wThrownBallWobbleCount]
@@ -1166,9 +1170,7 @@ RareCandy_StatBooster_GetParameters:
 	ld a, [hl]
 	ld [wCurPartyLevel], a
 	call GetBaseData
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	jmp GetNickname
+	jmp GetCurNickname
 
 RareCandyEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -1510,8 +1512,7 @@ BitterBerryEffect:
 	jr z, .done
 
 	res SUBSTATUS_CONFUSED, [hl]
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 	call UseItemText
 
 	ld hl, ConfusedNoMoreText
@@ -2019,8 +2020,7 @@ XItemEffect:
 	inc hl
 	inc hl
 	ld b, [hl]
-	xor a
-	ldh [hBattleTurn], a
+	call SetPlayerTurn
 	ld [wAttackMissed], a
 	ld [wEffectFailed], a
 	farcall RaiseStat
@@ -2665,7 +2665,7 @@ UseBallInTrainerBattle:
 	xor a
 	ld [wBattleAnimParam], a
 	ldh [hBattleTurn], a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	predef PlayBattleAnim
 	ld hl, BallBlockedText
 	call PrintText

@@ -212,17 +212,17 @@ Function17d405:
 	xor a
 	ldh [rVBK], a
 	call EnableLCD
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $5
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, PokemonNewsPalettes
 	ld de, wBGPals1
 	ld bc, 8 palettes
 	rst CopyBytes
 	call SetDefaultBGPAndOBP
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 Function17d711:
@@ -363,10 +363,10 @@ Function17d93a:
 	rst CopyBytes
 	call HlToCrashCheckPointer
 	call Function17e32b
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [wc70c]
 	call Function17e6de
 	ld a, [wc70a]
@@ -387,7 +387,7 @@ Function17d93a:
 	ld d, h
 	farcall HOF_AnimateFrontpic
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jmp Function17e349
 
 Function17d98b:
@@ -397,10 +397,10 @@ Function17d98b:
 	rst CopyBytes
 	call HlToCrashCheckPointer
 	call Function17e32b
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [wc70b]
 	call Function17e6de
 	ld a, [wc70a]
@@ -422,7 +422,7 @@ Function17d98b:
 	ld bc, $707
 	predef PlaceGraphic
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jmp Function17e349
 
 Function17d9e3:
@@ -436,7 +436,7 @@ Function17d9e3:
 	cp $c0
 	jr c, .asm_17da01
 	ld a, [wc70c]
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .asm_17da07
 
 .asm_17da01
@@ -461,7 +461,7 @@ Function17d9e3:
 	cp $c0
 	jr c, .asm_17da2d
 	ld a, $4
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .asm_17da2d
@@ -478,7 +478,7 @@ Function17da31:
 	cp $c0
 	jr c, .asm_17da4f
 	ld a, [wc70a]
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .asm_17da55
 
 .asm_17da4f
@@ -518,7 +518,7 @@ Function17da31:
 	cp $c0
 	jr c, .asm_17da88
 	ld a, $4
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .asm_17da88
@@ -743,10 +743,10 @@ Function17dc1f:
 	ld bc, $6
 	rst CopyBytes
 	call Function17e32b
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wc688
 	ld a, $40
 	ld [wc708], a
@@ -774,7 +774,7 @@ Function17dc1f:
 .asm_17dc6e
 	call CloseWindow
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [wMenuCursorY]
 	cp $1
 	jr nz, .asm_17dc85
@@ -806,7 +806,7 @@ Function17dca9:
 	call HlToCrashCheckPointer
 ; Function17dcaf:
 	ld a, $5
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wBGPals1
 	ld de, 1 palettes
 	ld c, 8
@@ -821,7 +821,7 @@ Function17dca9:
 	jr nz, .asm_17dcbb
 ;	call RotateThreePalettesRight
 	ld a, $4
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 Function17dccf:
@@ -919,7 +919,7 @@ Function17dd49:
 	cp $c0
 	jr c, .sram
 	ld a, [wc708]
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .got_bank
 
 .sram
@@ -940,7 +940,7 @@ Function17dd49:
 	cp $c0
 	jr c, .close_sram
 	ld a, $4
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .exited_bank
 
 .close_sram
@@ -994,7 +994,7 @@ Function17ddcd:
 	cp $c0
 	jr c, .asm_17dde7
 	ld a, [wc708]
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .asm_17dded
 
 .asm_17dde7
@@ -1015,7 +1015,7 @@ Function17ddcd:
 	cp $c0
 	jr c, .asm_17de0c
 	ld a, $4
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .asm_17de0f
 
 .asm_17de0c
@@ -1149,10 +1149,10 @@ Function17ded9:
 	ld bc, $1f
 	rst CopyBytes
 	call Function17e32b
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wc708
 	ld a, [hli]
 	ld [wCurPartySpecies], a
@@ -1353,7 +1353,7 @@ asm_17e0ee:
 	ld h, [hl]
 	ld l, a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	push hl
 	call Function17e349
 	pop hl
@@ -1364,10 +1364,10 @@ Function17e0fd:
 	ld de, wc708
 	ld bc, $6
 	rst CopyBytes
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wc708
 	ld a, [hli]
 	ld [wCurItem], a
@@ -1388,7 +1388,7 @@ Function17e0fd:
 	ld h, a
 	ld l, b
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jmp Function17e40f
 
 Function17e165:
@@ -1396,10 +1396,10 @@ Function17e165:
 	ld de, wc708
 	ld bc, $5
 	rst CopyBytes
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wc708
 	ld a, [hli]
 	ld [wCurItem], a
@@ -1423,7 +1423,7 @@ Function17e165:
 	ld h, a
 	ld l, b
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jmp Function17e40f
 
 Function17e1a1:
@@ -1435,7 +1435,7 @@ Function17e1a1:
 	cp $c0
 	jr c, .asm_17e1bb
 	ld a, [wc708]
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .asm_17e1c1
 
 .asm_17e1bb
@@ -1456,7 +1456,7 @@ Function17e1a1:
 	cp $c0
 	jr c, .asm_17e1e2
 	ld a, $4
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .asm_17e1e5
 
 .asm_17e1e2
@@ -1467,7 +1467,7 @@ Function17e1a1:
 	cp $c0
 	jr c, .asm_17e1f3
 	ld a, [wc70c]
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .asm_17e1f9
 
 .asm_17e1f3
@@ -1488,7 +1488,7 @@ Function17e1a1:
 	cp $c0
 	jr c, .asm_17e21a
 	ld a, $4
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	jr .asm_17e21d
 
 .asm_17e21a
@@ -1630,16 +1630,16 @@ Function17e349:
 MACRO inc_crash_check_pointer_farcall
 	call IncCrashCheckPointer
 	call HlToCrashCheckPointer ; redundant
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	rept _NARG
 		farcall \1
 		shift
 	endr
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 ENDM
 

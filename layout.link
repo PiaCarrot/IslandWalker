@@ -67,7 +67,6 @@ ROMX $0b
 ROMX $0c
 	"Tileset Data 4"
 ROMX $0d
-	"Effect Commands"
 ROMX $0e
 	"Enemy Trainers"
 ROMX $0f

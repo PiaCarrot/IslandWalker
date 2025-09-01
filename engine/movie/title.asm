@@ -160,7 +160,7 @@ InitializeBackground:
 	ld [hli], a ; tile id
 	inc e
 	inc e
-	ld a, 0 | PRIORITY
+	ld a, 0 | OAM_PRIO
 	ld [hli], a ; attributes
 	dec c
 	jr nz, .loop2

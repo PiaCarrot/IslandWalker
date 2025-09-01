@@ -54,10 +54,9 @@ RuinsOfAlphInnerChamberStatue:
 	playsound SFX_STRENGTH
 	earthquake 50
 	setflag ENGINE_UNLOCKED_UNOWNS_EXCLAMATION_QUESTION
-	jumptext RuinsOfAlphStrangePresenceText
-
 .already_unlocked
 .dont_unlock
+	jumptext RuinsOfAlphStrangePresenceText
 
 RuinsOfAlphStrangePresenceText:
 	text "There is a strange"
