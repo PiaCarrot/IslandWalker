@@ -50,10 +50,52 @@ EggMovePointers3::
 	dw SphealEggMoves
 	dw NoEggMoves3
 	dw NoEggMoves3
-	dw RelicanthEggMoves
-	dw LuvdiscEggMoves
-	dw NoEggMoves3
-	dw NoEggMoves3
+        dw RelicanthEggMoves
+        dw LuvdiscEggMoves
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3
+        dw NoEggMoves3 ; LICKILICKY
+        dw NoEggMoves3 ; RHYPERIOR
+        dw NoEggMoves3 ; TANGROWTH
+        dw NoEggMoves3 ; ELECTIVIRE
+        dw NoEggMoves3 ; MAGMORTAR
+        dw NoEggMoves3 ; TOGEKISS
+        dw NoEggMoves3 ; YANMEGA
+       dw NoEggMoves3 ; LEAFEON
+       dw NoEggMoves3 ; GLACEON
+       dw NoEggMoves3 ; GLISCOR
+       dw NoEggMoves3 ; MAMOSWINE
+       dw NoEggMoves3 ; PORYGON_Z
+       dw NoEggMoves3 ; GALLADE
+       dw NoEggMoves3 ; DUSKNOIR
+       dw NoEggMoves3 ; FROSLASS
+       dw NoEggMoves3 ; ROTOM
+       dw NoEggMoves3 ; PHIONE
+       dw NoEggMoves3 ; MANAPHY
 .IndirectEnd::
 
 PoochyenaEggMoves:

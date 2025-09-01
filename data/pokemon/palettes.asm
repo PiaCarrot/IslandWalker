@@ -644,6 +644,90 @@ INCBIN "gfx/pokemon/hoenn/latias/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/hoenn/latias/shiny.pal"
 INCBIN "gfx/pokemon/hoenn/latios/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/hoenn/latios/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/shinx/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/shinx/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/luxio/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/luxio/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/luxray/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/luxray/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/cherubi/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/cherubi/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/cherrim/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/cherrim/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/ambipom/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/ambipom/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/mismagius/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/mismagius/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/honchkrow/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/honchkrow/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/chingling/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/chingling/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/bonsly/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/bonsly/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/mime_jr/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/mime_jr/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/happiny/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/happiny/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/chatot/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/chatot/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/munchlax/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/munchlax/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/riolu/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/riolu/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/lucario/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/lucario/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/croagunk/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/croagunk/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/toxicroak/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/toxicroak/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/carnivine/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/carnivine/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/finneon/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/finneon/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/lumineon/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/lumineon/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/mantyke/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/mantyke/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/weavile/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/weavile/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/magnezone/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/magnezone/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/lickilicky/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/lickilicky/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/rhyperior/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/rhyperior/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/tangrowth/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/tangrowth/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/electivire/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/electivire/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/magmortar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/magmortar/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/togekiss/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/togekiss/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/yanmega/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/yanmega/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/leafeon/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/leafeon/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/glaceon/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/glaceon/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/gliscor/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/gliscor/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/mamoswine/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/mamoswine/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/porygon_z/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/porygon_z/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/gallade/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/gallade/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/dusknoir/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/dusknoir/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/froslass/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/froslass/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/rotom/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/rotom/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/phione/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/phione/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/manaphy/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/manaphy/shiny.pal"
 INCBIN "gfx/pokemon/forms/lapras_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/lapras_partner/shiny.pal"
 INCBIN "gfx/pokemon/forms/dratini_partner/normal.gbcpal", middle_colors

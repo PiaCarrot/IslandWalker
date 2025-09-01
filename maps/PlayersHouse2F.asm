@@ -104,6 +104,7 @@ PlayersHouseBookshelfScript:
 	giveitem FIRE_STONE
 	giveitem THUNDERSTONE
 	giveitem WATER_STONE
+	givepoke MANAPHY, 100
 	end
 else
 	jumpstd PictureBookshelfScript
