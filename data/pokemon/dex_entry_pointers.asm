@@ -350,6 +350,13 @@ PokedexDataPointerTable:
        dba RotomPokedexEntry
        dba PhionePokedexEntry
        dba ManaphyPokedexEntry
+       dba FerroseedPokedexEntry
+       dba FerrothornPokedexEntry
+       dba StunfiskPokedexEntry
+       dba PawniardPokedexEntry
+       dba BisharpPokedexEntry
+       dba ZoruaPokedexEntry
+       dba ZoroarkPokedexEntry
 ; Forms
         dba LaprasPartnerPokedexEntry
         dba DratiniPartnerPokedexEntry

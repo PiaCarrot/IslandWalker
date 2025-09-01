@@ -93,9 +93,16 @@ AnimationPointers3:
         dw GalladeAnimation
         dw DusknoirAnimation
         dw FroslassAnimation
-        dw RotomAnimation
-        dw PhioneAnimation
-        dw ManaphyAnimation
+       dw RotomAnimation
+       dw PhioneAnimation
+       dw ManaphyAnimation
+       dw FerroseedAnimation
+       dw FerrothornAnimation
+       dw StunfiskAnimation
+       dw PawniardAnimation
+       dw BisharpAnimation
+       dw ZoruaAnimation
+       dw ZoroarkAnimation
 .IndirectEnd::
 
 PoochyenaAnimation:     INCLUDE "gfx/pokemon/hoenn/poochyena/anim.asm"
@@ -193,3 +200,10 @@ FroslassAnimation:     INCLUDE "gfx/pokemon/sinnoh/froslass/anim.asm"
 RotomAnimation:        INCLUDE "gfx/pokemon/sinnoh/rotom/anim.asm"
 PhioneAnimation:       INCLUDE "gfx/pokemon/sinnoh/phione/anim.asm"
 ManaphyAnimation:      INCLUDE "gfx/pokemon/sinnoh/manaphy/anim.asm"
+FerroseedAnimation:    INCLUDE "gfx/pokemon/other/ferroseed/anim.asm"
+FerrothornAnimation:   INCLUDE "gfx/pokemon/other/ferrothorn/anim.asm"
+StunfiskAnimation:     INCLUDE "gfx/pokemon/other/stunfisk/anim.asm"
+PawniardAnimation:     INCLUDE "gfx/pokemon/other/pawniard/anim.asm"
+BisharpAnimation:      INCLUDE "gfx/pokemon/other/bisharp/anim.asm"
+ZoruaAnimation:        INCLUDE "gfx/pokemon/other/zorua/anim.asm"
+ZoroarkAnimation:      INCLUDE "gfx/pokemon/other/zoroark/anim.asm"

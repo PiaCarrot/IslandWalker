@@ -360,6 +360,13 @@ MonMenuIconPals:
         icon_pals RED,    RED    ; ROTOM
         icon_pals RED,    RED    ; PHIONE
         icon_pals RED,    RED    ; MANAPHY
+       icon_pals RED,    RED    ; FERROSEED
+       icon_pals RED,    RED    ; FERROTHORN
+       icon_pals RED,    RED    ; STUNFISK
+       icon_pals RED,    RED    ; PAWNIARD
+       icon_pals RED,    RED    ; BISHARP
+       icon_pals RED,    RED    ; ZORUA
+       icon_pals RED,    RED    ; ZOROARK
 ; Forms
         icon_pals BLUE,   TEAL   ; LAPRAS
         icon_pals BLUE,   PURPLE ; DRATINI

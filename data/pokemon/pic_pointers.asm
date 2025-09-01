@@ -711,6 +711,20 @@ PokemonPicPointers::
        dba PhioneBackpic
        dba ManaphyFrontpic
        dba ManaphyBackpic
+       dba FerroseedFrontpic
+       dba FerroseedBackpic
+       dba FerrothornFrontpic
+       dba FerrothornBackpic
+       dba StunfiskFrontpic
+       dba StunfiskBackpic
+       dba PawniardFrontpic
+       dba PawniardBackpic
+       dba BisharpFrontpic
+       dba BisharpBackpic
+       dba ZoruaFrontpic
+       dba ZoruaBackpic
+       dba ZoroarkFrontpic
+       dba ZoroarkBackpic
 ; Forms
         dba LaprasPartnerFrontpic
         dba LaprasPartnerBackpic
