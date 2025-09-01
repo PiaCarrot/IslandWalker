@@ -838,6 +838,19 @@ GlaceonFrontpic:       INCBIN "gfx/pokemon/sinnoh/glaceon/front.animated.2bpp.lz
 GlaceonBackpic:        INCBIN "gfx/pokemon/sinnoh/glaceon/back.2bpp.lz"
 GliscorFrontpic:       INCBIN "gfx/pokemon/sinnoh/gliscor/front.animated.2bpp.lz"
 GliscorBackpic:        INCBIN "gfx/pokemon/sinnoh/gliscor/back.2bpp.lz"
+
+SECTION "Pokemon Pics 36", ROMX
+
+MamoswineFrontpic:     INCBIN "gfx/pokemon/sinnoh/mamoswine/front.animated.2bpp.lz"
+MamoswineBackpic:      INCBIN "gfx/pokemon/sinnoh/mamoswine/back.2bpp.lz"
+PorygonZFrontpic:      INCBIN "gfx/pokemon/sinnoh/porygon_z/front.animated.2bpp.lz"
+PorygonZBackpic:       INCBIN "gfx/pokemon/sinnoh/porygon_z/back.2bpp.lz"
+GalladeFrontpic:       INCBIN "gfx/pokemon/sinnoh/gallade/front.animated.2bpp.lz"
+GalladeBackpic:        INCBIN "gfx/pokemon/sinnoh/gallade/back.2bpp.lz"
+DusknoirFrontpic:      INCBIN "gfx/pokemon/sinnoh/dusknoir/front.animated.2bpp.lz"
+DusknoirBackpic:       INCBIN "gfx/pokemon/sinnoh/dusknoir/back.2bpp.lz"
+FroslassFrontpic:      INCBIN "gfx/pokemon/sinnoh/froslass/front.animated.2bpp.lz"
+FroslassBackpic:       INCBIN "gfx/pokemon/sinnoh/froslass/back.2bpp.lz"
 RotomFrontpic:         INCBIN "gfx/pokemon/sinnoh/rotom/front.animated.2bpp.lz"
 RotomBackpic:          INCBIN "gfx/pokemon/sinnoh/rotom/back.2bpp.lz"
 PhioneFrontpic:        INCBIN "gfx/pokemon/sinnoh/phione/front.animated.2bpp.lz"

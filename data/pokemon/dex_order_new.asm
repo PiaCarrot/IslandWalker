@@ -337,12 +337,17 @@ NewPokedexOrder:
         dw MAGMORTAR
         dw TOGEKISS
         dw YANMEGA
-        dw LEAFEON
-        dw GLACEON
-        dw GLISCOR
-        dw ROTOM
-        dw PHIONE
-        dw MANAPHY
+       dw LEAFEON
+       dw GLACEON
+       dw GLISCOR
+       dw MAMOSWINE
+       dw PORYGON_Z
+       dw GALLADE
+       dw DUSKNOIR
+       dw FROSLASS
+       dw ROTOM
+       dw PHIONE
+       dw MANAPHY
         dw LAPRAS_PARTNER
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER

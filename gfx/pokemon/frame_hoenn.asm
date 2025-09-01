@@ -88,6 +88,11 @@ FramePointers3:
         dw LeafeonFrames
         dw GlaceonFrames
         dw GliscorFrames
+        dw MamoswineFrames
+        dw PorygonZFrames
+        dw GalladeFrames
+        dw DusknoirFrames
+        dw FroslassFrames
         dw RotomFrames
         dw PhioneFrames
         dw ManaphyFrames
@@ -180,6 +185,11 @@ YanmegaFrames:      INCLUDE "gfx/pokemon/sinnoh/yanmega/frames.asm"
 LeafeonFrames:      INCLUDE "gfx/pokemon/sinnoh/leafeon/frames.asm"
 GlaceonFrames:      INCLUDE "gfx/pokemon/sinnoh/glaceon/frames.asm"
 GliscorFrames:      INCLUDE "gfx/pokemon/sinnoh/gliscor/frames.asm"
+MamoswineFrames:    INCLUDE "gfx/pokemon/sinnoh/mamoswine/frames.asm"
+PorygonZFrames:     INCLUDE "gfx/pokemon/sinnoh/porygon_z/frames.asm"
+GalladeFrames:      INCLUDE "gfx/pokemon/sinnoh/gallade/frames.asm"
+DusknoirFrames:     INCLUDE "gfx/pokemon/sinnoh/dusknoir/frames.asm"
+FroslassFrames:     INCLUDE "gfx/pokemon/sinnoh/froslass/frames.asm"
 RotomFrames:        INCLUDE "gfx/pokemon/sinnoh/rotom/frames.asm"
 PhioneFrames:       INCLUDE "gfx/pokemon/sinnoh/phione/frames.asm"
 ManaphyFrames:      INCLUDE "gfx/pokemon/sinnoh/manaphy/frames.asm"

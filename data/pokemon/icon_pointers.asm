@@ -343,12 +343,17 @@ IconPointers:
         dw MagmortarIcon
         dw TogekissIcon
         dw YanmegaIcon
-        dw LeafeonIcon
-        dw GlaceonIcon
-        dw GliscorIcon
-        dw RotomIcon
-        dw PhioneIcon
-        dw ManaphyIcon
+       dw LeafeonIcon
+       dw GlaceonIcon
+       dw GliscorIcon
+       dw MamoswineIcon
+       dw PorygonZIcon
+       dw GalladeIcon
+       dw DusknoirIcon
+       dw FroslassIcon
+       dw RotomIcon
+       dw PhioneIcon
+       dw ManaphyIcon
 ; forms
         dw LaprasIcon
         dw DratiniIcon

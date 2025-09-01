@@ -1066,7 +1066,8 @@ SwinubEvosAttacks:
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
-	db 0 ; no more evolutions
+        dbww EVOLVE_ITEM, ICE_STONE, MAMOSWINE
+        db 0 ; no more evolutions
 	dbw 1, ENDURE
 	dbw 1, HORN_ATTACK
 	dbw 1, ODOR_SLEUTH
@@ -1225,7 +1226,8 @@ DonphanEvosAttacks:
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
-	db 0 ; no more evolutions
+        dbww EVOLVE_TRADE, DUBIOUS_DISC, PORYGON_Z
+        db 0 ; no more evolutions
 	dbw 1, CONVERSION
 	dbw 1, CONVERSION2
 	dbw 1, TACKLE

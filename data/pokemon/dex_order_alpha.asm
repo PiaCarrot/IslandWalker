@@ -67,8 +67,9 @@ AlphabeticalPokedexOrder:
 	dw DROWZEE
 	dw DUGTRIO
 	dw DUNSPARCE
-	dw DUSCLOPS
-	dw DUSKULL
+       dw DUSCLOPS
+       dw DUSKNOIR
+       dw DUSKULL
 	dw EEVEE
         dw EKANS
         dw ELECTABUZZ
@@ -87,9 +88,11 @@ AlphabeticalPokedexOrder:
         dw FLAAFFY
 	dw FLAREON
 	dw FLYGON
-	dw FORRETRESS
-	dw FURRET
-	dw GARDEVOIR
+       dw FORRETRESS
+       dw FROSLASS
+       dw FURRET
+       dw GALLADE
+       dw GARDEVOIR
 	dw GASTLY
 	dw GENGAR
 	dw GEODUDE
@@ -168,8 +171,9 @@ AlphabeticalPokedexOrder:
         dw MAGMORTAR
         dw MAGNEMITE
         dw MAGNETON
-        dw MAGNEZONE
-        dw MANAPHY
+       dw MAGNEZONE
+       dw MAMOSWINE
+       dw MANAPHY
         dw MANKEY
         dw MANTINE
         dw MANTYKE
@@ -229,9 +233,10 @@ AlphabeticalPokedexOrder:
 	dw POLIWRATH
 	dw PONYTA
 	dw POOCHYENA
-	dw PORYGON
-	dw PORYGON2
-	dw PRIMEAPE
+       dw PORYGON
+       dw PORYGON2
+       dw PORYGON_Z
+       dw PRIMEAPE
 	dw PSYDUCK
 	dw PUPITAR
 	dw QUAGSIRE

@@ -336,12 +336,17 @@ FirstEvoStages::
         dw MAGBY
         dw TOGEPI
         dw YANMA
-        dw EEVEE
-        dw EEVEE
-        dw GLIGAR
-        dw ROTOM
-        dw PHIONE
-        dw MANAPHY
+       dw EEVEE
+       dw EEVEE
+       dw GLIGAR
+       dw SWINUB
+       dw PORYGON
+       dw RALTS
+       dw DUSKULL
+       dw SNORUNT
+       dw ROTOM
+       dw PHIONE
+       dw MANAPHY
         dw LAPRAS_PARTNER
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER

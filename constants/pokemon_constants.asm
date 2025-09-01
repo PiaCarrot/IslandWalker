@@ -362,13 +362,13 @@ DEF SINNOH_POKEMON EQU const_value
         const YANMEGA    ; 14f
         const LEAFEON    ; 150
         const GLACEON    ; 151
-        const GLISCOR    ; 152
-        ; const MAMOSWINE  ; 153
-        ; const PORYGON_Z  ; 154
-        ; const GALLADE    ; 155
-        ; const DUSKNOIR   ; 156
-        ; const FROSLASS   ; 157
-        const ROTOM      ; 158
+       const GLISCOR    ; 152
+       const MAMOSWINE  ; 153
+       const PORYGON_Z  ; 154
+       const GALLADE    ; 155
+       const DUSKNOIR   ; 156
+       const FROSLASS   ; 157
+       const ROTOM      ; 158
         const PHIONE     ; 159
         const MANAPHY    ; 15a
 DEF NUM_SINNOH_POKEMON EQU const_value - SINNOH_POKEMON

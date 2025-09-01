@@ -341,9 +341,14 @@ PokemonBodyData:
         dw 104, 130    ; TOGEKISS
         dw 104, 130    ; YANMEGA
         dw 104, 130    ; LEAFEON
-        dw 104, 130    ; GLACEON
-        dw 104, 130    ; GLISCOR
-        dw 100, 15     ; ROTOM
+       dw 104, 130    ; GLACEON
+       dw 104, 130    ; GLISCOR
+       dw 104, 130    ; MAMOSWINE
+       dw 104, 130    ; PORYGON_Z
+       dw 104, 130    ; GALLADE
+       dw 104, 130    ; DUSKNOIR
+       dw 104, 130    ; FROSLASS
+       dw 100, 15     ; ROTOM
         dw 104, 68     ; PHIONE
         dw 100, 31     ; MANAPHY
 ; Forms

@@ -88,6 +88,11 @@ EvosAttacksPointers3::
        dw LeafeonEvosAttacks
        dw GlaceonEvosAttacks
        dw GliscorEvosAttacks
+       dw MamoswineEvosAttacks
+       dw PorygonZEvosAttacks
+       dw GalladeEvosAttacks
+       dw DusknoirEvosAttacks
+       dw FroslassEvosAttacks
        dw RotomEvosAttacks
        dw PhioneEvosAttacks
        dw ManaphyEvosAttacks
@@ -210,8 +215,9 @@ RaltsEvosAttacks:
 	db 0 ; no more level-up moves
 
 KirliaEvosAttacks:
-	dbbw EVOLVE_LEVEL, 30, GARDEVOIR
-	db 0 ; no more evolutions
+        dbbw EVOLVE_LEVEL, 30, GARDEVOIR
+        dbww EVOLVE_ITEM, DAWN_STONE, GALLADE
+        db 0 ; no more evolutions
 	dbw 1, CONFUSION
 	dbw 1, DOUBLE_TEAM
 	dbw 1, GROWL
@@ -741,7 +747,8 @@ DuskullEvosAttacks:
 	db 0 ; no more level-up moves
 
 DusclopsEvosAttacks:
-	db 0 ; no more evolutions
+        dbww EVOLVE_ITEM, REAPER_CLOTH, DUSKNOIR
+        db 0 ; no more evolutions
 	dbw 1, BIND
 	dbw 1, DISABLE
 	dbw 1, LEER
@@ -802,8 +809,9 @@ WynautEvosAttacks:
 	db 0 ; no more level-up moves
 
 SnoruntEvosAttacks:
-	dbbw EVOLVE_LEVEL, 42, GLALIE
-	db 0 ; no more evolutions
+        dbbw EVOLVE_LEVEL, 42, GLALIE
+        dbww EVOLVE_ITEM, DAWN_STONE, FROSLASS
+        db 0 ; no more evolutions
 	dbw 1, LEER
 	dbw 1, POWDER_SNOW
 	dbw 7, DOUBLE_TEAM
@@ -1108,6 +1116,26 @@ GlaceonEvosAttacks:
         dbw 1, TACKLE
         db 0 ; no more level-up moves
 GliscorEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+MamoswineEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+PorygonZEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+GalladeEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+DusknoirEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+FroslassEvosAttacks:
         db 0 ; no more evolutions
         dbw 1, TACKLE
         db 0 ; no more level-up moves

@@ -345,11 +345,16 @@ PokemonCries::
         mon_cry CRY_BULBASAUR,   238,  129 ; TOGEKISS
         mon_cry CRY_BULBASAUR,   238,  129 ; YANMEGA
         mon_cry CRY_BULBASAUR,   238,  129 ; LEAFEON
-        mon_cry CRY_BULBASAUR,   238,  129 ; GLACEON
-        mon_cry CRY_BULBASAUR,   238,  129 ; GLISCOR
-        mon_cry CRY_BULBASAUR,   238,  129 ; ROTOM
-        mon_cry CRY_BULBASAUR,   238,  129 ; PHIONE
-        mon_cry CRY_BULBASAUR,   238,  129 ; MANAPHY
+       mon_cry CRY_BULBASAUR,   238,  129 ; GLACEON
+       mon_cry CRY_BULBASAUR,   238,  129 ; GLISCOR
+       mon_cry CRY_BULBASAUR,   238,  129 ; MAMOSWINE
+       mon_cry CRY_BULBASAUR,   238,  129 ; PORYGON_Z
+       mon_cry CRY_BULBASAUR,   238,  129 ; GALLADE
+       mon_cry CRY_BULBASAUR,   238,  129 ; DUSKNOIR
+       mon_cry CRY_BULBASAUR,   238,  129 ; FROSLASS
+       mon_cry CRY_BULBASAUR,   238,  129 ; ROTOM
+       mon_cry CRY_BULBASAUR,   238,  129 ; PHIONE
+       mon_cry CRY_BULBASAUR,   238,  129 ; MANAPHY
 ; Forms
         mon_cry CRY_LAPRAS,       80,  256 ; LAPRAS PARTNER
         mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI

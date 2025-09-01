@@ -88,6 +88,11 @@ AnimationPointers3:
         dw LeafeonAnimation
         dw GlaceonAnimation
         dw GliscorAnimation
+        dw MamoswineAnimation
+        dw PorygonZAnimation
+        dw GalladeAnimation
+        dw DusknoirAnimation
+        dw FroslassAnimation
         dw RotomAnimation
         dw PhioneAnimation
         dw ManaphyAnimation
@@ -180,6 +185,11 @@ YanmegaAnimation:      INCLUDE "gfx/pokemon/sinnoh/yanmega/anim.asm"
 LeafeonAnimation:      INCLUDE "gfx/pokemon/sinnoh/leafeon/anim.asm"
 GlaceonAnimation:      INCLUDE "gfx/pokemon/sinnoh/glaceon/anim.asm"
 GliscorAnimation:      INCLUDE "gfx/pokemon/sinnoh/gliscor/anim.asm"
+MamoswineAnimation:    INCLUDE "gfx/pokemon/sinnoh/mamoswine/anim.asm"
+PorygonZAnimation:     INCLUDE "gfx/pokemon/sinnoh/porygon_z/anim.asm"
+GalladeAnimation:      INCLUDE "gfx/pokemon/sinnoh/gallade/anim.asm"
+DusknoirAnimation:     INCLUDE "gfx/pokemon/sinnoh/dusknoir/anim.asm"
+FroslassAnimation:     INCLUDE "gfx/pokemon/sinnoh/froslass/anim.asm"
 RotomAnimation:        INCLUDE "gfx/pokemon/sinnoh/rotom/anim.asm"
 PhioneAnimation:       INCLUDE "gfx/pokemon/sinnoh/phione/anim.asm"
 ManaphyAnimation:      INCLUDE "gfx/pokemon/sinnoh/manaphy/anim.asm"

@@ -691,16 +691,26 @@ PokemonPicPointers::
         dba YanmegaBackpic
         dba LeafeonFrontpic
         dba LeafeonBackpic
-        dba GlaceonFrontpic
-        dba GlaceonBackpic
-        dba GliscorFrontpic
-        dba GliscorBackpic
-        dba RotomFrontpic
-        dba RotomBackpic
-        dba PhioneFrontpic
-        dba PhioneBackpic
-        dba ManaphyFrontpic
-        dba ManaphyBackpic
+       dba GlaceonFrontpic
+       dba GlaceonBackpic
+       dba GliscorFrontpic
+       dba GliscorBackpic
+       dba MamoswineFrontpic
+       dba MamoswineBackpic
+       dba PorygonZFrontpic
+       dba PorygonZBackpic
+       dba GalladeFrontpic
+       dba GalladeBackpic
+       dba DusknoirFrontpic
+       dba DusknoirBackpic
+       dba FroslassFrontpic
+       dba FroslassBackpic
+       dba RotomFrontpic
+       dba RotomBackpic
+       dba PhioneFrontpic
+       dba PhioneBackpic
+       dba ManaphyFrontpic
+       dba ManaphyBackpic
 ; Forms
         dba LaprasPartnerFrontpic
         dba LaprasPartnerBackpic

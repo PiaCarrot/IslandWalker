@@ -339,12 +339,17 @@ PokedexDataPointerTable:
         dba MagmortarPokedexEntry
         dba TogekissPokedexEntry
         dba YanmegaPokedexEntry
-        dba LeafeonPokedexEntry
-        dba GlaceonPokedexEntry
-        dba GliscorPokedexEntry
-        dba RotomPokedexEntry
-        dba PhionePokedexEntry
-        dba ManaphyPokedexEntry
+       dba LeafeonPokedexEntry
+       dba GlaceonPokedexEntry
+       dba GliscorPokedexEntry
+       dba MamoswinePokedexEntry
+       dba Porygon_ZPokedexEntry
+       dba GalladePokedexEntry
+       dba DusknoirPokedexEntry
+       dba FroslassPokedexEntry
+       dba RotomPokedexEntry
+       dba PhionePokedexEntry
+       dba ManaphyPokedexEntry
 ; Forms
         dba LaprasPartnerPokedexEntry
         dba DratiniPartnerPokedexEntry

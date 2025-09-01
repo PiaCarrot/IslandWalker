@@ -712,6 +712,16 @@ INCBIN "gfx/pokemon/sinnoh/glaceon/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/sinnoh/glaceon/shiny.pal"
 INCBIN "gfx/pokemon/sinnoh/gliscor/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/sinnoh/gliscor/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/mamoswine/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/mamoswine/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/porygon_z/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/porygon_z/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/gallade/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/gallade/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/dusknoir/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/dusknoir/shiny.pal"
+INCBIN "gfx/pokemon/sinnoh/froslass/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sinnoh/froslass/shiny.pal"
 INCBIN "gfx/pokemon/sinnoh/rotom/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/sinnoh/rotom/shiny.pal"
 INCBIN "gfx/pokemon/sinnoh/phione/normal.gbcpal", middle_colors

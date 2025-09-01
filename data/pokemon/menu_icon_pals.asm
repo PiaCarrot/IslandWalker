@@ -352,6 +352,11 @@ MonMenuIconPals:
         icon_pals RED,    RED    ; LEAFEON
         icon_pals RED,    RED    ; GLACEON
         icon_pals RED,    RED    ; GLISCOR
+        icon_pals RED,    RED    ; MAMOSWINE
+        icon_pals RED,    RED    ; PORYGON_Z
+        icon_pals RED,    RED    ; GALLADE
+        icon_pals RED,    RED    ; DUSKNOIR
+        icon_pals RED,    RED    ; FROSLASS
         icon_pals RED,    RED    ; ROTOM
         icon_pals RED,    RED    ; PHIONE
         icon_pals RED,    RED    ; MANAPHY

@@ -87,10 +87,15 @@ AnimationIdlePointers3:
         dw YanmegaAnimationIdle
         dw LeafeonAnimationIdle
         dw GlaceonAnimationIdle
-        dw GliscorAnimationIdle
-        dw RotomAnimationIdle
-        dw PhioneAnimationIdle
-        dw ManaphyAnimationIdle
+       dw GliscorAnimationIdle
+       dw MamoswineAnimationIdle
+       dw PorygonZAnimationIdle
+       dw GalladeAnimationIdle
+       dw DusknoirAnimationIdle
+       dw FroslassAnimationIdle
+       dw RotomAnimationIdle
+       dw PhioneAnimationIdle
+       dw ManaphyAnimationIdle
 .IndirectEnd::
 
 PoochyenaAnimationIdle:     INCLUDE "gfx/pokemon/hoenn/poochyena/anim_idle.asm"
@@ -180,6 +185,11 @@ YanmegaAnimationIdle:    INCLUDE "gfx/pokemon/sinnoh/yanmega/anim_idle.asm"
 LeafeonAnimationIdle:    INCLUDE "gfx/pokemon/sinnoh/leafeon/anim_idle.asm"
 GlaceonAnimationIdle:    INCLUDE "gfx/pokemon/sinnoh/glaceon/anim_idle.asm"
 GliscorAnimationIdle:    INCLUDE "gfx/pokemon/sinnoh/gliscor/anim_idle.asm"
+MamoswineAnimationIdle: INCLUDE "gfx/pokemon/sinnoh/mamoswine/anim_idle.asm"
+PorygonZAnimationIdle:  INCLUDE "gfx/pokemon/sinnoh/porygon_z/anim_idle.asm"
+GalladeAnimationIdle:   INCLUDE "gfx/pokemon/sinnoh/gallade/anim_idle.asm"
+DusknoirAnimationIdle:  INCLUDE "gfx/pokemon/sinnoh/dusknoir/anim_idle.asm"
+FroslassAnimationIdle:  INCLUDE "gfx/pokemon/sinnoh/froslass/anim_idle.asm"
 RotomAnimationIdle:     INCLUDE "gfx/pokemon/sinnoh/rotom/anim_idle.asm"
 PhioneAnimationIdle:    INCLUDE "gfx/pokemon/sinnoh/phione/anim_idle.asm"
 ManaphyAnimationIdle:   INCLUDE "gfx/pokemon/sinnoh/manaphy/anim_idle.asm"

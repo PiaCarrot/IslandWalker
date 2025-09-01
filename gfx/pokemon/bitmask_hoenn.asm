@@ -88,6 +88,11 @@ BitmaskPointers3:
         dw LeafeonBitmasks
         dw GlaceonBitmasks
         dw GliscorBitmasks
+        dw MamoswineBitmasks
+        dw PorygonZBitmasks
+        dw GalladeBitmasks
+        dw DusknoirBitmasks
+        dw FroslassBitmasks
         dw RotomBitmasks
         dw PhioneBitmasks
         dw ManaphyBitmasks
@@ -180,6 +185,11 @@ YanmegaBitmasks:      INCLUDE "gfx/pokemon/sinnoh/yanmega/bitmask.asm"
 LeafeonBitmasks:      INCLUDE "gfx/pokemon/sinnoh/leafeon/bitmask.asm"
 GlaceonBitmasks:      INCLUDE "gfx/pokemon/sinnoh/glaceon/bitmask.asm"
 GliscorBitmasks:      INCLUDE "gfx/pokemon/sinnoh/gliscor/bitmask.asm"
+MamoswineBitmasks:    INCLUDE "gfx/pokemon/sinnoh/mamoswine/bitmask.asm"
+PorygonZBitmasks:     INCLUDE "gfx/pokemon/sinnoh/porygon_z/bitmask.asm"
+GalladeBitmasks:      INCLUDE "gfx/pokemon/sinnoh/gallade/bitmask.asm"
+DusknoirBitmasks:     INCLUDE "gfx/pokemon/sinnoh/dusknoir/bitmask.asm"
+FroslassBitmasks:     INCLUDE "gfx/pokemon/sinnoh/froslass/bitmask.asm"
 RotomBitmasks:        INCLUDE "gfx/pokemon/sinnoh/rotom/bitmask.asm"
 PhioneBitmasks:       INCLUDE "gfx/pokemon/sinnoh/phione/bitmask.asm"
 ManaphyBitmasks:      INCLUDE "gfx/pokemon/sinnoh/manaphy/bitmask.asm"
