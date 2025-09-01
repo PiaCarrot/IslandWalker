@@ -113,8 +113,8 @@ FirstEvoStages::
 	dw KOFFING
 	dw RHYHORN
 	dw RHYHORN    ;070
-	dw CHANSEY
-	dw TANGELA
+        dw HAPPINY
+        dw TANGELA
 	dw KANGASKHAN
 	dw HORSEA
 	dw HORSEA
@@ -122,7 +122,7 @@ FirstEvoStages::
 	dw GOLDEEN
 	dw STARYU     ;078
 	dw STARYU
-	dw MR__MIME
+        dw MIME_JR
 	dw SCYTHER
 	dw SMOOCHUM
 	dw ELEKID
@@ -143,7 +143,7 @@ FirstEvoStages::
 	dw KABUTO
 	dw KABUTO
 	dw AERODACTYL
-	dw SNORLAX
+        dw MUNCHLAX
 	dw ARTICUNO   ;090
 	dw ZAPDOS
 	dw MOLTRES
@@ -185,7 +185,7 @@ FirstEvoStages::
 	dw ODDISH
 	dw MARILL
 	dw MARILL     ;0b8
-	dw SUDOWOODO
+        dw BONSLY
 	dw POLIWAG
 	dw HOPPIP
 	dw HOPPIP
@@ -226,7 +226,7 @@ FirstEvoStages::
 	dw REMORAID
 	dw REMORAID   ;0e0
 	dw DELIBIRD
-	dw MANTINE
+    dw MANTYKE
 	dw SKARMORY
 	dw HOUNDOUR
 	dw HOUNDOUR
@@ -242,8 +242,8 @@ FirstEvoStages::
 	dw ELEKID
 	dw MAGBY      ;0f0
 	dw MILTANK
-	dw CHANSEY
-	dw RAIKOU
+        dw HAPPINY
+        dw RAIKOU
 	dw ENTEI
 	dw SUICUNE
 	dw LARVITAR
@@ -294,19 +294,56 @@ FirstEvoStages::
 	dw DUSKULL
 	dw DUSKULL
 	dw TROPIUS
-	dw CHIMECHO
-	dw WYNAUT     ;168
+        dw CHINGLING
+        dw WYNAUT     ;168
 	dw SNORUNT
 	dw SNORUNT
 	dw SPHEAL
 	dw SPHEAL
 	dw SPHEAL
-	dw RELICANTH
-	dw LUVDISC
-	dw LATIAS
-	dw LATIOS
-	dw LAPRAS_PARTNER
-	dw DRATINI_PARTNER
-	dw EEVEE_PARTNER
-	dw PIKACHU_PARTNER
-	assert_table_length NUM_POKEMON
+        dw RELICANTH
+        dw LUVDISC
+        dw LATIAS
+        dw LATIOS
+        dw SHINX
+        dw SHINX
+        dw SHINX
+        dw CHERUBI
+        dw CHERUBI
+        dw AIPOM
+        dw MISDREAVUS
+        dw MURKROW
+        dw CHINGLING
+        dw BONSLY
+        dw MIME_JR
+        dw HAPPINY
+        dw CHATOT
+        dw MUNCHLAX
+        dw RIOLU
+        dw RIOLU
+        dw CROAGUNK
+        dw CROAGUNK
+        dw CARNIVINE
+        dw FINNEON
+        dw FINNEON
+        dw MANTYKE
+        dw SNEASEL
+        dw MAGNEMITE
+        dw LICKITUNG
+        dw RHYHORN
+        dw TANGELA
+        dw ELEKID
+        dw MAGBY
+        dw TOGEPI
+        dw YANMA
+        dw EEVEE
+        dw EEVEE
+        dw GLIGAR
+        dw ROTOM
+        dw PHIONE
+        dw MANAPHY
+        dw LAPRAS_PARTNER
+        dw DRATINI_PARTNER
+        dw EEVEE_PARTNER
+        dw PIKACHU_PARTNER
+        assert_table_length NUM_POKEMON

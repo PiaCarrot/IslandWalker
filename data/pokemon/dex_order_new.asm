@@ -302,12 +302,49 @@ NewPokedexOrder:
 	dw SPHEAL
 	dw SEALEO
 	dw WALREIN
-	dw RELICANTH
-	dw LUVDISC
-	dw LATIAS
-	dw LATIOS
-	dw LAPRAS_PARTNER
-	dw DRATINI_PARTNER
-	dw EEVEE_PARTNER
-	dw PIKACHU_PARTNER
+        dw RELICANTH
+        dw LUVDISC
+        dw LATIAS
+        dw LATIOS
+        dw SHINX
+        dw LUXIO
+        dw LUXRAY
+        dw CHERUBI
+        dw CHERRIM
+        dw AMBIPOM
+        dw MISMAGIUS
+        dw HONCHKROW
+        dw CHINGLING
+        dw BONSLY
+        dw MIME_JR
+        dw HAPPINY
+        dw CHATOT
+        dw MUNCHLAX
+        dw RIOLU
+        dw LUCARIO
+        dw CROAGUNK
+        dw TOXICROAK
+        dw CARNIVINE
+        dw FINNEON
+        dw LUMINEON
+        dw MANTYKE
+        dw WEAVILE
+        dw MAGNEZONE
+        dw LICKILICKY
+        dw RHYPERIOR
+        dw TANGROWTH
+        dw ELECTIVIRE
+        dw MAGMORTAR
+        dw TOGEKISS
+        dw YANMEGA
+        dw LEAFEON
+        dw GLACEON
+        dw GLISCOR
+        dw ROTOM
+        dw PHIONE
+        dw MANAPHY
+        dw LAPRAS_PARTNER
+        dw DRATINI_PARTNER
+        dw EEVEE_PARTNER
+        dw PIKACHU_PARTNER
 	assert_table_length NUM_POKEMON

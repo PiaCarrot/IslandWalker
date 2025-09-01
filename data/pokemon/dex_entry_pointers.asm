@@ -305,12 +305,49 @@ PokedexDataPointerTable:
 	dba SealeoPokedexEntry
 	dba WalreinPokedexEntry
 	dba RelicanthPokedexEntry
-	dba LuvdiscPokedexEntry
-	dba LatiasPokedexEntry
-	dba LatiosPokedexEntry
+        dba LuvdiscPokedexEntry
+        dba LatiasPokedexEntry
+        dba LatiosPokedexEntry
+        dba ShinxPokedexEntry
+        dba LuxioPokedexEntry
+        dba LuxrayPokedexEntry
+        dba CherubiPokedexEntry
+        dba CherrimPokedexEntry
+        dba AmbipomPokedexEntry
+        dba MismagiusPokedexEntry
+        dba HonchkrowPokedexEntry
+        dba ChinglingPokedexEntry
+        dba BonslyPokedexEntry
+        dba MimeJrPokedexEntry
+        dba HappinyPokedexEntry
+        dba ChatotPokedexEntry
+        dba MunchlaxPokedexEntry
+        dba RioluPokedexEntry
+        dba LucarioPokedexEntry
+        dba CroagunkPokedexEntry
+        dba ToxicroakPokedexEntry
+        dba CarnivinePokedexEntry
+        dba FinneonPokedexEntry
+        dba LumineonPokedexEntry
+        dba MantykePokedexEntry
+        dba WeavilePokedexEntry
+        dba MagnezonePokedexEntry
+        dba LickilickyPokedexEntry
+        dba RhyperiorPokedexEntry
+        dba TangrowthPokedexEntry
+        dba ElectivirePokedexEntry
+        dba MagmortarPokedexEntry
+        dba TogekissPokedexEntry
+        dba YanmegaPokedexEntry
+        dba LeafeonPokedexEntry
+        dba GlaceonPokedexEntry
+        dba GliscorPokedexEntry
+        dba RotomPokedexEntry
+        dba PhionePokedexEntry
+        dba ManaphyPokedexEntry
 ; Forms
-	dba LaprasPartnerPokedexEntry
-	dba DratiniPartnerPokedexEntry
-	dba EeveePartnerPokedexEntry
+        dba LaprasPartnerPokedexEntry
+        dba DratiniPartnerPokedexEntry
+        dba EeveePartnerPokedexEntry
 	dba PikachuPartnerPokedexEntry
 	assert_table_length NUM_POKEMON

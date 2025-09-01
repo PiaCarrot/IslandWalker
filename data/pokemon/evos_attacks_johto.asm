@@ -449,7 +449,8 @@ TogepiEvosAttacks:
 	db 0 ; no more level-up moves
 
 TogeticEvosAttacks:
-	db 0 ; no more evolutions
+        dbww EVOLVE_ITEM, SHINY_STONE, TOGEKISS
+        db 0 ; no more evolutions
 	dbw 1, CHARM
 	dbw 1, GROWL
 	dbw 6, METRONOME
@@ -640,7 +641,8 @@ JumpluffEvosAttacks:
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
-	db 0 ; no more evolutions
+        dbbw EVOLVE_LEVEL, 32, AMBIPOM
+        db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, TAIL_WHIP
 	dbw 6, SAND_ATTACK
@@ -680,7 +682,8 @@ SunfloraEvosAttacks:
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
-	db 0 ; no more evolutions
+        dbbw EVOLVE_LEVEL, 33, YANMEGA
+        db 0 ; no more evolutions
 	dbw 1, FORESIGHT
 	dbw 1, TACKLE
 	dbw 7, QUICK_ATTACK
@@ -753,7 +756,8 @@ UmbreonEvosAttacks:
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
-	db 0 ; no more evolutions
+        dbww EVOLVE_ITEM, DUSK_STONE, HONCHKROW
+        db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 9, ASTONISH
 	dbw 14, PURSUIT
@@ -779,7 +783,8 @@ SlowkingEvosAttacks:
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
-	db 0 ; no more evolutions
+        dbww EVOLVE_ITEM, DUSK_STONE, MISMAGIUS
+        db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, PSYWAVE
 	dbw 6, SPITE
@@ -861,7 +866,8 @@ DunsparceEvosAttacks:
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
-	db 0 ; no more evolutions
+        dbww EVOLVE_ITEM, RAZOR_FANG, GLISCOR
+        db 0 ; no more evolutions
 	dbw 1, POISON_STING
 	dbw 6, SAND_ATTACK
 	dbw 13, HARDEN
@@ -970,7 +976,8 @@ HeracrossEvosAttacks:
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
-	db 0 ; no more evolutions
+        dbww EVOLVE_ITEM, RAZOR_CLAW, WEAVILE
+        db 0 ; no more evolutions
 	dbw 1, LEER
 	dbw 1, SCRATCH
 	dbw 1, TAUNT

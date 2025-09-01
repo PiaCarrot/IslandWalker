@@ -328,50 +328,50 @@ DEF HOENN_POKEMON EQU const_value
 	const LATIAS     ; 12f
 	const LATIOS     ; 130
 DEF NUM_HOENN_POKEMON EQU const_value - HOENN_POKEMON
-; DEF SINNOH_POKEMON EQU const_value
-	; const SHINX      ; 131
-	; const LUXIO      ; 132
-	; const LUXRAY     ; 133
-	; const CHERUBI    ; 134
-	; const CHERRIM    ; 135
-	; const AMBIPOM    ; 136
-	; const MISMAGIUS  ; 137
-	; const HONCHKROW  ; 138
-	; const CHINGLING  ; 139
-	; const BONSLY     ; 13a
-	; const MIME_JR    ; 13b
-	; const HAPPINY    ; 13c
-	; const CHATOT     ; 13d
-	; const MUNCHLAX   ; 13e
-	; const RIOLU      ; 13f
-	; const LUCARIO    ; 140
-	; const CROAGUNK   ; 141
-	; const TOXICROAK  ; 142
-	; const CARNIVINE  ; 143
-	; const FINNEON    ; 145
-	; const LUMINEON   ; 146
-	; const MANTYKE    ; 147
-	; const WEAVILE    ; 148
-	; const MAGNEZONE  ; 149
-	; const LICKILICKY ; 14a
-	; const RHYPERIOR  ; 14b
-	; const TANGROWTH  ; 14c
-	; const ELECTIVIRE ; 14d
-	; const MAGMORTAR  ; 14e
-	; const TOGEKISS   ; 14f
-	; const YANMEGA    ; 150
-	; const LEAFEON    ; 151
-	; const GLACEON    ; 152
-	; const GLISCOR    ; 153
-	; const MAMOSWINE  ; 154
-	; const PORYGON_Z  ; 155
-	; const GALLADE    ; 156
-	; const DUSKNOIR   ; 157
-	; const FROSLASS   ; 158
-	; const ROTOM      ; 159
-	; const PHIONE     ; 15a
-	; const MANAPHY    ; 15b
-; DEF NUM_SINNOH_POKEMON EQU const_value - SINNOH_POKEMON
+DEF SINNOH_POKEMON EQU const_value
+        const SHINX      ; 131
+        const LUXIO      ; 132
+        const LUXRAY     ; 133
+        const CHERUBI    ; 134
+        const CHERRIM    ; 135
+        const AMBIPOM    ; 136
+        const MISMAGIUS  ; 137
+        const HONCHKROW  ; 138
+        const CHINGLING  ; 139
+        const BONSLY     ; 13a
+        const MIME_JR    ; 13b
+        const HAPPINY    ; 13c
+        const CHATOT     ; 13d
+        const MUNCHLAX   ; 13e
+        const RIOLU      ; 13f
+        const LUCARIO    ; 140
+        const CROAGUNK   ; 141
+        const TOXICROAK  ; 142
+       const CARNIVINE  ; 143
+       const FINNEON    ; 144
+       const LUMINEON   ; 145
+       const MANTYKE    ; 146
+       const WEAVILE    ; 147
+       const MAGNEZONE  ; 148
+       const LICKILICKY ; 149
+       const RHYPERIOR  ; 14a
+       const TANGROWTH  ; 14b
+       const ELECTIVIRE ; 14c
+       const MAGMORTAR  ; 14d
+        const TOGEKISS   ; 14e
+        const YANMEGA    ; 14f
+        const LEAFEON    ; 150
+        const GLACEON    ; 151
+        const GLISCOR    ; 152
+        ; const MAMOSWINE  ; 153
+        ; const PORYGON_Z  ; 154
+        ; const GALLADE    ; 155
+        ; const DUSKNOIR   ; 156
+        ; const FROSLASS   ; 157
+        const ROTOM      ; 158
+        const PHIONE     ; 159
+        const MANAPHY    ; 15a
+DEF NUM_SINNOH_POKEMON EQU const_value - SINNOH_POKEMON
 ; DEF OTHER_POKEMON EQU const_value
 	; const FERROSEED  ; 15c
 	; const FERROTHORN ; 15d

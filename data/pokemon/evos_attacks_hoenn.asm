@@ -50,10 +50,47 @@ EvosAttacksPointers3::
 	dw SphealEvosAttacks
 	dw SealeoEvosAttacks
 	dw WalreinEvosAttacks
-	dw RelicanthEvosAttacks
-	dw LuvdiscEvosAttacks
-	dw LatiasEvosAttacks
-	dw LatiosEvosAttacks
+        dw RelicanthEvosAttacks
+        dw LuvdiscEvosAttacks
+        dw LatiasEvosAttacks
+        dw LatiosEvosAttacks
+        dw ShinxEvosAttacks
+        dw LuxioEvosAttacks
+        dw LuxrayEvosAttacks
+        dw CherubiEvosAttacks
+        dw CherrimEvosAttacks
+        dw AmbipomEvosAttacks
+        dw MismagiusEvosAttacks
+        dw HonchkrowEvosAttacks
+        dw ChinglingEvosAttacks
+        dw BonslyEvosAttacks
+        dw MimeJrEvosAttacks
+        dw HappinyEvosAttacks
+        dw ChatotEvosAttacks
+        dw MunchlaxEvosAttacks
+        dw RioluEvosAttacks
+        dw LucarioEvosAttacks
+        dw CroagunkEvosAttacks
+        dw ToxicroakEvosAttacks
+       dw CarnivineEvosAttacks
+       dw FinneonEvosAttacks
+       dw LumineonEvosAttacks
+       dw MantykeEvosAttacks
+       dw WeavileEvosAttacks
+       dw MagnezoneEvosAttacks
+       dw LickilickyEvosAttacks
+       dw RhyperiorEvosAttacks
+       dw TangrowthEvosAttacks
+       dw ElectivireEvosAttacks
+       dw MagmortarEvosAttacks
+       dw TogekissEvosAttacks
+       dw YanmegaEvosAttacks
+       dw LeafeonEvosAttacks
+       dw GlaceonEvosAttacks
+       dw GliscorEvosAttacks
+       dw RotomEvosAttacks
+       dw PhioneEvosAttacks
+       dw ManaphyEvosAttacks
 .IndirectEnd::
 
 PoochyenaEvosAttacks:
@@ -894,8 +931,8 @@ LatiasEvosAttacks:
 	db 0 ; no more level-up moves
 
 LatiosEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, PSYWAVE
+        db 0 ; no more evolutions
+        dbw 1, PSYWAVE
 	dbw 5, MEMENTO
 	; dbw 10, HELPING_HAND
 	dbw 15, SAFEGUARD
@@ -905,7 +942,185 @@ LatiosEvosAttacks:
 	dbw 35, LUSTER_PURGE
 	dbw 40, PSYCHIC_M
 	dbw 45, RECOVER
-	dbw 50, DRAGON_DANCE
-	db 0 ; no more level-up moves
+        dbw 50, DRAGON_DANCE
+        db 0 ; no more level-up moves
 
+ShinxEvosAttacks:
+        dbbw EVOLVE_LEVEL, 15, LUXIO
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+LuxioEvosAttacks:
+        dbbw EVOLVE_LEVEL, 30, LUXRAY
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+LuxrayEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+CherubiEvosAttacks:
+        dbbw EVOLVE_LEVEL, 25, CHERRIM
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+CherrimEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+AmbipomEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+MismagiusEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+HonchkrowEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+ChinglingEvosAttacks:
+        dbbw EVOLVE_LEVEL, 20, CHIMECHO
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+BonslyEvosAttacks:
+        dbbw EVOLVE_LEVEL, 20, SUDOWOODO
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+MimeJrEvosAttacks:
+        dbbw EVOLVE_LEVEL, 20, MR__MIME
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+HappinyEvosAttacks:
+        dbbw EVOLVE_LEVEL, 20, CHANSEY
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+ChatotEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+MunchlaxEvosAttacks:
+        dbbw EVOLVE_LEVEL, 20, SNORLAX
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+RioluEvosAttacks:
+        dbbw EVOLVE_LEVEL, 20, LUCARIO
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+LucarioEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+CroagunkEvosAttacks:
+        dbbw EVOLVE_LEVEL, 37, TOXICROAK
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+ToxicroakEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+CarnivineEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+FinneonEvosAttacks:
+        dbbw EVOLVE_LEVEL, 31, LUMINEON
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+LumineonEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+MantykeEvosAttacks:
+        dbbw EVOLVE_LEVEL, 20, MANTINE
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+WeavileEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+MagnezoneEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+LickilickyEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+RhyperiorEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+TangrowthEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+ElectivireEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+
+MagmortarEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+TogekissEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+YanmegaEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+LeafeonEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+GlaceonEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+GliscorEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+RotomEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+PhioneEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
+ManaphyEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        db 0 ; no more level-up moves
 ENDSECTION

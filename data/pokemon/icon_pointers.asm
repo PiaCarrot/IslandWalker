@@ -308,13 +308,50 @@ IconPointers:
 	dw SphealIcon
 	dw SealeoIcon
 	dw WalreinIcon
-	dw RelicanthIcon
-	dw LuvdiscIcon
-	dw LatiasIcon
-	dw LatiosIcon
+        dw RelicanthIcon
+        dw LuvdiscIcon
+        dw LatiasIcon
+        dw LatiosIcon
+        dw ShinxIcon
+        dw LuxioIcon
+        dw LuxrayIcon
+        dw CherubiIcon
+        dw CherrimIcon
+        dw AmbipomIcon
+        dw MismagiusIcon
+        dw HonchkrowIcon
+        dw ChinglingIcon
+        dw BonslyIcon
+        dw MimeJrIcon
+        dw HappinyIcon
+        dw ChatotIcon
+        dw MunchlaxIcon
+        dw RioluIcon
+        dw LucarioIcon
+        dw CroagunkIcon
+        dw ToxicroakIcon
+        dw CarnivineIcon
+        dw FinneonIcon
+        dw LumineonIcon
+        dw MantykeIcon
+        dw WeavileIcon
+        dw MagnezoneIcon
+        dw LickilickyIcon
+        dw RhyperiorIcon
+        dw TangrowthIcon
+        dw ElectivireIcon
+        dw MagmortarIcon
+        dw TogekissIcon
+        dw YanmegaIcon
+        dw LeafeonIcon
+        dw GlaceonIcon
+        dw GliscorIcon
+        dw RotomIcon
+        dw PhioneIcon
+        dw ManaphyIcon
 ; forms
-	dw LaprasIcon
-	dw DratiniIcon
-	dw EeveeIcon
+        dw LaprasIcon
+        dw DratiniIcon
+        dw EeveeIcon
 	dw PikachuIcon
 	assert_table_length NUM_POKEMON + 1

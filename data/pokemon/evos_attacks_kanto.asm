@@ -1310,7 +1310,8 @@ MagnemiteEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
-	db 0 ; no more evolutions
+        dbww EVOLVE_ITEM, THUNDERSTONE, MAGNEZONE
+        db 0 ; no more evolutions
 	dbw 1, METAL_SOUND
 	dbw 1, SUPERSONIC
 	dbw 1, TACKLE
@@ -1699,8 +1700,9 @@ HitmonchanEvosAttacks:
 	db 0 ; no more level-up moves
 
 LickitungEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, LICK
+        dbbw EVOLVE_LEVEL, 33, LICKILICKY
+        db 0 ; no more evolutions
+        dbw 1, LICK
 	dbw 7, SUPERSONIC
 	dbw 12, DEFENSE_CURL
 	dbw 18, KNOCK_OFF
@@ -1759,8 +1761,9 @@ RhyhornEvosAttacks:
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, FURY_ATTACK
+        dbww EVOLVE_ITEM, PROTECTOR, RHYPERIOR
+        db 0 ; no more evolutions
+        dbw 1, FURY_ATTACK
 	dbw 1, HORN_ATTACK
 	dbw 1, STOMP
 	dbw 1, TAIL_WHIP
@@ -1792,8 +1795,9 @@ ChanseyEvosAttacks:
 	db 0 ; no more level-up moves
 
 TangelaEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, CONSTRICT
+        dbbw EVOLVE_LEVEL, 33, TANGROWTH
+        db 0 ; no more evolutions
+        dbw 1, CONSTRICT
 	dbw 1, INGRAIN
 	dbw 4, SLEEP_POWDER
 	dbw 10, ABSORB
@@ -1959,8 +1963,9 @@ JynxEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, LEER
+        dbww EVOLVE_ITEM, ELECTIRIZER, ELECTIVIRE
+        db 0 ; no more evolutions
+        dbw 1, LEER
 	dbw 1, QUICK_ATTACK
 	dbw 1, THUNDERPUNCH
 	dbw 9, THUNDERPUNCH
@@ -1972,8 +1977,9 @@ ElectabuzzEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, EMBER
+        dbww EVOLVE_ITEM, MAGMARIZER, MAGMORTAR
+        db 0 ; no more evolutions
+        dbw 1, EMBER
 	dbw 1, FIRE_PUNCH
 	dbw 1, LEER
 	dbw 1, SMOG
@@ -2059,10 +2065,12 @@ DittoEvosAttacks:
 EeveeEvosAttacks:
 	dbww EVOLVE_ITEM, THUNDERSTONE, JOLTEON
 	dbww EVOLVE_ITEM, WATER_STONE, VAPOREON
-	dbww EVOLVE_ITEM, FIRE_STONE, FLAREON
-	dbbw EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
-	dbbw EVOLVE_HAPPINESS, TR_EVENITE, UMBREON
-	db 0 ; no more evolutions
+        dbww EVOLVE_ITEM, FIRE_STONE, FLAREON
+        dbbw EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
+        dbbw EVOLVE_HAPPINESS, TR_EVENITE, UMBREON
+        dbww EVOLVE_ITEM, LEAF_STONE, LEAFEON
+        dbww EVOLVE_ITEM, ICE_STONE, GLACEON
+        db 0 ; no more evolutions
 	; dbw 1, HELPING_HAND
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP

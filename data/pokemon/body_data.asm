@@ -305,12 +305,49 @@ PokemonBodyData:
 	dw 207, 871    ; SPHEAL
 	dw 307, 1931   ; SEALEO
 	dw 407, 3320   ; WALREIN
-	dw 303, 516    ; RELICANTH
-	dw 200, 192    ; LUVDISC
-	dw 407, 882    ; LATIAS
-	dw 607, 1323   ; LATIOS
+        dw 303, 516    ; RELICANTH
+        dw 200, 192    ; LUVDISC
+        dw 407, 882    ; LATIAS
+        dw 607, 1323   ; LATIOS
+        dw 104, 130    ; SHINX
+        dw 104, 130    ; LUXIO
+        dw 104, 130    ; LUXRAY
+        dw 104, 130    ; CHERUBI
+        dw 104, 130    ; CHERRIM
+        dw 104, 130    ; AMBIPOM
+        dw 104, 130    ; MISMAGIUS
+        dw 104, 130    ; HONCHKROW
+        dw 104, 130    ; CHINGLING
+        dw 104, 130    ; BONSLY
+        dw 104, 130    ; MIME_JR
+        dw 104, 130    ; HAPPINY
+        dw 104, 130    ; CHATOT
+        dw 104, 130    ; MUNCHLAX
+        dw 104, 130    ; RIOLU
+        dw 104, 130    ; LUCARIO
+        dw 104, 130    ; CROAGUNK
+        dw 104, 130    ; TOXICROAK
+        dw 104, 130    ; CARNIVINE
+        dw 104, 154    ; FINNEON
+        dw 311, 529    ; LUMINEON
+        dw 303, 1433   ; MANTYKE
+        dw 307, 750    ; WEAVILE
+        dw 311, 3968   ; MAGNEZONE
+        dw 104, 130    ; LICKILICKY
+        dw 104, 130    ; RHYPERIOR
+        dw 104, 130    ; TANGROWTH
+        dw 104, 130    ; ELECTIVIRE
+        dw 104, 130    ; MAGMORTAR
+        dw 104, 130    ; TOGEKISS
+        dw 104, 130    ; YANMEGA
+        dw 104, 130    ; LEAFEON
+        dw 104, 130    ; GLACEON
+        dw 104, 130    ; GLISCOR
+        dw 100, 15     ; ROTOM
+        dw 104, 68     ; PHIONE
+        dw 100, 31     ; MANAPHY
 ; Forms
-	dw 802, 4850  ; LAPRAS PARTNER
+        dw 802, 4850  ; LAPRAS PARTNER
 	dw 511, 70     ; DRATINI PARTNER
 	dw 100, 140    ; EEVEE PARTNER
 	dw 104, 130    ; PIKACHU PARTNER

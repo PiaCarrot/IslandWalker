@@ -311,11 +311,48 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   238,  129 ; WALREIN
 	mon_cry CRY_BULBASAUR,   238,  129 ; RELICANTH
 	mon_cry CRY_BULBASAUR,   238,  129 ; LUVDISC
-	mon_cry CRY_BULBASAUR,   238,  129 ; LATIAS
-	mon_cry CRY_BULBASAUR,   238,  129 ; LATIOS
+        mon_cry CRY_BULBASAUR,   238,  129 ; LATIAS
+        mon_cry CRY_BULBASAUR,   238,  129 ; LATIOS
+        mon_cry CRY_BULBASAUR,   238,  129 ; SHINX
+        mon_cry CRY_BULBASAUR,   238,  129 ; LUXIO
+        mon_cry CRY_BULBASAUR,   238,  129 ; LUXRAY
+        mon_cry CRY_BULBASAUR,   238,  129 ; CHERUBI
+        mon_cry CRY_BULBASAUR,   238,  129 ; CHERRIM
+        mon_cry CRY_BULBASAUR,   238,  129 ; AMBIPOM
+        mon_cry CRY_BULBASAUR,   238,  129 ; MISMAGIUS
+        mon_cry CRY_BULBASAUR,   238,  129 ; HONCHKROW
+        mon_cry CRY_BULBASAUR,   238,  129 ; CHINGLING
+        mon_cry CRY_BULBASAUR,   238,  129 ; BONSLY
+        mon_cry CRY_BULBASAUR,   238,  129 ; MIME_JR
+        mon_cry CRY_BULBASAUR,   238,  129 ; HAPPINY
+        mon_cry CRY_BULBASAUR,   238,  129 ; CHATOT
+        mon_cry CRY_BULBASAUR,   238,  129 ; MUNCHLAX
+        mon_cry CRY_BULBASAUR,   238,  129 ; RIOLU
+        mon_cry CRY_BULBASAUR,   238,  129 ; LUCARIO
+        mon_cry CRY_BULBASAUR,   238,  129 ; CROAGUNK
+        mon_cry CRY_BULBASAUR,   238,  129 ; TOXICROAK
+        mon_cry CRY_BULBASAUR,   238,  129 ; CARNIVINE
+        mon_cry CRY_BULBASAUR,   238,  129 ; FINNEON
+        mon_cry CRY_BULBASAUR,   238,  129 ; LUMINEON
+        mon_cry CRY_BULBASAUR,   238,  129 ; MANTYKE
+        mon_cry CRY_BULBASAUR,   238,  129 ; WEAVILE
+        mon_cry CRY_BULBASAUR,   238,  129 ; MAGNEZONE
+        mon_cry CRY_BULBASAUR,   238,  129 ; LICKILICKY
+        mon_cry CRY_BULBASAUR,   238,  129 ; RHYPERIOR
+        mon_cry CRY_BULBASAUR,   238,  129 ; TANGROWTH
+        mon_cry CRY_BULBASAUR,   238,  129 ; ELECTIVIRE
+        mon_cry CRY_BULBASAUR,   238,  129 ; MAGMORTAR
+        mon_cry CRY_BULBASAUR,   238,  129 ; TOGEKISS
+        mon_cry CRY_BULBASAUR,   238,  129 ; YANMEGA
+        mon_cry CRY_BULBASAUR,   238,  129 ; LEAFEON
+        mon_cry CRY_BULBASAUR,   238,  129 ; GLACEON
+        mon_cry CRY_BULBASAUR,   238,  129 ; GLISCOR
+        mon_cry CRY_BULBASAUR,   238,  129 ; ROTOM
+        mon_cry CRY_BULBASAUR,   238,  129 ; PHIONE
+        mon_cry CRY_BULBASAUR,   238,  129 ; MANAPHY
 ; Forms
-	mon_cry CRY_LAPRAS,       80,  256 ; LAPRAS PARTNER
-	mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI
-	mon_cry CRY_VENONAT,     136,  224 ; EEVEE
-	mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
-	assert_table_length NUM_POKEMON
+        mon_cry CRY_LAPRAS,       80,  256 ; LAPRAS PARTNER
+        mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI
+        mon_cry CRY_VENONAT,     136,  224 ; EEVEE
+        mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
+        assert_table_length NUM_POKEMON

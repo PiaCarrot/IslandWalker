@@ -1,0 +1,21 @@
+db 0 ; species ID placeholder
+
+db  70,  110,   70,   90,  115,   70
+evs 0,   1,   0,   0,   1,   0
+;   hp  atk  def  spd  sat  sdf
+
+db FIGHTING, STEEL ; type
+db 45 ; catch rate
+db 184 ; base exp
+dw NO_ITEM, NO_ITEM ; items
+db GENDER_F12_5 ; gender ratio
+db 25 ; step cycles to hatch
+INCBIN "gfx/pokemon/sinnoh/lucario/front.dimensions"
+db STEADFAST, INNER_FOCUS ; wBaseAbility1, wBaseAbility2
+dw NULL ; Padding left-over from the unused back pic
+db GROWTH_MEDIUM_SLOW ; growth rate
+dn EGG_GROUND, EGG_HUMANSHAPE ; egg groups
+
+; tm/hm learnset
+	tmhm FOCUS_PUNCH, WATER_PULSE, CALM_MIND, ROAR, BULK_UP, WORK_UP, SUNNY_DAY, HYPER_BEAM, PROTECT, RAIN_DANCE, IRON_TAIL, EARTHQUAKE, LOW_SWEEP, DIG, PSYCHIC_M, SHADOW_BALL, BRICK_BREAK, DOUBLE_TEAM, ROCK_TOMB, FACADE, REST, ATTRACT, FOCUS_BLAST, FLING, ENDURE, DRAGON_PULSE, DRAIN_PUNCH, NASTY_PLOT, SHADOW_CLAW, PAYBACK, GIGA_IMPACT, STONE_EDGE, SWORDS_DANCE, DARK_PULSE, ROCK_SLIDE, SLEEP_TALK, BULLDOZE, POISON_JAB, SWAGGER, SUBSTITUTE, FLASH_CANNON, STRENGTH, ROCK_SMASH, ROCK_CLIMB
+; end
