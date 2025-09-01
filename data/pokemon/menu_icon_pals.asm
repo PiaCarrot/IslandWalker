@@ -315,11 +315,54 @@ MonMenuIconPals:
 	icon_pals RED,    RED    ; WALREIN
 	icon_pals RED,    RED    ; RELICANTH
 	icon_pals RED,    RED    ; LUVDISC
-	icon_pals RED,    RED    ; LATIAS
-	icon_pals RED,    RED    ; LATIOS
+        icon_pals RED,    RED    ; LATIAS
+        icon_pals RED,    RED    ; LATIOS
+; Sinnoh
+        icon_pals RED,    RED    ; SHINX
+        icon_pals RED,    RED    ; LUXIO
+        icon_pals RED,    RED    ; LUXRAY
+        icon_pals RED,    RED    ; CHERUBI
+        icon_pals RED,    RED    ; CHERRIM
+        icon_pals RED,    RED    ; AMBIPOM
+        icon_pals RED,    RED    ; MISMAGIUS
+        icon_pals RED,    RED    ; HONCHKROW
+        icon_pals RED,    RED    ; CHINGLING
+        icon_pals RED,    RED    ; BONSLY
+        icon_pals RED,    RED    ; MIME_JR
+        icon_pals RED,    RED    ; HAPPINY
+        icon_pals RED,    RED    ; CHATOT
+        icon_pals RED,    RED    ; MUNCHLAX
+        icon_pals RED,    RED    ; RIOLU
+        icon_pals RED,    RED    ; LUCARIO
+        icon_pals RED,    RED    ; CROAGUNK
+        icon_pals RED,    RED    ; TOXICROAK
+        icon_pals RED,    RED    ; CARNIVINE
+        icon_pals RED,    RED    ; FINNEON
+        icon_pals RED,    RED    ; LUMINEON
+        icon_pals RED,    RED    ; MANTYKE
+        icon_pals RED,    RED    ; WEAVILE
+        icon_pals RED,    RED    ; MAGNEZONE
+        icon_pals RED,    RED    ; LICKILICKY
+        icon_pals RED,    RED    ; RHYPERIOR
+        icon_pals RED,    RED    ; TANGROWTH
+        icon_pals RED,    RED    ; ELECTIVIRE
+        icon_pals RED,    RED    ; MAGMORTAR
+        icon_pals RED,    RED    ; TOGEKISS
+        icon_pals RED,    RED    ; YANMEGA
+        icon_pals RED,    RED    ; LEAFEON
+        icon_pals RED,    RED    ; GLACEON
+        icon_pals RED,    RED    ; GLISCOR
+        icon_pals RED,    RED    ; MAMOSWINE
+        icon_pals RED,    RED    ; PORYGON_Z
+        icon_pals RED,    RED    ; GALLADE
+        icon_pals RED,    RED    ; DUSKNOIR
+        icon_pals RED,    RED    ; FROSLASS
+        icon_pals RED,    RED    ; ROTOM
+        icon_pals RED,    RED    ; PHIONE
+        icon_pals RED,    RED    ; MANAPHY
 ; Forms
-	icon_pals BLUE,   TEAL   ; LAPRAS
-	icon_pals BLUE,   PURPLE ; DRATINI
-	icon_pals BROWN,  GRAY   ; EEVEE
-	icon_pals RED,    RED    ; PIKACHU
+        icon_pals BLUE,   TEAL   ; LAPRAS
+        icon_pals BLUE,   PURPLE ; DRATINI
+        icon_pals BROWN,  GRAY   ; EEVEE
+        icon_pals RED,    RED    ; PIKACHU
 	assert_table_length NUM_POKEMON
