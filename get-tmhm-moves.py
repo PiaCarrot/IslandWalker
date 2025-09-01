@@ -72,6 +72,7 @@ def gather_tmhm_moves(slug: str):
     # Gen 8 appearances
     moves.update(fetch_tm_moves(slug, 8, 'Sword & Shield'))
     moves.update(fetch_tm_moves(slug, 8, 'Brilliant Diamond & Shining Pearl'))
+    moves.update(fetch_tm_moves(slug, 9, 'Scarlet & Violet'))
     # Check HGSS for Whirlpool and Rock Climb
     hgss_moves = fetch_tm_moves(slug, 4, 'HeartGold &')
     if 'Whirlpool' in hgss_moves:
