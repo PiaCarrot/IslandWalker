@@ -20,8 +20,9 @@ AlphabeticalPokedexOrder:
 	dw BANETTE
 	dw BAYLEEF
 	dw BEEDRILL
-	dw BELLOSSOM
-	dw BELLSPROUT
+        dw BELLOSSOM
+        dw BELLSPROUT
+        dw BISHARP
         dw BLASTOISE
         dw BLISSEY
         dw BONSLY
@@ -84,6 +85,8 @@ AlphabeticalPokedexOrder:
 	dw FEAROW
         dw FEEBAS
         dw FERALIGATR
+        dw FERROSEED
+        dw FERROTHORN
         dw FINNEON
         dw FLAAFFY
 	dw FLAREON
@@ -213,9 +216,10 @@ AlphabeticalPokedexOrder:
 	dw OMANYTE
 	dw OMASTAR
 	dw ONIX
-	dw PARAS
-	dw PARASECT
-	dw PELIPPER
+        dw PARAS
+        dw PARASECT
+        dw PAWNIARD
+        dw PELIPPER
         dw PERSIAN
         dw PHANPY
         dw PHIONE
@@ -291,11 +295,12 @@ AlphabeticalPokedexOrder:
 	dw SPOINK
 	dw SQUIRTLE
 	dw STANTLER
-	dw STARMIE
-	dw STARYU
-	dw STEELIX
-	dw SUDOWOODO
-	dw SUICUNE
+        dw STARMIE
+        dw STARYU
+        dw STEELIX
+       dw STUNFISK
+        dw SUDOWOODO
+        dw SUICUNE
 	dw SUNFLORA
 	dw SUNKERN
 	dw SWABLU
@@ -345,10 +350,12 @@ AlphabeticalPokedexOrder:
         dw YANMA
         dw YANMEGA
         dw ZANGOOSE
-	dw ZAPDOS
-	dw ZIGZAGOON
-	dw ZUBAT
-	dw LAPRAS_PARTNER
+        dw ZAPDOS
+        dw ZIGZAGOON
+        dw ZOROARK
+        dw ZORUA
+        dw ZUBAT
+        dw LAPRAS_PARTNER
 	dw DRATINI_PARTNER
 	dw EEVEE_PARTNER
 	dw PIKACHU_PARTNER

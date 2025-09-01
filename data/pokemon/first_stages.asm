@@ -347,6 +347,13 @@ FirstEvoStages::
        dw ROTOM
        dw PHIONE
        dw MANAPHY
+       dw FERROSEED
+       dw FERROSEED
+       dw STUNFISK
+       dw PAWNIARD
+       dw PAWNIARD
+       dw ZORUA
+       dw ZORUA
         dw LAPRAS_PARTNER
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER

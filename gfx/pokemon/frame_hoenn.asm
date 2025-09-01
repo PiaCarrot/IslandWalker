@@ -93,9 +93,16 @@ FramePointers3:
         dw GalladeFrames
         dw DusknoirFrames
         dw FroslassFrames
-        dw RotomFrames
-        dw PhioneFrames
-        dw ManaphyFrames
+       dw RotomFrames
+       dw PhioneFrames
+       dw ManaphyFrames
+       dw FerroseedFrames
+       dw FerrothornFrames
+       dw StunfiskFrames
+       dw PawniardFrames
+       dw BisharpFrames
+       dw ZoruaFrames
+       dw ZoroarkFrames
 .IndirectEnd::
 
 PoochyenaFrames:     INCLUDE "gfx/pokemon/hoenn/poochyena/frames.asm"
@@ -193,3 +200,10 @@ FroslassFrames:     INCLUDE "gfx/pokemon/sinnoh/froslass/frames.asm"
 RotomFrames:        INCLUDE "gfx/pokemon/sinnoh/rotom/frames.asm"
 PhioneFrames:       INCLUDE "gfx/pokemon/sinnoh/phione/frames.asm"
 ManaphyFrames:      INCLUDE "gfx/pokemon/sinnoh/manaphy/frames.asm"
+FerroseedFrames:    INCLUDE "gfx/pokemon/other/ferroseed/frames.asm"
+FerrothornFrames:   INCLUDE "gfx/pokemon/other/ferrothorn/frames.asm"
+StunfiskFrames:     INCLUDE "gfx/pokemon/other/stunfisk/frames.asm"
+PawniardFrames:     INCLUDE "gfx/pokemon/other/pawniard/frames.asm"
+BisharpFrames:      INCLUDE "gfx/pokemon/other/bisharp/frames.asm"
+ZoruaFrames:        INCLUDE "gfx/pokemon/other/zorua/frames.asm"
+ZoroarkFrames:      INCLUDE "gfx/pokemon/other/zoroark/frames.asm"

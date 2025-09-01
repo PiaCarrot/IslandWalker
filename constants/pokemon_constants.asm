@@ -372,14 +372,14 @@ DEF SINNOH_POKEMON EQU const_value
         const PHIONE     ; 159
         const MANAPHY    ; 15a
 DEF NUM_SINNOH_POKEMON EQU const_value - SINNOH_POKEMON
-; DEF OTHER_POKEMON EQU const_value
-	; const FERROSEED  ; 15c
-	; const FERROTHORN ; 15d
-	; const STUNFISK   ; 15e
-	; const PAWNIARD   ; 15f
-	; const BISHARP    ; 160
-	; const ZORUA      ; 161
-	; const ZORUARK    ; 162
+DEF OTHER_POKEMON EQU const_value
+        const FERROSEED  ; 15c
+        const FERROTHORN ; 15d
+        const STUNFISK   ; 15e
+        const PAWNIARD   ; 15f
+        const BISHARP    ; 160
+        const ZORUA      ; 161
+        const ZOROARK    ; 162
 	; const SKRELP     ; 163
 	; const DRAGALGE   ; 164
 	; const CLAUNCHER  ; 165
@@ -445,7 +445,7 @@ DEF NUM_SINNOH_POKEMON EQU const_value - SINNOH_POKEMON
 	; const MARSHADOW  ; 1a1
 	; const MELTAN     ; 1a2
 	; const MELMETAL   ; 1a3
-; DEF NUM_OTHER_POKEMON EQU const_value - OTHER_POKEMON
+DEF NUM_OTHER_POKEMON EQU const_value - OTHER_POKEMON
 DEF FORM_POKEMON EQU const_value
 	const LAPRAS_PARTNER      ; 1a4
 	; const RATATTA_ALOLA       ; 1a5

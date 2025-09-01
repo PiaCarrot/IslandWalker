@@ -96,6 +96,13 @@ EvosAttacksPointers3::
        dw RotomEvosAttacks
        dw PhioneEvosAttacks
        dw ManaphyEvosAttacks
+       dw FerroseedEvosAttacks
+       dw FerrothornEvosAttacks
+       dw StunfiskEvosAttacks
+       dw PawniardEvosAttacks
+       dw BisharpEvosAttacks
+       dw ZoruaEvosAttacks
+       dw ZoroarkEvosAttacks
 .IndirectEnd::
 
 PoochyenaEvosAttacks:
@@ -1793,18 +1800,149 @@ PhioneEvosAttacks:
 	db 0 ; no more level-up moves
 ManaphyEvosAttacks:
         db 0 ; no more evolutions
-	dbw 1, TAIL_GLOW
-	dbw 1, BUBBLE
-	dbw 1, WATER_SPORT
-	dbw 9, CHARM
-	dbw 16, SUPERSONIC
-	dbw 24, BUBBLEBEAM
-	dbw 31, ACID_ARMOR
-	dbw 39, WHIRLPOOL
-	dbw 46, WATER_PULSE
-	dbw 54, AQUA_RING
-	dbw 61, DIVE
-	dbw 69, RAIN_DANCE
-	dbw 76, HEART_SWAP
-	db 0 ; no more level-up moves
+        dbw 1, TAIL_GLOW
+        dbw 1, BUBBLE
+        dbw 1, WATER_SPORT
+        dbw 9, CHARM
+        dbw 16, SUPERSONIC
+        dbw 24, BUBBLEBEAM
+        dbw 31, ACID_ARMOR
+        dbw 39, WHIRLPOOL
+        dbw 46, WATER_PULSE
+        dbw 54, AQUA_RING
+        dbw 61, DIVE
+        dbw 69, RAIN_DANCE
+        dbw 76, HEART_SWAP
+        db 0 ; no more level-up moves
+FerroseedEvosAttacks:
+        dbbw EVOLVE_LEVEL, 40, FERROTHORN
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        dbw 1, HARDEN
+        dbw 5, ROLLOUT
+        dbw 10, CURSE
+        dbw 15, METAL_CLAW
+        dbw 20, PIN_MISSILE
+        dbw 25, GYRO_BALL
+        dbw 30, IRON_DEFENSE
+        dbw 35, MIRROR_SHOT
+        dbw 40, INGRAIN
+        dbw 45, FLASH_CANNON
+        dbw 50, IRON_HEAD
+        dbw 55, PAYBACK
+        db 0 ; no more level-up moves
+FerrothornEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        dbw 1, HARDEN
+        dbw 1, ROLLOUT
+        dbw 1, CURSE
+        dbw 15, METAL_CLAW
+        dbw 20, PIN_MISSILE
+        dbw 25, GYRO_BALL
+        dbw 30, IRON_DEFENSE
+        dbw 35, MIRROR_SHOT
+        dbw 40, INGRAIN
+        dbw 45, FLASH_CANNON
+        dbw 50, IRON_HEAD
+        dbw 55, PAYBACK
+        dbw 60, POWER_WHIP
+        dbw 65, EXPLOSION
+        db 0 ; no more level-up moves
+StunfiskEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        dbw 1, WATER_GUN
+        dbw 1, THUNDERSHOCK
+        dbw 1, MUD_SLAP
+        dbw 5, ENDURE
+        dbw 10, MUD_SHOT
+        dbw 15, REVENGE
+        dbw 20, CHARGE
+        dbw 25, SUCKER_PUNCH
+        dbw 35, BOUNCE
+        dbw 40, MUDDY_WATER
+        dbw 45, DISCHARGE
+        dbw 50, FLAIL
+        dbw 55, FISSURE
+        db 0 ; no more level-up moves
+PawniardEvosAttacks:
+        dbbw EVOLVE_LEVEL, 52, BISHARP
+        db 0 ; no more evolutions
+        dbw 1, SCRATCH
+        dbw 1, LEER
+        dbw 5, FURY_CUTTER
+        dbw 10, TORMENT
+        dbw 15, SCARY_FACE
+        dbw 20, METAL_CLAW
+        dbw 25, SLASH
+        dbw 30, METAL_SOUND
+        dbw 35, EMBARGO
+        dbw 40, NIGHT_SLASH
+        dbw 45, IRON_DEFENSE
+        dbw 50, METAL_BURST
+        dbw 55, SWORDS_DANCE
+        dbw 60, GUILLOTINE
+        db 0 ; no more level-up moves
+BisharpEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, METAL_CLAW
+        dbw 1, SCRATCH
+        dbw 1, LEER
+        dbw 1, FURY_CUTTER
+        dbw 1, TORMENT
+        dbw 15, SCARY_FACE
+        dbw 20, METAL_CLAW
+        dbw 25, SLASH
+        dbw 30, METAL_SOUND
+        dbw 35, EMBARGO
+        dbw 40, NIGHT_SLASH
+        dbw 45, IRON_DEFENSE
+        dbw 50, METAL_BURST
+        dbw 57, SWORDS_DANCE
+        dbw 64, GUILLOTINE
+        dbw 71, IRON_HEAD
+        db 0 ; no more level-up moves
+ZoruaEvosAttacks:
+        dbbw EVOLVE_LEVEL, 30, ZOROARK
+        db 0 ; no more evolutions
+        dbw 1, SCRATCH
+        dbw 1, LEER
+        dbw 5, PURSUIT
+        dbw 9, FAKE_TEARS
+        dbw 13, FURY_SWIPES
+        dbw 17, FAINT_ATTACK
+        dbw 21, SCARY_FACE
+        dbw 25, TAUNT
+        dbw 29, SNARL
+        dbw 33, NIGHT_SLASH
+        dbw 37, NASTY_PLOT
+        dbw 41, IMPRISON
+        dbw 45, U_TURN
+        dbw 49, EXTRASENSORY
+        dbw 53, DARK_PULSE
+        db 0 ; no more level-up moves
+ZoroarkEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, NIGHT_SLASH
+        dbw 1, NASTY_PLOT
+        dbw 1, IMPRISON
+        dbw 1, SCRATCH
+        dbw 1, LEER
+        dbw 5, PURSUIT
+        dbw 9, FAKE_TEARS
+        dbw 13, FURY_SWIPES
+        dbw 17, FAINT_ATTACK
+        dbw 21, SCARY_FACE
+        dbw 25, TAUNT
+        dbw 29, SNARL
+        dbw 34, NIGHT_SLASH
+        dbw 39, NASTY_PLOT
+        dbw 44, IMPRISON
+        dbw 49, U_TURN
+        dbw 54, EXTRASENSORY
+        dbw 59, DARK_PULSE
+        dbw 64, AGILITY
+        dbw 69, COUNTER
+        db 0 ; no more level-up moves
 ENDSECTION

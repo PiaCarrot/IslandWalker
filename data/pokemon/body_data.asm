@@ -349,8 +349,15 @@ PokemonBodyData:
        dw 104, 130    ; DUSKNOIR
        dw 104, 130    ; FROSLASS
        dw 100, 15     ; ROTOM
-        dw 104, 68     ; PHIONE
-        dw 100, 31     ; MANAPHY
+       dw 104, 68     ; PHIONE
+       dw 100, 31     ; MANAPHY
+       dw 200, 414   ; FERROSEED
+       dw 303, 2425  ; FERROTHORN
+       dw 204, 243   ; STUNFISK
+       dw 108, 225   ; PAWNIARD
+       dw 503, 1543  ; BISHARP
+       dw 204, 276   ; ZORUA
+       dw 503, 1788  ; ZOROARK
 ; Forms
         dw 802, 4850  ; LAPRAS PARTNER
 	dw 511, 70     ; DRATINI PARTNER

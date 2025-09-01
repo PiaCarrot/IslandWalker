@@ -354,6 +354,13 @@ PokemonNames::
        db "ROTOM@@@@@"
        db "PHIONE@@@@"
        db "MANAPHY@@@"
+       db "FERROSEED@"
+       db "FERROTHORN"
+       db "STUNFISK@@"
+       db "PAWNIARD@@"
+       db "BISHARP@@@"
+       db "ZORUA@@@@@"
+       db "ZOROARK@@@"
 ; Forms
         db "LAPRAS@@@@"
         db "DRATINI@@@"
