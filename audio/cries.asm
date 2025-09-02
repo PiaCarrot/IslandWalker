@@ -2151,3 +2151,72 @@ Cry_Wingull_Ch8:
         noise_note 6, 8, 3, 58
         noise_note 8, 7, 1, 56
         sound_ret
+
+Cry_Ralts:
+        channel_count 2
+        channel 5, Cry_Ralts_Ch5
+        channel 6, Cry_Ralts_Ch6
+
+Cry_Ralts_Ch5:
+        duty_cycle_pattern 2, 2, 0, 0
+        square_note 4, 13, 4, 2016
+        square_note 8, 12, 1, 1984
+        sound_ret
+
+Cry_Ralts_Ch6:
+        duty_cycle_pattern 1, 1, 3, 3
+        square_note 4, 12, 4, 1984
+        square_note 8, 11, 1, 1952
+        sound_ret
+
+Cry_Shroomish:
+        channel_count 3
+        channel 5, Cry_Shroomish_Ch5
+        channel 6, Cry_Shroomish_Ch6
+        channel 8, Cry_Shroomish_Ch8
+
+Cry_Shroomish_Ch5:
+        duty_cycle_pattern 0, 1, 0, 1
+        square_note 4, 14, 4, 1536
+        square_note 6, 13, 4, 1472
+        square_note 8, 11, 1, 1408
+        sound_ret
+
+Cry_Shroomish_Ch6:
+        duty_cycle_pattern 3, 2, 3, 2
+        square_note 4, 13, 4, 1504
+        square_note 6, 12, 4, 1440
+        square_note 8, 10, 1, 1376
+        sound_ret
+
+Cry_Shroomish_Ch8:
+        noise_note 4, 10, 4, 52
+        noise_note 6, 9, 3, 50
+        noise_note 8, 8, 1, 48
+        sound_ret
+
+Cry_Nincada:
+        channel_count 3
+        channel 5, Cry_Nincada_Ch5
+        channel 6, Cry_Nincada_Ch6
+        channel 8, Cry_Nincada_Ch8
+
+Cry_Nincada_Ch5:
+        duty_cycle_pattern 2, 0, 2, 0
+        square_note 2, 14, 4, 1728
+        square_note 4, 13, 2, 1760
+        square_note 6, 12, 1, 1792
+        sound_ret
+
+Cry_Nincada_Ch6:
+        duty_cycle_pattern 1, 3, 1, 3
+        square_note 2, 13, 4, 1696
+        square_note 4, 12, 2, 1728
+        square_note 6, 11, 1, 1760
+        sound_ret
+
+Cry_Nincada_Ch8:
+        noise_note 2, 11, 4, 60
+        noise_note 4, 10, 2, 58
+        noise_note 6, 9, 1, 56
+        sound_ret

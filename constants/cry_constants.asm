@@ -77,5 +77,8 @@
         const CRY_POOCHYENA
         const CRY_ZIGZAGOON
         const CRY_WINGULL
+        const CRY_RALTS
+        const CRY_SHROOMISH
+        const CRY_NINCADA
 
 DEF NUM_CRIES EQU const_value

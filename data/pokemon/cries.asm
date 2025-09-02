@@ -266,14 +266,14 @@ PokemonCries::
         mon_cry CRY_ZIGZAGOON,    32,  383 ; LINOONE
         mon_cry CRY_WINGULL,       0,  256 ; WINGULL
         mon_cry CRY_WINGULL,      16,  320 ; PELIPPER
-	mon_cry CRY_BULBASAUR,   238,  129 ; RALTS
-	mon_cry CRY_BULBASAUR,   238,  129 ; KIRLIA
-	mon_cry CRY_BULBASAUR,   238,  129 ; GARDEVOIR
-	mon_cry CRY_BULBASAUR,   238,  129 ; SHROOMISH
-	mon_cry CRY_BULBASAUR,   238,  129 ; BRELOOM
-	mon_cry CRY_BULBASAUR,   238,  129 ; NINCADA
-	mon_cry CRY_BULBASAUR,   238,  129 ; NINJASK
-	mon_cry CRY_BULBASAUR,   238,  129 ; SHEDINJA
+        mon_cry CRY_RALTS,        0,  256 ; RALTS
+        mon_cry CRY_RALTS,       32,  320 ; KIRLIA
+        mon_cry CRY_RALTS,       64,  384 ; GARDEVOIR
+        mon_cry CRY_SHROOMISH,    0,  256 ; SHROOMISH
+        mon_cry CRY_SHROOMISH,   32,  383 ; BRELOOM
+        mon_cry CRY_NINCADA,      0,  256 ; NINCADA
+        mon_cry CRY_NINCADA,     32,  320 ; NINJASK
+        mon_cry CRY_NINCADA,     64,  384 ; SHEDINJA
 	mon_cry CRY_BULBASAUR,   238,  129 ; AZURILL
 	mon_cry CRY_BULBASAUR,   238,  129 ; ARON
 	mon_cry CRY_BULBASAUR,   238,  129 ; LAIRON
