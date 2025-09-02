@@ -103,44 +103,44 @@ EggMovePointers3::
        dw NoEggMoves3 ; BISHARP
        dw ZoruaEggMoves
        dw NoEggMoves3 ; ZOROARK
-       dw NoEggMoves3 ; SKRELP
+       dw SkrelpEggMoves
        dw NoEggMoves3 ; DRAGALGE
-       dw NoEggMoves3 ; CLAUNCHER
+       dw ClauncherEggMoves
        dw NoEggMoves3 ; CLAWITZER
        dw NoEggMoves3 ; SYLVEON
-       dw NoEggMoves3 ; PANCHAM
+       dw PanchamEggMoves
        dw NoEggMoves3 ; PANGORO
-       dw NoEggMoves3 ; INKAY
+       dw InkayEggMoves
        dw NoEggMoves3 ; MALAMAR
-       dw NoEggMoves3 ; NOIBAT
+       dw NoibatEggMoves
        dw NoEggMoves3 ; NOIVERN
-       dw NoEggMoves3 ; HONEDGE
+       dw HonedgeEggMoves
        dw NoEggMoves3 ; DOUBLADE
        dw NoEggMoves3 ; AEGISLASH
-       dw NoEggMoves3 ; GOOMY
+       dw GoomyEggMoves
        dw NoEggMoves3 ; SLIGGOO
        dw NoEggMoves3 ; GOODRA
-       dw NoEggMoves3 ; ROCKRUFF
+       dw RockruffEggMoves
        dw NoEggMoves3 ; LYCANROC
-       dw NoEggMoves3 ; CUTIEFLY
+       dw CutieflyEggMoves
        dw NoEggMoves3 ; RIBOMBEE
-       dw NoEggMoves3 ; PIKIPEK
+       dw PikipekEggMoves
        dw NoEggMoves3 ; TRUMBEAK
        dw NoEggMoves3 ; TOUCANNON
-       dw NoEggMoves3 ; MIMIKYU
-       dw NoEggMoves3 ; SANDYGAST
+       dw MimikyuEggMoves
+       dw SandygastEggMoves
        dw NoEggMoves3 ; PALOSSAND
-       dw NoEggMoves3 ; SALANDIT
+       dw SalanditEggMoves
        dw NoEggMoves3 ; SALAZZLE
-       dw NoEggMoves3 ; MAREANIE
+       dw MareanieEggMoves
        dw NoEggMoves3 ; TOXAPEX
-       dw NoEggMoves3 ; TURTONATOR
+       dw TurtonatorEggMoves
        dw NoEggMoves3 ; DHELMISE
-       dw NoEggMoves3 ; PINCURCHIN
-       dw NoEggMoves3 ; CRAMORANT
-       dw NoEggMoves3 ; BINACLE
+       dw PincurchinEggMoves
+       dw CramorantEggMoves
+       dw BinacleEggMoves
        dw NoEggMoves3 ; BARBARACLE
-       dw NoEggMoves3 ; APPLIN
+       dw ApplinEggMoves
        dw NoEggMoves3 ; FLAPPLE
        dw NoEggMoves3 ; APPLETUN
        dw NoEggMoves3 ; GIMMIGHOUL
@@ -151,7 +151,7 @@ EggMovePointers3::
        dw NoEggMoves3 ; KINGAMBIT
        dw NoEggMoves3 ; DIPPLIN
        dw NoEggMoves3 ; HYDRAPPLE
-       dw NoEggMoves3 ; CHARCADET
+       dw CharcadetEggMoves
        dw NoEggMoves3 ; ARMAROUGE
        dw NoEggMoves3 ; CERULEDGE
        dw NoEggMoves3 ; CLODSIRE
@@ -496,7 +496,192 @@ ZoruaEggMoves:
         dw CAPTIVATE
         dw COPYCAT
         dw -1 ; end
+
+SkrelpEggMoves:
+        dw ACID_ARMOR
+        ; DRAGON_TAIL
+        dw HAZE
+        ; PLAY_ROUGH
+        dw TOXIC_SPIKES
+        dw TWISTER
+        ; VENOM_DRENCH
+        dw -1 ; end
+
+ClauncherEggMoves:
+        dw AQUA_JET
+        dw AQUA_TAIL
+        dw BUBBLEBEAM
+        dw CRABHAMMER
+        dw ENDURE
+        ; ENTRAINMENT
+        ; HELPING_HAND
+        dw -1 ; end
+
+PanchamEggMoves:
+        ; FOUL_PLAY
+        ; ME_FIRST
+        ; POWER_TRIP
+        ; QUASH
+        ; QUICK_GUARD
+        dw SEISMIC_TOSS
+        ; STORM_THROW
+        dw -1 ; end
+
+InkayEggMoves:
+        dw ACUPRESSURE
+        dw CAMOUFLAGE
+        dw DESTINY_BOND
+        dw DISABLE
+        dw FLATTER
+        dw GUARD_SWAP
+        ; POWER_SPLIT
+        ; SIMPLE_BEAM
+        dw -1 ; end
+
+NoibatEggMoves:
+        dw DEFOG
+        dw DRAGON_RUSH
+        dw OUTRAGE
+        dw SNATCH
+        dw SWITCHEROO
+        dw TAILWIND
+        dw -1 ; end
+
+HonedgeEggMoves:
+        dw BLOCK
+        dw DESTINY_BOND
+        dw METAL_SOUND
+        dw SHADOW_SNEAK
+        ; WIDE_GUARD
+        dw -1 ; end
+
+GoomyEggMoves:
+        dw ACID_ARMOR
+        ; ACID_SPRAY
+        dw BUBBLE
+        dw COUNTER
+        dw CURSE
+        dw DRAGON_PULSE
+        dw ENDURE
+        dw HYDRO_PUMP
+        dw IRON_TAIL
+        ; LIFE_DEW
+        dw POISON_TAIL
+        ; SHELTER
+        dw WATER_PULSE
+        dw -1 ; end
+
+RockruffEggMoves:
+        dw CRUSH_CLAW
+        dw ENDEAVOR
+        dw FIRE_FANG
+        dw LAST_RESORT
+        dw SUCKER_PUNCH
+        dw THRASH
+        dw THUNDER_FANG
+        dw -1 ; end
+
+CutieflyEggMoves:
+        ; AROMATIC_MIST
+        dw BATON_PASS
+        ; BESTOW
+        ; MOONBLAST
+        ; POWDER
+        dw SKILL_SWAP
+        ; SPEED_SWAP
+        ; STICKY_WEB
+        dw -1 ; end
+
+PikipekEggMoves:
+        ; BOOMBURST
+        dw BRAVE_BIRD
+        dw GUNK_SHOT
+        dw MIRROR_MOVE
+        dw SKY_ATTACK
+        dw TAILWIND
+        dw UPROAR
+        dw -1 ; end
+
+MimikyuEggMoves:
+        dw CURSE
+        dw DESTINY_BOND
+        dw GRUDGE
+        dw NIGHTMARE
+        dw -1 ; end
+
+SandygastEggMoves:
+        dw AMNESIA
+        dw ANCIENTPOWER
+        dw CURSE
+        dw DESTINY_BOND
+        dw SPIT_UP
+        dw STOCKPILE
+        dw SWALLOW
+        dw -1 ; end
+
+SalanditEggMoves:
+        ; BELCH
+        dw FAKE_OUT
+        dw KNOCK_OFF
+        dw MUD_SLAP
+        dw SAND_ATTACK
+        dw SNATCH
+        dw -1 ; end
+
+MareanieEggMoves:
+        dw HAZE
+        ; INFESTATION
+        dw SPIT_UP
+        dw STOCKPILE
+        dw SWALLOW
+        dw -1 ; end
+
+TurtonatorEggMoves:
+        dw CURSE
+        dw FIRE_SPIN
+        dw HEAD_SMASH
+        dw RAPID_SPIN
+        dw REVENGE
+        ; WIDE_GUARD
+        dw -1 ; end
+
+PincurchinEggMoves:
+        dw MEMENTO
+        dw SUCKER_PUNCH
+        dw -1 ; end
+
+CramorantEggMoves:
+        dw AERIAL_ACE
+        ; AQUA_CUTTER
+        dw AQUA_RING
+        dw DEFOG
+        dw FEATHERDANCE
+        dw ROOST
+        dw -1 ; end
+
+BinacleEggMoves:
+        ; HELPING_HAND
+        dw NIGHT_SLASH
+        dw SAND_ATTACK
+        dw SWITCHEROO
+        dw TICKLE
+        dw WATER_SPORT
+        dw -1 ; end
+
+ApplinEggMoves:
+        dw DEFENSE_CURL
+        dw RECYCLE
+        dw ROLLOUT
+        dw SUCKER_PUNCH
+        dw -1 ; end
+
+CharcadetEggMoves:
+        dw DESTINY_BOND
+        dw DISABLE
+        dw SPITE
+        dw -1 ; end
+
 NoEggMoves3:
-	dw -1 ; end
+        dw -1 ; end
 
 ENDSECTION
