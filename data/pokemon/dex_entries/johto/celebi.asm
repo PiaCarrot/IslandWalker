@@ -1,9 +1,9 @@
 	db "TIMETRAVEL@" ; species name
 
-	db   "Revered as a"
-	next "guardian of the"
-	next "forest, CELEBI"
+	db   "It was somehow"
+	next "sealed in the GS"
+	next "BALL. It has the"
 
-	page "appears wherever"
-	next "beautiful forests"
-	next "exist.@"
+	page "mysterious power"
+	next "to manipulate"
+	next "time itself.@"

@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "GULP@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "It swallows prey"
+	next "whole, but due to"
+	next "its narrow throat"
+
+	page "it can only eat"
+	next "narrow fish like"
+	next "ARROKUDA.@"

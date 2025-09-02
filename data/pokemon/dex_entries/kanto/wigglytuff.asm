@@ -1,9 +1,9 @@
 	db "BALLOON@" ; species name
 
-	db   "The rich, fluffy"
-	next "fur that covers"
-	next "its body feels so"
+	db   "Its soft fur is"
+	next "so sought after"
+	next "that its never"
 
-	page "good that anyone"
-	next "who feels it can't"
-	next "stop touching it.@"
+	page "found wild. Its"
+	next "eyes are always"
+	next "teary.@"

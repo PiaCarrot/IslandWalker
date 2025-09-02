@@ -1,9 +1,9 @@
 	db "DRILL@" ; species name
 
-	db   "By lightly spin-"
-	next "ning its drill-"
-	next "like horn, it can"
+	db   "When it evolved,"
+	next "it became a lot"
+	next "smarter and tends"
 
-	page "easily shatter"
-	next "even a diamond in"
-	next "the rough.@"
+	page "to stay away from"
+	next "humans and lives"
+	next "in mountains.@"

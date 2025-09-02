@@ -1,9 +1,9 @@
 	db "ROCK SNAKE@" ; species name
 
-	db   "As it digs through"
-	next "the ground, it"
-	next "absorbs many hard"
+	db   "It feeds on large"
+	next "boulders deep in"
+	next "the ground. It"
 
-	page "objects. This is"
-	next "what makes its"
-	next "body so solid.@"
+	page "leaves behind big"
+	next "tunnels that turn"
+	next "into caves.@"

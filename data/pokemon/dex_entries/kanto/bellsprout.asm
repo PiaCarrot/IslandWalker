@@ -1,9 +1,9 @@
 	db "FLOWER@" ; species name
 
-	db   "If it notices"
-	next "anything that"
-	next "moves, it"
+	db   "It can whip its"
+	next "lithe body with"
+	next "terrifying speed"
 
-	page "immediately flings"
-	next "its vine at the"
-	next "object.@"
+	page "and precision to"
+	next "catch BUG-type"
+	next "POKEMON.@"

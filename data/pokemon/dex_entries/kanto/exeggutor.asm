@@ -1,9 +1,9 @@
 	db "COCONUT@" ; species name
 
-	db   "Living in a good"
-	next "environment makes"
-	next "it grow lots of"
+	db   "While normally"
+	next "gentle, when in"
+	next "large groups they"
 
-	page "heads. A head that"
-	next "drops off becomes"
-	next "an EXEGGCUTE.@"
+	page "can stampede and"
+	next "wreak havoc all"
+	next "around it.@"

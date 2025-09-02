@@ -1,9 +1,9 @@
 	db "MOONLIGHT@" ; species name
 
-	db   "On the night of a"
-	next "full moon, or when"
-	next "it gets excited,"
+	db   "There was some"
+	next "debate on whether"
+	next "this POKEMON was"
 
-	page "the ring patterns"
-	next "on its body glow"
-	next "yellow.@"
+	page "a POISON-type or"
+	next "not, due to its"
+	next "poisonous sweat.@"

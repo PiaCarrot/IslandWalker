@@ -1,9 +1,9 @@
 	db "FLAME@" ; species name
 
-	db   "Legendary bird"
-	next "#MON. It is"
-	next "said to migrate"
+	db   "Ancient SHAMOUTI"
+	next "legends say that"
+	next "MOLTRES brings"
 
-	page "from the south"
-	next "along with the"
-	next "spring.@"
+	page "forth a warm"
+	next "current called"
+	next "BLACK TIDE.@"

@@ -1,9 +1,9 @@
 	db "BALL@" ; species name
 
-	db   "On sunny days, it"
-	next "lands on beaches"
-	next "to bounce like a"
+	db   "They have been"
+	next "observed beaching"
+	next "themselves in or-"
 
-	page "ball and play. It"
-	next "spouts water from"
-	next "its nose.@"
+	page "der to play by"
+	next "bouncing all"
+	next "around.@"

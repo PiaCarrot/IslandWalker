@@ -1,9 +1,9 @@
 db "BIG EATER@" ; species name
 
-db   "It eats anything," 
-next "even if it isn't"
-next "food. It stores"
+	db   "It is commonly"
+	next "kept as a pet due"
+	next "to it being more"
 
-page "leftovers in its"
-next "fur to snack on"
-next "later.@"
+	page "than happy to eat"
+	next "rotten food and"
+	next "trash.@"

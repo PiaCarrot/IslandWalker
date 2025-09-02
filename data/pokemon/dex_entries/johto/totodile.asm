@@ -1,9 +1,9 @@
 	db "BIG JAW@" ; species name
 
-	db   "This rough critter"
-	next "chomps at any"
-	next "moving object it"
+	db   "A popular partner"
+	next "POKEMON in the"
+	next "JOHTO region. Its"
 
-	page "sees. Turning your"
-	next "back on it is not"
-	next "recommended.@"
+	page "playful bite can"
+	next "cause serious in-"
+	next "jury.@"

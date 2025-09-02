@@ -1,9 +1,9 @@
 	db "DUCK@" ; species name
 
-	db   "The only time it"
-	next "can use its psy-"
-	next "chic power is when"
+	db   "When it has a bad"
+	next "headache, it uses"
+	next "powerful PSYCHIC"
 
-	page "its sleeping brain"
-	next "cells happen to"
-	next "wake.@"
+	page "shockwaves. After"
+	next "it goes, it for-"
+	next "gets about it.@"

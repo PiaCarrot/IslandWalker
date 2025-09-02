@@ -1,9 +1,9 @@
 	db "SPIKES@" ; species name
 
-	db   "It can remember"
-	next "only one thing at"
-	next "a time. Once it"
+	db   "It can knock down"
+	next "a skyscraper with"
+	next "its charge. It is"
 
-	page "starts rushing, it"
-	next "forgets why it"
-	next "started.@"
+	page "too dumb to think"
+	next "about what it's"
+	next "doing.@"

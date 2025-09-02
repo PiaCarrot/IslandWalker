@@ -1,9 +1,9 @@
 	db "MOUSE@" ; species name
 
-	db   "When it is anger-"
-	next "ed, it immediately"
-	next "discharges the"
+	db   "It channels elec-"
+	next "tricity through"
+	next "its eyes in order"
 
-	page "energy stored in"
-	next "the pouches in its"
-	next "cheeks.@"
+	page "to see through"
+	next "walls with X-Ray"
+	next "vision.@"

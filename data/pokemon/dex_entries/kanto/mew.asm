@@ -1,9 +1,9 @@
 	db "NEW SPECIE@" ; species name
 
-	db   "Because it can"
-	next "learn any move,"
-	next "some people began"
+	db   "Its DNA was found"
+	next "on an island off"
+	next "the coast of GUY-"
 
-	page "research to see if"
-	next "it is the ancestor"
-	next "of all #MON.@"
+	page "ANA. It was the"
+	next "only evidence of"
+	next "its existence.@"

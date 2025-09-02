@@ -1,9 +1,9 @@
 	db "SAVAGE@" ; species name
 
-	db   "They swarm any foe"
-	next "that invades their"
-	next "territory. Their"
+	db   "It prefers rivers"
+	next "that run through"
+	next "dense jungle. It"
 
-	page "sharp fangs can"
-	next "tear out boat"
-	next "hulls.@"
+	page "swarms anything"
+	next "that falls into"
+	next "the water.@"

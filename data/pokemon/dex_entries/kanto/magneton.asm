@@ -1,9 +1,9 @@
 	db "MAGNET@" ; species name
 
-	db   "When many"
-	next "MAGNETON gather"
-	next "together, the"
+	db   "It releases radio"
+	next "waves constantly,"
+	next "which scrambles"
 
-	page "resulting magnetic"
-	next "storm disrupts"
-	next "radio waves.@"
+	page "electronics and"
+	next "causes increases"
+	next "in temperature.@"

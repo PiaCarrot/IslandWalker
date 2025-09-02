@@ -1,9 +1,9 @@
 	db "DUCK@" ; species name
 
-	db   "It swims grace-"
-	next "fully along on the"
-	next "quiet, slow-moving"
+	db   "It's a powerful"
+	next "swimmer that can"
+	next "swim through a"
 
-	page "rivers and lakes"
-	next "of which it is so"
-	next "fond.@"
+	page "typhoon easily."
+	next "Sailors called it"
+	next "a sahagin.@"

@@ -1,9 +1,9 @@
 	db "COTTONWEED@" ; species name
 
-	db   "As soon as it"
-	next "rains, it closes"
-	next "its flower and"
+	db   "The flower on its"
+	next "head gives off a"
+	next "syrupy scent. It's"
 
-	page "hides in the shade"
-	next "of a tree to avoid"
-	next "getting wet.@"
+	page "likely due to the"
+	next "warm weather in"
+	next "the islands.@"

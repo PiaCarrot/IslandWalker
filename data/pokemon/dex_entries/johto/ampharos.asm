@@ -1,9 +1,9 @@
 	db "LIGHT@" ; species name
 
-	db   "When it gets dark,"
-	next "the light from its"
-	next "bright, shiny tail"
+	db   "Many lighthouses"
+	next "employ this very"
+	next "POKEMON to serve"
 
-	page "can be seen from"
-	next "far away on the"
-	next "ocean's surface.@"
+	page "as a beacon for"
+	next "ships so they can"
+	next "land safely.@"

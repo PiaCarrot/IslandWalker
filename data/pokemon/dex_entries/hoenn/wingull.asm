@@ -1,9 +1,9 @@
 	db "SEAGULL@" ; species name
 
-	db   "It soars high in"
-	next "the sky, riding on"
-	next "updrafts like a"
+	db   "Its hollow bones"
+	next "allow it easily"
+	next "maneuver while it"
 
-	page "glider. It carries"
-	next "food tucked in its"
-	next "bill.@"
+	page "flies over the"
+	next "ocean looking for"
+	next "food.@"

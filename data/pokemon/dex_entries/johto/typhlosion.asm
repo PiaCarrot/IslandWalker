@@ -1,9 +1,9 @@
 	db "VOLCANO@" ; species name
 
-	db   "When heat from its"
-	next "body causes the"
-	next "air around it to"
+	db   "It can ignite its"
+	next "own fur to create"
+	next "a big EXPLOSION."
 
-	page "shimmer, this is a"
-	next "sign that it is"
-	next "ready to battle.@"
+	page "The heat it pro-"
+	next "duces grows with"
+	next "anger.@"

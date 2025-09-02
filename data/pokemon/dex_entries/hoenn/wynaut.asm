@@ -1,8 +1,9 @@
 	db "BRIGHT@" ; species name
 
-	db   "It grows strong by"
-	next "pushing up against"
-	next "others en masse."
+	db   "It builds a tol-"
+	next "erance to pain by"
+	next "pushing against"
 
-	page "It loves eating"
-	next "sweet fruit.@"
+	page "hard objects. It"
+	next "rewards itself by"
+	next "eating fruit.@"

@@ -1,9 +1,9 @@
 	db "HIBERNANT@" ; species name
 
-	db   "Although it has a"
-	next "large body, it is"
-	next "quite skilled at"
+	db   "It is quite adept"
+	next "at climbing trees"
+	next "and will fight"
 
-	page "climbing trees. It"
-	next "eats and sleeps in"
-	next "the treetops.@"
+	page "off PRIMEAPE that"
+	next "are going for the"
+	next "same food.@"

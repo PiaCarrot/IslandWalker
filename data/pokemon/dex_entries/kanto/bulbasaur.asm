@@ -1,9 +1,8 @@
 	db "SEED@" ; species name
 
-	db   "While it is young,"
-	next "it uses the"
-	next "nutrients that are"
+	db   "It naps in bright"
+	next "sunlight. It is"
+	next "believed to store"
 
-	page "stored in the"
-	next "seeds on its back"
-	next "in order to grow.@"
+	page "energy in the"
+	next "bulb on its back.@"

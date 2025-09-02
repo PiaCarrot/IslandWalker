@@ -1,9 +1,9 @@
 	db "EON@" ; species name
 
-	db   "Its body is cov-"
-	next "ered with a down"
-	next "that can refract"
+	db   "It can use light"
+	next "to change its"
+	next "appearance as it"
 
-	page "light in such a"
-	next "way that it be-"
-	next "comes invisible.@"
+	page "pleases. It is"
+	next "said to have liv-"
+	next "ed with humans.@"

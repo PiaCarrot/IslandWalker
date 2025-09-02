@@ -1,9 +1,9 @@
 	db "DRAGON@" ; species name
 
-	db   "It is said that"
-	next "somewhere in the"
-	next "ocean lies an"
+	db   "Only those that"
+	next "earn its trust"
+	next "can visit the"
 
-	page "island where these"
-	next "gather. Only they"
-	next "live there.@"
+	page "island that all"
+	next "DRAGONITE call"
+	next "home.@"

@@ -1,9 +1,9 @@
 	db "PIG MONKEY@" ; species name
 
-	db   "It lives in groups"
-	next "in the treetops."
-	next "If it loses sight"
+	db   "It is a menace to"
+	next "adventurers. If"
+	next "it gets angry,"
 
-	page "of its group, it"
-	next "becomes infuriated"
-	next "by its loneliness.@"
+	page "the entire colony"
+	next "will also become"
+	next "enraged.@"

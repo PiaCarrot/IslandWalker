@@ -1,9 +1,9 @@
 db "BLAST@@@" ; species name
 
-db   "It blasts fireballs"
-next "of over 3,600"
-next "degrees F from its"
+	db   "When it releases"
+	next "full fire-power,"
+	next "it glows white"
 
-page "arm cannons. It"
-next "lives deep inside"
-next "volcanoes.@"
+	page "from the intens-"
+	next "ity of its molten"
+	next "slag.@"

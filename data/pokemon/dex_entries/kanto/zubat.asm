@@ -1,9 +1,9 @@
 	db "BAT@" ; species name
 
-	db   "During the day, it"
-	next "gathers with"
-	next "others and hangs"
+	db   "It can't stand"
+	next "sunlight, so it"
+	next "is only found at"
 
-	page "from the ceilings"
-	next "of old buildings"
-	next "and caves.@"
+	page "night or in caves"
+	next "where it can move"
+	next "with precision.@"

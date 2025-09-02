@@ -1,10 +1,9 @@
 db "OGRE DARN@" ; species name
 
-db   "This six-legged"
-next "Pokemon is feared"
-next "as a brutal flier."
+	db   "Its wingbeats can"
+	next "knock down trees"
+	next "when it launches"
 
-page "Its wings can"
-next "create shockwaves"
-next "that shatter windows.@"
-
+	page "itself to flight."
+	next "It eats the heads"
+	next "of its prey.@"

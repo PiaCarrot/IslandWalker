@@ -1,9 +1,9 @@
 db "BIG BOSS@" ; species name
 
-db   "Becoming active at"
-next "night, it is known"
-next "to swarm with"
+	db   "In the wild, it"
+	next "commands a murder"
+	next "of MURKROW that"
 
-page "numerous MURKROW"
-next "in tow."
-next "@"
+	page "do its bidding."
+	next "It punishes any"
+	next "that disobey.@"

@@ -1,9 +1,9 @@
 db "SEAFARING@" ; species name
 
-db   "Born in warm seas,"
-next "it bonds with any"
-next "Pokémon it meets."
+	db   "It seems to be"
+	next "able to get along"
+	next "with any other"
 
-page "Its heart can link"
-next "to others, sharing"
-next "feelings instantly.@"
+	page "#MON. It knows"
+	next "exactly where it"
+	next "was born.@"

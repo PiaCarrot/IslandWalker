@@ -1,9 +1,9 @@
 	db "LAVA@" ; species name
 
-	db   "These group to-"
-	next "gether in areas"
-	next "that are hotter"
+	db   "It must take a"
+	next "bath in lava once"
+	next "in a while or it"
 
-	page "than normal. If it"
-	next "cools off, its"
-	next "skin hardens.@"
+	page "will cool off and"
+	next "become a statue"
+	next "of igneous rock.@"

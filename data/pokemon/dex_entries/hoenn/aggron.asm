@@ -1,9 +1,9 @@
 	db "IRON@" ; species name
 
-	db   "While seeking iron"
-	next "for food, it digs"
-	next "tunnels by break-"
+	db   "It claims whole"
+	next "mountains as its"
+	next "territory. It is"
 
-	page "ing through"
-	next "bedrock with its"
-	next "steel horns.@"
+	page "known to fight"
+	next "TYRANITAR over"
+	next "land disputes.@"

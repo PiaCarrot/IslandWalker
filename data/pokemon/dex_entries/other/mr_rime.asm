@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "COMEDIAN@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "It dances grace-"
+	next "fully while it"
+	next "battles, spinning"
+
+	page "its ice cane and"
+	next "channeling energy"
+	next "from its belly.@"

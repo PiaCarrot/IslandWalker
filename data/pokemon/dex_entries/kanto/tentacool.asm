@@ -1,9 +1,9 @@
 	db "JELLYFISH@" ; species name
 
-	db   "As it floats along"
-	next "on the waves, it"
-	next "uses its toxic"
+	db   "This POKEMON is"
+	next "made mostly of"
+	next "water. What isn't"
 
-	page "feelers to stab"
-	next "anything it"
-	next "touches.@"
+	page "water are organs"
+	next "that glow and"
+	next "make poison.@"

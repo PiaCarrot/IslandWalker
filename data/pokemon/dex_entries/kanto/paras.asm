@@ -1,9 +1,9 @@
 	db "MUSHROOM@" ; species name
 
-	db   "The tochukaso"
-	next "growing on this"
-	next "#MON's back"
+	db   "It is not born"
+	next "with mushrooms,"
+	next "but they seem to"
 
-	page "orders it to"
-	next "extract juice from"
-	next "tree trunks.@"
+	page "cause PARAS to"
+	next "voraciously feed"
+	next "on tree roots.@"

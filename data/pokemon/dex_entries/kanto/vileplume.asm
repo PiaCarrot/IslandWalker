@@ -1,9 +1,9 @@
 	db "FLOWER@" ; species name
 
-	db   "By shaking its big"
-	next "petals, it scat-"
-	next "ters toxic pollen"
+	db   "It sprays a toxic"
+	next "pollen that will"
+	next "paralyze prey. It"
 
-	page "into the air,"
-	next "turning the air"
-	next "yellow.@"
+	page "then eats its"
+	next "catch until only"
+	next "bones are left.@"

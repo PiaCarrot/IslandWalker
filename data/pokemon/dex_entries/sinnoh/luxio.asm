@@ -1,9 +1,9 @@
 	db "MOUSE@" ; species name
 
-	db   "When it is anger-"
-	next "ed, it immediately"
-	next "discharges the"
+	db   "It tases its foe"
+	next "with its claws"
+	next "that channel pure"
 
-	page "energy stored in"
-	next "the pouches in its"
-	next "cheeks.@"
+	page "electricity. It"
+	next "hurts enough to"
+	next "pass out.@"

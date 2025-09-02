@@ -1,9 +1,9 @@
 	db "HANDSTAND@" ; species name
 
-	db   "After doing a"
-	next "handstand to"
-	next "throw off the"
+	db   "The older it gets"
+	next "the longer its"
+	next "horn grows, which"
 
-	page "opponent's timing,"
-	next "it presents its"
-	next "fancy kick moves.@"
+	page "allows it to spin"
+	next "more and more in-"
+	next "tesely.@"

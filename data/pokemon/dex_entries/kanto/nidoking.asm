@@ -1,9 +1,9 @@
 	db "DRILL@" ; species name
 
-	db   "It uses its thick"
-	next "arms, legs and"
-	next "tail to attack"
+	db   "Its violence can"
+	next "only be quelled"
+	next "by its mate. It"
 
-	page "forcefully. Melee"
-	next "combat is its"
-	next "specialty.@"
+	page "is proud of its"
+	next "own power and is"
+	next "highly desired.@"

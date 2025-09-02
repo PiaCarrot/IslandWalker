@@ -1,9 +1,9 @@
 	db "BAGWORM@" ; species name
 
-	db   "Usually found"
-	next "hanging on to a"
-	next "fat tree trunk. It"
+	db   "Because its core"
+	next "is vulnerable, it"
+	next "never eats when"
 
-	page "shoots out bits of"
-	next "its shell when it"
-	next "sees action.@"
+	page "its near others."
+	next "Its shell is made"
+	next "of pure STEEL.@"

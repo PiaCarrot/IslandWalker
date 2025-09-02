@@ -1,9 +1,9 @@
 db "DRILL@@@" ; species name
 
-db   "It can launch"
-next "rocks from the"
-next "holes in its hands"
+	db   "Its brain has"
+	next "regressed to less"
+	next "than the size of"
 
-page "like missiles. Its"
-next "armor is so tough"
-next "that bullets bounce.@"
+	page "a pea, and all it"
+	next "cares to do now"
+	next "is battle.@"

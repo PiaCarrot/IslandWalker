@@ -1,9 +1,9 @@
 	db "LONG NOSE@" ; species name
 
-	db   "During the desert-"
-	next "ed morning hours,"
-	next "it comes ashore"
+	db   "Its trunk is very"
+	next "sensitive. It"
+	next "bumps its TRAINER"
 
-	page "where it deftly"
-	next "uses its trunk to"
-	next "take a shower.@"
+	page "with its snout as"
+	next "a sign of affec-"
+	next "tion.@"

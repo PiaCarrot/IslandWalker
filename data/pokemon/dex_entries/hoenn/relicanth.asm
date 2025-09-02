@@ -1,9 +1,9 @@
 	db "LONGEVITY@" ; species name
 
-	db   "A rare #MON"
-	next "discovered during"
-	next "a deep-sea explo-"
+	db   "It was recently"
+	next "thought to be"
+	next "extinct. Scienti-"
 
-	page "ration. It has not"
-	next "changed in over"
-	next "100 million years.@"
+	page "sts have studied"
+	next "it to bring back"
+	next "FOSSIL #MON.@"

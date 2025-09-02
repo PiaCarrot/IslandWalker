@@ -1,9 +1,9 @@
 	db "MYSTIC@" ; species name
 
-	db   "It whips up sand-"
-	next "storms with power-"
-	next "ful flaps of its"
+	db   "It creates sand-"
+	next "storms to hide"
+	next "itself. Its prey"
 
-	page "wings. It is known"
-	next "as “The Desert"
-	next "Spirit.”@"
+	page "doesn't even see"
+	next "it coming, but it"
+	next "can be heard.@"

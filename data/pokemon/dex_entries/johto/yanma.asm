@@ -1,9 +1,9 @@
 	db "CLEAR WING@" ; species name
 
-	db   "It can see in all"
-	next "directions without"
-	next "moving its big"
+	db   "It hasn't changed"
+	next "at all over mill-"
+	next "ions of years. A"
 
-	page "eyes, helping it"
-	next "spot attackers and"
-	next "food right away.@"
+	page "testament to its"
+	next "ability to thrive"
+	next "in many places.@"

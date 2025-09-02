@@ -1,9 +1,9 @@
 	db "ERUPTION@" ; species name
 
-	db   "It has volcanoes"
-	next "on its back. If"
-	next "magma builds up in"
+	db   "It lives inside"
+	next "volcanoes. When"
+	next "it gets angry it"
 
-	page "its body, it shud-"
-	next "ders, then erupts"
-	next "violently.@"
+	page "sputs hot magma"
+	next "from within its"
+	next "hump.@"

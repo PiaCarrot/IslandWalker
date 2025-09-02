@@ -1,9 +1,9 @@
 	db "FIRE MOUSE@" ; species name
 
-	db   "The fire that"
-	next "spouts from its"
-	next "back burns hottest"
+	db   "A popular partner"
+	next "POKEMON in the"
+	next "JOHTO region. Its"
 
-	page "when it is angry."
-	next "The flaring flames"
-	next "intimidate foes.@"
+	page "rather timid but"
+	next "will flare up if"
+	next "startled.@"

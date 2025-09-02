@@ -1,9 +1,9 @@
 	db "POISON PIN@" ; species name
 
-	db   "Small and very"
-	next "docile, it pro-"
-	next "tects itself with"
+	db   "Its keen sense of"
+	next "smell allows it"
+	next "to forage for"
 
-	page "its small, poison-"
-	next "ous horn when"
-	next "attacked.@"
+	page "BERRIES and avoid"
+	next "predators. Has a"
+	next "lethal poison.@"

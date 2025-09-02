@@ -1,9 +1,9 @@
 	db "BAT@" ; species name
 
-	db   "When it plunges"
-	next "its fangs into its"
-	next "prey, it instantly"
+	db   "Its fangs are"
+	next "hollow, and are"
+	next "used like straws"
 
-	page "draws and gulps"
-	next "down more than ten"
-	next "ounces of blood.@"
+	page "to suck blood. It"
+	next "has no preference"
+	next "for its victim.@"

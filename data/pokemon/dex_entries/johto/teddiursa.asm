@@ -1,9 +1,9 @@
 	db "LITTLE BEAR@" ; species name
 
-	db   "It always licks"
-	next "honey. Its palm"
-	next "tastes sweet"
+	db   "It licks its paws"
+	next "that are covered"
+	next "in a HONEY that"
 
-	page "because of all the"
-	next "honey it has"
-	next "absorbed.@"
+	page "it makes itself"
+	next "with BERRIES and"
+	next "BEEDRILL pollen.@"

@@ -1,9 +1,9 @@
 	db "ELECTRIC@" ; species name
 
-	db   "It loves violent"
-	next "thunder. The space"
-	next "between its horns"
+	db   "It gets worked up"
+	next "when it hears the"
+	next "sound of THUNDER."
 
-	page "flickers bluish-"
-	next "white when it is"
-	next "charging energy.@"
+	page "It's horns will"
+	next "DISCHARGE extra"
+	next "electricity.@"

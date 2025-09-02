@@ -1,9 +1,9 @@
 	db "FISH@" ; species name
 
-	db   "It is a shabby and"
-	next "ugly #MON. How-"
-	next "ever, it is very"
+	db   "Despite its looks"
+	next "it has delicious"
+	next "meat. It gets ig-"
 
-	page "hardy and can sur-"
-	next "vive on little wa-"
-	next "ter.@"
+	page "nored by pred-"
+	next "ators because it"
+	next "seems sickly.@"

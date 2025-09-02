@@ -1,9 +1,9 @@
 	db "ARMOR@" ; species name
 
-	db   "In just one of its"
-	next "mighty hands, it"
-	next "has the power to"
+	db   "Its known to be"
+	next "impudent and un-"
+	next "ruly, destroying"
 
-	page "make the ground"
-	next "shake and moun-"
-	next "tains crumble.@"
+	page "everything in its"
+	next "way while seeking"
+	next "new opponents.@"

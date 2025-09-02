@@ -1,9 +1,9 @@
 	db "INSECT@" ; species name
 
-	db   "The small bugs it"
-	next "eats appear only"
-	next "at night, so it"
+	db   "Its entire body"
+	next "secretes a poison"
+	next "that it will use"
 
-	page "sleeps in a hole"
-	next "in a tree until"
-	next "night falls.@"
+	page "to capture other"
+	next "BUG-type POKEMON"
+	next "to eat.@"

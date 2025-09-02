@@ -1,9 +1,9 @@
 	db "ARMOR@" ; species name
 
-	db   "Because this"
-	next "#MON's skin is"
-	next "so tough, a normal"
+	db   "While normally it"
+	next "is calm, when mad"
+	next "it curls into a"
 
-	page "attack won't even"
-	next "leave a scratch on"
-	next "it.@"
+	page "ball and rampages"
+	next "with its ROLLOUT"
+	next "attack.@"

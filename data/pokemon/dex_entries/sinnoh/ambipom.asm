@@ -1,9 +1,9 @@
 db "LONG TAIL@" ; species name
 
-db   "To eat, it deftly"
-next "shucks nuts with"
-next "its two tails. It"
+	db   "Its split tail is"
+	next "a source of pride"
+	next "and joy for it."
 
-page "rarely uses its"
-next "arms now."
-next "@"
+	page "It gets in fights"
+	next "with MANKEY over"
+	next "territory.@"

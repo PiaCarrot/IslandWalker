@@ -1,9 +1,9 @@
 	db "FLOAT@" ; species name
 
-	db   "The biggest of all"
-	next "#MON. It can"
-	next "dive to a depth of"
+	db   "It is the largest"
+	next "of all #MON."
+	next "It dives 10,000"
 
-	page "almost 10,000 feet"
-	next "on only one"
-	next "breath.@"
+	page "FT to the ocean"
+	next "floor so that it"
+	next "can eat.@"

@@ -1,9 +1,9 @@
 	db "MANTIS@" ; species name
 
-	db   "It's very proud of"
-	next "its speed. It"
-	next "moves so fast that"
+	db   "It will clear out"
+	next "several trees to"
+	next "mark its terri-"
 
-	page "its opponent does"
-	next "not even know what"
-	next "knocked it down.@"
+	page "tory. Its scythes"
+	next "can cleave its"
+	next "prey in two.@"

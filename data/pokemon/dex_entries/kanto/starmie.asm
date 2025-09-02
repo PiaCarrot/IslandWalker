@@ -1,9 +1,9 @@
 	db "MYSTERIOUS@" ; species name
 
-	db   "It is said that it"
-	next "uses the seven-"
-	next "colored core of"
+	db   "Its core glows"
+	next "all 7 colors of"
+	next "the rainbow. It's"
 
-	page "its body to send"
-	next "electric waves"
-	next "into outer space.@"
+	page "highly sought"
+	next "after by the rich"
+	next "as a gemstone.@"

@@ -1,9 +1,9 @@
 	db "EON@" ; species name
 
-	db   "A highly intelli-"
-	next "gent #MON. By"
-	next "folding back its"
+	db   "It can refract"
+	next "light on its coat"
+	next "to become totally"
 
-	page "wings in flight,"
-	next "it can overtake"
-	next "jet planes.@"
+	page "invisible. Its"
+	next "speed is like a"
+	next "jet engine.@"

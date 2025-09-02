@@ -1,9 +1,9 @@
 	db "FLYSCORPIO@" ; species name
 
-	db   "It builds its nest"
-	next "on a steep cliff."
-	next "When it is done"
+	db   "It builds a nest"
+	next "on top of steep"
+	next "cliffs, so that"
 
-	page "gliding, it hops"
-	next "along the ground"
-	next "back to its nest.@"
+	page "it can glide in"
+	next "search of prey to"
+	next "sting.@"

@@ -1,9 +1,9 @@
 	db "MILK COW@" ; species name
 
-	db   "In order to milk a"
-	next "MILTANK, one must"
-	next "have a knack for"
+	db   "Its sweet milk is"
+	next "the result of its"
+	next "diet of BERRIES."
 
-	page "rhythmically pull-"
-	next "ing up and down"
-	next "on its udders.@"
+	page "The milk is very"
+	next "popular with both"
+	next "kids and adults.@"

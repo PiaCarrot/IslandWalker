@@ -1,8 +1,9 @@
 	db "SPOT@" ; species name
 
-	db   "No two SPINDA have"
-	next "the same pattern"
-	next "of spots. Its tot-"
+	db   "It walks around"
+	next "stumbling and"
+	next "shaky. If it has"
 
-	page "tering step fouls"
-	next "the aim of foes.@"
+	page "to run, it will"
+	next "get extremely"
+	next "sick.@"

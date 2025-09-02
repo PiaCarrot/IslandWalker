@@ -1,9 +1,9 @@
 	db "AQUARABBIT@" ; species name
 
-	db   "The bubble-like"
-	next "pattern on its"
-	next "stomach helps it"
+	db   "If it must fight,"
+	next "it will well up"
+	next "strength with its"
 
-	page "camouflage itself"
-	next "when it's in the"
-	next "water.@"
+	page "HUGE POWER and"
+	next "swing its tail"
+	next "like a flail.@"

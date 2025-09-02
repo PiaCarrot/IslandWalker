@@ -1,9 +1,9 @@
 	db "TURTLE@" ; species name
 
-	db   "Its long, furry"
-	next "tail is a symbol"
-	next "of longevity,"
+	db   "Its furry tail"
+	next "and ears help it"
+	next "maintain balance"
 
-	page "making it quite"
-	next "popular among"
-	next "older people.@"
+	page "swimming. Legends"
+	next "say it lives for"
+	next "10,000 years.@"

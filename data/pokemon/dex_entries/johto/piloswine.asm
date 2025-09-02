@@ -1,9 +1,9 @@
 	db "SWINE@" ; species name
 
-	db   "Although its legs"
-	next "are short, its"
-	next "rugged hooves"
+	db   "It uses its thick"
+	next "fur to keep warm"
+	next "while it uses its"
 
-	page "prevent it from"
-	next "slipping, even on"
-	next "icy ground.@"
+	page "two tusks to dig"
+	next "up food buried in"
+	next "ice.@"

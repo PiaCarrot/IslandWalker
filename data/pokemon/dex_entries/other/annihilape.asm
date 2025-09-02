@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "RAGE MONKEY@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "PRIMEAPE became"
+	next "so angry that it"
+	next "died. Its rage is"
+
+	page "now endless and"
+	next "it can no longer"
+	next "be calmed.@"

@@ -1,9 +1,9 @@
 	db "DRAGON@" ; species name
 
-	db   "It stores energy"
-	next "by sleeping at"
-	next "underwater depths"
+	db   "It holds a deep"
+	next "rivarly with"
+	next "DRAGONITE. It's"
 
-	page "at which no other"
-	next "life forms can"
-	next "survive.@"
+	page "said the battles"
+	next "they have cause"
+	next "WHIRLPOOLs.@"

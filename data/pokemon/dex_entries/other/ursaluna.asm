@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "PEAT@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "An extinct #MON."
+	next "Its keen sense of"
+	next "smell and power"
+
+	page "over peat help it"
+	next "find things, even"
+	next "lost people.@"

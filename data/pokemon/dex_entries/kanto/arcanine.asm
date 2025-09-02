@@ -1,9 +1,9 @@
 	db "LEGENDARY@" ; species name
 
-	db   "An ancient picture"
-	next "scroll shows that"
-	next "people were"
+	db   "It is seldom seen"
+	next "on islands, as it"
+	next "lives only where"
 
-	page "attracted to its"
-	next "movement as it ran"
-	next "through prairies.@"
+	page "it can travel"
+	next "vast expanses of"
+	next "land.@"

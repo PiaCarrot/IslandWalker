@@ -1,9 +1,9 @@
 	db "BAGWORM@" ; species name
 
-	db   "It spits out a"
-	next "fluid that it uses"
-	next "to glue tree bark"
+	db   "It hangs in trees"
+	next "patiently until"
+	next "it can drop onto"
 
-	page "to its body. The"
-	next "fluid hardens when"
-	next "it touches air.@"
+	page "prey. It seems to"
+	next "prefer eating"
+	next "CUTIEFLY.@"

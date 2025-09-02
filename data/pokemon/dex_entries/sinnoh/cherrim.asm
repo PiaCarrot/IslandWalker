@@ -1,9 +1,9 @@
 db "BLOSSOM@" ; species name
 
-db   "It blooms to greet"
-next "the sun and folds up"
-next "on cloudy days."
+	db   "It is docile as a"
+	next "bud and becomes"
+	next "cheery when it"
 
-page "Its form changes with"
-next "the season's light," 
-next "revealing its joy.@"
+	page "blooms. It folds"
+	next "back up if the"
+	next "sunlight wanes.@"

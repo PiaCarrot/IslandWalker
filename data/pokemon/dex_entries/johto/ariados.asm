@@ -1,9 +1,9 @@
 	db "LONG LEG@" ; species name
 
-	db   "Rather than mak-"
-	next "ing a nest in one"
-	next "specific spot, it"
+	db   "It hunts at night"
+	next "with string that"
+	next "goes to its nest."
 
-	page "wanders in search"
-	next "of food after"
-	next "darkness falls.@"
+	page "Once it grabs its"
+	next "prey, it reels it"
+	next "back to its den.@"

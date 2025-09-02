@@ -1,9 +1,9 @@
 	db "ELECTRIC@" ; species name
 
-	db   "Legendary bird"
-	next "#MON. They say"
-	next "lightning caused"
+	db   "Ancient SHAMOUTI"
+	next "legends say that"
+	next "ZAPDOS brings"
 
-	page "by the flapping of"
-	next "its wings causes"
-	next "summer storms.@"
+	page "forth a violent"
+	next "storm when two"
+	next "tides meet.@"

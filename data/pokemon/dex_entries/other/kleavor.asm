@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "AXE@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "An extinct #MON."
+	next "A single swing of"
+	next "its stone axes"
+
+	page "can easily fell"
+	next "trees. Has a vio-"
+	next "lent disposition.@"

@@ -1,9 +1,9 @@
 	db "MUSHROOM@" ; species name
 
-	db   "When nothing's"
-	next "left to extract"
-	next "from the bug, the"
+	db   "The mushroom has"
+	next "taken over its"
+	next "host and the bug"
 
-	page "mushrooms on its"
-	next "back leave spores"
-	next "on the bug's egg.@"
+	page "that was PARAS is"
+	next "nearly dead. Its"
+	next "very aggressive.@"

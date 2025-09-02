@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "GLOOMDWELLE@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "It tests the very"
+	next "hearts of people"
+	next "by entering their"
+
+	page "shadows. It can"
+	next "understand human"
+	next "feelings.@"

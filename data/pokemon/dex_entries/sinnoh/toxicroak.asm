@@ -1,9 +1,9 @@
         db "TOXIC MOUTH@" ; species name
 
-        db   "It taps the poison"
-        next "sacs on its limbs"
-        next "to taunt its prey."
+	db   "Even a scratch"
+	next "from its toxic"
+	next "claws can prove"
 
-        page "A scratch from its"
-        next "claws can induce"
-        next "lethal toxins.@"
+	page "fatal, if medical"
+	next "care isn't quick-"
+	next "ly provided.@"

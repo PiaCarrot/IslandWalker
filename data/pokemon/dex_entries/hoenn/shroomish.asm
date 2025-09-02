@@ -1,9 +1,9 @@
 	db "MUSHROOM@" ; species name
 
-	db   "It spouts poison"
-	next "spores from the"
-	next "top of its head."
+	db   "In places where"
+	next "VILEPLUME thrive,"
+	next "it can't compete"
 
-	page "These spores cause"
-	next "pain all over if"
-	next "inhaled.@"
+	page "with them and"
+	next "its population"
+	next "shrinks.@"

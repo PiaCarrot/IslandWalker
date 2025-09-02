@@ -1,9 +1,9 @@
 	db "WOOL@" ; species name
 
-	db   "It stores lots of"
-	next "air in its soft"
-	next "fur, allowing it"
+	db   "It sheds consist-"
+	next "ently. Those that"
+	next "find a tuft of"
 
-	page "to stay cool in"
-	next "summer and warm"
-	next "in winter.@"
+	page "its fleece have"
+	next "been said to get"
+	next "a bad shock.@"

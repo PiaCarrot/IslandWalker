@@ -1,9 +1,9 @@
 db "THUNDERBOLT" ; species name
 
-db   "It pushes the tips"
-next "of its two tails"
-next "onto foes and then"
+	db   "It generates as"
+	next "much as 20,000"
+	next "volts while also"
 
-page "lets loose with"
-next "over 20,000 volts"
-next "of electricity.@"
+	page "discharging just"
+	next "as much electric-"
+	next "ity.@"

@@ -1,9 +1,9 @@
 	db "LONG NECK@" ; species name
 
-	db   "When it is in"
-	next "danger, its tail"
-	next "uses some sort of"
+	db   "Its tail has a"
+	next "mind of its own."
+	next "It seems to be"
 
-	page "mysterious powers"
-	next "to drive away the"
-	next "enemy.@"
+	page "the source of its"
+	next "PSYCHIC power,"
+	next "and it bites.@"

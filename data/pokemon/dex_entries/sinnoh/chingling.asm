@@ -1,9 +1,9 @@
 db "BELL@" ; species name
 
-db   "It emits cries by"
-next "agitating an orb"
-next "at the back of its"
+	db   "It emits high-"
+	next "pitched ringing"
+	next "that can't be"
 
-page "throat. It moves"
-next "with flouncing"
-next "hops.@"
+	page "heard by ear. A"
+	next "severe headache"
+	next "follows the cry.@"

@@ -1,9 +1,9 @@
 	db "CAT@" ; species name
 
-	db   "It has feuded with"
-	next "SEVIPER for many"
-	next "generations. Its"
+	db   "It is always on"
+	next "edge. If it is"
+	next "relaxed, it will"
 
-	page "sharp claws are"
-	next "its biggest"
-	next "weapons.@"
+	page "be on all fours."
+	next "It despises SEVI-"
+	next "PER.@"

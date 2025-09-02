@@ -1,9 +1,9 @@
 	db "AURORA@" ; species name
 
-	db   "This divine"
-	next "#MON blows"
-	next "around the world,"
+	db   "Its said to embo-"
+	next "dy the northern"
+	next "winds. Any water,"
 
-	page "always in search"
-	next "of a pure"
-	next "reservoir.@"
+	page "no matter how"
+	next "dirty, will be"
+	next "purified by it.@"

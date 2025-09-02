@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "INTERTWININ@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "It calms down a"
+	next "hostile enemy"
+	next "with its ribbon"
+
+	page "feelers. It emits"
+	next "an aura that can"
+	next "stop conflict.@"

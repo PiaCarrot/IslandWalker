@@ -1,9 +1,9 @@
 	db "MYSTIC@" ; species name
 
-	db   "Once it begins to"
-	next "meditate at sun-"
-	next "rise, the entire"
+	db   "It is revered in"
+	next "GUYANESE legends"
+	next "as a POKEMON that"
 
-	page "day will pass"
-	next "before it will"
-	next "move again.@"
+	page "can see both the"
+	next "future and the"
+	next "past.@"

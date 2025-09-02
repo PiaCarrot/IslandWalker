@@ -1,9 +1,9 @@
 	db "PSI@" ; species name
 
-	db   "When it closes its"
-	next "eyes, twice as"
-	next "many alpha parti-"
+	db   "It's said a famous"
+	next "magician disliked"
+	next "KADABRA so much"
 
-	page "cles come out of"
-	next "the surface of its"
-	next "body.@"
+	page "that for 20 years"
+	next "he would drive"
+	next "them away.@"

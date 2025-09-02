@@ -1,9 +1,9 @@
 	db "SNOW@" ; species name
 
-	db   "It is said that"
-	next "several SNORUNT"
-	next "gather under giant"
+	db   "It is said if a"
+	next "SNORUNT visits a"
+	next "house, the family"
 
-	page "leaves and live"
-	next "together in harmo-"
-	next "ny.@"
+	page "will prosper for"
+	next "generations to"
+	next "come.@"

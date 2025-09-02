@@ -1,9 +1,9 @@
 	db "MUSHROOM@" ; species name
 
-	db   "Its short arms"
-	next "stretch when it"
-	next "throws punches."
+	db   "It prefers to use"
+	next "its fists when it"
+	next "fights, but will"
 
-	page "Its technique is"
-	next "equal to that of"
-	next "pro boxers.@"
+	page "use toxic spores"
+	next "to defend itself"
+	next "if it must.@"

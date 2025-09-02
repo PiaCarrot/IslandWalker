@@ -1,9 +1,9 @@
 	db "STARSHAPE@" ; species name
 
-	db   "When the stars"
-	next "twinkle at night,"
-	next "it floats up from"
+	db   "It communicates"
+	next "with the stars,"
+	next "apparently. It"
 
-	page "the sea floor, and"
-	next "its body's center"
-	next "core flickers.@"
+	page "regenerates lost"
+	next "limbs easily that"
+	next "LUMINEON eats.@"

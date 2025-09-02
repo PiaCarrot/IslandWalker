@@ -1,9 +1,9 @@
 	db "SCISSORS@" ; species name
 
-	db   "This #MON's"
-	next "pincers, which"
-	next "contain steel, can"
+	db   "It must regulate"
+	next "its body tempera-"
+	next "ture by beating"
 
-	page "crush any hard"
-	next "object it gets a"
-	next "hold of into bits.@"
+	page "its wings or it"
+	next "will melt while"
+	next "it battles.@"

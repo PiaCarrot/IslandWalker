@@ -1,9 +1,9 @@
 	db "TINY BIRD@" ; species name
 
-	db   "It rapidly flaps"
-	next "its wings in the"
-	next "grass, stirring up"
+	db   "When threatened,"
+	next "it will kick up"
+	next "sand and run away"
 
-	page "a dust cloud that"
-	next "drives insect prey"
-	next "out into the open.@"
+	page "from its attacker"
+	next "rather than fight"
+	next "back.@"

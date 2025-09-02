@@ -1,9 +1,9 @@
 	db "TINYRACCOON@" ; species name
 
-	db   "It walks in zigzag"
-	next "fashion. It is"
-	next "good at finding"
+	db   "It can't walk in"
+	next "a straight line."
+	next "It has a penchant"
 
-	page "items in the grass"
-	next "and even in the"
-	next "ground.@"
+	page "for finding lost"
+	next "items, so its a"
+	next "popular #MON.@"

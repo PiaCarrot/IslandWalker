@@ -1,9 +1,9 @@
 	db "HAPPINESS@" ; species name
 
-	db   "Biting into one"
-	next "of the delicious"
-	next "eggs that BLISSEY"
+	db   "It senses others"
+	next "feelings in order"
+	next "to find and nurse"
 
-	page "provides will make"
-	next "everyone around"
-	next "smile with joy.@"
+	page "any that are sad."
+	next "Its egg can make"
+	next "anyone happy.@"

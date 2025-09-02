@@ -1,9 +1,9 @@
 	db "POISON GAS@" ; species name
 
-	db   "If one gets close"
-	next "enough to it when"
-	next "it expels poison-"
+	db   "It lives off of"
+	next "polluted air. Its"
+	next "skin is thin and"
 
-	page "ous gas, the gas"
-	next "swirling inside it"
-	next "can be seen.@"
+	page "its filled with"
+	next "toxic gas that is"
+	next "flammable.@"

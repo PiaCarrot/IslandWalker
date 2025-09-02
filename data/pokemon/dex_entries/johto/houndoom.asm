@@ -1,9 +1,9 @@
 	db "DARK@" ; species name
 
-	db   "The pungent-"
-	next "smelling flame"
-	next "that shoots from"
+	db   "The flame that it"
+	next "uses when hunting"
+	next "is laced with a"
 
-	page "its mouth results"
-	next "from toxins burn-"
-	next "ing in its body.@"
+	page "strong poison. It"
+	next "causes pain that"
+	next "won't ever stop.@"

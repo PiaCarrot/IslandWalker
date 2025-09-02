@@ -1,9 +1,9 @@
 	db "HAPPINESS@" ; species name
 
-	db   "Although it does"
-	next "not flap its wings"
-	next "very much, it can"
+	db   "It only evolves"
+	next "if it has a bond"
+	next "with its trainer."
 
-	page "stay up in the air"
-	next "as it tags along"
-	next "after its trainer.@"
+	page "It will share its"
+	next "happiness with"
+	next "kind people.@"

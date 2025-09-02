@@ -1,9 +1,9 @@
 	db "SCOUT@" ; species name
 
-	db   "When acting as a"
-	next "lookout, it warns"
-	next "others of danger"
+	db   "Its powerful tail"
+	next "is used to raise"
+	next "itself so it can"
 
-	page "by screeching and"
-	next "hitting the ground"
-	next "with its tail.@"
+	page "scout its surrou-"
+	next "ndings with pin-"
+	next "point accuracy.@"

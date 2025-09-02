@@ -1,9 +1,9 @@
 	db "SCUFFLE@" ; species name
 
-	db   "To brush up on its"
-	next "fighting skills,"
-	next "it will challenge"
+	db   "It can't handle a"
+	next "lazy TRAINER. It"
+	next "must be able to"
 
-	page "anyone. It has a"
-	next "very strong com-"
-	next "petitive spirit.@"
+	page "work out every"
+	next "day or it becomes"
+	next "stressed.@"

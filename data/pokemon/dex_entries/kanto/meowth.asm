@@ -1,9 +1,9 @@
 	db "SCRATCHCAT@" ; species name
 
-	db   "It loves things"
-	next "that sparkle. When"
-	next "it sees a shiny"
+	db   "If it trusts its"
+	next "trainer, it may"
+	next "show its prized"
 
-	page "object, the gold"
-	next "coin on its head"
-	next "shines too.@"
+	page "collection of"
+	next "shiny things. It's"
+	next "active at night.@"

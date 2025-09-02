@@ -1,9 +1,9 @@
 	db "IRON SNAKE@" ; species name
 
-	db   "The many small"
-	next "metal particles"
-	next "that cover this"
+	db   "It has excellent"
+	next "vision even in"
+	next "complete darkness"
 
-	page "#MON's body"
-	next "reflect bright"
-	next "light well.@"
+	page "and digs tunnels"
+	next "very deep under"
+	next "the earth.@"

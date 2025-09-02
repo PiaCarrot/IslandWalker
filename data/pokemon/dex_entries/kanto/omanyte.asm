@@ -1,9 +1,9 @@
 	db "SPIRAL@" ; species name
 
-	db   "In prehistoric"
-	next "times, it swam on"
-	next "the sea floor,"
+	db   "It is believed"
+	next "that this #MON"
+	next "went extinct long"
 
-	page "eating plankton."
-	next "Its fossils are"
-	next "sometimes found.@"
+	page "ago. It uses air"
+	next "to sink and rise"
+	next "underwater.@"

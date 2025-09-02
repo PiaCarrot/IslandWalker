@@ -1,9 +1,9 @@
 	db "POISON PIN@" ; species name
 
-	db   "It is easily"
-	next "agitated and uses"
-	next "its horn for"
+	db   "Its poweful horn"
+	next "is as tough as a"
+	next "diamond. It will"
 
-	page "offense as soon as"
-	next "it notices an"
-	next "attacker.@"
+	page "stab its foes and"
+	next "envenom them most"
+	next "brutally.@"

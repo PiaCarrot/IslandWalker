@@ -1,9 +1,9 @@
 	db "COTTONWEED@" ; species name
 
-	db   "It can be carried"
-	next "away on even the"
-	next "gentlest breeze."
+	db   "It drifts on warm"
+	next "winds in groups."
+	next "Because of this,"
 
-	page "It may even float"
-	next "all the way to the"
-	next "next town.@"
+	page "it can be found"
+	next "just about every-"
+	next "where.@"

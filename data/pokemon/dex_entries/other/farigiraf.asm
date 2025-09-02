@@ -1,4 +1,8 @@
-db "???@" ; species name
+db "LONG NECK@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "The head and the"
+	next "tail are now in"
+	next "sync, boosting"
+
+	page "its PSYCHIC power"
+	next "by ten-fold.@"

@@ -1,9 +1,9 @@
 	db "NINJA@" ; species name
 
-	db   "Because it moves"
-	next "so quickly, it"
-	next "sometimes becomes"
+	db   "It moves so fast"
+	next "that it appears"
+	next "invisible. The"
 
-	page "unseeable. It con-"
-	next "gregates around"
-	next "tree sap.@"
+	page "noise it produces"
+	next "causes headaches"
+	next "to anyone close.@"

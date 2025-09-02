@@ -1,9 +1,9 @@
 	db "ROCK@" ; species name
 
-	db   "It travels by rol-"
-	next "ling on mountain"
-	next "paths. If it gains"
+	db   "It gets all of"
+	next "its nutrients by"
+	next "eating rocks that"
 
-	page "too much speed, it"
-	next "stops by running"
-	next "into huge rocks.@"
+	page "are covered in"
+	next "moss, which are"
+	next "its favorite.@"

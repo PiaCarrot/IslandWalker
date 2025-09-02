@@ -1,9 +1,9 @@
 db "KITE@" ; species name
 
-db   "A friendly sort,"
-next "it glides in shallow"
-next "seas with Remoraid."
+	db   "It makes friends"
+	next "with REMORAID for"
+	next "protection. If it"
 
-page "It grows by"
-next "absorbing rich"
-next "seawater nutrients.@"
+	page "spends a long"
+	next "time with them it"
+	next "will evolve.@"

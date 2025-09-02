@@ -1,9 +1,9 @@
 	db "PSI@" ; species name
 
-	db   "It hypnotizes"
-	next "itself so that it"
-	next "can teleport away"
+	db   "It sleeps almost"
+	next "all of the time."
+	next "Even in its sleep"
 
-	page "when it senses"
-	next "danger, even"
-	next "if it is asleep.@"
+	page "it can sense dan-"
+	next "ger and TELEPORT"
+	next "away.@"

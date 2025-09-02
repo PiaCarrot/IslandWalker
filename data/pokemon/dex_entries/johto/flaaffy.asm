@@ -1,9 +1,9 @@
 	db "WOOL@" ; species name
 
-	db   "Because of its"
-	next "rubbery, electric-"
-	next "ity-resistant"
+	db   "Its rubbery hide"
+	next "protects itself"
+	next "from its very own"
 
-	page "skin, it can store"
-	next "lots of electric-"
-	next "ity in its fur.@"
+	page "electricity. The"
+	next "tail lights up if"
+	next "fully charged.@"

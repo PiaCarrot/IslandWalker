@@ -1,9 +1,8 @@
 	db "IRON@" ; species name
 
-	db   "It usually lives"
-	next "deep in mountains."
-	next "However, hunger"
+	db   "It eats metal to"
+	next "survive. Not even"
+	next "boats and cars"
 
-	page "may drive it to"
-	next "eat railroad"
-	next "tracks and cars.@"
+	page "are safe from a"
+	next "starving ARON.@"

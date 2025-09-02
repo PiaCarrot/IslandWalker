@@ -1,9 +1,9 @@
 	db "FEELING@" ; species name
 
-	db   "If its horns cap-"
-	next "ture the warm"
-	next "feelings of people"
+	db   "It is sensitive"
+	next "to emotions, and"
+	next "will only show"
 
-	page "or #MON, its"
-	next "body warms up"
-	next "slightly.@"
+	page "itself to those"
+	next "who aren't nega-"
+	next "tive.@"

@@ -1,9 +1,9 @@
 	db "STAGBEETLE@" ; species name
 
-	db   "When the tempera-"
-	next "ture drops at"
-	next "night, it sleeps"
+	db   "While its massive"
+	next "pincers can be"
+	next "used to hunt, it"
 
-	page "on treetops or"
-	next "among roots where"
-	next "it is well hidden.@"
+	page "usually fights"
+	next "HERACROSS over"
+	next "tree sap.@"

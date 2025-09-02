@@ -1,9 +1,9 @@
 	db "WATER@" ; species name
 
-	db   "It is a messenger"
-	next "of the skies, car-"
-	next "rying small"
+	db   "It seems to get"
+	next "along with small"
+	next "#MON, providing"
 
-	page "#MON and eggs"
-	next "to safety in its"
-	next "bill.@"
+	page "them transport by"
+	next "riding in its"
+	next "huge beak.@"

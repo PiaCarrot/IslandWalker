@@ -1,9 +1,9 @@
 	db "COLOR@" ; species name
 
-	db   "It can freely"
-	next "change its body's"
-	next "color. The zigzag"
+	db   "Its color changes"
+	next "so that it can"
+	next "hide anywhere."
 
-	page "pattern on its"
-	next "belly doesn't"
-	next "change, however.@"
+	page "The zigzag on its"
+	next "belly will never"
+	next "change, though.@"

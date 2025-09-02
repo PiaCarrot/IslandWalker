@@ -1,9 +1,9 @@
 	db "EMOTION@" ; species name
 
-	db   "If its Trainer be-"
-	next "comes happy, it"
-	next "overflows with en-"
+	db   "When it is happy,"
+	next "it will spin and"
+	next "dance. It's said"
 
-	page "ergy, dancing joy-"
-	next "ously while spin-"
-	next "ning about.@"
+	page "that ballet was"
+	next "inspired by this"
+	next "#MON's dance.@"

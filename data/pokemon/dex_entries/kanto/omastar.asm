@@ -1,9 +1,9 @@
 	db "SPIRAL@" ; species name
 
-	db   "Its heavy shell"
-	next "allowed it to"
-	next "reach only nearby"
+	db   "Its ringed beak"
+	next "lets it crack the"
+	next "shells of other"
 
-	page "food. This could"
-	next "be the reason it"
-	next "is extinct.@"
+	page "invertebrates,"
+	next "such as SHELLDER"
+	next "or KRABBY.@"

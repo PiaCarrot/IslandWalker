@@ -1,9 +1,9 @@
 	db "FAIRY@" ; species name
 
-	db   "Said to live in"
-	next "quiet, remote"
-	next "mountains, this"
+	db   "It hates loud"
+	next "noises, because"
+	next "of its excellent"
 
-	page "type of fairy has"
-	next "a strong aversion"
-	next "to being seen.@"
+	page "hearing. It can"
+	next "skip on water"
+	next "with ease.@"

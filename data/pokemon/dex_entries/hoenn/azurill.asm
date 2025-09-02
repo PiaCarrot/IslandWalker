@@ -1,9 +1,9 @@
 	db "POLKA@" ; species name
 
-	db   "Its tail bounces"
-	next "like a rubber"
-	next "ball. It flings"
+	db   "It bounces on its"
+	next "tail like a rub-"
+	next "ber ball to get"
 
-	page "its tail around to"
-	next "fight opponents"
-	next "bigger than it is.@"
+	page "around. It hurls"
+	next "itself upwards of"
+	next "33 FT away.@"

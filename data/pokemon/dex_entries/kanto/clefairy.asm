@@ -1,9 +1,9 @@
 	db "FAIRY@" ; species name
 
-	db   "Though rarely"
-	next "seen, it becomes"
-	next "easier to spot,"
+	db   "A PROFESSOR from"
+	next "KANTO claims it"
+	next "comes from space."
 
-	page "for some reason,"
-	next "on the night of a"
-	next "full moon.@"
+	page "It only appears"
+	next "under a full moon"
+	next "to dance.@"

@@ -1,9 +1,9 @@
 	db "SHELLFISH@" ; species name
 
-	db   "Three hundred"
-	next "million years ago,"
-	next "it hid on the sea"
+	db   "It is believed"
+	next "that this #MON"
+	next "went extinct long"
 
-	page "floor. It also has"
-	next "eyes on its back"
-	next "that glow.@"
+	page "ago. It's fossil"
+	next "inspired samurai"
+	next "helmets.@"

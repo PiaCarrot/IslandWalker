@@ -1,9 +1,9 @@
 	db "VOLCANO@" ; species name
 
-	db   "This brawny"
-	next "#MON courses"
-	next "around the earth,"
+	db   "Its said to embo-"
+	next "dy the passion of"
+	next "magma. Whenever"
 
-	page "spouting flames"
-	next "hotter than a"
-	next "volcano's magma.@"
+	page "it barks, a volc-"
+	next "ano is sure to"
+	next "erupt.@"

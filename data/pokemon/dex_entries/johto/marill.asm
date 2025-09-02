@@ -1,9 +1,9 @@
 	db "AQUAMOUSE@" ; species name
 
-	db   "The fur on its"
-	next "body naturally"
-	next "repels water. It"
+	db   "Its ears detect"
+	next "sounds even under"
+	next "the water. Its"
 
-	page "can stay dry, even"
-	next "when it plays in"
-	next "the water.@"
+	page "tail is filled"
+	next "with oil that act"
+	next "as a buoy.@"

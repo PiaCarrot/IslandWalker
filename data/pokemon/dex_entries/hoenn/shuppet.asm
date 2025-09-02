@@ -1,9 +1,9 @@
 	db "PUPPET@" ; species name
 
-	db   "It loves vengeful"
-	next "emotions and hangs"
-	next "in rows under the"
+	db   "It uses its horn"
+	next "to feed on envy"
+	next "and malice, or so"
 
-	page "eaves of houses"
-	next "where vengeful"
-	next "people live.@"
+	page "it's said. It's"
+	next "very active at"
+	next "night.@"

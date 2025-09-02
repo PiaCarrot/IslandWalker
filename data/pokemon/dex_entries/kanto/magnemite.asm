@@ -1,9 +1,9 @@
 	db "MAGNET@" ; species name
 
-	db   "The electricity"
-	next "emitted by the"
-	next "units on each side"
+	db   "It gathers in any"
+	next "place where elec-"
+	next "tricity is. Some"
 
-	page "of its body cause"
-	next "it to become a"
-	next "strong magnet.@"
+	page "ranchers use them"
+	next "to collect power"
+	next "for homes.@"

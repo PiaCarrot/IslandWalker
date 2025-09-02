@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "HEX NUT@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "It creates iron"
+	next "from nothing. It"
+	next "will eventually"
+
+	page "rust and bring a"
+	next "new life to many"
+	next "MELTAN.@"

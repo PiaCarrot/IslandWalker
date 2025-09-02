@@ -1,9 +1,9 @@
 	db "FROG@" ; species name
 
-	db   "When it expands"
-	next "its throat to"
-	next "croak out a tune,"
+	db   "The curl on its"
+	next "head serves as a"
+	next "crown. POLIWAG"
 
-	page "nearby POLIWAG and"
-	next "POLIWHIRL gather"
-	next "immediately.@"
+	page "and POLIWHIRL are"
+	next "subservient and"
+	next "follow it.@"

@@ -1,9 +1,9 @@
 	db "BIG JAW@" ; species name
 
-	db   "The tips of its"
-	next "fangs are slanted"
-	next "backward. Once"
+	db   "Its hooked fangs"
+	next "ensure nothing"
+	next "can escape its"
 
-	page "those fangs clamp"
-	next "down, the prey has"
-	next "no hope of escape.@"
+	page "bite. The teeth"
+	next "grow back quickly"
+	next "if they break.@"

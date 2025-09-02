@@ -1,9 +1,9 @@
 	db "PARENT@" ; species name
 
-	db   "To avoid"
-	next "crushing the"
-	next "baby it carries in"
+	db   "All KANGASKHAN"
+	next "are female. If"
+	next "its child leaves"
 
-	page "its pouch, it"
-	next "always sleeps"
-	next "standing up.@"
+	page "when its older,"
+	next "it cries wildly"
+	next "for days.@"

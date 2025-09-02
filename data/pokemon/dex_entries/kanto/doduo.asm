@@ -1,9 +1,9 @@
 	db "TWIN BIRD@" ; species name
 
-	db   "It lives on a"
-	next "grassy plain where"
-	next "it can see a long"
+	db   "It races RAPIDASH"
+	next "quite commonly"
+	next "and it's believed"
 
-	page "way. If it sees an"
-	next "enemy, it runs"
-	next "away at 60 mph.@"
+	page "the two heads are"
+	next "completely in"
+	next "sync.@"

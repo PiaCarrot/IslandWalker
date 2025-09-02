@@ -1,9 +1,9 @@
 	db "SINGLEHORN@" ; species name
 
-	db   "With its Herculean"
-	next "powers, it can"
-	next "easily throw arou-"
+	db   "It loves anything"
+	next "sweet. If PINSIR"
+	next "tries to contest"
 
-	page "nd an object that"
-	next "is 100 times its"
-	next "own weight.@"
+	page "it for HONEY it"
+	next "easily defeats it"
+	next "with its horn.@"

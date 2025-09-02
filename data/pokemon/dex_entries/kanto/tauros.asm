@@ -1,9 +1,9 @@
 	db "WILD BULL@" ; species name
 
-	db   "These violent"
-	next "#MON fight"
-	next "with other mem-"
+	db   "In the ORANGE"
+	next "ISLANDS, TAUROS"
+	next "are raised by"
 
-	page "bers of their herd"
-	next "in order to prove"
-	next "their strength.@"
+	page "humans and are"
+	next "much more gentle"
+	next "than in KANTO.@"

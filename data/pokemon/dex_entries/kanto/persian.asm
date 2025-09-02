@@ -1,9 +1,9 @@
 	db "CLASSY CAT@" ; species name
 
-	db   "Behind its lithe,"
-	next "elegant appearance"
-	next "lies a barbaric"
+	db   "The jewel on its"
+	next "head glows. Its"
+	next "prey stares at it"
 
-	page "side. It will tear"
-	next "apart its prey on"
-	next "a mere whim.@"
+	page "curiously before"
+	next "PERSIAN pounces"
+	next "from shadows.@"

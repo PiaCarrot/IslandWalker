@@ -1,9 +1,9 @@
 	db "KISS@" ; species name
 
-	db   "The sensitivity of"
-	next "its lips develops"
-	next "most quickly."
+	db   "It kisses things"
+	next "that its curious"
+	next "about with its"
 
-	page "It uses them to"
-	next "try to identify"
-	next "unknown objects.@"
+	page "sensitive lips."
+	next "It can't handle"
+	next "getting dirty.@"

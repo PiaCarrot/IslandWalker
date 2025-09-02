@@ -1,9 +1,9 @@
 	db "RAINBOW@" ; species name
 
-	db   "It will reveal"
-	next "itself before a"
-	next "pure-hearted"
+	db   "Only those pure"
+	next "of heart will be"
+	next "allowed in its"
 
-	page "trainer by shining"
-	next "its bright rain-"
-	next "bow-colored wings.@"
+	page "presence. It will"
+	next "test people with"
+	next "its feathers.@"

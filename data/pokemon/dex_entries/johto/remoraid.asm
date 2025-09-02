@@ -1,9 +1,9 @@
 	db "JET@" ; species name
 
-	db   "To escape from an"
-	next "attacker, it may"
-	next "shoot water out of"
+	db   "It clings to the"
+	next "underside of MAN-"
+	next "TINE for scraps."
 
-	page "its mouth, then"
-	next "use that force to"
-	next "swim backward.@"
+	page "If MANTINE gets"
+	next "attacked, it will"
+	next "fight with it.@"

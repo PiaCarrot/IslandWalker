@@ -1,9 +1,9 @@
 	db "LEAF@" ; species name
 
-	db   "The scent that"
-	next "wafts from the"
-	next "leaves on its neck"
+	db   "If you sleep near"
+	next "it, you will wake"
+	next "up feeling invig-"
 
-	page "causes anyone who"
-	next "smells it to"
-	next "become energetic.@"
+	page "orated. A spicy"
+	next "smell emanates"
+	next "from its leaves.@"

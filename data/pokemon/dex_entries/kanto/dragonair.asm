@@ -1,9 +1,9 @@
 	db "DRAGON@" ; species name
 
-	db   "It is called the"
-	next "divine #MON."
-	next "When its entire"
+	db   "It's a well known"
+	next "fact that people"
+	next "in the past wor-"
 
-	page "body brightens"
-	next "slightly, the"
-	next "weather changes.@"
+	page "shipped DRAGONAIR"
+	next "because it can"
+	next "control weather.@"

@@ -1,9 +1,9 @@
 	db "BIG HORN@" ; species name
 
-	db   "The round balls"
-	next "found on the"
-	next "fallen antlers can"
+	db   "Due to the unfor-"
+	next "giving conditions"
+	next "it lives in, its"
 
-	page "be ground into a"
-	next "powder that aids"
-	next "in sleeping.@"
+	page "PSYCHIC power is"
+	next "stronger than in"
+	next "other regions.@"

@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "LAND SNAKE@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "Building nests up"
+	next "to 6 miles long,"
+	next "it repels intrud-"
+
+	page "ers by blasting"
+	next "air with its long"
+	next "and narrow lungs.@"

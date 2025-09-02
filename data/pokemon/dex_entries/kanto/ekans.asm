@@ -1,9 +1,9 @@
 	db "SNAKE@" ; species name
 
-	db   "It flutters the"
-	next "tip of its tongue"
-	next "to seek out the"
+	db   "It wraps itself"
+	next "around trees in"
+	next "order to get to"
 
-	page "scent of prey,"
-	next "then swallows the"
-	next "prey whole.@"
+	page "the nests of BIRD"
+	next "POKEMON to eat"
+	next "their EGGs.@"

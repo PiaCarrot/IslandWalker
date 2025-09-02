@@ -1,9 +1,9 @@
 	db "POISONMOTH@" ; species name
 
-	db   "The scales it"
-	next "scatters will"
-	next "paralyze anyone"
+	db   "It stalks camp-"
+	next "fires and street"
+	next "lamps to hunt for"
 
-	page "who touches them,"
-	next "making that person"
-	next "unable to stand.@"
+	page "BUG-type POKEMON"
+	next "that are attract-"
+	next "ed to light.@"

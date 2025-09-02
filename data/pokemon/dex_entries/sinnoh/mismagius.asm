@@ -1,9 +1,9 @@
 db "MAGICAL@" ; species name
 
-db   "Its cries sound"
-next "like incantations."
-next "Those hearing it"
+	db   "It grants a bles-"
+	next "sing to those who"
+	next "treat it with"
 
-page "are tormented by"
-next "headaches and"
-next "hallucinations.@"
+	page "respect, but when"
+	next "displeased, it"
+	next "casts a curse.@"

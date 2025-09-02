@@ -1,9 +1,9 @@
 	db "SLUDGE@" ; species name
 
-	db   "As it moves, a"
-	next "very strong poison"
-	next "leaks from it,"
+	db   "Its smell is so"
+	next "vile and toxic"
+	next "that they can"
 
-	page "making the ground"
-	next "there barren for"
-	next "three years.@"
+	page "kill entire eco-"
+	next "systems when they"
+	next "multiply.@"

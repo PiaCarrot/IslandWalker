@@ -1,9 +1,9 @@
 	db "KITE@" ; species name
 
-	db   "It swims along"
-	next "freely, eating"
-	next "things that swim"
+	db   "It loves to build"
+	next "up speed so that"
+	next "it can jump out"
 
-	page "into its mouth."
-	next "Its whole body is"
-	next "very coarse.@"
+	page "of the water to"
+	next "glide for over"
+	next "300 feet.@"

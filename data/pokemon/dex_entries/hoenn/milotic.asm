@@ -1,9 +1,9 @@
 	db "TENDER@" ; species name
 
-	db   "Its lovely scales"
-	next "are described as"
-	next "rainbow colored."
+	db   "It lives at the"
+	next "bottom of crystal"
+	next "clear lakes. Its"
 
-	page "They change color"
-	next "depending on the"
-	next "viewing angle.@"
+	page "beauty has inspi-"
+	next "red the hearts of"
+	next "many.@"

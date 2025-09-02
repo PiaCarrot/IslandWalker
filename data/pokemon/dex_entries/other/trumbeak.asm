@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "BUGLE BEAK@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "It can bend its"
+	next "beak, to produce a"
+	next "variety of calls"
+
+	page "and brand itself a"
+	next "noisy nuisance for"
+	next "its neighbors.@"

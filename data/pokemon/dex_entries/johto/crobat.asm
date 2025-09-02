@@ -1,9 +1,9 @@
 	db "BAT@" ; species name
 
-	db   "As a result of its"
-	next "pursuit of faster,"
-	next "yet more silent"
+	db   "Its flies around"
+	next "extremely quickly"
+	next "and precisely. It"
 
-	page "flight, a new set"
-	next "of wings grew on"
-	next "its hind legs.@"
+	page "flies silently to"
+	next "ensure it isn't"
+	next "detectable.@"

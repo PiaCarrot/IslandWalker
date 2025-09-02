@@ -1,9 +1,9 @@
 	db "EVOLUTION@" ; species name
 
-	db   "Its ability to"
+	db   "Due to unstable"
+	next "genetics, it can"
 	next "evolve into many"
-	next "forms allows it to"
 
-	page "adapt smoothly"
-	next "and perfectly to"
-	next "any environment.@"
+	page "different POKEMON."
+	next "Due to this, it's"
+	next "very popular.@"

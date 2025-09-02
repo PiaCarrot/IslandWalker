@@ -1,9 +1,9 @@
 	db "HUMANSHAPE@" ; species name
 
-	db   "It has several"
-	next "different cry pat-"
-	next "terns, each of"
+	db   "When JYNX meets"
+	next "someone new, it"
+	next "tries to give"
 
-	page "which seems to"
-	next "have its own"
-	next "meaning.@"
+	page "them a kiss. If"
+	next "it likes you it"
+	next "doesn't stop.@"

@@ -1,9 +1,9 @@
 	db "SHELLFISH@" ; species name
 
-	db   "It was able to"
-	next "swim quickly thro-"
-	next "ugh the water by"
+	db   "It swims nearly 4"
+	next "times faster than"
+	next "DEWGONG, and has"
 
-	page "compactly folding"
-	next "up its razor-sharp"
-	next "sickles.@"
+	page "adapted to hunt"
+	next "its prey in and"
+	next "out of water.@"
