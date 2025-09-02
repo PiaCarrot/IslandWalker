@@ -367,6 +367,71 @@ MonMenuIconPals:
        icon_pals RED,    RED    ; BISHARP
        icon_pals RED,    RED    ; ZORUA
        icon_pals RED,    RED    ; ZOROARK
+       icon_pals RED,    RED    ; SKRELP
+       icon_pals RED,    RED    ; DRAGALGE
+       icon_pals RED,    RED    ; CLAUNCHER
+       icon_pals RED,    RED    ; CLAWITZER
+       icon_pals RED,    RED    ; SYLVEON
+       icon_pals RED,    RED    ; PANCHAM
+       icon_pals RED,    RED    ; PANGORO
+       icon_pals RED,    RED    ; INKAY
+       icon_pals RED,    RED    ; MALAMAR
+       icon_pals RED,    RED    ; NOIBAT
+       icon_pals RED,    RED    ; NOIVERN
+       icon_pals RED,    RED    ; HONEDGE
+       icon_pals RED,    RED    ; DOUBLADE
+       icon_pals RED,    RED    ; AEGISLASH
+       icon_pals RED,    RED    ; GOOMY
+       icon_pals RED,    RED    ; SLIGGOO
+       icon_pals RED,    RED    ; GOODRA
+       icon_pals RED,    RED    ; ROCKRUFF
+       icon_pals RED,    RED    ; LYCANROC
+       icon_pals RED,    RED    ; CUTIEFLY
+       icon_pals RED,    RED    ; RIBOMBEE
+       icon_pals RED,    RED    ; PIKIPEK
+       icon_pals RED,    RED    ; TRUMBEAK
+       icon_pals RED,    RED    ; TOUCANNON
+       icon_pals RED,    RED    ; MIMIKYU
+       icon_pals RED,    RED    ; SANDYGAST
+       icon_pals RED,    RED    ; PALOSSAND
+       icon_pals RED,    RED    ; SALANDIT
+       icon_pals RED,    RED    ; SALAZZLE
+       icon_pals RED,    RED    ; MAREANIE
+       icon_pals RED,    RED    ; TOXAPEX
+       icon_pals RED,    RED    ; TURTONATOR
+       icon_pals RED,    RED    ; DHELMISE
+       icon_pals RED,    RED    ; PINCURCHIN
+       icon_pals RED,    RED    ; CRAMORANT
+       icon_pals RED,    RED    ; BINACLE
+       icon_pals RED,    RED    ; BARBARACLE
+       icon_pals RED,    RED    ; APPLIN
+       icon_pals RED,    RED    ; FLAPPLE
+       icon_pals RED,    RED    ; APPLETUN
+       icon_pals RED,    RED    ; GIMMIGHOUL
+       icon_pals RED,    RED    ; GHOLDENGO
+       icon_pals RED,    RED    ; ANNIHILAPE
+       icon_pals RED,    RED    ; DUDUNSPARCE
+       icon_pals RED,    RED    ; FARIGIRAF
+       icon_pals RED,    RED    ; KINGAMBIT
+       icon_pals RED,    RED    ; DIPPLIN
+       icon_pals RED,    RED    ; HYDRAPPLE
+       icon_pals RED,    RED    ; CHARCADET
+       icon_pals RED,    RED    ; ARMAROUGE
+       icon_pals RED,    RED    ; CERULEDGE
+       icon_pals RED,    RED    ; CLODSIRE
+       icon_pals RED,    RED    ; CURSOLA
+       icon_pals RED,    RED    ; PERRSERKER
+       icon_pals RED,    RED    ; SIRFETCHD
+       icon_pals RED,    RED    ; MR_RIME
+       icon_pals RED,    RED    ; OBSTAGOON
+       icon_pals RED,    RED    ; OVERQWIL
+       icon_pals RED,    RED    ; SNEASLER
+       icon_pals RED,    RED    ; KLEAVOR
+       icon_pals RED,    RED    ; URSALUNA
+       icon_pals RED,    RED    ; WYRDEER
+       icon_pals RED,    RED    ; MARSHADOW
+       icon_pals RED,    RED    ; MELTAN
+       icon_pals RED,    RED    ; MELMETAL
 ; Forms
         icon_pals BLUE,   TEAL   ; LAPRAS
         icon_pals BLUE,   PURPLE ; DRATINI

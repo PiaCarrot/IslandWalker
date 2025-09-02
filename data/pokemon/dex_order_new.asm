@@ -355,6 +355,71 @@ NewPokedexOrder:
        dw BISHARP
        dw ZORUA
        dw ZOROARK
+       dw SKRELP
+       dw DRAGALGE
+       dw CLAUNCHER
+       dw CLAWITZER
+       dw SYLVEON
+       dw PANCHAM
+       dw PANGORO
+       dw INKAY
+       dw MALAMAR
+       dw NOIBAT
+       dw NOIVERN
+       dw HONEDGE
+       dw DOUBLADE
+       dw AEGISLASH
+       dw GOOMY
+       dw SLIGGOO
+       dw GOODRA
+       dw ROCKRUFF
+       dw LYCANROC
+       dw CUTIEFLY
+       dw RIBOMBEE
+       dw PIKIPEK
+       dw TRUMBEAK
+       dw TOUCANNON
+       dw MIMIKYU
+       dw SANDYGAST
+       dw PALOSSAND
+       dw SALANDIT
+       dw SALAZZLE
+       dw MAREANIE
+       dw TOXAPEX
+       dw TURTONATOR
+       dw DHELMISE
+       dw PINCURCHIN
+       dw CRAMORANT
+       dw BINACLE
+       dw BARBARACLE
+       dw APPLIN
+       dw FLAPPLE
+       dw APPLETUN
+       dw GIMMIGHOUL
+       dw GHOLDENGO
+       dw ANNIHILAPE
+       dw DUDUNSPARCE
+       dw FARIGIRAF
+       dw KINGAMBIT
+       dw DIPPLIN
+       dw HYDRAPPLE
+       dw CHARCADET
+       dw ARMAROUGE
+       dw CERULEDGE
+       dw CLODSIRE
+       dw CURSOLA
+       dw PERRSERKER
+       dw SIRFETCHD
+       dw MR_RIME
+       dw OBSTAGOON
+       dw OVERQWIL
+       dw SNEASLER
+       dw KLEAVOR
+       dw URSALUNA
+       dw WYRDEER
+       dw MARSHADOW
+       dw MELTAN
+       dw MELMETAL
         dw LAPRAS_PARTNER
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER

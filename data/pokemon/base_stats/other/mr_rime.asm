@@ -4,7 +4,7 @@ db  80,  85,  75,  70, 110, 100
 evs  0,  0,  0,  0,  3,  0
 ;   hp  atk  def  spd  sat  sdf
 
-db ICE, PSYCHIC ; type
+db ICE, PSYCHIC_TYPE ; type
 db 45 ; catch rate
 db 182 ; base exp
 dw NO_ITEM, NO_ITEM ; items

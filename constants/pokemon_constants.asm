@@ -380,71 +380,71 @@ DEF OTHER_POKEMON EQU const_value
     const BISHARP    ; 160
     const ZORUA      ; 161
     const ZOROARK    ; 162
-	; const SKRELP     ; 163
-	; const DRAGALGE   ; 164
-	; const CLAUNCHER  ; 165
-	; const CLAWITZER  ; 166
-	; const SYLVEON    ; 167
-	; const PANCHAM    ; 168
-	; const PANGORO    ; 169
-	; const INKAY      ; 16a
-	; const MALAMAR    ; 16b
-	; const NOIBAT     ; 16c
-	; const NOIVERN    ; 16d
-	; const HONEDGE    ; 16e
-	; const DOUBLADE   ; 16f
-	; const AEGISLASH  ; 170
-	; const GOOMY      ; 171
-	; const SLIGGOO    ; 172
-	; const GOODRA     ; 173
-	; const ROCKRUFF   ; 174
-	; const LYCANROC   ; 175
-	; const CUTIEFLY   ; 176
-	; const RIBOMBEE   ; 177
-	; const PIKIPEK    ; 178
-	; const TRUMBEAK   ; 179
-	; const TOUCANNON  ; 17a
-	; const MIMIKYU    ; 17b
-	; const SANDYGHAST ; 17c
-	; const PALLOSAND  ; 17d
-	; const SALANDIT   ; 17e
-	; const SALAZZLE   ; 17f
-	; const MAREANIE   ; 180
-	; const TOXAPEX    ; 181
-	; const TURTONATOR ; 182
-	; const DHELMISE   ; 183
-	; const PINCURCHIN ; 184
-	; const CRAMORANT  ; 185
-	; const BINACLE    ; 186
-	; const BARBARACLE    ; 187
-	; const APPLIN     ; 188
-	; const FLAPPLE    ; 189
-	; const APPLETUN   ; 18a
-	; const GIMMIGHOUL ; 18b
-	; const GHOLDENGO  ; 18c
-	; const ANNIHILAPE ; 18d
-	; const DUDUNSPARCE ; 18e
-	; const FARIGARAF  ; 18f
-	; const KINGAMBIT  ; 190
-	; const DIPPLIN    ; 191
-	; const HYDRAPPLE  ; 192
-	; const CHARCADET  ; 193
-	; const ARMAROUGE  ; 194
-	; const CERULEDGE  ; 195
-	; const CLODSIRE   ; 196
-	; const CURSOLA    ; 197
-	; const PERRSERKER ; 198
-	; const SIRFETCH_D ; 199
-	; const MR__RIME   ; 19a
-	; const OBSTAGOON  ; 19b
-	; const OVERQWIL   ; 19c
-	; const SNEASLER   ; 19d
-	; const KLEAVOR    ; 19e
-	; const URSALUNA   ; 19f
-	; const WYRDEER    ; 1a0
-	; const MARSHADOW  ; 1a1
-	; const MELTAN     ; 1a2
-	; const MELMETAL   ; 1a3
+    const SKRELP     ; 163
+    const DRAGALGE   ; 164
+    const CLAUNCHER  ; 165
+    const CLAWITZER  ; 166
+    const SYLVEON    ; 167
+    const PANCHAM    ; 168
+    const PANGORO    ; 169
+    const INKAY      ; 16a
+    const MALAMAR    ; 16b
+    const NOIBAT     ; 16c
+    const NOIVERN    ; 16d
+    const HONEDGE    ; 16e
+    const DOUBLADE   ; 16f
+    const AEGISLASH  ; 170
+    const GOOMY      ; 171
+    const SLIGGOO    ; 172
+    const GOODRA     ; 173
+    const ROCKRUFF   ; 174
+    const LYCANROC   ; 175
+    const CUTIEFLY   ; 176
+    const RIBOMBEE   ; 177
+    const PIKIPEK    ; 178
+    const TRUMBEAK   ; 179
+    const TOUCANNON  ; 17a
+    const MIMIKYU    ; 17b
+    const SANDYGAST  ; 17c
+    const PALOSSAND  ; 17d
+    const SALANDIT   ; 17e
+    const SALAZZLE   ; 17f
+    const MAREANIE   ; 180
+    const TOXAPEX    ; 181
+    const TURTONATOR ; 182
+    const DHELMISE   ; 183
+    const PINCURCHIN ; 184
+    const CRAMORANT  ; 185
+    const BINACLE    ; 186
+    const BARBARACLE    ; 187
+    const APPLIN     ; 188
+    const FLAPPLE    ; 189
+    const APPLETUN   ; 18a
+    const GIMMIGHOUL ; 18b
+    const GHOLDENGO  ; 18c
+    const ANNIHILAPE ; 18d
+    const DUDUNSPARCE ; 18e
+    const FARIGIRAF  ; 18f
+    const KINGAMBIT  ; 190
+    const DIPPLIN    ; 191
+    const HYDRAPPLE  ; 192
+    const CHARCADET  ; 193
+    const ARMAROUGE  ; 194
+    const CERULEDGE  ; 195
+    const CLODSIRE   ; 196
+    const CURSOLA    ; 197
+    const PERRSERKER ; 198
+    const SIRFETCHD  ; 199
+    const MR_RIME    ; 19a
+    const OBSTAGOON  ; 19b
+    const OVERQWIL   ; 19c
+    const SNEASLER   ; 19d
+    const KLEAVOR    ; 19e
+    const URSALUNA   ; 19f
+    const WYRDEER    ; 1a0
+    const MARSHADOW  ; 1a1
+    const MELTAN     ; 1a2
+    const MELMETAL   ; 1a3
 DEF NUM_OTHER_POKEMON EQU const_value - OTHER_POKEMON
 DEF FORM_POKEMON EQU const_value
 	const LAPRAS_PARTNER      ; 1a4

@@ -4,9 +4,9 @@ db 120,  90,  70,  60, 110,  70
 evs  3,  0,  0,  0,  0,  0
 ;   hp  atk  def  spd  sat  sdf
 
-db NORMAL, PSYCHIC ; type
+db NORMAL, PSYCHIC_TYPE ; type
 db 45 ; catch rate
-db 260 ; base exp
+db 255 ; base exp
 dw NO_ITEM, NO_ITEM ; items
 db GENDER_F50 ; gender ratio
 db 20 ; step cycles to hatch

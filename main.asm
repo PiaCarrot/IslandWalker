@@ -252,8 +252,6 @@ INCLUDE "data/pokemon/names.asm"
 INCLUDE "engine/pokemon/natures.asm"
 
 
-SECTION "Base Stats", ROMX
-
 INCLUDE "data/pokemon/base_stats.asm"
 
 
