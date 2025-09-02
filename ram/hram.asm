@@ -194,6 +194,9 @@ hRequestOpaque1bpp::    db
 
 hTilesetGFXBank:: db
 
-	ds 4
+hCurBitStream:: db
+hCurSampVal:: db
+hDEDNR51Mask:: db
+hLoopCounter:: db
 
 ENDSECTION
