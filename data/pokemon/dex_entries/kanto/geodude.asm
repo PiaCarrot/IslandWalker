@@ -1,9 +1,9 @@
 	db "ROCK@" ; species name
 
-	db   "Proud of their"
-	next "sturdy bodies,"
-	next "they bash against"
+	db   "Using its arms,"
+	next "it climbs the"
+	next "mountainside to"
 
-	page "each other in a"
-	next "contest to prove"
-	next "whose is harder.@"
+	page "sleep. When it"
+	next "awakes, it rolls"
+	next "down the hill.@"

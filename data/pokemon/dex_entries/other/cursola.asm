@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "CORAL@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "Under a full moon"
+	next "they can be seen"
+	next "sending their"
+
+	page "branches into the"
+	next "sky. It is not"
+	next "known why.@"

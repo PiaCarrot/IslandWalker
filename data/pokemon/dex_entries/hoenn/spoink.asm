@@ -1,9 +1,9 @@
 	db "BOUNCE@" ; species name
 
-	db   "It bounces con-"
-	next "stantly, using its"
-	next "tail like a"
+	db   "Its heart will"
+	next "stop if it can't"
+	next "bounce. In the"
 
-	page "spring. The shock"
-	next "of bouncing keeps"
-	next "its heart beating.@"
+	page "past humans used"
+	next "tar to catch them"
+	next "for food.@"

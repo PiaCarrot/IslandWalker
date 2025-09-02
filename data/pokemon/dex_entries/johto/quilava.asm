@@ -1,9 +1,9 @@
 	db "VOLCANO@" ; species name
 
-	db   "Before battle, it"
-	next "turns its back on"
-	next "its opponent to"
+	db   "Its fur is wholly"
+	next "impervious to all"
+	next "fire attacks. It"
 
-	page "demonstrate how"
-	next "ferociously its"
-	next "fire blazes.@"
+	page "can heat up the"
+	next "air around it"
+	next "like a furnace.@"

@@ -1,9 +1,9 @@
 db "VINE@@@" ; species name
 
-db   "Its arms are made"
-next "of vines that wrap"
-next "around prey. They"
+	db   "Its vines grow so"
+	next "quickly in warm"
+	next "climates that it"
 
-page "can be extended"
-next "anywhere and will"
-next "never slacken.@"
+	page "must constantly"
+	next "prune itself so"
+	next "it can see.@"

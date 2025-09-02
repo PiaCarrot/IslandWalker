@@ -1,9 +1,9 @@
 	db "TINY MOUSE@" ; species name
 
-	db   "It is unskilled at"
-	next "storing electric"
-	next "power. Any kind of"
+	db   "It has no control"
+	next "over its electric"
+	next "power. It needs a"
 
-	page "shock causes it to"
-	next "discharge energy"
-	next "spontaneously.@"
+	page "good TRAINER to"
+	next "ensure it grows"
+	next "up healthily.@"

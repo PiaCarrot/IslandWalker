@@ -1,9 +1,9 @@
 	db "BIRD@" ; species name
 
-	db   "Its outstanding"
-	next "vision allows it"
-	next "to spot splashing"
+	db   "Rarely seen wild,"
+	next "its wing muscles"
+	next "are so powerful"
 
-	page "MAGIKARP, even"
-	next "while flying at"
-	next "3300 feet.@"
+	page "that it can FLY"
+	next "faster than most"
+	next "airplanes.@"

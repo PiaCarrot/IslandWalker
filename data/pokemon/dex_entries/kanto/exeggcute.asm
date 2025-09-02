@@ -1,9 +1,9 @@
 	db "EGG@" ; species name
 
-	db   "If even one is"
-	next "separated from the"
-	next "group, the energy"
+	db   "The ones found on"
+	next "islands are much"
+	next "heavier than ones"
 
-	page "bond between the"
-	next "six will make them"
-	next "rejoin instantly.@"
+	page "found on the main"
+	next "land. There are"
+	next "always 6 heads.@"

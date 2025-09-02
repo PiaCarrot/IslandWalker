@@ -1,9 +1,9 @@
 	db "GOLDFISH@" ; species name
 
-	db   "During spawning"
-	next "season, they swim"
-	next "gracefully in the"
+	db   "During its mating"
+	next "season, they make"
+	next "their way up riv-"
 
-	page "water, searching"
-	next "for their perfect"
-	next "mate.@"
+	page "ers and steams."
+	next "It is popular due"
+	next "to its beauty.@"

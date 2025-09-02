@@ -1,9 +1,9 @@
 	db "FOX@" ; species name
 
-	db   "As its body grows"
-	next "larger, its six"
-	next "warm tails become"
+	db   "It has control of"
+	next "the fireballs it"
+	next "spits out. It can"
 
-	page "more beautiful,"
-	next "with a more luxur-"
-	next "ious coat of fur.@"
+	page "then use them to"
+	next "chase and capture"
+	next "its prey.@"

@@ -1,9 +1,9 @@
 	db "HERMITCRAB@" ; species name
 
-	db   "An attached"
-	next "SHELLDER won't let"
-	next "go because of the"
+	db   "Some speculate"
+	next "that the SHELLDER"
+	next "on its tail is"
 
-	page "tasty flavor that"
-	next "oozes out of its"
-	next "tail.@"
+	page "the only POKEMON"
+	next "that evolved in"
+	next "the process.@"

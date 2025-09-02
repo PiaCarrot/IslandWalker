@@ -1,9 +1,9 @@
 	db "LONELY@" ; species name
 
-	db   "It lost its mother"
-	next "after its birth."
-	next "It wears its"
+	db   "It fashions armor"
+	next "and weapons from"
+	next "the bones in its"
 
-	page "mother's skull,"
-	next "never revealing"
-	next "its true face.@"
+	page "mother's nest. It"
+	next "grows stronger as"
+	next "it cries.@"

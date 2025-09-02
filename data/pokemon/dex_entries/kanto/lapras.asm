@@ -1,9 +1,9 @@
 	db "TRANSPORT@" ; species name
 
-	db   "This gentle"
-	next "#MON loves to"
-	next "give people rides"
+	db   "They travel in"
+	next "schools around"
+	next "the world. If one"
 
-	page "and provides a ve-"
-	next "ry comfortable way"
-	next "to get around.@"
+	page "becomes lost, the"
+	next "rest will sing"
+	next "in search of it.@"

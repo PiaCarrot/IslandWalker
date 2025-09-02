@@ -1,9 +1,9 @@
 	db "BIRD@" ; species name
 
-	db   "It slowly flies in"
-	next "a circular pat-"
-	next "tern, all the"
+	db   "Its keen eyesight"
+	next "allows it to hunt"
+	next "from a distance."
 
-	page "while keeping a"
-	next "sharp lookout for"
-	next "prey.@"
+	page "Its favorite prey"
+	next "is EXEGGCUTE and"
+	next "MAGIKARP.@"

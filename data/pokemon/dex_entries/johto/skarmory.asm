@@ -1,9 +1,9 @@
 	db "ARMOR BIRD@" ; species name
 
-	db   "The feathers that"
-	next "it sheds are very"
-	next "sharp. It is said"
+	db   "Its metal armor"
+	next "grows back quick."
+	next "The metal that it"
 
-	page "that people once"
-	next "used the feathers"
-	next "as swords.@"
+	page "sheds is used to"
+	next "make knives for"
+	next "kitchenware.@"

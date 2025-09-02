@@ -1,9 +1,9 @@
 	db "SYMBOL@" ; species name
 
-	db   "Because different"
-	next "types of UNOWN"
-	next "exist, it is said"
+	db   "They resemble the"
+	next "english alphabet."
+	next "When more than"
 
-	page "that they must"
-	next "have a variety of"
-	next "abilities.@"
+	page "one gather, you"
+	next "can feel strange"
+	next "powers surge.@"

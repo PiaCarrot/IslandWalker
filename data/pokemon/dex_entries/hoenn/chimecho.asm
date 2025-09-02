@@ -1,9 +1,9 @@
 	db "WIND@" ; species name
 
-	db   "Its cries echo in-"
-	next "side its hollow"
-	next "body to emerge as"
+	db   "It rides the wind"
+	next "to get from one"
+	next "place to another."
 
-	page "beautiful notes"
-	next "for startling and"
-	next "repelling foes.@"
+	page "When it tires, it"
+	next "hangs off trees"
+	next "and plays notes.@"

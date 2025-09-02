@@ -1,9 +1,9 @@
 	db "WORM@" ; species name
 
-	db   "It crawls into"
-	next "foliage where it"
-	next "camouflages itself"
+	db   "When it's scared,"
+	next "it releases a bad"
+	next "stench to scare"
 
-	page "among leaves that"
-	next "are the same color"
-	next "as its body.@"
+	page "predators away."
+	next "Its favorite food"
+	next "are leaves.@"

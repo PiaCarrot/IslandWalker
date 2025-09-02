@@ -1,9 +1,9 @@
 	db "OWL@" ; species name
 
-	db   "It begins to hoot"
-	next "at the same time"
-	next "every day. Some"
+	db   "Before the inven-"
+	next "tion of clocks,"
+	next "they were used to"
 
-	page "trainers use them"
-	next "in place of"
-	next "clocks.@"
+	page "tell time. It is"
+	next "only active at"
+	next "night-time.@"

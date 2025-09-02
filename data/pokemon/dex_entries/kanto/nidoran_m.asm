@@ -1,9 +1,9 @@
 	db "POISON PIN@" ; species name
 
-	db   "It constantly"
-	next "moves its large"
-	next "ears in many"
+	db   "Its has excellent"
+	next "hearing that it"
+	next "uses to scan its"
 
-	page "directions in"
-	next "order to detect"
-	next "danger right away.@"
+	page "surroundings. It"
+	next "relies on females"
+	next "to find food.@"

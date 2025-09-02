@@ -1,9 +1,9 @@
 	db "MOUSE@" ; species name
 
-	db   "It prefers dry,"
-	next "sandy places"
-	next "because it uses"
+	db   "When cornered, it"
+	next "will SCRATCH its"
+	next "pursuer before"
 
-	page "the sand to"
-	next "protect itself"
-	next "when threatened.@"
+	page "curling up into a"
+	next "ball and rolling"
+	next "away.@"

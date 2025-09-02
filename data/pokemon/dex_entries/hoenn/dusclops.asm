@@ -1,9 +1,9 @@
 	db "BECKON@" ; species name
 
-	db   "It seeks drifting"
-	next "will-o'-the-wisps"
-	next "and sucks them in"
+	db   "Its body is enti-"
+	next "rely hollow. It"
+	next "will try to stuff"
 
-	page "its empty body."
-	next "What happens in-"
-	next "side is a mystery.@"
+	page "anything it can"
+	next "to its mouth if"
+	next "its angry.@"

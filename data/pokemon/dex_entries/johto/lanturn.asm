@@ -1,9 +1,9 @@
 	db "LIGHT@" ; species name
 
-	db   "This #MON uses"
-	next "the bright part of"
-	next "its body, which"
+	db   "It can ILLUMINATE"
+	next "the ocean floor"
+	next "with its antenna."
 
-	page "changed from a"
-	next "dorsal fin, to"
-	next "lure prey.@"
+	page "It can be seen"
+	next "from up to three"
+	next "miles away.@"

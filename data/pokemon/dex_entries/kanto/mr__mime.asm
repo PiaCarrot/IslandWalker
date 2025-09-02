@@ -1,9 +1,9 @@
 	db "BARRIER@" ; species name
 
-	db   "It uses the"
-	next "mysterious"
-	next "power it has in"
+	db   "It manipulates"
+	next "the molecules in"
+	next "the air to create"
 
-	page "its fingers to"
-	next "solidify air into"
-	next "an invisible wall.@"
+	page "solid walls that"
+	next "are invisible to"
+	next "the naked eye.@"

@@ -1,9 +1,9 @@
 	db "WEED@" ; species name
 
-	db   "The smell from its"
-	next "drool-like syrup"
-	next "and the pollen on"
+	db   "Some gourmets are"
+	next "addicted to the"
+	next "nectar GLOOM has,"
 
-	page "its petals is so"
-	next "bad, it may make"
-	next "opponents faint.@"
+	page "but most find it"
+	next "to smell too foul"
+	next "to even be near.@"

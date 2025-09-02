@@ -1,9 +1,9 @@
 	db "HYPNOSIS@" ; species name
 
-	db   "When it twitches"
-	next "its nose, it can"
-	next "tell where someone"
+	db   "It can recall any"
+	next "dream it's eaten."
+	next "If it likes you,"
 
-	page "is sleeping and"
-	next "what that person"
-	next "is dreaming about.@"
+	page "it will show you"
+	next "some of the best"
+	next "dreams it ate.@"

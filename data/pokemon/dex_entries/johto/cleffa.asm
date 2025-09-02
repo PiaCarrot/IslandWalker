@@ -1,9 +1,9 @@
 	db "STARSHAPE@" ; species name
 
-	db   "If the impact site"
-	next "of a meteorite is"
-	next "found, this"
+	db   "A tabloid showing"
+	next "a clearly fake"
+	next "image of CLEFFA"
 
-	page "#MON is certain"
-	next "to be within the"
-	next "immediate area.@"
+	page "with an antenna"
+	next "on its head was"
+	next "popularized.@"

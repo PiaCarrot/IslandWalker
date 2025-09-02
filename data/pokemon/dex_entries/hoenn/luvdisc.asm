@@ -1,9 +1,9 @@
 	db "RENDEZVOUS@" ; species name
 
-	db   "It lives in warm"
-	next "seas. A couple"
-	next "finding this"
+	db   "It pairs with an-"
+	next "other LUVDISC for"
+	next "life. If it beco-"
 
-	page "#MON will"
-	next "be blessed with"
-	next "eternal love.@"
+	page "mes alone, it'll"
+	next "try to get eaten"
+	next "by PELIPPER.@"

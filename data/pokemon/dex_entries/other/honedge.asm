@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "SWORD@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "A famous explorer"
+	next "once wielded a"
+	next "crimson-red HON-"
+
+	page "EDGE. It drains"
+	next "the life of those"
+	next "that use it.@"

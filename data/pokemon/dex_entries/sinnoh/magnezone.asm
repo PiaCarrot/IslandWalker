@@ -1,9 +1,9 @@
 db "MAGNET AREA@" ; species name
 
-db   "Created when"
-next "magnetic forces got"
-next "out of control."
+	db   "It only appears"
+	next "in places that"
+	next "have strong mag-"
 
-page "It emits strange"
-next "signals that can"
-next "disrupt machinery.@"
+	page "netic fields. It"
+	next "seems to receive"
+	next "strange signals.@"

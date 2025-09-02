@@ -1,9 +1,9 @@
 	db "COCOON@" ; species name
 
-	db   "This is its pre-"
-	next "evolved form. At"
-	next "this stage, it can"
+	db   "When threatened,"
+	next "it uses HARDEN to"
+	next "become as tough"
 
-	page "only harden, so it"
-	next "remains motionless"
-	next "to avoid attack.@"
+	page "as iron. Inside"
+	next "of the shell is"
+	next "complete liquid.@"

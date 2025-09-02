@@ -1,9 +1,9 @@
 	db "FLAME@" ; species name
 
-	db   "Once it has stored"
-	next "up enough heat,"
-	next "this #MON's"
+	db   "It forages for"
+	next "berries or hunts"
+	next "prey, torching it"
 
-	page "body temperature"
-	next "can reach up to"
-	next "1700 degrees.@"
+	page "with its flames"
+	next "until it's cooked"
+	next "well-done.@"

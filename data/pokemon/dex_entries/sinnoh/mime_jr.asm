@@ -1,9 +1,9 @@
 db "MIME@" ; species name
 
-db   "It habitually"
-next "mimics foes. The"
-next "mimicked foe is"
+	db   "It habitually"
+	next "mimics foes. Once"
+	next "mimicked, the foe"
 
-page "said to be unable"
-next "to look away from"
-next "Mime Jr.@"
+	page "cannot take its"
+	next "eyes off this"
+	next "Pokemon.@"

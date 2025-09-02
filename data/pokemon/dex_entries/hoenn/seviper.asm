@@ -1,9 +1,9 @@
 	db "FANG@" ; species name
 
-	db   "For many genera-"
-	next "tions, it has"
-	next "feuded with ZAN-"
+	db   "Its tail is sharp"
+	next "like a sword, and"
+	next "is laced with a"
 
-	page "GOOSE. It whets"
-	next "its bladed tail on"
-	next "rocks for battle.@"
+	page "toxic venom. It"
+	next "has a bitter feud"
+	next "with ZANGOOSE.@"

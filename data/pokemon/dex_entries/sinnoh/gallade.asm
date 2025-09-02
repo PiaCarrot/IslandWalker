@@ -1,10 +1,9 @@
 db "BLADE@" ; species name
 
-db   "When protecting someone"
-next "it cares for, it strikes"
-next "with blade-like arms."
+	db   "A SAMURAI school"
+	next "is said to have"
+	next "been inspired by"
 
-page "The more it trains,"
-next "the sharper its"
-next "movements become.@"
-
+	page "GALLADE's way of"
+	next "only fighting to"
+	next "defend the weak.@"

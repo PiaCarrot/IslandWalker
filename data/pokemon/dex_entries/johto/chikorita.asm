@@ -1,9 +1,9 @@
 	db "LEAF@" ; species name
 
-	db   "It loves to bask"
-	next "in the sunlight."
-	next "It uses the leaf"
+	db   "A popular partner"
+	next "POKEMON in the"
+	next "JOHTO region. It"
 
-	page "on its head to"
-	next "seek out warm"
-	next "places.@"
+	page "uses its leaf to"
+	next "find the best sun"
+	next "bathing spots.@"

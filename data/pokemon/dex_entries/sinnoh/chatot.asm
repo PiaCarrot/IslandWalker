@@ -1,9 +1,8 @@
 db "MUSIC NOTE@" ; species name
 
-db   "It mimics the cries"
-next "of others to trick"
-next "them. It can also"
+	db   "It can learn and"
+	next "speak human words."
+	next "If they gather,"
 
-page "copy human speech"
-next "and delights in"
-next "chirping songs.@"
+	page "they all learn the"
+	next "same saying.@"

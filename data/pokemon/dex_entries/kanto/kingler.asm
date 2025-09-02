@@ -1,9 +1,9 @@
 	db "PINCER@" ; species name
 
-	db   "Its oversized claw"
-	next "is very powerful,"
-	next "but when it's not"
+	db   "It is the only"
+	next "threat to CLOY-"
+	next "STER, using its"
 
-	page "in battle, the"
-	next "claw just gets in"
-	next "the way.@"
+	page "claw to crush the"
+	next "shell with 10,000"
+	next "horsepower.@"

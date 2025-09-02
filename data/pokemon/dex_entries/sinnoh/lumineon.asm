@@ -1,9 +1,9 @@
 db "NEON@" ; species name
 
-db   "It crawls along"
-next "seafloors using the"
-next "tips of its fins."
+	db   "Since they use"
+	next "similar methods"
+	next "to catch the same"
 
-page "The patterns glow"
-next "brightly to lure"
-next "prey in darkness.@"
+	page "prey, it fights"
+	next "with LANTURN all"
+	next "the time.@"

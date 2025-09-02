@@ -1,9 +1,9 @@
 	db "COBRA@" ; species name
 
-	db   "To intimidate"
-	next "foes, it spreads"
-	next "its chest wide and"
+	db   "It displays its"
+	next "scary pattern to"
+	next "freeze its prey,"
 
-	page "makes eerie sounds"
-	next "by expelling air"
-	next "from its mouth.@"
+	page "then squeezes it"
+	next "with enough force"
+	next "to bend steel.@"

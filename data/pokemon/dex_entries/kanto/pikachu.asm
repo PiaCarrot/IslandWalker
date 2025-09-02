@@ -1,9 +1,9 @@
 	db "MOUSE@" ; species name
 
-	db   "When it is anger-"
-	next "ed, it immediately"
-	next "discharges the"
+	db   "PIKACHU live in"
+	next "colonies and will"
+	next "rarely venture"
 
-	page "energy stored in"
-	next "the pouches in its"
-	next "cheeks.@"
+	page "out alone. Its"
+	next "wit makes it hard"
+	next "to capture.@"

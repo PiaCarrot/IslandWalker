@@ -1,9 +1,9 @@
 	db "STRINGSPIT@" ; species name
 
-	db   "If prey becomes"
-	next "ensnared in its"
-	next "nest of spun"
+	db   "Its sticky web is"
+	next "used to make silk"
+	next "that is popular"
 
-	page "string, it waits"
-	next "motionlessly until"
-	next "it becomes dark.@"
+	page "in the ORANGE IS-"
+	next "LANDS. The silk"
+	next "can't be ripped.@"

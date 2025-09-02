@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "SAND HEAP@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "If it loses the"
+	next "shovel in its"
+	next "head, it will"
+
+	page "temporarily re-"
+	next "place it with a"
+	next "branch or bottle.@"

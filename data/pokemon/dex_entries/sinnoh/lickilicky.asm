@@ -1,9 +1,9 @@
 db "LICKING@@@" ; species name
 
-db   "Its long tongue"
-next "can stretch over"
-next "20 meters. It"
+	db   "A large stature"
+	next "gives it the cap-"
+	next "acity to store a"
 
-page "wraps things up"
-next "and licks them"
-next "to immobilize.@"
+	page "large tongue that"
+	next "is said to be 80"
+	next "FT long.@"

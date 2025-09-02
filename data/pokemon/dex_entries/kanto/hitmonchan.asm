@@ -1,9 +1,9 @@
 	db "PUNCHING@" ; species name
 
-	db   "To increase the"
-	next "strength of all"
-	next "its punch moves,"
+	db   "Boxing as a sport"
+	next "was created after"
+	next "people watched"
 
-	page "it spins its arms"
-	next "just before making"
-	next "contact.@"
+	page "HITMONCHAN beat"
+	next "a PRIMEAPE in a"
+	next "fist fight.@"

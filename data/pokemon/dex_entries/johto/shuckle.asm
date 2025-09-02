@@ -1,9 +1,9 @@
 	db "MOLD@" ; species name
 
-	db   "The fluid secreted"
-	next "by its toes carves"
-	next "holes in rocks for"
+	db   "Exquisite juice"
+	next "is made when this"
+	next "POKEMON stores"
 
-	page "nesting and can be"
-	next "mixed with BERRIES"
-	next "to make a drink.@"
+	page "BERRIES in its"
+	next "shell and then"
+	next "ferments.@"

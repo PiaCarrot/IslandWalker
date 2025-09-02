@@ -1,9 +1,9 @@
 	db "PAINTER@" ; species name
 
-	db   "The color of the"
-	next "mysterious fluid"
-	next "secreted from its"
+	db   "The vibrant fluid"
+	next "that leaks from"
+	next "its tail is high-"
 
-	page "tail is predeter-"
-	next "mined for each"
-	next "SMEARGLE.@"
+	page "ly sought after"
+	next "by artists and"
+	next "collectors.@"

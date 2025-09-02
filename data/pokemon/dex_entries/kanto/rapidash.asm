@@ -1,9 +1,9 @@
 	db "FIRE HORSE@" ; species name
 
-	db   "It just loves to"
-	next "gallop. The faster"
-	next "it goes, the long-"
+	db   "It loves to race"
+	next "other POKEMON and"
+	next "even cars. When a"
 
-	page "er the swaying"
-	next "flames of its mane"
-	next "will become.@"
+	page "herd races, the"
+	next "fastest becomes"
+	next "the new leader.@"

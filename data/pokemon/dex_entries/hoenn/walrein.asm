@@ -1,9 +1,9 @@
 	db "ICE@" ; species name
 
-	db   "It shatters ice"
-	next "with its tusks."
-	next "Its thick blubber"
+	db   "Its thick tusks"
+	next "never stop grow-"
+	next "ing. If they ever"
 
-	page "repels not only"
-	next "the cold, but also"
-	next "enemy attacks.@"
+	page "break they will"
+	next "grow back within"
+	next "a year.@"

@@ -1,10 +1,9 @@
 db "FANG SCORP@" ; species name
 
-db   "It glides through"
-next "the night sky."
-next "After striking its"
+	db   "Its doesn't make"
+	next "any noise while"
+	next "it flies. It can"
 
-page "prey, it drags"
-next "them back to its"
-next "den to feast.@"
-
+	page "use even the most"
+	next "faint breeze to"
+	next "glide far.@"

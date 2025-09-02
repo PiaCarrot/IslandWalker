@@ -1,9 +1,9 @@
 	db "POISON GAS@" ; species name
 
-	db   "When it inhales"
-	next "poisonous gases"
-	next "from garbage, its"
+	db   "A popular perfume"
+	next "was made by TEAM"
+	next "ROCKET using the"
 
-	page "body expands, and"
-	next "its insides smell"
-	next "much worse.@"
+	page "fumes of WEEZING"
+	next "and sold to the"
+	next "rich.@"

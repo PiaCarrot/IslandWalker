@@ -1,9 +1,9 @@
 db "PLASMA@" ; species name
 
-db   "Born from charged"
-next "plasma, it can enter"
-next "gadgets at will."
+	db   "It is believed"
+	next "that this #MON"
+	next "will be important"
 
-page "It misbehaves for"
-next "fun, leaving devices"
-next "in utter disarray.@"
+	page "for the advance-"
+	next "ment of #DEX"
+	next "technology soon.@"

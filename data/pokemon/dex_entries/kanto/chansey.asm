@@ -1,9 +1,9 @@
 	db "EGG@" ; species name
 
-	db   "People try to"
-	next "catch it for its"
-	next "extremely"
+	db   "Its eggs have the"
+	next "power to heal. It"
+	next "only gives them"
 
-	page "nutritious eggs,"
-	next "but it rarely can"
-	next "be found.@"
+	page "to people that do"
+	next "not harbor evil"
+	next "in their hearts.@"

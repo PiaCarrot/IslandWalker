@@ -1,9 +1,9 @@
 	db "FRUIT@" ; species name
 
-	db   "Delicious fruits"
-	next "grew out from"
-	next "around its neck"
+	db   "It is said a man"
+	next "went delirious"
+	next "from eating the"
 
-	page "because it always"
-	next "ate the same kind"
-	next "of fruit.@"
+	page "fruit it makes."
+	next "Most people love"
+	next "it, though.@"

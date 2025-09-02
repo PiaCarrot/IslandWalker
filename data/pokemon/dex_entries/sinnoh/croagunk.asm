@@ -1,9 +1,9 @@
         db "TOXIC MOUTH@" ; species name
 
-        db   "Inflating its poison"
-        next "sacs, it makes soft"
-        next "croaking sounds."
+	db   "Traditional medi-"
+	next "cine calls for"
+	next "diluted CROAGUNK"
 
-        page "The fluid it shoots"
-        next "from its mouth can"
-        next "paralyze foes.@"
+	page "venom as a remedy"
+	next "for high blood"
+	next "pressure.@"

@@ -1,9 +1,9 @@
 	db "BALL@" ; species name
 
-	db   "During the study"
-	next "of this #MON,"
-	next "it was discovered"
+	db   "If fully charged,"
+	next "it rolls around"
+	next "to move. It is"
 
-	page "that its compo-"
-	next "nents are not"
-	next "found in nature.@"
+	page "easily excited"
+	next "and will SELF-"
+	next "DESTRUCT.@"

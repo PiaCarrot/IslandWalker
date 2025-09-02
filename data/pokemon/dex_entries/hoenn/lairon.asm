@@ -1,9 +1,9 @@
 	db "IRON@" ; species name
 
-	db   "For food, it digs"
-	next "up iron ore. It"
-	next "smashes its steely"
+	db   "In order to find"
+	next "enough food to"
+	next "live, it makes a"
 
-	page "body against oth-"
-	next "ers to fight over"
-	next "territory.@"
+	page "home in caves and"
+	next "occasionally, a"
+	next "steel factory.@"

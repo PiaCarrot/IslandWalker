@@ -1,9 +1,9 @@
 	db "THUNDER@" ; species name
 
-	db   "This rough #MON"
-	next "stores energy"
-	next "inside its body,"
+	db   "Its said to embo-"
+	next "dy the speed of"
+	next "lightning. It"
 
-	page "then sweeps across"
-	next "the land, shooting"
-	next "off electricity.@"
+	page "brings storms to"
+	next "wherever it will"
+	next "go.@"

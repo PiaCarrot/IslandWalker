@@ -1,9 +1,9 @@
 	db "RIVER CRAB@" ; species name
 
-	db   "If it is unable"
-	next "to find food, it"
-	next "will absorb"
+	db   "Its claws are"
+	next "delicious, and"
+	next "they grow back,"
 
-	page "nutrients by"
-	next "swallowing a"
-	next "mouthful of sand.@"
+	page "so people don't"
+	next "feel bad about"
+	next "eating them.@"

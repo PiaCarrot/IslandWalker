@@ -1,9 +1,9 @@
 	db "TINY BIRD@" ; species name
 
-	db   "To protect its"
-	next "territory, it"
-	next "flies around"
+	db   "It cannot fly too"
+	next "high, so it tends"
+	next "to stalk fields"
 
-	page "ceaselessly,"
-	next "making high-"
-	next "pitched cries.@"
+	page "and forests for"
+	next "BUG-type POKEMON"
+	next "for food.@"

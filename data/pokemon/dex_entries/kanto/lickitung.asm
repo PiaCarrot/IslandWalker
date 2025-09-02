@@ -1,9 +1,9 @@
 	db "LICKING@" ; species name
 
-	db   "It has a tongue"
-	next "that is over 6'6''"
-	next "long. It uses this"
+	db   "It climbs trees"
+	next "in order to eat"
+	next "BUGs it can't"
 
-	page "long tongue to"
-	next "lick its body"
-	next "clean.@"
+	page "reach with its"
+	next "tongue from the"
+	next "jungle floor.@"

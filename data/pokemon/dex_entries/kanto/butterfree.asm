@@ -1,9 +1,9 @@
 	db "BUTTERFLY@" ; species name
 
-	db   "It flits from"
-	next "flower to flower,"
-	next "collecting honey."
+	db   "They are known to"
+	next "mate for life, so"
+	next "to court its mate"
 
-	page "It can even"
-	next "identify distant"
-	next "flowers in bloom.@"
+	page "it will collect"
+	next "HONEY made from"
+	next "its harvests.@"

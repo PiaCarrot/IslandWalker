@@ -1,9 +1,9 @@
 	db "BIG JAW@" ; species name
 
-	db   "Although it has a"
-	next "massive body, its"
-	next "powerful hind legs"
+	db   "When its out of"
+	next "the water, it"
+	next "crawls on all"
 
-	page "enable it to move"
-	next "quickly, even on"
-	next "the ground.@"
+	page "fours. It's slow"
+	next "until it sees its"
+	next "prey.@"

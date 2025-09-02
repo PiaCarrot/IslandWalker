@@ -1,9 +1,9 @@
 	db "SLEEPING@" ; species name
 
-	db   "This #MON's"
-	next "stomach is so"
-	next "strong, even"
+	db   "Its appetite will"
+	next "compel it to eat"
+	next "nearly its body"
 
-	page "eating moldy or"
-	next "rotten food will"
-	next "not affect it.@"
+	page "weight in a day."
+	next "It is not a picky"
+	next "eater at all.@"

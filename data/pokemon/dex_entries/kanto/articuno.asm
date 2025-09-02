@@ -1,9 +1,9 @@
 	db "FREEZE@" ; species name
 
-	db   "Legendary bird"
-	next "#MON. As it"
-	next "flies through the"
+	db   "Ancient SHAMOUTI"
+	next "legends say that"
+	next "ARTICUNO brings"
 
-	page "sky, it cools the"
-	next "air, causing snow"
-	next "to fall.@"
+	page "forth a subarctic"
+	next "current called"
+	next "PARENTAL TIDE.@"

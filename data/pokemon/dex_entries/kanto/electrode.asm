@@ -1,9 +1,9 @@
 	db "BALL@" ; species name
 
-	db   "The more energy it"
-	next "charges up, the"
-	next "faster it gets."
+	db   "It can cause a"
+	next "blackout. Accord-"
+	next "ing to a soldier,"
 
-	page "But this also"
-	next "makes it more"
-	next "likely to explode.@"
+	page "these were used"
+	next "as landmines in a"
+	next "war.@"

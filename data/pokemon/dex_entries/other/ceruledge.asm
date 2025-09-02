@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "FIRE BLADES@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "It dons a cursed"
+	next "set of armor that"
+	next "is filled with"
+
+	page "resentment, cutt-"
+	next "ing down its foes"
+	next "callously.@"

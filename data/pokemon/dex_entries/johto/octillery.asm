@@ -1,9 +1,9 @@
 	db "JET@" ; species name
 
-	db   "Its instinct is to"
-	next "bury itself in"
-	next "holes. It often"
+	db   "The ink that it"
+	next "sprays dulls the"
+	next "sense of smell,"
 
-	page "steals the nesting"
-	next "holes of others to"
-	next "sleep in them.@"
+	page "which allows it"
+	next "to get away with-"
+	next "out chase.@"

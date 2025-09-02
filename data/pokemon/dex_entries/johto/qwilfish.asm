@@ -1,9 +1,9 @@
 	db "BALLOON@" ; species name
 
-	db   "When faced with a"
-	next "larger opponent,"
-	next "it swallows as"
+	db   "It is quick to"
+	next "defend itself. It"
+	next "sucks in water"
 
-	page "much water as it"
-	next "can to match the"
-	next "opponent's size.@"
+	page "rapidly so that"
+	next "it can shoot its"
+	next "toxic spikes.@"

@@ -1,9 +1,9 @@
 	db "TADPOLE@" ; species name
 
-	db   "It can use its"
-	next "well-developed"
-	next "arms and legs to"
+	db   "Despite being a"
+	next "strong swimmer,"
+	next "it lives on land."
 
-	page "run on the surface"
-	next "of the water for a"
-	next "split second.@"
+	page "If it has to swim"
+	next "it can cross an"
+	next "entire ocean.@"

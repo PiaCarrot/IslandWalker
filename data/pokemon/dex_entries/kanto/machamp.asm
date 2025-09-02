@@ -1,9 +1,9 @@
 	db "SUPERPOWER@" ; species name
 
-	db   "With four arms"
-	next "that react more"
-	next "quickly than it"
+	db   "It has trained to"
+	next "the pinnacle of"
+	next "physical prowess."
 
-	page "can think, it can"
-	next "execute many"
-	next "punches at once.@"
+	page "In just 2 seconds"
+	next "it can punch over"
+	next "1,000 times.@"

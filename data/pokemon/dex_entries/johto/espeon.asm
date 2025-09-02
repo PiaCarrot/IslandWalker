@@ -1,9 +1,9 @@
 	db "SUN@" ; species name
 
-	db   "The tip of its"
-	next "forked tail"
-	next "quivers when it is"
+	db   "It absorbs light,"
+	next "making the gem on"
+	next "its head glow. If"
 
-	page "predicting its"
-	next "opponent's next"
-	next "move.@"
+	page "it uses its power"
+	next "too much the orb"
+	next "grows dark.@"

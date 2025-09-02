@@ -1,9 +1,9 @@
 	db "SEED@" ; species name
 
-	db   "The bulb on its"
-	next "back grows as it"
-	next "absorbs nutrients."
+	db   "Its swollen bulb"
+	next "prevents it from"
+	next "standing on its"
 
-	page "The bulb gives off"
-	next "a pleasant aroma"
-	next "when it blooms.@"
+	page "hind legs. As a"
+	next "result, its legs"
+	next "are very sturdy.@"

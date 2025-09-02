@@ -1,9 +1,9 @@
 	db "BEAK@" ; species name
 
-	db   "It uses its long"
-	next "beak to attack. It"
-	next "has a surprisingly"
+	db   "Unlike SPEAROW,"
+	next "it can stay in"
+	next "the air for a day"
 
-	page "long reach, so it"
-	next "must be treated"
-	next "with caution.@"
+	page "without rest. It"
+	next "circles the ocean"
+	next "for food.@"

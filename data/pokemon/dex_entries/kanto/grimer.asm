@@ -1,9 +1,9 @@
 	db "SLUDGE@" ; species name
 
-	db   "When two of these"
-	next "#MON's bodies"
-	next "are combined"
+	db   "Ocean pollution"
+	next "gave birth to the"
+	next "first GRIMER. It's"
 
-	page "together, new"
-	next "poisons are"
-	next "created.@"
+	page "said that when"
+	next "it runs out of"
+	next "sludge, it dies.@"

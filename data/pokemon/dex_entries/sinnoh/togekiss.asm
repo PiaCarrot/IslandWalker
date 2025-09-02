@@ -1,10 +1,9 @@
 db "JUBILEE@" ; species name
 
-db   "It shares many"
-next "blessings with"
-next "people it trusts."
+	db   "Extremely rare."
+	next "It's said that it"
+	next "will only appear"
 
-page "As a result, it"
-next "is adored as a"
-next "kindhearted Pokemon.@"
-
+	page "in times of peace"
+	next "and never when"
+	next "there's strife.@"

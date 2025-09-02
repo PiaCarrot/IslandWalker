@@ -1,9 +1,9 @@
 	db "BONEKEEPER@" ; species name
 
-	db   "Somewhere in the"
-	next "world is a ceme-"
-	next "tery just for"
+	db   "It collects bones"
+	next "for its young to"
+	next "use and to rein-"
 
-	page "MAROWAK. It gets"
-	next "its bones from"
-	next "those graves.@"
+	page "force its nest."
+	next "It thumps a club"
+	next "to communicate.@"

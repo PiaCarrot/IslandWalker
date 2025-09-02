@@ -1,9 +1,9 @@
 	db "FIRE HORSE@" ; species name
 
-	db   "Training by"
-	next "jumping over grass"
-	next "that grows longer"
+	db   "It runs across"
+	next "plains, helping"
+	next "seeds plant in"
 
-	page "every day has made"
-	next "it a world-class"
-	next "jumper.@"
+	page "the ground with"
+	next "its diamond-tough"
+	next "hooves.@"

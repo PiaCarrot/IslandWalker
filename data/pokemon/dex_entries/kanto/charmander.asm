@@ -1,9 +1,9 @@
 	db "LIZARD@" ; species name
 
-	db   "If it's healthy,"
-	next "the flame on the"
-	next "tip of its tail"
+	db   "Its tail seems to"
+	next "indicate various"
+	next "emotions. When it"
 
-	page "will burn vigor-"
-	next "ously, even if it"
-	next "gets a bit wet.@"
+	page "is happy, it will"
+	next "waver. When it is"
+	next "sad, it flickers.@"

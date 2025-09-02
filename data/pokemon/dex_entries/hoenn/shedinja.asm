@@ -1,9 +1,9 @@
 	db "SHED@" ; species name
 
-	db   "A discarded bug"
-	next "shell that came to"
-	next "life. Peering into"
+	db   "When NINJASK eme-"
+	next "rges from soil, a"
+	next "shell is left be-"
 
-	page "the crack on its"
-	next "back will steal"
-	next "one's spirit.@"
+	page "hind. That shell"
+	next "comes to life as"
+	next "SHEDINJA.@"

@@ -1,9 +1,9 @@
 	db "TRAINEE@" ; species name
 
-	db   "It grows under-"
-	next "ground, sensing"
-	next "its surroundings"
+	db   "They live in the"
+	next "ground, eating"
+	next "roots to grow. It"
 
-	page "using antennae in-"
-	next "stead of its vir-"
-	next "tually blind eyes.@"
+	page "is said to emerge"
+	next "every 13 or 17"
+	next "years.@"

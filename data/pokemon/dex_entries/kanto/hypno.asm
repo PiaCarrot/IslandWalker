@@ -1,9 +1,9 @@
 	db "HYPNOSIS@" ; species name
 
-	db   "The longer it"
-	next "swings its"
-	next "pendulum, the"
+	db   "It is not a good-"
+	next "natured POKEMON."
+	next "It cares only to"
 
-	page "longer the effects"
-	next "of its hypnosis"
-	next "last.@"
+	page "fill itself with"
+	next "the dreams of"
+	next "others.@"

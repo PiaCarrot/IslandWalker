@@ -1,9 +1,9 @@
 	db "VIRTUAL@" ; species name
 
-	db   "An artificial"
-	next "#MON created"
-	next "due to extensive"
+	db   "It was created by"
+	next "SILPH CO. as the"
+	next "first artificial"
 
-	page "research, it can"
-	next "perform only what"
-	next "is in its program.@"
+	page "POKEMON. It can"
+	next "freely travel 2D"
+	next "and 3D spaces.@"

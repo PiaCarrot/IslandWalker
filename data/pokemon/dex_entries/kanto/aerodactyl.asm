@@ -1,9 +1,9 @@
 	db "FOSSIL@" ; species name
 
-	db   "In prehistoric"
-	next "times, this"
-	next "#MON flew"
+	db   "It is believed"
+	next "that this #MON"
+	next "went extinct long"
 
-	page "freely and"
-	next "fearlessly through"
-	next "the skies.@"
+	page "ago. Its serrated"
+	next "teeth can tear"
+	next "STEEL apart.@"

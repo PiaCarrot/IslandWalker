@@ -1,9 +1,9 @@
 	db "CORAL@" ; species name
 
-	db   "The points on its"
-	next "head absorb"
-	next "nutrients from"
+	db   "The branches on"
+	next "its head break"
+	next "off easily, which"
 
-	page "clean water. They"
-	next "cannot survive in"
-	next "polluted water.@"
+	page "are loved by peo-"
+	next "ple and MAREANIE"
+	next "alike.@"

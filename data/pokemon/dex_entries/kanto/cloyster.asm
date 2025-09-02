@@ -1,9 +1,9 @@
 	db "BIVALVE@" ; species name
 
-	db   "Even a missile"
-	next "can't break the"
-	next "spikes it uses to"
+	db   "In times of war"
+	next "its spikes were"
+	next "used as a ranged"
 
-	page "stab opponents."
-	next "They're even hard-"
-	next "er than its shell.@"
+	page "weapon that could"
+	next "pierce ships and"
+	next "fort walls.@"

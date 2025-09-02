@@ -1,9 +1,9 @@
 	db "FISH@" ; species name
 
-	db   "This weak and"
-	next "pathetic #MON"
-	next "gets easily pushed"
+	db   "While usually it"
+	next "can be found all"
+	next "around, at this"
 
-	page "along rivers when"
-	next "there are strong"
-	next "currents.@"
+	page "time of year it's"
+	next "mostly found on"
+	next "RIND ISLAND.@"

@@ -1,9 +1,9 @@
         db "AURA@" ; species name
 
-        db   "It can manipulate"
-        next "auras, sensing and"
-        next "shaping them at will"
+	db   "It can see even"
+	next "invisible foes,"
+	next "thanks to its"
 
-        page "to understand how"
-        next "others feel and to"
-        next "focus its power.@"
+	page "ability to sense"
+	next "auras from even"
+	next "far away.@"

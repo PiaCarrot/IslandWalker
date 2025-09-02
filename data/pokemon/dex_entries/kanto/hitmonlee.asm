@@ -1,9 +1,9 @@
 	db "KICKING@" ; species name
 
-	db   "It is also called"
-	next "the Kick Master."
-	next "It uses its"
+	db   "It is difficult"
+	next "to fight in close"
+	next "combat. Its kicks"
 
-	page "elastic legs to"
-	next "execute every"
-	next "known kick.@"
+	page "go so far that it"
+	next "is impossible to"
+	next "get close.@"

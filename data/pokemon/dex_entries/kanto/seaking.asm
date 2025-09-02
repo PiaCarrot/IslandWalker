@@ -1,9 +1,9 @@
 	db "GOLDFISH@" ; species name
 
-	db   "When autumn comes,"
-	next "the males patrol"
-	next "the area around"
+	db   "Its powerful horn"
+	next "bores holes that"
+	next "it lays eggs in."
 
-	page "their nests in"
-	next "order to protect"
-	next "their offspring.@"
+	page "ARROKUDA can slip"
+	next "in with ease for"
+	next "an easy meal.@"

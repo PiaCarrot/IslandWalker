@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "PUPPY@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "A great #MON"
+	next "for new TRAINERs."
+	next "It's friendly and"
+
+	page "loyal to a kind"
+	next "owner even as it"
+	next "matures.@"

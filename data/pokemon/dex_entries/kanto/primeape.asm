@@ -1,9 +1,9 @@
 	db "PIG MONKEY@" ; species name
 
-	db   "It will beat up"
-	next "anyone who makes"
-	next "it mad, even if it"
+	db   "This POKEMON is"
+	next "able to be angry"
+	next "for long periods."
 
-	page "has to chase them"
-	next "until the end of"
-	next "the world.@"
+	page "Has sturdy veins"
+	next "so it won't die"
+	next "from a stroke.@"

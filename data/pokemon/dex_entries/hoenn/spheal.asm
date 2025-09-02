@@ -1,9 +1,9 @@
 	db "CLAP@" ; species name
 
-	db   "It rolls across"
-	next "ice floes to reach"
-	next "shore because its"
+	db   "They roll around"
+	next "rather than swim"
+	next "because it's a"
 
-	page "body is poorly"
-	next "shaped for swim-"
-	next "ming.@"
+	page "lot faster for"
+	next "them. It loves"
+	next "slippery ice.@"

@@ -1,9 +1,9 @@
 	db "MOLE@" ; species name
 
-	db   "It digs under-"
-	next "ground and chews"
-	next "on tree roots,"
+	db   "Farmers cherish"
+	next "this POKEMON due"
+	next "to its ability to"
 
-	page "sticking its head"
-	next "out only when the"
-	next "sun isn't bright.@"
+	page "till and enrich"
+	next "soil. It lives"
+	next "in shallow dirt.@"

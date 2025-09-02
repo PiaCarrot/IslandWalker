@@ -1,9 +1,9 @@
 	db "FLOWER@" ; species name
 
-	db   "When these dance"
-	next "together, their"
-	next "petals rub against"
+	db   "They are found in"
+	next "groups doing a"
+	next "mysterious dance."
 
-	page "each other,"
-	next "making pretty,"
-	next "relaxing sounds.@"
+	page "The effects of a"
+	next "SUN STONE make it"
+	next "diurnal.@"

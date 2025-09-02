@@ -1,9 +1,9 @@
 	db "TRIPLEBIRD@" ; species name
 
-	db   "An enemy that"
-	next "takes its eyes off"
-	next "any of the three"
+	db   "It has a pair of"
+	next "lungs for each of"
+	next "its heads, so it"
 
-	page "heads--even for a"
-	next "second--will get"
-	next "pecked severely.@"
+	page "never tires. They"
+	next "also share one"
+	next "stomach.@"

@@ -1,9 +1,9 @@
 	db "ANGLER@" ; species name
 
-	db   "Its antennae, whi-"
-	next "ch evolved from a"
-	next "fin, have both po-"
+	db   "Its popular with"
+	next "fishermen. It can"
+	next "lure in prey with"
 
-	page "sitive and neg-"
-	next "ative charges flo-"
-	next "wing through them.@"
+	page "its two antennae"
+	next "that softly glow"
+	next "in the night.@"

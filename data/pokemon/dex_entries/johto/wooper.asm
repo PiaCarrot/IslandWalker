@@ -1,9 +1,9 @@
 	db "WATER FISH@" ; species name
 
-	db   "A mucous"
-	next "membrane covers"
-	next "its body. Touching"
+	db   "It's most active"
+	next "at night when it"
+	next "is cooler. ARBOK"
 
-	page "it barehanded will"
-	next "cause a shooting"
-	next "pain.@"
+	page "doesn't seem to"
+	next "mind the toxic"
+	next "mucus it makes.@"

@@ -1,9 +1,9 @@
 	db "ELECTRIC@" ; species name
 
-	db   "When two"
-	next "ELECTABUZZ touch,"
-	next "they control the"
+	db   "While it eats a"
+	next "large amount of"
+	next "electricity, it"
 
-	page "electric currents"
-	next "to communicate"
-	next "their feelings.@"
+	page "generates far"
+	next "more than it in-"
+	next "takes.@"

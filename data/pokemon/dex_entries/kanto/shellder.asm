@@ -1,9 +1,9 @@
 	db "BIVALVE@" ; species name
 
-	db   "Clamping on to an"
-	next "opponent reveals"
-	next "its vulnerable"
+	db   "It filters food"
+	next "with its tongue,"
+	next "even while it"
 
-	page "parts, so it uses"
-	next "this move only as"
-	next "a last resort.@"
+	page "sleeps. It can't"
+	next "resist a SLOWPOKE"
+	next "TAIL, though.@"

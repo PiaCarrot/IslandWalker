@@ -1,9 +1,9 @@
 	db "DRAGON@" ; species name
 
-	db   "The male raises"
-	next "the young. If it"
-	next "is approached, it"
+	db   "It creates WHIRL-"
+	next "POOLs that can"
+	next "swallow boats"
 
-	page "uses its toxic"
-	next "spikes to fend off"
-	next "the intruder.@"
+	page "whole. Its spines"
+	next "produce a venom"
+	next "that numbs.@"

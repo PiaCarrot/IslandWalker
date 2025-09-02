@@ -1,9 +1,9 @@
 	db "FLYCATCHER@" ; species name
 
-	db   "Once ingested into"
-	next "this #MON's"
-	next "body, even the"
+	db   "Found in large"
+	next "colonies deep in"
+	next "the jungle. It"
 
-	page "hardest object"
-	next "will melt into"
-	next "nothing.@"
+	page "uses its aromatic"
+	next "HONEY and vines"
+	next "to catch prey.@"

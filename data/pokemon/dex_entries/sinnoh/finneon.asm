@@ -1,9 +1,9 @@
 db "WING FISH@" ; species name
 
-db   "Its tail fins"
-next "flutter like wings," 
-next "letting it float."
+	db   "At night, their"
+	next "fins will shine"
+	next "brightly. This"
 
-page "Schools are known"
-next "to glitter in the"
-next "sunlit sea.@"
+	page "will attract its"
+	next "favorite prey,"
+	next "STARYU.@"

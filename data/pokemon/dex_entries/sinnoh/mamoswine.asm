@@ -1,10 +1,9 @@
 db "TWIN TUSK@" ; species name
 
-db   "Its impressive tusks"
-next "are made of ice that"
-next "will never melt."
+	db   "Its thick fur"
+	next "makes it hard for"
+	next "it to deal with"
 
-page "Ancient species that"
-next "arose when it thawed"
-next "after an ice age.@"
-
+	page "warm climates. It"
+	next "is almost never"
+	next "seen wild.@"

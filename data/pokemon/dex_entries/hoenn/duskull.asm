@@ -1,9 +1,9 @@
 	db "REQUIEM@" ; species name
 
-	db   "It loves the cry-"
-	next "ing of children."
-	next "It startles bad"
+	db   "It seems delight-"
+	next "ed by the cries"
+	next "of children. It"
 
-	page "kids by passing"
-	next "through walls and"
-	next "making them cry.@"
+	page "phases through"
+	next "walls to scare"
+	next "them.@"

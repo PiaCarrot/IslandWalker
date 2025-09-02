@@ -1,9 +1,9 @@
 	db "SHADOW@" ; species name
 
-	db   "Hiding in people's"
-	next "shadows at night,"
-	next "it absorbs their"
+	db   "It's very good at"
+	next "hiding, because"
+	next "it can slip into"
 
-	page "heat. The chill it"
-	next "causes makes the"
-	next "victims shake.@"
+	page "the shadow of any"
+	next "object. It will"
+	next "absorb heat.@"

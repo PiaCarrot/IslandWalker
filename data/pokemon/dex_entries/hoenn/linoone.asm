@@ -1,9 +1,9 @@
 	db "RUSHING@" ; species name
 
-	db   "It charges prey at"
-	next "speeds over 60"
-	next "mph. However, be-"
+	db   "It can only run a"
+	next "straight line. It"
+	next "can easily reach"
 
-	page "cause it can only"
-	next "run straight, it"
-	next "often fails.@"
+	page "speeds of 60 MPH"
+	next "when it sprints"
+	next "towards prey.@"

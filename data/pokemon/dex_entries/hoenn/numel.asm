@@ -1,9 +1,9 @@
 	db "NUMB@" ; species name
 
-	db   "Its humped back"
-	next "stores intensely"
-	next "hot magma. In"
+	db   "It has been used"
+	next "as a pack mule in"
+	next "some parts of the"
 
-	page "rain, the magma"
-	next "cools, slowing its"
-	next "movement.@"
+	page "world. Its hump"
+	next "is full of hot"
+	next "magma.@"

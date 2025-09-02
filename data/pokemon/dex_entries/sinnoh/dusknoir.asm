@@ -1,10 +1,9 @@
 db "GRIPPER@" ; species name
 
-db   "It is said to take"
-next "lost spirits into"
-next "its body."
+	db   "Using the large"
+	next "mouth on its sto-"
+	next "mach, it consumes"
 
-page "The antenna on its"
-next "head searches for"
-next "faint souls.@"
-
+	page "its prey whole,"
+	next "then spits it out"
+	next "again, lifeless.@"

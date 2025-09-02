@@ -1,9 +1,9 @@
 	db "LAVA@" ; species name
 
-	db   "Its body is as hot"
-	next "as lava and is"
-	next "always billowing."
+	db   "It lives in magma"
+	next "where it stores"
+	next "energy. Its shell"
 
-	page "Flames will"
-	next "occasionally burst"
-	next "from its shell.@"
+	page "is made up of"
+	next "igneous volcanic"
+	next "rock.@"

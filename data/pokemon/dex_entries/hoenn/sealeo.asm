@@ -1,8 +1,9 @@
 	db "BALL@" ; species name
 
-	db   "It habitually"
-	next "spins things on"
-	next "its nose. By doing"
+	db   "It has excellent"
+	next "smell while swim-"
+	next "ming, allowing it"
 
-	page "so, it learns tex-"
-	next "tures and odors.@"
+	page "to efficiently"
+	next "hunt its favorite"
+	next "food, OCTILLERY.@"

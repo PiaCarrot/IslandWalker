@@ -1,9 +1,9 @@
 	db "JELLYFISH@" ; species name
 
-	db   "When its 80 feel-"
-	next "ers absorb water,"
-	next "it stretches to"
+	db   "When outbreaks of"
+	next "these occur on a"
+	next "reef, they use 80"
 
-	page "become like a net"
-	next "to entangle its"
-	next "prey.@"
+	page "feelers to catch"
+	next "and eat all FISH"
+	next "POKEMON around.@"

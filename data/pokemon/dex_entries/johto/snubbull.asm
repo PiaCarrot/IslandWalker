@@ -1,9 +1,9 @@
 	db "FAIRY@" ; species name
 
-	db   "In truth, it is a"
-	next "cowardly #MON."
-	next "It growls eagerly"
+	db   "It's very popular"
+	next "and is a common"
+	next "household pet. It"
 
-	page "in order to hide"
-	next "its fear from its"
-	next "opponent.@"
+	page "is actually quite"
+	next "cowardly despite"
+	next "its mean mug.@"

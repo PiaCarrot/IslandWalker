@@ -1,9 +1,9 @@
 	db "LAND SNAKE@" ; species name
 
-	db   "It hides deep"
-	next "inside caves where"
-	next "no light ever"
+	db   "It digs a maze-"
+	next "like tunnel as a"
+	next "nest, so it has"
 
-	page "reaches it and"
-	next "remains virtually"
-	next "motionless there.@"
+	page "seldom been seen."
+	next "DIGLETT use its"
+	next "old nests.@"

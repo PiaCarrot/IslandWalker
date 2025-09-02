@@ -1,9 +1,9 @@
 	db "MARIONETTE@" ; species name
 
-	db   "A doll that became"
-	next "a #MON over its"
-	next "grudge from being"
+	db   "A strong hatred"
+	next "brought a puppet"
+	next "to life. It seems"
 
-	page "junked. It seeks"
-	next "the child that"
-	next "disowned it.@"
+	page "to want revenge"
+	next "on whoever hurt"
+	next "it.@"

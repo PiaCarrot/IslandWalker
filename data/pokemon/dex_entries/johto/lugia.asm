@@ -1,9 +1,9 @@
 	db "DIVING@" ; species name
 
-	db   "It has an incred-"
-	next "ible ability to"
-	next "calm raging sto-"
+	db   "Known as the god"
+	next "of the sea, an"
+	next "ancient SHAMOUTI"
 
-	page "rms. It is said"
-	next "that LUGIA appears"
-	next "when storms start.@"
+	page "prophecy foretold"
+	next "it would try to"
+	next "save the world.@"

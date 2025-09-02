@@ -1,9 +1,9 @@
 	db "LITTLE BIRD@" ; species name
 
-	db   "It is extremely"
-	next "good at climbing"
-	next "tree trunks and"
+	db   "To make up for"
+	next "its weak flying"
+	next "capability, it"
 
-	page "likes to eat the"
-	next "new sprouts on"
-	next "the trees.@"
+	page "is adept at clim-"
+	next "bing trees where"
+	next "it eats sprouts.@"

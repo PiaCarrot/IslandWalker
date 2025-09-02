@@ -1,9 +1,9 @@
 	db "SUPERPOWER@" ; species name
 
-	db   "This tough #MON"
-	next "always stays in"
-	next "the zone. Its"
+	db   "It gets along"
+	next "with humans and"
+	next "has helped build"
 
-	page "muscles become"
-	next "thicker after"
-	next "every battle.@"
+	page "cities in order"
+	next "to get a good"
+	next "workout in.@"

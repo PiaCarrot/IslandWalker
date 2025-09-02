@@ -1,9 +1,9 @@
 	db "IMITATION@" ; species name
 
-	db   "If a tree branch"
-	next "shakes when there"
-	next "is no wind, it's a"
+	db   "It likes to stand"
+	next "still and pretend"
+	next "to be a tree. It"
 
-	page "SUDOWOODO, not a"
-	next "tree. It hides"
-	next "from the rain.@"
+	page "really hates rain"
+	next "because it is a"
+	next "ROCK-type.@"

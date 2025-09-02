@@ -1,9 +1,9 @@
 	db "SPITFIRE@" ; species name
 
-	db   "It moves more"
-	next "frequently in hot"
-	next "areas. It can heal"
+	db   "It's not uncommon"
+	next "to find a MAGMAR"
+	next "bathing in lava"
 
-	page "itself by dipping"
-	next "its wound into"
-	next "lava.@"
+	page "in the mouth of a"
+	next "volcano. Lava can"
+	next "heal its wounds.@"

@@ -1,10 +1,9 @@
 db "SNOW LAND@" ; species name
 
-db   "Legends claim it drags"
-next "unwary souls to frozen"
-next "mountain peaks."
+	db   "It's said to keep"
+	next "anyone it freezes"
+	next "in its den as a"
 
-page "It creates iced"
-next "sculptures of foes"
-next "it has frozen.@"
-
+	page "statue that can"
+	next "be admired for"
+	next "all eternity.@"

@@ -1,9 +1,9 @@
 	db "FLYCATCHER@" ; species name
 
-	db   "When it's hungry,"
-	next "it swings its"
-	next "razor-sharp"
+	db   "It uses a hook to"
+	next "hang onto trees"
+	next "while it sleeps."
 
-	page "leaves, slicing up"
-	next "any unlucky object"
-	next "nearby for food.@"
+	page "Sometimes it can"
+	next "fall on top of"
+	next "people.@"

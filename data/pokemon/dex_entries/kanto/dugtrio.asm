@@ -1,9 +1,9 @@
 	db "MOLE@" ; species name
 
-	db   "These DIGLETT"
-	next "triplets dig over"
-	next "60 miles below sea"
+	db   "Its known to live"
+	next "in tunnels dug by"
+	next "ONIX. If it has"
 
-	page "level. No one"
-	next "knows what it's"
-	next "like underground.@"
+	page "to dig a tunnel"
+	next "itself, it causes"
+	next "EARTHQUAKEs.@"

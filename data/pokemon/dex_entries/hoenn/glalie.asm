@@ -1,8 +1,9 @@
 	db "FACE@" ; species name
 
-	db   "It prevents prey"
-	next "from escaping by"
-	next "instantaneously"
+	db   "It can instantly"
+	next "freeze moisture"
+	next "in the air. It"
 
-	page "freezing moisture"
-	next "in the air.@"
+	page "uses this power"
+	next "to survive in the"
+	next "heat.@"

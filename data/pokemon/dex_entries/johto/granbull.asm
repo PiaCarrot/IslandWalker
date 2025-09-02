@@ -1,9 +1,9 @@
 	db "FAIRY@" ; species name
 
-	db   "It can make most"
-	next "any #MON run"
-	next "away simply by"
+	db   "The phrase 'All"
+	next "bark and no bite'"
+	next "comes from this"
 
-	page "opening its mouth"
-	next "wide to reveal its"
-	next "big fangs.@"
+	page "POKEMON. But, if"
+	next "you make it angry"
+	next "it will bite!@"

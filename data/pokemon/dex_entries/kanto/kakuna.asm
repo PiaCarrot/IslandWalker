@@ -1,9 +1,9 @@
 	db "COCOON@" ; species name
 
-	db   "Nearly incapable"
-	next "of movement, it"
-	next "leans against"
+	db   "While limited, it"
+	next "can still move"
+	next "slightly and has"
 
-	page "stout trees while"
-	next "waiting for its"
-	next "evolution.@"
+	page "a stinger that it"
+	next "uses to fend off"
+	next "predators.@"

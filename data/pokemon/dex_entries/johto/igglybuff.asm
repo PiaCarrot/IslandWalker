@@ -1,9 +1,9 @@
 	db "BALLOON@" ; species name
 
-	db   "Instead of walking"
-	next "with its short"
-	next "legs, it moves"
+	db   "It trains its"
+	next "vocal chords in"
+	next "order to become a"
 
-	page "around by bouncing"
-	next "on its soft,"
-	next "tender body.@"
+	page "good singer. It"
+	next "strangely has a"
+	next "sweet scent.@"

@@ -1,9 +1,9 @@
 	db "ROCK SKIN@" ; species name
 
-	db   "Born deep under-"
-	next "ground, this"
-	next "#MON becomes a"
+	db   "It eats enough"
+	next "soil to make up a"
+	next "mountain in order"
 
-	page "pupa after eating"
-	next "enough dirt to"
-	next "make a mountain.@"
+	page "to absorb enough"
+	next "nutrients to be-"
+	next "come a pupa.@"

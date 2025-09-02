@@ -1,9 +1,9 @@
 	db "MOUSE@" ; species name
 
-	db   "If its electric"
-	next "pouches run empty,"
-	next "it raises its tail"
+	db   "Exposure to the"
+	next "THUNDERSTONE has"
+	next "made it powerful."
 
-	page "to gather electri-"
-	next "city from the"
-	next "atmosphere.@"
+	page "It uses its tail"
+	next "to keep itself"
+	next "grounded.@"

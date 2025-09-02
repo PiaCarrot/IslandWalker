@@ -1,9 +1,9 @@
 	db "HERB@" ; species name
 
-	db   "Anyone who stands"
-	next "beside it becomes"
-	next "refreshed, just as"
+	db   "Its magnificent"
+	next "flower calms all"
+	next "who see it. Its"
 
-	page "if they were"
-	next "relaxing in a"
-	next "sunny forest.@"
+	page "breath can mirac-"
+	next "ulously revive a"
+	next "dying plant.@"

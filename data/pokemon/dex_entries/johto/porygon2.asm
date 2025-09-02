@@ -1,9 +1,9 @@
 	db "VIRTUAL@" ; species name
 
-	db   "This manmade"
-	next "#MON evolved"
-	next "from the latest"
+	db   "Cutting edge AI"
+	next "was installed in"
+	next "PORYGON, giving"
 
-	page "technology. It"
-	next "may have unprog-"
-	next "rammed reactions.@"
+	page "it the ability to"
+	next "learn and display"
+	next "emotions.@"

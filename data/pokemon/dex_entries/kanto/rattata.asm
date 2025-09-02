@@ -1,9 +1,9 @@
 	db "RAT@" ; species name
 
-	db   "This #MON's"
-	next "impressive vital-"
-	next "ity allows it to"
+	db   "A hardy POKEMON"
+	next "that can live in"
+	next "most places. It"
 
-	page "live anywhere. It"
-	next "also multiplies"
-	next "very quickly.@"
+	page "chews on wood to"
+	next "keep its fangs at"
+	next "a short length.@"

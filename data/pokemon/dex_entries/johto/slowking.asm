@@ -1,9 +1,9 @@
 	db "ROYAL@" ; species name
 
-	db   "Every time it ya-"
-	next "wns, SHELLDER"
-	next "injects more poi-"
+	db   "If SHELLDER some"
+	next "how bites a SLOW-"
+	next "POKE's head, it"
 
-	page "son into it. The"
-	next "poison makes it"
-	next "more intelligent.@"
+	page "evolves to this."
+	next "It's extremely"
+	next "intelligent.@"

@@ -1,9 +1,9 @@
 	db "BALLOON@" ; species name
 
-	db   "It rolls its cute"
-	next "eyes as it sings a"
-	next "soothing lullaby."
+	db   "Its capacity to"
+	next "suck in tons of"
+	next "air allows it to"
 
-	page "Its gentle song"
-	next "puts anyone who"
-	next "hears it to sleep.@"
+	page "SING for hours."
+	next "Gets mad if a foe"
+	next "falls asleep.@"

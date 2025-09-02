@@ -1,9 +1,9 @@
 	db "HUMMING@" ; species name
 
-	db   "If it bonds with a"
-	next "person, it will"
-	next "gently envelop the"
+	db   "It loves to sing."
+	next "It's said that if"
+	next "it loves its"
 
-	page "friend with its"
-	next "soft wings, then"
-	next "hum.@"
+	page "TRAINER, it will"
+	next "keep them warm"
+	next "at night.@"

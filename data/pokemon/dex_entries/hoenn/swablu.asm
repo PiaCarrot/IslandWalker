@@ -1,9 +1,9 @@
 	db "COTTON@" ; species name
 
-	db   "It can't relax if"
-	next "it or its sur-"
-	next "roundings are not"
+	db   "It can be found"
+	next "grooming itself"
+	next "constantly. It"
 
-	page "clean. It wipes"
-	next "off dirt with its"
-	next "wings.@"
+	page "will clean your"
+	next "hair if it finds"
+	next "it too dirty.@"

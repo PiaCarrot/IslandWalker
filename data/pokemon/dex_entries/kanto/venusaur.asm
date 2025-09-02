@@ -1,9 +1,9 @@
 	db "SEED@" ; species name
 
-	db   "As it warms it-"
-	next "self and absorbs"
-	next "the sunlight, its"
+	db   "The scent of its"
+	next "flower is known"
+	next "to relieve stress"
 
-	page "flower petals"
-	next "release a pleasant"
-	next "fragrance.@"
+	page "and anxiety from"
+	next "those who breathe"
+	next "it in.@"

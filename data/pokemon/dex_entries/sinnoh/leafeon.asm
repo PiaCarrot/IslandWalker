@@ -1,10 +1,9 @@
 db "VERDANT@" ; species name
 
-db   "The air around it"
-next "is always fresh."
-next "It is happiest"
+	db   "It is closer to a"
+	next "plant than it is"
+	next "an animal. It can"
 
-page "when lazing in"
-next "the sunshine of"
-next "forests and fields.@"
-
+	page "rarely be found"
+	next "in mossy caves or"
+	next "lush forests.@"

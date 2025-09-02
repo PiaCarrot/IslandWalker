@@ -1,9 +1,9 @@
 	db "DRAGON@" ; species name
 
-	db   "It sheds many lay-"
-	next "ers of skin as it"
-	next "grows larger. Dur-"
+	db   "It is still not"
+	next "certain where"
+	next "DRATINI dwell. It"
 
-	page "ing this process,"
-	next "it is protected by"
-	next "a rapid waterfall.@"
+	page "was considered a"
+	next "mythical POKEMON"
+	next "until recently.@"

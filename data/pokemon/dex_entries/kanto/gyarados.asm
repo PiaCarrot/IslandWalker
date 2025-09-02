@@ -1,9 +1,9 @@
 	db "ATROCIOUS@" ; species name
 
-	db   "It appears when-"
-	next "ever there is"
-	next "world conflict,"
+	db   "Sailors fear this"
+	next "POKEMON as when it"
+	next "appears it brings"
 
-	page "burning down any"
-	next "place it travels"
-	next "through.@"
+	page "only destruction"
+	next "with it. It will"
+	next "rampage easily.@"

@@ -1,9 +1,9 @@
 	db "LONG TAIL@" ; species name
 
-	db   "It uses its tail"
-	next "to hang on to tree"
-	next "branches. It uses"
+	db   "It relies heavily"
+	next "on its tail to do"
+	next "everything, from"
 
-	page "its momentum to"
-	next "swing from one"
-	next "branch to another.@"
+	page "tree-climbing to"
+	next "collecting sweet"
+	next "BERRIES.@"

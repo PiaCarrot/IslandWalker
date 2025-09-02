@@ -1,9 +1,9 @@
 	db "RAT@" ; species name
 
-	db   "The webs on its"
-	next "hind legs enable"
-	next "it to cross"
+	db   "Its hind feet are"
+	next "webbed, allowing"
+	next "it to swim. Its"
 
-	page "rivers. It search-"
-	next "es wide areas for"
-	next "food.@"
+	page "delicate whiskers"
+	next "help it keep its"
+	next "balance.@"

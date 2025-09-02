@@ -1,9 +1,9 @@
 	db "VIBRATION@" ; species name
 
-	db   "It violently shud-"
-	next "ders its wings,"
-	next "generating ultra-"
+	db   "It rubs its wings"
+	next "together to make"
+	next "its prey fall un-"
 
-	page "sonic waves to in-"
-	next "duce headaches in"
-	next "people.@"
+	page "concious. It then"
+	next "dissolves them"
+	next "with its ACID.@"

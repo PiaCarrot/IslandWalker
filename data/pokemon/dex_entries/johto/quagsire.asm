@@ -1,9 +1,9 @@
 	db "WATER FISH@" ; species name
 
-	db   "Its body is always"
-	next "slimy. It often"
-	next "bangs its head on"
+	db   "It has a sluggish"
+	next "nature. It lies"
+	next "at the river's"
 
-	page "the river bottom"
-	next "as it swims but"
-	next "seems not to care.@"
+	page "bottom, waiting"
+	next "for prey to stray"
+	next "into its mouth.@"

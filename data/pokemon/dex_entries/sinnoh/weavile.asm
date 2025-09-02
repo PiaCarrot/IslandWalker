@@ -1,9 +1,9 @@
 db "SHARP CLAW@" ; species name
 
-db   "They travel in"
-next "packs, leaving deep"
-next "gouges on trees."
+	db   "It has a devious"
+	next "personality. It"
+	next "hunts other"
 
-page "A smart hunter,"
-next "it coordinates with"
-next "its comrades.@"
+	page "mammalian #MON"
+	next "like VULPIX and"
+	next "SANDSHREW.@"

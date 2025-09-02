@@ -1,4 +1,9 @@
 db "THORN SEED@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "It feeds on moss"
+	next "that grow in damp"
+	next "caves. The moss"
+
+	page "helps its spikes"
+	next "become hard like"
+	next "metal.@"

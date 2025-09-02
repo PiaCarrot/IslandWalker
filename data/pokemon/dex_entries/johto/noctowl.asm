@@ -1,9 +1,9 @@
 	db "OWL@" ; species name
 
-	db   "Its extremely soft"
-	next "feathers make no"
-	next "sound in flight."
+	db   "It silently flies"
+	next "throughout the"
+	next "night, searching"
 
-	page "It silently sneaks"
-	next "up on prey without"
-	next "being detected.@"
+	page "for unsuspecting"
+	next "prey. It has very"
+	next "keen eyesight.@"

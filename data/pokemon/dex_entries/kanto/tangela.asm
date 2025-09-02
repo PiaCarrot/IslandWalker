@@ -1,9 +1,9 @@
 	db "VINE@" ; species name
 
-	db   "During battle, it"
-	next "constantly moves"
-	next "the vines that"
+	db   "It ensnares foes"
+	next "with its vines,"
+	next "but its easy to"
 
-	page "cover its body in"
-	next "order to annoy its"
-	next "opponent.@"
+	page "break free. The"
+	next "vines can be used"
+	next "as a spice.@"

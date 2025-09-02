@@ -1,9 +1,9 @@
 	db "SUN@" ; species name
 
-	db   "As the hot season"
-	next "approaches, the"
-	next "petals on this"
+	db   "It relies on the"
+	next "sun for all of"
+	next "its energy. If"
 
-	page "#MON's face"
-	next "become more vivid"
-	next "and lively.@"
+	page "the sun sets, it"
+	next "can no longer"
+	next "move at all.@"

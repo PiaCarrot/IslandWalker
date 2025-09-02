@@ -1,9 +1,9 @@
 	db "SEA LION@" ; species name
 
-	db   "It sleeps under"
-	next "shallow ocean"
-	next "waters during the"
+	db   "It uses its horn"
+	next "to pierce its"
+	next "prey, charging"
 
-	page "day, then looks"
-	next "for food at night"
-	next "when it's cold.@"
+	page "at a speed of"
+	next "10 MPH. It loves"
+	next "cold water.@"

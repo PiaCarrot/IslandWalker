@@ -1,9 +1,9 @@
 	db "FOX@" ; species name
 
-	db   "It is said to live"
-	next "a thousand years,"
-	next "and each of its"
+	db   "It has a calm"
+	next "disposition, but"
+	next "is vengeful if"
 
-	page "tails is loaded"
-	next "with supernatural"
-	next "powers.@"
+	page "slighted. Its hot"
+	next "flame is said to"
+	next "burn souls.@"

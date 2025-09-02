@@ -1,9 +1,9 @@
 	db "MEGATON@" ; species name
 
-	db   "Its rock-like body"
-	next "is so durable,"
-	next "even high-powered"
+	db   "It has limited"
+	next "use of its arms"
+	next "when it isn't"
 
-	page "dynamite blasts"
-	next "fail to scratch"
-	next "its rugged hide.@"
+	page "molting. It can"
+	next "use EXPLOSION to"
+	next "climb mountains.@"

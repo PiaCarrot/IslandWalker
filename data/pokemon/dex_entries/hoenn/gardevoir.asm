@@ -1,9 +1,9 @@
 	db "EMBRACE@" ; species name
 
-	db   "To protect its"
-	next "Trainer, it will"
-	next "expend all its"
+	db   "It's loyal to the"
+	next "trainer it bonds"
+	next "with, and will"
 
-	page "psychic power to"
-	next "create a small"
-	next "black hole.@"
+	page "defend them even"
+	next "at the cost of"
+	next "its own life.@"

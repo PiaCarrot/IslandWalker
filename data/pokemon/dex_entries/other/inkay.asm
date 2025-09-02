@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "REVOLVING@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "It sometimes can"
+	next "be seen upside-"
+	next "down. It most"
+
+	page "likely does this"
+	next "to improve its"
+	next "blood flow.@"

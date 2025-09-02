@@ -1,9 +1,9 @@
 	db "GAS@" ; species name
 
-	db   "It hides in the"
-	next "dark, planning to"
-	next "take the life of"
+	db   "Old legends say"
+	next "if one is licked"
+	next "by HAUNTER, they"
 
-	page "the next living"
-	next "thing that wanders"
-	next "close by.@"
+	page "will die. It only"
+	next "seems to cause a"
+	next "short paralysis.@"

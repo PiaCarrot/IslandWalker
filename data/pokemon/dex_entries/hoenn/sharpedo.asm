@@ -1,9 +1,9 @@
 	db "BRUTAL@" ; species name
 
-	db   "Its fangs rip"
-	next "through sheet"
-	next "iron. It swims at"
+	db   "An apex predator"
+	next "of the open seas,"
+	next "it is becoming"
 
-	page "75 mph and is"
-	next "known as “The"
-	next "Bully of the Sea.”@"
+	page "hard to find them"
+	next "in the wild. Its"
+	next "fin is tasty.@"

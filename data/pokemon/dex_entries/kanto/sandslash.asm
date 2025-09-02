@@ -1,9 +1,9 @@
 	db "MOUSE@" ; species name
 
-	db   "Adept at climbing"
-	next "trees, it rolls"
-	next "into a spiny ball,"
+	db   "Its spines and"
+	next "claws are made"
+	next "keratin. They"
 
-	page "then attacks its"
-	next "enemies from"
-	next "above.@"
+	page "fall out all of"
+	next "the time but grow"
+	next "back in a day.@"

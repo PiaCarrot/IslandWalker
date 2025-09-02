@@ -1,9 +1,9 @@
 	db "BUBBLE JET@" ; species name
 
-	db   "As it uses the"
-	next "fins on the tip"
-	next "of its tail to"
+	db   "Its ACID ARMOR"
+	next "allows it to turn"
+	next "invisible when"
 
-	page "swim, it blends"
-	next "with the water"
-	next "perfectly.@"
+	page "submerged under-"
+	next "water. It's an"
+	next "apex predator.@"

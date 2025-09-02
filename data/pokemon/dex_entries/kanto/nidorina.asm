@@ -1,9 +1,9 @@
 	db "POISON PIN@" ; species name
 
-	db   "It has a docile"
-	next "nature. If it is"
-	next "threatened with"
+	db   "When its relaxed,"
+	next "its barbs retract"
+	next "and are hidden."
 
-	page "attack, it raises"
-	next "the barbs that are"
-	next "all over its body.@"
+	page "If threatened, it"
+	next "will use a SUPER-"
+	next "SONIC screech.@"

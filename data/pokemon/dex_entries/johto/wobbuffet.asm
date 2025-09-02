@@ -1,9 +1,9 @@
 	db "PATIENT@" ; species name
 
-	db   "In order to con-"
-	next "ceal its black"
-	next "tail, it lives in"
+	db   "It can endure any"
+	next "attack and send"
+	next "it right back at"
 
-	page "a dark cave and"
-	next "only moves about"
-	next "at night.@"
+	page "its attacker, but"
+	next "it takes skill to"
+	next "use in battle.@"

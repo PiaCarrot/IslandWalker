@@ -1,9 +1,9 @@
 	db "ANT@" ; species name
 
-	db   "It makes a conical"
-	next "pit in desert sand"
-	next "and lies in wait"
+	db   "It digs a pit in"
+	next "the sand and will"
+	next "wait for prey to"
 
-	page "at the bottom for"
-	next "prey to come tum-"
-	next "bling down.@"
+	page "fall in. It gets"
+	next "stuck if it flips"
+	next "over.@"

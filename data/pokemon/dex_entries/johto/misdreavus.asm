@@ -1,9 +1,9 @@
 	db "SCREECH@" ; species name
 
-	db   "It loves to watch"
-	next "people it's scar-"
-	next "ed. It frightens"
+	db   "Its energy source"
+	next "is fear. It loves"
+	next "to bite and yank"
 
-	page "them by screaming"
-	next "loudly or appear-"
-	next "ing suddenly.@"
+	page "hair just to get"
+	next "a reaction from"
+	next "people.@"

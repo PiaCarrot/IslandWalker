@@ -1,9 +1,9 @@
 	db "TADPOLE@" ; species name
 
-	db   "Though it is"
-	next "skilled at walk-"
-	next "ing, it prefers to"
+	db   "Its slimy skin"
+	next "lets it slip away"
+	next "from danger. It"
 
-	page "live underwater"
-	next "where there is"
-	next "less danger.@"
+	page "hunts on land and"
+	next "brings its meal"
+	next "to water.@"

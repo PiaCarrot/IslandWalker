@@ -1,9 +1,9 @@
 	db "FLAME@" ; species name
 
-	db   "If it becomes"
-	next "agitated during"
-	next "battle, it spouts"
+	db   "A vicious being"
+	next "that uses its big"
+	next "sharp claws and"
 
-	page "intense flames,"
-	next "incinerating its"
-	next "surroundings.@"
+	page "powerful tail to"
+	next "dispatch its foe."
+	next "Has a bad temper.@"

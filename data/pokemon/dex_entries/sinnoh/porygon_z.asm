@@ -1,10 +1,9 @@
 db "VIRTUAL@" ; species name
 
-db   "This upgraded form"
-next "of PORYGON is known"
-next "for erratic behavior."
+	db   "A computer progr-"
+	next "am with no clear"
+	next "origin was insta-"
 
-page "Its programming was"
-next "modified for space"
-next "exploration.@"
-
+	page "lled. It behaves"
+	next "erratically and"
+	next "is unstable.@"

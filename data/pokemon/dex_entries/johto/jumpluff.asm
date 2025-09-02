@@ -1,9 +1,9 @@
 	db "COTTONWEED@" ; species name
 
-	db   "Even in the fierc-"
-	next "est wind, it can"
-	next "control its fluff"
+	db   "It uses its fluff"
+	next "to control where"
+	next "it drifts. It"
 
-	page "to make its way to"
-	next "any place in the"
-	next "world it wants.@"
+	page "spreads spores"
+	next "all over world"
+	next "before dying.@"

@@ -1,9 +1,9 @@
 	db "PUPPY@" ; species name
 
-	db   "It controls a big"
-	next "territory. If it"
-	next "detects an unknown"
+	db   "Police officers"
+	next "prefer this loyal"
+	next "POKEMON. In the"
 
-	page "smell, it roars"
-	next "loudly to force"
-	next "out the intruder.@"
+	page "wild, it fights"
+	next "ROCKRUFF over its"
+	next "territory.@"

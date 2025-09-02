@@ -1,9 +1,9 @@
 	db "HARD SHELL@" ; species name
 
-	db   "It will not stay"
-	next "still, even while"
-	next "it's a pupa. It"
+	db   "Unlike similar"
+	next "cocoon types, it"
+	next "moves constantly"
 
-	page "already has arms"
-	next "and legs under its"
-	next "solid shell.@"
+	page "in the hopes that"
+	next "it will evolve as"
+	next "soon as possible.@"

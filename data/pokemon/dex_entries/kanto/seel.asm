@@ -1,9 +1,9 @@
 	db "SEA LION@" ; species name
 
-	db   "The light blue fur"
-	next "that covers it"
-	next "keeps it protected"
+	db   "It prefers cold."
+	next "Sometimes can be"
+	next "found in warmer"
 
-	page "against the cold."
-	next "It loves iceberg-"
-	next "filled oceans.@"
+	page "waters, where it"
+	next "is sluggish and"
+	next "easy to capture.@"

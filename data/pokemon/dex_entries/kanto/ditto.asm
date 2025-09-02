@@ -1,9 +1,9 @@
 	db "TRANSFORM@" ; species name
 
-	db   "When it encount-"
-	next "ers another DITTO,"
-	next "it will move"
+	db   "It can change its"
+	next "molecular struc-"
+	next "ture to copy any-"
 
-	page "faster than normal"
-	next "to duplicate that"
-	next "opponent exactly.@"
+	page "thing. When it"
+	next "sleeps, it TRANS-"
+	next "FORMs to a rock.@"

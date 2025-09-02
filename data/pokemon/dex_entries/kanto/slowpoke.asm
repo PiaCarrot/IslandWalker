@@ -1,9 +1,9 @@
 	db "DOPEY@" ; species name
 
-	db   "It is always so"
-	next "absent-minded that"
-	next "it won't react,"
+	db   "Even though it's"
+	next "good at fishing,"
+	next "it forgets what"
 
-	page "even if its"
-	next "flavorful tail is"
-	next "bitten.@"
+	page "its doing, so it's"
+	next "rare that it will"
+	next "catch something.@"

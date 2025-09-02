@@ -1,4 +1,9 @@
-db "???@" ; species name
+db "SEA CREEPER@" ; species name
 
-db   "Placeholder"
-next "dex entry.@"
+	db   "Using it mossy"
+	next "chains, it hurls"
+	next "its anchor toward"
+
+	page "wild WAILORD. It"
+	next "then drains the"
+	next "life out of it.@"

@@ -1,9 +1,9 @@
 	db "SHELLFISH@" ; species name
 
-	db   "It firmly plants"
-	next "its feet on the"
-	next "ground before"
+	db   "Its jet nozzles"
+	next "are used not only"
+	next "for offense, but"
 
-	page "shooting water"
-	next "from the jets on"
-	next "its back.@"
+	page "can be used to"
+	next "move incredibly"
+	next "fast in water.@"

@@ -1,9 +1,9 @@
 	db "GENETIC@" ; species name
 
-	db   "Said to rest qui-"
-	next "etly in an"
-	next "undiscovered cave,"
+	db   "An experiment"
+	next "created by FUJI"
+	next "with funding by"
 
-	page "this #MON was"
-	next "created solely for"
-	next "battling.@"
+	page "TEAM ROCKET. It"
+	next "was made with the"
+	next "DNA of MEW.@"

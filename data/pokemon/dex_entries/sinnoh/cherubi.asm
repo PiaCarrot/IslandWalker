@@ -1,9 +1,9 @@
 db "CHERRY@" ; species name
 
-db   "It absorbs sunlight"
-next "and grows ripe and"
-next "juicy in warm sites"
+	db   "It is apparently"
+	next "very sweet. It is"
+	next "full of nutrients"
 
-page "The small ball on"
-next "its body stores all"
-next "the nutrients.@"
+	page "and if it dries"
+	next "out, evolution is"
+	next "near.@"

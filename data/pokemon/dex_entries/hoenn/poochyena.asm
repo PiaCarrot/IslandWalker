@@ -1,9 +1,9 @@
 	db "BITE@" ; species name
 
-	db   "A #MON with a"
-	next "persistent nature,"
-	next "it chases its cho-"
+	db   "They tend to have"
+	next "territorial dis-"
+	next "putes with packs"
 
-	page "sen prey until the"
-	next "prey becomes ex-"
-	next "hausted.@"
+	page "of HOUNDOUR. It"
+	next "is much more cow-"
+	next "ardly, though.@"

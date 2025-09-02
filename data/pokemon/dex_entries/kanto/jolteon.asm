@@ -1,9 +1,9 @@
 	db "LIGHTNING@" ; species name
 
-	db   "The negatively"
-	next "charged ions"
-	next "generated in its"
+	db   "If angered, it'll"
+	next "shoot electrified"
+	next "needles from its"
 
-	page "fur create a"
-	next "constant sparking"
-	next "noise.@"
+	page "coat that pierces"
+	next "its target with"
+	next "supreme speed.@"

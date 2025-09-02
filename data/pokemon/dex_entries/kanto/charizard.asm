@@ -1,9 +1,9 @@
 	db "FLAME@" ; species name
 
-	db   "It uses its wings"
-	next "to fly high. The"
-	next "temperature of its"
+	db   "If it becomes"
+	next "angry, its flame"
+	next "grows so hot that"
 
-	page "fire increases as"
-	next "it gains exper-"
-	next "ience in battle.@"
+	page "its flame becomes"
+	next "blue and can melt"
+	next "steel beams.@"
