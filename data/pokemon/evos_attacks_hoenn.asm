@@ -2057,12 +2057,12 @@ ClauncherEvosAttacks:
         db 0 ; no more evolutions
         dbw 1, SPLASH
         dbw 1, WATER_GUN
-        ; VICE_GRIP (L5)
+        dbw 5, VICEGRIP
         dbw 7, WATER_SPORT
         dbw 10, FLAIL
         dbw 12, BUBBLE
         dbw 15, AQUA_JET
-        ; BUBBLE_BEAM (L20)
+        dbw 20, BUBBLEBEAM
         ; SMACK_DOWN (L20)
         ; HONE_CLAWS (L25)
         dbw 25, SWORDS_DANCE
@@ -2080,12 +2080,12 @@ ClawitzerEvosAttacks:
         dbw 1, FLAIL
         ; HEAL_PULSE (L1)
         dbw 1, SPLASH
-        ; VICE_GRIP (L1)
+        dbw 1, VICEGRIP
         dbw 1, WATER_GUN
         dbw 1, WATER_SPORT
         dbw 12, BUBBLE
         dbw 15, AQUA_JET
-        ; BUBBLE_BEAM (L20)
+        dbw 20, BUBBLEBEAM
         ; SMACK_DOWN (L20)
         ; HONE_CLAWS (L25)
         dbw 25, SWORDS_DANCE
@@ -2325,7 +2325,7 @@ GoomyEvosAttacks:
         dbw 5, WATER_GUN
         ; ACID_SPRAY (L6)
         dbw 9, PROTECT
-        ; DRAGON_BREATH (L10)
+        dbw 10, DRAGONBREATH
         dbw 11, ACID_ARMOR
         dbw 13, BIDE
         dbw 18, WATER_PULSE
@@ -2345,7 +2345,7 @@ SliggooEvosAttacks:
         dbw 1, ACID_ARMOR
         ; ACID_SPRAY (L1)
         dbw 1, BUBBLE
-        ; DRAGON_BREATH (L1)
+        dbw 1, DRAGONBREATH
         dbw 1, TACKLE
         dbw 1, WATER_GUN
         dbw 9, PROTECT
@@ -2364,7 +2364,7 @@ GoodraEvosAttacks:
         ; ACID_SPRAY (L1)
         dbw 1, AQUA_TAIL
         dbw 1, BUBBLE
-        ; DRAGON_BREATH (L1)
+        dbw 1, DRAGONBREATH
         dbw 1, FEINT
         dbw 1, OUTRAGE
         dbw 1, POISON_TAIL
@@ -2576,7 +2576,7 @@ SalanditEvosAttacks:
         dbw 8, SWEET_SCENT
         dbw 13, DRAGON_RAGE
         dbw 15, POISON_FANG
-        ; DOUBLE_SLAP (L21)
+        dbw 21, DOUBLESLAP
         ; FLAME_BURST (L24)
         dbw 25, NASTY_PLOT
         dbw 29, TOXIC
@@ -2605,7 +2605,7 @@ SalazzleEvosAttacks:
         dbw 1, TORMENT
         dbw 13, DRAGON_RAGE
         dbw 15, POISON_FANG
-        ; DOUBLE_SLAP (L21)
+        dbw 21, DOUBLESLAP
         ; FLAME_BURST (L24)
         dbw 25, NASTY_PLOT
         dbw 29, TOXIC
@@ -2693,12 +2693,12 @@ DhelmiseEvosAttacks:
 PincurchinEvosAttacks:
         db 0 ; no more evolutions
         dbw 1, PECK
-        ; THUNDER_SHOCK (L1)
+        dbw 1, THUNDERSHOCK
         dbw 5, WATER_GUN
         dbw 10, CHARGE
         dbw 15, FURY_ATTACK
         dbw 20, SPARK
-        ; BUBBLE_BEAM (L25)
+        dbw 25, BUBBLEBEAM
         dbw 30, RECOVER
         dbw 35, CURSE
         ; ELECTRIC_TERRAIN (L40)
@@ -2735,7 +2735,7 @@ BinacleEvosAttacks:
         dbw 10, FURY_SWIPES
         dbw 12, FURY_CUTTER
         dbw 13, SLASH
-        ; ANCIENT_POWER (L20)
+        dbw 20, ANCIENTPOWER
         dbw 20, CLAMP
         dbw 24, ROCK_POLISH
         ; HONE_CLAWS (L32)
@@ -2756,7 +2756,7 @@ BarbaracleEvosAttacks:
         dbw 10, FURY_SWIPES
         dbw 12, FURY_CUTTER
         dbw 13, SLASH
-        ; ANCIENT_POWER (L20)
+        dbw 20, ANCIENTPOWER
         dbw 20, CLAMP
         dbw 24, ROCK_POLISH
         ; HONE_CLAWS (L32)
@@ -2782,7 +2782,7 @@ FlappleEvosAttacks:
         ; ACROBATICS (L8)
         dbw 12, LEECH_SEED
         dbw 16, PROTECT
-        ; DRAGON_BREATH (L20)
+        dbw 20, DRAGONBREATH
         dbw 24, DRAGON_DANCE
         dbw 28, DRAGON_PULSE
         ; GRAV_APPLE (L32)
@@ -2861,7 +2861,7 @@ DudunsparceEvosAttacks:
         dbw 8, ROLLOUT
         dbw 12, GLARE
         dbw 16, SCREECH
-        ; ANCIENT_POWER (L20)
+        dbw 20, ANCIENTPOWER
         ; DRILL_RUN (L24)
         dbw 28, YAWN
         ; HYPER_DRILL (L32)
@@ -2890,7 +2890,7 @@ FarigirafEvosAttacks:
         dbw 37, CRUNCH
         dbw 41, BATON_PASS
         dbw 46, NASTY_PLOT
-        ; PSYCHIC (L50)
+        dbw 50, PSYCHIC_M
         db 0 ; no more level-up moves
 KingambitEvosAttacks:
         db 0 ; no more evolutions
@@ -2922,7 +2922,7 @@ DipplinEvosAttacks:
         dbw 1, WITHDRAW
         ; DRAGON_TAIL (L4)
         dbw 8, GROWTH
-        ; DRAGON_BREATH (L12)
+        dbw 12, DRAGONBREATH
         dbw 16, PROTECT
         dbw 20, BULLET_SEED
         ; SYRUP_BOMB (L28)
@@ -2940,7 +2940,7 @@ HydrappleEvosAttacks:
         dbw 1, WITHDRAW
         ; DRAGON_TAIL (L4)
         dbw 8, GROWTH
-        ; DRAGON_BREATH (L12)
+        dbw 12, DRAGONBREATH
         dbw 16, PROTECT
         dbw 20, BULLET_SEED
         ; SYRUP_BOMB (L28)
@@ -3028,7 +3028,7 @@ CursolaEvosAttacks:
         dbw 1, PERISH_SONG
         dbw 1, TACKLE
         dbw 15, SPITE
-        ; ANCIENT_POWER (L20)
+        dbw 20, ANCIENTPOWER
         ; HEX (L25)
         dbw 30, CURSE
         ; STRENGTH_SAP (L35)
@@ -3107,7 +3107,7 @@ MrRimeEvosAttacks:
         dbw 36, MIRROR_COAT
         dbw 40, SUCKER_PUNCH
         ; FREEZE_DRY (L44)
-        ; PSYCHIC (L48)
+        dbw 48, PSYCHIC_M
         dbw 52, TEETER_DANCE
         db 0 ; no more level-up moves
 ObstagoonEvosAttacks:
@@ -3158,7 +3158,7 @@ OverqwilEvosAttacks:
         dbw 48, CRUNCH
         dbw 52, ACUPRESSURE
         dbw 56, DESTINY_BOND
-        ; SELF_DESTRUCT (L57)
+        dbw 57, SELFDESTRUCT
         db 0 ; no more level-up moves
 SneaslerEvosAttacks:
         db 0 ; no more evolutions
@@ -3259,7 +3259,7 @@ MarshadowEvosAttacks:
         ; LASER_FOCUS (L1)
         dbw 1, PURSUIT
         dbw 1, SHADOW_SNEAK
-        ; THUNDER_PUNCH (L1)
+        dbw 1, THUNDERPUNCH
         dbw 5, FORCE_PALM
         dbw 9, ROLE_PLAY
         dbw 15, ROLLING_KICK
@@ -3275,7 +3275,7 @@ MeltanEvosAttacks:
         db 0 ; no more evolutions
         dbw 1, HARDEN
         dbw 1, HEADBUTT
-        ; THUNDER_SHOCK (L1)
+        dbw 1, THUNDERSHOCK
         dbw 8, TAIL_WHIP
         dbw 18, THUNDER_WAVE
         dbw 32, ACID_ARMOR
@@ -3286,8 +3286,8 @@ MelmetalEvosAttacks:
         dbw 1, HARDEN
         dbw 1, HEADBUTT
         dbw 1, TAIL_WHIP
-        ; THUNDER_PUNCH (L1)
-        ; THUNDER_SHOCK (L1)
+        dbw 1, THUNDERPUNCH
+        dbw 1, THUNDERSHOCK
         dbw 1, THUNDER_WAVE
         dbw 32, ACID_ARMOR
         dbw 40, FLASH_CANNON
@@ -3295,7 +3295,7 @@ MelmetalEvosAttacks:
         dbw 56, PROTECT
         dbw 64, DISCHARGE
         ; DOUBLE_IRON_BASH (L72)
-        ; DYNAMIC_PUNCH (L72)
+        dbw 72, DYNAMICPUNCH
         dbw 80, SUPERPOWER
         dbw 90, HYPER_BEAM
         db 0 ; no more level-up moves
