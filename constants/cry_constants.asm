@@ -80,5 +80,7 @@
         const CRY_RALTS
         const CRY_SHROOMISH
         const CRY_NINCADA
+        const CRY_AZURILL
+        const CRY_LATIAS
 
 DEF NUM_CRIES EQU const_value

@@ -274,8 +274,8 @@ PokemonCries::
         mon_cry CRY_NINCADA,      0,  256 ; NINCADA
         mon_cry CRY_NINCADA,     32,  320 ; NINJASK
         mon_cry CRY_NINCADA,     64,  384 ; SHEDINJA
-	mon_cry CRY_BULBASAUR,   238,  129 ; AZURILL
-	mon_cry CRY_BULBASAUR,   238,  129 ; ARON
+        mon_cry CRY_AZURILL,      0,  256 ; AZURILL
+        mon_cry CRY_BULBASAUR,   238,  129 ; ARON
 	mon_cry CRY_BULBASAUR,   238,  129 ; LAIRON
 	mon_cry CRY_BULBASAUR,   238,  129 ; AGGRON
 	mon_cry CRY_BULBASAUR,   238,  129 ; CARVANHA
@@ -309,10 +309,10 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   238,  129 ; SPHEAL
 	mon_cry CRY_BULBASAUR,   238,  129 ; SEALEO
 	mon_cry CRY_BULBASAUR,   238,  129 ; WALREIN
-	mon_cry CRY_BULBASAUR,   238,  129 ; RELICANTH
-	mon_cry CRY_BULBASAUR,   238,  129 ; LUVDISC
-        mon_cry CRY_BULBASAUR,   238,  129 ; LATIAS
-        mon_cry CRY_BULBASAUR,   238,  129 ; LATIOS
+        mon_cry CRY_BULBASAUR,   238,  129 ; RELICANTH
+        mon_cry CRY_BULBASAUR,   238,  129 ; LUVDISC
+        mon_cry CRY_LATIAS,       0,  256 ; LATIAS
+        mon_cry CRY_LATIAS,      32,  320 ; LATIOS
         mon_cry CRY_BULBASAUR,   238,  129 ; SHINX
         mon_cry CRY_BULBASAUR,   238,  129 ; LUXIO
         mon_cry CRY_BULBASAUR,   238,  129 ; LUXRAY

@@ -2220,3 +2220,45 @@ Cry_Nincada_Ch8:
         noise_note 4, 10, 2, 58
         noise_note 6, 9, 1, 56
         sound_ret
+
+Cry_Azurill:
+        channel_count 2
+        channel 5, Cry_Azurill_Ch5
+        channel 6, Cry_Azurill_Ch6
+
+Cry_Azurill_Ch5:
+        duty_cycle_pattern 0, 1, 0, 1
+        square_note 4, 12, 4, 1792
+        square_note 6, 11, 1, 1856
+        sound_ret
+
+Cry_Azurill_Ch6:
+        duty_cycle_pattern 1, 0, 1, 0
+        square_note 4, 11, 4, 1760
+        square_note 6, 10, 1, 1824
+        sound_ret
+
+Cry_Latias:
+        channel_count 3
+        channel 5, Cry_Latias_Ch5
+        channel 6, Cry_Latias_Ch6
+        channel 8, Cry_Latias_Ch8
+
+Cry_Latias_Ch5:
+        duty_cycle_pattern 1, 2, 3, 2
+        square_note 4, 14, 4, 1984
+        square_note 6, 13, 4, 2048
+        square_note 8, 12, 1, 1920
+        sound_ret
+
+Cry_Latias_Ch6:
+        duty_cycle_pattern 2, 3, 2, 1
+        square_note 4, 13, 4, 1952
+        square_note 6, 12, 4, 2016
+        square_note 8, 11, 1, 1888
+        sound_ret
+
+Cry_Latias_Ch8:
+        noise_note 4, 10, 4, 66
+        noise_note 6, 9, 1, 64
+        sound_ret

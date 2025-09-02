@@ -75,4 +75,6 @@ Cries:
         dba Cry_Ralts
         dba Cry_Shroomish
         dba Cry_Nincada
+        dba Cry_Azurill
+        dba Cry_Latias
         assert_table_length NUM_CRIES
