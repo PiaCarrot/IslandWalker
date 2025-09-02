@@ -82,5 +82,26 @@
         const CRY_NINCADA
         const CRY_AZURILL
         const CRY_LATIAS
+        const CRY_ARON
+        const CRY_CARVANHA
+        const CRY_WAILMER
+        const CRY_NUMEL
+        const CRY_SPOINK
+        const CRY_SPINDA
+        const CRY_TRAPINCH
+        const CRY_SWABLU
+        const CRY_ZANGOOSE
+        const CRY_SEVIPER
+        const CRY_FEEBAS
+        const CRY_KECLEON
+        const CRY_SHUPPET
+        const CRY_DUSKULL
+        const CRY_TROPIUS
+        const CRY_CHIMECHO
+        const CRY_WYNAUT
+        const CRY_SNORUNT
+        const CRY_SPHEAL
+        const CRY_RELICANTH
+        const CRY_LUVDISC
 
 DEF NUM_CRIES EQU const_value

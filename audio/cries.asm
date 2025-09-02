@@ -2262,3 +2262,486 @@ Cry_Latias_Ch8:
         noise_note 4, 10, 4, 66
         noise_note 6, 9, 1, 64
         sound_ret
+
+Cry_Aron:
+        channel_count 3
+        channel 5, Cry_Aron_Ch5
+        channel 6, Cry_Aron_Ch6
+        channel 8, Cry_Aron_Ch8
+
+Cry_Aron_Ch5:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 13, 4, 1600
+        square_note 8, 12, 2, 1504
+        sound_ret
+
+Cry_Aron_Ch6:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 11, 4, 1568
+        square_note 8, 10, 2, 1472
+        sound_ret
+
+Cry_Aron_Ch8:
+        noise_note 4, 10, 4, 112
+        noise_note 8, 8, 2, 108
+        sound_ret
+
+Cry_Carvanha:
+        channel_count 3
+        channel 5, Cry_Carvanha_Ch5
+        channel 6, Cry_Carvanha_Ch6
+        channel 8, Cry_Carvanha_Ch8
+
+Cry_Carvanha_Ch5:
+        duty_cycle_pattern 1, 0, 1, 0
+        square_note 4, 13, 4, 1680
+        square_note 8, 12, 2, 1648
+        sound_ret
+
+Cry_Carvanha_Ch6:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 11, 4, 1648
+        square_note 8, 10, 2, 1600
+        sound_ret
+
+Cry_Carvanha_Ch8:
+        noise_note 4, 9, 4, 104
+        noise_note 8, 8, 2, 100
+        sound_ret
+
+Cry_Wailmer:
+        channel_count 3
+        channel 5, Cry_Wailmer_Ch5
+        channel 6, Cry_Wailmer_Ch6
+        channel 8, Cry_Wailmer_Ch8
+
+Cry_Wailmer_Ch5:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 14, 4, 1120
+        square_note 8, 12, 2, 1056
+        sound_ret
+
+Cry_Wailmer_Ch6:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 12, 4, 1088
+        square_note 8, 10, 2, 1024
+        sound_ret
+
+Cry_Wailmer_Ch8:
+        noise_note 4, 10, 4, 92
+        noise_note 8, 8, 2, 88
+        sound_ret
+
+Cry_Numel:
+        channel_count 3
+        channel 5, Cry_Numel_Ch5
+        channel 6, Cry_Numel_Ch6
+        channel 8, Cry_Numel_Ch8
+
+Cry_Numel_Ch5:
+        duty_cycle_pattern 2, 1, 2, 1
+        square_note 4, 13, 4, 1200
+        square_note 8, 12, 2, 1152
+        sound_ret
+
+Cry_Numel_Ch6:
+        duty_cycle_pattern 3, 2, 3, 2
+        square_note 4, 11, 4, 1168
+        square_note 8, 10, 2, 1120
+        sound_ret
+
+Cry_Numel_Ch8:
+        noise_note 4, 9, 4, 100
+        noise_note 8, 8, 2, 96
+        sound_ret
+
+Cry_Spoink:
+        channel_count 3
+        channel 5, Cry_Spoink_Ch5
+        channel 6, Cry_Spoink_Ch6
+        channel 8, Cry_Spoink_Ch8
+
+Cry_Spoink_Ch5:
+        duty_cycle_pattern 0, 1, 0, 1
+        square_note 4, 13, 4, 1952
+        square_note 8, 12, 2, 2016
+        sound_ret
+
+Cry_Spoink_Ch6:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 11, 4, 1920
+        square_note 8, 10, 2, 1984
+        sound_ret
+
+Cry_Spoink_Ch8:
+        noise_note 4, 9, 4, 108
+        noise_note 8, 8, 2, 104
+        sound_ret
+
+Cry_Spinda:
+        channel_count 3
+        channel 5, Cry_Spinda_Ch5
+        channel 6, Cry_Spinda_Ch6
+        channel 8, Cry_Spinda_Ch8
+
+Cry_Spinda_Ch5:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 13, 4, 1760
+        square_note 8, 12, 2, 1712
+        sound_ret
+
+Cry_Spinda_Ch6:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 11, 4, 1728
+        square_note 8, 10, 2, 1680
+        sound_ret
+
+Cry_Spinda_Ch8:
+        noise_note 4, 9, 4, 100
+        noise_note 8, 8, 2, 96
+        sound_ret
+
+Cry_Trapinch:
+        channel_count 3
+        channel 5, Cry_Trapinch_Ch5
+        channel 6, Cry_Trapinch_Ch6
+        channel 8, Cry_Trapinch_Ch8
+
+Cry_Trapinch_Ch5:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 13, 4, 1504
+        square_note 8, 12, 2, 1440
+        sound_ret
+
+Cry_Trapinch_Ch6:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 11, 4, 1472
+        square_note 8, 10, 2, 1408
+        sound_ret
+
+Cry_Trapinch_Ch8:
+        noise_note 4, 9, 4, 96
+        noise_note 8, 8, 2, 92
+        sound_ret
+
+Cry_Swablu:
+        channel_count 3
+        channel 5, Cry_Swablu_Ch5
+        channel 6, Cry_Swablu_Ch6
+        channel 8, Cry_Swablu_Ch8
+
+Cry_Swablu_Ch5:
+        duty_cycle_pattern 0, 1, 0, 1
+        square_note 4, 13, 4, 1888
+        square_note 8, 12, 2, 1952
+        sound_ret
+
+Cry_Swablu_Ch6:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 11, 4, 1856
+        square_note 8, 10, 2, 1920
+        sound_ret
+
+Cry_Swablu_Ch8:
+        noise_note 4, 9, 4, 108
+        noise_note 8, 8, 2, 104
+        sound_ret
+
+Cry_Zangoose:
+        channel_count 3
+        channel 5, Cry_Zangoose_Ch5
+        channel 6, Cry_Zangoose_Ch6
+        channel 8, Cry_Zangoose_Ch8
+
+Cry_Zangoose_Ch5:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 13, 4, 1856
+        square_note 8, 12, 2, 1792
+        sound_ret
+
+Cry_Zangoose_Ch6:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 11, 4, 1824
+        square_note 8, 10, 2, 1760
+        sound_ret
+
+Cry_Zangoose_Ch8:
+        noise_note 4, 9, 4, 104
+        noise_note 8, 8, 2, 100
+        sound_ret
+
+Cry_Seviper:
+        channel_count 3
+        channel 5, Cry_Seviper_Ch5
+        channel 6, Cry_Seviper_Ch6
+        channel 8, Cry_Seviper_Ch8
+
+Cry_Seviper_Ch5:
+        duty_cycle_pattern 1, 0, 1, 0
+        square_note 4, 13, 4, 1680
+        square_note 8, 12, 2, 1600
+        sound_ret
+
+Cry_Seviper_Ch6:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 11, 4, 1648
+        square_note 8, 10, 2, 1568
+        sound_ret
+
+Cry_Seviper_Ch8:
+        noise_note 4, 9, 4, 100
+        noise_note 8, 8, 2, 96
+        sound_ret
+
+Cry_Feebas:
+        channel_count 3
+        channel 5, Cry_Feebas_Ch5
+        channel 6, Cry_Feebas_Ch6
+        channel 8, Cry_Feebas_Ch8
+
+Cry_Feebas_Ch5:
+        duty_cycle_pattern 0, 1, 0, 1
+        square_note 4, 13, 4, 1728
+        square_note 8, 12, 2, 1664
+        sound_ret
+
+Cry_Feebas_Ch6:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 11, 4, 1696
+        square_note 8, 10, 2, 1632
+        sound_ret
+
+Cry_Feebas_Ch8:
+        noise_note 4, 9, 4, 96
+        noise_note 8, 8, 2, 92
+        sound_ret
+
+Cry_Kecleon:
+        channel_count 3
+        channel 5, Cry_Kecleon_Ch5
+        channel 6, Cry_Kecleon_Ch6
+        channel 8, Cry_Kecleon_Ch8
+
+Cry_Kecleon_Ch5:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 13, 4, 1808
+        square_note 8, 12, 2, 1744
+        sound_ret
+
+Cry_Kecleon_Ch6:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 11, 4, 1776
+        square_note 8, 10, 2, 1712
+        sound_ret
+
+Cry_Kecleon_Ch8:
+        noise_note 4, 9, 4, 100
+        noise_note 8, 8, 2, 96
+        sound_ret
+
+Cry_Shuppet:
+        channel_count 3
+        channel 5, Cry_Shuppet_Ch5
+        channel 6, Cry_Shuppet_Ch6
+        channel 8, Cry_Shuppet_Ch8
+
+Cry_Shuppet_Ch5:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 13, 4, 1904
+        square_note 8, 12, 2, 1840
+        sound_ret
+
+Cry_Shuppet_Ch6:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 11, 4, 1872
+        square_note 8, 10, 2, 1808
+        sound_ret
+
+Cry_Shuppet_Ch8:
+        noise_note 4, 9, 4, 106
+        noise_note 8, 8, 2, 102
+        sound_ret
+
+Cry_Duskull:
+        channel_count 3
+        channel 5, Cry_Duskull_Ch5
+        channel 6, Cry_Duskull_Ch6
+        channel 8, Cry_Duskull_Ch8
+
+Cry_Duskull_Ch5:
+        duty_cycle_pattern 2, 1, 2, 1
+        square_note 4, 13, 4, 1440
+        square_note 8, 12, 2, 1376
+        sound_ret
+
+Cry_Duskull_Ch6:
+        duty_cycle_pattern 3, 2, 3, 2
+        square_note 4, 11, 4, 1408
+        square_note 8, 10, 2, 1344
+        sound_ret
+
+Cry_Duskull_Ch8:
+        noise_note 4, 9, 4, 94
+        noise_note 8, 8, 2, 90
+        sound_ret
+
+Cry_Tropius:
+        channel_count 3
+        channel 5, Cry_Tropius_Ch5
+        channel 6, Cry_Tropius_Ch6
+        channel 8, Cry_Tropius_Ch8
+
+Cry_Tropius_Ch5:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 13, 4, 1600
+        square_note 8, 12, 2, 1536
+        sound_ret
+
+Cry_Tropius_Ch6:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 11, 4, 1568
+        square_note 8, 10, 2, 1504
+        sound_ret
+
+Cry_Tropius_Ch8:
+        noise_note 4, 9, 4, 100
+        noise_note 8, 8, 2, 96
+        sound_ret
+
+Cry_Chimecho:
+        channel_count 3
+        channel 5, Cry_Chimecho_Ch5
+        channel 6, Cry_Chimecho_Ch6
+        channel 8, Cry_Chimecho_Ch8
+
+Cry_Chimecho_Ch5:
+        duty_cycle_pattern 0, 1, 0, 1
+        square_note 4, 13, 4, 2016
+        square_note 8, 12, 2, 1952
+        sound_ret
+
+Cry_Chimecho_Ch6:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 11, 4, 1984
+        square_note 8, 10, 2, 1920
+        sound_ret
+
+Cry_Chimecho_Ch8:
+        noise_note 4, 9, 4, 112
+        noise_note 8, 8, 2, 108
+        sound_ret
+
+Cry_Wynaut:
+        channel_count 3
+        channel 5, Cry_Wynaut_Ch5
+        channel 6, Cry_Wynaut_Ch6
+        channel 8, Cry_Wynaut_Ch8
+
+Cry_Wynaut_Ch5:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 13, 4, 1760
+        square_note 8, 12, 2, 1696
+        sound_ret
+
+Cry_Wynaut_Ch6:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 11, 4, 1728
+        square_note 8, 10, 2, 1664
+        sound_ret
+
+Cry_Wynaut_Ch8:
+        noise_note 4, 9, 4, 100
+        noise_note 8, 8, 2, 96
+        sound_ret
+
+Cry_Snorunt:
+        channel_count 3
+        channel 5, Cry_Snorunt_Ch5
+        channel 6, Cry_Snorunt_Ch6
+        channel 8, Cry_Snorunt_Ch8
+
+Cry_Snorunt_Ch5:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 13, 4, 1584
+        square_note 8, 12, 2, 1520
+        sound_ret
+
+Cry_Snorunt_Ch6:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 11, 4, 1552
+        square_note 8, 10, 2, 1488
+        sound_ret
+
+Cry_Snorunt_Ch8:
+        noise_note 4, 9, 4, 98
+        noise_note 8, 8, 2, 94
+        sound_ret
+
+Cry_Spheal:
+        channel_count 3
+        channel 5, Cry_Spheal_Ch5
+        channel 6, Cry_Spheal_Ch6
+        channel 8, Cry_Spheal_Ch8
+
+Cry_Spheal_Ch5:
+        duty_cycle_pattern 2, 1, 2, 1
+        square_note 4, 13, 4, 1648
+        square_note 8, 12, 2, 1584
+        sound_ret
+
+Cry_Spheal_Ch6:
+        duty_cycle_pattern 3, 2, 3, 2
+        square_note 4, 11, 4, 1616
+        square_note 8, 10, 2, 1552
+        sound_ret
+
+Cry_Spheal_Ch8:
+        noise_note 4, 9, 4, 96
+        noise_note 8, 8, 2, 92
+        sound_ret
+
+Cry_Relicanth:
+        channel_count 3
+        channel 5, Cry_Relicanth_Ch5
+        channel 6, Cry_Relicanth_Ch6
+        channel 8, Cry_Relicanth_Ch8
+
+Cry_Relicanth_Ch5:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 13, 4, 1360
+        square_note 8, 12, 2, 1296
+        sound_ret
+
+Cry_Relicanth_Ch6:
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 11, 4, 1328
+        square_note 8, 10, 2, 1264
+        sound_ret
+
+Cry_Relicanth_Ch8:
+        noise_note 4, 9, 4, 92
+        noise_note 8, 8, 2, 88
+        sound_ret
+
+Cry_Luvdisc:
+        channel_count 3
+        channel 5, Cry_Luvdisc_Ch5
+        channel 6, Cry_Luvdisc_Ch6
+        channel 8, Cry_Luvdisc_Ch8
+
+Cry_Luvdisc_Ch5:
+        duty_cycle_pattern 0, 1, 0, 1
+        square_note 4, 13, 4, 1888
+        square_note 8, 12, 2, 1824
+        sound_ret
+
+Cry_Luvdisc_Ch6:
+        duty_cycle_pattern 2, 3, 2, 3
+        square_note 4, 11, 4, 1856
+        square_note 8, 10, 2, 1792
+        sound_ret
+
+Cry_Luvdisc_Ch8:
+        noise_note 4, 9, 4, 104
+        noise_note 8, 8, 2, 100
+        sound_ret

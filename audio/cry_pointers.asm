@@ -77,4 +77,25 @@ Cries:
         dba Cry_Nincada
         dba Cry_Azurill
         dba Cry_Latias
+        dba Cry_Aron
+        dba Cry_Carvanha
+        dba Cry_Wailmer
+        dba Cry_Numel
+        dba Cry_Spoink
+        dba Cry_Spinda
+        dba Cry_Trapinch
+        dba Cry_Swablu
+        dba Cry_Zangoose
+        dba Cry_Seviper
+        dba Cry_Feebas
+        dba Cry_Kecleon
+        dba Cry_Shuppet
+        dba Cry_Duskull
+        dba Cry_Tropius
+        dba Cry_Chimecho
+        dba Cry_Wynaut
+        dba Cry_Snorunt
+        dba Cry_Spheal
+        dba Cry_Relicanth
+        dba Cry_Luvdisc
         assert_table_length NUM_CRIES
