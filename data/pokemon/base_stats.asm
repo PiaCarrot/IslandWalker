@@ -29,15 +29,23 @@ MACRO tmhm
 	endr
 ENDM
 
+SECTION "Base Stats", ROMX
+
 BaseData::
 	indirect_table BASE_DATA_SIZE, 1
 	indirect_entries JOHTO_POKEMON - 1, BaseData1
-	indirect_entries HOENN_POKEMON - 1, BaseData2
-	indirect_entries FORM_POKEMON - 1, BaseData3
+        indirect_entries HOENN_POKEMON - 1, BaseData2
+        indirect_entries SINNOH_POKEMON - 1, BaseData3
+        indirect_entries OTHER_POKEMON - 1, BaseData4
+        indirect_entries FORM_POKEMON - 1, BaseData5
 	indirect_entries NUM_POKEMON, FormsBaseData
 	indirect_table_end
 
 INCLUDE "data/pokemon/base_stats_kanto.asm"
 INCLUDE "data/pokemon/base_stats_johto.asm"
 INCLUDE "data/pokemon/base_stats_hoenn.asm"
+
+SECTION "Base Stats 2", ROMX
+INCLUDE "data/pokemon/base_stats_sinnoh.asm"
+INCLUDE "data/pokemon/base_stats_other.asm"
 INCLUDE "data/pokemon/base_stats_forms.asm"

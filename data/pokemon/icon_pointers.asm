@@ -361,6 +361,71 @@ IconPointers:
        dw BisharpIcon
        dw ZoruaIcon
        dw ZoroarkIcon
+       dw SkrelpIcon
+       dw DragalgeIcon
+       dw ClauncherIcon
+       dw ClawitzerIcon
+       dw SylveonIcon
+       dw PanchamIcon
+       dw PangoroIcon
+       dw InkayIcon
+       dw MalamarIcon
+       dw NoibatIcon
+       dw NoivernIcon
+       dw HonedgeIcon
+       dw DoubladeIcon
+       dw AegislashIcon
+       dw GoomyIcon
+       dw SliggooIcon
+       dw GoodraIcon
+       dw RockruffIcon
+       dw LycanrocIcon
+       dw CutieflyIcon
+       dw RibombeeIcon
+       dw PikipekIcon
+       dw TrumbeakIcon
+       dw ToucannonIcon
+       dw MimikyuIcon
+       dw SandygastIcon
+       dw PalossandIcon
+       dw SalanditIcon
+       dw SalazzleIcon
+       dw MareanieIcon
+       dw ToxapexIcon
+       dw TurtonatorIcon
+       dw DhelmiseIcon
+       dw PincurchinIcon
+       dw CramorantIcon
+       dw BinacleIcon
+       dw BarbaracleIcon
+       dw ApplinIcon
+       dw FlappleIcon
+       dw AppletunIcon
+       dw GimmighoulIcon
+       dw GholdengoIcon
+       dw AnnihilapeIcon
+       dw DudunsparceIcon
+       dw FarigirafIcon
+       dw KingambitIcon
+       dw DipplinIcon
+       dw HydrappleIcon
+       dw CharcadetIcon
+       dw ArmarougeIcon
+       dw CeruledgeIcon
+       dw ClodsireIcon
+       dw CursolaIcon
+       dw PerrserkerIcon
+       dw SirfetchdIcon
+       dw MrRimeIcon
+       dw ObstagoonIcon
+       dw OverqwilIcon
+       dw SneaslerIcon
+       dw KleavorIcon
+       dw UrsalunaIcon
+       dw WyrdeerIcon
+       dw MarshadowIcon
+       dw MeltanIcon
+       dw MelmetalIcon
 ; forms
         dw LaprasIcon
         dw DratiniIcon

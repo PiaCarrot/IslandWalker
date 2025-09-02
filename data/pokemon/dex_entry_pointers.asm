@@ -357,6 +357,71 @@ PokedexDataPointerTable:
        dba BisharpPokedexEntry
        dba ZoruaPokedexEntry
        dba ZoroarkPokedexEntry
+       dba SkrelpPokedexEntry
+       dba DragalgePokedexEntry
+       dba ClauncherPokedexEntry
+       dba ClawitzerPokedexEntry
+       dba SylveonPokedexEntry
+       dba PanchamPokedexEntry
+       dba PangoroPokedexEntry
+       dba InkayPokedexEntry
+       dba MalamarPokedexEntry
+       dba NoibatPokedexEntry
+       dba NoivernPokedexEntry
+       dba HonedgePokedexEntry
+       dba DoubladePokedexEntry
+       dba AegislashPokedexEntry
+       dba GoomyPokedexEntry
+       dba SliggooPokedexEntry
+       dba GoodraPokedexEntry
+       dba RockruffPokedexEntry
+       dba LycanrocPokedexEntry
+       dba CutieflyPokedexEntry
+       dba RibombeePokedexEntry
+       dba PikipekPokedexEntry
+       dba TrumbeakPokedexEntry
+       dba ToucannonPokedexEntry
+       dba MimikyuPokedexEntry
+       dba SandygastPokedexEntry
+       dba PalossandPokedexEntry
+       dba SalanditPokedexEntry
+       dba SalazzlePokedexEntry
+       dba MareaniePokedexEntry
+       dba ToxapexPokedexEntry
+       dba TurtonatorPokedexEntry
+       dba DhelmisePokedexEntry
+       dba PincurchinPokedexEntry
+       dba CramorantPokedexEntry
+       dba BinaclePokedexEntry
+       dba BarbaraclePokedexEntry
+       dba ApplinPokedexEntry
+       dba FlapplePokedexEntry
+       dba AppletunPokedexEntry
+       dba GimmighoulPokedexEntry
+       dba GholdengoPokedexEntry
+       dba AnnihilapePokedexEntry
+       dba DudunsparcePokedexEntry
+       dba FarigirafPokedexEntry
+       dba KingambitPokedexEntry
+       dba DipplinPokedexEntry
+       dba HydrapplePokedexEntry
+       dba CharcadetPokedexEntry
+       dba ArmarougePokedexEntry
+       dba CeruledgePokedexEntry
+       dba ClodsirePokedexEntry
+       dba CursolaPokedexEntry
+       dba PerrserkerPokedexEntry
+       dba SirfetchdPokedexEntry
+       dba MrRimePokedexEntry
+       dba ObstagoonPokedexEntry
+       dba OverqwilPokedexEntry
+       dba SneaslerPokedexEntry
+       dba KleavorPokedexEntry
+       dba UrsalunaPokedexEntry
+       dba WyrdeerPokedexEntry
+       dba MarshadowPokedexEntry
+       dba MeltanPokedexEntry
+       dba MelmetalPokedexEntry
 ; Forms
         dba LaprasPartnerPokedexEntry
         dba DratiniPartnerPokedexEntry
