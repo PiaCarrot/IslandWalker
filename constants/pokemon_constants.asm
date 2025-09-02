@@ -329,57 +329,57 @@ DEF HOENN_POKEMON EQU const_value
 	const LATIOS     ; 130
 DEF NUM_HOENN_POKEMON EQU const_value - HOENN_POKEMON
 DEF SINNOH_POKEMON EQU const_value
-        const SHINX      ; 131
-        const LUXIO      ; 132
-        const LUXRAY     ; 133
-        const CHERUBI    ; 134
-        const CHERRIM    ; 135
-        const AMBIPOM    ; 136
-        const MISMAGIUS  ; 137
-        const HONCHKROW  ; 138
-        const CHINGLING  ; 139
-        const BONSLY     ; 13a
-        const MIME_JR    ; 13b
-        const HAPPINY    ; 13c
-        const CHATOT     ; 13d
-        const MUNCHLAX   ; 13e
-        const RIOLU      ; 13f
-        const LUCARIO    ; 140
-        const CROAGUNK   ; 141
-        const TOXICROAK  ; 142
-       const CARNIVINE  ; 143
-       const FINNEON    ; 144
-       const LUMINEON   ; 145
-       const MANTYKE    ; 146
-       const WEAVILE    ; 147
-       const MAGNEZONE  ; 148
-       const LICKILICKY ; 149
-       const RHYPERIOR  ; 14a
-       const TANGROWTH  ; 14b
-       const ELECTIVIRE ; 14c
-       const MAGMORTAR  ; 14d
-        const TOGEKISS   ; 14e
-        const YANMEGA    ; 14f
-        const LEAFEON    ; 150
-        const GLACEON    ; 151
-       const GLISCOR    ; 152
-       const MAMOSWINE  ; 153
-       const PORYGON_Z  ; 154
-       const GALLADE    ; 155
-       const DUSKNOIR   ; 156
-       const FROSLASS   ; 157
-       const ROTOM      ; 158
-        const PHIONE     ; 159
-        const MANAPHY    ; 15a
+    const SHINX      ; 131
+    const LUXIO      ; 132
+    const LUXRAY     ; 133
+    const CHERUBI    ; 134
+    const CHERRIM    ; 135
+    const AMBIPOM    ; 136
+    const MISMAGIUS  ; 137
+    const HONCHKROW  ; 138
+    const CHINGLING  ; 139
+    const BONSLY     ; 13a
+    const MIME_JR    ; 13b
+    const HAPPINY    ; 13c
+    const CHATOT     ; 13d
+    const MUNCHLAX   ; 13e
+    const RIOLU      ; 13f
+    const LUCARIO    ; 140
+    const CROAGUNK   ; 141
+    const TOXICROAK  ; 142
+    const CARNIVINE  ; 143
+    const FINNEON    ; 144
+    const LUMINEON   ; 145
+    const MANTYKE    ; 146
+    const WEAVILE    ; 147
+    const MAGNEZONE  ; 148
+    const LICKILICKY ; 149
+    const RHYPERIOR  ; 14a
+    const TANGROWTH  ; 14b
+    const ELECTIVIRE ; 14c
+    const MAGMORTAR  ; 14d
+    const TOGEKISS   ; 14e
+    const YANMEGA    ; 14f
+    const LEAFEON    ; 150
+    const GLACEON    ; 151
+    const GLISCOR    ; 152
+    const MAMOSWINE  ; 153
+    const PORYGON_Z  ; 154
+    const GALLADE    ; 155
+    const DUSKNOIR   ; 156
+    const FROSLASS   ; 157
+    const ROTOM      ; 158
+    const PHIONE     ; 159
+    const MANAPHY    ; 15a
 DEF NUM_SINNOH_POKEMON EQU const_value - SINNOH_POKEMON
 DEF OTHER_POKEMON EQU const_value
-        const FERROSEED  ; 15c
-        const FERROTHORN ; 15d
-        const STUNFISK   ; 15e
-        const PAWNIARD   ; 15f
-        const BISHARP    ; 160
-        const ZORUA      ; 161
-        const ZOROARK    ; 162
+    const FERROSEED  ; 15c
+    const FERROTHORN ; 15d
+    const STUNFISK   ; 15e
+    const PAWNIARD   ; 15f
+    const BISHARP    ; 160
+    const ZORUA      ; 161
+    const ZOROARK    ; 162
 	; const SKRELP     ; 163
 	; const DRAGALGE   ; 164
 	; const CLAUNCHER  ; 165
@@ -415,8 +415,8 @@ DEF OTHER_POKEMON EQU const_value
 	; const DHELMISE   ; 183
 	; const PINCURCHIN ; 184
 	; const CRAMORANT  ; 185
-	; const WIGLETT    ; 186
-	; const WUGTRIO    ; 187
+	; const BINACLE    ; 186
+	; const BARBARACLE    ; 187
 	; const APPLIN     ; 188
 	; const FLAPPLE    ; 189
 	; const APPLETUN   ; 18a
@@ -424,7 +424,7 @@ DEF OTHER_POKEMON EQU const_value
 	; const GHOLDENGO  ; 18c
 	; const ANNIHILAPE ; 18d
 	; const DUDUNSPARCE ; 18e
-	; const GIRAFARIG  ; 18f
+	; const FARIGARAF  ; 18f
 	; const KINGAMBIT  ; 190
 	; const DIPPLIN    ; 191
 	; const HYDRAPPLE  ; 192
