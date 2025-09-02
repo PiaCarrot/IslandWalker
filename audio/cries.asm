@@ -2068,8 +2068,11 @@ Cry_Rattata_Ch6:
 	sound_ret
 
 Cry_Rattata_Ch8:
-	noise_note 2, 9, 2, 73
-	noise_note 7, 11, 5, 41
-	noise_note 1, 10, 2, 57
-	noise_note 8, 9, 1, 73
-	sound_ret
+        noise_note 2, 9, 2, 73
+        noise_note 7, 11, 5, 41
+        noise_note 1, 10, 2, 57
+        noise_note 8, 9, 1, 73
+        sound_ret
+
+Cry_Electivire:
+        db 0

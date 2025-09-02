@@ -115,18 +115,33 @@ PlayCry::
 	ld a, BANK(PokemonCries)
 	rst Bankswitch
 
-	ld hl, PokemonCries
+        ld hl, PokemonCries
 rept MON_CRY_LENGTH
-	add hl, de
+        add hl, de
 endr
 
-	ld a, [hli]
-	ld e, a
-	ld a, [hli]
-	ld d, a
+        ld a, [hli]
+        ld e, a
+        ld a, [hli]
+        ld d, a
 
-	ld a, [hli]
-	ld [wCryPitch], a
+        ld a, e
+        cp CRY_ELECTIVIRE
+        jr nz, .not_ded
+        ld a, BANK(ElectivireDEDHeader)
+        rst Bankswitch
+        ld hl, ElectivireDEDHeader
+        call LoadDEDCryHeader
+        ld e, 0
+        call PlayDEDCry
+        pop af
+        rst Bankswitch
+        jmp PopAFBCDEHL
+
+.not_ded
+
+        ld a, [hli]
+        ld [wCryPitch], a
 	ld a, [hli]
 	ld [wCryPitch + 1], a
 	ld a, [hli]

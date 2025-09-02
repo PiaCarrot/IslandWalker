@@ -340,7 +340,7 @@ PokemonCries::
         mon_cry CRY_BULBASAUR,   238,  129 ; LICKILICKY
         mon_cry CRY_BULBASAUR,   238,  129 ; RHYPERIOR
         mon_cry CRY_BULBASAUR,   238,  129 ; TANGROWTH
-        mon_cry CRY_BULBASAUR,   238,  129 ; ELECTIVIRE
+        mon_cry CRY_ELECTIVIRE,     0,    0 ; ELECTIVIRE
         mon_cry CRY_BULBASAUR,   238,  129 ; MAGMORTAR
         mon_cry CRY_BULBASAUR,   238,  129 ; TOGEKISS
         mon_cry CRY_BULBASAUR,   238,  129 ; YANMEGA

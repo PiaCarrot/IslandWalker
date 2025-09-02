@@ -6,6 +6,8 @@ INCLUDE "audio/music_pointers.asm"
 INCLUDE "audio/music/nothing.asm"
 INCLUDE "audio/cry_pointers.asm"
 INCLUDE "audio/sfx_pointers.asm"
+INCLUDE "audio/ded.asm"
+INCLUDE "audio/ded/files.asm"
 
 
 SECTION "Songs 1", ROMX

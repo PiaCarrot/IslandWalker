@@ -100,7 +100,7 @@ wCryTracks::
 wSFXDuration:: db
 wCurSFX::
 ; id of sfx currently playing
-	db
+        db
 
 wAudioEnd::
 

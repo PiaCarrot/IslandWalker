@@ -71,6 +71,7 @@
 	const CRY_PICHU
 	const CRY_AIPOM
 	const CRY_DUNSPARCE
-	const CRY_DONPHAN
+        const CRY_DONPHAN
+        const CRY_ELECTIVIRE
 
 DEF NUM_CRIES EQU const_value
