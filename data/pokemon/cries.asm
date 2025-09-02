@@ -262,10 +262,10 @@ PokemonCries::
 ;Hoenn
         mon_cry CRY_POOCHYENA,     0,  256 ; POOCHYENA
         mon_cry CRY_POOCHYENA,    32,  383 ; MIGHTYENA
-        mon_cry CRY_BULBASAUR,   238,  129 ; ZIGZAGOON
-	mon_cry CRY_BULBASAUR,   238,  129 ; LINOONE
-	mon_cry CRY_BULBASAUR,   238,  129 ; WINGULL
-	mon_cry CRY_BULBASAUR,   238,  129 ; PELIPPER
+        mon_cry CRY_ZIGZAGOON,     0,  256 ; ZIGZAGOON
+        mon_cry CRY_ZIGZAGOON,    32,  383 ; LINOONE
+        mon_cry CRY_WINGULL,       0,  256 ; WINGULL
+        mon_cry CRY_WINGULL,      16,  320 ; PELIPPER
 	mon_cry CRY_BULBASAUR,   238,  129 ; RALTS
 	mon_cry CRY_BULBASAUR,   238,  129 ; KIRLIA
 	mon_cry CRY_BULBASAUR,   238,  129 ; GARDEVOIR

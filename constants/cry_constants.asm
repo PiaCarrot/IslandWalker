@@ -75,5 +75,7 @@
 
 ; gen 3
         const CRY_POOCHYENA
+        const CRY_ZIGZAGOON
+        const CRY_WINGULL
 
 DEF NUM_CRIES EQU const_value
