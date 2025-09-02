@@ -67,10 +67,13 @@
 	const CRY_TEDDIURSA
 	const CRY_SUNFLORA
 	const CRY_AMPHAROS
-	const CRY_MAGCARGO
-	const CRY_PICHU
-	const CRY_AIPOM
-	const CRY_DUNSPARCE
-	const CRY_DONPHAN
+        const CRY_MAGCARGO
+        const CRY_PICHU
+        const CRY_AIPOM
+        const CRY_DUNSPARCE
+        const CRY_DONPHAN
+
+; gen 3
+        const CRY_POOCHYENA
 
 DEF NUM_CRIES EQU const_value

@@ -2068,8 +2068,34 @@ Cry_Rattata_Ch6:
 	sound_ret
 
 Cry_Rattata_Ch8:
-	noise_note 2, 9, 2, 73
-	noise_note 7, 11, 5, 41
-	noise_note 1, 10, 2, 57
-	noise_note 8, 9, 1, 73
-	sound_ret
+        noise_note 2, 9, 2, 73
+        noise_note 7, 11, 5, 41
+        noise_note 1, 10, 2, 57
+        noise_note 8, 9, 1, 73
+        sound_ret
+
+Cry_Poochyena:
+        channel_count 3
+        channel 5, Cry_Poochyena_Ch5
+        channel 6, Cry_Poochyena_Ch6
+        channel 8, Cry_Poochyena_Ch8
+
+Cry_Poochyena_Ch5:
+        duty_cycle_pattern 2, 2, 1, 1
+        square_note 4, 15, 4, 1536
+        square_note 6, 14, 4, 1408
+        square_note 8, 12, 1, 1376
+        sound_ret
+
+Cry_Poochyena_Ch6:
+        duty_cycle_pattern 3, 0, 3, 0
+        square_note 4, 14, 4, 1472
+        square_note 6, 13, 4, 1360
+        square_note 8, 11, 1, 1328
+        sound_ret
+
+Cry_Poochyena_Ch8:
+        noise_note 4, 13, 4, 70
+        noise_note 6, 12, 3, 66
+        noise_note 8, 10, 1, 64
+        sound_ret

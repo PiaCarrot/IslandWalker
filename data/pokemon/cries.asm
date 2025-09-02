@@ -260,9 +260,9 @@ PokemonCries::
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
 ;Hoenn
-	mon_cry CRY_BULBASAUR,   238,  129 ; POOCHYENA
-	mon_cry CRY_BULBASAUR,   238,  129 ; MIGHTYENA
-	mon_cry CRY_BULBASAUR,   238,  129 ; ZIGZAGOON
+        mon_cry CRY_POOCHYENA,     0,  256 ; POOCHYENA
+        mon_cry CRY_POOCHYENA,    32,  383 ; MIGHTYENA
+        mon_cry CRY_BULBASAUR,   238,  129 ; ZIGZAGOON
 	mon_cry CRY_BULBASAUR,   238,  129 ; LINOONE
 	mon_cry CRY_BULBASAUR,   238,  129 ; WINGULL
 	mon_cry CRY_BULBASAUR,   238,  129 ; PELIPPER
