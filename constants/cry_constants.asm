@@ -104,4 +104,15 @@
         const CRY_RELICANTH
         const CRY_LUVDISC
 
+        ; gen 4
+        const CRY_SHINX
+        const CRY_CHERUBI
+        const CRY_CHATOT
+        const CRY_RIOLU
+        const CRY_CROAGUNK
+        const CRY_CARNIVINE
+        const CRY_FINNEON
+        const CRY_ROTOM
+        const CRY_PHIONE
+
 DEF NUM_CRIES EQU const_value

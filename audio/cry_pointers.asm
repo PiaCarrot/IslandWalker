@@ -98,4 +98,13 @@ Cries:
         dba Cry_Spheal
         dba Cry_Relicanth
         dba Cry_Luvdisc
+        dba Cry_Shinx
+        dba Cry_Cherubi
+        dba Cry_Chatot
+        dba Cry_Riolu
+        dba Cry_Croagunk
+        dba Cry_Carnivine
+        dba Cry_Finneon
+        dba Cry_Rotom
+        dba Cry_Phione
         assert_table_length NUM_CRIES
