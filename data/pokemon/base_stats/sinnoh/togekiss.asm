@@ -4,7 +4,7 @@ db  85,   50,   95,   80,  120,  115
 evs 0,   0,   0,   0,   2,   1
 ;   hp  atk  def  spd  sat  sdf
 
-    db NORMAL, FLYING ; type
+    db FAIRY, FLYING ; type
 db 30 ; catch rate
 db 245 ; base exp
 dw NO_ITEM, NO_ITEM ; items

@@ -235,7 +235,7 @@ MovesGen2:
 	move EFFECT_SANDSTORM,           0, ROCK,          100, 10,   0      ;SANDSTORM
 	move EFFECT_LEECH_HIT,          60, GRASS,         100,  5,   0      ;GIGA_DRAIN
 	move EFFECT_ENDURE,              0, NORMAL,        100, 10,   0      ;ENDURE
-	move EFFECT_ATTACK_DOWN_2,       0, NORMAL,        100, 20,   0      ;CHARM
+	move EFFECT_ATTACK_DOWN_2,       0, FAIRY,         100, 20,   0      ;CHARM
 	move EFFECT_ROLLOUT,            30, ROCK,           90, 20,   0      ;ROLLOUT
 	move EFFECT_FALSE_SWIPE,        40, NORMAL,        100, 40,   0      ;FALSE_SWIPE
 	move EFFECT_SWAGGER,             0, NORMAL,         90, 15, 100      ;SWAGGER
@@ -261,13 +261,13 @@ MovesGen2:
 	move EFFECT_ENCORE,              0, NORMAL,        100,  5,   0      ;ENCORE
 	move EFFECT_PURSUIT,            40, DARK,          100, 20,   0      ;PURSUIT
 	move EFFECT_RAPID_SPIN,         20, NORMAL,        100, 40,   0      ;RAPID_SPIN
-	move EFFECT_EVASION_DOWN,        0, NORMAL,        100, 20,   0      ;SWEET_SCENT
+	move EFFECT_EVASION_DOWN,        0, FAIRY,         100, 20,   0      ;SWEET_SCENT
 	move EFFECT_DEFENSE_DOWN_HIT,  100, STEEL,          75, 15,  30      ;IRON_TAIL
 	move EFFECT_ATTACK_UP_HIT,      50, STEEL,          95, 35,  10      ;METAL_CLAW
 	move EFFECT_ALWAYS_HIT,         70, FIGHTING,      100, 10,   0      ;VITAL_THROW
 	move EFFECT_MORNING_SUN,         0, NORMAL,        100,  5,   0      ;MORNING_SUN
 	move EFFECT_SYNTHESIS,           0, GRASS,         100,  5,   0      ;SYNTHESIS
-	move EFFECT_MOONLIGHT,           0, NORMAL,        100,  5,   0      ;MOONLIGHT
+	move EFFECT_MOONLIGHT,           0, FAIRY,         100,  5,   0      ;MOONLIGHT
 	move EFFECT_HIDDEN_POWER,        1, NORMAL,        100, 15,   0      ;HIDDEN_POWER
 	move EFFECT_NORMAL_HIT,        100, FIGHTING,       80,  5,   0      ;CROSS_CHOP
 	move EFFECT_TWISTER,            40, DRAGON,        100, 20,  20      ;TWISTER
