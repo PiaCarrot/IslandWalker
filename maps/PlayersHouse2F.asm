@@ -105,10 +105,26 @@ PlayersHouseBookshelfScript:
 	giveitem THUNDERSTONE
 	giveitem WATER_STONE
 	givepoke MANAPHY, 100
+	callasm CheatFillPokedex
 	end
 else
 	jumpstd PictureBookshelfScript
 endc
+
+CheatFillPokedex:
+	ld a, 1
+	ld [wFirstUnownSeen], a
+	ld hl, wPokedexSeen
+	call .Fill
+	ld hl, wPokedexCaught
+.Fill:
+	ld a, %11111111
+	ld bc, 62 ; 001-248
+	call ByteFill
+	ld a, %11111111
+	ld bc, 31 ; 249-496
+	ret
+	end
 
 PlayersHousePCScript:
         opentext

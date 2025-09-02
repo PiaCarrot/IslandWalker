@@ -1,4 +1,4 @@
-
+db "TRICKY FOX@" ; species name
 
 	db   "It can TRANSFORM"
 	next "into people and"

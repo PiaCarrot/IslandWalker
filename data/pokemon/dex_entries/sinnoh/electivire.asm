@@ -1,4 +1,4 @@
-db "THUNDERBOLT" ; species name
+db "THUNDERBOLT@" ; species name
 
 	db   "It generates as"
 	next "much as 20,000"
