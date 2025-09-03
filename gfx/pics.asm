@@ -869,11 +869,12 @@ ZoruaFrontpic:         INCBIN "gfx/pokemon/other/zorua/front.animated.2bpp.lz"
 ZoruaBackpic:          INCBIN "gfx/pokemon/other/zorua/back.2bpp.lz"
 ZoroarkFrontpic:       INCBIN "gfx/pokemon/other/zoroark/front.animated.2bpp.lz"
 ZoroarkBackpic:        INCBIN "gfx/pokemon/other/zoroark/back.2bpp.lz"
-GliscorFrontpic:       INCBIN "gfx/pokemon/sinnoh/gliscor/front.animated.2bpp.lz"
-GliscorBackpic:        INCBIN "gfx/pokemon/sinnoh/gliscor/back.2bpp.lz"
 
 
 SECTION "Pokemon Pics 37", ROMX
+
+GliscorFrontpic:       INCBIN "gfx/pokemon/sinnoh/gliscor/front.animated.2bpp.lz"
+GliscorBackpic:        INCBIN "gfx/pokemon/sinnoh/gliscor/back.2bpp.lz"
 
 SkrelpFrontpic:        INCBIN "gfx/pokemon/other/skrelp/front.animated.2bpp.lz"
 SkrelpBackpic:         INCBIN "gfx/pokemon/other/skrelp/back.2bpp.lz"
