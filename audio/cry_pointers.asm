@@ -153,4 +153,33 @@ Cries:
         dba Cry_Marshadow
         dba Cry_Meltan
         dba Cry_Melmetal
+        dba Cry_Ambipom
+        dba Cry_Mismagius
+        dba Cry_Honchkrow
+        dba Cry_Chingling
+        dba Cry_Bonsly
+        dba Cry_Mime_Jr
+        dba Cry_Happiny
+        dba Cry_Munchlax
+        dba Cry_Lucario
+        dba Cry_Toxicroak
+        dba Cry_Lumineon
+        dba Cry_Mantyke
+        dba Cry_Weavile
+        dba Cry_Magnezone
+        dba Cry_Lickilicky
+        dba Cry_Rhyperior
+        dba Cry_Tangrowth
+        dba Cry_Electivire
+        dba Cry_Magmortar
+        dba Cry_Togekiss
+        dba Cry_Yanmega
+        dba Cry_Leafeon
+        dba Cry_Glaceon
+        dba Cry_Gliscor
+        dba Cry_Mamoswine
+        dba Cry_Porygon_Z
+        dba Cry_Gallade
+        dba Cry_Dusknoir
+        dba Cry_Froslass
         assert_table_length NUM_CRIES

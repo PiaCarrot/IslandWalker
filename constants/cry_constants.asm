@@ -161,4 +161,34 @@
         const CRY_MELTAN
         const CRY_MELMETAL
 
+        const CRY_AMBIPOM
+        const CRY_MISMAGIUS
+        const CRY_HONCHKROW
+        const CRY_CHINGLING
+        const CRY_BONSLY
+        const CRY_MIME_JR
+        const CRY_HAPPINY
+        const CRY_MUNCHLAX
+        const CRY_LUCARIO
+        const CRY_TOXICROAK
+        const CRY_LUMINEON
+        const CRY_MANTYKE
+        const CRY_WEAVILE
+        const CRY_MAGNEZONE
+        const CRY_LICKILICKY
+        const CRY_RHYPERIOR
+        const CRY_TANGROWTH
+        const CRY_ELECTIVIRE
+        const CRY_MAGMORTAR
+        const CRY_TOGEKISS
+        const CRY_YANMEGA
+        const CRY_LEAFEON
+        const CRY_GLACEON
+        const CRY_GLISCOR
+        const CRY_MAMOSWINE
+        const CRY_PORYGON_Z
+        const CRY_GALLADE
+        const CRY_DUSKNOIR
+        const CRY_FROSLASS
+
 DEF NUM_CRIES EQU const_value

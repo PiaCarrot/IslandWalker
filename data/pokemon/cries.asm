@@ -318,40 +318,40 @@ PokemonCries::
         mon_cry CRY_SHINX,       64,  384 ; LUXRAY
         mon_cry CRY_CHERUBI,      0,  256 ; CHERUBI
         mon_cry CRY_CHERUBI,     32,  320 ; CHERRIM
-        mon_cry CRY_AIPOM,       32,  320 ; AMBIPOM
-        mon_cry CRY_HOOTHOOT,     0,  256 ; MISMAGIUS
-        mon_cry CRY_MARILL,      32,  320 ; HONCHKROW
-        mon_cry CRY_CHIMECHO,     0,  256 ; CHINGLING
-        mon_cry CRY_CLEFFA,       0,  256 ; BONSLY
-        mon_cry CRY_KRABBY,       0,  256 ; MIME_JR
-        mon_cry CRY_PIDGEOTTO,    0,  256 ; HAPPINY
+        mon_cry CRY_AMBIPOM,     0,  256 ; AMBIPOM
+        mon_cry CRY_MISMAGIUS,  0,  256 ; MISMAGIUS
+        mon_cry CRY_HONCHKROW,  0,  256 ; HONCHKROW
+        mon_cry CRY_CHINGLING, 0,  256 ; CHINGLING
+        mon_cry CRY_BONSLY,    0,  256 ; BONSLY
+        mon_cry CRY_MIME_JR,   0,  256 ; MIME_JR
+        mon_cry CRY_HAPPINY,   0,  256 ; HAPPINY
         mon_cry CRY_CHATOT,       0,  256 ; CHATOT
-        mon_cry CRY_GRIMER,       0,  256 ; MUNCHLAX
+        mon_cry CRY_MUNCHLAX, 0,  256 ; MUNCHLAX
         mon_cry CRY_RIOLU,        0,  256 ; RIOLU
-        mon_cry CRY_RIOLU,       32,  320 ; LUCARIO
+        mon_cry CRY_LUCARIO,   0,  256 ; LUCARIO
         mon_cry CRY_CROAGUNK,     0,  256 ; CROAGUNK
-        mon_cry CRY_CROAGUNK,    32,  320 ; TOXICROAK
+        mon_cry CRY_TOXICROAK,0,  256 ; TOXICROAK
         mon_cry CRY_CARNIVINE,    0,  256 ; CARNIVINE
         mon_cry CRY_FINNEON,      0,  256 ; FINNEON
-        mon_cry CRY_FINNEON,     32,  320 ; LUMINEON
-        mon_cry CRY_MANTINE,      0,  256 ; MANTYKE
-        mon_cry CRY_WOOPER,      32,  320 ; WEAVILE
-        mon_cry CRY_METAPOD,      0,  256 ; MAGNEZONE
-        mon_cry CRY_SEEL,         0,  256 ; LICKILICKY
-        mon_cry CRY_RHYDON,      32,  320 ; RHYPERIOR
-        mon_cry CRY_GOLEM,       32,  320 ; TANGROWTH
-        mon_cry CRY_VOLTORB,     32,  320 ; ELECTIVIRE
-        mon_cry CRY_CHARMANDER,  32,  320 ; MAGMORTAR
-        mon_cry CRY_TOGETIC,     32,  320 ; TOGEKISS
-        mon_cry CRY_TOTODILE,    32,  320 ; YANMEGA
-        mon_cry CRY_VENONAT,     32,  320 ; LEAFEON
-        mon_cry CRY_VENONAT,     64,  384 ; GLACEON
-        mon_cry CRY_GLIGAR,      32,  320 ; GLISCOR
-        mon_cry CRY_MAGCARGO,    32,  320 ; MAMOSWINE
-        mon_cry CRY_GIRAFARIG,   32,  320 ; PORYGON_Z
-        mon_cry CRY_RALTS,       64,  384 ; GALLADE
-        mon_cry CRY_DUSKULL,     64,  384 ; DUSKNOIR
-        mon_cry CRY_SNORUNT,     64,  384 ; FROSLASS
+        mon_cry CRY_LUMINEON, 0,  256 ; LUMINEON
+        mon_cry CRY_MANTYKE,  0,  256 ; MANTYKE
+        mon_cry CRY_WEAVILE,  0,  256 ; WEAVILE
+        mon_cry CRY_MAGNEZONE,0,  256 ; MAGNEZONE
+        mon_cry CRY_LICKILICKY,0,  256 ; LICKILICKY
+        mon_cry CRY_RHYPERIOR,0,  256 ; RHYPERIOR
+        mon_cry CRY_TANGROWTH,0,  256 ; TANGROWTH
+        mon_cry CRY_ELECTIVIRE,0,  256 ; ELECTIVIRE
+        mon_cry CRY_MAGMORTAR,0,  256 ; MAGMORTAR
+        mon_cry CRY_TOGEKISS,0,  256 ; TOGEKISS
+        mon_cry CRY_YANMEGA, 0,  256 ; YANMEGA
+        mon_cry CRY_LEAFEON,  0,  256 ; LEAFEON
+        mon_cry CRY_GLACEON,  0,  256 ; GLACEON
+        mon_cry CRY_GLISCOR,  0,  256 ; GLISCOR
+        mon_cry CRY_MAMOSWINE,0,  256 ; MAMOSWINE
+        mon_cry CRY_PORYGON_Z,0,  256 ; PORYGON_Z
+        mon_cry CRY_GALLADE, 0,  256 ; GALLADE
+        mon_cry CRY_DUSKNOIR,0,  256 ; DUSKNOIR
+        mon_cry CRY_FROSLASS, 0,  256 ; FROSLASS
         mon_cry CRY_ROTOM,        0,  256 ; ROTOM
         mon_cry CRY_PHIONE,       0,  256 ; PHIONE
         mon_cry CRY_PHIONE,      32,  320 ; MANAPHY
