@@ -380,36 +380,36 @@ PokemonCries::
 	mon_cry CRY_CHATOT,     -$01a,  $2e6 ; SLIGGOO Ax6
 	mon_cry CRY_VULPIX,     -$107,  $0ca ; GOODRA Ax6
     mon_cry CRY_TOGEPI,       116,  256 ; ROCKRUFF
-        mon_cry CRY_ROCKRUFF,  32,  320 ; LYCANROC
+        mon_cry CRY_ROCKRUFF,  32,  320 ; LYCANROC TODO: This is complicated as all 3 forms have unique cries
 	mon_cry CRY_PICHU,      -$03e,  $0fc ; CUTIEFLY Ax6
 	mon_cry CRY_PICHU,      -$029,  $3a0 ; RIBOMBEE Ax6
-        mon_cry CRY_PIKIPEK,    0,  256 ; PIKIPEK
-        mon_cry CRY_PIKIPEK,   32,  320 ; TRUMBEAK
-        mon_cry CRY_PIKIPEK,   64,  384 ; TOUCANNON
-        mon_cry CRY_MIMIKYU,    0,  256 ; MIMIKYU
-        mon_cry CRY_SANDYGAST,  0,  256 ; SANDYGAST
-        mon_cry CRY_SANDYGAST, 32,  320 ; PALOSSAND
-        mon_cry CRY_SALANDIT,   0,  256 ; SALANDIT
-        mon_cry CRY_SALANDIT,  32,  320 ; SALAZZLE
-        mon_cry CRY_MAREANIE,   0,  256 ; MAREANIE
-        mon_cry CRY_MAREANIE,  32,  320 ; TOXAPEX
-        mon_cry CRY_TURTONATOR, 0,  256 ; TURTONATOR
-        mon_cry CRY_DHELMISE,   0,  256 ; DHELMISE
-        mon_cry CRY_PINCURCHIN, 0,  256 ; PINCURCHIN
-        mon_cry CRY_CRAMORANT,  0,  256 ; CRAMORANT
-        mon_cry CRY_BINACLE,    0,  256 ; BINACLE
-        mon_cry CRY_BINACLE,   32,  320 ; BARBARACLE
-        mon_cry CRY_APPLIN,     0,  256 ; APPLIN
-        mon_cry CRY_APPLIN,    32,  320 ; FLAPPLE
-        mon_cry CRY_APPLIN,    32,  320 ; APPLETUN
+    mon_cry CRY_PIKIPEK,   112,  256 ; PIKIPEK
+    mon_cry CRY_PIKIPEK,   32,  380 ; TRUMBEAK
+    mon_cry CRY_PIKIPEK,   -332,  580 ; TOUCANNON
+    mon_cry CRY_MARILL,      231,  334 ; MIMIKYU
+    mon_cry CRY_TYPHLOSION,  -112,  336 ; SANDYGAST
+    mon_cry CRY_TYPHLOSION,  -412,  623 ; PALOSSAND
+    mon_cry CRY_KRABBY,       -232,  252 ; SALANDIT TODO: Needs work
+    mon_cry CRY_KRABBY,      332,  292 ; SALAZZLE TODO: Needs work
+    mon_cry CRY_TOTODILE,    235,  $168 ; MAREANIE TODO: Needs work
+    mon_cry CRY_TOTODILE,    -235,  $168 ; TOXAPEX TODO: Needs work
+    mon_cry CRY_RAICHU,     -333,  523 ; TURTONATOR
+    mon_cry CRY_MARILL,      -234,  $300 ; DHELMISE
+    mon_cry CRY_PHIONE,      -228,  456 ; PINCURCHIN
+    mon_cry CRY_CRAMORANT,  -112,  556 ; CRAMORANT
+    mon_cry CRY_AIPOM,       -181,  332 ; BINACLE
+    mon_cry CRY_AIPOM,       -281,  432 ; BARBARACLE
+    mon_cry CRY_APPLIN,     155,  256 ; APPLIN
+    mon_cry CRY_APPLIN,    249,  46 ; FLAPPLE
+    mon_cry CRY_BLASTOISE,   $0bc,  $0ff ; APPLETUN
     mon_cry CRY_PIDGEY,      -255,  383 ; GIMMIGHOUL
     mon_cry CRY_GIMMIGHOUL, 32,  320 ; GHOLDENGO - TODO: Improve
     mon_cry CRY_NIDOQUEEN,   -275,  212 ; ANNIHILAPE
     mon_cry CRY_DUNSPARCE,   452,  456 ; DUDUNSPARCE
 	mon_cry CRY_GIRAFARIG,    265,  582 ; FARIGIRAF
 	mon_cry CRY_GROWLITHE,   $2fc,  $287 ; KINGAMBIT
-        mon_cry CRY_DIPPLIN,    0,  256 ; DIPPLIN
-        mon_cry CRY_DIPPLIN,   32,  320 ; HYDRAPPLE
+    mon_cry CRY_RAIKOU,      558,  442 ; DIPPLIN TODO: Needs work
+    mon_cry CRY_RAIKOU,      658,  642 ; HYDRAPPLE TODO: Needs work
 	mon_cry CRY_PICHU,      31,  433 ; CHARCADET
 	mon_cry CRY_BULBASAUR,   -335,  229 ; ARMAROUGE
     mon_cry CRY_CHARCADET, -364,  584 ; CERULEDGE

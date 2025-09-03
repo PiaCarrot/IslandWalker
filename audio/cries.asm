@@ -3229,14 +3229,22 @@ Cry_Pikipek:
 
 Cry_Pikipek_Ch5:
         duty_cycle_pattern 2, 3, 2, 3
-        square_note 8, 15, 2, 1712
-        square_note 8, 13, 2, 1616
+        square_note 4, 15, 2, 1712
+        square_note 4, 13, 2, 1616
+        square_note 4, 11, 2, 1512
+        square_note 4, 11, 2, 1512
+        square_note 4, 13, 2, 1616
+        square_note 4, 15, 2, 1712
         sound_ret
 
 Cry_Pikipek_Ch6:
         duty_cycle_pattern 1, 2, 1, 2
-        square_note 8, 14, 2, 1680
-        square_note 8, 12, 2, 1584
+        square_note 4, 14, 2, 1680
+        square_note 4, 12, 2, 1584
+        square_note 4, 10, 2, 1488
+        square_note 4, 10, 2, 1488
+        square_note 4, 12, 2, 1584
+        square_note 4, 14, 2, 1680
         sound_ret
 
 Cry_Mimikyu:
@@ -3399,14 +3407,18 @@ Cry_Applin:
 
 Cry_Applin_Ch5:
         duty_cycle_pattern 2, 3, 2, 3
-        square_note 8, 15, 2, 1792
+        square_note 4, 15, 2, 1792
         square_note 8, 13, 2, 1696
+        square_note 4, 15, 2, 1792
+        square_note 8, 15, 2, 1732
         sound_ret
 
 Cry_Applin_Ch6:
         duty_cycle_pattern 1, 2, 1, 2
-        square_note 8, 14, 2, 1760
+        square_note 4, 14, 2, 1760
         square_note 8, 12, 2, 1664
+        square_note 4, 14, 2, 1760
+        square_note 8, 12, 2, 1700
         sound_ret
 
 Cry_Gimmighoul:
