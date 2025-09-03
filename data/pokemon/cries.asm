@@ -352,9 +352,9 @@ PokemonCries::
 	mon_cry CRY_SPEAROW,     $070,  $170 ; GALLADE
 	mon_cry CRY_DROWZEE,     $044,  $0c6 ; DUSKNOIR
 	mon_cry CRY_PICHU,       $feb,  $500 ; FROSLASS
-        mon_cry CRY_ROTOM,        0,  256 ; ROTOM
-        mon_cry CRY_PHIONE,       0,  256 ; PHIONE
-        mon_cry CRY_PHIONE,      32,  320 ; MANAPHY
+    mon_cry CRY_PHIONE,      32,  556 ; ROTOM
+    mon_cry CRY_CHARCADET,   122,  584 ; PHIONE
+    mon_cry CRY_PHIONE,      128,  256 ; MANAPHY
         mon_cry CRY_FERROSEED,    0,  256 ; FERROSEED
         mon_cry CRY_FERROSEED,   32,  320 ; FERROTHORN
         mon_cry CRY_STUNFISK,    0,  256 ; STUNFISK
@@ -402,29 +402,29 @@ PokemonCries::
         mon_cry CRY_APPLIN,     0,  256 ; APPLIN
         mon_cry CRY_APPLIN,    32,  320 ; FLAPPLE
         mon_cry CRY_APPLIN,    32,  320 ; APPLETUN
-        mon_cry CRY_GIMMIGHOUL, 0,  256 ; GIMMIGHOUL
+        mon_cry CRY_PIDGEY,      -255,  383 ; GIMMIGHOUL
         mon_cry CRY_GIMMIGHOUL, 32,  320 ; GHOLDENGO
-        mon_cry CRY_ANNIHILAPE, 0,  256 ; ANNIHILAPE
-        mon_cry CRY_DUDUNSPARCE,0,  256 ; DUDUNSPARCE
-        mon_cry CRY_FARIGIRAF,  0,  256 ; FARIGIRAF
+    mon_cry CRY_NIDOQUEEN,   -275,  212 ; ANNIHILAPE
+    mon_cry CRY_DUNSPARCE,   452,  456 ; DUDUNSPARCE
+	mon_cry CRY_GIRAFARIG,    265,  582 ; FARIGIRAF
         mon_cry CRY_KINGAMBIT,  0,  256 ; KINGAMBIT
         mon_cry CRY_DIPPLIN,    0,  256 ; DIPPLIN
         mon_cry CRY_DIPPLIN,   32,  320 ; HYDRAPPLE
-        mon_cry CRY_CHARCADET,  0,  256 ; CHARCADET
-        mon_cry CRY_CHARCADET, 32,  320 ; ARMAROUGE
-        mon_cry CRY_CHARCADET, 64,  384 ; CERULEDGE
-        mon_cry CRY_CLODSIRE,   0,  256 ; CLODSIRE
+	mon_cry CRY_PICHU,      31,  433 ; CHARCADET
+	mon_cry CRY_BULBASAUR,   -335,  229 ; ARMAROUGE
+    mon_cry CRY_CHARCADET, -364,  584 ; CERULEDGE
+	mon_cry CRY_MAGCARGO,    -222,  332 ; CLODSIRE
 	mon_cry CRY_MAGCARGO,    $fa1,  $188 ; CURSOLA
 	mon_cry CRY_CLEFAIRY,    $fc9,  $14f ; PERRSERKER
 	mon_cry CRY_SPEAROW,     $7dd,  $06b ; SIRFETCH'D
 	mon_cry CRY_KRABBY,      $e08,  $0f0 ; MR. RIME
 	mon_cry CRY_VILEPLUME,   $620,  $1b0 ; OBSTAGOON
-        mon_cry CRY_OVERQWIL,   0,  256 ; OVERQWIL
+	mon_cry CRY_SLOWKING,    700,  224 ; OVERQWIL
     mon_cry CRY_SNEASLER,   0,  256 ; SNEASLER
-	mon_cry CRY_CATERPIE,      -64,  256 ; SCYTHER
-	mon_cry CRY_TEDDIURSA,  1400,  127 ; URSARING
-        mon_cry CRY_WYRDEER,    0,  256 ; WYRDEER
-	mon_cry CRY_CHIKORITA,  -142,  643 ; MEGANIUM
+	mon_cry CRY_CATERPIE,      -64,  256 ; KLEAVOR
+	mon_cry CRY_TEDDIURSA,  1400,  127 ; URSALUNA
+	mon_cry CRY_BLASTOISE,    196,  187 ; WYRDEER
+	mon_cry CRY_CHIKORITA,  -142,  643 ; MARSHADOW
         mon_cry CRY_MELTAN,     0,  256 ; MELTAN
         mon_cry CRY_MELMETAL,   0,  256 ; MELMETAL
 ; Forms

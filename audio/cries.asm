@@ -2939,14 +2939,16 @@ Cry_Phione:
 
 Cry_Phione_Ch5:
         duty_cycle_pattern 2, 3, 2, 3
-        square_note 6, 14, 4, 1744
         square_note 6, 13, 2, 1648
+        square_note 8, 14, 4, 1744
+        square_note 12, 15, 6, 1840
         sound_ret
 
 Cry_Phione_Ch6:
         duty_cycle_pattern 1, 2, 1, 2
-        square_note 6, 13, 4, 1712
         square_note 6, 12, 2, 1616
+        square_note 8, 13, 4, 1712
+        square_note 12, 14, 6, 1808
         sound_ret
 
 Cry_Phione_Ch8:
@@ -3417,13 +3419,23 @@ Cry_Gimmighoul:
 Cry_Gimmighoul_Ch5:
         duty_cycle_pattern 2, 3, 2, 3
         square_note 8, 15, 2, 1800
-        square_note 8, 13, 2, 1704
+        square_note 8, 13, 2, 1600
+	square_note 8, 0, 0, 0
+        square_note 8, 15, 2, 1850
+        square_note 8, 13, 2, 1650
+	square_note 8, 0, 0, 0
+        square_note 16, 14, 6, 1700
         sound_ret
 
 Cry_Gimmighoul_Ch6:
         duty_cycle_pattern 1, 2, 1, 2
-        square_note 8, 14, 2, 1768
-        square_note 8, 12, 2, 1672
+        square_note 8, 14, 2, 1700
+        square_note 8, 14, 2, 1750
+	square_note 8, 0, 0, 0
+        square_note 8, 12, 2, 1500
+        square_note 8, 12, 2, 1550
+	square_note 8, 0, 0, 0
+        square_note 16, 13, 6, 1600
         sound_ret
 
 Cry_Annihilape:
