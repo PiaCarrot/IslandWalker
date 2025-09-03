@@ -316,8 +316,8 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $065,  $270 ; SHINX walshyb
 	mon_cry CRY_PIDGEOTTO,   $010,  $180 ; LUXIO Ax6
 	mon_cry CRY_RAICHU,     -$038,  $0c8 ; LUXRAY Ax6
-        mon_cry CRY_CHERUBI,      0,  256 ; CHERUBI
-        mon_cry CRY_CHERUBI,     32,  320 ; CHERRIM
+    mon_cry CRY_DIGLETT,     $fff,  $0c9 ;  CHERUBI - TODO: Needs improvement
+    mon_cry CRY_VENONAT,     133,  340 ; CHERRIM
 	mon_cry CRY_CLEFFA,      $070,  $270 ; AMBIPOM
 	mon_cry CRY_MARILL,      $be1,  $260 ; HONCHKROW
 	mon_cry CRY_HOOTHOOT,    $1b4,  $1e8 ; MISMAGIUS
@@ -327,13 +327,13 @@ PokemonCries::
 	mon_cry CRY_SLOWKING,    $a50,  $130 ; HAPPINY
 	mon_cry CRY_CHATOT,      $002,  $120 ; CHATOT Ax6
 	mon_cry CRY_NIDOQUEEN,   $f30,  $0a0 ; MUNCHLAX
-        mon_cry CRY_RIOLU,        0,  256 ; RIOLU
-        mon_cry CRY_RIOLU,       32,  320 ; LUCARIO
+    mon_cry CRY_TOGEPI,       116,  256 ; RIOLU
+    mon_cry CRY_MARILL,      -131,  334 ; LUCARIO
 	mon_cry CRY_DIGLETT,    -$133,  $125 ; CROAGUNK Ax6
 	mon_cry CRY_SLOWKING,    $002,  $2c6 ; TOXICROAK Ax6
-        mon_cry CRY_CARNIVINE,    0,  256 ; CARNIVINE
-        mon_cry CRY_FINNEON,      0,  256 ; FINNEON
-        mon_cry CRY_FINNEON,     32,  320 ; LUMINEON
+    mon_cry CRY_HOOTHOOT,    $1d4,  $1e8 ; CARNIVINE
+	mon_cry CRY_DIGLETT,     133,  293 ; FINNEON
+    mon_cry CRY_RAICHU,      $038,  $0cf ; LUMINEON - TODO: Needs Improvement
 	mon_cry CRY_CATERPIE,    $05c,  $080 ; MANTYKE
 	mon_cry CRY_WOOPER,      $073,  $151 ; WEAVILE
 	mon_cry CRY_DROWZEE,     $110,  $0e0 ; MAGNEZONE
@@ -355,15 +355,15 @@ PokemonCries::
     mon_cry CRY_PHIONE,      32,  556 ; ROTOM
     mon_cry CRY_CHARCADET,   122,  584 ; PHIONE
     mon_cry CRY_PHIONE,      128,  256 ; MANAPHY
-        mon_cry CRY_FERROSEED,    0,  256 ; FERROSEED
-        mon_cry CRY_FERROSEED,   32,  320 ; FERROTHORN
-        mon_cry CRY_STUNFISK,    0,  256 ; STUNFISK
-        mon_cry CRY_PAWNIARD,    0,  256 ; PAWNIARD
-        mon_cry CRY_PAWNIARD,   32,  320 ; BISHARP
-        mon_cry CRY_ZORUA,      0,  256 ; ZORUA
-        mon_cry CRY_ZORUA,     32,  320 ; ZOROARK
-        mon_cry CRY_SKRELP,     0,  256 ; SKRELP
-        mon_cry CRY_SKRELP,    32,  320 ; DRAGALGE
+	mon_cry CRY_MANTINE,     $032,  $080 ; FERROSEED
+	mon_cry CRY_MANTINE,     $184,  $0a0 ; FERROTHORN
+	mon_cry CRY_METAPOD,     $2d1,  $0e0 ; STUNFISK
+	mon_cry CRY_GROWLITHE,   $1d0,  $0b0 ; PAWNIARD
+	mon_cry CRY_GROWLITHE,   $2fc,  $1c4 ; BISHARP
+	mon_cry CRY_SUNFLORA,   -$089,  $0eb ; ZORUA
+	mon_cry CRY_SPINARAK,   -$078,  $320 ; ZOROARK
+    mon_cry CRY_CLEFFA,     -$170,  $140 ; SKRELP
+    mon_cry CRY_CLEFFA,     -$470,  $290 ; DRAGALGE
 	mon_cry CRY_KRABBY,      $035,  $0ac ; CLAUNCHER Ax6
 	mon_cry CRY_SQUIRTLE,   -$026,  $097 ; CLAWITZER Ax6
 	mon_cry CRY_MARILL,      $0d8,  $300 ; SYLVEON
@@ -402,12 +402,12 @@ PokemonCries::
         mon_cry CRY_APPLIN,     0,  256 ; APPLIN
         mon_cry CRY_APPLIN,    32,  320 ; FLAPPLE
         mon_cry CRY_APPLIN,    32,  320 ; APPLETUN
-        mon_cry CRY_PIDGEY,      -255,  383 ; GIMMIGHOUL
-        mon_cry CRY_GIMMIGHOUL, 32,  320 ; GHOLDENGO
+    mon_cry CRY_PIDGEY,      -255,  383 ; GIMMIGHOUL
+    mon_cry CRY_GIMMIGHOUL, 32,  320 ; GHOLDENGO - TODO: Improve
     mon_cry CRY_NIDOQUEEN,   -275,  212 ; ANNIHILAPE
     mon_cry CRY_DUNSPARCE,   452,  456 ; DUDUNSPARCE
 	mon_cry CRY_GIRAFARIG,    265,  582 ; FARIGIRAF
-        mon_cry CRY_KINGAMBIT,  0,  256 ; KINGAMBIT
+	mon_cry CRY_GROWLITHE,   $2fc,  $287 ; KINGAMBIT
         mon_cry CRY_DIPPLIN,    0,  256 ; DIPPLIN
         mon_cry CRY_DIPPLIN,   32,  320 ; HYDRAPPLE
 	mon_cry CRY_PICHU,      31,  433 ; CHARCADET
@@ -425,11 +425,11 @@ PokemonCries::
 	mon_cry CRY_TEDDIURSA,  1400,  127 ; URSALUNA
 	mon_cry CRY_BLASTOISE,    196,  187 ; WYRDEER
 	mon_cry CRY_CHIKORITA,  -142,  643 ; MARSHADOW
-        mon_cry CRY_MELTAN,     0,  256 ; MELTAN
-        mon_cry CRY_MELMETAL,   0,  256 ; MELMETAL
+	mon_cry CRY_MARILL,      249,  164 ; MELTAN
+    mon_cry CRY_PHIONE,      228,  456 ; MELMETAL
 ; Forms
-        mon_cry CRY_LAPRAS,       80,  256 ; LAPRAS PARTNER
-        mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI
-        mon_cry CRY_VENONAT,     136,  224 ; EEVEE
-        mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
+    mon_cry CRY_LAPRAS,       80,  256 ; LAPRAS PARTNER
+    mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI  PARTNER
+    mon_cry CRY_VENONAT,     136,  224 ; EEVEE  PARTNER
+    mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU  PARTNER
         assert_table_length NUM_POKEMON
