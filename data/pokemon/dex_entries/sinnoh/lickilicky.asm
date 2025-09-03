@@ -1,4 +1,4 @@
-db "LICKING@@@" ; species name
+db "LICKING@" ; species name
 
 	db   "A large stature"
 	next "gives it the cap-"

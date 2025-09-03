@@ -1,4 +1,4 @@
-db "VINE@@@" ; species name
+db "VINE@" ; species name
 
 	db   "Its vines grow so"
 	next "quickly in warm"

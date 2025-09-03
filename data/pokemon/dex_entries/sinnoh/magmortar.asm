@@ -1,4 +1,4 @@
-db "BLAST@@@" ; species name
+db "BLAST@" ; species name
 
 	db   "When it releases"
 	next "full fire-power,"

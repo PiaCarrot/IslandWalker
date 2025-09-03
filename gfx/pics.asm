@@ -836,8 +836,6 @@ LeafeonFrontpic:       INCBIN "gfx/pokemon/sinnoh/leafeon/front.animated.2bpp.lz
 LeafeonBackpic:        INCBIN "gfx/pokemon/sinnoh/leafeon/back.2bpp.lz"
 GlaceonFrontpic:       INCBIN "gfx/pokemon/sinnoh/glaceon/front.animated.2bpp.lz"
 GlaceonBackpic:        INCBIN "gfx/pokemon/sinnoh/glaceon/back.2bpp.lz"
-GliscorFrontpic:       INCBIN "gfx/pokemon/sinnoh/gliscor/front.animated.2bpp.lz"
-GliscorBackpic:        INCBIN "gfx/pokemon/sinnoh/gliscor/back.2bpp.lz"
 
 SECTION "Pokemon Pics 36", ROMX
 
@@ -871,6 +869,10 @@ ZoruaFrontpic:         INCBIN "gfx/pokemon/other/zorua/front.animated.2bpp.lz"
 ZoruaBackpic:          INCBIN "gfx/pokemon/other/zorua/back.2bpp.lz"
 ZoroarkFrontpic:       INCBIN "gfx/pokemon/other/zoroark/front.animated.2bpp.lz"
 ZoroarkBackpic:        INCBIN "gfx/pokemon/other/zoroark/back.2bpp.lz"
+GliscorFrontpic:       INCBIN "gfx/pokemon/sinnoh/gliscor/front.animated.2bpp.lz"
+GliscorBackpic:        INCBIN "gfx/pokemon/sinnoh/gliscor/back.2bpp.lz"
+
+
 SECTION "Pokemon Pics 37", ROMX
 
 SkrelpFrontpic:        INCBIN "gfx/pokemon/other/skrelp/front.animated.2bpp.lz"

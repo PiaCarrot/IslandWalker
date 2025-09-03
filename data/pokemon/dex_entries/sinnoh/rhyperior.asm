@@ -1,4 +1,4 @@
-db "DRILL@@@" ; species name
+	db "DRILL@" ; species name
 
 	db   "Its brain has"
 	next "regressed to less"
