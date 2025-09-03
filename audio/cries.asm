@@ -2793,29 +2793,28 @@ Cry_Cherubi_Ch8:
         sound_ret
 
 Cry_Chatot:
-        channel_count 3
-        channel 5, Cry_Chatot_Ch5
-        channel 6, Cry_Chatot_Ch6
-        channel 8, Cry_Chatot_Ch8
+	channel_count 3
+	channel 5, Cry_Chatot_Ch5
+	channel 6, Cry_Chatot_Ch6
+	channel 8, Cry_Chatot_Ch8
 
 Cry_Chatot_Ch5:
-        duty_cycle_pattern 0, 1, 0, 1
-        square_note 4, 15, 2, 1888
-        square_note 4, 12, 2, 1800
-        square_note 8, 10, 1, 1704
-        sound_ret
+	duty_cycle_pattern 0, 1 ,2 ,3
+	square_note  5, 13, 3, $0740
+	square_note 10, 12, 6, $0720
+	square_note  1,  0, 0, $0000
+	square_note 16, 14, 5, $0760
+	sound_ret
 
 Cry_Chatot_Ch6:
-        duty_cycle_pattern 1, 2, 1, 2
-        square_note 4, 12, 2, 1856
-        square_note 4, 11, 2, 1760
-        square_note 8, 9, 1, 1664
-        sound_ret
-
+	sound_duty 1, 0, 0, 2
+	square_note  2, 12, 3, $0701
+	square_note  3, 12, 3, $0708
+	square_note 10, 10, 6, $06f1
+	square_note  1,  0, 0, $0000
+	square_note 16, 13, 7, $0741
 Cry_Chatot_Ch8:
-        noise_note 4, 7, 4, 48
-        noise_note 8, 6, 2, 44
-        sound_ret
+	sound_ret
 
 Cry_Riolu:
         channel_count 3
@@ -3143,21 +3142,51 @@ Cry_Honedge_Ch6:
         sound_ret
 
 Cry_Goomy:
-        channel_count 2
-        channel 5, Cry_Goomy_Ch5
-        channel 6, Cry_Goomy_Ch6
+	channel_count 3
+	channel 5, Cry_Goomy_Ch5
+	channel 6, Cry_Goomy_Ch6
+	channel 8, Cry_Goomy_Ch8
 
 Cry_Goomy_Ch5:
-        duty_cycle_pattern 2, 3, 2, 3
-        square_note 8, 15, 2, 1688
-        square_note 8, 13, 2, 1592
-        sound_ret
+	sound_duty 3, 3, 0, 0
+	square_note 9, 15, 2, 1150
+	square_note 1,  0, 0, 1
+	square_note 9, 15, 2, 1300
+	square_note 1,  0, 0, 1
+	square_note 9, 15, 2, 1350
+	square_note 1,  0, 0, 1
+	sound_duty 3, 0, 3, 0
+	square_note 6,  8, 3, 1570
+	sound_ret
 
 Cry_Goomy_Ch6:
-        duty_cycle_pattern 1, 2, 1, 2
-        square_note 8, 14, 2, 1656
-        square_note 8, 12, 2, 1560
-        sound_ret
+	sound_duty 1, 3, 0, 2
+	square_note 10,  5, 7, 1300
+	square_note 1,  0, 7, 300
+	square_note 10,  5, 7, 1500
+	square_note 1,  0, 7, 300
+	square_note 10,  5, 7, 1600
+	square_note 1,  0, 7, 300
+	square_note 16, 13, 5, 1646
+	square_note 1, 13, 5, 1646
+	sound_duty 3, 2, 0, 0
+	square_note 3,  7, 6, 1500
+	square_note 1,  0, 0, 1
+	square_note 3,  7, 6, 1400
+	square_note 1,  0, 0, 1
+	square_note 3,  7, 4, 1300
+	sound_ret
+	
+Cry_Goomy_Ch8:
+	noise_note 2,  0, 1, $00
+Cry_Goomy_Ch8_branch:
+	noise_note 4,  2, 3, $66
+	noise_note 6,  0, 0, $00
+	sound_loop 3, Cry_Goomy_Ch8_branch
+	noise_note 10,  4, 7, $21
+	noise_note 10,  4, 7, $46
+	noise_note 10,  3, 7, $21
+	sound_ret
 
 Cry_Rockruff:
         channel_count 2
@@ -3626,13 +3655,13 @@ Cry_Sneasler:
 Cry_Sneasler_Ch5:
         duty_cycle_pattern 2, 3, 2, 3
         square_note 8, 15, 2, 1912
-        square_note 8, 13, 2, 1816
+        square_note 8, 15, 2, 1912
         sound_ret
 
 Cry_Sneasler_Ch6:
         duty_cycle_pattern 1, 2, 1, 2
         square_note 8, 14, 2, 1880
-        square_note 8, 12, 2, 1784
+        square_note 8, 14, 2, 1880
         sound_ret
 
 Cry_Kleavor:

@@ -313,9 +313,9 @@ PokemonCries::
 	mon_cry CRY_PICHU,       $fb0,  $0c0 ; LUVDISC
 	mon_cry CRY_WEEPINBELL,  $018,  $0c0 ; LATIAS
 	mon_cry CRY_WEEPINBELL,  $f18,  $140 ; LATIOS
-        mon_cry CRY_SHINX,        0,  256 ; SHINX
-        mon_cry CRY_SHINX,       32,  320 ; LUXIO
-        mon_cry CRY_SHINX,       64,  384 ; LUXRAY
+	mon_cry CRY_RATTATA,     $065,  $270 ; SHINX walshyb
+	mon_cry CRY_PIDGEOTTO,   $010,  $180 ; LUXIO Ax6
+	mon_cry CRY_RAICHU,     -$038,  $0c8 ; LUXRAY Ax6
         mon_cry CRY_CHERUBI,      0,  256 ; CHERUBI
         mon_cry CRY_CHERUBI,     32,  320 ; CHERRIM
 	mon_cry CRY_CLEFFA,      $070,  $270 ; AMBIPOM
@@ -325,12 +325,12 @@ PokemonCries::
 	mon_cry CRY_SPEAROW,     $040,  $090 ; BONSLY
 	mon_cry CRY_NIDORAN_M,   $047,  $150 ; MIME JR.
 	mon_cry CRY_SLOWKING,    $a50,  $130 ; HAPPINY
-        mon_cry CRY_CHATOT,       0,  256 ; CHATOT
+	mon_cry CRY_CHATOT,      $002,  $120 ; CHATOT Ax6
 	mon_cry CRY_NIDOQUEEN,   $f30,  $0a0 ; MUNCHLAX
         mon_cry CRY_RIOLU,        0,  256 ; RIOLU
         mon_cry CRY_RIOLU,       32,  320 ; LUCARIO
-        mon_cry CRY_CROAGUNK,     0,  256 ; CROAGUNK
-        mon_cry CRY_CROAGUNK,    32,  320 ; TOXICROAK
+	mon_cry CRY_DIGLETT,    -$133,  $125 ; CROAGUNK Ax6
+	mon_cry CRY_SLOWKING,    $002,  $2c6 ; TOXICROAK Ax6
         mon_cry CRY_CARNIVINE,    0,  256 ; CARNIVINE
         mon_cry CRY_FINNEON,      0,  256 ; FINNEON
         mon_cry CRY_FINNEON,     32,  320 ; LUMINEON
@@ -364,8 +364,8 @@ PokemonCries::
         mon_cry CRY_ZORUA,     32,  320 ; ZOROARK
         mon_cry CRY_SKRELP,     0,  256 ; SKRELP
         mon_cry CRY_SKRELP,    32,  320 ; DRAGALGE
-        mon_cry CRY_CLAUNCHER,   0,  256 ; CLAUNCHER
-        mon_cry CRY_CLAUNCHER,  32,  320 ; CLAWITZER
+	mon_cry CRY_KRABBY,      $035,  $0ac ; CLAUNCHER Ax6
+	mon_cry CRY_SQUIRTLE,   -$026,  $097 ; CLAWITZER Ax6
 	mon_cry CRY_MARILL,      $0d8,  $300 ; SYLVEON
         mon_cry CRY_PANCHAM,    0,  256 ; PANCHAM
         mon_cry CRY_PANCHAM,   32,  320 ; PANGORO
@@ -376,13 +376,13 @@ PokemonCries::
         mon_cry CRY_HONEDGE,    0,  256 ; HONEDGE
         mon_cry CRY_HONEDGE,   32,  320 ; DOUBLADE
         mon_cry CRY_HONEDGE,   64,  384 ; AEGISLASH
-        mon_cry CRY_GOOMY,      0,  256 ; GOOMY
-        mon_cry CRY_GOOMY,     32,  320 ; SLIGGOO
-        mon_cry CRY_GOOMY,     64,  384 ; GOODRA
+	mon_cry CRY_GOOMY,       $0b4,  $0ea ; GOOMY myRattata
+	mon_cry CRY_CHATOT,     -$01a,  $2e6 ; SLIGGOO Ax6
+	mon_cry CRY_VULPIX,     -$107,  $0ca ; GOODRA Ax6
         mon_cry CRY_ROCKRUFF,   0,  256 ; ROCKRUFF
         mon_cry CRY_ROCKRUFF,  32,  320 ; LYCANROC
-        mon_cry CRY_CUTIEFLY,   0,  256 ; CUTIEFLY
-        mon_cry CRY_CUTIEFLY,  32,  320 ; RIBOMBEE
+	mon_cry CRY_PICHU,      -$03e,  $0fc ; CUTIEFLY Ax6
+	mon_cry CRY_PICHU,      -$029,  $3a0 ; RIBOMBEE Ax6
         mon_cry CRY_PIKIPEK,    0,  256 ; PIKIPEK
         mon_cry CRY_PIKIPEK,   32,  320 ; TRUMBEAK
         mon_cry CRY_PIKIPEK,   64,  384 ; TOUCANNON
@@ -420,11 +420,11 @@ PokemonCries::
 	mon_cry CRY_KRABBY,      $e08,  $0f0 ; MR. RIME
 	mon_cry CRY_VILEPLUME,   $620,  $1b0 ; OBSTAGOON
         mon_cry CRY_OVERQWIL,   0,  256 ; OVERQWIL
-        mon_cry CRY_SNEASLER,   0,  256 ; SNEASLER
-        mon_cry CRY_KLEAVOR,    0,  256 ; KLEAVOR
-        mon_cry CRY_URSALUNA,   0,  256 ; URSALUNA
+    mon_cry CRY_SNEASLER,   0,  256 ; SNEASLER
+	mon_cry CRY_CATERPIE,      -64,  256 ; SCYTHER
+	mon_cry CRY_TEDDIURSA,  1400,  127 ; URSARING
         mon_cry CRY_WYRDEER,    0,  256 ; WYRDEER
-        mon_cry CRY_MARSHADOW,  0,  256 ; MARSHADOW
+	mon_cry CRY_CHIKORITA,  -142,  643 ; MEGANIUM
         mon_cry CRY_MELTAN,     0,  256 ; MELTAN
         mon_cry CRY_MELMETAL,   0,  256 ; MELMETAL
 ; Forms
