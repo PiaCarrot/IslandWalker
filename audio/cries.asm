@@ -3133,14 +3133,12 @@ Cry_Honedge:
 
 Cry_Honedge_Ch5:
         duty_cycle_pattern 2, 3, 2, 3
-        square_note 8, 15, 2, 1680
-        square_note 8, 13, 2, 1584
+        square_note 32, 15, 2, 1680
         sound_ret
 
 Cry_Honedge_Ch6:
         duty_cycle_pattern 1, 2, 1, 2
-        square_note 8, 14, 2, 1648
-        square_note 8, 12, 2, 1552
+        square_note 32, 14, 2, 1648
         sound_ret
 
 Cry_Goomy:

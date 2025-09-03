@@ -367,19 +367,19 @@ PokemonCries::
 	mon_cry CRY_KRABBY,      $035,  $0ac ; CLAUNCHER Ax6
 	mon_cry CRY_SQUIRTLE,   -$026,  $097 ; CLAWITZER Ax6
 	mon_cry CRY_MARILL,      $0d8,  $300 ; SYLVEON
-        mon_cry CRY_PANCHAM,    0,  256 ; PANCHAM
-        mon_cry CRY_PANCHAM,   32,  320 ; PANGORO
-        mon_cry CRY_INKAY,      0,  256 ; INKAY
-        mon_cry CRY_INKAY,     32,  320 ; MALAMAR
-        mon_cry CRY_NOIBAT,     0,  256 ; NOIBAT
-        mon_cry CRY_NOIBAT,    32,  320 ; NOIVERN
-        mon_cry CRY_HONEDGE,    0,  256 ; HONEDGE
-        mon_cry CRY_HONEDGE,   32,  320 ; DOUBLADE
-        mon_cry CRY_HONEDGE,   64,  384 ; AEGISLASH
+    mon_cry CRY_MARILL,      282,  184 ; PANCHAM
+    mon_cry CRY_MARILL,      -282,  412 ; PANGORO
+    mon_cry CRY_GROWLITHE,    232,  112 ; INKAY
+    mon_cry CRY_RAICHU,      -228,  192 ; MALAMAR
+    mon_cry CRY_PIDGEY,      255,  620 ; NOIBAT
+    mon_cry CRY_DROWZEE,     -210,  $0e0 ; NOIVERN
+    mon_cry CRY_HONEDGE,  255,  356 ; HONEDGE
+    mon_cry CRY_HONEDGE,  128,  412 ; DOUBLADE
+    mon_cry CRY_HONEDGE, -264,  512 ; AEGISLASH
 	mon_cry CRY_GOOMY,       $0b4,  $0ea ; GOOMY myRattata
 	mon_cry CRY_CHATOT,     -$01a,  $2e6 ; SLIGGOO Ax6
 	mon_cry CRY_VULPIX,     -$107,  $0ca ; GOODRA Ax6
-        mon_cry CRY_ROCKRUFF,   0,  256 ; ROCKRUFF
+    mon_cry CRY_TOGEPI,       116,  256 ; ROCKRUFF
         mon_cry CRY_ROCKRUFF,  32,  320 ; LYCANROC
 	mon_cry CRY_PICHU,      -$03e,  $0fc ; CUTIEFLY Ax6
 	mon_cry CRY_PICHU,      -$029,  $3a0 ; RIBOMBEE Ax6
