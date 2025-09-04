@@ -1,0 +1,1 @@
+        next "for Growlithe Hisui."

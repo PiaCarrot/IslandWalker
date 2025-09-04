@@ -482,17 +482,17 @@ DEF FORM_POKEMON EQU const_value
         const ARTICUNO_GALAR      ; 1c4
         const ZAPDOS_GALAR        ; 1c5
         const MOLTRES_GALAR       ; 1c6
-	; const GROWLITHE_HISUI     ; 1c7
-	; const ARCANINE_HISUI      ; 1c8
-	; const VOLTORB_HISUI       ; 1c9
-	; const ELECTRODE_HISUI     ; 1ca
-	; const QWILFISH_HISUI      ; 1cb
-	; const SNEASEL_HISUI       ; 1cc
-	; const ZORUA_HISUI         ; 1cd
-	; const ZOROARK_HISUI       ; 1ce
-	; const SLIGGOO_HISUI       ; 1cf
-	; const GOODRA_HISUI        ; 1d0
-	; const TYPHLOSION_HISUI    ; 1d1
+        const GROWLITHE_HISUI     ; 1c7
+        const ARCANINE_HISUI      ; 1c8
+        const VOLTORB_HISUI       ; 1c9
+        const ELECTRODE_HISUI     ; 1ca
+        const QWILFISH_HISUI      ; 1cb
+        const SNEASEL_HISUI       ; 1cc
+        const ZORUA_HISUI         ; 1cd
+        const ZOROARK_HISUI       ; 1ce
+        const SLIGGOO_HISUI       ; 1cf
+        const GOODRA_HISUI        ; 1d0
+        const TYPHLOSION_HISUI    ; 1d1
 	; const WOOPER_PALDEA       ; 1d2
 	; const TAUROS_COMBAT       ; 1d3
 	; const TAUROS_BLAZE        ; 1d4

@@ -36,6 +36,17 @@ FormsBitmaskPointers:
     dw ArticunoGalarBitmasks
     dw ZapdosGalarBitmasks
     dw MoltresGalarBitmasks
+    dw GrowlitheHisuiBitmasks
+    dw ArcanineHisuiBitmasks
+    dw VoltorbHisuiBitmasks
+    dw ElectrodeHisuiBitmasks
+    dw QwilfishHisuiBitmasks
+    dw SneaselHisuiBitmasks
+    dw ZoruaHisuiBitmasks
+    dw ZoroarkHisuiBitmasks
+    dw SliggooHisuiBitmasks
+    dw GoodraHisuiBitmasks
+    dw TyphlosionHisuiBitmasks
     dw DratiniPartnerBitmasks
     dw EeveePartnerBitmasks
     dw PikachuPartnerBitmasks
@@ -78,6 +89,17 @@ SlowkingGalarBitmasks: INCLUDE "gfx/pokemon/forms/slowking_galar/bitmask.asm"
 ArticunoGalarBitmasks: INCLUDE "gfx/pokemon/forms/articuno_galar/bitmask.asm"
 ZapdosGalarBitmasks: INCLUDE "gfx/pokemon/forms/zapdos_galar/bitmask.asm"
 MoltresGalarBitmasks: INCLUDE "gfx/pokemon/forms/moltres_galar/bitmask.asm"
+GrowlitheHisuiBitmasks: INCLUDE "gfx/pokemon/forms/growlithe_hisui/bitmask.asm"
+ArcanineHisuiBitmasks: INCLUDE "gfx/pokemon/forms/arcanine_hisui/bitmask.asm"
+VoltorbHisuiBitmasks: INCLUDE "gfx/pokemon/forms/voltorb_hisui/bitmask.asm"
+ElectrodeHisuiBitmasks: INCLUDE "gfx/pokemon/forms/electrode_hisui/bitmask.asm"
+QwilfishHisuiBitmasks: INCLUDE "gfx/pokemon/forms/qwilfish_hisui/bitmask.asm"
+SneaselHisuiBitmasks: INCLUDE "gfx/pokemon/forms/sneasel_hisui/bitmask.asm"
+ZoruaHisuiBitmasks: INCLUDE "gfx/pokemon/forms/zorua_hisui/bitmask.asm"
+ZoroarkHisuiBitmasks: INCLUDE "gfx/pokemon/forms/zoroark_hisui/bitmask.asm"
+SliggooHisuiBitmasks: INCLUDE "gfx/pokemon/forms/sliggoo_hisui/bitmask.asm"
+GoodraHisuiBitmasks: INCLUDE "gfx/pokemon/forms/goodra_hisui/bitmask.asm"
+TyphlosionHisuiBitmasks: INCLUDE "gfx/pokemon/forms/typhlosion_hisui/bitmask.asm"
 DratiniPartnerBitmasks: INCLUDE "gfx/pokemon/forms/dratini_partner/bitmask.asm"
 EeveePartnerBitmasks: INCLUDE "gfx/pokemon/forms/eevee_partner/bitmask.asm"
 PikachuPartnerBitmasks: INCLUDE "gfx/pokemon/forms/pikachu_partner/bitmask.asm"

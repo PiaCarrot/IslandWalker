@@ -36,6 +36,17 @@ FormsAnimationIdlePointers:
     dw ArticunoGalarAnimationIdle
     dw ZapdosGalarAnimationIdle
     dw MoltresGalarAnimationIdle
+    dw GrowlitheHisuiAnimationIdle
+    dw ArcanineHisuiAnimationIdle
+    dw VoltorbHisuiAnimationIdle
+    dw ElectrodeHisuiAnimationIdle
+    dw QwilfishHisuiAnimationIdle
+    dw SneaselHisuiAnimationIdle
+    dw ZoruaHisuiAnimationIdle
+    dw ZoroarkHisuiAnimationIdle
+    dw SliggooHisuiAnimationIdle
+    dw GoodraHisuiAnimationIdle
+    dw TyphlosionHisuiAnimationIdle
     dw DratiniPartnerAnimationIdle
     dw EeveePartnerAnimationIdle
     dw PikachuPartnerAnimationIdle
@@ -78,6 +89,17 @@ SlowkingGalarAnimationIdle: INCLUDE "gfx/pokemon/forms/slowking_galar/anim_idle.
 ArticunoGalarAnimationIdle: INCLUDE "gfx/pokemon/forms/articuno_galar/anim_idle.asm"
 ZapdosGalarAnimationIdle: INCLUDE "gfx/pokemon/forms/zapdos_galar/anim_idle.asm"
 MoltresGalarAnimationIdle: INCLUDE "gfx/pokemon/forms/moltres_galar/anim_idle.asm"
+GrowlitheHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/growlithe_hisui/anim_idle.asm"
+ArcanineHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/arcanine_hisui/anim_idle.asm"
+VoltorbHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/voltorb_hisui/anim_idle.asm"
+ElectrodeHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/electrode_hisui/anim_idle.asm"
+QwilfishHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/qwilfish_hisui/anim_idle.asm"
+SneaselHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/sneasel_hisui/anim_idle.asm"
+ZoruaHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/zorua_hisui/anim_idle.asm"
+ZoroarkHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/zoroark_hisui/anim_idle.asm"
+SliggooHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/sliggoo_hisui/anim_idle.asm"
+GoodraHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/goodra_hisui/anim_idle.asm"
+TyphlosionHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/typhlosion_hisui/anim_idle.asm"
 DratiniPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/dratini_partner/anim_idle.asm"
 EeveePartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/eevee_partner/anim_idle.asm"
 PikachuPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/pikachu_partner/anim_idle.asm"

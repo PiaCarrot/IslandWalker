@@ -460,6 +460,17 @@ INCBIN "gfx/footprints/other/placeholder.1bpp" ; SLOWKING_GALAR
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; ARTICUNO_GALAR
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; ZAPDOS_GALAR
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; MOLTRES_GALAR
+INCBIN "gfx/footprints/kanto/growlithe.1bpp" ; GROWLITHE_HISUI
+INCBIN "gfx/footprints/kanto/arcanine.1bpp" ; ARCANINE_HISUI
+INCBIN "gfx/footprints/kanto/voltorb.1bpp" ; VOLTORB_HISUI
+INCBIN "gfx/footprints/kanto/electrode.1bpp" ; ELECTRODE_HISUI
+INCBIN "gfx/footprints/johto/qwilfish.1bpp" ; QWILFISH_HISUI
+INCBIN "gfx/footprints/johto/sneasel.1bpp" ; SNEASEL_HISUI
+INCBIN "gfx/footprints/other/zorua.1bpp" ; ZORUA_HISUI
+INCBIN "gfx/footprints/other/zoroark.1bpp" ; ZOROARK_HISUI
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; SLIGGOO_HISUI
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; GOODRA_HISUI
+INCBIN "gfx/footprints/johto/typhlosion.1bpp" ; TYPHLOSION_HISUI
 INCBIN "gfx/footprints/kanto/dratini.1bpp"
 INCBIN "gfx/footprints/kanto/eevee.1bpp"
 INCBIN "gfx/footprints/kanto/pikachu.1bpp"

@@ -455,9 +455,20 @@ AlphabeticalPokedexOrder:
         dw ARTICUNO_GALAR
         dw ZAPDOS_GALAR
         dw MOLTRES_GALAR
+        dw GROWLITHE_HISUI
+        dw ARCANINE_HISUI
+        dw VOLTORB_HISUI
+        dw ELECTRODE_HISUI
+        dw QWILFISH_HISUI
+        dw SNEASEL_HISUI
+        dw ZORUA_HISUI
+        dw ZOROARK_HISUI
+        dw SLIGGOO_HISUI
+        dw GOODRA_HISUI
+        dw TYPHLOSION_HISUI
         dw DRATINI_PARTNER
-	dw EEVEE_PARTNER
-	dw PIKACHU_PARTNER
+        dw EEVEE_PARTNER
+        dw PIKACHU_PARTNER
 	dw DRAGONAIR_PARTNER
 	dw DRAGONITE_PARTNER
 	assert_table_length NUM_POKEMON

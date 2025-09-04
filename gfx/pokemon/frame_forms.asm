@@ -36,6 +36,17 @@ FormsFramePointers:
     dw ArticunoGalarFrames
     dw ZapdosGalarFrames
     dw MoltresGalarFrames
+    dw GrowlitheHisuiFrames
+    dw ArcanineHisuiFrames
+    dw VoltorbHisuiFrames
+    dw ElectrodeHisuiFrames
+    dw QwilfishHisuiFrames
+    dw SneaselHisuiFrames
+    dw ZoruaHisuiFrames
+    dw ZoroarkHisuiFrames
+    dw SliggooHisuiFrames
+    dw GoodraHisuiFrames
+    dw TyphlosionHisuiFrames
     dw DratiniPartnerFrames
     dw EeveePartnerFrames
     dw PikachuPartnerFrames
@@ -78,6 +89,17 @@ SlowkingGalarFrames: INCLUDE "gfx/pokemon/forms/slowking_galar/frames.asm"
 ArticunoGalarFrames: INCLUDE "gfx/pokemon/forms/articuno_galar/frames.asm"
 ZapdosGalarFrames: INCLUDE "gfx/pokemon/forms/zapdos_galar/frames.asm"
 MoltresGalarFrames: INCLUDE "gfx/pokemon/forms/moltres_galar/frames.asm"
+GrowlitheHisuiFrames: INCLUDE "gfx/pokemon/forms/growlithe_hisui/frames.asm"
+ArcanineHisuiFrames: INCLUDE "gfx/pokemon/forms/arcanine_hisui/frames.asm"
+VoltorbHisuiFrames: INCLUDE "gfx/pokemon/forms/voltorb_hisui/frames.asm"
+ElectrodeHisuiFrames: INCLUDE "gfx/pokemon/forms/electrode_hisui/frames.asm"
+QwilfishHisuiFrames: INCLUDE "gfx/pokemon/forms/qwilfish_hisui/frames.asm"
+SneaselHisuiFrames: INCLUDE "gfx/pokemon/forms/sneasel_hisui/frames.asm"
+ZoruaHisuiFrames: INCLUDE "gfx/pokemon/forms/zorua_hisui/frames.asm"
+ZoroarkHisuiFrames: INCLUDE "gfx/pokemon/forms/zoroark_hisui/frames.asm"
+SliggooHisuiFrames: INCLUDE "gfx/pokemon/forms/sliggoo_hisui/frames.asm"
+GoodraHisuiFrames: INCLUDE "gfx/pokemon/forms/goodra_hisui/frames.asm"
+TyphlosionHisuiFrames: INCLUDE "gfx/pokemon/forms/typhlosion_hisui/frames.asm"
 DratiniPartnerFrames: INCLUDE "gfx/pokemon/forms/dratini_partner/frames.asm"
 EeveePartnerFrames: INCLUDE "gfx/pokemon/forms/eevee_partner/frames.asm"
 PikachuPartnerFrames: INCLUDE "gfx/pokemon/forms/pikachu_partner/frames.asm"

@@ -465,6 +465,18 @@ PokemonCries::
     mon_cry CRY_FEAROW,      255,  256 ; ZAPDOS GALAR
     mon_cry CRY_RAICHU,      248,  192 ; MOLTRES GALAR
 
+    mon_cry CRY_GROWLITHE,    32,  192 ; GROWLITHE HISUI
+    mon_cry CRY_WEEDLE,        0,  256 ; ARCANINE HISUI
+    mon_cry CRY_VOLTORB,     237,  256 ; VOLTORB HISUI
+    mon_cry CRY_VOLTORB,     168,  272 ; ELECTRODE HISUI
+    mon_cry CRY_SLOWKING,    352,  224 ; QWILFISH HISUI
+    mon_cry CRY_WOOPER,       83,  175 ; SNEASEL HISUI
+    mon_cry CRY_SUNFLORA,   -$089, $0eb ; ZORUA HISUI
+    mon_cry CRY_SPINARAK,   -$078, $320 ; ZOROARK HISUI
+    mon_cry CRY_CHATOT,     -$01a, $2e6 ; SLIGGOO HISUI
+    mon_cry CRY_VULPIX,     -$107, $0ca ; GOODRA HISUI
+    mon_cry CRY_TYPHLOSION, 3840,  212 ; TYPHLOSION HISUI
+
     mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI PARTNER
     mon_cry CRY_VENONAT,     136,  224 ; EEVEE PARTNER
     mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU PARTNER

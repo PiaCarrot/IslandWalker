@@ -34,6 +34,17 @@ FormsAnimationPointers:
         dw ArticunoGalarAnimation
         dw ZapdosGalarAnimation
         dw MoltresGalarAnimation
+        dw GrowlitheHisuiAnimation
+        dw ArcanineHisuiAnimation
+        dw VoltorbHisuiAnimation
+        dw ElectrodeHisuiAnimation
+        dw QwilfishHisuiAnimation
+        dw SneaselHisuiAnimation
+        dw ZoruaHisuiAnimation
+        dw ZoroarkHisuiAnimation
+        dw SliggooHisuiAnimation
+        dw GoodraHisuiAnimation
+        dw TyphlosionHisuiAnimation
         dw DratiniPartnerAnimation
         dw EeveePartnerAnimation
 	dw PikachuPartnerAnimation
@@ -76,6 +87,17 @@ SlowkingGalarAnimation: INCLUDE "gfx/pokemon/forms/slowking_galar/anim.asm"
 ArticunoGalarAnimation: INCLUDE "gfx/pokemon/forms/articuno_galar/anim.asm"
 ZapdosGalarAnimation: INCLUDE "gfx/pokemon/forms/zapdos_galar/anim.asm"
 MoltresGalarAnimation: INCLUDE "gfx/pokemon/forms/moltres_galar/anim.asm"
+GrowlitheHisuiAnimation: INCLUDE "gfx/pokemon/forms/growlithe_hisui/anim.asm"
+ArcanineHisuiAnimation: INCLUDE "gfx/pokemon/forms/arcanine_hisui/anim.asm"
+VoltorbHisuiAnimation: INCLUDE "gfx/pokemon/forms/voltorb_hisui/anim.asm"
+ElectrodeHisuiAnimation: INCLUDE "gfx/pokemon/forms/electrode_hisui/anim.asm"
+QwilfishHisuiAnimation: INCLUDE "gfx/pokemon/forms/qwilfish_hisui/anim.asm"
+SneaselHisuiAnimation: INCLUDE "gfx/pokemon/forms/sneasel_hisui/anim.asm"
+ZoruaHisuiAnimation: INCLUDE "gfx/pokemon/forms/zorua_hisui/anim.asm"
+ZoroarkHisuiAnimation: INCLUDE "gfx/pokemon/forms/zoroark_hisui/anim.asm"
+SliggooHisuiAnimation: INCLUDE "gfx/pokemon/forms/sliggoo_hisui/anim.asm"
+GoodraHisuiAnimation: INCLUDE "gfx/pokemon/forms/goodra_hisui/anim.asm"
+TyphlosionHisuiAnimation: INCLUDE "gfx/pokemon/forms/typhlosion_hisui/anim.asm"
 DratiniPartnerAnimation: INCLUDE "gfx/pokemon/forms/dratini_partner/anim.asm"
 EeveePartnerAnimation: INCLUDE "gfx/pokemon/forms/eevee_partner/anim.asm"
 PikachuPartnerAnimation: INCLUDE "gfx/pokemon/forms/pikachu_partner/anim.asm"

@@ -468,6 +468,17 @@ MonMenuIconPals:
         icon_pals BLUE,   BLUE   ; ARTICUNO_GALAR
         icon_pals BROWN,  RED    ; ZAPDOS_GALAR
         icon_pals RED,    RED    ; MOLTRES_GALAR
+        icon_pals RED,    BROWN  ; GROWLITHE_HISUI
+        icon_pals RED,    BROWN  ; ARCANINE_HISUI
+        icon_pals RED,    BLUE   ; VOLTORB_HISUI
+        icon_pals RED,    BLUE   ; ELECTRODE_HISUI
+        icon_pals BLUE,   PURPLE ; QWILFISH_HISUI
+        icon_pals RED,    PURPLE ; SNEASEL_HISUI
+        icon_pals RED,    RED    ; ZORUA_HISUI
+        icon_pals RED,    RED    ; ZOROARK_HISUI
+        icon_pals RED,    RED    ; SLIGGOO_HISUI
+        icon_pals RED,    RED    ; GOODRA_HISUI
+        icon_pals PINK,   PURPLE ; TYPHLOSION_HISUI
         icon_pals BLUE,   PURPLE ; DRATINI
         icon_pals BROWN,  GRAY   ; EEVEE
         icon_pals RED,    RED    ; PIKACHU

@@ -36,9 +36,20 @@ FormsEvosAttacksPointers::
         dw ArticunoGalarEvosAttacks
         dw ZapdosGalarEvosAttacks
         dw MoltresGalarEvosAttacks
+        dw GrowlitheHisuiEvosAttacks
+        dw ArcanineHisuiEvosAttacks
+        dw VoltorbHisuiEvosAttacks
+        dw ElectrodeHisuiEvosAttacks
+        dw QwilfishHisuiEvosAttacks
+        dw SneaselHisuiEvosAttacks
+        dw ZoruaHisuiEvosAttacks
+        dw ZoroarkHisuiEvosAttacks
+        dw SliggooHisuiEvosAttacks
+        dw GoodraHisuiEvosAttacks
+        dw TyphlosionHisuiEvosAttacks
         dw DratiniPartnerEvosAttacks
         dw EeveePartnerEvosAttacks
-	dw PikachuPartnerEvosAttacks
+        dw PikachuPartnerEvosAttacks
 	dw DragonairPartnerEvosAttacks
 	dw DragonitePartnerEvosAttacks
 .IndirectEnd::
@@ -811,9 +822,9 @@ DragonairPartnerEvosAttacks:
 	db 0 ; no more level-up moves
 
 DragonitePartnerEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, FIRE_PUNCH
-	dbw 1, THUNDERPUNCH
+        db 0 ; no more evolutions
+        dbw 1, FIRE_PUNCH
+        dbw 1, THUNDERPUNCH
 	dbw 1, ROOST
 	dbw 1, WRAP
 	dbw 1, LEER
@@ -831,6 +842,238 @@ DragonitePartnerEvosAttacks:
 	dbw 55, WING_ATTACK
         dbw 64, OUTRAGE
         dbw 73, HYPER_BEAM
+        db 0 ; no more level-up moves
+
+GrowlitheHisuiEvosAttacks:
+        evolve EVOLVE_ITEM, FIRE_STONE, ARCANINE_HISUI
+        db 0 ; no more evolutions
+        dbw 1, EMBER
+        dbw 1, LEER
+        dbw 4, HOWL
+        dbw 8, BITE
+        dbw 12, FLAME_WHEEL
+        ; dbw 16, HELPING_HAND
+        dbw 24, FIRE_FANG
+        ; dbw 28, RETALIATE
+        dbw 32, CRUNCH
+        dbw 36, TAKE_DOWN
+        dbw 40, FLAMETHROWER
+        dbw 44, ROAR
+        dbw 48, ROCK_SLIDE
+        dbw 52, REVERSAL
+        dbw 56, FLARE_BLITZ
+        db 0 ; no more level-up moves
+
+ArcanineHisuiEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 0, EXTREMESPEED
+        dbw 1, AGILITY
+        dbw 1, BITE
+        dbw 1, CRUNCH
+        dbw 1, EMBER
+        dbw 1, FIRE_FANG
+        dbw 1, FLAME_WHEEL
+        dbw 1, FLARE_BLITZ
+        ; dbw 1, HELPING_HAND
+        dbw 1, HOWL
+        dbw 1, LEER
+        ; dbw 1, RETALIATE
+        dbw 1, REVERSAL
+        dbw 1, ROAR
+        dbw 1, ROCK_SLIDE
+        dbw 1, ROCK_THROW
+        dbw 1, TAKE_DOWN
+        dbw 5, FLAMETHROWER
+        ; dbw 64, RAGING_FURY
+        db 0 ; no more level-up moves
+
+VoltorbHisuiEvosAttacks:
+        evolve EVOLVE_ITEM, LEAF_STONE, ELECTRODE_HISUI
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        dbw 1, CHARGE
+        dbw 4, THUNDERSHOCK
+        dbw 6, STUN_SPORE
+        dbw 9, BULLET_SEED
+        dbw 11, ROLLOUT
+        dbw 13, SCREECH
+        dbw 16, CHARGE_BEAM
+        dbw 20, SWIFT
+        ; dbw 22, ELECTRO_BALL
+        dbw 26, SELFDESTRUCT
+        dbw 29, ENERGY_BALL
+        dbw 34, SEED_BOMB
+        dbw 34, DISCHARGE
+        dbw 41, EXPLOSION
+        dbw 46, GYRO_BALL
+        ; dbw 50, GRASSY_TERRAIN
+        db 0 ; no more level-up moves
+
+ElectrodeHisuiEvosAttacks:
+        db 0 ; no more evolutions
+        ; dbw 0, CHLOROBLAST
+        dbw 1, TACKLE
+        dbw 1, CHARGE
+        dbw 4, THUNDERSHOCK
+        dbw 6, STUN_SPORE
+        dbw 9, BULLET_SEED
+        dbw 11, ROLLOUT
+        dbw 13, SCREECH
+        dbw 16, CHARGE_BEAM
+        dbw 20, SWIFT
+        ; dbw 22, ELECTRO_BALL
+        dbw 26, SELFDESTRUCT
+        dbw 29, ENERGY_BALL
+        dbw 34, SEED_BOMB
+        dbw 34, DISCHARGE
+        dbw 41, EXPLOSION
+        dbw 46, GYRO_BALL
+        ; dbw 50, GRASSY_TERRAIN
+        db 0 ; no more level-up moves
+
+QwilfishHisuiEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, POISON_STING
+        dbw 1, TACKLE
+        dbw 4, HARDEN
+        dbw 8, BITE
+        ; dbw 12, FELL_STINGER
+        dbw 16, MINIMIZE
+        dbw 20, SPIKES
+        dbw 24, BRINE
+        ; dbw 28, BARB_BARRAGE
+        dbw 32, PIN_MISSILE
+        dbw 36, TOXIC_SPIKES
+        dbw 40, STOCKPILE
+        dbw 40, SPIT_UP
+        dbw 44, TOXIC
+        dbw 48, CRUNCH
+        dbw 52, ACUPRESSURE
+        dbw 56, DESTINY_BOND
+        db 0 ; no more level-up moves
+
+SneaselHisuiEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, SCRATCH
+        dbw 1, LEER
+        dbw 1, ROCK_SMASH
+        dbw 6, TAUNT
+        dbw 12, QUICK_ATTACK
+        dbw 18, METAL_CLAW
+        dbw 24, POISON_JAB
+        dbw 30, BRICK_BREAK
+        ; dbw 36, HONE_CLAWS
+        dbw 42, SLASH
+        dbw 48, AGILITY
+        dbw 54, SCREECH
+        dbw 60, CLOSE_COMBAT
+        db 0 ; no more level-up moves
+
+ZoruaHisuiEvosAttacks:
+        evolve EVOLVE_LEVEL, 30, ZOROARK_HISUI
+        db 0 ; no more evolutions
+        dbw 1, SCRATCH
+        dbw 1, LEER
+        dbw 4, TORMENT
+        ; dbw 8, HONE_CLAWS
+        dbw 12, SHADOW_SNEAK
+        dbw 16, CURSE
+        dbw 20, TAUNT
+        dbw 24, KNOCK_OFF
+        dbw 28, SPITE
+        dbw 32, AGILITY
+        dbw 36, SHADOW_BALL
+        ; dbw 40, BITTER_MALICE
+        dbw 44, NASTY_PLOT
+        ; dbw 48, FOUL_PLAY
+        db 0 ; no more level-up moves
+
+ZoroarkHisuiEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 0, SHADOW_CLAW
+        ; dbw 1, HONE_CLAWS
+        dbw 1, SCRATCH
+        dbw 1, LEER
+        dbw 1, TORMENT
+        dbw 1, U_TURN
+        dbw 12, SHADOW_SNEAK
+        dbw 16, CURSE
+        dbw 20, TAUNT
+        dbw 24, KNOCK_OFF
+        dbw 28, SPITE
+        dbw 34, AGILITY
+        dbw 40, SHADOW_BALL
+        ; dbw 46, BITTER_MALICE
+        dbw 52, NASTY_PLOT
+        ; dbw 58, FOUL_PLAY
+        db 0 ; no more level-up moves
+
+SliggooHisuiEvosAttacks:
+        evolve EVOLVE_LEVEL, 50, GOODRA_HISUI
+        db 0 ; no more evolutions
+        ; dbw 0, SHELTER
+        dbw 1, TACKLE
+        dbw 1, WATER_GUN
+        dbw 1, ABSORB
+        dbw 1, ACID_ARMOR
+        ; dbw 1, DRAGON_BREATH
+        dbw 15, PROTECT
+        dbw 20, FLAIL
+        dbw 25, WATER_PULSE
+        dbw 30, RAIN_DANCE
+        dbw 35, DRAGON_PULSE
+        dbw 43, CURSE
+        dbw 49, IRON_HEAD
+        dbw 56, MUDDY_WATER
+        db 0 ; no more level-up moves
+
+GoodraHisuiEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 0, IRON_TAIL
+        dbw 1, TACKLE
+        dbw 1, WATER_GUN
+        dbw 1, ABSORB
+        ; dbw 1, DRAGON_BREATH
+        dbw 1, FEINT
+        ; dbw 1, ACID_SPRAY
+        ; dbw 1, TEARFUL_LOOK
+        ; dbw 1, SHELTER
+        dbw 15, PROTECT
+        dbw 20, FLAIL
+        dbw 25, WATER_PULSE
+        dbw 30, RAIN_DANCE
+        dbw 35, DRAGON_PULSE
+        dbw 43, CURSE
+        dbw 49, BODY_SLAM
+        dbw 49, IRON_HEAD
+        dbw 58, MUDDY_WATER
+        ; dbw 67, HEAVY_SLAM
+        db 0 ; no more level-up moves
+
+TyphlosionHisuiEvosAttacks:
+        db 0 ; no more evolutions
+        ; dbw 0, INFERNAL_PARADE
+        dbw 1, TACKLE
+        dbw 1, DOUBLE_EDGE
+        dbw 1, LEER
+        dbw 1, EMBER
+        dbw 1, SMOKESCREEN
+        dbw 1, ERUPTION
+        dbw 1, GYRO_BALL
+        dbw 13, QUICK_ATTACK
+        dbw 20, FLAME_WHEEL
+        dbw 24, DEFENSE_CURL
+        dbw 31, SWIFT
+        ; dbw 35, FLAME_CHARGE
+        dbw 43, LAVA_PLUME
+        dbw 48, FLAMETHROWER
+        ; dbw 56, INFERNO
+        dbw 61, ROLLOUT
+        dbw 74, OVERHEAT
+        db 0 ; no more level-up moves
+
+NoEvosAttacks4:
+        db 0 ; no more evolutions
         db 0 ; no more level-up moves
 
 ENDSECTION

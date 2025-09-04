@@ -926,10 +926,32 @@ PokemonPicPointers::
     dba ZapdosGalarBackpic
     dba MoltresGalarFrontpic
     dba MoltresGalarBackpic
+    dba GrowlitheHisuiFrontpic
+    dba GrowlitheHisuiBackpic
+    dba ArcanineHisuiFrontpic
+    dba ArcanineHisuiBackpic
+    dba VoltorbHisuiFrontpic
+    dba VoltorbHisuiBackpic
+    dba ElectrodeHisuiFrontpic
+    dba ElectrodeHisuiBackpic
+    dba QwilfishHisuiFrontpic
+    dba QwilfishHisuiBackpic
+    dba SneaselHisuiFrontpic
+    dba SneaselHisuiBackpic
+    dba ZoruaHisuiFrontpic
+    dba ZoruaHisuiBackpic
+    dba ZoroarkHisuiFrontpic
+    dba ZoroarkHisuiBackpic
+    dba SliggooHisuiFrontpic
+    dba SliggooHisuiBackpic
+    dba GoodraHisuiFrontpic
+    dba GoodraHisuiBackpic
+    dba TyphlosionHisuiFrontpic
+    dba TyphlosionHisuiBackpic
     dba DratiniPartnerFrontpic
         dba DratiniPartnerBackpic
-	dba EeveePartnerFrontpic
-	dba EeveePartnerBackpic
+        dba EeveePartnerFrontpic
+        dba EeveePartnerBackpic
 	dba PikachuPartnerFrontpic
 	dba PikachuPartnerBackpic
     dba DragonairPartnerFrontpic

@@ -458,9 +458,20 @@ PokedexDataPointerTable:
         dba ArticunoGalarPokedexEntry
         dba ZapdosGalarPokedexEntry
         dba MoltresGalarPokedexEntry
+        dba GrowlitheHisuiPokedexEntry
+        dba ArcanineHisuiPokedexEntry
+        dba VoltorbHisuiPokedexEntry
+        dba ElectrodeHisuiPokedexEntry
+        dba QwilfishHisuiPokedexEntry
+        dba SneaselHisuiPokedexEntry
+        dba ZoruaHisuiPokedexEntry
+        dba ZoroarkHisuiPokedexEntry
+        dba SliggooHisuiPokedexEntry
+        dba GoodraHisuiPokedexEntry
+        dba TyphlosionHisuiPokedexEntry
         dba DratiniPartnerPokedexEntry
         dba EeveePartnerPokedexEntry
-	dba PikachuPartnerPokedexEntry
+        dba PikachuPartnerPokedexEntry
 	dba DragonairPartnerPokedexEntry
 	dba DragonitePartnerPokedexEntry
 	assert_table_length NUM_POKEMON

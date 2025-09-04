@@ -462,6 +462,17 @@ IconPointers:
         dw ArticunoIcon
         dw ZapdosIcon
         dw MoltresIcon
+        dw GrowlitheIcon
+        dw ArcanineIcon
+        dw VoltorbIcon
+        dw ElectrodeIcon
+        dw QwilfishIcon
+        dw SneaselIcon
+        dw ZoruaIcon
+        dw ZoroarkIcon
+        dw SliggooIcon
+        dw GoodraIcon
+        dw TyphlosionIcon
         dw DratiniIcon
         dw EeveeIcon
         dw PikachuIcon

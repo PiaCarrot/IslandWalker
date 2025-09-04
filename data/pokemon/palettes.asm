@@ -942,6 +942,28 @@ INCBIN "gfx/pokemon/forms/zapdos_galar/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/zapdos_galar/shiny.pal"
 INCBIN "gfx/pokemon/forms/moltres_galar/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/moltres_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/growlithe_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/growlithe_hisui/shiny.pal"
+INCBIN "gfx/pokemon/forms/arcanine_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/arcanine_hisui/shiny.pal"
+INCBIN "gfx/pokemon/forms/voltorb_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/voltorb_hisui/shiny.pal"
+INCBIN "gfx/pokemon/forms/electrode_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/electrode_hisui/shiny.pal"
+INCBIN "gfx/pokemon/forms/qwilfish_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/qwilfish_hisui/shiny.pal"
+INCBIN "gfx/pokemon/forms/sneasel_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/sneasel_hisui/shiny.pal"
+INCBIN "gfx/pokemon/forms/zorua_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/zorua_hisui/shiny.pal"
+INCBIN "gfx/pokemon/forms/zoroark_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/zoroark_hisui/shiny.pal"
+INCBIN "gfx/pokemon/forms/sliggoo_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/sliggoo_hisui/shiny.pal"
+INCBIN "gfx/pokemon/forms/goodra_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/goodra_hisui/shiny.pal"
+INCBIN "gfx/pokemon/forms/typhlosion_hisui/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/typhlosion_hisui/shiny.pal"
 INCBIN "gfx/pokemon/forms/dratini_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dratini_partner/shiny.pal"
 INCBIN "gfx/pokemon/forms/eevee_partner/normal.gbcpal", middle_colors

@@ -36,6 +36,17 @@ FormsEggMovePointers::
         dw ArticunoGalarEggMoves
         dw ZapdosGalarEggMoves
         dw MoltresGalarEggMoves
+        dw GrowlitheHisuiEggMoves
+        dw NoEggMoves4 ; ArcanineHisui
+        dw VoltorbHisuiEggMoves
+        dw NoEggMoves4 ; ElectrodeHisui
+        dw QwilfishHisuiEggMoves
+        dw SneaselHisuiEggMoves
+        dw ZoruaHisuiEggMoves
+        dw NoEggMoves4 ; ZoroarkHisui
+        dw NoEggMoves4 ; SliggooHisui
+        dw NoEggMoves4 ; GoodraHisui
+        dw NoEggMoves4 ; TyphlosionHisui
         dw NoEggMoves4 ; DratiniPartner
         dw NoEggMoves4 ; EeveePartner
         dw NoEggMoves4 ; PikachuPartner
@@ -282,6 +293,51 @@ ZapdosGalarEggMoves:
         dw -1 ; end
 
 MoltresGalarEggMoves:
+        dw -1 ; end
+
+GrowlitheHisuiEggMoves:
+        dw DOUBLE_KICK
+        dw THRASH
+        dw DOUBLE_EDGE
+        dw MORNING_SUN
+        dw COVET
+        dw HEAD_SMASH
+        dw -1 ; end
+
+VoltorbHisuiEggMoves:
+        dw LEECH_SEED
+        dw RECYCLE
+        dw WORRY_SEED
+        dw -1 ; end
+
+QwilfishHisuiEggMoves:
+        dw SUPERSONIC
+        ; dw BUBBLE_BEAM
+        dw HAZE
+        dw SELFDESTRUCT
+        dw FLAIL
+        dw ASTONISH
+        dw WATER_PULSE
+        dw AQUA_TAIL
+        dw AQUA_JET
+        ; dw ACID_SPRAY
+        dw -1 ; end
+
+SneaselHisuiEggMoves:
+        dw COUNTER
+        dw FAKE_OUT
+        dw FEINT
+        dw NIGHT_SLASH
+        dw SWITCHEROO
+        dw DOUBLE_HIT
+        ; dw QUICK_GUARD
+        dw -1 ; end
+
+ZoruaHisuiEggMoves:
+        dw DETECT
+        dw MEMENTO
+        dw EXTRASENSORY
+        ; dw COMEUPPANCE
         dw -1 ; end
 
 ENDSECTION
