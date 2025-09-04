@@ -51,6 +51,18 @@ FormsFramePointers:
     dw TaurosCombatFrames
     dw TaurosBlazeFrames
     dw TaurosAquaFrames
+    dw CaterpieValenciaFrames
+    dw MetapodValenciaFrames
+    dw ButterfreeValenciaFrames
+    dw OddishValenciaFrames
+    dw GloomValenciaFrames
+    dw VileplumeValenciaFrames
+    dw BellossomValenciaFrames
+    dw BellsproutValenciaFrames
+    dw WeepinbellValenciaFrames
+    dw VictreebelValenciaFrames
+    dw ParasValenciaFrames
+    dw ParasectValenciaFrames
     dw DratiniPartnerFrames
     dw EeveePartnerFrames
     dw PikachuPartnerFrames
@@ -108,6 +120,18 @@ WooperPaldeaFrames: INCLUDE "gfx/pokemon/forms/wooper_paldea/frames.asm"
 TaurosCombatFrames: INCLUDE "gfx/pokemon/forms/tauros_combat/frames.asm"
 TaurosBlazeFrames: INCLUDE "gfx/pokemon/forms/tauros_blaze/frames.asm"
 TaurosAquaFrames: INCLUDE "gfx/pokemon/forms/tauros_aqua/frames.asm"
+CaterpieValenciaFrames: INCLUDE "gfx/pokemon/forms/caterpie_valencia/frames.asm"
+MetapodValenciaFrames: INCLUDE "gfx/pokemon/forms/metapod_valencia/frames.asm"
+ButterfreeValenciaFrames: INCLUDE "gfx/pokemon/forms/butterfree_valencia/frames.asm"
+OddishValenciaFrames: INCLUDE "gfx/pokemon/forms/oddish_valencia/frames.asm"
+GloomValenciaFrames: INCLUDE "gfx/pokemon/forms/gloom_valencia/frames.asm"
+VileplumeValenciaFrames: INCLUDE "gfx/pokemon/forms/vileplume_valencia/frames.asm"
+BellossomValenciaFrames: INCLUDE "gfx/pokemon/forms/bellossom_valencia/frames.asm"
+BellsproutValenciaFrames: INCLUDE "gfx/pokemon/forms/bellsprout_valencia/frames.asm"
+WeepinbellValenciaFrames: INCLUDE "gfx/pokemon/forms/weepinbell_valencia/frames.asm"
+VictreebelValenciaFrames: INCLUDE "gfx/pokemon/forms/victreebel_valencia/frames.asm"
+ParasValenciaFrames: INCLUDE "gfx/pokemon/forms/paras_valencia/frames.asm"
+ParasectValenciaFrames: INCLUDE "gfx/pokemon/forms/parasect_valencia/frames.asm"
 DratiniPartnerFrames: INCLUDE "gfx/pokemon/forms/dratini_partner/frames.asm"
 EeveePartnerFrames: INCLUDE "gfx/pokemon/forms/eevee_partner/frames.asm"
 PikachuPartnerFrames: INCLUDE "gfx/pokemon/forms/pikachu_partner/frames.asm"

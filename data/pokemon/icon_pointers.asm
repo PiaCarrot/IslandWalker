@@ -477,6 +477,18 @@ IconPointers:
         dw TaurosIcon
         dw TaurosIcon
         dw TaurosIcon
+        dw CaterpieIcon
+        dw MetapodIcon
+        dw ButterfreeIcon
+        dw OddishIcon
+        dw GloomIcon
+        dw VileplumeIcon
+        dw BellossomIcon
+        dw BellsproutIcon
+        dw WeepinbellIcon
+        dw VictreebelIcon
+        dw ParasIcon
+        dw ParasectIcon
         dw DratiniIcon
         dw EeveeIcon
         dw PikachuIcon

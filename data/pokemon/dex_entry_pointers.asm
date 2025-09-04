@@ -473,6 +473,18 @@ PokedexDataPointerTable:
         dba TaurosCombatPokedexEntry
         dba TaurosBlazePokedexEntry
         dba TaurosAquaPokedexEntry
+        dba CaterpieValenciaPokedexEntry
+        dba MetapodValenciaPokedexEntry
+        dba ButterfreeValenciaPokedexEntry
+        dba OddishValenciaPokedexEntry
+        dba GloomValenciaPokedexEntry
+        dba VileplumeValenciaPokedexEntry
+        dba BellossomValenciaPokedexEntry
+        dba BellsproutValenciaPokedexEntry
+        dba WeepinbellValenciaPokedexEntry
+        dba VictreebelValenciaPokedexEntry
+        dba ParasValenciaPokedexEntry
+        dba ParasectValenciaPokedexEntry
         dba DratiniPartnerPokedexEntry
         dba EeveePartnerPokedexEntry
         dba PikachuPartnerPokedexEntry

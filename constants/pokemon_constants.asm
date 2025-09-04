@@ -497,18 +497,18 @@ DEF FORM_POKEMON EQU const_value
         const TAUROS_COMBAT       ; 1d3
         const TAUROS_BLAZE        ; 1d4
         const TAUROS_AQUA         ; 1d5
-	; const CATERPIE_VALENCIA   ; 1d6
-	; const METAPOD_VALENCIA    ; 1d7
-	; const BUTTERFREE_VALENCIA ; 1d8
-	; const ODDISH_VALENCIA     ; 1d9
-	; const GLOOM_VALENCIA      ; 1da
-	; const VILEPLUME_VALENCIA  ; 1db
-	; const BELOSSOM_VALENCIA   ; 1dc
-	; const BELLSPROUT_VALENCIA ; 1dd
-	; const WEEPINBELL_VALENCIA ; 1de
-	; const VICTREEBEL_VALENCIA ; 1df
-	; const PARAS_VALENCIA      ; 1e0
-	; const PARASECT_VALENCIA   ; 1e1
+        const CATERPIE_VALENCIA   ; 1d6
+        const METAPOD_VALENCIA    ; 1d7
+        const BUTTERFREE_VALENCIA ; 1d8
+        const ODDISH_VALENCIA     ; 1d9
+        const GLOOM_VALENCIA      ; 1da
+        const VILEPLUME_VALENCIA  ; 1db
+        const BELLOSSOM_VALENCIA   ; 1dc
+        const BELLSPROUT_VALENCIA ; 1dd
+        const WEEPINBELL_VALENCIA ; 1de
+        const VICTREEBEL_VALENCIA ; 1df
+        const PARAS_VALENCIA      ; 1e0
+        const PARASECT_VALENCIA   ; 1e1
 	; const ONIX_CRYSTAL        ; 1e2
 	; const STEELIX_CRYSTAL     ; 1e3
 	; const URSALUNA_BLOODMOON  ; 1e4

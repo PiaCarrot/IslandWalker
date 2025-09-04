@@ -475,6 +475,18 @@ INCBIN "gfx/footprints/johto/wooper.1bpp" ; WOOPER_PALDEA
 INCBIN "gfx/footprints/kanto/tauros.1bpp" ; TAUROS_COMBAT
 INCBIN "gfx/footprints/kanto/tauros.1bpp" ; TAUROS_BLAZE
 INCBIN "gfx/footprints/kanto/tauros.1bpp" ; TAUROS_AQUA
+INCBIN "gfx/footprints/kanto/caterpie.1bpp" ; CATERPIE_VALENCIA
+INCBIN "gfx/footprints/kanto/metapod.1bpp" ; METAPOD_VALENCIA
+INCBIN "gfx/footprints/kanto/butterfree.1bpp" ; BUTTERFREE_VALENCIA
+INCBIN "gfx/footprints/kanto/oddish.1bpp" ; ODDISH_VALENCIA
+INCBIN "gfx/footprints/kanto/gloom.1bpp" ; GLOOM_VALENCIA
+INCBIN "gfx/footprints/kanto/vileplume.1bpp" ; VILEPLUME_VALENCIA
+INCBIN "gfx/footprints/johto/bellossom.1bpp" ; BELLOSSOM_VALENCIA
+INCBIN "gfx/footprints/kanto/bellsprout.1bpp" ; BELLSPROUT_VALENCIA
+INCBIN "gfx/footprints/kanto/weepinbell.1bpp" ; WEEPINBELL_VALENCIA
+INCBIN "gfx/footprints/kanto/victreebel.1bpp" ; VICTREEBEL_VALENCIA
+INCBIN "gfx/footprints/kanto/paras.1bpp" ; PARAS_VALENCIA
+INCBIN "gfx/footprints/kanto/parasect.1bpp" ; PARASECT_VALENCIA
 INCBIN "gfx/footprints/kanto/dratini.1bpp"
 INCBIN "gfx/footprints/kanto/eevee.1bpp"
 INCBIN "gfx/footprints/kanto/pikachu.1bpp"

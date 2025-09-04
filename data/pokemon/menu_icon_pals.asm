@@ -480,12 +480,24 @@ MonMenuIconPals:
         icon_pals RED,    RED    ; GOODRA_HISUI
         icon_pals PINK,   PURPLE ; TYPHLOSION_HISUI
         icon_pals BROWN,  PURPLE ; WOOPER_PALDEA
-        icon_pals BROWN,  BROWN  ; TAUROS_COMBAT
-        icon_pals BROWN,  RED    ; TAUROS_BLAZE
-        icon_pals BROWN,  BLUE   ; TAUROS_AQUA
-        icon_pals BLUE,   PURPLE ; DRATINI
-        icon_pals BROWN,  GRAY   ; EEVEE
-        icon_pals RED,    RED    ; PIKACHU
+       icon_pals BROWN,  BROWN  ; TAUROS_COMBAT
+       icon_pals BROWN,  RED    ; TAUROS_BLAZE
+       icon_pals BROWN,  BLUE   ; TAUROS_AQUA
+        icon_pals GREEN,  BROWN  ; CATERPIE_VALENCIA
+        icon_pals GREEN,  BROWN  ; METAPOD_VALENCIA
+        icon_pals TEAL,   PINK   ; BUTTERFREE_VALENCIA
+        icon_pals GREEN,  BROWN  ; ODDISH_VALENCIA
+        icon_pals RED,    BROWN  ; GLOOM_VALENCIA
+        icon_pals RED,    PINK   ; VILEPLUME_VALENCIA
+        icon_pals RED,    PINK   ; BELLOSSOM_VALENCIA
+        icon_pals GREEN,  BROWN  ; BELLSPROUT_VALENCIA
+        icon_pals GREEN,  PURPLE ; WEEPINBELL_VALENCIA
+        icon_pals GREEN,  GREEN  ; VICTREEBEL_VALENCIA
+        icon_pals RED,    BROWN  ; PARAS_VALENCIA
+        icon_pals RED,    BROWN  ; PARASECT_VALENCIA
+       icon_pals BLUE,   PURPLE ; DRATINI
+       icon_pals BROWN,  GRAY   ; EEVEE
+       icon_pals RED,    RED    ; PIKACHU
         icon_pals BLUE,   PURPLE ; DRAGONAIR
         icon_pals RED,    GRAY   ; DRAGONITE
         assert_table_length NUM_POKEMON

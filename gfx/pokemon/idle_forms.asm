@@ -51,6 +51,18 @@ FormsAnimationIdlePointers:
     dw TaurosCombatAnimationIdle
     dw TaurosBlazeAnimationIdle
     dw TaurosAquaAnimationIdle
+    dw CaterpieValenciaAnimationIdle
+    dw MetapodValenciaAnimationIdle
+    dw ButterfreeValenciaAnimationIdle
+    dw OddishValenciaAnimationIdle
+    dw GloomValenciaAnimationIdle
+    dw VileplumeValenciaAnimationIdle
+    dw BellossomValenciaAnimationIdle
+    dw BellsproutValenciaAnimationIdle
+    dw WeepinbellValenciaAnimationIdle
+    dw VictreebelValenciaAnimationIdle
+    dw ParasValenciaAnimationIdle
+    dw ParasectValenciaAnimationIdle
     dw DratiniPartnerAnimationIdle
     dw EeveePartnerAnimationIdle
     dw PikachuPartnerAnimationIdle
@@ -108,6 +120,18 @@ WooperPaldeaAnimationIdle: INCLUDE "gfx/pokemon/forms/wooper_paldea/anim_idle.as
 TaurosCombatAnimationIdle: INCLUDE "gfx/pokemon/forms/tauros_combat/anim_idle.asm"
 TaurosBlazeAnimationIdle: INCLUDE "gfx/pokemon/forms/tauros_blaze/anim_idle.asm"
 TaurosAquaAnimationIdle: INCLUDE "gfx/pokemon/forms/tauros_aqua/anim_idle.asm"
+CaterpieValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/caterpie_valencia/anim_idle.asm"
+MetapodValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/metapod_valencia/anim_idle.asm"
+ButterfreeValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/butterfree_valencia/anim_idle.asm"
+OddishValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/oddish_valencia/anim_idle.asm"
+GloomValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/gloom_valencia/anim_idle.asm"
+VileplumeValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/vileplume_valencia/anim_idle.asm"
+BellossomValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/bellossom_valencia/anim_idle.asm"
+BellsproutValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/bellsprout_valencia/anim_idle.asm"
+WeepinbellValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/weepinbell_valencia/anim_idle.asm"
+VictreebelValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/victreebel_valencia/anim_idle.asm"
+ParasValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/paras_valencia/anim_idle.asm"
+ParasectValenciaAnimationIdle: INCLUDE "gfx/pokemon/forms/parasect_valencia/anim_idle.asm"
 DratiniPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/dratini_partner/anim_idle.asm"
 EeveePartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/eevee_partner/anim_idle.asm"
 PikachuPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/pikachu_partner/anim_idle.asm"

@@ -972,6 +972,30 @@ INCBIN "gfx/pokemon/kanto/tauros/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/kanto/tauros/shiny.pal"
 INCBIN "gfx/pokemon/kanto/tauros/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/kanto/tauros/shiny.pal"
+INCBIN "gfx/pokemon/forms/caterpie_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/caterpie_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/metapod_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/metapod_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/butterfree_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/butterfree_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/oddish_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/oddish_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/gloom_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/gloom_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/vileplume_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/vileplume_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/bellossom_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/bellossom_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/bellsprout_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/bellsprout_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/weepinbell_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/weepinbell_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/victreebel_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/victreebel_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/paras_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/paras_valencia/shiny.pal"
+INCBIN "gfx/pokemon/forms/parasect_valencia/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/parasect_valencia/shiny.pal"
 INCBIN "gfx/pokemon/forms/dratini_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dratini_partner/shiny.pal"
 INCBIN "gfx/pokemon/forms/eevee_partner/normal.gbcpal", middle_colors

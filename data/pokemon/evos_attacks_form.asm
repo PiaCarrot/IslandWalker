@@ -51,6 +51,18 @@ FormsEvosAttacksPointers::
         dw TaurosCombatEvosAttacks
         dw TaurosBlazeEvosAttacks
         dw TaurosAquaEvosAttacks
+        dw CaterpieValenciaEvosAttacks
+        dw MetapodValenciaEvosAttacks
+        dw ButterfreeValenciaEvosAttacks
+        dw OddishValenciaEvosAttacks
+        dw GloomValenciaEvosAttacks
+        dw VileplumeValenciaEvosAttacks
+        dw BellossomValenciaEvosAttacks
+        dw BellsproutValenciaEvosAttacks
+        dw WeepinbellValenciaEvosAttacks
+        dw VictreebelValenciaEvosAttacks
+        dw ParasValenciaEvosAttacks
+        dw ParasectValenciaEvosAttacks
         dw DratiniPartnerEvosAttacks
         dw EeveePartnerEvosAttacks
         dw PikachuPartnerEvosAttacks
@@ -1145,6 +1157,181 @@ TaurosAquaEvosAttacks:
         dbw 50, THRASH
         ; dbw 55, WAVE_CRASH
         dbw 60, CLOSE_COMBAT
+        db 0 ; no more level-up moves
+
+CaterpieValenciaEvosAttacks:
+        evolve EVOLVE_LEVEL, 7, METAPOD_VALENCIA
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        dbw 1, STRING_SHOT
+        dbw 15, BUG_BITE
+        db 0 ; no more level-up moves
+
+MetapodValenciaEvosAttacks:
+        evolve EVOLVE_LEVEL, 10, BUTTERFREE_VALENCIA
+        db 0 ; no more evolutions
+        dbw 1, HARDEN
+        dbw 7, HARDEN
+        db 0 ; no more level-up moves
+
+ButterfreeValenciaEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, CONFUSION
+        dbw 10, CONFUSION
+        dbw 12, POISONPOWDER
+        dbw 12, STUN_SPORE
+        dbw 12, SLEEP_POWDER
+        dbw 16, GUST
+        dbw 18, SUPERSONIC
+        dbw 22, WHIRLWIND
+        dbw 24, PSYBEAM
+        dbw 28, SILVER_WIND
+        dbw 30, TAILWIND
+        dbw 34, SAFEGUARD
+        dbw 36, CAPTIVATE
+        dbw 40, BUG_BUZZ
+        db 0 ; no more level-up moves
+
+OddishValenciaEvosAttacks:
+        evolve EVOLVE_LEVEL, 21, GLOOM_VALENCIA
+        db 0 ; no more evolutions
+        dbw 1, ABSORB
+        dbw 5, SWEET_SCENT
+        dbw 9, ACID
+        dbw 13, POISONPOWDER
+        dbw 15, STUN_SPORE
+        dbw 17, SLEEP_POWDER
+        dbw 21, MEGA_DRAIN
+        dbw 25, LUCKY_CHANT
+        dbw 29, NATURAL_GIFT
+        dbw 33, MOONLIGHT
+        dbw 37, GIGA_DRAIN
+        dbw 41, PETAL_DANCE
+        db 0 ; no more level-up moves
+
+GloomValenciaEvosAttacks:
+        evolve EVOLVE_ITEM, LEAF_STONE, VILEPLUME_VALENCIA
+        evolve EVOLVE_ITEM, SUN_STONE, BELLOSSOM_VALENCIA
+        db 0 ; no more evolutions
+        dbw 1, ABSORB
+        dbw 1, SWEET_SCENT
+        dbw 1, ACID
+        dbw 5, SWEET_SCENT
+        dbw 9, ACID
+        dbw 13, POISONPOWDER
+        dbw 15, STUN_SPORE
+        dbw 17, SLEEP_POWDER
+        dbw 23, MEGA_DRAIN
+        dbw 29, LUCKY_CHANT
+        dbw 35, NATURAL_GIFT
+        dbw 41, MOONLIGHT
+        dbw 47, GIGA_DRAIN
+        dbw 53, PETAL_DANCE
+        db 0 ; no more level-up moves
+
+VileplumeValenciaEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, MEGA_DRAIN
+        dbw 1, AROMATHERAPY
+        dbw 1, STUN_SPORE
+        dbw 1, POISONPOWDER
+        dbw 53, PETAL_DANCE
+        dbw 65, SOLARBEAM
+        db 0 ; no more level-up moves
+
+BellossomValenciaEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, LEAF_BLADE
+        dbw 1, MEGA_DRAIN
+        dbw 1, SWEET_SCENT
+        dbw 1, STUN_SPORE
+        dbw 1, SUNNY_DAY
+        dbw 23, MAGICAL_LEAF
+        dbw 53, LEAF_STORM
+        db 0 ; no more level-up moves
+
+BellsproutValenciaEvosAttacks:
+        evolve EVOLVE_LEVEL, 21, WEEPINBELL_VALENCIA
+        db 0 ; no more evolutions
+        dbw 1, VINE_WHIP
+        dbw 7, GROWTH
+        dbw 11, WRAP
+        dbw 13, SLEEP_POWDER
+        dbw 15, POISONPOWDER
+        dbw 17, STUN_SPORE
+        dbw 23, ACID
+        dbw 27, KNOCK_OFF
+        dbw 29, SWEET_SCENT
+        dbw 35, GASTRO_ACID
+        dbw 39, RAZOR_LEAF
+        dbw 41, SLAM
+        dbw 47, WRING_OUT
+        db 0 ; no more level-up moves
+
+WeepinbellValenciaEvosAttacks:
+        evolve EVOLVE_ITEM, LEAF_STONE, VICTREEBEL_VALENCIA
+        db 0 ; no more evolutions
+        dbw 1, VINE_WHIP
+        dbw 1, GROWTH
+        dbw 1, WRAP
+        dbw 7, GROWTH
+        dbw 11, WRAP
+        dbw 13, SLEEP_POWDER
+        dbw 15, POISONPOWDER
+        dbw 17, STUN_SPORE
+        dbw 23, ACID
+        dbw 27, KNOCK_OFF
+        dbw 29, SWEET_SCENT
+        dbw 35, GASTRO_ACID
+        dbw 39, RAZOR_LEAF
+        dbw 41, SLAM
+        dbw 47, WRING_OUT
+        db 0 ; no more level-up moves
+
+VictreebelValenciaEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, STOCKPILE
+        dbw 1, SWALLOW
+        dbw 1, SPIT_UP
+        dbw 1, VINE_WHIP
+        dbw 1, SLEEP_POWDER
+        dbw 1, SWEET_SCENT
+        dbw 1, RAZOR_LEAF
+        dbw 47, LEAF_STORM
+        dbw 47, LEAF_BLADE
+        db 0 ; no more level-up moves
+
+ParasValenciaEvosAttacks:
+        evolve EVOLVE_LEVEL, 24, PARASECT_VALENCIA
+        db 0 ; no more evolutions
+        dbw 1, SCRATCH
+        dbw 6, STUN_SPORE
+        dbw 6, POISONPOWDER
+        dbw 11, LEECH_LIFE
+        dbw 17, SPORE
+        dbw 22, SLASH
+        dbw 27, GROWTH
+        dbw 33, GIGA_DRAIN
+        dbw 38, AROMATHERAPY
+        dbw 43, X_SCISSOR
+        db 0 ; no more level-up moves
+
+ParasectValenciaEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, CROSS_POISON
+        dbw 1, SCRATCH
+        dbw 1, STUN_SPORE
+        dbw 1, POISONPOWDER
+        dbw 1, LEECH_LIFE
+        dbw 6, STUN_SPORE
+        dbw 6, POISONPOWDER
+        dbw 11, LEECH_LIFE
+        dbw 17, SPORE
+        dbw 22, SLASH
+        dbw 30, GROWTH
+        dbw 39, GIGA_DRAIN
+        dbw 47, AROMATHERAPY
+        dbw 55, X_SCISSOR
         db 0 ; no more level-up moves
 
 NoEvosAttacks4:

@@ -46,10 +46,22 @@ FormsAnimationPointers:
         dw GoodraHisuiAnimation
         dw TyphlosionHisuiAnimation
         dw WooperPaldeaAnimation
-        dw TaurosCombatAnimation
-        dw TaurosBlazeAnimation
-        dw TaurosAquaAnimation
-        dw DratiniPartnerAnimation
+    dw TaurosCombatAnimation
+    dw TaurosBlazeAnimation
+    dw TaurosAquaAnimation
+    dw CaterpieValenciaAnimation
+    dw MetapodValenciaAnimation
+    dw ButterfreeValenciaAnimation
+    dw OddishValenciaAnimation
+    dw GloomValenciaAnimation
+    dw VileplumeValenciaAnimation
+    dw BellossomValenciaAnimation
+    dw BellsproutValenciaAnimation
+    dw WeepinbellValenciaAnimation
+    dw VictreebelValenciaAnimation
+    dw ParasValenciaAnimation
+    dw ParasectValenciaAnimation
+    dw DratiniPartnerAnimation
         dw EeveePartnerAnimation
 	dw PikachuPartnerAnimation
 	dw DragonairPartnerAnimation
@@ -106,6 +118,18 @@ WooperPaldeaAnimation: INCLUDE "gfx/pokemon/forms/wooper_paldea/anim.asm"
 TaurosCombatAnimation: INCLUDE "gfx/pokemon/forms/tauros_combat/anim.asm"
 TaurosBlazeAnimation: INCLUDE "gfx/pokemon/forms/tauros_blaze/anim.asm"
 TaurosAquaAnimation: INCLUDE "gfx/pokemon/forms/tauros_aqua/anim.asm"
+CaterpieValenciaAnimation: INCLUDE "gfx/pokemon/forms/caterpie_valencia/anim.asm"
+MetapodValenciaAnimation: INCLUDE "gfx/pokemon/forms/metapod_valencia/anim.asm"
+ButterfreeValenciaAnimation: INCLUDE "gfx/pokemon/forms/butterfree_valencia/anim.asm"
+OddishValenciaAnimation: INCLUDE "gfx/pokemon/forms/oddish_valencia/anim.asm"
+GloomValenciaAnimation: INCLUDE "gfx/pokemon/forms/gloom_valencia/anim.asm"
+VileplumeValenciaAnimation: INCLUDE "gfx/pokemon/forms/vileplume_valencia/anim.asm"
+BellossomValenciaAnimation: INCLUDE "gfx/pokemon/forms/bellossom_valencia/anim.asm"
+BellsproutValenciaAnimation: INCLUDE "gfx/pokemon/forms/bellsprout_valencia/anim.asm"
+WeepinbellValenciaAnimation: INCLUDE "gfx/pokemon/forms/weepinbell_valencia/anim.asm"
+VictreebelValenciaAnimation: INCLUDE "gfx/pokemon/forms/victreebel_valencia/anim.asm"
+ParasValenciaAnimation: INCLUDE "gfx/pokemon/forms/paras_valencia/anim.asm"
+ParasectValenciaAnimation: INCLUDE "gfx/pokemon/forms/parasect_valencia/anim.asm"
 DratiniPartnerAnimation: INCLUDE "gfx/pokemon/forms/dratini_partner/anim.asm"
 EeveePartnerAnimation: INCLUDE "gfx/pokemon/forms/eevee_partner/anim.asm"
 PikachuPartnerAnimation: INCLUDE "gfx/pokemon/forms/pikachu_partner/anim.asm"

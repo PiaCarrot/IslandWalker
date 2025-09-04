@@ -956,6 +956,30 @@ PokemonPicPointers::
     dba TaurosBlazeBackpic
     dba TaurosAquaFrontpic
     dba TaurosAquaBackpic
+    dba CaterpieValenciaFrontpic
+    dba CaterpieValenciaBackpic
+    dba MetapodValenciaFrontpic
+    dba MetapodValenciaBackpic
+    dba ButterfreeValenciaFrontpic
+    dba ButterfreeValenciaBackpic
+    dba OddishValenciaFrontpic
+    dba OddishValenciaBackpic
+    dba GloomValenciaFrontpic
+    dba GloomValenciaBackpic
+    dba VileplumeValenciaFrontpic
+    dba VileplumeValenciaBackpic
+    dba BellossomValenciaFrontpic
+    dba BellossomValenciaBackpic
+    dba BellsproutValenciaFrontpic
+    dba BellsproutValenciaBackpic
+    dba WeepinbellValenciaFrontpic
+    dba WeepinbellValenciaBackpic
+    dba VictreebelValenciaFrontpic
+    dba VictreebelValenciaBackpic
+    dba ParasValenciaFrontpic
+    dba ParasValenciaBackpic
+    dba ParasectValenciaFrontpic
+    dba ParasectValenciaBackpic
     dba DratiniPartnerFrontpic
         dba DratiniPartnerBackpic
         dba EeveePartnerFrontpic

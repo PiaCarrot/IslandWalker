@@ -51,6 +51,18 @@ FormsBitmaskPointers:
     dw TaurosCombatBitmasks
     dw TaurosBlazeBitmasks
     dw TaurosAquaBitmasks
+    dw CaterpieValenciaBitmasks
+    dw MetapodValenciaBitmasks
+    dw ButterfreeValenciaBitmasks
+    dw OddishValenciaBitmasks
+    dw GloomValenciaBitmasks
+    dw VileplumeValenciaBitmasks
+    dw BellossomValenciaBitmasks
+    dw BellsproutValenciaBitmasks
+    dw WeepinbellValenciaBitmasks
+    dw VictreebelValenciaBitmasks
+    dw ParasValenciaBitmasks
+    dw ParasectValenciaBitmasks
     dw DratiniPartnerBitmasks
     dw EeveePartnerBitmasks
     dw PikachuPartnerBitmasks
@@ -108,6 +120,18 @@ WooperPaldeaBitmasks: INCLUDE "gfx/pokemon/forms/wooper_paldea/bitmask.asm"
 TaurosCombatBitmasks: INCLUDE "gfx/pokemon/forms/tauros_combat/bitmask.asm"
 TaurosBlazeBitmasks: INCLUDE "gfx/pokemon/forms/tauros_blaze/bitmask.asm"
 TaurosAquaBitmasks: INCLUDE "gfx/pokemon/forms/tauros_aqua/bitmask.asm"
+CaterpieValenciaBitmasks: INCLUDE "gfx/pokemon/forms/caterpie_valencia/bitmask.asm"
+MetapodValenciaBitmasks: INCLUDE "gfx/pokemon/forms/metapod_valencia/bitmask.asm"
+ButterfreeValenciaBitmasks: INCLUDE "gfx/pokemon/forms/butterfree_valencia/bitmask.asm"
+OddishValenciaBitmasks: INCLUDE "gfx/pokemon/forms/oddish_valencia/bitmask.asm"
+GloomValenciaBitmasks: INCLUDE "gfx/pokemon/forms/gloom_valencia/bitmask.asm"
+VileplumeValenciaBitmasks: INCLUDE "gfx/pokemon/forms/vileplume_valencia/bitmask.asm"
+BellossomValenciaBitmasks: INCLUDE "gfx/pokemon/forms/bellossom_valencia/bitmask.asm"
+BellsproutValenciaBitmasks: INCLUDE "gfx/pokemon/forms/bellsprout_valencia/bitmask.asm"
+WeepinbellValenciaBitmasks: INCLUDE "gfx/pokemon/forms/weepinbell_valencia/bitmask.asm"
+VictreebelValenciaBitmasks: INCLUDE "gfx/pokemon/forms/victreebel_valencia/bitmask.asm"
+ParasValenciaBitmasks: INCLUDE "gfx/pokemon/forms/paras_valencia/bitmask.asm"
+ParasectValenciaBitmasks: INCLUDE "gfx/pokemon/forms/parasect_valencia/bitmask.asm"
 DratiniPartnerBitmasks: INCLUDE "gfx/pokemon/forms/dratini_partner/bitmask.asm"
 EeveePartnerBitmasks: INCLUDE "gfx/pokemon/forms/eevee_partner/bitmask.asm"
 PikachuPartnerBitmasks: INCLUDE "gfx/pokemon/forms/pikachu_partner/bitmask.asm"

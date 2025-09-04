@@ -51,6 +51,18 @@ FormsEggMovePointers::
         dw TaurosCombatEggMoves
         dw TaurosBlazeEggMoves
         dw TaurosAquaEggMoves
+        dw NoEggMoves4 ; CaterpieValencia
+        dw NoEggMoves4 ; MetapodValencia
+        dw NoEggMoves4 ; ButterfreeValencia
+        dw OddishEggMoves
+        dw NoEggMoves4 ; GloomValencia
+        dw NoEggMoves4 ; VileplumeValencia
+        dw NoEggMoves4 ; BellossomValencia
+        dw BellsproutEggMoves
+        dw NoEggMoves4 ; WeepinbellValencia
+        dw NoEggMoves4 ; VictreebelValencia
+        dw ParasEggMoves
+        dw NoEggMoves4 ; ParasectValencia
         dw NoEggMoves4 ; DratiniPartner
         dw NoEggMoves4 ; EeveePartner
         dw NoEggMoves4 ; PikachuPartner

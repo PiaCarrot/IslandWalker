@@ -470,6 +470,18 @@ NewPokedexOrder:
         dw TAUROS_COMBAT
         dw TAUROS_BLAZE
         dw TAUROS_AQUA
+        dw CATERPIE_VALENCIA
+        dw METAPOD_VALENCIA
+        dw BUTTERFREE_VALENCIA
+        dw ODDISH_VALENCIA
+        dw GLOOM_VALENCIA
+        dw VILEPLUME_VALENCIA
+        dw BELLOSSOM_VALENCIA
+        dw BELLSPROUT_VALENCIA
+        dw WEEPINBELL_VALENCIA
+        dw VICTREEBEL_VALENCIA
+        dw PARAS_VALENCIA
+        dw PARASECT_VALENCIA
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER
         dw PIKACHU_PARTNER
