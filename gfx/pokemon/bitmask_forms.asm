@@ -20,6 +20,22 @@ FormsBitmaskPointers:
     dw ExeggutorAlolaBitmasks
     dw MeowthAlolaBitmasks
     dw PersianAlolaBitmasks
+    dw PonytaGalarBitmasks
+    dw RapidashGalarBitmasks
+    dw FarfetchDGalarBitmasks
+    dw MrMimeGalarBitmasks
+    dw WeezingGalarBitmasks
+    dw ZigzagoonGalarBitmasks
+    dw LinooneGalarBitmasks
+    dw StunfiskGalarBitmasks
+    dw CorsolaGalarBitmasks
+    dw MeowthGalarBitmasks
+    dw SlowpokeGalarBitmasks
+    dw SlowbroGalarBitmasks
+    dw SlowkingGalarBitmasks
+    dw ArticunoGalarBitmasks
+    dw ZapdosGalarBitmasks
+    dw MoltresGalarBitmasks
     dw DratiniPartnerBitmasks
     dw EeveePartnerBitmasks
     dw PikachuPartnerBitmasks
@@ -46,6 +62,22 @@ MarowakAlolaBitmasks: INCLUDE "gfx/pokemon/forms/marowak_alola/bitmask.asm"
 ExeggutorAlolaBitmasks: INCLUDE "gfx/pokemon/forms/exeggutor_alola/bitmask.asm"
 MeowthAlolaBitmasks: INCLUDE "gfx/pokemon/forms/meowth_alola/bitmask.asm"
 PersianAlolaBitmasks: INCLUDE "gfx/pokemon/forms/persian_alola/bitmask.asm"
+PonytaGalarBitmasks: INCLUDE "gfx/pokemon/forms/ponyta_galar/bitmask.asm"
+RapidashGalarBitmasks: INCLUDE "gfx/pokemon/forms/rapidash_galar/bitmask.asm"
+FarfetchDGalarBitmasks: INCLUDE "gfx/pokemon/forms/farfetch_d_galar/bitmask.asm"
+MrMimeGalarBitmasks: INCLUDE "gfx/pokemon/forms/mr__mime_galar/bitmask.asm"
+WeezingGalarBitmasks: INCLUDE "gfx/pokemon/forms/weezing_galar/bitmask.asm"
+ZigzagoonGalarBitmasks: INCLUDE "gfx/pokemon/forms/zigzagoon_galar/bitmask.asm"
+LinooneGalarBitmasks: INCLUDE "gfx/pokemon/forms/linoone_galar/bitmask.asm"
+StunfiskGalarBitmasks: INCLUDE "gfx/pokemon/forms/stunfisk_galar/bitmask.asm"
+CorsolaGalarBitmasks: INCLUDE "gfx/pokemon/forms/corsola_galar/bitmask.asm"
+MeowthGalarBitmasks: INCLUDE "gfx/pokemon/forms/meowth_galar/bitmask.asm"
+SlowpokeGalarBitmasks: INCLUDE "gfx/pokemon/forms/slowpoke_galar/bitmask.asm"
+SlowbroGalarBitmasks: INCLUDE "gfx/pokemon/forms/slowbro_galar/bitmask.asm"
+SlowkingGalarBitmasks: INCLUDE "gfx/pokemon/forms/slowking_galar/bitmask.asm"
+ArticunoGalarBitmasks: INCLUDE "gfx/pokemon/forms/articuno_galar/bitmask.asm"
+ZapdosGalarBitmasks: INCLUDE "gfx/pokemon/forms/zapdos_galar/bitmask.asm"
+MoltresGalarBitmasks: INCLUDE "gfx/pokemon/forms/moltres_galar/bitmask.asm"
 DratiniPartnerBitmasks: INCLUDE "gfx/pokemon/forms/dratini_partner/bitmask.asm"
 EeveePartnerBitmasks: INCLUDE "gfx/pokemon/forms/eevee_partner/bitmask.asm"
 PikachuPartnerBitmasks: INCLUDE "gfx/pokemon/forms/pikachu_partner/bitmask.asm"

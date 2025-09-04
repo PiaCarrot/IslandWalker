@@ -452,6 +452,22 @@ MonMenuIconPals:
         icon_pals RED,    RED    ; EXEGGUTOR_ALOLA
         icon_pals RED,    RED    ; MEOWTH_ALOLA
         icon_pals RED,    RED    ; PERSIAN_ALOLA
+        icon_pals RED,    BROWN  ; PONYTA_GALAR
+        icon_pals RED,    PURPLE ; RAPIDASH_GALAR
+        icon_pals BROWN,  BROWN  ; FARFETCH_D_GALAR
+        icon_pals PINK,   GREEN  ; MR__MIME_GALAR
+        icon_pals PURPLE, BLUE   ; WEEZING_GALAR
+        icon_pals RED,    RED    ; ZIGZAGOON_GALAR
+        icon_pals RED,    RED    ; LINOONE_GALAR
+        icon_pals RED,    RED    ; STUNFISK_GALAR
+        icon_pals PINK,   TEAL   ; CORSOLA_GALAR
+        icon_pals BROWN,  PURPLE ; MEOWTH_GALAR
+        icon_pals PINK,   PURPLE ; SLOWPOKE_GALAR
+        icon_pals PINK,   PURPLE ; SLOWBRO_GALAR
+        icon_pals PINK,   BLUE   ; SLOWKING_GALAR
+        icon_pals BLUE,   BLUE   ; ARTICUNO_GALAR
+        icon_pals BROWN,  RED    ; ZAPDOS_GALAR
+        icon_pals RED,    RED    ; MOLTRES_GALAR
         icon_pals BLUE,   PURPLE ; DRATINI
         icon_pals BROWN,  GRAY   ; EEVEE
         icon_pals RED,    RED    ; PIKACHU

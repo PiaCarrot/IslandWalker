@@ -2,11 +2,6 @@ SECTION "Egg Moves 4", ROMX
 
 FormsEggMovePointers::
         dw LaprasPartnerEggMoves
-        dw NoEggMoves4 ; DratiniPartner
-        dw NoEggMoves4 ; EeveePartner
-        dw NoEggMoves4 ; PikachuPartner
-        dw NoEggMoves4 ; DragonairPartner
-        dw NoEggMoves4 ; DragonitePartner
         dw RattataAlolaEggMoves
         dw RaticateAlolaEggMoves
         dw RaichuAlolaEggMoves
@@ -25,6 +20,27 @@ FormsEggMovePointers::
         dw ExeggutorAlolaEggMoves
         dw MeowthAlolaEggMoves
         dw PersianAlolaEggMoves
+        dw PonytaGalarEggMoves
+        dw RapidashGalarEggMoves
+        dw FarfetchDGalarEggMoves
+        dw MrMimeGalarEggMoves
+        dw WeezingGalarEggMoves
+        dw ZigzagoonGalarEggMoves
+        dw LinooneGalarEggMoves
+        dw StunfiskGalarEggMoves
+        dw CorsolaGalarEggMoves
+        dw MeowthGalarEggMoves
+        dw SlowpokeGalarEggMoves
+        dw SlowbroGalarEggMoves
+        dw SlowkingGalarEggMoves
+        dw ArticunoGalarEggMoves
+        dw ZapdosGalarEggMoves
+        dw MoltresGalarEggMoves
+        dw NoEggMoves4 ; DratiniPartner
+        dw NoEggMoves4 ; EeveePartner
+        dw NoEggMoves4 ; PikachuPartner
+        dw NoEggMoves4 ; DragonairPartner
+        dw NoEggMoves4 ; DragonitePartner
 .IndirectEnd::
 
 LaprasPartnerEggMoves:
@@ -170,6 +186,102 @@ MeowthAlolaEggMoves:
         dw -1 ; end
 
 PersianAlolaEggMoves:
+        dw -1 ; end
+
+PonytaGalarEggMoves:
+        dw DOUBLE_EDGE
+        dw DOUBLE_KICK
+        dw HORN_DRILL
+        dw HYPNOSIS
+        dw MORNING_SUN
+        dw THRASH
+        dw -1 ; end
+
+RapidashGalarEggMoves:
+        dw -1 ; end
+
+FarfetchDGalarEggMoves:
+        dw COUNTER
+        dw COVET
+        dw CURSE
+        dw DOUBLE_EDGE
+        dw FEINT
+        dw FLAIL
+        dw NIGHT_SLASH
+        dw QUICK_ATTACK
+        ; dw QUICK_GUARD
+        ; dw SIMPLE_BEAM
+        dw SKY_ATTACK
+        dw -1 ; end
+
+MrMimeGalarEggMoves:
+        dw CONFUSE_RAY
+        dw FAKE_OUT
+        ; dw POWER_SPLIT
+        dw TICKLE
+        dw -1 ; end
+
+WeezingGalarEggMoves:
+        dw -1 ; end
+
+ZigzagoonGalarEggMoves:
+        dw KNOCK_OFF
+        ; dw PARTING_SHOT
+        ; dw QUICK_GUARD
+        dw -1 ; end
+
+LinooneGalarEggMoves:
+        dw -1 ; end
+
+StunfiskGalarEggMoves:
+        dw ASTONISH
+        dw BIND
+        dw COUNTER
+        dw CURSE
+        dw PAIN_SPLIT
+        ; dw REFLECT_TYPE
+        dw SPITE
+        dw YAWN
+        dw -1 ; end
+
+CorsolaGalarEggMoves:
+        dw CONFUSE_RAY
+        dw DESTINY_BOND
+        dw HAZE
+        dw HEAD_SMASH
+        dw NATURE_POWER
+        dw WATER_PULSE
+        dw -1 ; end
+
+MeowthGalarEggMoves:
+        dw COVET
+        dw CURSE
+        dw DOUBLE_EDGE
+        dw FLAIL
+        dw NIGHT_SLASH
+        dw SPITE
+        dw -1 ; end
+
+SlowpokeGalarEggMoves:
+        ; dw BELCH
+        dw BELLY_DRUM
+        dw BLOCK
+        dw STOMP
+        dw -1 ; end
+
+SlowbroGalarEggMoves:
+        dw -1 ; end
+
+SlowkingGalarEggMoves:
+        dw -1 ; end
+
+ArticunoGalarEggMoves:
+        dw -1 ; end
+
+ZapdosGalarEggMoves:
+        dw -1 ; end
+
+MoltresGalarEggMoves:
         dw -1 ; end
 
 ENDSECTION

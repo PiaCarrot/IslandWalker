@@ -439,6 +439,22 @@ NewPokedexOrder:
         dw EXEGGUTOR_ALOLA
         dw MEOWTH_ALOLA
         dw PERSIAN_ALOLA
+        dw PONYTA_GALAR
+        dw RAPIDASH_GALAR
+        dw FARFETCH_D_GALAR
+        dw MR__MIME_GALAR
+        dw WEEZING_GALAR
+        dw ZIGZAGOON_GALAR
+        dw LINOONE_GALAR
+        dw STUNFISK_GALAR
+        dw CORSOLA_GALAR
+        dw MEOWTH_GALAR
+        dw SLOWPOKE_GALAR
+        dw SLOWBRO_GALAR
+        dw SLOWKING_GALAR
+        dw ARTICUNO_GALAR
+        dw ZAPDOS_GALAR
+        dw MOLTRES_GALAR
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER
         dw PIKACHU_PARTNER

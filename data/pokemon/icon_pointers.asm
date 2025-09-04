@@ -446,6 +446,22 @@ IconPointers:
         dw ExeggutorIcon
         dw MeowthIcon
         dw PersianIcon
+        dw PonytaIcon
+        dw RapidashIcon
+        dw FarfetchdIcon
+        dw MrMimeIcon
+        dw WeezingIcon
+        dw ZigzagoonIcon
+        dw LinooneIcon
+        dw StunfiskIcon
+        dw CorsolaIcon
+        dw MeowthIcon
+        dw SlowpokeIcon
+        dw SlowbroIcon
+        dw SlowkingIcon
+        dw ArticunoIcon
+        dw ZapdosIcon
+        dw MoltresIcon
         dw DratiniIcon
         dw EeveeIcon
         dw PikachuIcon

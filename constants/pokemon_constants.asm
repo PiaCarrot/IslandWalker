@@ -466,22 +466,22 @@ DEF FORM_POKEMON EQU const_value
         const EXEGGUTOR_ALOLA     ; 1b4
         const MEOWTH_ALOLA        ; 1b5
         const PERSIAN_ALOLA       ; 1b6
-	; const PONYTA_GALAR        ; 1b7
-	; const RAPIDASH_GALAR      ; 1b8
-	; const FARFETCH_D_GALAR    ; 1b9
-	; const MR__MIME_GALAR      ; 1ba
-	; const WEEZING_GALAR       ; 1bb
-	; const ZIGZAGOON_GALAR     ; 1bc
-	; const LINOONE_GALAR       ; 1bd
-	; const STUNFISK_GALAR      ; 1be
-	; const CORSOLA_GALAR       ; 1bf
-	; const MEOWTH_GALAR        ; 1c0
-	; const SLOWPOKE_GALAR      ; 1c1
-	; const SLOWBRO_GALAR       ; 1c2
-	; const SLOWKING_GALAR      ; 1c3
-	; const ARTICUNO_GALAR      ; 1c4
-	; const ZAPDOS_GALAR        ; 1c5
-	; const MOLTRES_GALAR       ; 1c6
+        const PONYTA_GALAR        ; 1b7
+        const RAPIDASH_GALAR      ; 1b8
+        const FARFETCH_D_GALAR    ; 1b9
+        const MR__MIME_GALAR      ; 1ba
+        const WEEZING_GALAR       ; 1bb
+        const ZIGZAGOON_GALAR     ; 1bc
+        const LINOONE_GALAR       ; 1bd
+        const STUNFISK_GALAR      ; 1be
+        const CORSOLA_GALAR       ; 1bf
+        const MEOWTH_GALAR        ; 1c0
+        const SLOWPOKE_GALAR      ; 1c1
+        const SLOWBRO_GALAR       ; 1c2
+        const SLOWKING_GALAR      ; 1c3
+        const ARTICUNO_GALAR      ; 1c4
+        const ZAPDOS_GALAR        ; 1c5
+        const MOLTRES_GALAR       ; 1c6
 	; const GROWLITHE_HISUI     ; 1c7
 	; const ARCANINE_HISUI      ; 1c8
 	; const VOLTORB_HISUI       ; 1c9

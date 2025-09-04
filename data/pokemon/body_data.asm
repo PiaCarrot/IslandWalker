@@ -425,11 +425,6 @@ PokemonBodyData:
     dw 802, 17640  ; MELMETAL
 ; Forms
     dw 802, 4850   ; LAPRAS PARTNER
-    dw 511, 70     ; DRATINI PARTNER
-    dw 100, 140    ; EEVEE PARTNER
-    dw 104, 130    ; PIKACHU PARTNER
-    dw 1301, 360   ; DRAGONAIR PARTNER
-    dw 703, 4630   ; DRAGONITE PARTNER
     dw 100, 80     ; RATTATA ALOLA
     dw 204, 410    ; RATICATE ALOLA
     dw 207, 660    ; RAICHU ALOLA
@@ -448,4 +443,25 @@ PokemonBodyData:
     dw 607, 2650   ; EXEGGUTOR ALOLA
     dw 104, 90     ; MEOWTH ALOLA
     dw 303, 710    ; PERSIAN ALOLA
+    dw 303, 660    ; PONYTA GALAR
+    dw 507, 2090   ; RAPIDASH GALAR
+    dw 207, 330    ; FARFETCH_D GALAR
+    dw 403, 1200   ; MR__MIME GALAR
+    dw 311, 210    ; WEEZING GALAR
+    dw 104, 386    ; ZIGZAGOON GALAR
+    dw 108, 717    ; LINOONE GALAR
+    dw 204, 243    ; STUNFISK GALAR
+    dw 200, 110    ; CORSOLA GALAR
+    dw 104, 90     ; MEOWTH GALAR
+    dw 311, 790    ; SLOWPOKE GALAR
+    dw 503, 1730   ; SLOWBRO GALAR
+    dw 607, 1750   ; SLOWKING GALAR
+    dw 507, 1220   ; ARTICUNO GALAR
+    dw 503, 1160   ; ZAPDOS GALAR
+    dw 607, 1320   ; MOLTRES GALAR
+    dw 511, 70     ; DRATINI PARTNER
+    dw 100, 140    ; EEVEE PARTNER
+    dw 104, 130    ; PIKACHU PARTNER
+    dw 1301, 360   ; DRAGONAIR PARTNER
+    dw 703, 4630   ; DRAGONITE PARTNER
     assert_table_length NUM_POKEMON

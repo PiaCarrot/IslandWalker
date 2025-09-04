@@ -442,6 +442,22 @@ PokedexDataPointerTable:
         dba ExeggutorAlolaPokedexEntry
         dba MeowthAlolaPokedexEntry
         dba PersianAlolaPokedexEntry
+        dba PonytaGalarPokedexEntry
+        dba RapidashGalarPokedexEntry
+        dba FarfetchDGalarPokedexEntry
+        dba MrMimeGalarPokedexEntry
+        dba WeezingGalarPokedexEntry
+        dba ZigzagoonGalarPokedexEntry
+        dba LinooneGalarPokedexEntry
+        dba StunfiskGalarPokedexEntry
+        dba CorsolaGalarPokedexEntry
+        dba MeowthGalarPokedexEntry
+        dba SlowpokeGalarPokedexEntry
+        dba SlowbroGalarPokedexEntry
+        dba SlowkingGalarPokedexEntry
+        dba ArticunoGalarPokedexEntry
+        dba ZapdosGalarPokedexEntry
+        dba MoltresGalarPokedexEntry
         dba DratiniPartnerPokedexEntry
         dba EeveePartnerPokedexEntry
 	dba PikachuPartnerPokedexEntry

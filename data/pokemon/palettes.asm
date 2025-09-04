@@ -910,6 +910,38 @@ INCBIN "gfx/pokemon/forms/meowth_alola/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/meowth_alola/shiny.pal"
 INCBIN "gfx/pokemon/forms/persian_alola/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/persian_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/ponyta_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/ponyta_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/rapidash_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/rapidash_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/farfetch_d_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/farfetch_d_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/mr__mime_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/mr__mime_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/weezing_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/weezing_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/zigzagoon_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/zigzagoon_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/linoone_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/linoone_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/stunfisk_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/stunfisk_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/corsola_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/corsola_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/meowth_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/meowth_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/slowpoke_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/slowpoke_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/slowbro_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/slowbro_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/slowking_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/slowking_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/articuno_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/articuno_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/zapdos_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/zapdos_galar/shiny.pal"
+INCBIN "gfx/pokemon/forms/moltres_galar/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/moltres_galar/shiny.pal"
 INCBIN "gfx/pokemon/forms/dratini_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dratini_partner/shiny.pal"
 INCBIN "gfx/pokemon/forms/eevee_partner/normal.gbcpal", middle_colors

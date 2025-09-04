@@ -447,6 +447,24 @@ PokemonCries::
     mon_cry CRY_DROWZEE,       0,  256 ; EXEGGUTOR ALOLA
     mon_cry CRY_CLEFAIRY,    119,  144 ; MEOWTH ALOLA
     mon_cry CRY_CLEFAIRY,    153,  383 ; PERSIAN ALOLA
+
+    mon_cry CRY_WEEPINBELL,    0,  256 ; PONYTA GALAR
+    mon_cry CRY_WEEPINBELL,   32,  320 ; RAPIDASH GALAR
+    mon_cry CRY_SPEAROW,     221,  129 ; FARFETCH_D GALAR
+    mon_cry CRY_KRABBY,        8,  192 ; MR__MIME GALAR
+    mon_cry CRY_GOLEM,       255,  383 ; WEEZING GALAR
+    mon_cry CRY_WEEDLE,      $80b,  $081 ; ZIGZAGOON GALAR
+    mon_cry CRY_WEEDLE,      $609,  $1b1 ; LINOONE GALAR
+    mon_cry CRY_METAPOD,     $2d1,  $0e0 ; STUNFISK GALAR
+    mon_cry CRY_MAGCARGO,    161,  232 ; CORSOLA GALAR
+    mon_cry CRY_CLEFAIRY,    119,  144 ; MEOWTH GALAR
+    mon_cry CRY_SLOWPOKE,      0,  256 ; SLOWPOKE GALAR
+    mon_cry CRY_GROWLITHE,     0,  256 ; SLOWBRO GALAR
+    mon_cry CRY_SLOWKING,    260,  512 ; SLOWKING GALAR
+    mon_cry CRY_RAICHU,      128,  192 ; ARTICUNO GALAR
+    mon_cry CRY_FEAROW,      255,  256 ; ZAPDOS GALAR
+    mon_cry CRY_RAICHU,      248,  192 ; MOLTRES GALAR
+
     mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI PARTNER
     mon_cry CRY_VENONAT,     136,  224 ; EEVEE PARTNER
     mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU PARTNER

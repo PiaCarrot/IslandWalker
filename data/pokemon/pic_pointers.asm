@@ -894,8 +894,40 @@ PokemonPicPointers::
     dba MeowthAlolaBackpic
     dba PersianAlolaFrontpic
     dba PersianAlolaBackpic
+    dba PonytaGalarFrontpic
+    dba PonytaGalarBackpic
+    dba RapidashGalarFrontpic
+    dba RapidashGalarBackpic
+    dba FarfetchDGalarFrontpic
+    dba FarfetchDGalarBackpic
+    dba MrMimeGalarFrontpic
+    dba MrMimeGalarBackpic
+    dba WeezingGalarFrontpic
+    dba WeezingGalarBackpic
+    dba ZigzagoonGalarFrontpic
+    dba ZigzagoonGalarBackpic
+    dba LinooneGalarFrontpic
+    dba LinooneGalarBackpic
+    dba StunfiskGalarFrontpic
+    dba StunfiskGalarBackpic
+    dba CorsolaGalarFrontpic
+    dba CorsolaGalarBackpic
+    dba MeowthGalarFrontpic
+    dba MeowthGalarBackpic
+    dba SlowpokeGalarFrontpic
+    dba SlowpokeGalarBackpic
+    dba SlowbroGalarFrontpic
+    dba SlowbroGalarBackpic
+    dba SlowkingGalarFrontpic
+    dba SlowkingGalarBackpic
+    dba ArticunoGalarFrontpic
+    dba ArticunoGalarBackpic
+    dba ZapdosGalarFrontpic
+    dba ZapdosGalarBackpic
+    dba MoltresGalarFrontpic
+    dba MoltresGalarBackpic
     dba DratiniPartnerFrontpic
-	dba DratiniPartnerBackpic
+        dba DratiniPartnerBackpic
 	dba EeveePartnerFrontpic
 	dba EeveePartnerBackpic
 	dba PikachuPartnerFrontpic

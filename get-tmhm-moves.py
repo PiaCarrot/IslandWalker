@@ -52,9 +52,13 @@ def gather_tmhm_moves(slug: str):
     return moves
 
 for file in filenames:
-    # slug for PokemonDB URLs
+    # slug for PokeAPI URLs, handling edge cases with punctuation
     name = file.split('/')[-1].replace('.asm', '')
-    slug = name.replace('_', '-').replace('farfetchd', 'farfetch-d').replace('mr.mime', 'mr-mime')
+    slug_map = {
+        'farfetch_d_galar': 'farfetchd-galar',
+        'mr__mime_galar': 'mr-mime-galar',
+    }
+    slug = slug_map.get(name, name.replace('_', '-'))
 
     print(f'Processing {name}')
 

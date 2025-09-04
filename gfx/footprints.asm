@@ -444,6 +444,22 @@ INCBIN "gfx/footprints/other/placeholder.1bpp" ; MAROWAK_ALOLA
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; EXEGGUTOR_ALOLA
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; MEOWTH_ALOLA
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; PERSIAN_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; PONYTA_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; RAPIDASH_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; FARFETCH_D_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; MR__MIME_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; WEEZING_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; ZIGZAGOON_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; LINOONE_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; STUNFISK_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; CORSOLA_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; MEOWTH_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; SLOWPOKE_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; SLOWBRO_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; SLOWKING_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; ARTICUNO_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; ZAPDOS_GALAR
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; MOLTRES_GALAR
 INCBIN "gfx/footprints/kanto/dratini.1bpp"
 INCBIN "gfx/footprints/kanto/eevee.1bpp"
 INCBIN "gfx/footprints/kanto/pikachu.1bpp"
