@@ -493,10 +493,10 @@ DEF FORM_POKEMON EQU const_value
         const SLIGGOO_HISUI       ; 1cf
         const GOODRA_HISUI        ; 1d0
         const TYPHLOSION_HISUI    ; 1d1
-	; const WOOPER_PALDEA       ; 1d2
-	; const TAUROS_COMBAT       ; 1d3
-	; const TAUROS_BLAZE        ; 1d4
-	; const TAUROS_AQUA         ; 1d5
+        const WOOPER_PALDEA       ; 1d2
+        const TAUROS_COMBAT       ; 1d3
+        const TAUROS_BLAZE        ; 1d4
+        const TAUROS_AQUA         ; 1d5
 	; const CATERPIE_VALENCIA   ; 1d6
 	; const METAPOD_VALENCIA    ; 1d7
 	; const BUTTERFREE_VALENCIA ; 1d8

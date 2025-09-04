@@ -469,6 +469,10 @@ PokedexDataPointerTable:
         dba SliggooHisuiPokedexEntry
         dba GoodraHisuiPokedexEntry
         dba TyphlosionHisuiPokedexEntry
+        dba WooperPaldeaPokedexEntry
+        dba TaurosCombatPokedexEntry
+        dba TaurosBlazePokedexEntry
+        dba TaurosAquaPokedexEntry
         dba DratiniPartnerPokedexEntry
         dba EeveePartnerPokedexEntry
         dba PikachuPartnerPokedexEntry

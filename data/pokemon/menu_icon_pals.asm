@@ -479,6 +479,10 @@ MonMenuIconPals:
         icon_pals RED,    RED    ; SLIGGOO_HISUI
         icon_pals RED,    RED    ; GOODRA_HISUI
         icon_pals PINK,   PURPLE ; TYPHLOSION_HISUI
+        icon_pals BROWN,  PURPLE ; WOOPER_PALDEA
+        icon_pals BROWN,  BROWN  ; TAUROS_COMBAT
+        icon_pals BROWN,  RED    ; TAUROS_BLAZE
+        icon_pals BROWN,  BLUE   ; TAUROS_AQUA
         icon_pals BLUE,   PURPLE ; DRATINI
         icon_pals BROWN,  GRAY   ; EEVEE
         icon_pals RED,    RED    ; PIKACHU

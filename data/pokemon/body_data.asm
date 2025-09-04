@@ -470,6 +470,10 @@ PokemonBodyData:
     dw 207, 390    ; SLIGGOO HISUI
     dw 607, 3320   ; GOODRA HISUI
     dw 507, 1750   ; TYPHLOSION HISUI
+    dw 104, 243    ; WOOPER PALDEA
+    dw 407, 2535   ; TAUROS COMBAT
+    dw 407, 1874   ; TAUROS BLAZE
+    dw 407, 2425   ; TAUROS AQUA
     dw 511, 70     ; DRATINI PARTNER
     dw 100, 140    ; EEVEE PARTNER
     dw 104, 130    ; PIKACHU PARTNER

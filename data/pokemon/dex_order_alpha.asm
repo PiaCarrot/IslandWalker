@@ -466,6 +466,10 @@ AlphabeticalPokedexOrder:
         dw SLIGGOO_HISUI
         dw GOODRA_HISUI
         dw TYPHLOSION_HISUI
+        dw WOOPER_PALDEA
+        dw TAUROS_COMBAT
+        dw TAUROS_BLAZE
+        dw TAUROS_AQUA
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER
         dw PIKACHU_PARTNER

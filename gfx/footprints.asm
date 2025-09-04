@@ -471,6 +471,10 @@ INCBIN "gfx/footprints/other/zoroark.1bpp" ; ZOROARK_HISUI
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; SLIGGOO_HISUI
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; GOODRA_HISUI
 INCBIN "gfx/footprints/johto/typhlosion.1bpp" ; TYPHLOSION_HISUI
+INCBIN "gfx/footprints/johto/wooper.1bpp" ; WOOPER_PALDEA
+INCBIN "gfx/footprints/kanto/tauros.1bpp" ; TAUROS_COMBAT
+INCBIN "gfx/footprints/kanto/tauros.1bpp" ; TAUROS_BLAZE
+INCBIN "gfx/footprints/kanto/tauros.1bpp" ; TAUROS_AQUA
 INCBIN "gfx/footprints/kanto/dratini.1bpp"
 INCBIN "gfx/footprints/kanto/eevee.1bpp"
 INCBIN "gfx/footprints/kanto/pikachu.1bpp"

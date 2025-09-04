@@ -47,6 +47,10 @@ FormsEggMovePointers::
         dw NoEggMoves4 ; SliggooHisui
         dw NoEggMoves4 ; GoodraHisui
         dw NoEggMoves4 ; TyphlosionHisui
+        dw WooperPaldeaEggMoves
+        dw TaurosCombatEggMoves
+        dw TaurosBlazeEggMoves
+        dw TaurosAquaEggMoves
         dw NoEggMoves4 ; DratiniPartner
         dw NoEggMoves4 ; EeveePartner
         dw NoEggMoves4 ; PikachuPartner
@@ -338,6 +342,36 @@ ZoruaHisuiEggMoves:
         dw MEMENTO
         dw EXTRASENSORY
         ; dw COMEUPPANCE
+        dw -1 ; end
+
+WooperPaldeaEggMoves:
+        dw DOUBLE_KICK
+        dw MIST
+        dw COUNTER
+        dw RECOVER
+        dw HAZE
+        dw CURSE
+        dw ANCIENTPOWER
+        dw STOCKPILE
+        dw SPIT_UP
+        dw SWALLOW
+        ; dw ACID_SPRAY
+        ; dw AFTER_YOU
+        dw -1 ; end
+
+TaurosCombatEggMoves:
+        dw CURSE
+        dw ENDEAVOR
+        dw -1 ; end
+
+TaurosBlazeEggMoves:
+        dw CURSE
+        dw ENDEAVOR
+        dw -1 ; end
+
+TaurosAquaEggMoves:
+        dw CURSE
+        dw ENDEAVOR
         dw -1 ; end
 
 ENDSECTION

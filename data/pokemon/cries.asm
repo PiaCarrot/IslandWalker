@@ -476,7 +476,10 @@ PokemonCries::
     mon_cry CRY_CHATOT,     -$01a, $2e6 ; SLIGGOO HISUI
     mon_cry CRY_VULPIX,     -$107, $0ca ; GOODRA HISUI
     mon_cry CRY_TYPHLOSION, 3840,  212 ; TYPHLOSION HISUI
-
+    mon_cry CRY_WOOPER,      147,  175 ; WOOPER PALDEA
+    mon_cry CRY_SQUIRTLE,     17,  192 ; TAUROS COMBAT
+    mon_cry CRY_SQUIRTLE,     17,  192 ; TAUROS BLAZE
+    mon_cry CRY_SQUIRTLE,     17,  192 ; TAUROS AQUA
     mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI PARTNER
     mon_cry CRY_VENONAT,     136,  224 ; EEVEE PARTNER
     mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU PARTNER

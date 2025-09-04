@@ -473,6 +473,10 @@ IconPointers:
         dw SliggooIcon
         dw GoodraIcon
         dw TyphlosionIcon
+        dw WooperIcon
+        dw TaurosIcon
+        dw TaurosIcon
+        dw TaurosIcon
         dw DratiniIcon
         dw EeveeIcon
         dw PikachuIcon

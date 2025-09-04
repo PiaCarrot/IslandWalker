@@ -45,6 +45,10 @@ FormsAnimationPointers:
         dw SliggooHisuiAnimation
         dw GoodraHisuiAnimation
         dw TyphlosionHisuiAnimation
+        dw WooperPaldeaAnimation
+        dw TaurosCombatAnimation
+        dw TaurosBlazeAnimation
+        dw TaurosAquaAnimation
         dw DratiniPartnerAnimation
         dw EeveePartnerAnimation
 	dw PikachuPartnerAnimation
@@ -98,6 +102,10 @@ ZoroarkHisuiAnimation: INCLUDE "gfx/pokemon/forms/zoroark_hisui/anim.asm"
 SliggooHisuiAnimation: INCLUDE "gfx/pokemon/forms/sliggoo_hisui/anim.asm"
 GoodraHisuiAnimation: INCLUDE "gfx/pokemon/forms/goodra_hisui/anim.asm"
 TyphlosionHisuiAnimation: INCLUDE "gfx/pokemon/forms/typhlosion_hisui/anim.asm"
+WooperPaldeaAnimation: INCLUDE "gfx/pokemon/johto/wooper/anim.asm"
+TaurosCombatAnimation: INCLUDE "gfx/pokemon/kanto/tauros/anim.asm"
+TaurosBlazeAnimation: INCLUDE "gfx/pokemon/kanto/tauros/anim.asm"
+TaurosAquaAnimation: INCLUDE "gfx/pokemon/kanto/tauros/anim.asm"
 DratiniPartnerAnimation: INCLUDE "gfx/pokemon/forms/dratini_partner/anim.asm"
 EeveePartnerAnimation: INCLUDE "gfx/pokemon/forms/eevee_partner/anim.asm"
 PikachuPartnerAnimation: INCLUDE "gfx/pokemon/forms/pikachu_partner/anim.asm"

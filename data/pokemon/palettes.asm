@@ -964,6 +964,14 @@ INCBIN "gfx/pokemon/forms/goodra_hisui/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/goodra_hisui/shiny.pal"
 INCBIN "gfx/pokemon/forms/typhlosion_hisui/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/typhlosion_hisui/shiny.pal"
+INCBIN "gfx/pokemon/johto/wooper/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/johto/wooper/shiny.pal"
+INCBIN "gfx/pokemon/kanto/tauros/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/kanto/tauros/shiny.pal"
+INCBIN "gfx/pokemon/kanto/tauros/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/kanto/tauros/shiny.pal"
+INCBIN "gfx/pokemon/kanto/tauros/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/kanto/tauros/shiny.pal"
 INCBIN "gfx/pokemon/forms/dratini_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dratini_partner/shiny.pal"
 INCBIN "gfx/pokemon/forms/eevee_partner/normal.gbcpal", middle_colors

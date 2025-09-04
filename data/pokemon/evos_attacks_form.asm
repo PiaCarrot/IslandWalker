@@ -47,6 +47,10 @@ FormsEvosAttacksPointers::
         dw SliggooHisuiEvosAttacks
         dw GoodraHisuiEvosAttacks
         dw TyphlosionHisuiEvosAttacks
+        dw WooperPaldeaEvosAttacks
+        dw TaurosCombatEvosAttacks
+        dw TaurosBlazeEvosAttacks
+        dw TaurosAquaEvosAttacks
         dw DratiniPartnerEvosAttacks
         dw EeveePartnerEvosAttacks
         dw PikachuPartnerEvosAttacks
@@ -1070,6 +1074,77 @@ TyphlosionHisuiEvosAttacks:
         ; dbw 56, INFERNO
         dbw 61, ROLLOUT
         dbw 74, OVERHEAT
+        db 0 ; no more level-up moves
+
+WooperPaldeaEvosAttacks:
+        evolve EVOLVE_LEVEL, 20, CLODSIRE
+        db 0 ; no more evolutions
+        dbw 1, MUD_SHOT
+        dbw 1, TAIL_WHIP
+        dbw 4, TACKLE
+        dbw 8, POISON_TAIL
+        dbw 12, TOXIC_SPIKES
+        dbw 16, SLAM
+        dbw 21, YAWN
+        dbw 24, POISON_JAB
+        ; dbw 28, SLUDGE_WAVE
+        dbw 32, AMNESIA
+        dbw 36, TOXIC
+        dbw 40, EARTHQUAKE
+        db 0 ; no more level-up moves
+
+TaurosCombatEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        dbw 1, TAIL_WHIP
+        dbw 5, WORK_UP
+        dbw 10, DOUBLE_KICK
+        dbw 15, ASSURANCE
+        dbw 20, HEADBUTT
+        dbw 25, SCARY_FACE
+        dbw 30, ZEN_HEADBUTT
+        ; dbw 35, RAGING_BULL
+        dbw 40, REST
+        dbw 45, SWAGGER
+        dbw 50, THRASH
+        dbw 55, DOUBLE_EDGE
+        dbw 60, CLOSE_COMBAT
+        db 0 ; no more level-up moves
+
+TaurosBlazeEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        dbw 1, TAIL_WHIP
+        dbw 5, WORK_UP
+        dbw 10, DOUBLE_KICK
+        ; dbw 15, FLAME_CHARGE
+        dbw 20, HEADBUTT
+        dbw 25, SCARY_FACE
+        dbw 30, ZEN_HEADBUTT
+        ; dbw 35, RAGING_BULL
+        dbw 40, REST
+        dbw 45, SWAGGER
+        dbw 50, THRASH
+        dbw 55, FLARE_BLITZ
+        dbw 60, CLOSE_COMBAT
+        db 0 ; no more level-up moves
+
+TaurosAquaEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, TACKLE
+        dbw 1, TAIL_WHIP
+        dbw 5, WORK_UP
+        dbw 10, DOUBLE_KICK
+        dbw 15, AQUA_JET
+        dbw 20, HEADBUTT
+        dbw 25, SCARY_FACE
+        dbw 30, ZEN_HEADBUTT
+        ; dbw 35, RAGING_BULL
+        dbw 40, REST
+        dbw 45, SWAGGER
+        dbw 50, THRASH
+        ; dbw 55, WAVE_CRASH
+        dbw 60, CLOSE_COMBAT
         db 0 ; no more level-up moves
 
 NoEvosAttacks4:

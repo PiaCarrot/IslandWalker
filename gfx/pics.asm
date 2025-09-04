@@ -667,6 +667,14 @@ GoodraHisuiFrontpic: INCBIN "gfx/pokemon/forms/goodra_hisui/front.animated.2bpp.
 GoodraHisuiBackpic:  INCBIN "gfx/pokemon/forms/goodra_hisui/back.2bpp.lz"
 TyphlosionHisuiFrontpic: INCBIN "gfx/pokemon/forms/typhlosion_hisui/front.animated.2bpp.lz"
 TyphlosionHisuiBackpic:  INCBIN "gfx/pokemon/forms/typhlosion_hisui/back.2bpp.lz"
+WooperPaldeaFrontpic: INCBIN "gfx/pokemon/forms/wooper_paldea/front.animated.2bpp.lz"
+WooperPaldeaBackpic:  INCBIN "gfx/pokemon/forms/wooper_paldea/back.2bpp.lz"
+TaurosCombatFrontpic: INCBIN "gfx/pokemon/forms/tauros_combat/front.animated.2bpp.lz"
+TaurosCombatBackpic:  INCBIN "gfx/pokemon/forms/tauros_combat/back.2bpp.lz"
+TaurosBlazeFrontpic:  INCBIN "gfx/pokemon/forms/tauros_blaze/front.animated.2bpp.lz"
+TaurosBlazeBackpic:   INCBIN "gfx/pokemon/forms/tauros_blaze/back.2bpp.lz"
+TaurosAquaFrontpic:   INCBIN "gfx/pokemon/forms/tauros_aqua/front.animated.2bpp.lz"
+TaurosAquaBackpic:    INCBIN "gfx/pokemon/forms/tauros_aqua/back.2bpp.lz"
 
 SECTION "Pokemon Pics 24", ROMX
 

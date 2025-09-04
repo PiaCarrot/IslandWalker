@@ -45,8 +45,12 @@ FormsAnimationIdlePointers:
     dw ZoruaHisuiAnimationIdle
     dw ZoroarkHisuiAnimationIdle
     dw SliggooHisuiAnimationIdle
-    dw GoodraHisuiAnimationIdle
+        dw GoodraHisuiAnimationIdle
     dw TyphlosionHisuiAnimationIdle
+    dw WooperPaldeaAnimationIdle
+    dw TaurosCombatAnimationIdle
+    dw TaurosBlazeAnimationIdle
+    dw TaurosAquaAnimationIdle
     dw DratiniPartnerAnimationIdle
     dw EeveePartnerAnimationIdle
     dw PikachuPartnerAnimationIdle
@@ -100,6 +104,10 @@ ZoroarkHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/zoroark_hisui/anim_idle.as
 SliggooHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/sliggoo_hisui/anim_idle.asm"
 GoodraHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/goodra_hisui/anim_idle.asm"
 TyphlosionHisuiAnimationIdle: INCLUDE "gfx/pokemon/forms/typhlosion_hisui/anim_idle.asm"
+WooperPaldeaAnimationIdle: INCLUDE "gfx/pokemon/johto/wooper/anim_idle.asm"
+TaurosCombatAnimationIdle: INCLUDE "gfx/pokemon/kanto/tauros/anim_idle.asm"
+TaurosBlazeAnimationIdle: INCLUDE "gfx/pokemon/kanto/tauros/anim_idle.asm"
+TaurosAquaAnimationIdle: INCLUDE "gfx/pokemon/kanto/tauros/anim_idle.asm"
 DratiniPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/dratini_partner/anim_idle.asm"
 EeveePartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/eevee_partner/anim_idle.asm"
 PikachuPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/pikachu_partner/anim_idle.asm"

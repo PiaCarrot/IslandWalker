@@ -106,6 +106,7 @@ PlayersHouseBookshelfScript:
 	giveitem WATER_STONE
 	givepoke MANAPHY, 100
 	callasm CheatFillPokedex
+	setflag ENGINE_POKEDEX
 	end
 else
 	jumpstd PictureBookshelfScript

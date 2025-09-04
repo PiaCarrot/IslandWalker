@@ -948,6 +948,14 @@ PokemonPicPointers::
     dba GoodraHisuiBackpic
     dba TyphlosionHisuiFrontpic
     dba TyphlosionHisuiBackpic
+    dba WooperPaldeaFrontpic
+    dba WooperPaldeaBackpic
+    dba TaurosCombatFrontpic
+    dba TaurosCombatBackpic
+    dba TaurosBlazeFrontpic
+    dba TaurosBlazeBackpic
+    dba TaurosAquaFrontpic
+    dba TaurosAquaBackpic
     dba DratiniPartnerFrontpic
         dba DratiniPartnerBackpic
         dba EeveePartnerFrontpic

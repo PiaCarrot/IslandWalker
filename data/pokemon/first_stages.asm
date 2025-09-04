@@ -465,6 +465,10 @@ FirstEvoStages::
         dw GOOMY            ; SLIGGOO_HISUI
         dw GOOMY            ; GOODRA_HISUI
         dw CYNDAQUIL        ; TYPHLOSION_HISUI
+        dw WOOPER_PALDEA    ; WOOPER_PALDEA
+        dw TAUROS_COMBAT    ; TAUROS_COMBAT
+        dw TAUROS_COMBAT    ; TAUROS_BLAZE
+        dw TAUROS_COMBAT    ; TAUROS_AQUA
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER
         dw PIKACHU_PARTNER

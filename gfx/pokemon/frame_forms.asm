@@ -47,6 +47,10 @@ FormsFramePointers:
     dw SliggooHisuiFrames
     dw GoodraHisuiFrames
     dw TyphlosionHisuiFrames
+    dw WooperPaldeaFrames
+    dw TaurosCombatFrames
+    dw TaurosBlazeFrames
+    dw TaurosAquaFrames
     dw DratiniPartnerFrames
     dw EeveePartnerFrames
     dw PikachuPartnerFrames
@@ -100,6 +104,10 @@ ZoroarkHisuiFrames: INCLUDE "gfx/pokemon/forms/zoroark_hisui/frames.asm"
 SliggooHisuiFrames: INCLUDE "gfx/pokemon/forms/sliggoo_hisui/frames.asm"
 GoodraHisuiFrames: INCLUDE "gfx/pokemon/forms/goodra_hisui/frames.asm"
 TyphlosionHisuiFrames: INCLUDE "gfx/pokemon/forms/typhlosion_hisui/frames.asm"
+WooperPaldeaFrames: INCLUDE "gfx/pokemon/johto/wooper/frames.asm"
+TaurosCombatFrames: INCLUDE "gfx/pokemon/kanto/tauros/frames.asm"
+TaurosBlazeFrames: INCLUDE "gfx/pokemon/kanto/tauros/frames.asm"
+TaurosAquaFrames: INCLUDE "gfx/pokemon/kanto/tauros/frames.asm"
 DratiniPartnerFrames: INCLUDE "gfx/pokemon/forms/dratini_partner/frames.asm"
 EeveePartnerFrames: INCLUDE "gfx/pokemon/forms/eevee_partner/frames.asm"
 PikachuPartnerFrames: INCLUDE "gfx/pokemon/forms/pikachu_partner/frames.asm"
