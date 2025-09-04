@@ -525,6 +525,9 @@ DEF FORM_POKEMON EQU const_value
 	; const ROTOM_FROST  ; 1ef
 	; const ROTOM_FAN  ; 1f0
 	; const ROTOM_MOW  ; 1f1
+	; const LYCANROC_MIDNIGHT  ; 1f2
+	; const LYCANROC_DUSK  ; 1f3
+	; const DUDUNSPARCE_THREE  ; 1f4
 DEF NUM_FORM_POKEMON EQU const_value - FORM_POKEMON
 DEF NUM_POKEMON EQU const_value - 1
 
