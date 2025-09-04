@@ -420,9 +420,27 @@ FirstEvoStages::
        dw MELTAN
        dw MELMETAL
         dw LAPRAS_PARTNER
+        dw RATTATA_ALOLA
+        dw RATTATA_ALOLA ; RATICATE_ALOLA
+        dw PICHU         ; RAICHU_ALOLA
+        dw SANDSHREW_ALOLA
+        dw SANDSHREW_ALOLA ; SANDSLASH_ALOLA
+        dw DIGLETT_ALOLA
+        dw DIGLETT_ALOLA ; DUGTRIO_ALOLA
+        dw GRIMER_ALOLA
+        dw GRIMER_ALOLA  ; MUK_ALOLA
+        dw GEODUDE_ALOLA
+        dw GEODUDE_ALOLA ; GRAVELER_ALOLA
+        dw GEODUDE_ALOLA ; GOLEM_ALOLA
+        dw VULPIX_ALOLA
+        dw VULPIX_ALOLA  ; NINETALES_ALOLA
+        dw CUBONE        ; MAROWAK_ALOLA
+        dw EXEGGCUTE     ; EXEGGUTOR_ALOLA
+        dw MEOWTH_ALOLA
+        dw MEOWTH_ALOLA  ; PERSIAN_ALOLA
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER
         dw PIKACHU_PARTNER
-        dw DRATINI_PARTNER
-        dw DRATINI_PARTNER
+        dw DRAGONAIR_PARTNER
+        dw DRAGONITE_PARTNER
         assert_table_length NUM_POKEMON

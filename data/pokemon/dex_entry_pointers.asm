@@ -424,6 +424,24 @@ PokedexDataPointerTable:
        dba MelmetalPokedexEntry
 ; Forms
         dba LaprasPartnerPokedexEntry
+        dba RattataAlolaPokedexEntry
+        dba RaticateAlolaPokedexEntry
+        dba RaichuAlolaPokedexEntry
+        dba SandshrewAlolaPokedexEntry
+        dba SandslashAlolaPokedexEntry
+        dba DiglettAlolaPokedexEntry
+        dba DugtrioAlolaPokedexEntry
+        dba GrimerAlolaPokedexEntry
+        dba MukAlolaPokedexEntry
+        dba GeodudeAlolaPokedexEntry
+        dba GravelerAlolaPokedexEntry
+        dba GolemAlolaPokedexEntry
+        dba VulpixAlolaPokedexEntry
+        dba NinetalesAlolaPokedexEntry
+        dba MarowakAlolaPokedexEntry
+        dba ExeggutorAlolaPokedexEntry
+        dba MeowthAlolaPokedexEntry
+        dba PersianAlolaPokedexEntry
         dba DratiniPartnerPokedexEntry
         dba EeveePartnerPokedexEntry
 	dba PikachuPartnerPokedexEntry

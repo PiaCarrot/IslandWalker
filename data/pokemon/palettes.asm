@@ -874,6 +874,42 @@ INCBIN "gfx/pokemon/other/melmetal/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/other/melmetal/shiny.pal"
 INCBIN "gfx/pokemon/forms/lapras_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/lapras_partner/shiny.pal"
+INCBIN "gfx/pokemon/forms/rattata_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/rattata_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/raticate_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/raticate_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/raichu_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/raichu_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/sandshrew_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/sandshrew_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/sandslash_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/sandslash_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/diglett_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/diglett_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/dugtrio_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/dugtrio_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/grimer_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/grimer_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/muk_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/muk_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/geodude_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/geodude_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/graveler_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/graveler_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/golem_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/golem_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/vulpix_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/vulpix_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/ninetales_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/ninetales_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/marowak_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/marowak_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/exeggutor_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/exeggutor_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/meowth_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/meowth_alola/shiny.pal"
+INCBIN "gfx/pokemon/forms/persian_alola/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/persian_alola/shiny.pal"
 INCBIN "gfx/pokemon/forms/dratini_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dratini_partner/shiny.pal"
 INCBIN "gfx/pokemon/forms/eevee_partner/normal.gbcpal", middle_colors

@@ -426,9 +426,27 @@ INCBIN "gfx/footprints/other/placeholder.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
 ; Forms
 INCBIN "gfx/footprints/kanto/lapras.1bpp"
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; RATTATA_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; RATICATE_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; RAICHU_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; SANDSHREW_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; SANDSLASH_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; DIGLETT_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; DUGTRIO_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; GRIMER_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; MUK_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; GEODUDE_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; GRAVELER_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; GOLEM_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; VULPIX_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; NINETALES_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; MAROWAK_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; EXEGGUTOR_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; MEOWTH_ALOLA
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; PERSIAN_ALOLA
 INCBIN "gfx/footprints/kanto/dratini.1bpp"
 INCBIN "gfx/footprints/kanto/eevee.1bpp"
 INCBIN "gfx/footprints/kanto/pikachu.1bpp"
 INCBIN "gfx/footprints/kanto/dragonair.1bpp"
 INCBIN "gfx/footprints/kanto/dragonite.1bpp"
-	assert_table_length NUM_POKEMON
+        assert_table_length NUM_POKEMON

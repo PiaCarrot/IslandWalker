@@ -428,9 +428,27 @@ IconPointers:
        dw MelmetalIcon
 ; forms
         dw LaprasIcon
+        dw RattataIcon
+        dw RaticateIcon
+        dw RaichuIcon
+        dw SandshrewIcon
+        dw SandslashIcon
+        dw DiglettIcon
+        dw DugtrioIcon
+        dw GrimerIcon
+        dw MukIcon
+        dw GeodudeIcon
+        dw GravelerIcon
+        dw GolemIcon
+        dw VulpixIcon
+        dw NinetalesIcon
+        dw MarowakIcon
+        dw ExeggutorIcon
+        dw MeowthIcon
+        dw PersianIcon
         dw DratiniIcon
         dw EeveeIcon
-	dw PikachuIcon
-	dw DragonairIcon
-	dw DragoniteIcon
-	assert_table_length NUM_POKEMON + 1
+        dw PikachuIcon
+        dw DragonairIcon
+        dw DragoniteIcon
+        assert_table_length NUM_POKEMON + 1

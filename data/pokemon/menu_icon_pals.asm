@@ -434,9 +434,27 @@ MonMenuIconPals:
        icon_pals RED,    RED    ; MELMETAL
 ; Forms
         icon_pals BLUE,   TEAL   ; LAPRAS
+        icon_pals RED,    RED    ; RATTATA_ALOLA
+        icon_pals RED,    RED    ; RATICATE_ALOLA
+        icon_pals RED,    RED    ; RAICHU_ALOLA
+        icon_pals RED,    RED    ; SANDSHREW_ALOLA
+        icon_pals RED,    RED    ; SANDSLASH_ALOLA
+        icon_pals RED,    RED    ; DIGLETT_ALOLA
+        icon_pals RED,    RED    ; DUGTRIO_ALOLA
+        icon_pals RED,    RED    ; GRIMER_ALOLA
+        icon_pals RED,    RED    ; MUK_ALOLA
+        icon_pals RED,    RED    ; GEODUDE_ALOLA
+        icon_pals RED,    RED    ; GRAVELER_ALOLA
+        icon_pals RED,    RED    ; GOLEM_ALOLA
+        icon_pals RED,    RED    ; VULPIX_ALOLA
+        icon_pals RED,    RED    ; NINETALES_ALOLA
+        icon_pals RED,    RED    ; MAROWAK_ALOLA
+        icon_pals RED,    RED    ; EXEGGUTOR_ALOLA
+        icon_pals RED,    RED    ; MEOWTH_ALOLA
+        icon_pals RED,    RED    ; PERSIAN_ALOLA
         icon_pals BLUE,   PURPLE ; DRATINI
         icon_pals BROWN,  GRAY   ; EEVEE
         icon_pals RED,    RED    ; PIKACHU
-	icon_pals BLUE,   PURPLE ; DRAGONAIR
-	icon_pals RED,    GRAY   ; DRAGONITE
-	assert_table_length NUM_POKEMON
+        icon_pals BLUE,   PURPLE ; DRAGONAIR
+        icon_pals RED,    GRAY   ; DRAGONITE
+        assert_table_length NUM_POKEMON

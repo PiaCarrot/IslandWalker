@@ -858,7 +858,43 @@ PokemonPicPointers::
 ; Forms
         dba LaprasPartnerFrontpic
         dba LaprasPartnerBackpic
-        dba DratiniPartnerFrontpic
+    dba RattataAlolaFrontpic
+    dba RattataAlolaBackpic
+    dba RaticateAlolaFrontpic
+    dba RaticateAlolaBackpic
+    dba RaichuAlolaFrontpic
+    dba RaichuAlolaBackpic
+    dba SandshrewAlolaFrontpic
+    dba SandshrewAlolaBackpic
+    dba SandslashAlolaFrontpic
+    dba SandslashAlolaBackpic
+    dba DiglettAlolaFrontpic
+    dba DiglettAlolaBackpic
+    dba DugtrioAlolaFrontpic
+    dba DugtrioAlolaBackpic
+    dba GrimerAlolaFrontpic
+    dba GrimerAlolaBackpic
+    dba MukAlolaFrontpic
+    dba MukAlolaBackpic
+    dba GeodudeAlolaFrontpic
+    dba GeodudeAlolaBackpic
+    dba GravelerAlolaFrontpic
+    dba GravelerAlolaBackpic
+    dba GolemAlolaFrontpic
+    dba GolemAlolaBackpic
+    dba VulpixAlolaFrontpic
+    dba VulpixAlolaBackpic
+    dba NinetalesAlolaFrontpic
+    dba NinetalesAlolaBackpic
+    dba MarowakAlolaFrontpic
+    dba MarowakAlolaBackpic
+    dba ExeggutorAlolaFrontpic
+    dba ExeggutorAlolaBackpic
+    dba MeowthAlolaFrontpic
+    dba MeowthAlolaBackpic
+    dba PersianAlolaFrontpic
+    dba PersianAlolaBackpic
+    dba DratiniPartnerFrontpic
 	dba DratiniPartnerBackpic
 	dba EeveePartnerFrontpic
 	dba EeveePartnerBackpic

@@ -429,9 +429,27 @@ PokemonCries::
     mon_cry CRY_PHIONE,      228,  456 ; MELMETAL
 ; Forms
     mon_cry CRY_LAPRAS,       80,  256 ; LAPRAS PARTNER
-    mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI  PARTNER
-    mon_cry CRY_VENONAT,     136,  224 ; EEVEE  PARTNER
-    mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU  PARTNER
-	mon_cry CRY_BULBASAUR,    64,  256 ; DRAGONAIR  PARTNER
-	mon_cry CRY_BULBASAUR,    60,  320 ; DRAGONITE  PARTNER
+    mon_cry CRY_RATTATA,       0,  256 ; RATTATA ALOLA
+    mon_cry CRY_RATTATA,      32,  383 ; RATICATE ALOLA
+    mon_cry CRY_RAICHU,      238,  136 ; RAICHU ALOLA
+    mon_cry CRY_NIDORAN_M,    32,  192 ; SANDSHREW ALOLA
+    mon_cry CRY_NIDORAN_M,   255,  383 ; SANDSLASH ALOLA
+    mon_cry CRY_DIGLETT,     170,  129 ; DIGLETT ALOLA
+    mon_cry CRY_DIGLETT,      42,  144 ; DUGTRIO ALOLA
+    mon_cry CRY_GRIMER,        0,  256 ; GRIMER ALOLA
+    mon_cry CRY_MUK,         239,  383 ; MUK ALOLA
+    mon_cry CRY_VULPIX,      240,  144 ; GEODUDE ALOLA
+    mon_cry CRY_VULPIX,        0,  256 ; GRAVELER ALOLA
+    mon_cry CRY_GOLEM,       224,  192 ; GOLEM ALOLA
+    mon_cry CRY_VULPIX,       79,  144 ; VULPIX ALOLA
+    mon_cry CRY_VULPIX,      136,  224 ; NINETALES ALOLA
+    mon_cry CRY_ODDISH,       79,  224 ; MAROWAK ALOLA
+    mon_cry CRY_DROWZEE,       0,  256 ; EXEGGUTOR ALOLA
+    mon_cry CRY_CLEFAIRY,    119,  144 ; MEOWTH ALOLA
+    mon_cry CRY_CLEFAIRY,    153,  383 ; PERSIAN ALOLA
+    mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI PARTNER
+    mon_cry CRY_VENONAT,     136,  224 ; EEVEE PARTNER
+    mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU PARTNER
+    mon_cry CRY_BULBASAUR,    64,  256 ; DRAGONAIR PARTNER
+    mon_cry CRY_BULBASAUR,    60,  320 ; DRAGONITE PARTNER
         assert_table_length NUM_POKEMON

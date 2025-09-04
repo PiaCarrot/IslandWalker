@@ -421,6 +421,24 @@ NewPokedexOrder:
        dw MELTAN
        dw MELMETAL
         dw LAPRAS_PARTNER
+        dw RATTATA_ALOLA
+        dw RATICATE_ALOLA
+        dw RAICHU_ALOLA
+        dw SANDSHREW_ALOLA
+        dw SANDSLASH_ALOLA
+        dw DIGLETT_ALOLA
+        dw DUGTRIO_ALOLA
+        dw GRIMER_ALOLA
+        dw MUK_ALOLA
+        dw GEODUDE_ALOLA
+        dw GRAVELER_ALOLA
+        dw GOLEM_ALOLA
+        dw VULPIX_ALOLA
+        dw NINETALES_ALOLA
+        dw MAROWAK_ALOLA
+        dw EXEGGUTOR_ALOLA
+        dw MEOWTH_ALOLA
+        dw PERSIAN_ALOLA
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER
         dw PIKACHU_PARTNER

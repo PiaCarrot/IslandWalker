@@ -1,0 +1,21 @@
+	db 0 ; species ID placeholder
+
+	db 105, 105,  75,  50,  65, 100
+	evs  1,   1,   0,   0,   0,   0
+	;   hp  atk  def  spd  sat  sdf
+
+	db POISON, DARK ; type
+	db 75 ; catch rate
+	db 157 ; base exp
+	dw NO_ITEM, NUGGET ; items
+	db GENDER_F50 ; gender ratio
+	db 20 ; step cycles to hatch
+	INCBIN "gfx/pokemon/forms/muk_alola/front.dimensions"
+	db POISON_TOUCH, GLUTTONY ; wBaseAbility1, wBaseAbility2
+	dw NULL ; Padding left-over from the unused back pic
+	db GROWTH_MEDIUM_FAST ; growth rate
+	dn EGG_INDETERMINATE, EGG_INDETERMINATE ; egg groups
+
+	; tm/hm learnset
+	tmhm SANDSTORM, DIG, FOCUS_PUNCH, FRUSTRATION, EMBARGO, GIGA_DRAIN, FACADE, RETURN, BRICK_BREAK, ENDURE, DOUBLE_TEAM, FLAMETHROWER, STONE_EDGE, ROCK_POLISH, TAUNT, FLING, HIDDEN_POWER, PAYBACK, TORMENT, THIEF, ATTRACT, FOCUS_BLAST, FIRE_BLAST, SUBSTITUTE, REST, SWAGGER, SUNNY_DAY, ROCK_SLIDE, DRAIN_PUNCH, PROTECT, RAIN_DANCE, SLUDGE_BOMB, DARK_PULSE, SNARL, THUNDERBOLT, GIGA_IMPACT, EXPLOSION, SHADOW_BALL, TOXIC, ROCK_TOMB, THUNDER, HYPER_BEAM, SLEEP_TALK, POISON_JAB
+	; end
