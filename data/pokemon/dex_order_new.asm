@@ -487,4 +487,6 @@ NewPokedexOrder:
         dw PIKACHU_PARTNER
         dw DRAGONAIR_PARTNER
         dw DRAGONITE_PARTNER
-	assert_table_length NUM_POKEMON
+        dw ONIX_CRYSTAL
+        dw STEELIX_CRYSTAL
+        assert_table_length NUM_POKEMON

@@ -68,6 +68,8 @@ FormsEggMovePointers::
         dw NoEggMoves4 ; PikachuPartner
         dw NoEggMoves4 ; DragonairPartner
         dw NoEggMoves4 ; DragonitePartner
+        dw OnixEggMoves
+        dw NoEggMoves4 ; SteelixCrystal
 .IndirectEnd::
 
 LaprasPartnerEggMoves:

@@ -500,4 +500,6 @@ MonMenuIconPals:
        icon_pals RED,    RED    ; PIKACHU
         icon_pals BLUE,   PURPLE ; DRAGONAIR
         icon_pals RED,    GRAY   ; DRAGONITE
+        icon_pals GRAY,   GREEN  ; ONIX_CRYSTAL
+        icon_pals GRAY,   BROWN  ; STEELIX_CRYSTAL
         assert_table_length NUM_POKEMON

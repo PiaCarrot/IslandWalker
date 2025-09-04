@@ -510,3 +510,5 @@ EeveePartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/eevee_partner
 PikachuPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/pikachu_partner.asm"
 DragonairPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dragonair_partner.asm"
 DragonitePartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dragonite_partner.asm"
+OnixCrystalPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/onix_crystal.asm"
+SteelixCrystalPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/steelix_crystal.asm"

@@ -66,4 +66,6 @@ INCLUDE "data/pokemon/base_stats/forms/eevee_partner.asm"
 INCLUDE "data/pokemon/base_stats/forms/pikachu_partner.asm"
 INCLUDE "data/pokemon/base_stats/forms/dragonair_partner.asm"
 INCLUDE "data/pokemon/base_stats/forms/dragonite_partner.asm"
+INCLUDE "data/pokemon/base_stats/forms/onix_crystal.asm"
+INCLUDE "data/pokemon/base_stats/forms/steelix_crystal.asm"
 .IndirectEnd::

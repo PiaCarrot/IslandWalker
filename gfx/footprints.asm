@@ -487,6 +487,8 @@ INCBIN "gfx/footprints/kanto/weepinbell.1bpp" ; WEEPINBELL_VALENCIA
 INCBIN "gfx/footprints/kanto/victreebel.1bpp" ; VICTREEBEL_VALENCIA
 INCBIN "gfx/footprints/kanto/paras.1bpp" ; PARAS_VALENCIA
 INCBIN "gfx/footprints/kanto/parasect.1bpp" ; PARASECT_VALENCIA
+INCBIN "gfx/footprints/kanto/onix.1bpp" ; ONIX_CRYSTAL
+INCBIN "gfx/footprints/johto/steelix.1bpp" ; STEELIX_CRYSTAL
 INCBIN "gfx/footprints/kanto/dratini.1bpp"
 INCBIN "gfx/footprints/kanto/eevee.1bpp"
 INCBIN "gfx/footprints/kanto/pikachu.1bpp"

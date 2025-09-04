@@ -68,6 +68,8 @@ FormsAnimationIdlePointers:
     dw PikachuPartnerAnimationIdle
     dw DragonairPartnerAnimationIdle
     dw DragonitePartnerAnimationIdle
+    dw OnixCrystalAnimationIdle
+    dw SteelixCrystalAnimationIdle
 .IndirectEnd::
 
 LaprasPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/lapras_partner/anim_idle.asm"
@@ -137,3 +139,5 @@ EeveePartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/eevee_partner/anim_idle.as
 PikachuPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/pikachu_partner/anim_idle.asm"
 DragonairPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/dragonair_partner/anim_idle.asm"
 DragonitePartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/dragonite_partner/anim_idle.asm"
+OnixCrystalAnimationIdle: INCLUDE "gfx/pokemon/forms/onix_crystal/anim_idle.asm"
+SteelixCrystalAnimationIdle: INCLUDE "gfx/pokemon/forms/steelix_crystal/anim_idle.asm"

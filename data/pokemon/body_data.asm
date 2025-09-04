@@ -491,4 +491,6 @@ PokemonBodyData:
     dw 104, 130    ; PIKACHU PARTNER
     dw 1301, 360   ; DRAGONAIR PARTNER
     dw 703, 4630   ; DRAGONITE PARTNER
+    dw 2810, 4630  ; ONIX CRYSTAL
+    dw 3002, 8820  ; STEELIX CRYSTAL
     assert_table_length NUM_POKEMON

@@ -488,6 +488,8 @@ PokedexDataPointerTable:
         dba DratiniPartnerPokedexEntry
         dba EeveePartnerPokedexEntry
         dba PikachuPartnerPokedexEntry
-	dba DragonairPartnerPokedexEntry
-	dba DragonitePartnerPokedexEntry
-	assert_table_length NUM_POKEMON
+        dba DragonairPartnerPokedexEntry
+        dba DragonitePartnerPokedexEntry
+        dba OnixCrystalPokedexEntry
+        dba SteelixCrystalPokedexEntry
+        assert_table_length NUM_POKEMON

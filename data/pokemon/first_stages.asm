@@ -486,4 +486,6 @@ FirstEvoStages::
         dw PIKACHU_PARTNER
         dw DRAGONAIR_PARTNER
         dw DRAGONITE_PARTNER
+        dw ONIX_CRYSTAL  ; ONIX_CRYSTAL
+        dw ONIX_CRYSTAL  ; STEELIX_CRYSTAL
         assert_table_length NUM_POKEMON

@@ -1341,3 +1341,7 @@ LinooneGalarFrontpic: INCBIN "gfx/pokemon/forms/linoone_galar/front.animated.2bp
 LinooneGalarBackpic:  INCBIN "gfx/pokemon/forms/linoone_galar/back.2bpp.lz"
 StunfiskGalarFrontpic: INCBIN "gfx/pokemon/forms/stunfisk_galar/front.animated.2bpp.lz"
 StunfiskGalarBackpic:  INCBIN "gfx/pokemon/forms/stunfisk_galar/back.2bpp.lz"
+OnixCrystalFrontpic: INCBIN "gfx/pokemon/forms/onix_crystal/front.animated.2bpp.lz"
+OnixCrystalBackpic:  INCBIN "gfx/pokemon/forms/onix_crystal/back.2bpp.lz"
+SteelixCrystalFrontpic: INCBIN "gfx/pokemon/forms/steelix_crystal/front.animated.2bpp.lz"
+SteelixCrystalBackpic:  INCBIN "gfx/pokemon/forms/steelix_crystal/back.2bpp.lz"

@@ -987,7 +987,11 @@ PokemonPicPointers::
 	dba PikachuPartnerFrontpic
 	dba PikachuPartnerBackpic
     dba DragonairPartnerFrontpic
-	dba DragonairPartnerBackpic
+        dba DragonairPartnerBackpic
     dba DragonitePartnerFrontpic
-	dba DragonitePartnerBackpic
-	assert_table_length NUM_POKEMON + 1
+        dba DragonitePartnerBackpic
+    dba OnixCrystalFrontpic
+    dba OnixCrystalBackpic
+    dba SteelixCrystalFrontpic
+    dba SteelixCrystalBackpic
+        assert_table_length NUM_POKEMON + 1

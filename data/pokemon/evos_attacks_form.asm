@@ -66,8 +66,10 @@ FormsEvosAttacksPointers::
         dw DratiniPartnerEvosAttacks
         dw EeveePartnerEvosAttacks
         dw PikachuPartnerEvosAttacks
-	dw DragonairPartnerEvosAttacks
-	dw DragonitePartnerEvosAttacks
+        dw DragonairPartnerEvosAttacks
+        dw DragonitePartnerEvosAttacks
+        dw OnixCrystalEvosAttacks
+        dw SteelixCrystalEvosAttacks
 .IndirectEnd::
 
 LaprasPartnerEvosAttacks:
@@ -1332,6 +1334,52 @@ ParasectValenciaEvosAttacks:
         dbw 39, GIGA_DRAIN
         dbw 47, AROMATHERAPY
         dbw 55, X_SCISSOR
+        db 0 ; no more level-up moves
+
+OnixCrystalEvosAttacks:
+        evolve EVOLVE_TRADE, METAL_COAT, STEELIX_CRYSTAL
+        db 0 ; no more evolutions
+        dbw 1, MUD_SPORT
+        dbw 1, TACKLE
+        dbw 1, HARDEN
+        dbw 1, BIND
+        dbw 6, SCREECH
+        dbw 9, ROCK_THROW
+        dbw 14, RAGE
+        dbw 17, ROCK_TOMB
+        dbw 22, SANDSTORM
+        dbw 25, SLAM
+        dbw 30, ROCK_POLISH
+        dbw 33, DRAGONBREATH
+        dbw 38, CURSE
+        dbw 41, IRON_TAIL
+        dbw 46, SAND_TOMB
+        dbw 49, DOUBLE_EDGE
+        dbw 54, STONE_EDGE
+        db 0 ; no more level-up moves
+
+SteelixCrystalEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, THUNDER_FANG
+        dbw 1, ICE_FANG
+        dbw 1, FIRE_FANG
+        dbw 1, MUD_SPORT
+        dbw 1, TACKLE
+        dbw 1, HARDEN
+        dbw 1, BIND
+        dbw 6, SCREECH
+        dbw 9, ROCK_THROW
+        dbw 14, RAGE
+        dbw 17, ROCK_TOMB
+        dbw 22, SANDSTORM
+        dbw 25, SLAM
+        dbw 30, ROCK_POLISH
+        dbw 33, DRAGONBREATH
+        dbw 38, CURSE
+        dbw 41, IRON_TAIL
+        dbw 46, CRUNCH
+        dbw 49, DOUBLE_EDGE
+        dbw 54, STONE_EDGE
         db 0 ; no more level-up moves
 
 NoEvosAttacks4:
