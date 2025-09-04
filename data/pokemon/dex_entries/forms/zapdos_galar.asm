@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "ELECTRIC@" ; species name
 
-        db   "Placeholder entry"
-        next "for Zapdos Galar."
-        next "To be updated.@"
+	db   "Its powerful kick"
+	next "can pulverize a"
+	next "truck. When it"
+
+	page "runs at speeds of"
+	next "180 MPH, its mis-"
+	next "taken for THUNDER.@"

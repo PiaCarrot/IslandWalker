@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "BONEKEEPER@" ; species name
 
-        db   "Placeholder entry"
-        next "for Marowak Alola."
-        next "To be updated.@"
+	db   "It mourns the"
+	next "death of its kind"
+	next "by dancing with"
+
+	page "its enflamed club"
+	next "throughout the"
+	next "night.@"

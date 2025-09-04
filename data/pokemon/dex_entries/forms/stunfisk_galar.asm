@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "TRAP@" ; species name
 
-        db   "Placeholder entry"
-        next "for Stunfisk Galar."
-        next "To be updated.@"
+	db   "A high-iron diet"
+	next "has given this"
+	next "#MON a steel"
+
+	page "body that makes"
+	next "it a respectable"
+	next "predator.@"

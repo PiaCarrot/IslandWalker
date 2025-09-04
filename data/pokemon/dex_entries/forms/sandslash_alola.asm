@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "MOUSE@" ; species name
 
-        db   "Placeholder entry"
-        next "for Sandslash Alola."
-        next "To be updated.@"
+	db   "Its hooked claws"
+	next "make it adept at"
+	next "climbing snowy"
+
+	page "mountains and ice"
+	next "sheets. It expels"
+	next "cold air.@"

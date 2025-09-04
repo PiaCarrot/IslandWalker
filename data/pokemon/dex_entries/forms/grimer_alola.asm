@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "SLUDGE@" ; species name
 
-        db   "Placeholder entry"
-        next "for Grimer Alola."
-        next "To be updated.@"
+	db   "A mutation that"
+	next "occurred when its"
+	next "diet is made up"
+
+	page "of solid waste,"
+	next "rather than poll-"
+	next "uted sludge.@"

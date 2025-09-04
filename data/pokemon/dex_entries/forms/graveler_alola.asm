@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "ROCK@" ; species name
 
-        db   "Placeholder entry"
-        next "for Graveler Alola."
-        next "To be updated.@"
+	db   "It eats precious"
+	next "stones that fill"
+	next "it with tingling"
+
+	page "electricity. It"
+	next "zaps all in its"
+	next "way as it rolls.@"

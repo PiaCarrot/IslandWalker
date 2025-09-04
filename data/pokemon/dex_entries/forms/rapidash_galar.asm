@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "FIRE HORSE@" ; species name
 
-        db   "Placeholder entry"
-        next "for Rapidash Galar."
-        next "To be updated.@"
+	db   "It stores PSYCHIC"
+	next "power in its fet-"
+	next "locks that let it"
+
+	page "dash in mystical"
+	next "forests of GALAR"
+	next "with ease.@"

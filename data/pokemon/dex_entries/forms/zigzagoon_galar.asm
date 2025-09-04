@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "TINYRACCOON@" ; species name
 
-        db   "Placeholder entry"
-        next "for Zigzagoon Galar."
-        next "To be updated.@"
+	db   "This variety of"
+	next "ZIGZAGOON is very"
+	next "rowdy and quick"
+
+	page "to pick fights."
+	next "It wreaks havoc"
+	next "all around it.@"

@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "RAT@" ; species name
 
-        db   "Placeholder entry"
-        next "for Raticate Alola."
-        next "To be updated.@"
+	db   "It has good taste"
+	next "in food. It leads"
+	next "packs of RATTATA"
+
+	page "to gather gourmet"
+	next "meals for it to"
+	next "consume.@"

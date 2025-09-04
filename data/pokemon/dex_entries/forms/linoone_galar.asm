@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "RUSHING@" ; species name
 
-        db   "Placeholder entry"
-        next "for Linoone Galar."
-        next "To be updated.@"
+	db   "Using its long"
+	next "tongue, it taunts"
+	next "its foe. Once the"
+
+	page "target is mad, it"
+	next "knocks them out"
+	next "with HEADBUTT.@"

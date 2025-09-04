@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "WILD DUCK@" ; species name
 
-        db   "Placeholder entry"
-        next "for Farfetch'd Galar."
-        next "To be updated.@"
+	db   "This variety of"
+	next "FARFETCH'D can"
+	next "use a tough leek"
+
+	page "like a greatsword"
+	next "to fend off its"
+	next "predators.@"

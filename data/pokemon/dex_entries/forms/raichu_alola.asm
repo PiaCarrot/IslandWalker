@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "MOUSE@" ; species name
 
-        db   "Placeholder entry"
-        next "for Raichu Alola."
-        next "To be updated.@"
+	db   "It appears that a"
+	next "PIKACHU that can"
+	next "SURF can attain"
+
+	page "this form. It can"
+	next "shoot star-shaped"
+	next "THUNDERBOLTs.@"

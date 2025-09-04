@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "MOLE@" ; species name
 
-        db   "Placeholder entry"
-        next "for Diglett Alola."
-        next "To be updated.@"
+	db   "To break volcanic"
+	next "rock, it uses its"
+	next "metal whiskers to"
+
+	page "crush it into ash"
+	next "and soil. It is"
+	next "rarely seen.@"

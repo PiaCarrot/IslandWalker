@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "CORAL@" ; species name
 
-        db   "Placeholder entry"
-        next "for Corsola Galar."
-        next "To be updated.@"
+	db   "Cursing those who"
+	next "touch its branch,"
+	next "this variety of"
+
+	page "CORSOLA appeared"
+	next "when pollution"
+	next "entered the sea.@"

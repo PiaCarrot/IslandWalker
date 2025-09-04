@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "SCRATCHCAT@" ; species name
 
-        db   "Placeholder entry"
-        next "for Meowth Alola."
-        next "To be updated.@"
+	db   "A proud and sel-"
+	next "fish breed of"
+	next "MEOWTH, it takes"
+
+	page "a special trainer"
+	next "to take care of"
+	next "it well.@"
