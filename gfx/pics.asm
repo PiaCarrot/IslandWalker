@@ -760,6 +760,10 @@ LatiasFrontpic:           INCBIN "gfx/pokemon/hoenn/latias/front.animated.2bpp.l
 LatiasBackpic:            INCBIN "gfx/pokemon/hoenn/latias/back.2bpp.lz"
 LatiosFrontpic:           INCBIN "gfx/pokemon/hoenn/latios/front.animated.2bpp.lz"
 LatiosBackpic:            INCBIN "gfx/pokemon/hoenn/latios/back.2bpp.lz"
+DragonairPartnerFrontpic: INCBIN "gfx/pokemon/forms/dragonair_partner/front.animated.2bpp.lz"
+DragonairPartnerBackpic:  INCBIN "gfx/pokemon/forms/dragonair_partner/back.2bpp.lz"
+DragonitePartnerFrontpic: INCBIN "gfx/pokemon/forms/dragonite_partner/front.animated.2bpp.lz"
+DragonitePartnerBackpic:  INCBIN "gfx/pokemon/forms/dragonite_partner/back.2bpp.lz"
 
 SECTION "Pokemon Pics 33", ROMX
 

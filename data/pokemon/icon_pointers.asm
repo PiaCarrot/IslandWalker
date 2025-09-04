@@ -431,4 +431,6 @@ IconPointers:
         dw DratiniIcon
         dw EeveeIcon
 	dw PikachuIcon
+	dw DragonairIcon
+	dw DragoniteIcon
 	assert_table_length NUM_POKEMON + 1

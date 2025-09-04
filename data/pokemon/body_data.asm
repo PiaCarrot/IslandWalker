@@ -428,4 +428,6 @@ PokemonBodyData:
 	dw 511, 70     ; DRATINI PARTNER
 	dw 100, 140    ; EEVEE PARTNER
 	dw 104, 130    ; PIKACHU PARTNER
+	dw 1301, 360   ; DRAGONAIR PARTNER
+	dw 703, 4630   ; DRAGONITE PARTNER
 	assert_table_length NUM_POKEMON

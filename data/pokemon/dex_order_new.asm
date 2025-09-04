@@ -424,4 +424,6 @@ NewPokedexOrder:
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER
         dw PIKACHU_PARTNER
+        dw DRAGONAIR_PARTNER
+        dw DRAGONITE_PARTNER
 	assert_table_length NUM_POKEMON

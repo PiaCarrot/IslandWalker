@@ -74,7 +74,6 @@ ROMX $0f
 ROMX $10
 	"bank10"
 	"Evolutions and Attacks Pointers"
-	"Evolutions and Attacks 1"
 ROMX $11
 	"bank11"
 	"Newbox"

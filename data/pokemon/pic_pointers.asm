@@ -864,4 +864,8 @@ PokemonPicPointers::
 	dba EeveePartnerBackpic
 	dba PikachuPartnerFrontpic
 	dba PikachuPartnerBackpic
+    dba DragonairPartnerFrontpic
+	dba DragonairPartnerBackpic
+    dba DragonitePartnerFrontpic
+	dba DragonitePartnerBackpic
 	assert_table_length NUM_POKEMON + 1

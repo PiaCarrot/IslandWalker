@@ -447,3 +447,5 @@ LaprasPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/lapras_partn
 DratiniPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dratini_partner.asm"
 EeveePartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/eevee_partner.asm"
 PikachuPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/pikachu_partner.asm"
+DragonairPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dragonair_partner.asm"
+DragonitePartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dragonite_partner.asm"

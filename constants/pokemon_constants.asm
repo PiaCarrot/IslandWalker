@@ -515,8 +515,8 @@ DEF FORM_POKEMON EQU const_value
 	const DRATINI_PARTNER  ; 1e5
 	const EEVEE_PARTNER  ; 1e6
 	const PIKACHU_PARTNER  ; 1e7
-	; const DRAGONAIR_PARTNER  ; 1e8
-	; const DRAGONITE_PARTNER  ; 1e9
+	const DRAGONAIR_PARTNER  ; 1e8
+	const DRAGONITE_PARTNER  ; 1e9
 	; const ROCKRUFF_OWN_TEMPO  ; 1ea
 	; const GIMMIGHOUL_ROAMING  ; 1eb
 	; const MEOWTH_ROCKET  ; 1ec

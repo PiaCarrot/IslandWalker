@@ -5,6 +5,8 @@ FormsEvosAttacksPointers::
 	dw DratiniPartnerEvosAttacks
 	dw EeveePartnerEvosAttacks
 	dw PikachuPartnerEvosAttacks
+	dw DragonairPartnerEvosAttacks
+	dw DragonitePartnerEvosAttacks
 .IndirectEnd::
 
 LaprasPartnerEvosAttacks:
@@ -71,6 +73,49 @@ PikachuPartnerEvosAttacks:
 	dbw 33, AGILITY
 	dbw 41, THUNDER
 	dbw 50, LIGHT_SCREEN
+	db 0 ; no more level-up moves
+	
+DragonairPartnerEvosAttacks:
+	evolve EVOLVE_LEVEL, 55, DRAGONITE
+	db 0 ; no more evolutions
+	dbw 1, WRAP
+	dbw 1, LEER
+	dbw 1, THUNDER_WAVE
+	dbw 1, TWISTER
+	dbw 5, THUNDER_WAVE
+	dbw 11, TWISTER
+	dbw 15, DRAGON_RAGE
+	dbw 21, SLAM
+	dbw 25, AGILITY
+	dbw 33, AQUA_TAIL
+	dbw 39, DRAGON_RUSH
+	dbw 47, SAFEGUARD
+	dbw 53, DRAGON_DANCE
+	dbw 61, OUTRAGE
+	dbw 67, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+DragonitePartnerEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, FIRE_PUNCH
+	dbw 1, THUNDERPUNCH
+	dbw 1, ROOST
+	dbw 1, WRAP
+	dbw 1, LEER
+	dbw 1, THUNDER_WAVE
+	dbw 1, TWISTER
+	dbw 5, THUNDER_WAVE
+	dbw 11, TWISTER
+	dbw 15, DRAGON_RAGE
+	dbw 21, SLAM
+	dbw 25, AGILITY
+	dbw 33, AQUA_TAIL
+	dbw 39, DRAGON_RUSH
+	dbw 47, SAFEGUARD
+	dbw 53, DRAGON_DANCE
+	dbw 55, WING_ATTACK
+	dbw 64, OUTRAGE
+	dbw 73, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 ENDSECTION

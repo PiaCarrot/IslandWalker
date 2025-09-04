@@ -437,4 +437,6 @@ MonMenuIconPals:
         icon_pals BLUE,   PURPLE ; DRATINI
         icon_pals BROWN,  GRAY   ; EEVEE
         icon_pals RED,    RED    ; PIKACHU
+	icon_pals BLUE,   PURPLE ; DRAGONAIR
+	icon_pals RED,    GRAY   ; DRAGONITE
 	assert_table_length NUM_POKEMON

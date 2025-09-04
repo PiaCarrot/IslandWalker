@@ -431,4 +431,6 @@ PokemonNames::
         db "DRATINI@@@"
         db "EEVEE@@@@@"
         db "PIKACHU@@@"
+	db "DRAGONAIR@"
+	db "DRAGONITE@"
         assert_table_length NUM_POKEMON

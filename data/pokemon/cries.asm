@@ -432,4 +432,6 @@ PokemonCries::
     mon_cry CRY_BULBASAUR,    96,  192 ; DRATINI  PARTNER
     mon_cry CRY_VENONAT,     136,  224 ; EEVEE  PARTNER
     mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU  PARTNER
+	mon_cry CRY_BULBASAUR,    64,  256 ; DRAGONAIR  PARTNER
+	mon_cry CRY_BULBASAUR,    60,  320 ; DRAGONITE  PARTNER
         assert_table_length NUM_POKEMON
