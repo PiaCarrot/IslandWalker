@@ -583,44 +583,43 @@ DEF NUM_UNOWN EQU const_value - 1 ; 28
 ; Magikarp forms
 ; indexes for:
 ; - MagikarpPicPointers (see data/pokemon/magikarp_pic_pointers.asm)
-; - AnimationPointersMagikarp (see gfx/pokemon/anims_magikarp.asm)
-; - MagikarpAnimationIdlePointers (see gfx/pokemon/idle_magikarp.asm)
-; - MagikarpBitmasksPointers (see gfx/pokemon/bitmask_magikarp.asm)
-; - MagikarpFramesPointers (see gfx/pokemon/frame_magikarp.asm)
-        const_def 1
-        const MAGIKARP_PLAIN           ;  1
-        const MAGIKARP_SKELLY          ;  2
-        const MAGIKARP_CALICO_OW       ;  3
-        const MAGIKARP_CALICO_OWB      ;  4
-        const MAGIKARP_CALICO_WO       ;  5
-        const MAGIKARP_CALICO_OG       ;  6
-        const MAGIKARP_ORANGE_2_TONE   ;  7
-        const MAGIKARP_ORANGE_ORCA     ;  8
-        const MAGIKARP_ORANGE_DAPPLE   ;  9
-        const MAGIKARP_PINK_2_TONE     ; 10
-        const MAGIKARP_PINK_ORCA       ; 11
-        const MAGIKARP_PINK_DAPPLE     ; 12
-        const MAGIKARP_GRAY_BUBBLE     ; 13
-        const MAGIKARP_GRAY_DIAMOND    ; 14
-        const MAGIKARP_GRAY_PATCH      ; 15
-        const MAGIKARP_PURPLE_BUBBLE   ; 16
-        const MAGIKARP_PURPLE_DIAMOND  ; 17
-        const MAGIKARP_PURPLE_PATCH    ; 18
-        const MAGIKARP_APRICOT_TIGER   ; 19
-        const MAGIKARP_APRICOT_ZEBRA   ; 20
-        const MAGIKARP_APRICOT_STRIPE  ; 21
-        const MAGIKARP_BROWN_TIGER     ; 22
-        const MAGIKARP_BROWN_ZEBRA     ; 23
-        const MAGIKARP_BROWN_STRIPE    ; 24
-        const MAGIKARP_ORANGE_FOREHEAD ; 25
-        const MAGIKARP_ORANGE_MASK     ; 26
-        const MAGIKARP_BLACK_FOREHEAD  ; 27
-        const MAGIKARP_BLACK_MASK      ; 28
-        const MAGIKARP_BLUE_SAUCY      ; 29
-        const MAGIKARP_BLUE_RAIN       ; 30
-        const MAGIKARP_VIOLET_SAUCY    ; 31
-        const MAGIKARP_VIOLET_RAIN     ; 32
-DEF NUM_MAGIKARP EQU const_value - 1 ; 32
+; - AnimationPointersMagikarp (see gfx/pokemon/magikarp_anim_pointers.asm)
+; - MagikarpAnimationIdlePointers (see gfx/pokemon/magikarp_idle_pointers.asm)
+; - MagikarpBitmasksPointers (see gfx/pokemon/magikarp_bitmask_pointers.asm)
+; - MagikarpFramesPointers (see gfx/pokemon/magikarp_frame_pointers.asm)
+	; const_def 1
+	; const MAGIKARP_PLAIN           ;  1
+	; const MAGIKARP_SKELLY          ;  2
+	; const MAGIKARP_CALICO_OW       ;  3
+	; const MAGIKARP_CALICO_OWB      ;  4
+	; const MAGIKARP_CALICO_WO       ;  5
+	; const MAGIKARP_CALICO_OG       ;  6
+	; const MAGIKARP_ORANGE_2_TONE   ;  7
+	; const MAGIKARP_ORANGE_ORCA     ;  8
+	; const MAGIKARP_ORANGE_DAPPLE   ;  9
+	; const MAGIKARP_PINK_2_TONE     ; 10
+	; const MAGIKARP_PINK_ORCA       ; 11
+	; const MAGIKARP_PINK_DAPPLE     ; 12
+	; const MAGIKARP_GRAY_BUBBLE     ; 13
+	; const MAGIKARP_GRAY_DIAMOND    ; 14
+	; const MAGIKARP_GRAY_PATCH      ; 15
+	; const MAGIKARP_PURPLE_BUBBLE   ; 16
+	; const MAGIKARP_PURPLE_DIAMOND  ; 17
+	; const MAGIKARP_PURPLE_PATCH    ; 18
+	; const MAGIKARP_APRICOT_TIGER   ; 19
+	; const MAGIKARP_APRICOT_ZEBRA   ; 20
+	; const MAGIKARP_APRICOT_STRIPE  ; 21
+	; const MAGIKARP_BROWN_TIGER     ; 22
+	; const MAGIKARP_BROWN_ZEBRA     ; 23
+	; const MAGIKARP_BROWN_STRIPE    ; 24
+	; const MAGIKARP_ORANGE_FOREHEAD ; 25
+	; const MAGIKARP_ORANGE_MASK     ; 26
+	; const MAGIKARP_BLACK_FOREHEAD  ; 27
+	; const MAGIKARP_BLACK_MASK      ; 28
+	; const MAGIKARP_BLUE_SAUCY      ; 29
+	; const MAGIKARP_BLUE_RAIN       ; 30
+	; const MAGIKARP_VIOLET_SAUCY    ; 31
+	; const MAGIKARP_VIOLET_RAIN     ; 32
+; DEF NUM_MAGIKARP EQU const_value - 1 ; 32
 
 DEF UNOWN_OFFSET EQU NUM_POKEMON + NUM_UNOWN
-DEF MAGIKARP_OFFSET EQU UNOWN_OFFSET + NUM_MAGIKARP

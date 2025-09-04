@@ -1,11 +1,9 @@
 GetUnownLetter:
-; Return form value based on Personality Form at hl
-; Stores result in wUnownLetter and wMagikarpPattern
-        ld a, [hl]
-        and FORM_MASK
-        ld [wUnownLetter], a
-        ld [wMagikarpPattern], a
-        ret
+; Return Unown letter in wUnownLetter based on Personality Form at hl
+	ld a, [hl]
+	and FORM_MASK
+	ld [wUnownLetter], a
+	ret
 
 GetMonFrontpic:
 	ld a, [wCurPartySpecies]
@@ -89,71 +87,42 @@ _GetFrontpic:
 	ret
 
 GetPicIndirectPointer:
-        ld a, [wCurPartySpecies]
-        call GetPokemonIndexFromID
-        ld b, h
-        ld c, l
-        ld a, l
-        sub LOW(UNOWN)
-        if HIGH(UNOWN) == 0
-                or h
-        else
-                jr nz, .check_magikarp
-                if HIGH(UNOWN) == 1
-                        dec h
-                else
-                        ld a, h
-                        cp HIGH(UNOWN)
-                endc
-        endc
-        jr z, .unown
-
-.check_magikarp
-        ld a, c
-        sub LOW(MAGIKARP)
-        if HIGH(MAGIKARP) == 0
-                or b
-        else
-                jr nz, .not_special
-                if HIGH(MAGIKARP) == 1
-                        dec b
-                else
-                        ld a, b
-                        cp HIGH(MAGIKARP)
-                endc
-        endc
-        jr z, .magikarp
-
-.not_special
-        ld hl, PokemonPicPointers
-        ld d, BANK(PokemonPicPointers)
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld a, l
+	sub LOW(UNOWN)
+	if HIGH(UNOWN) == 0
+		or h
+	else
+		jr nz, .not_unown
+		if HIGH(UNOWN) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(UNOWN)
+		endc
+	endc
+	jr z, .unown
+.not_unown
+	ld hl, PokemonPicPointers
+	ld d, BANK(PokemonPicPointers)
 .done
-        ld a, 6
-        jmp AddNTimes
+	ld a, 6
+	jmp AddNTimes
 
 .unown
-        ld a, [wUnownLetter]
-        and a
-        jr nz, .is_letter
-        inc a ; PLAIN_FORM will render as A
+	ld a, [wUnownLetter]
+	and a
+	jr nz, .is_letter
+	inc a ; PLAIN_FORM will render as A
 .is_letter
-        ld c, a
-        ld b, 0
-        ld hl, UnownPicPointers - 6
-        ld d, BANK(UnownPicPointers)
-        jr .done
-
-.magikarp
-        ld a, [wMagikarpPattern]
-        and a
-        jr nz, .is_pattern
-        inc a ; form 0 defaults to first pattern
-.is_pattern
-        ld c, a
-        ld b, 0
-        ld hl, MagikarpPicPointers - 6
-        ld d, BANK(MagikarpPicPointers)
-        jr .done
+	ld c, a
+	ld b, 0
+	ld hl, UnownPicPointers - 6
+	ld d, BANK(UnownPicPointers)
+	jr .done
 
 GetFrontpicPointer:
 	call GetPicIndirectPointer

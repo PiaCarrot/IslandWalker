@@ -5,7 +5,6 @@ AnimationPointers::
     indirect_entries FORM_POKEMON - 1, AnimationPointers3
     indirect_entries NUM_POKEMON, FormsAnimationPointers
     indirect_entries UNOWN_OFFSET, AnimationPointersUnown
-    indirect_entries MAGIKARP_OFFSET, AnimationPointersMagikarp
     indirect_table_end
 
 INCLUDE "gfx/pokemon/anims_kanto.asm"
@@ -13,6 +12,5 @@ INCLUDE "gfx/pokemon/anims_johto.asm"
 INCLUDE "gfx/pokemon/anims_hoenn.asm"
 INCLUDE "gfx/pokemon/anims_forms.asm"
 INCLUDE "gfx/pokemon/anims_unown.asm"
-INCLUDE "gfx/pokemon/anims_magikarp.asm"
 
 EggAnimation:        INCLUDE "gfx/pokemon/egg/anim.asm"

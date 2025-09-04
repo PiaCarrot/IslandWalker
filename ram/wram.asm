@@ -2442,7 +2442,6 @@ wForcedSwitch:: db
 wTrainerClass:: db
 
 wUnownLetter:: db
-wMagikarpPattern:: db
 
 wMoveSelectionMenuType:: db
 

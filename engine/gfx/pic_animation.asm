@@ -402,40 +402,22 @@ PokeAnim_StopWaitAnim:
 	ret
 
 PokeAnim_IsUnown:
-        ld a, [wPokeAnimSpecies]
-        push hl
-        call GetPokemonIndexFromID
-        ld a, l
-        cp LOW(UNOWN)
-        ld a, h
-        pop hl
-        ret nz
-        if HIGH(UNOWN) == 0
-                and a
-        elif HIGH(UNOWN) == 1
-                dec a
-        else
-                cp HIGH(UNOWN)
-        endc
-        ret
-
-PokeAnim_IsMagikarp:
-        ld a, [wPokeAnimSpecies]
-        push hl
-        call GetPokemonIndexFromID
-        ld a, l
-        cp LOW(MAGIKARP)
-        ld a, h
-        pop hl
-        ret nz
-        if HIGH(MAGIKARP) == 0
-                and a
-        elif HIGH(MAGIKARP) == 1
-                dec a
-        else
-                cp HIGH(MAGIKARP)
-        endc
-        ret
+	ld a, [wPokeAnimSpecies]
+	push hl
+	call GetPokemonIndexFromID
+	ld a, l
+	cp LOW(UNOWN)
+	ld a, h
+	pop hl
+	ret nz
+	if HIGH(UNOWN) == 0
+		and a
+	elif HIGH(UNOWN) == 1
+		dec a
+	else
+		cp HIGH(UNOWN)
+	endc
+	ret
 
 PokeAnim_IsEgg:
 	ld a, [wPokeAnimSpecies]
@@ -853,25 +835,22 @@ PokeAnim_GetAttrmapCoord:
 	ret
 
 GetMonAnimPointer:
-        call PokeAnim_IsEgg
-        jr z, .egg
+	call PokeAnim_IsEgg
+	jr z, .egg
 
-        call PokeAnim_IsUnown
-        jr z, .unown
+	call PokeAnim_IsUnown
+	jr z, .unown
 
-        call PokeAnim_IsMagikarp
-        jr z, .magikarp
-
-        ld a, [wPokeAnimSpeciesOrUnown]
-        call GetPokemonIndexFromID
-        ld b, h
-        ld c, l
-.return
-        ld a, [wPokeAnimIdleFlag]
-        and a
-        ld a, BANK(AnimationPointers)
-        ld hl, AnimationPointers
-        jr z, .got_pointers
+	ld a, [wPokeAnimSpeciesOrUnown]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+.unown_return
+	ld a, [wPokeAnimIdleFlag]
+	and a
+	ld a, BANK(AnimationPointers)
+	ld hl, AnimationPointers
+	jr z, .got_pointers
 	ld a, BANK(AnimationIdlePointers)
 	ld hl, AnimationIdlePointers
 .got_pointers
@@ -892,17 +871,8 @@ GetMonAnimPointer:
 	ld c, a
 	adc HIGH(NUM_POKEMON)
 	sub c
-        ld b, a
-        jr .return
-
-.magikarp
-        ld a, [wMagikarpPattern]
-        add LOW(NUM_POKEMON + NUM_UNOWN)
-        ld c, a
-        adc HIGH(NUM_POKEMON + NUM_UNOWN)
-        sub c
-        ld b, a
-        jr .return
+	ld b, a
+	jr .unown_return
 
 .egg
 	ld hl, EggAnimation
@@ -938,24 +908,21 @@ PokeAnim_GetFrontpicDims:
 	ret
 
 GetMonFramesPointer:
-        call PokeAnim_IsEgg
-        jr z, .egg
+	call PokeAnim_IsEgg
+	jr z, .egg
 
-        call PokeAnim_IsUnown
-        jr z, .unown
+	call PokeAnim_IsUnown
+	jr z, .unown
 
-        call PokeAnim_IsMagikarp
-        jr z, .magikarp
-
-        ld a, [wPokeAnimSpeciesOrUnown]
-        call GetPokemonIndexFromID
-        ld b, h
-        ld c, l
-.return
-        ld a, BANK(FramesPointers)
-        ld hl, FramesPointers
-        call LoadDoubleIndirectPointer
-        jr z, .egg ; error handler
+	ld a, [wPokeAnimSpeciesOrUnown]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+.unown_return
+	ld a, BANK(FramesPointers)
+	ld hl, FramesPointers
+	call LoadDoubleIndirectPointer
+	jr z, .egg ; error handler
 .load_pointer
 	ld a, b
 	ld [wPokeAnimFramesBank], a
@@ -971,17 +938,8 @@ GetMonFramesPointer:
 	ld c, a
 	adc HIGH(NUM_POKEMON)
 	sub c
-        ld b, a
-        jr .return
-
-.magikarp
-        ld a, [wMagikarpPattern]
-        add LOW(NUM_POKEMON + NUM_UNOWN)
-        ld c, a
-        adc HIGH(NUM_POKEMON + NUM_UNOWN)
-        sub c
-        ld b, a
-        jr .return
+	ld b, a
+	jr .unown_return
 
 .egg
 	ld a, BANK(EggFrames)
@@ -993,24 +951,21 @@ GetMonFramesPointer:
 	ret
 
 GetMonBitmaskPointer:
-        call PokeAnim_IsEgg
-        jr z, .egg
+	call PokeAnim_IsEgg
+	jr z, .egg
 
-        call PokeAnim_IsUnown
-        jr z, .unown
+	call PokeAnim_IsUnown
+	jr z, .unown
 
-        call PokeAnim_IsMagikarp
-        jr z, .magikarp
-
-        ld a, [wPokeAnimSpeciesOrUnown]
-        call GetPokemonIndexFromID
-        ld b, h
-        ld c, l
-.return
-        ld a, BANK(BitmasksPointers)
-        ld hl, BitmasksPointers
-        call LoadDoubleIndirectPointer
-        jr z, .egg ; error handler
+	ld a, [wPokeAnimSpeciesOrUnown]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+.unown_return
+	ld a, BANK(BitmasksPointers)
+	ld hl, BitmasksPointers
+	call LoadDoubleIndirectPointer
+	jr z, .egg ; error handler
 .load_pointer
 	ld a, b
 	ld [wPokeAnimBitmaskBank], a
@@ -1026,17 +981,8 @@ GetMonBitmaskPointer:
 	ld c, a
 	adc HIGH(NUM_POKEMON)
 	sub c
-        ld b, a
-        jr .return
-
-.magikarp
-        ld a, [wMagikarpPattern]
-        add LOW(NUM_POKEMON + NUM_UNOWN)
-        ld c, a
-        adc HIGH(NUM_POKEMON + NUM_UNOWN)
-        sub c
-        ld b, a
-        jr .return
+	ld b, a
+	jr .unown_return
 
 .egg
 	ld c, BANK(EggBitmasks)

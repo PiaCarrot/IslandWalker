@@ -5,7 +5,6 @@ AnimationIdlePointers::
     indirect_entries FORM_POKEMON - 1, AnimationIdlePointers3
     indirect_entries NUM_POKEMON, FormsAnimationIdlePointers
     indirect_entries UNOWN_OFFSET, AnimationIdlePointersUnown
-    indirect_entries MAGIKARP_OFFSET, AnimationIdlePointersMagikarp
     indirect_table_end
 
 INCLUDE "gfx/pokemon/idle_kanto.asm"
@@ -13,6 +12,5 @@ INCLUDE "gfx/pokemon/idle_johto.asm"
 INCLUDE "gfx/pokemon/idle_hoenn.asm"
 INCLUDE "gfx/pokemon/idle_forms.asm"
 INCLUDE "gfx/pokemon/idle_unown.asm"
-INCLUDE "gfx/pokemon/idle_magikarp.asm"
 
 EggAnimationIdle:        INCLUDE "gfx/pokemon/egg/anim_idle.asm"
