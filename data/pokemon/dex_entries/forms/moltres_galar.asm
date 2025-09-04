@@ -4,6 +4,6 @@
 	next "darkness that can"
 	next "burn. Victims of"
 
-	page "its "flame" are"
+	page "its 'flame' are"
 	next "left as nothing"
 	next "but a shadow.@"
