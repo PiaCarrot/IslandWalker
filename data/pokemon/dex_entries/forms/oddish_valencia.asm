@@ -1,1 +1,9 @@
-INCLUDE "data/pokemon/dex_entries/kanto/oddish.asm"
+        db "WEED@" ; species name
+
+        db   "These ODDISH get"
+        next "their energy from"
+        next "rich soil and are"
+
+        page "quick to run away"
+        next "from people that"
+        next "try to catch it.@"
