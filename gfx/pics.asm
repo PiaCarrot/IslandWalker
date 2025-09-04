@@ -11,6 +11,9 @@ SECTION "Unown Pic Pointers", ROMX
 
 INCLUDE "data/pokemon/unown_pic_pointers.asm"
 
+SECTION "Magikarp Pic Pointers", ROMX
+
+INCLUDE "data/pokemon/magikarp_pic_pointers.asm"
 
 SECTION "Trainer Pic Pointers", ROMX
 
