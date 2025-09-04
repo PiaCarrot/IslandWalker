@@ -5,6 +5,7 @@ BitmasksPointers::
     indirect_entries FORM_POKEMON - 1, BitmaskPointers3
     indirect_entries NUM_POKEMON, FormsBitmaskPointers
     indirect_entries UNOWN_OFFSET, BitmaskPointersUnown
+    indirect_entries MAGIKARP_OFFSET, MagikarpBitmasksPointers
     indirect_table_end
 
 INCLUDE "gfx/pokemon/bitmask_kanto.asm"
@@ -12,5 +13,6 @@ INCLUDE "gfx/pokemon/bitmask_johto.asm"
 INCLUDE "gfx/pokemon/bitmask_hoenn.asm"
 INCLUDE "gfx/pokemon/bitmask_forms.asm"
 INCLUDE "gfx/pokemon/bitmask_unown.asm"
+INCLUDE "gfx/pokemon/bitmask_magikarp.asm"
 
 EggBitmasks:        INCLUDE "gfx/pokemon/egg/bitmask.asm"
