@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "MOUSE@" ; species name
 
-        db   "Placeholder entry"
-        next "for Sandshrew Alola."
-        next "To be updated.@"
+	db   "When a snowstorm"
+	next "occurs, it face"
+	next "plants itself to"
+
+	page "keep from blowing"
+	next "away, appearing"
+	next "like an igloo.@"

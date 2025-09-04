@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "HERMITCRAB@" ; species name
 
-        db   "Placeholder entry"
-        next "for Slowbro Galar."
-        next "To be updated.@"
+	db   "While fishing, a"
+	next "SHELLDER bit its"
+	next "tail and SLOWBRO"
+
+	page "became poisonous."
+	next "It's likely due"
+	next "to its diet.@"

@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "SLUDGE@" ; species name
 
-        db   "Placeholder entry"
-        next "for Muk Alola."
-        next "To be updated.@"
+	db   "While it doesn't"
+	next "smell, it forms"
+	next "toxic crystals"
+
+	page "that can cause"
+	next "poor health"
+	next "conditions.@"

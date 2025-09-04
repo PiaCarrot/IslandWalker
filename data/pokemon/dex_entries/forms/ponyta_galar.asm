@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "FIRE HORSE@" ; species name
 
-        db   "Placeholder entry"
-        next "for Ponyta Galar."
-        next "To be updated.@"
+	db   "If it sees evil"
+	next "in your heart, it"
+	next "will not show it-"
+
+	page "self. Its horn"
+	next "has the power to"
+	next "heal.@"

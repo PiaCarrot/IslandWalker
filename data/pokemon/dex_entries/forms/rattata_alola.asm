@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "RAT@" ; species name
 
-        db   "Placeholder entry"
-        next "for Rattata Alola."
-        next "To be updated.@"
+	db   "These variety of"
+	next "RATTATA came from"
+	next "cargo ships and"
+
+	page "are considered a"
+	next "nuisance. They"
+	next "like fresh food.@"

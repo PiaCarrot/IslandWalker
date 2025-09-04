@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "POISON GAS@" ; species name
 
-        db   "Placeholder entry"
-        next "for Weezing Galar."
-        next "To be updated.@"
+	db   "It has undergone"
+	next "a mutation that"
+	next "allows it to con-"
+
+	page "vert polluted air"
+	next "into fresh, clean"
+	next "air.@"

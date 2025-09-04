@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "FOX@" ; species name
 
-        db   "Placeholder entry"
-        next "for Ninetales Alola."
-        next "To be updated.@"
+	db   "It will freeze"
+	next "any that attack"
+	next "its pack solid."
+
+	page "Guides lost ones"
+	next "to safety on icy"
+	next "peaks.@"

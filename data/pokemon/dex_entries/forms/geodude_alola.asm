@@ -1,5 +1,9 @@
-        db "PLACEHOLDER@" ; species name
+	db "ROCK@" ; species name
 
-        db   "Placeholder entry"
-        next "for Geodude Alola."
-        next "To be updated.@"
+	db   "Sometimes they"
+	next "can get stuck"
+	next "to wild MAGNETON,"
+
+	page "until it expels"
+	next "all of its elec-"
+	next "tricity.@"
