@@ -1317,6 +1317,10 @@ ParasValenciaFrontpic: INCBIN "gfx/pokemon/forms/paras_valencia/front.animated.2
 ParasValenciaBackpic:  INCBIN "gfx/pokemon/forms/paras_valencia/back.2bpp.lz"
 ParasectValenciaFrontpic: INCBIN "gfx/pokemon/forms/parasect_valencia/front.animated.2bpp.lz"
 ParasectValenciaBackpic:  INCBIN "gfx/pokemon/forms/parasect_valencia/back.2bpp.lz"
+GimmighoulRoamingFrontpic: INCBIN "gfx/pokemon/forms/gimmighoul_roaming/front.animated.2bpp.lz"
+GimmighoulRoamingBackpic:  INCBIN "gfx/pokemon/forms/gimmighoul_roaming/back.2bpp.lz"
+MeowthRocketFrontpic: INCBIN "gfx/pokemon/forms/meowth_rocket/front.animated.2bpp.lz"
+MeowthRocketBackpic:  INCBIN "gfx/pokemon/forms/meowth_rocket/back.2bpp.lz"
 
 SECTION "Pics 22", ROMX
 ExeggutorAlolaFrontpic: INCBIN "gfx/pokemon/forms/exeggutor_alola/front.animated.2bpp.lz"
@@ -1353,5 +1357,3 @@ LycanrocMidnightFrontpic: INCBIN "gfx/pokemon/forms/lycanroc_midnight/front.anim
 LycanrocMidnightBackpic:  INCBIN "gfx/pokemon/forms/lycanroc_midnight/back.2bpp.lz"
 LycanrocDuskFrontpic: INCBIN "gfx/pokemon/forms/lycanroc_dusk/front.animated.2bpp.lz"
 LycanrocDuskBackpic:  INCBIN "gfx/pokemon/forms/lycanroc_dusk/back.2bpp.lz"
-GimmighoulRoamingFrontpic: INCBIN "gfx/pokemon/forms/gimmighoul_roaming/front.animated.2bpp.lz"
-GimmighoulRoamingBackpic:  INCBIN "gfx/pokemon/forms/gimmighoul_roaming/back.2bpp.lz"

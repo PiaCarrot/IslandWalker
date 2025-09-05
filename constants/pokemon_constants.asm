@@ -521,7 +521,7 @@ DEF FORM_POKEMON EQU const_value
         const LYCANROC_MIDNIGHT  ; 1eb
         const LYCANROC_DUSK  ; 1ec
         const GIMMIGHOUL_ROAMING  ; 1ed
-        ; const MEOWTH_ROCKET  ; 1ee
+        const MEOWTH_ROCKET  ; 1ee
         ; const ROTOM_HEAT  ; 1ef
         ; const ROTOM_WASH  ; 1f0
         ; const ROTOM_FROST  ; 1f1

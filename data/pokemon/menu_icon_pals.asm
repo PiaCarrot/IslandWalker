@@ -507,4 +507,5 @@ MonMenuIconPals:
         icon_pals RED,    RED    ; LYCANROC_MIDNIGHT
         icon_pals RED,    RED    ; LYCANROC_DUSK
         icon_pals RED,    RED    ; GIMMIGHOUL_ROAMING
+        icon_pals BROWN,  PURPLE ; MEOWTH_ROCKET
         assert_table_length NUM_POKEMON

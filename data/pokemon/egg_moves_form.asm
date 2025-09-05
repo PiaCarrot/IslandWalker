@@ -75,6 +75,7 @@ FormsEggMovePointers::
         dw NoEggMoves4 ; LycanrocMidnight
         dw NoEggMoves4 ; LycanrocDusk
         dw NoEggMoves4 ; GimmighoulRoaming
+        dw MeowthRocketEggMoves
 .IndirectEnd::
 
 LaprasPartnerEggMoves:
@@ -393,4 +394,16 @@ TaurosAquaEggMoves:
         dw ENDEAVOR
         dw -1 ; end
 
+MeowthRocketEggMoves:
+        dw AMNESIA
+        dw ASSIST
+        dw CHARM
+        dw FLAIL
+        dw HYPNOSIS
+        dw LAST_RESORT
+        dw ODOR_SLEUTH
+        dw PSYCH_UP
+        dw PUNISHMENT
+        dw SPITE
+        dw -1 ; end
 ENDSECTION

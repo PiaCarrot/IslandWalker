@@ -75,6 +75,7 @@ FormsEvosAttacksPointers::
         dw LycanrocMidnightEvosAttacks
         dw LycanrocDuskEvosAttacks
         dw GimmighoulRoamingEvosAttacks
+        dw MeowthRocketEvosAttacks
 .IndirectEnd::
 
 LaprasPartnerEvosAttacks:
@@ -1493,4 +1494,23 @@ NoEvosAttacks4:
         db 0 ; no more evolutions
         db 0 ; no more level-up moves
 
+MeowthRocketEvosAttacks:
+        evolve EVOLVE_LEVEL, 28, PERSIAN
+        db 0 ; no more evolutions
+        dbw 1, SCRATCH
+        dbw 1, GROWL
+        dbw 6, BITE
+        dbw 9, FAKE_OUT
+        dbw 14, FURY_SWIPES
+        dbw 17, SCREECH
+        dbw 22, FAINT_ATTACK
+        dbw 25, TAUNT
+        dbw 30, PAY_DAY
+        dbw 33, SLASH
+        dbw 38, NASTY_PLOT
+        dbw 41, ASSURANCE
+        dbw 46, CAPTIVATE
+        dbw 49, NIGHT_SLASH
+        dbw 54, FEINT
+        db 0 ; no more level-up moves
 ENDSECTION

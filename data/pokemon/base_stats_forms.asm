@@ -73,4 +73,5 @@ INCLUDE "data/pokemon/base_stats/forms/rockruff_own_tempo.asm"
 INCLUDE "data/pokemon/base_stats/forms/lycanroc_midnight.asm"
 INCLUDE "data/pokemon/base_stats/forms/lycanroc_dusk.asm"
 INCLUDE "data/pokemon/base_stats/forms/gimmighoul_roaming.asm"
+INCLUDE "data/pokemon/base_stats/forms/meowth_rocket.asm"
 .IndirectEnd::

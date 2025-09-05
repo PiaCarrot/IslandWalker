@@ -504,4 +504,5 @@ PokemonCries::
     mon_cry CRY_ROCKRUFF,      32, 320 ; LYCANROC MIDNIGHT
     mon_cry CRY_ROCKRUFF,      32, 320 ; LYCANROC DUSK
     mon_cry CRY_PIDGEY,      -255,  383 ; GIMMIGHOUL ROAMING
+    mon_cry CRY_CLEFAIRY,    119,  144 ; MEOWTH ROCKET
         assert_table_length NUM_POKEMON

@@ -493,4 +493,5 @@ FirstEvoStages::
         dw LYCANROC_MIDNIGHT
         dw LYCANROC_DUSK
         dw GIMMIGHOUL_ROAMING
+        dw MEOWTH_ROCKET
         assert_table_length NUM_POKEMON

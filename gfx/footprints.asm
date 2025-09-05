@@ -499,4 +499,5 @@ INCBIN "gfx/footprints/other/placeholder.1bpp" ; ROCKRUFF_OWN_TEMPO
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; LYCANROC_MIDNIGHT
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; LYCANROC_DUSK
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; GIMMIGHOUL_ROAMING
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; MEOWTH_ROCKET
         assert_table_length NUM_POKEMON

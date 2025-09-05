@@ -498,4 +498,5 @@ PokemonBodyData:
     dw 207, 550    ; LYCANROC MIDNIGHT
     dw 207, 550    ; LYCANROC DUSK
     dw 100, 110    ; GIMMIGHOUL ROAMING
+    dw 104, 90     ; MEOWTH ROCKET
     assert_table_length NUM_POKEMON

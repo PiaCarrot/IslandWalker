@@ -75,6 +75,7 @@ FormsBitmaskPointers:
     dw LycanrocMidnightBitmasks
     dw LycanrocDuskBitmasks
     dw GimmighoulRoamingBitmasks
+    dw MeowthRocketBitmasks
 .IndirectEnd::
 
 LaprasPartnerBitmasks: INCLUDE "gfx/pokemon/forms/lapras_partner/bitmask.asm"
@@ -151,3 +152,4 @@ RockruffOwnTempoBitmasks: INCLUDE "gfx/pokemon/forms/rockruff_own_tempo/bitmask.
 LycanrocMidnightBitmasks: INCLUDE "gfx/pokemon/forms/lycanroc_midnight/bitmask.asm"
 LycanrocDuskBitmasks: INCLUDE "gfx/pokemon/forms/lycanroc_dusk/bitmask.asm"
 GimmighoulRoamingBitmasks: INCLUDE "gfx/pokemon/forms/gimmighoul_roaming/bitmask.asm"
+MeowthRocketBitmasks: INCLUDE "gfx/pokemon/forms/meowth_rocket/bitmask.asm"
