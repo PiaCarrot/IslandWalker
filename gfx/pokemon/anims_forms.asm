@@ -61,14 +61,14 @@ FormsAnimationPointers:
     dw VictreebelValenciaAnimation
     dw ParasValenciaAnimation
     dw ParasectValenciaAnimation
+        dw OnixCrystalAnimation
+        dw SteelixCrystalAnimation
+        dw UrsalunaBloodmoonAnimation
     dw DratiniPartnerAnimation
         dw EeveePartnerAnimation
 	dw PikachuPartnerAnimation
         dw DragonairPartnerAnimation
         dw DragonitePartnerAnimation
-        dw OnixCrystalAnimation
-        dw SteelixCrystalAnimation
-        dw UrsalunaBloodmoonAnimation
 .IndirectEnd::
 
 LaprasPartnerAnimation: INCLUDE "gfx/pokemon/forms/lapras_partner/anim.asm"
@@ -133,11 +133,11 @@ WeepinbellValenciaAnimation: INCLUDE "gfx/pokemon/forms/weepinbell_valencia/anim
 VictreebelValenciaAnimation: INCLUDE "gfx/pokemon/forms/victreebel_valencia/anim.asm"
 ParasValenciaAnimation: INCLUDE "gfx/pokemon/forms/paras_valencia/anim.asm"
 ParasectValenciaAnimation: INCLUDE "gfx/pokemon/forms/parasect_valencia/anim.asm"
+OnixCrystalAnimation: INCLUDE "gfx/pokemon/forms/onix_crystal/anim.asm"
+SteelixCrystalAnimation: INCLUDE "gfx/pokemon/forms/steelix_crystal/anim.asm"
+UrsalunaBloodmoonAnimation: INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/anim.asm"
 DratiniPartnerAnimation: INCLUDE "gfx/pokemon/forms/dratini_partner/anim.asm"
 EeveePartnerAnimation: INCLUDE "gfx/pokemon/forms/eevee_partner/anim.asm"
 PikachuPartnerAnimation: INCLUDE "gfx/pokemon/forms/pikachu_partner/anim.asm"
 DragonairPartnerAnimation: INCLUDE "gfx/pokemon/forms/dragonair_partner/anim.asm"
 DragonitePartnerAnimation: INCLUDE "gfx/pokemon/forms/dragonite_partner/anim.asm"
-OnixCrystalAnimation: INCLUDE "gfx/pokemon/forms/onix_crystal/anim.asm"
-SteelixCrystalAnimation: INCLUDE "gfx/pokemon/forms/steelix_crystal/anim.asm"
-UrsalunaBloodmoonAnimation: INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/anim.asm"

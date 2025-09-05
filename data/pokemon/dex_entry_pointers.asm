@@ -485,12 +485,12 @@ PokedexDataPointerTable:
         dba VictreebelValenciaPokedexEntry
         dba ParasValenciaPokedexEntry
         dba ParasectValenciaPokedexEntry
+        dba OnixCrystalPokedexEntry
+        dba SteelixCrystalPokedexEntry
+        dba UrsalunaBloodmoonPokedexEntry
         dba DratiniPartnerPokedexEntry
         dba EeveePartnerPokedexEntry
         dba PikachuPartnerPokedexEntry
         dba DragonairPartnerPokedexEntry
         dba DragonitePartnerPokedexEntry
-        dba OnixCrystalPokedexEntry
-        dba SteelixCrystalPokedexEntry
-        dba UrsalunaBloodmoonPokedexEntry
         assert_table_length NUM_POKEMON

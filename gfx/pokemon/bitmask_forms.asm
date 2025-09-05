@@ -63,14 +63,14 @@ FormsBitmaskPointers:
     dw VictreebelValenciaBitmasks
     dw ParasValenciaBitmasks
     dw ParasectValenciaBitmasks
+    dw OnixCrystalBitmasks
+    dw SteelixCrystalBitmasks
+    dw UrsalunaBloodmoonBitmasks
     dw DratiniPartnerBitmasks
     dw EeveePartnerBitmasks
     dw PikachuPartnerBitmasks
     dw DragonairPartnerBitmasks
     dw DragonitePartnerBitmasks
-    dw OnixCrystalBitmasks
-    dw SteelixCrystalBitmasks
-    dw UrsalunaBloodmoonBitmasks
 .IndirectEnd::
 
 LaprasPartnerBitmasks: INCLUDE "gfx/pokemon/forms/lapras_partner/bitmask.asm"
@@ -135,11 +135,11 @@ WeepinbellValenciaBitmasks: INCLUDE "gfx/pokemon/forms/weepinbell_valencia/bitma
 VictreebelValenciaBitmasks: INCLUDE "gfx/pokemon/forms/victreebel_valencia/bitmask.asm"
 ParasValenciaBitmasks: INCLUDE "gfx/pokemon/forms/paras_valencia/bitmask.asm"
 ParasectValenciaBitmasks: INCLUDE "gfx/pokemon/forms/parasect_valencia/bitmask.asm"
+OnixCrystalBitmasks: INCLUDE "gfx/pokemon/forms/onix_crystal/bitmask.asm"
+SteelixCrystalBitmasks: INCLUDE "gfx/pokemon/forms/steelix_crystal/bitmask.asm"
+UrsalunaBloodmoonBitmasks: INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/bitmask.asm"
 DratiniPartnerBitmasks: INCLUDE "gfx/pokemon/forms/dratini_partner/bitmask.asm"
 EeveePartnerBitmasks: INCLUDE "gfx/pokemon/forms/eevee_partner/bitmask.asm"
 PikachuPartnerBitmasks: INCLUDE "gfx/pokemon/forms/pikachu_partner/bitmask.asm"
 DragonairPartnerBitmasks: INCLUDE "gfx/pokemon/forms/dragonair_partner/bitmask.asm"
 DragonitePartnerBitmasks: INCLUDE "gfx/pokemon/forms/dragonite_partner/bitmask.asm"
-OnixCrystalBitmasks: INCLUDE "gfx/pokemon/forms/onix_crystal/bitmask.asm"
-SteelixCrystalBitmasks: INCLUDE "gfx/pokemon/forms/steelix_crystal/bitmask.asm"
-UrsalunaBloodmoonBitmasks: INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/bitmask.asm"

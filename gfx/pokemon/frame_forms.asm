@@ -63,14 +63,14 @@ FormsFramePointers:
     dw VictreebelValenciaFrames
     dw ParasValenciaFrames
     dw ParasectValenciaFrames
+    dw OnixCrystalFrames
+    dw SteelixCrystalFrames
+    dw UrsalunaBloodmoonFrames
     dw DratiniPartnerFrames
     dw EeveePartnerFrames
     dw PikachuPartnerFrames
     dw DragonairPartnerFrames
     dw DragonitePartnerFrames
-    dw OnixCrystalFrames
-    dw SteelixCrystalFrames
-    dw UrsalunaBloodmoonFrames
 .IndirectEnd::
 
 LaprasPartnerFrames: INCLUDE "gfx/pokemon/forms/lapras_partner/frames.asm"
@@ -135,11 +135,11 @@ WeepinbellValenciaFrames: INCLUDE "gfx/pokemon/forms/weepinbell_valencia/frames.
 VictreebelValenciaFrames: INCLUDE "gfx/pokemon/forms/victreebel_valencia/frames.asm"
 ParasValenciaFrames: INCLUDE "gfx/pokemon/forms/paras_valencia/frames.asm"
 ParasectValenciaFrames: INCLUDE "gfx/pokemon/forms/parasect_valencia/frames.asm"
+OnixCrystalFrames: INCLUDE "gfx/pokemon/forms/onix_crystal/frames.asm"
+SteelixCrystalFrames: INCLUDE "gfx/pokemon/forms/steelix_crystal/frames.asm"
+UrsalunaBloodmoonFrames: INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/frames.asm"
 DratiniPartnerFrames: INCLUDE "gfx/pokemon/forms/dratini_partner/frames.asm"
 EeveePartnerFrames: INCLUDE "gfx/pokemon/forms/eevee_partner/frames.asm"
 PikachuPartnerFrames: INCLUDE "gfx/pokemon/forms/pikachu_partner/frames.asm"
 DragonairPartnerFrames: INCLUDE "gfx/pokemon/forms/dragonair_partner/frames.asm"
 DragonitePartnerFrames: INCLUDE "gfx/pokemon/forms/dragonite_partner/frames.asm"
-OnixCrystalFrames: INCLUDE "gfx/pokemon/forms/onix_crystal/frames.asm"
-SteelixCrystalFrames: INCLUDE "gfx/pokemon/forms/steelix_crystal/frames.asm"
-UrsalunaBloodmoonFrames: INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/frames.asm"

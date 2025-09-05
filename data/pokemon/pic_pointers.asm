@@ -980,6 +980,12 @@ PokemonPicPointers::
     dba ParasValenciaBackpic
     dba ParasectValenciaFrontpic
     dba ParasectValenciaBackpic
+    dba OnixCrystalFrontpic
+    dba OnixCrystalBackpic
+    dba SteelixCrystalFrontpic
+    dba SteelixCrystalBackpic
+    dba UrsalunaBloodmoonFrontpic
+    dba UrsalunaBloodmoonBackpic
     dba DratiniPartnerFrontpic
         dba DratiniPartnerBackpic
         dba EeveePartnerFrontpic
@@ -990,10 +996,4 @@ PokemonPicPointers::
         dba DragonairPartnerBackpic
     dba DragonitePartnerFrontpic
         dba DragonitePartnerBackpic
-    dba OnixCrystalFrontpic
-    dba OnixCrystalBackpic
-    dba SteelixCrystalFrontpic
-    dba SteelixCrystalBackpic
-    dba UrsalunaBloodmoonFrontpic
-    dba UrsalunaBloodmoonBackpic
         assert_table_length NUM_POKEMON + 1

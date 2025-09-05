@@ -482,12 +482,12 @@ AlphabeticalPokedexOrder:
         dw VICTREEBEL_VALENCIA
         dw PARAS_VALENCIA
         dw PARASECT_VALENCIA
+        dw ONIX_CRYSTAL
+        dw STEELIX_CRYSTAL
+        dw URSALUNA_BLOODMOON
         dw DRATINI_PARTNER
         dw EEVEE_PARTNER
         dw PIKACHU_PARTNER
         dw DRAGONAIR_PARTNER
         dw DRAGONITE_PARTNER
-        dw ONIX_CRYSTAL
-        dw STEELIX_CRYSTAL
-        dw URSALUNA_BLOODMOON
         assert_table_length NUM_POKEMON
