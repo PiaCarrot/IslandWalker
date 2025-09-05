@@ -964,14 +964,14 @@ INCBIN "gfx/pokemon/forms/goodra_hisui/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/goodra_hisui/shiny.pal"
 INCBIN "gfx/pokemon/forms/typhlosion_hisui/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/typhlosion_hisui/shiny.pal"
-INCBIN "gfx/pokemon/johto/wooper/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/johto/wooper/shiny.pal"
-INCBIN "gfx/pokemon/kanto/tauros/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/kanto/tauros/shiny.pal"
-INCBIN "gfx/pokemon/kanto/tauros/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/kanto/tauros/shiny.pal"
-INCBIN "gfx/pokemon/kanto/tauros/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/kanto/tauros/shiny.pal"
+INCBIN "gfx/pokemon/forms/wooper_paldea/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/wooper_paldea/shiny.pal"
+INCBIN "gfx/pokemon/forms/tauros_combat/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/tauros_combat/shiny.pal"
+INCBIN "gfx/pokemon/forms/tauros_blaze/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/tauros_blaze/shiny.pal"
+INCBIN "gfx/pokemon/forms/tauros_aqua/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/tauros_aqua/shiny.pal"
 INCBIN "gfx/pokemon/forms/caterpie_valencia/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/caterpie_valencia/shiny.pal"
 INCBIN "gfx/pokemon/forms/metapod_valencia/normal.gbcpal", middle_colors
@@ -1010,4 +1010,6 @@ INCBIN "gfx/pokemon/forms/onix_crystal/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/onix_crystal/shiny.pal"
 INCBIN "gfx/pokemon/forms/steelix_crystal/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/steelix_crystal/shiny.pal"
+INCBIN "gfx/pokemon/forms/ursaluna_bloodmoon/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/shiny.pal"
         assert_table_length NUM_POKEMON + 1

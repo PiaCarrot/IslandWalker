@@ -70,6 +70,7 @@ FormsAnimationIdlePointers:
     dw DragonitePartnerAnimationIdle
     dw OnixCrystalAnimationIdle
     dw SteelixCrystalAnimationIdle
+    dw UrsalunaBloodmoonAnimationIdle
 .IndirectEnd::
 
 LaprasPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/lapras_partner/anim_idle.asm"
@@ -141,3 +142,4 @@ DragonairPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/dragonair_partner/anim
 DragonitePartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/dragonite_partner/anim_idle.asm"
 OnixCrystalAnimationIdle: INCLUDE "gfx/pokemon/forms/onix_crystal/anim_idle.asm"
 SteelixCrystalAnimationIdle: INCLUDE "gfx/pokemon/forms/steelix_crystal/anim_idle.asm"
+UrsalunaBloodmoonAnimationIdle: INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/anim_idle.asm"

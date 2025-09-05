@@ -496,4 +496,5 @@ IconPointers:
         dw DragoniteIcon
         dw OnixIcon
         dw SteelixIcon
+        dw UrsalunaIcon
         assert_table_length NUM_POKEMON + 1

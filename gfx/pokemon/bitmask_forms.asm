@@ -70,6 +70,7 @@ FormsBitmaskPointers:
     dw DragonitePartnerBitmasks
     dw OnixCrystalBitmasks
     dw SteelixCrystalBitmasks
+    dw UrsalunaBloodmoonBitmasks
 .IndirectEnd::
 
 LaprasPartnerBitmasks: INCLUDE "gfx/pokemon/forms/lapras_partner/bitmask.asm"
@@ -141,3 +142,4 @@ DragonairPartnerBitmasks: INCLUDE "gfx/pokemon/forms/dragonair_partner/bitmask.a
 DragonitePartnerBitmasks: INCLUDE "gfx/pokemon/forms/dragonite_partner/bitmask.asm"
 OnixCrystalBitmasks: INCLUDE "gfx/pokemon/forms/onix_crystal/bitmask.asm"
 SteelixCrystalBitmasks: INCLUDE "gfx/pokemon/forms/steelix_crystal/bitmask.asm"
+UrsalunaBloodmoonBitmasks: INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/bitmask.asm"

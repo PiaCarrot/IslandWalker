@@ -994,4 +994,6 @@ PokemonPicPointers::
     dba OnixCrystalBackpic
     dba SteelixCrystalFrontpic
     dba SteelixCrystalBackpic
+    dba UrsalunaBloodmoonFrontpic
+    dba UrsalunaBloodmoonBackpic
         assert_table_length NUM_POKEMON + 1

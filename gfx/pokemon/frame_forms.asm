@@ -70,6 +70,7 @@ FormsFramePointers:
     dw DragonitePartnerFrames
     dw OnixCrystalFrames
     dw SteelixCrystalFrames
+    dw UrsalunaBloodmoonFrames
 .IndirectEnd::
 
 LaprasPartnerFrames: INCLUDE "gfx/pokemon/forms/lapras_partner/frames.asm"
@@ -141,3 +142,4 @@ DragonairPartnerFrames: INCLUDE "gfx/pokemon/forms/dragonair_partner/frames.asm"
 DragonitePartnerFrames: INCLUDE "gfx/pokemon/forms/dragonite_partner/frames.asm"
 OnixCrystalFrames: INCLUDE "gfx/pokemon/forms/onix_crystal/frames.asm"
 SteelixCrystalFrames: INCLUDE "gfx/pokemon/forms/steelix_crystal/frames.asm"
+UrsalunaBloodmoonFrames: INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/frames.asm"

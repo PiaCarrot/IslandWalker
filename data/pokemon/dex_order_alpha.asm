@@ -489,4 +489,5 @@ AlphabeticalPokedexOrder:
         dw DRAGONITE_PARTNER
         dw ONIX_CRYSTAL
         dw STEELIX_CRYSTAL
+        dw URSALUNA_BLOODMOON
         assert_table_length NUM_POKEMON

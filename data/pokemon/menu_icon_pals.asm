@@ -495,11 +495,12 @@ MonMenuIconPals:
         icon_pals GREEN,  GREEN  ; VICTREEBEL_VALENCIA
         icon_pals RED,    BROWN  ; PARAS_VALENCIA
         icon_pals RED,    BROWN  ; PARASECT_VALENCIA
+        icon_pals GRAY,   GREEN  ; ONIX_CRYSTAL
+        icon_pals GRAY,   BROWN  ; STEELIX_CRYSTAL
+       icon_pals RED,    RED    ; URSALUNA_BLOODMOON
        icon_pals BLUE,   PURPLE ; DRATINI
        icon_pals BROWN,  GRAY   ; EEVEE
        icon_pals RED,    RED    ; PIKACHU
         icon_pals BLUE,   PURPLE ; DRAGONAIR
         icon_pals RED,    GRAY   ; DRAGONITE
-        icon_pals GRAY,   GREEN  ; ONIX_CRYSTAL
-        icon_pals GRAY,   BROWN  ; STEELIX_CRYSTAL
         assert_table_length NUM_POKEMON

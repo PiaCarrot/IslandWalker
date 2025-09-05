@@ -1345,3 +1345,5 @@ OnixCrystalFrontpic: INCBIN "gfx/pokemon/forms/onix_crystal/front.animated.2bpp.
 OnixCrystalBackpic:  INCBIN "gfx/pokemon/forms/onix_crystal/back.2bpp.lz"
 SteelixCrystalFrontpic: INCBIN "gfx/pokemon/forms/steelix_crystal/front.animated.2bpp.lz"
 SteelixCrystalBackpic:  INCBIN "gfx/pokemon/forms/steelix_crystal/back.2bpp.lz"
+UrsalunaBloodmoonFrontpic: INCBIN "gfx/pokemon/forms/ursaluna_bloodmoon/front.animated.2bpp.lz"
+UrsalunaBloodmoonBackpic:  INCBIN "gfx/pokemon/forms/ursaluna_bloodmoon/back.2bpp.lz"

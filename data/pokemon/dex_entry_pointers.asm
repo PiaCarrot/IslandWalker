@@ -492,4 +492,5 @@ PokedexDataPointerTable:
         dba DragonitePartnerPokedexEntry
         dba OnixCrystalPokedexEntry
         dba SteelixCrystalPokedexEntry
+        dba UrsalunaBloodmoonPokedexEntry
         assert_table_length NUM_POKEMON

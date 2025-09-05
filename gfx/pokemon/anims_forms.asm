@@ -68,6 +68,7 @@ FormsAnimationPointers:
         dw DragonitePartnerAnimation
         dw OnixCrystalAnimation
         dw SteelixCrystalAnimation
+        dw UrsalunaBloodmoonAnimation
 .IndirectEnd::
 
 LaprasPartnerAnimation: INCLUDE "gfx/pokemon/forms/lapras_partner/anim.asm"
@@ -139,3 +140,4 @@ DragonairPartnerAnimation: INCLUDE "gfx/pokemon/forms/dragonair_partner/anim.asm
 DragonitePartnerAnimation: INCLUDE "gfx/pokemon/forms/dragonite_partner/anim.asm"
 OnixCrystalAnimation: INCLUDE "gfx/pokemon/forms/onix_crystal/anim.asm"
 SteelixCrystalAnimation: INCLUDE "gfx/pokemon/forms/steelix_crystal/anim.asm"
+UrsalunaBloodmoonAnimation: INCLUDE "gfx/pokemon/forms/ursaluna_bloodmoon/anim.asm"

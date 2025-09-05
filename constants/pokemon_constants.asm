@@ -511,7 +511,7 @@ DEF FORM_POKEMON EQU const_value
         const PARASECT_VALENCIA   ; 1e1
         const ONIX_CRYSTAL        ; 1e2
         const STEELIX_CRYSTAL     ; 1e3
-	; const URSALUNA_BLOODMOON  ; 1e4
+        const URSALUNA_BLOODMOON  ; 1e4
         const DRATINI_PARTNER  ; 1e5
         const EEVEE_PARTNER  ; 1e6
         const PIKACHU_PARTNER  ; 1e7

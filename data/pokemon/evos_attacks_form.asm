@@ -70,6 +70,7 @@ FormsEvosAttacksPointers::
         dw DragonitePartnerEvosAttacks
         dw OnixCrystalEvosAttacks
         dw SteelixCrystalEvosAttacks
+        dw UrsalunaBloodmoonEvosAttacks
 .IndirectEnd::
 
 LaprasPartnerEvosAttacks:
@@ -1380,6 +1381,32 @@ SteelixCrystalEvosAttacks:
         dbw 46, CRUNCH
         dbw 49, DOUBLE_EDGE
         dbw 54, STONE_EDGE
+        db 0 ; no more level-up moves
+
+UrsalunaBloodmoonEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, COVET
+        dbw 1, FAKE_TEARS
+        ; HEADLONG_RUSH (L1)
+        dbw 1, LEER
+        dbw 1, LICK
+        dbw 1, SCRATCH
+        dbw 1, TACKLE
+        ; BABY_DOLL_EYES (L6)
+        dbw 8, FURY_SWIPES
+        dbw 11, BULLDOZE
+        dbw 13, PAYBACK
+        dbw 17, SWEET_SCENT
+        dbw 18, SLASH
+        ; PLAY_NICE (L25)
+        ; PLAY_ROUGH (L25)
+        ; HIGH_HORSEPOWER (L34)
+        dbw 35, SCARY_FACE
+        dbw 41, REST
+        dbw 41, SNORE
+        dbw 43, DOUBLE_EDGE
+        dbw 56, THRASH
+        dbw 64, HAMMER_ARM
         db 0 ; no more level-up moves
 
 NoEvosAttacks4:

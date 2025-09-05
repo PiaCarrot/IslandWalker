@@ -499,4 +499,5 @@ PokemonCries::
     mon_cry CRY_BULBASAUR,    60,  320 ; DRAGONITE PARTNER
     mon_cry CRY_EKANS,       255,  320 ; ONIX CRYSTAL
     mon_cry CRY_TYPHLOSION,  239,  247 ; STEELIX CRYSTAL
+    mon_cry CRY_URSALUNA,   1400,  127 ; URSALUNA BLOODMOON
         assert_table_length NUM_POKEMON

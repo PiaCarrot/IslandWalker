@@ -22,13 +22,13 @@ INCLUDE "data/items/attributes.asm"
 SECTION "bank2", ROMX
 
 INCLUDE "engine/overworld/player_object.asm"
-INCLUDE "engine/math/sine.asm"
 INCLUDE "engine/predef.asm"
 INCLUDE "engine/gfx/color.asm"
 
 
 SECTION "bank3", ROMX
 
+INCLUDE "engine/math/sine.asm"
 INCLUDE "engine/events/checktime.asm"
 INCLUDE "engine/events/specials.asm"
 INCLUDE "engine/math/print_num.asm"

@@ -70,6 +70,7 @@ FormsEggMovePointers::
         dw NoEggMoves4 ; DragonitePartner
         dw OnixEggMoves
         dw NoEggMoves4 ; SteelixCrystal
+        dw NoEggMoves4 ; UrsalunaBloodmoon
 .IndirectEnd::
 
 LaprasPartnerEggMoves:

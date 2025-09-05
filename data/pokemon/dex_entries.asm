@@ -512,3 +512,4 @@ DragonairPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dragonair
 DragonitePartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dragonite_partner.asm"
 OnixCrystalPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/onix_crystal.asm"
 SteelixCrystalPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/steelix_crystal.asm"
+UrsalunaBloodmoonPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/ursaluna_bloodmoon.asm"
