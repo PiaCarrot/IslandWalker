@@ -76,6 +76,11 @@ FormsEvosAttacksPointers::
         dw LycanrocDuskEvosAttacks
         dw GimmighoulRoamingEvosAttacks
         dw MeowthRocketEvosAttacks
+        dw RotomHeatEvosAttacks
+        dw RotomWashEvosAttacks
+        dw RotomFrostEvosAttacks
+        dw RotomFanEvosAttacks
+        dw RotomMowEvosAttacks
 .IndirectEnd::
 
 LaprasPartnerEvosAttacks:
@@ -1513,4 +1518,89 @@ MeowthRocketEvosAttacks:
         dbw 49, NIGHT_SLASH
         dbw 54, FEINT
         db 0 ; no more level-up moves
+RotomHeatEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, OVERHEAT
+        dbw 1, TRICK
+        dbw 1, ASTONISH
+        dbw 1, THUNDER_WAVE
+        dbw 1, THUNDERSHOCK
+        dbw 1, CONFUSE_RAY
+        dbw 8, UPROAR
+        dbw 15, DOUBLE_TEAM
+        dbw 22, SHOCK_WAVE
+        dbw 29, OMINOUS_WIND
+        dbw 36, SUBSTITUTE
+        dbw 43, CHARGE
+        dbw 50, DISCHARGE
+        db 0 ; no more level-up moves
+
+RotomWashEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, HYDRO_PUMP
+        dbw 1, TRICK
+        dbw 1, ASTONISH
+        dbw 1, THUNDER_WAVE
+        dbw 1, THUNDERSHOCK
+        dbw 1, CONFUSE_RAY
+        dbw 8, UPROAR
+        dbw 15, DOUBLE_TEAM
+        dbw 22, SHOCK_WAVE
+        dbw 29, OMINOUS_WIND
+        dbw 36, SUBSTITUTE
+        dbw 43, CHARGE
+        dbw 50, DISCHARGE
+        db 0 ; no more level-up moves
+
+RotomFrostEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, BLIZZARD
+        dbw 1, TRICK
+        dbw 1, ASTONISH
+        dbw 1, THUNDER_WAVE
+        dbw 1, THUNDERSHOCK
+        dbw 1, CONFUSE_RAY
+        dbw 8, UPROAR
+        dbw 15, DOUBLE_TEAM
+        dbw 22, SHOCK_WAVE
+        dbw 29, OMINOUS_WIND
+        dbw 36, SUBSTITUTE
+        dbw 43, CHARGE
+        dbw 50, DISCHARGE
+        db 0 ; no more level-up moves
+
+RotomFanEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, AIR_SLASH
+        dbw 1, TRICK
+        dbw 1, ASTONISH
+        dbw 1, THUNDER_WAVE
+        dbw 1, THUNDERSHOCK
+        dbw 1, CONFUSE_RAY
+        dbw 8, UPROAR
+        dbw 15, DOUBLE_TEAM
+        dbw 22, SHOCK_WAVE
+        dbw 29, OMINOUS_WIND
+        dbw 36, SUBSTITUTE
+        dbw 43, CHARGE
+        dbw 50, DISCHARGE
+        db 0 ; no more level-up moves
+
+RotomMowEvosAttacks:
+        db 0 ; no more evolutions
+        dbw 1, LEAF_STORM
+        dbw 1, TRICK
+        dbw 1, ASTONISH
+        dbw 1, THUNDER_WAVE
+        dbw 1, THUNDERSHOCK
+        dbw 1, CONFUSE_RAY
+        dbw 8, UPROAR
+        dbw 15, DOUBLE_TEAM
+        dbw 22, SHOCK_WAVE
+        dbw 29, OMINOUS_WIND
+        dbw 36, SUBSTITUTE
+        dbw 43, CHARGE
+        dbw 50, DISCHARGE
+        db 0 ; no more level-up moves
+
 ENDSECTION

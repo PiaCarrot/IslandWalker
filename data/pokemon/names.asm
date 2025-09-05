@@ -502,4 +502,9 @@ PokemonNames::
         db "LYCANROC@@"
         db "GIMMIGHOUL"
         db "MEOWTH@@@@"
+        db "ROTOM@@@@@"
+        db "ROTOM@@@@@"
+        db "ROTOM@@@@@"
+        db "ROTOM@@@@@"
+        db "ROTOM@@@@@"
        assert_table_length NUM_POKEMON

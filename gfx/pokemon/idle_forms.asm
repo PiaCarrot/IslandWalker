@@ -76,7 +76,12 @@ FormsAnimationIdlePointers:
     dw LycanrocDuskAnimationIdle
     dw GimmighoulRoamingAnimationIdle
     dw MeowthRocketAnimationIdle
-.IndirectEnd::
+    dw RotomHeatAnimationIdle
+    dw RotomWashAnimationIdle
+    dw RotomFrostAnimationIdle
+    dw RotomFanAnimationIdle
+    dw RotomMowAnimationIdle
+    .IndirectEnd::
 
 LaprasPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/lapras_partner/anim_idle.asm"
 RattataAlolaAnimationIdle: INCLUDE "gfx/pokemon/forms/rattata_alola/anim_idle.asm"
@@ -153,3 +158,8 @@ LycanrocMidnightAnimationIdle: INCLUDE "gfx/pokemon/forms/lycanroc_midnight/anim
 LycanrocDuskAnimationIdle: INCLUDE "gfx/pokemon/forms/lycanroc_dusk/anim_idle.asm"
 GimmighoulRoamingAnimationIdle: INCLUDE "gfx/pokemon/forms/gimmighoul_roaming/anim_idle.asm"
 MeowthRocketAnimationIdle: INCLUDE "gfx/pokemon/forms/meowth_rocket/anim_idle.asm"
+RotomHeatAnimationIdle: INCLUDE "gfx/pokemon/forms/rotom_heat/anim_idle.asm"
+RotomWashAnimationIdle: INCLUDE "gfx/pokemon/forms/rotom_wash/anim_idle.asm"
+RotomFrostAnimationIdle: INCLUDE "gfx/pokemon/forms/rotom_frost/anim_idle.asm"
+RotomFanAnimationIdle: INCLUDE "gfx/pokemon/forms/rotom_fan/anim_idle.asm"
+RotomMowAnimationIdle: INCLUDE "gfx/pokemon/forms/rotom_mow/anim_idle.asm"

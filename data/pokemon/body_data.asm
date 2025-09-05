@@ -499,4 +499,9 @@ PokemonBodyData:
     dw 207, 550    ; LYCANROC DUSK
     dw 100, 110    ; GIMMIGHOUL ROAMING
     dw 104, 90     ; MEOWTH ROCKET
+    dw 100, 15     ; ROTOM HEAT
+    dw 100, 15     ; ROTOM WASH
+    dw 100, 15     ; ROTOM FROST
+    dw 100, 15     ; ROTOM FAN
+    dw 100, 15     ; ROTOM MOW
     assert_table_length NUM_POKEMON

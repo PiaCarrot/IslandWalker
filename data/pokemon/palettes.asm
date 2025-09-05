@@ -1022,4 +1022,14 @@ INCBIN "gfx/pokemon/forms/gimmighoul_roaming/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/gimmighoul_roaming/shiny.pal"
 INCBIN "gfx/pokemon/forms/meowth_rocket/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/meowth_rocket/shiny.pal"
+INCBIN "gfx/pokemon/forms/rotom_heat/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/rotom_heat/shiny.pal"
+INCBIN "gfx/pokemon/forms/rotom_wash/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/rotom_wash/shiny.pal"
+INCBIN "gfx/pokemon/forms/rotom_frost/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/rotom_frost/shiny.pal"
+INCBIN "gfx/pokemon/forms/rotom_fan/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/rotom_fan/shiny.pal"
+INCBIN "gfx/pokemon/forms/rotom_mow/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/rotom_mow/shiny.pal"
         assert_table_length NUM_POKEMON + 1

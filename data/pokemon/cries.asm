@@ -505,4 +505,9 @@ PokemonCries::
     mon_cry CRY_ROCKRUFF,      32, 320 ; LYCANROC DUSK
     mon_cry CRY_PIDGEY,      -255,  383 ; GIMMIGHOUL ROAMING
     mon_cry CRY_CLEFAIRY,    119,  144 ; MEOWTH ROCKET
+    mon_cry CRY_PHIONE,      32,  556 ; ROTOM HEAT
+    mon_cry CRY_PHIONE,      32,  556 ; ROTOM WASH
+    mon_cry CRY_PHIONE,      32,  556 ; ROTOM FROST
+    mon_cry CRY_PHIONE,      32,  556 ; ROTOM FAN
+    mon_cry CRY_PHIONE,      32,  556 ; ROTOM MOW
         assert_table_length NUM_POKEMON

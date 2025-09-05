@@ -500,4 +500,9 @@ INCBIN "gfx/footprints/other/placeholder.1bpp" ; LYCANROC_MIDNIGHT
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; LYCANROC_DUSK
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; GIMMIGHOUL_ROAMING
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; MEOWTH_ROCKET
+    INCBIN "gfx/footprints/sinnoh/rotom.1bpp" ; ROTOM_HEAT
+    INCBIN "gfx/footprints/sinnoh/rotom.1bpp" ; ROTOM_WASH
+    INCBIN "gfx/footprints/sinnoh/rotom.1bpp" ; ROTOM_FROST
+    INCBIN "gfx/footprints/sinnoh/rotom.1bpp" ; ROTOM_FAN
+    INCBIN "gfx/footprints/sinnoh/rotom.1bpp" ; ROTOM_MOW
         assert_table_length NUM_POKEMON

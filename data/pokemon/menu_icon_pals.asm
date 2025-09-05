@@ -508,4 +508,9 @@ MonMenuIconPals:
         icon_pals RED,    RED    ; LYCANROC_DUSK
         icon_pals RED,    RED    ; GIMMIGHOUL_ROAMING
         icon_pals BROWN,  PURPLE ; MEOWTH_ROCKET
+        icon_pals RED,    RED    ; ROTOM_HEAT
+        icon_pals RED,    RED    ; ROTOM_WASH
+        icon_pals RED,    RED    ; ROTOM_FROST
+        icon_pals RED,    RED    ; ROTOM_FAN
+        icon_pals RED,    RED    ; ROTOM_MOW
         assert_table_length NUM_POKEMON

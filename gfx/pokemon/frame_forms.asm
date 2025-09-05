@@ -76,7 +76,12 @@ FormsFramePointers:
     dw LycanrocDuskFrames
     dw GimmighoulRoamingFrames
     dw MeowthRocketFrames
-.IndirectEnd::
+    dw RotomHeatFrames
+    dw RotomWashFrames
+    dw RotomFrostFrames
+    dw RotomFanFrames
+    dw RotomMowFrames
+    .IndirectEnd::
 
 LaprasPartnerFrames: INCLUDE "gfx/pokemon/forms/lapras_partner/frames.asm"
 RattataAlolaFrames: INCLUDE "gfx/pokemon/forms/rattata_alola/frames.asm"
@@ -153,3 +158,8 @@ LycanrocMidnightFrames: INCLUDE "gfx/pokemon/forms/lycanroc_midnight/frames.asm"
 LycanrocDuskFrames: INCLUDE "gfx/pokemon/forms/lycanroc_dusk/frames.asm"
 GimmighoulRoamingFrames: INCLUDE "gfx/pokemon/forms/gimmighoul_roaming/frames.asm"
 MeowthRocketFrames: INCLUDE "gfx/pokemon/forms/meowth_rocket/frames.asm"
+RotomHeatFrames: INCLUDE "gfx/pokemon/forms/rotom_heat/frames.asm"
+RotomWashFrames: INCLUDE "gfx/pokemon/forms/rotom_wash/frames.asm"
+RotomFrostFrames: INCLUDE "gfx/pokemon/forms/rotom_frost/frames.asm"
+RotomFanFrames: INCLUDE "gfx/pokemon/forms/rotom_fan/frames.asm"
+RotomMowFrames: INCLUDE "gfx/pokemon/forms/rotom_mow/frames.asm"

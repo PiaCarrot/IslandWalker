@@ -494,4 +494,9 @@ FirstEvoStages::
         dw LYCANROC_DUSK
         dw GIMMIGHOUL_ROAMING
         dw MEOWTH_ROCKET
+        dw ROTOM ; ROTOM_HEAT
+        dw ROTOM ; ROTOM_WASH
+        dw ROTOM ; ROTOM_FROST
+        dw ROTOM ; ROTOM_FAN
+        dw ROTOM ; ROTOM_MOW
         assert_table_length NUM_POKEMON

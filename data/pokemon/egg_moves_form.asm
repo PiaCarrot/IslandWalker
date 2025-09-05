@@ -76,6 +76,11 @@ FormsEggMovePointers::
         dw NoEggMoves4 ; LycanrocDusk
         dw NoEggMoves4 ; GimmighoulRoaming
         dw MeowthRocketEggMoves
+        dw NoEggMoves4 ; RotomHeat
+        dw NoEggMoves4 ; RotomWash
+        dw NoEggMoves4 ; RotomFrost
+        dw NoEggMoves4 ; RotomFan
+        dw NoEggMoves4 ; RotomMow
 .IndirectEnd::
 
 LaprasPartnerEggMoves:
@@ -395,6 +400,11 @@ TaurosAquaEggMoves:
         dw -1 ; end
 
 MeowthRocketEggMoves:
+        dw NoEggMoves4 ; RotomHeat
+        dw NoEggMoves4 ; RotomWash
+        dw NoEggMoves4 ; RotomFrost
+        dw NoEggMoves4 ; RotomFan
+        dw NoEggMoves4 ; RotomMow
         dw AMNESIA
         dw ASSIST
         dw CHARM

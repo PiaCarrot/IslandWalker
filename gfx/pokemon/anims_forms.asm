@@ -74,6 +74,11 @@ FormsAnimationPointers:
         dw LycanrocDuskAnimation
         dw GimmighoulRoamingAnimation
         dw MeowthRocketAnimation
+        dw RotomHeatAnimation
+        dw RotomWashAnimation
+        dw RotomFrostAnimation
+        dw RotomFanAnimation
+        dw RotomMowAnimation
 .IndirectEnd::
 
 LaprasPartnerAnimation: INCLUDE "gfx/pokemon/forms/lapras_partner/anim.asm"
@@ -151,3 +156,8 @@ LycanrocMidnightAnimation: INCLUDE "gfx/pokemon/forms/lycanroc_midnight/anim.asm
 LycanrocDuskAnimation: INCLUDE "gfx/pokemon/forms/lycanroc_dusk/anim.asm"
 GimmighoulRoamingAnimation: INCLUDE "gfx/pokemon/forms/gimmighoul_roaming/anim.asm"
 MeowthRocketAnimation: INCLUDE "gfx/pokemon/forms/meowth_rocket/anim.asm"
+RotomHeatAnimation: INCLUDE "gfx/pokemon/forms/rotom_heat/anim.asm"
+RotomWashAnimation: INCLUDE "gfx/pokemon/forms/rotom_wash/anim.asm"
+RotomFrostAnimation: INCLUDE "gfx/pokemon/forms/rotom_frost/anim.asm"
+RotomFanAnimation: INCLUDE "gfx/pokemon/forms/rotom_fan/anim.asm"
+RotomMowAnimation: INCLUDE "gfx/pokemon/forms/rotom_mow/anim.asm"

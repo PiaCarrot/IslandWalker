@@ -1081,6 +1081,12 @@ SECTION "Pokemon Pics 45", ROMX
 
 MelmetalFrontpic:      INCBIN "gfx/pokemon/other/melmetal/front.animated.2bpp.lz"
 MelmetalBackpic:       INCBIN "gfx/pokemon/other/melmetal/back.2bpp.lz"
+RotomFrostFrontpic: INCBIN "gfx/pokemon/forms/rotom_frost/front.animated.2bpp.lz"
+RotomFrostBackpic:  INCBIN "gfx/pokemon/forms/rotom_frost/back.2bpp.lz"
+RotomFanFrontpic: INCBIN "gfx/pokemon/forms/rotom_fan/front.animated.2bpp.lz"
+RotomFanBackpic:  INCBIN "gfx/pokemon/forms/rotom_fan/back.2bpp.lz"
+RotomMowFrontpic: INCBIN "gfx/pokemon/forms/rotom_mow/front.animated.2bpp.lz"
+RotomMowBackpic:  INCBIN "gfx/pokemon/forms/rotom_mow/back.2bpp.lz"
 
 SECTION "Unown Pics 1", ROMX
 
@@ -1321,6 +1327,10 @@ GimmighoulRoamingFrontpic: INCBIN "gfx/pokemon/forms/gimmighoul_roaming/front.an
 GimmighoulRoamingBackpic:  INCBIN "gfx/pokemon/forms/gimmighoul_roaming/back.2bpp.lz"
 MeowthRocketFrontpic: INCBIN "gfx/pokemon/forms/meowth_rocket/front.animated.2bpp.lz"
 MeowthRocketBackpic:  INCBIN "gfx/pokemon/forms/meowth_rocket/back.2bpp.lz"
+RotomHeatFrontpic: INCBIN "gfx/pokemon/forms/rotom_heat/front.animated.2bpp.lz"
+RotomHeatBackpic:  INCBIN "gfx/pokemon/forms/rotom_heat/back.2bpp.lz"
+RotomWashFrontpic: INCBIN "gfx/pokemon/forms/rotom_wash/front.animated.2bpp.lz"
+RotomWashBackpic:  INCBIN "gfx/pokemon/forms/rotom_wash/back.2bpp.lz"
 
 SECTION "Pics 22", ROMX
 ExeggutorAlolaFrontpic: INCBIN "gfx/pokemon/forms/exeggutor_alola/front.animated.2bpp.lz"

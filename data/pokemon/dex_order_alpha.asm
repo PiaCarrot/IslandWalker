@@ -495,4 +495,9 @@ AlphabeticalPokedexOrder:
         dw LYCANROC_DUSK
         dw GIMMIGHOUL_ROAMING
         dw MEOWTH_ROCKET
+        dw ROTOM_HEAT
+        dw ROTOM_WASH
+        dw ROTOM_FROST
+        dw ROTOM_FAN
+        dw ROTOM_MOW
         assert_table_length NUM_POKEMON

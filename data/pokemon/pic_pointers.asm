@@ -1006,4 +1006,14 @@ PokemonPicPointers::
     dba GimmighoulRoamingBackpic
     dba MeowthRocketFrontpic
     dba MeowthRocketBackpic
+    dba RotomHeatFrontpic
+    dba RotomHeatBackpic
+    dba RotomWashFrontpic
+    dba RotomWashBackpic
+    dba RotomFrostFrontpic
+    dba RotomFrostBackpic
+    dba RotomFanFrontpic
+    dba RotomFanBackpic
+    dba RotomMowFrontpic
+    dba RotomMowBackpic
         assert_table_length NUM_POKEMON + 1

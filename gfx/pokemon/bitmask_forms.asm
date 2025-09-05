@@ -76,7 +76,12 @@ FormsBitmaskPointers:
     dw LycanrocDuskBitmasks
     dw GimmighoulRoamingBitmasks
     dw MeowthRocketBitmasks
-.IndirectEnd::
+    dw RotomHeatBitmasks
+    dw RotomWashBitmasks
+    dw RotomFrostBitmasks
+    dw RotomFanBitmasks
+    dw RotomMowBitmasks
+    .IndirectEnd::
 
 LaprasPartnerBitmasks: INCLUDE "gfx/pokemon/forms/lapras_partner/bitmask.asm"
 RattataAlolaBitmasks: INCLUDE "gfx/pokemon/forms/rattata_alola/bitmask.asm"
@@ -153,3 +158,8 @@ LycanrocMidnightBitmasks: INCLUDE "gfx/pokemon/forms/lycanroc_midnight/bitmask.a
 LycanrocDuskBitmasks: INCLUDE "gfx/pokemon/forms/lycanroc_dusk/bitmask.asm"
 GimmighoulRoamingBitmasks: INCLUDE "gfx/pokemon/forms/gimmighoul_roaming/bitmask.asm"
 MeowthRocketBitmasks: INCLUDE "gfx/pokemon/forms/meowth_rocket/bitmask.asm"
+RotomHeatBitmasks: INCLUDE "gfx/pokemon/forms/rotom_heat/bitmask.asm"
+RotomWashBitmasks: INCLUDE "gfx/pokemon/forms/rotom_wash/bitmask.asm"
+RotomFrostBitmasks: INCLUDE "gfx/pokemon/forms/rotom_frost/bitmask.asm"
+RotomFanBitmasks: INCLUDE "gfx/pokemon/forms/rotom_fan/bitmask.asm"
+RotomMowBitmasks: INCLUDE "gfx/pokemon/forms/rotom_mow/bitmask.asm"

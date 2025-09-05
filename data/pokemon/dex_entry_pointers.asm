@@ -498,4 +498,9 @@ PokedexDataPointerTable:
         dba LycanrocDuskPokedexEntry
         dba GimmighoulRoamingPokedexEntry
         dba MeowthRocketPokedexEntry
+        dba RotomHeatPokedexEntry
+        dba RotomWashPokedexEntry
+        dba RotomFrostPokedexEntry
+        dba RotomFanPokedexEntry
+        dba RotomMowPokedexEntry
         assert_table_length NUM_POKEMON
