@@ -41,8 +41,8 @@ AbandonedHouseZoruaScript:
 	writetext AbandonedHouseZoruaText
 	waitbutton
 	closetext
-	cry SENTRET ; TODO: ZORUA
-	loadwildmon SENTRET, 30 ; TODO: ZORUA
+	cry ZORUA 
+	loadwildmon ZORUA, 30 
 	startbattle
 	disappear ABANDONED_HOUSE_ZORUA
 	setevent EVENT_MANDARIN_NORTH_ZORUA_BATTLE

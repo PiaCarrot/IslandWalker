@@ -669,4 +669,45 @@ JohtoGrassWildMons:
 	dbw 18, TANGELA                  ;  1%
 	end_grass_wildmons
 
-	db -1 ; end
+	def_grass_wildmons PINKAN_ISLAND
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 15, MANKEY                   ; 20%
+	dbw 15, PIDGEY                   ; 20%
+	dbw 16, MANKEY                   ; 10%
+	dbw 16, PIDGEY                   ; 10%
+	dbw 17, NIDORAN_F                ; 10%
+	dbw 17, NIDORAN_M                ; 10%
+	dbw 16, NIDORAN_F                ;  5%
+	dbw 16, NIDORAN_M                ;  5%
+	dbw 17, NIDORINA                 ;  4%
+	dbw 17, NIDORINO                 ;  4%
+	dbw 18, NIDORINA                 ;  1%
+	dbw 20, RHYHORN                  ;  1%
+	; day
+	dbw 15, MANKEY                   ; 20%
+	dbw 15, PIDGEY                   ; 20%
+	dbw 16, MANKEY                   ; 10%
+	dbw 16, PIDGEY                   ; 10%
+	dbw 17, NIDORAN_F                ; 10%
+	dbw 17, NIDORAN_M                ; 10%
+	dbw 16, NIDORAN_F                ;  5%
+	dbw 16, NIDORAN_M                ;  5%
+	dbw 17, NIDORINA                 ;  4%
+	dbw 17, NIDORINO                 ;  4%
+	dbw 18, NIDORINA                 ;  1%
+	dbw 20, RHYHORN                  ;  1%
+	; nite
+	dbw 15, MANKEY                   ; 20%
+	dbw 15, PIDGEY                   ; 20%
+	dbw 16, MANKEY                   ; 10%
+	dbw 16, PIDGEY                   ; 10%
+	dbw 17, NIDORAN_F                ; 10%
+	dbw 17, NIDORAN_M                ; 10%
+	dbw 16, NIDORAN_F                ;  5%
+	dbw 16, NIDORAN_M                ;  5%
+	dbw 17, NIDORINA                 ;  4%
+	dbw 17, NIDORINO                 ;  4%
+	dbw 18, NIDORINA                 ;  1%
+	dbw 20, RHYHORN                  ;  1%
+	end_grass_wildmons
