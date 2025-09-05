@@ -503,4 +503,5 @@ PokemonCries::
     mon_cry CRY_TOGEPI,       116, 256 ; ROCKRUFF OWN TEMPO
     mon_cry CRY_ROCKRUFF,      32, 320 ; LYCANROC MIDNIGHT
     mon_cry CRY_ROCKRUFF,      32, 320 ; LYCANROC DUSK
+    mon_cry CRY_PIDGEY,      -255,  383 ; GIMMIGHOUL ROAMING
         assert_table_length NUM_POKEMON

@@ -500,4 +500,5 @@ IconPointers:
         dw RockruffIcon
         dw LycanrocIcon
         dw LycanrocIcon
+        dw GimmighoulIcon
         assert_table_length NUM_POKEMON + 1

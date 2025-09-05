@@ -72,6 +72,7 @@ FormsAnimationPointers:
         dw RockruffOwnTempoAnimation
         dw LycanrocMidnightAnimation
         dw LycanrocDuskAnimation
+        dw GimmighoulRoamingAnimation
 .IndirectEnd::
 
 LaprasPartnerAnimation: INCLUDE "gfx/pokemon/forms/lapras_partner/anim.asm"
@@ -147,3 +148,4 @@ DragonitePartnerAnimation: INCLUDE "gfx/pokemon/forms/dragonite_partner/anim.asm
 RockruffOwnTempoAnimation: INCLUDE "gfx/pokemon/forms/rockruff_own_tempo/anim.asm"
 LycanrocMidnightAnimation: INCLUDE "gfx/pokemon/forms/lycanroc_midnight/anim.asm"
 LycanrocDuskAnimation: INCLUDE "gfx/pokemon/forms/lycanroc_dusk/anim.asm"
+GimmighoulRoamingAnimation: INCLUDE "gfx/pokemon/forms/gimmighoul_roaming/anim.asm"

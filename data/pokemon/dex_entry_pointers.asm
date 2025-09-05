@@ -496,4 +496,5 @@ PokedexDataPointerTable:
         dba RockruffOwnTempoPokedexEntry
         dba LycanrocMidnightPokedexEntry
         dba LycanrocDuskPokedexEntry
+        dba GimmighoulRoamingPokedexEntry
         assert_table_length NUM_POKEMON

@@ -74,6 +74,7 @@ FormsEggMovePointers::
         dw RockruffEggMoves ; RockruffOwnTempo
         dw NoEggMoves4 ; LycanrocMidnight
         dw NoEggMoves4 ; LycanrocDusk
+        dw NoEggMoves4 ; GimmighoulRoaming
 .IndirectEnd::
 
 LaprasPartnerEggMoves:

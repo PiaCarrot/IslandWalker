@@ -1018,4 +1018,6 @@ INCBIN "gfx/pokemon/forms/lycanroc_midnight/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/lycanroc_midnight/shiny.pal"
 INCBIN "gfx/pokemon/forms/lycanroc_dusk/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/lycanroc_dusk/shiny.pal"
+INCBIN "gfx/pokemon/forms/gimmighoul_roaming/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/gimmighoul_roaming/shiny.pal"
         assert_table_length NUM_POKEMON + 1

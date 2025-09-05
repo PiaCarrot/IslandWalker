@@ -1002,4 +1002,6 @@ PokemonPicPointers::
     dba LycanrocMidnightBackpic
     dba LycanrocDuskFrontpic
     dba LycanrocDuskBackpic
+    dba GimmighoulRoamingFrontpic
+    dba GimmighoulRoamingBackpic
         assert_table_length NUM_POKEMON + 1

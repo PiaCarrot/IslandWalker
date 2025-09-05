@@ -74,6 +74,7 @@ FormsFramePointers:
     dw RockruffOwnTempoFrames
     dw LycanrocMidnightFrames
     dw LycanrocDuskFrames
+    dw GimmighoulRoamingFrames
 .IndirectEnd::
 
 LaprasPartnerFrames: INCLUDE "gfx/pokemon/forms/lapras_partner/frames.asm"
@@ -149,3 +150,4 @@ DragonitePartnerFrames: INCLUDE "gfx/pokemon/forms/dragonite_partner/frames.asm"
 RockruffOwnTempoFrames: INCLUDE "gfx/pokemon/forms/rockruff_own_tempo/frames.asm"
 LycanrocMidnightFrames: INCLUDE "gfx/pokemon/forms/lycanroc_midnight/frames.asm"
 LycanrocDuskFrames: INCLUDE "gfx/pokemon/forms/lycanroc_dusk/frames.asm"
+GimmighoulRoamingFrames: INCLUDE "gfx/pokemon/forms/gimmighoul_roaming/frames.asm"

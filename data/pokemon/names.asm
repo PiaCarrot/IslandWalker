@@ -498,6 +498,7 @@ PokemonNames::
         db "DRAGONAIR@"
         db "DRAGONITE@"
         db "ROCKRUFF@@"
-        db "LYCANROC@@"
-        db "LYCANROC@@"
-        assert_table_length NUM_POKEMON
+       db "LYCANROC@@"
+       db "LYCANROC@@"
+       db "GIMMIGHOUL"
+       assert_table_length NUM_POKEMON

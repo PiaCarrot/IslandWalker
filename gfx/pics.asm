@@ -1353,3 +1353,5 @@ LycanrocMidnightFrontpic: INCBIN "gfx/pokemon/forms/lycanroc_midnight/front.anim
 LycanrocMidnightBackpic:  INCBIN "gfx/pokemon/forms/lycanroc_midnight/back.2bpp.lz"
 LycanrocDuskFrontpic: INCBIN "gfx/pokemon/forms/lycanroc_dusk/front.animated.2bpp.lz"
 LycanrocDuskBackpic:  INCBIN "gfx/pokemon/forms/lycanroc_dusk/back.2bpp.lz"
+GimmighoulRoamingFrontpic: INCBIN "gfx/pokemon/forms/gimmighoul_roaming/front.animated.2bpp.lz"
+GimmighoulRoamingBackpic:  INCBIN "gfx/pokemon/forms/gimmighoul_roaming/back.2bpp.lz"

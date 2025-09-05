@@ -497,4 +497,5 @@ PokemonBodyData:
     dw 108, 200    ; ROCKRUFF OWN TEMPO
     dw 207, 550    ; LYCANROC MIDNIGHT
     dw 207, 550    ; LYCANROC DUSK
+    dw 100, 110    ; GIMMIGHOUL ROAMING
     assert_table_length NUM_POKEMON

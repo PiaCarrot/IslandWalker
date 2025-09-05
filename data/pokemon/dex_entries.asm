@@ -516,3 +516,4 @@ DragonitePartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dragonite
 RockruffOwnTempoPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/rockruff_own_tempo.asm"
 LycanrocMidnightPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/lycanroc_midnight.asm"
 LycanrocDuskPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/lycanroc_dusk.asm"
+GimmighoulRoamingPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/gimmighoul_roaming.asm"

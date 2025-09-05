@@ -74,6 +74,7 @@ FormsEvosAttacksPointers::
         dw RockruffOwnTempoEvosAttacks
         dw LycanrocMidnightEvosAttacks
         dw LycanrocDuskEvosAttacks
+        dw GimmighoulRoamingEvosAttacks
 .IndirectEnd::
 
 LaprasPartnerEvosAttacks:
@@ -1479,6 +1480,13 @@ LycanrocDuskEvosAttacks:
         dbw 40, CRUNCH
         dbw 45, ROCK_CLIMB
         dbw 48, STONE_EDGE
+        db 0 ; no more level-up moves
+
+GimmighoulRoamingEvosAttacks:
+        ; evolves with 999 Gimmighoul Coins
+        db 0 ; no more evolutions
+        dbw 1, ASTONISH
+        dbw 1, TACKLE
         db 0 ; no more level-up moves
 
 NoEvosAttacks4:
