@@ -500,4 +500,7 @@ PokemonCries::
     mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU PARTNER
     mon_cry CRY_BULBASAUR,    64,  256 ; DRAGONAIR PARTNER
     mon_cry CRY_BULBASAUR,    60,  320 ; DRAGONITE PARTNER
+    mon_cry CRY_TOGEPI,       116, 256 ; ROCKRUFF OWN TEMPO
+    mon_cry CRY_ROCKRUFF,      32, 320 ; LYCANROC MIDNIGHT
+    mon_cry CRY_ROCKRUFF,      32, 320 ; LYCANROC DUSK
         assert_table_length NUM_POKEMON

@@ -996,4 +996,10 @@ PokemonPicPointers::
         dba DragonairPartnerBackpic
     dba DragonitePartnerFrontpic
         dba DragonitePartnerBackpic
+    dba RockruffOwnTempoFrontpic
+    dba RockruffOwnTempoBackpic
+    dba LycanrocMidnightFrontpic
+    dba LycanrocMidnightBackpic
+    dba LycanrocDuskFrontpic
+    dba LycanrocDuskBackpic
         assert_table_length NUM_POKEMON + 1

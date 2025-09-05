@@ -494,4 +494,7 @@ PokemonBodyData:
     dw 104, 130    ; PIKACHU PARTNER
     dw 1301, 360   ; DRAGONAIR PARTNER
     dw 703, 4630   ; DRAGONITE PARTNER
+    dw 108, 200    ; ROCKRUFF OWN TEMPO
+    dw 207, 550    ; LYCANROC MIDNIGHT
+    dw 207, 550    ; LYCANROC DUSK
     assert_table_length NUM_POKEMON

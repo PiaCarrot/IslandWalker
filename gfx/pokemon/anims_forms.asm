@@ -66,9 +66,12 @@ FormsAnimationPointers:
         dw UrsalunaBloodmoonAnimation
     dw DratiniPartnerAnimation
         dw EeveePartnerAnimation
-	dw PikachuPartnerAnimation
+        dw PikachuPartnerAnimation
         dw DragonairPartnerAnimation
         dw DragonitePartnerAnimation
+        dw RockruffOwnTempoAnimation
+        dw LycanrocMidnightAnimation
+        dw LycanrocDuskAnimation
 .IndirectEnd::
 
 LaprasPartnerAnimation: INCLUDE "gfx/pokemon/forms/lapras_partner/anim.asm"
@@ -141,3 +144,6 @@ EeveePartnerAnimation: INCLUDE "gfx/pokemon/forms/eevee_partner/anim.asm"
 PikachuPartnerAnimation: INCLUDE "gfx/pokemon/forms/pikachu_partner/anim.asm"
 DragonairPartnerAnimation: INCLUDE "gfx/pokemon/forms/dragonair_partner/anim.asm"
 DragonitePartnerAnimation: INCLUDE "gfx/pokemon/forms/dragonite_partner/anim.asm"
+RockruffOwnTempoAnimation: INCLUDE "gfx/pokemon/forms/rockruff_own_tempo/anim.asm"
+LycanrocMidnightAnimation: INCLUDE "gfx/pokemon/forms/lycanroc_midnight/anim.asm"
+LycanrocDuskAnimation: INCLUDE "gfx/pokemon/forms/lycanroc_dusk/anim.asm"

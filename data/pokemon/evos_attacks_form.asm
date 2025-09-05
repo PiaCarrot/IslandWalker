@@ -71,6 +71,9 @@ FormsEvosAttacksPointers::
         dw OnixCrystalEvosAttacks
         dw SteelixCrystalEvosAttacks
         dw UrsalunaBloodmoonEvosAttacks
+        dw RockruffOwnTempoEvosAttacks
+        dw LycanrocMidnightEvosAttacks
+        dw LycanrocDuskEvosAttacks
 .IndirectEnd::
 
 LaprasPartnerEvosAttacks:
@@ -1407,6 +1410,75 @@ UrsalunaBloodmoonEvosAttacks:
         dbw 43, DOUBLE_EDGE
         dbw 56, THRASH
         dbw 64, HAMMER_ARM
+        db 0 ; no more level-up moves
+
+RockruffOwnTempoEvosAttacks:
+        evolve EVOLVE_LEVEL, 25, LYCANROC_DUSK
+        db 0 ; no more evolutions
+        dbw 1, LEER
+        dbw 1, TACKLE
+        dbw 4, SAND_ATTACK
+        dbw 7, BITE
+        dbw 8, DOUBLE_TEAM
+        dbw 12, HOWL
+        dbw 12, ROCK_THROW
+        dbw 18, ODOR_SLEUTH
+        dbw 23, ROCK_TOMB
+        dbw 26, ROAR
+        dbw 29, STEALTH_ROCK
+        dbw 32, ROCK_SLIDE
+        dbw 36, CRUNCH
+        dbw 37, SCARY_FACE
+        dbw 45, ROCK_CLIMB
+        dbw 48, STONE_EDGE
+        db 0 ; no more level-up moves
+
+LycanrocMidnightEvosAttacks:
+        db 0 ; no more evolutions
+        ; ACCELEROCK (L1)
+        dbw 1, BITE
+        dbw 1, DOUBLE_TEAM
+        dbw 1, LEER
+        dbw 1, QUICK_ATTACK
+        ; QUICK_GUARD (L1)
+        dbw 1, SAND_ATTACK
+        dbw 1, SUCKER_PUNCH
+        dbw 1, TACKLE
+        dbw 12, HOWL
+        dbw 12, ROCK_THROW
+        dbw 18, ODOR_SLEUTH
+        dbw 23, ROCK_TOMB
+        dbw 26, ROAR
+        dbw 29, STEALTH_ROCK
+        dbw 34, ROCK_SLIDE
+        dbw 37, SCARY_FACE
+        dbw 40, CRUNCH
+        dbw 45, ROCK_CLIMB
+        dbw 48, STONE_EDGE
+        db 0 ; no more level-up moves
+
+LycanrocDuskEvosAttacks:
+        db 0 ; no more evolutions
+        ; ACCELEROCK (L1)
+        dbw 1, BITE
+        dbw 1, DOUBLE_TEAM
+        dbw 1, LEER
+        dbw 1, QUICK_ATTACK
+        ; QUICK_GUARD (L1)
+        dbw 1, SAND_ATTACK
+        dbw 1, SUCKER_PUNCH
+        dbw 1, TACKLE
+        dbw 12, HOWL
+        dbw 12, ROCK_THROW
+        dbw 18, ODOR_SLEUTH
+        dbw 23, ROCK_TOMB
+        dbw 26, ROAR
+        dbw 29, STEALTH_ROCK
+        dbw 34, ROCK_SLIDE
+        dbw 37, SCARY_FACE
+        dbw 40, CRUNCH
+        dbw 45, ROCK_CLIMB
+        dbw 48, STONE_EDGE
         db 0 ; no more level-up moves
 
 NoEvosAttacks4:

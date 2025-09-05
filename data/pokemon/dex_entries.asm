@@ -513,3 +513,6 @@ EeveePartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/eevee_partner
 PikachuPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/pikachu_partner.asm"
 DragonairPartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dragonair_partner.asm"
 DragonitePartnerPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/dragonite_partner.asm"
+RockruffOwnTempoPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/rockruff_own_tempo.asm"
+LycanrocMidnightPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/lycanroc_midnight.asm"
+LycanrocDuskPokedexEntry:: INCLUDE "data/pokemon/dex_entries/forms/lycanroc_dusk.asm"

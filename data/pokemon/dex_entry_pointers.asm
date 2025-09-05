@@ -493,4 +493,7 @@ PokedexDataPointerTable:
         dba PikachuPartnerPokedexEntry
         dba DragonairPartnerPokedexEntry
         dba DragonitePartnerPokedexEntry
+        dba RockruffOwnTempoPokedexEntry
+        dba LycanrocMidnightPokedexEntry
+        dba LycanrocDuskPokedexEntry
         assert_table_length NUM_POKEMON

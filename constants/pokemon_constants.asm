@@ -517,17 +517,17 @@ DEF FORM_POKEMON EQU const_value
         const PIKACHU_PARTNER  ; 1e7
         const DRAGONAIR_PARTNER  ; 1e8
         const DRAGONITE_PARTNER  ; 1e9
-	; const ROCKRUFF_OWN_TEMPO  ; 1ea
-	; const GIMMIGHOUL_ROAMING  ; 1eb
-	; const MEOWTH_ROCKET  ; 1ec
-	; const ROTOM_HEAT  ; 1ed
-	; const ROTOM_WASH  ; 1ee
-	; const ROTOM_FROST  ; 1ef
-	; const ROTOM_FAN  ; 1f0
-	; const ROTOM_MOW  ; 1f1
-	; const LYCANROC_MIDNIGHT  ; 1f2
-	; const LYCANROC_DUSK  ; 1f3
-	; const DUDUNSPARCE_THREE  ; 1f4
+        const ROCKRUFF_OWN_TEMPO  ; 1ea
+        const LYCANROC_MIDNIGHT  ; 1eb
+        const LYCANROC_DUSK  ; 1ec
+        ; const GIMMIGHOUL_ROAMING  ; 1ed
+        ; const MEOWTH_ROCKET  ; 1ee
+        ; const ROTOM_HEAT  ; 1ef
+        ; const ROTOM_WASH  ; 1f0
+        ; const ROTOM_FROST  ; 1f1
+        ; const ROTOM_FAN  ; 1f2
+        ; const ROTOM_MOW  ; 1f3
+        ; const DUDUNSPARCE_THREE  ; 1f4
 DEF NUM_FORM_POKEMON EQU const_value - FORM_POKEMON
 DEF NUM_POKEMON EQU const_value - 1
 

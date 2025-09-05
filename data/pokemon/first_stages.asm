@@ -489,4 +489,7 @@ FirstEvoStages::
         dw PIKACHU_PARTNER
         dw DRAGONAIR_PARTNER
         dw DRAGONITE_PARTNER
+        dw ROCKRUFF_OWN_TEMPO
+        dw LYCANROC_MIDNIGHT
+        dw LYCANROC_DUSK
         assert_table_length NUM_POKEMON

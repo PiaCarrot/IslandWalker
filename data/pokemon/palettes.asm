@@ -1012,4 +1012,10 @@ INCBIN "gfx/pokemon/forms/dragonair_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dragonair_partner/shiny.pal"
 INCBIN "gfx/pokemon/forms/dragonite_partner/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/forms/dragonite_partner/shiny.pal"
+INCBIN "gfx/pokemon/forms/rockruff_own_tempo/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/rockruff_own_tempo/shiny.pal"
+INCBIN "gfx/pokemon/forms/lycanroc_midnight/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/lycanroc_midnight/shiny.pal"
+INCBIN "gfx/pokemon/forms/lycanroc_dusk/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/forms/lycanroc_dusk/shiny.pal"
         assert_table_length NUM_POKEMON + 1

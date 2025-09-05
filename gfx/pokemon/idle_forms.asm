@@ -71,6 +71,9 @@ FormsAnimationIdlePointers:
     dw PikachuPartnerAnimationIdle
     dw DragonairPartnerAnimationIdle
     dw DragonitePartnerAnimationIdle
+    dw RockruffOwnTempoAnimationIdle
+    dw LycanrocMidnightAnimationIdle
+    dw LycanrocDuskAnimationIdle
 .IndirectEnd::
 
 LaprasPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/lapras_partner/anim_idle.asm"
@@ -143,3 +146,6 @@ EeveePartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/eevee_partner/anim_idle.as
 PikachuPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/pikachu_partner/anim_idle.asm"
 DragonairPartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/dragonair_partner/anim_idle.asm"
 DragonitePartnerAnimationIdle: INCLUDE "gfx/pokemon/forms/dragonite_partner/anim_idle.asm"
+RockruffOwnTempoAnimationIdle: INCLUDE "gfx/pokemon/forms/rockruff_own_tempo/anim_idle.asm"
+LycanrocMidnightAnimationIdle: INCLUDE "gfx/pokemon/forms/lycanroc_midnight/anim_idle.asm"
+LycanrocDuskAnimationIdle: INCLUDE "gfx/pokemon/forms/lycanroc_dusk/anim_idle.asm"

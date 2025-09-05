@@ -71,6 +71,9 @@ FormsBitmaskPointers:
     dw PikachuPartnerBitmasks
     dw DragonairPartnerBitmasks
     dw DragonitePartnerBitmasks
+    dw RockruffOwnTempoBitmasks
+    dw LycanrocMidnightBitmasks
+    dw LycanrocDuskBitmasks
 .IndirectEnd::
 
 LaprasPartnerBitmasks: INCLUDE "gfx/pokemon/forms/lapras_partner/bitmask.asm"
@@ -143,3 +146,6 @@ EeveePartnerBitmasks: INCLUDE "gfx/pokemon/forms/eevee_partner/bitmask.asm"
 PikachuPartnerBitmasks: INCLUDE "gfx/pokemon/forms/pikachu_partner/bitmask.asm"
 DragonairPartnerBitmasks: INCLUDE "gfx/pokemon/forms/dragonair_partner/bitmask.asm"
 DragonitePartnerBitmasks: INCLUDE "gfx/pokemon/forms/dragonite_partner/bitmask.asm"
+RockruffOwnTempoBitmasks: INCLUDE "gfx/pokemon/forms/rockruff_own_tempo/bitmask.asm"
+LycanrocMidnightBitmasks: INCLUDE "gfx/pokemon/forms/lycanroc_midnight/bitmask.asm"
+LycanrocDuskBitmasks: INCLUDE "gfx/pokemon/forms/lycanroc_dusk/bitmask.asm"

@@ -71,6 +71,9 @@ FormsEggMovePointers::
         dw OnixEggMoves
         dw NoEggMoves4 ; SteelixCrystal
         dw NoEggMoves4 ; UrsalunaBloodmoon
+        dw RockruffEggMoves ; RockruffOwnTempo
+        dw NoEggMoves4 ; LycanrocMidnight
+        dw NoEggMoves4 ; LycanrocDusk
 .IndirectEnd::
 
 LaprasPartnerEggMoves:

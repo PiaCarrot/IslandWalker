@@ -495,4 +495,7 @@ INCBIN "gfx/footprints/kanto/eevee.1bpp"
 INCBIN "gfx/footprints/kanto/pikachu.1bpp"
 INCBIN "gfx/footprints/kanto/dragonair.1bpp"
 INCBIN "gfx/footprints/kanto/dragonite.1bpp"
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; ROCKRUFF_OWN_TEMPO
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; LYCANROC_MIDNIGHT
+INCBIN "gfx/footprints/other/placeholder.1bpp" ; LYCANROC_DUSK
         assert_table_length NUM_POKEMON
