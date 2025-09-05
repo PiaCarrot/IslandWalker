@@ -1,9 +1,9 @@
 db "WOLF@" ; species name
 
-        db   "When well raised,"
-        next "it is a trust-"
-        next "worthy partner and"
+        db   "Bathed in the"
+        next "light of sunset,"
+        next "its display of"
 
-        page "will absolutely"
-        next "never betray its"
-        next "TRAINER.@"
+        page "calm and violent"
+        next "traits make it a"
+        next "balanced fighter.@"

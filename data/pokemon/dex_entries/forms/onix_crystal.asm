@@ -1,9 +1,9 @@
 	db "ROCK SNAKE@" ; species name
 
-	db   "It feeds on large"
-	next "boulders deep in"
-	next "the ground. It"
+        db   "Feeding on huge"
+        next "crystals has made"
+        next "this ONIX resis-"
 
-	page "leaves behind big"
-	next "tunnels that turn"
-	next "into caves.@"
+        page "tant to water,"
+        next "but it now has a"
+        next "low melt point.@"

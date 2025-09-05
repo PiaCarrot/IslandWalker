@@ -1,9 +1,9 @@
-	db "SCRATCHCAT@" ; species name
+        db "SCRATCHCAT@" ; species name
 
-	db   "If it trusts its"
-	next "trainer, it may"
-	next "show its prized"
+        db   "A peculiar MEOWTH"
+        next "that learned how"
+        next "to speak and walk"
 
-	page "collection of"
-	next "shiny things. It's"
-	next "active at night.@"
+        page "on its hind legs."
+        next "He used to live a"
+        next "life of crime.@"
