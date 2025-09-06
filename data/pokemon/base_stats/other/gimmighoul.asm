@@ -11,7 +11,7 @@ dw NO_ITEM, NO_ITEM ; items
 db GENDER_UNKNOWN ; gender ratio
 db 50 ; step cycles to hatch
 INCBIN "gfx/pokemon/other/gimmighoul/front.dimensions"
-db COIN_COLLECTOR, COIN_COLLECTOR ; wBaseAbility1, wBaseAbility2
+db RATTLED, COIN_COLLECTOR ; wBaseAbility1, wBaseAbility2
 dw NULL ; Padding left-over from the unused back pic
 db GROWTH_SLOW ; growth rate
 dn EGG_NONE, EGG_NONE ; egg groups

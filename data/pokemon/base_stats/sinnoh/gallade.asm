@@ -11,7 +11,7 @@ dw NO_ITEM, NO_ITEM ; items
 db GENDER_F0 ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/gallade/front.dimensions"
-db STEADFAST, STEADFAST ; wBaseAbility1, wBaseAbility2
+db STEADFAST, SHARPNESS ; wBaseAbility1, wBaseAbility2
 dw NULL ; Padding left-over from the unused back pic
 db GROWTH_SLOW ; growth rate
 dn EGG_HUMANSHAPE, EGG_INDETERMINATE ; egg groups

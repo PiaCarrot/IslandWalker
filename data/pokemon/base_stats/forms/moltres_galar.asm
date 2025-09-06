@@ -11,7 +11,7 @@
         db GENDER_UNKNOWN ; gender ratio
         db 80 ; step cycles to hatch
         INCBIN "gfx/pokemon/forms/moltres_galar/front.dimensions"
-        db BERSERK, BERSERK ; wBaseAbility1, wBaseAbility2
+        db BERSERK, SHEER_FORCE ; wBaseAbility1, wBaseAbility2
         dw NULL ; Padding left-over from the unused back pic
         db GROWTH_SLOW ; growth rate
         dn EGG_NONE, EGG_NONE ; egg groups

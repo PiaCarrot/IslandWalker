@@ -11,7 +11,7 @@
         db GENDER_F75 ; gender ratio
         db 20 ; step cycles to hatch
         INCBIN "gfx/pokemon/forms/corsola_galar/front.dimensions"
-        db WEAK_ARMOR, WEAK_ARMOR ; wBaseAbility1, wBaseAbility2
+        db WEAK_ARMOR, CURSED_BODY ; wBaseAbility1, wBaseAbility2
         dw NULL ; Padding left-over from the unused back pic
         db GROWTH_FAST ; growth rate
         dn EGG_WATER_1, EGG_WATER_3 ; egg groups

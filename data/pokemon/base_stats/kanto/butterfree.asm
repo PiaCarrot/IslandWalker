@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/butterfree/front.dimensions"
-	db COMPOUNDEYES, TINTED_LENS ; wBaseAbility1, wBaseAbility2
+	db COMPOUNDEYES, COMPOUNDEYES ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_BUG, EGG_BUG ; egg groups
