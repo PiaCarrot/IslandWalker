@@ -561,3 +561,6 @@ If <code><i>item_id</i></code> = `USE_SCRIPT_VAR`, then it uses `[wScriptVar]` i
 
 
 ## `$A9`: `checksave`
+
+## `$B0`: `checkcm`
+Sets `VAR` to `TRUE` if Challenge Mode is enabled; otherwise `FALSE`.

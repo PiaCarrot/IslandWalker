@@ -143,12 +143,18 @@ MikanGymCissyScript:
 	writetext CissyBeforeBattleText
 	waitbutton
 	closetext
-	winlosstext CissyBeatenText, 0
-	setlasttalked MIKAN_GYM_CISSY
-	loadtrainer CISSY, CISSY1
-	startbattle
-	reloadmapafterbattle
-	sjump .AfterBattle
+        winlosstext CissyBeatenText, 0
+        setlasttalked MIKAN_GYM_CISSY
+        checkcm
+        iffalse .LoadCissy
+        loadtrainer RED, RED1
+        sjump .StartBattle
+.LoadCissy
+        loadtrainer CISSY, CISSY1
+.StartBattle
+        startbattle
+        reloadmapafterbattle
+        sjump .AfterBattle
 .AfterBattle:
 	setevent EVENT_CISSY_DEFEATED
 	setevent EVENT_BEAT_SWIMMER_F_ALLIE

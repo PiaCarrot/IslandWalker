@@ -27,11 +27,11 @@ StartMenu::
 .GotMenuData:
 	call LoadMenuHeader
 	call .SetUpMenuItems
-	ld a, [wBattleMenuCursorPosition]
-	ld [wMenuCursorPosition], a
-	call .DrawDayTimeBox
-	call .DrawMenuAccount
-	call DrawVariableLengthMenuBox
+        ld a, [wBattleMenuCursorPosition]
+        ld [wMenuCursorPosition], a
+        call .DrawDayTimeBox
+        call .DrawMenuAccount
+        call DrawVariableLengthMenuBox
 	call .DrawBugContestStatusBox
 	call SafeUpdateSprites
 	call HDMATransferTilemapAndAttrmap_Menu
@@ -48,11 +48,11 @@ StartMenu::
 	ld [wMenuCursorPosition], a
 
 .Select:
-	call .GetInput
-	jr c, .Exit
-	call .DrawDayTimeBox
-	call .DrawMenuAccount
-	ld a, [wMenuCursorPosition]
+        call .GetInput
+        jr c, .Exit
+        call .DrawDayTimeBox
+        call .DrawMenuAccount
+        ld a, [wMenuCursorPosition]
 	ld [wBattleMenuCursorPosition], a
 	call PlayClickSFX
 	call PlaceHollowCursor
@@ -97,16 +97,16 @@ StartMenu::
 ; Return carry on exit, and no-carry on selection.
 	xor a
 	ldh [hBGMapMode], a
-	call .DrawDayTimeBox
-	call .DrawMenuAccount
-	call SetUpMenu
-	ld a, $ff
+        call .DrawDayTimeBox
+        call .DrawMenuAccount
+        call SetUpMenu
+        ld a, $ff
 	ld [wMenuSelection], a
 .loop
-	call .PrintDayTime
-	call .PrintMenuAccount
-	call GetScrollingMenuJoypad
-	ld a, [wMenuJoypad]
+        call .PrintDayTime
+        call .PrintMenuAccount
+        call GetScrollingMenuJoypad
+        ld a, [wMenuJoypad]
 	cp PAD_B
 	jr z, .b
 	cp PAD_A
@@ -148,13 +148,13 @@ StartMenu::
 	call ClearBGPalettes
 	call ExitMenu
 	call ReloadTilesetAndPalettes
-	call .DrawDayTimeBox
-	call .DrawMenuAccount
-	call DrawVariableLengthMenuBox
-	call .DrawBugContestStatus
-	call UpdateSprites
-	call FinishExitMenu
-	jmp .Reopen
+        call .DrawDayTimeBox
+        call .DrawMenuAccount
+        call DrawVariableLengthMenuBox
+        call .DrawBugContestStatus
+        call UpdateSprites
+        call FinishExitMenu
+        jmp .Reopen
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -354,36 +354,36 @@ endr
 	ret
 
 .AppendMenuList:
-	ld [de], a
-	inc de
-	inc c
-	ret
+        ld [de], a
+        inc de
+        inc c
+        ret
 
 .PrintMenuAccount:
-	call .IsMenuAccountOn
-	ret z
-	call .DrawMenuAccount
-	decoord 1, 15
-	jmp .MenuDesc
+       call .IsMenuAccountOn
+       ret z
+       call .DrawMenuAccount
+       decoord 1, 15
+       jmp .MenuDesc
 
 .DrawMenuAccount:
-	call .IsMenuAccountOn
-	ret z
-	hlcoord 0, 14
-	lb bc, 4, 10
-	call ClearBox
-	hlcoord 0, 14
-	lb bc, 4, 8
-	jmp TextboxPalette
+       call .IsMenuAccountOn
+       ret z
+       hlcoord 0, 14
+       lb bc, 4, 10
+       call ClearBox
+       hlcoord 0, 14
+       lb bc, 4, 8
+       jmp TextboxPalette
 
 .IsMenuAccountOn:
-	ld a, [wOptions2]
-	and 1 << MENU_ACCOUNT
-	ret
-	
+       ld a, [wOptions2]
+       and 1 << MENU_ACCOUNT
+       ret
+
 .DrawDayTimeBox: ; 128b4
-	hlcoord 0, 0
-	lb bc, 2, 10
+        hlcoord 0, 0
+        lb bc, 2, 10
 	call ClearBox
 	hlcoord 0, 0
 	lb bc, 0, 8
