@@ -232,11 +232,12 @@ ScriptCommandTable:
 	dw Script_checksave                  ; a9
 	dw Script_loadmonindex               ; aa
 	dw Script_checkmaplockedmons         ; ab
-	dw Script_loaditemindex              ; ac
-	dw Script_checkmaplockeditems        ; ad
-	dw Script_givepokemove               ; ae
-	dw Script_berrysound               ; af
-	assert_table_length NUM_EVENT_COMMANDS
+        dw Script_loaditemindex              ; ac
+        dw Script_checkmaplockeditems        ; ad
+        dw Script_givepokemove               ; ae
+        dw Script_berrysound               ; af
+        dw Script_checkcm                  ; b0
+        assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
 	ld hl, wScriptFlags
@@ -1991,12 +1992,22 @@ Script_checkflag:
 	ret
 
 _EngineFlagAction:
-	farjp EngineFlagAction
+        farjp EngineFlagAction
+
+Script_checkcm:
+        xor a
+        ld [wScriptVar], a
+        ld a, [wOptions2]
+        bit CHALLENGE_MODE, a
+        ret z
+        ld a, TRUE
+        ld [wScriptVar], a
+        ret
 
 Script_wildoff:
-	ld hl, wStatusFlags
-	set STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
-	ret
+        ld hl, wStatusFlags
+        set STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+        ret
 
 Script_wildon:
 	ld hl, wStatusFlags
