@@ -227,6 +227,8 @@ ValenciaYoungsterScript:
 	addcellnum PHONE_NANU
 	addcellnum PHONE_YELLOW
 	closetext
+	; loadtrainer LUANA, LUANA1
+	; startbattle
 	warp SUNBURST_ISLAND, 15, 15
 	end
 	jumptextfaceplayer ValenciaYoungsterText

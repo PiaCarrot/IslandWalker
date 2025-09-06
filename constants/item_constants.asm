@@ -493,7 +493,7 @@ DEF TM01 EQU const_value
 	add_tm DRAGON_CLAW  ; 0401
 	add_tm WATER_PULSE  ; 0402
 	add_tm CALM_MIND    ; 0403
-	add_tm ROAR         ; 0404
+	add_tm SIGNAL_BEAM  ; 0404
 	add_tm TOXIC        ; 0405
 	add_tm HAIL         ; 0406
 	add_tm BULK_UP      ; 0407
@@ -631,6 +631,7 @@ DEF MT01 EQU const_value
         add_mt BLAST_BURN
        add_mt HYDRO_CANNON
        add_mt DEFOG
+       add_mt ROAR
 DEF NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 DEF NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS

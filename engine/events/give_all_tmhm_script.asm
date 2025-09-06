@@ -6,7 +6,7 @@ GiveAllTMsHMsScript:
         giveitem TM_DRAGON_CLAW
         giveitem TM_WATER_PULSE
         giveitem TM_CALM_MIND
-        giveitem TM_ROAR
+        giveitem TM_SIGNAL_BEAM
         giveitem TM_TOXIC
         giveitem TM_HAIL
         giveitem TM_BULK_UP
