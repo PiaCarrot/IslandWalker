@@ -142,14 +142,15 @@ MikanGymCissyScript:
 	iftrue .FightDone
 	checkoak
 	iffalse .NoOakChallenge
-	checkevent EVENT_GOT_PIKACHU_FROM_IVY
+	checkevent EVENT_ALT_STARTER_VALENCIA_IVY
 	iftrue .Check82
-	checkevent EVENT_GOT_EEVEE_FROM_IVY
-	iftrue .Check82
+.Check84:
 	checkdex
 	ifless 84, .NeedMorePokemon
 	sjump .NoOakChallenge
 .Check82:
+	checkevent EVENT_GOT_DRATINI_FROM_IVY
+	iftrue .Check84
 	checkdex
 	ifless 82, .NeedMorePokemonPikaOrEevee
 .NoOakChallenge:
