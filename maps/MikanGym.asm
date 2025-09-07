@@ -136,13 +136,18 @@ MikanGymFemaleGuardText:
 	done
 	
 MikanGymCissyScript:
-	faceplayer
-	opentext
-	checkflag ENGINE_CORALEYEBADGE
-	iftrue .FightDone
-	writetext CissyBeforeBattleText
-	waitbutton
-	closetext
+        faceplayer
+        opentext
+        checkflag ENGINE_CORALEYEBADGE
+        iftrue .FightDone
+        checkoak
+        iffalse .NoOakChallenge
+        checkdex
+        ifless 10, .NeedMorePokemon
+.NoOakChallenge:
+        writetext CissyBeforeBattleText
+        waitbutton
+        closetext
         winlosstext CissyBeatenText, 0
         setlasttalked MIKAN_GYM_CISSY
         checkcm
@@ -155,9 +160,14 @@ MikanGymCissyScript:
         startbattle
         reloadmapafterbattle
         sjump .AfterBattle
+.NeedMorePokemon:
+        writetext CissyOakChallengeText
+        waitbutton
+        closetext
+        end
 .AfterBattle:
-	setevent EVENT_CISSY_DEFEATED
-	setevent EVENT_BEAT_SWIMMER_F_ALLIE
+        setevent EVENT_CISSY_DEFEATED
+        setevent EVENT_BEAT_SWIMMER_F_ALLIE
 	setevent EVENT_BEAT_SWIMMER_F_MORGAN
 	setevent EVENT_BEAT_BEAUTY_YEVON
 	setevent EVENT_BEAT_SWIMMER_M_BRAD
@@ -214,23 +224,29 @@ CissyBeforeBattleText:
 	done
 
 CissyBeatenText:
-	text "CISSY: What?!"
+        text "CISSY: What?!"
 
-	para "My perfect WATER"
-	line "#MON!"
+        para "My perfect WATER"
+        line "#MON!"
 
 	para "Very well! You've"
 	line "earned this."
 
 	para "It's the official"
 	line "ORANGE CREW"
-	cont "CORAL-EYE BADGE."
-	done
+        cont "CORAL-EYE BADGE."
+        done
+
+CissyOakChallengeText:
+        text "CISSY: OAK says"
+        line "you need 10" 
+        cont "#MON to fight!"
+        done
 
 PlayerReceivedCoralEyeBadgeText:
-	text "<PLAYER> received"
-	line "CORAL-EYE BADGE."
-	done
+        text "<PLAYER> received"
+        line "CORAL-EYE BADGE."
+        done
 
 CissyExplainTMText:
 	text "CISSY: You fought"

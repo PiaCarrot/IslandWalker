@@ -237,6 +237,8 @@ ScriptCommandTable:
         dw Script_givepokemove               ; ae
         dw Script_berrysound               ; af
         dw Script_checkcm                  ; b0
+        dw Script_checkdex                 ; b1
+        dw Script_checkoak                 ; b2
         assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -1999,6 +2001,23 @@ Script_checkcm:
         ld [wScriptVar], a
         ld a, [wOptions2]
         bit CHALLENGE_MODE, a
+        ret z
+        ld a, TRUE
+        ld [wScriptVar], a
+        ret
+
+Script_checkdex:
+        ld a, VAR_DEXCAUGHT
+        call GetVarAction
+        ld a, [de]
+        ld [wScriptVar], a
+        ret
+
+Script_checkoak:
+        xor a
+        ld [wScriptVar], a
+        ld a, [wOptions2]
+        bit OAK_CHALLENGE, a
         ret z
         ld a, TRUE
         ld [wScriptVar], a

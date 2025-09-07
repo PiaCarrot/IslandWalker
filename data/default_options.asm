@@ -9,8 +9,8 @@ DefaultOptions:
 	db 1 << FAST_TEXT_DELAY_F
 ; wGBPrinterBrightness: normal
 	db GBPRINTER_NORMAL
-; wOptions2: menu account on, challenge mode off
-        db 1 << MENU_ACCOUNT
+; wOptions2: oak challenge off, challenge mode off
+        db 0
 
 	db $00
 	db $00

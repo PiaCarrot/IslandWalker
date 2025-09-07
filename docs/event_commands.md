@@ -564,3 +564,9 @@ If <code><i>item_id</i></code> = `USE_SCRIPT_VAR`, then it uses `[wScriptVar]` i
 
 ## `$B0`: `checkcm`
 Sets `VAR` to `TRUE` if Challenge Mode is enabled; otherwise `FALSE`.
+
+## `$B1`: `checkdex`
+Stores the number of Pokémon caught in `VAR`.
+
+## `$B2`: `checkoak`
+Sets `VAR` to `TRUE` if the Oak Challenge is enabled; otherwise `FALSE`.

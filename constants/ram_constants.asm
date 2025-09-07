@@ -76,7 +76,7 @@ DEF GBPRINTER_DARKEST  EQU $7f
 
 ; wOptions2::
         const_def
-        const MENU_ACCOUNT   ; 0
+        const OAK_CHALLENGE  ; 0
         const CHALLENGE_MODE ; 1
 
 ; wDST::

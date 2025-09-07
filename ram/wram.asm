@@ -1584,7 +1584,7 @@ wGBPrinterBrightness::
 ;   darkest:  $7F
 	db
 wOptions2::
-; bit 0: menu account off/on
+; bit 0: oak challenge off/on
 ; bit 1: challenge mode off/on
         db
 	ds 2
