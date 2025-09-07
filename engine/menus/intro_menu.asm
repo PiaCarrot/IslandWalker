@@ -155,13 +155,22 @@ _ResetWRAM:
 	ld hl, wNumValuable
 	call .InitList
 
-	ld hl, wNumPCItems
-	call .InitList
+    ld hl, wNumPCItems
+    call .InitList
 
-	xor a
-	ld [wRoamMon1Species], a
-	ld [wRoamMon2Species], a
-	ld [wRoamMon3Species], a
+; Give the player a Potion stored in the PC on a new game
+    ld hl, POTION
+    call GetItemIDFromIndex
+	ld [wCurItem], a
+	ld a, 1
+	ld [wItemQuantityChange], a
+	ld hl, wNumPCItems
+	call ReceiveItem
+
+    xor a
+    ld [wRoamMon1Species], a
+    ld [wRoamMon2Species], a
+    ld [wRoamMon3Species], a
 	ld a, -1
 	ld [wRoamMon1MapGroup], a
 	ld [wRoamMon2MapGroup], a
