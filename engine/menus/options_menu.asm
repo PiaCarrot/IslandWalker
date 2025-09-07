@@ -4,7 +4,7 @@
 	const OPT_BATTLE_SCENE  ; 1
 	const OPT_BATTLE_STYLE  ; 2
         const OPT_SOUND         ; 3
-        const OPT_MENU_ACCOUNT  ; 4
+        const OPT_OAK_CHALLENGE ; 4
         const OPT_CHALLENGE_MODE ; 5
         const OPT_FRAME         ; 6
         const OPT_CANCEL        ; 7
@@ -82,7 +82,7 @@ StringOptions:
 	db "        :<LF>"
         db "SOUND<LF>"
         db "        :<LF>"
-        db "MENU ACCOUNT<LF>"
+        db "OAK CHALLENGE<LF>"
         db "        :<LF>"
         db "CHALLENGE MODE<LF>"
         db "        :<LF>"
@@ -99,7 +99,7 @@ GetOptionPointer:
 	dw Options_BattleScene
 	dw Options_BattleStyle
         dw Options_Sound
-        dw Options_MenuAccount
+        dw Options_OakChallenge
         dw Options_ChallengeMode
 	dw Options_Frame
 	dw Options_Cancel
@@ -311,33 +311,33 @@ Options_Sound:
 .Mono:   db "MONO  @"
 .Stereo: db "STEREO@"
 
-Options_MenuAccount:
+Options_OakChallenge:
         ld hl, wOptions2
         ldh a, [hJoyPressed]
         bit B_PAD_LEFT, a
         jr nz, .LeftPressed
         bit B_PAD_RIGHT, a
         jr z, .NonePressed
-        bit MENU_ACCOUNT, [hl]
+        bit OAK_CHALLENGE, [hl]
         jr nz, .ToggleOff
         jr .ToggleOn
 
 .LeftPressed:
-        bit MENU_ACCOUNT, [hl]
+        bit OAK_CHALLENGE, [hl]
         jr z, .ToggleOn
         jr .ToggleOff
 
 .NonePressed:
-        bit MENU_ACCOUNT, [hl]
+        bit OAK_CHALLENGE, [hl]
         jr nz, .ToggleOn
 
 .ToggleOff:
-        res MENU_ACCOUNT, [hl]
+        res OAK_CHALLENGE, [hl]
         ld de, .Off
         jr .Display
 
 .ToggleOn:
-        set MENU_ACCOUNT, [hl]
+        set OAK_CHALLENGE, [hl]
         ld de, .On
 
 .Display:

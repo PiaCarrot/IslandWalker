@@ -1112,4 +1112,14 @@ MACRO checkcm
         db checkcm_command
 ENDM
 
+        const checkdex_command ; $b1
+MACRO checkdex
+        db checkdex_command
+ENDM
+
+        const checkoak_command ; $b2
+MACRO checkoak
+        db checkoak_command
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

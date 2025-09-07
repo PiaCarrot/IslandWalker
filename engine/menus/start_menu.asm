@@ -53,7 +53,7 @@ StartMenu::
         call .DrawDayTimeBox
         call .DrawMenuAccount
         ld a, [wMenuCursorPosition]
-	ld [wBattleMenuCursorPosition], a
+        ld [wBattleMenuCursorPosition], a
 	call PlayClickSFX
 	call PlaceHollowCursor
 	call .OpenMenu
@@ -95,13 +95,13 @@ StartMenu::
 
 .GetInput:
 ; Return carry on exit, and no-carry on selection.
-	xor a
-	ldh [hBGMapMode], a
+        xor a
+        ldh [hBGMapMode], a
         call .DrawDayTimeBox
         call .DrawMenuAccount
         call SetUpMenu
         ld a, $ff
-	ld [wMenuSelection], a
+        ld [wMenuSelection], a
 .loop
         call .PrintDayTime
         call .PrintMenuAccount
@@ -143,11 +143,11 @@ StartMenu::
 	jr .ReturnEnd2
 
 .ReturnRedraw:
-	farcall ClearSavedObjPals
-	farcall DisableDynPalUpdates
-	call ClearBGPalettes
-	call ExitMenu
-	call ReloadTilesetAndPalettes
+        farcall ClearSavedObjPals
+        farcall DisableDynPalUpdates
+        call ClearBGPalettes
+        call ExitMenu
+        call ReloadTilesetAndPalettes
         call .DrawDayTimeBox
         call .DrawMenuAccount
         call DrawVariableLengthMenuBox
@@ -235,7 +235,7 @@ StartMenu::
 
 .OpenMenu:
 	ld a, [wMenuSelection]
-	call .GetMenuAccountTextPointer
+        call .GetMenuTextPointer
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -244,7 +244,7 @@ StartMenu::
 .MenuString:
 	push de
 	ld a, [wMenuSelection]
-	call .GetMenuAccountTextPointer
+        call .GetMenuTextPointer
 	inc hl
 	inc hl
 	ld a, [hli]
@@ -258,7 +258,7 @@ StartMenu::
 	ld a, [wMenuSelection]
 	cp $ff
 	jr z, .none
-	call .GetMenuAccountTextPointer
+        call .GetMenuTextPointer
 rept 4
 	inc hl
 endr
@@ -271,7 +271,7 @@ endr
 	pop de
 	ret
 
-.GetMenuAccountTextPointer:
+.GetMenuTextPointer:
 	ld e, a
 	ld d, 0
 	ld hl, wMenuDataPointerTableAddr
@@ -359,32 +359,25 @@ endr
         inc c
         ret
 
+
 .PrintMenuAccount:
-       call .IsMenuAccountOn
-       ret z
-       call .DrawMenuAccount
-       decoord 1, 15
-       jmp .MenuDesc
+        call .DrawMenuAccount
+        decoord 1, 15
+        jmp .MenuDesc
 
 .DrawMenuAccount:
-       call .IsMenuAccountOn
-       ret z
-       hlcoord 0, 14
-       lb bc, 4, 10
-       call ClearBox
-       hlcoord 0, 14
-       lb bc, 4, 8
-       jmp TextboxPalette
+        hlcoord 0, 14
+        lb bc, 4, 10
+        call ClearBox
+        hlcoord 0, 14
+        lb bc, 4, 8
+        jmp TextboxPalette
 
-.IsMenuAccountOn:
-       ld a, [wOptions2]
-       and 1 << MENU_ACCOUNT
-       ret
 
 .DrawDayTimeBox: ; 128b4
         hlcoord 0, 0
         lb bc, 2, 10
-	call ClearBox
+        call ClearBox
 	hlcoord 0, 0
 	lb bc, 0, 8
 	jmp TextboxPalette
