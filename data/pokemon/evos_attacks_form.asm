@@ -63,14 +63,14 @@ FormsEvosAttacksPointers::
         dw VictreebelValenciaEvosAttacks
         dw ParasValenciaEvosAttacks
         dw ParasectValenciaEvosAttacks
+        dw OnixCrystalEvosAttacks
+        dw SteelixCrystalEvosAttacks
+        dw UrsalunaBloodmoonEvosAttacks
         dw DratiniPartnerEvosAttacks
         dw EeveePartnerEvosAttacks
         dw PikachuPartnerEvosAttacks
         dw DragonairPartnerEvosAttacks
         dw DragonitePartnerEvosAttacks
-        dw OnixCrystalEvosAttacks
-        dw SteelixCrystalEvosAttacks
-        dw UrsalunaBloodmoonEvosAttacks
         dw RockruffOwnTempoEvosAttacks
         dw LycanrocMidnightEvosAttacks
         dw LycanrocDuskEvosAttacks

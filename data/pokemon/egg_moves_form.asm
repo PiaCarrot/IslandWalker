@@ -63,14 +63,14 @@ FormsEggMovePointers::
         dw NoEggMoves4 ; VictreebelValencia
         dw ParasEggMoves
         dw NoEggMoves4 ; ParasectValencia
+        dw OnixEggMoves
+        dw NoEggMoves4 ; SteelixCrystal
+        dw NoEggMoves4 ; UrsalunaBloodmoon
         dw NoEggMoves4 ; DratiniPartner
         dw NoEggMoves4 ; EeveePartner
         dw NoEggMoves4 ; PikachuPartner
         dw NoEggMoves4 ; DragonairPartner
         dw NoEggMoves4 ; DragonitePartner
-        dw OnixEggMoves
-        dw NoEggMoves4 ; SteelixCrystal
-        dw NoEggMoves4 ; UrsalunaBloodmoon
         dw RockruffEggMoves ; RockruffOwnTempo
         dw NoEggMoves4 ; LycanrocMidnight
         dw NoEggMoves4 ; LycanrocDusk

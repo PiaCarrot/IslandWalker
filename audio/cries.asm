@@ -2153,21 +2153,40 @@ Cry_Wingull_Ch8:
         sound_ret
 
 Cry_Ralts:
-        channel_count 2
+        channel_count 3
         channel 5, Cry_Ralts_Ch5
         channel 6, Cry_Ralts_Ch6
+    channel 8, Cry_Ralts_Ch8
 
 Cry_Ralts_Ch5:
-        duty_cycle_pattern 2, 2, 0, 0
-        square_note 4, 13, 4, 2016
-        square_note 8, 12, 1, 1984
+        duty_cycle_pattern 0, 1, 2, 1
+        square_note 4, 11, 7, 1696
+    square_note 8, 12, 7, 1826
+    square_note 15, 13, 7, 1826
+    square_note 4, 13, 6, 1826
+        square_note 12, 11, 3, 1696
+    square_note 8, 13, 7, 1800
+    square_note 15, 12, 6, 1800
+    square_note 4, 11, 3, 1800
         sound_ret
 
 Cry_Ralts_Ch6:
-        duty_cycle_pattern 1, 1, 3, 3
-        square_note 4, 12, 4, 1984
-        square_note 8, 11, 1, 1952
+        duty_cycle_pattern 1, 2, 1, 2
+        square_note 4, 7, 7, 1400
+    square_note 8, 7, 7, 1030
+    square_note 15, 9, 7, 1030
+    square_note 4, 7, 6, 1030
+    square_note 12, 7, 3, 650
+    square_note 8, 9, 7, 750
+    square_note 15, 7, 6, 750
+    square_note 4, 7, 3, 750
         sound_ret
+
+Cry_Ralts_Ch8:
+    noise_note 8, 6, 1, 30
+    noise_note 8, 3, 1, 30
+    noise_note 8, 6, 1, 100
+    sound_ret
 
 Cry_Shroomish:
         channel_count 3

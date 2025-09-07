@@ -266,7 +266,7 @@ PokemonCries::
 	mon_cry CRY_WEEDLE,      $609,  $1b1 ; LINOONE
 	mon_cry CRY_GRIMER,      $100,  $1b5 ; WINGULL
 	mon_cry CRY_SLOWPOKE,    $740,  $210 ; PELIPPER
-	mon_cry CRY_BULBASAUR,   $007,  $0f0 ; RALTS
+	mon_cry CRY_RALTS,         96,    64 ; RALTS
 	mon_cry CRY_VILEPLUME,   $012,  $07f ; KIRLIA
 	mon_cry CRY_VILEPLUME,   $ef0,  $160 ; GARDEVOIR
 	mon_cry CRY_CHARMANDER,  $120,  $090 ; SHROOMISH
