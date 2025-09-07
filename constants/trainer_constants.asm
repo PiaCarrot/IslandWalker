@@ -31,6 +31,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
 	trainerclass CISSY ; 1
 	const CISSY1
+	const CISSY1_CM
 
 	trainerclass RUDY ; 2
 	const RUDY1
@@ -245,6 +246,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
 	trainerclass CROSS1 ; 48
 	const CROSS_1
+	const CROSS_1_CM
 
 	trainerclass BUG_CATCHER_F ; 49
 	const MICA

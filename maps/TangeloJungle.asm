@@ -65,7 +65,7 @@ TangeloJungleSignText:
 	done
 	
 TangeloJungleCrossScript:
-	cry GEODUDE
+	cry ROCKRUFF
 	waitsfx
 	cry CATERPIE
 	waitsfx
@@ -98,8 +98,15 @@ TangeloJungleCrossScript:
 	closetext
 	winlosstext TangeloJungleCrossWinText, TangeloJungleCrossLossText
 	setlasttalked TANGELO_JUNGLE_CROSS
+    checkcm
+    iffalse .LoadRegularTangeloCross
+	loadtrainer CROSS1, CROSS_1_CM
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	sjump .StartBattle
+.LoadRegularTangeloCross
 	loadtrainer CROSS1, CROSS_1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+.StartBattle
 	startbattle
 	dontrestartmapmusic
 	reloadmap

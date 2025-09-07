@@ -152,7 +152,7 @@ MikanGymCissyScript:
         setlasttalked MIKAN_GYM_CISSY
         checkcm
         iffalse .LoadCissy
-        loadtrainer RED, RED1
+        loadtrainer CISSY, CISSY1_CM
         sjump .StartBattle
 .LoadCissy
         loadtrainer CISSY, CISSY1

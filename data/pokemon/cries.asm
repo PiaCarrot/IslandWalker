@@ -267,8 +267,8 @@ PokemonCries::
 	mon_cry CRY_GRIMER,      $100,  $1b5 ; WINGULL
 	mon_cry CRY_SLOWPOKE,    $740,  $210 ; PELIPPER
 	mon_cry CRY_RALTS,         96,    64 ; RALTS
-	mon_cry CRY_VILEPLUME,   $012,  $07f ; KIRLIA
-	mon_cry CRY_VILEPLUME,   $ef0,  $160 ; GARDEVOIR
+	mon_cry CRY_KIRLIA,   96, 128 ; KIRLIA
+	mon_cry CRY_KIRLIA,   5, 256 ; GARDEVOIR
 	mon_cry CRY_CHARMANDER,  $120,  $090 ; SHROOMISH
 	mon_cry CRY_CHARMANDER,  $760,  $0a0 ; BRELOOM
 	mon_cry CRY_METAPOD,     $0bc,  $039 ; NINCADA
@@ -349,7 +349,7 @@ PokemonCries::
 	mon_cry CRY_NIDOQUEEN,   $73d,  $1b0 ; GLISCOR
 	mon_cry CRY_TYPHLOSION,  $fa0,  $0d3 ; MAMOSWINE
 	mon_cry CRY_RHYDON,      $050,  $180 ; PORYGON-Z
-	mon_cry CRY_SPEAROW,     $070,  $170 ; GALLADE
+	mon_cry CRY_GALLADE,     32, 304 ; GALLADE
 	mon_cry CRY_DROWZEE,     $044,  $0c6 ; DUSKNOIR
 	mon_cry CRY_PICHU,       $feb,  $500 ; FROSLASS
     mon_cry CRY_PHIONE,      32,  556 ; ROTOM

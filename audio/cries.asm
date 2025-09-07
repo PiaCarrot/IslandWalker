@@ -2187,6 +2187,78 @@ Cry_Ralts_Ch8:
     noise_note 8, 3, 1, 30
     noise_note 8, 6, 1, 100
     sound_ret
+	
+Cry_Kirlia:
+        channel_count 3
+        channel 5, Cry_Kirlia_Ch5
+        channel 6, Cry_Kirlia_Ch6
+    channel 8, Cry_Kirlia_Ch8
+
+Cry_Kirlia_Ch5:
+    duty_cycle_pattern 0, 1, 2, 1
+    square_note 8, 13, 7, 1829
+    square_note 15, 11, 7, 1829
+    square_note 8, 12, 7, 1828
+    square_note 15, 11, 7, 1828
+    square_note 8, 10, 5, 1828
+    sound_ret
+
+Cry_Kirlia_Ch6:
+    duty_cycle_pattern 1, 2, 1, 2
+    square_note 8, 6, 5, 1030
+    square_note 15, 4, 5, 1030
+    square_note 8, 5, 5, 1020
+    square_note 15, 4, 5, 1020
+    square_note 8, 3, 3, 1020
+    sound_ret
+
+Cry_Kirlia_Ch8:
+    noise_note 8, 6, 6, 145
+    sound_ret
+	
+Cry_Gallade:
+        channel_count 3
+        channel 5, Cry_Gallade_Ch5
+        channel 6, Cry_Gallade_Ch6
+    channel 8, Cry_Gallade_Ch8
+
+Cry_Gallade_Ch5:
+    duty_cycle_pattern 0, 0, 0, 0
+    square_note 3, 3,-5, 897
+    square_note 8, 14, 5, 1763
+    square_note 4, 12, 2, 1482
+    square_note 9, 3, 1, 897
+    square_note 11, 0, 4, 897
+    square_note 4, 14, 1, 1800
+    square_note 1, 4, 5, 1928
+    square_note 12, 5, 0, 1942
+    square_note 4, 5, 2, 1942
+    sound_ret
+
+Cry_Gallade_Ch6:
+    duty_cycle_pattern 0, 0, 0, 0
+    square_note 3, 3, -6, 897
+    square_note 8, 12, 5, 1500
+    square_note 2, 14, 2, 1910
+    square_note 2, 14, 2, 1966
+    square_note 9, 14, 3, 1978
+    square_note 11, 0, 4, 1978
+    square_note 4, 5, -6, 897
+    square_note 1, 12, 5, 1974
+    square_note 12, 8, 0, 1988
+    square_note 4, 8, 2, 1988
+    sound_ret
+
+Cry_Gallade_Ch8:
+    noise_note 3, 9, 2, 0x49
+    noise_note 8, 11, 5, 0x29
+    noise_note 4, 10, 2, 0x39
+    noise_note 9, 9, 1, 80
+    noise_note 11, 0, 1, 60
+    noise_note 3, 6, 4, 0x49
+    noise_note 8, 8, 4, 0x50
+    noise_note 9, 8, 5, 50
+    sound_ret
 
 Cry_Shroomish:
         channel_count 3

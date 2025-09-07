@@ -73,6 +73,8 @@ Cries:
         dba Cry_Zigzagoon
         dba Cry_Wingull
         dba Cry_Ralts
+        dba Cry_Kirlia
+        dba Cry_Gallade
         dba Cry_Shroomish
         dba Cry_Nincada
         dba Cry_Azurill
