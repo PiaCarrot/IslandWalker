@@ -450,7 +450,10 @@ BillsPC_BlankTiles:
 	push af
 	ld c, 4
 	call BillsPC_SafeGet2bpp
-	call PopAFBCDEHL
+	pop af
+	pop bc
+	pop de
+	pop hl
 	add hl, bc
 	dec a
 	jr nz, .loop
@@ -942,9 +945,9 @@ BillsPC_SetBoxArrows:
 
 .box_cursors
 	hlcoord 8, 5
-	ld [hl], "◀"
+	ld [hl], "←"
 	hlcoord 18, 5
-	ld [hl], "▶"
+	ld [hl], "→"
 	ret
 
 _GetCursorMon:
