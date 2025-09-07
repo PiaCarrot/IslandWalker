@@ -136,38 +136,51 @@ MikanGymFemaleGuardText:
 	done
 	
 MikanGymCissyScript:
-        faceplayer
-        opentext
-        checkflag ENGINE_CORALEYEBADGE
-        iftrue .FightDone
-        checkoak
-        iffalse .NoOakChallenge
-        checkdex
-        ifless 10, .NeedMorePokemon
+	faceplayer
+	opentext
+	checkflag ENGINE_CORALEYEBADGE
+	iftrue .FightDone
+	checkoak
+	iffalse .NoOakChallenge
+	checkevent EVENT_GOT_PIKACHU_FROM_IVY
+	iftrue .Check82
+	checkevent EVENT_GOT_EEVEE_FROM_IVY
+	iftrue .Check82
+	checkdex
+	ifless 84, .NeedMorePokemon
+	sjump .NoOakChallenge
+.Check82:
+	checkdex
+	ifless 82, .NeedMorePokemonPikaOrEevee
 .NoOakChallenge:
-        writetext CissyBeforeBattleText
-        waitbutton
-        closetext
-        winlosstext CissyBeatenText, 0
-        setlasttalked MIKAN_GYM_CISSY
-        checkcm
-        iffalse .LoadCissy
-        loadtrainer CISSY, CISSY1_CM
-        sjump .StartBattle
+	writetext CissyBeforeBattleText
+	waitbutton
+	closetext
+	winlosstext CissyBeatenText, 0
+	setlasttalked MIKAN_GYM_CISSY
+	checkcm
+	iffalse .LoadCissy
+	loadtrainer CISSY, CISSY1_CM
+	sjump .StartBattle
 .LoadCissy
-        loadtrainer CISSY, CISSY1
+	loadtrainer CISSY, CISSY1
 .StartBattle
-        startbattle
-        reloadmapafterbattle
-        sjump .AfterBattle
+	startbattle
+	reloadmapafterbattle
+	sjump .AfterBattle
 .NeedMorePokemon:
-        writetext CissyOakChallengeText
-        waitbutton
-        closetext
-        end
+	writetext CissyOakChallengeText
+	waitbutton
+	closetext
+	end
+.NeedMorePokemonPikaOrEevee:
+	writetext CissyOakChallengePikaOrEeveeText
+	waitbutton
+	closetext
+	end
 .AfterBattle:
-        setevent EVENT_CISSY_DEFEATED
-        setevent EVENT_BEAT_SWIMMER_F_ALLIE
+	setevent EVENT_CISSY_DEFEATED
+	setevent EVENT_BEAT_SWIMMER_F_ALLIE
 	setevent EVENT_BEAT_SWIMMER_F_MORGAN
 	setevent EVENT_BEAT_BEAUTY_YEVON
 	setevent EVENT_BEAT_SWIMMER_M_BRAD
@@ -180,14 +193,14 @@ MikanGymCissyScript:
 	setflag ENGINE_CORALEYEBADGE
 	setmapscene MANDARIN_NORTH, SCENE_MANDARIN_NORTH_LOOKER
 .FightDone:
-	checkevent EVENT_TM_61_WILL_O_WISP
-	iftrue .GotWillOWisp
+	checkevent EVENT_TM_49_SCALD
+	iftrue .GotScald
 	writetext CissyExplainTMText
 	promptbutton
-;	verbosegiveitem TM_WILL_O_WISP
-;	iffalse .GotWillOWisp
-	setevent EVENT_TM_61_WILL_O_WISP
-.GotWillOWisp:
+	verbosegiveitem TM_SCALD
+	iffalse .GotScald
+	setevent EVENT_TM_49_SCALD
+.GotScald:
 	writetext CissyAfterBattleText
 	waitbutton
 	closetext
@@ -216,37 +229,51 @@ CissyBeforeBattleText:
 	cont "perfection."
 
 	para "Is this your first"
-	line "GYM? These three"
-	cont "#MON should be"
-	cont "enough…"
+	line "GYM? These #MON"
+	cont "should be enough…"
 
 	para "Prepare yourself!"
 	done
 
 CissyBeatenText:
-        text "CISSY: What?!"
+	text "CISSY: What?!"
 
-        para "My perfect WATER"
-        line "#MON!"
+	para "My perfect WATER"
+	line "#MON!"
 
 	para "Very well! You've"
 	line "earned this."
 
 	para "It's the official"
 	line "ORANGE CREW"
-        cont "CORAL-EYE BADGE."
-        done
+	cont "CORAL-EYE BADGE."
+	done
 
 CissyOakChallengeText:
-        text "CISSY: OAK says"
-        line "you need 10" 
-        cont "#MON to fight!"
-        done
+	text "OAK: <PLAYER>!"
+	line "You are not ready" 
+	cont "to progress with"
+	cont "my challenge!"
+	
+	para "You must collect"
+	line "84 unique #MON"
+	cont "to do this GYM!"
+	done
+CissyOakChallengePikaOrEeveeText:
+	text "OAK: <PLAYER>!"
+	line "You are not ready" 
+	cont "to progress with"
+	cont "my challenge!"
+	
+	para "You must collect"
+	line "82 unique #MON"
+	cont "to do this GYM!"
+	done
 
 PlayerReceivedCoralEyeBadgeText:
-        text "<PLAYER> received"
-        line "CORAL-EYE BADGE."
-        done
+	text " received"
+	line "CORAL-EYE BADGE."
+	done
 
 CissyExplainTMText:
 	text "CISSY: You fought"
@@ -264,9 +291,9 @@ CissyExplainTMText:
 	cont "TECHNICAL MACHINE."
 
 	para "This one contains"
-	line "WILL-O-WISP."
+	line "SCALD."
 	
-	para "It's a fiery move"
+	para "It's a WATER move"
 	line "that BURNs the foe"
 	cont "with ease!"
 

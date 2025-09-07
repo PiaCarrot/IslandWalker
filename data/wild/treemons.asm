@@ -136,18 +136,18 @@ TreeMonSet_Rock:
 
 TreeMonSet_Sky1:
 	dbbw 60, 4, SPEAROW
-	dbbw 30, 3, PIDGEY ;WINGULL
+	dbbw 30, 3, WINGULL
 	dbbw 5, 5, SPEAROW
-	dbbw 4, 4, PIDGEY ;WINGULL
-	dbbw 1, 5, PIDGEY ;WINGULL
+	dbbw 4, 4, WINGULL
+	dbbw 1, 5, WINGULL
 	db -1
 	
 TreeMonSet_Depths1:
-	dbbw 60, 4, REMORAID ;CARVANHA
-	dbbw 30, 3, REMORAID ;FINNEON
-	dbbw 5, 5, REMORAID ;CARVANHA
-	dbbw 4, 4, REMORAID ;FINNEON
-	dbbw 1, 5, REMORAID ;FINNEON
+	dbbw 60, 4, CARVANHA
+	dbbw 30, 3, FINNEON
+	dbbw 5, 5, CARVANHA
+	dbbw 4, 4, FINNEON
+	dbbw 1, 5, FINNEON
 	db -1
 	
 TreeMonSet_Depths2:
