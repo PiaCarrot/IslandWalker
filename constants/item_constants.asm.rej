@@ -1,0 +1,67 @@
+--- constants/item_constants.asm
++++ constants/item_constants.asm
+@@ -382,57 +382,57 @@ DEF FIRST_MEDICINE_ITEM EQU const_value
+ 	const LONELY_MINT
+ 	const ADAMANT_MINT
+ 	const NAUGHTY_MINT
+ 	const BRAVE_MINT
+ 	const BOLD_MINT
+ 	const IMPISH_MINT
+ 	const LAX_MINT
+ 	const RELAXED_MINT
+ 	const MODEST_MINT
+ 	const MILD_MINT
+ 	const RASH_MINT
+ 	const QUIET_MINT
+ 	const CALM_MINT
+ 	const GENTLE_MINT
+ 	const CAREFUL_MINT
+ 	const SASSY_MINT
+ 	const TIMID_MINT
+ 	const HASTY_MINT
+ 	const JOLLY_MINT
+ 	const NAIVE_MINT
+ 	const SERIOUS_MINT
+ 	const HARDY_MINT
+ 	const DOCILE_MINT
+ 	const BASHFUL_MINT
+ 	const QUIRKY_MINT
+-	const ABILITY_UP
+-	const PINK_CURE
+-	; const EXP_CANDY_XS
+-	; const EXP_CANDY_S
+-	; const EXP_CANDY_M
+-	; const EXP_CANDY_L
+-	; const EXP_CANDY_XL
++        const ABILITY_UP
++        const PINK_CURE
++        const EXP_CANDY_XS
++        const EXP_CANDY_S
++        const EXP_CANDY_M
++        const EXP_CANDY_L
++        const EXP_CANDY_XL
+ DEF NUM_MEDICINE_ITEM_POCKET EQU const_value - FIRST_MEDICINE_ITEM
+ assert NUM_MEDICINE_ITEM_POCKET <= $ff
+ 
+ 	const_align 8 ; Valuable items assume the value of HIGH(FIRST_VALUABLE_ITEM) when storing in bag.
+ DEF FIRST_VALUABLE_ITEM EQU const_value
+ 	const NUGGET       ; 001F
+ 	const SILVER_LEAF  ; 0033
+ 	const GOLD_LEAF    ; 003A
+ 	const TINYMUSHROOM ; 003F
+ 	const BIG_MUSHROOM ; 0040
+ 	const SLOWPOKETAIL ; 004A
+ 	const PEARL        ; 0050
+ 	const BIG_PEARL    ; 0051
+ 	const STARDUST     ; 005F
+ 	const STAR_PIECE   ; 0060
+ 	const BRICK_PIECE  ; 0081
+ 	const HEART_SCALE  ; 00C9
+ 	const BLUE_SHARD   ; 00CA
+ 	const GREEN_SHARD  ; 00CB
+ 	const RED_SHARD    ; 00CC
+ 	const YELLOW_SHARD ; 00CD
+ 	const RARE_BONE    ; 00CE
+ 	const BALMMUSHROOM ; 00CF
+ 	const BIG_NUGGET   ; 00D0
+ 	const COMET_SHARD  ; 00D1

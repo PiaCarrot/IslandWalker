@@ -1,0 +1,143 @@
+--- data/items/descriptions.asm
++++ data/items/descriptions.asm
+@@ -376,65 +376,65 @@ ItemDescriptionsMedicine:
+ 	dw HealPowderDesc   ; 005B
+ 	dw RevivalHerbDesc  ; 005C
+ 	dw ZincDesc         ; 0063
+ 	dw BerryJuiceDesc   ; 0065
+ 	dw SacredAshDesc    ; 0075
+ 	dw PPMaxDesc          ; 00D8
+ 	dw PewterArareDesc    ; 00D9
+ 	dw SeventhTanghuluDesc    ; 00DA
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+ 	dw MintDesc
+-	dw MintDesc
+-	dw MintDesc
+-	dw MintDesc
+-	dw MintDesc
+-	dw MintDesc
+-	dw MintDesc
+-	dw MintDesc
+-	dw MintDesc
+-	dw AbilityUpDesc
+-	dw PinkCureDesc
+-	; dw ExpCandyXSDesc
+-	; dw ExpCandySDesc
+-	; dw ExpCandyMDesc
+-	; dw ExpCandyLDesc
+-	; dw ExpCandyXLDesc
++        dw MintDesc
++        dw MintDesc
++        dw MintDesc
++        dw MintDesc
++        dw MintDesc
++        dw MintDesc
++        dw MintDesc
++        dw MintDesc
++        dw AbilityUpDesc
++        dw PinkCureDesc
++        dw ExpCandyXSDesc
++        dw ExpCandySDesc
++        dw ExpCandyMDesc
++        dw ExpCandyLDesc
++        dw ExpCandyXLDesc
+ .IndirectEnd:
+ 
+ ItemDescriptionsValuable:
+ 	dw NuggetDesc       ; 001F
+ 	dw SilverLeafDesc   ; 0033
+ 	dw GoldLeafDesc     ; 003A
+ 	dw TinyMushroomDesc ; 003F
+ 	dw BigMushroomDesc  ; 0040
+ 	dw SlowpokeTailDesc ; 004A
+ 	dw PearlDesc        ; 0050
+ 	dw BigPearlDesc     ; 0051
+ 	dw StardustDesc     ; 005F
+ 	dw StarPieceDesc    ; 0060
+ 	dw BrickPieceDesc   ; 0081
+ 	dw HeartScaleDesc     ; 00C9
+ 	dw BlueShardDesc      ; 00CA
+ 	dw GreenShardDesc     ; 00CB
+ 	dw RedShardDesc       ; 00CC
+ 	dw YellowShardDesc    ; 00CD
+ 	dw RareBoneDesc       ; 00CE
+ 	dw BalmmushroomDesc   ; 00CF
+ 	dw BigNuggetDesc      ; 00D0
+ 	dw CometShardDesc     ; 00D1
+ 	dw PearlStringDesc    ; 00D2
+ 	dw BeachGlassDesc     ; 00D3
+@@ -1740,44 +1740,44 @@ SweetHoneyDesc:
+ 
+ PinkCureDesc:
+ 	db   "Reverses effect of"
+ 	next "PINKAN BERRY.@"
+ 
+ XEvadeDesc:
+ 	db   "Raises EVASION."
+ 	next "(1 BTL)@"
+ 
+ CandyTruffleDesc:
+ 	db   "A sweet truffle."
+ 	next "Sell low.@"
+ 
+ RocketMailDesc:
+ 	db   "ROCKET-print MAIL."
+ 	next "(HOLD)@"
+ 
+ ZigZagMailDesc:
+ 	db   "ZIGZAGOON-print"
+ 	next "MAIL. (HOLD)@"
+ 
+ GoldMailDesc:
+ 	db   "Expensive MAIL."
+ 	next "(HOLD)@"
+ 
+-; ExpCandyXSDesc:
+-	; db   "Grants a tiny"
+-	; next "amount of EXP.@"
++ExpCandyXSDesc:
++        db   "Grants a tiny"
++        next "amount of EXP.@"
+ 
+-; ExpCandySDesc:
+-	; db   "Grants a small"
+-	; next "amount of EXP.@"
++ExpCandySDesc:
++        db   "Grants a small"
++        next "amount of EXP.@"
+ 
+-; ExpCandyMDesc:
+-	; db   "Grants a decent"
+-	; next "amount of EXP.@"
++ExpCandyMDesc:
++        db   "Grants a decent"
++        next "amount of EXP.@"
+ 
+-; ExpCandyLDesc:
+-	; db   "Grants a large"
+-	; next "amount of EXP.@"
++ExpCandyLDesc:
++        db   "Grants a large"
++        next "amount of EXP.@"
+ 
+-; ExpCandyXLDesc:
+-	; db   "Grants a huge"
+-	; next "amount of EXP.@"
++ExpCandyXLDesc:
++        db   "Grants a huge"
++        next "amount of EXP.@"

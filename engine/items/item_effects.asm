@@ -426,13 +426,13 @@ ItemEffectsMedicineItems:
 	dw MintEffect ; DOCILE_MINT
 	dw MintEffect ; BASHFUL_MINT
 	dw MintEffect ; QUIRKY_MINT
-	dw AbilityUp ; ABILITY_UP
-	dw PinkCure ; PINK_CURE
-	; dw RareCandyEffect ; EXP_CANDY_XS
-	; dw RareCandyEffect ; EXP_CANDY_S
-	; dw RareCandyEffect ; EXP_CANDY_M
-	; dw RareCandyEffect ; EXP_CANDY_L
-	; dw RareCandyEffect ; EXP_CANDY_XL
+        dw AbilityUp ; ABILITY_UP
+        dw PinkCure ; PINK_CURE
+        dw ExpCandyEffect ; EXP_CANDY_XS
+        dw ExpCandyEffect ; EXP_CANDY_S
+        dw ExpCandyEffect ; EXP_CANDY_M
+        dw ExpCandyEffect ; EXP_CANDY_L
+        dw ExpCandyEffect ; EXP_CANDY_XL
 .IndirectEnd:
 
 ItemEffectsValuableItems:
@@ -1262,10 +1262,198 @@ RareCandyEffect:
 	ld [wForceEvolution], a
 	farcall EvolvePokemon
 
-	jmp UseDisposableItem
+        jmp UseDisposableItem
+
+ExpCandyEffect:
+        farcall UpdateLevelCap
+        ld b, PARTYMENUACTION_HEALING_ITEM
+        call UseItem_SelectMon
+
+        jmp c, RareCandy_StatBooster_ExitMenu
+
+        call RareCandy_StatBooster_GetParameters
+
+        ld a, [wCurPartyLevel]
+        ld c, a
+        ld a, [wLevelCap]
+        cp c
+        jr z, .no_effect
+        jr nc, .can_gain_exp
+.no_effect
+        jmp NoEffectMessage
+
+.can_gain_exp
+       ; determine experience amount based on candy size
+       ld a, [wCurItem]
+       call GetItemIndexFromID
+       ld a, l
+       sub LOW(EXP_CANDY_XS)
+       ld e, a
+       ld a, h
+       sbc HIGH(EXP_CANDY_XS)
+       ld d, a
+       ld hl, ExpCandyExperience
+       add hl, de
+       add hl, de
+       ld e, [hl]
+       inc hl
+       ld d, [hl]
+
+        ; store original experience for message
+        ld a, MON_EXP
+        call GetPartyParamLocation
+        ld a, [hli]
+        ld [wStringBuffer3], a
+        ld a, [hli]
+        ld [wStringBuffer3 + 1], a
+        ld a, [hli]
+        ld [wStringBuffer3 + 2], a
+
+        ld a, MON_EXP + 2
+        call GetPartyParamLocation
+        ld a, [hl]
+        add e
+        ld [hld], a
+        ld a, [hl]
+        adc d
+        ld [hld], a
+        ld a, [hl]
+        adc 0
+        ld [hl], a
+
+        xor a ; PARTYMON
+        ld [wMonType], a
+        predef CopyMonToTempMon
+        farcall CalcLevel
+        ld c, d
+        ld a, [wLevelCap]
+        cp c
+        jr nc, .within_cap
+        ld c, a
+        ld d, a
+        farcall CalcExpAtLevel
+        ld a, MON_EXP
+        call GetPartyParamLocation
+        ldh a, [hMultiplicand + 0]
+        ld [hli], a
+        ldh a, [hMultiplicand + 1]
+        ld [hli], a
+        ldh a, [hMultiplicand + 2]
+        ld [hl], a
+.within_cap
+        push bc
+        ld a, MON_EXP
+        call GetPartyParamLocation
+        ld a, [hli]
+        ld d, a
+        ld a, [hli]
+        ld e, a
+        ld a, [hli]
+        ld b, a
+       ld a, b
+       ld hl, wStringBuffer3 + 2
+       sub [hl]
+       ld [wStringBuffer2 + 1], a
+       ld a, e
+       ld hl, wStringBuffer3 + 1
+       sbc [hl]
+       ld [wStringBuffer2], a
+       ld a, d
+       ld hl, wStringBuffer3
+       sbc [hl]
+       xor a
+       ld [wStringBuffer2 + 2], a
+        ld hl, ExpCandyGainedExpText
+        call PrintText
+        pop bc
+
+        ld a, MON_LEVEL
+        call GetPartyParamLocation
+        ld b, [hl]
+        ld a, c
+        cp b
+        jr z, .no_level_up
+        ld [hl], a
+        ld [wCurPartyLevel], a
+        ld c, a
+
+        ld a, MON_MAXHP
+        call GetPartyParamLocation
+        ld a, [hli]
+        ld b, a
+        ld c, [hl]
+        push bc
+        call UpdateStatsAfterItem
+
+        ld a, MON_MAXHP + 1
+        call GetPartyParamLocation
+
+        pop bc
+        ld a, [hld]
+        sub c
+        ld c, a
+        ld a, [hl]
+        sbc b
+        ld b, a
+        dec hl
+        ld a, [hl]
+        add c
+        ld [hld], a
+        ld a, [hl]
+        adc b
+        ld [hl], a
+        farcall LevelUpHappinessMod
+
+        ld a, PARTYMENUTEXT_LEVEL_UP
+        call ItemActionText
+
+        xor a ; PARTYMON
+        ld [wMonType], a
+        predef CopyMonToTempMon
+
+        hlcoord 9, 0
+        lb bc, 10, 9
+        call Textbox
+
+        hlcoord 11, 1
+        ld bc, 4
+        predef PrintTempMonStats
+
+        call WaitPressAorB_BlinkCursor
+
+        xor a ; PARTYMON
+        ld [wMonType], a
+        ld a, [wCurPartySpecies]
+        ld [wTempSpecies], a
+.level_loop
+        inc b
+        ld a, b
+        ld [wCurPartyLevel], a
+        push bc
+        predef LearnLevelMoves
+        pop bc
+        ld a, b
+        cp c
+        jr nz, .level_loop
+        ld a, c
+        ld [wCurPartyLevel], a
+        xor a
+        ld [wForceEvolution], a
+        farcall EvolvePokemon
+        jmp UseDisposableItem
+
+.no_level_up
+        jmp UseDisposableItem
+
+ExpCandyGainedExpText:
+       text_far Text_MonGainedExpPoint
+       text_end
+
+ExpCandyExperience:
+       dw 100, 800, 3000, 10000, 30000
 
 HealPowderEffect:
-	ld b, PARTYMENUACTION_HEALING_ITEM
+       ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 
 	jmp c, StatusHealer_ExitMenu

@@ -398,21 +398,21 @@ ItemDescriptionsMedicine:
 	dw MintDesc
 	dw MintDesc
 	dw MintDesc
-	dw MintDesc
-	dw MintDesc
-	dw MintDesc
-	dw MintDesc
-	dw MintDesc
-	dw MintDesc
-	dw MintDesc
-	dw MintDesc
-	dw AbilityUpDesc
-	dw PinkCureDesc
-	; dw ExpCandyXSDesc
-	; dw ExpCandySDesc
-	; dw ExpCandyMDesc
-	; dw ExpCandyLDesc
-	; dw ExpCandyXLDesc
+        dw MintDesc
+        dw MintDesc
+        dw MintDesc
+        dw MintDesc
+        dw MintDesc
+        dw MintDesc
+        dw MintDesc
+        dw MintDesc
+        dw AbilityUpDesc
+        dw PinkCureDesc
+        dw ExpCandyXSDesc
+        dw ExpCandySDesc
+        dw ExpCandyMDesc
+        dw ExpCandyLDesc
+        dw ExpCandyXLDesc
 .IndirectEnd:
 
 ItemDescriptionsValuable:
@@ -1762,22 +1762,22 @@ GoldMailDesc:
 	db   "Expensive MAIL."
 	next "(HOLD)@"
 
-; ExpCandyXSDesc:
-	; db   "Grants a tiny"
-	; next "amount of EXP.@"
+ExpCandyXSDesc:
+        db   "Grants a tiny"
+        next "amount of EXP.@"
 
-; ExpCandySDesc:
-	; db   "Grants a small"
-	; next "amount of EXP.@"
+ExpCandySDesc:
+        db   "Grants a small"
+        next "amount of EXP.@"
 
-; ExpCandyMDesc:
-	; db   "Grants a decent"
-	; next "amount of EXP.@"
+ExpCandyMDesc:
+        db   "Grants a decent"
+        next "amount of EXP.@"
 
-; ExpCandyLDesc:
-	; db   "Grants a large"
-	; next "amount of EXP.@"
+ExpCandyLDesc:
+        db   "Grants a large"
+        next "amount of EXP.@"
 
-; ExpCandyXLDesc:
-	; db   "Grants a huge"
-	; next "amount of EXP.@"
+ExpCandyXLDesc:
+        db   "Grants a huge"
+        next "amount of EXP.@"

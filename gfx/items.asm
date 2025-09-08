@@ -481,10 +481,15 @@ MedicineIconsPointers:
 	dw MintIcon ; SERIOUS_MINT
 	dw MintIcon ; HARDY_MINT
 	dw MintIcon ; DOCILE_MINT
-	dw MintIcon ; BASHFUL_MINT
-	dw MintIcon ; QUIRKY_MINT
-	dw AbilityUpIcon ; ABILITY_UP
-	dw AntidoteIcon ; PINK_CURE
+        dw MintIcon ; BASHFUL_MINT
+        dw MintIcon ; QUIRKY_MINT
+        dw AbilityUpIcon ; ABILITY_UP
+        dw AntidoteIcon ; PINK_CURE
+        dw RareCandyIcon ; EXP_CANDY_XS
+        dw RareCandyIcon ; EXP_CANDY_S
+        dw RareCandyIcon ; EXP_CANDY_M
+        dw RareCandyIcon ; EXP_CANDY_L
+        dw RareCandyIcon ; EXP_CANDY_XL
 .IndirectEnd:
 
 ValuablesIconsPointers:
@@ -1728,8 +1733,23 @@ MedicineIconPalettes:
 	RGB 13, 21, 29
 	RGB 21, 13, 31
 ; PINK_CURE
-	RGB 30, 25, 28
-	RGB 31, 15, 24
+        RGB 30, 25, 28
+        RGB 31, 15, 24
+; EXP_CANDY_XS
+        RGB 15, 18, 29
+        RGB 10, 12, 24
+; EXP_CANDY_S
+        RGB 15, 18, 29
+        RGB 10, 12, 24
+; EXP_CANDY_M
+        RGB 15, 18, 29
+        RGB 10, 12, 24
+; EXP_CANDY_L
+        RGB 15, 18, 29
+        RGB 10, 12, 24
+; EXP_CANDY_XL
+        RGB 15, 18, 29
+        RGB 10, 12, 24
 .IndirectEnd:
 
 ValuablesIconPalettes:

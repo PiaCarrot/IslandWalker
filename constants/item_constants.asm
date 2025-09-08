@@ -404,13 +404,13 @@ DEF FIRST_MEDICINE_ITEM EQU const_value
 	const DOCILE_MINT
 	const BASHFUL_MINT
 	const QUIRKY_MINT
-	const ABILITY_UP
-	const PINK_CURE
-	; const EXP_CANDY_XS
-	; const EXP_CANDY_S
-	; const EXP_CANDY_M
-	; const EXP_CANDY_L
-	; const EXP_CANDY_XL
+        const ABILITY_UP
+        const PINK_CURE
+        const EXP_CANDY_XS
+        const EXP_CANDY_S
+        const EXP_CANDY_M
+        const EXP_CANDY_L
+        const EXP_CANDY_XL
 DEF NUM_MEDICINE_ITEM_POCKET EQU const_value - FIRST_MEDICINE_ITEM
 assert NUM_MEDICINE_ITEM_POCKET <= $ff
 

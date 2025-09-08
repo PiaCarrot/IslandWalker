@@ -395,14 +395,14 @@ MedicineItemNames::
 	li "DOCILE MINT"
 	li "BASHFUL MINT"
 	li "QUIRKY MINT"
-	li "ABILITY UP"
-	li "PINK CURE"
-	; li "EXP CANDY XS"
-	; li "EXP CANDY S"
-	; li "EXP CANDY M"
-	; li "EXP CANDY L"
-	; li "EXP CANDY XL"
-	assert_list_length NUM_MEDICINE_ITEM_POCKET
+        li "ABILITY UP"
+        li "PINK CURE"
+        li "EXP CANDY XS"
+        li "EXP CANDY S"
+        li "EXP CANDY M"
+        li "EXP CANDY L"
+        li "EXP CANDY XL"
+        assert_list_length NUM_MEDICINE_ITEM_POCKET
 
 ValuableItemNames::
 	list_start

@@ -38,13 +38,13 @@ ROMX $02
 	"bank2"
 ROMX $03
 	"bank3"
-	"VWF"
-	"Battle Weather Images"
 ROMX $04
 	"bank4"
 	"Battle Animation Data"
 ROMX $05
 	"bank5"
+	"VWF"
+	"Battle Weather Images"
 ROMX $06
 	"Tileset Data 1"
 ROMX $07
