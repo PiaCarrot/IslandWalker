@@ -1,7 +1,12 @@
 SelectQuantityToToss:
-	ld hl, TossItem_MenuHeader
-	call LoadMenuHeader
-	jr Toss_Sell_Loop
+        ld hl, TossItem_MenuHeader
+        call LoadMenuHeader
+        jr Toss_Sell_Loop
+
+SelectQuantityToUseExpCandy:
+        ld hl, ExpCandy_MenuHeader
+        call LoadMenuHeader
+        jr Toss_Sell_Loop
 
 SelectQuantityToBuy:
 	farcall GetItemPrice
@@ -190,10 +195,17 @@ BuySell_DisplaySubtotal:
 	jmp WaitBGMap
 
 TossItem_MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 15, 9, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw DoNothing ; NoPriceToDisplay
-	db 0 ; default option
+        db MENU_BACKUP_TILES ; flags
+        menu_coords 15, 9, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+        dw DoNothing ; NoPriceToDisplay
+        db 0 ; default option
+
+ExpCandy_MenuHeader:
+        db MENU_BACKUP_TILES ; flags
+        ; Move quantity selection down by two tiles to align with small textbox
+        menu_coords 15, 11, SCREEN_WIDTH - 1, TEXTBOX_Y + 1
+        dw DoNothing ; NoPriceToDisplay
+        db 0 ; default option
 
 BuyItem_MenuHeader:
 	db MENU_BACKUP_TILES ; flags

@@ -1284,7 +1284,7 @@ ExpCandyEffect:
 
 .can_gain_exp
       ; allow choosing how many candies to use based on current bag quantity
-      farcall SelectQuantityToToss
+      farcall SelectQuantityToUseExpCandy
       push af
       call ExitMenu
       pop af
