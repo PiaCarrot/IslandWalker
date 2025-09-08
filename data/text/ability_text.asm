@@ -84,15 +84,7 @@ AbilityText_PreventedEscapeAbility: ; OK, because switching and escaping can get
 
 AbilityText_PickupFoundItem:
     text_ram wStringBuffer2
-    text " found a"
-    line "@"
-    text_ram wStringBuffer1
-    text "!"
-    prompt
-
-AbilityText_PickupMadeItem:
-    text_ram wStringBuffer2
-    text " made a"
+    text " found"
     line "@"
     text_ram wStringBuffer1
     text "!"

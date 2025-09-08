@@ -286,7 +286,7 @@ HandlePickup::
     call Pickup_GetItem
     call GetItemIDFromIndex
     ld e, a
-        ld [wNamedObjectIndex], a
+    ld [wNamedObjectIndex], a
     pop hl
     ld [hl], e
     ; Get nickname into wStringBuffer2
@@ -336,6 +336,8 @@ PickupAbilityItemTables:
     dw FlowerGiftItems
     db POWER_OF_ALCHEMY
     dw PowerOfAlchemyItems
+    db CURIOUS_MEDICINE
+    dw CuriousMedicineItems
     db $ff
     dw 0
 
@@ -344,3 +346,4 @@ INCLUDE "data/abilities/honey_gather_items.asm"
 INCLUDE "data/abilities/good_as_gold_items.asm"
 INCLUDE "data/abilities/flower_gift_items.asm"
 INCLUDE "data/abilities/power_of_alchemy_items.asm"
+INCLUDE "data/abilities/curious_medicine_items.asm"
