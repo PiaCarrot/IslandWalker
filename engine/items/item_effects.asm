@@ -1181,88 +1181,143 @@ RareCandyEffect:
 
         call RareCandy_StatBooster_GetParameters
 
+        ; allow choosing how many candies to use based on current bag quantity
+        farcall SelectQuantityToUseExpCandy
+        push af
+        call ExitMenu
+        pop af
+        jp c, RareCandy_StatBooster_ExitMenu
+
+        ld a, [wItemQuantityChange]
+        ld e, a                 ; desired quantity
+        ld a, [wCurPartyLevel]
+        ld d, a                 ; starting level
+        ld a, [wLevelCap]
+        sub d
+        ld c, a                 ; levels until cap
+        ld a, e
+        cp c
+        jr c, .qty_ok
+        ld a, c
+        ld e, a
+        ld [wItemQuantityChange], a
+.qty_ok
+        ld a, e
+        and a
+        jmp z, NoEffectMessage
+
+        ; preserve quantity and starting level across nickname fetch
+        push de
+        call GetCurNickname
+        pop de
+
+        ld a, d
+        ld b, a                 ; old level
+        ld a, e
+        add b
+        ld c, a                 ; new level
+
+        push bc                  ; preserve old/new levels
+
         ld a, MON_LEVEL
         call GetPartyParamLocation
+        ld [hl], c
+        ld a, c
+        ld [wCurPartyLevel], a
 
-        ld a, [wLevelCap]
+        ld d, c
+        farcall CalcExpAtLevel
+        ld a, MON_EXP
+        call GetPartyParamLocation
+        ldh a, [hMultiplicand + 0]
+        ld [hli], a
+        ldh a, [hMultiplicand + 1]
+        ld [hli], a
+        ldh a, [hMultiplicand + 2]
+        ld [hl], a
+
+        ld a, MON_MAXHP
+        call GetPartyParamLocation
+        ld a, [hli]
         ld b, a
+        ld c, [hl]
+        push bc
+        call UpdateStatsAfterItem
+
+        ld a, MON_MAXHP + 1
+        call GetPartyParamLocation
+
+        pop bc
+        ld a, [hld]
+        sub c
+        ld c, a
         ld a, [hl]
-        cp b
-        jmp nc, NoEffectMessage
+        sbc b
+        ld b, a
+        dec hl
+        ld a, [hl]
+        add c
+        ld [hld], a
+        ld a, [hl]
+        adc b
+        ld [hl], a
+        farcall LevelUpHappinessMod
 
-	inc a
-	ld [hl], a
-	ld [wCurPartyLevel], a
-	push de
-	ld d, a
-	farcall CalcExpAtLevel
+        ld a, PARTYMENUTEXT_LEVEL_UP
+        call ItemActionText
 
-	pop de
-	ld a, MON_EXP
-	call GetPartyParamLocation
+        xor a ; PARTYMON
+        ld [wMonType], a
+        predef CopyMonToTempMon
 
-	ldh a, [hMultiplicand + 0]
-	ld [hli], a
-	ldh a, [hMultiplicand + 1]
-	ld [hli], a
-	ldh a, [hMultiplicand + 2]
-	ld [hl], a
+        hlcoord 9, 0
+        lb bc, 10, 9
+        call Textbox
 
-	ld a, MON_MAXHP
-	call GetPartyParamLocation
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	push bc
-	call UpdateStatsAfterItem
+        hlcoord 11, 1
+        ld bc, 4
+        predef PrintTempMonStats
 
-	ld a, MON_MAXHP + 1
-	call GetPartyParamLocation
+        call WaitPressAorB_BlinkCursor
 
-	pop bc
-	ld a, [hld]
-	sub c
-	ld c, a
-	ld a, [hl]
-	sbc b
-	ld b, a
-	dec hl
-	ld a, [hl]
-	add c
-	ld [hld], a
-	ld a, [hl]
-	adc b
-	ld [hl], a
-	farcall LevelUpHappinessMod
+        pop bc                   ; restore old/new levels
+        xor a ; PARTYMON
+        ld [wMonType], a
+        ld a, [wCurPartySpecies]
+        ld [wTempSpecies], a
+.level_loop
+        inc b
+        ld a, b
+        ld [wCurPartyLevel], a
+        call GetCurNickname
+        ld a, [wCurPartySpecies]
+        ld [wTempSpecies], a
+        push bc
+        predef LearnLevelMoves
+        ld a, [wCurPartyMon]
+        push af
+        xor a
+        ld [wForceEvolution], a
+        farcall EvolvePokemon
+        pop af
+        ld [wCurPartyMon], a
+        ld a, [wCurPartySpecies]
+        ld d, a
+        ld a, [wTempSpecies]
+        cp d
+        jr z, .skip_post_moves
+        ld a, d
+        ld [wTempSpecies], a
+        call GetCurNickname
+        predef LearnLevelMoves
+.skip_post_moves
+        pop bc
+        ld a, b
+        cp c
+        jr nz, .level_loop
 
-	ld a, PARTYMENUTEXT_LEVEL_UP
-	call ItemActionText
-
-	xor a ; PARTYMON
-	ld [wMonType], a
-	predef CopyMonToTempMon
-
-	hlcoord 9, 0
-	lb bc, 10, 9
-	call Textbox
-
-	hlcoord 11, 1
-	ld bc, 4
-	predef PrintTempMonStats
-
-	call WaitPressAorB_BlinkCursor
-
-	xor a ; PARTYMON
-	ld [wMonType], a
-	ld a, [wCurPartySpecies]
-	ld [wTempSpecies], a
-	predef LearnLevelMoves
-
-	xor a
-	ld [wForceEvolution], a
-	farcall EvolvePokemon
-
-        jmp UseDisposableItem
+        ld hl, wNumItems
+        jmp TossItem
 
 ExpCandyEffect:
         farcall UpdateLevelCap
@@ -1397,10 +1452,11 @@ ExpCandyEffect:
         ld b, [hl]
         ld a, c
         cp b
-        jr z, .no_level_up
+        jp z, .no_level_up
         ld [hl], a
         ld [wCurPartyLevel], a
         ld c, a
+        push bc                  ; preserve old/new levels
 
         ld a, MON_MAXHP
         call GetPartyParamLocation
@@ -1446,31 +1502,47 @@ ExpCandyEffect:
 
         call WaitPressAorB_BlinkCursor
 
-        xor a ; PARTYMON
-        ld [wMonType], a
-        ld a, [wCurPartySpecies]
-        ld [wTempSpecies], a
+        pop bc                   ; restore old/new levels
+       xor a ; PARTYMON
+       ld [wMonType], a
+       ld a, [wCurPartySpecies]
+       ld [wTempSpecies], a
 .level_loop
-        inc b
-        ld a, b
-        ld [wCurPartyLevel], a
-        push bc
-        predef LearnLevelMoves
-        pop bc
-        ld a, b
-        cp c
-        jr nz, .level_loop
-        ld a, c
-        ld [wCurPartyLevel], a
-        xor a
-        ld [wForceEvolution], a
-        farcall EvolvePokemon
-        ld hl, wNumItems
-        jmp TossItem
+       inc b
+       ld a, b
+       ld [wCurPartyLevel], a
+       call GetCurNickname
+       ld a, [wCurPartySpecies]
+       ld [wTempSpecies], a
+       push bc
+       predef LearnLevelMoves
+       ld a, [wCurPartyMon]
+       push af
+       xor a
+       ld [wForceEvolution], a
+       farcall EvolvePokemon
+       pop af
+       ld [wCurPartyMon], a
+       ld a, [wCurPartySpecies]
+       ld d, a
+       ld a, [wTempSpecies]
+       cp d
+       jr z, .skip_post_moves
+       ld a, d
+       ld [wTempSpecies], a
+       call GetCurNickname
+       predef LearnLevelMoves
+.skip_post_moves
+       pop bc
+       ld a, b
+       cp c
+       jr nz, .level_loop
+       ld hl, wNumItems
+       jmp TossItem
 
 .no_level_up
-        ld hl, wNumItems
-        jmp TossItem
+       ld hl, wNumItems
+       jmp TossItem
 
 ExpCandyGainedExpText:
        text_far _ExpCandyGainedExpText
