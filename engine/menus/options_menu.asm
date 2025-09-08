@@ -1,14 +1,13 @@
 ; GetOptionPointer.Pointers indexes
 	const_def
-	const OPT_TEXT_SPEED    ; 0
-	const OPT_BATTLE_SCENE  ; 1
-	const OPT_BATTLE_STYLE  ; 2
+        const OPT_TEXT_SPEED    ; 0
+        const OPT_BATTLE_SCENE  ; 1
+        const OPT_BATTLE_STYLE  ; 2
         const OPT_SOUND         ; 3
-        const OPT_OAK_CHALLENGE ; 4
-        const OPT_CHALLENGE_MODE ; 5
-        const OPT_FRAME         ; 6
-        const OPT_CANCEL        ; 7
-DEF NUM_OPTIONS EQU const_value ; 8
+        const OPT_FRAME         ; 4
+        const OPT_CHALLENGES    ; 5
+        const OPT_CANCEL        ; 6
+DEF NUM_OPTIONS EQU const_value ; 7
 
 _Option:
 	call ClearJoypad
@@ -27,7 +26,7 @@ _Option:
 	ld [wJumptableIndex], a
 
 ; display the settings of each option when the menu is opened
-	ld c, NUM_OPTIONS - 2 ; omit frame type, the last option
+        ld c, NUM_OPTIONS - 2 ; omit frame type and cancel
 .print_text_loop
 	push bc
 	xor a
@@ -82,27 +81,24 @@ StringOptions:
 	db "        :<LF>"
         db "SOUND<LF>"
         db "        :<LF>"
-        db "OAK CHALLENGE<LF>"
-        db "        :<LF>"
-        db "CHALLENGE MODE<LF>"
-        db "        :<LF>"
         db "FRAME<LF>"
-	db "        :TYPE<LF>"
-	db "CANCEL@"
+        db "        :TYPE<LF>"
+        db "CHALLENGES<LF>"
+        db "        <LF>"
+        db "CANCEL@"
 
 GetOptionPointer:
 	jumptable .Pointers, wJumptableIndex
 
 .Pointers:
 ; entries correspond to OPT_* constants
-	dw Options_TextSpeed
-	dw Options_BattleScene
-	dw Options_BattleStyle
+        dw Options_TextSpeed
+        dw Options_BattleScene
+        dw Options_BattleStyle
         dw Options_Sound
-        dw Options_OakChallenge
-        dw Options_ChallengeMode
-	dw Options_Frame
-	dw Options_Cancel
+        dw Options_Frame
+        dw Options_Challenges
+        dw Options_Cancel
 
 	const_def
 	const OPT_TEXT_SPEED_FAST ; 0
@@ -311,6 +307,17 @@ Options_Sound:
 .Mono:   db "MONO  @"
 .Stereo: db "STEREO@"
 
+Options_Challenges:
+        ldh a, [hJoyPressed]
+        and PAD_A
+        ret z
+        call ChallengesMenu
+        ld a, OPT_CHALLENGES
+        ld [wJumptableIndex], a
+        call Options_UpdateCursorPosition
+        and a
+        ret
+
 Options_OakChallenge:
         ld hl, wOptions2
         ldh a, [hJoyPressed]
@@ -341,7 +348,7 @@ Options_OakChallenge:
         ld de, .On
 
 .Display:
-        hlcoord 11, 11
+        hlcoord 11, 3
         rst PlaceString
         and a
         ret
@@ -379,7 +386,7 @@ Options_ChallengeMode:
         ld de, .On
 
 .Display:
-        hlcoord 11, 13
+        hlcoord 11, 5
         rst PlaceString
         and a
         ret
@@ -411,7 +418,7 @@ Options_Frame:
 	ld [hl], a
 UpdateFrame:
 	ld a, [wTextboxFrame]
-	hlcoord 16, 15 ; where on the screen the number is drawn
+	hlcoord 16, 11 ; where on the screen the number is drawn
 	add "1"
 	ld [hl], a
 	call LoadFontsExtra
@@ -430,57 +437,43 @@ Options_Cancel:
 	ret
 
 OptionsControl:
-	ld hl, wJumptableIndex
-	ldh a, [hJoyLast]
-	cp PAD_DOWN
-	jr z, .DownPressed
-	cp PAD_UP
-	jr z, .UpPressed
-	and a
-	ret
+        ld hl, wJumptableIndex
+        ldh a, [hJoyLast]
+        cp PAD_DOWN
+        jr z, .DownPressed
+        cp PAD_UP
+        jr z, .UpPressed
+        and a
+        ret
 
 .DownPressed:
-	ld a, [hl]
+        ld a, [hl]
         cp OPT_CANCEL ; maximum option index
-        jr nz, .CheckChallengeMode
-	ld [hl], OPT_TEXT_SPEED ; first option
-	scf
-	ret
-
-.CheckChallengeMode: ; I have no idea why this exists...
-        cp OPT_CHALLENGE_MODE
         jr nz, .Increase
-        ld [hl], OPT_CHALLENGE_MODE
+        ld [hl], OPT_TEXT_SPEED ; first option
+        scf
+        ret
 
 .Increase:
-	inc [hl]
-	scf
-	ret
+        inc [hl]
+        scf
+        ret
 
 .UpPressed:
-	ld a, [hl]
-
-; Another thing where I'm not sure why it exists
-        cp OPT_FRAME
-        jr nz, .NotFrame
-        ld [hl], OPT_CHALLENGE_MODE
-	scf
-	ret
-
-.NotFrame:
-	and a ; OPT_TEXT_SPEED, minimum option index
-	jr nz, .Decrease
-	ld [hl], NUM_OPTIONS ; decrements to OPT_CANCEL, maximum option index
+        ld a, [hl]
+        and a ; OPT_TEXT_SPEED, minimum option index
+        jr nz, .Decrease
+        ld [hl], NUM_OPTIONS ; decrements to OPT_CANCEL, maximum option index
 
 .Decrease:
-	dec [hl]
-	scf
-	ret
+        dec [hl]
+        scf
+        ret
 
 Options_UpdateCursorPosition:
-	hlcoord 1, 1
-	ld de, SCREEN_WIDTH
-	ld c, SCREEN_HEIGHT - 2
+        hlcoord 1, 1
+        ld de, SCREEN_WIDTH
+        ld c, SCREEN_HEIGHT - 2
 .loop
 	ld [hl], " "
 	add hl, de
@@ -488,7 +481,164 @@ Options_UpdateCursorPosition:
 	jr nz, .loop
 	hlcoord 1, 2
 	ld bc, 2 * SCREEN_WIDTH
-	ld a, [wJumptableIndex]
-	rst AddNTimes
-	ld [hl], "▶"
-	ret
+        ld a, [wJumptableIndex]
+        rst AddNTimes
+        ld [hl], "▶"
+        ret
+
+Options_Reload:
+        call ClearJoypad
+        call ClearBGPalettes
+        hlcoord 0, 0
+        lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
+        call Textbox
+        hlcoord 2, 2
+        ld de, StringOptions
+        rst PlaceString
+        xor a
+        ld [wJumptableIndex], a
+
+        ld c, NUM_OPTIONS - 2 ; omit frame and cancel
+.print_loop
+        push bc
+        xor a
+        ldh [hJoyLast], a
+        call GetOptionPointer
+        pop bc
+        ld hl, wJumptableIndex
+        inc [hl]
+        dec c
+        jr nz, .print_loop
+        call UpdateFrame
+
+        xor a
+        ld [wJumptableIndex], a
+        inc a
+        ldh [hBGMapMode], a
+        call WaitBGMap
+        ld b, SCGB_DIPLOMA
+        call GetSGBLayout
+        call SetDefaultBGPAndOBP
+        ret
+
+ChallengesMenu:
+        call ClearJoypad
+        ld hl, hInMenu
+        ld a, [hl]
+        push af
+        ld [hl], TRUE
+        call ClearBGPalettes
+        hlcoord 0, 0
+        lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
+        call Textbox
+        hlcoord 2, 2
+        ld de, StringChallengeOptions
+        rst PlaceString
+        xor a
+        ld [wJumptableIndex], a
+
+        ld c, NUM_CHALLENGE_OPTIONS - 1 ; omit Back option
+.cprint_loop
+        push bc
+        xor a
+        ldh [hJoyLast], a
+        call GetChallengeOptionPointer
+        pop bc
+        ld hl, wJumptableIndex
+        inc [hl]
+        dec c
+        jr nz, .cprint_loop
+
+        xor a
+        ld [wJumptableIndex], a
+        inc a
+        ldh [hBGMapMode], a
+        call WaitBGMap
+        ld b, SCGB_DIPLOMA
+        call GetSGBLayout
+        call SetDefaultBGPAndOBP
+
+.cjoypad_loop
+        call JoyTextDelay
+        ldh a, [hJoyPressed]
+        and PAD_START | PAD_B
+        jr nz, .Exit
+        call ChallengeOptionsControl
+        jr c, .cdpad
+        call GetChallengeOptionPointer
+        jr c, .Exit
+
+.cdpad
+        call Options_UpdateCursorPosition
+        ld c, 3
+        call DelayFrames
+        jr .cjoypad_loop
+
+.Exit
+        ld de, SFX_TRANSACTION
+        call PlaySFX
+        call WaitSFX
+        pop af
+        ldh [hInMenu], a
+        call Options_Reload
+        ret
+
+StringChallengeOptions:
+        db "OAK CHALLENGE<LF>"
+        db "        :<LF>"
+        db "CHALLENGE MODE<LF>"
+        db "        :<LF>"
+        db "BACK TO OPTIONS@"
+
+GetChallengeOptionPointer:
+        jumptable .Pointers, wJumptableIndex
+.Pointers:
+        dw Options_OakChallenge
+        dw Options_ChallengeMode
+        dw Options_BackToOptions
+
+        const_def
+        const CHAL_OPT_OAK ; 0
+        const CHAL_OPT_MODE ; 1
+        const CHAL_OPT_BACK ; 2
+DEF NUM_CHALLENGE_OPTIONS EQU const_value ; 3
+
+Options_BackToOptions:
+        ldh a, [hJoyPressed]
+        and PAD_A
+        jr nz, .ExitBack
+        and a
+        ret
+.ExitBack:
+        scf
+        ret
+
+ChallengeOptionsControl:
+        ld hl, wJumptableIndex
+        ldh a, [hJoyLast]
+        cp PAD_DOWN
+        jr z, .Down
+        cp PAD_UP
+        jr z, .Up
+        and a
+        ret
+.Down:
+        ld a, [hl]
+        cp CHAL_OPT_BACK
+        jr nz, .Inc
+        ld [hl], CHAL_OPT_OAK
+        scf
+        ret
+.Inc:
+        inc [hl]
+        scf
+        ret
+.Up:
+        ld a, [hl]
+        and a
+        jr nz, .Dec
+        ld [hl], NUM_CHALLENGE_OPTIONS
+.Dec:
+        dec [hl]
+        scf
+        ret
