@@ -394,6 +394,45 @@ Options_ChallengeMode:
 .Off: db "OFF@"
 .On:  db "ON @"
 
+Options_LevelLimits:
+        ld hl, wOptions2
+        ldh a, [hJoyPressed]
+        bit B_PAD_LEFT, a
+        jr nz, .LeftPressed
+        bit B_PAD_RIGHT, a
+        jr z, .NonePressed
+        bit LEVEL_LIMITS, [hl]
+        jr nz, .ToggleOff
+        jr .ToggleOn
+
+.LeftPressed:
+        bit LEVEL_LIMITS, [hl]
+        jr z, .ToggleOn
+        jr .ToggleOff
+
+.NonePressed:
+        bit LEVEL_LIMITS, [hl]
+        jr nz, .ToggleOn
+
+.ToggleOff:
+        res LEVEL_LIMITS, [hl]
+        ld de, .Off
+        jr .Display
+
+.ToggleOn:
+        set LEVEL_LIMITS, [hl]
+        ld de, .On
+
+.Display:
+        hlcoord 11, 7
+        rst PlaceString
+        farcall UpdateLevelCap
+        and a
+        ret
+
+.Off: db "OFF@"
+.On:  db "ON @"
+
 Options_Frame:
 	ld hl, wTextboxFrame
 	ldh a, [hJoyPressed]
@@ -590,6 +629,8 @@ StringChallengeOptions:
         db "        :<LF>"
         db "CHALLENGE MODE<LF>"
         db "        :<LF>"
+        db "LEVEL LIMITS<LF>"
+        db "        :<LF>"
         db "BACK@"
 
 GetChallengeOptionPointer:
@@ -597,13 +638,15 @@ GetChallengeOptionPointer:
 .Pointers:
         dw Options_OakChallenge
         dw Options_ChallengeMode
+        dw Options_LevelLimits
         dw Options_BackToOptions
 
         const_def
-        const CHAL_OPT_OAK ; 0
-        const CHAL_OPT_MODE ; 1
-        const CHAL_OPT_BACK ; 2
-DEF NUM_CHALLENGE_OPTIONS EQU const_value ; 3
+        const CHAL_OPT_OAK   ; 0
+        const CHAL_OPT_MODE  ; 1
+        const CHAL_OPT_LIMIT ; 2
+        const CHAL_OPT_BACK  ; 3
+DEF NUM_CHALLENGE_OPTIONS EQU const_value ; 4
 
 Options_BackToOptions:
         ldh a, [hJoyPressed]
@@ -665,6 +708,7 @@ PrintChallengeDescription:
 ChallengeDescriptionPointers:
         dw ChallengeDesc_Oak
         dw ChallengeDesc_Mode
+        dw ChallengeDesc_Limit
         dw ChallengeDesc_Back
 
 ChallengeDesc_Oak:
@@ -677,6 +721,11 @@ ChallengeDesc_Mode:
         db "Makes bosses all<LF>"
         db "<LF>"
         db "much harder!@"
+ChallengeDesc_Limit:
+        db "<LF>"
+        db "Caps your party's<LF>"
+        db "<LF>"
+        db "levels by badges!@"
 ChallengeDesc_Back:
         db "<LF>"
         db "Return to the<LF>"

@@ -9,10 +9,10 @@ DefaultOptions:
 	db 1 << FAST_TEXT_DELAY_F
 ; wGBPrinterBrightness: normal
 	db GBPRINTER_NORMAL
-; wOptions2: oak challenge off, challenge mode off
+; wOptions2: oak challenge off, challenge mode off, level limits off
         db 0
 
-	db $00
-	db $00
+        db MAX_LEVEL ; wLevelCap
+        db $00
 .End
 	assert DefaultOptions.End - DefaultOptions == wOptionsEnd - wOptions

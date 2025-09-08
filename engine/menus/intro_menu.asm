@@ -218,9 +218,12 @@ endc
 	ld [hli], a
 	ld a, HIGH(MOM_MONEY) ; mid
 	ld [hli], a
-	ld [hl], LOW(MOM_MONEY)
+        ld [hl], LOW(MOM_MONEY)
 
-	call InitializeNPCNames
+        ld a, MAX_LEVEL
+        ld [wLevelCap], a
+
+        call InitializeNPCNames
 
 	farcall InitDecorations
 

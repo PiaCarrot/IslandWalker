@@ -7201,11 +7201,12 @@ GiveExperiencePoints:
 	and a
 	ret nz
 
-	ld a, [wInBattleTowerBattle]
-	bit IN_BATTLE_TOWER_BATTLE_F, a
-	ret nz
+        ld a, [wInBattleTowerBattle]
+        bit IN_BATTLE_TOWER_BATTLE_F, a
+        ret nz
 
-	call .EvenlyDivideExpAmongParticipants
+        farcall UpdateLevelCap
+        call .EvenlyDivideExpAmongParticipants
 	xor a
 	ld [wCurPartyMon], a
 	ld bc, wPartyMon1Species
@@ -7408,10 +7409,11 @@ GiveExperiencePoints:
 	ld a, [hl]
 	ld [wCurSpecies], a
 	call GetBaseData
-	push bc
-	ld d, MAX_LEVEL
-	farcall CalcExpAtLevel
-	pop bc
+        push bc
+        ld a, [wLevelCap]
+        ld d, a
+        farcall CalcExpAtLevel
+        pop bc
 	ld hl, MON_EXP + 2
 	add hl, bc
 	push bc
@@ -7442,11 +7444,15 @@ GiveExperiencePoints:
 	predef CopyMonToTempMon
 	farcall CalcLevel
 	pop bc
-	ld hl, MON_LEVEL
-	add hl, bc
-	ld a, [hl]
-	cp MAX_LEVEL
-	jmp nc, .next_mon
+        ld hl, MON_LEVEL
+        add hl, bc
+        ld a, [wLevelCap]
+        push bc
+        ld b, a
+        ld a, [hl]
+        cp b
+        pop bc
+        jmp nc, .next_mon
 	cp d
 	jmp z, .next_mon
 ; <NICKNAME> grew to level ##!
@@ -7696,9 +7702,14 @@ AnimateExpBar:
 	cp [hl]
 	jmp nz, .finish
 
-	ld a, [wBattleMonLevel]
-	cp MAX_LEVEL
-	jmp nc, .finish
+        farcall UpdateLevelCap
+        ld a, [wLevelCap]
+        push bc
+        ld b, a
+        ld a, [wBattleMonLevel]
+        cp b
+        pop bc
+        jmp nc, .finish
 
 	ldh a, [hProduct + 3]
 	ld [wExperienceGained + 2], a
@@ -7734,8 +7745,9 @@ AnimateExpBar:
 	ld [hl], a
 
 .NoOverflow:
-	ld d, MAX_LEVEL
-	farcall CalcExpAtLevel
+        ld a, [wLevelCap]
+        ld d, a
+        farcall CalcExpAtLevel
 	ldh a, [hProduct + 1]
 	ld b, a
 	ldh a, [hProduct + 2]
@@ -7769,11 +7781,15 @@ AnimateExpBar:
 	ld d, a
 
 .LoopLevels:
-	ld a, e
-	cp MAX_LEVEL
-	jr nc, .FinishExpBar
-	cp d
-	jr z, .FinishExpBar
+        ld a, [wLevelCap]
+        push bc
+        ld b, a
+        ld a, e
+        cp b
+        pop bc
+        jr nc, .FinishExpBar
+        cp d
+        jr z, .FinishExpBar
 	inc a
 	ld [wTempMonLevel], a
 	ld [wCurPartyLevel], a

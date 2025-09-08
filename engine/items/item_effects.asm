@@ -1173,19 +1173,22 @@ RareCandy_StatBooster_GetParameters:
 	jmp GetCurNickname
 
 RareCandyEffect:
-	ld b, PARTYMENUACTION_HEALING_ITEM
-	call UseItem_SelectMon
+        farcall UpdateLevelCap
+        ld b, PARTYMENUACTION_HEALING_ITEM
+        call UseItem_SelectMon
 
-	jmp c, RareCandy_StatBooster_ExitMenu
+        jmp c, RareCandy_StatBooster_ExitMenu
 
-	call RareCandy_StatBooster_GetParameters
+        call RareCandy_StatBooster_GetParameters
 
-	ld a, MON_LEVEL
-	call GetPartyParamLocation
+        ld a, MON_LEVEL
+        call GetPartyParamLocation
 
-	ld a, [hl]
-	cp MAX_LEVEL
-	jmp nc, NoEffectMessage
+        ld a, [wLevelCap]
+        ld b, a
+        ld a, [hl]
+        cp b
+        jmp nc, NoEffectMessage
 
 	inc a
 	ld [hl], a

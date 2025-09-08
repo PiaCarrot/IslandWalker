@@ -1586,8 +1586,10 @@ wGBPrinterBrightness::
 wOptions2::
 ; bit 0: oak challenge off/on
 ; bit 1: challenge mode off/on
+; bit 2: level limits off/on
         db
-	ds 2
+wLevelCap:: db
+        ds 1
 wOptionsEnd::
 
 ; Time buffer, for counting the amount of time since

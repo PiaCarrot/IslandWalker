@@ -189,10 +189,11 @@ MikanGymCissyScript:
 	setevent EVENT_BEAT_FISHER_PIKE
 	opentext
 	writetext PlayerReceivedCoralEyeBadgeText
-	playsound SFX_GET_BADGE
-	waitsfx
-	setflag ENGINE_CORALEYEBADGE
-	setmapscene MANDARIN_NORTH, SCENE_MANDARIN_NORTH_LOOKER
+        playsound SFX_GET_BADGE
+        waitsfx
+        setflag ENGINE_CORALEYEBADGE
+        callasm UpdateLevelCap
+        setmapscene MANDARIN_NORTH, SCENE_MANDARIN_NORTH_LOOKER
 .FightDone:
 	checkevent EVENT_TM_49_SCALD
 	iftrue .GotScald

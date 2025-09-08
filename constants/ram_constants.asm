@@ -78,6 +78,7 @@ DEF GBPRINTER_DARKEST  EQU $7f
         const_def
         const OAK_CHALLENGE  ; 0
         const CHALLENGE_MODE ; 1
+        const LEVEL_LIMITS   ; 2
 
 ; wDST::
 DEF DST_F EQU 7

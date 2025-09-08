@@ -239,6 +239,7 @@ ScriptCommandTable:
         dw Script_checkcm                  ; b0
         dw Script_checkdex                 ; b1
         dw Script_checkoak                 ; b2
+        dw Script_checklvlcap              ; b3
         assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2018,6 +2019,16 @@ Script_checkoak:
         ld [wScriptVar], a
         ld a, [wOptions2]
         bit OAK_CHALLENGE, a
+        ret z
+        ld a, TRUE
+        ld [wScriptVar], a
+        ret
+
+Script_checklvlcap:
+        xor a
+        ld [wScriptVar], a
+        ld a, [wOptions2]
+        bit LEVEL_LIMITS, a
         ret z
         ld a, TRUE
         ld [wScriptVar], a

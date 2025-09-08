@@ -1122,4 +1122,9 @@ MACRO checkoak
         db checkoak_command
 ENDM
 
+        const checklvlcap_command ; $b3
+MACRO checklvlcap
+        db checklvlcap_command
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

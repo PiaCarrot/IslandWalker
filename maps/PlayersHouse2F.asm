@@ -103,8 +103,8 @@ PlayersHouseBookshelfScript:
 	giveitem LEAF_STONE
 	giveitem FIRE_STONE
 	giveitem THUNDERSTONE
-	giveitem WATER_STONE
-	givepoke MANAPHY, 100
+	giveitem RARE_CANDY, 99
+	givepoke MANAPHY, 16
 	callasm CheatFillPokedex
 	setflag ENGINE_POKEDEX
 	end

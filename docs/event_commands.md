@@ -570,3 +570,6 @@ Stores the number of Pokémon caught in `VAR`.
 
 ## `$B2`: `checkoak`
 Sets `VAR` to `TRUE` if the Oak Challenge is enabled; otherwise `FALSE`.
+
+## `$B3`: `checklvlcap`
+Sets `VAR` to `TRUE` if Level Limits are enabled; otherwise `FALSE`.
