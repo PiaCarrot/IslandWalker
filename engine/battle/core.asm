@@ -7322,20 +7322,33 @@ GiveExperiencePoints:
 	ld b, a
 	jr .ev_loop
 .evs_done
-	xor a
-	ldh [hMultiplicand + 0], a
-	ldh [hMultiplicand + 1], a
-	ld a, [wEnemyMonBaseExp]
-	ldh [hMultiplicand + 2], a
-	ld a, [wEnemyMonLevel]
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, 7
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+        ; Stop experience gain at level cap or MAX_LEVEL
+        pop de
+        push de
+        ld hl, MON_LEVEL
+        add hl, de
+        ld a, [wLevelCap]
+        ld b, a
+        ld a, [hl]
+        cp b
+        jr c, .give_exp
+        pop bc
+        jmp .next_mon
+.give_exp
+        xor a
+        ldh [hMultiplicand + 0], a
+        ldh [hMultiplicand + 1], a
+        ld a, [wEnemyMonBaseExp]
+        ldh [hMultiplicand + 2], a
+        ld a, [wEnemyMonLevel]
+        ldh [hMultiplier], a
+        call Multiply
+        ld a, 7
+        ldh [hDivisor], a
+        ld b, 4
+        call Divide
 ; Boost Experience for traded Pokemon
-	pop bc
+        pop bc
 	ld hl, MON_OT_ID
 	add hl, bc
 	ld a, [wPlayerID]
