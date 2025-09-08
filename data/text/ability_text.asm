@@ -89,3 +89,11 @@ AbilityText_PickupFoundItem:
     text_ram wStringBuffer1
     text "!"
     prompt
+
+AbilityText_PickupMadeItem:
+    text_ram wStringBuffer2
+    text " made a"
+    line "@"
+    text_ram wStringBuffer1
+    text "!"
+    prompt

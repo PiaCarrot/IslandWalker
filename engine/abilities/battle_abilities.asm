@@ -252,8 +252,21 @@ HandlePickup::
     call GetPartyLocation
     ld c, d
     call GetAbility
-    cp PICKUP
-    jr nz, .next_mon
+    ld b, a
+    ld hl, PickupAbilityItemTables
+.ability_loop
+    ld a, [hli]
+    cp $ff
+    jr z, .next_mon
+    cp b
+    jr z, .ability_ok
+    inc hl
+    inc hl
+    jr .ability_loop
+.ability_ok
+    ld e, [hl]
+    inc hl
+    ld d, [hl]
     ; Check if holding an item
     ld a, [wCurPartyMon]
     ld hl, wPartyMon1Item
@@ -262,14 +275,18 @@ HandlePickup::
     and a
     jr nz, .next_mon
     ; 10% chance to pick up an item
+    push de
     call BattleRandom
+    pop de
     cp 10 percent
     jr nc, .next_mon
     push hl
+    ld h, d
+    ld l, e
     call Pickup_GetItem
     call GetItemIDFromIndex
     ld e, a
-	ld [wNamedObjectIndex], a
+        ld [wNamedObjectIndex], a
     pop hl
     ld [hl], e
     ; Get nickname into wStringBuffer2
@@ -281,16 +298,16 @@ HandlePickup::
     ; Display message
     ld hl, AbilityText_PickupFoundItem
     call StdAbilityTextbox
+    jr .next_mon
 .next_mon
     ld hl, wCurPartyMon
     inc [hl]
     jr .loop_mons
 
-; Select a random item based on Pickup probabilities
+; Select a random item from the table in HL
 Pickup_GetItem:
     ld a, 100
     call BattleRandomRange
-    ld hl, PickupItems
 .item_loop
     ld b, [hl]
     inc hl
@@ -308,4 +325,22 @@ Pickup_GetItem:
     ld l, e
     ret
 
+PickupAbilityItemTables:
+    db PICKUP
+    dw PickupItems
+    db HONEY_GATHER
+    dw HoneyGatherItems
+    db GOOD_AS_GOLD
+    dw GoodAsGoldItems
+    db FLOWER_GIFT
+    dw FlowerGiftItems
+    db POWER_OF_ALCHEMY
+    dw PowerOfAlchemyItems
+    db $ff
+    dw 0
+
 INCLUDE "data/abilities/pickup_items.asm"
+INCLUDE "data/abilities/honey_gather_items.asm"
+INCLUDE "data/abilities/good_as_gold_items.asm"
+INCLUDE "data/abilities/flower_gift_items.asm"
+INCLUDE "data/abilities/power_of_alchemy_items.asm"
