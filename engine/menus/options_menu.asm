@@ -763,12 +763,12 @@ ChallengeDesc_Mode:
         db "<LF>"
         db "Makes bosses all<LF>"
         db "<LF>"
-        db "much harder!@"
+        db "much harder.@"
 ChallengeDesc_Limit:
         db "<LF>"
         db "Caps your max LVL<LF>"
         db "<LF>"
-        db "based on BADGEs!@"
+        db "based on BADGEs.@"
 ChallengeDesc_Inverse:
         db "<LF>"
         db "Reverses all TYPE<LF>"
