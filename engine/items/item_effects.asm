@@ -1283,6 +1283,14 @@ ExpCandyEffect:
         jmp NoEffectMessage
 
 .can_gain_exp
+      ; allow choosing how many candies to use based on current bag quantity
+      farcall SelectQuantityToToss
+      push af
+      call ExitMenu
+      pop af
+      jp c, RareCandy_StatBooster_ExitMenu
+      call GetCurNickname
+
        ; determine experience amount based on candy size
        ld a, [wCurItem]
        call GetItemIndexFromID
@@ -1298,6 +1306,22 @@ ExpCandyEffect:
        ld e, [hl]
        inc hl
        ld d, [hl]
+       xor a
+       ldh [hMultiplicand + 0], a
+       ld a, d
+       ldh [hMultiplicand + 1], a
+       ld a, e
+       ldh [hMultiplicand + 2], a
+       ld a, [wItemQuantityChange]
+       ldh [hMultiplier], a
+       call Multiply
+       ; use the low three bytes of the product as the gained experience
+       ldh a, [hProduct + 3]
+       ld e, a
+       ldh a, [hProduct + 2]
+       ld d, a
+       ldh a, [hProduct + 1]
+       ld c, a
 
         ; store original experience for message
         ld a, MON_EXP
@@ -1311,15 +1335,15 @@ ExpCandyEffect:
 
         ld a, MON_EXP + 2
         call GetPartyParamLocation
-        ld a, [hl]
-        add e
-        ld [hld], a
-        ld a, [hl]
-        adc d
-        ld [hld], a
-        ld a, [hl]
-        adc 0
-        ld [hl], a
+       ld a, [hl]
+       add e
+       ld [hld], a
+       ld a, [hl]
+       adc d
+       ld [hld], a
+       ld a, [hl]
+       adc c
+       ld [hl], a
 
         xor a ; PARTYMON
         ld [wMonType], a
@@ -1344,28 +1368,29 @@ ExpCandyEffect:
         push bc
         ld a, MON_EXP
         call GetPartyParamLocation
-        ld a, [hli]
-        ld d, a
-        ld a, [hli]
-        ld e, a
-        ld a, [hli]
-        ld b, a
-       ld a, b
+       ld a, [hli]
+       ld d, a
+       ld a, [hli]
+       ld e, a
+       ld a, [hli]
+       ld b, a
        ld hl, wStringBuffer3 + 2
+       ld a, b
        sub [hl]
-       ld [wStringBuffer2 + 1], a
-       ld a, e
-       ld hl, wStringBuffer3 + 1
-       sbc [hl]
-       ld [wStringBuffer2], a
-       ld a, d
-       ld hl, wStringBuffer3
-       sbc [hl]
-       xor a
        ld [wStringBuffer2 + 2], a
-        ld hl, ExpCandyGainedExpText
-        call PrintText
-        pop bc
+       ld hl, wStringBuffer3 + 1
+       ld a, e
+       sbc [hl]
+       ld [wStringBuffer2 + 1], a
+	ld hl, wStringBuffer3
+	ld a, d
+	sbc [hl]
+	ld [wStringBuffer2], a
+	ld de, SFX_POTION
+	call WaitPlaySFX
+	ld hl, ExpCandyGainedExpText
+	call PrintText
+	pop bc
 
         ld a, MON_LEVEL
         call GetPartyParamLocation
@@ -1440,13 +1465,15 @@ ExpCandyEffect:
         xor a
         ld [wForceEvolution], a
         farcall EvolvePokemon
-        jmp UseDisposableItem
+        ld hl, wNumItems
+        jmp TossItem
 
 .no_level_up
-        jmp UseDisposableItem
+        ld hl, wNumItems
+        jmp TossItem
 
 ExpCandyGainedExpText:
-       text_far Text_MonGainedExpPoint
+       text_far _ExpCandyGainedExpText
        text_end
 
 ExpCandyExperience:
