@@ -228,3 +228,85 @@ Check_CritBlockingAbility:
     ret z
     cp SHELL_ARMOR
     ret
+
+; Ruby/Sapphire PICKUP ability: chance to find an item after battle
+HandlePickup::
+    ld a, [wPartyCount]
+    and a
+    ret z
+    xor a
+    ld [wCurPartyMon], a
+.loop_mons
+    ld a, [wCurPartyMon]
+    ld c, a
+    ld a, [wPartyCount]
+    cp c
+    ret z
+    ; Check ability
+    ld a, c
+    ld hl, wPartyMon1Species
+    call GetPartyLocation
+    ld d, [hl] ; preserve species
+    ld a, [wCurPartyMon]
+    ld hl, wPartyMon1Personality
+    call GetPartyLocation
+    ld c, d
+    call GetAbility
+    cp PICKUP
+    jr nz, .next_mon
+    ; Check if holding an item
+    ld a, [wCurPartyMon]
+    ld hl, wPartyMon1Item
+    call GetPartyLocation
+    ld a, [hl]
+    and a
+    jr nz, .next_mon
+    ; 10% chance to pick up an item
+    call BattleRandom
+    cp 10 percent
+    jr nc, .next_mon
+    push hl
+    call Pickup_GetItem
+    call GetItemIDFromIndex
+    ld e, a
+    pop hl
+    ld [hl], e
+    ; Get nickname into wStringBuffer2
+    call GetCurNickname
+    ld de, wStringBuffer1
+    call CopyName1
+    ; Get item name into wStringBuffer1
+    ld a, e
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ; Display message
+    ld hl, AbilityText_PickupFoundItem
+    call StdAbilityTextbox
+.next_mon
+    ld hl, wCurPartyMon
+    inc [hl]
+    jr .loop_mons
+
+; Select a random item based on Pickup probabilities
+Pickup_GetItem:
+    ld a, 100
+    call BattleRandomRange
+    ld hl, PickupItems
+.item_loop
+    ld b, [hl]
+    inc hl
+    cp b
+    jr c, .got_item
+    sub b
+    inc hl
+    inc hl
+    jr .item_loop
+.got_item
+    ld e, [hl]
+    inc hl
+    ld d, [hl]
+    ld h, d
+    ld l, e
+    ret
+
+INCLUDE "data/abilities/pickup_items.asm"

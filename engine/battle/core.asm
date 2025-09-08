@@ -8491,10 +8491,11 @@ ExitBattle:
 	ld a, [wBattleResult]
 	and $f
 	ret nz
-	call CheckPayDay
-	xor a
-	ld [wForceEvolution], a
-	predef EvolveAfterBattle
+        call CheckPayDay
+        farcall HandlePickup
+        xor a
+        ld [wForceEvolution], a
+        predef EvolveAfterBattle
 	farjp GivePokerusAndConvertBerries
 
 CleanUpBattleRAM:

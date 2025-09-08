@@ -1,0 +1,46 @@
+--- data/text/ability_text.asm
++++ data/text/ability_text.asm
+@@ -50,34 +50,42 @@ AbilityText_IntimidateBlocked:
+     prompt
+ 
+ ; In the name of looking pretty, and in not adding VWT/VWF, I have these two lovely functions.
+ AbilityText_TracedTheAbilityPlayer:
+     text "<USER> traced"
+     line "<TARGET>'s"
+     cont "@"
+     text_ram wStringBuffer1
+     text "!"
+     prompt
+ 
+ AbilityText_TracedTheAbilityEnemy:
+     text "<USER>"
+     line "traced <TARGET>'s"
+     cont "@"
+     text_ram wStringBuffer1
+     text "!"
+     prompt
+ 	
+ AbilityText_RunAway:
+     text "<TARGET>" ; Because the turn swaps, this matters.
+     line "fled using RUN"
+     cont "AWAY!"
+     prompt
+ 	
+-AbilityText_PreventedEscapeAbility: ; OK, because switching and escaping can get hairy with inconsistent GF code, this needs to be called out as such... 
++AbilityText_PreventedEscapeAbility: ; OK, because switching and escaping can get hairy with inconsistent GF code, this needs to be called out as such...
+     text "Enemy @"
+     text_ram wEnemyMonNickname
+     text ""
+     line "prevents escape"
+     cont "with @"
+     text_ram wStringBuffer1
+     text "!"
+     prompt
++
++AbilityText_PickupFoundItem:
++    text_ram wStringBuffer2
++    text " picked up"
++    line "@"
++    text_ram wStringBuffer1
++    text "!"
++    prompt
