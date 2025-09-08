@@ -485,11 +485,11 @@ MedicineIconsPointers:
         dw MintIcon ; QUIRKY_MINT
         dw AbilityUpIcon ; ABILITY_UP
         dw AntidoteIcon ; PINK_CURE
-        dw RareCandyIcon ; EXP_CANDY_XS
-        dw RareCandyIcon ; EXP_CANDY_S
-        dw RareCandyIcon ; EXP_CANDY_M
-        dw RareCandyIcon ; EXP_CANDY_L
-        dw RareCandyIcon ; EXP_CANDY_XL
+	dw ExpCandyXSIcon
+	dw ExpCandySIcon
+	dw ExpCandyMIcon
+	dw ExpCandyLIcon
+	dw ExpCandyXLIcon
 .IndirectEnd:
 
 ValuablesIconsPointers:
@@ -1736,20 +1736,20 @@ MedicineIconPalettes:
         RGB 30, 25, 28
         RGB 31, 15, 24
 ; EXP_CANDY_XS
-        RGB 15, 18, 29
-        RGB 10, 12, 24
+	RGB 18, 29, 31
+	RGB 03, 21, 24
 ; EXP_CANDY_S
-        RGB 15, 18, 29
-        RGB 10, 12, 24
+	RGB 18, 29, 31
+	RGB 03, 21, 24
 ; EXP_CANDY_M
-        RGB 15, 18, 29
-        RGB 10, 12, 24
+	RGB 18, 29, 31
+	RGB 03, 21, 24
 ; EXP_CANDY_L
-        RGB 15, 18, 29
-        RGB 10, 12, 24
+	RGB 18, 29, 31
+	RGB 03, 21, 24
 ; EXP_CANDY_XL
-        RGB 15, 18, 29
-        RGB 10, 12, 24
+	RGB 18, 29, 31
+	RGB 03, 21, 24
 .IndirectEnd:
 
 ValuablesIconPalettes:
@@ -2041,6 +2041,11 @@ AncientVaseIcon: INCBIN "gfx/items/ancient_vase.2bpp.lz"
 AncientCupIcon: INCBIN "gfx/items/ancient_cup.2bpp.lz"
 AncientJarIcon: INCBIN "gfx/items/ancient_jar.2bpp.lz"
 GoldStatueIcon: INCBIN "gfx/items/gold_statue.2bpp.lz"
+ExpCandyXSIcon: INCBIN "gfx/items/exp_candy_xs.2bpp.lz"
+ExpCandySIcon: INCBIN "gfx/items/exp_candy_s.2bpp.lz"
+ExpCandyMIcon: INCBIN "gfx/items/exp_candy_m.2bpp.lz"
+ExpCandyLIcon: INCBIN "gfx/items/exp_candy_l.2bpp.lz"
+ExpCandyXLIcon: INCBIN "gfx/items/exp_candy_xl.2bpp.lz"
 
 SECTION "Ball and Key Icons", ROMX
 NoBallIcon: INCBIN "gfx/items/no_item.2bpp.lz"
