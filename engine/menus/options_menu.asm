@@ -551,7 +551,8 @@ ChallengesMenu:
 
         xor a
         ld [wJumptableIndex], a
-        inc a
+        call PrintChallengeDescription
+        ld a, 1
         ldh [hBGMapMode], a
         call WaitBGMap
         ld b, SCGB_DIPLOMA
@@ -570,6 +571,7 @@ ChallengesMenu:
 
 .cdpad
         call Options_UpdateCursorPosition
+        call PrintChallengeDescription
         ld c, 3
         call DelayFrames
         jr .cjoypad_loop
@@ -584,11 +586,11 @@ ChallengesMenu:
         ret
 
 StringChallengeOptions:
-        db "OAK CHALLENGE<LF>"
+        db "OAK'S AMBITION<LF>"
         db "        :<LF>"
         db "CHALLENGE MODE<LF>"
         db "        :<LF>"
-        db "BACK TO OPTIONS@"
+        db "BACK@"
 
 GetChallengeOptionPointer:
         jumptable .Pointers, wJumptableIndex
@@ -642,3 +644,41 @@ ChallengeOptionsControl:
         dec [hl]
         scf
         ret
+
+PrintChallengeDescription:
+        hlcoord 0, 12
+        lb bc, 4, SCREEN_WIDTH - 2
+        call Textbox
+        ld a, [wJumptableIndex]
+        add a, a
+        ld e, a
+        ld d, 0
+        ld hl, ChallengeDescriptionPointers
+        add hl, de
+        ld e, [hl]
+        inc hl
+        ld d, [hl]
+        hlcoord 1, 13
+        rst PlaceString
+        ret
+
+ChallengeDescriptionPointers:
+        dw ChallengeDesc_Oak
+        dw ChallengeDesc_Mode
+        dw ChallengeDesc_Back
+
+ChallengeDesc_Oak:
+        db "<LF>"
+        db "Gotta Catch 'em<LF>"
+        db "<LF>"
+        db "all before GYMs!@"
+ChallengeDesc_Mode:
+        db "<LF>"
+        db "Makes bosses all<LF>"
+        db "<LF>"
+        db "much harder!@"
+ChallengeDesc_Back:
+        db "<LF>"
+        db "Return to the<LF>"
+        db "<LF>"
+        db "base OPTIONS.@"
