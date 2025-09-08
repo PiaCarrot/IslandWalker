@@ -104,6 +104,11 @@ PlayersHouseBookshelfScript:
 	giveitem FIRE_STONE
 	giveitem THUNDERSTONE
 	giveitem RARE_CANDY, 99
+	giveitem EXP_CANDY_XS, 99
+	giveitem EXP_CANDY_S, 99
+	giveitem EXP_CANDY_M, 99
+	giveitem EXP_CANDY_L, 99
+	giveitem EXP_CANDY_XL, 99
 	givepoke MANAPHY, 16
 	callasm CheatFillPokedex
 	setflag ENGINE_POKEDEX
