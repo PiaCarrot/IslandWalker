@@ -84,7 +84,7 @@ AbilityText_PreventedEscapeAbility: ; OK, because switching and escaping can get
 
 AbilityText_PickupFoundItem:
     text_ram wStringBuffer2
-    text " picked up"
+    text " found a"
     line "@"
     text_ram wStringBuffer1
     text "!"

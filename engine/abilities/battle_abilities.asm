@@ -269,6 +269,7 @@ HandlePickup::
     call Pickup_GetItem
     call GetItemIDFromIndex
     ld e, a
+	ld [wNamedObjectIndex], a
     pop hl
     ld [hl], e
     ; Get nickname into wStringBuffer2
@@ -276,8 +277,6 @@ HandlePickup::
     ld de, wStringBuffer1
     call CopyName1
     ; Get item name into wStringBuffer1
-    ld a, e
-    ld [wNamedObjectIndex], a
     call GetItemName
     ; Display message
     ld hl, AbilityText_PickupFoundItem
