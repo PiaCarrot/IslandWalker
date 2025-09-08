@@ -573,3 +573,6 @@ Sets `VAR` to `TRUE` if the Oak Challenge is enabled; otherwise `FALSE`.
 
 ## `$B3`: `checklvlcap`
 Sets `VAR` to `TRUE` if Level Limits are enabled; otherwise `FALSE`.
+
+## `$B4`: `checkinverse`
+Sets `VAR` to `TRUE` if Inverse Mode is enabled; otherwise `FALSE`.

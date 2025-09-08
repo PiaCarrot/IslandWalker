@@ -1127,4 +1127,9 @@ MACRO checklvlcap
         db checklvlcap_command
 ENDM
 
+        const checkinverse_command ; $b4
+MACRO checkinverse
+        db checkinverse_command
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

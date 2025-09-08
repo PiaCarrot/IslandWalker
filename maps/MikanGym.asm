@@ -273,7 +273,7 @@ CissyOakChallengePikaOrEeveeText:
 	done
 
 PlayerReceivedCoralEyeBadgeText:
-	text " received"
+	text "<PLAYER> received"
 	line "CORAL-EYE BADGE."
 	done
 

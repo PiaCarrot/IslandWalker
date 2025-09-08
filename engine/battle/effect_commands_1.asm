@@ -1358,20 +1358,23 @@ BattleCommand_Stab:
 	push hl
 	push bc
 	inc hl
-	ld a, [wTypeModifier]
-	and STAB_DAMAGE
-	ld b, a
-; If the target is immune to the move, treat it as a miss and calculate the damage as 0
-	ld a, [hl]
-	and a
-	jr nz, .NotImmune
-	inc a
-	ld [wAttackMissed], a
-	xor a
-.NotImmune:
-	ldh [hMultiplier], a
-	add b
-	ld [wTypeModifier], a
+        ld a, [wTypeModifier]
+        and STAB_DAMAGE
+        ld b, a
+; Apply the type matchup, inverting it for Inverse Battles.
+        ld a, [hl]
+        ld [wTypeMatchup], a
+        call MaybeInvertMatchup
+        ld a, [wTypeMatchup]
+        and a
+        jr nz, .apply
+        inc a
+        ld [wAttackMissed], a
+        xor a
+.apply:
+        ldh [hMultiplier], a
+        add b
+        ld [wTypeModifier], a
 
 	xor a
 	ldh [hMultiplicand + 0], a
@@ -1452,16 +1455,19 @@ CheckTypeMatchup:
 	ld [wTypeMatchup], a
 	ld hl, TypeMatchups
 .TypesLoop:
-	ld a, [hli]
-	cp -1
-	jr z, .End
-	cp -2
-	jr nz, .Next
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_IDENTIFIED, a
-	jr nz, .End
-	jr .TypesLoop
+        ld a, [hli]
+        cp -1
+        jr z, .End
+        cp -2
+        jr nz, .Next
+        ld a, BATTLE_VARS_SUBSTATUS1_OPP
+        call GetBattleVar
+        bit SUBSTATUS_IDENTIFIED, a
+        jr z, .TypesLoop
+        ld a, [wOptions2]
+        bit INVERSE_MODE, a
+        jr nz, .TypesLoop
+        jr .End
 
 .Next:
 	cp d
@@ -1500,7 +1506,49 @@ CheckTypeMatchup:
 	jr .TypesLoop
 
 .End:
-	jmp PopBCDEHL
+        call MaybeInvertMatchup
+        jmp PopBCDEHL
+
+MaybeInvertMatchup:
+; Any type that would be resistant or immune becomes weak instead, and vice versa.
+        ld a, [wOptions2]
+        bit INVERSE_MODE, a
+        ret z
+        ld a, [wTypeMatchup]
+        cp EFFECTIVE
+        ret z
+        cp SUPER_EFFECTIVE
+        jr z, .SetNotVery
+        cp 40
+        jr z, .SetQuarter
+        cp NOT_VERY_EFFECTIVE
+        jr z, .SetSuper
+        cp 2
+        jr z, .SetQuad
+        and a
+        jr nz, .Done
+        ld a, SUPER_EFFECTIVE
+        jr .Store
+
+.SetNotVery:
+        ld a, NOT_VERY_EFFECTIVE
+        jr .Store
+
+.SetQuarter:
+        ld a, 2
+        jr .Store
+
+.SetSuper:
+        ld a, SUPER_EFFECTIVE
+        jr .Store
+
+.SetQuad:
+        ld a, 40
+
+.Store:
+        ld [wTypeMatchup], a
+.Done:
+        ret
 
 BattleCommand_ResetTypeMatchup:
 ; Reset the type matchup multiplier to 1.0, if the type matchup is not 0.

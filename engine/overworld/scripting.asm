@@ -240,6 +240,7 @@ ScriptCommandTable:
         dw Script_checkdex                 ; b1
         dw Script_checkoak                 ; b2
         dw Script_checklvlcap              ; b3
+        dw Script_checkinverse             ; b4
         assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2029,6 +2030,16 @@ Script_checklvlcap:
         ld [wScriptVar], a
         ld a, [wOptions2]
         bit LEVEL_LIMITS, a
+        ret z
+        ld a, TRUE
+        ld [wScriptVar], a
+        ret
+
+Script_checkinverse:
+        xor a
+        ld [wScriptVar], a
+        ld a, [wOptions2]
+        bit INVERSE_MODE, a
         ret z
         ld a, TRUE
         ld [wScriptVar], a

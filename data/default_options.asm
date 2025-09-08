@@ -8,8 +8,8 @@ DefaultOptions:
 ; wTextboxFlags: use text speed
 	db 1 << FAST_TEXT_DELAY_F
 ; wGBPrinterBrightness: normal
-	db GBPRINTER_NORMAL
-; wOptions2: oak challenge off, challenge mode off, level limits off
+        db GBPRINTER_NORMAL
+; wOptions2: oak challenge off, challenge mode off, level limits off, inverse mode off
         db 0
 
         db MAX_LEVEL ; wLevelCap
