@@ -362,17 +362,25 @@ HandleCoinCollector::
     ld [hl], a
     ld a, [hl]
     cp HIGH(999)
-    jr c, .next
+    jr c, .display
     jr nz, .cap
     inc hl
     ld a, [hl]
     cp LOW(999)
-    jr c, .next
+    jr c, .display
 .cap
     ld hl, wGimmighoulCoins
     ld [hl], HIGH(999)
     inc hl
     ld [hl], LOW(999)
+.display
+    ld a, c
+    ld [wTextDecimalByte], a
+    call GetCurNickname
+    ld de, wStringBuffer1
+    call CopyName1
+    ld hl, AbilityText_CoinCollectorFoundCoins
+    call StdAbilityTextbox
 .next
     ld hl, wCurPartyMon
     inc [hl]

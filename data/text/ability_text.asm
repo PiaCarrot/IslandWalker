@@ -89,3 +89,11 @@ AbilityText_PickupFoundItem:
     text_ram wStringBuffer1
     text "!"
     prompt
+
+AbilityText_CoinCollectorFoundCoins:
+    text_ram wStringBuffer2
+    text " found"
+    line "@"
+    text_decimal wTextDecimalByte, 1, 3
+    text " old coins!"
+    prompt
