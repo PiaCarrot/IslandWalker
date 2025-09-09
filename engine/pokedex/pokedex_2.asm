@@ -115,7 +115,11 @@ DisplayDexEntry:
 	pop bc
 	ret z
 ; Get the height of the Pokemon.
-	ld a, [wCurPartySpecies]
+	; Use the currently selected species rather than the last party
+	; species. wTempSpecies is updated when scrolling through the
+	; Pokédex entries, ensuring the body data corresponds to the
+	; highlighted Pokémon.
+	ld a, [wTempSpecies]
 	ld [wCurSpecies], a
 	ld a, b
 	push af
