@@ -1,4 +1,4 @@
-db "TOXIC LIZAR@" ; species name
+db "TOXICLIZARD@" ; species name
 
 	db   "It creates harems"
 	next "of male SALANDIT"

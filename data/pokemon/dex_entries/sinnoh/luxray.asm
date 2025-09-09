@@ -1,4 +1,4 @@
-	db "MOUSE@" ; species name
+	db "GLEAM EYES@" ; species name
 
 	db   "It channels elec-"
 	next "tricity through"

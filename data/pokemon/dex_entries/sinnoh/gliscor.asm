@@ -1,4 +1,4 @@
-db "FANG SCORP@" ; species name
+db "FANGSCORPIO@" ; species name
 
 	db   "Its doesn't make"
 	next "any noise while"

@@ -1,4 +1,4 @@
-	db "SEA@" ; species name
+	db "SEA BASIN@" ; species name
 
 	db   "It is said to have"
 	next "widened the seas"

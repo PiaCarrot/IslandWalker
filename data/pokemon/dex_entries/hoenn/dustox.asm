@@ -1,4 +1,4 @@
-	db "POISON@" ; species name
+	db "POISON MOTH@" ; species name
 
 	db   "Toxic powder is"
 	next "scattered with"

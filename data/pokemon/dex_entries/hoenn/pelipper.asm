@@ -1,4 +1,4 @@
-	db "WATER@" ; species name
+	db "WATER BIRD@" ; species name
 
 	db   "It seems to get"
 	next "along with small"

@@ -1,4 +1,4 @@
-	db "IRON@" ; species name
+	db "IRON ARMOR@" ; species name
 
 	db   "In order to find"
 	next "enough food to"

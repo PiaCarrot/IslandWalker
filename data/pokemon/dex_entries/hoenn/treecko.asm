@@ -1,4 +1,4 @@
-	db "WOOD@" ; species name
+	db "WOOD GECKO@" ; species name
 
 	db   "The soles of its"
 	next "feet are covered"

@@ -1,4 +1,4 @@
-db "OGRE DARN@" ; species name
+db "OGRE DARNER@" ; species name
 
 	db   "Its wingbeats can"
 	next "knock down trees"

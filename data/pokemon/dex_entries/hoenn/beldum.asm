@@ -1,4 +1,4 @@
-	db "IRON@" ; species name
+	db "IRON BALL@" ; species name
 
 	db   "It converses with"
 	next "others by using"

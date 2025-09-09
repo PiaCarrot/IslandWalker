@@ -1,4 +1,4 @@
-db "INTERTWININ@" ; species name
+db "INTERTWINER@" ; species name
 
 	db   "It calms down a"
 	next "hostile enemy"

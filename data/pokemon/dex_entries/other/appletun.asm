@@ -1,4 +1,4 @@
-db "APPLE NECTA@" ; species name
+db "APPLENECTAR@" ; species name
 
 	db   "By eating a SWEET"
 	next "APPLE it achieved"

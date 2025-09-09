@@ -1,4 +1,4 @@
-	db "MOUSE@" ; species name
+	db "SPARK@" ; species name
 
 	db   "It tases its foe"
 	next "with its claws"

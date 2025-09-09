@@ -1,4 +1,4 @@
-	db "SNOW@" ; species name
+	db "SNOW HAT@" ; species name
 
 	db   "It is said if a"
 	next "SNORUNT visits a"

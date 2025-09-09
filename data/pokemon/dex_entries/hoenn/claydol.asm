@@ -1,4 +1,4 @@
-	db "CLAY@" ; species name
+	db "CLAY DOLL@" ; species name
 
 	db   "An ancient clay"
 	next "figurine that came"

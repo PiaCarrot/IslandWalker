@@ -1,4 +1,4 @@
-	db "LOUD@" ; species name
+	db "LOUD NOISE@" ; species name
 
 	db   "Its howls can be"
 	next "heard over six"

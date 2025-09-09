@@ -1,4 +1,4 @@
-	db "DEEP@" ; species name
+	db "DEEP SEA@" ; species name
 
 	db   "It lives deep in"
 	next "the sea. With a"

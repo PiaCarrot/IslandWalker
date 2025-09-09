@@ -1,4 +1,4 @@
-	db "SKY@" ; species name
+	db "SKY HIGH@" ; species name
 
 	db   "It lives in the"
 	next "ozone layer far"

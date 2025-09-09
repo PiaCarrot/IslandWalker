@@ -1,4 +1,4 @@
-	db "FLYSCORPIO@" ; species name
+	db "FLYSCORPION@" ; species name
 
 	db   "It builds a nest"
 	next "on top of steep"

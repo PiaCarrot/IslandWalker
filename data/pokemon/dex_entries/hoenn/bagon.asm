@@ -1,4 +1,4 @@
-	db "ROCK@" ; species name
+	db "ROCK HEAD@" ; species name
 
 	db   "Dreaming of one"
 	next "day flying, it"

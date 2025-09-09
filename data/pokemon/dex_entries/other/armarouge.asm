@@ -1,4 +1,4 @@
-db "FIRE WARRIO@" ; species name
+db "FIREWARRIOR@" ; species name
 
 	db   "The armor it dons"
 	next "belonged to an"

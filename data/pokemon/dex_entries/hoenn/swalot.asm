@@ -1,4 +1,4 @@
-	db "POISON@" ; species name
+	db "POISON BAG@" ; species name
 
 	db   "It swallows any-"
 	next "thing whole. It"

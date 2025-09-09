@@ -1,4 +1,4 @@
-	db "WOOD@" ; species name
+	db "WOOD GECKO@" ; species name
 
 	db   "It lives in dense"
 	next "jungles. While"

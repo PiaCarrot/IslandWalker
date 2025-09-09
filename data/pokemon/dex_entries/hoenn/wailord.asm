@@ -1,4 +1,4 @@
-	db "FLOAT@" ; species name
+	db "FLOAT WHALE@" ; species name
 
 	db   "It is the largest"
 	next "of all #MON."

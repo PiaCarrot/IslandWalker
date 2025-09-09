@@ -1,4 +1,4 @@
-	db "BIG@" ; species name
+	db "BIG VOICE@" ; species name
 
 	db   "The shock waves"
 	next "from its cries can"

@@ -1,4 +1,4 @@
-	db "ICE@" ; species name
+        db "ICE BREAK@" ; species name
 
 	db   "Its thick tusks"
 	next "never stop grow-"

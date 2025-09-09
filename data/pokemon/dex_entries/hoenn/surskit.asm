@@ -1,4 +1,4 @@
-	db "POND@" ; species name
+	db "POND SKATER@" ; species name
 
 	db   "It appears as if"
 	next "it is skating on"

@@ -1,4 +1,4 @@
-db "GLOOMDWELLE@" ; species name
+db "GLOOMDWELLR@" ; species name
 
 	db   "It tests the very"
 	next "hearts of people"

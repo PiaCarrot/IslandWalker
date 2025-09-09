@@ -1,4 +1,4 @@
-	db "FANG@" ; species name
+	db "FANG SNAKE@" ; species name
 
 	db   "Its tail is sharp"
 	next "like a sword, and"

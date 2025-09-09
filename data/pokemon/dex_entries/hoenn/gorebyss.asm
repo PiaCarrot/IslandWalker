@@ -1,4 +1,4 @@
-	db "SOUTH@" ; species name
+	db "SOUTH SEA@" ; species name
 
 	db   "It lives at the"
 	next "bottom of the sea."

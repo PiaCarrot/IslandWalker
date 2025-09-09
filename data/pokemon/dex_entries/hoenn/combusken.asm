@@ -1,4 +1,4 @@
-	db "YOUNG@" ; species name
+	db "YOUNG FOWL@" ; species name
 
 	db   "Its kicking mas-"
 	next "tery lets it loose"

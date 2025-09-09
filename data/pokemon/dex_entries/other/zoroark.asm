@@ -1,4 +1,4 @@
-db "ILLUSION FO@" ; species name
+db "ILLUSIONFOX@" ; species name
 
 	db   "Bonds between"
 	next "these Pokemon are"

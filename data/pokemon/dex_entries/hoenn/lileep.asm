@@ -1,4 +1,4 @@
-	db "SEA@" ; species name
+	db "SEA LILY@" ; species name
 
 	db   "It lived on the"
 	next "seafloor 100 mil-"

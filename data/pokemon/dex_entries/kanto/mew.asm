@@ -1,4 +1,4 @@
-	db "NEW SPECIE@" ; species name
+	db "NEW SPECIES@" ; species name
 
 	db   "Its DNA was found"
 	next "on an island off"

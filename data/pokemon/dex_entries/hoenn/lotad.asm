@@ -1,4 +1,4 @@
-	db "WATER@" ; species name
+	db "WATER WEED@" ; species name
 
 	db   "It looks like an"
 	next "aquatic plant and"

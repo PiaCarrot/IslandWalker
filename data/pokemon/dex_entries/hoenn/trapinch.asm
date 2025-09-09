@@ -1,4 +1,4 @@
-	db "ANT@" ; species name
+	db "ANT PIT@" ; species name
 
 	db   "It digs a pit in"
 	next "the sand and will"

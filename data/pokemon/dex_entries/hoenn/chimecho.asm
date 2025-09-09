@@ -1,4 +1,4 @@
-	db "WIND@" ; species name
+	db "WIND CHIME@" ; species name
 
 	db   "It rides the wind"
 	next "to get from one"

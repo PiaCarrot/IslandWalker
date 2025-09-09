@@ -1,4 +1,4 @@
-db "SEA DRIFTR@" ; species name
+db "SEA DRIFTER@" ; species name
 
 	db   "It is not quite"
 	next "understood where"

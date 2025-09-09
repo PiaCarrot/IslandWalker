@@ -1,4 +1,4 @@
-	db "BALL@" ; species name
+        db "BALL ROLL@" ; species name
 
 	db   "It has excellent"
 	next "smell while swim-"

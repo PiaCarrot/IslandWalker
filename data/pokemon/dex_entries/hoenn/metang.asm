@@ -1,4 +1,4 @@
-	db "IRON@" ; species name
+	db "IRON CLAW@" ; species name
 
 	db   "It is formed by"
 	next "two BELDUM joining"

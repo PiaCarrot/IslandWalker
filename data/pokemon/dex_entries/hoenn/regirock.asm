@@ -1,4 +1,4 @@
-	db "ROCK@" ; species name
+	db "ROCK PEAK@" ; species name
 
 	db   "Its entire body is"
 	next "made of rock. If"

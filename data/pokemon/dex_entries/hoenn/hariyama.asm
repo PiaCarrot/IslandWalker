@@ -1,4 +1,4 @@
-	db "ARM@" ; species name
+	db "ARM THRUST@" ; species name
 
 	db   "It loves to match"
 	next "power with big-"

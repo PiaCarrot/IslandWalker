@@ -1,4 +1,4 @@
-	db "CLAY@" ; species name
+	db "CLAY DOLL@" ; species name
 
 	db   "It moves by spin-"
 	next "ning on its foot."

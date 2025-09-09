@@ -1,4 +1,4 @@
-	db "SPOT@" ; species name
+	db "SPOT PANDA@" ; species name
 
 	db   "It walks around"
 	next "stumbling and"

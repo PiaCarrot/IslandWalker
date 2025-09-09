@@ -1,4 +1,4 @@
-	db "POLKA@" ; species name
+	db "POLKA DOT@" ; species name
 
 	db   "It bounces on its"
 	next "tail like a rub-"

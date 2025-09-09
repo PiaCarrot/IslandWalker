@@ -1,4 +1,4 @@
-	db "IRON@" ; species name
+	db "IRON LEG@" ; species name
 
 	db   "METANG combined to"
 	next "form it. With four"

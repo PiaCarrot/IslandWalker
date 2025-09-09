@@ -1,4 +1,4 @@
-	db "BALL@" ; species name
+	db "BALL WHALE@" ; species name
 
 	db   "They have been"
 	next "observed beaching"

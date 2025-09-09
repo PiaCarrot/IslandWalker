@@ -1,4 +1,4 @@
-	db "MOUSE@" ; species name
+	db "FLASH@" ; species name
 
 	db   "Its fur will glow"
 	next "if electrocuted."

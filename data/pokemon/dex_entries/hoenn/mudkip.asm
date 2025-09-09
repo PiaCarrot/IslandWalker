@@ -1,4 +1,4 @@
-	db "MUD@" ; species name
+	db "MUD FISH@" ; species name
 
 	db   "To alert it, the"
 	next "fin on its head"

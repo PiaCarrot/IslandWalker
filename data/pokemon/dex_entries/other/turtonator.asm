@@ -1,4 +1,4 @@
-db "BLAST TURTL@" ; species name
+db "BLASTTURTLE@" ; species name
 
 	db   "The sulfur that"
 	next "it eats creates a"

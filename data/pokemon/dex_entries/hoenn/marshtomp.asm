@@ -1,4 +1,4 @@
-	db "MUD@" ; species name
+	db "MUD FISH@" ; species name
 
 	db   "Its sturdy legs"
 	next "give it sure foot-"

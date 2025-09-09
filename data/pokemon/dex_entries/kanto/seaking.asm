@@ -4,6 +4,6 @@
 	next "bores holes that"
 	next "it lays eggs in."
 
-	page "ARROKUDA can slip"
-	next "in with ease for"
-	next "an easy meal.@"
+	page "It likes to nest"
+	next "upstream to avoid"
+	next "predators.@"

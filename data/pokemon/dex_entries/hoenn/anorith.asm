@@ -1,4 +1,4 @@
-	db "OLD@" ; species name
+	db "OLD SHRIMP@" ; species name
 
 	db   "A #MON ancestor"
 	next "that was reani-"

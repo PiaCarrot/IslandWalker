@@ -1,4 +1,4 @@
-db "TOXIC LIZAR@" ; species name
+db "TOXICLIZARD@" ; species name
 
 	db   "It runs in fear"
 	next "from SPINDA, as"

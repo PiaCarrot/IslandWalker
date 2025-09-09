@@ -1,4 +1,4 @@
-	db "ILLUSION FO@" ; species name
+	db "BANEFUL FOX@" ; species name
 
 	db   "It will not hold"
 	next "back when it uses"

@@ -1,4 +1,4 @@
-	db "COTTON@" ; species name
+	db "COTTON BIRD@" ; species name
 
 	db   "It can be found"
 	next "grooming itself"

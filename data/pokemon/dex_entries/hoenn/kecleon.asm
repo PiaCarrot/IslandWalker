@@ -1,4 +1,4 @@
-	db "COLOR@" ; species name
+	db "COLOR SWAP@" ; species name
 
 	db   "Its color changes"
 	next "so that it can"

@@ -1,4 +1,4 @@
-	db "MUD@" ; species name
+	db "MUD FISH@" ; species name
 
 	db   "It can swim while"
 	next "towing a large"

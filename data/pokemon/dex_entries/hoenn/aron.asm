@@ -1,4 +1,4 @@
-	db "IRON@" ; species name
+	db "IRON ARMOR@" ; species name
 
 	db   "It eats metal to"
 	next "survive. Not even"

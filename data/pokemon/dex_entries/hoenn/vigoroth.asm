@@ -1,4 +1,4 @@
-	db "WILD@" ; species name
+	db "WILD MONKEY@" ; species name
 
 	db   "Its heart beats at"
 	next "a tenfold tempo,"
