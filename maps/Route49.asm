@@ -262,7 +262,10 @@ Route49HiddenStarPiece:
 
 Route49HiddenRevive:
 	hiddenitem REVIVE, EVENT_ROUTE_49_HIDDEN_REVIVE
-	
+
+Route49DigSpot:
+	digspot TINYMUSHROOM, EVENT_ROUTE_49_DIG_SPOT_TINYMUSHROOM
+
 Route49Potion:
 	itemball POTION
 
@@ -297,6 +300,7 @@ Route49_MapEvents:
 	bg_event 16, 16, BGEVENT_ITEM, Route49HiddenPotion
 	bg_event  3, 44, BGEVENT_ITEM, Route49HiddenStarPiece
 	bg_event  6, 31, BGEVENT_ITEM, Route49HiddenRevive
+	bg_event 18,  6, BGEVENT_DIG_SPOT, Route49DigSpot
 
 	def_object_events
 	object_event 33, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ValenciaCooltrainerScript, -1

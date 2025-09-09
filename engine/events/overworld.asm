@@ -1453,13 +1453,22 @@ AskRockSmashText:
 	text_end
 
 HasRockSmash:
-	ld hl, ROCK_SMASH
-	call CheckPartyMoveIndex
-	; a = carry ? TRUE : FALSE
-	sbc a
-	and TRUE
-	ld [wScriptVar], a
-	ret
+        ld hl, ROCK_SMASH
+        call CheckPartyMoveIndex
+        ; a = carry ? TRUE : FALSE
+        sbc a
+        and TRUE
+        ld [wScriptVar], a
+        ret
+
+HasDig:
+        ld hl, DIG
+        call CheckPartyMoveIndex
+        ; a = carry ? TRUE : FALSE
+        sbc a
+        and TRUE
+        ld [wScriptVar], a
+        ret
 
 FishFunction:
 	ld a, e

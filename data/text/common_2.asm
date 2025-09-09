@@ -108,18 +108,18 @@ _BoostedExpPointsText::
 	prompt
 
 _ExpPointsText::
-        text_start
-        line "@"
-        text_decimal wStringBuffer2, 2, 5
-        text " EXP. Points!"
-        prompt
+	text_start
+	line "@"
+	text_decimal wStringBuffer2, 2, 5
+	text " EXP. Points!"
+	prompt
 
 _ExpCandyGainedExpText::
-       text "Gained a total of"
-       line "@"
-       text_decimal wStringBuffer2, 3, 7
-       text " EXP.!"
-       prompt
+   text "Gained a total of"
+   line "@"
+   text_decimal wStringBuffer2, 3, 7
+   text " EXP.!"
+   prompt
 
 _GoMonText::
 	text "Go! @"
@@ -436,6 +436,22 @@ _AskRockSmashText::
 
 	para "Want to use ROCK"
 	line "SMASH?"
+	done
+
+_AskDigSpotText::
+	text "The ground's soft."
+	line "Want to use DIG?"
+	done
+
+_DigSpotNeedDigText::
+	text "The ground's soft."
+	line "A #MON may be"
+	cont "able to DIG here."
+	done
+
+_DigSpotAlreadyDugText::
+	text "This spot has"
+	line "already been dug."
 	done
 
 _RodBiteText::

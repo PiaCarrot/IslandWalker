@@ -656,9 +656,10 @@ BGEventJumptable:
 	dw .left
 	dw .ifset
 	dw .ifnotset
-	dw .itemifset
-	dw .copy
-	assert_table_length NUM_BGEVENTS
+        dw .itemifset
+        dw .copy
+        dw .digspot
+        assert_table_length NUM_BGEVENTS
 
 .up:
 	ld b, OW_UP
@@ -679,7 +680,7 @@ BGEventJumptable:
 	ld a, [wPlayerDirection]
 	and %1100
 	cp b
-	jr nz, .dontread
+	jp nz, .dontread
 .read:
 	call PlayTalkObject
 	ld hl, wCurBGEventScriptAddr
@@ -693,7 +694,7 @@ BGEventJumptable:
 
 .itemifset:
 	call CheckBGEventFlag
-	jr nz, .dontread
+	jp nz, .dontread
 	call PlayTalkObject
 	call GetMapScriptsBank
 	ld de, wHiddenItemData
@@ -720,15 +721,35 @@ BGEventJumptable:
 	ld de, wHiddenItemData
 	ld bc, wHiddenItemDataEnd - wHiddenItemData
 	call FarCopyBytes
-	ld hl, wHiddenItemID
-	push hl
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call GetItemIDFromIndex
-	pop hl
-	ld [hl], a
-	jr .dontread
+        ld hl, wHiddenItemID
+        push hl
+        ld a, [hli]
+        ld h, [hl]
+        ld l, a
+        call GetItemIDFromIndex
+        pop hl
+        ld [hl], a
+        jr .dontread
+
+.digspot:
+        call PlayTalkObject
+        call GetMapScriptsBank
+        ld de, wHiddenItemData
+        ld bc, wHiddenItemDataEnd - wHiddenItemData
+        call FarCopyBytes
+        ld hl, wHiddenItemID
+        push hl
+        ld a, [hli]
+        ld h, [hl]
+        ld l, a
+        call GetItemIDFromIndex
+        pop hl
+        ld [hl], a
+        ld a, BANK(DigSpotScript)
+        ld hl, DigSpotScript
+        call CallScript
+        scf
+        ret
 
 .ifset:
 	call CheckBGEventFlag

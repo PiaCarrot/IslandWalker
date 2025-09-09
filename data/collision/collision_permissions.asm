@@ -160,7 +160,7 @@ CollisionPermissionTable::
 	db WALL_TILE         ; COLL_SINISTER_MACHINE
 	db WALL_TILE         ; COLL_WINDOW
 	db WALL_TILE         ; 9e
-	db WALL_TILE         ; COLL_PERSIAN_STATUE
+    db WALL_TILE         ; COLL_PERSIAN_STATUE
 	db LAND_TILE         ; COLL_HOP_RIGHT
 	db LAND_TILE         ; COLL_HOP_LEFT
 	db LAND_TILE         ; COLL_HOP_UP

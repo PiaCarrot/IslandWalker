@@ -34,3 +34,55 @@ SetMemEvent:
 	ld e, a
 	ld b, SET_FLAG
 	jmp EventFlagAction
+
+CheckMemEvent:
+	ld hl, wHiddenItemEvent
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	ld [wScriptVar], a
+	ret
+
+DigSpotScript::
+	callasm CheckMemEvent
+	iftrue .dug
+	callasm HasDig
+	iffalse .nodig
+	opentext
+	writetext AskDigSpotText
+	yesorno
+	iftrue .dig
+	closetext
+	end
+
+.dig
+	callasm GetPartyNickname
+	writetext UseDigText
+	closetext
+	scall HiddenItemScript
+	end
+
+.nodig
+	jumptext DigSpotNeedDigText
+
+.dug
+	jumptext DigSpotAlreadyDugText
+	
+UseDigText:
+    text_far _UseDigText
+    text_end
+
+AskDigSpotText:
+	text_far _AskDigSpotText
+	text_end
+
+DigSpotNeedDigText:
+	text_far _DigSpotNeedDigText
+	text_end
+
+DigSpotAlreadyDugText:
+	text_far _DigSpotAlreadyDugText
+	text_end

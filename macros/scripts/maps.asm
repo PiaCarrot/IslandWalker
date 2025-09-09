@@ -161,7 +161,13 @@ ENDM
 MACRO hiddenitem
 ;\1: item: from constants/item_constants.asm
 ;\2: flag: an EVENT_* constant
-	dw \2, \1
+        dw \2, \1
+ENDM
+
+MACRO digspot
+;\1: item: from constants/item_constants.asm
+;\2: flag: an EVENT_* constant
+        dw \2, \1
 ENDM
 
 MACRO elevfloor

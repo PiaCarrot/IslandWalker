@@ -128,10 +128,11 @@ DEF SCENE_ALWAYS EQU -1
 	const BGEVENT_DOWN
 	const BGEVENT_RIGHT
 	const BGEVENT_LEFT
-	const BGEVENT_IFSET
-	const BGEVENT_IFNOTSET
-	const BGEVENT_ITEM
-	const BGEVENT_COPY
+        const BGEVENT_IFSET
+        const BGEVENT_IFNOTSET
+        const BGEVENT_ITEM
+        const BGEVENT_COPY
+        const BGEVENT_DIG_SPOT
 DEF NUM_BGEVENTS EQU const_value
 
 ; object_event types
