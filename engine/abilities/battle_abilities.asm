@@ -19,6 +19,8 @@ Check_Entrance_Ability:
     jr z, .pressure
     cp INTIMIDATE
     jr z, .intimidate
+    cp IMPOSTER
+    jr z, .imposter
     ; Otherwise, do nothing
     ret
 
@@ -83,6 +85,31 @@ Check_Entrance_Ability:
 ; Finally, print this
     ld hl, AbilityText_IntimidateCutsAttack
     call StdAbilityTextbox
+    ret
+
+.imposter
+    ; Ensure the Transform animation plays and the sprite updates
+    ldh a, [hBattleTurn]
+    and a
+    jr nz, .enemy
+    ld a, [wEnemyMonSpecies]
+    ld [wTempEnemyMonSpecies], a
+    jr .got_species
+.enemy
+    ld a, [wBattleMonSpecies]
+    ld [wTempBattleMonSpecies], a
+.got_species
+    ld hl, TRANSFORM
+    call GetMoveIDFromIndex
+    ld b, a
+    ld a, BATTLE_VARS_MOVE_ANIM
+    call GetBattleVarAddr
+    ld [hl], b
+    push hl
+    farcall BattleCommand_Transform
+    pop hl
+    xor a
+    ld [hl], a
     ret
 
 ; At this point, we say "Hey, this blocked that!"
