@@ -697,54 +697,34 @@ BGEventJumptable:
 	jp nz, .dontread
 	call PlayTalkObject
 	call GetMapScriptsBank
-	ld de, wHiddenItemData
-	ld bc, wHiddenItemDataEnd - wHiddenItemData
-	call FarCopyBytes
-	ld hl, wHiddenItemID
-	push hl
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call GetItemIDFromIndex
-	pop hl
-	ld [hl], a
-	ld a, BANK(HiddenItemScript)
-	ld hl, HiddenItemScript
-	call CallScript
-	scf
-	ret
+        ld de, wHiddenItemData
+        ld bc, wHiddenItemDataEnd - wHiddenItemData
+        call FarCopyBytes
+        ld a, BANK(HiddenItemScript)
+        ld hl, HiddenItemScript
+        call CallScript
+        scf
+        ret
 
 .copy:
-	call CheckBGEventFlag
-	jr nz, .dontread
-	call GetMapScriptsBank
-	ld de, wHiddenItemData
-	ld bc, wHiddenItemDataEnd - wHiddenItemData
-	call FarCopyBytes
-        ld hl, wHiddenItemID
-        push hl
-        ld a, [hli]
-        ld h, [hl]
-        ld l, a
-        call GetItemIDFromIndex
-        pop hl
-        ld [hl], a
-        jr .dontread
-
-.digspot:
-        call PlayTalkObject
+        call CheckBGEventFlag
+        jr nz, .dontread
         call GetMapScriptsBank
         ld de, wHiddenItemData
         ld bc, wHiddenItemDataEnd - wHiddenItemData
         call FarCopyBytes
-        ld hl, wHiddenItemID
-        push hl
+        jr .dontread
+
+.digspot:
+        call PlayTalkObject
+        ld hl, wCurBGEventScriptAddr
         ld a, [hli]
         ld h, [hl]
         ld l, a
-        call GetItemIDFromIndex
-        pop hl
-        ld [hl], a
+        call GetMapScriptsBank
+        ld de, wHiddenItemData
+        ld bc, wHiddenItemDataEnd - wHiddenItemData
+        call FarCopyBytes
         ld a, BANK(DigSpotScript)
         ld hl, DigSpotScript
         call CallScript
