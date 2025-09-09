@@ -24,5 +24,8 @@ MACRO evolve
         db \2 ; level
         dw \3 ; species 1
         dw \4 ; species 2
+    elif (\1) == EVOLVE_COINS
+        dw \2 ; coins
+        dw \3 ; species
     endc
 ENDM

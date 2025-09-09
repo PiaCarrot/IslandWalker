@@ -8493,6 +8493,7 @@ ExitBattle:
 	ret nz
         call CheckPayDay
         farcall HandlePickup
+        farcall HandleCoinCollector
         xor a
         ld [wForceEvolution], a
         predef EvolveAfterBattle

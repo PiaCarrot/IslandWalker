@@ -2760,6 +2760,8 @@ wMomSavingMoney::
 
 wCoins:: dw
 
+wGimmighoulCoins:: dw
+
 wBadges::
 wJohtoBadges:: flag_array NUM_JOHTO_BADGES
 wKantoBadges:: flag_array NUM_KANTO_BADGES

@@ -74,16 +74,19 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_ITEM
 	jr z, .item
 
-	ld a, [wForceEvolution]
-	and a
-	jmp nz, .dont_evolve_check
+        ld a, [wForceEvolution]
+        and a
+        jmp nz, .dont_evolve_check
 
-	ld a, b
-	cp EVOLVE_LEVEL
-	jmp z, .level
+        ld a, b
+        cp EVOLVE_LEVEL
+        jmp z, .level
 
-	cp EVOLVE_PV
-	jr z, .pv
+        cp EVOLVE_COINS
+        jr z, .coins
+
+        cp EVOLVE_PV
+        jp z, .pv
 
 	cp EVOLVE_STAT
 	jmp z, .stat
@@ -117,7 +120,7 @@ EvolveAfterBattle_MasterLoop:
 
 	call GetEvoItem
 	inc a
-	jr z, .proceed
+        jp z, .proceed
 
 	ld a, [wTempMonItem]
 	cp b
@@ -125,7 +128,7 @@ EvolveAfterBattle_MasterLoop:
 
 	xor a
 	ld [wTempMonItem], a
-	jr .proceed
+	jp .proceed
 
 .item
 	call GetEvoItem
@@ -136,14 +139,41 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wForceEvolution]
 	and a
 	jmp z, .skip_evolution_species
-	ld a, [wLinkMode]
-	and a
-	jmp nz, .skip_evolution_species
-	jr .proceed
+        ld a, [wLinkMode]
+        and a
+        jmp nz, .skip_evolution_species
+        jmp .proceed
+
+.coins
+        call GetNextEvoAttackWord
+        call IsMonHoldingEverstone
+        jmp z, .skip_evolution_species
+        push hl
+        ld hl, wGimmighoulCoins
+        ld a, [hli]
+        ld b, a ; high
+        ld a, [hl]
+        ld c, a ; low
+        ld a, b
+        cp d
+        jr c, .not_enough_coins
+        jr nz, .enough_coins
+        ld a, c
+        cp e
+        jr c, .not_enough_coins
+.enough_coins
+        xor a
+        ld [wGimmighoulCoins], a
+        ld [wGimmighoulCoins + 1], a
+        pop hl
+        jp .proceed
+.not_enough_coins
+        pop hl
+        jmp .skip_evolution_species
 
 .pv
-	call GetEvoLevel
-	jmp c, .skip_evolution_species_parameter_word
+        call GetEvoLevel
+        jmp c, .skip_evolution_species_parameter_word
 
 	call IsMonHoldingEverstone
 	jmp z, .skip_evolution_species_parameter_word
@@ -166,7 +196,7 @@ EvolveAfterBattle_MasterLoop:
 	cp 4
 
 	call nc, GetNextEvoAttackWord ; high_pv
-	jr .proceed
+	jp .proceed
 
 .stat
 	push hl

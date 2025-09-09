@@ -198,8 +198,10 @@ _ResetWRAM:
 	ld [wJohtoBadges], a
 	ld [wKantoBadges], a
 
-	ld [wCoins], a
-	ld [wCoins + 1], a
+        ld [wCoins], a
+        ld [wCoins + 1], a
+        ld [wGimmighoulCoins], a
+        ld [wGimmighoulCoins + 1], a
 
 if START_MONEY >= $10000
 	ld a, HIGH(START_MONEY >> 8)

@@ -2812,6 +2812,7 @@ AppletunEvosAttacks:
         db 0 ; no more level-up moves
 GimmighoulEvosAttacks:
         ; evolves with 999 Gimmighoul Coins
+        evolve EVOLVE_COINS, 999, GHOLDENGO
         db 0 ; no more evolutions
         dbw 1, ASTONISH
         dbw 1, TACKLE

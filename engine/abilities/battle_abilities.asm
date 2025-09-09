@@ -325,6 +325,59 @@ Pickup_GetItem:
     ld l, e
     ret
 
+HandleCoinCollector::
+    ld a, [wPartyCount]
+    and a
+    ret z
+    xor a
+    ld [wCurPartyMon], a
+.loop
+    ld a, [wCurPartyMon]
+    ld c, a
+    ld a, [wPartyCount]
+    cp c
+    ret z
+    ld a, c
+    ld hl, wPartyMon1Species
+    call GetPartyLocation
+    ld d, [hl]
+    ld a, [wCurPartyMon]
+    ld hl, wPartyMon1Personality
+    call GetPartyLocation
+    ld c, d
+    call GetAbility
+    cp COIN_COLLECTOR
+    jr nz, .next
+    ld a, 50
+    call BattleRandomRange
+    inc a
+    ld c, a
+    ld hl, wGimmighoulCoins + 1 ; low byte
+    ld a, [hl]
+    add c
+    ld [hl], a
+    ld hl, wGimmighoulCoins ; high byte
+    ld a, [hl]
+    adc 0
+    ld [hl], a
+    ld a, [hl]
+    cp HIGH(999)
+    jr c, .next
+    jr nz, .cap
+    inc hl
+    ld a, [hl]
+    cp LOW(999)
+    jr c, .next
+.cap
+    ld hl, wGimmighoulCoins
+    ld [hl], HIGH(999)
+    inc hl
+    ld [hl], LOW(999)
+.next
+    ld hl, wCurPartyMon
+    inc [hl]
+    jr .loop
+
 PickupAbilityItemTables:
     db PICKUP
     dw PickupItems

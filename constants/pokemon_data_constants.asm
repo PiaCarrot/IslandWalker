@@ -246,9 +246,10 @@ DEF NUM_HOF_TEAMS EQU 30
 	const EVOLVE_ITEM
 	const EVOLVE_TRADE
 	const EVOLVE_HAPPINESS
-	const EVOLVE_HAPPINESS_TIME
-	const EVOLVE_STAT
-	const EVOLVE_PV
+        const EVOLVE_HAPPINESS_TIME
+        const EVOLVE_STAT
+        const EVOLVE_PV
+        const EVOLVE_COINS
 
 ; EVOLVE_HAPPINESS triggers
 	const_def 1
