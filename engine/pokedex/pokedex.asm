@@ -385,16 +385,17 @@ Pokedex_UpdateMainScreen:
 	ret
 
 Pokedex_InitDexEntryScreen:
-	call LowVolume
-	xor a ; page 1
-	ld [wPokedexStatus], a
-	xor a
-	ldh [hBGMapMode], a
-	call ClearSprites
-	call Pokedex_LoadCurrentFootprint
-	call Pokedex_DrawDexEntryScreenBG
-	call Pokedex_InitArrowCursor
-	call Pokedex_GetSelectedMon
+        call LowVolume
+       xor a ; page 1
+       ld [wPokedexStatus], a
+       xor a
+       ldh [hBGMapMode], a
+       ld [wTempMonShiny], a ; start with normal palette
+        call ClearSprites
+        call Pokedex_LoadCurrentFootprint
+        call Pokedex_DrawDexEntryScreenBG
+        call Pokedex_InitArrowCursor
+        call Pokedex_GetSelectedMon
 	ld a, l
 	ld [wPrevDexEntry], a
 	ld a, h
@@ -413,19 +414,31 @@ Pokedex_InitDexEntryScreen:
 	jmp Pokedex_IncrementDexPointer
 
 Pokedex_UpdateDexEntryScreen:
-	ld de, DexEntryScreen_ArrowCursorData
-	call Pokedex_MoveArrowCursor
-	ld hl, hJoyPressed
-	ld a, [hl]
-	and PAD_B
-	jr nz, .return_to_prev_screen
-	vc_hook Forbid_printing_Pokedex
-	ld a, [hl]
-	and PAD_A
-	jr nz, .do_menu_action
-	call Pokedex_NextOrPreviousDexEntry
-	ret nc
-	jmp Pokedex_IncrementDexPointer
+       ld hl, hJoyPressed
+       ld a, [hl]
+       and PAD_SELECT
+       jr z, .no_select
+       res B_PAD_SELECT, [hl]
+       ld hl, wTempMonShiny
+       ld a, [hl]
+       xor SHINY_MASK
+       ld [hl], a
+       ld a, SCGB_POKEDEX
+       call Pokedex_GetSGBLayout
+.no_select
+       ld de, DexEntryScreen_ArrowCursorData
+       call Pokedex_MoveArrowCursor
+       ld hl, hJoyPressed
+       ld a, [hl]
+       and PAD_B
+       jr nz, .return_to_prev_screen
+       vc_hook Forbid_printing_Pokedex
+       ld a, [hl]
+       and PAD_A
+       jr nz, .do_menu_action
+       call Pokedex_NextOrPreviousDexEntry
+       ret nc
+       jmp Pokedex_IncrementDexPointer
 
 .do_menu_action
 	ld a, [wDexArrowCursorPosIndex]

@@ -211,13 +211,14 @@ SGBLayoutJumptable:
 	ld [hli], a
 	ld a, HIGH(palred 31 + palgreen 20 + palblue 10)
 	ld [hli], a
-	ld a, LOW(palred 26 + palgreen 10 + palblue 6)
-	ld [hli], a
-	ld [hl], HIGH(palred 26 + palgreen 10 + palblue 6)
-	ld a, [wCurPartySpecies]
-	call GetMonPalettePointer
-	ld a, [hli]
-	ld [wSGBPals + 9], a
+        ld a, LOW(palred 26 + palgreen 10 + palblue 6)
+        ld [hli], a
+        ld [hl], HIGH(palred 26 + palgreen 10 + palblue 6)
+       ld a, [wCurPartySpecies]
+       ld bc, wTempMonShiny
+       call GetMonNormalOrShinyPalettePointer
+        ld a, [hli]
+        ld [wSGBPals + 9], a
 	ld a, [hli]
 	ld [wSGBPals + 10], a
 	ld a, [hli]

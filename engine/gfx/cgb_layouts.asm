@@ -316,18 +316,19 @@ _CGB_Pokedex:
 	ld a, PREDEFPAL_POKEDEX
 	call GetPredefPal
 	call LoadHLPaletteIntoDE ; dex interface palette
-	ld a, [wCurPartySpecies]
-	cp $ff
-	jr nz, .is_pokemon
-	ld hl, PokedexQuestionMarkPalette
-	call LoadHLPaletteIntoDE ; green question mark palette
-	jr .got_palette
+        ld a, [wCurPartySpecies]
+        cp $ff
+        jr nz, .is_pokemon
+        ld hl, PokedexQuestionMarkPalette
+        call LoadHLPaletteIntoDE ; green question mark palette
+        jr .got_palette
 
 .is_pokemon
-	call GetMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black ; mon palette
+       ld bc, wTempMonShiny
+       call GetMonNormalOrShinyPalettePointer
+        call LoadPalette_White_Col1_Col2_Black ; mon palette
 .got_palette
-	call WipeAttrmap
+        call WipeAttrmap
 	hlcoord 1, 1, wAttrmap
 	lb bc, 7, 7
 	ld a, $1 ; green question mark palette
