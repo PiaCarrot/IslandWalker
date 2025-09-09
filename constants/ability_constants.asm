@@ -47,9 +47,9 @@
 ; Changes type to match the weather
 	const FORECAST
 ; Causes a specific weather condition
-	const DROUGHT     ; Sunlight
-	const DRIZZLE     ; Rain
-	const SAND_STREAM ; Sandstorm. Also halves the wild Pokémon encounter rate if in the first slot during an overworld sandstorm
+	const DROUGHT     ; Sunlight ✔
+	const DRIZZLE     ; Rain ✔
+	const SAND_STREAM ; Sandstorm. Also halves the wild Pokémon encounter rate if in the first slot during an overworld sandstorm ✔
 ; Boosts stats in weather
 	const SAND_VEIL ; Evasion by 20% during a sandstorm
 ; Heals during weather
@@ -200,7 +200,7 @@
 	const SAND_RUSH
 	const ANALYTIC ; Exclusive to Magnezone
 	const ILLUSION ; GL Whoever attempts to program this
-	const IMPOSTER ; Exclusive to Ditto and Mew
+	const IMPOSTER ; Exclusive to Ditto and Mew ✔
 	const INFILTRATOR
 	const MOXIE ; Exclusive to Gyarados
 	const RATTLED
@@ -226,7 +226,7 @@
 	const DISGUISE
 	const CORROSION
 	const TANGLING_HAIR
-	const POWER_OF_ALCHEMY
+	const POWER_OF_ALCHEMY ; ✔ no double battles so battle effect is irrelevant
 	const ELECTRIC_SURGE
 	const PSYCHIC_SURGE
 	const MISTY_SURGE
@@ -253,7 +253,7 @@
 	const PERSISTANCE ; Torrent ability for Partner Eevee (Normal)
 	const OVERCHARGED ; Torrent ability for Partner Pikachu (Electric)
 	const DRAGOON ; Torrent ability for Partner Dratini (Dragon)
-	const COIN_COLLECTOR ; Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves.
+	const COIN_COLLECTOR ; Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves. ✔
 	const BATTLE_BOND ; Partner Dragonite's special ability, based on Gen IX Battle Bond
 
 DEF NUM_ABILITIES EQU const_value - 1

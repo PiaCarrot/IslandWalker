@@ -3842,8 +3842,12 @@ TryToRunAwayFromBattle:
 	ld b, 0
 	ld c, a
 	ld hl, wBattleMonPersonality
-	farcall Check_Flee_Ability
-	jp nz, .fled
+    farcall Check_Flee_Ability
+    jr z, .no_run_away
+    ld a, DRAW
+    jp .fled
+
+.no_run_away
 
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
