@@ -265,10 +265,10 @@ PokemonCries::
 	mon_cry CRY_WEEDLE,      $80b,  $081 ; ZIGZAGOON
 	mon_cry CRY_WEEDLE,      $609,  $1b1 ; LINOONE
 	mon_cry CRY_WINGULL,      204,   128 ; WINGULL
-	mon_cry CRY_SLOWPOKE,    $740,  $210 ; PELIPPER
+	mon_cry CRY_PELIPPER,     170,   340 ; PELIPPER
 	mon_cry CRY_RALTS,         96,    64 ; RALTS
 	mon_cry CRY_KIRLIA,   	   96,   128 ; KIRLIA
-	mon_cry CRY_KIRLIA,        5,    256 ; GARDEVOIR
+	mon_cry CRY_KIRLIA,         5,   256 ; GARDEVOIR
 	mon_cry CRY_CHARMANDER,  $120,  $090 ; SHROOMISH
 	mon_cry CRY_CHARMANDER,  $760,  $0a0 ; BRELOOM
 	mon_cry CRY_METAPOD,     $0bc,  $039 ; NINCADA

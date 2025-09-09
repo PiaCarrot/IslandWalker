@@ -72,6 +72,7 @@ Cries:
         dba Cry_Poochyena
         dba Cry_Zigzagoon
         dba Cry_Wingull
+	dba Cry_Pelipper
         dba Cry_Ralts
         dba Cry_Kirlia
         dba Cry_Gallade

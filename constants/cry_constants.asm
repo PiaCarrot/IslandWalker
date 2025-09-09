@@ -77,6 +77,7 @@
         const CRY_POOCHYENA
         const CRY_ZIGZAGOON
         const CRY_WINGULL
+	const CRY_PELIPPER
         const CRY_RALTS
         const CRY_KIRLIA
         const CRY_GALLADE

@@ -2160,6 +2160,36 @@ Cry_Wingull_Ch8:
 	noise_note 8, 8, 3, 136
         sound_ret
 
+Cry_Pelipper:
+        channel_count 3
+        channel 5, Cry_Pelipper_Ch5
+        channel 6, Cry_Pelipper_Ch6
+        channel 8, Cry_Pelipper_Ch8
+
+Cry_Pelipper_Ch5:
+	duty_cycle_pattern 2, 0, 0, 1
+	square_note 9, 15, 5, 1370
+	square_note 4, 14, 3, 1370
+	square_note 1, 13, 3, 1489
+	square_note 1, 14, 3, 1493
+	square_note 9, 15, 1, 1495
+	sound_ret
+
+Cry_Pelipper_Ch6:
+	duty_cycle_pattern 1, 1, 0, 0
+	square_note 9, 6, 5, 870
+	square_note 4, 6, 3, 870
+	square_note 6, 5, 3, 1073
+	square_note 9, 3, 1, 1092
+	sound_ret
+	
+Cry_Pelipper_Ch8:
+	noise_note 9, 5, 5, 34
+	noise_note 4, 3, 3, 34
+	noise_note 6, 0, 3, 34
+	noise_note 9, 5, 1, 34
+	sound_ret
+
 Cry_Ralts:
         channel_count 3
         channel 5, Cry_Ralts_Ch5
