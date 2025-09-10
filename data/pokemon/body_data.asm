@@ -377,7 +377,7 @@ PokemonBodyData:
     dw 607, 3320   ; GOODRA
     dw 108, 200    ; ROCKRUFF
     dw 207, 550    ; LYCANROC
-    dw 4, 0        ; CUTIEFLY
+    dw 4, 4        ; CUTIEFLY
     dw 8, 10       ; RIBOMBEE
     dw 100, 30     ; PIKIPEK
     dw 200, 330    ; TRUMBEAK
