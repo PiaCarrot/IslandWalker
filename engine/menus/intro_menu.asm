@@ -49,7 +49,14 @@ MysteryGift:
 	farjp DoMysteryGift
 
 Option:
-	farjp _Option
+        xor a
+        ld [wCheatsMenuEnable], a
+        farjp _Option
+
+Option_StartMenu:
+        ld a, 1
+        ld [wCheatsMenuEnable], a
+        farjp _Option
 
 NewGame:
 	xor a

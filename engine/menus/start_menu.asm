@@ -450,10 +450,10 @@ StartMenu_Save:
 StartMenu_Option:
 ; Game options.
 
-	call FadeToMenu
-	farcall Option
-	ld a, 6
-	ret
+        call FadeToMenu
+        farcall Option_StartMenu
+        ld a, 6
+        ret
 
 StartMenu_Status:
 ; Player status.

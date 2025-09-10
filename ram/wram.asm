@@ -123,6 +123,7 @@ wAutoInputLength::  db
 wDebugFlags:: db
 wGameLogicPaused:: db
 wSpriteUpdatesEnabled:: db
+wCheatsMenuEnable:: db
 
 wUnusedScriptByte:: db
 

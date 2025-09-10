@@ -21,12 +21,20 @@ _Option:
         lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
         call Textbox
 
+        ld a, [wCheatsMenuEnable]
+        and a
+        jr z, .skip_cheats_flag
         ld a, BANK(sLugiaCryFlag)
         call OpenSRAM
         ld hl, sLugiaCryFlag
         ld a, [hl]
         call CloseSRAM
         ldh [hCheatsMenuFlag], a
+        jr .got_cheats_flag
+.skip_cheats_flag
+        xor a
+        ldh [hCheatsMenuFlag], a
+.got_cheats_flag
 
         hlcoord 2, 2
         ld de, StringOptions_NoCheats
