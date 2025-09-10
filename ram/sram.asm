@@ -60,6 +60,10 @@ sRTCStatusFlags:: db
 sLuckyNumberDay:: db
 sLuckyIDNumber::  dw
 
+SECTION "Permanent Title Screen Flags", SRAM
+
+sLugiaCryFlag:: db
+
 SECTION "Saved 16-bit conversion tables", SRAM
 ; the Pokémon index table isn't stored here to improve save data packing
 sMoveIndexTable:: ds wMoveIndexTableEnd - wMoveIndexTable

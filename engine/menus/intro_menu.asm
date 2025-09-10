@@ -1229,7 +1229,7 @@ TitleScreenMain:
 	ld d, [hl]
 	ld e, a
 	or d
-	jr z, .end
+        jp z, .end
 
 	dec de
 	ld a, d
@@ -1240,11 +1240,36 @@ TitleScreenMain:
 	call JoyTextDelay
 	call GetJoypad
 	ld hl, hJoyLast
-	ld a, [hl]
-	or ~(PAD_UP + PAD_B + PAD_SELECT)
-	inc a
-	jr z, .delete_save_data
+        ld a, [hl]
+        or ~(PAD_UP + PAD_B + PAD_SELECT)
+        inc a
+        jp z, .delete_save_data
 
+; Hidden title screen flag trigger (hold Left + Start + B)
+        ldh a, [hJoyDown]
+        and PAD_LEFT + PAD_START + PAD_B
+        cp PAD_LEFT + PAD_START + PAD_B
+        jr nz, .lugia_reset
+        ldh a, [hLugiaCryTrigger]
+        and a
+        jr nz, .lugia_done
+        ld a, 1
+        ldh [hLugiaCryTrigger], a
+        ld a, BANK(sLugiaCryFlag)
+        call OpenSRAM
+        ld hl, sLugiaCryFlag
+        ld [hl], 1
+        call CloseSRAM
+        ld de, LUGIA
+        call PlayCry
+        ld hl, hJoyLast
+        jr .lugia_done
+
+.lugia_reset
+        xor a
+        ldh [hLugiaCryTrigger], a
+
+.lugia_done
 ; To bring up the clock reset dialog:
 
 ; Hold Down + B + Select to initiate the sequence.
