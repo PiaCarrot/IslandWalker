@@ -1265,10 +1265,17 @@ TitleScreenMain:
         ld a, BANK(sLugiaCryFlag)
         call OpenSRAM
         ld hl, sLugiaCryFlag
+        ld a, [hl]
+        and a
+        jr nz, .no_lugia_cry
         ld [hl], 1
         call CloseSRAM
         ld de, LUGIA
         call PlayCry
+        jr .after_lugia_cry
+.no_lugia_cry
+        call CloseSRAM
+.after_lugia_cry
         ld hl, hJoyLast
         jr .lugia_done
 
