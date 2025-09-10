@@ -1267,11 +1267,23 @@ TitleScreenMain:
         ld hl, sLugiaCryFlag
         ld a, [hl]
         and a
+        jr z, .enable_lugia_cry
+        ld a, [wSaveFileExists]
+        and a
         jr nz, .no_lugia_cry
+        xor a
+        ld [hl], a
+        call CloseSRAM
+        ld hl, HO_OH
+		call GetPokemonIDFromIndex
+		call PlayMonCry
+        jr .after_lugia_cry
+.enable_lugia_cry
         ld [hl], 1
         call CloseSRAM
-        ld de, LUGIA
-        call PlayCry
+        ld hl, LUGIA
+		call GetPokemonIDFromIndex
+		call PlayMonCry
         jr .after_lugia_cry
 .no_lugia_cry
         call CloseSRAM
