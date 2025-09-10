@@ -95,41 +95,12 @@ DisplayDexEntry:
 	ld [hli], a
 	ld a, $5d ; .
 	ld [hli], a
-	push hl
-	ld a, [wTempSpecies]
-	call GetPokemonIndexFromID
-        ; For form species, show the base species' Pokédex number
-        ld a, h
-        cp HIGH(FORM_POKEMON)
-        jr c, .GotDexNo
-        jr nz, .FormDexNo
-        ld a, l
-        cp LOW(FORM_POKEMON)
-        jr c, .GotDexNo
-.FormDexNo
-        ; hl = form index, convert to base species index
-        ld a, l
-        sub LOW(FORM_POKEMON)
-        ld l, a
-        ld a, h
-        sbc HIGH(FORM_POKEMON)
-        ld h, a
-        add hl, hl
-        ld de, FormBaseSpecies
-        add hl, de
-        ld a, BANK(FormBaseSpecies)
-        call GetFarWord
-.GotDexNo
-        ld b, l
-        ld c, h
-        ld hl, sp + 0
-	ld d, h
-	ld e, l
-	pop hl
-	push bc
-	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
-	call PrintNum
-	pop bc
+        ld a, [wTempSpecies]
+        ld [wNamedObjectIndex], a
+        push hl
+        call GetPokemonNumber
+        pop hl
+        rst PlaceString
 ; Check to see if we caught it.  Get out of here if we haven't.
 	ld a, [wTempSpecies]
 	call CheckCaughtMon

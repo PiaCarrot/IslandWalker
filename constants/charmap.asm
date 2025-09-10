@@ -128,6 +128,8 @@
 	charmap "<№>",       $c2 ; redundant
 	charmap "<BOLD_R>",  $c3
 	charmap "<ID>",      $c4
+	charmap "☆",         $c5
+	charmap "★",         $c6
 
 	charmap "<TC1>",     $cc
 	charmap "<TC2>",     $cd

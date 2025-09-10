@@ -487,24 +487,18 @@ DisplayHOFMon:
 	ld a, "№"
 	ld [hli], a
 	ld [hl], "<DOT>"
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	ld a, l
-	ld l, h
-	ld h, a
-	push hl
-	ld hl, sp + 0
-	ld d, h
-	ld e, l
-	hlcoord 3, 13
-	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
-	call PrintNum
-	pop hl
-	ld a, [wCurPartySpecies]
-	ld [wNamedObjectIndex], a
-	call GetBasePokemonName
-	hlcoord 7, 13
-	rst PlaceString
+        hlcoord 3, 13
+        ld a, [wCurPartySpecies]
+        ld [wNamedObjectIndex], a
+        push hl
+        call GetPokemonNumber
+        pop hl
+        rst PlaceString
+        ld a, [wCurPartySpecies]
+        ld [wNamedObjectIndex], a
+        call GetBasePokemonName
+        hlcoord 7, 13
+        rst PlaceString
 	ld a, TEMPMON
 	ld [wMonType], a
 	farcall GetGender

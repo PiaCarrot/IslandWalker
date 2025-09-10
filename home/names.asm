@@ -150,10 +150,40 @@ GetPokemonName::
 	ld [hl], "@"
 	pop de
 
-	pop hl
-	pop af
-	rst Bankswitch
-	ret
+        pop hl
+        pop af
+        rst Bankswitch
+        ret
+
+GetPokemonNumber::
+        ldh a, [hROMBank]
+        push af
+        push hl
+        ld a, BANK(PokemonNumbers)
+        rst Bankswitch
+
+        ld a, [wNamedObjectIndex]
+        call GetPokemonIndexFromID
+        ld e, l
+        ld d, h
+        add hl, hl
+        add hl, hl
+        add hl, de
+        ld de, PokemonNumbers - 5
+        add hl, de
+
+        ld de, wStringBuffer1
+        push de
+        ld bc, 4
+        rst CopyBytes
+        ld hl, wStringBuffer1 + 4
+        ld [hl], "@"
+        pop de
+
+        pop hl
+        pop af
+        rst Bankswitch
+        ret
 
 GetItemName::
 ; Get item name for wNamedObjectIndex.

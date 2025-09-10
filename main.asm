@@ -324,6 +324,7 @@ INCLUDE "data/pokemon/first_stages.asm"
 
 SECTION "Phone Scripts 1", ROMX
 
+INCLUDE "data/pokemon/dex_numbers.asm"
 INCLUDE "engine/phone/scripts/reminders.asm"
 INCLUDE "engine/phone/scripts/reminders_2.asm"
 INCLUDE "engine/phone/scripts/bike_shop.asm"

@@ -1836,23 +1836,24 @@ Pokedex_PrintListing:
 	jmp PlaceString
 
 Pokedex_PrintNumberIfOldMode:
-	ld a, [wCurDexMode]
-	cp DEXMODE_OLD
-	ret nz
-	push hl
-	push de
-	ld bc, -SCREEN_WIDTH
-	add hl, bc
-	ld a, e
-	ld [wPokedexDisplayNumber + 1], a
-	ld a, d
-	ld de, wPokedexDisplayNumber
-	ld [de], a
-	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
-	call PrintNum
-	pop de
-	pop hl
-	ret
+        ld a, [wCurDexMode]
+        cp DEXMODE_OLD
+        ret nz
+        push hl
+        push de
+        ld bc, -SCREEN_WIDTH
+        add hl, bc
+        push hl
+        ld h, d
+        ld l, e
+        call GetPokemonIDFromIndex
+        ld [wNamedObjectIndex], a
+        pop hl
+        call GetPokemonNumber
+        rst PlaceString
+        pop de
+        pop hl
+        ret
 
 Pokedex_PlaceCaughtSymbolIfCaught:
 	push hl

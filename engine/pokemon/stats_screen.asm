@@ -361,22 +361,17 @@ StatsScreen_InitUpperHalf:
 	ldh [hBGMapMode], a
 	ld a, [wBaseSpecies]
 	ld [wCurSpecies], a
-	call GetPokemonIndexFromID
-	ld a, h
-	ld h, l
-	ld l, a
-	push hl
-	ld hl, sp + 0
-	ld d, h
-	ld e, l
-	hlcoord 8, 0
-	ld a, "№"
-	ld [hli], a
-	ld a, "."
-	ld [hli], a
-	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
-	call PrintNum
-	add sp, 2
+        hlcoord 8, 0
+        ld a, "№"
+        ld [hli], a
+        ld a, "."
+        ld [hli], a
+        ld a, [wBaseSpecies]
+        ld [wNamedObjectIndex], a
+        push hl
+        call GetPokemonNumber
+        pop hl
+        rst PlaceString
 	hlcoord 14, 0
 	call PrintLevel
 	ld hl, .NicknamePointers
