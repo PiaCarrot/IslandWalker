@@ -504,14 +504,14 @@ DexEntryScreen_ArrowCursorData:
 	db PAD_RIGHT | PAD_LEFT, 4
 	dwcoord 1, 17  ; PAGE
 	dwcoord 6, 17  ; AREA
-	dwcoord 11, 17 ; CRY
-	dwcoord 15, 17 ; PRNT
+       dwcoord 11, 17 ; CRY
+       dwcoord 15, 17 ; FORM
 
 DexEntryScreen_MenuActionJumptable:
 	dw Pokedex_Page
 	dw .Area
 	dw .Cry
-	dw .Print
+       dw .Form
 
 .Area:
 	call Pokedex_BlackOutBG
@@ -551,38 +551,95 @@ DexEntryScreen_MenuActionJumptable:
 	ld d, b
 	jmp PlayCry
 
-.Print:
-	call Pokedex_ApplyPrintPals
-	xor a
-	ldh [hSCX], a
-	ld hl, wPrevDexEntryBackup
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	push hl
-	ld a, [wPrevDexEntryJumptableIndex]
-	push af
-	ld a, [wJumptableIndex]
-	push af
-	farcall PrintDexEntry
-	pop af
-	ld [wJumptableIndex], a
-	pop af
-	ld [wPrevDexEntryJumptableIndex], a
-	pop hl
-	ld a, l
-	ld [wPrevDexEntryBackup], a
-	ld a, h
-	ld [wPrevDexEntryBackup + 1], a
-	call ClearBGPalettes
-	call DisableLCD
-	call Pokedex_LoadInvertedFont
-	call Pokedex_RedisplayDexEntry
-	call EnableLCD
-	call WaitBGMap
-	ld a, POKEDEX_SCX
-	ldh [hSCX], a
-	jmp Pokedex_ApplyUsualPals
+.Form:
+       call Pokedex_GetSelectedMon
+       ld b, a
+       call .GetForm
+       ret nc
+       ld [wTempSpecies], a
+       ld l, LOCKED_MON_ID_DEX_SELECTED
+       call LockPokemonID
+       call Pokedex_LoadAnyFootprint
+       farcall DisplayDexEntry
+       call Pokedex_DrawFootprint
+       call Pokedex_CheckSeen
+       jr z, .QuestionMark
+       ld a, [wFirstUnownSeen]
+       ld [wUnownLetter], a
+       ld a, [wTempSpecies]
+       ld [wCurPartySpecies], a
+       call GetBaseData
+       ld de, vTiles2
+       predef GetMonFrontpic
+       jr .after_pic
+.QuestionMark:
+       ld a, BANK(sScratch)
+       call OpenSRAM
+       farcall LoadQuestionMarkPic
+       ld hl, vTiles2
+       ld de, sScratch
+       ld c, 7 * 7
+       ldh a, [hROMBank]
+       ld b, a
+       call Get2bpp
+       call CloseSRAM
+.after_pic:
+       call WaitBGMap
+       ld a, SCGB_POKEDEX
+       call Pokedex_GetSGBLayout
+.wait_input
+       call JoyTextDelay
+       ld a, [hJoyPressed]
+       and PAD_A | PAD_B
+       jr z, .wait_input
+       call Pokedex_LoadCurrentFootprint
+       call Pokedex_RedisplayDexEntry
+       call Pokedex_LoadSelectedMonTiles
+       call WaitBGMap
+       call Pokedex_GetSelectedMon
+       ld [wCurPartySpecies], a
+       ld a, SCGB_POKEDEX
+       call Pokedex_GetSGBLayout
+       ret
+
+.GetForm:
+       ld a, b
+       call GetPokemonIndexFromID
+       ld d, h
+       ld e, l
+       ld c, NUM_FORM_POKEMON
+       ld hl, FormBaseSpecies
+.loop
+       push bc
+       push hl
+       ld a, BANK(FormBaseSpecies)
+       call GetFarWord
+       ld a, l
+       cp e
+       jr nz, .next
+       ld a, h
+       cp d
+       jr nz, .next
+       pop hl
+       pop bc
+       ld a, NUM_FORM_POKEMON
+       sub c
+       ld e, a
+       ld d, 0
+       ld hl, FORM_POKEMON
+       add hl, de
+       call GetPokemonIDFromIndex
+       scf
+       ret
+.next
+       pop hl
+       pop bc
+       inc hl
+       inc hl
+       dec c
+       jr nz, .loop
+       or a
+       ret
 
 Pokedex_RedisplayDexEntry:
 	call Pokedex_DrawDexEntryScreenBG
@@ -1289,7 +1346,7 @@ Pokedex_DrawDexEntryScreenBG:
 .Weight:
 	db "WT   ???lb", -1
 .MenuItems:
-	db $3b, " PAGE AREA CRY PRNT", -1
+       db $3b, " PAGE AREA CRY FORM", -1
 
 Pokedex_DrawOptionScreenBG:
 	call Pokedex_FillBackgroundColor2
