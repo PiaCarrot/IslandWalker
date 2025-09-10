@@ -829,6 +829,9 @@ Options_WalkThroughWalls:
        set CHEAT_WALK_THROUGH_WALLS, [hl]
        ld hl, wDebugFlags
        set DEBUG_FIELD_F, [hl]
+       ld de, EVENT_USED_CHEAT_WALK_THROUGH_WALLS
+       ld b, SET_FLAG
+       call EventFlagAction
        ld de, .On
 .Display:
        hlcoord 11, 3
@@ -861,6 +864,9 @@ Options_InstantHatching:
         jr .Display
 .ToggleOn:
         set CHEAT_INSTANT_HATCHING, [hl]
+        ld de, EVENT_USED_CHEAT_INSTANT_HATCHING
+        ld b, SET_FLAG
+        call EventFlagAction
         ld de, .On
 .Display:
         hlcoord 11, 5
@@ -874,6 +880,9 @@ Options_RareCandies:
         ldh a, [hJoyPressed]
         and PAD_A
         ret z
+        ld de, EVENT_USED_CHEAT_RARE_CANDIES
+        ld b, SET_FLAG
+        call EventFlagAction
         ld hl, RARE_CANDY
         call GetItemIDFromIndex
         ld [wCurItem], a
@@ -892,6 +901,9 @@ Options_Balls:
         ldh a, [hJoyPressed]
         and PAD_A
         ret z
+        ld de, EVENT_USED_CHEAT_MASTER_BALLS
+        ld b, SET_FLAG
+        call EventFlagAction
         ld hl, MASTER_BALL
         call GetItemIDFromIndex
         ld [wCurItem], a
@@ -910,6 +922,9 @@ Options_MaxCash:
         ldh a, [hJoyPressed]
         and PAD_A
         ret z
+        ld de, EVENT_USED_CHEAT_MAX_CASH
+        ld b, SET_FLAG
+        call EventFlagAction
         ld de, wMoney
         ld hl, .MaxMoney
         ld bc, 3
