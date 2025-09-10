@@ -109,6 +109,7 @@ PlayersHouseBookshelfScript:
 	giveitem EXP_CANDY_M, 99
 	giveitem EXP_CANDY_L, 99
 	giveitem EXP_CANDY_XL, 99
+	giveegg TOGEPI, EGG_LEVEL
 	callasm CheatFillPokedex
 	setflag ENGINE_POKEDEX
 	end

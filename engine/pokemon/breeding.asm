@@ -158,34 +158,40 @@ CheckBreedmonCompatibility:
 
 
 DoEggStep::
-	ld a, [wPartyCount]
-	and a
-	ret z
+        ld a, [wPartyCount]
+        and a
+        ret z
 
-	; TODO: Breeding Cycles for Flame Body/Magama Armor
+        ; TODO: Breeding Cycles for Flame Body/Magama Armor
 
-	ld de, wPartySpecies
-	ld hl, wPartyMon1Happiness
-	ld c, 0
+        ld a, [wOptions2]
+        ld b, a
+
+        ld de, wPartySpecies
+        ld hl, wPartyMon1Happiness
 .loop
-	ld a, [de]
-	inc de
-	cp -1
-	ret z
-	cp EGG
-	jr nz, .next
-	dec [hl]
-	jr nz, .next
-	ld a, 1
-	and a
-	ret
+        ld a, [de]
+        inc de
+        cp -1
+        ret z
+        cp EGG
+        jr nz, .next
+        bit CHEAT_INSTANT_HATCHING, b
+        jr z, .dec
+        ld [hl], 1
+.dec
+        dec [hl]
+        jr nz, .next
+        ld a, 1
+        and a
+        ret
 
 .next
-	push de
-	ld de, PARTYMON_STRUCT_LENGTH
-	add hl, de
-	pop de
-	jr .loop
+        push de
+        ld de, PARTYMON_STRUCT_LENGTH
+        add hl, de
+        pop de
+        jr .loop
 
 OverworldHatchEgg::
 	call ReanchorMap
