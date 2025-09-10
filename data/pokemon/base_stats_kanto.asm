@@ -149,5 +149,4 @@ INCLUDE "data/pokemon/base_stats/kanto/dratini.asm"
 INCLUDE "data/pokemon/base_stats/kanto/dragonair.asm"
 INCLUDE "data/pokemon/base_stats/kanto/dragonite.asm"
 INCLUDE "data/pokemon/base_stats/kanto/mewtwo.asm"
-INCLUDE "data/pokemon/base_stats/kanto/mew.asm"
 .IndirectEnd::

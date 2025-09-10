@@ -94,8 +94,6 @@ BitmaskPointers3:
         dw DusknoirBitmasks
         dw FroslassBitmasks
        dw RotomBitmasks
-       dw PhioneBitmasks
-       dw ManaphyBitmasks
        dw FerroseedBitmasks
        dw FerrothornBitmasks
        dw StunfiskBitmasks
@@ -166,8 +164,12 @@ BitmaskPointers3:
        dw UrsalunaBitmasks
        dw WyrdeerBitmasks
        dw MarshadowBitmasks
+       dw PhioneBitmasks
+       dw ManaphyBitmasks
        dw MeltanBitmasks
        dw MelmetalBitmasks
+	dw MewBitmasks
+	dw UnownBitmasks
 .IndirectEnd::
 
 PoochyenaBitmasks:     INCLUDE "gfx/pokemon/hoenn/poochyena/bitmask.asm"
@@ -263,8 +265,6 @@ GalladeBitmasks:      INCLUDE "gfx/pokemon/sinnoh/gallade/bitmask.asm"
 DusknoirBitmasks:     INCLUDE "gfx/pokemon/sinnoh/dusknoir/bitmask.asm"
 FroslassBitmasks:     INCLUDE "gfx/pokemon/sinnoh/froslass/bitmask.asm"
 RotomBitmasks:        INCLUDE "gfx/pokemon/sinnoh/rotom/bitmask.asm"
-PhioneBitmasks:       INCLUDE "gfx/pokemon/sinnoh/phione/bitmask.asm"
-ManaphyBitmasks:      INCLUDE "gfx/pokemon/sinnoh/manaphy/bitmask.asm"
 FerroseedBitmasks:    INCLUDE "gfx/pokemon/other/ferroseed/bitmask.asm"
 FerrothornBitmasks:   INCLUDE "gfx/pokemon/other/ferrothorn/bitmask.asm"
 StunfiskBitmasks:     INCLUDE "gfx/pokemon/other/stunfisk/bitmask.asm"
@@ -335,5 +335,9 @@ KleavorBitmasks:      INCLUDE "gfx/pokemon/other/kleavor/bitmask.asm"
 UrsalunaBitmasks:     INCLUDE "gfx/pokemon/other/ursaluna/bitmask.asm"
 WyrdeerBitmasks:      INCLUDE "gfx/pokemon/other/wyrdeer/bitmask.asm"
 MarshadowBitmasks:    INCLUDE "gfx/pokemon/other/marshadow/bitmask.asm"
+PhioneBitmasks:       INCLUDE "gfx/pokemon/sinnoh/phione/bitmask.asm"
+ManaphyBitmasks:      INCLUDE "gfx/pokemon/sinnoh/manaphy/bitmask.asm"
 MeltanBitmasks:       INCLUDE "gfx/pokemon/other/meltan/bitmask.asm"
 MelmetalBitmasks:     INCLUDE "gfx/pokemon/other/melmetal/bitmask.asm"
+MewBitmasks:        INCLUDE "gfx/pokemon/kanto/mew/bitmask.asm"
+UnownBitmasks:      INCLUDE "gfx/pokemon/johto/unown/bitmask.asm"

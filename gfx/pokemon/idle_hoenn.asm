@@ -94,8 +94,6 @@ AnimationIdlePointers3:
        dw DusknoirAnimationIdle
        dw FroslassAnimationIdle
        dw RotomAnimationIdle
-       dw PhioneAnimationIdle
-       dw ManaphyAnimationIdle
        dw FerroseedAnimationIdle
        dw FerrothornAnimationIdle
        dw StunfiskAnimationIdle
@@ -166,8 +164,12 @@ AnimationIdlePointers3:
        dw UrsalunaAnimationIdle
        dw WyrdeerAnimationIdle
        dw MarshadowAnimationIdle
+       dw PhioneAnimationIdle
+       dw ManaphyAnimationIdle
        dw MeltanAnimationIdle
        dw MelmetalAnimationIdle
+	dw MewAnimationIdle
+	dw UnownAnimationIdle
 .IndirectEnd::
 
 PoochyenaAnimationIdle:     INCLUDE "gfx/pokemon/hoenn/poochyena/anim_idle.asm"
@@ -263,8 +265,6 @@ GalladeAnimationIdle:   INCLUDE "gfx/pokemon/sinnoh/gallade/anim_idle.asm"
 DusknoirAnimationIdle:  INCLUDE "gfx/pokemon/sinnoh/dusknoir/anim_idle.asm"
 FroslassAnimationIdle:  INCLUDE "gfx/pokemon/sinnoh/froslass/anim_idle.asm"
 RotomAnimationIdle:     INCLUDE "gfx/pokemon/sinnoh/rotom/anim_idle.asm"
-PhioneAnimationIdle:    INCLUDE "gfx/pokemon/sinnoh/phione/anim_idle.asm"
-ManaphyAnimationIdle:   INCLUDE "gfx/pokemon/sinnoh/manaphy/anim_idle.asm"
 FerroseedAnimationIdle: INCLUDE "gfx/pokemon/other/ferroseed/anim_idle.asm"
 FerrothornAnimationIdle: INCLUDE "gfx/pokemon/other/ferrothorn/anim_idle.asm"
 StunfiskAnimationIdle: INCLUDE "gfx/pokemon/other/stunfisk/anim_idle.asm"
@@ -335,5 +335,9 @@ KleavorAnimationIdle:    INCLUDE "gfx/pokemon/other/kleavor/anim_idle.asm"
 UrsalunaAnimationIdle:    INCLUDE "gfx/pokemon/other/ursaluna/anim_idle.asm"
 WyrdeerAnimationIdle:    INCLUDE "gfx/pokemon/other/wyrdeer/anim_idle.asm"
 MarshadowAnimationIdle:    INCLUDE "gfx/pokemon/other/marshadow/anim_idle.asm"
+PhioneAnimationIdle:    INCLUDE "gfx/pokemon/sinnoh/phione/anim_idle.asm"
+ManaphyAnimationIdle:   INCLUDE "gfx/pokemon/sinnoh/manaphy/anim_idle.asm"
 MeltanAnimationIdle:    INCLUDE "gfx/pokemon/other/meltan/anim_idle.asm"
 MelmetalAnimationIdle:    INCLUDE "gfx/pokemon/other/melmetal/anim_idle.asm"
+MewAnimationIdle:        INCLUDE "gfx/pokemon/kanto/mew/anim_idle.asm"
+UnownAnimationIdle:      INCLUDE "gfx/pokemon/johto/unown/anim_idle.asm"

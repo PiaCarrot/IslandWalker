@@ -153,7 +153,6 @@ PokemonBodyData:
 	dw 1301, 360   ; DRAGONAIR
 	dw 703, 4630   ; DRAGONITE
 	dw 607, 2690   ; MEWTWO
-	dw 104, 90     ; MEW
 ; Johto
 	dw 211, 140    ; CHIKORITA
 	dw 311, 350    ; BAYLEEF
@@ -204,7 +203,6 @@ PokemonBodyData:
 	dw 108, 50     ; MURKROW
 	dw 607, 1750   ; SLOWKING
 	dw 204, 20     ; MISDREAVUS
-	dw 108, 110    ; UNOWN
 	dw 403, 630    ; WOBBUFFET
 	dw 411, 910    ; GIRAFARIG
 	dw 200, 160    ; PINECO
@@ -349,8 +347,6 @@ PokemonBodyData:
     dw 104, 130    ; DUSKNOIR
     dw 104, 130    ; FROSLASS
     dw 100, 15     ; ROTOM
-    dw 104, 68     ; PHIONE
-    dw 100, 31     ; MANAPHY
     dw 200, 414    ; FERROSEED
     dw 303, 2425   ; FERROTHORN
     dw 204, 243    ; STUNFISK
@@ -421,8 +417,12 @@ PokemonBodyData:
     dw 710, 6390   ; URSALUNA
     dw 511, 2100   ; WYRDEER
     dw 204, 490    ; MARSHADOW
+    dw 104, 68     ; PHIONE
+    dw 100, 31     ; MANAPHY
     dw 8, 180      ; MELTAN
     dw 802, 17640  ; MELMETAL
+	dw 104, 90     ; MEW
+	dw 108, 110    ; UNOWN
 ; Forms
     dw 802, 4850   ; LAPRAS PARTNER
     dw 100, 80     ; RATTATA ALOLA

@@ -94,8 +94,6 @@ EvosAttacksPointers3::
        dw DusknoirEvosAttacks
        dw FroslassEvosAttacks
        dw RotomEvosAttacks
-       dw PhioneEvosAttacks
-       dw ManaphyEvosAttacks
        dw FerroseedEvosAttacks
        dw FerrothornEvosAttacks
        dw StunfiskEvosAttacks
@@ -166,8 +164,12 @@ EvosAttacksPointers3::
        dw UrsalunaEvosAttacks
        dw WyrdeerEvosAttacks
        dw MarshadowEvosAttacks
+       dw PhioneEvosAttacks
+       dw ManaphyEvosAttacks
        dw MeltanEvosAttacks
        dw MelmetalEvosAttacks
+       dw MewEvosAttacks
+       dw UnownEvosAttacks
 .IndirectEnd::
 
 PoochyenaEvosAttacks:
@@ -3300,4 +3302,24 @@ MelmetalEvosAttacks:
         dbw 80, SUPERPOWER
         dbw 90, HYPER_BEAM
         db 0 ; no more level-up moves
+
+MewEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, POUND
+	dbw 1, TRANSFORM
+	dbw 10, MEGA_PUNCH
+	dbw 20, METRONOME
+	dbw 30, PSYCHIC_M
+	dbw 40, BARRIER
+	dbw 50, ANCIENTPOWER
+	dbw 60, AMNESIA
+	dbw 80, BATON_PASS
+	dbw 90, NASTY_PLOT
+	dbw 100, AURA_SPHERE
+	db 0 ; no more level-up moves
+
+UnownEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, HIDDEN_POWER
+	db 0 ; no more level-up moves
 ENDSECTION

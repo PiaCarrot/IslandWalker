@@ -151,7 +151,6 @@ BitmaskPointers1:
 	dw DragonairBitmasks
 	dw DragoniteBitmasks
 	dw MewtwoBitmasks
-	dw MewBitmasks
 .IndirectEnd::
 
 BulbasaurBitmasks:  INCLUDE "gfx/pokemon/kanto/bulbasaur/bitmask.asm"
@@ -304,4 +303,3 @@ DratiniBitmasks:    INCLUDE "gfx/pokemon/kanto/dratini/bitmask.asm"
 DragonairBitmasks:  INCLUDE "gfx/pokemon/kanto/dragonair/bitmask.asm"
 DragoniteBitmasks:  INCLUDE "gfx/pokemon/kanto/dragonite/bitmask.asm"
 MewtwoBitmasks:     INCLUDE "gfx/pokemon/kanto/mewtwo/bitmask.asm"
-MewBitmasks:        INCLUDE "gfx/pokemon/kanto/mew/bitmask.asm"

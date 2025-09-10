@@ -3845,7 +3845,7 @@ TryToRunAwayFromBattle:
     farcall Check_Flee_Ability
     jr z, .no_run_away
     ld a, DRAW
-    jp .fled
+   jp .fled
 
 .no_run_away
 
@@ -8450,7 +8450,7 @@ InitEnemyWildmon:
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
-	sub UNOWN
+	sub LOW(UNOWN)
 	if HIGH(UNOWN) == 0
 		or h
 	else

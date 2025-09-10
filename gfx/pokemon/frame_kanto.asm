@@ -151,7 +151,6 @@ FramePointers1:
 	dw DragonairFrames
 	dw DragoniteFrames
 	dw MewtwoFrames
-	dw MewFrames
 .IndirectEnd::
 
 BulbasaurFrames:  INCLUDE "gfx/pokemon/kanto/bulbasaur/frames.asm"
@@ -304,4 +303,3 @@ DratiniFrames:    INCLUDE "gfx/pokemon/kanto/dratini/frames.asm"
 DragonairFrames:  INCLUDE "gfx/pokemon/kanto/dragonair/frames.asm"
 DragoniteFrames:  INCLUDE "gfx/pokemon/kanto/dragonite/frames.asm"
 MewtwoFrames:     INCLUDE "gfx/pokemon/kanto/mewtwo/frames.asm"
-MewFrames:        INCLUDE "gfx/pokemon/kanto/mew/frames.asm"

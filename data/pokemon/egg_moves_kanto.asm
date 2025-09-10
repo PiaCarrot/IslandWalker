@@ -151,7 +151,6 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
-	dw NoEggMoves1
 .IndirectEnd::
 
 BulbasaurEggMoves:

@@ -39,6 +39,4 @@ INCLUDE "data/pokemon/base_stats/sinnoh/gallade.asm"
 INCLUDE "data/pokemon/base_stats/sinnoh/dusknoir.asm"
 INCLUDE "data/pokemon/base_stats/sinnoh/froslass.asm"
 INCLUDE "data/pokemon/base_stats/sinnoh/rotom.asm"
-INCLUDE "data/pokemon/base_stats/sinnoh/phione.asm"
-INCLUDE "data/pokemon/base_stats/sinnoh/manaphy.asm"
 .IndirectEnd::

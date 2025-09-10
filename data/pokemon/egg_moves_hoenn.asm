@@ -94,8 +94,6 @@ EggMovePointers3::
        dw NoEggMoves3 ; DUSKNOIR
        dw NoEggMoves3 ; FROSLASS
        dw NoEggMoves3 ; ROTOM
-       dw NoEggMoves3 ; PHIONE
-       dw NoEggMoves3 ; MANAPHY
        dw FerroseedEggMoves
        dw NoEggMoves3 ; FERROTHORN
        dw StunfiskEggMoves
@@ -166,8 +164,12 @@ EggMovePointers3::
        dw NoEggMoves3 ; URSALUNA
        dw NoEggMoves3 ; WYRDEER
        dw NoEggMoves3 ; MARSHADOW
+       dw NoEggMoves3 ; PHIONE
+       dw NoEggMoves3 ; MANAPHY
        dw NoEggMoves3 ; MELTAN
        dw NoEggMoves3 ; MELMETAL
+       dw NoEggMoves3 ; MEW
+       dw NoEggMoves3 ; UNOWN
 .IndirectEnd::
 
 PoochyenaEggMoves:

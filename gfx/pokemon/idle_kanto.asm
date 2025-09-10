@@ -151,7 +151,6 @@ AnimationIdlePointers1:
 	dw DragonairAnimationIdle
 	dw DragoniteAnimationIdle
 	dw MewtwoAnimationIdle
-	dw MewAnimationIdle
 .IndirectEnd::
 
 BulbasaurAnimationIdle:  INCLUDE "gfx/pokemon/kanto/bulbasaur/anim_idle.asm"
@@ -304,4 +303,3 @@ DratiniAnimationIdle:    INCLUDE "gfx/pokemon/kanto/dratini/anim_idle.asm"
 DragonairAnimationIdle:  INCLUDE "gfx/pokemon/kanto/dragonair/anim_idle.asm"
 DragoniteAnimationIdle:  INCLUDE "gfx/pokemon/kanto/dragonite/anim_idle.asm"
 MewtwoAnimationIdle:     INCLUDE "gfx/pokemon/kanto/mewtwo/anim_idle.asm"
-MewAnimationIdle:        INCLUDE "gfx/pokemon/kanto/mew/anim_idle.asm"

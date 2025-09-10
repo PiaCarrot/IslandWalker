@@ -20,7 +20,7 @@ Pokered_MonIndices:
 	db RHYHORN
 	db LAPRAS
 	db ARCANINE
-	db MEW
+	db ARCANINE
 	db GYARADOS
 	db SHELLDER
 	db TENTACOOL
@@ -131,6 +131,7 @@ Pokered_MonIndices:
 	db HYPNO
 	db GOLBAT
 	db MEWTWO
+	db CHIKORITA
 	db SNORLAX
 	db MAGIKARP
 	db PORYGON2 ; MISSINGNO.
@@ -189,7 +190,6 @@ Pokered_MonIndices:
 	db VILEPLUME
 	db BELLSPROUT
 	db WEEPINBELL
-	db VICTREEBEL
 	assert_table_length 190 ; gen 1 mon indexes
 	db CHIKORITA
 	db BAYLEEF
@@ -240,7 +240,7 @@ Pokered_MonIndices:
 	db MURKROW
 	db SLOWKING
 	db MISDREAVUS
-	db UNOWN
+	db ARCANINE
 	db WOBBUFFET
 	db GIRAFARIG
 	db PINECO
@@ -251,6 +251,4 @@ Pokered_MonIndices:
 	db SNUBBULL
 	db GRANBULL
 	db QWILFISH
-	db WOBBUFFET
-	db WOBBUFFET
 	assert_table_length HOENN_POKEMON

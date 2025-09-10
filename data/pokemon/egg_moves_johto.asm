@@ -51,7 +51,6 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw MisdreavusEggMoves
 	dw NoEggMoves2
-	dw NoEggMoves2
 	dw GirafarigEggMoves
 	dw PinecoEggMoves
 	dw NoEggMoves2

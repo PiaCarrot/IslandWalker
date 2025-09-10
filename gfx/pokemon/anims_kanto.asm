@@ -151,7 +151,6 @@ AnimationPointers1:
 	dw DragonairAnimation
 	dw DragoniteAnimation
 	dw MewtwoAnimation
-	dw MewAnimation
 .IndirectEnd::
 
 BulbasaurAnimation:  INCLUDE "gfx/pokemon/kanto/bulbasaur/anim.asm"
@@ -304,4 +303,3 @@ DratiniAnimation:    INCLUDE "gfx/pokemon/kanto/dratini/anim.asm"
 DragonairAnimation:  INCLUDE "gfx/pokemon/kanto/dragonair/anim.asm"
 DragoniteAnimation:  INCLUDE "gfx/pokemon/kanto/dragonite/anim.asm"
 MewtwoAnimation:     INCLUDE "gfx/pokemon/kanto/mewtwo/anim.asm"
-MewAnimation:        INCLUDE "gfx/pokemon/kanto/mew/anim.asm"

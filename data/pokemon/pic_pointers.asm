@@ -314,8 +314,6 @@ PokemonPicPointers::
 	dba DragoniteBackpic
 	dba MewtwoFrontpic
 	dba MewtwoBackpic
-	dba MewFrontpic
-	dba MewBackpic
 ; Johto
 	dba ChikoritaFrontpic
 	dba ChikoritaBackpic
@@ -415,11 +413,6 @@ PokemonPicPointers::
 	dba SlowkingBackpic
 	dba MisdreavusFrontpic
 	dba MisdreavusBackpic
-
-	; Unown pics have their own table. See UnownPicPointers
-	dbw -1, -1
-	dbw -1, -1
-
 	dba WobbuffetFrontpic
 	dba WobbuffetBackpic
 	dba GirafarigFrontpic
@@ -707,10 +700,6 @@ PokemonPicPointers::
        dba FroslassBackpic
        dba RotomFrontpic
        dba RotomBackpic
-       dba PhioneFrontpic
-       dba PhioneBackpic
-       dba ManaphyFrontpic
-       dba ManaphyBackpic
        dba FerroseedFrontpic
        dba FerroseedBackpic
        dba FerrothornFrontpic
@@ -851,10 +840,20 @@ PokemonPicPointers::
        dba WyrdeerBackpic
        dba MarshadowFrontpic
        dba MarshadowBackpic
+       dba PhioneFrontpic
+       dba PhioneBackpic
+       dba ManaphyFrontpic
+       dba ManaphyBackpic
        dba MeltanFrontpic
        dba MeltanBackpic
        dba MelmetalFrontpic
        dba MelmetalBackpic
+	dba MewFrontpic
+	dba MewBackpic
+
+	; Unown pics have their own table. See UnownPicPointers
+	dbw -1, -1
+	dbw -1, -1
 ; Forms
         dba LaprasPartnerFrontpic
         dba LaprasPartnerBackpic

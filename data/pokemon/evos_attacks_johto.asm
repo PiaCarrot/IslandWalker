@@ -50,7 +50,6 @@ EvosAttacksPointers2::
 	dw MurkrowEvosAttacks
 	dw SlowkingEvosAttacks
 	dw MisdreavusEvosAttacks
-	dw UnownEvosAttacks
 	dw WobbuffetEvosAttacks
 	dw GirafarigEvosAttacks
 	dw PinecoEvosAttacks
@@ -1002,11 +1001,6 @@ MisdreavusEvosAttacks:
 	dbw 41, PERISH_SONG
 	dbw 46, GRUDGE
 	dbw 50, POWER_GEM
-	db 0 ; no more level-up moves
-
-UnownEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, HIDDEN_POWER
 	db 0 ; no more level-up moves
 
 WobbuffetEvosAttacks:

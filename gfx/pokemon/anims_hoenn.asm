@@ -95,8 +95,6 @@ AnimationPointers3:
         dw FroslassAnimation
        dw RotomAnimation
        dw PhioneAnimation
-       dw ManaphyAnimation
-       dw FerroseedAnimation
        dw FerrothornAnimation
        dw StunfiskAnimation
        dw PawniardAnimation
@@ -166,8 +164,12 @@ AnimationPointers3:
        dw UrsalunaAnimation
        dw WyrdeerAnimation
        dw MarshadowAnimation
+       dw ManaphyAnimation
+       dw FerroseedAnimation
        dw MeltanAnimation
        dw MelmetalAnimation
+	dw MewAnimation
+	dw UnownAnimation
 .IndirectEnd::
 
 PoochyenaAnimation:     INCLUDE "gfx/pokemon/hoenn/poochyena/anim.asm"
@@ -263,8 +265,6 @@ GalladeAnimation:      INCLUDE "gfx/pokemon/sinnoh/gallade/anim.asm"
 DusknoirAnimation:     INCLUDE "gfx/pokemon/sinnoh/dusknoir/anim.asm"
 FroslassAnimation:     INCLUDE "gfx/pokemon/sinnoh/froslass/anim.asm"
 RotomAnimation:        INCLUDE "gfx/pokemon/sinnoh/rotom/anim.asm"
-PhioneAnimation:       INCLUDE "gfx/pokemon/sinnoh/phione/anim.asm"
-ManaphyAnimation:      INCLUDE "gfx/pokemon/sinnoh/manaphy/anim.asm"
 FerroseedAnimation:    INCLUDE "gfx/pokemon/other/ferroseed/anim.asm"
 FerrothornAnimation:   INCLUDE "gfx/pokemon/other/ferrothorn/anim.asm"
 StunfiskAnimation:     INCLUDE "gfx/pokemon/other/stunfisk/anim.asm"
@@ -335,5 +335,9 @@ KleavorAnimation:       INCLUDE "gfx/pokemon/other/kleavor/anim.asm"
 UrsalunaAnimation:       INCLUDE "gfx/pokemon/other/ursaluna/anim.asm"
 WyrdeerAnimation:       INCLUDE "gfx/pokemon/other/wyrdeer/anim.asm"
 MarshadowAnimation:       INCLUDE "gfx/pokemon/other/marshadow/anim.asm"
+PhioneAnimation:       INCLUDE "gfx/pokemon/sinnoh/phione/anim.asm"
+ManaphyAnimation:      INCLUDE "gfx/pokemon/sinnoh/manaphy/anim.asm"
 MeltanAnimation:       INCLUDE "gfx/pokemon/other/meltan/anim.asm"
 MelmetalAnimation:       INCLUDE "gfx/pokemon/other/melmetal/anim.asm"
+MewAnimation:        INCLUDE "gfx/pokemon/kanto/mew/anim.asm"
+UnownAnimation:      INCLUDE "gfx/pokemon/johto/unown/anim.asm"

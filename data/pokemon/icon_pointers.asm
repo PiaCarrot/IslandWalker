@@ -156,7 +156,6 @@ IconPointers:
 	dw DragonairIcon
 	dw DragoniteIcon
 	dw MewtwoIcon
-	dw MewIcon
 ; Johto
 	dw ChikoritaIcon
 	dw BayleefIcon
@@ -207,7 +206,6 @@ IconPointers:
 	dw MurkrowIcon
 	dw SlowkingIcon
 	dw MisdreavusIcon
-	dw UnownIcon
 	dw WobbuffetIcon
 	dw GirafarigIcon
 	dw PinecoIcon
@@ -352,8 +350,6 @@ IconPointers:
        dw DusknoirIcon
        dw FroslassIcon
        dw RotomIcon
-       dw PhioneIcon
-       dw ManaphyIcon
        dw FerroseedIcon
        dw FerrothornIcon
        dw StunfiskIcon
@@ -424,8 +420,12 @@ IconPointers:
        dw UrsalunaIcon
        dw WyrdeerIcon
        dw MarshadowIcon
+       dw PhioneIcon
+       dw ManaphyIcon
        dw MeltanIcon
        dw MelmetalIcon
+	dw MewIcon
+	dw UnownIcon
 ; forms
         dw LaprasIcon
         dw RattataIcon

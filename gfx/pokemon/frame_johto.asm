@@ -50,7 +50,6 @@ FramePointers2:
 	dw MurkrowFrames
 	dw SlowkingFrames
 	dw MisdreavusFrames
-	dw UnownFrames
 	dw WobbuffetFrames
 	dw GirafarigFrames
 	dw PinecoFrames
@@ -152,7 +151,6 @@ UmbreonFrames:    INCLUDE "gfx/pokemon/johto/umbreon/frames.asm"
 MurkrowFrames:    INCLUDE "gfx/pokemon/johto/murkrow/frames.asm"
 SlowkingFrames:   INCLUDE "gfx/pokemon/johto/slowking/frames.asm"
 MisdreavusFrames: INCLUDE "gfx/pokemon/johto/misdreavus/frames.asm"
-UnownFrames:      INCLUDE "gfx/pokemon/johto/unown/frames.asm"
 WobbuffetFrames:  INCLUDE "gfx/pokemon/johto/wobbuffet/frames.asm"
 GirafarigFrames:  INCLUDE "gfx/pokemon/johto/girafarig/frames.asm"
 PinecoFrames:     INCLUDE "gfx/pokemon/johto/pineco/frames.asm"

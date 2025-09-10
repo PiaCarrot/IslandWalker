@@ -151,7 +151,6 @@ EvosAttacksPointers1::
 	dw DragonairEvosAttacks
 	dw DragoniteEvosAttacks
 	dw MewtwoEvosAttacks
-	dw MewEvosAttacks
 .IndirectEnd::
 
 BulbasaurEvosAttacks:
@@ -2827,21 +2826,6 @@ MewtwoEvosAttacks:
 	dbw 71, PSYCHIC_M
 	dbw 86, RECOVER
 	dbw 93, SAFEGUARD
-	dbw 100, AURA_SPHERE
-	db 0 ; no more level-up moves
-
-MewEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, POUND
-	dbw 1, TRANSFORM
-	dbw 10, MEGA_PUNCH
-	dbw 20, METRONOME
-	dbw 30, PSYCHIC_M
-	dbw 40, BARRIER
-	dbw 50, ANCIENTPOWER
-	dbw 60, AMNESIA
-	dbw 80, BATON_PASS
-	dbw 90, NASTY_PLOT
 	dbw 100, AURA_SPHERE
 	db 0 ; no more level-up moves
 

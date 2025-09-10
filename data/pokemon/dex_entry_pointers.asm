@@ -152,7 +152,6 @@ PokedexDataPointerTable:
 	dba DragonairPokedexEntry
 	dba DragonitePokedexEntry
 	dba MewtwoPokedexEntry
-	dba MewPokedexEntry
 ; Johto
 	dba ChikoritaPokedexEntry
 	dba BayleefPokedexEntry
@@ -203,7 +202,6 @@ PokedexDataPointerTable:
 	dba MurkrowPokedexEntry
 	dba SlowkingPokedexEntry
 	dba MisdreavusPokedexEntry
-	dba UnownPokedexEntry
 	dba WobbuffetPokedexEntry
 	dba GirafarigPokedexEntry
 	dba PinecoPokedexEntry
@@ -348,8 +346,6 @@ PokedexDataPointerTable:
        dba DusknoirPokedexEntry
        dba FroslassPokedexEntry
        dba RotomPokedexEntry
-       dba PhionePokedexEntry
-       dba ManaphyPokedexEntry
        dba FerroseedPokedexEntry
        dba FerrothornPokedexEntry
        dba StunfiskPokedexEntry
@@ -420,8 +416,12 @@ PokedexDataPointerTable:
        dba UrsalunaPokedexEntry
        dba WyrdeerPokedexEntry
        dba MarshadowPokedexEntry
+       dba PhionePokedexEntry
+       dba ManaphyPokedexEntry
        dba MeltanPokedexEntry
        dba MelmetalPokedexEntry
+	dba MewPokedexEntry
+	dba UnownPokedexEntry
 ; Forms
         dba LaprasPartnerPokedexEntry
         dba RattataAlolaPokedexEntry

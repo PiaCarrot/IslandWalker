@@ -151,7 +151,6 @@ FirstEvoStages::
 	dw DRATINI
 	dw DRATINI
 	dw MEWTWO
-	dw MEW
 	dw CHIKORITA  ;098
 	dw CHIKORITA
 	dw CHIKORITA
@@ -201,7 +200,6 @@ FirstEvoStages::
 	dw MURKROW
 	dw SLOWPOKE
 	dw MISDREAVUS ;0c8
-	dw UNOWN
 	dw WOBBUFFET
 	dw GIRAFARIG
 	dw PINECO
@@ -345,8 +343,6 @@ FirstEvoStages::
        dw DUSKULL
        dw SNORUNT
        dw ROTOM
-       dw PHIONE
-       dw MANAPHY
        dw FERROSEED
        dw FERROSEED
        dw STUNFISK
@@ -417,8 +413,12 @@ FirstEvoStages::
        dw URSALUNA
        dw WYRDEER
        dw MARSHADOW
+       dw PHIONE
+       dw MANAPHY
        dw MELTAN
        dw MELMETAL
+	dw MEW
+	dw UNOWN
         dw LAPRAS_PARTNER
         dw RATTATA_ALOLA
         dw RATTATA_ALOLA ; RATICATE_ALOLA

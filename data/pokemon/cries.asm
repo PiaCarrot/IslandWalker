@@ -157,7 +157,6 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,    64,  256 ; DRAGONAIR
 	mon_cry CRY_BULBASAUR,    60,  320 ; DRAGONITE
 	mon_cry CRY_PARAS,       153,  383 ; MEWTWO
-	mon_cry CRY_PARAS,       238,  383 ; MEW
 ; Johto
 	mon_cry CRY_CHIKORITA,   -16,  176 ; CHIKORITA
 	mon_cry CRY_CHIKORITA,   -34,  288 ; BAYLEEF
@@ -208,7 +207,6 @@ PokemonCries::
 	mon_cry CRY_MARILL,      -31,  384 ; MURKROW
 	mon_cry CRY_SLOWKING,    260,  512 ; SLOWKING
 	mon_cry CRY_HOOTHOOT,    304,  232 ; MISDREAVUS
-	mon_cry CRY_HOOTHOOT,    354,  256 ; UNOWN
 	mon_cry CRY_AMPHAROS,    635,  324 ; WOBBUFFET
 	mon_cry CRY_GIRAFARIG,    65,  512 ; GIRAFARIG
 	mon_cry CRY_SLOWKING,    128,  256 ; PINECO
@@ -353,8 +351,6 @@ PokemonCries::
 	mon_cry CRY_DROWZEE,     $044,  $0c6 ; DUSKNOIR
 	mon_cry CRY_PICHU,       $feb,  $500 ; FROSLASS
     mon_cry CRY_PHIONE,      32,  556 ; ROTOM
-    mon_cry CRY_CHARCADET,   122,  584 ; PHIONE
-    mon_cry CRY_PHIONE,      128,  256 ; MANAPHY
 	mon_cry CRY_MANTINE,     $032,  $080 ; FERROSEED
 	mon_cry CRY_MANTINE,     $184,  $0a0 ; FERROTHORN
 	mon_cry CRY_METAPOD,     $2d1,  $0e0 ; STUNFISK
@@ -425,8 +421,12 @@ PokemonCries::
 	mon_cry CRY_TEDDIURSA,  1400,  127 ; URSALUNA
 	mon_cry CRY_BLASTOISE,    196,  187 ; WYRDEER
 	mon_cry CRY_CHIKORITA,  -142,  643 ; MARSHADOW
+    mon_cry CRY_CHARCADET,   122,  584 ; PHIONE
+    mon_cry CRY_PHIONE,      128,  256 ; MANAPHY
 	mon_cry CRY_MARILL,      249,  164 ; MELTAN
     mon_cry CRY_PHIONE,      228,  456 ; MELMETAL
+	mon_cry CRY_PARAS,       238,  383 ; MEW
+	mon_cry CRY_HOOTHOOT,    354,  256 ; UNOWN
 ; Forms
     mon_cry CRY_LAPRAS,       80,  256 ; LAPRAS PARTNER
     mon_cry CRY_RATTATA,       0,  256 ; RATTATA ALOLA
