@@ -107,6 +107,8 @@ StringOptions_NoCheats:
         db "        :TYPE<LF>"
         db "CHALLENGES<LF>"
         db "        <LF>"
+        db "        <LF>"
+        db "        <LF>"
         db "CANCEL@"
 
 StringOptions:
@@ -586,14 +588,27 @@ OptionsControl:
 .DownPressed:
         ldh a, [hCheatsMenuFlag]
         and a
-        ld b, OPT_CANCEL
-        jr nz, .have_max
-        ld b, OPT_CHEATS
-.have_max
+        jr nz, .cheats_enabled
+        ; cheats are disabled: skip the Cheats option and wrap past Cancel
         ld a, [hl]
-        cp b
+        cp OPT_CHALLENGES
+        jr nz, .check_wrap
+        ld [hl], OPT_CANCEL
+        scf
+        ret
+
+.check_wrap
+        cp OPT_CHEATS
+        jr c, .Increase
+        ld [hl], OPT_TEXT_SPEED ; wrap to first option
+        scf
+        ret
+
+.cheats_enabled
+        ld a, [hl]
+        cp OPT_CANCEL
         jr nz, .Increase
-        ld [hl], OPT_TEXT_SPEED ; first option
+        ld [hl], OPT_TEXT_SPEED ; wrap to first option
         scf
         ret
 
@@ -608,12 +623,11 @@ OptionsControl:
         jr nz, .Decrease
         ldh a, [hCheatsMenuFlag]
         and a
-        ld a, OPT_CANCEL
+        ld a, NUM_OPTIONS ; wrap to one past Cancel when cheats are enabled
         jr nz, .set_max
-        ld a, OPT_CHEATS
+        ld a, NUM_OPTIONS - 1 ; wrap to one past final option when cheats are disabled
 .set_max
         ld [hl], a ; decrements to max option index
-
 .Decrease:
         dec [hl]
         scf
