@@ -415,17 +415,17 @@ Pokedex_UpdateMainScreen:
 	ret
 
 Pokedex_InitDexEntryScreen:
-        call LowVolume
-       xor a ; page 1
-       ld [wPokedexStatus], a
-       xor a
-       ldh [hBGMapMode], a
-       ld [wTempMonShiny], a ; start with normal palette
-        call ClearSprites
-        call Pokedex_LoadCurrentFootprint
-        call Pokedex_DrawDexEntryScreenBG
-        call Pokedex_InitArrowCursor
-        call Pokedex_GetSelectedMon
+	call LowVolume
+    xor a ; page 1
+    ld [wPokedexStatus], a
+    xor a
+    ldh [hBGMapMode], a
+    ld [wTempMonShiny], a ; start with normal palette
+	call ClearSprites
+	call Pokedex_LoadCurrentFootprint
+	call Pokedex_DrawDexEntryScreenBG
+	call Pokedex_InitArrowCursor
+	call Pokedex_GetSelectedMon
 	ld a, l
 	ld [wPrevDexEntry], a
 	ld a, h
@@ -441,6 +441,9 @@ Pokedex_InitDexEntryScreen:
 	call Pokedex_GetSGBLayout
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
+	; Restart the map music after the cry to prevent its
+	; waveform data from corrupting the background track.
+	call LowVolume
 	jmp Pokedex_IncrementDexPointer
 
 Pokedex_UpdateDexEntryScreen:
