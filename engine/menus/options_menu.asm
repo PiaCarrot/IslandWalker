@@ -803,34 +803,38 @@ GetCheatOptionPointer:
 DEF NUM_CHEAT_OPTIONS EQU const_value ; 6
 
 Options_WalkThroughWalls:
-        ld hl, wOptions2
-        ldh a, [hJoyPressed]
-        bit B_PAD_LEFT, a
-        jr nz, .LeftPressed
-        bit B_PAD_RIGHT, a
-        jr z, .NonePressed
-        bit CHEAT_WALK_THROUGH_WALLS, [hl]
-        jr nz, .ToggleOff
-        jr .ToggleOn
+       ld hl, wOptions2
+       ldh a, [hJoyPressed]
+       bit B_PAD_LEFT, a
+       jr nz, .LeftPressed
+       bit B_PAD_RIGHT, a
+       jr z, .NonePressed
+       bit CHEAT_WALK_THROUGH_WALLS, [hl]
+       jr nz, .ToggleOff
+       jr .ToggleOn
 .LeftPressed:
-        bit CHEAT_WALK_THROUGH_WALLS, [hl]
-        jr z, .ToggleOn
-        jr .ToggleOff
+       bit CHEAT_WALK_THROUGH_WALLS, [hl]
+       jr z, .ToggleOn
+       jr .ToggleOff
 .NonePressed:
-        bit CHEAT_WALK_THROUGH_WALLS, [hl]
-        jr nz, .ToggleOn
+       bit CHEAT_WALK_THROUGH_WALLS, [hl]
+       jr nz, .ToggleOn
 .ToggleOff:
-        res CHEAT_WALK_THROUGH_WALLS, [hl]
-        ld de, .Off
-        jr .Display
+       res CHEAT_WALK_THROUGH_WALLS, [hl]
+       ld hl, wDebugFlags
+       res DEBUG_FIELD_F, [hl]
+       ld de, .Off
+       jr .Display
 .ToggleOn:
-        set CHEAT_WALK_THROUGH_WALLS, [hl]
-        ld de, .On
+       set CHEAT_WALK_THROUGH_WALLS, [hl]
+       ld hl, wDebugFlags
+       set DEBUG_FIELD_F, [hl]
+       ld de, .On
 .Display:
-        hlcoord 11, 3
-        rst PlaceString
-        and a
-        ret
+       hlcoord 11, 3
+       rst PlaceString
+       and a
+       ret
 .Off: db "OFF@"
 .On:  db "ON @"
 

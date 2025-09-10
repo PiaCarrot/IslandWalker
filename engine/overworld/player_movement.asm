@@ -30,26 +30,19 @@ DoPlayerMovement::
 	ret
 
 .TranslateIntoMovement:
-	if DEF(_DEBUG)
-	ld a, [wCurInput]
-	or ~(A_BUTTON | B_BUTTON)
-	inc a
-	jr nz, .regular_move
-	call .GetAction
-	ld a, [wWalkingTileCollision]
-	cp -1
-	ld a, STEP_BACK_LEDGE
-	jr z, .hopback
-	ld a, STEP_RUN
-.hopback
-	call .DoStep
-	scf
-	ret
-.regular_move
+if DEF(_DEBUG)
+        call .DebugFieldMovement
+        ret c
 endc
-	ld a, [wPlayerState]
-	cp PLAYER_NORMAL
-	jr z, .Normal
+        ld a, [wDebugFlags]
+        bit DEBUG_FIELD_F, a
+        jr z, .regular_move
+        call .DebugFieldMovement
+        ret c
+.regular_move
+        ld a, [wPlayerState]
+       cp PLAYER_NORMAL
+       jr z, .Normal
 	cp PLAYER_SURF
 	jr z, .Surf
 	cp PLAYER_SURF_PIKA
@@ -122,9 +115,25 @@ endc
 	ret
 
 .Standing:
-	call .StandInPlace
-	xor a
-	ret
+        call .StandInPlace
+        xor a
+        ret
+
+.DebugFieldMovement:
+        ld a, [wCurInput]
+        or ~(A_BUTTON | B_BUTTON)
+        inc a
+        ret nz
+        call .GetAction
+        ld a, [wWalkingTileCollision]
+        cp -1
+        ld a, STEP_BACK_LEDGE
+        jr z, .hopback
+        ld a, STEP_RUN
+.hopback
+        call .DoStep
+        scf
+        ret
 
 .CheckTile:
 ; Tiles such as waterfalls and warps move the player
