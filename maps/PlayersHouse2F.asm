@@ -109,11 +109,8 @@ PlayersHouseBookshelfScript:
 	giveitem EXP_CANDY_M, 99
 	giveitem EXP_CANDY_L, 99
 	giveitem EXP_CANDY_XL, 99
-	givepoke DIGLETT, 18
-	givepoke ZIGZAGOON, 16
-	givepoke CHERRIM, 16
-	callasm CheatFillPokedex
-	setflag ENGINE_POKEDEX
+;	callasm CheatFillPokedex
+;	setflag ENGINE_POKEDEX
 	end
 else
 	jumpstd PictureBookshelfScript

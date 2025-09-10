@@ -98,9 +98,31 @@ DisplayDexEntry:
 	push hl
 	ld a, [wTempSpecies]
 	call GetPokemonIndexFromID
-	ld b, l
-	ld c, h
-	ld hl, sp + 0
+        ; For form species, show the base species' Pokédex number
+        ld a, h
+        cp HIGH(FORM_POKEMON)
+        jr c, .GotDexNo
+        jr nz, .FormDexNo
+        ld a, l
+        cp LOW(FORM_POKEMON)
+        jr c, .GotDexNo
+.FormDexNo
+        ; hl = form index, convert to base species index
+        ld a, l
+        sub LOW(FORM_POKEMON)
+        ld l, a
+        ld a, h
+        sbc HIGH(FORM_POKEMON)
+        ld h, a
+        add hl, hl
+        ld de, FormBaseSpecies
+        add hl, de
+        ld a, BANK(FormBaseSpecies)
+        call GetFarWord
+.GotDexNo
+        ld b, l
+        ld c, h
+        ld hl, sp + 0
 	ld d, h
 	ld e, l
 	pop hl
