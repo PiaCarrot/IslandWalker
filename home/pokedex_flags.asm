@@ -85,8 +85,40 @@ SetSeenMon::
 SetSeenMonIndex::
 	ld hl, wPokedexSeen
 SetPokedexStatusMonIndex:
-	ld b, SET_FLAG
-	jr FlagActionBaseOne
+       ld b, SET_FLAG
+       push de
+       push hl
+       call FlagActionBaseOne
+       pop hl
+       pop de
+
+       ld a, d
+       cp HIGH(FORM_POKEMON)
+       jr c, .done
+       jr nz, .form
+       ld a, e
+       cp LOW(FORM_POKEMON)
+       jr c, .done
+.form
+       push hl
+       ld a, e
+       sub LOW(FORM_POKEMON)
+       ld l, a
+       ld a, d
+       sbc HIGH(FORM_POKEMON)
+       ld h, a
+       add hl, hl
+       ld de, FormBaseSpecies
+       add hl, de
+       ld a, BANK(FormBaseSpecies)
+       call GetFarWord
+       ld d, h
+       ld e, l
+       pop hl
+       ld b, SET_FLAG
+       call FlagActionBaseOne
+.done
+       ret
 	
 ResetSeenAndCaughtMon::
 	call GetPokemonFlagIndex
@@ -122,7 +154,7 @@ FlagActionBaseOne:
 	jmp FlagAction
 
 GetPokemonFlagIndex::
-	call GetPokemonIndexFromID
-	ld d, h
-	ld e, l
-	ret
+        call GetPokemonIndexFromID
+        ld d, h
+        ld e, l
+        ret
