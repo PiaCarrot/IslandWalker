@@ -619,13 +619,23 @@ OptionsControl:
 
 .UpPressed:
         ld a, [hl]
+		cp OPT_CANCEL
+        jr nz, .NotCancel
+        ldh a, [hCheatsMenuFlag]
+        and a
+        jr nz, .Decrease ; cheats enabled: go to Cheats
+        ld [hl], OPT_CHALLENGES
+        scf
+        ret
+
+.NotCancel:
         and a ; OPT_TEXT_SPEED, minimum option index
         jr nz, .Decrease
         ldh a, [hCheatsMenuFlag]
         and a
         ld a, NUM_OPTIONS ; wrap to one past Cancel when cheats are enabled
         jr nz, .set_max
-        ld a, NUM_OPTIONS - 1 ; wrap to one past final option when cheats are disabled
+        ld a, NUM_OPTIONS ; wrap to one past final option when cheats are disabled
 .set_max
         ld [hl], a ; decrements to max option index
 .Decrease:
