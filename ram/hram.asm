@@ -174,6 +174,7 @@ hSystemBooted:: db
 hClockResetTrigger:: db
 
 hLugiaCryTrigger:: db
+hCheatsMenuFlag:: db
 
 hFarCallSavedA:: db
 hFarCallSavedHL::
@@ -196,6 +197,6 @@ hRequestOpaque1bpp::    db
 
 hTilesetGFXBank:: db
 
-        ds 3
+        ds 2
 
 ENDSECTION

@@ -391,12 +391,12 @@ INCLUDE "engine/events/print_unown_2.asm"
 INCLUDE "engine/games/card_flip.asm"
 INCLUDE "engine/games/unown_puzzle.asm"
 INCLUDE "engine/games/memory_game.asm"
-INCLUDE "engine/movie/splash.asm"
+INCLUDE "engine/menus/options_menu.asm"
 
 
 SECTION "bank39", ROMX
 
-INCLUDE "engine/menus/options_menu.asm"
+INCLUDE "engine/movie/splash.asm"
 INCLUDE "engine/movie/intro.asm"
 
 

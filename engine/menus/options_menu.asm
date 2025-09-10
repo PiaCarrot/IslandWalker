@@ -6,38 +6,52 @@
         const OPT_SOUND         ; 3
         const OPT_FRAME         ; 4
         const OPT_CHALLENGES    ; 5
-        const OPT_CANCEL        ; 6
-DEF NUM_OPTIONS EQU const_value ; 7
+        const OPT_CHEATS        ; 6
+        const OPT_CANCEL        ; 7
+DEF NUM_OPTIONS EQU const_value ; 8
 
 _Option:
-	call ClearJoypad
-	ld hl, hInMenu
-	ld a, [hl]
-	push af
-	ld [hl], TRUE
-	call ClearBGPalettes
-	hlcoord 0, 0
-	lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
-	call Textbox
-	hlcoord 2, 2
-	ld de, StringOptions
-	rst PlaceString
-	xor a
-	ld [wJumptableIndex], a
+        call ClearJoypad
+        ld hl, hInMenu
+        ld a, [hl]
+        push af
+        ld [hl], TRUE
+        call ClearBGPalettes
+        hlcoord 0, 0
+        lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
+        call Textbox
+
+        ld a, BANK(sLugiaCryFlag)
+        call OpenSRAM
+        ld hl, sLugiaCryFlag
+        ld a, [hl]
+        call CloseSRAM
+        ldh [hCheatsMenuFlag], a
+
+        hlcoord 2, 2
+        ld de, StringOptions_NoCheats
+        ldh a, [hCheatsMenuFlag]
+        and a
+        jr z, .no_cheats_string
+        ld de, StringOptions
+.no_cheats_string
+        rst PlaceString
+        xor a
+        ld [wJumptableIndex], a
 
 ; display the settings of each option when the menu is opened
-        ld c, NUM_OPTIONS - 2 ; omit frame type and cancel
+        ld c, NUM_OPTIONS - 3 ; omit frame type, cheats and cancel
 .print_text_loop
-	push bc
-	xor a
-	ldh [hJoyLast], a
-	call GetOptionPointer
-	pop bc
-	ld hl, wJumptableIndex
-	inc [hl]
-	dec c
-	jr nz, .print_text_loop
-	call UpdateFrame ; display the frame type
+        push bc
+        xor a
+        ldh [hJoyLast], a
+        call GetOptionPointer
+        pop bc
+        ld hl, wJumptableIndex
+        inc [hl]
+        dec c
+        jr nz, .print_text_loop
+        call UpdateFrame ; display the frame type
 
 	xor a
 	ld [wJumptableIndex], a
@@ -72,13 +86,13 @@ _Option:
 	ldh [hInMenu], a
 	ret
 
-StringOptions:
-	db "TEXT SPEED<LF>"
-	db "        :<LF>"
-	db "BATTLE SCENE<LF>"
-	db "        :<LF>"
-	db "BATTLE STYLE<LF>"
-	db "        :<LF>"
+StringOptions_NoCheats:
+        db "TEXT SPEED<LF>"
+        db "        :<LF>"
+        db "BATTLE SCENE<LF>"
+        db "        :<LF>"
+        db "BATTLE STYLE<LF>"
+        db "        :<LF>"
         db "SOUND<LF>"
         db "        :<LF>"
         db "FRAME<LF>"
@@ -87,8 +101,34 @@ StringOptions:
         db "        <LF>"
         db "CANCEL@"
 
+StringOptions:
+        db "TEXT SPEED<LF>"
+        db "        :<LF>"
+        db "BATTLE SCENE<LF>"
+        db "        :<LF>"
+        db "BATTLE STYLE<LF>"
+        db "        :<LF>"
+        db "SOUND<LF>"
+        db "        :<LF>"
+        db "FRAME<LF>"
+        db "        :TYPE<LF>"
+        db "CHALLENGES<LF>"
+        db "        <LF>"
+        db "CHEATS<LF>"
+        db "        <LF>"
+        db "CANCEL@"
+
 GetOptionPointer:
-	jumptable .Pointers, wJumptableIndex
+        ldh a, [hCheatsMenuFlag]
+        and a
+        jr nz, .use_table
+        ld a, [wJumptableIndex]
+        cp OPT_CHEATS
+        jr nz, .use_table
+        ld a, OPT_CANCEL
+        ld [wJumptableIndex], a
+.use_table
+        jumptable .Pointers, wJumptableIndex
 
 .Pointers:
 ; entries correspond to OPT_* constants
@@ -98,6 +138,7 @@ GetOptionPointer:
         dw Options_Sound
         dw Options_Frame
         dw Options_Challenges
+        dw Options_Cheats
         dw Options_Cancel
 
 	const_def
@@ -318,6 +359,17 @@ Options_Challenges:
         and a
         ret
 
+Options_Cheats:
+        ldh a, [hJoyPressed]
+        and PAD_A
+        ret z
+        call CheatsMenu
+        ld a, OPT_CHEATS
+        ld [wJumptableIndex], a
+        call Options_UpdateCursorPosition
+        and a
+        ret
+
 Options_OakChallenge:
         ld hl, wOptions2
         ldh a, [hJoyPressed]
@@ -524,8 +576,14 @@ OptionsControl:
         ret
 
 .DownPressed:
+        ldh a, [hCheatsMenuFlag]
+        and a
+        ld b, OPT_CANCEL
+        jr nz, .have_max
+        ld b, OPT_CHEATS
+.have_max
         ld a, [hl]
-        cp OPT_CANCEL ; maximum option index
+        cp b
         jr nz, .Increase
         ld [hl], OPT_TEXT_SPEED ; first option
         scf
@@ -540,7 +598,13 @@ OptionsControl:
         ld a, [hl]
         and a ; OPT_TEXT_SPEED, minimum option index
         jr nz, .Decrease
-        ld [hl], NUM_OPTIONS ; decrements to OPT_CANCEL, maximum option index
+        ldh a, [hCheatsMenuFlag]
+        and a
+        ld a, OPT_CANCEL
+        jr nz, .set_max
+        ld a, OPT_CHEATS
+.set_max
+        ld [hl], a ; decrements to max option index
 
 .Decrease:
         dec [hl]
@@ -570,12 +634,17 @@ Options_Reload:
         lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
         call Textbox
         hlcoord 2, 2
+        ld de, StringOptions_NoCheats
+        ldh a, [hCheatsMenuFlag]
+        and a
+        jr z, .no_cheats_reload
         ld de, StringOptions
+.no_cheats_reload
         rst PlaceString
         xor a
         ld [wJumptableIndex], a
 
-        ld c, NUM_OPTIONS - 2 ; omit frame and cancel
+        ld c, NUM_OPTIONS - 3 ; omit frame, cheats and cancel
 .print_loop
         push bc
         xor a
@@ -597,6 +666,45 @@ Options_Reload:
         call GetSGBLayout
         call SetDefaultBGPAndOBP
         ret
+
+CheatsMenu:
+        call ClearJoypad
+        ld hl, hInMenu
+        ld a, [hl]
+        push af
+        ld [hl], TRUE
+        call ClearBGPalettes
+        hlcoord 0, 0
+        lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
+        call Textbox
+        hlcoord 2, 2
+        ld de, StringCheatOptions
+        rst PlaceString
+        xor a
+        ld [wJumptableIndex], a
+        call Options_UpdateCursorPosition
+        ld a, 1
+        ldh [hBGMapMode], a
+        call WaitBGMap
+        ld b, SCGB_DIPLOMA
+        call GetSGBLayout
+        call SetDefaultBGPAndOBP
+
+.cheat_loop
+        call JoyTextDelay
+        ldh a, [hJoyPressed]
+        and PAD_START | PAD_A | PAD_B
+        jr z, .cheat_loop
+        ld de, SFX_TRANSACTION
+        call PlaySFX
+        call WaitSFX
+        pop af
+        ldh [hInMenu], a
+        call Options_Reload
+        ret
+
+StringCheatOptions:
+        db "BACK@"
 
 ChallengesMenu:
         call ClearJoypad
