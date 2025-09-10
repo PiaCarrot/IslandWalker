@@ -551,95 +551,192 @@ DexEntryScreen_MenuActionJumptable:
 	ld d, b
 	jmp PlayCry
 
-.Form:
-       call Pokedex_GetSelectedMon
-       ld b, a
-       call .GetForm
-       ret nc
-       ld [wTempSpecies], a
-       ld l, LOCKED_MON_ID_DEX_SELECTED
-       call LockPokemonID
-       call Pokedex_LoadAnyFootprint
-       farcall DisplayDexEntry
-       call Pokedex_DrawFootprint
-       call Pokedex_CheckSeen
-       jr z, .QuestionMark
-       ld a, [wFirstUnownSeen]
-       ld [wUnownLetter], a
-       ld a, [wTempSpecies]
-       ld [wCurPartySpecies], a
-       call GetBaseData
-       ld de, vTiles2
-       predef GetMonFrontpic
-       jr .after_pic
-.QuestionMark:
-       ld a, BANK(sScratch)
-       call OpenSRAM
-       farcall LoadQuestionMarkPic
-       ld hl, vTiles2
-       ld de, sScratch
-       ld c, 7 * 7
-       ldh a, [hROMBank]
-       ld b, a
-       call Get2bpp
-       call CloseSRAM
-.after_pic:
-       call WaitBGMap
-       ld a, SCGB_POKEDEX
-       call Pokedex_GetSGBLayout
-.wait_input
-       call JoyTextDelay
-       ld a, [hJoyPressed]
-       and PAD_A | PAD_B
-       jr z, .wait_input
-       call Pokedex_LoadCurrentFootprint
-       call Pokedex_RedisplayDexEntry
-       call Pokedex_LoadSelectedMonTiles
-       call WaitBGMap
-       call Pokedex_GetSelectedMon
-       ld [wCurPartySpecies], a
-       ld a, SCGB_POKEDEX
-       call Pokedex_GetSGBLayout
-       ret
 
-.GetForm:
-       ld a, b
-       call GetPokemonIndexFromID
-       ld d, h
-       ld e, l
-       ld c, NUM_FORM_POKEMON
-       ld hl, FormBaseSpecies
-.loop
-       push bc
-       push hl
-       ld a, BANK(FormBaseSpecies)
-       call GetFarWord
-       ld a, l
-       cp e
-       jr nz, .next
-       ld a, h
-       cp d
-       jr nz, .next
-       pop hl
-       pop bc
-       ld a, NUM_FORM_POKEMON
-       sub c
-       ld e, a
-       ld d, 0
-       ld hl, FORM_POKEMON
-       add hl, de
-       call GetPokemonIDFromIndex
-       scf
-       ret
-.next
-       pop hl
-       pop bc
-       inc hl
-       inc hl
-       dec c
-       jr nz, .loop
-       or a
-       ret
+.Form:
+	call Pokedex_GetSelectedMon
+	ld [wDexFormBaseSpecies], a
+	ld b, a
+	call .CountForms
+	ld [wDexFormCount], a
+	ret z
+	xor a
+	ld [wDexFormIndex], a
+
+.cycle_form
+	ld a, [wDexFormIndex]
+	ld c, a
+	ld a, [wDexFormBaseSpecies]
+	ld b, a
+	call .GetNthForm
+	ret nc
+	ld [wTempSpecies], a
+	ld l, LOCKED_MON_ID_DEX_SELECTED
+	call LockPokemonID
+	call Pokedex_LoadAnyFootprint
+	farcall DisplayDexEntry
+	call Pokedex_DrawFootprint
+	call Pokedex_CheckSeen
+	jr z, .QuestionMark
+	ld a, [wFirstUnownSeen]
+	ld [wUnownLetter], a
+	ld a, [wTempSpecies]
+	ld [wCurPartySpecies], a
+	call GetBaseData
+	ld de, vTiles2
+	predef GetMonFrontpic
+	jr .after_pic
+.QuestionMark:
+	ld a, BANK(sScratch)
+	call OpenSRAM
+	farcall LoadQuestionMarkPic
+	ld hl, vTiles2
+	ld de, sScratch
+	ld c, 7 * 7
+	ldh a, [hROMBank]
+	ld b, a
+	call Get2bpp
+	call CloseSRAM
+.after_pic:
+	call WaitBGMap
+	ld a, SCGB_POKEDEX
+	call Pokedex_GetSGBLayout
+.form_input_loop
+	call JoyTextDelay
+	ld a, [hJoyPressed]
+	and PAD_B
+	jr nz, .exit_forms
+	ld a, [hJoyPressed]
+	and PAD_LEFT | PAD_RIGHT | PAD_UP | PAD_DOWN
+	jr z, .form_input_loop
+	ld a, [hJoyPressed]
+	and PAD_UP | PAD_DOWN
+	jr z, .check_lr
+	ld a, [wPokedexStatus]
+	xor 1
+	ld [wPokedexStatus], a
+	ld a, [wTempSpecies]
+	farcall DisplayDexEntry
+	call WaitBGMap
+	jr .form_input_loop
+.check_lr
+	ld a, [hJoyPressed]
+	bit B_PAD_RIGHT, a
+	jr z, .form_left
+	ld a, [wDexFormIndex]
+	inc a
+	ld hl, wDexFormCount
+	cp [hl]
+	jr c, .store_right
+	xor a
+.store_right
+	ld [wDexFormIndex], a
+	jp .cycle_form
+.form_left
+	ld a, [wDexFormIndex]
+	and a
+	jr nz, .dec_left
+	ld hl, wDexFormCount
+	ld a, [hl]
+	dec a
+	jr .store_left
+.dec_left
+	dec a
+.store_left
+	ld [wDexFormIndex], a
+	jp .cycle_form
+
+.exit_forms
+	call Pokedex_LoadCurrentFootprint
+	call Pokedex_RedisplayDexEntry
+	call Pokedex_LoadSelectedMonTiles
+	call WaitBGMap
+	call Pokedex_GetSelectedMon
+	ld [wCurPartySpecies], a
+	ld a, SCGB_POKEDEX
+	call Pokedex_GetSGBLayout
+	ret
+
+
+.GetNthForm:
+	ld a, b
+	call GetPokemonIndexFromID
+	ld d, h
+	ld e, l
+	ld b, NUM_FORM_POKEMON
+	ld hl, FormBaseSpecies
+	.nth_loop
+	push bc
+	push hl
+	ld a, BANK(FormBaseSpecies)
+	call GetFarWord
+	ld a, l
+	cp e
+	jr nz, .not_match
+	ld a, h
+	cp d
+	jr nz, .not_match
+	pop hl
+	pop bc
+	ld a, c
+	and a
+	jr z, .found_form
+	dec c
+	jr .continue
+	.not_match
+	pop hl
+	pop bc
+	.continue
+	inc hl
+	inc hl
+	dec b
+	jr nz, .nth_loop
+	or a
+	ret
+.found_form
+	ld a, NUM_FORM_POKEMON
+	sub b
+	ld e, a
+	ld d, 0
+	ld hl, FORM_POKEMON
+	add hl, de
+	call GetPokemonIDFromIndex
+	scf
+	ret
+
+.CountForms:
+	ld a, b
+	call GetPokemonIndexFromID
+	ld d, h
+	ld e, l
+	ld b, NUM_FORM_POKEMON
+	ld hl, FormBaseSpecies
+	ld c, 0
+.count_loop
+	push bc
+	push hl
+	ld a, BANK(FormBaseSpecies)
+	call GetFarWord
+	ld a, l
+	cp e
+	jr nz, .count_not
+	ld a, h
+	cp d
+	jr nz, .count_not
+	pop hl
+	pop bc
+	inc c
+	jr .count_after
+.count_not
+	pop hl
+	pop bc
+.count_after
+	inc hl
+	inc hl
+	dec b
+	jr nz, .count_loop
+	ld a, c
+	and a
+	ret
 
 Pokedex_RedisplayDexEntry:
 	call Pokedex_DrawDexEntryScreenBG

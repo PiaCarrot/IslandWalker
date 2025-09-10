@@ -672,7 +672,7 @@ wc688:: ds 2
 wc68a:: ds 15
 ENDU
 
-; This union spans 280 bytes.
+; This union spans 283 bytes.
 UNION
 ; pokedex
 wPokedexDataStart::
@@ -702,6 +702,9 @@ wPokedexDisplayNumber:: dw
 wDexLastSeenIndex:: db ; index into wPokedexSeen containing the last non-zero value
 wDexLastSeenValue:: db ; value at index
 wDexTempCounter:: dw
+wDexFormBaseSpecies:: db
+wDexFormCount:: db
+wDexFormIndex:: db
 wPokedexDataEnd::
 
 wPrevDexEntry:: dw
