@@ -266,9 +266,9 @@ TrainerCard_InitCard:
 	call PrintNum
 
 ; print pokedex caught count
-	ld hl, wPokedexCaught
-	ld bc, NUM_DEX_BYTES
-	call CountSetBits16
+        ld hl, wPokedexCaught
+        ld bc, NUM_DEX_BEFORE_FORMS_BYTES
+        call CountSetBits16
 	ld a, c
 	ld c, b
 	ld b, a

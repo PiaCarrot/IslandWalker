@@ -1382,8 +1382,8 @@ Pokedex_DrawMainScreenBG:
 	hlcoord 1, 11
 	ld de, String_SEEN
 	call Pokedex_PlaceString
-	ld hl, wPokedexSeen
-	ld bc, NUM_DEX_BYTES
+        ld hl, wPokedexSeen
+        ld bc, NUM_DEX_BEFORE_FORMS_BYTES
 	call CountSetBits16
 	ld a, c
 	ld de, wPokedexDisplayNumber + 1
@@ -1397,8 +1397,8 @@ Pokedex_DrawMainScreenBG:
 	hlcoord 1, 14
 	ld de, String_OWN
 	call Pokedex_PlaceString
-	ld hl, wPokedexCaught
-	ld bc, NUM_DEX_BYTES
+        ld hl, wPokedexCaught
+        ld bc, NUM_DEX_BEFORE_FORMS_BYTES
 	call CountSetBits16
 	ld a, c
 	ld de, wPokedexDisplayNumber + 1

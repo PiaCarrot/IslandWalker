@@ -68,10 +68,10 @@ _GetVarAction::
 
 .CountCaughtMons:
 ; Caught mons. Saturate at 255.
-	ld hl, wPokedexCaught
+        ld hl, wPokedexCaught
 .count_caught_or_seen_mons
-	ld bc, NUM_DEX_BYTES
-	call CountSetBits16
+        ld bc, NUM_DEX_BEFORE_FORMS_BYTES
+        call CountSetBits16
 	ld a, b
 .load_or_saturate
 	add -1
@@ -81,20 +81,20 @@ _GetVarAction::
 
 .CountSeenMons:
 ; Seen mons. Saturate at 255.
-	ld hl, wPokedexSeen
-	jr .count_caught_or_seen_mons
+        ld hl, wPokedexSeen
+        jr .count_caught_or_seen_mons
 
 .CountUncaughtMons:
 ; Mons left to catch. Saturate at 255.
-	ld hl, wPokedexCaught
-	ld bc, NUM_DEX_BYTES
-	call CountSetBits16
-	ld a, LOW(NUM_DEX_POKEMON)
-	sub c
-	ld c, a
-	ld a, HIGH(NUM_DEX_POKEMON)
-	sbc b
-	jr .load_or_saturate
+        ld hl, wPokedexCaught
+        ld bc, NUM_DEX_BEFORE_FORMS_BYTES
+        call CountSetBits16
+        ld a, LOW(NUM_DEX_BEFORE_FORMS)
+        sub c
+        ld c, a
+        ld a, HIGH(NUM_DEX_BEFORE_FORMS)
+        sbc b
+        jr .load_or_saturate
 
 .CountBadges:
 ; Number of owned badges.
