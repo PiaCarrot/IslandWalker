@@ -124,7 +124,6 @@ wDebugFlags:: db
 wGameLogicPaused:: db
 wSpriteUpdatesEnabled:: db
 wCheatsMenuEnable:: db
-
 wUnusedScriptByte:: db
 
 wMapTimeOfDay:: db
@@ -1591,6 +1590,9 @@ wOptions2::
 ; bit 0: oak challenge off/on
 ; bit 1: challenge mode off/on
 ; bit 2: level limits off/on
+; bit 3: inverse mode off/on
+; bit 4: walk through walls off/on
+; bit 5: instant hatching off/on
         db
 wLevelCap:: db
         ds 1

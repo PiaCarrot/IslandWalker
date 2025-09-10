@@ -9,7 +9,7 @@ DefaultOptions:
 	db 1 << FAST_TEXT_DELAY_F
 ; wGBPrinterBrightness: normal
         db GBPRINTER_NORMAL
-; wOptions2: oak challenge off, challenge mode off, level limits off, inverse mode off
+; wOptions2: oak challenge off, challenge mode off, level limits off, inverse mode off, walk through walls off, instant hatching off
         db 0
 
         db MAX_LEVEL ; wLevelCap

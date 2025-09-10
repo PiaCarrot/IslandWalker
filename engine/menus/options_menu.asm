@@ -714,6 +714,21 @@ CheatsMenu:
         rst PlaceString
         xor a
         ld [wJumptableIndex], a
+
+        ld c, NUM_CHEAT_OPTIONS - 1 ; omit Back option
+.cprint_loop
+        push bc
+        xor a
+        ldh [hJoyLast], a
+        call GetCheatOptionPointer
+        pop bc
+        ld hl, wJumptableIndex
+        inc [hl]
+        dec c
+        jr nz, .cprint_loop
+
+        xor a
+        ld [wJumptableIndex], a
         call Options_UpdateCursorPosition
         ld a, 1
         ldh [hBGMapMode], a
@@ -734,8 +749,19 @@ CheatsMenu:
 .cheat_loop
         call JoyTextDelay
         ldh a, [hJoyPressed]
-        and PAD_START | PAD_A | PAD_B
-        jr z, .cheat_loop
+        and PAD_START | PAD_B
+        jr nz, .Exit
+        call CheatsOptionsControl
+        jr c, .cdpad
+        call GetCheatOptionPointer
+        jr c, .Exit
+.cdpad
+        call Options_UpdateCursorPosition
+        ld c, 3
+        call DelayFrames
+        jr .cheat_loop
+
+.Exit
         ld de, SFX_TRANSACTION
         call PlaySFX
         call WaitSFX
@@ -745,7 +771,182 @@ CheatsMenu:
         ret
 
 StringCheatOptions:
+        db "WALK THRU WALLS<LF>"
+        db "        :<LF>"
+        db "INSTANT HATCHING<LF>"
+        db "        :<LF>"
+        db "99 RARE CANDIES<LF>"
+        db "        <LF>"
+        db "99 MASTER BALLS<LF>"
+        db "        <LF>"
+        db "MAX CASH<LF>"
+        db "        <LF>"
         db "BACK@"
+
+GetCheatOptionPointer:
+        jumptable .Pointers, wJumptableIndex
+.Pointers:
+        dw Options_WalkThroughWalls
+        dw Options_InstantHatching
+        dw Options_RareCandies
+        dw Options_Balls
+        dw Options_MaxCash
+        dw Options_BackToOptions
+
+        const_def
+        const CHEAT_OPT_WTW     ; 0
+        const CHEAT_OPT_HATCH   ; 1
+        const CHEAT_OPT_CANDY   ; 2
+        const CHEAT_OPT_BALLS   ; 3
+        const CHEAT_OPT_CASH    ; 4
+        const CHEAT_OPT_BACK    ; 5
+DEF NUM_CHEAT_OPTIONS EQU const_value ; 6
+
+Options_WalkThroughWalls:
+        ld hl, wOptions2
+        ldh a, [hJoyPressed]
+        bit B_PAD_LEFT, a
+        jr nz, .LeftPressed
+        bit B_PAD_RIGHT, a
+        jr z, .NonePressed
+        bit CHEAT_WALK_THROUGH_WALLS, [hl]
+        jr nz, .ToggleOff
+        jr .ToggleOn
+.LeftPressed:
+        bit CHEAT_WALK_THROUGH_WALLS, [hl]
+        jr z, .ToggleOn
+        jr .ToggleOff
+.NonePressed:
+        bit CHEAT_WALK_THROUGH_WALLS, [hl]
+        jr nz, .ToggleOn
+.ToggleOff:
+        res CHEAT_WALK_THROUGH_WALLS, [hl]
+        ld de, .Off
+        jr .Display
+.ToggleOn:
+        set CHEAT_WALK_THROUGH_WALLS, [hl]
+        ld de, .On
+.Display:
+        hlcoord 11, 3
+        rst PlaceString
+        and a
+        ret
+.Off: db "OFF@"
+.On:  db "ON @"
+
+Options_InstantHatching:
+        ld hl, wOptions2
+        ldh a, [hJoyPressed]
+        bit B_PAD_LEFT, a
+        jr nz, .LeftPressed
+        bit B_PAD_RIGHT, a
+        jr z, .NonePressed
+        bit CHEAT_INSTANT_HATCHING, [hl]
+        jr nz, .ToggleOff
+        jr .ToggleOn
+.LeftPressed:
+        bit CHEAT_INSTANT_HATCHING, [hl]
+        jr z, .ToggleOn
+        jr .ToggleOff
+.NonePressed:
+        bit CHEAT_INSTANT_HATCHING, [hl]
+        jr nz, .ToggleOn
+.ToggleOff:
+        res CHEAT_INSTANT_HATCHING, [hl]
+        ld de, .Off
+        jr .Display
+.ToggleOn:
+        set CHEAT_INSTANT_HATCHING, [hl]
+        ld de, .On
+.Display:
+        hlcoord 11, 5
+        rst PlaceString
+        and a
+        ret
+.Off: db "OFF@"
+.On:  db "ON @"
+
+Options_RareCandies:
+        ldh a, [hJoyPressed]
+        and PAD_A
+        ret z
+        ld hl, RARE_CANDY
+        call GetItemIDFromIndex
+        ld [wCurItem], a
+        ld a, 99
+        ld [wItemQuantityChange], a
+        ld hl, wNumItems
+        call ReceiveItem
+        jr nc, .done
+        ld de, SFX_ITEM
+        call PlaySFX
+.done
+        xor a
+        ret
+
+Options_Balls:
+        ldh a, [hJoyPressed]
+        and PAD_A
+        ret z
+        ld hl, MASTER_BALL
+        call GetItemIDFromIndex
+        ld [wCurItem], a
+        ld a, 99
+        ld [wItemQuantityChange], a
+        ld hl, wNumItems
+        call ReceiveItem
+        jr nc, .done
+        ld de, SFX_ITEM
+        call PlaySFX
+.done
+        xor a
+        ret
+
+Options_MaxCash:
+        ldh a, [hJoyPressed]
+        and PAD_A
+        ret z
+        ld de, wMoney
+        ld hl, .MaxMoney
+        ld bc, 3
+        rst CopyBytes
+        ld de, SFX_TRANSACTION
+        call PlaySFX
+        xor a
+        ret
+
+.MaxMoney:
+        bigdt MAX_MONEY
+
+CheatsOptionsControl:
+        ld hl, wJumptableIndex
+        ldh a, [hJoyLast]
+        cp PAD_DOWN
+        jr z, .Down
+        cp PAD_UP
+        jr z, .Up
+        and a
+        ret
+.Down:
+        ld a, [hl]
+        cp CHEAT_OPT_BACK
+        jr nz, .Inc
+        ld [hl], CHEAT_OPT_WTW
+        scf
+        ret
+.Inc:
+        inc [hl]
+        scf
+        ret
+.Up:
+        ld a, [hl]
+        and a
+        jr nz, .Dec
+        ld [hl], NUM_CHEAT_OPTIONS
+.Dec:
+        dec [hl]
+        scf
+        ret
 
 ChallengesMenu:
         call ClearJoypad

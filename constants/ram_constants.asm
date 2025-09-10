@@ -76,10 +76,12 @@ DEF GBPRINTER_DARKEST  EQU $7f
 
 ; wOptions2::
         const_def
-        const OAK_CHALLENGE  ; 0
-        const CHALLENGE_MODE ; 1
-        const LEVEL_LIMITS   ; 2
-        const INVERSE_MODE   ; 3
+        const OAK_CHALLENGE        ; 0
+        const CHALLENGE_MODE       ; 1
+        const LEVEL_LIMITS         ; 2
+        const INVERSE_MODE         ; 3
+        const CHEAT_WALK_THROUGH_WALLS ; 4
+        const CHEAT_INSTANT_HATCHING   ; 5
 
 ; wDST::
 DEF DST_F EQU 7
