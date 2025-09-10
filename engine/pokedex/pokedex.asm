@@ -17,6 +17,36 @@
 
 EXPORT DEF POKEDEX_SCX EQU 5
 
+Pokedex_FastJoypad::
+	; Like JoyTextDelay but with shorter repeat for quicker scrolling
+	call GetJoypad
+	ldh a, [hInMenu]
+	and a
+	ldh a, [hJoyPressed]
+	jr z, .ok
+	ldh a, [hJoyDown]
+.ok
+	ldh [hJoyLast], a
+	ldh a, [hJoyPressed]
+	and a
+	jr z, .checkframedelay
+	ld a, 8
+	ld [wTextDelayFrames], a
+	ret
+
+.checkframedelay
+	ld a, [wTextDelayFrames]
+	and a
+	jr z, .restartframedelay
+	xor a
+	ldh [hJoyLast], a
+	ret
+
+.restartframedelay
+	ld a, 2
+	ld [wTextDelayFrames], a
+	ret
+
 Pokedex:
 	ldh a, [hWX]
 	ld l, a
@@ -44,7 +74,7 @@ Pokedex:
 	call DelayFrame
 
 .main
-	call JoyTextDelay
+	call Pokedex_FastJoypad
 	ld a, [wJumptableIndex]
 	bit JUMPTABLE_EXIT_F, a
 	jr nz, .exit
@@ -2694,7 +2724,7 @@ Pokedex_MoveArrowCursor:
 .update_cursor_pos
 	call Pokedex_GetArrowCursorPos
 	ld [hl], "▶"
-	ld a, 12
+	ld a, 1
 	ld [wDexArrowCursorDelayCounter], a
 	xor a
 	ld [wDexArrowCursorBlinkCounter], a
