@@ -20,7 +20,7 @@ StageDataForMysteryGift:
 	rst CopyBytes
 	push de ; wMysteryGiftStaging+14
 	ld hl, sPokemonData + wPokedexCaught - wPokemonData
-	ld bc, wEndPokedexCaught - wPokedexCaught
+	ld bc, NUM_DEX_BYTES
 	call CountSetBits16
 	ld a, b
 	add -1

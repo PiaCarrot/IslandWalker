@@ -29,11 +29,11 @@ ProfOaksPCRating:
 Rate:
 ; calculate Seen/Owned
 	ld hl, wPokedexCaught
-	ld bc, wEndPokedexCaught - wPokedexCaught
+	ld bc, NUM_DEX_BYTES
 	call CountSetBits16
 	push bc
 	ld hl, wPokedexSeen
-	ld bc, wEndPokedexSeen - wPokedexSeen
+	ld bc, NUM_DEX_BYTES
 	call CountSetBits16
 
 ; print appropriate rating

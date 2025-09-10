@@ -70,7 +70,7 @@ _GetVarAction::
 ; Caught mons. Saturate at 255.
 	ld hl, wPokedexCaught
 .count_caught_or_seen_mons
-	ld bc, wEndPokedexCaught - wPokedexCaught
+	ld bc, NUM_DEX_BYTES
 	call CountSetBits16
 	ld a, b
 .load_or_saturate
@@ -87,12 +87,12 @@ _GetVarAction::
 .CountUncaughtMons:
 ; Mons left to catch. Saturate at 255.
 	ld hl, wPokedexCaught
-	ld bc, wEndPokedexCaught - wPokedexCaught
+	ld bc, NUM_DEX_BYTES
 	call CountSetBits16
-	ld a, LOW(NUM_POKEMON)
+	ld a, LOW(NUM_DEX_POKEMON)
 	sub c
 	ld c, a
-	ld a, HIGH(NUM_POKEMON)
+	ld a, HIGH(NUM_DEX_POKEMON)
 	sbc b
 	jr .load_or_saturate
 

@@ -529,7 +529,7 @@ Continue_DisplayPokedexNumCaught:
 	ret z
 	push hl
 	ld hl, wPokedexCaught
-	ld bc, wEndPokedexCaught - wPokedexCaught
+	ld bc, NUM_DEX_BYTES
 	call CountSetBits16
 	pop hl
 	ld a, b

@@ -133,20 +133,20 @@ Pokedex_InitCursorPosition:
 	ld a, [hld]
 	ld c, [hl]
 	ld b, a
-	if NUM_POKEMON <= $FF
-		and a
-		ret nz
-	else
-		cp HIGH(NUM_POKEMON)
-		jr c, .check_zero
-		ret nz
-		if LOW(NUM_POKEMON) < $FF
-			ld a, c
-			cp LOW(NUM_POKEMON) + 1
-			ret nc
-		endc
-		jr .go
-	endc
+       if NUM_DEX_POKEMON <= $FF
+               and a
+               ret nz
+       else
+               cp HIGH(NUM_DEX_POKEMON)
+               jr c, .check_zero
+               ret nz
+               if LOW(NUM_DEX_POKEMON) < $FF
+                       ld a, c
+                       cp LOW(NUM_DEX_POKEMON) + 1
+                       ret nc
+               endc
+               jr .go
+       endc
 .check_zero
 	or c
 	ret z
@@ -1196,7 +1196,7 @@ Pokedex_DrawMainScreenBG:
 	ld de, String_SEEN
 	call Pokedex_PlaceString
 	ld hl, wPokedexSeen
-	ld bc, wEndPokedexSeen - wPokedexSeen
+	ld bc, NUM_DEX_BYTES
 	call CountSetBits16
 	ld a, c
 	ld de, wPokedexDisplayNumber + 1
@@ -1211,7 +1211,7 @@ Pokedex_DrawMainScreenBG:
 	ld de, String_OWN
 	call Pokedex_PlaceString
 	ld hl, wPokedexCaught
-	ld bc, wEndPokedexCaught - wPokedexCaught
+	ld bc, NUM_DEX_BYTES
 	call CountSetBits16
 	ld a, c
 	ld de, wPokedexDisplayNumber + 1
@@ -1775,7 +1775,7 @@ Pokedex_OrderMonsByMode:
 	ld hl, wPokedexOrder
 	ld a, -1
 	jr z, .nothing_seen
-	ld bc, (NUM_POKEMON + 1) * 2
+       ld bc, (NUM_DEX_POKEMON + 1) * 2
 	rst ByteFill
 	ld a, [wCurDexMode]
 	ld hl, .Jumptable
@@ -1839,12 +1839,12 @@ Pokedex_OrderMonsByMode:
 .NewMode:
 	ld hl, NewPokedexOrder
 	ld de, wPokedexOrder
-	ld bc, NUM_POKEMON * 2
+       ld bc, NUM_DEX_POKEMON * 2
 	rst CopyBytes
 	ld a, BANK(wPokedexSeen)
 	ldh [rSVBK], a
-	ld bc, NUM_POKEMON
-	ld hl, NewPokedexOrder + (2 * NUM_POKEMON) - 1
+       ld bc, NUM_DEX_POKEMON
+       ld hl, NewPokedexOrder + (2 * NUM_DEX_POKEMON) - 1
 .new_mode_last_seen_loop
 	ld a, [hld]
 	ld d, a
@@ -1870,9 +1870,9 @@ Pokedex_OrderMonsByMode:
 Pokedex_ABCMode:
 	; called in the WRAM bank of wPokedexOrder; the function doesn't preserve it
 	ld hl, wDexTempCounter
-	ld a, LOW(-NUM_POKEMON)
-	ld [hli], a
-	ld [hl], HIGH(-NUM_POKEMON)
+       ld a, LOW(-NUM_DEX_POKEMON)
+       ld [hli], a
+       ld [hl], HIGH(-NUM_DEX_POKEMON)
 	ld bc, AlphabeticalPokedexOrder
 	ld de, wPokedexOrder
 	ld a, BANK(wPokedexSeen)
@@ -2185,7 +2185,7 @@ Pokedex_SearchForMons:
 	jr nz, .loop
 
 	ld hl, wDexSearchResultCount
-	ld bc, -(NUM_POKEMON + 1)
+       ld bc, -(NUM_DEX_POKEMON + 1)
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
