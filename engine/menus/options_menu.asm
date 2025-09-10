@@ -696,7 +696,16 @@ CheatsMenu:
         call WaitBGMap
         ld b, SCGB_DIPLOMA
         call GetSGBLayout
-        call SetDefaultBGPAndOBP
+        ldh a, [hCGB]
+        and a
+        jr nz, .cgb_cheats_palette
+        ld a, %00011011
+        ldh [rBGP], a
+        jr .cheats_palette_done
+.cgb_cheats_palette
+        ld a, %00011011
+        call DmgToCgbBGPals
+.cheats_palette_done
 
 .cheat_loop
         call JoyTextDelay
