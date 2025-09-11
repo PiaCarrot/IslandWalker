@@ -38,8 +38,8 @@ _SafeCopyTilemapAtOnce::
 	ldh a, [rLY]
 	cp $70
 	jr nz, .waitLYAndUpdateMusic
-	xor a
-	ldh [hBGMapThird], a
+        xor a
+        ldh [hBGMapHalf], a
 	bit 2, b
 	jr z, .noForceOAMUpdate
 	xor a

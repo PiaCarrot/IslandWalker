@@ -161,7 +161,6 @@ MonMenuIconPals:
 	icon_pals BLUE,   PURPLE ; DRAGONAIR
 	icon_pals RED,    GRAY   ; DRAGONITE
 	icon_pals PURPLE, BROWN  ; MEWTWO
-	icon_pals PINK,   BLUE   ; MEW
 ; Johto
 	icon_pals GREEN,  BROWN  ; CHIKORITA
 	icon_pals GREEN,  BROWN  ; BAYLEEF
@@ -212,7 +211,6 @@ MonMenuIconPals:
 	icon_pals BLUE,   PURPLE ; MURKROW
 	icon_pals PINK,   BLUE   ; SLOWKING
 	icon_pals PURPLE, BROWN  ; MISDREAVUS
-	icon_pals GRAY,   BLUE   ; UNOWN
 	icon_pals BLUE,   PURPLE ; WOBBUFFET
 	icon_pals RED,    BLUE   ; GIRAFARIG
 	icon_pals TEAL,   PINK   ; PINECO
@@ -358,8 +356,6 @@ MonMenuIconPals:
         icon_pals RED,    RED    ; DUSKNOIR
         icon_pals RED,    RED    ; FROSLASS
         icon_pals RED,    RED    ; ROTOM
-        icon_pals RED,    RED    ; PHIONE
-        icon_pals RED,    RED    ; MANAPHY
        icon_pals RED,    RED    ; FERROSEED
        icon_pals RED,    RED    ; FERROTHORN
        icon_pals RED,    RED    ; STUNFISK
@@ -430,8 +426,12 @@ MonMenuIconPals:
        icon_pals RED,    RED    ; URSALUNA
        icon_pals RED,    RED    ; WYRDEER
        icon_pals RED,    RED    ; MARSHADOW
+        icon_pals RED,    RED    ; PHIONE
+        icon_pals RED,    RED    ; MANAPHY
        icon_pals RED,    RED    ; MELTAN
        icon_pals RED,    RED    ; MELMETAL
+	icon_pals PINK,   BLUE   ; MEW
+	icon_pals GRAY,   BLUE   ; UNOWN
 ; Forms
         icon_pals BLUE,   TEAL   ; LAPRAS
         icon_pals RED,    RED    ; RATTATA_ALOLA

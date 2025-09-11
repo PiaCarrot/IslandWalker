@@ -9,20 +9,18 @@ WaitBGMap::
 	jmp DelayFrames
 
 WaitBGMap2::
-	ldh a, [hCGB]
-	and a
-	jr z, .bg0
+        ldh a, [hCGB]
+        and a
+        jr z, .bg0
 
-	ld a, 2
-	ldh [hBGMapMode], a
-	ld c, 4
-	call DelayFrames
+        ld a, 2
+        ldh [hBGMapMode], a
+        call Delay2
 
 .bg0
-	ld a, 1
-	ldh [hBGMapMode], a
-	ld c, 4
-	jmp DelayFrames
+        ld a, 1
+        ldh [hBGMapMode], a
+        jp Delay2
 
 IsCGB::
 	ldh a, [hCGB]

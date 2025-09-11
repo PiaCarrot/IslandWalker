@@ -96,15 +96,15 @@ endr
 	ret
 
 WaitTop::
-; Wait until the top third of the BG Map is being updated.
+; Wait until the top half of the BG Map is being updated.
 
-	ldh a, [hBGMapMode]
-	and a
-	ret z
+        ldh a, [hBGMapMode]
+        and a
+        ret z
 
-	ldh a, [hBGMapThird]
-	and a
-	jr z, .done
+        ldh a, [hBGMapHalf]
+        and a
+        jr z, .done
 
 	call DelayFrame
 	jr WaitTop
@@ -115,7 +115,7 @@ WaitTop::
 	ret
 
 UpdateBGMap::
-; Update the BG Map, in thirds, from wTilemap and wAttrmap.
+; Update the BG Map, in halves, from wTilemap and wAttrmap.
 
 	ldh a, [hBGMapMode]
 	and a ; 0
@@ -154,41 +154,28 @@ UpdateBGMap::
 .update
 	ld [hSPBuffer], sp
 
-; Which third?
-	ldh a, [hBGMapThird]
-	and a ; 0
-	jr z, .attr_top
-	dec a ; 1
-	jr z, .attr_middle
-	; 2
+; Which half?
+        ldh a, [hBGMapHalf]
+        and a ; 0
+        jr z, .attr_top
 
-DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
+DEF HALF_HEIGHT EQU SCREEN_HEIGHT / 2
 
 .attr_bottom
-	coord sp, 0, 2 * THIRD_HEIGHT, wAttrmap
+        coord sp, 0, 9, wAttrmap
 
-	ld de, 2 * THIRD_HEIGHT * TILEMAP_WIDTH
-	add hl, de
+        ld de, HALF_HEIGHT * TILEMAP_WIDTH
+        add hl, de
 
-; Next time: top third
-	xor a
-	jr .start
-
-.attr_middle
-	coord sp, 0, THIRD_HEIGHT, wAttrmap
-
-	ld de, THIRD_HEIGHT * TILEMAP_WIDTH
-	add hl, de
-
-; Next time: bottom third
-	ld a, 2
-	jr .start
+; Next time: top half
+        xor a
+        jr .start
 
 .attr_top
-	coord sp, 0, 0, wAttrmap
+        coord sp, 0, 0, wAttrmap
 
-; Next time: middle third
-	jr .continue
+; Next time: bottom half
+        jr .continue
 
 .Tiles0:
 	ldh a, [hBGMapAddress]
@@ -197,50 +184,35 @@ DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
 	ld h, a
 
 .Tiles1:
-	ld [hSPBuffer], sp
+        ld [hSPBuffer], sp
 
-; Which third?
-	ldh a, [hBGMapThird]
-	and a ; 0
-	jr z, .tiles_top
-	dec a ; 1
-	jr z, .tiles_middle
-	; 2
+; Which half?
+        ldh a, [hBGMapHalf]
+        and a ; 0
+        jr z, .tiles_top
+        ; bottom row
+        coord sp, 0, 9
+        ld de, HALF_HEIGHT * TILEMAP_WIDTH
+        add hl, de
 
-.tiles_bottom
-	coord sp, 0, 2 * THIRD_HEIGHT
-
-	ld de, 2 * THIRD_HEIGHT * TILEMAP_WIDTH
-	add hl, de
-
-; Next time: top third
-	xor a
-	jr .start
-
-.tiles_middle
-	coord sp, 0, THIRD_HEIGHT
-
-	ld de, THIRD_HEIGHT * TILEMAP_WIDTH
-	add hl, de
-
-; Next time: bottom third
-	ld a, 2
-	jr .start
+; Next time: top half
+        xor a
+        jr .start
 
 .tiles_top
-	coord sp, 0, 0
+        coord sp, 0, 0
 
-; Next time: middle third
+; Next time: bottom half
 
 .continue
 	inc a
 
 .start
-; Which third to update next time
-	ldh [hBGMapThird], a
+; Which half to update next time
+        ldh [hBGMapHalf], a
 
-; Rows of tiles in a third
-	ld a, THIRD_HEIGHT
+; Rows of tiles in a half
+        ld a, HALF_HEIGHT
 
 ; Discrepancy between wTilemap and BGMap
 	ld bc, TILEMAP_WIDTH - (SCREEN_WIDTH - 1)

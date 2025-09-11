@@ -133,10 +133,9 @@ UpdateEnemyMonInParty::
 	jmp CopyBytes
 
 RefreshBattleHuds::
-	call UpdateBattleHuds
-	ld c, 3
-	call DelayFrames
-	jmp WaitBGMap
+        call UpdateBattleHuds
+        call Delay2
+        jmp WaitBGMap
 
 UpdateBattleHuds::
 	farcall UpdatePlayerHUD

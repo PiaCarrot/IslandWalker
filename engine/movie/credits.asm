@@ -361,8 +361,8 @@ ParseCredits:
 	call .get
 	ld [wCreditsTimer], a
 
-	xor a
-	ldh [hBGMapThird], a
+        xor a
+        ldh [hBGMapHalf], a
 	ld a, 1
 	ldh [hBGMapMode], a
 
