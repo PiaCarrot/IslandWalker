@@ -725,20 +725,47 @@ WriteIconPaletteData:
 	push hl
 	push de
 	push bc
-	ld bc, wBufferMonShiny
-	farcall CheckShininess
-	ld a, [wBufferMonAltSpecies]
-	ld c, a
-	ld b, 1
-	jr c, .got_shininess
-	dec b
+        ld bc, wBufferMonShiny
+        farcall CheckShininess
+        ld d, 1
+        jr c, .got_shininess
+        dec d
 .got_shininess
-	farcall GetMonPalInBCDE
-	ld h, b
-	ld l, c
-	pop bc
-	push bc
-	push hl
+        ld bc, wBufferMonShiny
+        farcall CheckPinkness
+        jr nc, .not_pink
+
+        ; Pink mons always use the red icon palette
+        ld a, PAL_ICON_RED
+        ld hl, PartyMenuOBPals + 2
+        ld bc, 1 palettes
+        rst AddNTimes
+        push hl
+        ld a, BANK(PartyMenuOBPals)
+        call GetFarWord
+        ld b, h
+        ld c, l
+        pop hl
+        inc hl
+        inc hl
+        ld a, BANK(PartyMenuOBPals)
+        call GetFarWord
+        ld d, h
+        ld e, l
+        jr .got_pal
+
+.not_pink
+        ld a, [wBufferMonAltSpecies]
+        ld c, a
+        ld b, d
+        farcall GetMonPalInBCDE
+
+.got_pal
+        ld h, b
+        ld l, c
+        pop bc
+        push bc
+        push hl
 	call BillsPC_GetMonPalAddr
 	pop bc
 
