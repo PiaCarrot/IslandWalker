@@ -21,16 +21,32 @@ GenerateShininess:
 CheckShininess:
 ; Check if a mon is shiny by Personality Shiny bit at bc.
 ; Return carry if shiny.
-	ld a, [bc]
-	bit MON_SHINY_F, a
-	jr z, .not_shiny
+        ld a, [bc]
+        bit MON_SHINY_F, a
+        jr z, .not_shiny
 ; shiny
-	scf
-	ret
+        scf
+        ret
 
 .not_shiny
-	and a
-	ret
+        and a
+        ret
+
+CheckPinkness:
+; Check if a mon is pink by Personality Pink bit at bc.
+; Return carry if pink.
+        push bc
+        inc bc
+        ld a, [bc]
+        and PINK_MASK
+        pop bc
+        jr z, .not_pink
+        scf
+        ret
+
+.not_pink
+        and a
+        ret
 
 InitPartyMenuPalettes:
 	ld hl, PalPacket_PartyMenu + 1
@@ -647,17 +663,30 @@ GetMonPalettePointer:
 	ret
 
 GetMonNormalOrShinyPalettePointer:
-	push bc
-	call GetMonPalettePointer
-	pop bc
-	push hl
-	call CheckShininess
-	pop hl
-	ret nc
+        push bc
+        call GetMonPalettePointer
+        pop bc
+        push hl
+        call CheckPinkness
+        jr nc, .not_pink
+        pop hl
+        call CheckShininess
+        ld hl, PinkanPalette
+        jr nc, .done
+        ld hl, PinkanShinyPalette
+.done
+        ret
+
+.not_pink
+        pop hl
+        push hl
+        call CheckShininess
+        pop hl
+        ret nc
 rept 4
-	inc hl
+        inc hl
 endr
-	ret
+        ret
 
 PushSGBPals:
 	ld a, [wJoypadDisable]

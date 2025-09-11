@@ -142,15 +142,23 @@ GetMonPalInBCDE:
 	ret
 
 GetMenuMonIconPalette:
-	ld c, l
-	ld b, h
-	farcall CheckShininess
+        ld c, l
+        ld b, h
+        farcall CheckShininess
+        push af
+        farcall CheckPinkness
+        jr nc, .not_pink
+        pop af
+        ld a, PAL_ICON_RED
+        ret
+.not_pink
+        pop af
 GetMenuMonIconPalette_PredeterminedShininess:
-	push af
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	dec hl
-	ld b, h
+        push af
+        ld a, [wCurPartySpecies]
+        call GetPokemonIndexFromID
+        dec hl
+        ld b, h
 	ld c, l
 	ld hl, MonMenuIconPals
 	add hl, bc
