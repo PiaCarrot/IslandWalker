@@ -95,6 +95,10 @@ StartMenu::
 
 .GetInput:
 ; Return carry on exit, and no-carry on selection.
+        ldh a, [hInMenu]
+        push af
+        ld a, 1
+        ldh [hInMenu], a
         xor a
         ldh [hBGMapMode], a
         call .DrawDayTimeBox
@@ -113,12 +117,16 @@ StartMenu::
 	jr nz, .loop
 ; fallthrough
 .a
-	call PlayClickSFX
-	and a
-	ret
+        call PlayClickSFX
+        pop af
+        ldh [hInMenu], a
+        and a
+        ret
 .b
-	scf
-	ret
+        pop af
+        ldh [hInMenu], a
+        scf
+        ret
 
 .ExitMenuRunScript:
 	call ExitMenu
