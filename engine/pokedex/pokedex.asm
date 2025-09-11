@@ -1244,20 +1244,86 @@ Pokedex_NextOrPreviousDexEntry:
 
 Pokedex_ListingHandleDPadInput:
 ; Handles D-pad input for a list of Pokémon.
-	call Pokedex_LoadListingScrollParams
-	ld hl, hJoyLast
-	bit B_PAD_UP, [hl]
-	jr nz, Pokedex_ListingMoveCursorUp
-	bit B_PAD_DOWN, [hl]
-	jr nz, Pokedex_ListingMoveCursorDown
-	ld a, [wDexListingHeight]
-	xor d ; compares for equality (if zero) and clears carry
-	ret nz
-	bit B_PAD_LEFT, [hl]
-	jr nz, Pokedex_ListingMoveUpOnePage
-	bit B_PAD_RIGHT, [hl]
-	jr nz, Pokedex_ListingMoveDownOnePage
-	ret
+       call Pokedex_LoadListingScrollParams
+       ld hl, hJoyLast
+       ld a, [hl]
+       ld b, a
+       and PAD_UP | PAD_DOWN
+       ld c, a
+       jr nz, .up_or_down
+
+       ; reset acceleration if neither up nor down is held
+       xor a
+       ld [wDexScrollHeldCount], a
+       ld [wDexScrollLastDir], a
+
+       ld a, [wDexListingHeight]
+       xor d ; compares for equality (if zero) and clears carry
+       ret nz
+       bit B_PAD_LEFT, b
+       jp nz, Pokedex_ListingMoveUpOnePage
+       bit B_PAD_RIGHT, b
+       jp nz, Pokedex_ListingMoveDownOnePage
+       ret
+
+.up_or_down
+       ; track direction and acceleration
+       ld hl, wDexScrollLastDir
+       ld a, c
+       cp [hl]
+       jr z, .dir_ok
+       ld [hl], a
+       ld hl, wDexScrollHeldCount
+       xor a
+       ld [hl], a
+.dir_ok
+       ld hl, wDexScrollHeldCount
+       ld a, [hl]
+       inc [hl]
+       ld b, 1
+       cp 5
+       jr c, .got_speed
+       ld b, 2
+       cp 10
+       jr c, .got_speed
+       ld b, 4
+.got_speed
+       ld a, c
+       bit B_PAD_UP, a
+       jr nz, .scroll_up
+
+; scroll down
+.scroll_down
+       ld e, 0
+.down_loop
+       call Pokedex_LoadListingScrollParams
+       call Pokedex_ListingMoveCursorDown
+       jr nc, .down_done
+       ld e, 1
+       dec b
+       jr nz, .down_loop
+.down_done
+       ld a, e
+       and a
+       ret z
+       scf
+       ret
+
+.scroll_up
+       ld e, 0
+.up_loop
+       call Pokedex_LoadListingScrollParams
+       call Pokedex_ListingMoveCursorUp
+       jr nc, .up_done
+       ld e, 1
+       dec b
+       jr nz, .up_loop
+.up_done
+       ld a, e
+       and a
+       ret z
+       scf
+       ret
 
 Pokedex_ListingMoveCursorUp:
 	ld hl, wDexListingCursor
