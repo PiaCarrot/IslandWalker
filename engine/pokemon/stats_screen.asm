@@ -379,9 +379,17 @@ StatsScreen_InitUpperHalf:
 	call CopyNickname
 	hlcoord 8, 2
 	rst PlaceString
-	hlcoord 18, 0
-	call .PlaceGenderChar
-	hlcoord 9, 4
+        hlcoord 18, 0
+        call .PlaceGenderChar
+        ld bc, wTempMonShiny
+        farcall CheckPinkness
+        jr nc, .no_pink_mask
+        hlcoord 18, 1
+        ld [hl], $4f
+        hlcoord 18, 1, wAttrmap
+        ld [hl], 3 ; BGPal3
+.no_pink_mask
+        hlcoord 9, 4
 	ld a, "/"
 	ld [hli], a
 	ld a, [wBaseSpecies]
