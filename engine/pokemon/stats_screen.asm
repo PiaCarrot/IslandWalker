@@ -466,12 +466,30 @@ StatsScreen_PlacePageSwitchArrows:
 	ret
 
 StatsScreen_PlaceShinyIcon:
-	ld bc, wTempMonShiny
-	farcall CheckShininess
-	ret nc
-	hlcoord 19, 0
-	ld [hl], "⁂"
-	ret
+        ld bc, wTempMonShiny
+        farcall CheckShininess
+        jr nc, .skip_shiny
+        hlcoord 19, 0
+        ld [hl], "⁂"
+.skip_shiny
+        ld a, [wTempMonPokerusStatus]
+        ld b, a
+        and $f
+        jr nz, .HasPokerus
+        ld a, b
+        and $f0
+        jr z, .NoPokerus
+        hlcoord 19, 1
+        ld [hl], $4e
+        ret
+.HasPokerus
+        hlcoord 19, 1
+        ld [hl], $4d
+        ret
+.NoPokerus
+        hlcoord 19, 1
+        ld [hl], " "
+        ret
 
 StatsScreen_LoadGFX:
 	ld a, [wBaseSpecies]
