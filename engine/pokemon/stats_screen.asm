@@ -387,7 +387,7 @@ StatsScreen_InitUpperHalf:
         hlcoord 18, 1
         ld [hl], $4f
         hlcoord 18, 1, wAttrmap
-        ld [hl], 3 ; BGPal3
+        ld [hl], 1 ; BGPal3
 .no_pink_mask
         hlcoord 9, 4
 	ld a, "/"
