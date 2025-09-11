@@ -110,6 +110,8 @@ PlayersHouseBookshelfScript:
 	giveitem EXP_CANDY_L, 99
 	giveitem EXP_CANDY_XL, 99
 	giveegg TOGEPI, EGG_LEVEL
+	givepoke LAPRAS, 5
+	giveitem HM_SURF
 	callasm CheatFillPokedex
 	setflag ENGINE_POKEDEX
 	end

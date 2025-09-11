@@ -137,15 +137,10 @@ CutFunction:
 	ld a, c
 	and a
 	ret z
-	jr c, .nohivebadge
-	call CheckMapForSomethingToCut
-	jr c, .nothingtocut
-	ld a, $1
-	ret
-
-.nohivebadge
-	ld a, JUMPTABLE_EXIT
-	ret
+        call CheckMapForSomethingToCut
+        jr c, .nothingtocut
+        ld a, $1
+        ret
 
 .nothingtocut
 	ld a, $2
@@ -288,11 +283,10 @@ FlashFunction:
 	ld a, c
 	and a
 	ret z
-	jr c, .nozephyrbadge
-	push hl
-	farcall SpecialAerodactylChamber
-	pop hl
-	jr c, .useflash
+        push hl
+        farcall SpecialAerodactylChamber
+        pop hl
+        jr c, .useflash
 	ld a, [wTimeOfDayPalset]
 	cp DARKNESS_PALSET
 	jr nz, .notadarkcave
@@ -306,9 +300,6 @@ FlashFunction:
 	ld a, JUMPTABLE_EXIT
 	ret
 
-.nozephyrbadge
-	ld a, JUMPTABLE_EXIT
-	ret
 
 UseFlash:
 	ld hl, Script_UseFlash
@@ -352,12 +343,6 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	ld de, EVENT_HM_03_SURF
-	ld b, CHECK_FLAG
-	call EventFlagAction
-	ld a, c
-	and a
-	ret z
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .cannotsurf
@@ -374,14 +359,11 @@ SurfFunction:
 	jr c, .cannotsurf
 	farcall CheckFacingObject
 	jr c, .cannotsurf
-	ld a, $1
-	ret
-.nofogbadge
-	ld a, JUMPTABLE_EXIT
-	ret
+        ld a, $1
+        ret
 .alreadyfail
-	ld a, $3
-	ret
+        ld a, $3
+        ret
 .cannotsurf
 	ld a, $2
 	ret
@@ -510,13 +492,6 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
-	ld de, EVENT_HM_03_SURF
-	ld b, CHECK_FLAG
-	call EventFlagAction
-	ld a, c
-	and a
-	ret z
-
 	ld hl, SURF
 	call CheckPartyMoveIndex
 	jr c, .quit
@@ -556,11 +531,8 @@ FlyFunction:
 	dw .FailFly
 
 .TryFly:
-	ld de, ENGINE_STORMBADGE
-	call CheckBadge
-	jr c, .nostormbadge
-	call GetMapEnvironment
-	call CheckOutdoorMap
+        call GetMapEnvironment
+        call CheckOutdoorMap
 	jr nz, .indoors
 	xor a
 	ldh [hMapAnims], a
@@ -576,10 +548,6 @@ FlyFunction:
 	ld [wDefaultSpawnpoint], a
 	call CloseWindow
 	ld a, $1
-	ret
-
-.nostormbadge
-	ld a, JUMPTABLE_EXIT | $2
 	ret
 
 .indoors
@@ -635,13 +603,9 @@ WaterfallFunction:
 	ret
 
 .TryWaterfall:
-	ld de, ENGINE_RISINGBADGE
-	call CheckBadge
-	ld a, JUMPTABLE_EXIT
-	ret c
-	call CheckMapCanWaterfall
-	jr c, .failed
-	ld hl, Script_WaterfallFromMenu
+        call CheckMapCanWaterfall
+        jr c, .failed
+        ld hl, Script_WaterfallFromMenu
 	call QueueScript
 	ld a, JUMPTABLE_EXIT | $1
 	ret
@@ -705,12 +669,9 @@ TryWaterfallOW::
 	ld hl, WATERFALL
 	call CheckPartyMoveIndex
 	jr c, .failed
-	ld de, ENGINE_RISINGBADGE
-	call CheckEngineFlag
-	jr c, .failed
-	call CheckMapCanWaterfall
-	jr c, .failed
-	ld a, BANK(Script_AskWaterfall)
+        call CheckMapCanWaterfall
+        jr c, .failed
+        ld a, BANK(Script_AskWaterfall)
 	ld hl, Script_AskWaterfall
 	call CallScript
 	scf
@@ -957,24 +918,10 @@ StrengthFunction:
 	ret
 
 .TryStrength:
-	ld de, ENGINE_SPIKESHELLBADGE
-	call CheckBadge
-	jr c, .Failed
-	jr .UseStrength
-
-.AlreadyUsingStrengthText:
-	text_far _AlreadyUsingStrengthText
-	text_end
-
-.Failed:
-	ld a, JUMPTABLE_EXIT
-	ret
-
-.UseStrength:
-	ld hl, Script_StrengthFromMenu
-	call QueueScript
-	ld a, JUMPTABLE_EXIT | $1
-	ret
+        ld hl, Script_StrengthFromMenu
+        call QueueScript
+        ld a, JUMPTABLE_EXIT | $1
+        ret
 
 SetStrengthFlag:
 	ld hl, wBikeFlags
@@ -1047,12 +994,8 @@ TryStrengthOW:
 	call CheckPartyMoveIndex
 	jr c, .nope
 
-	ld de, ENGINE_SPIKESHELLBADGE
-	call CheckEngineFlag
-	jr c, .nope
-
-	ld hl, wBikeFlags
-	bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
+        ld hl, wBikeFlags
+        bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
 	jr z, .already_using
 
 	ld a, 2
@@ -1083,22 +1026,16 @@ WhirlpoolFunction:
 	dw .DoWhirlpool
 	dw .FailWhirlpool
 
+
 .TryWhirlpool:
-	ld de, ENGINE_GLACIERBADGE
-	call CheckBadge
-	jr c, .noglacierbadge
-	call TryWhirlpoolMenu
-	jr c, .failed
-	ld a, $1
-	ret
+        call TryWhirlpoolMenu
+        jr c, .failed
+        ld a, $1
+        ret
 
 .failed
-	ld a, $2
-	ret
-
-.noglacierbadge
-	ld a, JUMPTABLE_EXIT
-	ret
+        ld a, $2
+        ret
 
 .DoWhirlpool:
 	ld hl, Script_WhirlpoolFromMenu
@@ -1177,12 +1114,9 @@ TryWhirlpoolOW::
 	ld hl, WHIRLPOOL
 	call CheckPartyMoveIndex
 	jr c, .failed
-	ld de, ENGINE_GLACIERBADGE
-	call CheckEngineFlag
-	jr c, .failed
-	call TryWhirlpoolMenu
-	jr c, .failed
-	ld a, BANK(Script_AskWhirlpoolOW)
+        call TryWhirlpoolMenu
+        jr c, .failed
+        ld a, BANK(Script_AskWhirlpoolOW)
 	ld hl, Script_AskWhirlpoolOW
 	call CallScript
 	scf
@@ -1860,14 +1794,6 @@ GotOffBikeText:
 TryCutOW::
 	ld hl, CUT
 	call CheckPartyMoveIndex
-	jr c, .cant_cut
-
-	ld de, EVENT_HM_01_CUT
-	ld b, CHECK_FLAG
-	call EventFlagAction
-	ld a, c
-	and a
-	ret z
 	jr c, .cant_cut
 
 	ld a, BANK(AskCutScript)
