@@ -384,9 +384,9 @@ StatsScreen_InitUpperHalf:
         ld bc, wTempMonShiny
         farcall CheckPinkness
         jr nc, .no_pink_mask
-        hlcoord 18, 1
+        hlcoord 17, 0
         ld [hl], $4f
-        hlcoord 18, 1, wAttrmap
+        hlcoord 17, 0, wAttrmap
         ld [hl], 1 ; BGPal3
 .no_pink_mask
         hlcoord 9, 4
@@ -466,30 +466,13 @@ StatsScreen_PlacePageSwitchArrows:
 	ret
 
 StatsScreen_PlaceShinyIcon:
-        ld bc, wTempMonShiny
-        farcall CheckShininess
-        jr nc, .skip_shiny
-        hlcoord 19, 0
-        ld [hl], "⁂"
+	ld bc, wTempMonShiny
+	farcall CheckShininess
+	jr nc, .skip_shiny
+	hlcoord 19, 0
+	ld [hl], "⁂"
 .skip_shiny
-        ld a, [wTempMonPokerusStatus]
-        ld b, a
-        and $f
-        jr nz, .HasPokerus
-        ld a, b
-        and $f0
-        jr z, .NoPokerus
-        hlcoord 19, 1
-        ld [hl], $4e
-        ret
-.HasPokerus
-        hlcoord 19, 1
-        ld [hl], $4d
-        ret
-.NoPokerus
-        hlcoord 19, 1
-        ld [hl], " "
-        ret
+	ret
 
 StatsScreen_LoadGFX:
 	ld a, [wBaseSpecies]
@@ -555,8 +538,8 @@ LoadPinkPage:
 	ld a, b
 	and $f0
 	jr z, .NotImmuneToPkrs
-	hlcoord 8, 8
-	ld [hl], "." ; Pokérus immunity dot
+    hlcoord 1, 8
+    ld [hl], $4e
 .NotImmuneToPkrs:
 	ld a, [wMonType]
 	cp BOXMON
@@ -569,6 +552,8 @@ LoadPinkPage:
 	jr nz, .done_status
 	jr .StatusOK
 .HasPokerus:
+	hlcoord 1, 8
+	ld [hl], $4d
 	ld de, .PkrsStr
 	hlcoord 1, 13
 	rst PlaceString

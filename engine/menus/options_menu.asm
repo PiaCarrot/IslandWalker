@@ -781,6 +781,8 @@ StringCheatOptions:
         db "        <LF>"
         db "MAX CASH<LF>"
         db "        <LF>"
+        db "POKERUS<LF>"
+        db "        <LF>"
         db "BACK@"
 
 GetCheatOptionPointer:
@@ -791,6 +793,7 @@ GetCheatOptionPointer:
         dw Options_RareCandies
         dw Options_Balls
         dw Options_MaxCash
+        dw Options_Pokerus
         dw Options_BackToOptions
 
         const_def
@@ -799,8 +802,9 @@ GetCheatOptionPointer:
         const CHEAT_OPT_CANDY   ; 2
         const CHEAT_OPT_BALLS   ; 3
         const CHEAT_OPT_CASH    ; 4
-        const CHEAT_OPT_BACK    ; 5
-DEF NUM_CHEAT_OPTIONS EQU const_value ; 6
+        const CHEAT_OPT_POKERUS ; 5
+        const CHEAT_OPT_BACK    ; 6
+DEF NUM_CHEAT_OPTIONS EQU const_value ; 7
 
 Options_WalkThroughWalls:
        ld hl, wOptions2
@@ -936,6 +940,39 @@ Options_MaxCash:
 
 .MaxMoney:
         bigdt MAX_MONEY
+
+Options_Pokerus:
+        ldh a, [hJoyPressed]
+        and PAD_A
+        ret z
+        ld de, EVENT_USED_CHEAT_POKERUS
+        ld b, SET_FLAG
+        call EventFlagAction
+        ld a, [wPartyCount]
+        and a
+        ret z
+        ld hl, wPartyMon1PokerusStatus
+.randomPokerusLoop
+        call Random
+        and a
+        jr z, .randomPokerusLoop
+        ld b, a
+        and $f0
+        jr z, .load_pkrs
+        ld a, b
+        and $7
+        inc a
+.load_pkrs
+        ld b, a
+        swap b
+        and $3
+        inc a
+        add b
+        ld [hl], a
+        ld de, SFX_ITEM
+        call PlaySFX
+        xor a
+        ret
 
 CheatsOptionsControl:
         ld hl, wJumptableIndex
