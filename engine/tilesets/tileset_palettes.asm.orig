@@ -1,6 +1,5 @@
 LoadSpecialMapPalette:
        call GetMapTimeOfDay
-       ld b, a
        bit IN_FOG_F, a
        jr z, .check_dark
        ld a, [wStatusFlags2]
@@ -11,7 +10,6 @@ LoadSpecialMapPalette:
        ret
 
 .check_dark
-       ld a, b
        bit IN_DARKNESS_F, a
        jr z, .not_dark
        ld a, [wStatusFlags]

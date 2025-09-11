@@ -280,8 +280,7 @@ _BlindingFlashText::
         text_end
 
 _ClearingFogText::
-       text "The fog was"
-       line "cleared!@"
+       text "The fog was cleared!@"
        text_promptbutton
        text_end
 
