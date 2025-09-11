@@ -421,6 +421,7 @@ Pokedex_InitDexEntryScreen:
     xor a
     ldh [hBGMapMode], a
     ld [wTempMonShiny], a ; start with normal palette
+    ld [wTempMonForm], a  ; clear pink flag
 	call ClearSprites
 	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DrawDexEntryScreenBG

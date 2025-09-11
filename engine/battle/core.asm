@@ -3032,9 +3032,13 @@ ForcePickSwitchMonInBattle:
 	ret
 
 EndBattle:
-	ld a, 1
-	ld [wBattleEnded], a
-	ret
+        ld a, 1
+        ld [wBattleEnded], a
+        ; Clear enemy personality so menus don't stay pink
+        xor a
+        ld [wEnemyMonPersonality], a
+        ld [wEnemyMonPersonality + 1], a
+        ret
 
 LostBattle:
 	call EndBattle
@@ -6482,9 +6486,24 @@ LoadEnemyMon:
 ; Finally done with IVs
 
 .Happiness:
-; Set happiness
-	ld a, BASE_HAPPINESS
-	ld [wEnemyMonHappiness], a
+        ; Pinkan Island wild mons are always pink
+        ld a, [wBattleMode]
+        cp WILD_BATTLE
+        jr nz, .NotPinkan
+        ld a, [wMapGroup]
+        cp GROUP_PINKAN_ISLAND
+        jr nz, .NotPinkan
+        ld a, [wMapNumber]
+        cp MAP_PINKAN_ISLAND
+        jr nz, .NotPinkan
+        ld hl, wEnemyMonPersonality + 1 ; apply pink to personality flag
+        ld a, [hl]
+        or PINK_MASK
+        ld [hl], a
+.NotPinkan:
+        ; Set happiness
+        ld a, BASE_HAPPINESS
+        ld [wEnemyMonHappiness], a
 ; Set level
 	ld a, [wCurPartyLevel]
 	ld [wEnemyMonLevel], a
