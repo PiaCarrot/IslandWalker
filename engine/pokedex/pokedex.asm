@@ -556,16 +556,18 @@ DexEntryScreen_MenuActionJumptable:
 	ld a, $90
 	ldh [hWY], a
 	call Pokedex_GetSelectedMon
-	ld a, [wDexCurLocation]
-	ld e, a
-	predef Pokedex_GetArea
-	call Pokedex_BlackOutBG
-	call DelayFrame
-	xor a
-	ldh [hBGMapMode], a
-	ld a, $90
-	ldh [hWY], a
-	ld a, POKEDEX_SCX
+        ld a, [wDexCurLocation]
+        ld e, a
+        predef Pokedex_GetArea
+        call Pokedex_BlackOutBG
+        call DelayFrame
+        call Pokedex_LoadGFX
+        call Pokedex_LoadCurrentFootprint
+        xor a
+        ldh [hBGMapMode], a
+        ld a, $90
+        ldh [hWY], a
+        ld a, POKEDEX_SCX
 	ldh [hSCX], a
 	call DelayFrame
 	call Pokedex_RedisplayDexEntry

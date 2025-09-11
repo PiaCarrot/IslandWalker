@@ -585,7 +585,7 @@ PokegearMap_PrintLandmarkName:
 	call ClearBox
 	farcall GetLandmarkName
 	hlcoord 0, 0
-	ld a, $3E
+	ld a, $4D
 	ld [hli], a
 	ld de, wStringBuffer1
 	jp PlaceString
@@ -2224,13 +2224,6 @@ Pokedex_GetArea:
 	ld bc, SCREEN_WIDTH
 	ld a, " "
 	rst ByteFill
-	hlcoord 0, 1
-	ld a, $06
-	ld [hli], a
-	ld bc, SCREEN_WIDTH - 2
-	ld a, $07
-	rst ByteFill
-	ld [hl], $17
 	call GetPokemonName
 	hlcoord 2, 0
 	rst PlaceString
@@ -2538,10 +2531,10 @@ TownMapPlayerIcon:
 	ret
 
 LoadTownMapGFX:
-	ld hl, TownMapGFX
-	ld de, vTiles2
-	lb bc, BANK(TownMapGFX), 48
-	jmp DecompressRequest2bpp
+        ld hl, TownMapGFX
+        ld de, vTiles2
+        lb bc, BANK(TownMapGFX), 96
+        jmp DecompressRequest2bpp
 
 JohtoMap:
 INCBIN "gfx/pokegear/johto.bin"
