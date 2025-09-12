@@ -1326,9 +1326,10 @@ BattleCommand_Stab:
 	set STAB_DAMAGE_F, [hl]
 
 .SkipStab:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	ld b, a
+        ld a, BATTLE_VARS_MOVE_TYPE
+        call GetBattleVar
+        and TYPE_MASK
+        ld b, a
 	ld hl, TypeMatchups
 
 .TypesLoop:
@@ -1442,9 +1443,10 @@ BattleCheckTypeMatchup:
 	jr z, .get_type
 	ld hl, wBattleMonType1
 .get_type
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar ; preserves hl, de, and bc
-	; fallthrough
+        ld a, BATTLE_VARS_MOVE_TYPE
+        call GetBattleVar ; preserves hl, de, and bc
+        and TYPE_MASK
+        ; fallthrough
 CheckTypeMatchup:
 	push hl
 	push de
@@ -3061,9 +3063,10 @@ ConfusionDamageCalc:
 	jr nz, .NotSoulDew
 	cp HIGH(LATIOS)
 	jr nz, .NotSoulDew
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	cp PSYCHIC_TYPE
+        ld a, BATTLE_VARS_MOVE_TYPE
+        call GetBattleVar
+        and TYPE_MASK
+        cp PSYCHIC_TYPE
 	jr z, .TypeBoost
 	cp DRAGON
 	jr z, .TypeBoost
@@ -3084,9 +3087,10 @@ ConfusionDamageCalc:
 
 ; Type
 	ld b, a
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	cp b
+        ld a, BATTLE_VARS_MOVE_TYPE
+        call GetBattleVar
+        and TYPE_MASK
+        cp b
 	jr nz, .DoneItem
 
 .TypeBoost:

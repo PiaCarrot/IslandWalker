@@ -621,12 +621,13 @@ GetMoveTypeIfDamaging:
 	rept MOVE_POWER - 1
 		inc hl
 	endr
-	call GetFarByte
-	ld c, a
-	ld a, b
-	inc hl
-	call GetFarByte
-	inc c
-	dec c
+        call GetFarByte
+        ld c, a
+        ld a, b
+        inc hl
+        call GetFarByte
+        and TYPE_MASK
+        inc c
+        dec c
 	pop bc
 	ret
