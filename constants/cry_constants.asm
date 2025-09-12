@@ -97,6 +97,7 @@
         const CRY_ZANGOOSE
         const CRY_SEVIPER
         const CRY_FEEBAS
+	const CRY_MILOTIC
         const CRY_KECLEON
         const CRY_SHUPPET
         const CRY_DUSKULL

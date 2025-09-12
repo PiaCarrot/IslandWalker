@@ -92,6 +92,7 @@ Cries:
         dba Cry_Zangoose
         dba Cry_Seviper
         dba Cry_Feebas
+	dba Cry_Milotic
         dba Cry_Kecleon
         dba Cry_Shuppet
         dba Cry_Duskull

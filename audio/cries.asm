@@ -2665,27 +2665,96 @@ Cry_Seviper_Ch8:
         sound_ret
 
 Cry_Feebas:
-        channel_count 3
+        channel_count 2
         channel 5, Cry_Feebas_Ch5
         channel 6, Cry_Feebas_Ch6
-        channel 8, Cry_Feebas_Ch8
 
 Cry_Feebas_Ch5:
-        duty_cycle_pattern 0, 1, 0, 1
-        square_note 4, 13, 4, 1728
-        square_note 8, 12, 2, 1664
+        duty_cycle_pattern 0, 3, 0, 0
+        square_note 2, 13, 3, 1152
+	square_note 1, 14, 5, 1400
+	square_note 1, 14, 5, 1426
+	square_note 1, 14, 5, 1439
+	square_note 2, 15, 5, 1450
+	square_note 2, 13, 5, 1439
+	square_note 1, 12, 5, 1426
+	square_note 1, 10, 5, 1152
+	square_note 1, 14, 5, 1400
+	square_note 1, 11, 2, 1426
+	square_note 1, 12, 2, 1439
+	square_note 2, 13, 1, 1450
+	square_note 1, 8, 1, 1450
         sound_ret
 
 Cry_Feebas_Ch6:
-        duty_cycle_pattern 2, 3, 2, 3
-        square_note 4, 11, 4, 1696
-        square_note 8, 10, 2, 1632
+        duty_cycle_pattern 0, 0, 1, 0
+        square_note 1, 4, 5, 1217
+	square_note 2, 6, 5, 1217
+	square_note 2, 7, 5, 1217
+	square_note 2, 8, 5, 1217
+	square_note 2, 5, 5, 1217
+	square_note 2, 4, 5, 1217
+	square_note 2, 4, 5, 1217
+	square_note 1, 5, 2, 1217
+	square_note 1, 2, 2, 1217
         sound_ret
 
-Cry_Feebas_Ch8:
-        noise_note 4, 9, 4, 96
-        noise_note 8, 8, 2, 92
-        sound_ret
+Cry_Milotic:
+        channel_count 3
+        channel 5, Cry_Milotic_Ch5
+        channel 6, Cry_Milotic_Ch6
+	channel 8, Cry_Milotic_Ch8
+
+Cry_Milotic_Ch5:
+	duty_cycle_pattern 1, 1, 1, 1
+	square_note 10, 13, -5, 1722
+	square_note 6, 12, -2, 1726
+	square_note 4, 12, -2, 1730
+	square_note 4, 13, -2, 1734
+	square_note 4, 13, -3, 1742
+	square_note 2, 15, -3, 1746
+	square_note 4, 12, -3, 1746
+	square_note 4, 15, 7, 1745
+	square_note 4, 12, -6, 1746
+	square_note 4, 15, 7, 1745
+	square_note 6, 12, -6, 1746
+	square_note 2, 11, 5, 1746
+	square_note 2, 11, 5, 1742
+	square_note 2, 10, 5, 1738
+	square_note 2, 8, 5, 1734
+	square_note 1, 8, 3, 1730
+	square_note 2, 6, 2, 1726
+	sound_ret
+
+Cry_Milotic_Ch6:
+	duty_cycle_pattern 1, 0, 1, 2
+	square_note 10, 7, 7, 1632
+	square_note 6, 8, 7, 1638
+	square_note 4, 8, 5, 1642
+	square_note 4, 8, 5, 1648
+	square_note 4, 8, 5, 1654
+	square_note 2, 8, 5, 1660
+	square_note 4, 8, 5, 1666
+	square_note 4, 10, 5, 1666
+	square_note 4, 9, 5, 1666
+	square_note 6, 9, 5, 1668
+	square_note 2, 9, 5, 1666
+	square_note 2, 6, 5, 1660
+	square_note 2, 6, 5, 1654
+	square_note 2, 5, 5, 1648
+	square_note 1, 3, 3, 1642
+	square_note 1, 3, 2, 1638
+	sound_ret
+
+Cry_Milotic_Ch8:
+	noise_note 14, 1, -5, 0x7c
+	noise_note 14, 3, 7, 0x8c
+	noise_note 13, 2, 6, 0x7c
+	noise_note 9, 2, 4, 0x6c
+	noise_note 14, 1, -5, 0x7c
+	noise_note 14, 3, 7, 0x8c
+	noise_note 13, 2, 4, 0x7c
+	sound_ret
 
 Cry_Kecleon:
         channel_count 3

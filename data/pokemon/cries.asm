@@ -292,8 +292,8 @@ PokemonCries::
 	mon_cry CRY_GLIGAR,      $059,  $150 ; ALTARIA
 	mon_cry CRY_RAICHU,      $e00,  $070 ; ZANGOOSE
 	mon_cry CRY_SUNFLORA,    $04c,  $180 ; SEVIPER
-	mon_cry CRY_DIGLETT,     $f57,  $062 ; FEEBAS
-	mon_cry CRY_GLIGAR,      $f39,  $4a0 ; MILOTIC
+	mon_cry CRY_FEEBAS,         0,   150 ; FEEBAS
+	mon_cry CRY_MILOTIC,      148,   340 ; MILOTIC
 	mon_cry CRY_NIDORAN_M,   $2ff,  $100 ; KECLEON
 	mon_cry CRY_SUNFLORA,    $820,  $070 ; SHUPPET
 	mon_cry CRY_DROWZEE,     $180,  $05f ; BANETTE
