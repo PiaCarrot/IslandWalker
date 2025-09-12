@@ -75,6 +75,7 @@
 
 ; gen 3
         const CRY_POOCHYENA
+	const CRY_MIGHTYENA
         const CRY_ZIGZAGOON
         const CRY_WINGULL
 	const CRY_PELIPPER

@@ -258,8 +258,8 @@ PokemonCries::
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
 ;Hoenn
-	mon_cry CRY_PIDGEY,      $52d,  $0f2 ; POOCHYENA
-	mon_cry CRY_SPEAROW,     $35d,  $162 ; MIGHTYENA
+	mon_cry CRY_POOCHYENA,     38,   332 ; POOCHYENA
+	mon_cry CRY_MIGHTYENA,     36,   168 ; MIGHTYENA
 	mon_cry CRY_WEEDLE,      $80b,  $081 ; ZIGZAGOON
 	mon_cry CRY_WEEDLE,      $609,  $1b1 ; LINOONE
 	mon_cry CRY_WINGULL,      204,   128 ; WINGULL

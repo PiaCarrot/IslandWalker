@@ -70,6 +70,7 @@ Cries:
         dba Cry_Dunsparce
         dba Cry_Donphan
         dba Cry_Poochyena
+	dba Cry_Mightyena
         dba Cry_Zigzagoon
         dba Cry_Wingull
 	dba Cry_Pelipper

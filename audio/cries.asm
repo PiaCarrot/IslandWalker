@@ -2081,24 +2081,65 @@ Cry_Poochyena:
         channel 8, Cry_Poochyena_Ch8
 
 Cry_Poochyena_Ch5:
-        duty_cycle_pattern 2, 2, 1, 1
-        square_note 4, 15, 4, 1536
-        square_note 6, 14, 4, 1408
-        square_note 8, 12, 1, 1376
+        duty_cycle_pattern 0, 1, 0, 0
+        square_note 5, 14, 5, 1389
+	square_note 2, 10, 3, 1383
+	square_note 3, 12, 4, 1389
+	square_note 3, 11, 1, 1156
         sound_ret
 
 Cry_Poochyena_Ch6:
-        duty_cycle_pattern 3, 0, 3, 0
-        square_note 4, 14, 4, 1472
-        square_note 6, 13, 4, 1360
-        square_note 8, 11, 1, 1328
+        duty_cycle_pattern 3, 1, 1, 2
+        square_note 7, 10, 6, 1000
+	square_note 3, 9, 6, 972
+	square_note 6, 12, 1, 888
         sound_ret
 
 Cry_Poochyena_Ch8:
-        noise_note 4, 13, 4, 70
-        noise_note 6, 12, 3, 66
-        noise_note 8, 10, 1, 64
+        noise_note 8, 8, 7, 68
+	noise_note 4, 7, 3, 68
         sound_ret
+
+Cry_Mightyena:
+        channel_count 3
+        channel 5, Cry_Mightyena_Ch5
+        channel 6, Cry_Mightyena_Ch6
+        channel 8, Cry_Mightyena_Ch8
+
+Cry_Mightyena_Ch5:
+	duty_cycle_pattern 0, 2, 3, 1
+	square_note 15, 10, 4, 1076
+	square_note 8, 8, 3, 1076
+	square_note 1, 5, 3, 1076
+	square_note 1, 7, 3, 1034
+	square_note 1, 10, 3, 1143
+	square_note 3, 12, 3, 1235
+	square_note 15, 13, 3, 1273
+	square_note 7, 6, 3, 1258
+	square_note 6, 3, 3, 1258
+	sound_ret
+
+Cry_Mightyena_Ch6:
+	duty_cycle_pattern 1, 1, 3, 1
+	square_note 15, 13, 4, 1076
+	square_note 8, 0, 3, 1076
+	square_note 1, 12, 3, 1013
+	square_note 1, 9, 3, 1022
+	square_note 4, 8, 3, 1028
+	square_note 15, 12, 3, 1034
+	square_note 7, 7, 3, 1028
+	square_note 7, 0, 3, 1028
+	square_note 2, 12, 3, 1022
+	square_note 15, 13, 2, 1034
+	sound_ret
+
+Cry_Mightyena_Ch8:	
+	noise_note 15, 14, 3, 92
+	noise_note 6, 6, 3, 92
+	noise_note 15, 13, 2, 92
+	noise_note 4, 5, 2, 92
+	noise_note 9, 14, 2, 92
+	sound_ret
 
 Cry_Zigzagoon:
         channel_count 3
