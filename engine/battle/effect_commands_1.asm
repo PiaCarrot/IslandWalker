@@ -31,15 +31,42 @@ DoTurn:
 	; Effect command checkturn is called for every move.
 	call CheckTurn
 
-	ld a, [wTurnEnded]
-	and a
-	ret nz
+        ld a, [wTurnEnded]
+        and a
+        ret nz
 
-	call UpdateMoveData
+        call UpdateMoveData
+
+        ; Good as Gold ability: block status moves
+        ld a, BATTLE_VARS_MOVE_TYPE
+        call GetBattleVar
+        and STATUS
+        cp STATUS
+        jr nz, DoMove
+        ; Load target's species and personality
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .enemy_turn
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_ability
+.enemy_turn
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_ability
+        farcall Check_GoodAsGold
+        jr nz, DoMove
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
 
 DoMove:
 ; Get the user's move effect.
-	ld a, BATTLE_VARS_MOVE_EFFECT
+        ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	ld c, a
 	ld b, 0

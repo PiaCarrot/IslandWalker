@@ -97,3 +97,12 @@ AbilityText_CoinCollectorFoundCoins:
     text_decimal wTextDecimalByte, 1, 3
     text " old coins!"
     prompt
+
+AbilityText_GoodAsGold:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " made"
+    cont "status moves"
+	cont "ineffective!"
+    prompt

@@ -256,6 +256,21 @@ Check_CritBlockingAbility:
     cp SHELL_ARMOR
     ret
 
+; Good as Gold provides immunity to status moves. Returns z if blocked.
+Check_GoodAsGold:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp GOOD_AS_GOLD
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_GoodAsGold
+    call StdAbilityTextbox
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Ruby/Sapphire PICKUP ability: chance to find an item after battle
 HandlePickup::
     ld a, [wPartyCount]
