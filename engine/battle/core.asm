@@ -6725,12 +6725,15 @@ LoadEnemyMon:
 	dec b
 	jr nz, .loop
 
-	ld a, [wBaseCatchRate]
-	ld [de], a
-	inc de
+        ld a, [wBaseCatchRate]
+        ld [de], a
+        inc de
 
-	ld a, [wBaseExp]
-	ld [de], a
+        ld a, [wBaseExp]
+        ld [de], a
+        inc de
+        ld a, [wBaseExp + 1]
+        ld [de], a
 
 	ld a, [wTempEnemyMonSpecies]
 	ld [wNamedObjectIndex], a
@@ -7392,13 +7395,14 @@ GiveExperiencePoints:
 .give_exp
         xor a
         ldh [hMultiplicand + 0], a
+        ld a, [wEnemyMonBaseExp + 1]
         ldh [hMultiplicand + 1], a
         ld a, [wEnemyMonBaseExp]
         ldh [hMultiplicand + 2], a
         ld a, [wEnemyMonLevel]
         ldh [hMultiplier], a
         call Multiply
-        ld a, 7
+        ld a, 5
         ldh [hDivisor], a
         ld b, 4
         call Divide
@@ -7429,11 +7433,14 @@ GiveExperiencePoints:
 	push bc
 	ld a, MON_ITEM
 	call GetPartyParamLocation
-	ld a, [hl]
-	call GetItemIndexFromID
-	cphl16 LUCKY_EGG
-	call z, BoostExp
-	ldh a, [hQuotient + 3]
+        ld a, [hl]
+        call GetItemIndexFromID
+        cphl16 LUCKY_EGG
+        call z, BoostExp
+
+        call ScaleExpByLevel
+
+        ldh a, [hQuotient + 3]
 	ld [wStringBuffer2 + 1], a
 	ldh a, [hQuotient + 2]
 	ld [wStringBuffer2], a
@@ -7700,19 +7707,100 @@ GiveExperiencePoints:
 	cp 2
 	ret c
 
-	ld [wTempByteValue], a
-	ld hl, wEnemyMonBaseExp
-	xor a
-	ldh [hDividend + 0], a
-	ld a, [hl]
-	ldh [hDividend + 1], a
-	ld a, [wTempByteValue]
-	ldh [hDivisor], a
-	ld b, 2
-	call Divide
-	ldh a, [hQuotient + 3]
-	ld [hl], a
-	ret
+        ld [wTempByteValue], a
+        ld hl, wEnemyMonBaseExp
+        ld a, [hli]
+        ldh [hDividend + 2], a
+        ld a, [hl]
+        ldh [hDividend + 1], a
+        xor a
+        ldh [hDividend + 0], a
+        ld a, [wTempByteValue]
+        ldh [hDivisor], a
+        ld b, 3
+        call Divide
+        ldh a, [hQuotient + 3]
+        ld [wEnemyMonBaseExp], a
+        ldh a, [hQuotient + 2]
+        ld [wEnemyMonBaseExp + 1], a
+        ret
+
+ScaleExpByLevel:
+; Scale experience based on level difference
+        push bc
+
+        ; Get levels
+        ld hl, MON_LEVEL
+        add hl, bc          ; bc points to party mon
+        ld c, [hl]          ; c = player level (N)
+        ld a, [wEnemyMonLevel]
+        ld b, a             ; b = enemy level (L)
+
+        ; Level multiplier (d = 2L + 10)
+        add a
+        add 10
+        ld d, a
+
+        ; Level divider (e = L + N + 10)
+        ld a, b
+        add c
+        add 10
+        ld e, a
+
+        call .ScaleMod
+        call .ScaleMod
+        ld a, d
+        call .GetSqrt
+        ld d, a
+        ld a, e
+        call .GetSqrt
+        ld e, a
+        call .ScaleMod
+
+        ; +1 to final quotient
+        ld hl, hQuotient + 3
+        inc [hl]
+        jr nz, .done
+        dec hl
+        inc [hl]
+        jr nz, .done
+        dec hl
+        inc [hl]
+        jr nz, .done
+        dec hl
+        inc [hl]
+.done
+        pop bc
+        ret
+
+.ScaleMod:
+        ld a, d
+        ldh [hMultiplier], a
+        call Multiply
+        ld a, e
+        ldh [hDivisor], a
+        ld b, 4
+        jmp Divide
+
+.GetSqrt:
+        push bc
+        cp 225
+        ld c, 15
+        jr nc, .got_result
+        ld b, a
+        ld c, 0
+.squareloop
+        inc c
+        ld a, c
+        call SimpleMultiply
+        cp b
+        jr c, .squareloop
+        jr z, .got_result
+        dec c
+.got_result
+        ld a, c
+        pop bc
+        ret
 
 IsEvsGreaterThan510:
 ; Total EVs in bc. Set Carry flag if bc > 510.

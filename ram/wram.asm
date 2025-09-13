@@ -588,7 +588,7 @@ wGivingExperienceToExpShareHolders:: db
 
 wBackupEnemyMonBaseStats:: ds NUM_EXP_STATS
 wBackupEnemyMonCatchRate:: db
-wBackupEnemyMonBaseExp:: db
+wBackupEnemyMonBaseExp:: dw
 
 wPlayerFutureSightDamage:: dw
 wEnemyFutureSightDamage:: dw
@@ -2426,7 +2426,7 @@ NEXTU
 wEnemyMon:: battle_struct wEnemyMon
 wEnemyMonBaseStats:: ds NUM_EXP_STATS
 wEnemyMonCatchRate:: db
-wEnemyMonBaseExp::   db
+wEnemyMonBaseExp::   dw
 wEnemyMonEnd::
 ENDU
 
@@ -2476,7 +2476,7 @@ wBaseType::
 wBaseType1:: db
 wBaseType2:: db
 wBaseCatchRate:: db
-wBaseExp:: db
+wBaseExpByte:: db
 wBaseItems::
 wBaseItem1:: dw
 wBaseItem2:: dw
@@ -2490,7 +2490,9 @@ wBaseGrowthRate:: db
 wBaseEggGroups:: db
 wBaseTMHM:: flag_array NUM_TM_HM_TUTOR
 wCurBaseDataEnd::
-	assert wCurBaseDataEnd - wCurBaseData == BASE_DATA_SIZE
+        assert wCurBaseDataEnd - wCurBaseData == BASE_DATA_SIZE
+
+wBaseExp:: dw
 
 wCurDamage:: dw
 

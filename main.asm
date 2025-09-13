@@ -257,6 +257,7 @@ INCLUDE "engine/pokemon/natures.asm"
 
 
 INCLUDE "data/pokemon/base_stats.asm"
+INCLUDE "data/pokemon/base_exp.asm"
 
 
 SECTION "Crystal Phone Text", ROMX

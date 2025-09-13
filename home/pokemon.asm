@@ -246,11 +246,24 @@ GetBaseData::
 	ld hl, BaseData
 	call LoadIndirectPointer
 	; jr z, <some error handler>
-	rst Bankswitch
-	ld de, wCurBaseData
-	ld bc, BASE_DATA_SIZE
-	rst CopyBytes
-	jr .end
+        rst Bankswitch
+        ld de, wCurBaseData
+        ld bc, BASE_DATA_SIZE
+        rst CopyBytes
+
+        ; load 16-bit base experience
+        ld a, [wCurSpecies]
+        call GetPokemonIndexFromID
+        ld b, h
+        ld c, l
+        ld hl, BaseExpTable
+        ld a, BANK(BaseExpTable)
+        call GetFarWord
+        ld a, l
+        ld [wBaseExp], a
+        ld a, h
+        ld [wBaseExp + 1], a
+        jr .end
 
 .egg
 
@@ -262,13 +275,17 @@ GetBaseData::
 ; Ability (which was formerly the unused frontpic)
 ; I don't want to screw with this at the moment because it will break something else
 	ld hl, wBaseAbility1
-	ld a, e
-	ld [hli], a
-	ld a, d
-	ld [hli], a
-	ld a, e
-	ld [hli], a
-	ld [hl], d
+        ld a, e
+        ld [hli], a
+        ld a, d
+        ld [hli], a
+        ld a, e
+        ld [hli], a
+        ld [hl], d
+
+        xor a
+        ld [wBaseExp], a
+        ld [wBaseExp + 1], a
 
 .end
 ; Replace Pokedex # with species
