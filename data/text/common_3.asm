@@ -876,16 +876,24 @@ _BallSoCloseText::
 	prompt
 
 Text_BallCaught::
-	text "Gotcha! @"
-	text_ram wEnemyMonNickname
-	text_start
-	line "was caught!@"
-	sound_caught_mon
-	text_end
+        text "Gotcha! @"
+        text_ram wEnemyMonNickname
+        text_start
+        line "was caught!@"
+        sound_caught_mon
+        text_end
+
+Text_CriticalCaptureCaught::
+        text "Woah! @"
+        text_ram wEnemyMonNickname
+        text_start
+        line "was caught!@"
+        sound_caught_mon
+        text_end
 
 _WaitButtonText::
-	text_promptbutton
-	text_end
+        text_promptbutton
+        text_end
 
 _BallSentToPCText::
 	text_ram wMonOrItemNameBuffer

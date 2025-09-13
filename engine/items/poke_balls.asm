@@ -484,31 +484,31 @@ TryCriticalCapture::
         ld h, b
         ld l, c
 
-        cphl16 601
+        cphl16 399
         jr c, .check451
         ln a, 5, 12
         jr .calculate
 
 .check451
-        cphl16 451
+        cphl16 299
         jr c, .check301
         ln a, 1, 3
         jr .calculate
 
 .check301
-        cphl16 301
+        cphl16 199
         jr c, .check151
         ln a, 1, 4
         jr .calculate
 
 .check151
-        cphl16 151
+        cphl16 99
         jr c, .check31
         ln a, 1, 6
         jr .calculate
 
 .check31
-        cphl16 31
+        cphl16 30
         jr c, .done
         ln a, 1, 12
 

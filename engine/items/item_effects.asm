@@ -678,8 +678,13 @@ PokeBallEffect:
 
 	farcall StubbedTrainerRankings_WildMonsCaught
 
-	ld hl, Text_GotchaMonWasCaught
-	call PrintText
+        ld a, [wCriticalCapture]
+        and a
+        ld hl, Text_GotchaMonWasCaught
+        jr z, .print_caught_text
+        ld hl, Text_CriticalCaptureMonWasCaught
+.print_caught_text
+        call PrintText
 
 	call ClearSprites
 
@@ -874,8 +879,13 @@ PokeBallEffect:
 	jr .return_from_capture
 
 .FinishTutorial:
-	ld hl, Text_GotchaMonWasCaught
-	jr .got_text
+        ld a, [wCriticalCapture]
+        and a
+        ld hl, Text_GotchaMonWasCaught
+        jr z, .finish_text
+        ld hl, Text_CriticalCaptureMonWasCaught
+.finish_text
+        jr .got_text
 
 .shake_and_break_free
 	xor a
@@ -926,14 +936,29 @@ BallAlmostHadItText:
 	text_end
 
 BallSoCloseText:
-	text_far _BallSoCloseText
-	text_end
+        text_far _BallSoCloseText
+        text_end
+
+Text_CriticalCaptureMonWasCaught:
+        ; Woah! @ was caught!@ @
+        text_far Text_CriticalCaptureCaught
+        text_asm
+        call WaitSFX
+        push bc
+        ld de, MUSIC_NONE
+        call PlayMusic
+        call DelayFrame
+        ld de, MUSIC_CAPTURE
+        call PlayMusic
+        pop bc
+        ld hl, WaitButtonText
+        ret
 
 Text_GotchaMonWasCaught:
-	; Gotcha! @ was caught!@ @
-	text_far Text_BallCaught
-	text_asm
-	call WaitSFX
+        ; Gotcha! @ was caught!@ @
+        text_far Text_BallCaught
+        text_asm
+        call WaitSFX
 	push bc
 	ld de, MUSIC_NONE
 	call PlayMusic
