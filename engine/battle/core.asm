@@ -3661,7 +3661,9 @@ ShowBattleTextEnemySentOut:
         farcall Battle_GetTrainerName
         ld hl, BattleText_EnemySentOut
         call StdBattleTextbox
-        jmp WaitBGMap
+        call WaitBGMap
+        call PlayGymLeaderLastMonMusic
+        ret
 
 TrainerLastMonMessageIfLast:
         call CheckLastEnemyMon
@@ -3713,6 +3715,19 @@ CheckLastEnemyMon:
         ld a, b
         cp 1
         ret
+
+PlayGymLeaderLastMonMusic:
+        call CheckLastEnemyMon
+        ret nz
+        ld a, [wOtherTrainerClass]
+        cp CHAMPION
+        ret z
+        cp RED
+        ret z
+        call IsGymLeader
+        ret nc
+        ld de, MUSIC_DRAKE_BATTLE
+        jmp PlayMusic
 
 ShowSetEnemyMonAndSendOutAnimation:
         ld a, [wTempEnemyMonSpecies]
