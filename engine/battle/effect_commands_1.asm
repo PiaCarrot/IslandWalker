@@ -1280,11 +1280,19 @@ INCLUDE "data/battle/critical_hit_chances.asm"
 
 BattleCommand_Stab:
 ; STAB = Same Type Attack Bonus
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	and TYPE_MASK
-	ld bc, STRUGGLE
-	call CompareMove
+        ld a, [wIsConfusionDamage]
+        and a
+        jr z, .not_confused
+        ld a, 10
+        ld [wTypeModifier], a
+        ret
+
+.not_confused
+        ld a, BATTLE_VARS_MOVE_ANIM
+        call GetBattleVar
+        and TYPE_MASK
+        ld bc, STRUGGLE
+        call CompareMove
 	ret z
 
 	ld hl, wBattleMonType1
@@ -3138,7 +3146,11 @@ ConfusionDamageCalc:
 
 .DoneItem:
 ; Critical hits
-	call .CriticalMultiplier
+       ld a, [wIsConfusionDamage]
+       and a
+       jr nz, .SkipCriticalMultiplier
+       call .CriticalMultiplier
+.SkipCriticalMultiplier:
 
 ; Update wCurDamage. Max 999 (capped at 997, then add 2).
 DEF MAX_DAMAGE EQU 999
