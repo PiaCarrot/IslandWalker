@@ -18,8 +18,6 @@ GetPokeBallWobble:
         ret
 
 .crit_second
-        xor a
-        ld [wCriticalCapture], a
         ld hl, WobbleProbabilities
         ld a, [wFinalCatchRate]
         inc a
@@ -47,6 +45,8 @@ GetPokeBallWobble:
         ld c, 1
         ret
 .crit_fail
+        xor a
+        ld [wCriticalCapture], a
         ld a, 1
         ld [wThrownBallWobbleCount], a
         ld c, 2
