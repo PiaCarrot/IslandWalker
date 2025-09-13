@@ -965,10 +965,20 @@ _BlueCardBalanceText::
 	done
 
 _CoinCaseCountText::
-	text "Coins:"
-	line "@"
-	text_decimal wCoins, 2, 4
-	text_end
+        text "Coins:"
+        line "@"
+        text_decimal wCoins, 2, 4
+        text_end
+
+_ExpShareOnText::
+        text "Exp Share turned"
+        line "on!"
+        done
+
+_ExpShareOffText::
+        text "Exp Share turned"
+        line "off!"
+        done
 
 _RaiseThePPOfWhichMoveText::
 	text "Raise the PP of"

@@ -82,6 +82,7 @@ DEF GBPRINTER_DARKEST  EQU $7f
         const INVERSE_MODE         ; 3
         const CHEAT_WALK_THROUGH_WALLS ; 4
         const CHEAT_INSTANT_HATCHING   ; 5
+        const EXP_SHARE_ON          ; 6
 
 ; wDST::
 DEF DST_F EQU 7

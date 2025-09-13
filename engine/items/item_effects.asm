@@ -60,7 +60,7 @@ ItemEffects1:
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SP_ATK
 	dw PokeFluteEffect     ; POKE_FLUTE
-	dw NoEffect            ; EXP_SHARE
+        dw ExpShareEffect      ; EXP_SHARE
 	dw NoEffect            ; QUICK_CLAW
 	dw NoEffect            ; SOFT_SAND
 	dw NoEffect            ; SHARP_BEAK
@@ -2606,7 +2606,7 @@ PokeFluteEffect:
 	text_asm
 	ld a, [wBattleMode]
 	and a
-	jr nz, .battle
+        jr nz, .battle
 
 	push de
 	ld de, SFX_POKEFLUTE
@@ -2615,7 +2615,30 @@ PokeFluteEffect:
 	pop de
 
 .battle
-	jmp PokeFluteTerminator
+        jmp PokeFluteTerminator
+
+ExpShareEffect:
+        ld hl, wOptions2
+        bit EXP_SHARE_ON, [hl]
+        jr z, .turn_on
+        res EXP_SHARE_ON, [hl]
+        ld hl, .OffText
+        jr .print
+
+.turn_on
+        set EXP_SHARE_ON, [hl]
+        ld hl, .OnText
+
+.print
+        jp MenuTextboxWaitButton
+
+.OnText
+        text_far _ExpShareOnText
+        text_end
+
+.OffText
+        text_far _ExpShareOffText
+        text_end
 
 BlueCardEffect:
 	ld hl, .BlueCardBalanceText

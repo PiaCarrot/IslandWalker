@@ -1595,6 +1595,7 @@ wOptions2::
 ; bit 3: inverse mode off/on
 ; bit 4: walk through walls off/on
 ; bit 5: instant hatching off/on
+; bit 6: Exp Share off/on
         db
 wLevelCap:: db
         ds 1

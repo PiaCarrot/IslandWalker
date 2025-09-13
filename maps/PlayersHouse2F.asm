@@ -108,9 +108,11 @@ PlayersHouseBookshelfScript:
 	giveitem EXP_CANDY_XL, 99
 	giveitem POKE_BALL, 99
 	giveitem GREAT_BALL, 99
-	giveitem ULTRA_BALL, 99
-	giveegg TOGEPI, EGG_LEVEL
-	givepoke LAPRAS_PARTNER, 20
+	giveitem EXP_SHARE
+	givepoke LAPRAS_PARTNER, 15
+	givepoke PIKACHU_PARTNER, 15
+	givepoke EEVEE_PARTNER, 15
+	givepoke DRATINI_PARTNER, 15
 	callasm CheatFillPokedex
 	setflag ENGINE_POKEDEX
 	end
