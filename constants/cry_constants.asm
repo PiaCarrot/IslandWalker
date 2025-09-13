@@ -83,6 +83,7 @@
         const CRY_KIRLIA
         const CRY_GALLADE
         const CRY_SHROOMISH
+	const CRY_BRELOOM
         const CRY_NINCADA
         const CRY_AZURILL
         const CRY_LATIAS

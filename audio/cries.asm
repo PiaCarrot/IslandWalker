@@ -2344,27 +2344,63 @@ Cry_Shroomish:
         channel_count 3
         channel 5, Cry_Shroomish_Ch5
         channel 6, Cry_Shroomish_Ch6
-        channel 8, Cry_Shroomish_Ch8
+	channel 8, Cry_Shroomish_Ch8
 
 Cry_Shroomish_Ch5:
-        duty_cycle_pattern 0, 1, 0, 1
-        square_note 4, 14, 4, 1536
-        square_note 6, 13, 4, 1472
-        square_note 8, 11, 1, 1408
+        duty_cycle_pattern 0, 1, 0, 0
+        square_note 3, 15, -1, 1688
+	square_note 6, 15, 1, 1700
+	square_note 15, 15, 0, 1677
+	square_note 15, 13, 0, 1677
+	square_note 5, 12, 0, 1677
+	square_note 1, 0, 0, 1677
         sound_ret
 
 Cry_Shroomish_Ch6:
-        duty_cycle_pattern 3, 2, 3, 2
-        square_note 4, 13, 4, 1504
-        square_note 6, 12, 4, 1440
-        square_note 8, 10, 1, 1376
+        duty_cycle_pattern 0, 2, 0, 0
+        square_note 3, 6, -1, 1020
+	square_note 6, 5, 6, 1020
+	square_note 5, 7, 5, 1277
+	square_note 4, 6, 4, 1277
+	square_note 12, 4, 0, 1277
+	square_note 2, 0, 0, 1277
         sound_ret
 
 Cry_Shroomish_Ch8:
-        noise_note 4, 10, 4, 52
-        noise_note 6, 9, 3, 50
-        noise_note 8, 8, 1, 48
-        sound_ret
+	noise_note 7, 10, 5, 13
+	noise_note 15, 5, 4, 15
+	sound_ret
+
+Cry_Breloom:
+        channel_count 3
+        channel 5, Cry_Breloom_Ch5
+        channel 6, Cry_Breloom_Ch6
+        channel 8, Cry_Breloom_Ch8
+
+Cry_Breloom_Ch5:
+	duty_cycle_pattern 1, 0, 3, 0
+	square_note 3, 13, -1, 1737
+	square_note 5, 15, 3, 1744
+	square_note 15, 15, 0, 1677
+	square_note 3, 14, 0, 1677
+	square_note 3, 14, 0, 1673
+	square_note 1, 0, 0, 1677
+	sound_ret
+
+Cry_Breloom_Ch6:
+	duty_cycle_pattern 3, 0, 1, 2
+	square_note 3, 7, -1, 1020
+	square_note 5, 6, 6, 1020
+	square_note 5, 6, 5, 1411
+	square_note 4, 5, 4, 1404
+	square_note 11, 5, 0, 1411
+	square_note 2, 0, 0, 1411
+	sound_ret
+
+Cry_Breloom_Ch8:
+	noise_note 8, 11, 5, 2
+	noise_note 15, 10, 7, 3
+	sound_ret
 
 Cry_Nincada:
         channel_count 3

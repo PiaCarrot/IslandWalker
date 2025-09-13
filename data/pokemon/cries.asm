@@ -267,8 +267,8 @@ PokemonCries::
 	mon_cry CRY_RALTS,         96,    64 ; RALTS
 	mon_cry CRY_KIRLIA,   	   96,   128 ; KIRLIA
 	mon_cry CRY_KIRLIA,         5,   256 ; GARDEVOIR
-	mon_cry CRY_CHARMANDER,  $120,  $090 ; SHROOMISH
-	mon_cry CRY_CHARMANDER,  $760,  $0a0 ; BRELOOM
+	mon_cry CRY_SHROOMISH,    255,   112 ; SHROOMISH
+	mon_cry CRY_BRELOOM,       80,   278 ; BRELOOM
 	mon_cry CRY_METAPOD,     $0bc,  $039 ; NINCADA
 	mon_cry CRY_WEEDLE,      $700,  $100 ; NINJASK
 	mon_cry CRY_EKANS,       $172,  $060 ; SHEDINJA

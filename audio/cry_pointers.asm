@@ -78,6 +78,7 @@ Cries:
         dba Cry_Kirlia
         dba Cry_Gallade
         dba Cry_Shroomish
+	dba Cry_Breloom
         dba Cry_Nincada
         dba Cry_Azurill
         dba Cry_Latias
