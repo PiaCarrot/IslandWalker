@@ -82,7 +82,26 @@ MikanKimonoGirlScript:
 	jumptextfaceplayer MikanKimonoGirlText
 	
 MikanBlackbeltScript:
-	jumptextfaceplayer MikanBlackbeltText
+       faceplayer
+       opentext
+if DEF(_DEBUG)
+       callasm .GetFishingChain
+       writetext MikanBlackbeltDebugText
+else
+       writetext MikanBlackbeltText
+endc
+       waitbutton
+       closetext
+       end
+
+if DEF(_DEBUG)
+.GetFishingChain:
+       ld a, [wFishingChain]
+       ld [wStringBuffer2], a
+       xor a
+       ld [wStringBuffer2 + 1], a
+       ret
+endc
 	
 MikanGrannyScript:
 	faceplayer
@@ -221,15 +240,27 @@ MikanKimonoGirlText:
 	done
 	
 MikanBlackbeltText:
-	text "I tried to win the"
-	line "CORAL EYE BADGE"
-	cont "from MIKAN GYM!"
-	
-	para "But my FIGHTING-"
-	line "type #MON are"
-	cont "weakened if they"
-	cont "get burned!"
-	done
+        text "I tried to win the"
+        line "CORAL EYE BADGE"
+        cont "from MIKAN GYM!"
+
+        para "But my FIGHTING-"
+        line "type #MON are"
+        cont "weakened if they"
+        cont "get burned!"
+        done
+
+if DEF(_DEBUG)
+MikanBlackbeltDebugText:
+       text "I tried to win the"
+       line "CORAL EYE BADGE"
+       cont "from MIKAN GYM!"
+
+       para "Your chain is @"
+       text_decimal wStringBuffer2, 1, 3
+       text "."
+       done
+endc
 	
 MikanSwimmerGirlScript:
 	jumptextfaceplayer MikanSwimmerGirlText

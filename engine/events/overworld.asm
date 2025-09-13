@@ -1502,17 +1502,19 @@ FishFunction:
 	ld a, d
 	and a
 	jr z, .nonibble
-	ld [wTempWildMonSpecies], a
-	ld a, e
-	ld [wCurPartyLevel], a
-	ld a, BATTLETYPE_FISH
-	ld [wBattleType], a
-	ld a, $2
-	ret
+        ld [wTempWildMonSpecies], a
+        ld a, e
+        ld [wCurPartyLevel], a
+        ld hl, wFishingChain
+        inc [hl]
+        ld a, BATTLETYPE_FISH
+        ld [wBattleType], a
+        ld a, $2
+        ret
 
 .nonibble
-	ld a, $1
-	ret
+        ld a, $1
+        ret
 
 .FailFish:
 	ld a, JUMPTABLE_EXIT

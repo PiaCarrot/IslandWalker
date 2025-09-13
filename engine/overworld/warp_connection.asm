@@ -3,13 +3,15 @@ HandleNewMap:
        call ResetFlashIfOutOfCave
        call ResetDefogIfOutOfFog
         call GetCurrentMapSceneID
-	call ResetBikeFlags
-	call ResetMapLockedIDs
-	ld a, MAPCALLBACK_NEWMAP
-	call RunMapCallback
+        call ResetBikeFlags
+        call ResetMapLockedIDs
+        xor a
+        ld [wFishingChain], a
+        ld a, MAPCALLBACK_NEWMAP
+        call RunMapCallback
 HandleContinueMap:
-	farcall ClearCmdQueue
-	ld a, MAPCALLBACK_CMDQUEUE
+        farcall ClearCmdQueue
+        ld a, MAPCALLBACK_CMDQUEUE
 	call RunMapCallback
 	call GetMapTimeOfDay
 	ld [wMapTimeOfDay], a

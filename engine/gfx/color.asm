@@ -6,23 +6,57 @@ DEF SHINY_SPD_DV EQU 10
 DEF SHINY_SPC_DV EQU 10
 
 GenerateShininess:
-; returns c if shiny.
-        call Random
-        and a
-        jr nz, .not_shiny
+; returns carry if shiny.
+       ld a, [wFishingChain]
+       cp CHAIN_FISH_PITY_THRESHOLD
+       jr c, .skip_pity
+       xor a
+       ld [wFishingChain], a
+       scf
+       ret
 
-        ld b, SHINY_NUMERATOR
-        ld a, [wSwarmFlags]
-        and %11111100
-        jr z, .got_numerator
-        ld b, SWARM_SHINY_NUMERATOR
-.got_numerator
-        call Random
-        cp b
-        ret c
-.not_shiny
-        xor a
-        ret
+.skip_pity
+       ld bc, SHINY_NUMERATOR
+       ld a, [wSwarmFlags]
+       and %11111100
+       jr z, .init_attempts
+       ld bc, SWARM_SHINY_NUMERATOR
+.init_attempts
+       ld h, 1 ; number of shiny rolls
+       ld a, [wBattleType]
+       cp BATTLETYPE_FISH
+       jr nz, .roll
+       ld a, [wFishingChain]
+       cp CHAIN_FISH_THRESHOLD
+       jr c, .calc_attempts
+       ld a, CHAIN_FISH_THRESHOLD
+.calc_attempts
+       add a
+       inc a
+       ld h, a
+.roll
+       call Random
+       ld e, a
+       call Random
+       ld d, a
+       ld a, e
+       sub c
+       ld a, d
+       sbc b
+       jr c, .shiny
+       dec h
+       jr nz, .roll
+       xor a
+       ret
+.shiny
+       ld a, [wBattleType]
+       cp BATTLETYPE_FISH
+       jr nz, .return_shiny
+       xor a
+       ld [wFishingChain], a
+.return_shiny
+       scf
+       ret
 
 CheckShininess:
 ; Check if a mon is shiny by Personality Shiny bit at bc.

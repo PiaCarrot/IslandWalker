@@ -101,8 +101,10 @@ StartMap:
 	ld hl, wMapStatus
 	ld bc, wMapStatusEnd - wMapStatus
 	rst ByteFill
-	farcall InitCallReceiveDelay
-	call ClearJoypad
+        farcall InitCallReceiveDelay
+        call ClearJoypad
+        xor a
+        ld [wFishingChain], a
 EnterMap:
 	xor a
 	ld [wXYComparePointer], a

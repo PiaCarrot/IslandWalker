@@ -6374,31 +6374,29 @@ LoadEnemyMon:
 .NotRoaming:
 ; Register a contains wBattleType
 
-	cp BATTLETYPE_TUTORIAL
-	jp nz, .GenerateIVs
+        cp BATTLETYPE_TUTORIAL
+        jr z, .Tutorial
 
-	ld a, [wPartyMon1IVs]
-	ld b, a
-	ld a, [wPartyMon1IVs + 1]
-	ld c, a
-	jr .UpdateIVs
+        push af
+        ld hl, wEnemyMonShiny
+        farcall GenerateShininess
+        jr nc, .no_shiny
+        ld hl, wEnemyMonShiny
+        set MON_SHINY_F, [hl]
+.no_shiny
+        pop af
+        cp BATTLETYPE_FORCESHINY
+        jr nz, .GenerateIVs
+        ld hl, wEnemyMonShiny
+        set MON_SHINY_F, [hl]
+        jr .GenerateIVs
 
-
-
-; Forced shiny battle type
-; Used by Red Gyarados at Lake of Rage
-	push af
-	ld hl, wEnemyMonShiny
-	farcall GenerateShininess
-	jr nc, .not_shiny
-	ld hl, wEnemyMonShiny
-	set MON_SHINY_F, [hl]
-.not_shiny
-	pop af
-	cp BATTLETYPE_FORCESHINY
-	jr nz, .GenerateIVs
-	ld hl, wEnemyMonShiny
-	set MON_SHINY_F, [hl]
+.Tutorial:
+        ld a, [wPartyMon1IVs]
+        ld b, a
+        ld a, [wPartyMon1IVs + 1]
+        ld c, a
+        jr .UpdateIVs
 
 .GenerateIVs:
 ; Generate new random IVs
