@@ -661,23 +661,42 @@ DayCare_GenerateEgg:
 
 	; TODO: Breeding abilities
 
-	call Random
-	and a
-	jr nz, .not_shiny ; 255/256 not shiny
+        ; Check for shiny inheritance
+        ld a, [wBreedMon1Shiny]
+        ld hl, wBreedMon2Shiny
+        or [hl]
+        and SHINY_MASK
+        jr z, .random_shiny
 
-	; Shiny. Shiny rate after the above pass is:
-	; 1/16 - Usual
-	ld a, 16
-	call RandomRange
-	ld b, a
-	ld c, 1
-	ld a, b
-	cp c
-	jr nc, .not_shiny
-	ld a, SHINY_MASK
-	ld hl, wEggMonShiny
-	or [hl]
-	ld [hl], a
+        ; At least one parent is shiny: 1/64 chance to pass shininess
+        ld a, 64
+        call RandomRange
+        and a
+        jr nz, .random_shiny
+        ld a, SHINY_MASK
+        ld hl, wEggMonShiny
+        or [hl]
+        ld [hl], a
+        jr .not_shiny
+
+.random_shiny
+        call Random
+        and a
+        jr nz, .not_shiny ; 255/256 not shiny
+
+        ; Shiny. Shiny rate after the above pass is:
+        ; 1/16 - Usual
+        ld a, 16
+        call RandomRange
+        ld b, a
+        ld c, 1
+        ld a, b
+        cp c
+        jr nc, .not_shiny
+        ld a, SHINY_MASK
+        ld hl, wEggMonShiny
+        or [hl]
+        ld [hl], a
 .not_shiny
 
 	; Nature
