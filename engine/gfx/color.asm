@@ -16,11 +16,39 @@ GenerateShininess:
        ret
 
 .skip_pity
-       ld bc, SHINY_NUMERATOR
        ld a, [wSwarmFlags]
        and %11111100
-       jr z, .init_attempts
+       jr z, .no_swarm
+
+.swarm
+       call .check_charm
        ld bc, SWARM_SHINY_NUMERATOR
+       jr nc, .init_attempts
+       ld bc, CHARMED_SWARM_SHINY_NUMERATOR
+       jr .init_attempts
+
+.no_swarm
+       call .check_charm
+       ld bc, SHINY_NUMERATOR
+       jr nc, .init_attempts
+       ld bc, CHARMED_SHINY_NUMERATOR
+       jr .init_attempts
+
+.check_charm
+       ld a, [wCurItem]
+       ld d, a
+       ld e, 0
+       push de
+       ld hl, SHINY_CHARM
+       call GetItemIDFromIndex
+       ld [wCurItem], a
+       ld hl, wNumItems
+       call CheckItem
+       pop de
+       ld a, d
+       ld [wCurItem], a
+       ret
+
 .init_attempts
        ld h, 1 ; number of shiny rolls
        ld a, [wBattleType]

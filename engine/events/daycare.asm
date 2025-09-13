@@ -690,6 +690,23 @@ DayCare_GenerateEgg:
         call RandomRange
         ld b, a
         ld c, 1
+
+        ; Check for Shiny Charm
+        ld a, [wCurItem]
+        ld d, a
+        ld e, 0
+        push de
+        ld hl, SHINY_CHARM
+        call GetItemIDFromIndex
+        ld [wCurItem], a
+        ld hl, wNumItems
+        call CheckItem
+        pop de
+        ld a, d
+        ld [wCurItem], a
+        jr nc, .compare
+        ld c, 3
+.compare
         ld a, b
         cp c
         jr nc, .not_shiny
