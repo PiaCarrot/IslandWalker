@@ -513,13 +513,36 @@ TryCriticalCapture::
         ln a, 1, 12
 
 .calculate
-        call MultiplyAndDivide
-        ldh a, [hQuotient + 3]
-        ld b, a
-        call Random
-        cp b
-        jr nc, .done
-        ld a, 1
-        ld [wCriticalCapture], a
+       call MultiplyAndDivide
+       ldh a, [hQuotient + 3]
+       ld [wCriticalCapture], a ; store base rate
+
+       ld a, [wCurItem]
+       ld d, a
+       ld e, 0
+       push de
+       ld hl, CATCHING_CHARM
+       call GetItemIDFromIndex
+       ld [wCurItem], a
+       ld hl, wNumItems
+       call CheckItem
+       pop de
+       ld a, d
+       ld [wCurItem], a
+
+       ld a, [wCriticalCapture]
+       ld b, a
+       jr nc, .after_charm
+       sla b
+       jr nc, .after_charm
+       ld b, $ff
+.after_charm
+       xor a
+       ld [wCriticalCapture], a
+       call Random
+       cp b
+       jr nc, .done
+       ld a, 1
+       ld [wCriticalCapture], a
 .done
-        ret
+       ret

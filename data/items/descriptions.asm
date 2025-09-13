@@ -1687,32 +1687,32 @@ BerryLogDesc:
 	next "various BERRIES.@"
 	
 ExcelScopeDesc:
-        db   "Reveals the unseen"
-        next "when prompted.@"
+	db   "Reveals the unseen"
+	next "when prompted.@"
 
 ShinyCharmDesc:
-        db   "A charm that"
-        next "attracts SHINY.@"
+	db   "Increases SHINY"
+	next "encounter rate.@"
 
 OvalCharmDesc:
-        db   "A charm said to"
-        next "boost breeding.@"
+	db   "Increases chance"
+	next "of EGG appearing.@"
 
 ExpCharmDesc:
-        db   "A charm that"
-        next "boosts EXP.@"
+	db   "Boosts EXP from"
+	next "battles.@"
 
 CatchingCharmDesc:
-        db   "A charm that"
-        next "aids catching.@"
+   db   "Doubles critical"
+   next "capture rate.@"
 
 BlockDesc:
-        db   "A #BLOCK made"
-        next "of BERRIES.@"
+	db   "A #BLOCK made"
+	next "of BERRIES.@"
 
 AncientPotteryDesc:
-	db   "Very old pottery."
-	next "Sell high.@"
+db   "Very old pottery."
+next "Sell high.@"
 
 ClayShardDesc:
 	db   "Intricate design."
