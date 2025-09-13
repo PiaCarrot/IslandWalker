@@ -7,16 +7,22 @@ DEF SHINY_SPC_DV EQU 10
 
 GenerateShininess:
 ; returns c if shiny.
-	call Random
-	and a
-	jr nz, .not_shiny
+        call Random
+        and a
+        jr nz, .not_shiny
 
-	call Random
-	cp SHINY_NUMERATOR
-	ret c
+        ld b, SHINY_NUMERATOR
+        ld a, [wSwarmFlags]
+        and %11111100
+        jr z, .got_numerator
+        ld b, SWARM_SHINY_NUMERATOR
+.got_numerator
+        call Random
+        cp b
+        ret c
 .not_shiny
-	xor a
-	ret
+        xor a
+        ret
 
 CheckShininess:
 ; Check if a mon is shiny by Personality Shiny bit at bc.
