@@ -2289,6 +2289,7 @@ NEXTU
 ; thrown ball data
 wFinalCatchRate:: db
 wThrownBallWobbleCount:: db
+wCriticalCapture:: db
 
 NEXTU
 ; evolution data

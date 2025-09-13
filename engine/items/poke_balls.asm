@@ -463,5 +463,63 @@ MoonBallMultiplier:
 	pop de
 	ret z
 
-	ln a, 4, 1 ; x4
-	jmp MultiplyAndDivide
+        ln a, 4, 1 ; x4
+        jmp MultiplyAndDivide
+
+TryCriticalCapture::
+; Determine if this throw should trigger a critical capture.
+; Sets wCriticalCapture to 1 if successful, 0 otherwise.
+        xor a
+        ld [wCriticalCapture], a
+
+        ld a, [wFinalCatchRate]
+        ldh [hMultiplicand + 2], a
+        xor a
+        ldh [hMultiplicand + 1], a
+        ldh [hMultiplicand], a
+
+        ld hl, wPokedexCaught
+        ld bc, NUM_DEX_BEFORE_FORMS_BYTES
+        call CountSetBits16
+        ld h, b
+        ld l, c
+
+        cphl16 601
+        jr c, .check451
+        ln a, 5, 12
+        jr .calculate
+
+.check451
+        cphl16 451
+        jr c, .check301
+        ln a, 1, 3
+        jr .calculate
+
+.check301
+        cphl16 301
+        jr c, .check151
+        ln a, 1, 4
+        jr .calculate
+
+.check151
+        cphl16 151
+        jr c, .check31
+        ln a, 1, 6
+        jr .calculate
+
+.check31
+        cphl16 31
+        jr c, .done
+        ln a, 1, 12
+
+.calculate
+        call MultiplyAndDivide
+        ldh a, [hQuotient + 3]
+        ld b, a
+        call Random
+        cp b
+        jr nc, .done
+        ld a, 1
+        ld [wCriticalCapture], a
+.done
+        ret

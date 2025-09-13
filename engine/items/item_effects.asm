@@ -533,8 +533,9 @@ PokeBallEffect:
 	ld a, $ff
 .max_2
 
-	ld [wFinalCatchRate], a
-	ld a, [wTempEnemyMonSpecies]
+        ld [wFinalCatchRate], a
+        farcall TryCriticalCapture
+        ld a, [wTempEnemyMonSpecies]
 	ld [wEnemyMonSpecies], a
 	ld [wWildMon], a
 
