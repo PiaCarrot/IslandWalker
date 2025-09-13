@@ -60,6 +60,9 @@ DoTurn:
 .check_ability
         farcall Check_GoodAsGold
         jr nz, DoMove
+        farcall DisplayUsedMoveText
+        ld hl, AbilityText_GoodAsGold
+        farcall StdAbilityTextbox
         ld a, 1
         ld [wAttackMissed], a
         jmp EndMoveEffect

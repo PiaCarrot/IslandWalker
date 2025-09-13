@@ -263,8 +263,6 @@ Check_GoodAsGold:
     cp GOOD_AS_GOLD
     jr nz, .nope
     call Ability_LoadAbilityName
-    ld hl, AbilityText_GoodAsGold
-    call StdAbilityTextbox
     xor a
     ret
 .nope
