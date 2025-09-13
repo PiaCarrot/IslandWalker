@@ -468,9 +468,6 @@ _ChooseWildEncounter:
 	endc
 	jr nz, .done
 
-	ld a, [wUnlockedUnowns]
-	and a
-	jr z, .nowildbattle
 
 .done
 	call GetPokemonIDFromIndex
