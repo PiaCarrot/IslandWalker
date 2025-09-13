@@ -124,12 +124,15 @@ LoadTrainer_continue::
 	call GetFarWord
 	ld de, wTempTrainer
 	ld bc, wTempTrainerEnd - wTempTrainer
-	ld a, [wSeenTrainerBank]
-	call FarCopyBytes
-	xor a
-	ld [wRunningTrainerBattleScript], a
-	scf
-	ret
+        ld a, [wSeenTrainerBank]
+        call FarCopyBytes
+        xor a
+        ld [wRunningTrainerBattleScript], a
+        ld hl, wLastMonTextPointer
+        ld [hli], a
+        ld [hl], a
+        scf
+        ret
 
 FacingPlayerDistance_bc::
 	push de
