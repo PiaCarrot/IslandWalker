@@ -241,6 +241,7 @@ ScriptCommandTable:
         dw Script_checkoak                 ; b2
         dw Script_checklvlcap              ; b3
         dw Script_checkinverse             ; b4
+        dw Script_lastmonmsg              ; b5
         assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2043,6 +2044,14 @@ Script_checkinverse:
         ret z
         ld a, TRUE
         ld [wScriptVar], a
+        ret
+
+Script_lastmonmsg:
+        ld hl, wLastMonTextPointer
+        rst GetScriptByte
+        ld [hli], a
+        rst GetScriptByte
+        ld [hli], a
         ret
 
 Script_wildoff:

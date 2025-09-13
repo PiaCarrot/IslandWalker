@@ -576,3 +576,6 @@ Sets `VAR` to `TRUE` if Level Limits are enabled; otherwise `FALSE`.
 
 ## `$B4`: `checkinverse`
 Sets `VAR` to `TRUE` if Inverse Mode is enabled; otherwise `FALSE`.
+
+## `$B5`: `lastmonmsg <text_pointer>`
+Sets the text shown when the opposing trainer is about to send out their final Pokémon.

@@ -3657,14 +3657,66 @@ ClearEnemyMonBox:
 	jmp FinishBattleAnim
 
 ShowBattleTextEnemySentOut:
-	farcall Battle_GetTrainerName
-	ld hl, BattleText_EnemySentOut
-	call StdBattleTextbox
-	jmp WaitBGMap
+        call TrainerLastMonMessageIfLast
+        farcall Battle_GetTrainerName
+        ld hl, BattleText_EnemySentOut
+        call StdBattleTextbox
+        jmp WaitBGMap
+
+TrainerLastMonMessageIfLast:
+        call CheckLastEnemyMon
+        ret nz
+        ld hl, wLastMonTextPointer
+        ld a, [hli]
+        ld h, [hl]
+       ld l, a
+       ld a, l
+       or h
+       ret z
+       ld a, [wTempEnemyMonSpecies]
+       push af
+       push hl
+       call BattleWinSlideInEnemyTrainerFrontpic
+       pop hl
+       pop af
+       ld [wTempEnemyMonSpecies], a
+       call GetMapScriptsBank
+       call FarPrintText
+       call WaitBGMap
+       call WaitPressAorB_BlinkCursor
+       hlcoord 18, 0
+        ld a, 8
+        call SlideBattlePicOut
+       call FinishBattleAnim
+        xor a
+        ld hl, wLastMonTextPointer
+        ld [hli], a
+        ld [hl], a
+        ret
+
+CheckLastEnemyMon:
+        ld a, [wOTPartyCount]
+        ld c, a
+        ld hl, wOTPartyMon1 + MON_HP
+        ld b, 0
+.loop
+        ld a, [hli]
+        or [hl]
+        jr z, .next
+        inc b
+.next
+        inc hl
+        ld de, PARTYMON_STRUCT_LENGTH - 2
+        add hl, de
+        dec c
+        jr nz, .loop
+        ld a, b
+        cp 1
+        ret
 
 ShowSetEnemyMonAndSendOutAnimation:
-	ld a, [wTempEnemyMonSpecies]
-	call SetSeenMon
+        ld a, [wTempEnemyMonSpecies]
+        call SetSeenMon
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	call GetBaseData

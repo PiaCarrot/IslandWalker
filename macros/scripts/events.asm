@@ -1132,4 +1132,10 @@ MACRO checkinverse
         db checkinverse_command
 ENDM
 
+        const lastmonmsg_command ; $b5
+MACRO lastmonmsg
+        db lastmonmsg_command
+        dw \1 ; text_pointer
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

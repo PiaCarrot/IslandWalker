@@ -1921,6 +1921,7 @@ wTempTrainerID:: db
 wSeenTextPointer:: dw
 wWinTextPointer:: dw
 wLossTextPointer:: dw
+wLastMonTextPointer:: dw
 wScriptAfterPointer:: dw
 wRunningTrainerBattleScript:: db
 wTempTrainerEnd::

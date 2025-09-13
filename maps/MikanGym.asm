@@ -158,6 +158,7 @@ MikanGymCissyScript:
 	waitbutton
 	closetext
 	winlosstext CissyBeatenText, 0
+	lastmonmsg CissyLastMonText
 	setlasttalked MIKAN_GYM_CISSY
 	checkcm
 	iffalse .LoadCissy
@@ -249,6 +250,16 @@ CissyBeatenText:
 	para "It's the official"
 	line "ORANGE CREW"
 	cont "CORAL-EYE BADGE."
+	done
+
+CissyLastMonText:
+	text "CISSY: You're"
+	line "making waves…"
+
+	para "It's getting hot"
+	line "in here!"
+	
+	para "Go, WARTORTLE!"
 	done
 
 CissyOakChallengeText:
