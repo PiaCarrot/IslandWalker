@@ -221,9 +221,13 @@ ItemEffectsKeyItems:
 	dw SquirtbottleEffect ; SQUIRTBOTTLE
 	dw NoEffect           ; RAINBOW_WING
 	dw NoEffect           ; SECRET_STASH
-	dw TownMapEffect      ; SEA_MAP
-	dw NoEffect           ; BERRY_LOG (Effect not Implemented Yet)
-	dw NoEffect           ; EXCEL_SCOPE
+        dw TownMapEffect      ; SEA_MAP
+        dw NoEffect           ; BERRY_LOG (Effect not Implemented Yet)
+        dw NoEffect           ; EXCEL_SCOPE
+        dw NoEffect           ; SHINY_CHARM
+        dw NoEffect           ; OVAL_CHARM
+        dw NoEffect           ; EXP_CHARM
+        dw NoEffect           ; CATCHING_CHARM
 .IndirectEnd:
 
 ItemEffectsBalls:

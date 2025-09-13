@@ -187,10 +187,14 @@ KeyItemNames::
 	li "SQUIRTBOTTLE" ; 0114
 	li "RAINBOW WING" ; 0115
 	li "SECRET STASH" ; 0116
-	li "SEA MAP"      ; 0117
-	li "BERRY LOG"    ; 0118
-	li "EXCEL SCOPE"  ; 0119
-	assert_list_length NUM_KEY_ITEM_POCKET
+        li "SEA MAP"      ; 0117
+        li "BERRY LOG"    ; 0118
+        li "EXCEL SCOPE"  ; 0119
+        li "SHINY CHARM"  ; 011A
+        li "OVAL CHARM"   ; 011B
+        li "EXP. CHARM"   ; 011C
+        li "CATCH CHARM" ; 011D
+        assert_list_length NUM_KEY_ITEM_POCKET
 
 BallNames::
 	list_start

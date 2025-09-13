@@ -96,22 +96,21 @@ PlayersHouseBookshelfScript:
 	; startbattle
 	; reloadmapafterbattle
 	;	; Grant All Pokemon
-	giveitem BRIGHTPOWDER
-	giveitem ESCAPE_ROPE
-	giveitem MOON_STONE
-	giveitem SUN_STONE
-	giveitem LEAF_STONE
-	giveitem FIRE_STONE
-	giveitem THUNDERSTONE
+	giveitem CATCHING_CHARM
+	giveitem EXP_CHARM
+	giveitem OVAL_CHARM
+	giveitem SHINY_CHARM
 	giveitem RARE_CANDY, 99
 	giveitem EXP_CANDY_XS, 99
 	giveitem EXP_CANDY_S, 99
 	giveitem EXP_CANDY_M, 99
 	giveitem EXP_CANDY_L, 99
 	giveitem EXP_CANDY_XL, 99
+	giveitem POKE_BALL, 99
+	giveitem GREAT_BALL, 99
+	giveitem ULTRA_BALL, 99
 	giveegg TOGEPI, EGG_LEVEL
-	givepoke LAPRAS, 5
-	giveitem HM_SURF
+	givepoke LAPRAS_PARTNER, 20
 	callasm CheatFillPokedex
 	setflag ENGINE_POKEDEX
 	end

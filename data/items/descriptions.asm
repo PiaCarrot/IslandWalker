@@ -199,11 +199,15 @@ ItemDescriptionsKeyItems:
 	dw BasementKeyDesc  ; 0112
 	dw PassDesc         ; 0113
 	dw SquirtBottleDesc ; 0114
-	dw RainbowWingDesc  ; 0115
-	dw SecretStashDesc  ; 0116
-	dw SeaMapDesc       ; 0117
-	dw BerryLogDesc     ; 0118
-	dw ExcelScopeDesc     ; 0119
+        dw RainbowWingDesc  ; 0115
+        dw SecretStashDesc  ; 0116
+        dw SeaMapDesc       ; 0117
+        dw BerryLogDesc     ; 0118
+        dw ExcelScopeDesc     ; 0119
+        dw ShinyCharmDesc    ; 011A
+        dw OvalCharmDesc     ; 011B
+        dw ExpCharmDesc      ; 011C
+        dw CatchingCharmDesc ; 011D
 .IndirectEnd:
 
 ItemDescriptionsBalls:
@@ -1683,12 +1687,28 @@ BerryLogDesc:
 	next "various BERRIES.@"
 	
 ExcelScopeDesc:
-	db   "Reveals the unseen"
-	next "when prompted.@"
+        db   "Reveals the unseen"
+        next "when prompted.@"
+
+ShinyCharmDesc:
+        db   "A charm that"
+        next "attracts SHINY.@"
+
+OvalCharmDesc:
+        db   "A charm said to"
+        next "boost breeding.@"
+
+ExpCharmDesc:
+        db   "A charm that"
+        next "boosts EXP.@"
+
+CatchingCharmDesc:
+        db   "A charm that"
+        next "aids catching.@"
 
 BlockDesc:
-	db   "A #BLOCK made"
-	next "of BERRIES.@"
+        db   "A #BLOCK made"
+        next "of BERRIES.@"
 
 AncientPotteryDesc:
 	db   "Very old pottery."

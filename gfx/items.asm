@@ -278,9 +278,13 @@ KeyItemIconPointers:
 	dw NoItemIcon ; SQUIRTBOTTLE
 	dw RainbowWingIcon ; RAINBOW_WING
 	dw NoItemIcon ; SECRET_STASH
-	dw SeaMapIcon ; SEA_MAP
-	dw BerryLogIcon ; BERRY_LOG
-	dw ExcelScopeIcon ; EXCEL_SCOPE
+        dw SeaMapIcon ; SEA_MAP
+        dw BerryLogIcon ; BERRY_LOG
+        dw ExcelScopeIcon ; EXCEL_SCOPE
+        dw NoItemIcon ; SHINY_CHARM
+        dw NoItemIcon ; OVAL_CHARM
+        dw NoItemIcon ; EXP_CHARM
+        dw NoItemIcon ; CATCHING_CHARM
 .IndirectEnd:
 	
 BallsIconPointers:
@@ -1136,11 +1140,23 @@ KeyItemIconPalettes:
 	RGB 27, 23, 17
 	RGB 22, 18, 13
 ; BERRY_LOG
-	RGB 07, 20, 05
-	RGB 07, 16, 06
+        RGB 07, 20, 05
+        RGB 07, 16, 06
 ; EXCEL_SCOPE
-	RGB 21, 21, 21
-	RGB 31, 00, 00
+        RGB 21, 21, 21
+        RGB 31, 00, 00
+; SHINY_CHARM
+        RGB 20, 20, 20
+        RGB 10, 10, 10
+; OVAL_CHARM
+        RGB 20, 20, 20
+        RGB 10, 10, 10
+; EXP_CHARM
+        RGB 20, 20, 20
+        RGB 10, 10, 10
+; CATCHING_CHARM
+        RGB 20, 20, 20
+        RGB 10, 10, 10
 .IndirectEnd:
 	
 BallsIconPalettes:

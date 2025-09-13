@@ -192,10 +192,14 @@ DEF FIRST_KEY_ITEM EQU const_value
 	const PASS         ; 0113
 	const SQUIRTBOTTLE ; 0114
 	const RAINBOW_WING ; 0115
-	const SECRET_STASH ; 0116
-	const SEA_MAP      ; 0117
-	const BERRY_LOG    ; 0118
-	const EXCEL_SCOPE    ; 0119
+        const SECRET_STASH ; 0116
+        const SEA_MAP      ; 0117
+        const BERRY_LOG    ; 0118
+        const EXCEL_SCOPE    ; 0119
+        const SHINY_CHARM   ; 011A
+        const OVAL_CHARM    ; 011B
+        const EXP_CHARM     ; 011C
+        const CATCHING_CHARM ; 011D
 DEF NUM_KEY_ITEM_POCKET EQU const_value - FIRST_KEY_ITEM
 assert NUM_KEY_ITEM_POCKET <= $ff
 
