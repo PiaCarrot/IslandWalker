@@ -539,14 +539,21 @@ PokeBallEffect:
 	ld [wEnemyMonSpecies], a
 	ld [wWildMon], a
 
-	call Wait20Frames
+        call Wait20Frames
 
-	ld a, [wCurItem]
-	ld [wBattleAnimParam], a
-	call GetItemIndexFromID
-	cphl16 POKE_BALL + 1 ; Assumes Master/Ultra/Great come before
-	jr c, .not_kurt_ball
-	ld hl, POKE_BALL
+        ld a, [wCriticalCapture]
+        and a
+        jr z, .no_crit_capture_sfx
+        ld de, SFX_RAZOR_WIND
+        call PlaySFX
+.no_crit_capture_sfx
+
+        ld a, [wCurItem]
+        ld [wBattleAnimParam], a
+        call GetItemIndexFromID
+        cphl16 POKE_BALL + 1 ; Assumes Master/Ultra/Great come before
+        jr c, .not_kurt_ball
+        ld hl, POKE_BALL
 	call GetItemIDFromIndex
 	ld [wBattleAnimParam], a
 .not_kurt_ball
