@@ -262,7 +262,7 @@ TreeItemEncounter:
 	ret
 	
 .TreeItems:
-	dbw 1, LEAF_STONE
+	dbw 1, SPIDER_SILK
 	dbw 1, MIRACLE_SEED
 	dbw 2, GOLD_LEAF
 	dbw 4, SILVER_LEAF
@@ -276,7 +276,7 @@ TreeItemEncounter:
 	db -1
 	
 .BambooTreeItems:
-	dbw 1, LEADER_CREST
+	dbw 1, SPIDER_SILK
 	dbw 1, MIRACLE_SEED
 	dbw 2, GOLD_LEAF
 	dbw 4, SILVER_LEAF
