@@ -713,8 +713,8 @@ ItemfinderDesc:
 	next "items in the area.@"
 
 ExpShareDesc:
-	db   "Shares battle EXP."
-	next "Points. (HOLD)@"
+	db   "Gives entire party"
+	next "EXP. (TOGGLE)@"
 
 OldRodDesc:
 	db   "Use by water to"
