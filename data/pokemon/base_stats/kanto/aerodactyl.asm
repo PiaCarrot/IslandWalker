@@ -12,7 +12,7 @@
 	db 35 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/aerodactyl/front.dimensions"
 	db ROCK_HEAD, PRESSURE ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_FLYING, EGG_FLYING ; egg groups
 

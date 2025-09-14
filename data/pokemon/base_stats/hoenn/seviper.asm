@@ -12,7 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/seviper/front.dimensions"
 	db SHED_SKIN, INFILTRATOR ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_FLUCTUATING ; growth rate
 	dn EGG_GROUND, EGG_DRAGON ; egg groups
 

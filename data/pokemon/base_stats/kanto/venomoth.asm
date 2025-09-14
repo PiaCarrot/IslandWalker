@@ -12,7 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/venomoth/front.dimensions"
 	db SHIELD_DUST, TINTED_LENS ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_BUG, EGG_BUG ; egg groups
 

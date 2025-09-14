@@ -12,7 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/cloyster/front.dimensions"
 	db SHELL_ARMOR, SKILL_LINK ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_WATER_3, EGG_WATER_3 ; egg groups
 

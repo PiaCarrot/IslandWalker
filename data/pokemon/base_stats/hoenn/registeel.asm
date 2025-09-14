@@ -12,7 +12,7 @@
 	db 80 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/registeel/front.dimensions"
 	db CLEAR_BODY, CLEAR_BODY ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

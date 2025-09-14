@@ -12,7 +12,7 @@ db GENDER_F12_5 ; gender ratio
 db 35 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/leafeon/front.dimensions"
 db LEAF_GUARD, LEAF_GUARD ; wBaseAbility1, wBaseAbility2
-dw NULL ; Padding left-over from the unused back pic
+dw EXP_CANDY_XS ; drop item
 db GROWTH_MEDIUM_FAST ; growth rate
 dn EGG_GROUND, EGG_GROUND ; egg groups
 

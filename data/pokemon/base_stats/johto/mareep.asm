@@ -12,7 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/mareep/front.dimensions"
 	db STATIC, MINUS ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_GROUND ; egg groups
 

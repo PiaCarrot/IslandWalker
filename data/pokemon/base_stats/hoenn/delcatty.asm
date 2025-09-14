@@ -12,7 +12,7 @@
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/delcatty/front.dimensions"
 	db CUTE_CHARM, CUTE_CHARM ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
 

@@ -12,7 +12,7 @@
 	db 35 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/aggron/front.dimensions"
 	db ROCK_HEAD, STURDY ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_MONSTER ; egg groups
 

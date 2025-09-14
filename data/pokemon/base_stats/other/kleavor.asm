@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/other/kleavor/front.dimensions"
 db SWARM, SHEER_FORCE ; wBaseAbility1, wBaseAbility2
-dw NULL ; Padding left-over from the unused back pic
+dw EXP_CANDY_XS ; drop item
 db GROWTH_MEDIUM_FAST ; growth rate
 dn EGG_BUG, EGG_BUG ; egg groups
 

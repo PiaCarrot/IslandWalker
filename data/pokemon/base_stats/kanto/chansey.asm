@@ -12,7 +12,7 @@
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/chansey/front.dimensions"
 	db NATURAL_CURE, SERENE_GRACE ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_FAST ; growth rate
 	dn EGG_FAIRY, EGG_FAIRY ; egg groups
 

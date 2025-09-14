@@ -12,7 +12,7 @@
 	db 120 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/lugia/front.dimensions"
 	db PRESSURE, MULTISCALE ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

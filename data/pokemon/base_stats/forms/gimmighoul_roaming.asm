@@ -12,7 +12,7 @@ db GENDER_UNKNOWN ; gender ratio
 db 50 ; step cycles to hatch
 INCBIN "gfx/pokemon/forms/gimmighoul_roaming/front.dimensions"
 db RUN_AWAY, COIN_COLLECTOR ; wBaseAbility1, wBaseAbility2
-dw NULL ; Padding left-over from the unused back pic
+dw EXP_CANDY_XS ; drop item
 db GROWTH_SLOW ; growth rate
 dn EGG_NONE, EGG_NONE ; egg groups
 

@@ -8666,10 +8666,11 @@ ExitBattle:
 	jmp DisplayLinkBattleResult
 
 .not_linked
-	ld a, [wBattleResult]
-	and $f
-	ret nz
+        ld a, [wBattleResult]
+        and $f
+        ret nz
         call CheckPayDay
+        call CheckWildDropItem
         farcall HandlePickup
         farcall HandleCoinCollector
         xor a
@@ -8739,8 +8740,32 @@ CheckPayDay:
 	ld a, [wInBattleTowerBattle]
 	bit IN_BATTLE_TOWER_BATTLE_F, a
 	ret z
-	call ClearTilemap
-	jmp ClearBGPalettes
+        call ClearTilemap
+        jmp ClearBGPalettes
+
+CheckWildDropItem:
+        ld a, [wBattleMode]
+        dec a
+        ret nz
+        ld hl, wBaseDropItem
+        call GetItemIDFromHL
+        cp NO_ITEM
+        ret z
+        ld b, a
+        call BattleRandom
+        cp 10 percent
+        ret nc
+        ld a, b
+        ld [wCurItem], a
+        ld [wNamedObjectIndex], a
+        ld a, 1
+        ld [wItemQuantityChange], a
+        ld hl, wNumItems
+        call ReceiveItem
+        ret nc
+        call GetItemName
+        ld hl, BattleText_PlayerFoundDropItem
+        jmp StdBattleTextbox
 
 ShowLinkBattleParticipantsAfterEnd:
 	farcall StubbedTrainerRankings_LinkBattles

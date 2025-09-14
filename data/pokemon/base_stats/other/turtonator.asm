@@ -12,7 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/other/turtonator/front.dimensions"
 	db SHELL_ARMOR, SHELL_ARMOR ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_MONSTER, EGG_DRAGON ; egg groups
 

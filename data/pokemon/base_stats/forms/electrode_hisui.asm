@@ -12,7 +12,7 @@
         db 20 ; step cycles to hatch
         INCBIN "gfx/pokemon/forms/electrode_hisui/front.dimensions"
         db SOUNDPROOF, STATIC ; wBaseAbility1, wBaseAbility2
-        dw NULL ; Padding left-over from the unused back pic
+        dw EXP_CANDY_XS ; drop item
         db GROWTH_MEDIUM_FAST ; growth rate
         dn EGG_MINERAL, EGG_MINERAL ; egg groups
 

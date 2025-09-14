@@ -30,6 +30,6 @@ for filename in filenames:
         for line in lines:
             if line == '\tdw NULL, NULL ; unused (beta front/back pics)\n':
                 file.write("\tdb " + ability1 + ", " + ability2 + " ; wBaseAbility1, wBaseAbility2\n")
-                file.write("\tdw NULL ; Padding left-over from the unused back pic\n")
+                file.write("\tdw EXP_CANDY_XS ; drop item\n")
             else:
                 file.write(line)

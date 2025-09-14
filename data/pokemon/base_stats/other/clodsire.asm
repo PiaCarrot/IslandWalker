@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/other/clodsire/front.dimensions"
 db POISON_POINT, WATER_ABSORB ; wBaseAbility1, wBaseAbility2
-dw NULL ; Padding left-over from the unused back pic
+dw EXP_CANDY_XS ; drop item
 db GROWTH_MEDIUM_FAST ; growth rate
 dn EGG_WATER_1, EGG_GROUND ; egg groups
 

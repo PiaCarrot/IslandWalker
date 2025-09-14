@@ -286,11 +286,14 @@ GetBaseData::
         xor a
         ld [wBaseExp], a
         ld [wBaseExp + 1], a
+        ld hl, wBaseDropItem
+        ld [hli], a
+        ld [hl], a
 
 .end
 ; Replace Pokedex # with species
-	ld a, [wCurSpecies]
-	ld [wBaseSpecies], a
+        ld a, [wCurSpecies]
+        ld [wBaseSpecies], a
 
 	pop af
 	rst Bankswitch

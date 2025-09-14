@@ -28,7 +28,7 @@ DEF BASE_EGG_STEPS          rb
 DEF BASE_PIC_SIZE           rb
 DEF BASE_ABILITY1           rb
 DEF BASE_ABILITY2           rb
-DEF BASE_PADDING            rw
+DEF BASE_DROP_ITEM          rw ; drop item
 DEF BASE_GROWTH_RATE        rb
 DEF BASE_EGG_GROUPS         rb
 DEF BASE_TMHM               rb (NUM_TM_HM_TUTOR + 7) / 8

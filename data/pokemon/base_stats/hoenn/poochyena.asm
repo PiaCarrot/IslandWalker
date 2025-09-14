@@ -12,7 +12,7 @@
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/poochyena/front.dimensions"
 	db RUN_AWAY, RUN_AWAY ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 

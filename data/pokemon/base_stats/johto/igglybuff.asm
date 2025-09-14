@@ -12,7 +12,7 @@
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/igglybuff/front.dimensions"
 	db CUTE_CHARM, COMPETITIVE ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_FAST ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

@@ -12,7 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/smeargle/front.dimensions"
 	db OWN_TEMPO, TECHNICIAN ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 

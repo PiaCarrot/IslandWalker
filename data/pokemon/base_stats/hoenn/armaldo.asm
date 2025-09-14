@@ -12,7 +12,7 @@
 	db 30 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/armaldo/front.dimensions"
 	db BATTLE_ARMOR, BATTLE_ARMOR ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_ERRATIC ; growth rate
 	dn EGG_WATER_3, EGG_WATER_3 ; egg groups
 

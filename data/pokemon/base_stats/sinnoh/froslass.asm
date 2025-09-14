@@ -12,7 +12,7 @@ db GENDER_F100 ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/froslass/front.dimensions"
 db SNOW_CLOAK, SNOW_CLOAK ; wBaseAbility1, wBaseAbility2
-dw NULL ; Padding left-over from the unused back pic
+dw EXP_CANDY_XS ; drop item
 db GROWTH_MEDIUM_FAST ; growth rate
 dn EGG_FAIRY, EGG_MINERAL ; egg groups
 

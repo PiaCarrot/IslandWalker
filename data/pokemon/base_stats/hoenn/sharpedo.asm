@@ -12,7 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/sharpedo/front.dimensions"
 	db ROUGH_SKIN, SPEED_BOOST ; wBaseAbility1, wBaseAbility2
-	dw NULL ; Padding left-over from the unused back pic
+	dw EXP_CANDY_XS ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_WATER_2, EGG_WATER_2 ; egg groups
 
