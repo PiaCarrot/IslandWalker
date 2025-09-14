@@ -7430,6 +7430,23 @@ GiveExperiencePoints:
         cphl16 LUCKY_EGG
         call z, BoostExp
 
+; Boost experience for Exp Charm
+        ld a, [wCurItem]
+        ld d, a
+        ld e, 0
+        push de
+        ld hl, EXP_CHARM
+        call GetItemIDFromIndex
+        ld [wCurItem], a
+        ld hl, wNumItems
+        call CheckItem
+        pop de
+        ld a, d
+        ld [wCurItem], a
+        jr nc, .no_exp_charm
+        call BoostExp
+.no_exp_charm
+
         call ScaleExpByLevel
 
         ldh a, [hQuotient + 3]
