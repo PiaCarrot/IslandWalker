@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 25 ; step cycles to hatch
 INCBIN "gfx/pokemon/other/mr_rime/front.dimensions"
 db TANGLED_FEET, SCREEN_CLEANER ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_M ; drop item
 db GROWTH_MEDIUM_FAST ; growth rate
 dn EGG_HUMANSHAPE, EGG_HUMANSHAPE ; egg groups
 

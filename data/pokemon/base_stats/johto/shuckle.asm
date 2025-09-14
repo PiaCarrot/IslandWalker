@@ -12,7 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/shuckle/front.dimensions"
 	db STURDY, GLUTTONY ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_M ; drop item
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_BUG, EGG_BUG ; egg groups
 

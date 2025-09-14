@@ -12,7 +12,7 @@
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/pidgeotto/front.dimensions"
 	db KEEN_EYE, TANGLED_FEET ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_S ; drop item
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_FLYING, EGG_FLYING ; egg groups
 

@@ -12,7 +12,7 @@ db GENDER_UNKNOWN ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/other/dipplin/front.dimensions"
 db SUPERSWEET_SYRUP, GLUTTONY ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_M ; drop item
 db GROWTH_SLOW ; growth rate
 dn EGG_PLANT, EGG_DRAGON ; egg groups
 

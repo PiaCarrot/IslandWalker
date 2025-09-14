@@ -12,7 +12,7 @@
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/sableye/front.dimensions"
 	db KEEN_EYE, KEEN_EYE ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_S ; drop item
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_HUMANSHAPE, EGG_HUMANSHAPE ; egg groups
 

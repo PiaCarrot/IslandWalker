@@ -12,7 +12,7 @@
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/clefairy/front.dimensions"
 	db CUTE_CHARM, MAGIC_GUARD ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_S ; drop item
 	db GROWTH_FAST ; growth rate
 	dn EGG_FAIRY, EGG_FAIRY ; egg groups
 

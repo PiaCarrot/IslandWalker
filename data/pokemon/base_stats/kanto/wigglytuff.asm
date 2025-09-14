@@ -12,7 +12,7 @@
 	db 10 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/wigglytuff/front.dimensions"
 	db CUTE_CHARM, COMPETITIVE ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_M ; drop item
 	db GROWTH_FAST ; growth rate
 	dn EGG_FAIRY, EGG_FAIRY ; egg groups
 

@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 25 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/dusknoir/front.dimensions"
 db PRESSURE, PRESSURE ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_L ; drop item
 db GROWTH_FAST ; growth rate
 dn EGG_INDETERMINATE, EGG_INDETERMINATE ; egg groups
 

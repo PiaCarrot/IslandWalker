@@ -12,7 +12,7 @@
 	db 35 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/lairon/front.dimensions"
 	db ROCK_HEAD, STURDY ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_M ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_MONSTER ; egg groups
 

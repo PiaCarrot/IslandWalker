@@ -12,7 +12,7 @@
 	 db 35 ; step cycles to hatch
 	 INCBIN "gfx/pokemon/other/sylveon/front.dimensions"
 	 db CUTE_CHARM, PIXILATE ; wBaseAbility1, wBaseAbility2
-	 dw EXP_CANDY_XS ; drop item
+	 dw EXP_CANDY_M ; drop item
 	 db GROWTH_MEDIUM_FAST ; growth rate
 	 dn EGG_GROUND, EGG_GROUND ; egg groups
 

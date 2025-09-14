@@ -12,7 +12,7 @@
 	db 30 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/lileep/front.dimensions"
 	db SUCTION_CUPS, SUCTION_CUPS ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_S ; drop item
 	db GROWTH_ERRATIC ; growth rate
 	dn EGG_WATER_3, EGG_WATER_3 ; egg groups
 

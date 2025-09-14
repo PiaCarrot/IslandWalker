@@ -12,7 +12,7 @@
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/lapras/front.dimensions"
 	db WATER_ABSORB, SHELL_ARMOR ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_M ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_WATER_1 ; egg groups
 

@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/gliscor/front.dimensions"
 db HYPER_CUTTER, SAND_VEIL ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_M ; drop item
 db GROWTH_MEDIUM_SLOW ; growth rate
 dn EGG_BUG, EGG_BUG ; egg groups
 

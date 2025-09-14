@@ -12,7 +12,7 @@
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/tropius/front.dimensions"
 	db CHLOROPHYLL, SOLAR_POWER ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_M ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_PLANT ; egg groups
 

@@ -12,7 +12,7 @@
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/unown/unown_a/front.dimensions"
 	db LEVITATE, LEVITATE ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_S ; drop item
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

@@ -12,7 +12,7 @@
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/ninjask/front.dimensions"
 	db SPEED_BOOST, INFILTRATOR ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_M ; drop item
 	db GROWTH_ERRATIC ; growth rate
 	dn EGG_BUG, EGG_BUG ; egg groups
 

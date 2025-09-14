@@ -12,7 +12,7 @@
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/fearow/front.dimensions"
 	db KEEN_EYE, SNIPER ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_M ; drop item
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_FLYING, EGG_FLYING ; egg groups
 

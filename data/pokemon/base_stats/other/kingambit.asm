@@ -12,7 +12,7 @@
         db 20 ; step cycles to hatch
         INCBIN "gfx/pokemon/other/kingambit/front.dimensions"
         db DEFIANT, SUPREME_OVERLORD ; wBaseAbility1, wBaseAbility2
-        dw EXP_CANDY_XS ; drop item
+        dw EXP_CANDY_L ; drop item
         db GROWTH_MEDIUM_FAST ; growth rate
         dn EGG_HUMANSHAPE, EGG_HUMANSHAPE ; egg groups
 

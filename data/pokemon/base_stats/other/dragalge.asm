@@ -12,7 +12,7 @@
         db 20 ; step cycles to hatch
         INCBIN "gfx/pokemon/other/dragalge/front.dimensions"
         db POISON_POINT, POISON_TOUCH ; wBaseAbility1, wBaseAbility2
-        dw EXP_CANDY_XS ; drop item
+        dw EXP_CANDY_M ; drop item
         db GROWTH_MEDIUM_FAST ; growth rate
         dn EGG_WATER_1, EGG_DRAGON ; egg groups
 

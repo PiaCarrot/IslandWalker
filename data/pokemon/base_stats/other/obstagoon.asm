@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 15 ; step cycles to hatch
 INCBIN "gfx/pokemon/other/obstagoon/front.dimensions"
 db RECKLESS, GUTS ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_L ; drop item
 db GROWTH_MEDIUM_FAST ; growth rate
 dn EGG_GROUND, EGG_GROUND ; egg groups
 

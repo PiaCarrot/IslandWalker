@@ -12,7 +12,7 @@
 	db 80 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/entei/front.dimensions"
 	db INNER_FOCUS, FLASH_FIRE ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_L ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

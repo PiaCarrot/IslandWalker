@@ -12,7 +12,7 @@
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/wailord/front.dimensions"
 	db WATER_VEIL, OBLIVIOUS ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_M ; drop item
 	db GROWTH_FLUCTUATING ; growth rate
 	dn EGG_GROUND, EGG_WATER_2 ; egg groups
 

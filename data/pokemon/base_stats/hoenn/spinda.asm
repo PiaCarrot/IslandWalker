@@ -12,7 +12,7 @@
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/spinda/front.dimensions"
 	db OWN_TEMPO, TANGLED_FEET ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_S ; drop item
 	db GROWTH_FAST ; growth rate
 	dn EGG_GROUND, EGG_HUMANSHAPE ; egg groups
 

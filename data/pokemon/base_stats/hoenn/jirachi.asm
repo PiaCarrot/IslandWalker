@@ -12,7 +12,7 @@
 	db 120 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/jirachi/front.dimensions"
 	db SERENE_GRACE, SERENE_GRACE ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_L ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

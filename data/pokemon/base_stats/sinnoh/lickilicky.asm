@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/lickilicky/front.dimensions"
 db OWN_TEMPO, OBLIVIOUS ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_M ; drop item
 db GROWTH_MEDIUM_FAST ; growth rate
 dn EGG_MONSTER, EGG_MONSTER ; egg groups
 

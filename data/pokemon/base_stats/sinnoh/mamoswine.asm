@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/mamoswine/front.dimensions"
 db OBLIVIOUS, SNOW_CLOAK ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_L ; drop item
 db GROWTH_SLOW ; growth rate
 dn EGG_GROUND, EGG_GROUND ; egg groups
 

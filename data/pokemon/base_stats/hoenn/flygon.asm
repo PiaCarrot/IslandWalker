@@ -12,7 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/flygon/front.dimensions"
 	db LEVITATE, SAND_STREAM ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_L ; drop item
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_BUG, EGG_DRAGON ; egg groups
 

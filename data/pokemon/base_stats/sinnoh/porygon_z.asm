@@ -12,7 +12,7 @@ db GENDER_UNKNOWN ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/porygon_z/front.dimensions"
 db ADAPTABILITY, DOWNLOAD ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_L ; drop item
 db GROWTH_MEDIUM_FAST ; growth rate
 dn EGG_MINERAL, EGG_MINERAL ; egg groups
 

@@ -12,7 +12,7 @@
 	db 40 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/shelgon/front.dimensions"
 	db ROCK_HEAD, ROCK_HEAD ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_S ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_DRAGON, EGG_DRAGON ; egg groups
 

@@ -12,7 +12,7 @@
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/castform/front.dimensions"
 	db FORECAST, FORECAST ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_S ; drop item
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_FAIRY, EGG_INDETERMINATE ; egg groups
 

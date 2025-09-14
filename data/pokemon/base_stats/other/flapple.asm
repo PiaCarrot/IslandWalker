@@ -12,7 +12,7 @@
         db 20 ; step cycles to hatch
         INCBIN "gfx/pokemon/other/flapple/front.dimensions"
         db RIPEN, GLUTTONY ; wBaseAbility1, wBaseAbility2
-        dw EXP_CANDY_XS ; drop item
+        dw EXP_CANDY_M ; drop item
         db GROWTH_FLUCTUATING ; growth rate
         dn EGG_PLANT, EGG_DRAGON ; egg groups
 

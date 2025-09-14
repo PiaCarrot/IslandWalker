@@ -12,7 +12,7 @@
 	db 5 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/gyarados/front.dimensions"
 	db INTIMIDATE, MOXIE ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_M ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_WATER_2, EGG_DRAGON ; egg groups
 

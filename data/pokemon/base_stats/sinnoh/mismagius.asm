@@ -12,7 +12,7 @@
         db 25 ; step cycles to hatch
         INCBIN "gfx/pokemon/sinnoh/mismagius/front.dimensions"
         db LEVITATE, LEVITATE ; wBaseAbility1, wBaseAbility2
-        dw EXP_CANDY_XS ; drop item
+        dw EXP_CANDY_M ; drop item
         db GROWTH_FAST ; growth rate
         dn EGG_INDETERMINATE, EGG_INDETERMINATE ; egg groups
 

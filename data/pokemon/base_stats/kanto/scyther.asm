@@ -12,7 +12,7 @@
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/scyther/front.dimensions"
 	db SWARM, TECHNICIAN ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_S ; drop item
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_BUG, EGG_BUG ; egg groups
 

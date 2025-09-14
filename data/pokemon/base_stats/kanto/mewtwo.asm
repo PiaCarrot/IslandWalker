@@ -12,7 +12,7 @@
 	db 120 ; step cycles to hatch
 	INCBIN "gfx/pokemon/kanto/mewtwo/front.dimensions"
 	db PRESSURE, UNNERVE ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_XL ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

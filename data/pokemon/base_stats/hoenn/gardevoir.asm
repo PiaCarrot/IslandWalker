@@ -12,7 +12,7 @@
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/gardevoir/front.dimensions"
 	db SYNCHRONIZE, TRACE ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_L ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_HUMANSHAPE, EGG_INDETERMINATE ; egg groups
 

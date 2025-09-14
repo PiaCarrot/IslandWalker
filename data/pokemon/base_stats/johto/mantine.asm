@@ -12,7 +12,7 @@
 	db 25 ; step cycles to hatch
 	INCBIN "gfx/pokemon/johto/mantine/front.dimensions"
 	db SWIFT_SWIM, WATER_ABSORB ; wBaseAbility1, wBaseAbility2
-	dw EXP_CANDY_XS ; drop item
+	dw EXP_CANDY_M ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_WATER_1, EGG_WATER_1 ; egg groups
 

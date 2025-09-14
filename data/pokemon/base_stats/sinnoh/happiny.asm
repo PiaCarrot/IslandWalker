@@ -12,7 +12,7 @@ db GENDER_F100 ; gender ratio
 db 40 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/happiny/front.dimensions"
 db NATURAL_CURE, SERENE_GRACE ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_S ; drop item
 db GROWTH_FAST ; growth rate
 dn EGG_NONE, EGG_NONE ; egg groups
 

@@ -12,7 +12,7 @@
         db 20 ; step cycles to hatch
         INCBIN "gfx/pokemon/forms/corsola_galar/front.dimensions"
         db WEAK_ARMOR, CURSED_BODY ; wBaseAbility1, wBaseAbility2
-        dw EXP_CANDY_XS ; drop item
+        dw EXP_CANDY_S ; drop item
         db GROWTH_FAST ; growth rate
         dn EGG_WATER_1, EGG_WATER_3 ; egg groups
 

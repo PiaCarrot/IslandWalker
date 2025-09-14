@@ -12,7 +12,7 @@ db GENDER_F12_5 ; gender ratio
 db 10 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/togekiss/front.dimensions"
 db HUSTLE, SERENE_GRACE ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_L ; drop item
 db GROWTH_FAST ; growth rate
 dn EGG_FLYING, EGG_FAIRY ; egg groups
 

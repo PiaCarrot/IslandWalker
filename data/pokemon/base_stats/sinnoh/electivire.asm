@@ -12,7 +12,7 @@ db GENDER_F25 ; gender ratio
 db 25 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/electivire/front.dimensions"
 db MOTOR_DRIVE, MOTOR_DRIVE ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_L ; drop item
 db GROWTH_MEDIUM_FAST ; growth rate
 dn EGG_HUMANSHAPE, EGG_HUMANSHAPE ; egg groups
 

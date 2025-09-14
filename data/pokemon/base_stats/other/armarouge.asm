@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 35 ; step cycles to hatch
 INCBIN "gfx/pokemon/other/armarouge/front.dimensions"
 db FLASH_FIRE, FLASH_FIRE ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_L ; drop item
 db GROWTH_SLOW ; growth rate
 dn EGG_HUMANSHAPE, EGG_HUMANSHAPE ; egg groups
 

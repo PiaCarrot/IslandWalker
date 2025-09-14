@@ -12,7 +12,7 @@
         db 20 ; step cycles to hatch
         INCBIN "gfx/pokemon/other/doublade/front.dimensions"
         db NO_GUARD, NO_GUARD ; wBaseAbility1, wBaseAbility2
-        dw EXP_CANDY_XS ; drop item
+        dw EXP_CANDY_M ; drop item
         db GROWTH_MEDIUM_FAST ; growth rate
         dn EGG_MINERAL, EGG_MINERAL ; egg groups
 

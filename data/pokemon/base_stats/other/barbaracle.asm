@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/other/barbaracle/front.dimensions"
 db TOUGH_CLAWS, SNIPER ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_M ; drop item
 db GROWTH_MEDIUM_FAST ; growth rate
 dn EGG_WATER_3, EGG_WATER_3 ; egg groups
 

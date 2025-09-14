@@ -12,7 +12,7 @@ db GENDER_F50 ; gender ratio
 db 20 ; step cycles to hatch
 INCBIN "gfx/pokemon/sinnoh/chatot/front.dimensions"
 db KEEN_EYE, TANGLED_FEET ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_XS ; drop item
+dw EXP_CANDY_S ; drop item
 db GROWTH_MEDIUM_SLOW ; growth rate
 dn EGG_FLYING, EGG_FLYING ; egg groups
 
