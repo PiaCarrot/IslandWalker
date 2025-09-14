@@ -1107,13 +1107,17 @@ Script_loadwildmon:
 	ret
 
 Script_loadtrainer:
-	ld a, (1 << 7) | 1
-	ld [wBattleScriptFlags], a
-	rst GetScriptByte
-	ld [wOtherTrainerClass], a
-	rst GetScriptByte
-	ld [wOtherTrainerID], a
-	ret
+        ld a, (1 << 7) | 1
+        ld [wBattleScriptFlags], a
+        rst GetScriptByte
+        ld [wOtherTrainerClass], a
+        rst GetScriptByte
+        ld [wOtherTrainerID], a
+        xor a
+        ld hl, wLastMonTextPointer
+        ld [hli], a
+        ld [hl], a
+        ret
 
 Script_startbattle:
 	call BufferScreen
