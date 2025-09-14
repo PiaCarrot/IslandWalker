@@ -8763,9 +8763,12 @@ CheckWildDropItem:
         ld hl, wNumItems
         call ReceiveItem
         ret nc
-        call GetItemName
-        ld hl, BattleText_PlayerFoundDropItem
-        jmp StdBattleTextbox
+       call GetItemName
+       ld b, SCGB_BATTLE_COLORS
+       call GetSGBLayout
+       call SetDefaultBGPAndOBP
+       ld hl, BattleText_PlayerFoundDropItem
+       jmp StdBattleTextbox
 
 ShowLinkBattleParticipantsAfterEnd:
 	farcall StubbedTrainerRankings_LinkBattles
