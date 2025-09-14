@@ -8721,11 +8721,22 @@ CheckWildDropItem:
         call GetItemIDFromHL
         cp NO_ITEM
         ret z
-        ld b, a
+        ld d, a ; store drop item
+        ld a, [wTempWildMonSpecies]
+        call GetPokemonIndexFromID
+        ld b, h
+        ld c, l
+        ld de, 2
+        ld hl, OnePercentDropMons
+        call IsInWordArray
+        ld c, 10 percent
+        jr nc, .got_chance
+        ld c, 1 percent
+.got_chance
         call BattleRandom
-        cp 10 percent
+        cp c
         ret nc
-        ld a, b
+        ld a, d
         ld [wCurItem], a
         ld [wNamedObjectIndex], a
         ld a, 1
@@ -8739,10 +8750,14 @@ CheckWildDropItem:
        call SetDefaultBGPAndOBP
        ld hl, BattleText_PlayerFoundDropItem
        jmp StdBattleTextbox
+OnePercentDropMons:
+        ; Used by CheckWildDropItem
+        dw MELTAN
+        dw -1
 
 ShowLinkBattleParticipantsAfterEnd:
-	farcall StubbedTrainerRankings_LinkBattles
-	farcall BackupGSBallFlag
+        farcall StubbedTrainerRankings_LinkBattles
+        farcall BackupGSBallFlag
 	ld a, [wCurOTMon]
 	ld hl, wOTPartyMon1Status
 	call GetPartyLocation
