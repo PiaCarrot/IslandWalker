@@ -62,7 +62,7 @@ DoTurn:
         jr nz, DoMove
         farcall DisplayUsedMoveText
         ld hl, AbilityText_GoodAsGold
-        farcall StdAbilityTextbox
+       call StdAbilityTextbox
         ld a, 1
         ld [wAttackMissed], a
         jmp EndMoveEffect

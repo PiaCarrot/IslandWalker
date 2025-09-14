@@ -105,7 +105,7 @@ EvolveAfterBattle_MasterLoop:
 
 	call IsMonHoldingEverstone
 	jmp nc, .skip_evolution_species ; NITE_F or EVE_F >= NITE_F
-	jmp .proceed
+    jp .proceed
 
 .trade
 	ld a, [wLinkMode]
@@ -142,7 +142,7 @@ EvolveAfterBattle_MasterLoop:
         ld a, [wLinkMode]
         and a
         jmp nz, .skip_evolution_species
-        jmp .proceed
+       jr .proceed
 
 .coins
         call GetNextEvoAttackWord
