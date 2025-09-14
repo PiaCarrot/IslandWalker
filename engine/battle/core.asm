@@ -2344,7 +2344,8 @@ IsAnyMonHoldingExpShare:
         ld hl, wPartyMon1
         ld c, 1
         ld d, 0
-        ld a, [wBattleParticipantsNotFainted]
+        ; Treat any Pokémon that entered battle as a participant, even if it fainted
+        ld a, [wBattleParticipantsIncludingFainted]
         ld e, a
 .loop
         push hl
@@ -7719,41 +7720,10 @@ GiveExperiencePoints:
 	jmp ResetBattleParticipants
 
 .EvenlyDivideExpAmongParticipants:
-; don't split experience if the Exp Share option is on
-        ld a, [wOptions2]
-        bit EXP_SHARE_ON, a
-        ret nz
-; count number of battle participants
-        ld a, [wBattleParticipantsNotFainted]
-        ld b, a
-        ld c, PARTY_LENGTH
-        ld d, 0
-.count_loop
-        xor a
-        srl b
-        adc d
-        ld d, a
-        dec c
-        jr nz, .count_loop
-        cp 2
-        ret c
-
-        ld [wTempByteValue], a
-        ld hl, wEnemyMonBaseExp
-        ld a, [hli]
-        ldh [hDividend + 2], a
-        ld a, [hl]
-        ldh [hDividend + 1], a
-        xor a
-        ldh [hDividend + 0], a
-        ld a, [wTempByteValue]
-        ldh [hDivisor], a
-        ld b, 3
-        call Divide
-        ldh a, [hQuotient + 3]
-        ld [wEnemyMonBaseExp], a
-        ldh a, [hQuotient + 2]
-        ld [wEnemyMonBaseExp + 1], a
+; In Generation 6 and onward, experience is no longer split between
+; participants. Each battler that contributed receives the full amount.
+; To implement this behavior, do nothing here so wEnemyMonBaseExp remains
+; unmodified for every participant.
         ret
 
 ScaleExpByLevel:
