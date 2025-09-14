@@ -971,12 +971,12 @@ _CoinCaseCountText::
         text_end
 
 _ExpShareOnText::
-        text "Exp Share turned"
+        text "EXP. SHARE turned"
         line "on!"
         done
 
 _ExpShareOffText::
-        text "Exp Share turned"
+        text "EXP. SHARE turned"
         line "off!"
         done
 

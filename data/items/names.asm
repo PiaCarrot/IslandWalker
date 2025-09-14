@@ -25,7 +25,7 @@ ItemNames::
 	li "X SPEED"      ; 002F
 	li "X SP.ATK"     ; 0030
 	li "TERU-SAMA"    ; 0031
-	li "EXP. SHARE"   ; 0032
+        li "TERU-SAMA"    ; 0032
 	li "QUICK CLAW"   ; 0039
 	li "SOFT SAND"    ; 003B
 	li "SHARP BEAK"   ; 003C
@@ -194,6 +194,7 @@ KeyItemNames::
         li "OVAL CHARM"   ; 011B
         li "EXP. CHARM"   ; 011C
         li "CATCH CHARM" ; 011D
+        li "EXP. SHARE"   ; 011E
         assert_list_length NUM_KEY_ITEM_POCKET
 
 BallNames::

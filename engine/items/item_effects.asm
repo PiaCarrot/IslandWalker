@@ -60,7 +60,7 @@ ItemEffects1:
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SP_ATK
 	dw PokeFluteEffect     ; POKE_FLUTE
-        dw ExpShareEffect      ; EXP_SHARE
+        dw NoEffect            ; ITEM_33
 	dw NoEffect            ; QUICK_CLAW
 	dw NoEffect            ; SOFT_SAND
 	dw NoEffect            ; SHARP_BEAK
@@ -228,6 +228,7 @@ ItemEffectsKeyItems:
         dw NoEffect           ; OVAL_CHARM
         dw NoEffect           ; EXP_CHARM
         dw NoEffect           ; CATCHING_CHARM
+        dw ExpShareEffect     ; EXP_SHARE
 .IndirectEnd:
 
 ItemEffectsBalls:

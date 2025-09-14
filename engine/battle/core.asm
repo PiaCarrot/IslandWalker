@@ -2328,6 +2328,9 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
         ld a, $1
         ld [wGivingExperienceToExpShareHolders], a
         call GiveExperiencePoints
+        ld hl, Text_RestOfPartyGainedExp
+        call BattleTextbox
+        call LoadTilemapToTempTilemap
         pop af
         ld [wBattleParticipantsNotFainted], a
         ret
@@ -7850,12 +7853,16 @@ Text_MonGainedExpPoint:
 	ret
 
 BoostedExpPointsText:
-	text_far _BoostedExpPointsText
-	text_end
+        text_far _BoostedExpPointsText
+        text_end
 
 ExpPointsText:
-	text_far _ExpPointsText
-	text_end
+        text_far _ExpPointsText
+        text_end
+
+Text_RestOfPartyGainedExp:
+        text_far _RestOfPartyGainedExpText
+        text_end
 
 AnimateExpBar:
 	push bc

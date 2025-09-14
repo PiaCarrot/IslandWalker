@@ -117,7 +117,7 @@ ItemIconPointers1:
     dw XAccuracyIcon ; X_SPEED
     dw XAccuracyIcon ; X_SP_ATK
     dw NoItemIcon ; POKE_FLUTE
-    dw ExpShareIcon ; EXP_SHARE
+    dw NoItemIcon ; ITEM_33
     dw QuickClawIcon ; QUICK_CLAW
     dw BrightpowderIcon ; SOFT_SAND
     dw SharpBeakIcon ; SHARP_BEAK
@@ -285,6 +285,7 @@ KeyItemIconPointers:
         dw NoItemIcon ; OVAL_CHARM
         dw NoItemIcon ; EXP_CHARM
         dw NoItemIcon ; CATCHING_CHARM
+        dw ExpShareIcon ; EXP_SHARE
 .IndirectEnd:
 	
 BallsIconPointers:
@@ -656,14 +657,14 @@ ItemIconPalettes1:
 	RGB 25, 25, 13
 	RGB 19, 19, 09
 ; POKE_FLUTE
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-; EXP_SHARE
-	RGB 21, 23, 21
-	RGB 13, 15, 13
+        RGB 20, 20, 20
+        RGB 10, 10, 10
+; ITEM_33
+        RGB 20, 20, 20
+        RGB 10, 10, 10
 ; QUICK_CLAW
-	RGB 27, 24, 13
-	RGB 25, 19, 10
+        RGB 27, 24, 13
+        RGB 25, 19, 10
 ; SOFT_SAND
 	RGB 25, 21, 14
 	RGB 19, 12, 19
@@ -1157,8 +1158,11 @@ KeyItemIconPalettes:
 ; CATCHING_CHARM
         RGB 20, 20, 20
         RGB 10, 10, 10
+; EXP_SHARE
+        RGB 21, 23, 21
+        RGB 13, 15, 13
 .IndirectEnd:
-	
+
 BallsIconPalettes:
 ; MASTER_BALL
 	RGB 12, 08, 18
@@ -1925,7 +1929,6 @@ LuckyPunchIcon: INCBIN "gfx/items/lucky_punch.2bpp.lz"
 XAccuracyIcon: INCBIN "gfx/items/battle_item.2bpp.lz"
 LeafStoneIcon: INCBIN "gfx/items/leaf_stone.2bpp.lz"
 PokeDollIcon: INCBIN "gfx/items/poke_doll.2bpp.lz"
-ExpShareIcon: INCBIN "gfx/items/exp_share.2bpp.lz"
 QuickClawIcon: INCBIN "gfx/items/quick_claw.2bpp.lz"
 SharpBeakIcon: INCBIN "gfx/items/sharp_beak.2bpp.lz"
 PoisonBarbIcon: INCBIN "gfx/items/poison_barb.2bpp.lz"
@@ -2117,6 +2120,7 @@ JetBallIcon:
 OriginBallIcon:
 RocketBallIcon: INCBIN "gfx/items/rocket_ball.2bpp.lz"
 GSBallIcon: INCBIN "gfx/items/gs_ball.2bpp.lz"
+ExpShareIcon: INCBIN "gfx/items/exp_share.2bpp.lz"
 
 SECTION "Berry Icons", ROMX
 NoBerryIcon: INCBIN "gfx/items/no_item.2bpp.lz"

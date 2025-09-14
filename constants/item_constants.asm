@@ -30,8 +30,8 @@
 	const X_DEFEND     ; 002E
 	const X_SPEED      ; 002F
 	const X_SP_ATK     ; 0030
-	const POKE_FLUTE   ; 0031
-	const EXP_SHARE    ; 0032
+        const POKE_FLUTE   ; 0031
+        const ITEM_33      ; 0032
 	const QUICK_CLAW   ; 0039
 	const SOFT_SAND    ; 003B
 	const SHARP_BEAK   ; 003C
@@ -200,6 +200,7 @@ DEF FIRST_KEY_ITEM EQU const_value
         const OVAL_CHARM    ; 011B
         const EXP_CHARM     ; 011C
         const CATCHING_CHARM ; 011D
+        const EXP_SHARE     ; 011E
 DEF NUM_KEY_ITEM_POCKET EQU const_value - FIRST_KEY_ITEM
 assert NUM_KEY_ITEM_POCKET <= $ff
 

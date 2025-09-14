@@ -100,19 +100,19 @@ Text_Gained::
 	text_end
 
 _BoostedExpPointsText::
-	text_start
-	line "a boosted"
-	cont "@"
-	text_decimal wStringBuffer2, 2, 5
-	text " EXP. Points!"
-	prompt
+        text_start
+        line "a boosted"
+        cont "@"
+        text_decimal wStringBuffer2, 2, 5
+        text " EXP.!"
+        prompt
 
 _ExpPointsText::
-	text_start
-	line "@"
-	text_decimal wStringBuffer2, 2, 5
-	text " EXP. Points!"
-	prompt
+        text_start
+        line "@"
+        text_decimal wStringBuffer2, 2, 5
+        text " EXP.!"
+        prompt
 
 _ExpCandyGainedExpText::
    text "Gained a total of"
@@ -120,6 +120,11 @@ _ExpCandyGainedExpText::
    text_decimal wStringBuffer2, 3, 7
    text " EXP.!"
    prompt
+
+_RestOfPartyGainedExpText::
+        text "The rest of the"
+        line "party gained EXP.!"
+        prompt
 
 _GoMonText::
 	text "Go! @"

@@ -40,7 +40,7 @@ ItemDescriptions1:
 	dw XSpeedDesc       ; 002F
 	dw XSpAtkDesc       ; 0030
 	dw QuestionMarkDesc ; 0031
-	dw ExpShareDesc     ; 0032
+        dw QuestionMarkDesc ; 0032
 	dw QuickClawDesc    ; 0039
 	dw SoftSandDesc     ; 003B
 	dw SharpBeakDesc    ; 003C
@@ -208,6 +208,7 @@ ItemDescriptionsKeyItems:
         dw OvalCharmDesc     ; 011B
         dw ExpCharmDesc      ; 011C
         dw CatchingCharmDesc ; 011D
+        dw ExpShareDesc      ; 011E
 .IndirectEnd:
 
 ItemDescriptionsBalls:
