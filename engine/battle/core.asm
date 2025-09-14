@@ -5180,15 +5180,15 @@ BattleMenu_Pack:
 	ret
 
 .run
-	xor a
-	ld [wWildMon], a
-	ld a, [wBattleResult]
-	and BATTLERESULT_BITMASK
-	ld [wBattleResult], a ; WIN
-	call ClearWindowData
-	call SetDefaultBGPAndOBP
-	scf
-	ret
+        xor a
+        ld [wWildMon], a
+        ld a, [wBattleResult]
+        and BATTLERESULT_BITMASK
+        ld [wBattleResult], a ; WIN
+        call ClearWindowData
+        call SetDefaultBGPAndOBP
+        scf
+        ret
 
 BattleMenu_PKMN:
 	call LoadStandardMenuHeader

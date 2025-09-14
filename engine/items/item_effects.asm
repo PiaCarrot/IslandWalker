@@ -691,10 +691,28 @@ PokeBallEffect:
 .print_caught_text
         call PrintText
 
-	call ClearSprites
+        call ClearSprites
 
-	ld a, [wTempSpecies]
-	call CheckCaughtMon
+        ld a, [wBattleType]
+        cp BATTLETYPE_TUTORIAL
+        jr z, .skip_give_exp
+        cp BATTLETYPE_DEBUG
+        jr z, .skip_give_exp
+        ld hl, wEnemyMonNickname
+        ld de, wBufferMonNickname
+        ld bc, MON_NAME_LENGTH
+        rst CopyBytes
+        farcall UpdateBattleStateAndExperienceAfterEnemyFaint
+        ld hl, wBufferMonNickname
+        ld de, wEnemyMonNickname
+        ld bc, MON_NAME_LENGTH
+        rst CopyBytes
+        ld a, [wTempSpecies]
+        ld [wCurPartySpecies], a
+.skip_give_exp
+
+        ld a, [wTempSpecies]
+        call CheckCaughtMon
 
 	ld a, c
 	push af
