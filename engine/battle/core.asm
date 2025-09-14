@@ -7702,20 +7702,24 @@ GiveExperiencePoints:
 	jmp ResetBattleParticipants
 
 .EvenlyDivideExpAmongParticipants:
+; don't split experience if the Exp Share option is on
+        ld a, [wOptions2]
+        bit EXP_SHARE_ON, a
+        ret nz
 ; count number of battle participants
-	ld a, [wBattleParticipantsNotFainted]
-	ld b, a
-	ld c, PARTY_LENGTH
-	ld d, 0
+        ld a, [wBattleParticipantsNotFainted]
+        ld b, a
+        ld c, PARTY_LENGTH
+        ld d, 0
 .count_loop
-	xor a
-	srl b
-	adc d
-	ld d, a
-	dec c
-	jr nz, .count_loop
-	cp 2
-	ret c
+        xor a
+        srl b
+        adc d
+        ld d, a
+        dec c
+        jr nz, .count_loop
+        cp 2
+        ret c
 
         ld [wTempByteValue], a
         ld hl, wEnemyMonBaseExp
