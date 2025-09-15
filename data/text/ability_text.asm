@@ -104,5 +104,13 @@ AbilityText_GoodAsGold:
     text_ram wStringBuffer1
     text " made"
     cont "status moves"
-	cont "ineffective!"
+        cont "ineffective!"
+    prompt
+
+AbilityText_Soundproof:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " blocked"
+    cont "the sound!"
     prompt

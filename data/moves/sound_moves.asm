@@ -1,0 +1,21 @@
+SoundMoves:
+        dw GROWL
+        dw ROAR
+        dw SING
+        dw SUPERSONIC
+        dw SONICBOOM
+        dw SCREECH
+        dw SNORE
+        dw UPROAR
+        dw HYPER_VOICE
+        dw METAL_SOUND
+        dw GRASSWHISTLE
+        dw HEAL_BELL
+        dw PERISH_SONG
+        dw BUG_BUZZ
+        dw CHATTER
+        dw HOWL
+        dw ASTONISH
+        dw SNARL
+        dw TEETER_DANCE
+        dw -1

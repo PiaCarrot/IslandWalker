@@ -269,6 +269,22 @@ Check_GoodAsGold:
     ld a, 1
     ret
 
+; Soundproof provides immunity to sound-based moves. Returns z if blocked.
+Check_Soundproof:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp SOUNDPROOF
+    jr z, .blocked
+    cp CACOPHONY
+    jr nz, .nope
+.blocked
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Ruby/Sapphire PICKUP ability: chance to find an item after battle
 HandlePickup::
     ld a, [wPartyCount]

@@ -59,10 +59,45 @@ DoTurn:
         ld b, 0
 .check_ability
         farcall Check_GoodAsGold
-        jr nz, DoMove
+        jr nz, .check_soundproof
         farcall DisplayUsedMoveText
         ld hl, AbilityText_GoodAsGold
        call StdAbilityTextbox
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+
+.check_soundproof
+        ; Soundproof ability: block sound-based moves
+        ld a, BATTLE_VARS_MOVE_ANIM
+        call GetBattleVar
+        call GetMoveIndexFromID
+        ld b, h
+        ld c, l
+        ld de, 2
+        ld hl, SoundMoves
+        call IsInWordArray
+        jr nc, DoMove
+        ; Load target's species and personality
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .enemy_turn_sound
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_sound_ability
+.enemy_turn_sound
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_sound_ability
+        farcall Check_Soundproof
+        jr nz, DoMove
+        farcall DisplayUsedMoveText
+        ld hl, AbilityText_Soundproof
+        call StdAbilityTextbox
         ld a, 1
         ld [wAttackMissed], a
         jmp EndMoveEffect
@@ -1272,8 +1307,9 @@ BattleCommand_Critical:
 	ld a, 1
 	ld [wCriticalHit], a
 .skip_critical_hit
-	ret
+        ret
 
+INCLUDE "data/moves/sound_moves.asm"
 INCLUDE "data/moves/critical_hit_moves.asm"
 
 INCLUDE "data/battle/critical_hit_chances.asm"
