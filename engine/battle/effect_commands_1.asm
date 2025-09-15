@@ -42,7 +42,6 @@ DoTurn:
        ret z
 
        call UpdateMoveData
-       farcall DisplayUsedMoveText
 
        ; Ability checks only apply when a move is actually used
 
@@ -68,7 +67,9 @@ DoTurn:
         ld b, 0
 .check_ability
         farcall Check_GoodAsGold
+        and a
         jr nz, .check_soundproof
+        farcall DisplayUsedMoveText
         ld hl, AbilityText_GoodAsGold
         call StdAbilityTextbox
         ld a, 1
@@ -85,7 +86,7 @@ DoTurn:
         ld de, 2
         ld hl, SoundMoves
         call IsInWordArray
-        jr nc, .check_levitate
+        jr nc, DoMove
         ; Load target's species and personality
         ldh a, [hBattleTurn]
         and a
@@ -102,38 +103,10 @@ DoTurn:
         ld b, 0
 .check_sound_ability
         farcall Check_Soundproof
-        jr nz, .check_levitate
-        ld hl, AbilityText_Soundproof
-        call StdAbilityTextbox
-        ld a, 1
-        ld [wAttackMissed], a
-        jmp EndMoveEffect
-
-.check_levitate
-        ; Levitate ability: block Ground-type moves
-        ld a, BATTLE_VARS_MOVE_TYPE
-        call GetBattleVar
-        and TYPE_MASK
-        cp GROUND
-        jr nz, DoMove
-        ; Load target's species and personality
-        ldh a, [hBattleTurn]
         and a
-        jr nz, .enemy_turn_levitate
-        ld a, [wEnemyMonSpecies]
-        ld c, a
-        ld hl, wEnemyMonPersonality
-        ld b, 1
-        jr .check_lev_ability
-.enemy_turn_levitate
-        ld a, [wBattleMonSpecies]
-        ld c, a
-        ld hl, wBattleMonPersonality
-        ld b, 0
-.check_lev_ability
-        farcall Check_Levitate
         jr nz, DoMove
-        ld hl, AbilityText_Levitate
+        farcall DisplayUsedMoveText
+        ld hl, AbilityText_Soundproof
         call StdAbilityTextbox
         ld a, 1
         ld [wAttackMissed], a
@@ -1439,12 +1412,60 @@ BattleCommand_Stab:
 .SkipStab:
         ld a, BATTLE_VARS_MOVE_TYPE
         call GetBattleVar
+        ld c, a
         and TYPE_MASK
         ld b, a
-	ld hl, TypeMatchups
+
+        ; Levitate grants immunity to Ground-type damaging moves.
+        ld a, c
+        and STATUS
+        cp STATUS
+        jr z, .NoLevitate
+        ld a, b
+        cp GROUND
+        jr nz, .NoLevitate
+        push bc
+        push de
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .EnemyTurnLevitate
+        ld hl, wEnemyMonPersonality
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld b, 1
+        jr .CheckLevitateAbility
+.EnemyTurnLevitate
+        ld hl, wBattleMonPersonality
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld b, 0
+.CheckLevitateAbility
+        farcall Check_Levitate
+        pop de
+        pop bc
+        and a
+        jr nz, .NoLevitate
+        call ResetDamage
+        ld hl, wTypeModifier
+        ld a, [hl]
+        and STAB_DAMAGE
+        ld [hl], a
+        xor a
+        ld [wTypeMatchup], a
+        ldh [hMultiplier], a
+        ld hl, AbilityText_Levitate
+        ld a, [wAttackMissed]
+        and a
+        call z, StdAbilityTextbox
+        ld a, 1
+        ld [wAttackMissed], a
+        ret
+
+.NoLevitate
+        ld hl, TypeMatchups
 
 .TypesLoop:
-	ld a, [hli]
+        ld a, [hli]
 
 	cp -1
 	jr z, .end
