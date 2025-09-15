@@ -1,23 +1,20 @@
 ; Gets our ability for the stats screen
 CalcAbility_StatsScreen:
-	; Preserve HL and BC
-	push hl
-	push bc
+        ; Preserve HL and BC
+        push hl
+        push bc
 
-	; Target the relevant mon.
-	ld a, [wCurPartyMon]
-	ld bc, PARTYMON_STRUCT_LENGTH
-	ld hl, wPartyMon1Species
-	rst AddNTimes
-
-	ld a, [hl]
-	ld bc, wPartyMon1Personality - wPartyMon1Species
-	add hl, bc
-	ld c, a
-	call GetAbility
-	pop bc
-	pop hl
-	ret
+        ; Ability is determined from the temporary mon used by the
+        ; stats screen. This buffer is populated for both party and
+        ; boxed Pokémon, preventing out-of-bounds reads when viewing
+        ; boxed mons.
+        ld a, [wTempMonSpecies]
+        ld hl, wTempMonPersonality
+        ld c, a
+        call GetAbility
+        pop bc
+        pop hl
+        ret
 
 ; Prints the ability for our stats screen
 ; Blended mix of code from Delta, MAE, and PC
