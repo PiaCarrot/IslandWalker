@@ -2477,21 +2477,108 @@ Cry_Aron:
         channel 8, Cry_Aron_Ch8
 
 Cry_Aron_Ch5:
-        duty_cycle_pattern 2, 3, 2, 3
-        square_note 4, 13, 4, 1600
-        square_note 8, 12, 2, 1504
-        sound_ret
+	duty_cycle_pattern 0, 1, 2, 3
+	square_note 8, 15, 1, 1892
+	square_note 8, 14, 1, 1892
+	square_note 8, 14, 1, 1888
+	square_note 16, 14, 0, 1883
+	square_note 3, 14, 7, 1881
+	square_note 8, 0, 1, 1881
+	sound_ret
 
 Cry_Aron_Ch6:
-        duty_cycle_pattern 1, 2, 1, 2
-        square_note 4, 11, 4, 1568
-        square_note 8, 10, 2, 1472
+        duty_cycle_pattern 2, 2, 2, 2
+        square_note 16, 12, 3, 1890
+	square_note 8, 12, 1, 1886
+	square_note 16, 11, 0, 1881
+	square_note 3, 8, 7, 1885
+	square_note 8, 0, 1, 1885
         sound_ret
 
 Cry_Aron_Ch8:
-        noise_note 4, 10, 4, 112
-        noise_note 8, 8, 2, 108
+        noise_note 10, 10, 0, 10
+	noise_note 8, 8, 2, 48
         sound_ret
+
+Cry_Lairon:
+        channel_count 3
+        channel 5, Cry_Lairon_Ch5
+        channel 6, Cry_Lairon_Ch6
+        channel 8, Cry_Lairon_Ch8
+
+Cry_Lairon_Ch5:
+	duty_cycle_pattern 1, 1, 1, 0
+	square_note 16, 11, 0, 1890
+	square_note 5, 10, 1, 1890
+	square_note 12, 11, 1, 1865
+	square_note 14, 12, 2, 1894
+	square_note 5, 11, 1, 1894
+	square_note 10, 12, 1, 1852
+	square_note 10, 11, 1, 1847
+	square_note 8, 10, 1, 1843
+	square_note 8, 9, 1, 1843
+	square_note 8, 9, 1, 1840
+	square_note 16, 8, 1, 1837
+	sound_ret
+
+Cry_Lairon_Ch6:
+	duty_cycle_pattern 0, 0, 1, 0
+	square_note 16, 15, 0, 1892
+	square_note 5, 14, 1, 1892
+	square_note 12, 14, 1, 1868
+	square_note 14, 15, 2, 1896
+	square_note 5, 14, 1, 1896
+	square_note 10, 15, 1, 1855
+	square_note 10, 14, 1, 1850
+	square_note 8, 13, 1, 1845
+	square_note 8, 12, 1, 1845
+	square_note 8, 12, 1, 1842
+	square_note 16, 12, 1, 1838
+	sound_ret
+
+Cry_Lairon_Ch8:
+	noise_note 10, 15, 0, 54
+	noise_note 8, 13, 4, 55
+	noise_note 10, 12, 0, 54
+	noise_note 15, 9, 0, 56
+	noise_note 8, 9, 1, 56
+	sound_ret
+
+Cry_Aggron:
+        channel_count 3
+        channel 5, Cry_Aggron_Ch5
+        channel 6, Cry_Aggron_Ch6
+	channel 8, Cry_Aggron_Ch8
+
+Cry_Aggron_Ch5:
+	duty_cycle_pattern 0, 0, 1, 0
+	square_note 14, 15, 0, 1877
+	square_note 3, 14, 5, 1849
+	square_note 3, 14, 5, 1845
+	square_note 16, 15, 0, 1877
+	square_note 6, 15, 5, 1879
+	square_note 16, 15, 2, 1877
+	sound_ret
+
+Cry_Aggron_Ch6:
+	duty_cycle_pattern 1, 1, 1, 0	
+	square_note 7, 10, 0, 1851
+	square_note 7, 8, 0, 1849
+	square_note 3, 8, 5, 1822
+	square_note 3, 9, 5, 1818
+	square_note 16, 9, 0, 1851
+	square_note 4, 8, 5, 1854
+	square_note 16, 7, 5, 1851
+	square_note 5, 9, 1, 1834
+	sound_ret
+
+Cry_Aggron_Ch8:
+	noise_note 10, 12, 0, 55
+	noise_note 8, 11, 4, 54
+	noise_note 15, 12, 0, 55
+	noise_note 15, 11, 0, 55
+	noise_note 15, 10, 3, 71
+	sound_ret
 
 Cry_Carvanha:
         channel_count 3

@@ -83,6 +83,8 @@ Cries:
         dba Cry_Azurill
         dba Cry_Latias
         dba Cry_Aron
+	dba Cry_Lairon
+	dba Cry_Aggron
         dba Cry_Carvanha
         dba Cry_Wailmer
         dba Cry_Numel

@@ -273,9 +273,9 @@ PokemonCries::
 	mon_cry CRY_WEEDLE,      $700,  $100 ; NINJASK
 	mon_cry CRY_EKANS,       $172,  $060 ; SHEDINJA
 	mon_cry CRY_MARILL,      $130,  $140 ; AZURILL
-	mon_cry CRY_GROWLITHE,   $080,  $0b0 ; ARON
-	mon_cry CRY_TYPHLOSION,  $f80,  $0f0 ; LAIRON
-	mon_cry CRY_SLOWKING,    $710,  $242 ; AGGRON
+	mon_cry CRY_ARON,          60,   112 ; ARON
+	mon_cry CRY_LAIRON,        30,   112 ; LAIRON
+	mon_cry CRY_AGGRON,         0,   256 ; AGGRON
 	mon_cry CRY_SLOWKING,    $3a3,  $070 ; CARVANHA
 	mon_cry CRY_RAIKOU,      $e00,  $1b0 ; SHARPEDO
 	mon_cry CRY_TYPHLOSION,  $f12,  $0c0 ; WAILMER

@@ -88,6 +88,8 @@
         const CRY_AZURILL
         const CRY_LATIAS
         const CRY_ARON
+	const CRY_LAIRON
+	const CRY_AGGRON
         const CRY_CARVANHA
         const CRY_WAILMER
         const CRY_NUMEL
