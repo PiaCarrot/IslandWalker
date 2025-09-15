@@ -285,6 +285,19 @@ Check_Soundproof:
     ld a, 1
     ret
 
+; Levitate provides immunity to Ground-type moves. Returns z if blocked.
+Check_Levitate:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp LEVITATE
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Ruby/Sapphire PICKUP ability: chance to find an item after battle
 HandlePickup::
     ld a, [wPartyCount]

@@ -35,14 +35,23 @@ DoTurn:
         and a
         ret nz
 
-        call UpdateMoveData
+       ; If no move is selected (e.g., using an item), skip move handling
+       ld a, BATTLE_VARS_MOVE
+       call GetBattleVar
+       and a
+       ret z
 
-        ; Good as Gold ability: block status moves
+       call UpdateMoveData
+       farcall DisplayUsedMoveText
+
+       ; Ability checks only apply when a move is actually used
+
+       ; Good as Gold ability: block status moves
         ld a, BATTLE_VARS_MOVE_TYPE
         call GetBattleVar
         and STATUS
         cp STATUS
-        jr nz, DoMove
+        jr nz, .check_soundproof
         ; Load target's species and personality
         ldh a, [hBattleTurn]
         and a
@@ -60,9 +69,8 @@ DoTurn:
 .check_ability
         farcall Check_GoodAsGold
         jr nz, .check_soundproof
-        farcall DisplayUsedMoveText
         ld hl, AbilityText_GoodAsGold
-       call StdAbilityTextbox
+        call StdAbilityTextbox
         ld a, 1
         ld [wAttackMissed], a
         jmp EndMoveEffect
@@ -77,7 +85,7 @@ DoTurn:
         ld de, 2
         ld hl, SoundMoves
         call IsInWordArray
-        jr nc, DoMove
+        jr nc, .check_levitate
         ; Load target's species and personality
         ldh a, [hBattleTurn]
         and a
@@ -94,9 +102,38 @@ DoTurn:
         ld b, 0
 .check_sound_ability
         farcall Check_Soundproof
-        jr nz, DoMove
-        farcall DisplayUsedMoveText
+        jr nz, .check_levitate
         ld hl, AbilityText_Soundproof
+        call StdAbilityTextbox
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+
+.check_levitate
+        ; Levitate ability: block Ground-type moves
+        ld a, BATTLE_VARS_MOVE_TYPE
+        call GetBattleVar
+        and TYPE_MASK
+        cp GROUND
+        jr nz, DoMove
+        ; Load target's species and personality
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .enemy_turn_levitate
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_lev_ability
+.enemy_turn_levitate
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_lev_ability
+        farcall Check_Levitate
+        jr nz, DoMove
+        ld hl, AbilityText_Levitate
         call StdAbilityTextbox
         ld a, 1
         ld [wAttackMissed], a

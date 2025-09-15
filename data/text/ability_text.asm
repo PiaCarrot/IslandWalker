@@ -114,3 +114,12 @@ AbilityText_Soundproof:
     text " blocked"
     cont "the sound!"
     prompt
+
+AbilityText_Levitate:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " made"
+    cont "GROUND moves"
+    cont "miss!"
+    prompt
