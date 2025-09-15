@@ -186,12 +186,13 @@ AbilityDescriptions:
 	dw SupremeOverlordDesc
 	dw ArmorTailDesc
 	dw MindsEyeDesc
-	dw SupersweetSyrupDesc
-	dw DrySkinDesc
-	dw PersistanceDesc
-	dw OverchargedDesc
-	dw DragoonDesc
-	dw CoinCollectorDesc
+        dw SupersweetSyrupDesc
+        dw CrystalBodyDesc
+        dw PersistanceDesc
+        dw OverchargedDesc
+        dw DragoonDesc
+        dw CoinCollectorDesc
+        dw BattleBondDesc
 
 ; Actual descriptions start here
 NoAbilityDesc:
@@ -652,9 +653,13 @@ FlowerGiftDesc:
     db    "Powers up #MON"
     next1 "when sunny.@"
 
+CrystalBodyDesc:
+        db    "Loses HP in heat,"
+        next1 "gains HP in water.@"
+
 PersistanceDesc:
-	db    "Boosts NORMAL"
-	next1 "moves in a pinch.@"
+        db    "Boosts NORMAL"
+        next1 "moves in a pinch.@"
 
 OverchargedDesc:
 	db    "Boosts ELECTRIC"
