@@ -6429,10 +6429,12 @@ LoadEnemyMon:
 	ld [hl], a
 	
 ; generate personality
-	call BattleRandom
-	and ABILITY_MASK
-	or [hl]
-	ld [hl], a
+; ability bit (bit 5) randomly set for a 50/50 ability distribution
+; bit 6 remains clear to avoid unintended third abilities
+        call BattleRandom
+        and %00100000
+        or [hl]
+        ld [hl], a
 
 ; We've still got more to do if we're dealing with a wild monster
 	ld a, [wBattleMode]
