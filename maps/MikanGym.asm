@@ -158,14 +158,15 @@ MikanGymCissyScript:
 	waitbutton
 	closetext
 	winlosstext CissyBeatenText, 0
-	lastmonmsg CissyLastMonText
 	setlasttalked MIKAN_GYM_CISSY
 	checkcm
 	iffalse .LoadCissy
 	loadtrainer CISSY, CISSY1_CM
+	lastmonmsg CissyLastMonText
 	sjump .StartBattle
 .LoadCissy
 	loadtrainer CISSY, CISSY1
+	lastmonmsg CissyLastMonText
 .StartBattle
 	startbattle
 	reloadmapafterbattle
