@@ -149,6 +149,32 @@ Ability_BoostStatByHalf:
     ld [hl], e
     ret
 
+; Doubles the stat pointed to by hl, capped at MAX_STAT_VALUE.
+Ability_DoubleStat:
+    push hl
+    ld a, [hli]
+    ld b, a
+    ld a, [hl]
+    ld c, a
+    ld h, b
+    ld l, c
+    add hl, hl
+    ld d, h
+    ld e, l
+    ld a, e
+    sub LOW(MAX_STAT_VALUE)
+    ld a, d
+    sbc HIGH(MAX_STAT_VALUE)
+    jr c, .store
+    ld d, HIGH(MAX_STAT_VALUE)
+    ld e, LOW(MAX_STAT_VALUE)
+.store
+    pop hl
+    ld a, d
+    ld [hli], a
+    ld [hl], e
+    ret
+
 ; Applies status-driven stat changes and ability-based modifiers. These were
 ; previously part of the battle core and are now kept with other ability
 ; utilities so battle/core has more room for future abilities.
@@ -165,7 +191,9 @@ ApplyStatusEffectOnStats:
 	call ApplyBrnEffectOnAttack
 	call ApplyGutsEffectOnAttack
 	call ApplyToxicBoostEffectOnAttack
+	call ApplyHugePowerEffectOnAttack
 	call ApplyMarvelScaleEffectOnDefense
+	call ApplyFurCoatEffectOnDefense
 	call ApplyQuickFeetEffectOnSpeed
 	jp ApplyFlareBoostEffectOnSpAttack
 
@@ -282,7 +310,9 @@ ApplyBrnEffectOnAttack:
 ApplyStatusAbilityBoosts:
 	call ApplyGutsEffectOnAttack
 	call ApplyToxicBoostEffectOnAttack
+	call ApplyHugePowerEffectOnAttack
 	call ApplyMarvelScaleEffectOnDefense
+	call ApplyFurCoatEffectOnDefense
 	call ApplyQuickFeetEffectOnSpeed
 	jp ApplyFlareBoostEffectOnSpAttack
 
@@ -302,40 +332,64 @@ ApplyGutsEffectOnAttack:
 	ret
 
 ApplyToxicBoostEffectOnAttack:
-	xcall Ability_LoadBattleMonBase
-	call GetAbility
-	xcall Ability_LoadTracedAbility
-	cp TOXIC_BOOST
-	ret nz
-	ld a, [de]
-	and 1 << PSN
-	ret z
-	ld hl, wEnemyMonAttack
-	ld de, wBattleMonAttack
-	xcall Ability_SelectBattleMonStatPointer
-	xcall Ability_BoostStatByHalf
-	ret
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp TOXIC_BOOST
+        ret nz
+        ld a, [de]
+        and 1 << PSN
+        ret z
+        ld hl, wEnemyMonAttack
+        ld de, wBattleMonAttack
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_BoostStatByHalf
+        ret
+
+ApplyHugePowerEffectOnAttack:
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp HUGE_POWER
+        ret nz
+        ld hl, wEnemyMonAttack
+        ld de, wBattleMonAttack
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_DoubleStat
+        ret
 
 ApplyMarvelScaleEffectOnDefense:
-	xcall Ability_LoadBattleMonBase
-	call GetAbility
-	xcall Ability_LoadTracedAbility
-	cp MARVEL_SCALE
-	ret nz
-	ld a, [de]
-	and a
-	ret z
-	ld hl, wEnemyMonDefense
-	ld de, wBattleMonDefense
-	xcall Ability_SelectBattleMonStatPointer
-	xcall Ability_BoostStatByHalf
-	ret
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp MARVEL_SCALE
+        ret nz
+        ld a, [de]
+        and a
+        ret z
+        ld hl, wEnemyMonDefense
+        ld de, wBattleMonDefense
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_BoostStatByHalf
+        ret
+
+ApplyFurCoatEffectOnDefense:
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp FUR_COAT
+        ret nz
+        ld hl, wEnemyMonDefense
+        ld de, wBattleMonDefense
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_DoubleStat
+        ret
 
 ApplyQuickFeetEffectOnSpeed:
-	xcall Ability_LoadBattleMonBase
-	ld a, [de]
-	and a
-	ret z
+        xcall Ability_LoadBattleMonBase
+        ld a, [de]
+        and a
+        ret z
 	bit FRZ, a
 	ret nz
 	call GetAbility
