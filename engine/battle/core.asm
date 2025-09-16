@@ -8719,11 +8719,21 @@ CheckWildDropItem:
         ld a, [wBattleMode]
         dec a
         ret nz
+        ld a, [wCurSpecies]
+        ld h, a
+        ld a, [wTempByteValue]
+        ld l, a
+        push hl
+        ld a, [wTempWildMonSpecies]
+        ld [wCurSpecies], a
+        call GetBaseData
         ld hl, wBaseDropItem
         call GetItemIDFromHL
+        ld e, a
         cp NO_ITEM
-        ret z
-        ld d, a ; store drop item
+        jr z, .restore_state
+        ld a, e
+        ld [wTempByteValue], a
         ld a, [wTempWildMonSpecies]
         call GetPokemonIndexFromID
         ld b, h
@@ -8737,21 +8747,32 @@ CheckWildDropItem:
 .got_chance
         call BattleRandom
         cp c
-        ret nc
-        ld a, d
+        jr nc, .restore_state
+        ld a, [wTempByteValue]
         ld [wCurItem], a
         ld [wNamedObjectIndex], a
         ld a, 1
         ld [wItemQuantityChange], a
         ld hl, wNumItems
         call ReceiveItem
-        ret nc
-       call GetItemName
-       ld b, SCGB_BATTLE_COLORS
-       call GetSGBLayout
-       call SetDefaultBGPAndOBP
-       ld hl, BattleText_PlayerFoundDropItem
-       jmp StdBattleTextbox
+        jr nc, .restore_state
+        call GetItemName
+        ld b, SCGB_BATTLE_COLORS
+        call GetSGBLayout
+        call SetDefaultBGPAndOBP
+        ld hl, BattleText_PlayerFoundDropItem
+        call StdBattleTextbox
+.restore_state
+        pop hl
+        ld a, h
+        ld [wCurSpecies], a
+        and a
+        jr z, .restore_temp_byte
+        call GetBaseData
+.restore_temp_byte
+        ld a, l
+        ld [wTempByteValue], a
+        ret
 OnePercentDropMons:
         ; Used by CheckWildDropItem
         dw MELTAN
