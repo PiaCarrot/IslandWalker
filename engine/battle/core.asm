@@ -5264,7 +5264,7 @@ Battle_StatsScreen:
 	ld bc, $23 tiles
 	rst CopyBytes
 
-	ld hl, vTiles0 tile $11
+    ld hl, vTiles0 tile $23
 	ld de, vTiles2
 	ld bc, $31 tiles
 	rst CopyBytes
