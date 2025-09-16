@@ -12,7 +12,7 @@ db GENDER_UNKNOWN ; gender ratio
 db 120 ; step cycles to hatch
 INCBIN "gfx/pokemon/other/meltan/front.dimensions"
 db MAGNET_PULL, MAGNET_PULL ; wBaseAbility1, wBaseAbility2
-dw EXP_CANDY_S ; drop item
+dw EXP_CANDY_S ; drop item MELTAN_CANDY
 db GROWTH_SLOW ; growth rate
 dn EGG_NONE, EGG_NONE ; egg groups
 
