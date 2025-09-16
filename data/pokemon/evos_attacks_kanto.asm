@@ -1393,7 +1393,7 @@ GeodudeEvosAttacks:
 	dbw 4, MUD_SPORT
 	dbw 8, ROCK_POLISH
 	dbw 11, ROCK_THROW
-	dbw 15, FISSURE
+	dbw 15, MAGNITUDE
 	dbw 18, SELFDESTRUCT
 	dbw 22, ROLLOUT
 	dbw 25, ROCK_BLAST
