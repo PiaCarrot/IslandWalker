@@ -1556,11 +1556,11 @@ BillsPC_MenuStrings:
 	db "SWITCH@"
 	db "MOVES@"
 	db "ITEM@"
-	db "RELEASE@"
+        db "SEND@"
 	; box options
 	db "RENAME@"
 	db "THEME@"
-	db "RELEASE@"
+        db "SEND@"
 	; holding a mail
 	db "TAKE@"
 	db "READ@"
@@ -2697,35 +2697,62 @@ BillsPC_ReleaseAll:
 	ld hl, .ReallyReleaseBox
 	call MenuTextbox
 	call NoYesBox
-	jr c, .done
+	jp c, .done
 
 	ld hl, .CantRecallReleasedMons
 	call PrintText
 	call NoYesBox
-	jr c, .done
+	jp c, .done
 
-	; We want to give 3 possible messages:
-	; * Nothing was released. You can't release Eggs or PKMN knowing HMs.
-	; * There's nothing there!
-	; * X PKMN released.
-	lb de, 0, 0 ; Successful and failed releases.
-	call BillsPC_GetCursorSlot
+        ; We want to give 3 possible messages:
+        ; * Nothing was sent. You can't send Eggs or PKMN knowing HMs.
+        ; * There's nothing there!
+        ; * X PKMN sent.
+        lb de, 0, 0 ; Successful and failed releases.
+        xor a
+        ld [wBillsPCTempListIndex], a
+        call BillsPC_GetCursorSlot
 .loop
 	ld a, c
 	inc c
 	cp MONS_PER_BOX
 	jr z, .releases_done
 
-	call BillsPC_CanReleaseMon
-	jr nz, .failed_release
-	inc d
-	push de
-	call RemoveStorageBoxMon
-	lb de, -1, -1
-	push bc
-	call BillsPC_MoveIconData
-	pop bc
-	pop de
+        call BillsPC_CanReleaseMon
+        jr nz, .failed_release
+        inc d
+        push de
+        push bc
+        ld a, [wBufferMonAltSpecies]
+        ld [wCurSpecies], a
+        call GetBaseData
+        ld hl, wBaseDropItem
+        call GetItemIDFromHL
+        ld [wCurItem], a
+        push af
+        call RemoveStorageBoxMon
+        pop af
+        cp NO_ITEM
+        jr z, .skip_drop_reward
+        ld [wNamedObjectIndex], a
+        ld a, 1
+        ld [wBillsPCTempListIndex], a
+        ld [wItemQuantityChange], a
+        ld hl, wNumItems
+        call ReceiveItem
+        jr nc, .bag_full_reward
+        jr .skip_drop_reward
+
+.bag_full_reward
+        ld hl, BillsPC_PackFullText
+        call PrintText
+.skip_drop_reward
+        pop bc
+        lb de, -1, -1
+        push bc
+        call BillsPC_MoveIconData
+        pop bc
+        pop de
 	jr .loop
 .failed_release
 	; Check if there was something there.
@@ -2740,53 +2767,69 @@ BillsPC_ReleaseAll:
 	ld hl, .NothingThere
 	jr z, .print
 	and d
-	ld hl, .NothingReleased
+        ld hl, .NothingReleased
 	jr z, .print2
-	ld hl, .ReleasedXMon
+        ld hl, .ReleasedXMon
 .print
-	push de
-	call PrintText
-	pop de
-	ld a, e
-	and a
-	ld hl, .TheRestWasnt
-	jr z, .done
+        push de
+        call PrintText
+        pop de
+        ld a, d
+        and a
+        jr z, .skip_box_drop_message
+        ld a, [wBillsPCTempListIndex]
+        and a
+        jr z, .skip_box_drop_message
+        push de
+        ld hl, .ReceivedBoxDropItemsText
+        call PrintText
+        pop de
+.skip_box_drop_message
+        ld a, e
+        and a
+        ld hl, .TheRestWasnt
+        jr z, .done
 .print2
-	call PrintText
+        call PrintText
 .done
 	call BillsPC_UpdateCursorLocation
 	jmp CloseWindow
 
 .ReallyReleaseBox:
-	text "Really release the"
-	line "entire BOX?"
-	done
+        text "Really send the"
+        line "entire BOX?"
+        done
 
 .CantRecallReleasedMons:
-	text "You can't recall"
-	line "released #MON."
-	cont "Are you sure?"
-	done
+        text "You can't recall"
+        line "sent #MON."
+        cont "Are you sure?"
+        done
 
 .NothingThere:
-	text "The BOX is empty."
-	prompt
+        text "The BOX is empty."
+        prompt
 
 .NothingReleased:
-	text "You can't release"
-	line "EGGs or #MON"
-	cont "with HM moves."
-	prompt
+        text "You can't send"
+        line "EGGs or #MON"
+        cont "with HM moves."
+        prompt
 
 .ReleasedXMon:
-	text "Released @"
-	text_decimal wTextDecimalByte, 1, 2
-	text ""
-	line "#MON."
-	prompt
+        text "Sent @"
+        text_decimal wTextDecimalByte, 1, 2
+        text ""
+        line "#MON."
+        prompt
+
+.ReceivedBoxDropItemsText:
+        text "IVY sent you some"
+        line "items as thanks!"
+        prompt
 
 .TheRestWasnt:
-	text "The rest are EGGs"
+        text "The rest are EGGs"
 	line "or know HM moves."
 	prompt
 
@@ -2795,10 +2838,10 @@ BillsPC_Release:
 	call BillsPC_CanReleaseMon
 	ld hl, BillsPC_LastPartyMon
 	dec a
-	jr z, .print
+	jp z, .print
 	ld hl, .CantReleaseEgg
 	dec a
-	jr z, .print
+	jp z, .print
 	ld hl, .CantReleaseHMMons
 	dec a
 	jr z, .print
@@ -2811,26 +2854,57 @@ BillsPC_Release:
 	call NoYesBox
 	jr c, .done
 
-	; Copy mon nick to a string buffer, since SetStorageBoxPointer might
-	; mangle wBufferMon.
-	ld hl, wBufferMonNickname
-	ld de, wStringBuffer1
-	ld bc, MON_NAME_LENGTH
-	rst CopyBytes
+        ; Copy mon nick to a string buffer, since SetStorageBoxPointer might
+        ; mangle wBufferMon.
+        ld hl, wBufferMonNickname
+        ld de, wStringBuffer1
+        ld bc, MON_NAME_LENGTH
+        rst CopyBytes
 
-	; Then release the mon.
-	call BillsPC_GetCursorSlot
-	push bc
-	call RemoveStorageBoxMon
+        ; Prepare drop item reward.
+        ld a, [wBufferMonAltSpecies]
+        ld [wCurSpecies], a
+        call GetBaseData
+        ld hl, wBaseDropItem
+        call GetItemIDFromHL
+        ld [wCurItem], a
 
-	; Print message and reload current cursor mon.
-	ld hl, .WasReleasedOutside
-	call PrintText
+        ; Then release the mon.
+        call BillsPC_GetCursorSlot
+        push bc
+        call RemoveStorageBoxMon
 
-	call .done
-	pop bc
-	lb de, -1, -1
-	call BillsPC_MoveIconData
+        ; Print message and reload current cursor mon.
+        ld hl, .SentToIvyText
+        call PrintText
+
+        ; Give the mon's drop item if possible.
+        ld a, [wCurItem]
+        cp NO_ITEM
+        jr z, .skip_drop_item
+        ld [wNamedObjectIndex], a
+        ld a, 1
+        ld [wItemQuantityChange], a
+        ld hl, wNumItems
+        call ReceiveItem
+        jr nc, .bag_full
+        ld a, [wCurItem]
+        ld [wNamedObjectIndex], a
+        call GetItemName
+        ld hl, .ReceivedDropItemText
+        call PrintText
+        jr .skip_drop_item
+
+.bag_full
+        ld hl, BillsPC_PackFullText
+        call PrintText
+
+.skip_drop_item
+
+        call .done
+        pop bc
+        lb de, -1, -1
+        call BillsPC_MoveIconData
 	call CheckPartyShift
 	jmp GetCursorMon
 
@@ -2839,34 +2913,36 @@ BillsPC_Release:
 	jmp CloseWindow
 
 .print
-	jmp BillsPC_PrintText
+        jmp BillsPC_PrintText
 
 .CantReleaseEgg:
-	text "You can't release"
-	line "an EGG!"
-	prompt
+        text "You can't send"
+        line "an EGG!"
+        prompt
 
 .CantReleaseHMMons:
-	text "You can't release"
-	line "<PK><MN> with HM moves!"
-	prompt
+        text "You can't send"
+        line "<PK><MN> with HM moves!"
+        prompt
 
 .ReallyReleaseMon:
-	text "Really release"
-	line "@"
-	text_ram wBufferMonNickname
-	text "?"
-	done
+        text "Really send"
+        line "@"
+        text_ram wBufferMonNickname
+        text "?"
+        done
 
-.WasReleasedOutside:
-	text "@"
-	text_ram wStringBuffer1
-	text " was"
-	line "released outside."
-	cont "Bye, @"
-	text_ram wStringBuffer1
-	text "!"
-	prompt
+.SentToIvyText:
+        text "Sending to IVY for"
+        line "research. Goodbye!"
+        prompt
+
+.ReceivedDropItemText:
+        text "IVY sent you"
+        line "@"
+        text_ram wStringBuffer1
+        text "!"
+        prompt
 
 BillsPC_Rename:
 	call BillsPC_PrepareTransistion
