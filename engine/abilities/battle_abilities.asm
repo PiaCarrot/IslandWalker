@@ -298,6 +298,19 @@ Check_Levitate:
     ld a, 1
     ret
 
+; Wonder Guard prevents damage from non-super-effective moves. Returns z if blocked.
+Check_WonderGuard:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp WONDER_GUARD
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Ruby/Sapphire PICKUP ability: chance to find an item after battle
 HandlePickup::
     ld a, [wPartyCount]

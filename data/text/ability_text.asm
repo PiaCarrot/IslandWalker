@@ -123,3 +123,11 @@ AbilityText_Levitate:
     cont "GROUND moves"
     cont "miss!"
     prompt
+
+AbilityText_WonderGuard:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "blocks the attack!"
+    prompt

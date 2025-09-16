@@ -1559,12 +1559,60 @@ BattleCommand_Stab:
 	jr .TypesLoop
 
 .end
-	call BattleCheckTypeMatchup
-	ld a, [wTypeMatchup]
-	ld b, a
-	ld a, [wTypeModifier]
-	and STAB_DAMAGE
-	or b
+        call BattleCheckTypeMatchup
+        ld a, [wTypeMatchup]
+        and a
+        jr z, .SkipWonderGuard
+        cp SUPER_EFFECTIVE
+        jr nc, .SkipWonderGuard
+        ld a, BATTLE_VARS_MOVE_TYPE
+        call GetBattleVar
+        and STATUS
+        cp STATUS
+        jr z, .SkipWonderGuard
+        ld a, BATTLE_VARS_MOVE
+        call GetBattleVar
+        ld bc, STRUGGLE
+        call CompareMove
+        jr z, .SkipWonderGuard
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .EnemyTurnWonderGuard
+        ld hl, wEnemyMonPersonality
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld b, 1
+        jr .CheckWonderGuardAbility
+.EnemyTurnWonderGuard
+        ld hl, wBattleMonPersonality
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld b, 0
+.CheckWonderGuardAbility
+        farcall Check_WonderGuard
+        and a
+        jr nz, .SkipWonderGuard
+        call ResetDamage
+        ld hl, wTypeModifier
+        ld a, [hl]
+        and STAB_DAMAGE
+        ld [hl], a
+        xor a
+        ld [wTypeMatchup], a
+        ldh [hMultiplier], a
+        ld hl, AbilityText_WonderGuard
+        ld a, [wAttackMissed]
+        and a
+        call z, StdAbilityTextbox
+        ld a, 1
+        ld [wAttackMissed], a
+        ret
+.SkipWonderGuard
+        ld a, [wTypeMatchup]
+        ld b, a
+        ld a, [wTypeModifier]
+        and STAB_DAMAGE
+        or b
 	ld [wTypeModifier], a
 	ret
 
