@@ -1,6 +1,7 @@
 ; Utility functions for abilties, not sourced from pre-existing battle engine code. Ported content will be credited.
 ; Utilized in:
 ;   - engine/battle/abilities/battle_abilites.asm
+;   - engine/battle/core.asm
 
 ; Dynamically loads the ability name into wStringBuffer1 from the ability index stored in 'a'.
 ; Used for:
@@ -76,4 +77,74 @@ Ability_CheckOpponentMonType:
     cp c
 .done
     pop bc
+    ret
+
+; Loads the active battler's personality, species, and status pointers.
+; Returns:
+;   - b: 0 for the player, 1 for the enemy
+;   - hl: personality pointer
+;   - de: status pointer
+;   - c: species
+Ability_LoadBattleMonBase:
+    ldh a, [hBattleTurn]
+    and a
+    jr z, .enemy
+    ld b, 0
+    ld hl, wBattleMonPersonality
+    ld de, wBattleMonStatus
+    ld a, [wBattleMonSpecies]
+    ld c, a
+    ret
+
+.enemy
+    ld b, 1
+    ld hl, wEnemyMonPersonality
+    ld de, wEnemyMonStatus
+    ld a, [wEnemyMonSpecies]
+    ld c, a
+    ret
+
+; Selects the stat pointer belonging to the active battler.
+;   - hl: enemy stat pointer
+;   - de: player stat pointer
+; Returns hl pointing to the active battler's stat.
+Ability_SelectBattleMonStatPointer:
+    ldh a, [hBattleTurn]
+    and a
+    jr z, .enemy
+    ld h, d
+    ld l, e
+    ret
+
+.enemy
+    ret
+
+; Boosts the stat pointed to by hl by 50%, capped at MAX_STAT_VALUE.
+Ability_BoostStatByHalf:
+    push hl
+    ld a, [hli]
+    ld b, a
+    ld a, [hl]
+    ld c, a
+    ld h, b
+    ld l, c
+    ld d, h
+    ld e, l
+    srl d
+    rr e
+    add hl, de
+    ld d, h
+    ld e, l
+    ld a, e
+    sub LOW(MAX_STAT_VALUE)
+    ld a, d
+    sbc HIGH(MAX_STAT_VALUE)
+    jr c, .store
+    ld d, HIGH(MAX_STAT_VALUE)
+    ld e, LOW(MAX_STAT_VALUE)
+.store
+    pop hl
+    ld a, d
+    ld [hli], a
+    ld [hl], e
     ret

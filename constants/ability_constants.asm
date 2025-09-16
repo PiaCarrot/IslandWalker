@@ -109,11 +109,10 @@
 	const VOLT_ABSORB  ; Electric-type
 	const WATER_ABSORB ; Water-type
 ; Damages Physical attackers by 1/16th of their max HP (1/8th is in Gen IV+)
-	const ROUGH_SKIN
+        const ROUGH_SKIN
 
-; Skips every-other turn
-; Because of course, Slakoth and Slaking love their naps
-	const TRUANT ; UNUSED IN ORANGE
+; Boosts Special Attack when inflicted with a burn
+        const FLARE_BOOST
 
 ; Heals statuses...
 ; In-battle

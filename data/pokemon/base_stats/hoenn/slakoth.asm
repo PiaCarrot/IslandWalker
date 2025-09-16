@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/hoenn/slakoth/front.dimensions"
-	db TRUANT, TRUANT ; wBaseAbility1, wBaseAbility2
+        db FLARE_BOOST, FLARE_BOOST ; wBaseAbility1, wBaseAbility2
 	dw EXP_CANDY_XS ; drop item
 	db GROWTH_SLOW ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups

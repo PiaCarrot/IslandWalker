@@ -2078,7 +2078,7 @@ BattleCommand_CheckHit:
 
 .check_ability
         call GetAbility
-        call Ability_LoadTracedAbility
+        xcall Ability_LoadTracedAbility
         cp TANGLED_FEET
         jr nz, .restore_pointer
 

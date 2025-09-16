@@ -70,8 +70,8 @@ AbilityDescriptions:
 	dw LightningrodDesc
 	dw VoltAbsorbDesc
 	dw WaterAbsorbDesc
-	dw RoughSkinDesc
-	dw TruantDesc
+        dw RoughSkinDesc
+        dw FlareBoostDesc
 	dw ShedSkinDesc
 	dw EarlyBirdDesc
 	dw NaturalCureDesc
@@ -444,9 +444,9 @@ RoughSkinDesc:
 	db    "Damages users of"
 	next1 "physical moves.@"
 
-TruantDesc:
-	db    "Cannot move every"
-	next1 "other turn.@"
+FlareBoostDesc:
+        db    "Powers up special"
+        next1 "if burned.@"
 
 ShedSkinDesc:
 	db    "May heal from a"
