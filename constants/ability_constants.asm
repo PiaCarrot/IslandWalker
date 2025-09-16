@@ -45,11 +45,11 @@
 	const CHLOROPHYLL ; Sunlight
 	const SWIFT_SWIM  ; Rain
 ; Changes type to match the weather
-	const FORECAST
+	const FORECAST ; UNUSED IN ORANGE
 ; Causes a specific weather condition
 	const DROUGHT     ; Sunlight ✔
 	const DRIZZLE     ; Rain ✔
-	const SAND_STREAM ; Sandstorm. Also halves the wild Pokémon encounter rate if in the first slot during an overworld sandstorm ✔
+	const SAND_STREAM ; Sandstorm. ✔ Also halves the wild Pokémon encounter rate if in the first slot during an overworld sandstorm
 ; Boosts stats in weather
 	const SAND_VEIL ; Evasion by 20% during a sandstorm
 ; Heals during weather
@@ -58,12 +58,12 @@
 ; Nullifies or weakens specific moves/move effects
 ; Nullifies...
 	const CACOPHONY    ; Sound-based moves (THIS ABILITY IS UNUSED IN THE BASE GAMES - Grasswhistle, Growl, Heal Bell, Hyper Voice, Metal Sound, Perish Song, Sing, Sonicboom, Supersonic, Screech, Snore and Uproar)
-	const SOUNDPROOF   ; Sound-based moves (Grasswhistle, Growl, Heal Bell, Hyper Voice, Metal Sound, Perish Song, Sing, Sonicboom, Supersonic, Screech, Snore and Uproar)
-	const LEVITATE     ; Ground-type moves
-	const WONDER_GUARD ; Non-super-effective moves
-	const STURDY       ; One-hit KO moves
-	const SUCTION_CUPS ; Roar and Whirlwind. Also increases capture rate of hooked wild Pokémon if in Battle
-	const DAMP         ; Selfdestruct and Explosion
+	const SOUNDPROOF   ; Sound-based moves  ✔(Grasswhistle, Growl, Heal Bell, Hyper Voice, Metal Sound, Perish Song, Sing, Sonicboom, Supersonic, Screech, Snore and Uproar)
+	const LEVITATE     ; Ground-type moves ✔
+	const WONDER_GUARD ; Non-super-effective moves  ✔
+	const STURDY       ; One-hit KO moves  ✔
+	const SUCTION_CUPS ; Roar and Whirlwind.  ✔ Also increases capture rate of hooked wild Pokémon if in Battle X
+	const DAMP         ; Selfdestruct and Explosion  ✔
 ; Entirely prevents any form of enemy inflicted stat reduction
 	const CLEAR_BODY
 	const WHITE_SMOKE ; Also decreases the overworld encounter rate by 50%
@@ -113,7 +113,7 @@
 
 ; Skips every-other turn
 ; Because of course, Slakoth and Slaking love their naps
-	const TRUANT
+	const TRUANT ; UNUSED IN ORANGE
 
 ; Heals statuses...
 ; In-battle
@@ -124,15 +124,15 @@
 
 ; Ability activates upon entrance
 ; Lowers...
-	const INTIMIDATE ; Attack. Also reduces encounter rates of Pokémon at least 5 levels lower by 50%
+	const INTIMIDATE ; Attack.  ✔ Also reduces encounter rates of Pokémon at least 5 levels lower by 50%
 ; Copies the opponent's ability
-	const TRACE
+	const TRACE ;  ✔
 
 ; Doubles PP usage. Also halves the wild Pokémon encounter rate if in the first slot
-	const PRESSURE
+	const PRESSURE ;  ✔
 
 ; Allows the user to run away from any wild Pokémon battle without fail
-	const RUN_AWAY
+	const RUN_AWAY ;  ✔
 
 ; Purely has an overworld effect
 ; Doubles wild Pokémon encounter rate if in the first slot
@@ -140,7 +140,7 @@
 ; Halves wild Pokémon encounter rate if in the first slot
 	const STENCH
 ; Randomly may find an item after battle
-	const PICKUP
+	const PICKUP ;  ✔
 	
 ; Gen IV
     const TANGLED_FEET

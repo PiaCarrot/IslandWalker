@@ -4589,16 +4589,40 @@ BattleCommand_EvasionDown2:
 	ld a, $10 | EVASION
 
 BattleCommand_StatDown:
-	ld [wLoweredStat], a
+        ld [wLoweredStat], a
 
-	call CheckMist
-	jmp nz, .Mist
+        call CheckMist
+        jmp nz, .Mist
 
-	ld hl, wEnemyStatLevels
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .GetStatLevel
-	ld hl, wPlayerStatLevels
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .player_clear_body
+        ld hl, wEnemyMonPersonality
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld b, 1
+        jr .check_clear_body
+.player_clear_body
+        ld hl, wBattleMonPersonality
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld b, 0
+.check_clear_body
+        farcall Check_ClearBody
+        and a
+        jr nz, .no_clear_body
+        ld a, 4
+        ld [wFailedMessage], a
+        ld a, 1
+        ld [wAttackMissed], a
+        ret
+
+.no_clear_body
+        ld hl, wEnemyStatLevels
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .GetStatLevel
+        ld hl, wPlayerStatLevels
 
 .GetStatLevel:
 ; Attempt to lower the stat.
@@ -4855,17 +4879,22 @@ BattleCommand_StatUpFailText:
 	jmp StdBattleTextbox
 
 BattleCommand_StatDownFailText:
-	ld a, [wFailedMessage]
-	and a
-	ret z
-	push af
-	call BattleCommand_MoveDelay
-	pop af
-	dec a
-	jmp z, TryPrintButItFailed
-	dec a
-	ld hl, ProtectedByMistText
-	jmp z, StdBattleTextbox
+        ld a, [wFailedMessage]
+        and a
+        ret z
+        push af
+        call BattleCommand_MoveDelay
+        pop af
+        cp 4
+        jr nz, .not_ability_blocked
+        ld hl, AbilityText_ClearBody
+        jmp StdAbilityTextbox
+.not_ability_blocked
+        dec a
+        jmp z, TryPrintButItFailed
+        dec a
+        ld hl, ProtectedByMistText
+        jmp z, StdBattleTextbox
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a

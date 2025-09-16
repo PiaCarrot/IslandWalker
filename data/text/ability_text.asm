@@ -123,6 +123,14 @@ AbilityText_Soundproof:
     cont "the sound!"
     prompt
 
+AbilityText_ClearBody:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " stops"
+    cont "stat losses!"
+    prompt
+
 AbilityText_SuctionCups:
     text "<TARGET>'s"
     line "@"

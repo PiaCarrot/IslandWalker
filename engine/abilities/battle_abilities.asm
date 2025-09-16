@@ -299,6 +299,22 @@ Check_Damp:
     ld a, 1
     ret
 
+; Clear Body and White Smoke prevent stat drops. Returns z if blocked.
+Check_ClearBody:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp CLEAR_BODY
+    jr z, .blocked
+    cp WHITE_SMOKE
+    jr nz, .nope
+.blocked
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Suction Cups prevents forced switching. Returns z if blocked.
 Check_SuctionCups:
     call GetAbility
