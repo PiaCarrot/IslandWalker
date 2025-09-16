@@ -1887,19 +1887,22 @@ BattleCommand_CheckHit:
 	cp EFFECT_ALWAYS_HIT
 	ret z
 
-	call .StatModifiers
+        call .StatModifiers
 
-	ld a, [wPlayerMoveStruct + MOVE_ACC]
-	ld b, a
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .BrightPowder
-	ld a, [wEnemyMoveStruct + MOVE_ACC]
-	ld b, a
+        ld hl, wPlayerMoveStruct + MOVE_ACC
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .got_acc_pointer
+        ld hl, wEnemyMoveStruct + MOVE_ACC
+
+.got_acc_pointer
+        call .ApplyTangledFeetAccuracy
+        ld a, [hl]
+        ld b, a
 
 .BrightPowder:
-	push bc
-	call GetOpponentItem
+        push bc
+        call GetOpponentItem
 	ld a, b
 	cp HELD_BRIGHTPOWDER
 	ld a, c ; % miss
@@ -2039,16 +2042,74 @@ BattleCommand_CheckHit:
 	ret
 
 .XAccuracy:
-	ld a, BATTLE_VARS_SUBSTATUS4
-	call GetBattleVar
-	bit SUBSTATUS_X_ACCURACY, a
-	ret
+        ld a, BATTLE_VARS_SUBSTATUS4
+        call GetBattleVar
+        bit SUBSTATUS_X_ACCURACY, a
+        ret
+
+.ApplyTangledFeetAccuracy:
+        ld d, h
+        ld e, l
+        ld a, [de]
+        cp -1
+        jr z, .restore_pointer
+
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .check_player
+
+        ld a, [wEnemySubStatus3]
+        bit SUBSTATUS_CONFUSED, a
+        jr z, .restore_pointer
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_ability
+
+.check_player
+        ld a, [wPlayerSubStatus3]
+        bit SUBSTATUS_CONFUSED, a
+        jr z, .restore_pointer
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+
+.check_ability
+        call GetAbility
+        call Ability_LoadTracedAbility
+        cp TANGLED_FEET
+        jr nz, .restore_pointer
+
+        ld h, d
+        ld l, e
+        ld a, [hl]
+        ld c, a
+        ld b, 0
+
+.reduce_loop
+        cp 3
+        jr c, .store_reduced
+        sub 3
+        inc b
+        jr .reduce_loop
+
+.store_reduced
+        ld a, c
+        sub b
+        ld [hl], a
+
+.restore_pointer
+        ld h, d
+        ld l, e
+        ret
 
 .StatModifiers:
-	ldh a, [hBattleTurn]
-	and a
+        ldh a, [hBattleTurn]
+        and a
 
-	; load the user's accuracy into b and the opponent's evasion into c.
+        ; load the user's accuracy into b and the opponent's evasion into c.
 	ld hl, wPlayerMoveStruct + MOVE_ACC
 	ld a, [wPlayerAccLevel]
 	ld b, a
