@@ -2727,6 +2727,7 @@ BillsPC_ReleaseAll:
         ld [wCurSpecies], a
         call GetBaseData
         ld hl, wBaseDropItem
+        call BillsPC_AdjustDropItemForIvy
         call GetItemIDFromHL
         ld [wCurItem], a
         push af
@@ -2830,14 +2831,38 @@ BillsPC_ReleaseAll:
 
 .TheRestWasnt:
         text "The rest are EGGs"
-	line "or know HM moves."
-	prompt
+        line "or know HM moves."
+        prompt
+
+BillsPC_AdjustDropItemForIvy:
+; Override Meltan's drop item when sending #MON to IVY.
+; in: hl = pointer to the drop item field populated by GetBaseData
+        push hl
+        ld a, [wCurSpecies]
+        call GetPokemonIndexFromID
+        ld a, l
+        cp LOW(MELTAN)
+        jr nz, .restore_pointer
+        ld a, h
+        cp HIGH(MELTAN)
+        jr nz, .restore_pointer
+        pop hl
+        ld a, LOW(EXP_CANDY_XL)
+        ld [hli], a
+        ld a, HIGH(EXP_CANDY_XL)
+        ld [hl], a
+        dec hl
+        ret
+
+.restore_pointer
+        pop hl
+        ret
 
 BillsPC_Release:
-	call BillsPC_GetCursorSlot
-	call BillsPC_CanReleaseMon
-	ld hl, BillsPC_LastPartyMon
-	dec a
+        call BillsPC_GetCursorSlot
+        call BillsPC_CanReleaseMon
+        ld hl, BillsPC_LastPartyMon
+        dec a
 	jp z, .print
 	ld hl, .CantReleaseEgg
 	dec a
@@ -2866,6 +2891,7 @@ BillsPC_Release:
         ld [wCurSpecies], a
         call GetBaseData
         ld hl, wBaseDropItem
+        call BillsPC_AdjustDropItemForIvy
         call GetItemIDFromHL
         ld [wCurItem], a
 
