@@ -576,8 +576,26 @@ HandleSpeedBoost::
     call GetAbility
     call Ability_LoadTracedAbility
     cp SPEED_BOOST
-    ret nz
+    jr z, .PlayerSpeedBoost
+    cp PLUS
+    jr z, .PlayerPlusBoost
+    cp MINUS
+    jr z, .PlayerMinusBoost
+    ret
+
+.PlayerSpeedBoost
     ld hl, wPlayerStatLevels + SPEED
+    ld de, AbilityText_SpeedBoost
+    jr .RaiseStat
+
+.PlayerPlusBoost
+    ld hl, wPlayerStatLevels + SP_ATTACK
+    ld de, AbilityText_PlusBoost
+    jr .RaiseStat
+
+.PlayerMinusBoost
+    ld hl, wPlayerStatLevels + SP_DEFENSE
+    ld de, AbilityText_MinusBoost
     jr .RaiseStat
 
 .EnemySide
@@ -592,13 +610,33 @@ HandleSpeedBoost::
     call GetAbility
     call Ability_LoadTracedAbility
     cp SPEED_BOOST
-    ret nz
+    jr z, .EnemySpeedBoost
+    cp PLUS
+    jr z, .EnemyPlusBoost
+    cp MINUS
+    jr z, .EnemyMinusBoost
+    ret
+
+.EnemySpeedBoost
     ld hl, wEnemyStatLevels + SPEED
+    ld de, AbilityText_SpeedBoost
+    jr .RaiseStat
+
+.EnemyPlusBoost
+    ld hl, wEnemyStatLevels + SP_ATTACK
+    ld de, AbilityText_PlusBoost
+    jr .RaiseStat
+
+.EnemyMinusBoost
+    ld hl, wEnemyStatLevels + SP_DEFENSE
+    ld de, AbilityText_MinusBoost
+    jr .RaiseStat
 
 .RaiseStat
+    push de
     ld a, [hl]
     cp MAX_STAT_LEVEL
-    ret nc
+    jr nc, .Done
     inc [hl]
     ldh a, [hBattleTurn]
     and a
@@ -610,8 +648,14 @@ HandleSpeedBoost::
     farcall CalcEnemyStats
 
 .PrintText
-    ld hl, AbilityText_SpeedBoost
+    pop de
+    ld h, d
+    ld l, e
     call StdAbilityTextbox
+    ret
+
+.Done
+    pop de
     ret
 
 HandlePickup::

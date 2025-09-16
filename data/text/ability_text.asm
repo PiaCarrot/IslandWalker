@@ -34,6 +34,18 @@ AbilityText_SpeedBoost:
     cont "its SPEED!"
     prompt
 
+AbilityText_PlusBoost:
+    text "<USER>'s"
+    line "PLUS raised"
+    cont "its SPCL.ATK!"
+    prompt
+
+AbilityText_MinusBoost:
+    text "<USER>'s"
+    line "MINUS raised"
+    cont "its SPCL.DEF!"
+    prompt
+
 AbilityText_IntimidateCutsAttack:
     text "<USER>'s"
     line "INTIMIDATE cuts"
