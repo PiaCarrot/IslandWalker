@@ -6865,20 +6865,29 @@ ApplyStatusEffectOnStats:
         call ApplyPrzEffectOnSpeed
         call ApplyBrnEffectOnAttack
         call ApplyGutsEffectOnAttack
-        jp ApplyMarvelScaleEffectOnDefense
+        call ApplyMarvelScaleEffectOnDefense
+        jp ApplyQuickFeetEffectOnSpeed
 
 ApplyPrzEffectOnSpeed:
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .enemy
-	ld a, [wBattleMonStatus]
-	and 1 << PAR
-	ret z
-	ld hl, wBattleMonSpeed + 1
-	ld a, [hld]
-	ld b, a
-	ld a, [hl]
-	srl a
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .enemy
+        ld a, [wBattleMonStatus]
+        and 1 << PAR
+        ret z
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        call GetAbility
+        call Ability_LoadTracedAbility
+        cp QUICK_FEET
+        ret z
+        ld hl, wBattleMonSpeed + 1
+        ld a, [hld]
+        ld b, a
+        ld a, [hl]
+        srl a
 	rr b
 	srl a
 	rr b
@@ -6892,14 +6901,22 @@ ApplyPrzEffectOnSpeed:
 	ret
 
 .enemy
-	ld a, [wEnemyMonStatus]
-	and 1 << PAR
-	ret z
-	ld hl, wEnemyMonSpeed + 1
-	ld a, [hld]
-	ld b, a
-	ld a, [hl]
-	srl a
+        ld a, [wEnemyMonStatus]
+        and 1 << PAR
+        ret z
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        call GetAbility
+        call Ability_LoadTracedAbility
+        cp QUICK_FEET
+        ret z
+        ld hl, wEnemyMonSpeed + 1
+        ld a, [hld]
+        ld b, a
+        ld a, [hl]
+        srl a
 	rr b
 	srl a
 	rr b
@@ -6955,7 +6972,8 @@ ApplyBrnEffectOnAttack:
 
 ApplyStatusAbilityBoosts:
         call ApplyGutsEffectOnAttack
-        jp ApplyMarvelScaleEffectOnDefense
+        call ApplyMarvelScaleEffectOnDefense
+        jp ApplyQuickFeetEffectOnSpeed
 
 ApplyGutsEffectOnAttack:
         ldh a, [hBattleTurn]
@@ -7023,6 +7041,45 @@ ApplyMarvelScaleEffectOnDefense:
         and a
         ret z
         ld hl, wEnemyMonDefense
+
+.boost
+        jp Ability_BoostStatByHalf
+
+ApplyQuickFeetEffectOnSpeed:
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .enemy
+        ld a, [wBattleMonStatus]
+        and a
+        ret z
+        bit FRZ, a
+        ret nz
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        call GetAbility
+        call Ability_LoadTracedAbility
+        cp QUICK_FEET
+        ret nz
+        ld hl, wBattleMonSpeed
+        jr .boost
+
+.enemy
+        ld a, [wEnemyMonStatus]
+        and a
+        ret z
+        bit FRZ, a
+        ret nz
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        call GetAbility
+        call Ability_LoadTracedAbility
+        cp QUICK_FEET
+        ret nz
+        ld hl, wEnemyMonSpeed
 
 .boost
         jp Ability_BoostStatByHalf
