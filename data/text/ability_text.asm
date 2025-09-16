@@ -28,6 +28,12 @@ AbilityText_ExertingPressure:
     cont "PRESSURE!"
     prompt
 
+AbilityText_SpeedBoost:
+    text "<USER>'s"
+    line "SPEED BOOST raised"
+    cont "its SPEED!"
+    prompt
+
 AbilityText_IntimidateCutsAttack:
     text "<USER>'s"
     line "INTIMIDATE cuts"

@@ -542,6 +542,78 @@ Check_SturdyHangOn:
     ret
 
 ; Ruby/Sapphire PICKUP ability: chance to find an item after battle
+HandleSpeedBoost::
+    ldh a, [hSerialConnectionStatus]
+    cp USING_EXTERNAL_CLOCK
+    jr z, .EnemyFirst
+    call SetPlayerTurn
+    call .Apply
+    call SetEnemyTurn
+    call .Apply
+    ret
+
+.EnemyFirst
+    call SetEnemyTurn
+    call .Apply
+    call SetPlayerTurn
+    call .Apply
+    ret
+
+.Apply
+    ldh a, [hBattleTurn]
+    and a
+    jr nz, .EnemySide
+
+.PlayerSide
+    ld hl, wBattleMonHP
+    ld a, [hli]
+    or [hl]
+    ret z
+    ld hl, wBattleMonPersonality
+    ld a, [wBattleMonSpecies]
+    ld c, a
+    ld b, 0
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp SPEED_BOOST
+    ret nz
+    ld hl, wPlayerStatLevels + SPEED
+    jr .RaiseStat
+
+.EnemySide
+    ld hl, wEnemyMonHP
+    ld a, [hli]
+    or [hl]
+    ret z
+    ld hl, wEnemyMonPersonality
+    ld a, [wEnemyMonSpecies]
+    ld c, a
+    ld b, 1
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp SPEED_BOOST
+    ret nz
+    ld hl, wEnemyStatLevels + SPEED
+
+.RaiseStat
+    ld a, [hl]
+    cp MAX_STAT_LEVEL
+    ret nc
+    inc [hl]
+    ldh a, [hBattleTurn]
+    and a
+    jr nz, .CalcEnemy
+    farcall CalcPlayerStats
+    jr .PrintText
+
+.CalcEnemy
+    farcall CalcEnemyStats
+
+.PrintText
+    ld hl, AbilityText_SpeedBoost
+    call StdAbilityTextbox
+    ret
+
 HandlePickup::
     ld a, [wPartyCount]
     and a

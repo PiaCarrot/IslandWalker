@@ -280,10 +280,11 @@ HandleBetweenTurnEffects:
 	call HandleWrap
 	call CheckFaint_PlayerThenEnemy
 	ret c
-	call HandlePerishSong
-	call CheckFaint_PlayerThenEnemy
-	ret c
-	jr .NoMoreFaintingConditions
+        call HandlePerishSong
+        call CheckFaint_PlayerThenEnemy
+        ret c
+        farcall HandleSpeedBoost
+        jr .NoMoreFaintingConditions
 
 .CheckEnemyFirst:
 	call CheckFaint_EnemyThenPlayer
@@ -297,9 +298,10 @@ HandleBetweenTurnEffects:
 	call HandleWrap
 	call CheckFaint_EnemyThenPlayer
 	ret c
-	call HandlePerishSong
-	call CheckFaint_EnemyThenPlayer
-	ret c
+        call HandlePerishSong
+        call CheckFaint_EnemyThenPlayer
+        ret c
+        farcall HandleSpeedBoost
 
 .NoMoreFaintingConditions:
 	call HandleLeftovers
