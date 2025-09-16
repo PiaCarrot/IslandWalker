@@ -115,6 +115,15 @@ AbilityText_Soundproof:
     cont "the sound!"
     prompt
 
+AbilityText_SuctionCups:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "anchored itself in"
+    cont "place!"
+    prompt
+
 AbilityText_Levitate:
     text "<TARGET>'s"
     line "@"

@@ -285,6 +285,19 @@ Check_Soundproof:
     ld a, 1
     ret
 
+; Suction Cups prevents forced switching. Returns z if blocked.
+Check_SuctionCups:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp SUCTION_CUPS
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Levitate provides immunity to Ground-type moves. Returns z if blocked.
 Check_Levitate:
     call GetAbility

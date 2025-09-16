@@ -5195,6 +5195,22 @@ BattleCommand_ForceSwitch:
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .missed
+
+	; Check if the target's SUCTION CUPS blocks the switch effect.
+	ld hl, wEnemyMonPersonality
+	ld a, [wEnemyMonSpecies]
+	ld c, a
+	ld b, 1
+	farcall Check_SuctionCups
+	and a
+	jr nz, .no_suction_cups_enemy
+	ld hl, AbilityText_SuctionCups
+	call StdAbilityTextbox
+	ld a, 1
+	ld [wAttackMissed], a
+	jmp EndMoveEffect
+.no_suction_cups_enemy
+
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .trainer
@@ -5279,6 +5295,21 @@ BattleCommand_ForceSwitch:
 	ld a, [wAttackMissed]
 	and a
 	jmp nz, .fail
+
+	; Check if the target's SUCTION CUPS blocks the switch effect.
+	ld hl, wBattleMonPersonality
+	ld a, [wBattleMonSpecies]
+	ld c, a
+	ld b, 0
+	farcall Check_SuctionCups
+	and a
+	jr nz, .no_suction_cups_player
+	ld hl, AbilityText_SuctionCups
+	call StdAbilityTextbox
+	ld a, 1
+	ld [wAttackMissed], a
+	jmp EndMoveEffect
+.no_suction_cups_player
 
 	ld a, [wBattleMode]
 	dec a
