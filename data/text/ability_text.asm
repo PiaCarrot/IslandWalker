@@ -131,3 +131,19 @@ AbilityText_WonderGuard:
     text " "
     cont "blocks the attack!"
     prompt
+
+AbilityText_SturdyBlockedOHKO:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " blocked"
+    cont "the OHKO move!"
+    prompt
+
+AbilityText_SturdyHangOn:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " let it"
+    cont "hang on!"
+    prompt

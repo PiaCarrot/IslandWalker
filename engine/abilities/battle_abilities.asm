@@ -311,6 +311,89 @@ Check_WonderGuard:
     ld a, 1
     ret
 
+; Sturdy prevents OHKO moves from landing.
+Check_SturdyOHKO:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp STURDY
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
+; Sturdy lets the user survive a would-be KO from full HP.
+Check_SturdyHangOn:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp STURDY
+    jr nz, .nope
+    call Ability_LoadAbilityName
+
+    ld a, b
+    and a
+    jr z, .player_side
+    ld a, [wEnemySubStatus4]
+    jr .check_substitute
+.player_side
+    ld a, [wPlayerSubStatus4]
+.check_substitute
+    bit SUBSTATUS_SUBSTITUTE, a
+    jr nz, .nope
+
+    ld hl, wBattleMonHP
+    ld de, wBattleMonMaxHP
+    ld a, b
+    and a
+    jr z, .have_hp
+    ld hl, wEnemyMonHP
+    ld de, wEnemyMonMaxHP
+.have_hp
+    push hl
+    push de
+    ld c, 2
+    call CompareBytes
+    pop de
+    pop hl
+    jr nz, .nope
+
+    ld de, wCurDamage
+    ld c, 2
+    push hl
+    push de
+    call CompareBytes
+    pop de
+    pop hl
+    jr c, .nope
+
+    ld a, [hli]
+    ld [de], a
+    inc de
+    ld a, [hl]
+    dec a
+    ld [de], a
+    inc a
+    jr nz, .no_borrow
+    dec de
+    ld a, [de]
+    dec a
+    ld [de], a
+.no_borrow
+    ld a, [wCriticalHit]
+    cp 2
+    jr nz, .activated
+    xor a
+    ld [wCriticalHit], a
+.activated
+    xor a
+    ret
+
+.nope
+    ld a, 1
+    ret
+
 ; Ruby/Sapphire PICKUP ability: chance to find an item after battle
 HandlePickup::
     ld a, [wPartyCount]

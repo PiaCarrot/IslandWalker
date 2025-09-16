@@ -2359,23 +2359,44 @@ BattleCommand_FailureText:
 	dw -1
 
 BattleCommand_ApplyDamage:
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_ENDURE, a
-	jr z, .focus_band
+        ld a, BATTLE_VARS_SUBSTATUS1_OPP
+        call GetBattleVar
+        bit SUBSTATUS_ENDURE, a
+        jr z, .check_sturdy
 
-	call BattleCommand_FalseSwipe
-	ld b, 0
-	jr nc, .damage
-	ld b, 1
-	jr .damage
+        call BattleCommand_FalseSwipe
+        ld b, 0
+        jr nc, .damage
+        ld b, 1
+        jr .damage
+
+.check_sturdy
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .sturdy_player
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .call_sturdy
+.sturdy_player
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.call_sturdy
+        farcall Check_SturdyHangOn
+        and a
+        jr nz, .focus_band
+        ld b, 3
+        jr .damage
 
 .focus_band
-	call GetOpponentItem
-	ld a, b
-	cp HELD_FOCUS_BAND
-	ld b, 0
-	jr nz, .damage
+        call GetOpponentItem
+        ld a, b
+        cp HELD_FOCUS_BAND
+        ld b, 0
+        jr nz, .damage
 
 	call BattleRandom
 	cp c
@@ -2398,21 +2419,28 @@ BattleCommand_ApplyDamage:
 .damage_player
 	call DoPlayerDamage
 
-.done_damage
-	pop bc
-	ld a, b
-	and a
-	ret z
 
-	dec a
-	jr nz, .focus_band_text
-	ld hl, EnduredText
-	jmp StdBattleTextbox
+.done_damage
+        pop bc
+        ld a, b
+        and a
+        ret z
+
+        cp 1
+        jr z, .endured_text
+        cp 2
+        jr z, .focus_band_text
+        ld hl, AbilityText_SturdyHangOn
+        jmp StdAbilityTextbox
+
+.endured_text
+        ld hl, EnduredText
+        jmp StdBattleTextbox
 
 .focus_band_text
-	call GetOpponentItem
-	ld a, [hl]
-	ld [wNamedObjectIndex], a
+        call GetOpponentItem
+        ld a, [hl]
+        ld [wNamedObjectIndex], a
 	call GetItemName
 	ld hl, HungOnText
 	jmp StdBattleTextbox
@@ -5596,10 +5624,38 @@ BattleCommand_HeldFlinch:
 	ret
 
 BattleCommand_OHKO:
-	call ResetDamage
-	ld a, [wTypeModifier]
-	and EFFECTIVENESS_MASK
-	jr z, .no_effect
+        ; Sturdy blocks OHKO moves entirely
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .sturdy_player
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_sturdy_ohko
+.sturdy_player
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_sturdy_ohko
+        farcall Check_SturdyOHKO
+        and a
+        jr nz, .no_sturdy_block
+        farcall DisplayUsedMoveText
+        ld hl, AbilityText_SturdyBlockedOHKO
+        call StdAbilityTextbox
+        ld a, $ff
+        ld [wCriticalHit], a
+        ld a, $1
+        ld [wAttackMissed], a
+        ret
+
+.no_sturdy_block
+        call ResetDamage
+        ld a, [wTypeModifier]
+        and EFFECTIVENESS_MASK
+        jr z, .no_effect
 	ld hl, wEnemyMonLevel
 	ld de, wBattleMonLevel
 	ld bc, wPlayerMoveStruct + MOVE_ACC
