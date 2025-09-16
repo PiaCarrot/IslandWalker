@@ -107,6 +107,14 @@ AbilityText_GoodAsGold:
         cont "ineffective!"
     prompt
 
+AbilityText_Damp:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " prevented"
+    cont "the explosion!"
+    prompt
+
 AbilityText_Soundproof:
     text "<TARGET>'s"
     line "@"

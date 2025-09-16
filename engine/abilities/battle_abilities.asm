@@ -285,6 +285,20 @@ Check_Soundproof:
     ld a, 1
     ret
 
+; Damp prevents Selfdestruct, Explosion, and similar detonations.
+; Returns z if the move should be stopped.
+Check_Damp:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp DAMP
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Suction Cups prevents forced switching. Returns z if blocked.
 Check_SuctionCups:
     call GetAbility

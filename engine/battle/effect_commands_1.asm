@@ -50,7 +50,7 @@ DoTurn:
         call GetBattleVar
         and STATUS
         cp STATUS
-        jr nz, .check_soundproof
+        jr nz, .check_damp
         ; Load target's species and personality
         ldh a, [hBattleTurn]
         and a
@@ -68,9 +68,39 @@ DoTurn:
 .check_ability
         farcall Check_GoodAsGold
         and a
-        jr nz, .check_soundproof
+        jr nz, .check_damp
         farcall DisplayUsedMoveText
         ld hl, AbilityText_GoodAsGold
+        call StdAbilityTextbox
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+
+.check_damp
+        ld a, BATTLE_VARS_MOVE_EFFECT
+        call GetBattleVar
+        cp EFFECT_SELFDESTRUCT
+        jr nz, .check_soundproof
+        ; Load target's species and personality
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .enemy_turn_damp
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_damp_ability
+.enemy_turn_damp
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_damp_ability
+        farcall Check_Damp
+        and a
+        jr nz, .check_soundproof
+        farcall DisplayUsedMoveText
+        ld hl, AbilityText_Damp
         call StdAbilityTextbox
         ld a, 1
         ld [wAttackMissed], a
