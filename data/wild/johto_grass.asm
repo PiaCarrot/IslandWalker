@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, AZUMARILL                   ; 20%
-	dbw 13, PERSIAN_ALOLA                  ; 20%
-	dbw 14, AZUMARILL                   ; 10%
-	dbw 14, PERSIAN_ALOLA                  ; 10%
-	dbw 15, AZUMARILL                   ; 10%
-	dbw 15, PERSIAN_ALOLA                  ; 10%
-	dbw 14, AZUMARILL                ;  5%
-	dbw 15, PERSIAN_ALOLA                ;  5%
-	dbw 15, AZUMARILL                 ;  4%
-	dbw 15, PERSIAN_ALOLA                   ;  4%
-	dbw 16, AZUMARILL                 ;  1%
-	dbw 16, PERSIAN_ALOLA                   ;  1%
+	dbw 13, REMORAID                   ; 20%
+	dbw 13, REMORAID                  ; 20%
+	dbw 14, REMORAID                   ; 10%
+	dbw 14, REMORAID                  ; 10%
+	dbw 15, REMORAID                   ; 10%
+	dbw 15, REMORAID                  ; 10%
+	dbw 14, REMORAID                ;  5%
+	dbw 15, REMORAID                ;  5%
+	dbw 15, REMORAID                 ;  4%
+	dbw 15, REMORAID                   ;  4%
+	dbw 16, REMORAID                 ;  1%
+	dbw 16, REMORAID                   ;  1%
 	; day
-	dbw 13, AZUMARILL                   ; 20%
-	dbw 13, PERSIAN_ALOLA                  ; 20%
-	dbw 14, AZUMARILL                   ; 10%
-	dbw 14, PERSIAN_ALOLA                  ; 10%
-	dbw 15, AZUMARILL                   ; 10%
-	dbw 15, PERSIAN_ALOLA                  ; 10%
-	dbw 14, AZUMARILL                ;  5%
-	dbw 15, PERSIAN_ALOLA                ;  5%
-	dbw 15, AZUMARILL                 ;  4%
-	dbw 15, PERSIAN_ALOLA                   ;  4%
-	dbw 16, AZUMARILL                 ;  1%
-	dbw 16, PERSIAN_ALOLA                   ;  1%
+	dbw 13, REMORAID                   ; 20%
+	dbw 13, REMORAID                  ; 20%
+	dbw 14, REMORAID                   ; 10%
+	dbw 14, REMORAID                  ; 10%
+	dbw 15, REMORAID                   ; 10%
+	dbw 15, REMORAID                  ; 10%
+	dbw 14, REMORAID                ;  5%
+	dbw 15, REMORAID                ;  5%
+	dbw 15, REMORAID                 ;  4%
+	dbw 15, REMORAID                   ;  4%
+	dbw 16, REMORAID                 ;  1%
+	dbw 16, REMORAID                   ;  1%
 	; nite
-	dbw 13, AZUMARILL                   ; 20%
-	dbw 13, PERSIAN_ALOLA                  ; 20%
-	dbw 14, AZUMARILL                   ; 10%
-	dbw 14, PERSIAN_ALOLA                  ; 10%
-	dbw 15, AZUMARILL                   ; 10%
-	dbw 15, PERSIAN_ALOLA                  ; 10%
-	dbw 14, AZUMARILL                ;  5%
-	dbw 15, PERSIAN_ALOLA                ;  5%
-	dbw 15, AZUMARILL                 ;  4%
-	dbw 15, PERSIAN_ALOLA                   ;  4%
-	dbw 16, AZUMARILL                 ;  1%
-	dbw 16, PERSIAN_ALOLA                   ;  1%
+	dbw 13, REMORAID                   ; 20%
+	dbw 13, REMORAID                  ; 20%
+	dbw 14, REMORAID                   ; 10%
+	dbw 14, REMORAID                  ; 10%
+	dbw 15, REMORAID                   ; 10%
+	dbw 15, REMORAID                  ; 10%
+	dbw 14, REMORAID                ;  5%
+	dbw 15, REMORAID                ;  5%
+	dbw 15, REMORAID                 ;  4%
+	dbw 15, REMORAID                   ;  4%
+	dbw 16, REMORAID                 ;  1%
+	dbw 16, REMORAID                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54

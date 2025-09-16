@@ -1897,6 +1897,7 @@ BattleCommand_CheckHit:
 
 .got_acc_pointer
         call .ApplyTangledFeetAccuracy
+        call .ApplyHustleAccuracy
         ld a, [hl]
         ld b, a
 
@@ -2101,6 +2102,72 @@ BattleCommand_CheckHit:
         ld [hl], a
 
 .restore_pointer
+        ld h, d
+        ld l, e
+        ret
+
+.ApplyHustleAccuracy:
+        ld d, h
+        ld e, l
+        ld a, [de]
+        cp -1
+        jr z, .restore_pointer_hustle
+
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .player_hustle
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_ability_hustle
+
+.player_hustle
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+
+.check_ability_hustle
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp HUSTLE
+        jr nz, .restore_pointer_hustle
+
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .player_move_hustle
+        ld hl, wEnemyMoveStruct + MOVE_TYPE
+        jr .check_category_hustle
+
+.player_move_hustle
+        ld hl, wPlayerMoveStruct + MOVE_TYPE
+
+.check_category_hustle
+        ld a, [hl]
+        and PHYSICAL | SPECIAL
+        cp PHYSICAL
+        jr nz, .restore_pointer_hustle
+
+        ld h, d
+        ld l, e
+        ld a, [hl]
+        ld b, a
+        ld c, 0
+
+.divide_loop_hustle
+        cp 5
+        jr c, .store_hustle
+        sub 5
+        inc c
+        jr .divide_loop_hustle
+
+.store_hustle
+        ld a, b
+        sub c
+        ld [hl], a
+
+.restore_pointer_hustle
         ld h, d
         ld l, e
         ret

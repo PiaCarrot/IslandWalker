@@ -28,14 +28,14 @@
 	const GUTS         ; ✔ Attack
 	const MARVEL_SCALE ; ✔ Defense
 ; Boosts Sp. Attack in presence of... (THESE ABILITIES ARE ESSENTIALLY USELESS WITHOUT DOUBLE BATTLES)
-	const PLUS  ; ✔ Minus
-	const MINUS ; ✔ Plus
+	const PLUS  ; ✔ Sp Attack at the end of the turn, until maxed out
+	const MINUS ; ✔ Sp Defense at the end of the turn, until maxed out
 ; Passively boosts...
 	const COMPOUNDEYES ; Accuracy by 30%. Also increases the rate of wild Pokémon holding an item by 50% if in the first slot
 	const HUSTLE       ; Attack by 50%, but decreases accuracy of Physical moves by 20%. Also decreases the overworld encounter rate of wild Pokémon if in the first slot
-	const HUGE_POWER   ; Doubles Attack
-	const PURE_POWER   ; Doubles Attack
-	const SPEED_BOOST  ; Speed at the end of the turn, until maxed out
+	const HUGE_POWER   ; ✔ Doubles Attack
+	const PURE_POWER   ; ✔ Doubles Attack (UNUSED)
+	const SPEED_BOOST  ; ✔ Speed at the end of the turn, until maxed out
 
 ; Weather related
 ; Prevents the effects of the weather
@@ -57,7 +57,7 @@
 
 ; Nullifies or weakens specific moves/move effects
 ; Nullifies...
-	const CACOPHONY    ; Sound-based moves (THIS ABILITY IS UNUSED IN THE BASE GAMES - Grasswhistle, Growl, Heal Bell, Hyper Voice, Metal Sound, Perish Song, Sing, Sonicboom, Supersonic, Screech, Snore and Uproar)
+	const CACOPHONY    ; ✔ Sound-based moves (THIS ABILITY IS UNUSED IN THE BASE GAMES - Grasswhistle, Growl, Heal Bell, Hyper Voice, Metal Sound, Perish Song, Sing, Sonicboom, Supersonic, Screech, Snore and Uproar)
 	const SOUNDPROOF   ; ✔ Sound-based moves (Grasswhistle, Growl, Heal Bell, Hyper Voice, Metal Sound, Perish Song, Sing, Sonicboom, Supersonic, Screech, Snore and Uproar)
 	const LEVITATE     ; ✔ Ground-type moves
 	const WONDER_GUARD ; ✔ Non-super-effective moves
@@ -207,7 +207,7 @@
 	const SAP_SIPPER
 	const IRON_BARBS
 	const PROTEAN
-	const FUR_COAT
+	const FUR_COAT ; ✔
 	const BULLETPROOF
 	const COMPETITIVE
 	const STANCE_CHANGE

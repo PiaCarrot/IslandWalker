@@ -186,16 +186,17 @@ ApplyStatusEffectOnEnemyStats:
 	xor a
 
 ApplyStatusEffectOnStats:
-	ldh [hBattleTurn], a
-	call ApplyPrzEffectOnSpeed
-	call ApplyBrnEffectOnAttack
-	call ApplyGutsEffectOnAttack
-	call ApplyToxicBoostEffectOnAttack
-	call ApplyHugePowerEffectOnAttack
-	call ApplyMarvelScaleEffectOnDefense
-	call ApplyFurCoatEffectOnDefense
-	call ApplyQuickFeetEffectOnSpeed
-	jp ApplyFlareBoostEffectOnSpAttack
+        ldh [hBattleTurn], a
+        call ApplyPrzEffectOnSpeed
+        call ApplyBrnEffectOnAttack
+        call ApplyGutsEffectOnAttack
+        call ApplyToxicBoostEffectOnAttack
+        call ApplyHugePowerEffectOnAttack
+        call ApplyHustleEffectOnAttack
+        call ApplyMarvelScaleEffectOnDefense
+        call ApplyFurCoatEffectOnDefense
+        call ApplyQuickFeetEffectOnSpeed
+        jp ApplyFlareBoostEffectOnSpAttack
 
 ApplyPrzEffectOnSpeed:
 	ldh a, [hBattleTurn]
@@ -308,13 +309,14 @@ ApplyBrnEffectOnAttack:
 	ret
 
 ApplyStatusAbilityBoosts:
-	call ApplyGutsEffectOnAttack
-	call ApplyToxicBoostEffectOnAttack
-	call ApplyHugePowerEffectOnAttack
-	call ApplyMarvelScaleEffectOnDefense
-	call ApplyFurCoatEffectOnDefense
-	call ApplyQuickFeetEffectOnSpeed
-	jp ApplyFlareBoostEffectOnSpAttack
+        call ApplyGutsEffectOnAttack
+        call ApplyToxicBoostEffectOnAttack
+        call ApplyHugePowerEffectOnAttack
+        call ApplyHustleEffectOnAttack
+        call ApplyMarvelScaleEffectOnDefense
+        call ApplyFurCoatEffectOnDefense
+        call ApplyQuickFeetEffectOnSpeed
+        jp ApplyFlareBoostEffectOnSpAttack
 
 ApplyGutsEffectOnAttack:
 	xcall Ability_LoadBattleMonBase
@@ -356,6 +358,18 @@ ApplyHugePowerEffectOnAttack:
         ld de, wBattleMonAttack
         xcall Ability_SelectBattleMonStatPointer
         xcall Ability_DoubleStat
+        ret
+
+ApplyHustleEffectOnAttack:
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp HUSTLE
+        ret nz
+        ld hl, wEnemyMonAttack
+        ld de, wBattleMonAttack
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_BoostStatByHalf
         ret
 
 ApplyMarvelScaleEffectOnDefense:
