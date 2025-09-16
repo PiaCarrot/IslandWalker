@@ -4112,7 +4112,7 @@ InitBattleMon:
 	ld de, wPlayerStats
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	rst CopyBytes
-	call ApplyStatusEffectOnPlayerStats
+        farcall ApplyStatusEffectOnPlayerStats
 	jmp BadgeStatBoosts
 
 BattleCheckPlayerShininess:
@@ -4199,7 +4199,7 @@ InitEnemyMon:
 	ld de, wEnemyStats
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	rst CopyBytes
-	call ApplyStatusEffectOnEnemyStats
+	farcall ApplyStatusEffectOnEnemyStats
 	ld hl, wBaseType1
 	ld de, wEnemyMonType1
 	ld a, [hli]
@@ -6754,7 +6754,7 @@ LoadEnemyMon:
 	ld de, wEnemyStats
 	ld bc, NUM_BATTLE_STATS * 2
 	rst CopyBytes
-	jmp ApplyStatusEffectOnEnemyStats
+	farjp ApplyStatusEffectOnEnemyStats
 
 CheckSleepingTreeMon:
 ; Return carry if species is in the list
@@ -6852,209 +6852,6 @@ BattleWinSlideInEnemyTrainerFrontpic:
 	jr nz, .loop
 
 	jmp PopBCDEHL
-
-ApplyStatusEffectOnPlayerStats:
-	ld a, 1
-	jr ApplyStatusEffectOnStats
-
-ApplyStatusEffectOnEnemyStats:
-	xor a
-
-ApplyStatusEffectOnStats:
-        ldh [hBattleTurn], a
-        call ApplyPrzEffectOnSpeed
-        call ApplyBrnEffectOnAttack
-        call ApplyGutsEffectOnAttack
-        call ApplyToxicBoostEffectOnAttack
-        call ApplyMarvelScaleEffectOnDefense
-        call ApplyQuickFeetEffectOnSpeed
-        jp ApplyFlareBoostEffectOnSpAttack
-
-ApplyPrzEffectOnSpeed:
-        ldh a, [hBattleTurn]
-        and a
-        jr z, .enemy
-        ld a, [wBattleMonStatus]
-        and 1 << PAR
-        ret z
-        ld a, [wBattleMonSpecies]
-        ld c, a
-        ld hl, wBattleMonPersonality
-        ld b, 0
-        call GetAbility
-        xcall Ability_LoadTracedAbility
-        cp QUICK_FEET
-        ret z
-        ld hl, wBattleMonSpeed + 1
-        ld a, [hld]
-        ld b, a
-        ld a, [hl]
-        srl a
-	rr b
-	srl a
-	rr b
-	ld [hli], a
-	or b
-	jr nz, .player_ok
-	ld b, $1 ; min speed
-
-.player_ok
-	ld [hl], b
-	ret
-
-.enemy
-        ld a, [wEnemyMonStatus]
-        and 1 << PAR
-        ret z
-        ld a, [wEnemyMonSpecies]
-        ld c, a
-        ld hl, wEnemyMonPersonality
-        ld b, 1
-        call GetAbility
-        xcall Ability_LoadTracedAbility
-        cp QUICK_FEET
-        ret z
-        ld hl, wEnemyMonSpeed + 1
-        ld a, [hld]
-        ld b, a
-        ld a, [hl]
-        srl a
-	rr b
-	srl a
-	rr b
-	ld [hli], a
-	or b
-	jr nz, .enemy_ok
-	ld b, $1 ; min speed
-
-.enemy_ok
-	ld [hl], b
-	ret
-
-ApplyBrnEffectOnAttack:
-        ldh a, [hBattleTurn]
-        and a
-        jr z, .enemy
-	ld a, [wBattleMonStatus]
-	and 1 << BRN
-	ret z
-	ld hl, wBattleMonAttack + 1
-	ld a, [hld]
-	ld b, a
-	ld a, [hl]
-	srl a
-	rr b
-	ld [hli], a
-	or b
-	jr nz, .player_ok
-	ld b, $1 ; min attack
-
-.player_ok
-	ld [hl], b
-	ret
-
-.enemy
-	ld a, [wEnemyMonStatus]
-	and 1 << BRN
-	ret z
-	ld hl, wEnemyMonAttack + 1
-	ld a, [hld]
-	ld b, a
-	ld a, [hl]
-	srl a
-	rr b
-	ld [hli], a
-	or b
-	jr nz, .enemy_ok
-	ld b, $1 ; min attack
-
-.enemy_ok
-        ld [hl], b
-        ret
-
-ApplyStatusAbilityBoosts:
-        call ApplyGutsEffectOnAttack
-        call ApplyToxicBoostEffectOnAttack
-        call ApplyMarvelScaleEffectOnDefense
-        call ApplyQuickFeetEffectOnSpeed
-        jp ApplyFlareBoostEffectOnSpAttack
-
-ApplyGutsEffectOnAttack:
-        xcall Ability_LoadBattleMonBase
-        call GetAbility
-        xcall Ability_LoadTracedAbility
-        cp GUTS
-        ret nz
-        ld a, [de]
-        and a
-        ret z
-        ld hl, wEnemyMonAttack
-        ld de, wBattleMonAttack
-        xcall Ability_SelectBattleMonStatPointer
-        xcall Ability_BoostStatByHalf
-        ret
-
-ApplyToxicBoostEffectOnAttack:
-        xcall Ability_LoadBattleMonBase
-        call GetAbility
-        xcall Ability_LoadTracedAbility
-        cp TOXIC_BOOST
-        ret nz
-        ld a, [de]
-        and 1 << PSN
-        ret z
-        ld hl, wEnemyMonAttack
-        ld de, wBattleMonAttack
-        xcall Ability_SelectBattleMonStatPointer
-        xcall Ability_BoostStatByHalf
-        ret
-
-ApplyMarvelScaleEffectOnDefense:
-        xcall Ability_LoadBattleMonBase
-        call GetAbility
-        xcall Ability_LoadTracedAbility
-        cp MARVEL_SCALE
-        ret nz
-        ld a, [de]
-        and a
-        ret z
-        ld hl, wEnemyMonDefense
-        ld de, wBattleMonDefense
-        xcall Ability_SelectBattleMonStatPointer
-        xcall Ability_BoostStatByHalf
-        ret
-
-ApplyQuickFeetEffectOnSpeed:
-        xcall Ability_LoadBattleMonBase
-        ld a, [de]
-        and a
-        ret z
-        bit FRZ, a
-        ret nz
-        call GetAbility
-        xcall Ability_LoadTracedAbility
-        cp QUICK_FEET
-        ret nz
-        ld hl, wEnemyMonSpeed
-        ld de, wBattleMonSpeed
-        xcall Ability_SelectBattleMonStatPointer
-        xcall Ability_BoostStatByHalf
-        ret
-
-ApplyFlareBoostEffectOnSpAttack:
-        xcall Ability_LoadBattleMonBase
-        call GetAbility
-        xcall Ability_LoadTracedAbility
-        cp FLARE_BOOST
-        ret nz
-        ld a, [de]
-        and 1 << BRN
-        ret z
-        ld hl, wEnemyMonSpclAtk
-        ld de, wBattleMonSpclAtk
-        xcall Ability_SelectBattleMonStatPointer
-        xcall Ability_BoostStatByHalf
-        ret
 
 ApplyStatLevelMultiplierOnAllStats:
 ; Apply StatLevelMultipliers on all 5 Stats
@@ -7743,7 +7540,7 @@ GiveExperiencePoints:
 	xor a ; FALSE
 	ld [wApplyStatLevelMultipliersToEnemy], a
 	call ApplyStatLevelMultiplierOnAllStats
-	call ApplyStatusEffectOnPlayerStats
+	farcall ApplyStatusEffectOnPlayerStats
 	call BadgeStatBoosts
 	call UpdatePlayerHUD
 	call EmptyBattleTextbox
