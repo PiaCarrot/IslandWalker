@@ -780,7 +780,7 @@ MoltresGalarEvosAttacks:
         db 0 ; no more level-up moves
 
 DratiniPartnerEvosAttacks:
-        dbbw EVOLVE_LEVEL, 30, DRAGONAIR ;DRAGONAIR_PARTNER
+        dbbw EVOLVE_LEVEL, 30, DRAGONAIR_PARTNER
 	db 0 ; no more evolutions
 	dbw 1, WRAP
 	dbw 1, LEER
@@ -831,7 +831,7 @@ PikachuPartnerEvosAttacks:
 	db 0 ; no more level-up moves
 	
 DragonairPartnerEvosAttacks:
-	evolve EVOLVE_LEVEL, 55, DRAGONITE
+	evolve EVOLVE_LEVEL, 55, DRAGONITE_PARTNER
 	db 0 ; no more evolutions
 	dbw 1, WRAP
 	dbw 1, LEER

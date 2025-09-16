@@ -407,6 +407,7 @@ wEnemySubStatus4:: db
 wEnemySubStatus5:: db
 
 wPlayerAbility:: db
+wPlayerBattleBondActivated:: db
 wPlayerRolloutCount:: db
 wPlayerConfuseCount:: db
 wPlayerToxicCount:: db
@@ -417,6 +418,7 @@ wPlayerFuryCutterCount:: db
 wPlayerProtectCount:: db
 
 wEnemyAbility:: db
+wEnemyBattleBondActivated:: db
 wEnemyRolloutCount:: db
 wEnemyConfuseCount:: db
 wEnemyToxicCount:: db

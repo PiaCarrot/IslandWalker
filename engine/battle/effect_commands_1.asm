@@ -2786,7 +2786,8 @@ BattleCommand_CheckFaint:
 	jr EndMoveEffect
 
 .no_dbond
-	ld a, BATTLE_VARS_MOVE_EFFECT
+        farcall TryActivateBattleBond
+        ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_MULTI_HIT
 	jr z, .multiple_hit_raise_sub

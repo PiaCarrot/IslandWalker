@@ -658,6 +658,110 @@ HandleSpeedBoost::
     pop de
     ret
 
+TryActivateBattleBond::
+    ld hl, wCurDamage
+    ld a, [hli]
+    or [hl]
+    ret z
+    ld a, [wIsConfusionDamage]
+    and a
+    ret nz
+    ldh a, [hBattleTurn]
+    and a
+    jr nz, .Enemy
+
+.Player
+    ld hl, wBattleMonHP
+    ld a, [hli]
+    or [hl]
+    ret z
+    ld hl, wBattleMonPersonality
+    ld a, [wBattleMonSpecies]
+    ld c, a
+    ld b, 0
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp BATTLE_BOND
+    ret nz
+    ld a, [wPlayerBattleBondActivated]
+    and a
+    ret nz
+    ld hl, wPlayerStatLevels + ATTACK
+    ld de, wPlayerStatLevels + SP_ATTACK
+    ld bc, wPlayerStatLevels + SPEED
+    call .CheckStatsCap
+    ret z
+    ld a, 1
+    ld [wPlayerBattleBondActivated], a
+    call .BoostStat
+    ld h, d
+    ld l, e
+    call .BoostStat
+    ld h, b
+    ld l, c
+    call .BoostStat
+    farcall CalcPlayerStats
+    ld hl, AbilityText_BattleBond
+    call StdAbilityTextbox
+    ret
+
+.Enemy
+    ld hl, wEnemyMonHP
+    ld a, [hli]
+    or [hl]
+    ret z
+    ld hl, wEnemyMonPersonality
+    ld a, [wEnemyMonSpecies]
+    ld c, a
+    ld b, 1
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp BATTLE_BOND
+    ret nz
+    ld a, [wEnemyBattleBondActivated]
+    and a
+    ret nz
+    ld hl, wEnemyStatLevels + ATTACK
+    ld de, wEnemyStatLevels + SP_ATTACK
+    ld bc, wEnemyStatLevels + SPEED
+    call .CheckStatsCap
+    ret z
+    ld a, 1
+    ld [wEnemyBattleBondActivated], a
+    call .BoostStat
+    ld h, d
+    ld l, e
+    call .BoostStat
+    ld h, b
+    ld l, c
+    call .BoostStat
+    farcall CalcEnemyStats
+    ld hl, AbilityText_BattleBond
+    call StdAbilityTextbox
+    ret
+
+.CheckStatsCap
+    ld a, [hl]
+    cp MAX_STAT_LEVEL
+    jr nz, .not_all_max
+    ld a, [de]
+    cp MAX_STAT_LEVEL
+    jr nz, .not_all_max
+    ld a, [bc]
+    cp MAX_STAT_LEVEL
+    ret z
+
+.not_all_max
+    or 1
+    ret
+
+.BoostStat
+    ld a, [hl]
+    cp MAX_STAT_LEVEL
+    ret nc
+    inc [hl]
+    ret
+
 HandlePickup::
     ld a, [wPartyCount]
     and a

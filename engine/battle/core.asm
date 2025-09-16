@@ -3,11 +3,13 @@
 DoBattle:
 	xor a
 	ld [wBattleParticipantsNotFainted], a
-	ld [wBattleParticipantsIncludingFainted], a
-	ld [wBattlePlayerAction], a
-	ld [wBattleEnded], a
-	ld [wTotalBattleTurns], a
-	ld a, TRACE
+        ld [wBattleParticipantsIncludingFainted], a
+        ld [wBattlePlayerAction], a
+        ld [wBattleEnded], a
+        ld [wTotalBattleTurns], a
+        ld [wPlayerBattleBondActivated], a
+        ld [wEnemyBattleBondActivated], a
+        ld a, TRACE
 	ld [wBattleMonTracedAbility], a ; Load these with TRACE as a placeholder...
 	ld [wEnemyMonTracedAbility], a
 	ld hl, wOTPartyMon1HP

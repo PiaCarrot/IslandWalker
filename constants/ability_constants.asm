@@ -25,11 +25,11 @@
 	const TORRENT  ; ✔ Water
 	const SWARM    ; ✔ Bug (THE OVERWORLD EFFECT OF INCREASING OVERWORLD CRIES IS NOT BEING IMPLEMENTED IN CSE)
 ; Boosts stat upon status infliction
-	const GUTS         ; Attack
-	const MARVEL_SCALE ; Defense
+	const GUTS         ; ✔ Attack
+	const MARVEL_SCALE ; ✔ Defense
 ; Boosts Sp. Attack in presence of... (THESE ABILITIES ARE ESSENTIALLY USELESS WITHOUT DOUBLE BATTLES)
-	const PLUS  ; Minus
-	const MINUS ; Plus
+	const PLUS  ; ✔ Minus
+	const MINUS ; ✔ Plus
 ; Passively boosts...
 	const COMPOUNDEYES ; Accuracy by 30%. Also increases the rate of wild Pokémon holding an item by 50% if in the first slot
 	const HUSTLE       ; Attack by 50%, but decreases accuracy of Physical moves by 20%. Also decreases the overworld encounter rate of wild Pokémon if in the first slot
@@ -42,31 +42,31 @@
 	const AIR_LOCK
 	const CLOUD_NINE
 ; Boosts speed in weather conditions
-	const CHLOROPHYLL ; Sunlight
-	const SWIFT_SWIM  ; Rain
+	const CHLOROPHYLL  ; Sunlight
+	const SWIFT_SWIM   ; Rain
 ; Changes type to match the weather
 	const FORECAST ; UNUSED IN ORANGE
 ; Causes a specific weather condition
-	const DROUGHT     ; Sunlight ✔
-	const DRIZZLE     ; Rain ✔
-	const SAND_STREAM ; Sandstorm. ✔ Also halves the wild Pokémon encounter rate if in the first slot during an overworld sandstorm
+	const DROUGHT      ; ✔ Sunlight
+	const DRIZZLE      ; ✔ Rain
+	const SAND_STREAM  ; ✔ Sandstorm. Also halves the wild Pokémon encounter rate if in the first slot during an overworld sandstorm
 ; Boosts stats in weather
-	const SAND_VEIL ; Evasion by 20% during a sandstorm
+	const SAND_VEIL    ; Evasion by 20% during a sandstorm
 ; Heals during weather
-	const RAIN_DISH ; Heals during rain
+	const RAIN_DISH    ; Heals during rain
 
 ; Nullifies or weakens specific moves/move effects
 ; Nullifies...
 	const CACOPHONY    ; Sound-based moves (THIS ABILITY IS UNUSED IN THE BASE GAMES - Grasswhistle, Growl, Heal Bell, Hyper Voice, Metal Sound, Perish Song, Sing, Sonicboom, Supersonic, Screech, Snore and Uproar)
-	const SOUNDPROOF   ; Sound-based moves  ✔(Grasswhistle, Growl, Heal Bell, Hyper Voice, Metal Sound, Perish Song, Sing, Sonicboom, Supersonic, Screech, Snore and Uproar)
-	const LEVITATE     ; Ground-type moves ✔
-	const WONDER_GUARD ; Non-super-effective moves  ✔
-	const STURDY       ; One-hit KO moves  ✔
-	const SUCTION_CUPS ; Roar and Whirlwind.  ✔ Also increases capture rate of hooked wild Pokémon if in Battle X
-	const DAMP         ; Selfdestruct and Explosion  ✔
+	const SOUNDPROOF   ; ✔ Sound-based moves (Grasswhistle, Growl, Heal Bell, Hyper Voice, Metal Sound, Perish Song, Sing, Sonicboom, Supersonic, Screech, Snore and Uproar)
+	const LEVITATE     ; ✔ Ground-type moves
+	const WONDER_GUARD ; ✔ Non-super-effective moves
+	const STURDY       ; ✔ One-hit KO moves
+	const SUCTION_CUPS ; ✔ Roar and Whirlwind. Also increases capture rate of hooked wild Pokémon if in Battle X
+	const DAMP         ; ✔ Selfdestruct and Explosion
 ; Entirely prevents any form of enemy inflicted stat reduction
-	const CLEAR_BODY ; ✔
-	const WHITE_SMOKE ; ✔ Also decreases the overworld encounter rate by 50%
+	const CLEAR_BODY   ; ✔
+	const WHITE_SMOKE  ; ✔ Also decreases the overworld encounter rate by 50%
 ; Prevents specifically...
 	const ROCK_HEAD    ; Recoil damage from moves, except from Struggle
 	const BATTLE_ARMOR ; Critical hits
@@ -95,8 +95,8 @@
 	const POISON_POINT  ; Poisoning
 	const STATIC        ; Paralysis. Also increases the overworld encounter rate of electric Pokémon by 50% if in the first slot
 ; Alters added move effects
-	const LIQUID_OOZE  ; Damages Pokémon attempting to use life-sucking moves
-	const SERENE_GRACE ; Doubles the chance of added move effects
+	const LIQUID_OOZE   ; Damages Pokémon attempting to use life-sucking moves
+	const SERENE_GRACE  ; Doubles the chance of added move effects
 ; Pokémon's type changes to match the last damaging move that it was hit by
 	const COLOR_CHANGE
 ; Boosts power  of Fire-type moves upon being hit by one unless frozen or protected
@@ -112,7 +112,7 @@
         const ROUGH_SKIN
 
 ; Boosts Special Attack when inflicted with a burn
-        const FLARE_BOOST
+        const FLARE_BOOST ; ✔
 
 ; Heals statuses...
 ; In-battle
@@ -123,15 +123,15 @@
 
 ; Ability activates upon entrance
 ; Lowers...
-	const INTIMIDATE ; Attack.  ✔ Also reduces encounter rates of Pokémon at least 5 levels lower by 50%
+	const INTIMIDATE ; ✔ Attack. Also reduces encounter rates of Pokémon at least 5 levels lower by 50%
 ; Copies the opponent's ability
-	const TRACE ;  ✔
+	const TRACE ; ✔
 
 ; Doubles PP usage. Also halves the wild Pokémon encounter rate if in the first slot
-	const PRESSURE ;  ✔
+	const PRESSURE ; ✔
 
 ; Allows the user to run away from any wild Pokémon battle without fail
-	const RUN_AWAY ;  ✔
+	const RUN_AWAY ; ✔
 
 ; Purely has an overworld effect
 ; Doubles wild Pokémon encounter rate if in the first slot
@@ -139,10 +139,10 @@
 ; Halves wild Pokémon encounter rate if in the first slot
 	const STENCH
 ; Randomly may find an item after battle
-	const PICKUP ;  ✔
+	const PICKUP ; ✔
 	
 ; Gen IV
-    const TANGLED_FEET
+    const TANGLED_FEET ; ✔
     const MOTOR_DRIVE
     const RIVALRY
     const STEADFAST
@@ -159,7 +159,7 @@
     const SKILL_LINK
     const HYDRATION
     const SOLAR_POWER
-    const QUICK_FEET
+    const QUICK_FEET ; ✔
     const NORMALIZE
     const SNIPER
     const MAGIC_GUARD

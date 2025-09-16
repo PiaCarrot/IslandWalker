@@ -46,6 +46,14 @@ AbilityText_MinusBoost:
     cont "its SPCL.DEF!"
     prompt
 
+AbilityText_BattleBond:
+    text "<USER>'s"
+    line "BATTLE BOND raised"
+    cont "its ATTACK!"
+    para "SPCL.ATK and SPEED"
+    line "also rose!"
+    prompt
+
 AbilityText_IntimidateCutsAttack:
     text "<USER>'s"
     line "INTIMIDATE cuts"
