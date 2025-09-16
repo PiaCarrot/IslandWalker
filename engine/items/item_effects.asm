@@ -702,13 +702,16 @@ PokeBallEffect:
         ld de, wBufferMonNickname
         ld bc, MON_NAME_LENGTH
         rst CopyBytes
+        ld a, [wTempSpecies]
+        push af
         farcall UpdateBattleStateAndExperienceAfterEnemyFaint
+        pop af
+        ld [wTempSpecies], a
+        ld [wCurPartySpecies], a
         ld hl, wBufferMonNickname
         ld de, wEnemyMonNickname
         ld bc, MON_NAME_LENGTH
         rst CopyBytes
-        ld a, [wTempSpecies]
-        ld [wCurPartySpecies], a
 .skip_give_exp
 
         ld a, [wTempSpecies]
