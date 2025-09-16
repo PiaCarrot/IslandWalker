@@ -6236,24 +6236,40 @@ LoadEnemyMon:
 ;    23% Item1
 ;     2% Item2
 
-; 25% chance of getting an item
-	call BattleRandom
-	cp 75 percent + 1
-	ld b, NO_ITEM
-	jr c, .UpdateItem
+; 25% chance of getting an item (37.5% with Compoundeyes)
+        call GetLeadAbility
+        ld d, 75 percent + 1
+        ld e, 0
+        cp COMPOUNDEYES
+        jr nz, .got_wild_item_chance
+        ld d, 5 out_of 8
+        ld e, 1
+.got_wild_item_chance
+        call BattleRandom
+        cp d
+        ld b, NO_ITEM
+        jr c, .UpdateItem
 
-; From there, an 8% chance for Item2
+; From there, an 8% chance for Item2 (about 21% with Compoundeyes, ~8% overall)
 ; item 1
-	ld hl, wBaseItem1
-	call GetItemIDFromHL
-	ld b, a
-	call BattleRandom
-	cp 8 percent ; 8% of 25% = 2% Item2
-	jr nc, .UpdateItem
+        ld hl, wBaseItem1
+        call GetItemIDFromHL
+        ld b, a
+        call BattleRandom
+        ld d, a
+        ld a, e
+        and a
+        ld c, 8 percent ; 8% of 25% = 2% Item2
+        jr z, .got_item2_chance
+        ld c, 21 percent + 1 ; ~21% of 37.5% = ~8% Item2 with Compoundeyes
+.got_item2_chance
+        ld a, d
+        cp c
+        jr nc, .UpdateItem
 ; item 2
-	ld hl, wBaseItem2
-	call GetItemIDFromHL
-	ld b, a
+        ld hl, wBaseItem2
+        call GetItemIDFromHL
+        ld b, a
 
 .UpdateItem:
 	ld a, b

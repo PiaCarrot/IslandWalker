@@ -1898,6 +1898,7 @@ BattleCommand_CheckHit:
 .got_acc_pointer
         call .ApplyTangledFeetAccuracy
         call .ApplyHustleAccuracy
+        call .ApplyCompoundeyesAccuracy
         ld a, [hl]
         ld b, a
 
@@ -2168,6 +2169,75 @@ BattleCommand_CheckHit:
         ld [hl], a
 
 .restore_pointer_hustle
+        ld h, d
+        ld l, e
+        ret
+
+.ApplyCompoundeyesAccuracy:
+        ld d, h
+        ld e, l
+        ld a, [de]
+        cp -1
+        jr z, .restore_pointer_compoundeyes
+
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .player_compoundeyes
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_ability_compoundeyes
+
+.player_compoundeyes
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+
+.check_ability_compoundeyes
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp COMPOUNDEYES
+        jr nz, .restore_pointer_compoundeyes
+
+        ld h, d
+        ld l, e
+        ld a, [hl]
+        ld c, a
+        push hl
+
+        ld h, 0
+        ld l, 0
+        ld b, 0
+        ld a, 3
+.multiply_loop_compoundeyes
+        add hl, bc
+        dec a
+        jr nz, .multiply_loop_compoundeyes
+
+        ld b, 0
+.divide_loop_compoundeyes
+        ld a, l
+        sub 10
+        ld l, a
+        ld a, h
+        sbc 0
+        ld h, a
+        jr c, .done_divide_compoundeyes
+        inc b
+        jr .divide_loop_compoundeyes
+
+.done_divide_compoundeyes
+        pop hl
+        ld a, [hl]
+        add b
+        jr nc, .store_compoundeyes
+        ld a, -1
+.store_compoundeyes
+        ld [hl], a
+
+.restore_pointer_compoundeyes
         ld h, d
         ld l, e
         ret
