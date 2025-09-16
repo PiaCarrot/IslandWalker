@@ -20,10 +20,10 @@
 
 ; Stat boosting
 ; Boosts damage of specific moves in a "pinch" (1/3 or less max health)
-	const BLAZE    ; Fire
-	const OVERGROW ; Grass
-	const TORRENT  ; Water
-	const SWARM    ; Bug (THE OVERWORLD EFFECT OF INCREASING OVERWORLD CRIES IS NOT BEING IMPLEMENTED IN CSE)
+	const BLAZE    ; ✔ Fire
+	const OVERGROW ; ✔ Grass
+	const TORRENT  ; ✔ Water
+	const SWARM    ; ✔ Bug (THE OVERWORLD EFFECT OF INCREASING OVERWORLD CRIES IS NOT BEING IMPLEMENTED IN CSE)
 ; Boosts stat upon status infliction
 	const GUTS         ; Attack
 	const MARVEL_SCALE ; Defense
@@ -242,7 +242,7 @@
 	const QUICK_DRAW
 	const CURIOUS_MEDICINE
 	const WIND_POWER
-	const GOOD_AS_GOLD
+	const GOOD_AS_GOLD ; ✔ 
 	const CUD_CHEW
 	const SHARPNESS
 	const SUPREME_OVERLORD
@@ -250,10 +250,10 @@
 	const MINDS_EYE
 	const SUPERSWEET_SYRUP
 	const CRYSTAL_BODY ; Dry Skin for Crystal Onix
-	const PERSISTANCE ; Torrent ability for Partner Eevee (Normal)
-	const OVERCHARGED ; Torrent ability for Partner Pikachu (Electric)
-	const DRAGOON ; Torrent ability for Partner Dratini (Dragon)
-	const COIN_COLLECTOR ; Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves. ✔
+	const PERSISTANCE ; ✔ Torrent ability for Partner Eevee (Normal)
+	const OVERCHARGED ; ✔ Torrent ability for Partner Pikachu (Electric)
+	const DRAGOON ; ✔ Torrent ability for Partner Dratini (Dragon)
+	const COIN_COLLECTOR ; ✔ Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves. ✔
 	const BATTLE_BOND ; Partner Dragonite's special ability, based on Gen IX Battle Bond
 
 DEF NUM_ABILITIES EQU const_value - 1

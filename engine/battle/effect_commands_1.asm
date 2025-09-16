@@ -3941,10 +3941,11 @@ BattleCommand_SleepTarget:
 	jr z, .random_loop
 	cp SLP_MASK
 	jr z, .random_loop
-	inc a
-	ld [de], a
-	call UpdateOpponentInParty
-	call RefreshBattleHuds
+        inc a
+        ld [de], a
+        call UpdateOpponentInParty
+        farcall ApplyStatusAbilityBoosts
+        call RefreshBattleHuds
 
 	ld hl, FellAsleepText
 	call StdBattleTextbox
@@ -4120,10 +4121,12 @@ BattleCommand_Poison:
 	ret
 
 PoisonOpponent:
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	set PSN, [hl]
-	jmp UpdateOpponentInParty
+        ld a, BATTLE_VARS_STATUS_OPP
+        call GetBattleVarAddr
+        set PSN, [hl]
+        call UpdateOpponentInParty
+        farcall ApplyStatusAbilityBoosts
+        ret
 
 BattleCommand_DrainTarget:
 	call SapHealth
@@ -4250,13 +4253,14 @@ BattleCommand_BurnTarget:
 	ret nz
 	call SafeCheckSafeguard
 	ret nz
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	set BRN, [hl]
-	call UpdateOpponentInParty
-	farcall ApplyBrnEffectOnAttack
-	ld de, ANIM_BRN
-	call PlayOpponentBattleAnim
+        ld a, BATTLE_VARS_STATUS_OPP
+        call GetBattleVarAddr
+        set BRN, [hl]
+        call UpdateOpponentInParty
+        farcall ApplyBrnEffectOnAttack
+        farcall ApplyStatusAbilityBoosts
+        ld de, ANIM_BRN
+        call PlayOpponentBattleAnim
 	call RefreshBattleHuds
 
 	ld hl, WasBurnedText
@@ -4314,11 +4318,12 @@ BattleCommand_FreezeTarget:
 	ret nz
 	call SafeCheckSafeguard
 	ret nz
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	set FRZ, [hl]
-	call UpdateOpponentInParty
-	ld de, ANIM_FRZ
+        ld a, BATTLE_VARS_STATUS_OPP
+        call GetBattleVarAddr
+        set FRZ, [hl]
+        call UpdateOpponentInParty
+        farcall ApplyStatusAbilityBoosts
+        ld de, ANIM_FRZ
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
 
@@ -4358,12 +4363,13 @@ BattleCommand_ParalyzeTarget:
 	ret nz
 	call SafeCheckSafeguard
 	ret nz
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	set PAR, [hl]
-	call UpdateOpponentInParty
-	farcall ApplyPrzEffectOnSpeed
-	ld de, ANIM_PAR
+        ld a, BATTLE_VARS_STATUS_OPP
+        call GetBattleVarAddr
+        set PAR, [hl]
+        call UpdateOpponentInParty
+        farcall ApplyPrzEffectOnSpeed
+        farcall ApplyStatusAbilityBoosts
+        ld de, ANIM_PAR
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
 	call PrintParalyze
@@ -5097,11 +5103,13 @@ CalcPlayerStats:
 
 	call BattleCommand_SwitchTurn
 
-	farcall ApplyPrzEffectOnSpeed
+        farcall ApplyPrzEffectOnSpeed
 
-	farcall ApplyBrnEffectOnAttack
+        farcall ApplyBrnEffectOnAttack
 
-	jmp BattleCommand_SwitchTurn
+        farcall ApplyStatusAbilityBoosts
+
+        jmp BattleCommand_SwitchTurn
 
 CalcEnemyStats:
 	ld hl, wEnemyAtkLevel
@@ -5113,11 +5121,13 @@ CalcEnemyStats:
 
 	call BattleCommand_SwitchTurn
 
-	farcall ApplyPrzEffectOnSpeed
+        farcall ApplyPrzEffectOnSpeed
 
-	farcall ApplyBrnEffectOnAttack
+        farcall ApplyBrnEffectOnAttack
 
-	jmp BattleCommand_SwitchTurn
+        farcall ApplyStatusAbilityBoosts
+
+        jmp BattleCommand_SwitchTurn
 
 CalcBattleStats:
 .loop
@@ -6102,12 +6112,13 @@ BattleCommand_Paralyze:
 	call AnimateCurrentMove
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	set PAR, [hl]
-	call UpdateOpponentInParty
-	farcall ApplyPrzEffectOnSpeed
-	call UpdateBattleHuds
+        ld a, BATTLE_VARS_STATUS_OPP
+        call GetBattleVarAddr
+        set PAR, [hl]
+        call UpdateOpponentInParty
+        farcall ApplyPrzEffectOnSpeed
+        farcall ApplyStatusAbilityBoosts
+        call UpdateBattleHuds
 	call PrintParalyze
 	farjp UseHeldStatusHealingItem
 

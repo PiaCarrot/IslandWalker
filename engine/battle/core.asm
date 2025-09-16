@@ -6861,9 +6861,11 @@ ApplyStatusEffectOnEnemyStats:
 	xor a
 
 ApplyStatusEffectOnStats:
-	ldh [hBattleTurn], a
-	call ApplyPrzEffectOnSpeed
-	jr ApplyBrnEffectOnAttack
+        ldh [hBattleTurn], a
+        call ApplyPrzEffectOnSpeed
+        call ApplyBrnEffectOnAttack
+        call ApplyGutsEffectOnAttack
+        jp ApplyMarvelScaleEffectOnDefense
 
 ApplyPrzEffectOnSpeed:
 	ldh a, [hBattleTurn]
@@ -6911,9 +6913,9 @@ ApplyPrzEffectOnSpeed:
 	ret
 
 ApplyBrnEffectOnAttack:
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .enemy
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .enemy
 	ld a, [wBattleMonStatus]
 	and 1 << BRN
 	ret z
@@ -6948,8 +6950,111 @@ ApplyBrnEffectOnAttack:
 	ld b, $1 ; min attack
 
 .enemy_ok
-	ld [hl], b
-	ret
+        ld [hl], b
+        ret
+
+ApplyStatusAbilityBoosts:
+        call ApplyGutsEffectOnAttack
+        jp ApplyMarvelScaleEffectOnDefense
+
+ApplyGutsEffectOnAttack:
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .enemy
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        call GetAbility
+        call Ability_LoadTracedAbility
+        cp GUTS
+        ret nz
+        ld a, [wBattleMonStatus]
+        and a
+        ret z
+        ld hl, wBattleMonAttack
+        jr .boost
+
+.enemy
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        call GetAbility
+        call Ability_LoadTracedAbility
+        cp GUTS
+        ret nz
+        ld a, [wEnemyMonStatus]
+        and a
+        ret z
+        ld hl, wEnemyMonAttack
+
+.boost
+        jp Ability_BoostStatByHalf
+
+ApplyMarvelScaleEffectOnDefense:
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .enemy
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        call GetAbility
+        call Ability_LoadTracedAbility
+        cp MARVEL_SCALE
+        ret nz
+        ld a, [wBattleMonStatus]
+        and a
+        ret z
+        ld hl, wBattleMonDefense
+        jr .boost
+
+.enemy
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        call GetAbility
+        call Ability_LoadTracedAbility
+        cp MARVEL_SCALE
+        ret nz
+        ld a, [wEnemyMonStatus]
+        and a
+        ret z
+        ld hl, wEnemyMonDefense
+
+.boost
+        jp Ability_BoostStatByHalf
+
+Ability_BoostStatByHalf:
+        push hl
+        ld a, [hli]
+        ld b, a
+        ld a, [hl]
+        ld c, a
+        ld h, b
+        ld l, c
+        ld d, h
+        ld e, l
+        srl d
+        rr e
+        add hl, de
+        ld d, h
+        ld e, l
+        ld a, e
+        sub LOW(MAX_STAT_VALUE)
+        ld a, d
+        sbc HIGH(MAX_STAT_VALUE)
+        jr c, .store
+        ld d, HIGH(MAX_STAT_VALUE)
+        ld e, LOW(MAX_STAT_VALUE)
+.store
+        pop hl
+        ld a, d
+        ld [hli], a
+        ld [hl], e
+        ret
 
 ApplyStatLevelMultiplierOnAllStats:
 ; Apply StatLevelMultipliers on all 5 Stats

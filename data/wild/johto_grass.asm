@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, TENTACOOL                   ; 20%
-	dbw 13, TENTACOOL                  ; 20%
-	dbw 14, TENTACOOL                   ; 10%
-	dbw 14, TENTACOOL                  ; 10%
-	dbw 15, TENTACOOL                   ; 10%
-	dbw 15, TENTACOOL                  ; 10%
-	dbw 14, TENTACOOL                ;  5%
-	dbw 15, TENTACOOL                ;  5%
-	dbw 15, TENTACOOL                 ;  4%
-	dbw 15, TENTACOOL                   ;  4%
-	dbw 16, TENTACOOL                 ;  1%
-	dbw 16, TENTACOOL                   ;  1%
+	dbw 13, MILOTIC                   ; 20%
+	dbw 13, MILOTIC                  ; 20%
+	dbw 14, MILOTIC                   ; 10%
+	dbw 14, MILOTIC                  ; 10%
+	dbw 15, MILOTIC                   ; 10%
+	dbw 15, MILOTIC                  ; 10%
+	dbw 14, MILOTIC                ;  5%
+	dbw 15, MILOTIC                ;  5%
+	dbw 15, MILOTIC                 ;  4%
+	dbw 15, MILOTIC                   ;  4%
+	dbw 16, MILOTIC                 ;  1%
+	dbw 16, MILOTIC                   ;  1%
 	; day
-	dbw 13, TENTACOOL                   ; 20%
-	dbw 13, TENTACOOL                  ; 20%
-	dbw 14, TENTACOOL                   ; 10%
-	dbw 14, TENTACOOL                  ; 10%
-	dbw 15, TENTACOOL                   ; 10%
-	dbw 15, TENTACOOL                  ; 10%
-	dbw 14, TENTACOOL                ;  5%
-	dbw 15, TENTACOOL                ;  5%
-	dbw 15, TENTACOOL                 ;  4%
-	dbw 15, TENTACOOL                   ;  4%
-	dbw 16, TENTACOOL                 ;  1%
-	dbw 16, TENTACOOL                   ;  1%
+	dbw 13, MILOTIC                   ; 20%
+	dbw 13, MILOTIC                  ; 20%
+	dbw 14, MILOTIC                   ; 10%
+	dbw 14, MILOTIC                  ; 10%
+	dbw 15, MILOTIC                   ; 10%
+	dbw 15, MILOTIC                  ; 10%
+	dbw 14, MILOTIC                ;  5%
+	dbw 15, MILOTIC                ;  5%
+	dbw 15, MILOTIC                 ;  4%
+	dbw 15, MILOTIC                   ;  4%
+	dbw 16, MILOTIC                 ;  1%
+	dbw 16, MILOTIC                   ;  1%
 	; nite
-	dbw 13, TENTACOOL                   ; 20%
-	dbw 13, TENTACOOL                  ; 20%
-	dbw 14, TENTACOOL                   ; 10%
-	dbw 14, TENTACOOL                  ; 10%
-	dbw 15, TENTACOOL                   ; 10%
-	dbw 15, TENTACOOL                  ; 10%
-	dbw 14, TENTACOOL                ;  5%
-	dbw 15, TENTACOOL                ;  5%
-	dbw 15, TENTACOOL                 ;  4%
-	dbw 15, TENTACOOL                   ;  4%
-	dbw 16, TENTACOOL                 ;  1%
-	dbw 16, TENTACOOL                   ;  1%
+	dbw 13, MILOTIC                   ; 20%
+	dbw 13, MILOTIC                  ; 20%
+	dbw 14, MILOTIC                   ; 10%
+	dbw 14, MILOTIC                  ; 10%
+	dbw 15, MILOTIC                   ; 10%
+	dbw 15, MILOTIC                  ; 10%
+	dbw 14, MILOTIC                ;  5%
+	dbw 15, MILOTIC                ;  5%
+	dbw 15, MILOTIC                 ;  4%
+	dbw 15, MILOTIC                   ;  4%
+	dbw 16, MILOTIC                 ;  1%
+	dbw 16, MILOTIC                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54
