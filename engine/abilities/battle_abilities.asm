@@ -328,6 +328,110 @@ Check_SuctionCups:
     ld a, 1
     ret
 
+; Applies a 1.5x damage boost for "in a pinch" abilities when the user
+; is at or below 1/3 of its maximum HP. The ability user is indicated by
+; b (0 for the player, 1 for the enemy), with the species in c and the
+; personality at hl.
+ApplyPinchAbilityBoost:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    ld d, b
+    ld e, a
+    ld a, [wCurType]
+    and TYPE_MASK
+    ld b, a
+    ld hl, PinchAbilityTypeTable
+.loop
+    ld a, [hli]
+    cp -1
+    ret z
+    cp e
+    jr z, .matched
+    inc hl
+    jr .loop
+.matched
+    ld a, [hli]
+    cp b
+    ret nz
+    call .CheckPinch
+    ret z
+    call .ApplyBoost
+    ret
+
+.CheckPinch
+    push bc
+    push de
+    push hl
+    ld a, d
+    and a
+    jr nz, .enemy_hp
+    ld hl, wBattleMonHP
+    ld de, wBattleMonMaxHP
+    jr .have_hp
+.enemy_hp
+    ld hl, wEnemyMonHP
+    ld de, wEnemyMonMaxHP
+.have_hp
+    ld a, [hl]
+    ld b, a
+    inc hl
+    ld a, [hl]
+    ld c, a
+    ld h, b
+    ld l, c
+    add hl, bc
+    add hl, bc
+    ld a, [de]
+    ld b, a
+    inc de
+    ld a, [de]
+    ld c, a
+    ld a, h
+    cp b
+    jr c, .in_pinch
+    jr nz, .not_in_pinch
+    ld a, l
+    cp c
+    jr c, .in_pinch
+    jr z, .in_pinch
+.not_in_pinch
+    xor a
+    jr .done
+.in_pinch
+    ld a, 1
+.done
+    pop hl
+    pop de
+    pop bc
+    or a
+    ret
+
+.ApplyBoost
+    ld hl, wCurDamage + 1
+    ld a, [hld]
+    ld h, [hl]
+    ld l, a
+    ld b, h
+    ld c, l
+    srl b
+    rr c
+    add hl, bc
+    ld a, h
+    ld [wCurDamage], a
+    ld a, l
+    ld [wCurDamage + 1], a
+    ret
+
+PinchAbilityTypeTable:
+db BLAZE, FIRE
+db OVERGROW, GRASS
+db TORRENT, WATER
+db SWARM, BUG
+db PERSISTANCE, NORMAL
+db OVERCHARGED, ELECTRIC
+db DRAGOON, DRAGON
+db -1
+
 ; Levitate provides immunity to Ground-type moves. Returns z if blocked.
 Check_Levitate:
     call GetAbility

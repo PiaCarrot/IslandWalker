@@ -14,9 +14,9 @@
 
 ; Prevents fleeing of certain pokemon, provided they do not have Run Away or a Smoke Ball. Also prevents switching out, except by added move effect.
 	const NO_ABILITY  ; sentinel for lack of ability
-	const ARENA_TRAP  ; Also doubles the overworld encounter rate if in the first slot
-	const SHADOW_TAG  ; Only affects non-Ghost type Pokémon
-	const MAGNET_PULL ; Only may affect Steel-type Pokémon. Also increases the overworld encounter rate of Steel-type Pokémon by 50% if in the first slot
+	const ARENA_TRAP  ; ✔ Also doubles the overworld encounter rate if in the first slot
+	const SHADOW_TAG  ; ✔ Only affects non-Ghost type Pokémon
+	const MAGNET_PULL ; ✔ Only may affect Steel-type Pokémon. Also increases the overworld encounter rate of Steel-type Pokémon by 50% if in the first slot
 
 ; Stat boosting
 ; Boosts damage of specific moves in a "pinch" (1/3 or less max health)
@@ -65,8 +65,8 @@
 	const SUCTION_CUPS ; Roar and Whirlwind.  ✔ Also increases capture rate of hooked wild Pokémon if in Battle X
 	const DAMP         ; Selfdestruct and Explosion  ✔
 ; Entirely prevents any form of enemy inflicted stat reduction
-	const CLEAR_BODY
-	const WHITE_SMOKE ; Also decreases the overworld encounter rate by 50%
+	const CLEAR_BODY ; ✔
+	const WHITE_SMOKE ; ✔ Also decreases the overworld encounter rate by 50%
 ; Prevents specifically...
 	const ROCK_HEAD    ; Recoil damage from moves, except from Struggle
 	const BATTLE_ARMOR ; Critical hits

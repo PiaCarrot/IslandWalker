@@ -1413,9 +1413,28 @@ BattleCommand_Stab:
 	pop bc
 	pop de
 
-	ld a, [wCurType]
-	cp b
-	jr z, .stab
+	push de
+	push bc
+	ldh a, [hBattleTurn]
+	ld b, a
+	and a
+	jr nz, .EnemyPinchAbility
+	ld hl, wBattleMonPersonality
+	ld a, [wBattleMonSpecies]
+	ld c, a
+	jr .CallPinchAbility
+.EnemyPinchAbility
+	ld hl, wEnemyMonPersonality
+	ld a, [wEnemyMonSpecies]
+	ld c, a
+.CallPinchAbility
+	farcall ApplyPinchAbilityBoost
+	pop bc
+	pop de
+
+ld a, [wCurType]
+cp b
+jr z, .stab
 	cp c
 	jr nz, .SkipStab
 ; fallthrough
