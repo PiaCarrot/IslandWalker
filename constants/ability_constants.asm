@@ -73,9 +73,9 @@
 	const SHELL_ARMOR  ; ✔ Critical hits - Monsta
 	const INNER_FOCUS  ; ✔ Flinching
 	const KEEN_EYE     ; ✔ Accuracy loss. Also decreases the encounter rate of lower-leveled wild Pokémon
-	const HYPER_CUTTER ; Attack loss. Also increases the amount of grass removed when using Cut in the overworld
-	const INSOMNIA     ; Sleep
-	const VITAL_SPIRIT ; Sleep. Also decreases the overworld encounter rate of higher leveled Pokémon by 50% if in the first slot
+	const HYPER_CUTTER ; ✔ Attack loss. Also increases the amount of grass removed when using Cut in the overworld
+	const INSOMNIA     ; ✔ Sleep
+	const VITAL_SPIRIT ; ✔ Sleep. Also decreases the overworld encounter rate of higher leveled Pokémon by 50% if in the first slot
 	const IMMUNITY     ; Poisoning
 	const LIMBER       ; Paralysis
 	const WATER_VEIL   ; Burn
@@ -178,7 +178,7 @@
     const SCRAPPY
     const STORM_DRAIN
     const ICE_BODY
-    const SNOW_WARNING
+    const SNOW_WARNING ; Need to add Hail first
     const HONEY_GATHER
     const FRISK
     const RECKLESS
@@ -219,7 +219,7 @@
 	const MERCILESS
 	const STEELWORKER
 	const BERSERK
-	const SLUSH_RUSH
+	const SLUSH_RUSH ; Need to add Hail first
 	const GALVANIZE
 	const SURGE_SURFER
 	const DISGUISE

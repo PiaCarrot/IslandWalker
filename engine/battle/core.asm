@@ -6637,12 +6637,27 @@ LoadEnemyMon:
 
 .TreeMon:
 ; If we're headbutting trees, some monsters enter battle asleep
-	call CheckSleepingTreeMon
-	; a = carry ? TREEMON_SLEEP_TURNS : 0
-	sbc a
-	and TREEMON_SLEEP_TURNS
-	ld hl, wEnemyMonStatus
-	ld [hli], a
+        call CheckSleepingTreeMon
+        ; a = carry ? TREEMON_SLEEP_TURNS : 0
+        sbc a
+        and TREEMON_SLEEP_TURNS
+        ld b, a
+        jr z, .StoreEnemySleep
+        push bc
+        ld hl, wEnemyMonPersonality
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld b, 1
+        farcall Check_InsomniaVitalSpirit
+        pop bc
+        and a
+        jr nz, .StoreEnemySleep
+        xor a
+        ld b, a
+.StoreEnemySleep
+        ld a, b
+        ld hl, wEnemyMonStatus
+        ld [hli], a
 
 ; Unused byte
 	xor a

@@ -188,6 +188,14 @@ AbilityText_SuctionCups:
     cont "place!"
     prompt
 
+AbilityText_StayedAwake:
+    text "<TARGET>"
+    line "stayed awake due"
+    cont "to @"
+    text_ram wStringBuffer1
+    text "!"
+    prompt
+
 AbilityText_InnerFocus:
     text "<TARGET>'s"
     line "@"

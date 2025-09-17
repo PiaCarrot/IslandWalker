@@ -4150,7 +4150,7 @@ BattleCommand_SleepTarget:
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	ld hl, ProtectedByText
-	jr .fail
+	jmp .fail
 
 .not_protected_by_item
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -4174,12 +4174,36 @@ BattleCommand_SleepTarget:
 	and a
 	jr nz, .fail
 
-	call CheckSubstituteOpp
-	jr nz, .fail
+        call CheckSubstituteOpp
+        jr nz, .fail
 
-	call AnimateCurrentMove
-	ld b, SLP_MASK
-	ld a, [wInBattleTowerBattle]
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .sleep_target_player
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_sleep_ability
+.sleep_target_player
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_sleep_ability
+        farcall Check_InsomniaVitalSpirit
+        and a
+        jr nz, .no_sleep_block
+        ld hl, AbilityText_StayedAwake
+        call StdAbilityTextbox
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+.no_sleep_block
+
+        call AnimateCurrentMove
+        ld b, SLP_MASK
+        ld a, [wInBattleTowerBattle]
 	and a
 	jr z, .random_loop
 	ld b, %011
@@ -6514,19 +6538,46 @@ BattleCommand_Heal:
 	pop bc
 	pop de
 	pop hl
-	jr z, .hp_full
+	jp z, .hp_full
 	ld a, b
 	ld bc, REST
 	call CompareMove
 	jr nz, .not_rest
 
-	push hl
-	push de
-	push af
-	call BattleCommand_MoveDelay
-	ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVarAddr
-	res SUBSTATUS_TOXIC, [hl]
+        push hl
+        push de
+        push af
+
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .rest_enemy
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        jr .check_rest_ability
+.rest_enemy
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+.check_rest_ability
+        farcall Check_InsomniaVitalSpirit
+        and a
+        jr nz, .rest_sleep_ok
+        ld hl, AbilityText_StayedAwake
+        call StdAbilityTextbox
+        ld a, 1
+        ld [wAttackMissed], a
+        pop af
+        pop de
+        pop hl
+        jmp EndMoveEffect
+.rest_sleep_ok
+        call BattleCommand_MoveDelay
+        ld a, BATTLE_VARS_SUBSTATUS5
+        call GetBattleVarAddr
+        res SUBSTATUS_TOXIC, [hl]
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
 	ld a, [hl]

@@ -358,6 +358,23 @@ Check_SuctionCups:
     ld a, 1
     ret
 
+; Insomnia and Vital Spirit prevent the user from falling asleep.
+; Returns z if sleep is blocked.
+Check_InsomniaVitalSpirit:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp INSOMNIA
+    jr z, .blocked
+    cp VITAL_SPIRIT
+    jr nz, .nope
+.blocked
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Inner Focus prevents flinching. Returns z if blocked.
 Check_InnerFocus:
     call GetAbility
