@@ -299,8 +299,8 @@ Check_Damp:
     ld a, 1
     ret
 
-; Clear Body and White Smoke prevent stat drops. Keen Eye prevents accuracy
-; drops. Returns z if blocked.
+; Clear Body and White Smoke prevent stat drops. Hyper Cutter prevents attack
+; drops, and Keen Eye prevents accuracy drops. Returns z if blocked.
 Check_ClearBody:
     call GetAbility
     call Ability_LoadTracedAbility
@@ -309,6 +309,15 @@ Check_ClearBody:
     jr z, .blocked
     cp WHITE_SMOKE
     jr z, .blocked
+    cp HYPER_CUTTER
+    jr nz, .check_keen_eye
+    ld a, [wLoweredStat]
+    and $f
+    cp ATTACK
+    jr nz, .nope
+    ld a, d
+    jr .blocked
+.check_keen_eye
     cp KEEN_EYE
     jr nz, .nope
     ld a, [wLoweredStat]

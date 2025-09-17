@@ -4893,15 +4893,22 @@ BattleCommand_StatDown:
 .blocked_player
         ld a, [wPlayerAbility]
 .set_block_msg
-        cp KEEN_EYE
-        ld a, 4
-        jr nz, .store_block_msg
-        inc a ; 5 for Keen Eye
+	cp KEEN_EYE
+	jr z, .keen_eye
+	cp HYPER_CUTTER
+	jr z, .hyper_cutter
+	ld a, 4
+	jr .store_block_msg
+.keen_eye
+	ld a, 5
+	jr .store_block_msg
+.hyper_cutter
+	ld a, 6
 .store_block_msg
-        ld [wFailedMessage], a
-        ld a, 1
-        ld [wAttackMissed], a
-        ret
+	ld [wFailedMessage], a
+	ld a, 1
+	ld [wAttackMissed], a
+	ret
 
 .no_clear_body
         ld hl, wEnemyStatLevels
@@ -5171,12 +5178,14 @@ BattleCommand_StatDownFailText:
         push af
         call BattleCommand_MoveDelay
         pop af
-        cp 4
-        jr z, .clear_body
-        cp 5
-        jr z, .keen_eye
-        dec a
-        jmp z, TryPrintButItFailed
+	cp 4
+	jr z, .clear_body
+	cp 5
+	jr z, .keen_eye
+	cp 6
+	jr z, .hyper_cutter
+	dec a
+	jmp z, TryPrintButItFailed
         dec a
         ld hl, ProtectedByMistText
         jmp z, StdBattleTextbox
@@ -5189,12 +5198,16 @@ BattleCommand_StatDownFailText:
         jmp StdBattleTextbox
 
 .clear_body
-        ld hl, AbilityText_ClearBody
-        jmp StdAbilityTextbox
+	ld hl, AbilityText_ClearBody
+	jmp StdAbilityTextbox
 
 .keen_eye
-        ld hl, AbilityText_KeenEye
-        jmp StdAbilityTextbox
+	ld hl, AbilityText_KeenEye
+	jmp StdAbilityTextbox
+
+.hyper_cutter
+	ld hl, AbilityText_HyperCutter
+	jmp StdAbilityTextbox
 
 GetStatName:
 	ld hl, StatNames

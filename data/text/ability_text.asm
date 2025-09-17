@@ -171,6 +171,14 @@ AbilityText_KeenEye:
     cont "accuracy loss!"
     prompt
 
+AbilityText_HyperCutter:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " stops"
+    cont "attack loss!"
+    prompt
+
 AbilityText_SuctionCups:
     text "<TARGET>'s"
     line "@"

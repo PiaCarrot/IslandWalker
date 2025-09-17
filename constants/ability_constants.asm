@@ -71,8 +71,8 @@
 	const ROCK_HEAD    ; ✔ Recoil damage from moves, except from Struggle
 	const BATTLE_ARMOR ; ✔ Critical hits - Monsta
 	const SHELL_ARMOR  ; ✔ Critical hits - Monsta
-	const INNER_FOCUS  ; Flinching
-	const KEEN_EYE     ; Accuracy loss. Also decreases the encounter rate of lower-leveled wild Pokémon
+	const INNER_FOCUS  ; ✔ Flinching
+	const KEEN_EYE     ; ✔ Accuracy loss. Also decreases the encounter rate of lower-leveled wild Pokémon
 	const HYPER_CUTTER ; Attack loss. Also increases the amount of grass removed when using Cut in the overworld
 	const INSOMNIA     ; Sleep
 	const VITAL_SPIRIT ; Sleep. Also decreases the overworld encounter rate of higher leveled Pokémon by 50% if in the first slot

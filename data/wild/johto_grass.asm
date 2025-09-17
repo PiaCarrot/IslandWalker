@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, WINGULL                   ; 20%
-	dbw 13, WINGULL                  ; 20%
-	dbw 14, WINGULL                   ; 10%
-	dbw 14, WINGULL                  ; 10%
-	dbw 15, WINGULL                   ; 10%
-	dbw 15, WINGULL                  ; 10%
-	dbw 14, WINGULL                ;  5%
-	dbw 15, WINGULL                ;  5%
-	dbw 15, WINGULL                 ;  4%
-	dbw 15, WINGULL                   ;  4%
-	dbw 16, WINGULL                 ;  1%
-	dbw 16, WINGULL                   ;  1%
+	dbw 13, KRABBY                   ; 20%
+	dbw 13, KRABBY                  ; 20%
+	dbw 14, KRABBY                   ; 10%
+	dbw 14, KRABBY                  ; 10%
+	dbw 15, KRABBY                   ; 10%
+	dbw 15, KRABBY                  ; 10%
+	dbw 14, KRABBY                ;  5%
+	dbw 15, KRABBY                ;  5%
+	dbw 15, KRABBY                 ;  4%
+	dbw 15, KRABBY                   ;  4%
+	dbw 16, KRABBY                 ;  1%
+	dbw 16, KRABBY                   ;  1%
 	; day
-	dbw 13, WINGULL                   ; 20%
-	dbw 13, WINGULL                  ; 20%
-	dbw 14, WINGULL                   ; 10%
-	dbw 14, WINGULL                  ; 10%
-	dbw 15, WINGULL                   ; 10%
-	dbw 15, WINGULL                  ; 10%
-	dbw 14, WINGULL                ;  5%
-	dbw 15, WINGULL                ;  5%
-	dbw 15, WINGULL                 ;  4%
-	dbw 15, WINGULL                   ;  4%
-	dbw 16, WINGULL                 ;  1%
-	dbw 16, WINGULL                   ;  1%
+	dbw 13, KRABBY                   ; 20%
+	dbw 13, KRABBY                  ; 20%
+	dbw 14, KRABBY                   ; 10%
+	dbw 14, KRABBY                  ; 10%
+	dbw 15, KRABBY                   ; 10%
+	dbw 15, KRABBY                  ; 10%
+	dbw 14, KRABBY                ;  5%
+	dbw 15, KRABBY                ;  5%
+	dbw 15, KRABBY                 ;  4%
+	dbw 15, KRABBY                   ;  4%
+	dbw 16, KRABBY                 ;  1%
+	dbw 16, KRABBY                   ;  1%
 	; nite
-	dbw 13, WINGULL                   ; 20%
-	dbw 13, WINGULL                  ; 20%
-	dbw 14, WINGULL                   ; 10%
-	dbw 14, WINGULL                  ; 10%
-	dbw 15, WINGULL                   ; 10%
-	dbw 15, WINGULL                  ; 10%
-	dbw 14, WINGULL                ;  5%
-	dbw 15, WINGULL                ;  5%
-	dbw 15, WINGULL                 ;  4%
-	dbw 15, WINGULL                   ;  4%
-	dbw 16, WINGULL                 ;  1%
-	dbw 16, WINGULL                   ;  1%
+	dbw 13, KRABBY                   ; 20%
+	dbw 13, KRABBY                  ; 20%
+	dbw 14, KRABBY                   ; 10%
+	dbw 14, KRABBY                  ; 10%
+	dbw 15, KRABBY                   ; 10%
+	dbw 15, KRABBY                  ; 10%
+	dbw 14, KRABBY                ;  5%
+	dbw 15, KRABBY                ;  5%
+	dbw 15, KRABBY                 ;  4%
+	dbw 15, KRABBY                   ;  4%
+	dbw 16, KRABBY                 ;  1%
+	dbw 16, KRABBY                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54
