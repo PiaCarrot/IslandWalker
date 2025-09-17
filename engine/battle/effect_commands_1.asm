@@ -4885,7 +4885,19 @@ BattleCommand_StatDown:
         farcall Check_ClearBody
         and a
         jr nz, .no_clear_body
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .blocked_player
+        ld a, [wEnemyAbility]
+        jr .set_block_msg
+.blocked_player
+        ld a, [wPlayerAbility]
+.set_block_msg
+        cp KEEN_EYE
         ld a, 4
+        jr nz, .store_block_msg
+        inc a ; 5 for Keen Eye
+.store_block_msg
         ld [wFailedMessage], a
         ld a, 1
         ld [wAttackMissed], a
@@ -5160,22 +5172,29 @@ BattleCommand_StatDownFailText:
         call BattleCommand_MoveDelay
         pop af
         cp 4
-        jr nz, .not_ability_blocked
-        ld hl, AbilityText_ClearBody
-        jmp StdAbilityTextbox
-.not_ability_blocked
+        jr z, .clear_body
+        cp 5
+        jr z, .keen_eye
         dec a
         jmp z, TryPrintButItFailed
         dec a
         ld hl, ProtectedByMistText
         jmp z, StdBattleTextbox
-	ld a, [wLoweredStat]
-	and $f
-	ld b, a
-	inc b
-	call GetStatName
-	ld hl, WontDropAnymoreText
-	jmp StdBattleTextbox
+        ld a, [wLoweredStat]
+        and $f
+        ld b, a
+        inc b
+        call GetStatName
+        ld hl, WontDropAnymoreText
+        jmp StdBattleTextbox
+
+.clear_body
+        ld hl, AbilityText_ClearBody
+        jmp StdAbilityTextbox
+
+.keen_eye
+        ld hl, AbilityText_KeenEye
+        jmp StdAbilityTextbox
 
 GetStatName:
 	ld hl, StatNames

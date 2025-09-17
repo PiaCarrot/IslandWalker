@@ -299,15 +299,36 @@ Check_Damp:
     ld a, 1
     ret
 
-; Clear Body and White Smoke prevent stat drops. Returns z if blocked.
+; Clear Body and White Smoke prevent stat drops. Keen Eye prevents accuracy
+; drops. Returns z if blocked.
 Check_ClearBody:
     call GetAbility
     call Ability_LoadTracedAbility
+    ld d, a
     cp CLEAR_BODY
     jr z, .blocked
     cp WHITE_SMOKE
+    jr z, .blocked
+    cp KEEN_EYE
     jr nz, .nope
+    ld a, [wLoweredStat]
+    and $f
+    cp ACCURACY
+    jr nz, .nope
+    ld a, d
+    jr .blocked
 .blocked
+    push bc
+    push af
+    ld a, b
+    and a
+    ld hl, wPlayerAbility
+    jr z, .store
+    ld hl, wEnemyAbility
+.store
+    pop af
+    ld [hl], a
+    pop bc
     call Ability_LoadAbilityName
     xor a
     ret

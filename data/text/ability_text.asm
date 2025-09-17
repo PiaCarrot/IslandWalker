@@ -163,6 +163,14 @@ AbilityText_ClearBody:
     cont "stat losses!"
     prompt
 
+AbilityText_KeenEye:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " prevents"
+    cont "accuracy loss!"
+    prompt
+
 AbilityText_SuctionCups:
     text "<TARGET>'s"
     line "@"
