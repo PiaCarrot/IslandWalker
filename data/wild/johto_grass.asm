@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, KRABBY                   ; 20%
-	dbw 13, KRABBY                  ; 20%
-	dbw 14, KRABBY                   ; 10%
-	dbw 14, KRABBY                  ; 10%
-	dbw 15, KRABBY                   ; 10%
-	dbw 15, KRABBY                  ; 10%
-	dbw 14, KRABBY                ;  5%
-	dbw 15, KRABBY                ;  5%
-	dbw 15, KRABBY                 ;  4%
-	dbw 15, KRABBY                   ;  4%
-	dbw 16, KRABBY                 ;  1%
-	dbw 16, KRABBY                   ;  1%
+	dbw 13, ZANGOOSE                   ; 20%
+	dbw 13, ZANGOOSE                  ; 20%
+	dbw 14, ZANGOOSE                   ; 10%
+	dbw 14, ZANGOOSE                  ; 10%
+	dbw 15, ZANGOOSE                   ; 10%
+	dbw 15, ZANGOOSE                  ; 10%
+	dbw 14, ZANGOOSE                ;  5%
+	dbw 15, ZANGOOSE                ;  5%
+	dbw 15, ZANGOOSE                 ;  4%
+	dbw 15, ZANGOOSE                   ;  4%
+	dbw 16, ZANGOOSE                 ;  1%
+	dbw 16, ZANGOOSE                   ;  1%
 	; day
-	dbw 13, KRABBY                   ; 20%
-	dbw 13, KRABBY                  ; 20%
-	dbw 14, KRABBY                   ; 10%
-	dbw 14, KRABBY                  ; 10%
-	dbw 15, KRABBY                   ; 10%
-	dbw 15, KRABBY                  ; 10%
-	dbw 14, KRABBY                ;  5%
-	dbw 15, KRABBY                ;  5%
-	dbw 15, KRABBY                 ;  4%
-	dbw 15, KRABBY                   ;  4%
-	dbw 16, KRABBY                 ;  1%
-	dbw 16, KRABBY                   ;  1%
+	dbw 13, ZANGOOSE                   ; 20%
+	dbw 13, ZANGOOSE                  ; 20%
+	dbw 14, ZANGOOSE                   ; 10%
+	dbw 14, ZANGOOSE                  ; 10%
+	dbw 15, ZANGOOSE                   ; 10%
+	dbw 15, ZANGOOSE                  ; 10%
+	dbw 14, ZANGOOSE                ;  5%
+	dbw 15, ZANGOOSE                ;  5%
+	dbw 15, ZANGOOSE                 ;  4%
+	dbw 15, ZANGOOSE                   ;  4%
+	dbw 16, ZANGOOSE                 ;  1%
+	dbw 16, ZANGOOSE                   ;  1%
 	; nite
-	dbw 13, KRABBY                   ; 20%
-	dbw 13, KRABBY                  ; 20%
-	dbw 14, KRABBY                   ; 10%
-	dbw 14, KRABBY                  ; 10%
-	dbw 15, KRABBY                   ; 10%
-	dbw 15, KRABBY                  ; 10%
-	dbw 14, KRABBY                ;  5%
-	dbw 15, KRABBY                ;  5%
-	dbw 15, KRABBY                 ;  4%
-	dbw 15, KRABBY                   ;  4%
-	dbw 16, KRABBY                 ;  1%
-	dbw 16, KRABBY                   ;  1%
+	dbw 13, ZANGOOSE                   ; 20%
+	dbw 13, ZANGOOSE                  ; 20%
+	dbw 14, ZANGOOSE                   ; 10%
+	dbw 14, ZANGOOSE                  ; 10%
+	dbw 15, ZANGOOSE                   ; 10%
+	dbw 15, ZANGOOSE                  ; 10%
+	dbw 14, ZANGOOSE                ;  5%
+	dbw 15, ZANGOOSE                ;  5%
+	dbw 15, ZANGOOSE                 ;  4%
+	dbw 15, ZANGOOSE                   ;  4%
+	dbw 16, ZANGOOSE                 ;  1%
+	dbw 16, ZANGOOSE                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54

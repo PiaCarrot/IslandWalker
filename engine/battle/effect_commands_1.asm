@@ -4272,20 +4272,42 @@ BattleCommand_PoisonTarget:
 	ld c, POISON
 	call CheckIfTargetMatchesType ; Don't freeze an Ice-type
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_POISON
-	ret z
-	ld a, [wEffectFailed]
-	and a
-	ret nz
-	call SafeCheckSafeguard
-	ret nz
+        call GetOpponentItem
+        ld a, b
+        cp HELD_PREVENT_POISON
+        ret z
+        ld a, [wEffectFailed]
+        and a
+        ret nz
+        call SafeCheckSafeguard
+        ret nz
 
-	call PoisonOpponent
-	ld de, ANIM_PSN
-	call PlayOpponentBattleAnim
-	call RefreshBattleHuds
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .poison_target_player
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_immunity
+.poison_target_player
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_immunity
+        farcall Check_Immunity
+        and a
+        jr nz, .no_immunity_block
+        ld hl, AbilityText_Immunity
+        call StdAbilityTextbox
+        ret
+.no_immunity_block
+
+        call PoisonOpponent
+        ld de, ANIM_PSN
+        call PlayOpponentBattleAnim
+        call RefreshBattleHuds
 
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
@@ -4295,18 +4317,18 @@ BattleCommand_PoisonTarget:
 BattleCommand_Poison:
 	ld a, [wTypeModifier]
 	and EFFECTIVENESS_MASK
-	jr z, .failed
+	jmp z, .failed
 
 	ld c, POISON
 	call CheckIfTargetMatchesType ; Don't freeze an Ice-type
-	jr z, .failed
+	jmp z, .failed
 
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	ld b, a
 	ld hl, AlreadyPoisonedText
 	and 1 << PSN
-	jr nz, .failed
+	jmp nz, .failed
 
 	call GetOpponentItem
 	ld a, b
@@ -4316,7 +4338,7 @@ BattleCommand_Poison:
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	ld hl, ProtectedByText
-	jr .failed
+	jmp .failed
 
 .do_poison
 	ld hl, DidntAffectText
@@ -4346,15 +4368,39 @@ BattleCommand_Poison:
 	jr c, .failed
 
 .dont_sample_failure
-	call CheckSubstituteOpp
-	jr nz, .failed
-	ld a, [wAttackMissed]
-	and a
-	jr nz, .failed
-	call .check_toxic
-	jr z, .toxic
+        call CheckSubstituteOpp
+        jr nz, .failed
+        ld a, [wAttackMissed]
+        and a
+        jr nz, .failed
 
-	call .apply_poison
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .poison_move_target_player
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_immunity
+.poison_move_target_player
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_immunity
+        farcall Check_Immunity
+        and a
+        jr nz, .no_immunity_block
+        ld hl, AbilityText_Immunity
+        call StdAbilityTextbox
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+.no_immunity_block
+        call .check_toxic
+        jr z, .toxic
+
+        call .apply_poison
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
 	jr .finished

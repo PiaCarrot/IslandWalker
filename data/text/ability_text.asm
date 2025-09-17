@@ -196,6 +196,14 @@ AbilityText_StayedAwake:
     text "!"
     prompt
 
+AbilityText_Immunity:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " prevents"
+    cont "poisoning!"
+    prompt
+
 AbilityText_InnerFocus:
     text "<TARGET>'s"
     line "@"

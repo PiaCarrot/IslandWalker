@@ -375,6 +375,19 @@ Check_InsomniaVitalSpirit:
     ld a, 1
     ret
 
+; Immunity prevents the user from being poisoned. Returns z if blocked.
+Check_Immunity:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp IMMUNITY
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Inner Focus prevents flinching. Returns z if blocked.
 Check_InnerFocus:
     call GetAbility
