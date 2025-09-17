@@ -243,19 +243,30 @@ BattleCommand_CheckTurn:
 
 .no_recharge
 
-	ld hl, wBattleMonStatus
-	ld a, [hl]
-	and SLP_MASK
-	jr z, .not_asleep
+        ld hl, wBattleMonStatus
+        ld a, [hl]
+        and SLP_MASK
+        jr z, .not_asleep
 
-	dec a
-	ld [wBattleMonStatus], a
-	and SLP_MASK
-	jr z, .woke_up
+        dec a
+        ld [hl], a
+        and SLP_MASK
+        jr z, .woke_up
 
-	ld de, ANIM_SLP
-	call FarPlayBattleAnimation
-	jr .fast_asleep
+        call CheckPlayerEarlyBird
+        jr nz, .no_player_early_bird
+        ld a, [hl]
+        and SLP_MASK
+        jr z, .no_player_early_bird
+        dec a
+        ld [hl], a
+        and SLP_MASK
+        jr z, .woke_up
+
+.no_player_early_bird
+        ld de, ANIM_SLP
+        call FarPlayBattleAnimation
+        jr .fast_asleep
 
 .woke_up
 	ld hl, WokeUpText
@@ -459,14 +470,42 @@ CantMove:
 	dw -1
 
 OpponentCantMove:
-	call BattleCommand_SwitchTurn
-	call CantMove
-	jmp BattleCommand_SwitchTurn
+        call BattleCommand_SwitchTurn
+        call CantMove
+        jmp BattleCommand_SwitchTurn
+
+CheckPlayerEarlyBird:
+        push bc
+        push hl
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp EARLY_BIRD
+        pop hl
+        pop bc
+        ret
+
+CheckEnemyEarlyBird:
+        push bc
+        push hl
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp EARLY_BIRD
+        pop hl
+        pop bc
+        ret
 
 CheckEnemyTurn:
-	ld hl, wEnemySubStatus4
-	bit SUBSTATUS_RECHARGE, [hl]
-	jr z, .no_recharge
+        ld hl, wEnemySubStatus4
+        bit SUBSTATUS_RECHARGE, [hl]
+        jr z, .no_recharge
 
 	res SUBSTATUS_RECHARGE, [hl]
 	ld hl, MustRechargeText
@@ -476,21 +515,32 @@ CheckEnemyTurn:
 
 .no_recharge
 
-	ld hl, wEnemyMonStatus
-	ld a, [hl]
-	and SLP_MASK
-	jr z, .not_asleep
+        ld hl, wEnemyMonStatus
+        ld a, [hl]
+        and SLP_MASK
+        jr z, .not_asleep
 
-	dec a
-	ld [wEnemyMonStatus], a
-	and a
-	jr z, .woke_up
+        dec a
+        ld [hl], a
+        and SLP_MASK
+        jr z, .woke_up
 
-	ld hl, FastAsleepText
-	call StdBattleTextbox
-	ld de, ANIM_SLP
-	call FarPlayBattleAnimation
-	jr .fast_asleep
+        call CheckEnemyEarlyBird
+        jr nz, .no_enemy_early_bird
+        ld a, [hl]
+        and SLP_MASK
+        jr z, .no_enemy_early_bird
+        dec a
+        ld [hl], a
+        and SLP_MASK
+        jr z, .woke_up
+
+.no_enemy_early_bird
+        ld hl, FastAsleepText
+        call StdBattleTextbox
+        ld de, ANIM_SLP
+        call FarPlayBattleAnimation
+        jr .fast_asleep
 
 .woke_up
 	ld hl, WokeUpText
