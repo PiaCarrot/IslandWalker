@@ -305,8 +305,99 @@ ApplyBrnEffectOnAttack:
 	ld b, $1 ; min attack
 
 .enemy_ok
-	ld [hl], b
-	ret
+    ld [hl], b
+    ret
+
+Ability_CuteCharmCheckOppositeGender:
+    ld a, [wMonType]
+    ld h, 0
+    ld l, a
+    push hl
+    ld a, [wCurPartySpecies]
+    ld h, 0
+    ld l, a
+    push hl
+    ld a, [wCurPartyMon]
+    ld h, 0
+    ld l, a
+    push hl
+    ld a, [wCurOTMon]
+    ld h, 0
+    ld l, a
+    push hl
+
+    ld a, e
+    ld [wCurPartySpecies], a
+    ld a, d
+    and a
+    jr z, .user_player
+    ld a, WILDMON
+    ld [wMonType], a
+    farcall GetGender
+    jr c, .fail
+    ld b, a
+    jr .get_attacker
+
+.user_player
+    ld a, [wCurBattleMon]
+    ld [wCurPartyMon], a
+    ld a, PARTYMON
+    ld [wMonType], a
+    farcall GetGender
+    jr c, .fail
+    ld b, a
+
+.get_attacker
+    ld a, c
+    ld [wCurPartySpecies], a
+    ld a, d
+    and a
+    jr nz, .attacker_player
+    ld a, WILDMON
+    ld [wMonType], a
+    farcall GetGender
+    jr c, .fail
+    ld c, a
+    jr .compare
+
+.attacker_player
+    ld a, [wCurBattleMon]
+    ld [wCurPartyMon], a
+    ld a, PARTYMON
+    ld [wMonType], a
+    farcall GetGender
+    jr c, .fail
+    ld c, a
+
+.compare
+    ld a, b
+    xor c
+    jr z, .fail
+    ld b, 0
+    jr .restore
+
+.fail
+    ld b, 1
+
+.restore
+    pop hl
+    ld a, l
+    ld [wCurOTMon], a
+    pop hl
+    ld a, l
+    ld [wCurPartyMon], a
+    pop hl
+    ld a, l
+    ld [wCurPartySpecies], a
+    pop hl
+    ld a, l
+    ld [wMonType], a
+
+    ld a, b
+    and a
+    ret z
+    scf
+    ret
 
 ApplyStatusAbilityBoosts:
         call ApplyGutsEffectOnAttack

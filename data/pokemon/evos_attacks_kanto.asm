@@ -355,9 +355,6 @@ ButterfreeEvosAttacks:
 	dbw 16, GUST
 	dbw 18, SUPERSONIC
 	dbw 22, WHIRLWIND
-	dbw 22, ATTRACT
-	dbw 22, TAUNT
-	dbw 22, CAPTIVATE
 	dbw 24, PSYBEAM
 	dbw 28, SILVER_WIND
 	dbw 30, TAILWIND
@@ -748,10 +745,7 @@ ClefairyEvosAttacks:
 
 ClefableEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, SING
 	dbw 1, DOUBLESLAP
-	dbw 1, MINIMIZE
-	dbw 1, METRONOME
 	db 0 ; no more level-up moves
 
 VulpixEvosAttacks:

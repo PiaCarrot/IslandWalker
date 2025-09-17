@@ -2839,10 +2839,11 @@ BattleCommand_ApplyDamage:
 
 
 .done_damage
-        pop bc
-        ld a, b
-        and a
-        ret z
+    farcall TryActivateCuteCharm
+    pop bc
+    ld a, b
+    and a
+    ret z
 
         cp 1
         jr z, .endured_text

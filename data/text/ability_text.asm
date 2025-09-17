@@ -252,6 +252,14 @@ AbilityText_ObliviousCaptivate:
     cont "CAPTIVATE!"
     prompt
 
+AbilityText_CuteCharm:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " made <TARGET>"
+    cont "fall in love!"
+    prompt
+
 AbilityText_OwnTempo:
     text "<TARGET>'s"
     line "@"

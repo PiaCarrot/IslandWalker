@@ -911,6 +911,86 @@ HandleShedSkin::
     ld hl, AbilityText_ShedSkin
     jp StdAbilityTextbox
 
+TryActivateCuteCharm:
+    ld a, BATTLE_VARS_MOVE
+    call GetBattleVar
+    and a
+    ret z
+
+    call GetMoveIndexFromID
+    ld b, h
+    ld c, l
+    ld de, 2
+    ld hl, ContactMoves
+    call IsInWordArray
+    ret nc
+
+    call Ability_LoadBattleMonBase
+    ld d, b
+    ld e, c
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp CUTE_CHARM
+    ret nz
+
+    ld a, BATTLE_VARS_SUBSTATUS1
+    call GetBattleVarAddr
+    bit SUBSTATUS_IN_LOVE, [hl]
+    ret nz
+
+    call Ability_LoadOppSpeciesAndPersonality
+    push bc
+    ld a, d
+    xor 1
+    ld b, a
+    farcall Check_Oblivious
+    pop bc
+    ld b, d
+    and a
+    jr nz, .check_gender
+    ret
+
+.check_gender
+    call Ability_CuteCharmCheckOppositeGender
+    ld b, d
+    jr nc, .chance
+    ret
+
+.chance
+    call BattleRandom
+    cp 30 percent
+    ret nc
+
+    ld a, BATTLE_VARS_SUBSTATUS1
+    call GetBattleVarAddr
+    set SUBSTATUS_IN_LOVE, [hl]
+
+    ldh a, [hBattleTurn]
+    push af
+    ld a, d
+    and a
+    jr nz, .enemy_turn
+    call SetPlayerTurn
+    jr .have_turn
+
+.enemy_turn
+    call SetEnemyTurn
+
+.have_turn
+    ld a, CUTE_CHARM
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_CuteCharm
+    call StdAbilityTextbox
+    pop af
+    and a
+    jr nz, .restore_enemy
+    call SetPlayerTurn
+    ret
+
+.restore_enemy
+    call SetEnemyTurn
+    ret
+
 TryActivateNaturalCure_Player:
     ; d = party slot of the Pokémon being cured
     push bc
@@ -1254,6 +1334,8 @@ PickupAbilityItemTables:
     dw CuriousMedicineItems
     db $ff
     dw 0
+
+INCLUDE "data/moves/contact_moves.asm"
 
 INCLUDE "data/abilities/pickup_items.asm"
 INCLUDE "data/abilities/honey_gather_items.asm"
