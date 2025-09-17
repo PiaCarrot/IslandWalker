@@ -54,6 +54,12 @@ AbilityText_BattleBond:
     line "also rose!"
     prompt
 
+AbilityText_ShedSkin:
+    text "<USER>'s"
+    line "SHED SKIN cured"
+    cont "its status!"
+    prompt
+
 AbilityText_IntimidateCutsAttack:
     text "<USER>'s"
     line "INTIMIDATE cuts"

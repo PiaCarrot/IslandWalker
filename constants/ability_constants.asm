@@ -31,8 +31,8 @@
 	const PLUS  ; ✔ Sp Attack at the end of the turn, until maxed out
 	const MINUS ; ✔ Sp Defense at the end of the turn, until maxed out
 ; Passively boosts...
-	const COMPOUNDEYES ; Accuracy by 30%. Also increases the rate of wild Pokémon holding an item by 50% if in the first slot
-	const HUSTLE       ; Attack by 50%, but decreases accuracy of Physical moves by 20%. Also decreases the overworld encounter rate of wild Pokémon if in the first slot
+	const COMPOUNDEYES ; ✔ Accuracy by 30%. Also increases the rate of wild Pokémon holding an item by 50% if in the first slot
+	const HUSTLE       ; ✔ Attack by 50%, but decreases accuracy of Physical moves by 20%. Also decreases the overworld encounter rate of wild Pokémon if in the first slot
 	const HUGE_POWER   ; ✔ Doubles Attack
 	const PURE_POWER   ; ✔ Doubles Attack (UNUSED)
 	const SPEED_BOOST  ; ✔ Speed at the end of the turn, until maxed out
@@ -66,7 +66,7 @@
 	const DAMP         ; ✔ Selfdestruct and Explosion
 ; Entirely prevents any form of enemy inflicted stat reduction
 	const CLEAR_BODY   ; ✔
-	const WHITE_SMOKE  ; ✔ Also decreases the overworld encounter rate by 50%
+	const WHITE_SMOKE  ; ✔ Also decreases the overworld encounter rate by 50% (UNUSED)
 ; Prevents specifically...
 	const ROCK_HEAD    ; Recoil damage from moves, except from Struggle
 	const BATTLE_ARMOR ; Critical hits

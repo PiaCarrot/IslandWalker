@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, BUTTERFREE                   ; 20%
-	dbw 13, BUTTERFREE                  ; 20%
-	dbw 14, BUTTERFREE                   ; 10%
-	dbw 14, BUTTERFREE                  ; 10%
-	dbw 15, BUTTERFREE                   ; 10%
-	dbw 15, BUTTERFREE                  ; 10%
-	dbw 14, BUTTERFREE                ;  5%
-	dbw 15, BUTTERFREE                ;  5%
-	dbw 15, BUTTERFREE                 ;  4%
-	dbw 15, BUTTERFREE                   ;  4%
-	dbw 16, BUTTERFREE                 ;  1%
-	dbw 16, BUTTERFREE                   ;  1%
+	dbw 13, METAPOD                   ; 20%
+	dbw 13, METAPOD                  ; 20%
+	dbw 14, METAPOD                   ; 10%
+	dbw 14, METAPOD                  ; 10%
+	dbw 15, METAPOD                   ; 10%
+	dbw 15, METAPOD                  ; 10%
+	dbw 14, METAPOD                ;  5%
+	dbw 15, METAPOD                ;  5%
+	dbw 15, METAPOD                 ;  4%
+	dbw 15, METAPOD                   ;  4%
+	dbw 16, METAPOD                 ;  1%
+	dbw 16, METAPOD                   ;  1%
 	; day
-	dbw 13, BUTTERFREE                   ; 20%
-	dbw 13, BUTTERFREE                  ; 20%
-	dbw 14, BUTTERFREE                   ; 10%
-	dbw 14, BUTTERFREE                  ; 10%
-	dbw 15, BUTTERFREE                   ; 10%
-	dbw 15, BUTTERFREE                  ; 10%
-	dbw 14, BUTTERFREE                ;  5%
-	dbw 15, BUTTERFREE                ;  5%
-	dbw 15, BUTTERFREE                 ;  4%
-	dbw 15, BUTTERFREE                   ;  4%
-	dbw 16, BUTTERFREE                 ;  1%
-	dbw 16, BUTTERFREE                   ;  1%
+	dbw 13, METAPOD                   ; 20%
+	dbw 13, METAPOD                  ; 20%
+	dbw 14, METAPOD                   ; 10%
+	dbw 14, METAPOD                  ; 10%
+	dbw 15, METAPOD                   ; 10%
+	dbw 15, METAPOD                  ; 10%
+	dbw 14, METAPOD                ;  5%
+	dbw 15, METAPOD                ;  5%
+	dbw 15, METAPOD                 ;  4%
+	dbw 15, METAPOD                   ;  4%
+	dbw 16, METAPOD                 ;  1%
+	dbw 16, METAPOD                   ;  1%
 	; nite
-	dbw 13, BUTTERFREE                   ; 20%
-	dbw 13, BUTTERFREE                  ; 20%
-	dbw 14, BUTTERFREE                   ; 10%
-	dbw 14, BUTTERFREE                  ; 10%
-	dbw 15, BUTTERFREE                   ; 10%
-	dbw 15, BUTTERFREE                  ; 10%
-	dbw 14, BUTTERFREE                ;  5%
-	dbw 15, BUTTERFREE                ;  5%
-	dbw 15, BUTTERFREE                 ;  4%
-	dbw 15, BUTTERFREE                   ;  4%
-	dbw 16, BUTTERFREE                 ;  1%
-	dbw 16, BUTTERFREE                   ;  1%
+	dbw 13, METAPOD                   ; 20%
+	dbw 13, METAPOD                  ; 20%
+	dbw 14, METAPOD                   ; 10%
+	dbw 14, METAPOD                  ; 10%
+	dbw 15, METAPOD                   ; 10%
+	dbw 15, METAPOD                  ; 10%
+	dbw 14, METAPOD                ;  5%
+	dbw 15, METAPOD                ;  5%
+	dbw 15, METAPOD                 ;  4%
+	dbw 15, METAPOD                   ;  4%
+	dbw 16, METAPOD                 ;  1%
+	dbw 16, METAPOD                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54

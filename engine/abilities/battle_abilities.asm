@@ -658,6 +658,103 @@ HandleSpeedBoost::
     pop de
     ret
 
+HandleShedSkin::
+    ldh a, [hSerialConnectionStatus]
+    cp USING_EXTERNAL_CLOCK
+    jr z, .EnemyFirst
+    call SetPlayerTurn
+    call .Apply
+    call SetEnemyTurn
+    jp .Apply
+
+.EnemyFirst
+    call SetEnemyTurn
+    call .Apply
+    call SetPlayerTurn
+    jp .Apply
+
+.Apply
+    ldh a, [hBattleTurn]
+    and a
+    jr nz, .EnemyHP
+    ld hl, wBattleMonHP
+    jr .CheckHP
+
+.EnemyHP
+    ld hl, wEnemyMonHP
+
+.CheckHP
+    ld a, [hli]
+    or [hl]
+    ret z
+
+    call Ability_LoadBattleMonBase
+    ld a, [de]
+    and a
+    ret z
+
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp SHED_SKIN
+    ret nz
+
+    call BattleRandom
+    cp 33 percent + 1
+    ret nc
+
+    xor a
+    ld [de], a
+
+    ld a, b
+    and a
+    jr z, .Player
+
+.Enemy
+    ld hl, wEnemySubStatus5
+    res SUBSTATUS_TOXIC, [hl]
+    xor a
+    ld [wEnemyToxicCount], a
+    ld hl, wEnemySubStatus1
+    res SUBSTATUS_NIGHTMARE, [hl]
+    xor a
+    ld [wEnemyJustGotFrozen], a
+
+    ld a, [wBattleMode]
+    dec a
+    jr z, .SkipParty
+    ld a, [wCurOTMon]
+    ld hl, wOTPartyMon1Status
+    call GetPartyLocation
+    ld [hl], 0
+
+.SkipParty
+    farcall CalcEnemyStats
+    call UpdateBattleHuds
+    call SetEnemyTurn
+    ld hl, AbilityText_ShedSkin
+    jp StdAbilityTextbox
+
+.Player
+    ld hl, wPlayerSubStatus5
+    res SUBSTATUS_TOXIC, [hl]
+    xor a
+    ld [wPlayerToxicCount], a
+    ld hl, wPlayerSubStatus1
+    res SUBSTATUS_NIGHTMARE, [hl]
+    xor a
+    ld [wPlayerJustGotFrozen], a
+
+    ld a, [wCurBattleMon]
+    ld hl, wPartyMon1Status
+    call GetPartyLocation
+    ld [hl], 0
+
+    farcall CalcPlayerStats
+    call UpdateBattleHuds
+    call SetPlayerTurn
+    ld hl, AbilityText_ShedSkin
+    jp StdAbilityTextbox
+
 TryActivateBattleBond::
     ld hl, wCurDamage
     ld a, [hli]

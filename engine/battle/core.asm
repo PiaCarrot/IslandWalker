@@ -286,6 +286,7 @@ HandleBetweenTurnEffects:
         call CheckFaint_PlayerThenEnemy
         ret c
         farcall HandleSpeedBoost
+        farcall HandleShedSkin
         jr .NoMoreFaintingConditions
 
 .CheckEnemyFirst:
@@ -304,6 +305,7 @@ HandleBetweenTurnEffects:
         call CheckFaint_EnemyThenPlayer
         ret c
         farcall HandleSpeedBoost
+        farcall HandleShedSkin
 
 .NoMoreFaintingConditions:
 	call HandleLeftovers
