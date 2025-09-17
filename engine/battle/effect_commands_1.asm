@@ -1689,6 +1689,66 @@ jr z, .stab
 
 .end
         call BattleCheckTypeMatchup
+        ; Thick Fat halves the damage from Fire- and Ice-type moves.
+        push bc
+        push de
+        ld a, [wTypeMatchup]
+        and a
+        jr z, .ThickFatDone
+        ld a, BATTLE_VARS_MOVE_TYPE
+        call GetBattleVar
+        and TYPE_MASK
+        cp FIRE
+        jr z, .ThickFatCheckAbility
+        cp ICE
+        jr nz, .ThickFatDone
+.ThickFatCheckAbility
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .ThickFatEnemyTurn
+        ld hl, wEnemyMonPersonality
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld b, 1
+        jr .ThickFatLoadAbility
+.ThickFatEnemyTurn
+        ld hl, wBattleMonPersonality
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld b, 0
+.ThickFatLoadAbility
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp THICK_FAT
+        jr nz, .ThickFatDone
+        ld a, [wTypeMatchup]
+        srl a
+        jr nz, .ThickFatStoreMatchup
+        ld a, 1
+.ThickFatStoreMatchup
+        ld [wTypeMatchup], a
+        ld hl, wCurDamage
+        ld a, [hli]
+        ld d, a
+        ld e, [hl]
+        ld a, d
+        or e
+        jr z, .ThickFatDone
+        srl d
+        rr e
+        ld a, d
+        or e
+        jr nz, .ThickFatStoreDamage
+        ld e, 1
+.ThickFatStoreDamage
+        ld hl, wCurDamage
+        ld a, d
+        ld [hli], a
+        ld a, e
+        ld [hl], a
+.ThickFatDone
+        pop de
+        pop bc
         ld a, [wTypeMatchup]
         and a
         jr z, .SkipWonderGuard

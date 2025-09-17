@@ -82,8 +82,8 @@
 	const OBLIVIOUS    ; ✔ Infatuation and the moves Captivate and Taunt. Also Blocks Intimidate.
 	const OWN_TEMPO    ; ✔ Confusion. Also Blocks Intimidate.
 	const MAGMA_ARMOR  ; ✔ Freezing. Pokémon eggs will also hatch in half the time.
-	const SHIELD_DUST  ; Added move effects
-	const STICKY_HOLD  ; Item loss. Also increases capture rate of hooked wild Pokémon if in Battle
+	const SHIELD_DUST  ; ✔ Added move effects
+	const STICKY_HOLD  ; Item loss. Also increases capture rate of hooked wild Pokémon if in Battle (Holding off on this till more moves are done)
 ; Weakens...
 	const THICK_FAT ; Fire-type and Ice-type moves by half
 
