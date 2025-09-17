@@ -24,22 +24,28 @@
 	const OVERGROW ; ✔ Grass
 	const TORRENT  ; ✔ Water
 	const SWARM    ; ✔ Bug (THE OVERWORLD EFFECT OF INCREASING OVERWORLD CRIES IS NOT BEING IMPLEMENTED IN CSE)
+	const PERSISTANCE ; ✔ Normal
+	const OVERCHARGED ; ✔ Electric
+	const DRAGOON ; ✔ Dragon
 ; Boosts stat upon status infliction
 	const GUTS         ; ✔ Attack
 	const MARVEL_SCALE ; ✔ Defense
-; Boosts Sp. Attack in presence of... (THESE ABILITIES ARE ESSENTIALLY USELESS WITHOUT DOUBLE BATTLES)
-	const PLUS  ; ✔ Sp Attack at the end of the turn, until maxed out
-	const MINUS ; ✔ Sp Defense at the end of the turn, until maxed out
+    const TANGLED_FEET ; ✔
+    const QUICK_FEET   ; ✔
+	const TOXIC_BOOST  ; ✔
+    const FLARE_BOOST  ; ✔ Boosts Special Attack when inflicted with a burn
 ; Passively boosts...
 	const COMPOUNDEYES ; ✔ Accuracy by 30%. Also increases the rate of wild Pokémon holding an item by 50% if in the first slot
 	const HUSTLE       ; ✔ Attack by 50%, but decreases accuracy of Physical moves by 20%. Also decreases the overworld encounter rate of wild Pokémon if in the first slot
 	const HUGE_POWER   ; ✔ Doubles Attack
-	const PURE_POWER   ; ✔ Doubles Attack (UNUSED)
+	const FUR_COAT     ; ✔ Doubles Defense
 	const SPEED_BOOST  ; ✔ Speed at the end of the turn, until maxed out
+	const PLUS         ; ✔ Sp Attack at the end of the turn, until maxed out
+	const MINUS        ; ✔ Sp Defense at the end of the turn, until maxed out
+	const BATTLE_BOND  ; ✔ Increases several stats upon KO
 
 ; Weather related
 ; Prevents the effects of the weather
-	const AIR_LOCK
 	const CLOUD_NINE
 ; Boosts speed in weather conditions
 	const CHLOROPHYLL  ; Sunlight
@@ -50,6 +56,7 @@
 	const DROUGHT      ; ✔ Sunlight
 	const DRIZZLE      ; ✔ Rain
 	const SAND_STREAM  ; ✔ Sandstorm. Also halves the wild Pokémon encounter rate if in the first slot during an overworld sandstorm
+    const SNOW_WARNING ; ✔ Hail
 ; Boosts stats in weather
 	const SAND_VEIL    ; Evasion by 20% during a sandstorm
 ; Heals during weather
@@ -84,8 +91,9 @@
 	const MAGMA_ARMOR  ; ✔ Freezing. Pokémon eggs will also hatch in half the time.
 	const SHIELD_DUST  ; ✔ Added move effects
 	const STICKY_HOLD  ; Item loss. Also increases capture rate of hooked wild Pokémon if in Battle (Holding off on this till more moves are done)
+	const GOOD_AS_GOLD ; ✔ Status Moves
 ; Weakens...
-	const THICK_FAT ; Fire-type and Ice-type moves by half
+	const THICK_FAT ; ✔ Fire-type and Ice-type moves by half
 
 ; Causes additional effects upon move usage
 ; Contact-based status effects (30% chance on contact)
@@ -109,10 +117,9 @@
 	const VOLT_ABSORB  ; Electric-type
 	const WATER_ABSORB ; Water-type
 ; Damages Physical attackers by 1/16th of their max HP (1/8th is in Gen IV+)
-        const ROUGH_SKIN
+    const ROUGH_SKIN
 
-; Boosts Special Attack when inflicted with a burn
-        const FLARE_BOOST ; ✔
+
 
 ; Heals statuses...
 ; In-battle
@@ -132,6 +139,9 @@
 
 ; Allows the user to run away from any wild Pokémon battle without fail
 	const RUN_AWAY ; ✔
+	
+; Transforms into foe
+	const IMPOSTER ; Exclusive to Ditto and Mew ✔
 
 ; Purely has an overworld effect
 ; Doubles wild Pokémon encounter rate if in the first slot
@@ -140,9 +150,10 @@
 	const STENCH ; ✔
 ; Randomly may find an item after battle
 	const PICKUP ; ✔
+    const HONEY_GATHER ; ✔
+	const POWER_OF_ALCHEMY ; ✔ no double battles so battle effect is irrelevant
 	
 ; Gen IV
-    const TANGLED_FEET ; ✔
     const MOTOR_DRIVE
     const RIVALRY
     const STEADFAST
@@ -159,7 +170,6 @@
     const SKILL_LINK
     const HYDRATION
     const SOLAR_POWER
-    const QUICK_FEET ; ✔
     const NORMALIZE
     const SNIPER
     const MAGIC_GUARD
@@ -178,8 +188,6 @@
     const SCRAPPY
     const STORM_DRAIN
     const ICE_BODY
-    const SNOW_WARNING ; Need to add Hail first
-    const HONEY_GATHER
     const FRISK
     const RECKLESS
     const FLOWER_GIFT
@@ -191,7 +199,6 @@
 	const CURSED_BODY
 	const WEAK_ARMOR
 	const MULTISCALE
-	const TOXIC_BOOST
 	const HARVEST
 	const OVERCOAT
 	const POISON_TOUCH
@@ -199,7 +206,6 @@
 	const SAND_RUSH
 	const ANALYTIC ; Exclusive to Magnezone
 	const ILLUSION ; GL Whoever attempts to program this
-	const IMPOSTER ; Exclusive to Ditto and Mew ✔
 	const INFILTRATOR
 	const MOXIE ; Exclusive to Gyarados
 	const RATTLED
@@ -207,7 +213,6 @@
 	const SAP_SIPPER
 	const IRON_BARBS
 	const PROTEAN
-	const FUR_COAT ; ✔
 	const BULLETPROOF
 	const COMPETITIVE
 	const STANCE_CHANGE
@@ -219,13 +224,12 @@
 	const MERCILESS
 	const STEELWORKER
 	const BERSERK
-	const SLUSH_RUSH ; Need to add Hail first
+	const SLUSH_RUSH
 	const GALVANIZE
 	const SURGE_SURFER
 	const DISGUISE
 	const CORROSION
 	const TANGLING_HAIR
-	const POWER_OF_ALCHEMY ; ✔ no double battles so battle effect is irrelevant
 	const ELECTRIC_SURGE
 	const PSYCHIC_SURGE
 	const MISTY_SURGE
@@ -241,7 +245,6 @@
 	const QUICK_DRAW
 	const CURIOUS_MEDICINE
 	const WIND_POWER
-	const GOOD_AS_GOLD ; ✔ 
 	const CUD_CHEW
 	const SHARPNESS
 	const SUPREME_OVERLORD
@@ -249,10 +252,6 @@
 	const MINDS_EYE
 	const SUPERSWEET_SYRUP
 	const CRYSTAL_BODY ; Dry Skin for Crystal Onix
-	const PERSISTANCE ; ✔ Torrent ability for Partner Eevee (Normal)
-	const OVERCHARGED ; ✔ Torrent ability for Partner Pikachu (Electric)
-	const DRAGOON ; ✔ Torrent ability for Partner Dratini (Dragon)
 	const COIN_COLLECTOR ; ✔ Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves. ✔
-	const BATTLE_BOND ; ✔ Partner Dragonite's special ability, based on Gen IX Battle Bond
 
 DEF NUM_ABILITIES EQU const_value - 1

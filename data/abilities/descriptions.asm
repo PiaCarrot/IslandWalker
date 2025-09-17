@@ -12,16 +12,23 @@ AbilityDescriptions:
 	dw OvergrowDesc
 	dw TorrentDesc
 	dw SwarmDesc
+    dw PersistanceDesc
+    dw OverchargedDesc
+    dw DragoonDesc
 	dw GutsDesc
 	dw MarvelScaleDesc
-	dw PlusDesc
-	dw MinusDesc
+	dw TangledFeetDesc
+	dw QuickFeetDesc
+	dw ToxicBoostDesc  
+    dw FlareBoostDesc
 	dw CompoundeyesDesc
 	dw HustleDesc
 	dw HugePowerDesc
-	dw PurePowerDesc
+	dw FurCoatDesc
 	dw SpeedBoostDesc
-	dw AirLockDesc
+	dw PlusDesc
+	dw MinusDesc
+    dw BattleBondDesc
 	dw CloudNineDesc
 	dw ChlorophyllDesc
 	dw SwiftSwimDesc
@@ -29,6 +36,7 @@ AbilityDescriptions:
 	dw DroughtDesc
 	dw DrizzleDesc
 	dw SandStreamDesc
+	dw SnowWarningDesc
 	dw SandVeilDesc
 	dw RainDishDesc
 	dw CacophonyDesc
@@ -56,6 +64,7 @@ AbilityDescriptions:
 	dw MagmaArmorDesc
 	dw ShieldDustDesc
 	dw StickyHoldDesc
+	dw GoodAsGoldDesc
 	dw ThickFatDesc
 	dw CuteCharmDesc
 	dw EffectSporeDesc
@@ -70,8 +79,7 @@ AbilityDescriptions:
 	dw LightningrodDesc
 	dw VoltAbsorbDesc
 	dw WaterAbsorbDesc
-        dw RoughSkinDesc
-        dw FlareBoostDesc
+    dw RoughSkinDesc
 	dw ShedSkinDesc
 	dw EarlyBirdDesc
 	dw NaturalCureDesc
@@ -79,10 +87,12 @@ AbilityDescriptions:
 	dw TraceDesc
 	dw PressureDesc
 	dw RunAwayDesc
+	dw ImposterDesc
 	dw IlluminateDesc
 	dw StenchDesc
 	dw PickupDesc
-	dw TangledFeetDesc
+	dw HoneyGatherDesc
+	dw PowerOfAlchemyDesc
 	dw MotorDriveDesc
 	dw RivalryDesc
 	dw SteadfastDesc
@@ -99,7 +109,6 @@ AbilityDescriptions:
 	dw SkillLinkDesc
 	dw HydrationDesc
 	dw SolarPowerDesc
-	dw QuickFeetDesc
 	dw NormalizeDesc
 	dw SniperDesc
 	dw MagicGuardDesc
@@ -118,8 +127,6 @@ AbilityDescriptions:
 	dw ScrappyDesc
 	dw StormDrainDesc
 	dw IceBodyDesc
-	dw SnowWarningDesc
-	dw HoneyGatherDesc
 	dw FriskDesc
 	dw RecklessDesc
 	dw FlowerGiftDesc
@@ -130,7 +137,6 @@ AbilityDescriptions:
 	dw CursedBodyDesc  
 	dw WeakArmorDesc  
 	dw MultiscaleDesc  
-	dw ToxicBoostDesc  
 	dw HarvestDesc  
 	dw OvercoatDesc  
 	dw PoisonTouchDesc  
@@ -138,7 +144,6 @@ AbilityDescriptions:
 	dw SandRushDesc  
 	dw AnalyticDesc  
 	dw IllusionDesc  
-	dw ImposterDesc  
 	dw InfiltratorDesc  
 	dw MoxieDesc  
 	dw RattledDesc  
@@ -146,7 +151,6 @@ AbilityDescriptions:
 	dw SapSipperDesc  
 	dw IronBarbsDesc  
 	dw ProteanDesc  
-	dw FurCoatDesc  
 	dw BulletproofDesc  
 	dw CompetitiveDesc  
 	dw StanceChangeDesc  
@@ -164,7 +168,6 @@ AbilityDescriptions:
 	dw DisguiseDesc  
 	dw CorrosionDesc  
 	dw TanglingHairDesc  
-	dw PowerOfAlchemyDesc  
 	dw ElectricSurgeDesc  
 	dw PsychicSurgeDesc  
 	dw MistySurgeDesc  
@@ -180,7 +183,6 @@ AbilityDescriptions:
 	dw QuickDrawDesc  
 	dw CuriousMedicineDesc  
 	dw WindPowerDesc  
-	dw GoodAsGoldDesc  
 	dw CudChewDesc  
 	dw SharpnessDesc  
 	dw SupremeOverlordDesc
@@ -188,11 +190,7 @@ AbilityDescriptions:
 	dw MindsEyeDesc
         dw SupersweetSyrupDesc
         dw CrystalBodyDesc
-        dw PersistanceDesc
-        dw OverchargedDesc
-        dw DragoonDesc
         dw CoinCollectorDesc
-        dw BattleBondDesc
 
 ; Actual descriptions start here
 NoAbilityDesc:
