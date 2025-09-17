@@ -68,7 +68,7 @@
 	const CLEAR_BODY   ; ✔
 	const WHITE_SMOKE  ; ✔ Also decreases the overworld encounter rate by 50% (UNUSED)
 ; Prevents specifically...
-	const ROCK_HEAD    ; Recoil damage from moves, except from Struggle
+	const ROCK_HEAD    ; ✔ Recoil damage from moves, except from Struggle
 	const BATTLE_ARMOR ; Critical hits
 	const SHELL_ARMOR  ; Critical hits
 	const INNER_FOCUS  ; Flinching
@@ -116,10 +116,10 @@
 
 ; Heals statuses...
 ; In-battle
-	const SHED_SKIN  ; 33% chance to recover from major statuses (does not include Confusion or Infatuation)
-	const EARLY_BIRD ; Wakes up from sleep 50% earlier
+	const SHED_SKIN  ; ✔ 33% chance to recover from major statuses (does not include Confusion or Infatuation)
+	const EARLY_BIRD ; ✔ Wakes up from sleep 50% earlier
 ; Upon exiting the battle
-	const NATURAL_CURE
+	const NATURAL_CURE ; ✔
 
 ; Ability activates upon entrance
 ; Lowers...

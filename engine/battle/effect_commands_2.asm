@@ -87,15 +87,42 @@ BattleCommand_Screen:
 	farjp BattleEffect_ButItFailed
 
 BattleCommand_Recoil:
-	ld hl, wBattleMonMaxHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_hp
-	ld hl, wEnemyMonMaxHP
+        ld a, BATTLE_VARS_MOVE
+        call GetBattleVar
+        cp STRUGGLE
+        jr z, .do_recoil
+
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .enemy_rock_head
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        jr .check_rock_head
+
+.enemy_rock_head
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+
+.check_rock_head
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp ROCK_HEAD
+        ret z
+
+.do_recoil
+        ld hl, wBattleMonMaxHP
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .got_hp
+        ld hl, wEnemyMonMaxHP
 .got_hp
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld d, a
+        ld a, BATTLE_VARS_MOVE_ANIM
+        call GetBattleVar
+        ld d, a
 ; get 1/4 damage or 1 HP, whichever is higher
 	ld a, [wCurDamage]
 	ld b, a
