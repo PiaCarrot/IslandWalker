@@ -4877,18 +4877,9 @@ PrintPlayerHUD:
 	ld a, [wCurBattleMon]
 	ld hl, wPartyMon1IVs
 	call GetPartyLocation
-	ld de, wTempMonIVs
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
+        ld de, wTempMonIVs
+        ld bc, MON_PERSONALITY + 2 - MON_IVS
+        rst CopyBytes
 	ld hl, wBattleMonLevel
 	ld de, wTempMonLevel
 	ld bc, wTempMonStructEnd - wTempMonLevel
