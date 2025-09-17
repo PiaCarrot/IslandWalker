@@ -20,7 +20,7 @@ Check_Entrance_Ability:
     cp INTIMIDATE
     jr z, .intimidate
     cp IMPOSTER
-    jr z, .imposter
+    jp z, .imposter
     ; Otherwise, do nothing
     ret
 
@@ -77,6 +77,8 @@ Check_Entrance_Ability:
     cp HYPER_CUTTER
     jr z, .blocked_intimidate
     cp CLEAR_BODY
+    jr z, .blocked_intimidate
+    cp OBLIVIOUS
     jr z, .blocked_intimidate
     ; We're still here? Push forward!
 ; Known bug: it does briefly flash the HP bar
@@ -419,6 +421,19 @@ Check_MagmaArmor:
     call GetAbility
     call Ability_LoadTracedAbility
     cp MAGMA_ARMOR
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
+; Oblivious prevents infatuation, Taunt, and Captivate. Returns z if blocked.
+Check_Oblivious:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp OBLIVIOUS
     jr nz, .nope
     call Ability_LoadAbilityName
     xor a

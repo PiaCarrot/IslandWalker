@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, DITTO                   ; 20%
-	dbw 13, DITTO                  ; 20%
-	dbw 14, DITTO                   ; 10%
-	dbw 14, DITTO                  ; 10%
-	dbw 15, DITTO                   ; 10%
-	dbw 15, DITTO                  ; 10%
-	dbw 14, DITTO                ;  5%
-	dbw 15, DITTO                ;  5%
-	dbw 15, DITTO                 ;  4%
-	dbw 15, DITTO                   ;  4%
-	dbw 16, DITTO                 ;  1%
-	dbw 16, DITTO                   ;  1%
+	dbw 13, SLOWPOKE                   ; 20%
+	dbw 13, SLOWPOKE                  ; 20%
+	dbw 14, SLOWPOKE                   ; 10%
+	dbw 14, SLOWPOKE                  ; 10%
+	dbw 15, SLOWPOKE                   ; 10%
+	dbw 15, SLOWPOKE                  ; 10%
+	dbw 14, SLOWPOKE                ;  5%
+	dbw 15, SLOWPOKE                ;  5%
+	dbw 15, SLOWPOKE                 ;  4%
+	dbw 15, SLOWPOKE                   ;  4%
+	dbw 16, SLOWPOKE                 ;  1%
+	dbw 16, SLOWPOKE                   ;  1%
 	; day
-	dbw 13, DITTO                   ; 20%
-	dbw 13, DITTO                  ; 20%
-	dbw 14, DITTO                   ; 10%
-	dbw 14, DITTO                  ; 10%
-	dbw 15, DITTO                   ; 10%
-	dbw 15, DITTO                  ; 10%
-	dbw 14, DITTO                ;  5%
-	dbw 15, DITTO                ;  5%
-	dbw 15, DITTO                 ;  4%
-	dbw 15, DITTO                   ;  4%
-	dbw 16, DITTO                 ;  1%
-	dbw 16, DITTO                   ;  1%
+	dbw 13, SLOWPOKE                   ; 20%
+	dbw 13, SLOWPOKE                  ; 20%
+	dbw 14, SLOWPOKE                   ; 10%
+	dbw 14, SLOWPOKE                  ; 10%
+	dbw 15, SLOWPOKE                   ; 10%
+	dbw 15, SLOWPOKE                  ; 10%
+	dbw 14, SLOWPOKE                ;  5%
+	dbw 15, SLOWPOKE                ;  5%
+	dbw 15, SLOWPOKE                 ;  4%
+	dbw 15, SLOWPOKE                   ;  4%
+	dbw 16, SLOWPOKE                 ;  1%
+	dbw 16, SLOWPOKE                   ;  1%
 	; nite
-	dbw 13, DITTO                   ; 20%
-	dbw 13, DITTO                  ; 20%
-	dbw 14, DITTO                   ; 10%
-	dbw 14, DITTO                  ; 10%
-	dbw 15, DITTO                   ; 10%
-	dbw 15, DITTO                  ; 10%
-	dbw 14, DITTO                ;  5%
-	dbw 15, DITTO                ;  5%
-	dbw 15, DITTO                 ;  4%
-	dbw 15, DITTO                   ;  4%
-	dbw 16, DITTO                 ;  1%
-	dbw 16, DITTO                   ;  1%
+	dbw 13, SLOWPOKE                   ; 20%
+	dbw 13, SLOWPOKE                  ; 20%
+	dbw 14, SLOWPOKE                   ; 10%
+	dbw 14, SLOWPOKE                  ; 10%
+	dbw 15, SLOWPOKE                   ; 10%
+	dbw 15, SLOWPOKE                  ; 10%
+	dbw 14, SLOWPOKE                ;  5%
+	dbw 15, SLOWPOKE                ;  5%
+	dbw 15, SLOWPOKE                 ;  4%
+	dbw 15, SLOWPOKE                   ;  4%
+	dbw 16, SLOWPOKE                 ;  1%
+	dbw 16, SLOWPOKE                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54

@@ -228,6 +228,30 @@ AbilityText_MagmaArmor:
     cont "freezing!"
     prompt
 
+AbilityText_ObliviousInfatuation:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " prevents"
+    cont "infatuation!"
+    prompt
+
+AbilityText_ObliviousTaunt:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " shrugged"
+    cont "off TAUNT!"
+    prompt
+
+AbilityText_ObliviousCaptivate:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " blocked"
+    cont "CAPTIVATE!"
+    prompt
+
 AbilityText_InnerFocus:
     text "<TARGET>'s"
     line "@"

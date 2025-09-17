@@ -134,9 +134,39 @@ DoTurn:
 .check_sound_ability
         farcall Check_Soundproof
         and a
-        jr nz, DoMove
+        jr nz, .check_oblivious_taunt
         farcall DisplayUsedMoveText
         ld hl, AbilityText_Soundproof
+        call StdAbilityTextbox
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+
+.check_oblivious_taunt
+        ld a, BATTLE_VARS_MOVE
+        call GetBattleVar
+        call GetMoveIndexFromID
+        cphl16 TAUNT
+        jr nz, DoMove
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .enemy_turn_taunt
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_taunt_ability
+.enemy_turn_taunt
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_taunt_ability
+        farcall Check_Oblivious
+        and a
+        jr nz, DoMove
+        farcall DisplayUsedMoveText
+        ld hl, AbilityText_ObliviousTaunt
         call StdAbilityTextbox
         ld a, 1
         ld [wAttackMissed], a
@@ -145,7 +175,7 @@ DoTurn:
 DoMove:
 ; Get the user's move effect.
         ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
+        call GetBattleVar
 	ld c, a
 	ld b, 0
 	ld hl, MoveEffectsPointers
@@ -5007,6 +5037,35 @@ BattleCommand_StatDown:
         call CheckMist
         jmp nz, .Mist
 
+        ld a, BATTLE_VARS_MOVE
+        call GetBattleVar
+        call GetMoveIndexFromID
+        cphl16 CAPTIVATE
+        jr nz, .no_oblivious_captivate
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .captivate_player
+        ld hl, wEnemyMonPersonality
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld b, 1
+        jr .check_captivate_oblivious
+.captivate_player
+        ld hl, wBattleMonPersonality
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld b, 0
+.check_captivate_oblivious
+        farcall Check_Oblivious
+        and a
+        jr nz, .no_oblivious_captivate
+        ld a, 7
+        ld [wFailedMessage], a
+        ld a, 1
+        ld [wAttackMissed], a
+        ret
+
+.no_oblivious_captivate
         ldh a, [hBattleTurn]
         and a
         jr nz, .player_clear_body
@@ -5317,12 +5376,14 @@ BattleCommand_StatDownFailText:
         push af
         call BattleCommand_MoveDelay
         pop af
-	cp 4
-	jr z, .clear_body
-	cp 5
-	jr z, .keen_eye
-	cp 6
-	jr z, .hyper_cutter
+        cp 7
+        jr z, .oblivious
+        cp 4
+        jr z, .clear_body
+        cp 5
+        jr z, .keen_eye
+        cp 6
+        jr z, .hyper_cutter
 	dec a
 	jmp z, TryPrintButItFailed
         dec a
@@ -5336,9 +5397,13 @@ BattleCommand_StatDownFailText:
         ld hl, WontDropAnymoreText
         jmp StdBattleTextbox
 
+.oblivious
+        ld hl, AbilityText_ObliviousCaptivate
+        jmp StdAbilityTextbox
+
 .clear_body
-	ld hl, AbilityText_ClearBody
-	jmp StdAbilityTextbox
+        ld hl, AbilityText_ClearBody
+        jmp StdAbilityTextbox
 
 .keen_eye
 	ld hl, AbilityText_KeenEye

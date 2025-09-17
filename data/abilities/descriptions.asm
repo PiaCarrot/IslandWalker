@@ -364,8 +364,8 @@ WaterVeilDesc:
 	next1 "BURNED.@"
 
 ObliviousDesc:
-	db    "Prevents being"
-	next1 "INFATUATED.@"
+        db    "Prevents being"
+        next1 "INFATUATED.@"
 
 OwnTempoDesc:
 	db    "Prevents being"

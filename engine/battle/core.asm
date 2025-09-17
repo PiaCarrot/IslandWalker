@@ -6594,6 +6594,29 @@ LoadEnemyMon:
 ; Finally done with IVs
 
 .Happiness:
+        ; Determine gender for wild encounters
+        ld a, [wBattleMode]
+        cp WILD_BATTLE
+        jr nz, .SkipGender
+        ld a, [wBaseGender]
+        cp GENDER_UNKNOWN
+        jr z, .SkipGender
+        ld hl, wEnemyMonGender
+        cp GENDER_F100
+        jr z, .SetFemale
+        and a
+        jr z, .ClearGender
+        ld b, a
+        call BattleRandom
+        cp b
+        jr c, .SetFemale
+        jr z, .SetFemale
+.ClearGender:
+        res MON_GENDER_F, [hl]
+        jr .SkipGender
+.SetFemale:
+        set MON_GENDER_F, [hl]
+.SkipGender:
         ; Pinkan Island wild mons are always pink
         ld a, [wBattleMode]
         cp WILD_BATTLE

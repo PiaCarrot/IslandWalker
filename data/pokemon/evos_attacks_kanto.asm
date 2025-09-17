@@ -355,6 +355,9 @@ ButterfreeEvosAttacks:
 	dbw 16, GUST
 	dbw 18, SUPERSONIC
 	dbw 22, WHIRLWIND
+	dbw 22, ATTRACT
+	dbw 22, TAUNT
+	dbw 22, CAPTIVATE
 	dbw 24, PSYBEAM
 	dbw 28, SILVER_WIND
 	dbw 30, TAILWIND
