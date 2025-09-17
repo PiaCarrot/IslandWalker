@@ -388,6 +388,32 @@ Check_Immunity:
     ld a, 1
     ret
 
+; Limber prevents the user from being paralyzed. Returns z if blocked.
+Check_Limber:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp LIMBER
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
+; Water Veil prevents the user from being burned. Returns z if blocked.
+Check_WaterVeil:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp WATER_VEIL
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Inner Focus prevents flinching. Returns z if blocked.
 Check_InnerFocus:
     call GetAbility

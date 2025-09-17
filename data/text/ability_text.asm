@@ -204,6 +204,22 @@ AbilityText_Immunity:
     cont "poisoning!"
     prompt
 
+AbilityText_Limber:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " prevents"
+    cont "paralysis!"
+    prompt
+
+AbilityText_WaterVeil:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " prevents"
+    cont "burns!"
+    prompt
+
 AbilityText_InnerFocus:
     text "<TARGET>'s"
     line "@"

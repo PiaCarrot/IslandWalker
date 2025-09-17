@@ -4570,8 +4570,31 @@ BattleCommand_BurnTarget:
 	ld a, [wEffectFailed]
 	and a
 	ret nz
-	call SafeCheckSafeguard
-	ret nz
+        call SafeCheckSafeguard
+        ret nz
+
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .burn_target_player
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_water_veil
+.burn_target_player
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_water_veil
+        farcall Check_WaterVeil
+        and a
+        jr nz, .no_water_veil_block
+        ld hl, AbilityText_WaterVeil
+        call StdAbilityTextbox
+        ret
+
+.no_water_veil_block
         ld a, BATTLE_VARS_STATUS_OPP
         call GetBattleVarAddr
         set BRN, [hl]
@@ -4677,11 +4700,34 @@ BattleCommand_ParalyzeTarget:
 	ld a, b
 	cp HELD_PREVENT_PARALYZE
 	ret z
-	ld a, [wEffectFailed]
-	and a
-	ret nz
-	call SafeCheckSafeguard
-	ret nz
+        ld a, [wEffectFailed]
+        and a
+        ret nz
+        call SafeCheckSafeguard
+        ret nz
+
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .paralyze_target_player
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_limber
+.paralyze_target_player
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_limber
+        farcall Check_Limber
+        and a
+        jr nz, .no_limber_block
+        ld hl, AbilityText_Limber
+        call StdAbilityTextbox
+        ret
+
+.no_limber_block
         ld a, BATTLE_VARS_STATUS_OPP
         call GetBattleVarAddr
         set PAR, [hl]
@@ -6427,10 +6473,10 @@ BattleCommand_Paralyze:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	bit PAR, a
-	jr nz, .paralyzed
+	jmp nz, .paralyzed
 	ld a, [wTypeModifier]
 	and EFFECTIVENESS_MASK
-	jr z, .didnt_affect
+	jmp z, .didnt_affect
 	call GetOpponentItem
 	ld a, b
 	cp HELD_PREVENT_PARALYZE
@@ -6467,16 +6513,41 @@ BattleCommand_Paralyze:
 	call GetBattleVarAddr
 	and a
 	jr nz, .failed
-	ld a, [wAttackMissed]
-	and a
-	jr nz, .failed
-	call CheckSubstituteOpp
-	jr nz, .failed
-	ld c, 30
-	call DelayFrames
-	call AnimateCurrentMove
-	ld a, $1
-	ldh [hBGMapMode], a
+        ld a, [wAttackMissed]
+        and a
+        jr nz, .failed
+        call CheckSubstituteOpp
+        jr nz, .failed
+
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .paralyze_player
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_limber
+.paralyze_player
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_limber
+        farcall Check_Limber
+        and a
+        jr nz, .no_limber_block
+        ld hl, AbilityText_Limber
+        call StdAbilityTextbox
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+
+.no_limber_block
+        ld c, 30
+        call DelayFrames
+        call AnimateCurrentMove
+        ld a, $1
+        ldh [hBGMapMode], a
         ld a, BATTLE_VARS_STATUS_OPP
         call GetBattleVarAddr
         set PAR, [hl]
