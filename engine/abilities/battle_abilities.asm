@@ -755,6 +755,73 @@ HandleShedSkin::
     ld hl, AbilityText_ShedSkin
     jp StdAbilityTextbox
 
+TryActivateNaturalCure_Player:
+    ; d = party slot of the Pokémon being cured
+    push bc
+    push de
+    push hl
+
+    ld hl, wBattleMonPersonality
+    ld a, [wBattleMonSpecies]
+    ld c, a
+    ld b, 0
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp NATURAL_CURE
+    jr nz, .done
+
+    xor a
+    ld [wBattleMonStatus], a
+    ld [wPlayerToxicCount], a
+
+    ld a, d
+    ld hl, wPartyMon1Status
+    call GetPartyLocation
+    xor a
+    ld [hl], a
+
+.done
+    pop hl
+    pop de
+    pop bc
+    ret
+
+TryActivateNaturalCure_Enemy:
+    ; d = party slot of the Pokémon being cured
+    push bc
+    push de
+    push hl
+
+    ld hl, wEnemyMonPersonality
+    ld a, [wEnemyMonSpecies]
+    ld c, a
+    ld b, 1
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp NATURAL_CURE
+    jr nz, .done
+
+    xor a
+    ld [wEnemyMonStatus], a
+    ld [wEnemyToxicCount], a
+
+    ld a, [wBattleMode]
+    dec a
+    jr z, .skip_party
+
+    ld a, d
+    ld hl, wOTPartyMon1Status
+    call GetPartyLocation
+    xor a
+    ld [hl], a
+
+.skip_party
+.done
+    pop hl
+    pop de
+    pop bc
+    ret
+
 TryActivateBattleBond::
     ld hl, wCurDamage
     ld a, [hli]

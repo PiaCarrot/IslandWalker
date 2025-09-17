@@ -2510,6 +2510,9 @@ WinTrainerBattle:
 	ld a, $1
 	ld [wBattleLowHealthAlarm], a
 	ld [wBattleEnded], a
+	ld a, [wCurBattleMon]
+	ld d, a
+	farcall TryActivateNaturalCure_Player
 	ld a, [wLinkMode]
 	and a
 	ld a, b
@@ -2939,6 +2942,8 @@ ForcePlayerMonChoice:
 PlayerPartyMonEntrance:
 	ld a, [wCurBattleMon]
 	ld [wLastPlayerMon], a
+	ld d, a
+	farcall TryActivateNaturalCure_Player
 	ld a, [wCurPartyMon]
 	ld [wCurBattleMon], a
 	call AddBattleParticipant
@@ -3033,6 +3038,9 @@ ForcePickSwitchMonInBattle:
 EndBattle:
         ld a, 1
         ld [wBattleEnded], a
+        ld a, [wCurBattleMon]
+        ld d, a
+        farcall TryActivateNaturalCure_Player
         ; Clear enemy personality so menus don't stay pink
         xor a
         ld [wEnemyMonPersonality], a
@@ -3520,6 +3528,9 @@ ScoreMonTypeMatchups:
 
 LoadEnemyMonToSwitchTo:
 	; 'b' contains the PartyNr of the mon the AI will switch to
+	ld a, [wCurOTMon]
+	ld d, a
+	farcall TryActivateNaturalCure_Enemy
 	ld a, b
 	ld [wCurPartyMon], a
 	ld hl, wOTPartyMon1Level
@@ -4076,6 +4087,9 @@ TryToRunAwayFromBattle:
 .fled_using_run_away
 	farcall Check_Flee_Ability.PrintRunawayText
 .done_flee
+	ld a, [wCurBattleMon]
+	ld d, a
+	farcall TryActivateNaturalCure_Player
 	call WaitSFX
 	call LoadTilemapToTempTilemap
 	scf
@@ -4232,6 +4246,8 @@ SwitchPlayerMon:
 	call ClearSprites
 	ld a, [wCurBattleMon]
 	ld [wLastPlayerMon], a
+	ld d, a
+	farcall TryActivateNaturalCure_Player
 	ld a, [wCurPartyMon]
 	ld [wCurBattleMon], a
 	call AddBattleParticipant
@@ -5386,6 +5402,9 @@ BattleMonEntrance:
 	call SetEnemyTurn
 	call PursuitSwitch
 	call nc, RecallPlayerMon
+	ld a, [wLastPlayerMon]
+	ld d, a
+	farcall TryActivateNaturalCure_Player
 
 	hlcoord 9, 7
 	lb bc, 5, 11
@@ -5421,6 +5440,11 @@ PassedBattleMonEntrance:
 	hlcoord 9, 7
 	lb bc, 5, 11
 	call ClearBox
+
+	ld a, [wCurBattleMon]
+	ld [wLastPlayerMon], a
+	ld d, a
+	farcall TryActivateNaturalCure_Player
 
 	ld a, [wCurPartyMon]
 	ld [wCurBattleMon], a

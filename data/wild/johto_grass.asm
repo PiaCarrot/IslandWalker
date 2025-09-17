@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, DODUO                   ; 20%
-	dbw 13, DODUO                  ; 20%
-	dbw 14, DODUO                   ; 10%
-	dbw 14, DODUO                  ; 10%
-	dbw 15, DODUO                   ; 10%
-	dbw 15, DODUO                  ; 10%
-	dbw 14, DODUO                ;  5%
-	dbw 15, DODUO                ;  5%
-	dbw 15, DODUO                 ;  4%
-	dbw 15, DODUO                   ;  4%
-	dbw 16, DODUO                 ;  1%
-	dbw 16, DODUO                   ;  1%
+	dbw 13, SWABLU                   ; 20%
+	dbw 13, SWABLU                  ; 20%
+	dbw 14, SWABLU                   ; 10%
+	dbw 14, SWABLU                  ; 10%
+	dbw 15, SWABLU                   ; 10%
+	dbw 15, SWABLU                  ; 10%
+	dbw 14, SWABLU                ;  5%
+	dbw 15, SWABLU                ;  5%
+	dbw 15, SWABLU                 ;  4%
+	dbw 15, SWABLU                   ;  4%
+	dbw 16, SWABLU                 ;  1%
+	dbw 16, SWABLU                   ;  1%
 	; day
-	dbw 13, DODUO                   ; 20%
-	dbw 13, DODUO                  ; 20%
-	dbw 14, DODUO                   ; 10%
-	dbw 14, DODUO                  ; 10%
-	dbw 15, DODUO                   ; 10%
-	dbw 15, DODUO                  ; 10%
-	dbw 14, DODUO                ;  5%
-	dbw 15, DODUO                ;  5%
-	dbw 15, DODUO                 ;  4%
-	dbw 15, DODUO                   ;  4%
-	dbw 16, DODUO                 ;  1%
-	dbw 16, DODUO                   ;  1%
+	dbw 13, SWABLU                   ; 20%
+	dbw 13, SWABLU                  ; 20%
+	dbw 14, SWABLU                   ; 10%
+	dbw 14, SWABLU                  ; 10%
+	dbw 15, SWABLU                   ; 10%
+	dbw 15, SWABLU                  ; 10%
+	dbw 14, SWABLU                ;  5%
+	dbw 15, SWABLU                ;  5%
+	dbw 15, SWABLU                 ;  4%
+	dbw 15, SWABLU                   ;  4%
+	dbw 16, SWABLU                 ;  1%
+	dbw 16, SWABLU                   ;  1%
 	; nite
-	dbw 13, DODUO                   ; 20%
-	dbw 13, DODUO                  ; 20%
-	dbw 14, DODUO                   ; 10%
-	dbw 14, DODUO                  ; 10%
-	dbw 15, DODUO                   ; 10%
-	dbw 15, DODUO                  ; 10%
-	dbw 14, DODUO                ;  5%
-	dbw 15, DODUO                ;  5%
-	dbw 15, DODUO                 ;  4%
-	dbw 15, DODUO                   ;  4%
-	dbw 16, DODUO                 ;  1%
-	dbw 16, DODUO                   ;  1%
+	dbw 13, SWABLU                   ; 20%
+	dbw 13, SWABLU                  ; 20%
+	dbw 14, SWABLU                   ; 10%
+	dbw 14, SWABLU                  ; 10%
+	dbw 15, SWABLU                   ; 10%
+	dbw 15, SWABLU                  ; 10%
+	dbw 14, SWABLU                ;  5%
+	dbw 15, SWABLU                ;  5%
+	dbw 15, SWABLU                 ;  4%
+	dbw 15, SWABLU                   ;  4%
+	dbw 16, SWABLU                 ;  1%
+	dbw 16, SWABLU                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54
