@@ -76,9 +76,9 @@
 	const HYPER_CUTTER ; ✔ Attack loss. Also increases the amount of grass removed when using Cut in the overworld
 	const INSOMNIA     ; ✔ Sleep
 	const VITAL_SPIRIT ; ✔ Sleep. Also decreases the overworld encounter rate of higher leveled Pokémon by 50% if in the first slot
-	const IMMUNITY     ; Poisoning
-	const LIMBER       ; Paralysis
-	const WATER_VEIL   ; Burn
+	const IMMUNITY     ; ✔ Poisoning
+	const LIMBER       ; ✔ Paralysis
+	const WATER_VEIL   ; ✔ Burn
 	const OBLIVIOUS    ; Infatuation and the move Captivate
 	const OWN_TEMPO    ; Confusion
 	const MAGMA_ARMOR  ; Freezing. Pokémon eggs will also hatch in half the time.

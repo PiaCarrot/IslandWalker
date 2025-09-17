@@ -414,6 +414,19 @@ Check_WaterVeil:
     ld a, 1
     ret
 
+; Magma Armor prevents the user from being frozen. Returns z if blocked.
+Check_MagmaArmor:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp MAGMA_ARMOR
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Inner Focus prevents flinching. Returns z if blocked.
 Check_InnerFocus:
     call GetAbility

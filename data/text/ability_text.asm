@@ -220,6 +220,14 @@ AbilityText_WaterVeil:
     cont "burns!"
     prompt
 
+AbilityText_MagmaArmor:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " prevents"
+    cont "freezing!"
+    prompt
+
 AbilityText_InnerFocus:
     text "<TARGET>'s"
     line "@"

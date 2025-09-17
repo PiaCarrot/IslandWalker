@@ -4655,11 +4655,34 @@ BattleCommand_FreezeTarget:
 	ld a, b
 	cp HELD_PREVENT_FREEZE
 	ret z
-	ld a, [wEffectFailed]
-	and a
-	ret nz
-	call SafeCheckSafeguard
-	ret nz
+        ld a, [wEffectFailed]
+        and a
+        ret nz
+        call SafeCheckSafeguard
+        ret nz
+
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .freeze_target_player
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        jr .check_magma_armor
+.freeze_target_player
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+.check_magma_armor
+        farcall Check_MagmaArmor
+        and a
+        jr nz, .no_magma_armor_block
+        ld hl, AbilityText_MagmaArmor
+        call StdAbilityTextbox
+        ret
+
+.no_magma_armor_block
         ld a, BATTLE_VARS_STATUS_OPP
         call GetBattleVarAddr
         set FRZ, [hl]
