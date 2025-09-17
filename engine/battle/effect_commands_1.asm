@@ -2416,26 +2416,57 @@ BattleCommand_CheckHit:
 INCLUDE "data/battle/accuracy_multipliers.asm"
 
 BattleCommand_EffectChance:
-	xor a
-	ld [wEffectFailed], a
-	call CheckSubstituteOpp
-	jr nz, .failed
+xor a
+ld [wEffectFailed], a
+call CheckSubstituteOpp
+jr nz, .failed
 
-	push hl
-	ld hl, wPlayerMoveStruct + MOVE_CHANCE
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_move_chance
-	ld hl, wEnemyMoveStruct + MOVE_CHANCE
+push hl
+call .CheckShieldDust
+ld a, [wEffectFailed]
+and a
+jr nz, .shield_dust_blocked
+
+ld hl, wPlayerMoveStruct + MOVE_CHANCE
+ldh a, [hBattleTurn]
+and a
+jr z, .got_move_chance
+ld hl, wEnemyMoveStruct + MOVE_CHANCE
 .got_move_chance
-	ld a, [hl]
-	sub 100 percent
-	; If chance was 100%, RNG won't be called (carry not set)
-	; Thus chance will be subtracted from 0, guaranteeing a carry
-	call c, BattleRandom
-	cp [hl]
-	pop hl
-	ret c
+ld a, [hl]
+sub 100 percent
+; If chance was 100%, RNG won't be called (carry not set)
+; Thus chance will be subtracted from 0, guaranteeing a carry
+call c, BattleRandom
+cp [hl]
+pop hl
+ret c
+
+.shield_dust_blocked
+pop hl
+ret
+
+.CheckShieldDust
+ldh a, [hBattleTurn]
+and a
+jr nz, .shield_player
+ld hl, wEnemyMonPersonality
+ld a, [wEnemyMonSpecies]
+ld c, a
+ld b, 1
+jr .shield_check
+.shield_player
+ld hl, wBattleMonPersonality
+ld a, [wBattleMonSpecies]
+ld c, a
+ld b, 0
+.shield_check
+farcall Check_ShieldDust
+and a
+ret nz
+ld a, 1
+ld [wEffectFailed], a
+ret
 
 .failed
 	ld a, 1
@@ -6245,9 +6276,9 @@ CheckOpponentWentFirst:
 BattleCommand_HeldFlinch:
 ; kingsrock
 
-	ld a, [wAttackMissed]
-	and a
-	ret nz
+ld a, [wAttackMissed]
+and a
+ret nz
 
 	call GetUserItem
 	ld a, b
@@ -6260,11 +6291,33 @@ BattleCommand_HeldFlinch:
 	call GetBattleVarAddr
 	ld d, h
 	ld e, l
-        call GetUserItem
-        call BattleRandom
-        cp c
-        ret nc
-        jp FlinchTarget
+call GetUserItem
+call BattleRandom
+cp c
+ret nc
+push hl
+ldh a, [hBattleTurn]
+and a
+jr nz, .heldflinch_player
+ld hl, wEnemyMonPersonality
+ld a, [wEnemyMonSpecies]
+ld c, a
+ld b, 1
+jr .heldflinch_check
+.heldflinch_player
+ld hl, wBattleMonPersonality
+ld a, [wBattleMonSpecies]
+ld c, a
+ld b, 0
+.heldflinch_check
+farcall Check_ShieldDust
+and a
+jr nz, .heldflinch_apply
+pop hl
+ret
+.heldflinch_apply
+pop hl
+jp FlinchTarget
 
 BattleCommand_OHKO:
         ; Sturdy blocks OHKO moves entirely

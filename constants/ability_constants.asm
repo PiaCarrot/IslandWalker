@@ -80,7 +80,7 @@
 	const LIMBER       ; ✔ Paralysis
 	const WATER_VEIL   ; ✔ Burn
 	const OBLIVIOUS    ; ✔ Infatuation and the moves Captivate and Taunt. Also Blocks Intimidate.
-	const OWN_TEMPO    ; Confusion. Also Blocks Intimidate.
+	const OWN_TEMPO    ; ✔ Confusion. Also Blocks Intimidate.
 	const MAGMA_ARMOR  ; ✔ Freezing. Pokémon eggs will also hatch in half the time.
 	const SHIELD_DUST  ; Added move effects
 	const STICKY_HOLD  ; Item loss. Also increases capture rate of hooked wild Pokémon if in Battle
@@ -135,9 +135,9 @@
 
 ; Purely has an overworld effect
 ; Doubles wild Pokémon encounter rate if in the first slot
-	const ILLUMINATE
+	const ILLUMINATE ; ✔
 ; Halves wild Pokémon encounter rate if in the first slot
-	const STENCH
+	const STENCH ; ✔
 ; Randomly may find an item after battle
 	const PICKUP ; ✔
 	

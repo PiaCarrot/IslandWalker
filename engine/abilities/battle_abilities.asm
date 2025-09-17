@@ -444,6 +444,19 @@ Check_MagmaArmor:
     ld a, 1
     ret
 
+; Shield Dust prevents added move effects from affecting the user.
+; Returns z if blocked.
+Check_ShieldDust:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp SHIELD_DUST
+    jr nz, .nope
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Oblivious prevents infatuation, Taunt, and Captivate. Returns z if blocked.
 Check_Oblivious:
     call GetAbility
