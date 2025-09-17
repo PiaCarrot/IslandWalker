@@ -5947,10 +5947,28 @@ BattleCommand_FlinchTarget:
 	; fallthrough
 
 FlinchTarget:
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVarAddr
-	set SUBSTATUS_FLINCHED, [hl]
-	jmp EndRechargeOpp
+        ldh a, [hBattleTurn]
+        and a
+        jr nz, .player_inner_focus
+        ld hl, wEnemyMonPersonality
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld b, 1
+        jr .check_inner_focus
+.player_inner_focus
+        ld hl, wBattleMonPersonality
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld b, 0
+.check_inner_focus
+        farcall Check_InnerFocus
+        and a
+        ret z
+
+        ld a, BATTLE_VARS_SUBSTATUS3_OPP
+        call GetBattleVarAddr
+        set SUBSTATUS_FLINCHED, [hl]
+        jmp EndRechargeOpp
 
 CheckOpponentWentFirst:
 ; Returns a=0, z if user went first
@@ -5981,15 +5999,11 @@ BattleCommand_HeldFlinch:
 	call GetBattleVarAddr
 	ld d, h
 	ld e, l
-	call GetUserItem
-	call BattleRandom
-	cp c
-	ret nc
-	call EndRechargeOpp
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVarAddr
-	set SUBSTATUS_FLINCHED, [hl]
-	ret
+        call GetUserItem
+        call BattleRandom
+        cp c
+        ret nc
+        jp FlinchTarget
 
 BattleCommand_OHKO:
         ; Sturdy blocks OHKO moves entirely

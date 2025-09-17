@@ -328,6 +328,21 @@ Check_SuctionCups:
     ld a, 1
     ret
 
+; Inner Focus prevents flinching. Returns z if blocked.
+Check_InnerFocus:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp INNER_FOCUS
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_InnerFocus
+    call StdAbilityTextbox
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Applies a 1.5x damage boost for "in a pinch" abilities when the user
 ; is at or below 1/3 of its maximum HP. The ability user is indicated by
 ; b (0 for the player, 1 for the enemy), with the species in c and the
@@ -541,7 +556,6 @@ Check_SturdyHangOn:
     ld a, 1
     ret
 
-; Ruby/Sapphire PICKUP ability: chance to find an item after battle
 HandleSpeedBoost::
     ldh a, [hSerialConnectionStatus]
     cp USING_EXTERNAL_CLOCK
@@ -926,6 +940,7 @@ TryActivateBattleBond::
     inc [hl]
     ret
 
+; Ruby/Sapphire PICKUP ability: chance to find an item after battle
 HandlePickup::
     ld a, [wPartyCount]
     and a

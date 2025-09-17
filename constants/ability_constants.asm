@@ -69,8 +69,8 @@
 	const WHITE_SMOKE  ; ✔ Also decreases the overworld encounter rate by 50% (UNUSED)
 ; Prevents specifically...
 	const ROCK_HEAD    ; ✔ Recoil damage from moves, except from Struggle
-	const BATTLE_ARMOR ; Critical hits
-	const SHELL_ARMOR  ; Critical hits
+	const BATTLE_ARMOR ; ✔ Critical hits - Monsta
+	const SHELL_ARMOR  ; ✔ Critical hits - Monsta
 	const INNER_FOCUS  ; Flinching
 	const KEEN_EYE     ; Accuracy loss. Also decreases the encounter rate of lower-leveled wild Pokémon
 	const HYPER_CUTTER ; Attack loss. Also increases the amount of grass removed when using Cut in the overworld

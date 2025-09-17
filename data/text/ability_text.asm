@@ -172,6 +172,14 @@ AbilityText_SuctionCups:
     cont "place!"
     prompt
 
+AbilityText_InnerFocus:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " pre-"
+    cont "vents flinching!"
+    prompt
+
 AbilityText_Levitate:
     text "<TARGET>'s"
     line "@"
