@@ -116,7 +116,7 @@ DoTurn:
         ld de, 2
         ld hl, SoundMoves
         call IsInWordArray
-        jr nc, DoMove
+        jr nc, .check_oblivious_taunt
         ; Load target's species and personality
         ldh a, [hBattleTurn]
         and a
