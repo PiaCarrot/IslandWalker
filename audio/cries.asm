@@ -2886,20 +2886,27 @@ Cry_Kecleon:
         channel 8, Cry_Kecleon_Ch8
 
 Cry_Kecleon_Ch5:
-        duty_cycle_pattern 1, 2, 1, 2
-        square_note 4, 13, 4, 1808
-        square_note 8, 12, 2, 1744
+        duty_cycle_pattern 0, 1, 0, 3
+        square_note 4, 15, 0, 1446
+	square_note 1, 14, 1, 1446
+	square_note 1, 12, 1, 1446
+	square_note 1, 9, 1, 1412
+	square_note 4, 15, 0, 1446
+	square_note 1, 10, 1, 1412
+	square_note 5, 15, 0, 1442
+	square_note 3, 0, 1, 1442
         sound_ret
 
 Cry_Kecleon_Ch6:
-        duty_cycle_pattern 2, 3, 2, 3
-        square_note 4, 11, 4, 1776
-        square_note 8, 10, 2, 1712
+        duty_cycle_pattern 1, 1, 1, 1
+        square_note 5, 8, 4, 1078
+	square_note 2, 7, 6, 1078
+	square_note 7, 7, 1, 1344
+	square_note 4, 6, 1, 1344
         sound_ret
 
 Cry_Kecleon_Ch8:
-        noise_note 4, 9, 4, 100
-        noise_note 8, 8, 2, 96
+        noise_note 9, 8, 3, 122
         sound_ret
 
 Cry_Shuppet:
@@ -3001,20 +3008,27 @@ Cry_Wynaut:
         channel 8, Cry_Wynaut_Ch8
 
 Cry_Wynaut_Ch5:
-        duty_cycle_pattern 1, 2, 1, 2
-        square_note 4, 13, 4, 1760
-        square_note 8, 12, 2, 1696
+        duty_cycle_pattern 3, 1, 3, 2
+        square_note 8, 15, 1, 1946
+	square_note 11, 8, 1, 1945
+	square_note 24, 13, 2, 1935
         sound_ret
 
 Cry_Wynaut_Ch6:
-        duty_cycle_pattern 2, 3, 2, 3
-        square_note 4, 11, 4, 1728
-        square_note 8, 10, 2, 1664
+        duty_cycle_pattern 0, 0, 1, 3
+        square_note 8, 10, 7, 1666
+	square_note 4, 7, 1, 1666
+	square_note 5, 10, 1, 1666
+	square_note 1, 0, 1, 1666
+	square_note 16, 8, 3, 1643
         sound_ret
 
 Cry_Wynaut_Ch8:
-        noise_note 4, 9, 4, 100
-        noise_note 8, 8, 2, 96
+        noise_note 4, 14, -5, 86
+	noise_note 4, 12, 8, 86
+	noise_note 7, 11, 8, 87
+	noise_note 4, 10, 8, 86
+	noise_note 16, 10, 3, 86
         sound_ret
 
 Cry_Snorunt:

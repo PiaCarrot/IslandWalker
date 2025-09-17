@@ -294,14 +294,14 @@ PokemonCries::
 	mon_cry CRY_SUNFLORA,    $04c,  $180 ; SEVIPER
 	mon_cry CRY_FEEBAS,         0,   150 ; FEEBAS
 	mon_cry CRY_MILOTIC,      148,   340 ; MILOTIC
-	mon_cry CRY_NIDORAN_M,   $2ff,  $100 ; KECLEON
+	mon_cry CRY_KECLEON,      225,   184 ; KECLEON
 	mon_cry CRY_SUNFLORA,    $820,  $070 ; SHUPPET
 	mon_cry CRY_DROWZEE,     $180,  $05f ; BANETTE
 	mon_cry CRY_GLIGAR,      $ea0,  $100 ; DUSKULL
 	mon_cry CRY_NATU,        $100,  $190 ; DUSCLOPS
 	mon_cry CRY_TYPHLOSION,  $c00,  $130 ; TROPIUS
 	mon_cry CRY_CLEFFA,      $0b0,  $100 ; CHIMECHO
-	mon_cry CRY_AMPHAROS,    $28b,  $045 ; WYNAUT
+	mon_cry CRY_WYNAUT,         0,   228 ; WYNAUT
 	mon_cry CRY_PIDGEY,      $8a8,  $220 ; SNORUNT
 	mon_cry CRY_BULBASAUR,   $fe0,  $150 ; GLALIE
 	mon_cry CRY_MARILL,      $070,  $050 ; SPHEAL
