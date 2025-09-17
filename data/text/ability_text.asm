@@ -256,7 +256,8 @@ AbilityText_CuteCharm:
     text "<USER>'s"
     line "@"
     text_ram wStringBuffer1
-    text " made <TARGET>"
+    text " made"
+    cont "<TARGET>"
     cont "fall in love!"
     prompt
 

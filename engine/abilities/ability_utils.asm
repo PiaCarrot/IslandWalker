@@ -309,63 +309,40 @@ ApplyBrnEffectOnAttack:
     ret
 
 Ability_CuteCharmCheckOppositeGender:
-    ld a, [wMonType]
-    ld h, 0
-    ld l, a
-    push hl
-    ld a, [wCurPartySpecies]
-    ld h, 0
-    ld l, a
-    push hl
-    ld a, [wCurPartyMon]
-    ld h, 0
-    ld l, a
-    push hl
-    ld a, [wCurOTMon]
-    ld h, 0
-    ld l, a
-    push hl
+    push bc
 
-    ld a, e
-    ld [wCurPartySpecies], a
     ld a, d
     and a
-    jr z, .user_player
-    ld a, WILDMON
-    ld [wMonType], a
-    farcall GetGender
+    jr nz, .user_enemy
+    ld hl, wBattleMonGender
+    ld a, e
+    call Ability_GetGenderFromStruct
     jr c, .fail
     ld b, a
-    jr .get_attacker
+    jr .have_user_gender
 
-.user_player
-    ld a, [wCurBattleMon]
-    ld [wCurPartyMon], a
-    ld a, PARTYMON
-    ld [wMonType], a
-    farcall GetGender
+.user_enemy
+    ld hl, wEnemyMonGender
+    ld a, e
+    call Ability_GetGenderFromStruct
     jr c, .fail
     ld b, a
 
-.get_attacker
-    ld a, c
-    ld [wCurPartySpecies], a
+.have_user_gender
     ld a, d
     and a
     jr nz, .attacker_player
-    ld a, WILDMON
-    ld [wMonType], a
-    farcall GetGender
+    ld hl, wEnemyMonGender
+    ld a, c
+    call Ability_GetGenderFromStruct
     jr c, .fail
     ld c, a
     jr .compare
 
 .attacker_player
-    ld a, [wCurBattleMon]
-    ld [wCurPartyMon], a
-    ld a, PARTYMON
-    ld [wMonType], a
-    farcall GetGender
+    ld hl, wBattleMonGender
+    ld a, c
+    call Ability_GetGenderFromStruct
     jr c, .fail
     ld c, a
 
@@ -373,29 +350,62 @@ Ability_CuteCharmCheckOppositeGender:
     ld a, b
     xor c
     jr z, .fail
-    ld b, 0
-    jr .restore
+    and a
+    pop bc
+    ret
 
 .fail
-    ld b, 1
+    pop bc
+    scf
+    ret
 
-.restore
+Ability_GetGenderFromStruct:
+    push bc
+    push de
+    push hl
+    ld c, a
+    call GetPokemonIndexFromID
+    ld b, h
+    ld c, l
+    ld hl, BaseData
+    ld a, BANK(BaseData)
+    call LoadIndirectPointer
+    ld bc, BASE_GENDER
+    add hl, bc
+    call GetFarByte
+    ld e, a
     pop hl
-    ld a, l
-    ld [wCurOTMon], a
-    pop hl
-    ld a, l
-    ld [wCurPartyMon], a
-    pop hl
-    ld a, l
-    ld [wCurPartySpecies], a
-    pop hl
-    ld a, l
-    ld [wMonType], a
+    ld a, e
+    cp GENDER_UNKNOWN
+    jr z, .genderless
+    cp GENDER_F0
+    jr z, .male
+    cp GENDER_F100
+    jr z, .female
+    ld a, [hl]
+    and GENDER_MASK
+    rlca
+    jr nc, .male
+.female_personality
+    xor a
+    jr .done
 
-    ld a, b
+.male
+    ld a, 1
+    jr .done
+
+.female
+    xor a
+
+.done
     and a
-    ret z
+    pop de
+    pop bc
+    ret
+
+.genderless
+    pop de
+    pop bc
     scf
     ret
 
