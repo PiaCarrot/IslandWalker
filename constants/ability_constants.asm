@@ -79,9 +79,9 @@
 	const IMMUNITY     ; ✔ Poisoning
 	const LIMBER       ; ✔ Paralysis
 	const WATER_VEIL   ; ✔ Burn
-	const OBLIVIOUS    ; Infatuation and the move Captivate
-	const OWN_TEMPO    ; Confusion
-	const MAGMA_ARMOR  ; Freezing. Pokémon eggs will also hatch in half the time.
+	const OBLIVIOUS    ; ✔ Infatuation and the moves Captivate and Taunt. Also Blocks Intimidate.
+	const OWN_TEMPO    ; Confusion. Also Blocks Intimidate.
+	const MAGMA_ARMOR  ; ✔ Freezing. Pokémon eggs will also hatch in half the time.
 	const SHIELD_DUST  ; Added move effects
 	const STICKY_HOLD  ; Item loss. Also increases capture rate of hooked wild Pokémon if in Battle
 ; Weakens...

@@ -80,6 +80,8 @@ Check_Entrance_Ability:
     jr z, .blocked_intimidate
     cp OBLIVIOUS
     jr z, .blocked_intimidate
+    cp OWN_TEMPO
+    jr z, .blocked_intimidate
     ; We're still here? Push forward!
 ; Known bug: it does briefly flash the HP bar
     farcall BattleCommand_StatDownAnim.intimidate_skip
@@ -382,6 +384,19 @@ Check_Immunity:
     call GetAbility
     call Ability_LoadTracedAbility
     cp IMMUNITY
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
+; Own Tempo prevents the user from becoming confused. Returns z if blocked.
+Check_OwnTempo:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp OWN_TEMPO
     jr nz, .nope
     call Ability_LoadAbilityName
     xor a

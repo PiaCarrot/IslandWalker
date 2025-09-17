@@ -5700,18 +5700,43 @@ BattleCommand_CheckRampage:
 	jr nz, .continue_rampage
 
 	res SUBSTATUS_RAMPAGE, [hl]
-	call BattleCommand_SwitchTurn
-	call SafeCheckSafeguard
-	push af
-	call BattleCommand_SwitchTurn
-	pop af
-	jr nz, .continue_rampage
+        call BattleCommand_SwitchTurn
+        call SafeCheckSafeguard
+        push af
+        call BattleCommand_SwitchTurn
+        pop af
+        jr nz, .continue_rampage
 
-	set SUBSTATUS_CONFUSED, [hl]
-	call BattleRandom
-	and %00000001
-	inc a
-	inc a
+        push hl
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .rampage_target_enemy
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        jr .rampage_check_own_tempo
+.rampage_target_enemy
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+.rampage_check_own_tempo
+        farcall Check_OwnTempo
+        and a
+        jr nz, .rampage_no_block
+        ld hl, AbilityText_OwnTempo
+        call StdAbilityTextbox
+        pop hl
+        jr .continue_rampage
+.rampage_no_block
+        pop hl
+
+        set SUBSTATUS_CONFUSED, [hl]
+        call BattleRandom
+        and %00000001
+        inc a
+        inc a
 	inc de ; ConfuseCount
 	ld [de], a
 .continue_rampage
@@ -6506,11 +6531,35 @@ BattleCommand_Confuse:
 	and a
 	jr nz, BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit
 BattleCommand_FinishConfusingTarget:
-	ld bc, wEnemyConfuseCount
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_confuse_count
-	ld bc, wPlayerConfuseCount
+        push hl
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .target_enemy
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        jr .check_own_tempo
+.target_enemy
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+.check_own_tempo
+        farcall Check_OwnTempo
+        and a
+        jr nz, .no_own_tempo_block
+        ld hl, AbilityText_OwnTempo
+        call StdAbilityTextbox
+        pop hl
+        ret
+.no_own_tempo_block
+        pop hl
+        ld bc, wEnemyConfuseCount
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .got_confuse_count
+        ld bc, wPlayerConfuseCount
 
 .got_confuse_count
 	set SUBSTATUS_CONFUSED, [hl]

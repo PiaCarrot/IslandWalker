@@ -437,46 +437,81 @@ HandleBerserkGene:
 	call GetPartyLocation
 	xor a
 	ld [hl], a
-	ld a, BATTLE_VARS_SUBSTATUS3
-	call GetBattleVarAddr
-	push af
-	set SUBSTATUS_CONFUSED, [hl]
-	ldh a, [hBattleTurn]
-	and a
-	ld hl, wPlayerConfuseCount
-	jr z, .set_confuse_count
-	ld hl, wEnemyConfuseCount
-.set_confuse_count
-	call BattleRandom
-	and %11
-	add 2
-	ld [hl], a
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVarAddr
-	push hl
-	push af
-	xor a
-	ld [hl], a
-	ld [wAttackMissed], a
-	ld [wEffectFailed], a
-	farcall BattleCommand_AttackUp2
-	pop af
-	pop hl
-	ld [hl], a
-	call GetItemName
-	ld hl, BattleText_UsersStringBuffer1Activated
-	call StdBattleTextbox
-	farcall BattleCommand_StatUpMessage
-	pop af
-	bit SUBSTATUS_CONFUSED, a
-	ret nz
-	xor a
-	ld [wBattleAfterAnim], a
-	ld de, ANIM_CONFUSED
-	call Call_PlayBattleAnim_OnlyIfVisible
-	call SwitchTurnCore
-	ld hl, BecameConfusedText
-	jmp StdBattleTextbox
+        ld a, BATTLE_VARS_SUBSTATUS3
+        call GetBattleVarAddr
+        ld d, 0
+        push af
+        push hl
+        ldh a, [hBattleTurn]
+        and a
+        jr z, .berserk_target_enemy
+        ld a, [wBattleMonSpecies]
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        jr .berserk_check_own_tempo
+.berserk_target_enemy
+        ld a, [wEnemyMonSpecies]
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+.berserk_check_own_tempo
+        farcall Check_OwnTempo
+        and a
+        jr nz, .berserk_no_block
+        ld hl, AbilityText_OwnTempo
+        call StdAbilityTextbox
+        ld d, 1
+.berserk_no_block
+        pop hl
+        ld a, d
+        and a
+        jr nz, .skip_berserk_confuse
+        set SUBSTATUS_CONFUSED, [hl]
+        ldh a, [hBattleTurn]
+        and a
+        ld hl, wPlayerConfuseCount
+        jr z, .set_berserk_confuse_count
+        ld hl, wEnemyConfuseCount
+.set_berserk_confuse_count
+        call BattleRandom
+        and %11
+        add 2
+        ld [hl], a
+        jr .after_berserk_confuse
+.skip_berserk_confuse
+.after_berserk_confuse
+        ld a, BATTLE_VARS_MOVE_ANIM
+        call GetBattleVarAddr
+        push hl
+        push af
+        xor a
+        ld [hl], a
+        ld [wAttackMissed], a
+        ld [wEffectFailed], a
+        farcall BattleCommand_AttackUp2
+        pop af
+        pop hl
+        ld [hl], a
+        call GetItemName
+        ld hl, BattleText_UsersStringBuffer1Activated
+        call StdBattleTextbox
+        farcall BattleCommand_StatUpMessage
+        pop af
+        bit SUBSTATUS_CONFUSED, a
+        jr nz, .skip_berserk_confuse_message
+        ld a, d
+        and a
+        jr nz, .skip_berserk_confuse_message
+        xor a
+        ld [wBattleAfterAnim], a
+        ld de, ANIM_CONFUSED
+        call Call_PlayBattleAnim_OnlyIfVisible
+        call SwitchTurnCore
+        ld hl, BecameConfusedText
+        jmp StdBattleTextbox
+.skip_berserk_confuse_message
+        ret
 
 EnemyTriesToFlee:
 	ld a, [wLinkMode]

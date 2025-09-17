@@ -252,6 +252,14 @@ AbilityText_ObliviousCaptivate:
     cont "CAPTIVATE!"
     prompt
 
+AbilityText_OwnTempo:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " prevents"
+    cont "confusion!"
+    prompt
+
 AbilityText_InnerFocus:
     text "<TARGET>'s"
     line "@"
