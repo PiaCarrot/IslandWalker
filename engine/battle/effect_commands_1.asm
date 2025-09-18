@@ -2494,13 +2494,19 @@ jr z, .got_move_chance
 ld hl, wEnemyMoveStruct + MOVE_CHANCE
 .got_move_chance
 ld a, [hl]
+ld d, a
+call .CheckSereneGrace
+ld a, d
 sub 100 percent
 ; If chance was 100%, RNG won't be called (carry not set)
 ; Thus chance will be subtracted from 0, guaranteeing a carry
 call c, BattleRandom
-cp [hl]
+cp d
 pop hl
 ret c
+ld a, 1
+ld [wEffectFailed], a
+ret
 
 .shield_dust_blocked
 pop hl
@@ -2528,10 +2534,40 @@ ld a, 1
 ld [wEffectFailed], a
 ret
 
+.CheckSereneGrace
+ld a, d
+and a
+ret z
+ldh a, [hBattleTurn]
+and a
+jr z, .player_serene_grace
+ld hl, wEnemyMonPersonality
+ld a, [wEnemyMonSpecies]
+ld c, a
+ld b, 1
+jr .check_serene_grace
+.player_serene_grace
+ld hl, wBattleMonPersonality
+ld a, [wBattleMonSpecies]
+ld c, a
+ld b, 0
+.check_serene_grace
+call GetAbility
+xcall Ability_LoadTracedAbility
+cp SERENE_GRACE
+ret nz
+ld a, d
+add a
+jr nc, .store_serene_grace
+ld a, 100 percent
+.store_serene_grace
+ld d, a
+ret
+
 .failed
-	ld a, 1
-	ld [wEffectFailed], a
-	and a
+ld a, 1
+ld [wEffectFailed], a
+and a
 	ret
 
 BattleCommand_LowerSub:
