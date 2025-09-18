@@ -1,17 +1,3 @@
-GetBattleAnimOAMPointer:
-	ld h, d
-	ld l, e
-	ld de, BattleAnimOAMData
-	ld a, [wBattleAnimTempFrameOAMFlags]
-	add a
-	jr nc, .ok
-	ld de, BattleAnimOAMData + 4 * NUM_BATTLE_ANIM_OAMSETS
-.ok
-	add hl, hl
-	add hl, hl
-	add hl, de
-	ret
-
 LoadBattleAnimGFX:
 	push hl
 	cp BATTLE_ANIM_GFX_POKE_BALL

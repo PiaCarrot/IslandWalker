@@ -901,9 +901,9 @@ NamePlayer:
 	jmp InitName
 
 .Chris:
-	db "INDIGO@@@@@"
+	dname "INDIGO", NAME_LENGTH
 .Kris:
-	db "ORANGE@@@@@"
+	dname "ORANGE", NAME_LENGTH
 
 StorePlayerName:
 	ld a, "@"

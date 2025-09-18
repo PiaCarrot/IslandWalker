@@ -668,19 +668,6 @@ _OpenPartyStats:
 	xor a
 	ret
 
-MonMenu_Cut:
-	farcall CutFunction
-	ld a, [wFieldMoveSucceeded]
-	cp $1
-	jr nz, .Fail
-	ld b, $4
-	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
-	ret
-
 MonMenu_Fly:
 	farcall FlyFunction
 	ld a, [wFieldMoveSucceeded]
@@ -701,102 +688,55 @@ MonMenu_Fly:
 	xor a
 	ret
 
-MonMenu_Flash:
-        farcall FlashFunction
-        ld a, [wFieldMoveSucceeded]
-        cp $1
-        jr nz, .Fail
-        ld b, $4
-        ld a, $2
-        ret
+MonMenu_Cut:
+	farcall CutFunction
+	jr MonMenu_CheckMoveFail
 
-.Fail:
-        ld a, $3
-        ret
+MonMenu_Flash:
+	farcall FlashFunction
+	jr MonMenu_CheckMoveFail
 
 MonMenu_Defog:
-       farcall DefogFunction
-       ld a, [wFieldMoveSucceeded]
-       cp $1
-       jr nz, .Fail
-       ld b, $4
-       ld a, $2
-       ret
-
-.Fail:
-       ld a, $3
-       ret
+	farcall DefogFunction
+	farcall FlashFunction
+	jr MonMenu_CheckMoveFail
 
 MonMenu_Strength:
 	farcall StrengthFunction
-	ld a, [wFieldMoveSucceeded]
-	cp $1
-	jr nz, .Fail
-	ld b, $4
-	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
-	ret
+	jr MonMenu_CheckMoveFail
 
 MonMenu_Whirlpool:
 	farcall WhirlpoolFunction
-	ld a, [wFieldMoveSucceeded]
-	cp $1
-	jr nz, .Fail
-	ld b, $4
-	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
-	ret
+	jr MonMenu_CheckMoveFail
 
 MonMenu_Waterfall:
 	farcall WaterfallFunction
-	ld a, [wFieldMoveSucceeded]
-	cp $1
-	jr nz, .Fail
-	ld b, $4
-	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
-	ret
+	jr MonMenu_CheckMoveFail
 
 MonMenu_Teleport:
 	farcall TeleportFunction
-	ld a, [wFieldMoveSucceeded]
-	and a
-	jr z, .Fail
-	ld b, $4
-	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
-	ret
+	jr MonMenu_CheckMoveFail
 
 MonMenu_Surf:
 	farcall SurfFunction
-	ld a, [wFieldMoveSucceeded]
-	and a
-	jr z, .Fail
-	ld b, $4
-	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
-	ret
+	jr MonMenu_CheckMoveFail
 
 MonMenu_Dig:
 	farcall DigFunction
+	jr MonMenu_CheckMoveFail
+
+MonMenu_Headbutt:
+	farcall HeadbuttFunction
+	jr MonMenu_CheckMoveFail
+
+MonMenu_RockSmash:
+	farcall RockSmashFunction
+; fallthrough
+
+MonMenu_CheckMoveFail:
 	ld a, [wFieldMoveSucceeded]
-	cp $1
-	jr nz, .Fail
+	and a
+	jr z, .Fail
 	ld b, $4
 	ld a, $2
 	ret
@@ -844,32 +784,6 @@ MonMenu_Softboiled_MilkDrink:
 	dec hl
 	ldh a, [hQuotient + 2]
 	sbc [hl]
-	ret
-
-MonMenu_Headbutt:
-	farcall HeadbuttFunction
-	ld a, [wFieldMoveSucceeded]
-	cp $1
-	jr nz, .Fail
-	ld b, $4
-	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
-	ret
-
-MonMenu_RockSmash:
-	farcall RockSmashFunction
-	ld a, [wFieldMoveSucceeded]
-	cp $1
-	jr nz, .Fail
-	ld b, $4
-	ld a, $2
-	ret
-
-.Fail:
-	ld a, $3
 	ret
 
 MonMenu_SweetScent:

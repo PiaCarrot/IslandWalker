@@ -321,3 +321,12 @@ gfx/intro/fire3.2bpp: gfx/intro/fire.2bpp gfx/intro/unused_blastoise_venusaur.2b
 
 %.dimensions: %.png
 	tools/png_dimensions $< $@
+
+
+### File extensions that are never generated and should be manually created
+
+%.inc: ;
+%.pal: ;
+%.bin: ;
+%.blk: ;
+%.rle: ;

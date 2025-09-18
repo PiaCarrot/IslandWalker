@@ -122,6 +122,18 @@ MACRO dr ; relative offset
 	db \1 - @
 ENDM
 
+MACRO dname
+	if _NARG == 2
+		def n = \2
+	else
+		def n = NAME_LENGTH - 1
+	endc
+	assert STRFIND(\1, "@") == -1, "String terminator \"@\" in name: \1"
+	assert CHARLEN(\1) <= n, "Name longer than {d:n} characters: \1"
+	db \1
+	ds n - CHARLEN(\1), "@"
+ENDM
+
 MACRO bcd
 	rept _NARG
 		dn ((\1) % 100) / 10, (\1) % 10
