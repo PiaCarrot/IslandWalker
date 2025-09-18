@@ -288,6 +288,33 @@ AbilityText_EffectSporeParalyze:
     cont "<TARGET>!"
     prompt
 
+AbilityText_FlameBody:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "burned"
+    cont "<TARGET>!"
+    prompt
+
+AbilityText_PoisonPoint:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "poisoned"
+    cont "<TARGET>!"
+    prompt
+
+AbilityText_Static:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "paralyzed"
+    cont "<TARGET>!"
+    prompt
+
 AbilityText_OwnTempo:
     text "<TARGET>'s"
     line "@"

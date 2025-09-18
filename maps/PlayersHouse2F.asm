@@ -99,7 +99,7 @@ PlayersHouseBookshelfScript:
 	giveitem CATCHING_CHARM
 	giveitem EXP_CHARM
 	giveitem OVAL_CHARM
-	giveitem SHINY_CHARM
+	giveitem ABILITY_UP, 99
 	giveitem RARE_CANDY, 99
 	giveitem EXP_CANDY_XS, 99
 	giveitem EXP_CANDY_S, 99
@@ -109,10 +109,11 @@ PlayersHouseBookshelfScript:
 	giveitem POKE_BALL, 99
 	giveitem GREAT_BALL, 99
 	giveitem EXP_SHARE
-	givepoke LAPRAS_PARTNER, 15
-	givepoke PIKACHU_PARTNER, 15
-	givepoke EEVEE_PARTNER, 15
-	givepoke DRATINI_PARTNER, 15
+	givepoke NIDOQUEEN, 25
+	givepoke MAGMORTAR, 25
+	givepoke PIKACHU, 25
+	givepoke GENGAR, 25
+	givepoke SHROOMISH, 25
 	callasm CheatFillPokedex
 	setflag ENGINE_POKEDEX
 	end

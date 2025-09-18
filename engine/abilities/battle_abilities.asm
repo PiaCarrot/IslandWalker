@@ -943,7 +943,7 @@ TryActivateCuteCharm:
     ld a, d
     xor 1
     ld b, a
-    farcall Check_Oblivious
+    call Check_Oblivious
     pop bc
     ld b, d
     and a
@@ -1009,9 +1009,18 @@ TryActivateEffectSpore:
     ld d, b
     call GetAbility
     call Ability_LoadTracedAbility
+    ld e, a
+
     cp EFFECT_SPORE
+    jr z, .check_chance
+    cp FLAME_BODY
+    jr z, .check_chance
+    cp POISON_POINT
+    jr z, .check_chance
+    cp STATIC
     ret nz
 
+.check_chance
     call BattleRandom
     cp 30 percent
     ret nc
@@ -1042,6 +1051,16 @@ TryActivateEffectSpore:
     farcall SafeCheckSafeguard
     jp nz, .restore_turn
 
+    ld a, e
+    cp EFFECT_SPORE
+    jr z, .effect_spore
+    cp FLAME_BODY
+    jp z, .flame_body
+    cp POISON_POINT
+    jp z, .poison_point
+    jp .static
+
+.effect_spore
     call BattleRandom
     cp 33 percent + 1
     jr c, .sleep
@@ -1055,7 +1074,7 @@ TryActivateEffectSpore:
     ld a, d
     xor 1
     ld b, a
-    farcall Check_InsomniaVitalSpirit
+    call Check_InsomniaVitalSpirit
     ld b, d
     and a
     jr nz, .sleep_item
@@ -1093,7 +1112,7 @@ TryActivateEffectSpore:
     inc a
     ld [hl], a
     call UpdateOpponentInParty
-    farcall ApplyStatusAbilityBoosts
+    call ApplyStatusAbilityBoosts
     call RefreshBattleHuds
     ld a, EFFECT_SPORE
     call Ability_LoadAbilityName
@@ -1114,7 +1133,7 @@ TryActivateEffectSpore:
     ld a, d
     xor 1
     ld b, a
-    farcall Check_Immunity
+    call Check_Immunity
     ld b, d
     and a
     jr nz, .poison_item
@@ -1139,7 +1158,7 @@ TryActivateEffectSpore:
     call GetBattleVarAddr
     set PSN, [hl]
     call UpdateOpponentInParty
-    farcall ApplyStatusAbilityBoosts
+    call ApplyStatusAbilityBoosts
     call RefreshBattleHuds
     ld a, EFFECT_SPORE
     call Ability_LoadAbilityName
@@ -1154,7 +1173,7 @@ TryActivateEffectSpore:
     ld a, d
     xor 1
     ld b, a
-    farcall Check_Limber
+    call Check_Limber
     ld b, d
     and a
     jr nz, .paralyze_item
@@ -1179,12 +1198,143 @@ TryActivateEffectSpore:
     call GetBattleVarAddr
     set PAR, [hl]
     call UpdateOpponentInParty
-    farcall ApplyPrzEffectOnSpeed
-    farcall ApplyStatusAbilityBoosts
+    call ApplyPrzEffectOnSpeed
+    call ApplyStatusAbilityBoosts
     call RefreshBattleHuds
     ld a, EFFECT_SPORE
     call Ability_LoadAbilityName
     ld hl, AbilityText_EffectSporeParalyze
+    call StdAbilityTextbox
+    farcall UseHeldStatusHealingItem
+    jp .restore_turn
+
+.flame_body
+    ld b, d
+    call Ability_LoadOppSpeciesAndPersonality
+    ld a, FIRE
+    call Ability_CheckOpponentMonType
+    jp z, .restore_turn
+    ld a, d
+    xor 1
+    ld b, a
+    call Check_WaterVeil
+    ld b, d
+    and a
+    jr nz, .flame_body_item
+    ld hl, AbilityText_WaterVeil
+    call StdAbilityTextbox
+    jp .restore_turn
+
+.flame_body_item
+    farcall GetOpponentItem
+    ld a, b
+    cp HELD_PREVENT_BURN
+    jr nz, .flame_body_apply
+    ld a, [hl]
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ld hl, ProtectedByText
+    call StdBattleTextbox
+    jp .restore_turn
+
+.flame_body_apply
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    set BRN, [hl]
+    call UpdateOpponentInParty
+    call ApplyBrnEffectOnAttack
+    call ApplyStatusAbilityBoosts
+    call RefreshBattleHuds
+    ld a, FLAME_BODY
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_FlameBody
+    call StdAbilityTextbox
+    farcall UseHeldStatusHealingItem
+    jp .restore_turn
+
+.poison_point
+    ld b, d
+    call Ability_LoadOppSpeciesAndPersonality
+    ld a, POISON
+    call Ability_CheckOpponentMonType
+    jp z, .restore_turn
+    ld a, STEEL
+    call Ability_CheckOpponentMonType
+    jp z, .restore_turn
+    ld a, d
+    xor 1
+    ld b, a
+    call Check_Immunity
+    ld b, d
+    and a
+    jr nz, .poison_point_item
+    ld hl, AbilityText_Immunity
+    call StdAbilityTextbox
+    jp .restore_turn
+
+.poison_point_item
+    farcall GetOpponentItem
+    ld a, b
+    cp HELD_PREVENT_POISON
+    jr nz, .poison_point_apply
+    ld a, [hl]
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ld hl, ProtectedByText
+    call StdBattleTextbox
+    jp .restore_turn
+
+.poison_point_apply
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    set PSN, [hl]
+    call UpdateOpponentInParty
+    call ApplyStatusAbilityBoosts
+    call RefreshBattleHuds
+    ld a, POISON_POINT
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_PoisonPoint
+    call StdAbilityTextbox
+    farcall UseHeldStatusHealingItem
+    jp .restore_turn
+
+.static
+    ld b, d
+    call Ability_LoadOppSpeciesAndPersonality
+    ld a, d
+    xor 1
+    ld b, a
+    call Check_Limber
+    ld b, d
+    and a
+    jr nz, .static_item
+    ld hl, AbilityText_Limber
+    call StdAbilityTextbox
+    jp .restore_turn
+
+.static_item
+    farcall GetOpponentItem
+    ld a, b
+    cp HELD_PREVENT_PARALYZE
+    jr nz, .static_apply
+    ld a, [hl]
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ld hl, ProtectedByText
+    call StdBattleTextbox
+    jp .restore_turn
+
+.static_apply
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    set PAR, [hl]
+    call UpdateOpponentInParty
+    call ApplyPrzEffectOnSpeed
+    call ApplyStatusAbilityBoosts
+    call RefreshBattleHuds
+    ld a, STATIC
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_Static
     call StdAbilityTextbox
     farcall UseHeldStatusHealingItem
 
