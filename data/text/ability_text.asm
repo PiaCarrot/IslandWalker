@@ -261,6 +261,33 @@ AbilityText_CuteCharm:
     cont "fall in love!"
     prompt
 
+AbilityText_EffectSporeSleep:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " put"
+    cont "<TARGET>"
+    cont "to sleep!"
+    prompt
+
+AbilityText_EffectSporePoison:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "poisoned"
+    cont "<TARGET>!"
+    prompt
+
+AbilityText_EffectSporeParalyze:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "paralyzed"
+    cont "<TARGET>!"
+    prompt
+
 AbilityText_OwnTempo:
     text "<TARGET>'s"
     line "@"

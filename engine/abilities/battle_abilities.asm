@@ -991,6 +991,208 @@ TryActivateCuteCharm:
     call SetEnemyTurn
     ret
 
+TryActivateEffectSpore:
+    ld a, BATTLE_VARS_MOVE
+    call GetBattleVar
+    and a
+    ret z
+
+    call GetMoveIndexFromID
+    ld b, h
+    ld c, l
+    ld de, 2
+    ld hl, ContactMoves
+    call IsInWordArray
+    ret nc
+
+    call Ability_LoadBattleMonBase
+    ld d, b
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp EFFECT_SPORE
+    ret nz
+
+    call BattleRandom
+    cp 30 percent
+    ret nc
+
+    ld a, d
+    and a
+    jr nz, .ability_user_enemy
+    ld hl, wBattleMonHP
+    jr .check_ability_hp
+.ability_user_enemy
+    ld hl, wEnemyMonHP
+.check_ability_hp
+    ld a, [hli]
+    or [hl]
+    ret z
+
+    ld a, BATTLE_VARS_STATUS
+    call GetBattleVarAddr
+    ld a, [hl]
+    and a
+    ret nz
+
+    ldh a, [hBattleTurn]
+    push af
+    ld a, d
+    ldh [hBattleTurn], a
+
+    farcall SafeCheckSafeguard
+    jp nz, .restore_turn
+
+    call BattleRandom
+    cp 33 percent + 1
+    jr c, .sleep
+    cp 66 percent + 1
+    jr c, .poison
+    jp .paralyze
+
+.sleep
+    ld b, d
+    call Ability_LoadOppSpeciesAndPersonality
+    ld a, d
+    xor 1
+    ld b, a
+    farcall Check_InsomniaVitalSpirit
+    ld b, d
+    and a
+    jr nz, .sleep_item
+    ld hl, AbilityText_StayedAwake
+    call StdAbilityTextbox
+    jp .restore_turn
+
+.sleep_item
+    farcall GetOpponentItem
+    ld a, b
+    cp HELD_PREVENT_SLEEP
+    jr nz, .sleep_apply
+    ld a, [hl]
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ld hl, ProtectedByText
+    call StdBattleTextbox
+    jp .restore_turn
+
+.sleep_apply
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    ld b, SLP_MASK
+    ld a, [wInBattleTowerBattle]
+    and a
+    jr z, .sleep_random
+    ld b, %011
+
+.sleep_random
+    call BattleRandom
+    and b
+    jr z, .sleep_random
+    cp SLP_MASK
+    jr z, .sleep_random
+    inc a
+    ld [hl], a
+    call UpdateOpponentInParty
+    farcall ApplyStatusAbilityBoosts
+    call RefreshBattleHuds
+    ld a, EFFECT_SPORE
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_EffectSporeSleep
+    call StdAbilityTextbox
+    farcall UseHeldStatusHealingItem
+    jp .restore_turn
+
+.poison
+    ld b, d
+    call Ability_LoadOppSpeciesAndPersonality
+    ld a, POISON
+    call Ability_CheckOpponentMonType
+    jp z, .restore_turn
+    ld a, STEEL
+    call Ability_CheckOpponentMonType
+    jp z, .restore_turn
+    ld a, d
+    xor 1
+    ld b, a
+    farcall Check_Immunity
+    ld b, d
+    and a
+    jr nz, .poison_item
+    ld hl, AbilityText_Immunity
+    call StdAbilityTextbox
+    jp .restore_turn
+
+.poison_item
+    farcall GetOpponentItem
+    ld a, b
+    cp HELD_PREVENT_POISON
+    jr nz, .poison_apply
+    ld a, [hl]
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ld hl, ProtectedByText
+    call StdBattleTextbox
+    jp .restore_turn
+
+.poison_apply
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    set PSN, [hl]
+    call UpdateOpponentInParty
+    farcall ApplyStatusAbilityBoosts
+    call RefreshBattleHuds
+    ld a, EFFECT_SPORE
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_EffectSporePoison
+    call StdAbilityTextbox
+    farcall UseHeldStatusHealingItem
+    jp .restore_turn
+
+.paralyze
+    ld b, d
+    call Ability_LoadOppSpeciesAndPersonality
+    ld a, d
+    xor 1
+    ld b, a
+    farcall Check_Limber
+    ld b, d
+    and a
+    jr nz, .paralyze_item
+    ld hl, AbilityText_Limber
+    call StdAbilityTextbox
+    jp .restore_turn
+
+.paralyze_item
+    farcall GetOpponentItem
+    ld a, b
+    cp HELD_PREVENT_PARALYZE
+    jr nz, .paralyze_apply
+    ld a, [hl]
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ld hl, ProtectedByText
+    call StdBattleTextbox
+    jp .restore_turn
+
+.paralyze_apply
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    set PAR, [hl]
+    call UpdateOpponentInParty
+    farcall ApplyPrzEffectOnSpeed
+    farcall ApplyStatusAbilityBoosts
+    call RefreshBattleHuds
+    ld a, EFFECT_SPORE
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_EffectSporeParalyze
+    call StdAbilityTextbox
+    farcall UseHeldStatusHealingItem
+
+.restore_turn
+    pop af
+    ldh [hBattleTurn], a
+    ret
+
 TryActivateNaturalCure_Player:
     ; d = party slot of the Pokémon being cured
     push bc
