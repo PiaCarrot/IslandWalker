@@ -96,9 +96,6 @@ PlayersHouseBookshelfScript:
 	; startbattle
 	; reloadmapafterbattle
 	;	; Grant All Pokemon
-	giveitem CATCHING_CHARM
-	giveitem EXP_CHARM
-	giveitem OVAL_CHARM
 	giveitem ABILITY_UP, 99
 	giveitem RARE_CANDY, 99
 	giveitem EXP_CANDY_XS, 99

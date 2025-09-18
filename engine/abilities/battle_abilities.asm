@@ -1339,6 +1339,140 @@ TryActivateEffectSpore:
     farcall UseHeldStatusHealingItem
 
 .restore_turn
+pop af
+ldh [hBattleTurn], a
+ret
+
+TryActivateCursedBody:
+    ld a, BATTLE_VARS_MOVE
+    call GetBattleVar
+    and a
+    ret z
+
+    call Ability_LoadBattleMonBase
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp CURSED_BODY
+    ret nz
+
+    ld a, b
+    and a
+    jr nz, .check_enemy_hp
+    ld hl, wBattleMonHP
+    jr .check_hp
+
+.check_enemy_hp
+    ld hl, wEnemyMonHP
+
+.check_hp
+    ld a, [hli]
+    or [hl]
+    ret z
+
+    ld a, b
+    and a
+    jr nz, .check_enemy_damage
+    ld hl, wPlayerDamageTaken
+    jr .check_damage
+
+.check_enemy_damage
+    ld hl, wEnemyDamageTaken
+
+.check_damage
+    ld a, [hli]
+    or [hl]
+    ret z
+
+    call BattleRandom
+    cp 30 percent
+    ret nc
+
+    ld a, b
+    xor 1
+    ld c, a
+    and a
+    jr z, .attacker_player_side
+    ld de, wEnemyDisableCount
+    ld hl, wEnemyDisabledMove
+    jr .have_pointers
+
+.attacker_player_side
+    ld de, wPlayerDisableCount
+    ld hl, wDisabledMove
+
+.have_pointers
+    ld a, [de]
+    and a
+    ret nz
+
+    ld a, c
+    and a
+    jr z, .get_player_move_id
+    ld a, [wCurEnemyMove]
+    jr .move_id_loaded
+
+.get_player_move_id
+    ld a, [wCurPlayerMove]
+
+.move_id_loaded
+    and a
+    ret z
+
+    push bc
+    ld bc, STRUGGLE
+    farcall CompareMove
+    pop bc
+    ret z
+
+    ld a, c
+    and a
+    jr z, .get_player_move_index
+    ld a, [wCurEnemyMoveNum]
+    jr .move_index_loaded
+
+.get_player_move_index
+    ld a, [wCurMoveNum]
+
+.move_index_loaded
+    cp NUM_MOVES
+    ret nc
+
+    inc a
+    add a, a
+    add a, a
+    add a, a
+    add a, a
+    add 5
+    ld [de], a
+
+    ld a, c
+    and a
+    jr z, .store_player_move
+    ld a, [wCurEnemyMove]
+    jr .store_move
+
+.store_player_move
+    ld a, [wCurPlayerMove]
+
+.store_move
+    ld [hl], a
+    ld [wNamedObjectIndex], a
+    call GetMoveName
+
+    ld hl, wStringBuffer1
+    ld de, wStringBuffer2
+    ld bc, MOVE_NAME_LENGTH
+    rst CopyBytes
+
+    ld a, CURSED_BODY
+    call Ability_LoadAbilityName
+
+    ldh a, [hBattleTurn]
+    push af
+    ld a, b
+    ldh [hBattleTurn], a
+    ld hl, AbilityText_CursedBody
+    call StdAbilityTextbox
     pop af
     ldh [hBattleTurn], a
     ret

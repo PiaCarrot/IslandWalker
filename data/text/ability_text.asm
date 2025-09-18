@@ -306,6 +306,17 @@ AbilityText_PoisonPoint:
     cont "<TARGET>!"
     prompt
 
+AbilityText_CursedBody:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "disabled"
+    cont "<TARGET>'s "
+    text_ram wStringBuffer2
+    text "!"
+    prompt
+
 AbilityText_Static:
     text "<USER>'s"
     line "@"
