@@ -1459,14 +1459,6 @@ TryActivateCursedBody:
     ld [wNamedObjectIndex], a
     call GetMoveName
 
-    ld hl, wStringBuffer1
-    ld de, wStringBuffer2
-    ld bc, MOVE_NAME_LENGTH
-    rst CopyBytes
-
-    ld a, CURSED_BODY
-    call Ability_LoadAbilityName
-
     ldh a, [hBattleTurn]
     push af
     ld a, b
