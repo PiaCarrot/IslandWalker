@@ -97,11 +97,11 @@
 
 ; Causes additional effects upon move usage
 ; Contact-based status effects (30% chance on contact)
-	const CUTE_CHARM    ; Infatuation. Also increases the overworld encounter rate of Pokémon of the opposite gender by 67% if in the first slot
-	const EFFECT_SPORE  ; Sleep, Paralysis or Poison (33% chance each)
-	const FLAME_BODY    ; Burn. Pokémon eggs will also hatch in half the time.
-	const POISON_POINT  ; Poisoning
-	const STATIC        ; Paralysis. Also increases the overworld encounter rate of electric Pokémon by 50% if in the first slot
+	const CUTE_CHARM    ; ✔ Infatuation. Also increases the overworld encounter rate of Pokémon of the opposite gender by 67% if in the first slot
+	const EFFECT_SPORE  ; ✔ Sleep, Paralysis or Poison (33% chance each)
+	const FLAME_BODY    ; ✔ Burn. Pokémon eggs will also hatch in half the time.
+	const POISON_POINT  ; ✔ Poisoning
+	const STATIC        ; ✔ Paralysis. Also increases the overworld encounter rate of electric Pokémon by 50% if in the first slot
 ; Alters added move effects
 	const LIQUID_OOZE   ; Damages Pokémon attempting to use life-sucking moves
 	const SERENE_GRACE  ; Doubles the chance of added move effects
