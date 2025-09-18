@@ -196,7 +196,7 @@
 	const CONTRARY
 	const UNNERVE ; Exclusive to Mewtwo
 	const DEFIANT
-	const CURSED_BODY
+	const CURSED_BODY ; ✔
 	const WEAK_ARMOR
 	const MULTISCALE
 	const HARVEST

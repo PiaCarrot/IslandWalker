@@ -35,6 +35,8 @@ BattleCommand_Attract:
         jmp EndMoveEffect
 
 .not_blocked
+        ld a, BATTLE_VARS_SUBSTATUS1_OPP
+        call GetBattleVarAddr
         set SUBSTATUS_IN_LOVE, [hl]
 
 ; 'fell in love!'
