@@ -441,6 +441,14 @@ AbilityText_WaterAbsorb:
     cont "restored HP!"
     prompt
 
+AbilityText_RainDish:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " restored"
+    cont "its HP in rain!"
+    prompt
+
 AbilityText_Lightningrod:
     text "<TARGET>'s"
     line "@"

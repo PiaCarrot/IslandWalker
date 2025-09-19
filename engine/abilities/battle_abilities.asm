@@ -1216,6 +1216,91 @@ HandleSpeedBoost::
     pop de
     ret
 
+HandleRainDish::
+    ldh a, [hSerialConnectionStatus]
+    cp USING_EXTERNAL_CLOCK
+    jr z, .EnemyFirst
+    call SetPlayerTurn
+    call .Apply
+    call SetEnemyTurn
+    call .Apply
+    ret
+
+.EnemyFirst
+    call SetEnemyTurn
+    call .Apply
+    call SetPlayerTurn
+    call .Apply
+    ret
+
+.Apply
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_side
+	ld de, wBattleMonHP
+	ld hl, wBattleMonPersonality
+	ld a, [wBattleMonSpecies]
+	ld c, a
+	ld b, 0
+	jr .have_side
+
+.enemy_side
+	ld de, wEnemyMonHP
+	ld hl, wEnemyMonPersonality
+	ld a, [wEnemyMonSpecies]
+	ld c, a
+	ld b, 1
+
+.have_side
+	push hl
+	ld a, [de]
+	ld h, a
+	inc de
+	ld a, [de]
+	or h
+	dec de
+	jr z, .return
+
+	pop hl
+	push de
+	call GetAbility
+	call Ability_LoadTracedAbility
+	pop de
+	cp RAIN_DISH
+	ret nz
+
+	ld h, d
+	ld l, e
+	ld a, [hli]
+	ld d, a
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	cp d
+	jr nz, .do_heal
+	ld a, [hl]
+	cp e
+	ret z
+
+.do_heal
+    ld a, RAIN_DISH
+    call Ability_LoadAbilityName
+    farcall GetSixteenthMaxHP
+    ldh a, [hBattleTurn]
+    xor 1
+    ldh [hBattleTurn], a
+    farcall RestoreHP
+    ldh a, [hBattleTurn]
+    xor 1
+    ldh [hBattleTurn], a
+    ld hl, AbilityText_RainDish
+    call StdAbilityTextbox
+    ret
+
+.return
+	pop hl
+	ret
+
 HandleShedSkin::
     ldh a, [hSerialConnectionStatus]
     cp USING_EXTERNAL_CLOCK

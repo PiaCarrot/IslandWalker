@@ -1868,7 +1868,13 @@ HandleWeather:
         ret z
         ld hl, .WeatherMessages
         call .PrintWeatherMessage
-        call .PlayWeatherAnimation
+	call .PlayWeatherAnimation
+
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr nz, .skip_rain_dish
+	farcall HandleRainDish
+.skip_rain_dish
 
 ;check_sandstorm
 	ld a, [wBattleWeather]
