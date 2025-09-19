@@ -1711,20 +1711,7 @@ jr z, .stab
 	and STATUS
 	cp STATUS
 	jr z, .FlashFireDone
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .FlashFireTargetPlayer
-	ld hl, wEnemyMonPersonality
-	ld a, [wEnemyMonSpecies]
-	ld c, a
-	ld b, 1
-	jr .FlashFireCheckAbility
-.FlashFireTargetPlayer
-	ld hl, wBattleMonPersonality
-	ld a, [wBattleMonSpecies]
-	ld c, a
-	ld b, 0
-.FlashFireCheckAbility
+	call LoadTargetAbilityData
 	farcall Check_FlashFireDamage
 	and a
 	jr nz, .FlashFireDone
@@ -1732,8 +1719,31 @@ jr z, .stab
 	pop bc
 	ret
 .FlashFireDone
+        pop de
+        pop bc
+        ; Lightningrod grants immunity to Electric-type damaging moves and boosts Special Attack.
+	push bc
+	push de
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	ld c, a
+	and TYPE_MASK
+	cp ELECTRIC
+	jr nz, .LightningRodDone
+	ld a, c
+	and STATUS
+	cp STATUS
+	jr z, .LightningRodDone
+	call LoadTargetAbilityData
+	farcall Check_LightningrodDamage
+	and a
+	jr nz, .LightningRodDone
 	pop de
 	pop bc
+	ret
+.LightningRodDone
+        pop de
+        pop bc
         ; Thick Fat halves the damage from Fire- and Ice-type moves.
         push bc
         push de
@@ -4580,7 +4590,7 @@ BattleCommand_Poison:
 
 	call BattleRandom
 	cp 25 percent + 1 ; 25% chance AI fails
-	jmp c, .failed
+	jr c, .failed
 
 .dont_sample_failure
         call CheckSubstituteOpp
@@ -4890,20 +4900,7 @@ BattleCommand_BurnTarget:
 .TryFlashFireStatus
 	push bc
 	push de
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .FlashFireStatusPlayer
-	ld hl, wEnemyMonPersonality
-	ld a, [wEnemyMonSpecies]
-	ld c, a
-	ld b, 1
-	jr .FlashFireStatusCall
-.FlashFireStatusPlayer
-	ld hl, wBattleMonPersonality
-	ld a, [wBattleMonSpecies]
-	ld c, a
-	ld b, 0
-.FlashFireStatusCall
+	call LoadTargetAbilityData
 	farcall Check_FlashFireStatus
 	pop de
 	pop bc
@@ -5009,10 +5006,12 @@ BattleCommand_FreezeTarget:
 	ret
 
 BattleCommand_ParalyzeTarget:
-	call CheckSubstituteOpp
-	ret nz
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
+        call CheckSubstituteOpp
+        ret nz
+	call .TryLightningrodStatus
+        ret z
+        ld a, BATTLE_VARS_STATUS_OPP
+        call GetBattleVarAddr
 	and a
 	ret nz
 	ld a, [wTypeModifier]
@@ -5070,7 +5069,50 @@ BattleCommand_ParalyzeTarget:
 	pop af
 	ldh [hBattleTurn], a
 
-	farjp UseHeldStatusHealingItem
+        farjp UseHeldStatusHealingItem
+
+.TryLightningrodStatus
+        ld a, [wAttackMissed]
+        and a
+        jr nz, .no_block
+	push bc
+	push de
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp ELECTRIC
+	jr nz, .restore
+	call LoadTargetAbilityData
+	farcall Check_LightningrodStatus
+	and a
+	jr nz, .restore
+	pop de
+	pop bc
+	xor a
+	ret
+.restore
+	pop de
+	pop bc
+.no_block
+	ld a, 1
+	ret
+
+LoadTargetAbilityData:
+	ldh a, [hBattleTurn]
+	xor 1
+	ld b, a
+	and a
+	jr nz, .target_is_enemy
+	ld hl, wBattleMonPersonality
+	ld a, [wBattleMonSpecies]
+	ld c, a
+	ret
+
+.target_is_enemy
+	ld hl, wEnemyMonPersonality
+	ld a, [wEnemyMonSpecies]
+	ld c, a
+	ret
 
 BattleCommand_AttackUp:
 	ld b, ATTACK

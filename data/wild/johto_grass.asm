@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, MEW                   ; 20%
-	dbw 13, MEW                  ; 20%
-	dbw 14, MEW                   ; 10%
-	dbw 14, MEW                  ; 10%
-	dbw 15, MEW                   ; 10%
-	dbw 15, MEW                  ; 10%
-	dbw 14, MEW                ;  5%
-	dbw 15, MEW                ;  5%
-	dbw 15, MEW                 ;  4%
-	dbw 15, MEW                   ;  4%
-	dbw 16, MEW                 ;  1%
-	dbw 16, MEW                   ;  1%
+	dbw 13, PIKACHU                   ; 20%
+	dbw 13, PIKACHU                  ; 20%
+	dbw 14, PIKACHU                   ; 10%
+	dbw 14, PIKACHU                  ; 10%
+	dbw 15, PIKACHU                   ; 10%
+	dbw 15, PIKACHU                  ; 10%
+	dbw 14, PIKACHU                ;  5%
+	dbw 15, PIKACHU                ;  5%
+	dbw 15, PIKACHU                 ;  4%
+	dbw 15, PIKACHU                   ;  4%
+	dbw 16, PIKACHU                 ;  1%
+	dbw 16, PIKACHU                   ;  1%
 	; day
-	dbw 13, MEW                   ; 20%
-	dbw 13, MEW                  ; 20%
-	dbw 14, MEW                   ; 10%
-	dbw 14, MEW                  ; 10%
-	dbw 15, MEW                   ; 10%
-	dbw 15, MEW                  ; 10%
-	dbw 14, MEW                ;  5%
-	dbw 15, MEW                ;  5%
-	dbw 15, MEW                 ;  4%
-	dbw 15, MEW                   ;  4%
-	dbw 16, MEW                 ;  1%
-	dbw 16, MEW                   ;  1%
+	dbw 13, PIKACHU                   ; 20%
+	dbw 13, PIKACHU                  ; 20%
+	dbw 14, PIKACHU                   ; 10%
+	dbw 14, PIKACHU                  ; 10%
+	dbw 15, PIKACHU                   ; 10%
+	dbw 15, PIKACHU                  ; 10%
+	dbw 14, PIKACHU                ;  5%
+	dbw 15, PIKACHU                ;  5%
+	dbw 15, PIKACHU                 ;  4%
+	dbw 15, PIKACHU                   ;  4%
+	dbw 16, PIKACHU                 ;  1%
+	dbw 16, PIKACHU                   ;  1%
 	; nite
-	dbw 13, MEW                   ; 20%
-	dbw 13, MEW                  ; 20%
-	dbw 14, MEW                   ; 10%
-	dbw 14, MEW                  ; 10%
-	dbw 15, MEW                   ; 10%
-	dbw 15, MEW                  ; 10%
-	dbw 14, MEW                ;  5%
-	dbw 15, MEW                ;  5%
-	dbw 15, MEW                 ;  4%
-	dbw 15, MEW                   ;  4%
-	dbw 16, MEW                 ;  1%
-	dbw 16, MEW                   ;  1%
+	dbw 13, PIKACHU                   ; 20%
+	dbw 13, PIKACHU                  ; 20%
+	dbw 14, PIKACHU                   ; 10%
+	dbw 14, PIKACHU                  ; 10%
+	dbw 15, PIKACHU                   ; 10%
+	dbw 15, PIKACHU                  ; 10%
+	dbw 14, PIKACHU                ;  5%
+	dbw 15, PIKACHU                ;  5%
+	dbw 15, PIKACHU                 ;  4%
+	dbw 15, PIKACHU                   ;  4%
+	dbw 16, PIKACHU                 ;  1%
+	dbw 16, PIKACHU                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54

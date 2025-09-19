@@ -411,6 +411,14 @@ AbilityText_FlashFire:
     cont "it!"
     prompt
 
+AbilityText_Lightningrod:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "charged it up!"
+    prompt
+
 AbilityText_WonderGuard:
     text "<TARGET>'s"
     line "@"

@@ -638,6 +638,74 @@ ApplyFlashFireBoost:
     ld [wCurDamage + 1], a
     ret
 
+; Lightningrod grants immunity to Electric-type damaging moves and boosts Sp. Atk. Returns z if blocked.
+Check_LightningrodDamage:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp LIGHTNINGROD
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    call ResetDamage
+    ld hl, wTypeModifier
+    ld a, [hl]
+    and STAB_DAMAGE
+    ld [hl], a
+    xor a
+    ld [wTypeMatchup], a
+    ldh [hMultiplier], a
+    ld hl, AbilityText_Lightningrod
+    ld a, [wAttackMissed]
+    and a
+    call z, StdAbilityTextbox
+    call LightningrodBoostSpAttack
+    ld a, 1
+    ld [wAttackMissed], a
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
+; Lightningrod grants immunity to Electric-type status moves and boosts Sp. Atk. Returns z if blocked.
+Check_LightningrodStatus:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp LIGHTNINGROD
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_Lightningrod
+    call StdAbilityTextbox
+    call LightningrodBoostSpAttack
+    ld a, 1
+    ld [wAttackMissed], a
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
+LightningrodBoostSpAttack:
+    push af
+    push bc
+    push de
+    push hl
+    ldh a, [hBattleTurn]
+    push af
+    ld a, b
+    ldh [hBattleTurn], a
+    xor a
+    ld [wAttackMissed], a
+    ld [wEffectFailed], a
+    ld [wFailedMessage], a
+    farcall BattleCommand_SpecialAttackUp
+    pop af
+    ldh [hBattleTurn], a
+    pop hl
+    pop de
+    pop bc
+    pop af
+    ret
+
 ; Levitate provides immunity to Ground-type moves. Returns z if blocked.
 Check_Levitate:
     call GetAbility
