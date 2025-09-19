@@ -11,15 +11,15 @@ AbilityText_SunRaysIntensified:
     prompt
 
 AbilityText_WhippedUpASandStorm:
-    text "<USER>'s SAND"
-    line "STREAM whipped"
+    text "<USER>'s"
+    line "SAND STREAM whips"
     cont "up a sandstorm!"
     prompt
 
 AbilityText_WhippedUpAHailStorm:
-    text "<USER>'s SNOW"
-    line "WARNING whipped up"
-    cont "a hailstorm!"
+    text "<USER>'s"
+    line "SNOW WARNING whips"
+    cont "up a hailstorm!"
     prompt
 
 AbilityText_WeatherCleared:

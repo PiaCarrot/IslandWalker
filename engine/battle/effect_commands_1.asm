@@ -2120,6 +2120,7 @@ BattleCommand_CheckHit:
 
 .got_acc_pointer
         call .ApplyTangledFeetAccuracy
+        farcall Ability_ApplySandVeilAccuracy
         call .ApplyHustleAccuracy
         call .ApplyCompoundeyesAccuracy
         ld a, [hl]

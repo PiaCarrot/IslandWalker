@@ -552,19 +552,82 @@ ApplyQuickFeetEffectOnSpeed:
 	ret
 
 ApplyFlareBoostEffectOnSpAttack:
-        xcall Ability_LoadBattleMonBase
-        call GetAbility
-        xcall Ability_LoadTracedAbility
-        cp FLARE_BOOST
-        ret nz
-        ld a, [de]
-        and 1 << BRN
-        ret z
-        ld hl, wEnemyMonSpclAtk
-        ld de, wBattleMonSpclAtk
-        xcall Ability_SelectBattleMonStatPointer
-        xcall Ability_BoostStatByHalf
-        ret
+	xcall Ability_LoadBattleMonBase
+	call GetAbility
+	xcall Ability_LoadTracedAbility
+	cp FLARE_BOOST
+	ret nz
+	ld a, [de]
+	and 1 << BRN
+	ret z
+	ld hl, wEnemyMonSpclAtk
+	ld de, wBattleMonSpclAtk
+	xcall Ability_SelectBattleMonStatPointer
+	xcall Ability_BoostStatByHalf
+	ret
+
+Ability_ApplySandVeilAccuracy::
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_turn
+	ld hl, wPlayerMoveStruct + MOVE_ACC
+	jr .got_pointer
+
+.enemy_turn
+	ld hl, wEnemyMoveStruct + MOVE_ACC
+
+.got_pointer
+	ld a, [hl]
+	cp -1
+	ret z
+	ld d, h
+	ld e, l
+
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .check_player_target
+	ld a, [wEnemyMonSpecies]
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	ld b, 1
+	jr .check_ability
+
+.check_player_target
+	ld a, [wBattleMonSpecies]
+	ld c, a
+	ld hl, wBattleMonPersonality
+	ld b, 0
+
+.check_ability
+	call GetAbility
+	xcall Ability_LoadTracedAbility
+	cp SAND_VEIL
+	ret nz
+
+	push de
+	xcall Ability_GetBattleWeather
+	pop de
+	cp WEATHER_SANDSTORM
+	ret nz
+
+	ld h, d
+	ld l, e
+	ld a, [hl]
+	ld b, a
+	ld c, 0
+
+.divide_loop
+	cp 5
+	jr c, .store
+	sub 5
+	inc c
+	jr .divide_loop
+
+.store
+	ld a, b
+	sub c
+	ld [hl], a
+	ret
 
 ; Returns the active weather, treating it as clear if Cloud Nine is on the field.
 Ability_GetBattleWeather:
