@@ -2871,13 +2871,14 @@ BattleCommand_ApplyDamage:
 	jr .done_damage
 
 .damage_player
-        call DoPlayerDamage
+	call DoPlayerDamage
 
 
 .done_damage
-        farcall TryActivateCuteCharm
-        farcall TryActivateEffectSpore
-        farcall TryActivateCursedBody
+	farcall TryActivateColorChange
+	farcall TryActivateCuteCharm
+	farcall TryActivateEffectSpore
+	farcall TryActivateCursedBody
         pop bc
         ld a, b
         and a

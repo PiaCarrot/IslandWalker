@@ -103,10 +103,10 @@
 	const POISON_POINT  ; ✔ Poisoning
 	const STATIC        ; ✔ Paralysis. Also increases the overworld encounter rate of electric Pokémon by 50% if in the first slot
 ; Alters added move effects
-	const LIQUID_OOZE   ; Damages Pokémon attempting to use life-sucking moves
-	const SERENE_GRACE  ; Doubles the chance of added move effects
+	const LIQUID_OOZE   ; ✔ Damages Pokémon attempting to use life-sucking moves
+	const SERENE_GRACE  ; ✔ Doubles the chance of added move effects
 ; Pokémon's type changes to match the last damaging move that it was hit by
-	const COLOR_CHANGE
+	const COLOR_CHANGE  ; ✔
 ; Boosts power  of Fire-type moves upon being hit by one unless frozen or protected
 	const FLASH_FIRE ; Also provides complete immunity to Fire-type moves
 ; Synchronizes select status effects (Burn, Poisoning or Paralysis) if one is inflicted (it also can activate from the contact-based status effects)

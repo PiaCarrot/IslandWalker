@@ -918,11 +918,107 @@ HandleShedSkin::
     call GetPartyLocation
     ld [hl], 0
 
-    farcall CalcPlayerStats
-    call UpdateBattleHuds
-    call SetPlayerTurn
-    ld hl, AbilityText_ShedSkin
-    jp StdAbilityTextbox
+	farcall CalcPlayerStats
+	call UpdateBattleHuds
+	call SetPlayerTurn
+	ld hl, AbilityText_ShedSkin
+	jp StdAbilityTextbox
+
+TryActivateColorChange:
+	ld hl, wCurDamage
+	ld a, [hli]
+	or [hl]
+	ret z
+	ld a, [wIsConfusionDamage]
+	and a
+	ret nz
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVar
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
+
+	call Ability_LoadBattleMonBase
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp COLOR_CHANGE
+	ret nz
+
+	ld a, b
+	and a
+	jr nz, .enemy_hp
+	ld hl, wBattleMonHP
+	jr .check_hp
+
+.enemy_hp
+	ld hl, wEnemyMonHP
+
+.check_hp
+	ld a, [hli]
+	or [hl]
+	ret z
+
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	ld e, a
+	cp CURSE_TYPE
+	ret z
+	cp TYPES_END
+	ret nc
+	cp UNUSED_TYPES
+	jr c, .have_types
+	cp UNUSED_TYPES_END
+	jr nc, .have_types
+	ret
+
+.have_types
+	ld a, b
+	and a
+	jr nz, .enemy_types
+	ld hl, wBattleMonType1
+	jr .compare_types
+
+.enemy_types
+	ld hl, wEnemyMonType1
+
+.compare_types
+	ld a, [hli]
+	cp e
+	ret z
+	ld a, [hl]
+	cp e
+	ret z
+
+	ld [hl], e
+	dec hl
+	ld [hl], e
+
+	ld a, e
+	ld [wNamedObjectIndex], a
+	predef GetTypeName
+
+	ld hl, wStringBuffer1
+	ld de, wStringBuffer2
+
+.copy_type_name
+	ld a, [hli]
+	ld [de], a
+	inc de
+	cp "@"
+	jr nz, .copy_type_name
+
+	ld a, COLOR_CHANGE
+	call Ability_LoadAbilityName
+
+	ldh a, [hBattleTurn]
+	push af
+	ld a, b
+	ldh [hBattleTurn], a
+	ld hl, AbilityText_ColorChange
+	call StdAbilityTextbox
+	pop af
+	ldh [hBattleTurn], a
+	ret
 
 TryActivateCuteCharm:
     ld a, BATTLE_VARS_MOVE

@@ -316,6 +316,16 @@ AbilityText_CursedBody:
     text "!"
     prompt
 
+AbilityText_ColorChange:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " made"
+    cont "it @"
+    text_ram wStringBuffer2
+    text "-type!"
+    prompt
+
 AbilityText_Static:
     text "<USER>'s"
     line "@"
