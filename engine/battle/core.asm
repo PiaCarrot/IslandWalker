@@ -1206,10 +1206,13 @@ ResidualDamage:
 	farcall Check_LiquidOoze
 	jr nz, .leech_seed_normal
 	pop bc
-        call SwitchTurnCore
-        call SubtractHPFromUser
-        call UpdateUserInParty
-        call SwitchTurnCore
+	call SwitchTurnCore
+	push bc
+	call GetMaxHP
+	pop bc
+	call SubtractHPFromUser
+	call UpdateUserInParty
+	call SwitchTurnCore
         ld hl, AbilityText_LiquidOozeLeechSeed
         call StdAbilityTextbox
         jr .after_leech_seed
