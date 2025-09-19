@@ -7717,6 +7717,7 @@ GiveExperiencePoints:
 	ld a, [wCurPartyMon]
 	cp b
 	jr z, .skip_exp_bar_animation
+	call GetCurNickname
 	ld de, SFX_HIT_END_OF_EXP_BAR
 	call PlaySFX
 	call WaitSFX
