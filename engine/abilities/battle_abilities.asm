@@ -1371,6 +1371,13 @@ TryActivateEffectSpore:
     call Ability_LoadAbilityName
     ld hl, AbilityText_EffectSporePoison
     call StdAbilityTextbox
+    ld a, d
+    xor 1
+    ldh [hBattleTurn], a
+    ld a, 1 << PSN
+    call TryActivateSynchronize
+    ld a, d
+    ldh [hBattleTurn], a
     farcall UseHeldStatusHealingItem
     jp .restore_turn
 
@@ -1412,6 +1419,13 @@ TryActivateEffectSpore:
     call Ability_LoadAbilityName
     ld hl, AbilityText_EffectSporeParalyze
     call StdAbilityTextbox
+    ld a, d
+    xor 1
+    ldh [hBattleTurn], a
+    ld a, 1 << PAR
+    call TryActivateSynchronize
+    ld a, d
+    ldh [hBattleTurn], a
     farcall UseHeldStatusHealingItem
     jp .restore_turn
 
@@ -1456,6 +1470,13 @@ TryActivateEffectSpore:
     call Ability_LoadAbilityName
     ld hl, AbilityText_FlameBody
     call StdAbilityTextbox
+    ld a, d
+    xor 1
+    ldh [hBattleTurn], a
+    ld a, 1 << BRN
+    call TryActivateSynchronize
+    ld a, d
+    ldh [hBattleTurn], a
     farcall UseHeldStatusHealingItem
     jp .restore_turn
 
@@ -1502,6 +1523,13 @@ TryActivateEffectSpore:
     call Ability_LoadAbilityName
     ld hl, AbilityText_PoisonPoint
     call StdAbilityTextbox
+    ld a, d
+    xor 1
+    ldh [hBattleTurn], a
+    ld a, 1 << PSN
+    call TryActivateSynchronize
+    ld a, d
+    ldh [hBattleTurn], a
     farcall UseHeldStatusHealingItem
     jp .restore_turn
 
@@ -1543,12 +1571,249 @@ TryActivateEffectSpore:
     call Ability_LoadAbilityName
     ld hl, AbilityText_Static
     call StdAbilityTextbox
+    ld a, d
+    xor 1
+    ldh [hBattleTurn], a
+    ld a, 1 << PAR
+    call TryActivateSynchronize
+    ld a, d
+    ldh [hBattleTurn], a
     farcall UseHeldStatusHealingItem
 
 .restore_turn
 pop af
 ldh [hBattleTurn], a
 ret
+
+TryActivateSynchronize:
+    ld d, a
+    ldh a, [hBattleTurn]
+    ld b, a
+    and a
+    jr z, .user_player
+    ld hl, wEnemyMonPersonality
+    ld a, [wEnemyMonSpecies]
+    jr .have_user
+
+.user_player
+    ld hl, wBattleMonPersonality
+    ld a, [wBattleMonSpecies]
+
+.have_user
+    ld c, a
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp SYNCHRONIZE
+    ret nz
+
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    ld a, [hl]
+    and a
+    ret nz
+
+    farcall SafeCheckSafeguard
+    ret nz
+
+    ld a, d
+    cp 1 << BRN
+    jr z, .burn
+    cp 1 << PSN
+    jr z, .poison
+    cp 1 << PAR
+    jmp z, .paralyze
+    ret
+
+.burn
+    ldh a, [hBattleTurn]
+    ld b, a
+    ld a, FIRE
+    call Ability_CheckOpponentMonType
+    ret z
+
+    ldh a, [hBattleTurn]
+    xor 1
+    ld b, a
+    ld a, b
+    and a
+    jr z, .burn_target_player
+    ld hl, wEnemyMonPersonality
+    ld a, [wEnemyMonSpecies]
+    jr .burn_have_target
+
+.burn_target_player
+    ld hl, wBattleMonPersonality
+    ld a, [wBattleMonSpecies]
+
+.burn_have_target
+    ld c, a
+    farcall Check_WaterVeil
+    and a
+    jr nz, .burn_item
+    ld hl, AbilityText_WaterVeil
+    call StdAbilityTextbox
+    ret
+
+.burn_item
+    farcall GetOpponentItem
+    ld a, b
+    cp HELD_PREVENT_BURN
+    jr nz, .burn_apply
+    ld a, [hl]
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ld hl, ProtectedByText
+    call StdBattleTextbox
+    ret
+
+.burn_apply
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    set BRN, [hl]
+    call UpdateOpponentInParty
+    call ApplyBrnEffectOnAttack
+    call ApplyStatusAbilityBoosts
+    call RefreshBattleHuds
+    ld a, SYNCHRONIZE
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_SynchronizeBurn
+    call StdAbilityTextbox
+    ldh a, [hBattleTurn]
+    push af
+    xor 1
+    ldh [hBattleTurn], a
+    ld a, d
+    call TryActivateSynchronize
+    pop af
+    ldh [hBattleTurn], a
+    farcall UseHeldStatusHealingItem
+    ret
+
+.poison
+    ldh a, [hBattleTurn]
+    ld b, a
+    ld a, POISON
+    call Ability_CheckOpponentMonType
+    ret z
+    ld a, STEEL
+    call Ability_CheckOpponentMonType
+    ret z
+
+    ldh a, [hBattleTurn]
+    xor 1
+    ld b, a
+    ld a, b
+    and a
+    jr z, .poison_target_player
+    ld hl, wEnemyMonPersonality
+    ld a, [wEnemyMonSpecies]
+    jr .poison_have_target
+
+.poison_target_player
+    ld hl, wBattleMonPersonality
+    ld a, [wBattleMonSpecies]
+
+.poison_have_target
+    ld c, a
+    farcall Check_Immunity
+    and a
+    jr nz, .poison_item
+    ld hl, AbilityText_Immunity
+    call StdAbilityTextbox
+    ret
+
+.poison_item
+    farcall GetOpponentItem
+    ld a, b
+    cp HELD_PREVENT_POISON
+    jr nz, .poison_apply
+    ld a, [hl]
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ld hl, ProtectedByText
+    call StdBattleTextbox
+    ret
+
+.poison_apply
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    set PSN, [hl]
+    call UpdateOpponentInParty
+    call ApplyStatusAbilityBoosts
+    call RefreshBattleHuds
+    ld a, SYNCHRONIZE
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_SynchronizePoison
+    call StdAbilityTextbox
+    ldh a, [hBattleTurn]
+    push af
+    xor 1
+    ldh [hBattleTurn], a
+    ld a, d
+    call TryActivateSynchronize
+    pop af
+    ldh [hBattleTurn], a
+    farcall UseHeldStatusHealingItem
+    ret
+
+.paralyze
+    ldh a, [hBattleTurn]
+    xor 1
+    ld b, a
+    ld a, b
+    and a
+    jr z, .paralyze_target_player
+    ld hl, wEnemyMonPersonality
+    ld a, [wEnemyMonSpecies]
+    jr .paralyze_have_target
+
+.paralyze_target_player
+    ld hl, wBattleMonPersonality
+    ld a, [wBattleMonSpecies]
+
+.paralyze_have_target
+    ld c, a
+    farcall Check_Limber
+    and a
+    jr nz, .paralyze_item
+    ld hl, AbilityText_Limber
+    call StdAbilityTextbox
+    ret
+
+.paralyze_item
+    farcall GetOpponentItem
+    ld a, b
+    cp HELD_PREVENT_PARALYZE
+    jr nz, .paralyze_apply
+    ld a, [hl]
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ld hl, ProtectedByText
+    call StdBattleTextbox
+    ret
+
+.paralyze_apply
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    set PAR, [hl]
+    call UpdateOpponentInParty
+    call ApplyPrzEffectOnSpeed
+    call ApplyStatusAbilityBoosts
+    call RefreshBattleHuds
+    ld a, SYNCHRONIZE
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_SynchronizeParalyze
+    call StdAbilityTextbox
+    ldh a, [hBattleTurn]
+    push af
+    xor 1
+    ldh [hBattleTurn], a
+    ld a, d
+    call TryActivateSynchronize
+    pop af
+    ldh [hBattleTurn], a
+    farcall UseHeldStatusHealingItem
+    ret
 
 TryActivateCursedBody:
     ld a, BATTLE_VARS_MOVE

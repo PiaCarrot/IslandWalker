@@ -306,6 +306,15 @@ AbilityText_PoisonPoint:
     cont "<TARGET>!"
     prompt
 
+AbilityText_SynchronizePoison:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "poisoned"
+    cont "<TARGET>!"
+    prompt
+
 AbilityText_CursedBody:
     text "<USER>'s"
     line "CURSED BODY"
@@ -327,6 +336,24 @@ AbilityText_ColorChange:
     prompt
 
 AbilityText_Static:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "paralyzed"
+    cont "<TARGET>!"
+    prompt
+
+AbilityText_SynchronizeBurn:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "burned"
+    cont "<TARGET>!"
+    prompt
+
+AbilityText_SynchronizeParalyze:
     text "<USER>'s"
     line "@"
     text_ram wStringBuffer1

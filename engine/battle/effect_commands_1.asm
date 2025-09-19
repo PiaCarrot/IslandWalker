@@ -52,7 +52,7 @@ DoTurn:
         cp STATUS
         jr nz, .check_damp
         ; Load target's species and personality
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .enemy_turn
         ld a, [wEnemyMonSpecies]
@@ -82,7 +82,7 @@ DoTurn:
         cp EFFECT_SELFDESTRUCT
         jr nz, .check_soundproof
         ; Load target's species and personality
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .enemy_turn_damp
         ld a, [wEnemyMonSpecies]
@@ -118,7 +118,7 @@ DoTurn:
         call IsInWordArray
         jr nc, .check_oblivious_taunt
         ; Load target's species and personality
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .enemy_turn_sound
         ld a, [wEnemyMonSpecies]
@@ -148,7 +148,7 @@ DoTurn:
         call GetMoveIndexFromID
         cphl16 TAUNT
         jr nz, DoMove
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .enemy_turn_taunt
         ld a, [wEnemyMonSpecies]
@@ -1564,7 +1564,7 @@ jr z, .stab
         jr nz, .NoLevitate
         push bc
         push de
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .EnemyTurnLevitate
         ld hl, wEnemyMonPersonality
@@ -1748,7 +1748,7 @@ jr z, .stab
         cp ICE
         jr nz, .ThickFatDone
 .ThickFatCheckAbility
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .ThickFatEnemyTurn
         ld hl, wEnemyMonPersonality
@@ -1809,7 +1809,7 @@ jr z, .stab
         ld bc, STRUGGLE
         call CompareMove
         jr z, .SkipWonderGuard
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .EnemyTurnWonderGuard
         ld hl, wEnemyMonPersonality
@@ -2075,7 +2075,7 @@ BattleCommand_CheckHit:
         call .StatModifiers
 
         ld hl, wPlayerMoveStruct + MOVE_ACC
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr z, .got_acc_pointer
         ld hl, wEnemyMoveStruct + MOVE_ACC
@@ -2241,7 +2241,7 @@ BattleCommand_CheckHit:
         cp -1
         jr z, .restore_pointer
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .check_player
 
@@ -2299,7 +2299,7 @@ BattleCommand_CheckHit:
         cp -1
         jr z, .restore_pointer_hustle
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr z, .player_hustle
         ld a, [wEnemyMonSpecies]
@@ -2320,7 +2320,7 @@ BattleCommand_CheckHit:
         cp HUSTLE
         jr nz, .restore_pointer_hustle
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr z, .player_move_hustle
         ld hl, wEnemyMoveStruct + MOVE_TYPE
@@ -2365,7 +2365,7 @@ BattleCommand_CheckHit:
         cp -1
         jr z, .restore_pointer_compoundeyes
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr z, .player_compoundeyes
         ld a, [wEnemyMonSpecies]
@@ -2428,7 +2428,7 @@ BattleCommand_CheckHit:
         ret
 
 .StatModifiers:
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
 
         ; load the user's accuracy into b and the opponent's evasion into c.
@@ -2533,7 +2533,7 @@ and a
 jr nz, .shield_dust_blocked
 
 ld hl, wPlayerMoveStruct + MOVE_CHANCE
-ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 and a
 jr z, .got_move_chance
 ld hl, wEnemyMoveStruct + MOVE_CHANCE
@@ -2558,7 +2558,7 @@ pop hl
 ret
 
 .CheckShieldDust
-ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 and a
 jr nz, .shield_player
 ld hl, wEnemyMonPersonality
@@ -2583,7 +2583,7 @@ ret
 ld a, d
 and a
 ret z
-ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 and a
 jr z, .player_serene_grace
 ld hl, wEnemyMonPersonality
@@ -2870,7 +2870,7 @@ BattleCommand_ApplyDamage:
         jr .damage
 
 .check_sturdy
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .sturdy_player
         ld a, [wEnemyMonSpecies]
@@ -4383,7 +4383,7 @@ BattleCommand_SleepTarget:
         call CheckSubstituteOpp
         jr nz, .fail
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .sleep_target_player
         ld a, [wEnemyMonSpecies]
@@ -4424,7 +4424,7 @@ BattleCommand_SleepTarget:
         ld [de], a
         call UpdateOpponentInParty
         farcall ApplyStatusAbilityBoosts
-        call RefreshBattleHuds
+	call RefreshBattleHuds
 
 	ld hl, FellAsleepText
 	call StdBattleTextbox
@@ -4488,7 +4488,7 @@ BattleCommand_PoisonTarget:
         call SafeCheckSafeguard
         ret nz
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .poison_target_player
         ld a, [wEnemyMonSpecies]
@@ -4512,11 +4512,20 @@ BattleCommand_PoisonTarget:
 
         call PoisonOpponent
         ld de, ANIM_PSN
-        call PlayOpponentBattleAnim
-        call RefreshBattleHuds
+	call PlayOpponentBattleAnim
+	call RefreshBattleHuds
 
-	ld hl, WasPoisonedText
-	call StdBattleTextbox
+        ld hl, WasPoisonedText
+        call StdBattleTextbox
+
+	ldh a, [hBattleTurn]
+	push af
+	xor 1
+	ldh [hBattleTurn], a
+	ld a, 1 << PSN
+	farcall TryActivateSynchronize
+	pop af
+	ldh [hBattleTurn], a
 
 	farjp UseHeldStatusHealingItem
 
@@ -4551,7 +4560,7 @@ BattleCommand_Poison:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	and a
-	jr nz, .failed
+	jmp nz, .failed
 
 	ldh a, [hBattleTurn]
 	and a
@@ -4571,7 +4580,7 @@ BattleCommand_Poison:
 
 	call BattleRandom
 	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .failed
+	jmp c, .failed
 
 .dont_sample_failure
         call CheckSubstituteOpp
@@ -4580,7 +4589,7 @@ BattleCommand_Poison:
         and a
         jr nz, .failed
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .poison_move_target_player
         ld a, [wEnemyMonSpecies]
@@ -4621,6 +4630,15 @@ BattleCommand_Poison:
 	call StdBattleTextbox
 
 .finished
+	ldh a, [hBattleTurn]
+	push af
+	xor 1
+	ldh [hBattleTurn], a
+	ld a, 1 << PSN
+	farcall TryActivateSynchronize
+	pop af
+	ldh [hBattleTurn], a
+
 	farjp UseHeldStatusHealingItem
 
 .failed
@@ -4819,7 +4837,7 @@ BattleCommand_BurnTarget:
         call SafeCheckSafeguard
         ret nz
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .burn_target_player
         ld a, [wEnemyMonSpecies]
@@ -4848,11 +4866,20 @@ BattleCommand_BurnTarget:
         farcall ApplyBrnEffectOnAttack
         farcall ApplyStatusAbilityBoosts
         ld de, ANIM_BRN
-        call PlayOpponentBattleAnim
+	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
 
-	ld hl, WasBurnedText
-	call StdBattleTextbox
+        ld hl, WasBurnedText
+        call StdBattleTextbox
+
+	ldh a, [hBattleTurn]
+	push af
+	xor 1
+	ldh [hBattleTurn], a
+	ld a, 1 << BRN
+	farcall TryActivateSynchronize
+	pop af
+	ldh [hBattleTurn], a
 
 	farjp UseHeldStatusHealingItem
 
@@ -4933,7 +4960,7 @@ BattleCommand_FreezeTarget:
         call SafeCheckSafeguard
         ret nz
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .freeze_target_player
         ld a, [wEnemyMonSpecies]
@@ -5001,7 +5028,7 @@ BattleCommand_ParalyzeTarget:
         call SafeCheckSafeguard
         ret nz
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .paralyze_target_player
         ld a, [wEnemyMonSpecies]
@@ -5029,10 +5056,20 @@ BattleCommand_ParalyzeTarget:
         call UpdateOpponentInParty
         farcall ApplyPrzEffectOnSpeed
         farcall ApplyStatusAbilityBoosts
-        ld de, ANIM_PAR
+	ld de, ANIM_PAR
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
 	call PrintParalyze
+
+	ldh a, [hBattleTurn]
+	push af
+	xor 1
+	ldh [hBattleTurn], a
+	ld a, 1 << PAR
+	farcall TryActivateSynchronize
+	pop af
+	ldh [hBattleTurn], a
+
 	farjp UseHeldStatusHealingItem
 
 BattleCommand_AttackUp:
@@ -5284,7 +5321,7 @@ BattleCommand_StatDown:
         call GetMoveIndexFromID
         cphl16 CAPTIVATE
         jr nz, .no_oblivious_captivate
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .captivate_player
         ld hl, wEnemyMonPersonality
@@ -5308,7 +5345,7 @@ BattleCommand_StatDown:
         ret
 
 .no_oblivious_captivate
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .player_clear_body
         ld hl, wEnemyMonPersonality
@@ -5325,7 +5362,7 @@ BattleCommand_StatDown:
         farcall Check_ClearBody
         and a
         jr nz, .no_clear_body
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .blocked_player
         ld a, [wEnemyAbility]
@@ -5352,7 +5389,7 @@ BattleCommand_StatDown:
 
 .no_clear_body
         ld hl, wEnemyStatLevels
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr z, .GetStatLevel
         ld hl, wPlayerStatLevels
@@ -5615,9 +5652,9 @@ BattleCommand_StatDownFailText:
         ld a, [wFailedMessage]
         and a
         ret z
-        push af
+	push af
         call BattleCommand_MoveDelay
-        pop af
+	pop af
         cp 7
         jr z, .oblivious
         cp 4
@@ -5944,13 +5981,13 @@ BattleCommand_CheckRampage:
 	res SUBSTATUS_RAMPAGE, [hl]
         call BattleCommand_SwitchTurn
         call SafeCheckSafeguard
-        push af
+	push af
         call BattleCommand_SwitchTurn
-        pop af
+	pop af
         jr nz, .continue_rampage
 
         push hl
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr z, .rampage_target_enemy
         ld a, [wBattleMonSpecies]
@@ -6450,7 +6487,7 @@ BattleCommand_FlinchTarget:
 	; fallthrough
 
 FlinchTarget:
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .player_inner_focus
         ld hl, wEnemyMonPersonality
@@ -6507,7 +6544,7 @@ call BattleRandom
 cp c
 ret nc
 push hl
-ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
 and a
 jr nz, .heldflinch_player
 ld hl, wEnemyMonPersonality
@@ -6532,7 +6569,7 @@ jp FlinchTarget
 
 BattleCommand_OHKO:
         ; Sturdy blocks OHKO moves entirely
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .sturdy_player
         ld a, [wEnemyMonSpecies]
@@ -6796,7 +6833,7 @@ BattleCommand_Confuse:
 	jr nz, BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit
 BattleCommand_FinishConfusingTarget:
         push hl
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr z, .target_enemy
         ld a, [wBattleMonSpecies]
@@ -6820,7 +6857,7 @@ BattleCommand_FinishConfusingTarget:
 .no_own_tempo_block
         pop hl
         ld bc, wEnemyConfuseCount
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr z, .got_confuse_count
         ld bc, wPlayerConfuseCount
@@ -6920,7 +6957,7 @@ BattleCommand_Paralyze:
         call CheckSubstituteOpp
         jr nz, .failed
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .paralyze_player
         ld a, [wEnemyMonSpecies]
@@ -6955,8 +6992,17 @@ BattleCommand_Paralyze:
         call UpdateOpponentInParty
         farcall ApplyPrzEffectOnSpeed
         farcall ApplyStatusAbilityBoosts
-        call UpdateBattleHuds
+	call UpdateBattleHuds
 	call PrintParalyze
+
+	ldh a, [hBattleTurn]
+	push af
+	xor 1
+	ldh [hBattleTurn], a
+	ld a, 1 << PAR
+	farcall TryActivateSynchronize
+	pop af
+	ldh [hBattleTurn], a
 	farjp UseHeldStatusHealingItem
 
 .paralyzed
@@ -7064,9 +7110,9 @@ BattleCommand_Heal:
 
         push hl
         push de
-        push af
+	push af
 
-        ldh a, [hBattleTurn]
+	ldh a, [hBattleTurn]
         and a
         jr nz, .rest_enemy
         ld a, [wBattleMonSpecies]
@@ -7087,7 +7133,7 @@ BattleCommand_Heal:
         call StdAbilityTextbox
         ld a, 1
         ld [wAttackMissed], a
-        pop af
+	pop af
         pop de
         pop hl
         jmp EndMoveEffect
