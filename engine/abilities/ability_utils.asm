@@ -518,16 +518,86 @@ ApplyQuickFeetEffectOnSpeed:
 	ret
 
 ApplyFlareBoostEffectOnSpAttack:
-	xcall Ability_LoadBattleMonBase
-	call GetAbility
-	xcall Ability_LoadTracedAbility
-	cp FLARE_BOOST
-	ret nz
-	ld a, [de]
-	and 1 << BRN
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp FLARE_BOOST
+        ret nz
+        ld a, [de]
+        and 1 << BRN
+        ret z
+        ld hl, wEnemyMonSpclAtk
+        ld de, wBattleMonSpclAtk
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_BoostStatByHalf
+        ret
+
+; Returns the active weather, treating it as clear if Cloud Nine is on the field.
+Ability_GetBattleWeather:
+	ld a, [wBattleWeather]
+	cp WEATHER_NONE
 	ret z
-	ld hl, wEnemyMonSpclAtk
-	ld de, wBattleMonSpclAtk
-	xcall Ability_SelectBattleMonStatPointer
-	xcall Ability_BoostStatByHalf
+	push bc
+	ld c, a
+	call Ability_CheckCloudNine
+	jr nz, .no_suppression
+	xor a
+	pop bc
+	ret
+
+.no_suppression
+	ld a, c
+	pop bc
+	ret
+
+; Checks if Cloud Nine is active on either battler.
+; Returns with Z set if the weather should have no effect.
+Ability_CheckCloudNine:
+	push bc
+	push de
+	push hl
+	ld hl, wBattleMonHP
+	ld a, [hli]
+	or [hl]
+	jr z, .check_enemy
+	ld a, [wBattleMonSpecies]
+	and a
+	jr z, .check_enemy
+	ld c, a
+	ld hl, wBattleMonPersonality
+	ld b, 0
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp CLOUD_NINE
+	jr z, .cloud_nine
+
+.check_enemy
+	ld hl, wEnemyMonHP
+	ld a, [hli]
+	or [hl]
+	jr z, .no_cloud_nine
+	ld a, [wEnemyMonSpecies]
+	and a
+	jr z, .no_cloud_nine
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	ld b, 1
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp CLOUD_NINE
+	jr z, .cloud_nine
+
+.no_cloud_nine
+	pop hl
+	pop de
+	pop bc
+	ld a, 1
+	and a
+	ret
+
+.cloud_nine
+	pop hl
+	pop de
+	pop bc
+	xor a
 	ret

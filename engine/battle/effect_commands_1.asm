@@ -2078,11 +2078,28 @@ BattleCommand_CheckHit:
 	call .FlyDigMoves
 	jr nz, .Miss
 
-	call .ThunderRain
+	farcall Ability_GetBattleWeather
+	ld d, a
+
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	ld e, a
+
+	cp EFFECT_THUNDER
+	jr nz, .CheckBlizzard
+	ld a, d
+	cp WEATHER_RAIN
 	ret z
 
-	call .BlizzardHail
+.CheckBlizzard
+	ld a, e
+	cp EFFECT_BLIZZARD
+	jr nz, .AfterWeather
+	ld a, d
+	cp WEATHER_HAIL
 	ret z
+
+.AfterWeather
 
 	call .XAccuracy
 	ret nz
@@ -2226,28 +2243,6 @@ BattleCommand_CheckHit:
 	dw FISSURE
 	dw MAGNITUDE
 	dw -1
-
-.ThunderRain:
-; Return z if the current move always hits in rain, and it is raining.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_THUNDER
-	ret nz
-
-	ld a, [wBattleWeather]
-	cp WEATHER_RAIN
-	ret
-
-.BlizzardHail:
-; Return z if the current move always hits in hail, and it is hailing.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_BLIZZARD
-	ret nz
-
-	ld a, [wBattleWeather]
-	cp WEATHER_HAIL
-	ret
 
 .XAccuracy:
         ld a, BATTLE_VARS_SUBSTATUS4
@@ -4953,7 +4948,7 @@ BattleCommand_FreezeTarget:
 	ld a, [wTypeModifier]
 	and EFFECTIVENESS_MASK
 	ret z
-	ld a, [wBattleWeather]
+	farcall Ability_GetBattleWeather
 	cp WEATHER_SUN
 	ret z
 	ld c, ICE
@@ -7525,7 +7520,7 @@ BattleCommand_TimeBasedHealContinue:
 	dec c ; double
 
 .Weather:
-	ld a, [wBattleWeather]
+	farcall Ability_GetBattleWeather
 	and a
 	jr z, .Heal
 

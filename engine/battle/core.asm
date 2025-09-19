@@ -1842,13 +1842,13 @@ HandleScreens:
 	jmp StdBattleTextbox
 
 HandleWeather:
-	ld a, [wBattleWeather]
-	cp WEATHER_NONE
-	ret z
+        ld a, [wBattleWeather]
+        cp WEATHER_NONE
+        ret z
 
-	ld hl, wWeatherCount
-	dec [hl]
-	jr nz, .continues
+        ld hl, wWeatherCount
+        dec [hl]
+        jr nz, .continues
 
 ; ended
 	ld hl, .WeatherEndedMessages
@@ -1858,9 +1858,11 @@ HandleWeather:
 	ret
 
 .continues
-	ld hl, .WeatherMessages
-	call .PrintWeatherMessage
-	call .PlayWeatherAnimation
+        farcall Ability_CheckCloudNine
+        ret z
+        ld hl, .WeatherMessages
+        call .PrintWeatherMessage
+        call .PlayWeatherAnimation
 
 ;check_sandstorm
 	ld a, [wBattleWeather]
@@ -9582,10 +9584,10 @@ CheckImakuniTrainer:
 	ret
 
 GetWeatherImage:
-	ld a, [wBattleWeather]
-	and a
-	ret z
-	ld de, RainWeatherImage
+        farcall Ability_GetBattleWeather
+        and a
+        ret z
+        ld de, RainWeatherImage
 	lb bc, PAL_BATTLE_OB_BLUE, 4
 	cp WEATHER_RAIN
 	jr z, .done

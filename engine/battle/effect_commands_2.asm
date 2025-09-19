@@ -39,7 +39,7 @@ DoubleDamage:
 
 BattleCommand_SkipSunCharge:
 ; mimicsuncharge
-    ld a, [wBattleWeather]
+    farcall Ability_GetBattleWeather
     cp WEATHER_SUN
     ret nz
     ld b, charge_command

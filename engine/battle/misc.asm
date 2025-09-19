@@ -50,11 +50,11 @@ GetPlayerBackpicCoords:
 	ret
 
 DoWeatherModifiers:
-	ld de, WeatherTypeModifiers
-	ld a, [wBattleWeather]
-	ld b, a
-	ld a, [wCurType]
-	ld c, a
+        ld de, WeatherTypeModifiers
+        farcall Ability_GetBattleWeather
+        ld b, a
+        ld a, [wCurType]
+        ld c, a
 
 .CheckWeatherType:
 	ld a, [de]

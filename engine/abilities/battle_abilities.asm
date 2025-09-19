@@ -7,6 +7,8 @@ Check_Entrance_Ability:
     call Ability_LoadTracedAbility
     cp TRACE
     jp z, .trace
+    cp CLOUD_NINE
+    jr z, .cloud_nine
     cp DRIZZLE
     jr z, .drizzle
     cp DROUGHT
@@ -22,6 +24,14 @@ Check_Entrance_Ability:
     cp IMPOSTER
     jp z, .imposter
     ; Otherwise, do nothing
+    ret
+
+.cloud_nine
+    ld a, [wBattleWeather]
+    and a
+    ret z
+    ld hl, AbilityText_WeatherCleared
+    call StdAbilityTextbox
     ret
 
 .drizzle

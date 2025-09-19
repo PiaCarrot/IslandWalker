@@ -22,6 +22,12 @@ AbilityText_WhippedUpAHailStorm:
     cont "a hailstorm!"
     prompt
 
+AbilityText_WeatherCleared:
+    text "<USER>'s"
+    line "CLOUD NINE cleared"
+    cont "the weather!"
+    prompt
+
 AbilityText_ExertingPressure:
     text "<USER>"
     line "is exerting its"

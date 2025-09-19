@@ -137,10 +137,10 @@ AI_Redundant:
 	ret
 
 .Sandstorm:
-	ld a, [wBattleWeather]
-	cp WEATHER_SANDSTORM
-	jr z, .Redundant
-	jr .NotRedundant
+        farcall Ability_GetBattleWeather
+        cp WEATHER_SANDSTORM
+        jr z, .Redundant
+        jr .NotRedundant
 
 .Attract:
 	farcall CheckOppositeGender
@@ -155,16 +155,16 @@ AI_Redundant:
 	ret
 
 .RainDance:
-	ld a, [wBattleWeather]
-	cp WEATHER_RAIN
-	jr z, .Redundant
-	jr .NotRedundant
+        farcall Ability_GetBattleWeather
+        cp WEATHER_RAIN
+        jr z, .Redundant
+        jr .NotRedundant
 
 .SunnyDay:
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	jr z, .Redundant
-	jr .NotRedundant
+        farcall Ability_GetBattleWeather
+        cp WEATHER_SUN
+        jr z, .Redundant
+        jr .NotRedundant
 
 .DreamEater:
 	ld a, [wBattleMonStatus]
@@ -183,9 +183,9 @@ AI_Redundant:
 	ret
 
 .Hail:
-	ld a, [wBattleWeather]
-	cp WEATHER_HAIL
-	jr z, .Redundant
+        farcall Ability_GetBattleWeather
+        cp WEATHER_HAIL
+        jr z, .Redundant
 	jr .NotRedundant
 
 .Heal:
