@@ -655,71 +655,185 @@ ApplyFlashFireBoost:
 
 ; Lightningrod grants immunity to Electric-type damaging moves and boosts Sp. Atk. Returns z if blocked.
 Check_LightningrodDamage:
-    call GetAbility
-    call Ability_LoadTracedAbility
-    cp LIGHTNINGROD
-    jr nz, .nope
-    call Ability_LoadAbilityName
-    call ResetDamage
-    ld hl, wTypeModifier
-    ld a, [hl]
-    and STAB_DAMAGE
-    ld [hl], a
-    xor a
-    ld [wTypeMatchup], a
-    ldh [hMultiplier], a
-    ld hl, AbilityText_Lightningrod
-    ld a, [wAttackMissed]
-    and a
-    call z, StdAbilityTextbox
-    call LightningrodBoostSpAttack
-    ld a, 1
-    ld [wAttackMissed], a
-    xor a
-    ret
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp LIGHTNINGROD
+	jr nz, .nope
+	call Ability_LoadAbilityName
+	call ResetDamage
+	ld hl, wTypeModifier
+	ld a, [hl]
+	and STAB_DAMAGE
+	ld [hl], a
+	xor a
+	ld [wTypeMatchup], a
+	ldh [hMultiplier], a
+	ld hl, AbilityText_Lightningrod
+	ld a, [wAttackMissed]
+	and a
+	call z, StdAbilityTextbox
+	call Ability_BoostSpecialAttack
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
 .nope
-    ld a, 1
-    ret
+	ld a, 1
+	ret
 
 ; Lightningrod grants immunity to Electric-type status moves and boosts Sp. Atk. Returns z if blocked.
 Check_LightningrodStatus:
-    call GetAbility
-    call Ability_LoadTracedAbility
-    cp LIGHTNINGROD
-    jr nz, .nope
-    call Ability_LoadAbilityName
-    ld hl, AbilityText_Lightningrod
-    call StdAbilityTextbox
-    call LightningrodBoostSpAttack
-    ld a, 1
-    ld [wAttackMissed], a
-    xor a
-    ret
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp LIGHTNINGROD
+	jr nz, .nope
+	call Ability_LoadAbilityName
+	ld hl, AbilityText_Lightningrod
+	call StdAbilityTextbox
+	call Ability_BoostSpecialAttack
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
 .nope
-    ld a, 1
-    ret
+	ld a, 1
+	ret
 
-LightningrodBoostSpAttack:
-    push af
-    push bc
-    push de
-    push hl
-    ldh a, [hBattleTurn]
-    push af
-    ld a, b
-    ldh [hBattleTurn], a
-    xor a
-    ld [wAttackMissed], a
-    ld [wEffectFailed], a
-    ld [wFailedMessage], a
-    farcall BattleCommand_SpecialAttackUp
-    pop af
-    ldh [hBattleTurn], a
-    pop hl
-    pop de
-    pop bc
-    pop af
-    ret
+Ability_BoostSpecialAttack:
+	push af
+	push bc
+	push de
+	push hl
+	ldh a, [hBattleTurn]
+	push af
+	ld a, b
+	ldh [hBattleTurn], a
+	xor a
+	ld [wAttackMissed], a
+	ld [wEffectFailed], a
+	ld [wFailedMessage], a
+	farcall BattleCommand_SpecialAttackUp
+	pop af
+	ldh [hBattleTurn], a
+	pop hl
+	pop de
+	pop bc
+	pop af
+	ret
+
+; Storm Drain grants immunity to Water-type damaging moves and boosts Sp. Atk. Returns z if blocked.
+Check_StormDrainDamage:
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp STORM_DRAIN
+	jr nz, .nope
+	call Ability_LoadAbilityName
+	call ResetDamage
+	ld hl, wTypeModifier
+	ld a, [hl]
+	and STAB_DAMAGE
+	ld [hl], a
+	xor a
+	ld [wTypeMatchup], a
+	ldh [hMultiplier], a
+	ld hl, AbilityText_StormDrain
+	ld a, [wAttackMissed]
+	and a
+	call z, StdAbilityTextbox
+	call Ability_BoostSpecialAttack
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
+.nope
+	ld a, 1
+	ret
+
+; Storm Drain grants immunity to Water-type status moves and boosts Sp. Atk. Returns z if blocked.
+Check_StormDrainStatus:
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp STORM_DRAIN
+	jr nz, .nope
+	call Ability_LoadAbilityName
+	ld hl, AbilityText_StormDrain
+	call StdAbilityTextbox
+	call Ability_BoostSpecialAttack
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
+.nope
+	ld a, 1
+	ret
+
+; Sap Sipper grants immunity to Grass-type damaging moves and boosts Attack. Returns z if blocked.
+Check_SapSipperDamage:
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp SAP_SIPPER
+	jr nz, .nope
+	call Ability_LoadAbilityName
+	call ResetDamage
+	ld hl, wTypeModifier
+	ld a, [hl]
+	and STAB_DAMAGE
+	ld [hl], a
+	xor a
+	ld [wTypeMatchup], a
+	ldh [hMultiplier], a
+	ld hl, AbilityText_SapSipper
+	ld a, [wAttackMissed]
+	and a
+	call z, StdAbilityTextbox
+	call Ability_BoostAttack
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
+.nope
+	ld a, 1
+	ret
+
+; Sap Sipper grants immunity to Grass-type status moves and boosts Attack. Returns z if blocked.
+Check_SapSipperStatus:
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp SAP_SIPPER
+	jr nz, .nope
+	call Ability_LoadAbilityName
+	ld hl, AbilityText_SapSipper
+	call StdAbilityTextbox
+	call Ability_BoostAttack
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
+.nope
+	ld a, 1
+	ret
+
+Ability_BoostAttack:
+	push af
+	push bc
+	push de
+	push hl
+	ldh a, [hBattleTurn]
+	push af
+	ld a, b
+	ldh [hBattleTurn], a
+	xor a
+	ld [wAttackMissed], a
+	ld [wEffectFailed], a
+	ld [wFailedMessage], a
+	farcall BattleCommand_AttackUp
+	pop af
+	ldh [hBattleTurn], a
+	pop hl
+	pop de
+	pop bc
+	pop af
+	ret
 
 ; Motor Drive grants immunity to Electric-type damaging moves and boosts Speed. Returns z if blocked.
 Check_MotorDriveDamage:
@@ -941,6 +1055,79 @@ TryElectricAbsorbAbilities:
 	ld a, 1
 	ret
 
+TryGrassAbsorbDamage:
+	push bc
+	push de
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and STATUS
+	cp STATUS
+	jr z, .nope
+	farcall LoadTargetAbilityData
+	call Check_SapSipperDamage
+	and a
+	jr nz, .nope
+	pop de
+	pop bc
+	xor a
+	ret
+.nope
+	pop de
+	pop bc
+	ld a, 1
+	ret
+
+TryGrassAbsorbStatus:
+	push bc
+	push de
+	farcall LoadTargetAbilityData
+	call Check_SapSipperStatus
+	and a
+	jr nz, .nope
+	pop de
+	pop bc
+	xor a
+	ret
+.nope
+	pop de
+	pop bc
+	ld a, 1
+	ret
+
+TryGrassWaterAbsorbDamage:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp GRASS
+	jr z, .grass
+	cp WATER
+	jr z, .water
+	ld a, 1
+	ret
+.grass
+	call TryGrassAbsorbDamage
+	ret
+.water
+	call TryWaterAbsorbDamage
+	ret
+
+TryGrassWaterAbsorbStatus:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp GRASS
+	jr z, .grass
+	cp WATER
+	jr z, .water
+	ld a, 1
+	ret
+.grass
+	call TryGrassAbsorbStatus
+	ret
+.water
+	call TryWaterAbsorbStatus
+	ret
+
 TryWaterAbsorbDamage:
 	push bc
 	push de
@@ -951,6 +1138,15 @@ TryWaterAbsorbDamage:
 	jr z, .nope
 	farcall LoadTargetAbilityData
 	call Check_WaterAbsorbDamage
+	and a
+	jr nz, .check_stormdrain
+	pop de
+	pop bc
+	xor a
+	ret
+.check_stormdrain
+	farcall LoadTargetAbilityData
+	call Check_StormDrainDamage
 	and a
 	jr nz, .nope
 	pop de
@@ -1003,6 +1199,15 @@ TryWaterAbsorbStatus:
 	push de
 	farcall LoadTargetAbilityData
 	call Check_WaterAbsorbStatus
+	and a
+	jr nz, .check_stormdrain
+	pop de
+	pop bc
+	xor a
+	ret
+.check_stormdrain
+	farcall LoadTargetAbilityData
+	call Check_StormDrainStatus
 	and a
 	jr nz, .nope
 	pop de

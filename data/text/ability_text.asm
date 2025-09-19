@@ -458,6 +458,24 @@ AbilityText_Lightningrod:
         cont "SP. ATK went up!"
     prompt
 
+AbilityText_StormDrain:
+	text "<TARGET>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " "
+	cont "drew in the attack!"
+		cont "SP. ATK went up!"
+	prompt
+
+AbilityText_SapSipper:
+	text "<TARGET>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " "
+	cont "drank it up!"
+		cont "ATTACK went up!"
+	prompt
+
 AbilityText_MotorDrive:
     text "<TARGET>'s"
     line "@"

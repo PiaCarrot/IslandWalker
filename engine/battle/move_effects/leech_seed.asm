@@ -5,6 +5,9 @@ BattleCommand_LeechSeed:
 	farcall CheckSubstituteOpp
 	jr nz, .evaded
 
+	farcall TryGrassAbsorbStatus
+	ret z
+
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a

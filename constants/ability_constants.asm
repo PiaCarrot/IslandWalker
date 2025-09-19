@@ -154,7 +154,7 @@
 	const POWER_OF_ALCHEMY ; ✔ no double battles so battle effect is irrelevant
 	
 ; Gen IV
-    const MOTOR_DRIVE
+    const MOTOR_DRIVE ; ✔
     const RIVALRY
     const STEADFAST
     const SNOW_CLOAK
@@ -186,7 +186,7 @@
     const FILTER
     const SOLID_ROCK
     const SCRAPPY
-    const STORM_DRAIN
+    const STORM_DRAIN ; ✔
     const ICE_BODY
     const FRISK
     const RECKLESS
@@ -210,7 +210,7 @@
 	const MOXIE ; Exclusive to Gyarados
 	const RATTLED
 	const MAGIC_BOUNCE
-	const SAP_SIPPER
+	const SAP_SIPPER ; ✔
 	const IRON_BARBS
 	const PROTEAN
 	const BULLETPROOF

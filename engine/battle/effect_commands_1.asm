@@ -1738,21 +1738,16 @@ jr z, .stab
 .LightningRodDone
 	pop de
 	pop bc
-	; Water Absorb grants immunity to Water-type damaging moves and restores HP.
+	; Sap Sipper grants immunity to Grass-type moves; Water Absorb and Storm Drain block Water-type moves.
 	push bc
 	push de
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
-	cp WATER
-	jr nz, .WaterAbsorbDone
-	farcall TryWaterAbsorbDamage
+	farcall TryGrassWaterAbsorbDamage
 	and a
-	jr nz, .WaterAbsorbDone
+	jr nz, .TypeAbsorbDone
 	pop de
 	pop bc
 	ret
-.WaterAbsorbDone
+.TypeAbsorbDone
 	pop de
 	pop bc
 	; Thick Fat halves the damage from Fire- and Ice-type moves.
@@ -5092,8 +5087,10 @@ BattleCommand_ParalyzeTarget:
 	and TYPE_MASK
 	cp ELECTRIC
 	jr z, .check_electric
+	cp GRASS
+	jr z, .check_grass_water
 	cp WATER
-	jr z, .check_water
+	jr z, .check_grass_water
 	jr .restore
 .check_electric
 	ld a, c
@@ -5107,12 +5104,12 @@ BattleCommand_ParalyzeTarget:
 	pop bc
 	xor a
 	ret
-.check_water
+.check_grass_water
 	ld a, c
 	and STATUS
 	cp STATUS
 	jr z, .restore
-	farcall TryWaterAbsorbStatus
+	farcall TryGrassWaterAbsorbStatus
 	and a
 	jr nz, .restore
 	pop de
