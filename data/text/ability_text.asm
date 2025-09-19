@@ -325,6 +325,22 @@ AbilityText_Static:
     cont "<TARGET>!"
     prompt
 
+AbilityText_LiquidOoze:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " hurt"
+    cont "<USER>!"
+    prompt
+
+AbilityText_LiquidOozeLeechSeed:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " hurt"
+    cont "<TARGET>!"
+    prompt
+
 AbilityText_OwnTempo:
     text "<TARGET>'s"
     line "@"

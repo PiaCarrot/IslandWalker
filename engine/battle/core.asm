@@ -1185,12 +1185,42 @@ ResidualDamage:
 	call SwitchTurnCore
 
 	call GetEighthMaxHP
+	push bc
 	call SubtractHPFromUser
+	pop bc
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .liquid_enemy_seed
+	ld a, [wBattleMonSpecies]
+	ld c, a
+	ld hl, wBattleMonPersonality
+	ld b, 0
+	jr .check_liquid_seed
+.liquid_enemy_seed
+	ld a, [wEnemyMonSpecies]
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	ld b, 1
+.check_liquid_seed
+	farcall Check_LiquidOoze
+	jr nz, .leech_seed_normal
+	pop bc
+        call SwitchTurnCore
+        call SubtractHPFromUser
+        call UpdateUserInParty
+        call SwitchTurnCore
+        ld hl, AbilityText_LiquidOozeLeechSeed
+        call StdAbilityTextbox
+        jr .after_leech_seed
+.leech_seed_normal
+	pop bc
 	ld a, $1
 	ldh [hBGMapMode], a
 	call RestoreHP
 	ld hl, LeechSeedSapsText
 	call StdBattleTextbox
+.after_leech_seed
 .not_seeded
 
 	call HasUserFainted

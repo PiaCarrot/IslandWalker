@@ -4609,11 +4609,13 @@ PoisonOpponent:
 
 BattleCommand_DrainTarget:
 	call SapHealth
+	ret z
 	ld hl, SuckedHealthText
 	jmp StdBattleTextbox
 
 BattleCommand_EatDream:
 	call SapHealth
+	ret z
 	ld hl, DreamEatenText
 	jmp StdBattleTextbox
 
@@ -4632,6 +4634,24 @@ SapHealth:
 	ld a, 1
 	ldh [hDividend + 1], a
 .at_least_one
+
+	; Check for Liquid Ooze on the target
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .target_player
+	ld a, [wEnemyMonSpecies]
+	ld c, a
+	ld hl, wEnemyMonPersonality
+	ld b, 1
+	jr .check_liquid_ooze
+.target_player
+	ld a, [wBattleMonSpecies]
+	ld c, a
+	ld hl, wBattleMonPersonality
+	ld b, 0
+.check_liquid_ooze
+	farcall Check_LiquidOoze
+	jr z, .liquid_ooze
 
 	ld hl, wBattleMonHP
 	ld de, wBattleMonMaxHP
@@ -4697,6 +4717,23 @@ SapHealth:
 	inc de
 
 .finish
+	call .AnimateHPBarCommon
+	ld a, 1
+	ret
+
+.liquid_ooze
+        ldh a, [hDividend]
+        ld b, a
+        ldh a, [hDividend + 1]
+        ld c, a
+        farcall SubtractHPFromUser
+        call UpdateUserInParty
+        ld hl, AbilityText_LiquidOoze
+        call StdAbilityTextbox
+        xor a
+        ret
+
+.AnimateHPBarCommon
 	ldh a, [hBattleTurn]
 	and a
 	hlcoord 10, 9
@@ -4708,7 +4745,8 @@ SapHealth:
 	ld [wWhichHPBar], a
 	predef AnimateHPBar
 	call RefreshBattleHuds
-	jmp UpdateBattleMonInParty
+	call UpdateUserInParty
+	ret
 
 BattleCommand_BurnTarget:
 	call CheckSubstituteOpp

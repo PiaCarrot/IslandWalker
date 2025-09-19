@@ -457,6 +457,19 @@ Check_ShieldDust:
     ld a, 1
     ret
 
+; Liquid Ooze damages HP-draining move users. Returns z if triggered.
+Check_LiquidOoze:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp LIQUID_OOZE
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
 ; Oblivious prevents infatuation, Taunt, and Captivate. Returns z if blocked.
 Check_Oblivious:
     call GetAbility
