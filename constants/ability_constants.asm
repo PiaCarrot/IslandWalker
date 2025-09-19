@@ -58,9 +58,9 @@
 	const SAND_STREAM  ; ✔ Sandstorm. Also halves the wild Pokémon encounter rate if in the first slot during an overworld sandstorm
     const SNOW_WARNING ; ✔ Hail
 ; Boosts stats in weather
-	const SAND_VEIL    ; Evasion by 20% during a sandstorm
+	const SAND_VEIL    ; ✔ Evasion by 20% during a sandstorm
 ; Heals during weather
-	const RAIN_DISH    ; Heals during rain
+	const RAIN_DISH    ; ✔ Heals during rain
 
 ; Nullifies or weakens specific moves/move effects
 ; Nullifies...
@@ -194,7 +194,7 @@
 ; Gen V+
 	const SHEER_FORCE
 	const CONTRARY
-	const UNNERVE ; Exclusive to Mewtwo
+	const UNNERVE ; Exclusive to Mewtwo and Tyranitar
 	const DEFIANT
 	const CURSED_BODY ; ✔
 	const WEAK_ARMOR

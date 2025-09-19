@@ -455,7 +455,16 @@ AbilityText_Lightningrod:
     text_ram wStringBuffer1
     text " "
     cont "charged it up!"
-	cont "SP. ATK went up!"
+        cont "SP. ATK went up!"
+    prompt
+
+AbilityText_MotorDrive:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "charged it up!"
+        cont "SPEED went up!"
     prompt
 
 AbilityText_WonderGuard:

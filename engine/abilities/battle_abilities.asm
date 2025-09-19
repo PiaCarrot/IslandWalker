@@ -721,11 +721,79 @@ LightningrodBoostSpAttack:
     pop af
     ret
 
+; Motor Drive grants immunity to Electric-type damaging moves and boosts Speed. Returns z if blocked.
+Check_MotorDriveDamage:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp MOTOR_DRIVE
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    call ResetDamage
+    ld hl, wTypeModifier
+    ld a, [hl]
+    and STAB_DAMAGE
+    ld [hl], a
+    xor a
+    ld [wTypeMatchup], a
+    ldh [hMultiplier], a
+    ld hl, AbilityText_MotorDrive
+    ld a, [wAttackMissed]
+    and a
+    call z, StdAbilityTextbox
+    call MotorDriveBoostSpeed
+    ld a, 1
+    ld [wAttackMissed], a
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
+; Motor Drive grants immunity to Electric-type status moves and boosts Speed. Returns z if blocked.
+Check_MotorDriveStatus:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp MOTOR_DRIVE
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_MotorDrive
+    call StdAbilityTextbox
+    call MotorDriveBoostSpeed
+    ld a, 1
+    ld [wAttackMissed], a
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
+MotorDriveBoostSpeed:
+    push af
+    push bc
+    push de
+    push hl
+    ldh a, [hBattleTurn]
+    push af
+    ld a, b
+    ldh [hBattleTurn], a
+    xor a
+    ld [wAttackMissed], a
+    ld [wEffectFailed], a
+    ld [wFailedMessage], a
+    farcall BattleCommand_SpeedUp
+    pop af
+    ldh [hBattleTurn], a
+    pop hl
+    pop de
+    pop bc
+    pop af
+    ret
+
 ; Volt Absorb grants immunity to Electric-type damaging moves and restores HP. Returns z if blocked.
 Check_VoltAbsorbDamage:
-	call GetAbility
-	call Ability_LoadTracedAbility
-	cp VOLT_ABSORB
+        call GetAbility
+        call Ability_LoadTracedAbility
+        cp VOLT_ABSORB
 	jr nz, .nope
 	call Ability_LoadAbilityName
 	call ResetDamage
@@ -834,30 +902,39 @@ TypeAbsorbRestoreHP:
 	ret
 
 TryElectricAbsorbAbilities:
-	push bc
-	push de
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and STATUS
-	cp STATUS
-	jr z, .nope
-	farcall LoadTargetAbilityData
-	call Check_VoltAbsorbDamage
-	and a
-	jr nz, .check_lightningrod
-	pop de
-	pop bc
-	xor a
-	ret
+        push bc
+        push de
+        ld a, BATTLE_VARS_MOVE_TYPE
+        call GetBattleVar
+        and STATUS
+        cp STATUS
+        jr z, .nope
+        farcall LoadTargetAbilityData
+        call Check_VoltAbsorbDamage
+        and a
+        jr nz, .check_lightningrod
+        pop de
+        pop bc
+        xor a
+        ret
 .check_lightningrod
-	farcall LoadTargetAbilityData
-	call Check_LightningrodDamage
-	and a
-	jr nz, .nope
-	pop de
-	pop bc
-	xor a
-	ret
+        farcall LoadTargetAbilityData
+        call Check_LightningrodDamage
+        and a
+        jr nz, .check_motordrive
+        pop de
+        pop bc
+        xor a
+        ret
+.check_motordrive
+        farcall LoadTargetAbilityData
+        call Check_MotorDriveDamage
+        and a
+        jr nz, .nope
+        pop de
+        pop bc
+        xor a
+        ret
 .nope
 	pop de
 	pop bc
@@ -887,25 +964,34 @@ TryWaterAbsorbDamage:
 	ret
 
 TryElectricAbsorbStatus:
-	push bc
-	push de
-	farcall LoadTargetAbilityData
-	call Check_VoltAbsorbStatus
-	and a
-	jr nz, .check_lightningrod
-	pop de
-	pop bc
-	xor a
-	ret
+        push bc
+        push de
+        farcall LoadTargetAbilityData
+        call Check_VoltAbsorbStatus
+        and a
+        jr nz, .check_lightningrod
+        pop de
+        pop bc
+        xor a
+        ret
 .check_lightningrod
-	farcall LoadTargetAbilityData
-	call Check_LightningrodStatus
-	and a
-	jr nz, .nope
-	pop de
-	pop bc
-	xor a
-	ret
+        farcall LoadTargetAbilityData
+        call Check_LightningrodStatus
+        and a
+        jr nz, .check_motordrive
+        pop de
+        pop bc
+        xor a
+        ret
+.check_motordrive
+        farcall LoadTargetAbilityData
+        call Check_MotorDriveStatus
+        and a
+        jr nz, .nope
+        pop de
+        pop bc
+        xor a
+        ret
 .nope
 	pop de
 	pop bc

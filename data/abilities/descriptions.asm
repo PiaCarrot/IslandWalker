@@ -496,7 +496,7 @@ TangledFeetDesc:
 
 MotorDriveDesc:
     db    "Boosts SPEED if"
-    next1 "hit by electicity.@"
+    next1 "hit by electricity.@"
 
 RivalryDesc:
     db    "Deals damage based"

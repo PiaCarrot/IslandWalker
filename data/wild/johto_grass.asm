@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, SQUIRTLE                   ; 20%
-	dbw 13, SQUIRTLE                  ; 20%
-	dbw 14, SQUIRTLE                   ; 10%
-	dbw 14, SQUIRTLE                  ; 10%
-	dbw 15, SQUIRTLE                   ; 10%
-	dbw 15, SQUIRTLE                  ; 10%
-	dbw 14, SQUIRTLE                ;  5%
-	dbw 15, SQUIRTLE                ;  5%
-	dbw 15, SQUIRTLE                 ;  4%
-	dbw 15, SQUIRTLE                   ;  4%
-	dbw 16, SQUIRTLE                 ;  1%
-	dbw 16, SQUIRTLE                   ;  1%
+	dbw 13, ELECTIVIRE                   ; 20%
+	dbw 13, ELECTIVIRE                  ; 20%
+	dbw 14, ELECTIVIRE                   ; 10%
+	dbw 14, ELECTIVIRE                  ; 10%
+	dbw 15, ELECTIVIRE                   ; 10%
+	dbw 15, ELECTIVIRE                  ; 10%
+	dbw 14, ELECTIVIRE                ;  5%
+	dbw 15, ELECTIVIRE                ;  5%
+	dbw 15, ELECTIVIRE                 ;  4%
+	dbw 15, ELECTIVIRE                   ;  4%
+	dbw 16, ELECTIVIRE                 ;  1%
+	dbw 16, ELECTIVIRE                   ;  1%
 	; day
-	dbw 13, SQUIRTLE                   ; 20%
-	dbw 13, SQUIRTLE                  ; 20%
-	dbw 14, SQUIRTLE                   ; 10%
-	dbw 14, SQUIRTLE                  ; 10%
-	dbw 15, SQUIRTLE                   ; 10%
-	dbw 15, SQUIRTLE                  ; 10%
-	dbw 14, SQUIRTLE                ;  5%
-	dbw 15, SQUIRTLE                ;  5%
-	dbw 15, SQUIRTLE                 ;  4%
-	dbw 15, SQUIRTLE                   ;  4%
-	dbw 16, SQUIRTLE                 ;  1%
-	dbw 16, SQUIRTLE                   ;  1%
+	dbw 13, ELECTIVIRE                   ; 20%
+	dbw 13, ELECTIVIRE                  ; 20%
+	dbw 14, ELECTIVIRE                   ; 10%
+	dbw 14, ELECTIVIRE                  ; 10%
+	dbw 15, ELECTIVIRE                   ; 10%
+	dbw 15, ELECTIVIRE                  ; 10%
+	dbw 14, ELECTIVIRE                ;  5%
+	dbw 15, ELECTIVIRE                ;  5%
+	dbw 15, ELECTIVIRE                 ;  4%
+	dbw 15, ELECTIVIRE                   ;  4%
+	dbw 16, ELECTIVIRE                 ;  1%
+	dbw 16, ELECTIVIRE                   ;  1%
 	; nite
-	dbw 13, SQUIRTLE                   ; 20%
-	dbw 13, SQUIRTLE                  ; 20%
-	dbw 14, SQUIRTLE                   ; 10%
-	dbw 14, SQUIRTLE                  ; 10%
-	dbw 15, SQUIRTLE                   ; 10%
-	dbw 15, SQUIRTLE                  ; 10%
-	dbw 14, SQUIRTLE                ;  5%
-	dbw 15, SQUIRTLE                ;  5%
-	dbw 15, SQUIRTLE                 ;  4%
-	dbw 15, SQUIRTLE                   ;  4%
-	dbw 16, SQUIRTLE                 ;  1%
-	dbw 16, SQUIRTLE                   ;  1%
+	dbw 13, ELECTIVIRE                   ; 20%
+	dbw 13, ELECTIVIRE                  ; 20%
+	dbw 14, ELECTIVIRE                   ; 10%
+	dbw 14, ELECTIVIRE                  ; 10%
+	dbw 15, ELECTIVIRE                   ; 10%
+	dbw 15, ELECTIVIRE                  ; 10%
+	dbw 14, ELECTIVIRE                ;  5%
+	dbw 15, ELECTIVIRE                ;  5%
+	dbw 15, ELECTIVIRE                 ;  4%
+	dbw 15, ELECTIVIRE                   ;  4%
+	dbw 16, ELECTIVIRE                 ;  1%
+	dbw 16, ELECTIVIRE                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54
