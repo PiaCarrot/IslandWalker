@@ -706,6 +706,214 @@ LightningrodBoostSpAttack:
     pop af
     ret
 
+; Volt Absorb grants immunity to Electric-type damaging moves and restores HP. Returns z if blocked.
+Check_VoltAbsorbDamage:
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp VOLT_ABSORB
+	jr nz, .nope
+	call Ability_LoadAbilityName
+	call ResetDamage
+	ld hl, wTypeModifier
+	ld a, [hl]
+	and STAB_DAMAGE
+	ld [hl], a
+	xor a
+	ld [wTypeMatchup], a
+	ldh [hMultiplier], a
+	call TypeAbsorbRestoreHP
+	ld hl, AbilityText_VoltAbsorb
+	ld a, [wAttackMissed]
+	and a
+	call z, StdAbilityTextbox
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
+.nope
+	ld a, 1
+	ret
+
+; Volt Absorb grants immunity to Electric-type status moves and restores HP. Returns z if blocked.
+Check_VoltAbsorbStatus:
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp VOLT_ABSORB
+	jr nz, .nope
+	call Ability_LoadAbilityName
+	call TypeAbsorbRestoreHP
+	ld hl, AbilityText_VoltAbsorb
+	call StdAbilityTextbox
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
+.nope
+	ld a, 1
+	ret
+
+; Water Absorb grants immunity to Water-type damaging moves and restores HP. Returns z if blocked.
+Check_WaterAbsorbDamage:
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp WATER_ABSORB
+	jr nz, .nope
+	call Ability_LoadAbilityName
+	call ResetDamage
+	ld hl, wTypeModifier
+	ld a, [hl]
+	and STAB_DAMAGE
+	ld [hl], a
+	xor a
+	ld [wTypeMatchup], a
+	ldh [hMultiplier], a
+	call TypeAbsorbRestoreHP
+	ld hl, AbilityText_WaterAbsorb
+	ld a, [wAttackMissed]
+	and a
+	call z, StdAbilityTextbox
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
+.nope
+	ld a, 1
+	ret
+
+; Water Absorb grants immunity to Water-type status moves and restores HP. Returns z if blocked.
+Check_WaterAbsorbStatus:
+	call GetAbility
+	call Ability_LoadTracedAbility
+	cp WATER_ABSORB
+	jr nz, .nope
+	call Ability_LoadAbilityName
+	call TypeAbsorbRestoreHP
+	ld hl, AbilityText_WaterAbsorb
+	call StdAbilityTextbox
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
+.nope
+	ld a, 1
+	ret
+
+TypeAbsorbRestoreHP:
+	push af
+	push bc
+	push de
+	push hl
+	ldh a, [hBattleTurn]
+	push af
+	ld a, b
+	xor 1
+	ldh [hBattleTurn], a
+	farcall GetQuarterMaxHP
+	farcall RestoreHP
+	pop af
+	ldh [hBattleTurn], a
+	pop hl
+	pop de
+	pop bc
+	pop af
+	ret
+
+TryElectricAbsorbAbilities:
+	push bc
+	push de
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and STATUS
+	cp STATUS
+	jr z, .nope
+	farcall LoadTargetAbilityData
+	call Check_VoltAbsorbDamage
+	and a
+	jr nz, .check_lightningrod
+	pop de
+	pop bc
+	xor a
+	ret
+.check_lightningrod
+	farcall LoadTargetAbilityData
+	call Check_LightningrodDamage
+	and a
+	jr nz, .nope
+	pop de
+	pop bc
+	xor a
+	ret
+.nope
+	pop de
+	pop bc
+	ld a, 1
+	ret
+
+TryWaterAbsorbDamage:
+	push bc
+	push de
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and STATUS
+	cp STATUS
+	jr z, .nope
+	farcall LoadTargetAbilityData
+	call Check_WaterAbsorbDamage
+	and a
+	jr nz, .nope
+	pop de
+	pop bc
+	xor a
+	ret
+.nope
+	pop de
+	pop bc
+	ld a, 1
+	ret
+
+TryElectricAbsorbStatus:
+	push bc
+	push de
+	farcall LoadTargetAbilityData
+	call Check_VoltAbsorbStatus
+	and a
+	jr nz, .check_lightningrod
+	pop de
+	pop bc
+	xor a
+	ret
+.check_lightningrod
+	farcall LoadTargetAbilityData
+	call Check_LightningrodStatus
+	and a
+	jr nz, .nope
+	pop de
+	pop bc
+	xor a
+	ret
+.nope
+	pop de
+	pop bc
+	ld a, 1
+	ret
+
+TryWaterAbsorbStatus:
+	push bc
+	push de
+	farcall LoadTargetAbilityData
+	call Check_WaterAbsorbStatus
+	and a
+	jr nz, .nope
+	pop de
+	pop bc
+	xor a
+	ret
+.nope
+	pop de
+	pop bc
+	ld a, 1
+	ret
+
 ; Levitate provides immunity to Ground-type moves. Returns z if blocked.
 Check_Levitate:
     call GetAbility
@@ -1715,7 +1923,7 @@ TryActivateSynchronize:
 
 .burn_have_target
     ld c, a
-    farcall Check_WaterVeil
+    call Check_WaterVeil
     and a
     jr nz, .burn_item
     ld hl, AbilityText_WaterVeil
@@ -1783,7 +1991,7 @@ TryActivateSynchronize:
 
 .poison_have_target
     ld c, a
-    farcall Check_Immunity
+    call Check_Immunity
     and a
     jr nz, .poison_item
     ld hl, AbilityText_Immunity
@@ -1841,7 +2049,7 @@ TryActivateSynchronize:
 
 .paralyze_have_target
     ld c, a
-    farcall Check_Limber
+    call Check_Limber
     and a
     jr nz, .paralyze_item
     ld hl, AbilityText_Limber

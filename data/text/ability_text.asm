@@ -411,12 +411,29 @@ AbilityText_FlashFire:
     cont "it!"
     prompt
 
+AbilityText_VoltAbsorb:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "restored HP!"
+    prompt
+
+AbilityText_WaterAbsorb:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "restored HP!"
+    prompt
+
 AbilityText_Lightningrod:
     text "<TARGET>'s"
     line "@"
     text_ram wStringBuffer1
     text " "
     cont "charged it up!"
+	cont "SP. ATK went up!"
     prompt
 
 AbilityText_WonderGuard:

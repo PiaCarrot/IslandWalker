@@ -1697,8 +1697,8 @@ jr z, .stab
 	jr .TypesLoop
 
 .end
-        call BattleCheckTypeMatchup
-        ; Flash Fire grants immunity to Fire-type damaging moves and boosts its power.
+	call BattleCheckTypeMatchup
+	; Flash Fire grants immunity to Fire-type damaging moves and boosts its power.
 	push bc
 	push de
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1719,36 +1719,47 @@ jr z, .stab
 	pop bc
 	ret
 .FlashFireDone
-        pop de
-        pop bc
-        ; Lightningrod grants immunity to Electric-type damaging moves and boosts Special Attack.
+	pop de
+	pop bc
+	; Lightningrod grants immunity to Electric-type damaging moves and boosts Special Attack.
 	push bc
 	push de
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
-	ld c, a
 	and TYPE_MASK
 	cp ELECTRIC
 	jr nz, .LightningRodDone
-	ld a, c
-	and STATUS
-	cp STATUS
-	jr z, .LightningRodDone
-	call LoadTargetAbilityData
-	farcall Check_LightningrodDamage
+	farcall TryElectricAbsorbAbilities
 	and a
 	jr nz, .LightningRodDone
 	pop de
 	pop bc
 	ret
 .LightningRodDone
-        pop de
-        pop bc
-        ; Thick Fat halves the damage from Fire- and Ice-type moves.
-        push bc
-        push de
-        ld a, [wTypeMatchup]
-        and a
+	pop de
+	pop bc
+	; Water Absorb grants immunity to Water-type damaging moves and restores HP.
+	push bc
+	push de
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	cp WATER
+	jr nz, .WaterAbsorbDone
+	farcall TryWaterAbsorbDamage
+	and a
+	jr nz, .WaterAbsorbDone
+	pop de
+	pop bc
+	ret
+.WaterAbsorbDone
+	pop de
+	pop bc
+	; Thick Fat halves the damage from Fire- and Ice-type moves.
+	push bc
+	push de
+	ld a, [wTypeMatchup]
+	and a
         jr z, .ThickFatDone
         ld a, BATTLE_VARS_MOVE_TYPE
         call GetBattleVar
@@ -5072,18 +5083,39 @@ BattleCommand_ParalyzeTarget:
         farjp UseHeldStatusHealingItem
 
 .TryLightningrodStatus
-        ld a, [wAttackMissed]
-        and a
-        jr nz, .no_block
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .no_block
+.TryTypeAbsorbStatus
 	push bc
 	push de
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	ld c, a
 	and TYPE_MASK
 	cp ELECTRIC
+	jr z, .check_electric
+	cp WATER
+	jr z, .check_water
+	jr .restore
+.check_electric
+	ld a, c
+	and STATUS
+	cp STATUS
+	jr z, .restore
+	farcall TryElectricAbsorbStatus
+	and a
 	jr nz, .restore
-	call LoadTargetAbilityData
-	farcall Check_LightningrodStatus
+	pop de
+	pop bc
+	xor a
+	ret
+.check_water
+	ld a, c
+	and STATUS
+	cp STATUS
+	jr z, .restore
+	farcall TryWaterAbsorbStatus
 	and a
 	jr nz, .restore
 	pop de
