@@ -108,16 +108,16 @@
 ; Pokémon's type changes to match the last damaging move that it was hit by
 	const COLOR_CHANGE  ; ✔
 ; Boosts power  of Fire-type moves upon being hit by one unless frozen or protected
-	const FLASH_FIRE ; ✔ Also provides complete immunity to Fire-type moves
+	const FLASH_FIRE    ; ✔ Also provides complete immunity to Fire-type moves
 ; Synchronizes select status effects (Burn, Poisoning or Paralysis) if one is inflicted (it also can activate from the contact-based status effects)
-	const SYNCHRONIZE ; ✔ Has a 50% chance to force encountered Pokémon to share the same nature if in the first slot
+	const SYNCHRONIZE   ; ✔ Has a 50% chance to force encountered Pokémon to share the same nature if in the first slot
 ; Draws the move to the ability holder
-	const LIGHTNINGROD ; ✔ Electric-type moves. Also increases the rate of telephone calls
+	const LIGHTNINGROD  ; ✔ Electric-type moves. Also increases the rate of telephone calls
 ; Heals up to 25% of max HP upon being hit by a damaging move of the...
-	const VOLT_ABSORB  ; Electric-type
-	const WATER_ABSORB ; Water-type
+	const VOLT_ABSORB   ; ✔ Electric-type
+	const WATER_ABSORB  ; ✔ Water-type
 ; Damages Physical attackers by 1/16th of their max HP (1/8th is in Gen IV+)
-    const ROUGH_SKIN
+    const ROUGH_SKIN    ; ✔
 
 
 

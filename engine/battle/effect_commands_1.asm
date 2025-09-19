@@ -2944,9 +2944,10 @@ BattleCommand_ApplyDamage:
 	farcall TryActivateColorChange
 	farcall TryActivateCuteCharm
 	farcall TryActivateEffectSpore
+	farcall TryActivateRoughSkin
 	farcall TryActivateCursedBody
-        pop bc
-        ld a, b
+	pop bc
+	ld a, b
         and a
         ret z
 

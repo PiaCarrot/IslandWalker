@@ -306,6 +306,14 @@ AbilityText_PoisonPoint:
     cont "<TARGET>!"
     prompt
 
+AbilityText_RoughSkin:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " hurt"
+    cont "<TARGET>!"
+    prompt
+
 AbilityText_SynchronizePoison:
     text "<USER>'s"
     line "@"

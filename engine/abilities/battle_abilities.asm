@@ -1861,6 +1861,71 @@ pop af
 ldh [hBattleTurn], a
 ret
 
+TryActivateRoughSkin:
+    ld a, BATTLE_VARS_MOVE
+    call GetBattleVar
+    and a
+    ret z
+
+    call GetMoveIndexFromID
+    ld b, h
+    ld c, l
+    ld de, 2
+    ld hl, ContactMoves
+    call IsInWordArray
+    ret nc
+
+    call Ability_LoadBattleMonBase
+    ld d, b
+    call GetAbility
+    call Ability_LoadTracedAbility
+    ld e, a
+    cp ROUGH_SKIN
+    ret nz
+
+    ld a, d
+    and a
+    jr nz, .ability_enemy_hp
+    ld hl, wBattleMonHP
+    jr .check_ability_hp
+.ability_enemy_hp
+    ld hl, wEnemyMonHP
+.check_ability_hp
+    ld a, [hli]
+    or [hl]
+    ret z
+
+    ldh a, [hBattleTurn]
+    and a
+    jr nz, .attacker_enemy_hp
+    ld hl, wBattleMonHP
+    jr .check_attacker_hp
+.attacker_enemy_hp
+    ld hl, wEnemyMonHP
+.check_attacker_hp
+    ld a, [hli]
+    or [hl]
+    ret z
+
+    push de
+
+    farcall GetSixteenthMaxHP
+    farcall SubtractHPFromUser
+    call UpdateUserInParty
+
+    pop de
+    ldh a, [hBattleTurn]
+    push af
+    ld a, d
+    ldh [hBattleTurn], a
+    ld a, e
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_RoughSkin
+    call StdAbilityTextbox
+    pop af
+    ldh [hBattleTurn], a
+    ret
+
 TryActivateSynchronize:
     ld d, a
     ldh a, [hBattleTurn]
