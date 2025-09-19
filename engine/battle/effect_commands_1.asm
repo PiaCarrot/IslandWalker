@@ -2932,11 +2932,12 @@ BattleCommand_ApplyDamage:
 
 
 .done_damage
-	farcall TryActivateColorChange
-	farcall TryActivateCuteCharm
-	farcall TryActivateEffectSpore
-	farcall TryActivateRoughSkin
-	farcall TryActivateCursedBody
+        farcall TryActivateColorChange
+        farcall TryActivateCuteCharm
+        farcall TryActivateEffectSpore
+        farcall TryActivateRattled
+        farcall TryActivateRoughSkin
+        farcall TryActivateCursedBody
 	pop bc
 	ld a, b
         and a

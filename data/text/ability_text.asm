@@ -1,3 +1,4 @@
+AbilityText::
 AbilityText_MadeItRain:
     text "<USER>'s"
     line "DRIZZLE made it"
@@ -481,8 +482,8 @@ AbilityText_MotorDrive:
     line "@"
     text_ram wStringBuffer1
     text " "
-    cont "charged it up!"
-        cont "SPEED went up!"
+    cont "made its"
+        cont "SPEED go up!"
     prompt
 
 AbilityText_WonderGuard:

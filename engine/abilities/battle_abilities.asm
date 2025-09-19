@@ -1,4 +1,4 @@
-AbilityText:: ; Defines the ability text bank, referenced as BANK(AbilityText)
+; Ability text bank defined in data/text/ability_text.asm as AbilityText
 
 ; Checks the entrance ability based off of the Pokémon personality in HL, Player/Enemy in B (0 for Player, 1 for enemy), and species in C.
 ; Performs the ability if applicable.
@@ -87,6 +87,7 @@ Check_Entrance_Ability:
 .intimidate
     call Ability_LoadOppSpeciesAndPersonality
     call GetAbility
+    ld c, a
     cp WHITE_SMOKE
     jr z, .blocked_intimidate
     cp HYPER_CUTTER
@@ -98,12 +99,22 @@ Check_Entrance_Ability:
     cp OWN_TEMPO
     jr z, .blocked_intimidate
     ; We're still here? Push forward!
-; Known bug: it does briefly flash the HP bar
+    ; Known bug: it does briefly flash the HP bar
     farcall BattleCommand_StatDownAnim.intimidate_skip
     farcall BattleCommand_AttackDown
-; Finally, print this
+    ; Finally, print this
     ld hl, AbilityText_IntimidateCutsAttack
     call StdAbilityTextbox
+    ld a, c
+    cp RATTLED
+    jr nz, .done_intimidate
+    push bc
+    ld a, b
+    xor 1
+    ld b, a
+    call Ability_TriggerRattled
+    pop bc
+.done_intimidate
     ret
 
 .imposter
@@ -854,7 +865,7 @@ Check_MotorDriveDamage:
     ld a, [wAttackMissed]
     and a
     call z, StdAbilityTextbox
-    call MotorDriveBoostSpeed
+    call Ability_BoostSpeed
     ld a, 1
     ld [wAttackMissed], a
     xor a
@@ -872,7 +883,7 @@ Check_MotorDriveStatus:
     call Ability_LoadAbilityName
     ld hl, AbilityText_MotorDrive
     call StdAbilityTextbox
-    call MotorDriveBoostSpeed
+    call Ability_BoostSpeed
     ld a, 1
     ld [wAttackMissed], a
     xor a
@@ -881,7 +892,7 @@ Check_MotorDriveStatus:
     ld a, 1
     ret
 
-MotorDriveBoostSpeed:
+Ability_BoostSpeed:
     push af
     push bc
     push de
@@ -901,6 +912,40 @@ MotorDriveBoostSpeed:
     pop de
     pop bc
     pop af
+    ret
+
+Ability_TriggerRattled:
+    ldh a, [hBattleTurn]
+    ld c, a
+    ld a, b
+    ldh [hBattleTurn], a
+    ld a, RATTLED
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_MotorDrive
+    call StdAbilityTextbox
+    ld a, c
+    ldh [hBattleTurn], a
+    jp Ability_BoostSpeed
+
+Ability_CheckTargetWasHit:
+    ld hl, wBattleMonHP
+    ld a, b
+    and a
+    jr z, .have_hp
+    ld hl, wEnemyMonHP
+.have_hp
+    ld a, [hli]
+    or [hl]
+    ret z
+
+    ld hl, wPlayerDamageTaken
+    ld a, b
+    and a
+    jr z, .have_damage
+    ld hl, wEnemyDamageTaken
+.have_damage
+    ld a, [hli]
+    or [hl]
     ret
 
 ; Volt Absorb grants immunity to Electric-type damaging moves and restores HP. Returns z if blocked.
@@ -2252,6 +2297,39 @@ pop af
 ldh [hBattleTurn], a
 ret
 
+TryActivateRattled:
+    ld a, BATTLE_VARS_MOVE
+    call GetBattleVar
+    and a
+    ret z
+
+    ld a, BATTLE_VARS_MOVE_TYPE
+    call GetBattleVar
+    ld c, a
+    and STATUS
+    cp STATUS
+    ret z
+    ld a, c
+    and TYPE_MASK
+    cp BUG
+    jr z, .load_target
+    cp GHOST
+    jr z, .load_target
+    cp DARK
+    ret nz
+
+.load_target
+    call Ability_LoadBattleMonBase
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp RATTLED
+    ret nz
+
+    call Ability_CheckTargetWasHit
+    ret z
+
+    jp Ability_TriggerRattled
+
 TryActivateRoughSkin:
     ld a, BATTLE_VARS_MOVE
     call GetBattleVar
@@ -2267,14 +2345,13 @@ TryActivateRoughSkin:
     ret nc
 
     call Ability_LoadBattleMonBase
-    ld d, b
     call GetAbility
     call Ability_LoadTracedAbility
-    ld e, a
     cp ROUGH_SKIN
     ret nz
+    ld c, a
 
-    ld a, d
+    ld a, b
     and a
     jr nz, .ability_enemy_hp
     ld hl, wBattleMonHP
@@ -2298,18 +2375,18 @@ TryActivateRoughSkin:
     or [hl]
     ret z
 
-    push de
+    push bc
 
     farcall GetSixteenthMaxHP
     farcall SubtractHPFromUser
     call UpdateUserInParty
 
-    pop de
+    pop bc
     ldh a, [hBattleTurn]
     push af
-    ld a, d
+    ld a, b
     ldh [hBattleTurn], a
-    ld a, e
+    ld a, c
     call Ability_LoadAbilityName
     ld hl, AbilityText_RoughSkin
     call StdAbilityTextbox
@@ -2559,32 +2636,7 @@ TryActivateCursedBody:
     cp CURSED_BODY
     ret nz
 
-    ld a, b
-    and a
-    jr nz, .check_enemy_hp
-    ld hl, wBattleMonHP
-    jr .check_hp
-
-.check_enemy_hp
-    ld hl, wEnemyMonHP
-
-.check_hp
-    ld a, [hli]
-    or [hl]
-    ret z
-
-    ld a, b
-    and a
-    jr nz, .check_enemy_damage
-    ld hl, wPlayerDamageTaken
-    jr .check_damage
-
-.check_enemy_damage
-    ld hl, wEnemyDamageTaken
-
-.check_damage
-    ld a, [hli]
-    or [hl]
+    call Ability_CheckTargetWasHit
     ret z
 
     call BattleRandom
