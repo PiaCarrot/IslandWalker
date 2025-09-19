@@ -9,6 +9,8 @@ DoBattle:
         ld [wTotalBattleTurns], a
         ld [wPlayerBattleBondActivated], a
         ld [wEnemyBattleBondActivated], a
+	ld [wPlayerFlashFireBoosted], a
+	ld [wEnemyFlashFireBoosted], a
         ld a, TRACE
 	ld [wBattleMonTracedAbility], a ; Load these with TRACE as a placeholder...
 	ld [wEnemyMonTracedAbility], a
@@ -3871,6 +3873,7 @@ NewEnemyMonStatus:
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastEnemyMove], a
+	ld [wEnemyFlashFireBoosted], a
 	ld hl, wEnemySubStatus1
 rept 4
 	ld [hli], a
@@ -4397,6 +4400,7 @@ NewBattleMonStatus:
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
+	ld [wPlayerFlashFireBoosted], a
 	ld hl, wPlayerSubStatus1
 rept 4
 	ld [hli], a

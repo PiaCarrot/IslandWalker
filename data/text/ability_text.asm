@@ -376,6 +376,14 @@ AbilityText_Levitate:
     cont "miss!"
     prompt
 
+AbilityText_FlashFire:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " absorbs"
+    cont "it!"
+    prompt
+
 AbilityText_WonderGuard:
     text "<TARGET>'s"
     line "@"

@@ -1502,13 +1502,22 @@ BattleCommand_Stab:
 	ld hl, wBattleMonPersonality
 	ld a, [wBattleMonSpecies]
 	ld c, a
-	jr .CallPinchAbility
+	jr .CallAbilityBoosts
 .EnemyPinchAbility
 	ld hl, wEnemyMonPersonality
 	ld a, [wEnemyMonSpecies]
 	ld c, a
-.CallPinchAbility
+.CallAbilityBoosts
+	push hl
+	push bc
 	farcall ApplyPinchAbilityBoost
+	pop bc
+	pop hl
+	push hl
+	push bc
+	farcall ApplyFlashFireBoost
+	pop bc
+	pop hl
 	pop bc
 	pop de
 
@@ -1689,6 +1698,42 @@ jr z, .stab
 
 .end
         call BattleCheckTypeMatchup
+        ; Flash Fire grants immunity to Fire-type damaging moves and boosts its power.
+	push bc
+	push de
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	ld c, a
+	and TYPE_MASK
+	cp FIRE
+	jr nz, .FlashFireDone
+	ld a, c
+	and STATUS
+	cp STATUS
+	jr z, .FlashFireDone
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .FlashFireTargetPlayer
+	ld hl, wEnemyMonPersonality
+	ld a, [wEnemyMonSpecies]
+	ld c, a
+	ld b, 1
+	jr .FlashFireCheckAbility
+.FlashFireTargetPlayer
+	ld hl, wBattleMonPersonality
+	ld a, [wBattleMonSpecies]
+	ld c, a
+	ld b, 0
+.FlashFireCheckAbility
+	farcall Check_FlashFireDamage
+	and a
+	jr nz, .FlashFireDone
+	pop de
+	pop bc
+	ret
+.FlashFireDone
+	pop de
+	pop bc
         ; Thick Fat halves the damage from Fire- and Ice-type moves.
         push bc
         push de
@@ -4755,12 +4800,14 @@ BattleCommand_BurnTarget:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
-	jr nz, Defrost
+	jmp nz, Defrost
 	ld a, [wTypeModifier]
 	and EFFECTIVENESS_MASK
 	ret z
 	ld c, FIRE
 	call CheckIfTargetMatchesType ; Don't burn a Fire-type
+	jr z, .FlashFireStatusOnly
+	call .TryFlashFireStatus
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -4808,6 +4855,32 @@ BattleCommand_BurnTarget:
 	call StdBattleTextbox
 
 	farjp UseHeldStatusHealingItem
+
+.FlashFireStatusOnly
+	call .TryFlashFireStatus
+	ret
+
+.TryFlashFireStatus
+	push bc
+	push de
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .FlashFireStatusPlayer
+	ld hl, wEnemyMonPersonality
+	ld a, [wEnemyMonSpecies]
+	ld c, a
+	ld b, 1
+	jr .FlashFireStatusCall
+.FlashFireStatusPlayer
+	ld hl, wBattleMonPersonality
+	ld a, [wBattleMonSpecies]
+	ld c, a
+	ld b, 0
+.FlashFireStatusCall
+	farcall Check_FlashFireStatus
+	pop de
+	pop bc
+	ret
 
 Defrost:
 	ld a, [hl]

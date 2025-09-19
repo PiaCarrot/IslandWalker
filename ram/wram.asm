@@ -408,6 +408,7 @@ wEnemySubStatus5:: db
 
 wPlayerAbility:: db
 wPlayerBattleBondActivated:: db
+wPlayerFlashFireBoosted:: db
 wPlayerRolloutCount:: db
 wPlayerConfuseCount:: db
 wPlayerToxicCount:: db
@@ -419,6 +420,7 @@ wPlayerProtectCount:: db
 
 wEnemyAbility:: db
 wEnemyBattleBondActivated:: db
+wEnemyFlashFireBoosted:: db
 wEnemyRolloutCount:: db
 wEnemyConfuseCount:: db
 wEnemyToxicCount:: db

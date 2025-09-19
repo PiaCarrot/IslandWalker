@@ -602,6 +602,42 @@ db OVERCHARGED, ELECTRIC
 db DRAGOON, DRAGON
 db -1
 
+; Flash Fire boosts the power of Fire-type moves after activation.
+ApplyFlashFireBoost:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp FLASH_FIRE
+    ret nz
+    ld a, [wCurType]
+    and TYPE_MASK
+    cp FIRE
+    ret nz
+    ld a, b
+    and a
+    jr nz, .enemy
+    ld hl, wPlayerFlashFireBoosted
+    jr .check_flag
+.enemy
+    ld hl, wEnemyFlashFireBoosted
+.check_flag
+    ld a, [hl]
+    and a
+    ret z
+    ld hl, wCurDamage + 1
+    ld a, [hld]
+    ld h, [hl]
+    ld l, a
+    ld b, h
+    ld c, l
+    srl b
+    rr c
+    add hl, bc
+    ld a, h
+    ld [wCurDamage], a
+    ld a, l
+    ld [wCurDamage + 1], a
+    ret
+
 ; Levitate provides immunity to Ground-type moves. Returns z if blocked.
 Check_Levitate:
     call GetAbility
@@ -609,6 +645,68 @@ Check_Levitate:
     cp LEVITATE
     jr nz, .nope
     call Ability_LoadAbilityName
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
+; Flash Fire grants immunity to Fire-type damaging moves. Returns z if blocked.
+Check_FlashFireDamage:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp FLASH_FIRE
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    ld a, b
+    and a
+    jr nz, .enemy
+    ld hl, wPlayerFlashFireBoosted
+    jr .set_flag
+.enemy
+    ld hl, wEnemyFlashFireBoosted
+.set_flag
+    ld a, 1
+    ld [hl], a
+    call ResetDamage
+    ld hl, wTypeModifier
+    ld a, [hl]
+    and STAB_DAMAGE
+    ld [hl], a
+    xor a
+    ld [wTypeMatchup], a
+    ldh [hMultiplier], a
+    ld hl, AbilityText_FlashFire
+    ld a, [wAttackMissed]
+    and a
+    call z, StdAbilityTextbox
+    ld a, 1
+    ld [wAttackMissed], a
+    xor a
+    ret
+.nope
+    ld a, 1
+    ret
+
+; Flash Fire activates on Fire-type status moves. Returns z if blocked.
+Check_FlashFireStatus:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp FLASH_FIRE
+    jr nz, .nope
+    call Ability_LoadAbilityName
+    ld a, b
+    and a
+    jr nz, .enemy
+    ld hl, wPlayerFlashFireBoosted
+    jr .set_flag
+.enemy
+    ld hl, wEnemyFlashFireBoosted
+.set_flag
+    ld a, 1
+    ld [hl], a
+    ld hl, AbilityText_FlashFire
+    call StdAbilityTextbox
     xor a
     ret
 .nope
