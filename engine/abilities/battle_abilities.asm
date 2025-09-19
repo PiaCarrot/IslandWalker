@@ -20,7 +20,7 @@ Check_Entrance_Ability:
     cp PRESSURE
     jr z, .pressure
     cp INTIMIDATE
-    jr z, .intimidate
+    jmp z, .intimidate
     cp IMPOSTER
     jp z, .imposter
     ; Otherwise, do nothing
@@ -32,6 +32,7 @@ Check_Entrance_Ability:
     ret z
     ld hl, AbilityText_WeatherCleared
     call StdAbilityTextbox
+    xcall Ability_RecalculateStatsForWeather
     ret
 
 .drizzle
@@ -40,6 +41,7 @@ Check_Entrance_Ability:
     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
     ld [wWeatherCount], a
     farcall HandleWeather.weather_ability_skip
+    xcall Ability_RecalculateStatsForWeather
     ld hl, AbilityText_MadeItRain
     call StdAbilityTextbox
     ret
@@ -50,6 +52,7 @@ Check_Entrance_Ability:
     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
     ld [wWeatherCount], a
     farcall HandleWeather.weather_ability_skip
+    xcall Ability_RecalculateStatsForWeather
     ld hl, AbilityText_SunRaysIntensified
     call StdAbilityTextbox
     ret
@@ -60,6 +63,7 @@ Check_Entrance_Ability:
     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
     ld [wWeatherCount], a
     farcall HandleWeather.weather_ability_skip
+    xcall Ability_RecalculateStatsForWeather
     ld hl, AbilityText_WhippedUpASandStorm
     call StdAbilityTextbox
     ret
@@ -70,6 +74,7 @@ Check_Entrance_Ability:
     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
     ld [wWeatherCount], a
     farcall HandleWeather.weather_ability_skip
+    xcall Ability_RecalculateStatsForWeather
     ld hl, AbilityText_WhippedUpAHailStorm
     call StdAbilityTextbox
     ret

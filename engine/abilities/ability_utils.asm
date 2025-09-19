@@ -195,6 +195,8 @@ ApplyStatusEffectOnStats:
         call ApplyHustleEffectOnAttack
         call ApplyMarvelScaleEffectOnDefense
         call ApplyFurCoatEffectOnDefense
+        call ApplyChlorophyllEffectOnSpeed
+        call ApplySwiftSwimEffectOnSpeed
         call ApplyQuickFeetEffectOnSpeed
         jp ApplyFlareBoostEffectOnSpAttack
 
@@ -416,6 +418,8 @@ ApplyStatusAbilityBoosts:
         call ApplyHustleEffectOnAttack
         call ApplyMarvelScaleEffectOnDefense
         call ApplyFurCoatEffectOnDefense
+        call ApplyChlorophyllEffectOnSpeed
+        call ApplySwiftSwimEffectOnSpeed
         call ApplyQuickFeetEffectOnSpeed
         jp ApplyFlareBoostEffectOnSpAttack
 
@@ -496,6 +500,36 @@ ApplyFurCoatEffectOnDefense:
         ret nz
         ld hl, wEnemyMonDefense
         ld de, wBattleMonDefense
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_DoubleStat
+        ret
+
+ApplyChlorophyllEffectOnSpeed:
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp CHLOROPHYLL
+        ret nz
+        xcall Ability_GetBattleWeather
+        cp WEATHER_SUN
+        ret nz
+        ld hl, wEnemyMonSpeed
+        ld de, wBattleMonSpeed
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_DoubleStat
+        ret
+
+ApplySwiftSwimEffectOnSpeed:
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp SWIFT_SWIM
+        ret nz
+        xcall Ability_GetBattleWeather
+        cp WEATHER_RAIN
+        ret nz
+        ld hl, wEnemyMonSpeed
+        ld de, wBattleMonSpeed
         xcall Ability_SelectBattleMonStatPointer
         xcall Ability_DoubleStat
         ret
@@ -601,3 +635,8 @@ Ability_CheckCloudNine:
 	pop bc
 	xor a
 	ret
+
+Ability_RecalculateStatsForWeather::
+        farcall CalcPlayerStats
+        farcall CalcEnemyStats
+        ret

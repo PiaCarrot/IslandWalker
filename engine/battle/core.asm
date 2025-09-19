@@ -129,12 +129,14 @@ DoBattle:
 	ld c, a
 	ld hl, wBattleMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	call SetEnemyTurn
 	ld a, [wEnemyMonSpecies]
 	ld b, 1
 	ld c, a
 	ld hl, wEnemyMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	call SetPlayerTurn
 	jp BattleTurn
 .enemy_first
@@ -144,12 +146,14 @@ DoBattle:
 	ld c, a
 	ld hl, wEnemyMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	call SetPlayerTurn
 	ld a, [wBattleMonSpecies]
 	ld b, 0
 	ld c, a
 	ld hl, wBattleMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	jr BattleTurn
  
 ; I don't quite care about abilities yet here.
@@ -1855,10 +1859,12 @@ HandleWeather:
 	call .PrintWeatherMessage
 	xor a
 	ld [wBattleWeather], a
+	farcall Ability_RecalculateStatsForWeather
 	ret
 
 .continues
-        farcall Ability_CheckCloudNine
+	farcall Ability_RecalculateStatsForWeather
+	farcall Ability_CheckCloudNine
         ret z
         ld hl, .WeatherMessages
         call .PrintWeatherMessage
@@ -2249,7 +2255,7 @@ HandleEnemyMonFaint:
 DoubleSwitch:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
-	jr z, .player_1
+	jmp z, .player_1
 	call ClearSprites
 	hlcoord 1, 0
 	lb bc, 4, 10
@@ -2281,12 +2287,14 @@ DoubleSwitch:
 	ld c, a
 	ld hl, wBattleMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	call SetEnemyTurn
 	ld a, [wEnemyMonSpecies]
 	ld b, 1
 	ld c, a
 	ld hl, wEnemyMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	call SetPlayerTurn
 	jp BattleTurn
 .enemy_first
@@ -2296,12 +2304,14 @@ DoubleSwitch:
 	ld c, a
 	ld hl, wEnemyMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	call SetPlayerTurn
 	ld a, [wBattleMonSpecies]
 	ld b, 0
 	ld c, a
 	ld hl, wBattleMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	jr .done
 
 .player_1
@@ -2562,6 +2572,7 @@ EnemyPartyMonEntrance:
 	ld c, a
 	ld hl, wEnemyMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2998,6 +3009,7 @@ ForcePlayerMonChoice:
 	ld c, a
 	ld hl, wBattleMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	ld a, $1
 	and a
 	ld c, a
@@ -4327,6 +4339,7 @@ SwitchPlayerMon:
 	ld c, a
 	ld hl, wBattleMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	ld hl, wEnemyMonHP
@@ -5486,6 +5499,7 @@ BattleMonEntrance:
 	ld c, a
 	ld hl, wBattleMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5520,6 +5534,7 @@ PassedBattleMonEntrance:
 	ld c, a
 	ld hl, wBattleMonPersonality
 	farcall Check_Entrance_Ability
+	farcall Ability_RecalculateStatsForWeather
 	jmp SpikesDamage
 
 BattleMenu_Run:

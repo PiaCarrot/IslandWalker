@@ -46,10 +46,10 @@
 
 ; Weather related
 ; Prevents the effects of the weather
-	const CLOUD_NINE
+	const CLOUD_NINE   ; ✔
 ; Boosts speed in weather conditions
-	const CHLOROPHYLL  ; Sunlight
-	const SWIFT_SWIM   ; Rain
+	const CHLOROPHYLL  ; ✔ Sunlight
+	const SWIFT_SWIM   ; ✔ Rain
 ; Changes type to match the weather
 	const FORECAST ; UNUSED IN ORANGE
 ; Causes a specific weather condition
