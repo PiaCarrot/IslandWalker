@@ -713,6 +713,9 @@ PokeBallEffect:
         ld bc, MON_NAME_LENGTH
         rst CopyBytes
 .skip_give_exp
+        ; Experience gain may change wCurPartyLevel; restore the caught mon's level.
+        ld a, [wEnemyMonLevel]
+        ld [wCurPartyLevel], a
 
         ld a, [wTempSpecies]
         call CheckCaughtMon
