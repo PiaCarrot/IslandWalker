@@ -12,15 +12,15 @@ AbilityDescriptions:
 	dw OvergrowDesc
 	dw TorrentDesc
 	dw SwarmDesc
-    dw PersistanceDesc
-    dw OverchargedDesc
-    dw DragoonDesc
+	dw PersistanceDesc
+	dw OverchargedDesc
+	dw DragoonDesc
 	dw GutsDesc
 	dw MarvelScaleDesc
 	dw TangledFeetDesc
 	dw QuickFeetDesc
-	dw ToxicBoostDesc  
-    dw FlareBoostDesc
+	dw ToxicBoostDesc
+	dw FlareBoostDesc
 	dw SteadfastDesc
 	dw CompoundeyesDesc
 	dw HustleDesc
@@ -29,7 +29,7 @@ AbilityDescriptions:
 	dw SpeedBoostDesc
 	dw PlusDesc
 	dw MinusDesc
-    dw BattleBondDesc
+	dw BattleBondDesc
 	dw CloudNineDesc
 	dw ChlorophyllDesc
 	dw SwiftSwimDesc
@@ -38,10 +38,10 @@ AbilityDescriptions:
 	dw DrizzleDesc
 	dw SandStreamDesc
 	dw SnowWarningDesc
-	dw ElectricSurgeDesc  
-	dw PsychicSurgeDesc  
-	dw MistySurgeDesc  
-	dw GrassySurgeDesc  
+	dw ElectricSurgeDesc
+	dw PsychicSurgeDesc
+	dw MistySurgeDesc
+	dw GrassySurgeDesc
 	dw SandVeilDesc
 	dw SnowCloakDesc
 	dw FlowerGiftDesc
@@ -78,7 +78,7 @@ AbilityDescriptions:
 	dw FlameBodyDesc
 	dw PoisonPointDesc
 	dw StaticDesc
-	dw CursedBodyDesc  
+	dw CursedBodyDesc
 	dw LiquidOozeDesc
 	dw SereneGraceDesc
 	dw ColorChangeDesc
@@ -87,11 +87,11 @@ AbilityDescriptions:
 	dw LightningrodDesc
 	dw VoltAbsorbDesc
 	dw WaterAbsorbDesc
-    dw RoughSkinDesc
+	dw RoughSkinDesc
 	dw MotorDriveDesc
 	dw StormDrainDesc
-	dw SapSipperDesc  
-	dw RattledDesc  
+	dw SapSipperDesc
+	dw RattledDesc
 	dw ShedSkinDesc
 	dw EarlyBirdDesc
 	dw NaturalCureDesc
@@ -106,92 +106,91 @@ AbilityDescriptions:
 	dw PickupDesc
 	dw HoneyGatherDesc
 	dw PowerOfAlchemyDesc
-    dw CoinCollectorDesc
+	dw CoinCollectorDesc
 	dw GluttonyDesc
-	dw AngerPointDesc
+	dw UnnerveDesc
 	dw UnburdenDesc
+	dw RipenDesc
+	dw CudChewDesc
+	dw HarvestDesc
+	dw AngerPointDesc
 	dw SimpleDesc
-	dw DrySkinDesc
+	dw ContraryDesc
+	dw CompetitiveDesc
+	dw DefiantDesc
+	dw WeakArmorDesc
+	dw WaterCompactionDesc
 	dw DownloadDesc
+	dw MoxieDesc
+	dw BerserkDesc
+	dw SupremeOverlordDesc
 	dw IronFistDesc
-	dw PoisonHealDesc
+	dw RecklessDesc
+	dw SheerForceDesc
 	dw AdaptabilityDesc
 	dw SkillLinkDesc
+	dw TechnicianDesc
+	dw SniperDesc
+	dw SuperLuckDesc
+	dw TintedLensDesc
+	dw AnalyticDesc
+	dw MercilessDesc
+	dw SteelworkerDesc
+	dw MegaLauncherDesc
+	dw ToughClawsDesc
+	dw SharpnessDesc
+	dw MoldBreakerDesc
+	dw InfiltratorDesc
+	dw NormalizeDesc
+	dw ProteanDesc
+	dw PixilateDesc
+	dw GalvanizeDesc
+	dw ScrappyDesc
+	dw MimicryDesc
+	dw IllusionDesc
+	dw StanceChangeDesc
+	dw DisguiseDesc
+	dw DrySkinDesc
 	dw HydrationDesc
 	dw SolarPowerDesc
-	dw NormalizeDesc
-	dw SniperDesc
-	dw MagicGuardDesc
-	dw NoGuardDesc
-	dw TechnicianDesc
 	dw LeafGuardDesc
-	dw MoldBreakerDesc
-	dw SuperLuckDesc
+	dw SandRushDesc
+	dw SlushRushDesc
+	dw SurgeSurferDesc
+	dw IceBodyDesc
+	dw OvercoatDesc
+	dw WindPowerDesc
+	dw CrystalBodyDesc
+	dw PoisonHealDesc
+	dw MagicGuardDesc
+	dw MagicBounceDesc
+	dw RegeneratorDesc
+	dw PastelVeilDesc
+	dw PoisonTouchDesc
+	dw CorrosionDesc
 	dw AftermathDesc
+	dw IronBarbsDesc
+	dw GooeyDesc
+	dw TanglingHairDesc
+	dw PerishBodyDesc
+	dw GulpMissileDesc
+	dw FilterDesc
+	dw SolidRockDesc
+	dw MultiscaleDesc
+	dw BulletproofDesc
+	dw ArmorTailDesc
 	dw AnticipationDesc
 	dw ForewarnDesc
 	dw UnawareDesc
-	dw TintedLensDesc
-	dw FilterDesc
-	dw SolidRockDesc
-	dw ScrappyDesc
-	dw IceBodyDesc
 	dw FriskDesc
-	dw RecklessDesc
-	dw SheerForceDesc  
-	dw ContraryDesc  
-	dw UnnerveDesc  
-	dw DefiantDesc  
-	dw WeakArmorDesc  
-	dw MultiscaleDesc  
-	dw HarvestDesc  
-	dw OvercoatDesc  
-	dw PoisonTouchDesc  
-	dw RegeneratorDesc  
-	dw SandRushDesc  
-	dw AnalyticDesc  
-	dw IllusionDesc  
-	dw InfiltratorDesc  
-	dw MoxieDesc  
-	dw MagicBounceDesc  
-	dw IronBarbsDesc  
-	dw ProteanDesc  
-	dw BulletproofDesc  
-	dw CompetitiveDesc  
-	dw StanceChangeDesc  
-	dw MegaLauncherDesc  
-	dw ToughClawsDesc  
-	dw PixilateDesc  
-	dw GooeyDesc  
-	dw WaterCompactionDesc  
-	dw MercilessDesc  
-	dw SteelworkerDesc  
-	dw BerserkDesc  
-	dw SlushRushDesc  
-	dw GalvanizeDesc  
-	dw SurgeSurferDesc  
-	dw DisguiseDesc  
-	dw CorrosionDesc  
-	dw TanglingHairDesc  
-	dw GulpMissileDesc  
-	dw RipenDesc  
-	dw MimicryDesc  
-	dw ScreenCleanerDesc  
-	dw SteelySpiritDesc  
-	dw PerishBodyDesc  
-	dw NeutralizingGasDesc  
-	dw PastelVeilDesc  
-	dw QuickDrawDesc  
-	dw CuriousMedicineDesc  
-	dw WindPowerDesc  
-	dw CudChewDesc  
-	dw SharpnessDesc  
-	dw SupremeOverlordDesc
-	dw ArmorTailDesc
+	dw ScreenCleanerDesc
+	dw NeutralizingGasDesc
+	dw CuriousMedicineDesc
+	dw SupersweetSyrupDesc
+	dw SteelySpiritDesc
+	dw QuickDrawDesc
+	dw NoGuardDesc
 	dw MindsEyeDesc
-        dw SupersweetSyrupDesc
-        dw CrystalBodyDesc
-
 ; Actual descriptions start here
 NoAbilityDesc:
 ; This shouldn't be possible, but just in case.

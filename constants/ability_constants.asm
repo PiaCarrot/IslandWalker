@@ -170,91 +170,108 @@
 ; Evolution
 	const COIN_COLLECTOR ; ✔ Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves. ✔
 	
-; Gen IV
-    const GLUTTONY
-    const ANGER_POINT
-    const UNBURDEN
-    const SIMPLE
-    const DRY_SKIN
-    const DOWNLOAD
-    const IRON_FIST
-    const POISON_HEAL
-    const ADAPTABILITY
-    const SKILL_LINK
-    const HYDRATION
-    const SOLAR_POWER
-    const NORMALIZE
-    const SNIPER
-    const MAGIC_GUARD
-    const NO_GUARD
-    const TECHNICIAN
-    const LEAF_GUARD
-    const MOLD_BREAKER
-    const SUPER_LUCK
-    const AFTERMATH
-    const ANTICIPATION
-    const FOREWARN
-    const UNAWARE
-    const TINTED_LENS
-    const FILTER
-    const SOLID_ROCK
-    const SCRAPPY
-    const ICE_BODY
-    const FRISK
-    const RECKLESS
-; Gen V+
-	const SHEER_FORCE
-	const CONTRARY
-	const UNNERVE ; Exclusive to Mewtwo and Tyranitar
-	const DEFIANT
-	const WEAK_ARMOR
-	const MULTISCALE
-	const HARVEST
-	const OVERCOAT
-	const POISON_TOUCH
-	const REGENERATOR
-	const SAND_RUSH
-	const ANALYTIC ; Exclusive to Magnezone
-	const ILLUSION ; GL Whoever attempts to program this
-	const INFILTRATOR
-	const MOXIE ; Exclusive to Gyarados
-	const MAGIC_BOUNCE
-	const IRON_BARBS
-	const PROTEAN
-	const BULLETPROOF
-	const COMPETITIVE
-	const STANCE_CHANGE
-	const MEGA_LAUNCHER
-	const TOUGH_CLAWS
-	const PIXILATE
-	const GOOEY
-	const WATER_COMPACTION
-	const MERCILESS
-	const STEELWORKER
-	const BERSERK
-	const SLUSH_RUSH
-	const GALVANIZE
-	const SURGE_SURFER
-	const DISGUISE
-	const CORROSION
-	const TANGLING_HAIR
-	const GULP_MISSILE
-	const RIPEN
-	const MIMICRY
-	const SCREEN_CLEANER
-	const STEELY_SPIRIT
-	const PERISH_BODY
-	const NEUTRALIZING_GAS
-	const PASTEL_VEIL
-	const QUICK_DRAW
-	const CURIOUS_MEDICINE
-	const WIND_POWER
-	const CUD_CHEW
-	const SHARPNESS
-	const SUPREME_OVERLORD
-	const ARMOR_TAIL
-	const MINDS_EYE
-	const SUPERSWEET_SYRUP
-	const CRYSTAL_BODY ; Dry Skin for Crystal Onix
+; Held item and Berry interactions
+	const GLUTTONY		; Consumes its held Berry earlier than usual
+	const UNNERVE		; Prevents opposing Pokémon from eating Berries
+	const UNBURDEN	; Doubles Speed after the held item is used or lost
+	const RIPEN		; Doubles the effect of a consumed Berry
+	const CUD_CHEW	; Eats the same Berry again at the end of the turn
+	const HARVEST	; May forage a Berry after battle
+
+; Stat changes caused by battle events
+	const ANGER_POINT	; Maxes Attack when struck by a critical hit
+	const SIMPLE		; Doubles the magnitude of stat changes
+	const CONTRARY	; Reverses all stat stage adjustments
+	const COMPETITIVE	; Sharply raises Sp. Atk if a stat is lowered
+	const DEFIANT	; Sharply raises Attack if a stat is lowered
+	const WEAK_ARMOR	; Loses Defense but boosts Speed after a physical hit
+	const WATER_COMPACTION	; Greatly raises Defense when hit by a Water move
+	const DOWNLOAD	; Raises the better attacking stat on switch-in
+	const MOXIE		; Raises Attack after knocking out a foe
+	const BERSERK	; Raises Sp. Atk when HP drops below half
+	const SUPREME_OVERLORD	; Powers up as party members faint
+
+; Offensive move modifiers
+	const IRON_FIST	; Boosts the power of punching moves
+	const RECKLESS	; Boosts recoil moves despite the backlash
+	const SHEER_FORCE	; Boosts moves at the cost of their added effects
+	const ADAPTABILITY	; Increases same-type attack bonus damage
+	const SKILL_LINK	; Ensures multi-hit moves strike the maximum times
+	const TECHNICIAN	; Powers up moves with 60 base power or less
+	const SNIPER		; Raises damage dealt by critical hits
+	const SUPER_LUCK	; Makes landing critical hits easier
+	const TINTED_LENS	; Powers up attacks that would be resisted
+	const ANALYTIC	; Boosts moves used after the opponent acts
+	const MERCILESS	; Guarantees critical hits on poisoned targets
+	const STEELWORKER	; Strengthens the user's Steel-type attacks
+	const MEGA_LAUNCHER	; Boosts aura and pulse moves
+	const TOUGH_CLAWS	; Boosts the power of contact moves
+	const SHARPNESS	; Strengthens slicing moves
+	const MOLD_BREAKER	; Ignores abilities that would impede attacks
+	const INFILTRATOR	; Lets attacks bypass substitutes and screens
+
+; Type, form, and coverage adjustments
+	const NORMALIZE	; Changes all moves to become Normal type
+	const PROTEAN	; Changes the user’s type to match its move
+	const PIXILATE	; Turns Normal-type moves into Fairy-type moves
+	const GALVANIZE	; Turns Normal-type moves into Electric-type moves
+	const SCRAPPY		; Lets Normal- and Fighting-type moves hit Ghosts
+	const MIMICRY	; Changes type based on the current terrain
+	const ILLUSION	; Appears as the last healthy party member until hit
+	const STANCE_CHANGE	; Switches forms with attacking or defending moves
+	const DISGUISE	; Blocks one damaging hit by breaking its disguise
+
+; Weather, terrain, and environmental adaptation
+	const DRY_SKIN	; Loses HP in sunlight but heals in rain or water
+	const HYDRATION	; Cures status conditions while it is raining
+	const SOLAR_POWER	; Boosts Sp. Atk in sunlight at the cost of HP
+	const LEAF_GUARD	; Blocks status conditions during strong sunlight
+	const SAND_RUSH	; Doubles Speed during a sandstorm
+	const SLUSH_RUSH	; Doubles Speed during hail
+	const SURGE_SURFER	; Doubles Speed on Electric Terrain
+	const ICE_BODY	; May freeze foes that make contact
+	const OVERCOAT	; Immune to weather damage and powder moves
+	const WIND_POWER	; Charges power when hit by wind-based moves
+	const CRYSTAL_BODY	; Loses HP in heat but restores it in water
+
+; Status, recovery, and residual protection
+	const POISON_HEAL	; Recovers HP instead of taking poison damage
+	const MAGIC_GUARD	; Prevents indirect or residual damage
+	const MAGIC_BOUNCE	; Reflects status moves back at the user
+	const REGENERATOR	; Restores HP when withdrawing from battle
+	const PASTEL_VEIL	; Prevents and cures poison for the party
+
+; Status spreading and contact punishment
+	const POISON_TOUCH	; May poison foes that make contact
+	const CORROSION	; Can poison Steel- and Poison-type Pokémon
+	const AFTERMATH	; Damages the foe if it is KO’d by contact
+	const IRON_BARBS	; Damages attackers on contact
+	const GOOEY		; Lowers the attacker’s Speed on contact
+	const TANGLING_HAIR	; Harshly lowers Speed on contact
+	const PERISH_BODY	; Applies a perish count if struck by contact
+	const GULP_MISSILE	; Retaliates after Surf or Dive with stored prey
+
+; Defensive resilience
+	const FILTER		; Reduces damage from super-effective hits
+	const SOLID_ROCK	; Reduces damage from super-effective hits
+	const MULTISCALE	; Halves damage when at full HP
+	const BULLETPROOF	; Immune to ball and bomb moves
+	const ARMOR_TAIL	; Blocks enemy priority moves
+
+; Awareness and field control
+	const ANTICIPATION	; Shudders if the foe has threatening moves
+	const FOREWARN	; Reveals the foe’s strongest known move
+	const UNAWARE	; Ignores the foe’s stat changes in battle
+	const FRISK		; Reveals the foe’s held item
+	const SCREEN_CLEANER	; Removes protective screens upon entering battle
+	const NEUTRALIZING_GAS	; Suppresses all other abilities while active
+	const CURIOUS_MEDICINE	; Cures status conditions upon switch-in
+	const SUPERSWEET_SYRUP	; Lowers opposing evasion on entry
+	const STEELY_SPIRIT	; Powers up Steel-type moves for allies
+
+; Speed and accuracy manipulation
+	const QUICK_DRAW	; May move first regardless of Speed
+	const NO_GUARD	; All moves used by or on the user will hit
+	const MINDS_EYE	; Ignores accuracy drops and strikes Ghost-types
 
 DEF NUM_ABILITIES EQU const_value - 1
