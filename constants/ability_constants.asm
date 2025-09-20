@@ -161,8 +161,8 @@
 	const COIN_COLLECTOR ; ✔ Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves. ✔
 	
 ; Gen IV
-    const RIVALRY
-    const STEADFAST
+    const RIVALRY ; ✔
+    const STEADFAST ; ✔
     const SNOW_CLOAK
     const GLUTTONY
     const ANGER_POINT

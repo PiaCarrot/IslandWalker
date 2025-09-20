@@ -514,14 +514,17 @@ Check_InnerFocus:
     call GetAbility
     call Ability_LoadTracedAbility
     cp INNER_FOCUS
-    jr nz, .nope
+    jr z, .inner_focus
+    cp STEADFAST
+    jp z, TryActivateSteadfast
+.nope
+    ld a, 1
+    ret
+.inner_focus
     call Ability_LoadAbilityName
     ld hl, AbilityText_InnerFocus
     call StdAbilityTextbox
     xor a
-    ret
-.nope
-    ld a, 1
     ret
 
 ; Applies a 1.5x damage boost for "in a pinch" abilities when the user
@@ -2442,6 +2445,42 @@ TryActivateRattled:
     ret z
 
     jp Ability_TriggerRattled
+
+TryActivateSteadfast:
+    ld d, b
+
+    ld a, d
+    and a
+    jr nz, .enemy_hp
+    ld hl, wBattleMonHP
+    jr .check_hp
+
+.enemy_hp
+    ld hl, wEnemyMonHP
+
+.check_hp
+    ld a, [hli]
+    or [hl]
+    jr z, .fail
+
+    ld b, d
+    call Ability_BoostSpeed
+    ld a, [wFailedMessage]
+    and a
+    jr nz, .reset_failed
+
+    ld a, STEADFAST
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_Steadfast
+    call StdAbilityTextbox
+
+.reset_failed
+    xor a
+    ld [wFailedMessage], a
+
+.fail
+    ld a, 1
+    ret
 
 TryActivateRoughSkin:
     ld a, BATTLE_VARS_MOVE

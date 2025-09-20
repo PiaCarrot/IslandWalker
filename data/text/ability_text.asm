@@ -486,6 +486,14 @@ AbilityText_MotorDrive:
         cont "SPEED go up!"
     prompt
 
+AbilityText_Steadfast:
+    text "<TARGET>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " raised"
+    cont "its SPEED!"
+    prompt
+
 AbilityText_WonderGuard:
     text "<TARGET>'s"
     line "@"
