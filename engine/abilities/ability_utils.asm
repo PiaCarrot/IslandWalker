@@ -197,6 +197,8 @@ ApplyStatusEffectOnStats:
         call ApplyFurCoatEffectOnDefense
         call ApplyChlorophyllEffectOnSpeed
         call ApplySwiftSwimEffectOnSpeed
+        call ApplySandRushEffectOnSpeed
+        call ApplySlushRushEffectOnSpeed
         call ApplyQuickFeetEffectOnSpeed
         jp ApplyFlareBoostEffectOnSpAttack
 
@@ -527,6 +529,36 @@ ApplySwiftSwimEffectOnSpeed:
         ret nz
         xcall Ability_GetBattleWeather
         cp WEATHER_RAIN
+        ret nz
+        ld hl, wEnemyMonSpeed
+        ld de, wBattleMonSpeed
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_DoubleStat
+        ret
+
+ApplySandRushEffectOnSpeed:
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp SAND_RUSH
+        ret nz
+        xcall Ability_GetBattleWeather
+        cp WEATHER_SANDSTORM
+        ret nz
+        ld hl, wEnemyMonSpeed
+        ld de, wBattleMonSpeed
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_DoubleStat
+        ret
+
+ApplySlushRushEffectOnSpeed:
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp SLUSH_RUSH
+        ret nz
+        xcall Ability_GetBattleWeather
+        cp WEATHER_HAIL
         ret nz
         ld hl, wEnemyMonSpeed
         ld de, wBattleMonSpeed

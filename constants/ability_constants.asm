@@ -232,7 +232,7 @@
 	const ICE_BODY	; May freeze foes that make contact
 	const OVERCOAT	; Immune to weather damage and powder moves
 	const WIND_POWER	; Charges power when hit by wind-based moves
-	const CRYSTAL_BODY	; Loses HP in heat but restores it in water
+	const CRYSTAL_BODY	; Water type is not very effective, but Fire is super effective
 
 ; Status, recovery, and residual protection
 	const POISON_HEAL	; Recovers HP instead of taking poison damage
@@ -267,7 +267,7 @@
 	const NEUTRALIZING_GAS	; Suppresses all other abilities while active
 	const CURIOUS_MEDICINE	; Cures status conditions upon switch-in
 	const SUPERSWEET_SYRUP	; Lowers opposing evasion on entry
-	const STEELY_SPIRIT	; Powers up Steel-type moves for allies
+	const STEELY_SPIRIT	; Strengthens the user's Steel-type attacks
 
 ; Speed and accuracy manipulation
 	const QUICK_DRAW	; May move first regardless of Speed

@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, VULPIX_ALOLA                   ; 20%
-	dbw 13, VULPIX_ALOLA                  ; 20%
-	dbw 14, VULPIX_ALOLA                   ; 10%
-	dbw 14, VULPIX_ALOLA                  ; 10%
-	dbw 15, VULPIX_ALOLA                   ; 10%
-	dbw 15, VULPIX_ALOLA                  ; 10%
-	dbw 14, VULPIX_ALOLA                ;  5%
-	dbw 15, VULPIX_ALOLA                ;  5%
-	dbw 15, VULPIX_ALOLA                 ;  4%
-	dbw 15, VULPIX_ALOLA                   ;  4%
-	dbw 16, VULPIX_ALOLA                 ;  1%
-	dbw 16, VULPIX_ALOLA                   ;  1%
+	dbw 13, SANDSHREW_ALOLA                   ; 20%
+	dbw 13, SANDSHREW_ALOLA                  ; 20%
+	dbw 14, SANDSHREW_ALOLA                   ; 10%
+	dbw 14, SANDSHREW_ALOLA                  ; 10%
+	dbw 15, SANDSHREW_ALOLA                   ; 10%
+	dbw 15, SANDSHREW_ALOLA                  ; 10%
+	dbw 14, SANDSHREW_ALOLA                ;  5%
+	dbw 15, SANDSHREW_ALOLA                ;  5%
+	dbw 15, SANDSHREW_ALOLA                 ;  4%
+	dbw 15, SANDSHREW_ALOLA                   ;  4%
+	dbw 16, SANDSHREW_ALOLA                 ;  1%
+	dbw 16, SANDSHREW_ALOLA                   ;  1%
 	; day
-	dbw 13, VULPIX_ALOLA                   ; 20%
-	dbw 13, VULPIX_ALOLA                  ; 20%
-	dbw 14, VULPIX_ALOLA                   ; 10%
-	dbw 14, VULPIX_ALOLA                  ; 10%
-	dbw 15, VULPIX_ALOLA                   ; 10%
-	dbw 15, VULPIX_ALOLA                  ; 10%
-	dbw 14, VULPIX_ALOLA                ;  5%
-	dbw 15, VULPIX_ALOLA                ;  5%
-	dbw 15, VULPIX_ALOLA                 ;  4%
-	dbw 15, VULPIX_ALOLA                   ;  4%
-	dbw 16, VULPIX_ALOLA                 ;  1%
-	dbw 16, VULPIX_ALOLA                   ;  1%
+	dbw 13, SANDSHREW_ALOLA                   ; 20%
+	dbw 13, SANDSHREW_ALOLA                  ; 20%
+	dbw 14, SANDSHREW_ALOLA                   ; 10%
+	dbw 14, SANDSHREW_ALOLA                  ; 10%
+	dbw 15, SANDSHREW_ALOLA                   ; 10%
+	dbw 15, SANDSHREW_ALOLA                  ; 10%
+	dbw 14, SANDSHREW_ALOLA                ;  5%
+	dbw 15, SANDSHREW_ALOLA                ;  5%
+	dbw 15, SANDSHREW_ALOLA                 ;  4%
+	dbw 15, SANDSHREW_ALOLA                   ;  4%
+	dbw 16, SANDSHREW_ALOLA                 ;  1%
+	dbw 16, SANDSHREW_ALOLA                   ;  1%
 	; nite
-	dbw 13, VULPIX_ALOLA                   ; 20%
-	dbw 13, VULPIX_ALOLA                  ; 20%
-	dbw 14, VULPIX_ALOLA                   ; 10%
-	dbw 14, VULPIX_ALOLA                  ; 10%
-	dbw 15, VULPIX_ALOLA                   ; 10%
-	dbw 15, VULPIX_ALOLA                  ; 10%
-	dbw 14, VULPIX_ALOLA                ;  5%
-	dbw 15, VULPIX_ALOLA                ;  5%
-	dbw 15, VULPIX_ALOLA                 ;  4%
-	dbw 15, VULPIX_ALOLA                   ;  4%
-	dbw 16, VULPIX_ALOLA                 ;  1%
-	dbw 16, VULPIX_ALOLA                   ;  1%
+	dbw 13, SANDSHREW_ALOLA                   ; 20%
+	dbw 13, SANDSHREW_ALOLA                  ; 20%
+	dbw 14, SANDSHREW_ALOLA                   ; 10%
+	dbw 14, SANDSHREW_ALOLA                  ; 10%
+	dbw 15, SANDSHREW_ALOLA                   ; 10%
+	dbw 15, SANDSHREW_ALOLA                  ; 10%
+	dbw 14, SANDSHREW_ALOLA                ;  5%
+	dbw 15, SANDSHREW_ALOLA                ;  5%
+	dbw 15, SANDSHREW_ALOLA                 ;  4%
+	dbw 15, SANDSHREW_ALOLA                   ;  4%
+	dbw 16, SANDSHREW_ALOLA                 ;  1%
+	dbw 16, SANDSHREW_ALOLA                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54
