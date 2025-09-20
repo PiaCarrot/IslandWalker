@@ -1513,13 +1513,14 @@ BattleCommand_Stab:
 	farcall ApplyPinchAbilityBoost
 	pop bc
 	pop hl
-	push hl
-	push bc
-	farcall ApplyFlashFireBoost
-	pop bc
-	pop hl
-	pop bc
-	pop de
+        push hl
+        push bc
+        farcall ApplyFlashFireBoost
+        pop bc
+        pop hl
+        farcall ApplyRivalryDamageModifier
+        pop bc
+        pop de
 
 ld a, [wCurType]
 cp b

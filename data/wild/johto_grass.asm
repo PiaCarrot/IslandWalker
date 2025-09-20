@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, GIMMIGHOUL                   ; 20%
-	dbw 13, GIMMIGHOUL                  ; 20%
-	dbw 14, GIMMIGHOUL                   ; 10%
-	dbw 14, GIMMIGHOUL                  ; 10%
-	dbw 15, GIMMIGHOUL                   ; 10%
-	dbw 15, GIMMIGHOUL                  ; 10%
-	dbw 14, GIMMIGHOUL                ;  5%
-	dbw 15, GIMMIGHOUL                ;  5%
-	dbw 15, GIMMIGHOUL                 ;  4%
-	dbw 15, GIMMIGHOUL                   ;  4%
-	dbw 16, GIMMIGHOUL                 ;  1%
-	dbw 16, GIMMIGHOUL                   ;  1%
+	dbw 13, SHINX                   ; 20%
+	dbw 13, SHINX                  ; 20%
+	dbw 14, SHINX                   ; 10%
+	dbw 14, SHINX                  ; 10%
+	dbw 15, SHINX                   ; 10%
+	dbw 15, SHINX                  ; 10%
+	dbw 14, SHINX                ;  5%
+	dbw 15, SHINX                ;  5%
+	dbw 15, SHINX                 ;  4%
+	dbw 15, SHINX                   ;  4%
+	dbw 16, SHINX                 ;  1%
+	dbw 16, SHINX                   ;  1%
 	; day
-	dbw 13, GIMMIGHOUL                   ; 20%
-	dbw 13, GIMMIGHOUL                  ; 20%
-	dbw 14, GIMMIGHOUL                   ; 10%
-	dbw 14, GIMMIGHOUL                  ; 10%
-	dbw 15, GIMMIGHOUL                   ; 10%
-	dbw 15, GIMMIGHOUL                  ; 10%
-	dbw 14, GIMMIGHOUL                ;  5%
-	dbw 15, GIMMIGHOUL                ;  5%
-	dbw 15, GIMMIGHOUL                 ;  4%
-	dbw 15, GIMMIGHOUL                   ;  4%
-	dbw 16, GIMMIGHOUL                 ;  1%
-	dbw 16, GIMMIGHOUL                   ;  1%
+	dbw 13, SHINX                   ; 20%
+	dbw 13, SHINX                  ; 20%
+	dbw 14, SHINX                   ; 10%
+	dbw 14, SHINX                  ; 10%
+	dbw 15, SHINX                   ; 10%
+	dbw 15, SHINX                  ; 10%
+	dbw 14, SHINX                ;  5%
+	dbw 15, SHINX                ;  5%
+	dbw 15, SHINX                 ;  4%
+	dbw 15, SHINX                   ;  4%
+	dbw 16, SHINX                 ;  1%
+	dbw 16, SHINX                   ;  1%
 	; nite
-	dbw 13, GIMMIGHOUL                   ; 20%
-	dbw 13, GIMMIGHOUL                  ; 20%
-	dbw 14, GIMMIGHOUL                   ; 10%
-	dbw 14, GIMMIGHOUL                  ; 10%
-	dbw 15, GIMMIGHOUL                   ; 10%
-	dbw 15, GIMMIGHOUL                  ; 10%
-	dbw 14, GIMMIGHOUL                ;  5%
-	dbw 15, GIMMIGHOUL                ;  5%
-	dbw 15, GIMMIGHOUL                 ;  4%
-	dbw 15, GIMMIGHOUL                   ;  4%
-	dbw 16, GIMMIGHOUL                 ;  1%
-	dbw 16, GIMMIGHOUL                   ;  1%
+	dbw 13, SHINX                   ; 20%
+	dbw 13, SHINX                  ; 20%
+	dbw 14, SHINX                   ; 10%
+	dbw 14, SHINX                  ; 10%
+	dbw 15, SHINX                   ; 10%
+	dbw 15, SHINX                  ; 10%
+	dbw 14, SHINX                ;  5%
+	dbw 15, SHINX                ;  5%
+	dbw 15, SHINX                 ;  4%
+	dbw 15, SHINX                   ;  4%
+	dbw 16, SHINX                 ;  1%
+	dbw 16, SHINX                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54

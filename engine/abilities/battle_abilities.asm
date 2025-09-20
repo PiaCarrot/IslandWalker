@@ -664,10 +664,123 @@ ApplyFlashFireBoost:
     ld [wCurDamage + 1], a
     ret
 
+; Rivalry increases damage against same-gender foes and decreases it
+; against opposite-gender foes. Genderless Pokémon are unaffected.
+ApplyRivalryDamageModifier:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp RIVALRY
+    ret nz
+
+    ld hl, wCurDamage
+    ld a, [hli]
+    or [hl]
+    ret z
+    ld a, [wIsConfusionDamage]
+    and a
+    ret nz
+
+    push bc
+    push de
+
+    ld d, b
+    ld e, c
+
+    ld a, d
+    and a
+    jr nz, .user_enemy
+    ld hl, wBattleMonGender
+    ld a, e
+    call Ability_GetGenderFromStruct
+    jr c, .done
+    ld b, a
+    jr .have_user_gender
+
+.user_enemy
+    ld hl, wEnemyMonGender
+    ld a, e
+    call Ability_GetGenderFromStruct
+    jr c, .done
+    ld b, a
+
+.have_user_gender
+    ld a, d
+    and a
+    jr nz, .target_player
+    ld hl, wEnemyMonGender
+    ld a, [wEnemyMonSpecies]
+    call Ability_GetGenderFromStruct
+    jr c, .done
+    ld c, a
+    jr .compare_genders
+
+.target_player
+    ld hl, wBattleMonGender
+    ld a, [wBattleMonSpecies]
+    call Ability_GetGenderFromStruct
+    jr c, .done
+    ld c, a
+
+.compare_genders
+    ld a, b
+    cp c
+    jr z, .boost
+    call .ReduceDamageQuarter
+    jr .done
+
+.boost
+    call .IncreaseDamageQuarter
+    jr .done
+
+.IncreaseDamageQuarter
+    ld hl, wCurDamage + 1
+    ld a, [hld]
+    ld h, [hl]
+    ld l, a
+    ld d, h
+    ld e, l
+    srl d
+    rr e
+    srl d
+    rr e
+    add hl, de
+    ld a, h
+    ld [wCurDamage], a
+    ld a, l
+    ld [wCurDamage + 1], a
+    ret
+
+.ReduceDamageQuarter
+    ld hl, wCurDamage + 1
+    ld a, [hld]
+    ld h, [hl]
+    ld l, a
+    ld d, h
+    ld e, l
+    srl d
+    rr e
+    srl d
+    rr e
+    ld a, l
+    sub e
+    ld l, a
+    ld a, h
+    sbc d
+    ld [wCurDamage], a
+    ld h, a
+    ld a, l
+    ld [wCurDamage + 1], a
+    ret
+
+.done
+    pop de
+    pop bc
+    ret
+
 ; Lightningrod grants immunity to Electric-type damaging moves and boosts Sp. Atk. Returns z if blocked.
 Check_LightningrodDamage:
-	call GetAbility
-	call Ability_LoadTracedAbility
+        call GetAbility
+        call Ability_LoadTracedAbility
 	cp LIGHTNINGROD
 	jr nz, .nope
 	call Ability_LoadAbilityName
