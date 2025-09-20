@@ -264,7 +264,7 @@ PokemonCries::
 	mon_cry CRY_WEEDLE,      $609,  $1b1 ; LINOONE
 	mon_cry CRY_WINGULL,      204,   128 ; WINGULL
 	mon_cry CRY_PELIPPER,     170,   340 ; PELIPPER
-	mon_cry CRY_RALTS,         96,    64 ; RALTS
+	mon_cry CRY_RALTS,         96,    72 ; RALTS
 	mon_cry CRY_KIRLIA,   	   96,   128 ; KIRLIA
 	mon_cry CRY_KIRLIA,         5,   256 ; GARDEVOIR
 	mon_cry CRY_SHROOMISH,    255,   112 ; SHROOMISH
@@ -325,11 +325,11 @@ PokemonCries::
 	mon_cry CRY_SLOWKING,    $a50,  $130 ; HAPPINY
 	mon_cry CRY_CHATOT,      $002,  $120 ; CHATOT Ax6
 	mon_cry CRY_NIDOQUEEN,   $f30,  $0a0 ; MUNCHLAX
-    mon_cry CRY_TOGEPI,       116,  256 ; RIOLU
-    mon_cry CRY_MARILL,      -131,  334 ; LUCARIO
+    	mon_cry CRY_TOGEPI,       116,  256 ; RIOLU
+    	mon_cry CRY_MARILL,      -131,  334 ; LUCARIO
 	mon_cry CRY_DIGLETT,    -$133,  $125 ; CROAGUNK Ax6
 	mon_cry CRY_SLOWKING,    $002,  $2c6 ; TOXICROAK Ax6
-    mon_cry CRY_HOOTHOOT,    $1d4,  $1e8 ; CARNIVINE
+    	mon_cry CRY_HOOTHOOT,    $1d4,  $1e8 ; CARNIVINE
 	mon_cry CRY_DIGLETT,     133,  293 ; FINNEON
     mon_cry CRY_RAICHU,      $038,  $0cf ; LUMINEON - TODO: Needs Improvement
 	mon_cry CRY_CATERPIE,    $05c,  $080 ; MANTYKE
@@ -350,7 +350,7 @@ PokemonCries::
 	mon_cry CRY_GALLADE,       32,   304 ; GALLADE
 	mon_cry CRY_DROWZEE,     $044,  $0c6 ; DUSKNOIR
 	mon_cry CRY_PICHU,       $feb,  $500 ; FROSLASS
-    mon_cry CRY_PHIONE,      32,  556 ; ROTOM
+    	mon_cry CRY_PHIONE,         32,  556 ; ROTOM
 	mon_cry CRY_MANTINE,     $032,  $080 ; FERROSEED
 	mon_cry CRY_MANTINE,     $184,  $0a0 ; FERROTHORN
 	mon_cry CRY_METAPOD,     $2d1,  $0e0 ; STUNFISK
@@ -358,17 +358,17 @@ PokemonCries::
 	mon_cry CRY_GROWLITHE,   $2fc,  $1c4 ; BISHARP
 	mon_cry CRY_SUNFLORA,   -$089,  $0eb ; ZORUA
 	mon_cry CRY_SPINARAK,   -$078,  $320 ; ZOROARK
-    mon_cry CRY_CLEFFA,     -$170,  $140 ; SKRELP
-    mon_cry CRY_CLEFFA,     -$470,  $290 ; DRAGALGE
+    	mon_cry CRY_CLEFFA,     -$170,  $140 ; SKRELP
+    	mon_cry CRY_CLEFFA,     -$470,  $290 ; DRAGALGE
 	mon_cry CRY_KRABBY,      $035,  $0ac ; CLAUNCHER Ax6
 	mon_cry CRY_SQUIRTLE,   -$026,  $097 ; CLAWITZER Ax6
 	mon_cry CRY_MARILL,      $0d8,  $300 ; SYLVEON
-    mon_cry CRY_MARILL,      282,  184 ; PANCHAM
-    mon_cry CRY_MARILL,      -282,  412 ; PANGORO
-    mon_cry CRY_GROWLITHE,    232,  112 ; INKAY
-    mon_cry CRY_RAICHU,      -228,  192 ; MALAMAR
-    mon_cry CRY_PIDGEY,      255,  620 ; NOIBAT
-    mon_cry CRY_DROWZEE,     -210,  $0e0 ; NOIVERN
+    	mon_cry CRY_MARILL,       282,   184 ; PANCHAM
+    	mon_cry CRY_MARILL,       -282,  412 ; PANGORO
+    	mon_cry CRY_GROWLITHE,     232,  112 ; INKAY
+    	mon_cry CRY_RAICHU,       -228,  192 ; MALAMAR
+    	mon_cry CRY_NOIBAT,        167,  132 ; NOIBAT
+    	mon_cry CRY_NOIVERN,        74,  132 ; NOIVERN
     mon_cry CRY_HONEDGE,  255,  356 ; HONEDGE
     mon_cry CRY_HONEDGE,  128,  412 ; DOUBLADE
     mon_cry CRY_HONEDGE, -264,  512 ; AEGISLASH

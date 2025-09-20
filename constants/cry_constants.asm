@@ -132,6 +132,7 @@
         const CRY_PANCHAM
         const CRY_INKAY
         const CRY_NOIBAT
+	const CRY_NOIVERN
         const CRY_HONEDGE
         const CRY_GOOMY
         const CRY_ROCKRUFF

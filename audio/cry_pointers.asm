@@ -125,6 +125,7 @@ Cries:
         dba Cry_Pancham
         dba Cry_Inkay
         dba Cry_Noibat
+	dba Cry_Noivern
         dba Cry_Honedge
         dba Cry_Goomy
         dba Cry_Rockruff
