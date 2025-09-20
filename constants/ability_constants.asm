@@ -34,6 +34,7 @@
     const QUICK_FEET   ; ✔
 	const TOXIC_BOOST  ; ✔
     const FLARE_BOOST  ; ✔ Boosts Special Attack when inflicted with a burn
+    const STEADFAST ; ✔
 ; Passively boosts...
 	const COMPOUNDEYES ; ✔ Accuracy by 30%. Also increases the rate of wild Pokémon holding an item by 50% if in the first slot
 	const HUSTLE       ; ✔ Attack by 50%, but decreases accuracy of Physical moves by 20%. Also decreases the overworld encounter rate of wild Pokémon if in the first slot
@@ -57,8 +58,14 @@
 	const DRIZZLE      ; ✔ Rain
 	const SAND_STREAM  ; ✔ Sandstorm. Also halves the wild Pokémon encounter rate if in the first slot during an overworld sandstorm
     const SNOW_WARNING ; ✔ Hail
+	const ELECTRIC_SURGE
+	const PSYCHIC_SURGE
+	const MISTY_SURGE
+	const GRASSY_SURGE
 ; Boosts stats in weather
 	const SAND_VEIL    ; ✔ Evasion by 20% during a sandstorm
+    const SNOW_CLOAK ; ✔
+    const FLOWER_GIFT
 ; Heals during weather
 	const RAIN_DISH    ; ✔ Heals during rain
 
@@ -147,6 +154,9 @@
 	
 ; Transforms into foe
 	const IMPOSTER ; Exclusive to Ditto and Mew ✔
+	
+; Boosts damage based on opponent's gender
+    const RIVALRY ; ✔
 
 ; Purely has an overworld effect
 ; Doubles wild Pokémon encounter rate if in the first slot
@@ -161,9 +171,6 @@
 	const COIN_COLLECTOR ; ✔ Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves. ✔
 	
 ; Gen IV
-    const RIVALRY ; ✔
-    const STEADFAST ; ✔
-    const SNOW_CLOAK
     const GLUTTONY
     const ANGER_POINT
     const UNBURDEN
@@ -195,7 +202,6 @@
     const ICE_BODY
     const FRISK
     const RECKLESS
-    const FLOWER_GIFT
 ; Gen V+
 	const SHEER_FORCE
 	const CONTRARY
@@ -232,10 +238,6 @@
 	const DISGUISE
 	const CORROSION
 	const TANGLING_HAIR
-	const ELECTRIC_SURGE
-	const PSYCHIC_SURGE
-	const MISTY_SURGE
-	const GRASSY_SURGE
 	const GULP_MISSILE
 	const RIPEN
 	const MIMICRY

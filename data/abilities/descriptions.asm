@@ -21,6 +21,7 @@ AbilityDescriptions:
 	dw QuickFeetDesc
 	dw ToxicBoostDesc  
     dw FlareBoostDesc
+	dw SteadfastDesc
 	dw CompoundeyesDesc
 	dw HustleDesc
 	dw HugePowerDesc
@@ -37,7 +38,13 @@ AbilityDescriptions:
 	dw DrizzleDesc
 	dw SandStreamDesc
 	dw SnowWarningDesc
+	dw ElectricSurgeDesc  
+	dw PsychicSurgeDesc  
+	dw MistySurgeDesc  
+	dw GrassySurgeDesc  
 	dw SandVeilDesc
+	dw SnowCloakDesc
+	dw FlowerGiftDesc
 	dw RainDishDesc
 	dw CacophonyDesc
 	dw SoundproofDesc
@@ -93,15 +100,13 @@ AbilityDescriptions:
 	dw PressureDesc
 	dw RunAwayDesc
 	dw ImposterDesc
+	dw RivalryDesc
 	dw IlluminateDesc
 	dw StenchDesc
 	dw PickupDesc
 	dw HoneyGatherDesc
 	dw PowerOfAlchemyDesc
     dw CoinCollectorDesc
-	dw RivalryDesc
-	dw SteadfastDesc
-	dw SnowCloakDesc
 	dw GluttonyDesc
 	dw AngerPointDesc
 	dw UnburdenDesc
@@ -133,7 +138,6 @@ AbilityDescriptions:
 	dw IceBodyDesc
 	dw FriskDesc
 	dw RecklessDesc
-	dw FlowerGiftDesc
 	dw SheerForceDesc  
 	dw ContraryDesc  
 	dw UnnerveDesc  
@@ -169,10 +173,6 @@ AbilityDescriptions:
 	dw DisguiseDesc  
 	dw CorrosionDesc  
 	dw TanglingHairDesc  
-	dw ElectricSurgeDesc  
-	dw PsychicSurgeDesc  
-	dw MistySurgeDesc  
-	dw GrassySurgeDesc  
 	dw GulpMissileDesc  
 	dw RipenDesc  
 	dw MimicryDesc  
