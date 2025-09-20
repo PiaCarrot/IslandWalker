@@ -71,6 +71,7 @@ AbilityDescriptions:
 	dw FlameBodyDesc
 	dw PoisonPointDesc
 	dw StaticDesc
+	dw CursedBodyDesc  
 	dw LiquidOozeDesc
 	dw SereneGraceDesc
 	dw ColorChangeDesc
@@ -80,6 +81,10 @@ AbilityDescriptions:
 	dw VoltAbsorbDesc
 	dw WaterAbsorbDesc
     dw RoughSkinDesc
+	dw MotorDriveDesc
+	dw StormDrainDesc
+	dw SapSipperDesc  
+	dw RattledDesc  
 	dw ShedSkinDesc
 	dw EarlyBirdDesc
 	dw NaturalCureDesc
@@ -93,7 +98,7 @@ AbilityDescriptions:
 	dw PickupDesc
 	dw HoneyGatherDesc
 	dw PowerOfAlchemyDesc
-	dw MotorDriveDesc
+    dw CoinCollectorDesc
 	dw RivalryDesc
 	dw SteadfastDesc
 	dw SnowCloakDesc
@@ -125,7 +130,6 @@ AbilityDescriptions:
 	dw FilterDesc
 	dw SolidRockDesc
 	dw ScrappyDesc
-	dw StormDrainDesc
 	dw IceBodyDesc
 	dw FriskDesc
 	dw RecklessDesc
@@ -134,7 +138,6 @@ AbilityDescriptions:
 	dw ContraryDesc  
 	dw UnnerveDesc  
 	dw DefiantDesc  
-	dw CursedBodyDesc  
 	dw WeakArmorDesc  
 	dw MultiscaleDesc  
 	dw HarvestDesc  
@@ -146,9 +149,7 @@ AbilityDescriptions:
 	dw IllusionDesc  
 	dw InfiltratorDesc  
 	dw MoxieDesc  
-	dw RattledDesc  
 	dw MagicBounceDesc  
-	dw SapSipperDesc  
 	dw IronBarbsDesc  
 	dw ProteanDesc  
 	dw BulletproofDesc  
@@ -190,7 +191,6 @@ AbilityDescriptions:
 	dw MindsEyeDesc
         dw SupersweetSyrupDesc
         dw CrystalBodyDesc
-        dw CoinCollectorDesc
 
 ; Actual descriptions start here
 NoAbilityDesc:

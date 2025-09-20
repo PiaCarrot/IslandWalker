@@ -102,6 +102,7 @@
 	const FLAME_BODY    ; ✔ Burn. Pokémon eggs will also hatch in half the time.
 	const POISON_POINT  ; ✔ Poisoning
 	const STATIC        ; ✔ Paralysis. Also increases the overworld encounter rate of electric Pokémon by 50% if in the first slot
+	const CURSED_BODY ; ✔
 ; Alters added move effects
 	const LIQUID_OOZE   ; ✔ Damages Pokémon attempting to use life-sucking moves
 	const SERENE_GRACE  ; ✔ Doubles the chance of added move effects
@@ -119,6 +120,10 @@
 ; Damages Physical attackers by 1/16th of their max HP (1/8th is in Gen IV+)
     const ROUGH_SKIN    ; ✔
 
+    const MOTOR_DRIVE ; ✔
+    const STORM_DRAIN ; ✔
+	const SAP_SIPPER ; ✔
+	const RATTLED ; ✔
 
 
 ; Heals statuses...
@@ -152,9 +157,10 @@
 	const PICKUP ; ✔
     const HONEY_GATHER ; ✔
 	const POWER_OF_ALCHEMY ; ✔ no double battles so battle effect is irrelevant
+; Evolution
+	const COIN_COLLECTOR ; ✔ Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves. ✔
 	
 ; Gen IV
-    const MOTOR_DRIVE ; ✔
     const RIVALRY
     const STEADFAST
     const SNOW_CLOAK
@@ -186,7 +192,6 @@
     const FILTER
     const SOLID_ROCK
     const SCRAPPY
-    const STORM_DRAIN ; ✔
     const ICE_BODY
     const FRISK
     const RECKLESS
@@ -196,7 +201,6 @@
 	const CONTRARY
 	const UNNERVE ; Exclusive to Mewtwo and Tyranitar
 	const DEFIANT
-	const CURSED_BODY ; ✔
 	const WEAK_ARMOR
 	const MULTISCALE
 	const HARVEST
@@ -208,9 +212,7 @@
 	const ILLUSION ; GL Whoever attempts to program this
 	const INFILTRATOR
 	const MOXIE ; Exclusive to Gyarados
-	const RATTLED
 	const MAGIC_BOUNCE
-	const SAP_SIPPER ; ✔
 	const IRON_BARBS
 	const PROTEAN
 	const BULLETPROOF
@@ -252,6 +254,5 @@
 	const MINDS_EYE
 	const SUPERSWEET_SYRUP
 	const CRYSTAL_BODY ; Dry Skin for Crystal Onix
-	const COIN_COLLECTOR ; ✔ Possible evolution method for Gimmighoul, collects coins after battle. When 999 are obtained, it evolves. ✔
 
 DEF NUM_ABILITIES EQU const_value - 1
