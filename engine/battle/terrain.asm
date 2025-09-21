@@ -240,24 +240,24 @@ Terrain_TryBlockUserElectricSleep:
         ret
 
 Terrain_TryBlockPriorityMove:
-        ld a, [wBattleTerrain]
-        cp TERRAIN_PSYCHIC
-        jr nz, .no_block
-        call Terrain_CheckTargetGrounded
-        and a
-        jr z, .no_block
-        ld a, BATTLE_VARS_MOVE
-        call GetBattleVar
-        xcall GetMovePriority
-        and a
-        jr z, .no_block
-        call ResetDamage
-        ld a, FAILED_MESSAGE_PSYCHIC_TERRAIN
-        ld [wFailedMessage], a
-        ld a, 1
-        ld [wAttackMissed], a
-        xor a
-        ret
+	ld a, [wBattleTerrain]
+	cp TERRAIN_PSYCHIC
+	jr nz, .no_block
+	call Terrain_CheckTargetGrounded
+	and a
+	jr z, .no_block
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	xcall GetMovePriority
+	cp BASE_PRIORITY + 1
+	jr c, .no_block
+	call ResetDamage
+	ld a, FAILED_MESSAGE_PSYCHIC_TERRAIN
+	ld [wFailedMessage], a
+	ld a, 1
+	ld [wAttackMissed], a
+	xor a
+	ret
 
 .no_block
         ld a, 1
