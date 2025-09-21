@@ -58,10 +58,10 @@
 	const DRIZZLE      ; ✔ Rain
 	const SAND_STREAM  ; ✔ Sandstorm. Also halves the wild Pokémon encounter rate if in the first slot during an overworld sandstorm
     const SNOW_WARNING ; ✔ Hail
-	const ELECTRIC_SURGE
-	const PSYCHIC_SURGE
-	const MISTY_SURGE
-	const GRASSY_SURGE
+	const ELECTRIC_SURGE ; ✔
+	const PSYCHIC_SURGE ; ✔
+	const MISTY_SURGE ; ✔
+	const GRASSY_SURGE ; ✔
 ; Boosts stats in weather
 	const SAND_VEIL    ; ✔ Evasion by 20% during a sandstorm
     const SNOW_CLOAK ; ✔
@@ -228,7 +228,7 @@
 	const LEAF_GUARD	; Blocks status conditions during strong sunlight
 	const SAND_RUSH	; ✔ Doubles Speed during a sandstorm
 	const SLUSH_RUSH	; ✔ Doubles Speed during hail
-	const SURGE_SURFER	; Doubles Speed on Electric Terrain
+	const SURGE_SURFER  ; ✔ Doubles Speed on Electric Terrain
 	const ICE_BODY	; The Pokémon regains HP in a hailstorm.
 	const OVERCOAT	; Immune to weather damage and powder moves
 	const WIND_POWER	; Charges power when hit by wind-based moves

@@ -474,8 +474,8 @@ MoveNames::
         li "SCALD"
         li "SNARL"
         li "BULLDOZE"
-        li "G. TERRAIN"
-        li "M. TERRAIN"
-        li "E. TERRAIN"
-        li "P. TERRAIN"
+        li "GRASSY FIELD"
+        li "MISTY FIELD"
+        li "ELECTROFIELD"
+        li "PSYCHICFIELD"
         assert_list_length NUM_ATTACKS

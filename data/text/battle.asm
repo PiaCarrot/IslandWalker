@@ -197,69 +197,69 @@ BattleText_TheHailStopped:
         prompt
 
 BattleText_GrassyTerrainActive:
-        text "GRASSY TERRAIN"
+        text "GRASSY FIELD"
         line "is flourishing!"
         done
 
 BattleText_MistyTerrainActive:
-        text "MISTY TERRAIN"
+        text "MISTY FIELD"
         line "wraps the field!"
         done
 
 BattleText_ElectricTerrainActive:
-        text "ELECTRIC TERRAIN"
+        text "ELECTRIC FIELD"
         line "crackles!"
         done
 
 BattleText_PsychicTerrainActive:
-        text "PSYCHIC TERRAIN"
+        text "PSYCHIC FIELD"
         line "makes things odd!"
         done
 
 BattleText_GrassyTerrainFaded:
         text "The GRASSY"
-        line "TERRAIN faded!"
+        line "FIELD faded!"
         prompt
 
 BattleText_MistyTerrainFaded:
-        text "The MISTY TERRAIN"
+        text "The MISTY FIELD"
         line "faded away!"
         prompt
 
 BattleText_ElectricTerrainFaded:
         text "The ELECTRIC"
-        line "TERRAIN faded!"
+        line "FIELD faded!"
         prompt
 
 BattleText_PsychicTerrainFaded:
         text "The PSYCHIC"
-        line "TERRAIN faded!"
+        line "FIELD faded!"
         prompt
 
 BattleText_GrassyTerrainHealed:
-        text "GRASSY TERRAIN"
+        text "GRASSY FIELD"
         line "restored HP!"
         prompt
 
 BattleText_MistyTerrainBlocked:
-        text "The MISTY TERRAIN"
+        text "The MISTY FIELD"
         line "shields <TARGET>!"
         prompt
 
 BattleText_ElectricTerrainBlocked:
         text "<TARGET>"
         line "stayed awake from"
-        cont "ELECTRIC TERRAIN!"
+        cont "ELECTRIC FIELD!"
         prompt
 
 BattleText_ElectricTerrainRestBlocked:
         text "<USER>"
         line "can't sleep on the"
-        cont "ELECTRIC TERRAIN!"
+        cont "ELECTRIC FIELD!"
         prompt
 
 BattleText_PsychicTerrainBlocked:
-        text "PSYCHIC TERRAIN"
+        text "PSYCHIC FIELD"
         line "blocked the move!"
         prompt
 
@@ -283,25 +283,25 @@ PeltedByHailText:
 GrassyTerrainText:
         text "<USER>"
         line "spread GRASSY"
-        cont "TERRAIN!"
+        cont "FIELD!"
         prompt
 
 MistyTerrainText:
         text "<USER>"
         line "called forth"
-        cont "MISTY TERRAIN!"
+        cont "MISTY FIELD!"
         prompt
 
 ElectricTerrainText:
         text "<USER>"
         line "set ELECTRIC"
-        cont "TERRAIN!"
+        cont "FIELD!"
         prompt
 
 PsychicTerrainText:
         text "<USER>"
         line "twisted space with"
-        cont "PSYCHIC TERRAIN!"
+        cont "PSYCHIC FIELD!"
         prompt
 
 GotMoneyForWinningText:
