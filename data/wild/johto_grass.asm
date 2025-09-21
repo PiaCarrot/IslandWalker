@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, SKRELP                   ; 20%
-	dbw 13, SKRELP                  ; 20%
-	dbw 14, SKRELP                   ; 10%
-	dbw 14, SKRELP                  ; 10%
-	dbw 15, SKRELP                   ; 10%
-	dbw 15, SKRELP                  ; 10%
-	dbw 14, SKRELP                ;  5%
-	dbw 15, SKRELP                ;  5%
-	dbw 15, SKRELP                 ;  4%
-	dbw 15, SKRELP                   ;  4%
-	dbw 16, SKRELP                 ;  1%
-	dbw 16, SKRELP                   ;  1%
+	dbw 13, PAWNIARD                   ; 20%
+	dbw 13, PAWNIARD                  ; 20%
+	dbw 14, PAWNIARD                   ; 10%
+	dbw 14, PAWNIARD                  ; 10%
+	dbw 15, PAWNIARD                   ; 10%
+	dbw 15, PAWNIARD                  ; 10%
+	dbw 14, PAWNIARD                ;  5%
+	dbw 15, PAWNIARD                ;  5%
+	dbw 15, PAWNIARD                 ;  4%
+	dbw 15, PAWNIARD                   ;  4%
+	dbw 16, PAWNIARD                 ;  1%
+	dbw 16, PAWNIARD                   ;  1%
 	; day
-	dbw 13, SKRELP                   ; 20%
-	dbw 13, SKRELP                  ; 20%
-	dbw 14, SKRELP                   ; 10%
-	dbw 14, SKRELP                  ; 10%
-	dbw 15, SKRELP                   ; 10%
-	dbw 15, SKRELP                  ; 10%
-	dbw 14, SKRELP                ;  5%
-	dbw 15, SKRELP                ;  5%
-	dbw 15, SKRELP                 ;  4%
-	dbw 15, SKRELP                   ;  4%
-	dbw 16, SKRELP                 ;  1%
-	dbw 16, SKRELP                   ;  1%
+	dbw 13, PAWNIARD                   ; 20%
+	dbw 13, PAWNIARD                  ; 20%
+	dbw 14, PAWNIARD                   ; 10%
+	dbw 14, PAWNIARD                  ; 10%
+	dbw 15, PAWNIARD                   ; 10%
+	dbw 15, PAWNIARD                  ; 10%
+	dbw 14, PAWNIARD                ;  5%
+	dbw 15, PAWNIARD                ;  5%
+	dbw 15, PAWNIARD                 ;  4%
+	dbw 15, PAWNIARD                   ;  4%
+	dbw 16, PAWNIARD                 ;  1%
+	dbw 16, PAWNIARD                   ;  1%
 	; nite
-	dbw 13, SKRELP                   ; 20%
-	dbw 13, SKRELP                  ; 20%
-	dbw 14, SKRELP                   ; 10%
-	dbw 14, SKRELP                  ; 10%
-	dbw 15, SKRELP                   ; 10%
-	dbw 15, SKRELP                  ; 10%
-	dbw 14, SKRELP                ;  5%
-	dbw 15, SKRELP                ;  5%
-	dbw 15, SKRELP                 ;  4%
-	dbw 15, SKRELP                   ;  4%
-	dbw 16, SKRELP                 ;  1%
-	dbw 16, SKRELP                   ;  1%
+	dbw 13, PAWNIARD                   ; 20%
+	dbw 13, PAWNIARD                  ; 20%
+	dbw 14, PAWNIARD                   ; 10%
+	dbw 14, PAWNIARD                  ; 10%
+	dbw 15, PAWNIARD                   ; 10%
+	dbw 15, PAWNIARD                  ; 10%
+	dbw 14, PAWNIARD                ;  5%
+	dbw 15, PAWNIARD                ;  5%
+	dbw 15, PAWNIARD                 ;  4%
+	dbw 15, PAWNIARD                   ;  4%
+	dbw 16, PAWNIARD                 ;  1%
+	dbw 16, PAWNIARD                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54

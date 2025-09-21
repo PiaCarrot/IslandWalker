@@ -242,7 +242,7 @@
 	const PASTEL_VEIL	; Prevents and cures poison for the party
 
 ; Status spreading and contact punishment
-	const POISON_TOUCH	; May poison foes that make contact
+	const POISON_TOUCH	; ✔ May poison foes that make contact
 	const CORROSION	; Can poison Steel- and Poison-type Pokémon
 	const AFTERMATH	; Damages the foe if it is KO’d by contact
 	const IRON_BARBS	; Damages attackers on contact
