@@ -548,36 +548,8 @@ DexEntryScreen_MenuActionJumptable:
        dw .Form
 
 .Area:
-	call Pokedex_BlackOutBG
-	xor a
-	ldh [hSCX], a
-	call DelayFrame
-	ld a, $7
-	ldh [hWX], a
-	ld a, $90
-	ldh [hWY], a
 	call Pokedex_GetSelectedMon
-        ld a, [wDexCurLocation]
-        ld e, a
-        predef Pokedex_GetArea
-        call Pokedex_BlackOutBG
-        call DelayFrame
-        call Pokedex_LoadGFX
-        call Pokedex_LoadCurrentFootprint
-        xor a
-        ldh [hBGMapMode], a
-        ld a, $90
-        ldh [hWY], a
-        ld a, POKEDEX_SCX
-	ldh [hSCX], a
-	call DelayFrame
-	call Pokedex_RedisplayDexEntry
-	call Pokedex_LoadSelectedMonTiles
-	call WaitBGMap
-	call Pokedex_GetSelectedMon
-	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	jmp Pokedex_GetSGBLayout
+	jmp Pokedex_ShowAreaForCurrentSpecies
 
 .Cry:
 	ld a, [wCurPartySpecies]
@@ -639,12 +611,16 @@ DexEntryScreen_MenuActionJumptable:
 .form_input_loop
 	call JoyTextDelay
 	ld a, [hJoyPressed]
+	ld b, a
 	and PAD_B
 	jr nz, .exit_forms
-	ld a, [hJoyPressed]
+	ld a, b
+	and PAD_START
+	jr nz, .form_show_area
+	ld a, b
 	and PAD_LEFT | PAD_RIGHT | PAD_UP | PAD_DOWN
 	jr z, .form_input_loop
-	ld a, [hJoyPressed]
+	ld a, b
 	and PAD_UP | PAD_DOWN
 	jr z, .check_lr
 	ld a, [wPokedexStatus]
@@ -654,8 +630,13 @@ DexEntryScreen_MenuActionJumptable:
 	farcall DisplayDexEntry
 	call WaitBGMap
 	jr .form_input_loop
+
+.form_show_area
+	call Pokedex_ShowAreaForCurrentSpecies
+	jp .cycle_form
+
 .check_lr
-	ld a, [hJoyPressed]
+	ld a, b
 	bit B_PAD_RIGHT, a
 	jr z, .form_left
 	ld a, [wDexFormIndex]
@@ -681,7 +662,7 @@ DexEntryScreen_MenuActionJumptable:
 	ld [wDexFormIndex], a
 	jp .cycle_form
 
-.exit_forms
+.exit_forms:
 	call Pokedex_LoadCurrentFootprint
 	call Pokedex_RedisplayDexEntry
 	call Pokedex_LoadSelectedMonTiles
@@ -689,8 +670,9 @@ DexEntryScreen_MenuActionJumptable:
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
-	ret
+	jmp Pokedex_GetSGBLayout
+
+
 
 
 .GetNthForm:
@@ -773,6 +755,39 @@ DexEntryScreen_MenuActionJumptable:
 	ld a, c
 	and a
 	ret
+
+Pokedex_ShowAreaForCurrentSpecies:
+	call Pokedex_BlackOutBG
+	xor a
+	ldh [hSCX], a
+	call DelayFrame
+	ld a, $7
+	ldh [hWX], a
+	ld a, $90
+	ldh [hWY], a
+	ld a, [wTempSpecies]
+	ld [wNamedObjectIndex], a
+	ld a, [wDexCurLocation]
+	ld e, a
+	predef Pokedex_GetArea
+	call Pokedex_BlackOutBG
+	call DelayFrame
+	call Pokedex_LoadGFX
+	call Pokedex_LoadCurrentFootprint
+	xor a
+	ldh [hBGMapMode], a
+	ld a, $90
+	ldh [hWY], a
+	ld a, POKEDEX_SCX
+	ldh [hSCX], a
+	call DelayFrame
+	call Pokedex_RedisplayDexEntry
+	call Pokedex_LoadSelectedMonTiles
+	call WaitBGMap
+	ld a, [wTempSpecies]
+	ld [wCurPartySpecies], a
+	ld a, SCGB_POKEDEX
+	jmp Pokedex_GetSGBLayout
 
 Pokedex_RedisplayDexEntry:
 	call Pokedex_DrawDexEntryScreenBG
