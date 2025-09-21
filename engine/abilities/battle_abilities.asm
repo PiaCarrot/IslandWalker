@@ -2546,6 +2546,121 @@ TryActivateRoughSkin:
     ldh [hBattleTurn], a
     ret
 
+TryActivatePoisonTouch:
+    ld a, BATTLE_VARS_MOVE
+    call GetBattleVar
+    and a
+    ret z
+
+    call GetMoveIndexFromID
+    ld b, h
+    ld c, l
+    ld de, 2
+    ld hl, ContactMoves
+    call IsInWordArray
+    ret nc
+
+    ldh a, [hBattleTurn]
+    and a
+    jr nz, .attacker_enemy
+    ld b, 0
+    ld hl, wBattleMonPersonality
+    ld de, wBattleMonStatus
+    ld a, [wBattleMonSpecies]
+    ld c, a
+    jr .have_attacker
+
+.attacker_enemy
+    ld b, 1
+    ld hl, wEnemyMonPersonality
+    ld de, wEnemyMonStatus
+    ld a, [wEnemyMonSpecies]
+    ld c, a
+
+.have_attacker
+    ld d, b
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp POISON_TOUCH
+    ret nz
+
+    ld a, d
+    xor 1
+    ld c, a
+    ld b, a
+    call Ability_CheckTargetWasHit
+    ret z
+
+    call BattleRandom
+    cp 30 percent
+    ret nc
+
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    ld a, [hl]
+    and a
+    ret nz
+
+    ldh a, [hBattleTurn]
+    push af
+    ld a, d
+    ldh [hBattleTurn], a
+
+    ld b, d
+    call Ability_LoadOppSpeciesAndPersonality
+    ld a, POISON
+    call Ability_CheckOpponentMonType
+    jr z, .restore_turn
+    ld a, STEEL
+    call Ability_CheckOpponentMonType
+    jr z, .restore_turn
+
+    ld b, c
+    call Check_Immunity
+    ld b, d
+    and a
+    jr nz, .check_item
+    ld hl, AbilityText_Immunity
+    call StdAbilityTextbox
+    jr .restore_turn
+
+.check_item
+    farcall GetOpponentItem
+    ld a, b
+    cp HELD_PREVENT_POISON
+    jr nz, .apply_poison
+    ld a, [hl]
+    ld [wNamedObjectIndex], a
+    call GetItemName
+    ld hl, ProtectedByText
+    call StdBattleTextbox
+    jr .restore_turn
+
+.apply_poison
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    set PSN, [hl]
+    call UpdateOpponentInParty
+    call ApplyStatusAbilityBoosts
+    call RefreshBattleHuds
+    ld a, POISON_TOUCH
+    call Ability_LoadAbilityName
+    ld hl, AbilityText_PoisonTouch
+    call StdAbilityTextbox
+    ld a, d
+    xor 1
+    ldh [hBattleTurn], a
+    ld a, 1 << PSN
+    call TryActivateSynchronize
+    ld a, d
+    ldh [hBattleTurn], a
+    farcall UseHeldStatusHealingItem
+
+.restore_turn
+    pop af
+    ldh [hBattleTurn], a
+    ret
+
 TryActivateSynchronize:
     ld d, a
     ldh a, [hBattleTurn]

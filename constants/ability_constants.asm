@@ -226,10 +226,10 @@
 	const HYDRATION	; Cures status conditions while it is raining
 	const SOLAR_POWER	; Boosts Sp. Atk in sunlight at the cost of HP
 	const LEAF_GUARD	; Blocks status conditions during strong sunlight
-	const SAND_RUSH	; Doubles Speed during a sandstorm
-	const SLUSH_RUSH	; Doubles Speed during hail
+	const SAND_RUSH	; ✔ Doubles Speed during a sandstorm
+	const SLUSH_RUSH	; ✔ Doubles Speed during hail
 	const SURGE_SURFER	; Doubles Speed on Electric Terrain
-	const ICE_BODY	; May freeze foes that make contact
+	const ICE_BODY	; The Pokémon regains HP in a hailstorm.
 	const OVERCOAT	; Immune to weather damage and powder moves
 	const WIND_POWER	; Charges power when hit by wind-based moves
 	const CRYSTAL_BODY	; Water type is not very effective, but Fire is super effective

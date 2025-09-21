@@ -313,6 +313,15 @@ AbilityText_PoisonPoint:
     cont "<TARGET>!"
     prompt
 
+AbilityText_PoisonTouch:
+    text "<USER>'s"
+    line "@"
+    text_ram wStringBuffer1
+    text " "
+    cont "poisoned"
+    cont "<TARGET>!"
+    prompt
+
 AbilityText_RoughSkin:
     text "<USER>'s"
     line "@"

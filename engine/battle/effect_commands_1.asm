@@ -49,8 +49,7 @@ DoTurn:
         ld a, BATTLE_VARS_MOVE_TYPE
         call GetBattleVar
         and STATUS
-        cp STATUS
-        jr nz, .check_damp
+        jr z, .check_damp
         ; Load target's species and personality
 	ldh a, [hBattleTurn]
         and a
@@ -2935,6 +2934,7 @@ BattleCommand_ApplyDamage:
 .done_damage
         farcall TryActivateColorChange
         farcall TryActivateCuteCharm
+        farcall TryActivatePoisonTouch
         farcall TryActivateEffectSpore
         farcall TryActivateRattled
         farcall TryActivateRoughSkin
