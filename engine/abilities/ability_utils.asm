@@ -664,13 +664,13 @@ Ability_ApplySandVeilAccuracy::
 	call GetAbility
 	xcall Ability_LoadTracedAbility
 	cp SAND_VEIL
-	ret nz
+	jr nz, .restore_pointer
 
 	push de
 	xcall Ability_GetBattleWeather
 	pop de
 	cp WEATHER_SANDSTORM
-	ret nz
+	jr nz, .restore_pointer
 
 	ld h, d
 	ld l, e
@@ -690,6 +690,12 @@ Ability_ApplySandVeilAccuracy::
 	sub c
 	ld [hl], a
 	ret
+
+.restore_pointer
+	ld h, d
+	ld l, e
+	ret
+
 
 ; Returns the active weather, treating it as clear if Cloud Nine is on the field.
 Ability_GetBattleWeather:
