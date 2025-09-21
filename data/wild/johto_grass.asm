@@ -711,3 +711,4 @@ JohtoGrassWildMons:
 	dbw 18, DIGLETT                  ;  1%
 	dbw 20, RHYHORN                  ;  1%
 	end_grass_wildmons
+	db -1 ; end
