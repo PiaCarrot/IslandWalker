@@ -197,52 +197,52 @@ BattleText_TheHailStopped:
         prompt
 
 BattleText_GrassyTerrainActive:
-        text "Grassy Terrain"
+        text "GRASSY TERRAIN"
         line "is flourishing!"
         done
 
 BattleText_MistyTerrainActive:
-        text "Misty Terrain"
+        text "MISTY TERRAIN"
         line "wraps the field!"
         done
 
 BattleText_ElectricTerrainActive:
-        text "Electric Terrain"
+        text "ELECTRIC TERRAIN"
         line "crackles!"
         done
 
 BattleText_PsychicTerrainActive:
-        text "Psychic Terrain"
+        text "PSYCHIC TERRAIN"
         line "makes things odd!"
         done
 
 BattleText_GrassyTerrainFaded:
-        text "The Grassy"
-        line "Terrain faded!"
+        text "The GRASSY"
+        line "TERRAIN faded!"
         prompt
 
 BattleText_MistyTerrainFaded:
-        text "The Misty Terrain"
+        text "The MISTY TERRAIN"
         line "faded away!"
         prompt
 
 BattleText_ElectricTerrainFaded:
-        text "The Electric"
-        line "Terrain faded!"
+        text "The ELECTRIC"
+        line "TERRAIN faded!"
         prompt
 
 BattleText_PsychicTerrainFaded:
-        text "The Psychic"
-        line "Terrain faded!"
+        text "The PSYCHIC"
+        line "TERRAIN faded!"
         prompt
 
 BattleText_GrassyTerrainHealed:
-        text "Grassy Terrain"
+        text "GRASSY TERRAIN"
         line "restored HP!"
         prompt
 
 BattleText_MistyTerrainBlocked:
-        text "The Misty Terrain"
+        text "The MISTY TERRAIN"
         line "shields <TARGET>!"
         prompt
 
@@ -259,7 +259,7 @@ BattleText_ElectricTerrainRestBlocked:
         prompt
 
 BattleText_PsychicTerrainBlocked:
-        text "Psychic Terrain"
+        text "PSYCHIC TERRAIN"
         line "blocked the move!"
         prompt
 

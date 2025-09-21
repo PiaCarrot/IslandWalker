@@ -474,8 +474,8 @@ MoveNames::
         li "SCALD"
         li "SNARL"
         li "BULLDOZE"
-        li "G. Terrain"
-        li "M. Terrain"
-        li "E. Terrain"
-        li "P. Terrain"
+        li "G. TERRAIN"
+        li "M. TERRAIN"
+        li "E. TERRAIN"
+        li "P. TERRAIN"
         assert_list_length NUM_ATTACKS
