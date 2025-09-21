@@ -357,109 +357,109 @@ INCBIN "gfx/footprints/other/zorua.1bpp"
 INCBIN "gfx/footprints/other/zoroark.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/clauncher.1bpp"
+INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/sylveon.1bpp"
+INCBIN "gfx/footprints/other/pancham.1bpp"
+INCBIN "gfx/footprints/other/pangoro.1bpp"
+INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/malamar.1bpp"
+INCBIN "gfx/footprints/other/noibat.1bpp"
+INCBIN "gfx/footprints/other/noivern.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/goodra.1bpp"
+INCBIN "gfx/footprints/other/rockruff.1bpp"
+INCBIN "gfx/footprints/other/lycanroc.1bpp"
+INCBIN "gfx/footprints/other/cutiefly.1bpp"
+INCBIN "gfx/footprints/other/ribombee.1bpp"
+INCBIN "gfx/footprints/other/pikipek.1bpp"
+INCBIN "gfx/footprints/other/trumbeak.1bpp"
+INCBIN "gfx/footprints/other/toucannon.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/salandit.1bpp"
+INCBIN "gfx/footprints/other/salazzle.1bpp"
+INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/toxapex.1bpp"
+INCBIN "gfx/footprints/other/turtonator.1bpp"
+INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/pincurchin.1bpp"
+INCBIN "gfx/footprints/other/cramorant.1bpp"
+INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/barbaracle.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/appletun.1bpp"
+INCBIN "gfx/footprints/other/gimmighoul.1bpp"
+INCBIN "gfx/footprints/other/gholdengo.1bpp"
+INCBIN "gfx/footprints/other/annihilape.1bpp"
+INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/farigiraf.1bpp"
+INCBIN "gfx/footprints/other/kingambit.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/charcadet.1bpp"
+INCBIN "gfx/footprints/other/armarouge.1bpp"
+INCBIN "gfx/footprints/other/ceruledge.1bpp"
+INCBIN "gfx/footprints/other/clodsire.1bpp"
+INCBIN "gfx/footprints/other/cursola.1bpp"
+INCBIN "gfx/footprints/other/perrserker.1bpp"
+INCBIN "gfx/footprints/other/sirfetch_d.1bpp"
+INCBIN "gfx/footprints/other/mr__rime.1bpp"
+INCBIN "gfx/footprints/other/obstagoon.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/sneasler.1bpp"
+INCBIN "gfx/footprints/other/kleavor.1bpp"
+INCBIN "gfx/footprints/other/ursaluna.1bpp"
+INCBIN "gfx/footprints/other/wyrdeer.1bpp"
+INCBIN "gfx/footprints/other/marshadow.1bpp"
 INCBIN "gfx/footprints/sinnoh/phione.1bpp"
 INCBIN "gfx/footprints/sinnoh/manaphy.1bpp"
 INCBIN "gfx/footprints/other/placeholder.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp"
+INCBIN "gfx/footprints/other/melmetal.1bpp"
 INCBIN "gfx/footprints/kanto/mew.1bpp"
 INCBIN "gfx/footprints/johto/unown.1bpp"
 ; Forms
 INCBIN "gfx/footprints/kanto/lapras.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; RATTATA_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; RATICATE_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; RAICHU_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; SANDSHREW_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; SANDSLASH_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; DIGLETT_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; DUGTRIO_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; GRIMER_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; MUK_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; GEODUDE_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; GRAVELER_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; GOLEM_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; VULPIX_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; NINETALES_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; MAROWAK_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; EXEGGUTOR_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; MEOWTH_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; PERSIAN_ALOLA
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; PONYTA_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; RAPIDASH_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; FARFETCH_D_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; MR__MIME_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; WEEZING_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; ZIGZAGOON_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; LINOONE_GALAR
+INCBIN "gfx/footprints/kanto/rattata.1bpp" ; RATTATA_ALOLA
+INCBIN "gfx/footprints/kanto/raticate.1bpp" ; RATICATE_ALOLA
+INCBIN "gfx/footprints/kanto/raichu.1bpp" ; RAICHU_ALOLA
+INCBIN "gfx/footprints/kanto/sandshrew.1bpp" ; SANDSHREW_ALOLA
+INCBIN "gfx/footprints/kanto/sandslash.1bpp" ; SANDSLASH_ALOLA
+INCBIN "gfx/footprints/kanto/diglett.1bpp" ; DIGLETT_ALOLA
+INCBIN "gfx/footprints/kanto/dugtrio.1bpp" ; DUGTRIO_ALOLA
+INCBIN "gfx/footprints/kanto/grimer.1bpp" ; GRIMER_ALOLA
+INCBIN "gfx/footprints/kanto/muk.1bpp" ; MUK_ALOLA
+INCBIN "gfx/footprints/kanto/geodude.1bpp" ; GEODUDE_ALOLA
+INCBIN "gfx/footprints/kanto/graveler.1bpp" ; GRAVELER_ALOLA
+INCBIN "gfx/footprints/kanto/golem.1bpp" ; GOLEM_ALOLA
+INCBIN "gfx/footprints/kanto/vulpix.1bpp" ; VULPIX_ALOLA
+INCBIN "gfx/footprints/kanto/ninetales.1bpp" ; NINETALES_ALOLA
+INCBIN "gfx/footprints/kanto/marowak.1bpp" ; MAROWAK_ALOLA
+INCBIN "gfx/footprints/kanto/exeggutor.1bpp" ; EXEGGUTOR_ALOLA
+INCBIN "gfx/footprints/kanto/meowth.1bpp" ; MEOWTH_ALOLA
+INCBIN "gfx/footprints/kanto/persian.1bpp" ; PERSIAN_ALOLA
+INCBIN "gfx/footprints/kanto/ponyta.1bpp" ; PONYTA_GALAR
+INCBIN "gfx/footprints/kanto/rapidash.1bpp" ; RAPIDASH_GALAR
+INCBIN "gfx/footprints/kanto/farfetch_d.1bpp" ; FARFETCH_D_GALAR
+INCBIN "gfx/footprints/kanto/mr__mime.1bpp" ; MR__MIME_GALAR
+INCBIN "gfx/footprints/kanto/weezing.1bpp" ; WEEZING_GALAR
+INCBIN "gfx/footprints/hoenn/zigzagoon.1bpp" ; ZIGZAGOON_GALAR
+INCBIN "gfx/footprints/hoenn/linoone.1bpp" ; LINOONE_GALAR
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; STUNFISK_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; CORSOLA_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; MEOWTH_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; SLOWPOKE_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; SLOWBRO_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; SLOWKING_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; ARTICUNO_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; ZAPDOS_GALAR
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; MOLTRES_GALAR
+INCBIN "gfx/footprints/johto/corsola.1bpp" ; CORSOLA_GALAR
+INCBIN "gfx/footprints/kanto/meowth.1bpp" ; MEOWTH_GALAR
+INCBIN "gfx/footprints/kanto/slowpoke.1bpp" ; SLOWPOKE_GALAR
+INCBIN "gfx/footprints/kanto/slowbro.1bpp" ; SLOWBRO_GALAR
+INCBIN "gfx/footprints/johto/slowking.1bpp" ; SLOWKING_GALAR
+INCBIN "gfx/footprints/kanto/articuno.1bpp" ; ARTICUNO_GALAR
+INCBIN "gfx/footprints/kanto/zapdos.1bpp" ; ZAPDOS_GALAR
+INCBIN "gfx/footprints/kanto/moltres.1bpp" ; MOLTRES_GALAR
 INCBIN "gfx/footprints/kanto/growlithe.1bpp" ; GROWLITHE_HISUI
 INCBIN "gfx/footprints/kanto/arcanine.1bpp" ; ARCANINE_HISUI
 INCBIN "gfx/footprints/kanto/voltorb.1bpp" ; VOLTORB_HISUI
@@ -469,7 +469,7 @@ INCBIN "gfx/footprints/johto/sneasel.1bpp" ; SNEASEL_HISUI
 INCBIN "gfx/footprints/other/zorua.1bpp" ; ZORUA_HISUI
 INCBIN "gfx/footprints/other/zoroark.1bpp" ; ZOROARK_HISUI
 INCBIN "gfx/footprints/other/placeholder.1bpp" ; SLIGGOO_HISUI
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; GOODRA_HISUI
+INCBIN "gfx/footprints/other/goodra.1bpp" ; GOODRA_HISUI
 INCBIN "gfx/footprints/johto/typhlosion.1bpp" ; TYPHLOSION_HISUI
 INCBIN "gfx/footprints/johto/wooper.1bpp" ; WOOPER_PALDEA
 INCBIN "gfx/footprints/kanto/tauros.1bpp" ; TAUROS_COMBAT
@@ -495,11 +495,11 @@ INCBIN "gfx/footprints/kanto/eevee.1bpp"
 INCBIN "gfx/footprints/kanto/pikachu.1bpp"
 INCBIN "gfx/footprints/kanto/dragonair.1bpp"
 INCBIN "gfx/footprints/kanto/dragonite.1bpp"
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; ROCKRUFF_OWN_TEMPO
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; LYCANROC_MIDNIGHT
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; LYCANROC_DUSK
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; GIMMIGHOUL_ROAMING
-INCBIN "gfx/footprints/other/placeholder.1bpp" ; MEOWTH_ROCKET
+INCBIN "gfx/footprints/other/rockruff.1bpp" ; ROCKRUFF_OWN_TEMPO
+INCBIN "gfx/footprints/other/lycanroc.1bpp" ; LYCANROC_MIDNIGHT
+INCBIN "gfx/footprints/other/lycanroc.1bpp" ; LYCANROC_DUSK
+INCBIN "gfx/footprints/other/lycanroc.1bpp" ; GIMMIGHOUL_ROAMING
+INCBIN "gfx/footprints/kanto/meowth.1bpp" ; MEOWTH_ROCKET
     INCBIN "gfx/footprints/sinnoh/rotom.1bpp" ; ROTOM_HEAT
     INCBIN "gfx/footprints/sinnoh/rotom.1bpp" ; ROTOM_WASH
     INCBIN "gfx/footprints/sinnoh/rotom.1bpp" ; ROTOM_FROST
