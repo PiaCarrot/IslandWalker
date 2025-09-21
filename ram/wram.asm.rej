@@ -1,0 +1,180 @@
+--- ram/wram.asm
++++ ram/wram.asm
+@@ -318,50 +318,53 @@ SECTION UNION "Miscellaneous", WRAM0
+ 
+ ; box save buffer
+ ; SaveBoxAddress uses this buffer in three steps because it
+ ; needs more space than the buffer can hold.
+ wBoxPartialData:: ds 480
+ wBoxPartialDataEnd::
+ 
+ 
+ SECTION UNION "Miscellaneous", WRAM0
+ 
+ ; battle tower temp struct
+ wBT_OTTemp:: battle_tower_struct wBT_OTTemp
+ 
+ 
+ SECTION UNION "Miscellaneous", WRAM0
+ 
+ ; battle data
+ wBattle::
+ wEnemyMoveStruct::  move_struct wEnemyMoveStruct
+ wPlayerMoveStruct:: move_struct wPlayerMoveStruct
+ 
+ wEnemyMonNickname::  ds MON_NAME_LENGTH
+ wBattleMonNickname:: ds MON_NAME_LENGTH
+ 
+ wBattleMon:: battle_struct wBattleMon
++wBattleMonOriginalType1:: db
++wBattleMonOriginalType2:: db
++wBattleMonMimicryActive:: db
+ 
+ ; Traced abilities get stored.
+ wEnemyMonTracedAbility:: db
+ wBattleMonTracedAbility:: db
+ 
+ ; intro water/grass/fire cutscene data
+ 	ds 4
+ wIntroJumptableIndex:: db
+ wIntroBGMapPointer:: dw
+ wIntroTilemapPointer:: dw
+ wIntroTilesPointer:: dw
+ wIntroFrameCounter1:: db
+ wIntroFrameCounter2:: db
+ wIntroSpriteStateFlag:: db
+ 
+ 
+ 	ds 2
+ 
+ wWildMon:: db
+ 	ds 1
+ 
+ wEnemyTrainerItem1:: db
+ wEnemyTrainerItem2:: db
+ wEnemyTrainerBaseReward:: db
+ wEnemyTrainerAIFlags:: ds 3
+@@ -536,55 +539,67 @@ wPlayerScreens::
+ 
+ wEnemyScreens::
+ ; see wPlayerScreens
+ 	db
+ 
+ wPlayerSafeguardCount:: db
+ wPlayerLightScreenCount:: db
+ wPlayerReflectCount:: db
+ 
+ 
+ wEnemySafeguardCount:: db
+ wEnemyLightScreenCount:: db
+ wEnemyReflectCount:: db
+ 
+ 
+ wTempIVs:: ds 4
+ 
+ wBattleWeather::
+ ; 00 normal
+ ; 01 rain
+ ; 02 sun
+ ; 03 sandstorm
+ ; 04 rain stopped
+ ; 05 sunliight faded
+ ; 06 sandstorm subsided
+-	db
++        db
+ 
+ wWeatherCount::
+ ; # turns remaining
+-	db
++        db
++
++wBattleTerrain::
++; 00 none
++; 01 grassy
++; 02 misty
++; 03 electric
++; 04 psychic
++        db
++
++wTerrainCount::
++; # turns remaining
++        db
+ 
+ wLoweredStat:: db
+ wEffectFailed:: db
+ wFailedMessage:: db
+ wEnemyGoesFirst:: db
+ 
+ wPlayerIsSwitching:: db
+ wEnemyIsSwitching::  db
+ 
+ wPlayerUsedMoves::
+ ; add a move that has been used once by the player
+ ; added in order of use
+ 	ds NUM_MOVES
+ 
+ wEnemyAISwitchScore:: db
+ wEnemySwitchMonParam:: db
+ wEnemySwitchMonIndex:: db
+ wTempLevel:: db
+ wLastPlayerMon:: db
+ wLastPlayerMove:: db
+ wLastEnemyMove:: db
+ 
+ wPlayerFutureSightCount:: db
+ wEnemyFutureSightCount:: db
+ 
+@@ -2407,50 +2422,53 @@ wSwitchMonFrom:: db
+ 	ds 4
+ wPokerusBuffer::
+ wCurEnemyItem:: db
+ 
+ NEXTU
+ ; miscellaneous words
+ wBuySellItemPrice::
+ wTempMysteryGiftTimer::
+ wMagikarpLength:: dw
+ 
+ NEXTU
+ ; 16-bit wram
+ 	ds 13
+ wOtherTrainerType:: db
+ wTrainerGroupBank:: db
+ 
+ ENDU
+ 
+ wTempEnemyMonSpecies::  db
+ wTempBattleMonSpecies:: db
+ 
+ UNION
+ wOTLinkBattleRNData:: ds SERIAL_RN_PREAMBLE_LENGTH + SERIAL_RNS_LENGTH
+ NEXTU
+ wEnemyMon:: battle_struct wEnemyMon
++wEnemyMonOriginalType1:: db
++wEnemyMonOriginalType2:: db
++wEnemyMonMimicryActive:: db
+ wEnemyMonBaseStats:: ds NUM_EXP_STATS
+ wEnemyMonCatchRate:: db
+ wEnemyMonBaseExp::   dw
+ wEnemyMonEnd::
+ ENDU
+ 
+ wBattleMode::
+ ; 0: overworld
+ ; 1: wild battle
+ ; 2: trainer battle
+ 	db
+ 
+ wTempWildMonSpecies:: db
+ 
+ wOtherTrainerClass::
+ ; class (Youngster, Bug Catcher, etc.) of opposing trainer
+ ; 0 if opponent is a wild Pokémon, not a trainer
+ 	db
+ 
+ ; BATTLETYPE_* values
+ wBattleType:: db
+ 
+ wOtherTrainerID::
+ ; which trainer of the class that you're fighting
+ ; (Joey, Mikey, Albert, etc.)

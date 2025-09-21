@@ -1,0 +1,13 @@
+--- data/moves/animations_gen4.asm
++++ data/moves/animations_gen4.asm
+@@ -1,5 +1,9 @@
+ BattleAnimationsGen4::
+-        rept NUM_ATTACKS - GEN3_MOVES
++        rept NUM_ATTACKS - GEN3_MOVES - 4
+                 dw BattleAnim_Pound
+         endr
++        dw BattleAnim_Mist ; Grassy Terrain
++        dw BattleAnim_Mist ; Misty Terrain
++        dw BattleAnim_Mist ; Electric Terrain
++        dw BattleAnim_Mist ; Psychic Terrain
+ .IndirectEnd::

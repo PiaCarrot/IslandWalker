@@ -282,10 +282,13 @@ HandleBetweenTurnEffects:
 	call HandleFutureSight
 	call CheckFaint_PlayerThenEnemy
 	ret c
-	call HandleWeather
-	call CheckFaint_PlayerThenEnemy
-	ret c
-	call HandleWrap
+        call HandleWeather
+        call CheckFaint_PlayerThenEnemy
+        ret c
+farcall HandleTerrain
+        call CheckFaint_PlayerThenEnemy
+        ret c
+        call HandleWrap
 	call CheckFaint_PlayerThenEnemy
 	ret c
         call HandlePerishSong
@@ -301,10 +304,13 @@ HandleBetweenTurnEffects:
 	call HandleFutureSight
 	call CheckFaint_EnemyThenPlayer
 	ret c
-	call HandleWeather
-	call CheckFaint_EnemyThenPlayer
-	ret c
-	call HandleWrap
+        call HandleWeather
+        call CheckFaint_EnemyThenPlayer
+        ret c
+farcall HandleTerrain
+        call CheckFaint_EnemyThenPlayer
+        ret c
+        call HandleWrap
 	call CheckFaint_EnemyThenPlayer
 	ret c
         call HandlePerishSong
@@ -1855,8 +1861,8 @@ HandleWeather:
         jr nz, .continues
 
 ; ended
-	ld hl, .WeatherEndedMessages
-	call .PrintWeatherMessage
+	ld hl, BattleWeather_EndedMessages
+	farcall BattleWeather_PrintMessage
 	xor a
 	ld [wBattleWeather], a
 	farcall Ability_RecalculateStatsForWeather
@@ -1865,10 +1871,10 @@ HandleWeather:
 .continues
 	farcall Ability_RecalculateStatsForWeather
 	farcall Ability_CheckCloudNine
-        ret z
-        ld hl, .WeatherMessages
-        call .PrintWeatherMessage
-	call .PlayWeatherAnimation
+	ret z
+	ld hl, BattleWeather_Messages
+	farcall BattleWeather_PrintMessage
+	farcall BattleWeather_PlayAnimation
 
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
@@ -1977,57 +1983,8 @@ HandleWeather:
 	jp StdBattleTextbox
 
 
-.PlayWeatherAnimation:
-	call SetPlayerTurn
-.weather_ability_skip
-	xor a ; uses one byte of ROM, compared to two for "ld a, 1"
-	ld [wBattleAfterAnim], a
-	ld hl, .WeatherAnimations
-	ld a, [wBattleWeather]
-	dec a
-	ld b, 0
-	ld c, a
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld e, a
-	ld d, [hl]
-	jmp Call_PlayBattleAnim
-
-.WeatherAnimations:
-	dw RAIN_DANCE
-	dw SUNNY_DAY
-	dw SANDSTORM
-	dw HAIL
-
-.PrintWeatherMessage:
-	ld a, [wBattleWeather]
-	dec a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jmp StdBattleTextbox
-
-.WeatherMessages:
-; entries correspond to WEATHER_* constants
-	dw BattleText_RainContinuesToFall
-	dw BattleText_TheSunlightIsStrong
-	dw BattleText_TheSandstormRages
-	dw BattleText_HailContinuesToFall
-
-.WeatherEndedMessages:
-; entries correspond to WEATHER_* constants
-	dw BattleText_TheRainStopped
-	dw BattleText_TheSunlightFaded
-	dw BattleText_TheSandstormSubsided
-	dw BattleText_TheHailStopped
-
 SubtractHPFromTarget:
-	call SubtractHP
+        call SubtractHP
 	jmp UpdateHPBar
 
 SubtractHPFromUser:
@@ -4201,10 +4158,16 @@ InitBattleMon:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	call GetBaseData
-	ld a, [wBaseType1]
-	ld [wBattleMonType1], a
-	ld a, [wBaseType2]
-	ld [wBattleMonType2], a
+        ld a, [wBaseType1]
+        ld [wBattleMonType1], a
+        ld a, [wBaseType2]
+        ld [wBattleMonType2], a
+        ld a, [wBattleMonType1]
+        ld [wBattleMonOriginalType1], a
+        ld a, [wBattleMonType2]
+        ld [wBattleMonOriginalType2], a
+        xor a
+        ld [wBattleMonMimicryActive], a
 	ld hl, wPartyMonNicknames
 	ld a, [wCurBattleMon]
 	call SkipNames
@@ -4303,13 +4266,19 @@ InitEnemyMon:
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	rst CopyBytes
 	farcall ApplyStatusEffectOnEnemyStats
-	ld hl, wBaseType1
-	ld de, wEnemyMonType1
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
+        ld hl, wBaseType1
+        ld de, wEnemyMonType1
+        ld a, [hli]
+        ld [de], a
+        inc de
+        ld a, [hl]
+        ld [de], a
+        ld a, [wEnemyMonType1]
+        ld [wEnemyMonOriginalType1], a
+        ld a, [wEnemyMonType2]
+        ld [wEnemyMonOriginalType2], a
+        xor a
+        ld [wEnemyMonMimicryActive], a
 	; The enemy mon's base Sp. Def isn't needed since its base
 	; Sp. Atk is also used to calculate Sp. Def stat experience.
 	ld hl, wBaseStats

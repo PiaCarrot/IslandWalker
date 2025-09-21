@@ -1911,6 +1911,10 @@ MoveDescriptionsGen5:
         dw ScaldDescription
         dw SnarlDescription
         dw BulldozeDescription
+        dw GrassyTerrainDescription
+        dw MistyTerrainDescription
+        dw ElectricTerrainDescription
+        dw PsychicTerrainDescription
 .IndirectEnd::
 
 RoostDescription:
@@ -2386,5 +2390,21 @@ SnarlDescription:
 	next "lowers SPCL.ATK.@"
 
 BulldozeDescription:
-	db   "Slams the ground"
-	next "lowers all SPEED.@"
+        db   "Slams the ground"
+        next "lowers all SPEED.@"
+
+GrassyTerrainDescription:
+        db   "Grass heals those"
+        next "on the ground.@"
+
+MistyTerrainDescription:
+        db   "Mist covers field"
+        next "prevents statuses.@"
+
+ElectricTerrainDescription:
+        db   "Boosts grounded"
+        next "Electric moves.@"
+
+PsychicTerrainDescription:
+        db   "Boosts Psychic"
+        next "blocks priority.@"

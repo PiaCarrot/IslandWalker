@@ -1478,19 +1478,25 @@ BattleCommand_Stab:
 	and TYPE_MASK
 	ld [wCurType], a
 
-	push hl
-	push de
-	push bc
-	farcall DoWeatherModifiers
-	pop bc
-	pop de
-	pop hl
+        push hl
+        push de
+        push bc
+        farcall DoWeatherModifiers
+        pop bc
+        pop de
+        pop hl
 
-	push de
-	push bc
-	farcall DoBadgeTypeBoosts
-	pop bc
-	pop de
+        push de
+        push bc
+        farcall DoTerrainModifiers
+        pop bc
+        pop de
+
+        push de
+        push bc
+        farcall DoBadgeTypeBoosts
+        pop bc
+        pop de
 
 	push de
 	push bc
@@ -2070,11 +2076,14 @@ BattleCommand_CheckHit:
 	call .LockOn
 	ret nz
 
-	call .FlyDigMoves
-	jr nz, .Miss
+        call .FlyDigMoves
+        jr nz, .Miss
 
-	farcall Ability_GetBattleWeather
-	ld d, a
+        farcall Terrain_TryBlockPriorityMove
+        jr z, .Miss
+
+        farcall Ability_GetBattleWeather
+        ld d, a
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -2995,13 +3004,20 @@ BattleCommand_ApplyDamage:
 	ret
 
 GetFailureResultText:
-	ld de, ProtectingItselfText
+        ld de, ProtectingItselfText
 
-	ld hl, DoesntAffectText
-	ld a, [wTypeModifier]
-	and EFFECTIVENESS_MASK
-	jr z, .got_text
-	ld a, BATTLE_VARS_MOVE_EFFECT
+        ld a, [wFailedMessage]
+        cp FAILED_MESSAGE_PSYCHIC_TERRAIN
+        jr nz, .check_effectiveness
+        ld hl, BattleText_PsychicTerrainBlocked
+        jr .print_text
+
+.check_effectiveness
+        ld hl, DoesntAffectText
+        ld a, [wTypeModifier]
+        and EFFECTIVENESS_MASK
+        jr z, .got_text
+        ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_FUTURE_SIGHT
 	ld hl, ButItFailedText
@@ -3010,11 +3026,12 @@ GetFailureResultText:
 	ld a, [wCriticalHit]
 	cp -1
 	jr nz, .got_text
-	ld hl, UnaffectedText
+        ld hl, UnaffectedText
 .got_text
-	call FailText_CheckOpponentProtect
-	xor a
-	ld [wCriticalHit], a
+.print_text
+        call FailText_CheckOpponentProtect
+        xor a
+        ld [wCriticalHit], a
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -3097,17 +3114,6 @@ BattleCommand_CriticalText:
 .texts
 	dw CriticalHitText
 	dw OneHitKOText
-
-BattleCommand_StartLoop:
-	ld hl, wPlayerRolloutCount
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyRolloutCount
-.ok
-	xor a
-	ld [hl], a
-	ret
 
 BattleCommand_SuperEffectiveLoopText:
 	ld a, BATTLE_VARS_SUBSTATUS3
@@ -4381,7 +4387,7 @@ BattleCommand_SleepTarget:
 	ld a, [de]
 	and SLP_MASK
 	ld hl, AlreadyAsleepText
-	jr nz, .fail
+	jmp nz, .fail
 
 	ld a, [wAttackMissed]
 	and a
@@ -4389,16 +4395,32 @@ BattleCommand_SleepTarget:
 
 	ld hl, DidntAffectText
 	call .CheckAIRandomFail
-	jr c, .fail
+	jmp c, .fail
 
 	ld a, [de]
 	and a
-	jr nz, .fail
+	jmp nz, .fail
 
         call CheckSubstituteOpp
-        jr nz, .fail
+	jr nz, .fail
 
-	ldh a, [hBattleTurn]
+        farcall Terrain_TryBlockTargetMistyStatus
+        and a
+        jr nz, .check_electric_terrain
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+
+.check_electric_terrain
+        farcall Terrain_TryBlockTargetElectricSleep
+        and a
+        jr nz, .no_terrain_block
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+
+.no_terrain_block
+        ldh a, [hBattleTurn]
         and a
         jr nz, .sleep_target_player
         ld a, [wEnemyMonSpecies]
@@ -4503,7 +4525,10 @@ BattleCommand_PoisonTarget:
         call SafeCheckSafeguard
         ret nz
 
-	ldh a, [hBattleTurn]
+        farcall Terrain_TryBlockTargetMistyStatus
+        ret z
+
+        ldh a, [hBattleTurn]
         and a
         jr nz, .poison_target_player
         ld a, [wEnemyMonSpecies]
@@ -4593,18 +4618,26 @@ BattleCommand_Poison:
 	bit SUBSTATUS_LOCK_ON, a
 	jr nz, .dont_sample_failure
 
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .failed
+call BattleRandom
+cp 25 percent + 1 ; 25% chance AI fails
+jr c, .failed
 
 .dont_sample_failure
         call CheckSubstituteOpp
-        jr nz, .failed
-        ld a, [wAttackMissed]
-        and a
-        jr nz, .failed
+	jr nz, .failed
+ld a, [wAttackMissed]
+and a
+jr nz, .failed
 
-	ldh a, [hBattleTurn]
+        farcall Terrain_TryBlockTargetMistyStatus
+        and a
+        jr nz, .terrain_poison_ok
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+
+.terrain_poison_ok
+        ldh a, [hBattleTurn]
         and a
         jr nz, .poison_move_target_player
         ld a, [wEnemyMonSpecies]
@@ -4846,13 +4879,16 @@ BattleCommand_BurnTarget:
 	ld a, b
 	cp HELD_PREVENT_BURN
 	ret z
-	ld a, [wEffectFailed]
-	and a
-	ret nz
+        ld a, [wEffectFailed]
+        and a
+        ret nz
         call SafeCheckSafeguard
         ret nz
 
-	ldh a, [hBattleTurn]
+        farcall Terrain_TryBlockTargetMistyStatus
+        ret z
+
+        ldh a, [hBattleTurn]
         and a
         jr nz, .burn_target_player
         ld a, [wEnemyMonSpecies]
@@ -4962,7 +4998,10 @@ BattleCommand_FreezeTarget:
         call SafeCheckSafeguard
         ret nz
 
-	ldh a, [hBattleTurn]
+        farcall Terrain_TryBlockTargetMistyStatus
+        ret z
+
+        ldh a, [hBattleTurn]
         and a
         jr nz, .freeze_target_player
         ld a, [wEnemyMonSpecies]
@@ -5032,7 +5071,10 @@ BattleCommand_ParalyzeTarget:
         call SafeCheckSafeguard
         ret nz
 
-	ldh a, [hBattleTurn]
+        farcall Terrain_TryBlockTargetMistyStatus
+        ret z
+
+        ldh a, [hBattleTurn]
         and a
         jr nz, .paralyze_target_player
         ld a, [wEnemyMonSpecies]
@@ -6870,6 +6912,8 @@ BattleCommand_ConfuseTarget:
 	ret nz
 	call CheckSubstituteOpp
 	ret nz
+	farcall Terrain_TryBlockTargetMistyStatus
+	ret z
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_CONFUSED, [hl]
@@ -6901,6 +6945,10 @@ BattleCommand_Confuse:
 	ld a, [wAttackMissed]
 	and a
 	jr nz, BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit
+	farcall Terrain_TryBlockTargetMistyStatus
+	and a
+	jr nz, BattleCommand_FinishConfusingTarget
+	jr BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit
 BattleCommand_FinishConfusingTarget:
         push hl
 	ldh a, [hBattleTurn]
@@ -7014,20 +7062,28 @@ BattleCommand_Paralyze:
 
 	call BattleRandom
 	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .failed
+	jmp c, .failed
 
 .dont_sample_failure
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
-	jr nz, .failed
+	jmp nz, .failed
         ld a, [wAttackMissed]
         and a
-        jr nz, .failed
+	jmp nz, .failed
         call CheckSubstituteOpp
-        jr nz, .failed
+	jr nz, .failed
 
-	ldh a, [hBattleTurn]
+        farcall Terrain_TryBlockTargetMistyStatus
+        and a
+        jr nz, .terrain_paralyze_ok
+        ld a, 1
+        ld [wAttackMissed], a
+        jmp EndMoveEffect
+
+.terrain_paralyze_ok
+        ldh a, [hBattleTurn]
         and a
         jr nz, .paralyze_player
         ld a, [wEnemyMonSpecies]
@@ -7203,11 +7259,22 @@ BattleCommand_Heal:
         call StdAbilityTextbox
         ld a, 1
         ld [wAttackMissed], a
-	pop af
+        pop af
         pop de
         pop hl
         jmp EndMoveEffect
 .rest_sleep_ok
+        farcall Terrain_TryBlockUserElectricSleep
+        and a
+        jr nz, .rest_terrain_ok
+        ld a, 1
+        ld [wAttackMissed], a
+        pop af
+        pop de
+        pop hl
+        jmp EndMoveEffect
+
+.rest_terrain_ok
         call BattleCommand_MoveDelay
         ld a, BATTLE_VARS_SUBSTATUS5
         call GetBattleVarAddr
@@ -7433,6 +7500,10 @@ INCLUDE "engine/battle/move_effects/curse.asm"
 
 INCLUDE "engine/battle/move_effects/foresight.asm"
 
+INCLUDE "engine/battle/move_effects/rain_dance.asm"
+
+INCLUDE "engine/battle/move_effects/sunny_day.asm"
+
 INCLUDE "engine/battle/move_effects/sandstorm.asm"
 
 INCLUDE "engine/battle/move_effects/rollout.asm"
@@ -7567,19 +7638,8 @@ BattleCommand_TimeBasedHealContinue:
 	dw GetHalfMaxHP
 	dw GetMaxHP
 
-INCLUDE "engine/battle/move_effects/hidden_power.asm"
 
-INCLUDE "engine/battle/move_effects/rain_dance.asm"
 
-INCLUDE "engine/battle/move_effects/sunny_day.asm"
-
-INCLUDE "engine/battle/move_effects/belly_drum.asm"
-
-INCLUDE "engine/battle/move_effects/psych_up.asm"
-
-INCLUDE "engine/battle/move_effects/future_sight.asm"
-
-INCLUDE "engine/battle/move_effects/hail.asm"
 
 CheckHiddenOpponent:
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP

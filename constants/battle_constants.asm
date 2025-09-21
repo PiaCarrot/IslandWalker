@@ -224,20 +224,35 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 	const SCREENS_UNUSED
 
 ; values in wBattleWeather
-	const_def
-	const WEATHER_NONE
-	const WEATHER_RAIN
-	const WEATHER_SUN
-	const WEATHER_SANDSTORM
-	const WEATHER_HAIL
-	const WEATHER_RAIN_END
-	const WEATHER_SUN_END
-	const WEATHER_SANDSTORM_END
-	const WEATHER_HAIL_END
+        const_def
+        const WEATHER_NONE
+        const WEATHER_RAIN
+        const WEATHER_SUN
+        const WEATHER_SANDSTORM
+        const WEATHER_HAIL
+        const WEATHER_RAIN_END
+        const WEATHER_SUN_END
+        const WEATHER_SANDSTORM_END
+        const WEATHER_HAIL_END
+
+; values in wBattleTerrain
+        const_def
+        const TERRAIN_NONE
+        const TERRAIN_GRASSY
+        const TERRAIN_MISTY
+        const TERRAIN_ELECTRIC
+        const TERRAIN_PSYCHIC
+
+; values in wFailedMessage
+        const_def
+        const FAILED_MESSAGE_NONE
+        const FAILED_MESSAGE_STAT_FAIL
+        const FAILED_MESSAGE_STAT_MAX
+        const FAILED_MESSAGE_PSYCHIC_TERRAIN
 
 ; wBattleAction
-	const_def
-	const BATTLEACTION_MOVE1
+        const_def
+        const BATTLEACTION_MOVE1
 	const BATTLEACTION_MOVE2
 	const BATTLEACTION_MOVE3
 	const BATTLEACTION_MOVE4

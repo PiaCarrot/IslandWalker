@@ -1,0 +1,171 @@
+--- engine/battle/misc.asm
++++ engine/battle/misc.asm
+@@ -113,54 +113,164 @@ DoWeatherModifiers:
+ 	ldh [hMultiplier], a
+ 
+ 	call Multiply
+ 
+ 	ld a, 10
+ 	ldh [hDivisor], a
+ 	ld b, 4
+ 	call Divide
+ 
+ 	ldh a, [hQuotient + 1]
+ 	and a
+ 	ld bc, -1
+ 	jr nz, .Update
+ 
+ 	ldh a, [hQuotient + 2]
+ 	ld b, a
+ 	ldh a, [hQuotient + 3]
+ 	ld c, a
+ 	or b
+ 	jr nz, .Update
+ 
+ 	ld bc, 1
+ 
+ .Update:
+ 	ld a, b
+-	ld [wCurDamage], a
+-	ld a, c
+-	ld [wCurDamage + 1], a
+-	ret
++        ld [wCurDamage], a
++        ld a, c
++        ld [wCurDamage + 1], a
++        ret
++
++DoTerrainModifiers:
++        ld a, [wBattleTerrain]
++        cp TERRAIN_NONE
++        ret z
++
++        cp TERRAIN_GRASSY
++        jr z, .grassy
++        cp TERRAIN_MISTY
++        jr z, .misty
++        cp TERRAIN_ELECTRIC
++        jr z, .electric
++        cp TERRAIN_PSYCHIC
++        jr z, .psychic
++        ret
++
++.grassy
++        farcall Terrain_CheckUserGrounded
++        and a
++        jr z, .grassy_reduce
++        ld a, [wCurType]
++        cp GRASS
++        jr nz, .grassy_reduce
++        ld a, 13
++        call .ApplyTerrainMultiplier
++
++.grassy_reduce
++        farcall Terrain_CheckTargetGrounded
++        and a
++        ret z
++        ld a, BATTLE_VARS_MOVE
++        call GetBattleVar
++        cp EARTHQUAKE
++        jr z, .halve
++        cp LOW(BULLDOZE)
++        jr z, .halve
++        cp MAGNITUDE
++        ret nz
++.halve
++        ld a, 5
++        call .ApplyTerrainMultiplier
++        ret
++
++.misty
++        farcall Terrain_CheckTargetGrounded
++        and a
++        ret z
++        ld a, [wCurType]
++        cp DRAGON
++        ret nz
++        ld a, 5
++        call .ApplyTerrainMultiplier
++        ret
++
++.electric
++        farcall Terrain_CheckUserGrounded
++        and a
++        ret z
++        ld a, [wCurType]
++        cp ELECTRIC
++        ret nz
++        ld a, 13
++        call .ApplyTerrainMultiplier
++        ret
++
++.psychic
++        farcall Terrain_CheckUserGrounded
++        and a
++        ret z
++        ld a, [wCurType]
++        cp PSYCHIC_TYPE
++        ret nz
++        ld a, 13
++        call .ApplyTerrainMultiplier
++        ret
++
++.ApplyTerrainMultiplier
++        push af
++        xor a
++        ldh [hMultiplicand + 0], a
++        ld hl, wCurDamage
++        ld a, [hli]
++        ldh [hMultiplicand + 1], a
++        ld a, [hl]
++        ldh [hMultiplicand + 2], a
++        pop af
++        ldh [hMultiplier], a
++        call Multiply
++        ld a, 10
++        ldh [hDivisor], a
++        ld b, 4
++        call Divide
++        ldh a, [hQuotient + 1]
++        and a
++        ld bc, -1
++        jr nz, .store
++        ldh a, [hQuotient + 2]
++        ld b, a
++        ldh a, [hQuotient + 3]
++        ld c, a
++        or b
++        jr nz, .store
++        ld bc, 1
++
++.store
++        ld a, b
++        ld [wCurDamage], a
++        ld a, c
++        ld [wCurDamage + 1], a
++        ret
+ 
+ INCLUDE "data/battle/weather_modifiers.asm"
+ 
+ DoBadgeTypeBoosts:
+ 	ld a, [wLinkMode]
+ 	and a
+ 	ret nz
+ 
+ 	ld a, [wInBattleTowerBattle]
+ 	and a
+ 	ret nz
+ 
+ 	ldh a, [hBattleTurn]
+ 	and a
+ 	ret nz
+ 
+ 	push de
+ 	push bc
+ 
+ 	ld hl, BadgeTypeBoosts
+ 
+ 	ld a, [wKantoBadges]
+ 	ld b, a
+ 	ld a, [wJohtoBadges]
+ 	ld c, a

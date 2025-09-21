@@ -23,6 +23,34 @@ AbilityText_WhippedUpAHailStorm:
     cont "up a hailstorm!"
     prompt
 
+AbilityText_ElectricSurge:
+    text "<USER>'s"
+    line "ELECTRIC SURGE"
+    cont "electrified the"
+    cont "terrain!"
+    prompt
+
+AbilityText_PsychicSurge:
+    text "<USER>'s"
+    line "PSYCHIC SURGE"
+    cont "made the field"
+    cont "feel weird!"
+    prompt
+
+AbilityText_MistySurge:
+    text "<USER>'s"
+    line "MISTY SURGE"
+    cont "veiled the field"
+    cont "in mist!"
+    prompt
+
+AbilityText_GrassySurge:
+    text "<USER>'s"
+    line "GRASSY SURGE"
+    cont "made the field"
+    cont "lush with grass!"
+    prompt
+
 AbilityText_WeatherCleared:
     text "<USER>'s"
     line "CLOUD NINE cleared"

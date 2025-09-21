@@ -1804,21 +1804,49 @@ HiddenPower:
 	endmove
 
 RainDance:
-	checkobedience
-	usedmovetext
-	doturn
-	startrain
-	endmove
+        checkobedience
+        usedmovetext
+        doturn
+        startrain
+        endmove
 
 SunnyDay:
-	checkobedience
-	usedmovetext
-	doturn
-	startsun
-	endmove
+        checkobedience
+        usedmovetext
+        doturn
+        startsun
+        endmove
+
+GrassyTerrain:
+        checkobedience
+        usedmovetext
+        doturn
+        startgrassyterrain
+        endmove
+
+MistyTerrain:
+        checkobedience
+        usedmovetext
+        doturn
+        startmistyterrain
+        endmove
+
+ElectricTerrain:
+        checkobedience
+        usedmovetext
+        doturn
+        startelectricterrain
+        endmove
+
+PsychicTerrain:
+        checkobedience
+        usedmovetext
+        doturn
+        startpsychicterrain
+        endmove
 
 FakeOut:
-	checkobedience
+        checkobedience
 	usedmovetext
 	doturn
 	checkhit

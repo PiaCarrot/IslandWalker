@@ -199,6 +199,7 @@ ApplyStatusEffectOnStats:
         call ApplySwiftSwimEffectOnSpeed
         call ApplySandRushEffectOnSpeed
         call ApplySlushRushEffectOnSpeed
+        call ApplySurgeSurferEffectOnSpeed
         call ApplyQuickFeetEffectOnSpeed
         jp ApplyFlareBoostEffectOnSpAttack
 
@@ -566,6 +567,35 @@ ApplySlushRushEffectOnSpeed:
         xcall Ability_DoubleStat
         ret
 
+ApplySurgeSurferEffectOnSpeed:
+        xcall Ability_LoadBattleMonBase
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp SURGE_SURFER
+        ret nz
+        push bc
+        xcall Ability_GetBattleTerrain
+        pop bc
+        cp TERRAIN_ELECTRIC
+        ret nz
+        ld a, b
+        and a
+        jr nz, .enemy
+        farcall Terrain_CheckPlayerGrounded
+        jr .check_grounded
+
+.enemy
+        farcall Terrain_CheckEnemyGrounded
+
+.check_grounded
+        and a
+        ret z
+        ld hl, wEnemyMonSpeed
+        ld de, wBattleMonSpeed
+        xcall Ability_SelectBattleMonStatPointer
+        xcall Ability_DoubleStat
+        ret
+
 ApplyQuickFeetEffectOnSpeed:
         xcall Ability_LoadBattleMonBase
         ld a, [de]
@@ -734,4 +764,144 @@ Ability_CheckCloudNine:
 Ability_RecalculateStatsForWeather::
         farcall CalcPlayerStats
         farcall CalcEnemyStats
+        ret
+
+Ability_GetBattleTerrain::
+        ld a, [wBattleTerrain]
+        ret
+
+Ability_RecalculateStatsForTerrain::
+        call Ability_UpdateMimicry
+        farcall CalcPlayerStats
+        farcall CalcEnemyStats
+        ret
+
+Ability_UpdateMimicry:
+        push bc
+        push de
+        push hl
+        call .UpdatePlayer
+        call .UpdateEnemy
+        pop hl
+        pop de
+        pop bc
+        ret
+
+.UpdatePlayer
+        ld a, [wBattleMonSpecies]
+        and a
+        ret z
+        ld c, a
+        ld hl, wBattleMonPersonality
+        ld b, 0
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp MIMICRY
+        jr z, .player_mimicry
+        ld a, [wBattleMonMimicryActive]
+        and a
+        ret z
+        call .ResetPlayerTypes
+        ret
+
+.player_mimicry
+        push bc
+        xcall Ability_GetBattleTerrain
+        pop bc
+        ld d, a
+        cp TERRAIN_NONE
+        jr nz, .player_apply
+        ld a, [wBattleMonMimicryActive]
+        and a
+        ret z
+        call .ResetPlayerTypes
+        ret
+
+.player_apply
+        call .TerrainToType
+        ld [wBattleMonType1], a
+        ld [wBattleMonType2], a
+        ld a, 1
+        ld [wBattleMonMimicryActive], a
+        ret
+
+.ResetPlayerTypes
+        ld a, [wBattleMonOriginalType1]
+        ld [wBattleMonType1], a
+        ld a, [wBattleMonOriginalType2]
+        ld [wBattleMonType2], a
+        xor a
+        ld [wBattleMonMimicryActive], a
+        ret
+
+.UpdateEnemy
+        ld a, [wEnemyMonSpecies]
+        and a
+        ret z
+        ld c, a
+        ld hl, wEnemyMonPersonality
+        ld b, 1
+        call GetAbility
+        xcall Ability_LoadTracedAbility
+        cp MIMICRY
+        jr z, .enemy_mimicry
+        ld a, [wEnemyMonMimicryActive]
+        and a
+        ret z
+        call .ResetEnemyTypes
+        ret
+
+.enemy_mimicry
+        push bc
+        xcall Ability_GetBattleTerrain
+        pop bc
+        ld d, a
+        cp TERRAIN_NONE
+        jr nz, .enemy_apply
+        ld a, [wEnemyMonMimicryActive]
+        and a
+        ret z
+        call .ResetEnemyTypes
+        ret
+
+.enemy_apply
+        call .TerrainToType
+        ld [wEnemyMonType1], a
+        ld [wEnemyMonType2], a
+        ld a, 1
+        ld [wEnemyMonMimicryActive], a
+        ret
+
+.ResetEnemyTypes
+        ld a, [wEnemyMonOriginalType1]
+        ld [wEnemyMonType1], a
+        ld a, [wEnemyMonOriginalType2]
+        ld [wEnemyMonType2], a
+        xor a
+        ld [wEnemyMonMimicryActive], a
+        ret
+
+.TerrainToType
+        ld a, d
+        cp TERRAIN_GRASSY
+        jr nz, .check_misty
+        ld a, GRASS
+        ret
+
+.check_misty
+        cp TERRAIN_MISTY
+        jr nz, .check_electric
+        ld a, FAIRY
+        ret
+
+.check_electric
+        cp TERRAIN_ELECTRIC
+        jr nz, .check_psychic
+        ld a, ELECTRIC
+        ret
+
+.check_psychic
+        cp TERRAIN_PSYCHIC
+        ret nz
+        ld a, PSYCHIC_TYPE
         ret

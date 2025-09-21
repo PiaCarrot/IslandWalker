@@ -2,6 +2,12 @@ SECTION "Battle Commands 2", ROMX
 
 BattleCommandPointers2:
 ; entries correspond to macros/scripts/battle_commands.asm
+	dw BattleCommand_StartLoop
+	dw BattleCommand_StartHail
+	dw BattleCommand_StartGrassyTerrain
+	dw BattleCommand_StartMistyTerrain
+	dw BattleCommand_StartElectricTerrain
+	dw BattleCommand_StartPsychicTerrain
 	dw BattleCommand_DoubleMinimizeDamage
 	dw BattleCommand_DoubleFlyingDamage
 	dw BattleCommand_DoubleUndergroundDamage

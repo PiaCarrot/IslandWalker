@@ -142,8 +142,6 @@ BattleCommandPointers1:
 	dw BattleCommand_MoveAnim
 	dw BattleCommand_TriStatusChance
 	dw BattleCommand_SuperEffectiveLoopText
-	dw BattleCommand_StartLoop
-	dw BattleCommand_StartHail
 .IndirectEnd::
 
 

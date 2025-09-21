@@ -1,0 +1,34 @@
+--- data/battle/effect_commands_1.asm
++++ data/battle/effect_commands_1.asm
+@@ -120,31 +120,29 @@ BattleCommandPointers1:
+ 	dw BattleCommand_EvasionDown2
+ 	dw BattleCommand_StatUpMessage
+ 	dw BattleCommand_StatDownMessage
+ 	dw BattleCommand_StatUpFailText
+ 	dw BattleCommand_StatDownFailText
+ 	dw BattleCommand_EffectChance
+ 	dw BattleCommand_StatDownAnim
+ 	dw BattleCommand_StatUpAnim
+ 	dw BattleCommand_SwitchTurn
+ 	dw BattleCommand_FakeOut
+ 	dw BattleCommand_BellyDrum
+ 	dw BattleCommand_PsychUp
+ 	dw BattleCommand_CheckFutureSight
+ 	dw BattleCommand_FutureSight
+ 	dw BattleCommand_Teleport
+ 	dw BattleCommand_ResetTypeMatchup
+ 	dw BattleCommand_AllStatsUp
+ 	dw BattleCommand_BideFailText
+ 	dw BattleCommand_RaiseSubNoAnim
+ 	dw BattleCommand_LowerSubNoAnim
+ 	dw BattleCommand_ClearMissDamage
+ 	dw BattleCommand_MoveDelay
+ 	dw BattleCommand_MoveAnim
+ 	dw BattleCommand_TriStatusChance
+ 	dw BattleCommand_SuperEffectiveLoopText
+-	dw BattleCommand_StartLoop
+-	dw BattleCommand_StartHail
+ .IndirectEnd::
+ 
+ 
+-INCLUDE "engine/battle/effect_commands_1.asm"+INCLUDE "engine/battle/effect_commands_1.asm"

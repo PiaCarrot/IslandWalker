@@ -1,0 +1,208 @@
+--- engine/abilities/battle_abilities.asm
++++ engine/abilities/battle_abilities.asm
+@@ -1,106 +1,142 @@
+ ; Ability text bank defined in data/text/ability_text.asm as AbilityText
+ 
+ ; Checks the entrance ability based off of the Pokémon personality in HL, Player/Enemy in B (0 for Player, 1 for enemy), and species in C.
+ ; Performs the ability if applicable.
+ Check_Entrance_Ability:
+     call GetAbility
+     call Ability_LoadTracedAbility
+     cp TRACE
+     jp z, .trace
+     cp CLOUD_NINE
+     jr z, .cloud_nine
+     cp DRIZZLE
+     jr z, .drizzle
+     cp DROUGHT
+     jr z, .drought
+     cp SAND_STREAM
+     jr z, .sand_stream
+     cp SNOW_WARNING
+     jr z, .snow_warning
++    cp ELECTRIC_SURGE
++    jmp z, .electric_surge
++    cp PSYCHIC_SURGE
++    jmp z, .psychic_surge
++    cp MISTY_SURGE
++    jmp z, .misty_surge
++    cp GRASSY_SURGE
++    jmp z, .grassy_surge
+     cp PRESSURE
+-    jr z, .pressure
++    jmp z, .pressure
+     cp INTIMIDATE
+     jmp z, .intimidate
+     cp IMPOSTER
+     jp z, .imposter
+     ; Otherwise, do nothing
+     ret
+ 
+ .cloud_nine
+     ld a, [wBattleWeather]
+     and a
+     ret z
+     ld hl, AbilityText_WeatherCleared
+     call StdAbilityTextbox
+     xcall Ability_RecalculateStatsForWeather
+     ret
+ 
+ .drizzle
+     ld a, WEATHER_RAIN
+     ld [wBattleWeather], a
+     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
+     ld [wWeatherCount], a
+-    farcall HandleWeather.weather_ability_skip
++    farcall BattleWeatherAbilitySkip
+     xcall Ability_RecalculateStatsForWeather
+     ld hl, AbilityText_MadeItRain
+     call StdAbilityTextbox
+     ret
+ 
+ .drought
+     ld a, WEATHER_SUN
+     ld [wBattleWeather], a
+     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
+     ld [wWeatherCount], a
+-    farcall HandleWeather.weather_ability_skip
++    farcall BattleWeatherAbilitySkip
+     xcall Ability_RecalculateStatsForWeather
+     ld hl, AbilityText_SunRaysIntensified
+     call StdAbilityTextbox
+     ret
+ 
+ .sand_stream
+     ld a, WEATHER_SANDSTORM
+     ld [wBattleWeather], a
+     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
+     ld [wWeatherCount], a
+-    farcall HandleWeather.weather_ability_skip
++    farcall BattleWeatherAbilitySkip
+     xcall Ability_RecalculateStatsForWeather
+     ld hl, AbilityText_WhippedUpASandStorm
+     call StdAbilityTextbox
+     ret
+ 
+ .snow_warning
+     ld a, WEATHER_HAIL
+     ld [wBattleWeather], a
+     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
+     ld [wWeatherCount], a
+-    farcall HandleWeather.weather_ability_skip
++    farcall BattleWeatherAbilitySkip
+     xcall Ability_RecalculateStatsForWeather
+     ld hl, AbilityText_WhippedUpAHailStorm
+     call StdAbilityTextbox
+     ret
+ 
++.electric_surge
++    ld a, TERRAIN_ELECTRIC
++    call .SetTerrain
++    ld hl, AbilityText_ElectricSurge
++    call StdAbilityTextbox
++    ret
++
++.psychic_surge
++    ld a, TERRAIN_PSYCHIC
++    call .SetTerrain
++    ld hl, AbilityText_PsychicSurge
++    call StdAbilityTextbox
++    ret
++
++.misty_surge
++    ld a, TERRAIN_MISTY
++    call .SetTerrain
++    ld hl, AbilityText_MistySurge
++    call StdAbilityTextbox
++    ret
++
++.grassy_surge
++    ld a, TERRAIN_GRASSY
++    call .SetTerrain
++    ld hl, AbilityText_GrassySurge
++    call StdAbilityTextbox
++    ret
++
+ .pressure
+     ld hl, AbilityText_ExertingPressure
+     call StdAbilityTextbox
+     ret
+ 
+ .intimidate
+     call Ability_LoadOppSpeciesAndPersonality
+     call GetAbility
+     ld c, a
+     cp WHITE_SMOKE
+     jr z, .blocked_intimidate
+     cp HYPER_CUTTER
+     jr z, .blocked_intimidate
+     cp CLEAR_BODY
+     jr z, .blocked_intimidate
+     cp OBLIVIOUS
+     jr z, .blocked_intimidate
+     cp OWN_TEMPO
+     jr z, .blocked_intimidate
+     ; We're still here? Push forward!
+     ; Known bug: it does briefly flash the HP bar
+     farcall BattleCommand_StatDownAnim.intimidate_skip
+     farcall BattleCommand_AttackDown
+     ; Finally, print this
+     ld hl, AbilityText_IntimidateCutsAttack
+@@ -127,50 +163,57 @@ Check_Entrance_Ability:
+     jr .got_species
+ .enemy
+     ld a, [wBattleMonSpecies]
+     ld [wTempBattleMonSpecies], a
+ .got_species
+     ld hl, TRANSFORM
+     call GetMoveIDFromIndex
+     ld b, a
+     ld a, BATTLE_VARS_MOVE_ANIM
+     call GetBattleVarAddr
+     ld [hl], b
+     push hl
+     farcall BattleCommand_Transform
+     pop hl
+     xor a
+     ld [hl], a
+     ret
+ 
+ ; At this point, we say "Hey, this blocked that!"
+ .blocked_intimidate
+     call Ability_LoadAbilityName
+     ld hl, AbilityText_IntimidateBlocked
+     call StdAbilityTextbox
+     ret
+ 
++.SetTerrain
++    ld [wBattleTerrain], a
++    ld a, 5
++    ld [wTerrainCount], a
++    call Ability_RecalculateStatsForTerrain
++    ret
++
+ .trace
+     ; First sort out if the enemy's ability is also still TRACE, and do nothing otherwise.
+     call Ability_LoadOppSpeciesAndPersonality
+     call GetAbility
+     cp TRACE
+     jr z, .cannot_trace ; In Gen III, you could not trace a traced ability... or Trace, for that matter. 
+     
+     push af
+     ld a, b
+     and a
+     pop af
+     ld [wBattleMonTracedAbility], a
+     jr z, .print_traced
+     push af
+     ld a, TRACE
+     ld [wBattleMonTracedAbility], a ; Reset this
+     pop af
+     ld [wEnemyMonTracedAbility], a
+ .print_traced
+     call Ability_LoadAbilityName
+     ld a, b
+     and a
+     ld hl, AbilityText_TracedTheAbilityPlayer
+     jr z, .call_text
+     ld hl, AbilityText_TracedTheAbilityEnemy

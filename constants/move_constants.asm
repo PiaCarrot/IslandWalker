@@ -475,14 +475,18 @@ DEF GEN3_MOVES EQU const_value - 1
         const SHADOW_FORCE
 DEF GEN4_MOVES EQU const_value - 1
         const WORK_UP
-       const DAZZLING_GLEAM
+        const DAZZLING_GLEAM
 DEF DAZZLINGGLEAM EQU DAZZLING_GLEAM
         const LOW_SWEEP
         const VOLT_SWITCH
         const SCALD
         const SNARL
         const BULLDOZE
-DEF GEN5_MOVES EQU const_value - 1
+        const GRASSY_TERRAIN
+        const MISTY_TERRAIN
+        const ELECTRIC_TERRAIN
+        const PSYCHIC_TERRAIN
+DEF OTHER_MOVES EQU const_value - 1
 DEF NUM_ATTACKS EQU const_value - 1
 
 DEF CANNOT_MOVE EQU $ff

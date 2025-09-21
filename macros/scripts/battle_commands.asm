@@ -145,10 +145,14 @@ ENDM
 	command moveanim                ; 8a
 	command tristatuschance         ; 8b
 	command supereffectivelooptext  ; 8c
+DEF EFFECT_COMMANDS_1 EQU const_value - 1
 	command startloop               ; 8d
 	command starthail               ; 8e
-DEF EFFECT_COMMANDS_1 EQU const_value - 1
-	command doubleminimizedamage    ; 8f
+	command startgrassyterrain      ; 8f
+	command startmistyterrain       ; 90
+	command startelectricterrain    ; 91
+	command startpsychicterrain     ; 92
+	command doubleminimizedamage    ; 93
 	command doubleflyingdamage      ; 90
 	command doubleundergrounddamage ; 91
 	command skipsuncharge           ; 92

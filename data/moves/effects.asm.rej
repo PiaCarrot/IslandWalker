@@ -1,0 +1,107 @@
+--- data/moves/effects.asm
++++ data/moves/effects.asm
+@@ -1782,65 +1782,93 @@ Moonlight:
+ 	doturn
+ 	healnite
+ 	endmove
+ 
+ HiddenPower:
+ 	checkobedience
+ 	usedmovetext
+ 	doturn
+ 	critical
+ 	hiddenpower
+ 	damagecalc
+ 	stab
+ 	damagevariation
+ 	checkhit
+ 	moveanim
+ 	failuretext
+ 	applydamage
+ 	criticaltext
+ 	supereffectivetext
+ 	checkfaint
+ 	buildopponentrage
+ 	kingsrock
+ 	endmove
+ 
+ RainDance:
+-	checkobedience
+-	usedmovetext
+-	doturn
+-	startrain
+-	endmove
++        checkobedience
++        usedmovetext
++        doturn
++        startrain
++        endmove
+ 
+ SunnyDay:
+-	checkobedience
+-	usedmovetext
+-	doturn
+-	startsun
+-	endmove
++        checkobedience
++        usedmovetext
++        doturn
++        startsun
++        endmove
++
++GrassyTerrain:
++        checkobedience
++        usedmovetext
++        doturn
++        startgrassyterrain
++        endmove
++
++MistyTerrain:
++        checkobedience
++        usedmovetext
++        doturn
++        startmistyterrain
++        endmove
++
++ElectricTerrain:
++        checkobedience
++        usedmovetext
++        doturn
++        startelectricterrain
++        endmove
++
++PsychicTerrain:
++        checkobedience
++        usedmovetext
++        doturn
++        startpsychicterrain
++        endmove
+ 
+ FakeOut:
+-	checkobedience
++        checkobedience
+ 	usedmovetext
+ 	doturn
+ 	checkhit
+ 	fakeout
+ 	moveanim
+ 	failuretext
+ 	endmove
+ 
+ BellyDrum:
+ 	checkobedience
+ 	usedmovetext
+ 	doturn
+ 	bellydrum
+ 	endmove
+ 
+ PsychUp:
+ 	checkobedience
+ 	usedmovetext
+ 	doturn
+ 	psychup
+ 	endmove
+ 
+ MirrorCoat:
+ 	checkobedience
+ 	usedmovetext

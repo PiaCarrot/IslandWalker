@@ -136,10 +136,14 @@ MoveEffectsPointers:
 	dw MorningSun
 	dw Synthesis
 	dw Moonlight
-	dw HiddenPower
-	dw RainDance
-	dw SunnyDay
-	dw DefenseUpHit
+        dw HiddenPower
+        dw RainDance
+        dw SunnyDay
+        dw GrassyTerrain
+        dw MistyTerrain
+        dw ElectricTerrain
+        dw PsychicTerrain
+        dw DefenseUpHit
 	dw AttackUpHit
 	dw AllUpHit
 	dw FakeOut

@@ -340,6 +340,9 @@ wEnemyMonNickname::  ds MON_NAME_LENGTH
 wBattleMonNickname:: ds MON_NAME_LENGTH
 
 wBattleMon:: battle_struct wBattleMon
+wBattleMonOriginalType1:: db
+wBattleMonOriginalType2:: db
+wBattleMonMimicryActive:: db
 
 ; Traced abilities get stored.
 wEnemyMonTracedAbility:: db
@@ -558,11 +561,23 @@ wBattleWeather::
 ; 04 rain stopped
 ; 05 sunliight faded
 ; 06 sandstorm subsided
-	db
+        db
 
 wWeatherCount::
 ; # turns remaining
-	db
+        db
+
+wBattleTerrain::
+; 00 none
+; 01 grassy
+; 02 misty
+; 03 electric
+; 04 psychic
+        db
+
+wTerrainCount::
+; # turns remaining
+        db
 
 wLoweredStat:: db
 wEffectFailed:: db
@@ -2429,6 +2444,9 @@ UNION
 wOTLinkBattleRNData:: ds SERIAL_RN_PREAMBLE_LENGTH + SERIAL_RNS_LENGTH
 NEXTU
 wEnemyMon:: battle_struct wEnemyMon
+wEnemyMonOriginalType1:: db
+wEnemyMonOriginalType2:: db
+wEnemyMonMimicryActive:: db
 wEnemyMonBaseStats:: ds NUM_EXP_STATS
 wEnemyMonCatchRate:: db
 wEnemyMonBaseExp::   dw

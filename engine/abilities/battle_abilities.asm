@@ -17,8 +17,16 @@ Check_Entrance_Ability:
     jr z, .sand_stream
     cp SNOW_WARNING
     jr z, .snow_warning
+    cp ELECTRIC_SURGE
+    jmp z, .electric_surge
+    cp PSYCHIC_SURGE
+    jmp z, .psychic_surge
+    cp MISTY_SURGE
+    jmp z, .misty_surge
+    cp GRASSY_SURGE
+    jmp z, .grassy_surge
     cp PRESSURE
-    jr z, .pressure
+    jmp z, .pressure
     cp INTIMIDATE
     jmp z, .intimidate
     cp IMPOSTER
@@ -40,7 +48,7 @@ Check_Entrance_Ability:
     ld [wBattleWeather], a
     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
     ld [wWeatherCount], a
-    farcall HandleWeather.weather_ability_skip
+    farcall BattleWeatherAbilitySkip
     xcall Ability_RecalculateStatsForWeather
     ld hl, AbilityText_MadeItRain
     call StdAbilityTextbox
@@ -51,7 +59,7 @@ Check_Entrance_Ability:
     ld [wBattleWeather], a
     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
     ld [wWeatherCount], a
-    farcall HandleWeather.weather_ability_skip
+    farcall BattleWeatherAbilitySkip
     xcall Ability_RecalculateStatsForWeather
     ld hl, AbilityText_SunRaysIntensified
     call StdAbilityTextbox
@@ -62,7 +70,7 @@ Check_Entrance_Ability:
     ld [wBattleWeather], a
     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
     ld [wWeatherCount], a
-    farcall HandleWeather.weather_ability_skip
+    farcall BattleWeatherAbilitySkip
     xcall Ability_RecalculateStatsForWeather
     ld hl, AbilityText_WhippedUpASandStorm
     call StdAbilityTextbox
@@ -73,9 +81,37 @@ Check_Entrance_Ability:
     ld [wBattleWeather], a
     ld a, 255 ; 8-bit restriction. only 255 turns allowed.
     ld [wWeatherCount], a
-    farcall HandleWeather.weather_ability_skip
+    farcall BattleWeatherAbilitySkip
     xcall Ability_RecalculateStatsForWeather
     ld hl, AbilityText_WhippedUpAHailStorm
+    call StdAbilityTextbox
+    ret
+
+.electric_surge
+    ld a, TERRAIN_ELECTRIC
+    call .SetTerrain
+    ld hl, AbilityText_ElectricSurge
+    call StdAbilityTextbox
+    ret
+
+.psychic_surge
+    ld a, TERRAIN_PSYCHIC
+    call .SetTerrain
+    ld hl, AbilityText_PsychicSurge
+    call StdAbilityTextbox
+    ret
+
+.misty_surge
+    ld a, TERRAIN_MISTY
+    call .SetTerrain
+    ld hl, AbilityText_MistySurge
+    call StdAbilityTextbox
+    ret
+
+.grassy_surge
+    ld a, TERRAIN_GRASSY
+    call .SetTerrain
+    ld hl, AbilityText_GrassySurge
     call StdAbilityTextbox
     ret
 
@@ -147,6 +183,13 @@ Check_Entrance_Ability:
     call Ability_LoadAbilityName
     ld hl, AbilityText_IntimidateBlocked
     call StdAbilityTextbox
+    ret
+
+.SetTerrain
+    ld [wBattleTerrain], a
+    ld a, 5
+    ld [wTerrainCount], a
+    call Ability_RecalculateStatsForTerrain
     ret
 
 .trace

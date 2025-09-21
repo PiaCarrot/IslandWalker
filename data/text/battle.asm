@@ -193,8 +193,75 @@ BattleText_TheSandstormSubsided:
 	line "subsided."
 
 BattleText_TheHailStopped:
-	text "The HAIL stopped."
-	prompt
+        text "The HAIL stopped."
+        prompt
+
+BattleText_GrassyTerrainActive:
+        text "Grassy Terrain"
+        line "is flourishing!"
+        done
+
+BattleText_MistyTerrainActive:
+        text "Misty Terrain"
+        line "wraps the field!"
+        done
+
+BattleText_ElectricTerrainActive:
+        text "Electric Terrain"
+        line "crackles!"
+        done
+
+BattleText_PsychicTerrainActive:
+        text "Psychic Terrain"
+        line "makes things odd!"
+        done
+
+BattleText_GrassyTerrainFaded:
+        text "The Grassy"
+        line "Terrain faded!"
+        prompt
+
+BattleText_MistyTerrainFaded:
+        text "The Misty Terrain"
+        line "faded away!"
+        prompt
+
+BattleText_ElectricTerrainFaded:
+        text "The Electric"
+        line "Terrain faded!"
+        prompt
+
+BattleText_PsychicTerrainFaded:
+        text "The Psychic"
+        line "Terrain faded!"
+        prompt
+
+BattleText_GrassyTerrainHealed:
+        text "Grassy Terrain"
+        line "restored HP!"
+        prompt
+
+BattleText_MistyTerrainBlocked:
+        text "The Misty Terrain"
+        line "shields <TARGET>!"
+        prompt
+
+BattleText_ElectricTerrainBlocked:
+        text "<TARGET>"
+        line "stayed awake from"
+        cont "ELECTRIC TERRAIN!"
+        prompt
+
+BattleText_ElectricTerrainRestBlocked:
+        text "<USER>"
+        line "can't sleep on the"
+        cont "ELECTRIC TERRAIN!"
+        prompt
+
+BattleText_PsychicTerrainBlocked:
+        text "Psychic Terrain"
+        line "blocked the move!"
+        prompt
 
 BattleText_EnemyMonFainted:
 	text "Enemy @"
@@ -209,9 +276,33 @@ ItStartedToHailText:
 	prompt
 
 PeltedByHailText:
-	text "<USER>"
-	line "is pelted by HAIL!"
-	prompt
+        text "<USER>"
+        line "is pelted by HAIL!"
+        prompt
+
+GrassyTerrainText:
+        text "<USER>"
+        line "spread GRASSY"
+        cont "TERRAIN!"
+        prompt
+
+MistyTerrainText:
+        text "<USER>"
+        line "called forth"
+        cont "MISTY TERRAIN!"
+        prompt
+
+ElectricTerrainText:
+        text "<USER>"
+        line "set ELECTRIC"
+        cont "TERRAIN!"
+        prompt
+
+PsychicTerrainText:
+        text "<USER>"
+        line "twisted space with"
+        cont "PSYCHIC TERRAIN!"
+        prompt
 
 GotMoneyForWinningText:
 	text "<PLAYER> got ¥@"

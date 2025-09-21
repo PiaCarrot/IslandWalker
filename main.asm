@@ -170,8 +170,19 @@ INCLUDE "engine/battle/read_trainer_party.asm"
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"
-INCLUDE "data/battle/effect_command_pointers.asm"
 
+
+SECTION "Battle Terrain", ROMX
+
+INCLUDE "engine/battle/terrain.asm"
+
+SECTION "Battle Weather", ROMX
+
+INCLUDE "engine/battle/weather.asm"
+
+SECTION "Battle Command Pointers", ROMX
+
+INCLUDE "data/battle/effect_command_pointers.asm"
 
 SECTION "bank10", ROMX
 

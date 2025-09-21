@@ -1,3 +1,15 @@
+BattleCommand_StartLoop:
+	ld hl, wPlayerRolloutCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyRolloutCount
+.ok
+	xor a
+	ld [hl], a
+	ret
+
+
 BattleCommand_DoubleMinimizeDamage:
 	ld hl, wEnemyMinimized
 	ldh a, [hBattleTurn]
@@ -319,6 +331,18 @@ INCLUDE "engine/battle/move_effects/disable.asm"
 INCLUDE "engine/battle/move_effects/bide.asm"
 
 INCLUDE "engine/battle/move_effects/spite.asm"
+
+INCLUDE "engine/battle/move_effects/terrain.asm"
+
+INCLUDE "engine/battle/move_effects/hail.asm"
+
+INCLUDE "engine/battle/move_effects/hidden_power.asm"
+
+INCLUDE "engine/battle/move_effects/belly_drum.asm"
+
+INCLUDE "engine/battle/move_effects/psych_up.asm"
+
+INCLUDE "engine/battle/move_effects/future_sight.asm"
 
 INCLUDE "engine/battle/move_effects/conversion.asm"
 
