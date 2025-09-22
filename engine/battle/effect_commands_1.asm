@@ -5977,15 +5977,15 @@ CalcPlayerStats:
 
 	farcall BadgeStatBoosts
 
-	call BattleCommand_SwitchTurn
+	ldh a, [hBattleTurn]
+	push af
 
-        farcall ApplyPrzEffectOnSpeed
+        farcall ApplyStatusEffectOnPlayerStats
 
-        farcall ApplyBrnEffectOnAttack
+        pop af
+        ldh [hBattleTurn], a
 
-        farcall ApplyStatusAbilityBoosts
-
-        jmp BattleCommand_SwitchTurn
+        ret
 
 CalcEnemyStats:
 	ld hl, wEnemyAtkLevel
@@ -5995,15 +5995,15 @@ CalcEnemyStats:
 	ld a, NUM_BATTLE_STATS
 	call CalcBattleStats
 
-	call BattleCommand_SwitchTurn
+	ldh a, [hBattleTurn]
+	push af
 
-        farcall ApplyPrzEffectOnSpeed
+        farcall ApplyStatusEffectOnEnemyStats
 
-        farcall ApplyBrnEffectOnAttack
+        pop af
+        ldh [hBattleTurn], a
 
-        farcall ApplyStatusAbilityBoosts
-
-        jmp BattleCommand_SwitchTurn
+        ret
 
 CalcBattleStats:
 .loop
