@@ -456,44 +456,44 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, STUNFISK_GALAR                   ; 20%
-	dbw 13, STUNFISK_GALAR                  ; 20%
-	dbw 14, STUNFISK_GALAR                   ; 10%
-	dbw 14, STUNFISK_GALAR                  ; 10%
-	dbw 15, STUNFISK_GALAR                   ; 10%
-	dbw 15, STUNFISK_GALAR                  ; 10%
-	dbw 14, STUNFISK_GALAR                ;  5%
-	dbw 15, STUNFISK_GALAR                ;  5%
-	dbw 15, STUNFISK_GALAR                 ;  4%
-	dbw 15, STUNFISK_GALAR                   ;  4%
-	dbw 16, STUNFISK_GALAR                 ;  1%
-	dbw 16, STUNFISK_GALAR                   ;  1%
+	dbw 13, BISHARP                   ; 20%
+	dbw 13, BISHARP                  ; 20%
+	dbw 14, BISHARP                   ; 10%
+	dbw 14, BISHARP                  ; 10%
+	dbw 15, BISHARP                   ; 10%
+	dbw 15, BISHARP                  ; 10%
+	dbw 14, BISHARP                ;  5%
+	dbw 15, BISHARP                ;  5%
+	dbw 15, BISHARP                 ;  4%
+	dbw 15, BISHARP                   ;  4%
+	dbw 16, BISHARP                 ;  1%
+	dbw 16, BISHARP                   ;  1%
 	; day
-	dbw 13, STUNFISK_GALAR                   ; 20%
-	dbw 13, STUNFISK_GALAR                  ; 20%
-	dbw 14, STUNFISK_GALAR                   ; 10%
-	dbw 14, STUNFISK_GALAR                  ; 10%
-	dbw 15, STUNFISK_GALAR                   ; 10%
-	dbw 15, STUNFISK_GALAR                  ; 10%
-	dbw 14, STUNFISK_GALAR                ;  5%
-	dbw 15, STUNFISK_GALAR                ;  5%
-	dbw 15, STUNFISK_GALAR                 ;  4%
-	dbw 15, STUNFISK_GALAR                   ;  4%
-	dbw 16, STUNFISK_GALAR                 ;  1%
-	dbw 16, STUNFISK_GALAR                   ;  1%
+	dbw 13, BISHARP                   ; 20%
+	dbw 13, BISHARP                  ; 20%
+	dbw 14, BISHARP                   ; 10%
+	dbw 14, BISHARP                  ; 10%
+	dbw 15, BISHARP                   ; 10%
+	dbw 15, BISHARP                  ; 10%
+	dbw 14, BISHARP                ;  5%
+	dbw 15, BISHARP                ;  5%
+	dbw 15, BISHARP                 ;  4%
+	dbw 15, BISHARP                   ;  4%
+	dbw 16, BISHARP                 ;  1%
+	dbw 16, BISHARP                   ;  1%
 	; nite
-	dbw 13, STUNFISK_GALAR                   ; 20%
-	dbw 13, STUNFISK_GALAR                  ; 20%
-	dbw 14, STUNFISK_GALAR                   ; 10%
-	dbw 14, STUNFISK_GALAR                  ; 10%
-	dbw 15, STUNFISK_GALAR                   ; 10%
-	dbw 15, STUNFISK_GALAR                  ; 10%
-	dbw 14, STUNFISK_GALAR                ;  5%
-	dbw 15, STUNFISK_GALAR                ;  5%
-	dbw 15, STUNFISK_GALAR                 ;  4%
-	dbw 15, STUNFISK_GALAR                   ;  4%
-	dbw 16, STUNFISK_GALAR                 ;  1%
-	dbw 16, STUNFISK_GALAR                   ;  1%
+	dbw 13, BISHARP                   ; 20%
+	dbw 13, BISHARP                  ; 20%
+	dbw 14, BISHARP                   ; 10%
+	dbw 14, BISHARP                  ; 10%
+	dbw 15, BISHARP                   ; 10%
+	dbw 15, BISHARP                  ; 10%
+	dbw 14, BISHARP                ;  5%
+	dbw 15, BISHARP                ;  5%
+	dbw 15, BISHARP                 ;  4%
+	dbw 15, BISHARP                   ;  4%
+	dbw 16, BISHARP                 ;  1%
+	dbw 16, BISHARP                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54
