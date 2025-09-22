@@ -1952,6 +1952,7 @@ PawniardEvosAttacks:
         dbw 60, GUILLOTINE
         db 0 ; no more level-up moves
 BisharpEvosAttacks:
+        dbbw EVOLVE_ITEM, LEADER_CREST, KINGAMBIT
         db 0 ; no more evolutions
         dbw 1, METAL_CLAW
         dbw 1, SCRATCH
