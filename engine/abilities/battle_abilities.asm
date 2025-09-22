@@ -710,6 +710,34 @@ ApplyFlashFireBoost:
     ld [wCurDamage + 1], a
     ret
 
+; Steelworker and Steely Spirit boost the power of Steel-type moves.
+ApplySteelworkerBoost:
+    call GetAbility
+    call Ability_LoadTracedAbility
+    cp STEELWORKER
+    jr z, .boost
+    cp STEELY_SPIRIT
+    ret nz
+.boost
+    ld a, [wCurType]
+    and TYPE_MASK
+    cp STEEL
+    ret nz
+    ld hl, wCurDamage + 1
+    ld a, [hld]
+    ld h, [hl]
+    ld l, a
+    ld b, h
+    ld c, l
+    srl b
+    rr c
+    add hl, bc
+    ld a, h
+    ld [wCurDamage], a
+    ld a, l
+    ld [wCurDamage + 1], a
+    ret
+
 ; Rivalry increases damage against same-gender foes and decreases it
 ; against opposite-gender foes. Genderless Pokémon are unaffected.
 ApplyRivalryDamageModifier:
