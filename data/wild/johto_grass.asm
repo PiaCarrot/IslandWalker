@@ -482,18 +482,18 @@ JohtoGrassWildMons:
 	dbw 16, BISHARP                 ;  1%
 	dbw 16, BISHARP                   ;  1%
 	; nite
-	dbw 13, BISHARP                   ; 20%
-	dbw 13, BISHARP                  ; 20%
-	dbw 14, BISHARP                   ; 10%
-	dbw 14, BISHARP                  ; 10%
-	dbw 15, BISHARP                   ; 10%
-	dbw 15, BISHARP                  ; 10%
-	dbw 14, BISHARP                ;  5%
-	dbw 15, BISHARP                ;  5%
-	dbw 15, BISHARP                 ;  4%
-	dbw 15, BISHARP                   ;  4%
-	dbw 16, BISHARP                 ;  1%
-	dbw 16, BISHARP                   ;  1%
+	dbw 13, ONIX_CRYSTAL                   ; 20%
+	dbw 13, ONIX_CRYSTAL                  ; 20%
+	dbw 14, ONIX_CRYSTAL                   ; 10%
+	dbw 14, ONIX_CRYSTAL                  ; 10%
+	dbw 15, BUTTERFREE_VALENCIA                   ; 10%
+	dbw 15, BUTTERFREE_VALENCIA                  ; 10%
+	dbw 14, BUTTERFREE_VALENCIA                ;  5%
+	dbw 15, BUTTERFREE_VALENCIA                ;  5%
+	dbw 15, BELLSPROUT_VALENCIA                 ;  4%
+	dbw 15, WEEPINBELL_VALENCIA                   ;  4%
+	dbw 16, BELLSPROUT_VALENCIA                 ;  1%
+	dbw 16, WEEPINBELL_VALENCIA                   ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54
