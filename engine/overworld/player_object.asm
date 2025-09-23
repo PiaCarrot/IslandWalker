@@ -183,109 +183,102 @@ CopyMapObjectToObjectStruct:
 	call GetSpriteVTile
 	ld [wTempObjectCopySpriteVTile], a
 
-        ld a, [hl]
-        call GetSpritePalette
-        ld [wTempObjectCopyPalette], a
+	ld a, [hl]
+	call GetSpritePalette
+	ld [wTempObjectCopyPalette], a
 
-        ld hl, MAPOBJECT_PALETTE
-        add hl, bc
-        ld a, [hl]
-        and a
-        jr z, .skip_color_override
-        dec a
-        ld [wTempObjectCopyPalette], a
+	ld hl, MAPOBJECT_PALETTE
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .skip_color_override
+	dec a
+	ld [wTempObjectCopyPalette], a
 
 .skip_color_override
-        ld hl, MAPOBJECT_POKEMON
-        add hl, bc
-        ld a, [hli]
-        ld [wTempObjectCopyPokemon], a
-        ld a, [hl]
-        ld [wTempObjectCopyPokemonForm], a
+	ld hl, MAPOBJECT_MOVEMENT
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopyMovement], a
 
-        ld hl, MAPOBJECT_MOVEMENT
-        add hl, bc
-        ld a, [hl]
-        ld [wTempObjectCopyMovement], a
+	ld hl, MAPOBJECT_SIGHT_RANGE
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopyRange], a
 
-        ld hl, MAPOBJECT_SIGHT_RANGE
-        add hl, bc
-        ld a, [hl]
-        ld [wTempObjectCopyRange], a
+	ld hl, MAPOBJECT_X_COORD
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopyX], a
 
-        ld hl, MAPOBJECT_X_COORD
-        add hl, bc
-        ld a, [hl]
-        ld [wTempObjectCopyX], a
+	ld hl, MAPOBJECT_Y_COORD
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopyY], a
 
-        ld hl, MAPOBJECT_Y_COORD
-        add hl, bc
-        ld a, [hl]
-        ld [wTempObjectCopyY], a
-
-        ld hl, MAPOBJECT_RADIUS
-        add hl, bc
-        ld a, [hl]
-        ld [wTempObjectCopyRadius], a
-        ret
+	ld hl, MAPOBJECT_RADIUS
+	add hl, bc
+	ld a, [hl]
+	ld [wTempObjectCopyRadius], a
+	ret
 
 InitializeVisibleSprites:
-        ld bc, wMap1Object
-        ld a, 1
+	ld bc, wMap1Object
+	ld a, 1
 .loop
-        ldh [hMapObjectIndex], a
-        ld hl, MAPOBJECT_SPRITE
-        add hl, bc
-        ld a, [hl]
-        and a
-        jr z, .next
+	ldh [hMapObjectIndex], a
+	ld hl, MAPOBJECT_SPRITE
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .next
 
-        ld hl, MAPOBJECT_OBJECT_STRUCT_ID
-        add hl, bc
-        ld a, [hl]
-        cp -1
-        jr nz, .next
+	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
+	add hl, bc
+	ld a, [hl]
+	cp -1
+	jr nz, .next
 
-        ld a, [wXCoord]
-        ld d, a
-        ld a, [wYCoord]
-        ld e, a
+	ld a, [wXCoord]
+	ld d, a
+	ld a, [wYCoord]
+	ld e, a
 
-        ld hl, MAPOBJECT_X_COORD
-        add hl, bc
-        ld a, [hl]
-        inc a
-        sub d
-        jr c, .next
+	ld hl, MAPOBJECT_X_COORD
+	add hl, bc
+	ld a, [hl]
+	inc a
+	sub d
+	jr c, .next
 
-        cp MAPOBJECT_SCREEN_WIDTH
-        jr nc, .next
+	cp MAPOBJECT_SCREEN_WIDTH
+	jr nc, .next
 
-        ld hl, MAPOBJECT_Y_COORD
-        add hl, bc
-        ld a, [hl]
-        inc a
-        sub e
-        jr c, .next
+	ld hl, MAPOBJECT_Y_COORD
+	add hl, bc
+	ld a, [hl]
+	inc a
+	sub e
+	jr c, .next
 
-        cp MAPOBJECT_SCREEN_HEIGHT
-        jr nc, .next
+	cp MAPOBJECT_SCREEN_HEIGHT
+	jr nc, .next
 
-        push bc
-        call CopyObjectStruct
-        pop bc
-        ret c
+	push bc
+	call CopyObjectStruct
+	pop bc
+	ret c
 
 .next
-        ld hl, MAPOBJECT_LENGTH
-        add hl, bc
-        ld b, h
-        ld c, l
-        ldh a, [hMapObjectIndex]
-        inc a
-        cp NUM_OBJECTS
-jr nz, .loop
-ret
+	ld hl, MAPOBJECT_LENGTH
+	add hl, bc
+	ld b, h
+	ld c, l
+	ldh a, [hMapObjectIndex]
+	inc a
+	cp NUM_OBJECTS
+	jr nz, .loop
+	ret
 
 CheckObjectEnteringVisibleRange::
 	ld a, [wPlayerStepDirection]
@@ -453,24 +446,14 @@ CopyTempObjectToObjectStruct:
 	ld a, [wTempObjectCopyRadius]
 	call .InitRadius
 
-        ld a, [wTempObjectCopyRange]
-        ld hl, OBJECT_RANGE
-        add hl, de
-        ld [hl], a
+	ld a, [wTempObjectCopyRange]
+	ld hl, OBJECT_RANGE
+	add hl, de
+	ld [hl], a
 
-        ld a, [wTempObjectCopyPokemon]
-        ld hl, OBJECT_POKEMON
-        add hl, de
-        ld [hl], a
-
-        ld a, [wTempObjectCopyPokemonForm]
-        ld hl, OBJECT_POKEMON_FORM
-        add hl, de
-        ld [hl], a
-
-        farcall CheckForUsedObjPals
-        and a
-        ret
+	farcall CheckForUsedObjPals
+	and a
+	ret
 
 .InitYCoord:
 	ld hl, OBJECT_INIT_Y

@@ -177,129 +177,71 @@ GetSprite::
 GetMonSprite:
 ; Return carry if a monster sprite was loaded.
 
-        cp SPRITE_MON_ICON
-        jr z, .Icon
-        cp SPRITE_DAY_CARE_MON_1
-        jr z, .BreedMon1
-        cp SPRITE_DAY_CARE_MON_2
-        jr z, .BreedMon2
-        cp SPRITE_VARS
-        jr nc, .Variable
-        and a
-        ret
+	cp SPRITE_POKEMON
+	jr c, .Normal
+	cp SPRITE_DAY_CARE_MON_1
+	jr z, .BreedMon1
+	cp SPRITE_DAY_CARE_MON_2
+	jr z, .BreedMon2
+	cp SPRITE_VARS
+	jr nc, .Variable
+	jr .Icon
+
+.Normal:
+	and a
+	ret
 
 .Icon:
-        call .GetObjectSpecies
-        ld a, h
-        or l
-        jr z, .NoBreedmon
-        call GetPokemonIDFromIndex
-        jr .Mon
+	sub SPRITE_POKEMON
+	ld e, a
+	ld d, 0
+	ld hl, SpriteMons
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call GetPokemonIDFromIndex
+	jr .Mon
 
 .BreedMon1
-        ld a, [wBreedMon1Species]
-        jr .Mon
+	ld a, [wBreedMon1Species]
+	jr .Mon
 
 .BreedMon2
-        ld a, [wBreedMon2Species]
+	ld a, [wBreedMon2Species]
 
 .Mon:
-        ld e, a
-        and a
-        jr z, .NoBreedmon
+	ld e, a
+	and a
+	jr z, .NoBreedmon
 
-        farcall LoadOverworldMonIcon
+	farcall LoadOverworldMonIcon
 
-        lb hl, 0, WALKING_SPRITE
-        scf
-        ret
+	lb hl, 0, WALKING_SPRITE
+	scf
+	ret
 
 .Variable:
-        xor a
-        ld [wVariableMonSpeciesLo], a
-        ld [wVariableMonSpeciesHi], a
-        sub SPRITE_VARS
-        ld c, a
-        ld b, 0
-        ld hl, wVariableSprites
-        ld a, VARIABLE_SPRITE_LENGTH
-        rst AddNTimes
-        ld a, [hli]
-        ld b, a
-        ld a, [hli]
-        ld [wVariableMonSpeciesLo], a
-        ld a, [hl]
-        ld [wVariableMonSpeciesHi], a
-        ld a, b
-        and a
-        jr z, .NoBreedmon
-        jr GetMonSprite
+	sub SPRITE_VARS
+	ld e, a
+	ld d, 0
+	ld hl, wVariableSprites
+	add hl, de
+	ld a, [hl]
+	and a
+	jr nz, GetMonSprite
 
 .NoBreedmon:
-        ld a, WALKING_SPRITE
-        lb hl, 0, WALKING_SPRITE
-        and a
-        ret
-
-
-.GetObjectSpecies:
-        ld a, [wVariableMonSpeciesLo]
-        ld l, a
-        ld a, [wVariableMonSpeciesHi]
-        ld h, a
-        ld a, h
-        or l
-        jr z, .check_object_struct
-        xor a
-        ld [wVariableMonSpeciesLo], a
-        ld [wVariableMonSpeciesHi], a
-        ret
-
-.check_object_struct
-        ldh a, [hObjectStructIndex]
-        cp NUM_OBJECT_STRUCTS
-        jr nc, .check_map_object
-        ld c, a
-        ld b, 0
-        ld hl, wObjectStructs + OBJECT_POKEMON
-        ld a, OBJECT_LENGTH
-        rst AddNTimes
-        ld a, [hli]
-        ld l, a
-        ld a, [hl]
-        ld h, a
-        ld a, h
-        or l
-        jr nz, .done
-
-.check_map_object
-        ldh a, [hMapObjectIndex]
-        cp NUM_OBJECTS
-        jr nc, .zero
-        ld c, a
-        ld b, 0
-        ld hl, wMapObjects + MAPOBJECT_POKEMON
-        ld a, MAPOBJECT_LENGTH
-        rst AddNTimes
-        ld a, [hli]
-        ld l, a
-        ld a, [hl]
-        ld h, a
-        ret
-
-.zero
-        xor a
-        ld l, a
-        ld h, a
-        ret
-
-.done
-        ret
+	ld a, WALKING_SPRITE
+	lb hl, 0, WALKING_SPRITE
+	and a
+	ret
 
 _DoesSpriteHaveFacings::
 ; Checks to see whether we can apply a facing to a sprite.
 ; Returns carry unless the sprite is a Pokemon or a Still Sprite.
-        cp SPRITE_MON_ICON
+	cp SPRITE_POKEMON
 	jr nc, .only_down
 
 	push hl
@@ -532,5 +474,6 @@ LoadEmote::
 
 INCLUDE "data/sprites/emotes.asm"
 
+INCLUDE "data/sprites/sprite_mons.asm"
 
 INCLUDE "data/sprites/sprites.asm"

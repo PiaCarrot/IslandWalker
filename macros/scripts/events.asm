@@ -698,19 +698,9 @@ ENDM
 
 	const variablesprite_command ; $6d
 MACRO variablesprite
-        db variablesprite_command
-        db \1 - SPRITE_VARS ; byte
-        db \2 ; sprite
-        if _NARG >= 3
-                db LOW(\3)
-                if _NARG >= 4
-                        db \4
-                else
-                        db HIGH(\3)
-                endc
-        else
-                db 0, 0
-        endc
+	db variablesprite_command
+	db \1 - SPRITE_VARS ; byte
+	db \2 ; sprite
 ENDM
 
 	const disappear_command ; $6e

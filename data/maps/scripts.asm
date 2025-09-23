@@ -137,7 +137,6 @@ INCLUDE "maps/GlassBlowersHouse1.asm"
 INCLUDE "maps/GlassBlowersHouse2.asm"
 INCLUDE "maps/CrystalCave1F.asm"
 INCLUDE "maps/CrystalCaveB1F.asm"
-INCLUDE "maps/CrystalCaveGate.asm"
 INCLUDE "maps/CurioShop.asm"
 INCLUDE "maps/SunburstHouse.asm"
 
@@ -151,5 +150,6 @@ INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/ValenciaNeighborHouse.asm"
 INCLUDE "maps/Route49.asm"
 INCLUDE "maps/Route49North.asm"
+INCLUDE "maps/CrystalCaveGate.asm"
 
 ENDSECTION

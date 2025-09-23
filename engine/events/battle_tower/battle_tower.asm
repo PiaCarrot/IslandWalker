@@ -586,24 +586,19 @@ LoadOpponentTrainerAndPokemonWithOTSprite:
 
 ; Load sprite of the opponent trainer
 ; because s/he is chosen randomly and appears out of nowhere
-        ld a, [wScriptVar]
-        ld e, a
-        ld d, 0
-        ldh [hUsedSpriteIndex], a
-        sub SPRITE_VARS
-        ld c, a
-        ld b, 0
-        ld hl, wVariableSprites
-        ld a, VARIABLE_SPRITE_LENGTH
-        rst AddNTimes
-        ld a, [wBTTempOTSprite]
-        ld [hli], a
-        xor a
-        ld [hli], a
-        ld [hl], a
-        farcall ReloadSpriteIndex
-        ld a, [wBTTempOTSprite]
-        call GetSpritePalette
+	ld a, [wScriptVar]
+	ld e, a
+	ld d, 0
+	ldh [hUsedSpriteIndex], a
+	ld hl, wVariableSprites
+	add hl, de
+	ld de, -SPRITE_VARS
+	add hl, de
+	ld a, [wBTTempOTSprite]
+	ld [hl], a
+	farcall ReloadSpriteIndex
+	ld a, [wBTTempOTSprite]
+	call GetSpritePalette
 	ld [wNeededPalIndex], a
 	ld de, wOBPals1 palette 1
 	farjp CopySpritePal

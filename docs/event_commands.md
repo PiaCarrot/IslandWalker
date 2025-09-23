@@ -372,12 +372,7 @@ If <code><i>item_id</i></code> = `USE_SCRIPT_VAR`, then it uses `[wScriptVar]` i
 ## `$6C`: <code>faceobject <i>object1</i>, <i>object2</i></code>
 
 
-## `$6D`: <code>variablesprite <i>variable_sprite_id</i>, <i>sprite_id</i>[, <i>species</i>[, <i>form</i>]]</code>
-
-`species` and `form` are optional. Use them when the sprite is `SPRITE_MON_ICON`
-to specify which Pokémon should be shown. `form` defaults to the high byte of
-`species`, so only pass an explicit value when the Pokémon needs a different
-form index.
+## `$6D`: <code>variablesprite <i>variable_sprite_id</i>, <i>sprite_id</i></code>
 
 
 ## `$6E`: <code>disappear <i>object_id</i></code>

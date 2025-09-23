@@ -122,26 +122,16 @@ MACRO object_event
 ;\<11>: sight range: applies to OBJECTTYPE_TRAINER
 ;\<12>: script pointer
 ;\<13>: event flag: an EVENT_* constant, or -1 to always appear
-        db \3, \2 + 4, \1 + 4, \4
-        dn \6, \5
-        db \9, \8
-        db \<10>
-        db \<11>
-        dw \<12>, \<13>
-        if _NARG >= 14
-                db LOW(\<14>)
-                if _NARG >= 15
-                        db \<15>
-                else
-                        db HIGH(\<14>)
-                endc
-        else
-                db 0, 0
-        endc
-        ; the dummy PlayerObjectTemplate object_event has no def_object_events
-        if DEF(_NUM_OBJECT_EVENTS)
-                DEF {_NUM_OBJECT_EVENTS} += 1
-        endc
+	db \3, \2 + 4, \1 + 4, \4
+	dn \6, \5
+	db \9, \8
+	db \<10>
+	db \<11>
+	dw \<12>, \<13>
+	; the dummy PlayerObjectTemplate object_event has no def_object_events
+	if DEF(_NUM_OBJECT_EVENTS)
+		DEF {_NUM_OBJECT_EVENTS} += 1
+	endc
 ENDM
 
 MACRO trainer
