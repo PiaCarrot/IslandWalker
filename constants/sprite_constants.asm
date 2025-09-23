@@ -169,55 +169,14 @@
 	const SPRITE_BERRY_ETA_1 ; MARANGA/BLUE
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
-; SpriteMons indexes (see data/sprites/sprite_mons.asm)
-DEF SPRITE_POKEMON EQU const_value
-	const SPRITE_UNOWN ; 80
-	const SPRITE_GEODUDE ; 81
-	const SPRITE_GROWLITHE ; 82
-	const SPRITE_WEEDLE ; 83
-	const SPRITE_SHELLDER ; 84
-	const SPRITE_ODDISH ; 85
-	const SPRITE_GENGAR ; 86
-	const SPRITE_MAGIKARP ; 88
-	const SPRITE_SQUIRTLE ; 89
-	const SPRITE_TOGEPI ; 8a
-	const SPRITE_BUTTERFREE ; 8b
-	const SPRITE_DIGLETT ; 8c
-	const SPRITE_POLIWAG ; 8d
-	const SPRITE_PIKACHU ; 8e
-	const SPRITE_CLEFAIRY ; 8f
-	const SPRITE_CHARMANDER ; 90
-	const SPRITE_DROWZEE ; 91
-	const SPRITE_STARMIE ; 92
-	const SPRITE_BULBASAUR ; 93
-	const SPRITE_JIGGLYPUFF ; 94
-	const SPRITE_GRIMER ; 95
-	const SPRITE_EKANS ; 96
-	const SPRITE_PARAS ; 97
-	const SPRITE_TENTACOOL ; 98
-	const SPRITE_MILTANK ; 99
-	const SPRITE_TAUROS ; 99
-	const SPRITE_MACHOP ; 9a
-	const SPRITE_VOLTORB ; 9b
-	const SPRITE_LAPRAS ; 9c
-	const SPRITE_RHYDON ; 9d
-	const SPRITE_MOLTRES ; 9e
-	const SPRITE_SNORLAX ; 9f
-	const SPRITE_GYARADOS ; a0
-	const SPRITE_LUGIA ; a1
-	const SPRITE_HO_OH ; a2
-	const SPRITE_DRATINI ; a3
-	const SPRITE_CHIKORITA ; a4
-	const SPRITE_CYNDAQUIL ; a5
-	const SPRITE_TOTODILE ; a6
-DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
+        const SPRITE_MON_ICON ; 80
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
-	const SPRITE_DAY_CARE_MON_1 ; e0
-	const SPRITE_DAY_CARE_MON_2 ; e1
+        const SPRITE_DAY_CARE_MON_1 ; e0
+        const SPRITE_DAY_CARE_MON_2 ; e1
 
 ; wVariableSprites indexes (see wram.asm)
-	const_next $f0
+        const_next $f0
 DEF SPRITE_VARS EQU const_value
 	const SPRITE_CONSOLE ; f0
 	const SPRITE_DOLL_1 ; f1
@@ -229,6 +188,12 @@ DEF SPRITE_VARS EQU const_value
 	const SPRITE_FUCHSIA_GYM_3 ; f9
 	const SPRITE_FUCHSIA_GYM_4 ; fa
 	const SPRITE_COPYCAT ; fb
-	const SPRITE_JANINE_IMPERSONATOR ; fc
-	const SPRITE_LINK_TRAINER ; fd
-	const SPRITE_BATTLE_TOWER_OPPONENT ; fe
+        const SPRITE_JANINE_IMPERSONATOR ; fc
+        const SPRITE_LINK_TRAINER ; fd
+        const SPRITE_BATTLE_TOWER_OPPONENT ; fe
+
+DEF NUM_VARIABLE_SPRITES EQU SPRITE_BATTLE_TOWER_OPPONENT - SPRITE_VARS + 1
+DEF VARIABLE_SPRITE_LENGTH EQU 3
+DEF VAR_SPRITE_ID EQU 0
+DEF VAR_SPRITE_SPECIES EQU 1
+DEF VAR_SPRITE_FORM EQU 2

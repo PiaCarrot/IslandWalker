@@ -468,13 +468,17 @@ DecorationFlagAction:
 	jmp EventFlagAction
 
 GetDecorationSprite:
-	ld a, c
-	call GetDecorationData
-	ld de, DECOATTR_SPRITE
-	add hl, de
-	ld a, [hl]
-	ld c, a
-	ret
+        ld a, c
+        call GetDecorationData
+        ld de, DECOATTR_SPRITE
+        add hl, de
+        ld a, [hli]
+        ld c, a
+        ld a, [hli]
+        ld b, a
+        ld a, [hl]
+        ld d, a
+        ret
 
 INCLUDE "data/decorations/attributes.asm"
 
@@ -1124,29 +1128,54 @@ SetDecorationTile:
 	ret
 
 ToggleDecorationsVisibility:
-	ld de, EVENT_PLAYERS_HOUSE_2F_CONSOLE
-	ld hl, wVariableSprites + SPRITE_CONSOLE - SPRITE_VARS
-	ld a, [wDecoConsole]
-	call ToggleDecorationVisibility
-	ld de, EVENT_PLAYERS_HOUSE_2F_DOLL_1
-	ld hl, wVariableSprites + SPRITE_DOLL_1 - SPRITE_VARS
-	ld a, [wDecoLeftOrnament]
-	call ToggleDecorationVisibility
-	ld de, EVENT_PLAYERS_HOUSE_2F_DOLL_2
-	ld hl, wVariableSprites + SPRITE_DOLL_2 - SPRITE_VARS
-	ld a, [wDecoRightOrnament]
-	call ToggleDecorationVisibility
-	ld de, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
-	ld hl, wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS
-	ld a, [wDecoBigDoll]
+        ld de, EVENT_PLAYERS_HOUSE_2F_CONSOLE
+        ld hl, wVariableSprites
+        ld a, SPRITE_CONSOLE - SPRITE_VARS
+        ld c, a
+        ld b, 0
+        ld a, VARIABLE_SPRITE_LENGTH
+        rst AddNTimes
+        ld a, [wDecoConsole]
+        call ToggleDecorationVisibility
+        ld de, EVENT_PLAYERS_HOUSE_2F_DOLL_1
+        ld hl, wVariableSprites
+        ld a, SPRITE_DOLL_1 - SPRITE_VARS
+        ld c, a
+        ld b, 0
+        ld a, VARIABLE_SPRITE_LENGTH
+        rst AddNTimes
+        ld a, [wDecoLeftOrnament]
+        call ToggleDecorationVisibility
+        ld de, EVENT_PLAYERS_HOUSE_2F_DOLL_2
+        ld hl, wVariableSprites
+        ld a, SPRITE_DOLL_2 - SPRITE_VARS
+        ld c, a
+        ld b, 0
+        ld a, VARIABLE_SPRITE_LENGTH
+        rst AddNTimes
+        ld a, [wDecoRightOrnament]
+        call ToggleDecorationVisibility
+        ld de, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
+        ld hl, wVariableSprites
+        ld a, SPRITE_BIG_DOLL - SPRITE_VARS
+        ld c, a
+        ld b, 0
+        ld a, VARIABLE_SPRITE_LENGTH
+        rst AddNTimes
+        ld a, [wDecoBigDoll]
 ; fallthrough
 ToggleDecorationVisibility:
 	and a
 	jr z, .hide
 	call _GetDecorationSprite
 	ld [hl], a
+	inc hl
+	ld a, b
+	ld [hli], a
+	ld a, d
+	ld [hl], a
 	ld b, RESET_FLAG
-	jmp EventFlagAction
+        jmp EventFlagAction
 
 .hide
 	ld b, SET_FLAG

@@ -169,7 +169,7 @@ wObjectPriorities:: ds NUM_OBJECT_STRUCTS
 
 NEXTU
 wMovementPointer:: dw
-	ds 3
+		ds 1
 wTempObjectCopyMapObjectIndex:: db
 wTempObjectCopySprite:: db
 wTempObjectCopySpriteVTile:: db
@@ -179,6 +179,8 @@ wTempObjectCopyRange:: db
 wTempObjectCopyX:: db
 wTempObjectCopyY:: db
 wTempObjectCopyRadius:: db
+wTempObjectCopyPokemon:: db
+wTempObjectCopyPokemonForm:: db
 ENDU
 
 	ds 1
@@ -2752,7 +2754,9 @@ endr
 
 wObjectMasks:: ds NUM_OBJECTS
 
-wVariableSprites:: ds $100 - SPRITE_VARS
+wVariableSprites:: ds NUM_VARIABLE_SPRITES * VARIABLE_SPRITE_LENGTH
+wVariableMonSpeciesLo:: db
+wVariableMonSpeciesHi:: db
 
 wMapNameSignFlags:: db
 

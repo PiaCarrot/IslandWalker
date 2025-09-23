@@ -239,25 +239,40 @@ SetFacingWeirdTree:
 	ret
 
 SetFacingBigDollAsym:
-	ld hl, OBJECT_FACING
-	add hl, bc
-	ld [hl], FACING_BIG_DOLL_ASYM
-	ret
+        ld hl, OBJECT_FACING
+        add hl, bc
+        ld [hl], FACING_BIG_DOLL_ASYM
+        ret
 
 SetFacingBigDoll:
-	ld a, [wVariableSprites + SPRITE_BIG_DOLL - SPRITE_VARS]
-	ld d, FACING_BIG_DOLL_SYM ; symmetric
-	cp SPRITE_BIG_SNORLAX
-	jr z, .ok
-	cp SPRITE_BIG_LAPRAS
-	jr z, .ok
-	ld d, FACING_BIG_DOLL_ASYM ; asymmetric
-
-.ok
-	ld hl, OBJECT_FACING
-	add hl, bc
-	ld [hl], d
-	ret
+ld d, FACING_BIG_DOLL_ASYM
+ld hl, wVariableSprites + (SPRITE_BIG_DOLL - SPRITE_VARS) * VARIABLE_SPRITE_LENGTH
+ld a, [hl]
+cp SPRITE_MON_ICON
+jr nz, .store
+inc hl
+ld a, [hli]
+ld e, a
+ld a, [hl]
+cp HIGH(SNORLAX)
+jr nz, .check_lapras
+ld a, e
+cp LOW(SNORLAX)
+jr nz, .store
+ld d, FACING_BIG_DOLL_SYM
+jr .store
+.check_lapras
+cp HIGH(LAPRAS)
+jr nz, .store
+ld a, e
+cp LOW(LAPRAS)
+jr nz, .store
+ld d, FACING_BIG_DOLL_SYM
+.store
+ld hl, OBJECT_FACING
+add hl, bc
+ld [hl], d
+ret
 
 SetFacingBoulderDust:
 	ld hl, OBJECT_STEP_FRAME

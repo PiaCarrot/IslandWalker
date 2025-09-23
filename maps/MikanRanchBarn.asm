@@ -162,7 +162,7 @@ MikanRanchBarn_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, MikanRanchBarnTrough
 
 	def_object_events
-	object_event  3,  1, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnMiltankScript, -1
-	object_event  9,  2, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnMiltankScript, -1
-	object_event  0,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnTaurosScript, -1
+object_event  3,  1, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnMiltankScript, -1, MILTANK
+object_event  9,  2, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnMiltankScript, -1, MILTANK
+object_event  0,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MikanRanchBarnTaurosScript, -1, TAUROS
 	object_event  5,  3, SPRITE_DAISY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MikanRanchMooMooSellerScript, -1

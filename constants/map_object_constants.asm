@@ -34,7 +34,9 @@ DEF OBJECT_1E               rb ; 1e
 DEF OBJECT_JUMP_HEIGHT      rb ; 1f
 DEF OBJECT_RANGE            rb ; 20
 DEF OBJECT_PAL_INDEX        rb ; 21
-                            rb_skip 6
+DEF OBJECT_POKEMON          rb ; 22
+DEF OBJECT_POKEMON_FORM     rb ; 23
+	rb_skip 2
 DEF OBJECT_LENGTH EQU _RS
 DEF NUM_OBJECT_STRUCTS EQU 13 ; see wObjectStructs
 DEF FIRST_VRAM1_OBJECT_STRUCT EQU 8
@@ -93,7 +95,8 @@ DEF MAPOBJECT_TYPE             rb ; 8
 DEF MAPOBJECT_SIGHT_RANGE      rb ; 9
 DEF MAPOBJECT_SCRIPT_POINTER   rw ; a
 DEF MAPOBJECT_EVENT_FLAG       rw ; c
-                               rb_skip 2
+DEF MAPOBJECT_POKEMON          rb ; e
+DEF MAPOBJECT_POKEMON_FORM     rb ; f
 DEF MAPOBJECT_LENGTH EQU _RS
 DEF NUM_OBJECTS EQU 16
 DEF PLAYER_OBJECT EQU 0

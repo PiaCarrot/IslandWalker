@@ -917,15 +917,22 @@ ApplyObjectFacing:
 	ret
 
 Script_variablesprite:
-	rst GetScriptByte
-	ld e, a
-	ld d, 0
-	ldh [hUsedSpriteIndex], a
-	ld hl, wVariableSprites
-	add hl, de
-	rst GetScriptByte
-	ld [hl], a
-	farjp ReloadSpriteIndex
+        rst GetScriptByte
+        ld e, a
+        ld d, 0
+        ldh [hUsedSpriteIndex], a
+        ld hl, wVariableSprites
+        ld c, a
+        ld b, 0
+        ld a, VARIABLE_SPRITE_LENGTH
+        rst AddNTimes
+        rst GetScriptByte
+        ld [hli], a
+        rst GetScriptByte
+        ld [hli], a
+        rst GetScriptByte
+        ld [hl], a
+        farjp ReloadSpriteIndex
 
 Script_appear:
 	rst GetScriptByte
