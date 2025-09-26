@@ -2180,7 +2180,7 @@ Cry_Wingull_Ch5:
 	square_note 8, 11, 2, 1388
 	square_note 12, 4, 2, 1388
 	square_note 4, 9, 2, 1437
-	square_note 16, 11, 1, 1450
+	square_note 16, 11, 2, 1450
         sound_ret
 
 Cry_Wingull_Ch6:
@@ -2190,7 +2190,7 @@ Cry_Wingull_Ch6:
 	square_note 8, 15, 2, 1655
 	square_note 12, 5, 5, 1655
 	square_note 4, 13, 2, 1651
-	square_note 16, 15, 1, 1655
+	square_note 16, 15, 2, 1655
         sound_ret
 
 Cry_Wingull_Ch8:
@@ -3288,6 +3288,85 @@ Cry_Finneon_Ch8:
         noise_note 8, 5, 2, 28
         sound_ret
 
+Cry_Leafeon:
+        channel_count 3
+        channel 5, Cry_Leafeon_Ch5
+        channel 6, Cry_Leafeon_Ch6
+	channel 8, Cry_Leafeon_Ch8
+
+Cry_Leafeon_Ch5:
+	duty_cycle_pattern 1, 1, 1, 0
+	square_note 2, 13, -5, 1600
+	square_note 1, 14, 4, 1726
+	square_note 3, 15, 7, 1894
+	square_note 1, 14, 0, 1890
+	square_note 1, 13, 0, 1886
+	square_note 1, 13, 0, 1882
+	square_note 1, 12, 0, 1877
+	square_note 1, 14, 0, 1877
+	square_note 1, 9, 0, 1873
+	square_note 1, 7, 0, 1869
+	square_note 2, 5, 2, 1862
+	sound_ret
+
+Cry_Leafeon_Ch6:
+	duty_cycle_pattern 0, 0, 1, 0
+	square_note 2, 7, -8, 1798
+	square_note 1, 6, 4, 1798
+	square_note 2, 7, 4, 1858
+	square_note 16, 8, 5, 1860
+	sound_ret
+
+Cry_Leafeon_Ch8:
+.loop1:
+	noise_note 4, 5, 5, 145
+	noise_note 1, 3, 3, 214
+	noise_note 3, 4, 3, 213
+	noise_note 6, 3, 7, 212
+	sound_loop 2, .loop1
+	noise_note 4, 3, 5, 145
+	noise_note 2, 4, 3, 214
+	noise_note 4, 3, 5, 212
+	sound_ret
+
+Cry_Glaceon:
+        channel_count 2
+        channel 5, Cry_Glaceon_Ch5
+        channel 6, Cry_Glaceon_Ch6
+
+Cry_Glaceon_Ch5:
+	duty_cycle_pattern 2, 2, 2, 1
+	square_note 3, 12, -3, 1856
+	square_note 2, 14, 3, 1860
+	square_note 5, 13, -3, 1833
+	square_note 1, 14, -3, 1856
+	square_note 1, 15, 0, 1860
+	square_note 1, 13, 0, 1859
+	square_note 1, 12, 0, 1864
+	square_note 1, 9, 0, 1888
+	square_note 1, 10, 0, 1920
+	square_note 2, 12, 4, 1931
+	pitch_sweep 3, -7	
+	square_note 10, 8, 6, 1931
+	pitch_sweep 8, 8
+	sound_ret
+
+Cry_Glaceon_Ch6:
+	duty_cycle_pattern 0, 0, 2, 2
+	square_note 2, 8, 2, 1924
+	square_note 2, 8, 7, 1966
+	square_note 3, 8, 7, 1958
+	square_note 1, 0, 7, 1930
+	square_note 5, 8, 3, 1930
+	square_note 1, 0, 7, 1930
+	square_note 1, 8, 7, 1924
+	square_note 1, 8, 7, 1940
+	square_note 3, 8, 2, 1958
+	square_note 2, 8, 3, 1957
+	square_note 7, 8, 2, 1946
+	sound_ret
+
+
 Cry_Rotom:
         channel_count 3
         channel 5, Cry_Rotom_Ch5
@@ -3439,20 +3518,42 @@ Cry_Clauncher_Ch6:
         sound_ret
 
 Cry_Sylveon:
-        channel_count 2
+        channel_count 3
         channel 5, Cry_Sylveon_Ch5
-        channel 6, Cry_Sylveon_Ch6
+	channel 6, Cry_Sylveon_Ch6
+        channel 8, Cry_Sylveon_Ch8
 
 Cry_Sylveon_Ch5:
-        duty_cycle_pattern 2, 3, 2, 3
-        square_note 8, 15, 2, 1648
-        square_note 8, 13, 2, 1552
+        duty_cycle_pattern 0, 0, 0, 0
+	pitch_sweep 7, 7
+	square_note 2, 14, -3, 1920
+	pitch_sweep 8, 8
+	square_note 3, 15, 5, 1952
+	pitch_sweep 5, -7
+	square_note 4, 12, 4, 1952
+	pitch_sweep 8, 8
+	square_note 2, 14, 0, 1854
+	square_note 2, 14, 0, 1857
+	pitch_sweep 7, 7
+	square_note 5, 15, -8, 1857
+	pitch_sweep 8, 8	
+	square_note 7, 12, 1, 1933
         sound_ret
 
 Cry_Sylveon_Ch6:
-        duty_cycle_pattern 1, 2, 1, 2
-        square_note 8, 14, 2, 1616
-        square_note 8, 12, 2, 1520
+	duty_cycle_pattern 0, 1, 1, 0
+	square_note 2, 11, -3, 1933
+	square_note 9, 15, 5, 2000
+	square_note 7, 8, 4, 1951
+        sound_ret
+
+Cry_Sylveon_Ch8:
+        noise_note 12, 9, 0, 24
+	noise_note 12, 0, -5, 17
+	noise_note 16, 4, 0, 17
+	noise_note 16, 4, 0, 18
+	noise_note 8, 4, 0, 19
+	noise_note 14, 4, 6, 19
         sound_ret
 
 Cry_Pancham:

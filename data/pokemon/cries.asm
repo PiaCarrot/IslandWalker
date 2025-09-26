@@ -342,8 +342,8 @@ PokemonCries::
 	mon_cry CRY_CHARMANDER,  $710,  $130 ; MAGMORTAR
 	mon_cry CRY_AMPHAROS,    $3ab,  $270 ; TOGEKISS
 	mon_cry CRY_TOTODILE,    $e91,  $168 ; YANMEGA
-	mon_cry CRY_GLIGAR,      $043,  $2a0 ; LEAFEON
-	mon_cry CRY_METAPOD,     $fcf,  $1a0 ; GLACEON
+	mon_cry CRY_LEAFEON,       56,   524 ; LEAFEON
+	mon_cry CRY_GLACEON,       56,   588 ; GLACEON
 	mon_cry CRY_NIDOQUEEN,   $73d,  $1b0 ; GLISCOR
 	mon_cry CRY_TYPHLOSION,  $fa0,  $0d3 ; MAMOSWINE
 	mon_cry CRY_RHYDON,      $050,  $180 ; PORYGON-Z
@@ -362,7 +362,7 @@ PokemonCries::
     	mon_cry CRY_CLEFFA,     -$470,  $290 ; DRAGALGE
 	mon_cry CRY_KRABBY,      $035,  $0ac ; CLAUNCHER Ax6
 	mon_cry CRY_SQUIRTLE,   -$026,  $097 ; CLAWITZER Ax6
-	mon_cry CRY_MARILL,      $0d8,  $300 ; SYLVEON
+	mon_cry CRY_SYLVEON,         0,  664 ; SYLVEON
     	mon_cry CRY_MARILL,       282,   184 ; PANCHAM
     	mon_cry CRY_MARILL,       -282,  412 ; PANGORO
     	mon_cry CRY_GROWLITHE,     232,  112 ; INKAY

@@ -120,6 +120,8 @@
         const CRY_CROAGUNK
         const CRY_CARNIVINE
         const CRY_FINNEON
+	const CRY_LEAFEON
+	const CRY_GLACEON
         const CRY_ROTOM
         const CRY_PHIONE
         const CRY_FERROSEED

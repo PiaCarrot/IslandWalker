@@ -113,6 +113,8 @@ Cries:
         dba Cry_Croagunk
         dba Cry_Carnivine
         dba Cry_Finneon
+	dba Cry_Leafeon
+	dba Cry_Glaceon
         dba Cry_Rotom
         dba Cry_Phione
         dba Cry_Ferroseed
