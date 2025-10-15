@@ -21,4 +21,5 @@ MapScenes::
 	scene_var SUNBURST_ISLAND,              	           wSunburstIslandSceneID
 	scene_var MATEOS_HOUSE,              	               wMateosHouseSceneID
 	scene_var CRYSTAL_CAVE_B1F,              	               wCrystalCaveB1FSceneID
+	scene_var ROUTE_55,              	                   wRoute55SceneID
 	db -1 ; end

@@ -234,6 +234,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	
 	trainerclass LORELEI1 ; 44
 	const LORELEI_1
+	const LORELEI_1_CM
 
 	trainerclass LORELEI2 ; 45
 	const LORELEI_2

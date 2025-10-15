@@ -7,11 +7,23 @@
 	const ROUTE_55_YOUNGSTER_JOSEPH
 	const ROUTE_55_SWIMMERF_LARA
 	const ROUTE_55_SWIMMERF_MINNIE
+	const ROUTE_55_ITEMBALL_3
+	const ROUTE_55_ITEMBALL_4
+	const ROUTE_55_ITEMBALL_5
+	const ROUTE_55_LORELEI
 
 Route55_MapScripts:
 	def_scene_scripts
+	scene_script Route55Noop1Scene, SCENE_ROUTE_55_LOELEI_BATTLE
+	scene_script Route55Noop2Scene, SCENE_ROUTE_55_NOOP
 
 	def_callbacks
+
+Route55Noop1Scene:
+	end
+
+Route55Noop2Scene:
+	end
 	
 Route55SuperPotion:
 	itemball SUPER_POTION
@@ -33,6 +45,120 @@ Route55FruitTree:
 
 Route55FruitTree2:
 	fruittree FRUITTREE_ROUTE_55_2
+	
+Route55LoreleiSceneRight:
+	moveobject ROUTE_55_LORELEI, 15, 12
+	sjump Route55LoreleiScript
+Route55LoreleiSceneLeft:
+	moveobject ROUTE_55_LORELEI, 14, 12
+Route55LoreleiScript:
+	showemote EMOTE_SHOCK, PLAYER, 15
+	special FadeOutMusic
+	pause 15
+	appear ROUTE_55_LORELEI
+	applymovement ROUTE_55_LORELEI, Route55LoreleiWalkUp
+	playmusic MUSIC_FOUR_ISLAND
+	opentext
+	writetext Route55LoreleiText_Seen
+	waitbutton
+	closetext
+	winlosstext Route55LoreleiWinText, 0
+	setlasttalked ROUTE_55_LORELEI
+	checkcm
+	iffalse .LoadLorelei
+	loadtrainer LORELEI1, LORELEI_1_CM
+	lastmonmsg Route55LoreleiLastMonText
+	sjump .StartBattle
+.LoadLorelei
+	loadtrainer LORELEI1, LORELEI_1
+	lastmonmsg Route55LoreleiLastMonText
+.StartBattle
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	playmusic MUSIC_FOUR_ISLAND
+	opentext
+	writetext Route55LoreleiText_YouWon
+	waitbutton
+	verbosegiveitem EXP_SHARE
+	writetext Route55LoreleiExpShareText
+	waitbutton
+	closetext
+	applymovement ROUTE_55_LORELEI, Route55LoreleiWalkAway
+	disappear ROUTE_55_LORELEI
+	setscene SCENE_ROUTE_55_NOOP
+	special HealParty
+	playmapmusic
+	end
+	
+Route55LoreleiText_Seen:
+	text "PRIMA: <PLAYER>?"
+	line "Fancy seeing you"
+	cont "here!"
+	
+	para "If you've made it"
+	line "this far, you must"
+	cont "have gotten your"
+	cont "first BADGE!"
+	
+	para "Fufu…I think I'm"
+	line "gonna need to try"
+	cont "you out myself!"
+	cont "Let's battle!"
+	done
+	
+Route55LoreleiWinText:
+	text "My! They grow up"
+	line "so fast!"
+	done
+	
+Route55LoreleiLastMonText:
+	text "I'm shivering in"
+	line "delight! Let's"
+	cont "wrap this up!"
+	done
+	
+Route55LoreleiText_YouWon:
+	text "PRIMA: That was"
+	line "fun! I think you"
+	cont "are well on your"
+	cont "way to beating"
+	cont "the ORANGE CREW."
+	
+	para "Here's a gift,"
+	line "I hope it helps!"
+	done
+	
+Route55LoreleiExpShareText:
+	text "PRIMA: That is the"
+	line "EXP. SHARE!"
+	
+	para "Turn it on, and"
+	line "all your #MON"
+	cont "will all get EXP."
+	cont "after battle."
+	
+	para "Oh, look at the"
+	line "time! I better"
+	cont "get going!"
+	
+	para "See you around,"
+	line "<PLAYER>!"
+	done
+	
+Route55LoreleiWalkUp:
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+	
+Route55LoreleiWalkAway:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
 	
 Route55AthleteZackScript:
 	trainer ATHLETE, ZACK, EVENT_BEAT_ATHLETE_ZACK, Route55AthleteZackSeenText, Route55AthleteZackBeatenText, 0, .Script
@@ -181,6 +307,8 @@ Route55_MapEvents:
 	warp_event 15, 47, ROUTE_55_MANIACS_HOUSE, 1
 
 	def_coord_events
+	coord_event 14,  7, SCENE_ROUTE_55_LOELEI_BATTLE, Route55LoreleiSceneLeft
+	coord_event 15,  7, SCENE_ROUTE_55_LOELEI_BATTLE, Route55LoreleiSceneRight
 
 	def_bg_events
 	bg_event 17, 13, BGEVENT_READ, Route55Sign
@@ -199,3 +327,4 @@ Route55_MapEvents:
 	object_event 38, 51, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route55PrettyShell, EVENT_ROUTE_55_PRETTY_SHELL
 	object_event 13, 44, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route55UltraBall, EVENT_ROUTE_55_ULTRA_BALL
 	object_event 25, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_ITEMBALL, 0, Route55TMBrickBreak, EVENT_TM_31_BRICK_BREAK
+	object_event  2,  2, SPRITE_LORELEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, EVENT_BATTLE_ROUTE_55_LORELEI

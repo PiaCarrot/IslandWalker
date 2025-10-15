@@ -259,7 +259,7 @@ CrystalCaveB1FCrystalOnixScript:
 	waitbutton
 	closetext
 	cry ONIX
-	loadwildmon ONIX, 20
+	loadwildmon ONIX_CRYSTAL, 20
 	startbattle
 	disappear CRYSTAL_CAVE_B1F_CRYSTAL_ONIX
 	setevent EVENT_CRYSTAL_ONIX_ENCOUNTER
