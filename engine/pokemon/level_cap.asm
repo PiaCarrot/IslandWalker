@@ -19,5 +19,5 @@ UpdateLevelCap::
 
 LevelCapBadgeTable:
         ; caps for 0-12 badges
-        db 18,33
+        db 16,33
         db 100,100,100,100,100,100,100,100,100,100,100

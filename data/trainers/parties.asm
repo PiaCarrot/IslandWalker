@@ -16,7 +16,7 @@ CissyGroup:
 	dw HORSEA
 	dw NO_ITEM
 	dw SCALD, SMOKESCREEN, DISABLE, LEER
-	db 18
+	db 15
 	dw CORSOLA_GALAR
 	dw NO_ITEM
 	dw WILL_O_WISP, ASTONISH, WHIRLPOOL, SCALD
@@ -28,11 +28,11 @@ CissyGroup:
 
 	next_list_item ; CISSY (1) CHALLENGE MODE
 	db "CISSY@", TRAINERTYPE_ITEM_MOVES
-	db 19
+	db 16
 	dw CORSOLA_GALAR
 	dw COLBUR_BERRY
 	dw REFLECT, SHADOW_BALL, LIGHT_SCREEN, SCALD
-	db 18
+	db 16
 	dw HORSEA
 	dw RINDO_BERRY
 	dw SCALD, PROTECT, DRAGONBREATH, AURORA_BEAM
@@ -40,7 +40,7 @@ CissyGroup:
 	dw SLOWPOKE
 	dw SITRUS_BERRY
 	dw ZEN_HEADBUTT, FLAMETHROWER, CALM_MIND, SCALD
-	db 18
+	db 16
 	dw WARTORTLE
 	dw RINDO_BERRY
 	dw MIRROR_COAT, REFRESH, BITE, SCALD
@@ -1538,9 +1538,9 @@ BeautyGroup:
 
 	next_list_item ; BEAUTY (2)
 	db "YEVON@", TRAINERTYPE_NORMAL
-	db 6
-	dw SENTRET ; FEEBAS
-	db 6
+	db 10
+	dw FEEBAS
+	db 9
 	dw SEEL
 	db -1 ; end
 
@@ -1662,38 +1662,38 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (2)
 	db "AGENT@", TRAINERTYPE_NORMAL
-	db 10
+	db 11
 	dw RATTATA
-	db 10
+	db 12
 	dw ZUBAT
-	db 10
+	db 13
 	dw ZUBAT
 	db -1 ; end
 
 	next_list_item ; GRUNTM (3)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 13
+	db 16
 	dw BEEDRILL
 	db -1 ; end
 
 	next_list_item ; GRUNTM (4)
 	db "AGENT@", TRAINERTYPE_NORMAL
-	db 11
+	db 14
 	dw GRIMER
-	db 11
+	db 14
 	dw KOFFING
 	db -1 ; end
 
 	next_list_item ; GRUNTM (5)
 	db "GRUNT@", TRAINERTYPE_MOVES
-	db 12
+	db 16
 	dw HITMONCHAN
 	dw COMET_PUNCH, PURSUIT, FAKE_OUT, FORESIGHT
 	db -1 ; end
 
 	next_list_item ; GRUNTM (6)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 14
+	db 16
 	dw SPEAROW
 	db -1 ; end
 
@@ -1793,31 +1793,31 @@ SabrinaGroup:
 BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (1)
 	db "ASHTON@", TRAINERTYPE_NORMAL
-	db 4
-	dw CATERPIE
 	db 5
+	dw CATERPIE
+	db 6
 	dw PARAS
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (2)
 	db "OWEN@", TRAINERTYPE_NORMAL
-	db 4
+	db 5
 	dw CATERPIE
-	db 4
+	db 5
 	dw WEEDLE
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (3)
 	db "ERIC@", TRAINERTYPE_NORMAL
-	db 6
+	db 8
 	dw SPINARAK
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (4)
 	db "RYAN@", TRAINERTYPE_NORMAL
-	db 5
+	db 7
 	dw SPINARAK
-	db 4
+	db 6
 	dw VENONAT
 	db -1 ; end
 
@@ -1826,9 +1826,9 @@ BugCatcherGroup:
 FisherGroup:
 	next_list_item ; FISHER (1)
 	db "PIKE@", TRAINERTYPE_NORMAL
-	db 7
+	db 10
 	dw REMORAID
-	db 8
+	db 10
 	dw POLIWAG
 	db -1 ; end
 
@@ -1845,31 +1845,31 @@ FisherGroup:
 SwimmerMGroup:
 	next_list_item ; SWIMMERM (1)
 	db "CHAD@", TRAINERTYPE_NORMAL
-	db 6
+	db 7
 	dw REMORAID
-	db 5
+	db 7
 	dw TENTACOOL
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (2)
 	db "LUKE@", TRAINERTYPE_NORMAL
-	db 6
+	db 7
 	dw GOLDEEN
-	db 5
+	db 6
 	dw TENTACOOL
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (3)
 	db "BRAD@", TRAINERTYPE_NORMAL
-	db 8
+	db 9
 	dw SQUIRTLE
-	db 8
+	db 10
 	dw WOOPER
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (4)
 	db "LOGAN@", TRAINERTYPE_NORMAL
-	db 9
+	db 11
 	dw WOOPER
 	db -1 ; end
 
@@ -1878,33 +1878,39 @@ SwimmerMGroup:
 SwimmerFGroup:
 	next_list_item ; SWIMMERF (1)
 	db "DAHLIA@", TRAINERTYPE_NORMAL
-	db 5
-	dw STARYU
+	db 6
+	dw POLIWAG
+	db 7
+	dw LUVDISC
+	db 6
+	dw WOOPER
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (2)
 	db "MAYA@", TRAINERTYPE_NORMAL
-	db 5
-	dw STARYU
+	db 7
+	dw PSYDUCK
+	db 7
+	dw WINGULL
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (3)
 	db "ZOEY@", TRAINERTYPE_NORMAL
-	db 5
+	db 9
 	dw STARYU
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (4)
 	db "ALLIE@", TRAINERTYPE_NORMAL
-	db 8
+	db 10
 	dw STARYU
-	db 7
+	db 9
 	dw TOTODILE
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (5)
 	db "MORGAN@", TRAINERTYPE_NORMAL
-	db 9
+	db 11
 	dw CORSOLA
 	db -1 ; end
 
@@ -4092,31 +4098,31 @@ OfficerGroup:
 GruntFGroup:
 	next_list_item ; GRUNTF (1)
 	db "AGENT@", TRAINERTYPE_NORMAL
-	db 12
+	db 14
 	dw ZUBAT
-	db 12
+	db 14
 	dw EKANS
 	db -1 ; end
 
 	next_list_item ; GRUNTF (2)
 	db "AGENT@", TRAINERTYPE_NORMAL
-	db 13
+	db 17
 	dw LICKITUNG
 	db -1 ; end
 
 	next_list_item ; GRUNTF (3)
 	db "AGENT@", TRAINERTYPE_NORMAL
-	db 11
+	db 12
 	dw RATTATA
-	db 11
+	db 13
 	dw KOFFING
-	db 11
+	db 14
 	dw ODDISH
 	db -1 ; end
 
 	next_list_item ; GRUNTF (4) Receptionist
 	db "AGENT@", TRAINERTYPE_NORMAL
-	db 11
+	db 14
 	dw MAGNEMITE
 	db -1 ; end
 
@@ -4329,6 +4335,9 @@ LookerGroup:
 	db 18
 	dw GROWLITHE
 	dw EMBER, FORESIGHT, ROAR, BITE
+	db 18
+	dw CROAGUNK
+	dw FAINT_ATTACK, ASTONISH, POISON_STING, MUD_SLAP
 	db -1 ; end
 
 	end_list_items
@@ -4378,7 +4387,7 @@ MayorGroup:
 	dw FLAMETHROWER, CRUNCH, BEAT_UP, ROAR
 
 	db 55
-	dw RATTATA ; SPINDA OWN TEMPO
+	dw SPINDA
 	dw BERSERK_GENE ; SERUM R
 	dw DIZZY_PUNCH, HYPNOSIS, PSYCHIC_M, SHADOW_BALL
 	db -1 ; end

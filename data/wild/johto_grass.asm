@@ -453,47 +453,47 @@ JohtoGrassWildMons:
 	dbw 16, MILTANK                  ;  1%
 	end_grass_wildmons
 
-	def_grass_wildmons ROUTE_53
+def_grass_wildmons ROUTE_53
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, PERRSERKER                   ; 20%
-	dbw 13, PERRSERKER                  ; 20%
-	dbw 14, PERRSERKER                   ; 10%
-	dbw 14, PERRSERKER                  ; 10%
-	dbw 15, DHELMISE                   ; 10%
-	dbw 15, DHELMISE                  ; 10%
-	dbw 14, DHELMISE                ;  5%
-	dbw 15, DHELMISE                ;  5%
-	dbw 15, BISHARP                 ;  4%
-	dbw 15, BISHARP                   ;  4%
-	dbw 16, BISHARP                 ;  1%
-	dbw 16, BISHARP                   ;  1%
+	dbw 13, SPINDA                   ; 20%
+	dbw 13, SENTRET                  ; 20%
+	dbw 14, SPINDA                   ; 10%
+	dbw 14, SENTRET                  ; 10%
+	dbw 15, SPINDA                   ; 10%
+	dbw 15, SENTRET                  ; 10%
+	dbw 14, POOCHYENA                ;  5%
+	dbw 15, POOCHYENA                ;  5%
+	dbw 15, TRUMBEAK                 ;  4%
+	dbw 15, APPLIN                   ;  4%
+	dbw 16, TRUMBEAK                 ;  1%
+	dbw 16, APPLIN                   ;  1%
 	; day
-	dbw 13, PERRSERKER                   ; 20%
-	dbw 13, PERRSERKER                  ; 20%
-	dbw 14, PERRSERKER                   ; 10%
-	dbw 14, PERRSERKER                  ; 10%
-	dbw 15, DHELMISE                   ; 10%
-	dbw 15, DHELMISE                  ; 10%
-	dbw 14, DHELMISE                ;  5%
-	dbw 15, DHELMISE                ;  5%
-	dbw 15, BISHARP                 ;  4%
-	dbw 15, BISHARP                   ;  4%
-	dbw 16, BISHARP                 ;  1%
-	dbw 16, BISHARP                   ;  1%
+	dbw 13, SPINDA                   ; 20%
+	dbw 13, ZIGZAGOON                ; 20%
+	dbw 14, SPINDA                   ; 10%
+	dbw 14, ZIGZAGOON                ; 10%
+	dbw 15, SPINDA                   ; 10%
+	dbw 15, ZIGZAGOON                ; 10%
+	dbw 14, POOCHYENA                ;  5%
+	dbw 15, POOCHYENA                ;  5%
+	dbw 15, PIDGEOTTO                ;  4%
+	dbw 15, APPLIN                   ;  4%
+	dbw 16, PIDGEOTTO                ;  1%
+	dbw 16, APPLIN                   ;  1%
 	; nite
-	dbw 13, PERRSERKER                   ; 20%
-	dbw 13, PERRSERKER                  ; 20%
-	dbw 14, PERRSERKER                   ; 10%
-	dbw 14, PERRSERKER                  ; 10%
-	dbw 15, DHELMISE                   ; 10%
-	dbw 15, DHELMISE                  ; 10%
-	dbw 14, DHELMISE                ;  5%
-	dbw 15, DHELMISE                ;  5%
-	dbw 15, BELLSPROUT_VALENCIA                 ;  4%
-	dbw 15, WEEPINBELL_VALENCIA                   ;  4%
-	dbw 16, BELLSPROUT_VALENCIA                 ;  1%
-	dbw 16, WEEPINBELL_VALENCIA                   ;  1%
+	dbw 13, SPINDA                   ; 20%
+	dbw 13, RATTATA                  ; 20%
+	dbw 14, SPINDA                   ; 10%
+	dbw 14, RATTATA                  ; 10%
+	dbw 15, SPINDA                   ; 10%
+	dbw 15, RATTATA                  ; 10%
+	dbw 14, POOCHYENA                ;  5%
+	dbw 15, POOCHYENA                ;  5%
+	dbw 15, NOCTOWL                  ;  4%
+	dbw 15, APPLIN                   ;  4%
+	dbw 16, NOCTOWL                  ;  1%
+	dbw 16, RATTATA_ALOLA           ;  1%
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_54
