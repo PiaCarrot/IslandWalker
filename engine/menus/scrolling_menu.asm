@@ -16,34 +16,26 @@ _InitScrollingMenu::
 _ScrollingMenu::
 .loop
 	call ScrollingMenuJoyAction
-	; jr c, .exit
-	; call z, .zero
-	; jr .loop
-
-; .exit
 	jr c, .exit
-	jr nz, _ScrollingMenu
-	call ScrollingMenu_InitDisplay
-	call WaitBGMap
-	xor a
-	ld [hBGMapMode], a
-	jr _ScrollingMenu
-.exit:
+	call z, .zero
+	jr .loop
+
+.exit
 	call MenuClickSound
 	ld [wMenuJoypad], a
 	xor a
 	ldh [hInMenu], a
 	ret
 
-; .zero
-	; call ScrollingMenu_InitDisplay
-	; ld a, 1
-	; ldh [hBGMapMode], a
-	; ld c, 3
-	; call DelayFrames
-	; xor a
-	; ldh [hBGMapMode], a
-	; ret
+.zero
+	call ScrollingMenu_InitDisplay
+	ld a, 1
+	ldh [hBGMapMode], a
+	ld c, 3
+	call DelayFrames
+	xor a
+	ldh [hBGMapMode], a
+	ret
 
 ScrollingMenu_InitDisplay:
 	xor a
@@ -60,50 +52,32 @@ ScrollingMenu_InitDisplay:
 	ret
 
 ScrollingMenuJoyAction:
-; .loop
-	; call ScrollingMenuJoypad
-	; ldh a, [hJoyLast]
-	; and PAD_CTRL_PAD
-	; ld b, a
-	; ldh a, [hJoyPressed]
-	; and PAD_BUTTONS
-	; or b
-	; bit B_PAD_A, a
-	; jr nz, .a_button
-	; bit B_PAD_B, a
-	; jr nz, .b_button
-	; bit B_PAD_SELECT, a
-	; jr nz, .select
-	; bit B_PAD_START, a
-	; jr nz, .start
-	; bit B_PAD_RIGHT, a
-	; jmp nz, .d_right
-	; bit B_PAD_LEFT, a
-	; jr nz, .d_left
-	; bit B_PAD_UP, a
-	; jmp nz, .d_up
-	; bit B_PAD_DOWN, a
-	; jmp nz, .d_down
-	; jr .loop
-	call _ScrollingMenuJoypad
-	call GetMenuJoypad
-	rrca
-	jr c, .a_button
-	rrca
-	jr c, .b_button
-	rrca
-	jr c, .select
-	rrca
-	jr c, .start
-	rrca
-	jr c, .d_right
-	rrca
-	jp c, .d_left
-	rrca
-	jp c, .d_up
-	rrca
-	jp c, .d_down
-	jr ScrollingMenuJoyAction
+.loop
+	call ScrollingMenuJoypad
+	ldh a, [hJoyLast]
+	and PAD_CTRL_PAD
+	ld b, a
+	ldh a, [hJoyPressed]
+	and PAD_BUTTONS
+	or b
+	bit B_PAD_A, a
+	jr nz, .a_button
+	bit B_PAD_B, a
+	jr nz, .b_button
+	bit B_PAD_SELECT, a
+	jr nz, .select
+	bit B_PAD_START, a
+	jr nz, .start
+	bit B_PAD_RIGHT, a
+	jmp nz, .d_right
+	bit B_PAD_LEFT, a
+	jr nz, .d_left
+	bit B_PAD_UP, a
+	jmp nz, .d_up
+	bit B_PAD_DOWN, a
+	jmp nz, .d_down
+	jr .loop
+
 .a_button
 	call PlaceHollowCursor
 	ld a, [wMenuCursorY]
@@ -139,7 +113,7 @@ ScrollingMenuJoyAction:
 	call ScrollingMenu_GetListItemCoordAndFunctionArgs
 	ld a, [wMenuSelection]
 	cp -1
-	jr z, .unsetZeroFlag
+	jmp z, xor_a_dec_a
 	call ScrollingMenu_GetCursorPosition
 	dec a
 	ld [wScrollingMenuCursorPosition], a
@@ -150,68 +124,63 @@ ScrollingMenuJoyAction:
 .start
 	ld a, [wMenuDataFlags]
 	bit SCROLLINGMENU_ENABLE_START_F, a
-	jr z, .unsetZeroFlag
+	jmp z, xor_a_dec_a
 	ld a, PAD_START
 	scf
 	ret
 
 .d_left
-	ld a, [w2DMenuFlags2]
-	bit 7, a
-	jr z, .unsetZeroFlag
+	ld hl, w2DMenuFlags2
+	bit _2DMENU_DISABLE_JOYPAD_FILTER_F, [hl]
+	jmp z, xor_a_dec_a
 	ld a, [wMenuDataFlags]
 	bit SCROLLINGMENU_ENABLE_LEFT_F, a
-	jr z, .unsetZeroFlag
+	jmp z, xor_a_dec_a
 	ld a, PAD_LEFT
 	scf
 	ret
 
 .d_right
-	ld a, [w2DMenuFlags2]
-	bit 7, a
-	jr z, .unsetZeroFlag
+	ld hl, w2DMenuFlags2
+	bit _2DMENU_DISABLE_JOYPAD_FILTER_F, [hl]
+	jmp z, xor_a_dec_a
 	ld a, [wMenuDataFlags]
 	bit SCROLLINGMENU_ENABLE_RIGHT_F, a
-	jr z, .unsetZeroFlag
+	jmp z, xor_a_dec_a
 	ld a, PAD_RIGHT
 	scf
 	ret
 
 .d_up
-	ld a, [wMenuScrollPosition]
-	and a
-	jr z, .unsetZeroFlag
-	ld a, [w2DMenuFlags2]
-	bit 7, a
-	jr z, .checkCallFunction3
+	ld hl, w2DMenuFlags2
+	bit _2DMENU_DISABLE_JOYPAD_FILTER_F, [hl]
+	jmp z, xor_a
 	ld hl, wMenuScrollPosition
+	ld a, [hl]
+	and a
+	jr z, .xor_dec_up
 	dec [hl]
-	xor a
-	ret
+	jmp xor_a
+
+.xor_dec_up
+	jmp xor_a_dec_a
 
 .d_down
+	ld hl, w2DMenuFlags2
+	bit _2DMENU_DISABLE_JOYPAD_FILTER_F, [hl]
+	jmp z, xor_a
 	ld hl, wMenuScrollPosition
 	ld a, [wMenuData_ScrollingMenuHeight]
 	add [hl]
 	ld b, a
 	ld a, [wScrollingMenuListSize]
 	cp b
-	jr c, .unsetZeroFlag
-	ld a, [w2DMenuFlags2]
-	bit 7, a
-	jr z, .checkCallFunction3
+	jr c, .xor_dec_down
 	inc [hl]
-.setZeroFlag
-	xor a
-	ret
-	
+	jmp xor_a
 
-.checkCallFunction3
-	call ScrollingMenu_CheckCallFunction3
-.unsetZeroFlag
-	xor a
-	dec a
-	ret
+.xor_dec_down
+	jmp xor_a_dec_a
 
 ScrollingMenu_GetCursorPosition:
 	ld a, [wMenuScrollPosition]

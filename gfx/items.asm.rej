@@ -1,0 +1,232 @@
+--- gfx/items.asm
++++ gfx/items.asm
+@@ -1,103 +1,163 @@
+ UpdateItemIconAndDescription::
+ 	farcall UpdateItemDescription
+ 	jr UpdateItemIcon
+ 
+ UpdateKeyItemIconAndDescription::
+ 	farcall UpdateKeyItemDescription
+ 	jr UpdateBallandKeyItemIcon
+ 
+ UpdateItemBallIconAndDescription::
+ 	farcall UpdateItemBallDescription
+ UpdateBallandKeyItemIcon:
++	ld a, [wMenuSelection]
++	cp -1
++	jr nz, .load_icon
++	ld a, NO_ITEM
++	ld [wCurSpecies], a
++	ld a, BANK(NoBallIcon)
++	ld hl, NoBallIcon
++	jr .decompress
++
++.load_icon
+ 	ld a, [wCurSpecies]
+ 	call GetItemIndexFromID
+ 	ld b, h
+ 	ld c, l
+ 	ld a, BANK(ItemIconPointers)
+ 	ld hl, ItemIconPointers
+ 	call LoadDoubleIndirectPointer
+-	jr nz, .ok
++	jr nz, .decompress
+ 	ld a, BANK(NoBallIcon)
+ 	ld hl, NoBallIcon
+-.ok
++
++.decompress
+ 	ld de, vTiles2 tile $1f
+ 	lb bc, BANK(NoBallIcon), $9
+ 	call DecompressRequest2bpp
++	ld a, [wMenuSelection]
++	cp -1
++	jr nz, .palette
++	call LoadDefaultItemIconPalette
++	jr .finish
++
++.palette
+ 	call LoadItemIconPalette
++
++.finish
+ 	call SetDefaultBGPAndOBP
+ 	call WaitBGMap
+ 	ret
+-	
++
+ UpdateBerryIconAndDescription::
+ 	farcall UpdateItemBerryDescription
++	ld a, [wMenuSelection]
++	cp -1
++	jr nz, .load_icon
++	ld a, NO_ITEM
++	ld [wCurSpecies], a
++	ld a, BANK(NoBerryIcon)
++	ld hl, NoBerryIcon
++	jr .decompress
++
++.load_icon
+ 	ld a, [wCurSpecies]
+ 	call GetItemIndexFromID
+ 	ld b, h
+ 	ld c, l
+ 	ld a, BANK(ItemIconPointers)
+ 	ld hl, ItemIconPointers
+ 	call LoadDoubleIndirectPointer
+-	jr nz, .ok
++	jr nz, .decompress
+ 	ld a, BANK(NoBerryIcon)
+ 	ld hl, NoBerryIcon
+-.ok
++
++.decompress
+ 	ld de, vTiles2 tile $1f
+ 	lb bc, BANK(NoBerryIcon), $9
+ 	call DecompressRequest2bpp
++	ld a, [wMenuSelection]
++	cp -1
++	jr nz, .palette
++	call LoadDefaultItemIconPalette
++	jr .finish
++
++.palette
+ 	call LoadItemIconPalette
++
++.finish
+ 	call SetDefaultBGPAndOBP
+ 	call WaitBGMap
+ 	ret
+ 
+ UpdateMedicineIconAndDescription::
+ 	farcall UpdateItemMedicineDescription
+ 	jr UpdateItemIcon
+ 
+ UpdateValuableIconAndDescription::
+ 	farcall UpdateItemValuableDescription
+ ; fallthrough														
+ UpdateItemIcon:
++	ld a, [wMenuSelection]
++	cp -1
++	jr nz, .load_icon
++	ld a, NO_ITEM
++	ld [wCurSpecies], a
++	ld a, BANK(NoItemIcon)
++	ld hl, NoItemIcon
++	jr .decompress
++
++.load_icon
+ 	ld a, [wCurSpecies]
+ 	call GetItemIndexFromID
+ 	ld b, h
+ 	ld c, l
+ 	ld a, BANK(ItemIconPointers)
+ 	ld hl, ItemIconPointers
+ 	call LoadDoubleIndirectPointer
+-	jr nz, .ok
++	jr nz, .decompress
+ 	ld a, BANK(NoItemIcon)
+ 	ld hl, NoItemIcon
+-.ok
++
++.decompress
+ 	ld de, vTiles2 tile $1f
+ 	lb bc, BANK(NoItemIcon), $9
+ 	call DecompressRequest2bpp
++	ld a, [wMenuSelection]
++	cp -1
++	jr nz, .palette
++	call LoadDefaultItemIconPalette
++	jr .finish
++
++.palette
+ 	call LoadItemIconPalette
++
++.finish
+ 	call SetDefaultBGPAndOBP
+ 	call WaitBGMap
+ 	ret
+-	
++
+ ItemIconPointers:
+ 	indirect_table 2, 1
+ 	indirect_entries NUM_ITEM_POCKET, ItemIconPointers1
+ 	indirect_entries FIRST_KEY_ITEM - 1; sparse Table
+ 	indirect_entries (FIRST_KEY_ITEM - 1) + NUM_KEY_ITEM_POCKET, KeyItemIconPointers
+ 	indirect_entries FIRST_BALL_ITEM - 1 ; sparse Table
+ 	indirect_entries (FIRST_BALL_ITEM - 1) + NUM_BALL_ITEM_POCKET, BallsIconPointers
+ 	indirect_entries FIRST_BERRY_ITEM - 1 ; sparse Table
+ 	indirect_entries (FIRST_BERRY_ITEM - 1) + NUM_BERRY_ITEM_POCKET, BerriesIconPointers
+ 	indirect_entries FIRST_MEDICINE_ITEM - 1 ; sparse Table
+ 	indirect_entries (FIRST_MEDICINE_ITEM - 1) + NUM_MEDICINE_ITEM_POCKET, MedicineIconsPointers
+ 	indirect_entries FIRST_VALUABLE_ITEM - 1 ; sparse Table
+ 	indirect_entries (FIRST_VALUABLE_ITEM - 1) + NUM_VALUABLE_ITEM_POCKET, ValuablesIconsPointers
+ 	indirect_table_end
+ 	
+ ItemIconPointers1:
+     dw BrightpowderIcon ; BRIGHTPOWDER
+     dw NoItemIcon ; TOWN_MAP_RED
+     dw MoonStoneIcon ; MOON_STONE
+     dw EscapeRopeIcon ; ESCAPE_ROPE
+     dw RepelIcon ; REPEL
+     dw FireStoneIcon ; FIRE_STONE
+     dw ThunderStoneIcon ; THUNDERSTONE
+     dw WaterStoneIcon ; WATER_STONE
+     dw NoItemIcon ; ITEM_19
+@@ -525,50 +585,57 @@ ValuablesIconsPointers:
+ 	dw BigBambooIcon ; BIG_BAMBOO   ; 00D6
+ 	dw SpiderSilkIcon ; SPIDER_SILK  ; 00DC
+ 	dw AncientVaseIcon ; ANCIENT_VASE ; 00E3
+ 	dw AncientCupIcon ; ANCIENT_CUP  ; 00E4
+ 	dw AncientJarIcon ; ANCIENT_JAR  ; 00E5
+ 	dw ShardIcon ; CLAY_SHARD   ; 00E6
+ 	dw GemstoneIcon ; HUGE_CRYSTAL ; 00E7
+ 	dw GemstoneIcon ; LARGE_JADE   ; 00E8
+ 	dw GemstoneIcon ; BIG_EMERALD  ; 00E9
+ 	dw GemstoneIcon ; GIANT_RUBY   ; 00EA
+ 	dw GemstoneIcon ; BIG_SAPPHIRE ; 00EB
+ 	dw GemstoneIcon ; BIG_AMETHYST ; 00EC
+ 	dw GemstoneIcon ; HUGE_TOPAZ   ; 00ED
+ 	dw GemstoneIcon ; LARGE_GARNET ; 00EE
+ 	dw GemstoneIcon ; GIANT_ONYX   ; 00EF
+ 	dw GemstoneIcon ; HUGE_DIAMOND ; 00F0
+ 	dw BottleCapIcon ; SILVER_CAP
+ 	dw BottleCapIcon ; GOLD_CAP
+ 	dw SilverPowderIcon ; GOLD_DUST
+ 	dw GoldStatueIcon ; GOLD_STATUE
+ 	dw HoneyIcon ; HONEY
+ 	dw HoneyIcon ; SWEET_HONEY
+ 	dw CandyTruffleIcon ; CANDYTRUFFLE
+ .IndirectEnd:
+ 
++LoadDefaultItemIconPalette:
++	ld a, BANK(NoItemPalette)
++	ld hl, NoItemPalette
++	ld de, wBGPals1 palette 7 + 2
++	ld bc, 4
++	jmp FarCopyColorWRAM
++
+ LoadItemIconPalette:
+ 	ld a, [wCurSpecies]
+ 	call GetItemIndexFromID
+ 	ld b, h
+ 	ld c, l
+ 	ld a, BANK(ItemIconPalettes)
+ 	ld hl, ItemIconPalettes
+ 	call LoadIndirectPointer
+ 	jr nz, .ok
+ 	ld a, BANK(NoItemPalette)
+ 	ld hl, NoItemPalette
+ .ok
+ 	ld de, wBGPals1 palette 7 + 2
+ 	ld bc, 4
+ 	jmp FarCopyColorWRAM
+ 	
+ ItemIconPalettes:
+ 	indirect_table 4, 1
+ 	indirect_entries NUM_ITEM_POCKET, ItemIconPalettes1
+ 	indirect_entries FIRST_KEY_ITEM - 1; sparse Table
+ 	indirect_entries (FIRST_KEY_ITEM - 1) + NUM_KEY_ITEM_POCKET, KeyItemIconPalettes
+ 	indirect_entries FIRST_BALL_ITEM - 1 ; sparse Table
+ 	indirect_entries (FIRST_BALL_ITEM - 1) + NUM_BALL_ITEM_POCKET, BallsIconPalettes
+ 	indirect_entries FIRST_BERRY_ITEM - 1 ; sparse Table
+ 	indirect_entries (FIRST_BERRY_ITEM - 1) + NUM_BERRY_ITEM_POCKET, BerryIconPalettes
