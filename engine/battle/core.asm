@@ -3969,6 +3969,8 @@ TryToRunAwayFromBattle:
    jp .fled
 
 .no_run_away
+	ld hl, wBattleMonSpeed
+	ld de, wEnemyMonSpeed
 
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
