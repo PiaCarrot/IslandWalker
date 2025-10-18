@@ -16,7 +16,7 @@
 
 ; For encounter rates, 15 percent is pretty standard for routes, which is 6%
 ; Dungeons range from 2-6 percent. 10 percent is 4%, Red's Safari Zone uses 30 which is 12%.
-; This means 0 = 0%, 255 = 100%, make it too high and people are forced to buy repels.
+; This means 0 = 0%, 251 = 100%, make it too high and people are forced to buy repels.
 ; You can differ the rate by time of day but there's little point in doing so, unless you want more ghosts
 ; to appear at night in Pokemon Tower or something.
 
@@ -626,7 +626,7 @@ def_grass_wildmons ROUTE_53
 	end_grass_wildmons
 	
 
-	def_grass_wildmons ROUTE_55
+	def_grass_wildmons ROUTE_51
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 15, MAREEP                   ; 20%
@@ -668,6 +668,50 @@ def_grass_wildmons ROUTE_53
 	dbw 18, HOOTHOOT                 ;  1%
 	dbw 18, TANGELA                  ;  1%
 	end_grass_wildmons
+
+	def_grass_wildmons ROUTE_51_COVE
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 51, FLAAFY                   ; 20%
+	dbw 51, DODUO                    ; 20%
+	dbw 52, LEDIAN                   ; 10%
+	dbw 52, JUMPLUFF                 ; 10%
+	dbw 53, LEDIAN                   ; 10%
+	dbw 53, SKIPLOOM                 ; 10%
+	dbw 52, DODRIO                   ;  5%
+	dbw 53, AMPHAROS                 ;  5%
+	dbw 53, TOUCANNON                ;  4%
+	dbw 53, TANGROWTH                ;  4%
+	dbw 54, TOUCANNON                ;  1%
+	dbw 54, TANGROWTH                ;  1%
+	; day
+	dbw 51, FLAAFY                   ; 20%
+	dbw 51, DODUO                    ; 20%
+	dbw 52, LEDIAN                   ; 10%
+	dbw 52, JUMPLUFF                 ; 10%
+	dbw 53, LEDIAN                   ; 10%
+	dbw 53, SKIPLOOM                 ; 10%
+	dbw 52, DODRIO                   ;  5%
+	dbw 53, AMPHAROS                 ;  5%
+	dbw 53, TOUCANNON                ;  4%
+	dbw 53, TANGROWTH                ;  4%
+	dbw 54, TOUCANNON                ;  1%
+	dbw 54, TANGROWTH                ;  1%
+	; nite
+	dbw 51, FLAAFY                   ; 20%
+	dbw 51, MEOWTH                   ; 20%
+	dbw 52, LEDIAN                   ; 10%
+	dbw 52, JUMPLUFF                 ; 10%
+	dbw 53, LEDIAN                   ; 10%
+	dbw 53, SKIPLOOM                 ; 10%
+	dbw 52, PERSIAN                  ;  5%
+	dbw 53, AMPHAROS                 ;  5%
+	dbw 53, NOCTOWL                  ;  4%
+	dbw 53, TANGROWTH                ;  4%
+	dbw 54, NOCTOWL                  ;  1%
+	dbw 54, TANGROWTH                ;  1%
+	end_grass_wildmons
+
 
 	def_grass_wildmons PINKAN_ISLAND
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite

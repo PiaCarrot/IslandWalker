@@ -202,4 +202,7 @@ Route55ManiacsHouse_Blocks:
 PinkanIsland_Blocks:
 	INCBIN "maps/PinkanIsland.ablk"
 
+Route55Cove_Blocks:
+	INCBIN "maps/Route55Cove.ablk"
+
 ENDSECTION

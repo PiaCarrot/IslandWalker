@@ -152,12 +152,15 @@ ENDM
 	map_attributes SunburstIsland, SUNBURST_ISLAND, $10, NORTH
 	connection north, Route53, ROUTE_53, -11
 	
-
-	map_attributes Route55, ROUTE_55, $10, EAST
+	map_attributes Route55, ROUTE_55, $10, NORTH | EAST
+	connection north, Route55Cove, ROUTE_55_COVE, 0
 	connection east, PinkanIsland, PINKAN_ISLAND, 8
 
 	map_attributes PinkanIsland, PINKAN_ISLAND, $10, WEST
 	connection west, Route55, ROUTE_55, -8
+
+	map_attributes Route55Cove, ROUTE_55_COVE, $10, SOUTH
+	connection south, Route55, ROUTE_55, 0
 	
 	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
 	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
