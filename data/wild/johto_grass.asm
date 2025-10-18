@@ -626,7 +626,7 @@ def_grass_wildmons ROUTE_53
 	end_grass_wildmons
 	
 
-	def_grass_wildmons ROUTE_51
+	def_grass_wildmons ROUTE_55
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 15, MAREEP                   ; 20%
@@ -669,10 +669,10 @@ def_grass_wildmons ROUTE_53
 	dbw 18, TANGELA                  ;  1%
 	end_grass_wildmons
 
-	def_grass_wildmons ROUTE_51_COVE
+	def_grass_wildmons ROUTE_55_COVE
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 51, FLAAFY                   ; 20%
+	dbw 51, FLAAFFY                   ; 20%
 	dbw 51, DODUO                    ; 20%
 	dbw 52, LEDIAN                   ; 10%
 	dbw 52, JUMPLUFF                 ; 10%
@@ -685,7 +685,7 @@ def_grass_wildmons ROUTE_53
 	dbw 54, TOUCANNON                ;  1%
 	dbw 54, TANGROWTH                ;  1%
 	; day
-	dbw 51, FLAAFY                   ; 20%
+	dbw 51, FLAAFFY                   ; 20%
 	dbw 51, DODUO                    ; 20%
 	dbw 52, LEDIAN                   ; 10%
 	dbw 52, JUMPLUFF                 ; 10%
@@ -698,7 +698,7 @@ def_grass_wildmons ROUTE_53
 	dbw 54, TOUCANNON                ;  1%
 	dbw 54, TANGROWTH                ;  1%
 	; nite
-	dbw 51, FLAAFY                   ; 20%
+	dbw 51, FLAAFFY                   ; 20%
 	dbw 51, MEOWTH                   ; 20%
 	dbw 52, LEDIAN                   ; 10%
 	dbw 52, JUMPLUFF                 ; 10%
