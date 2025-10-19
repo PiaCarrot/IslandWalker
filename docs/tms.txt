@@ -25,7 +25,7 @@ THUNDERBOLT  ; 0417
 THUNDER      ; 0418
 EARTHQUAKE   ; 0419
 LOW_SWEEP    ; 041A
-DIG          ; 041B
+DIG          ; Route 55 (Zigs Digs)
 PSYCHIC_M    ; 041C
 SHADOW_BALL  ; 041D
 BRICK_BREAK  ; Route 55 (Requires Dive)
@@ -47,16 +47,16 @@ THIEF        ; Raticate Radio
 STEEL_WING   ; 042E
 SKILL_SWAP   ; 042F
 SCALD        ; Mikan Gym
-OVERHEAT     ; 0431
+OVERHEAT     ; Route 68 South (Requires Dive)
 ROOST        ; 0432
 FOCUS_BLAST  ; Route 51 (Requires Rock Climb)
 ENERGY_BALL  ; 0434
-FALSE_SWIPE  ; 0435
+FALSE_SWIPE  ; Route 49 (Requires Cut)
 BRINE        ; 0436
 FLING        ; 0437
 CHARGE_BEAM  ; 0438
 ENDURE       ; 0439
-DRAGON_PULSE ; 043A
+DRAGON_PULSE ; Crystal Cave B1F (Requires Waterfall)
 DRAIN_PUNCH  ; 043B
 WILL_O_WISP  ; 043C
 BUG_BUZZ     ; 043D
@@ -72,7 +72,7 @@ STONE_EDGE   ; 0446
 AVALANCHE    ; 0447
 THUNDER_WAVE ; 0448
 GYRO_BALL    ; Route 55 Cove (Requires Rock Climb)
-SWORDS_DANCE ; Mikan Thicket
+SWORDS_DANCE ; Mikan Thicket (Requires Cut)
 STEALTH_ROCK ; 044B
 PSYCH_UP     ; 044C
 SNARL        ; 044D

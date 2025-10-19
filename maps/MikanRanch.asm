@@ -4,6 +4,7 @@
 	const MIKAN_RANCH_MILTANK_3
 	const MIKAN_RANCH_TAUROS
 	const MIKAN_RANCH_RANCHER
+	const MIKAN_RANCH_NUGGET
 
 MikanRanch_MapScripts:
 	def_scene_scripts

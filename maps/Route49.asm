@@ -7,6 +7,7 @@
 	const ROUTE_49_DEPTHS
 	const ROUTE_49_FRUITTREE1
 	const ROUTE_49_FRUITTREE2
+	const ROUTE_49_TM_BALL
 
 Route49_MapScripts:
 	def_scene_scripts
@@ -283,6 +284,9 @@ Route49FruitTree1:
 	
 Route49FruitTree2:
 	fruittree FRUITTREE_ROUTE_49_2
+	
+Route49TMFalseSwipe:
+	itemball TM_FALSE_SWIPE
 
 Route49_MapEvents:
 	db 0, 0 ; filler
@@ -311,3 +315,4 @@ Route49_MapEvents:
 	object_event 30, 34, SPRITE_SHADOW, SPRITEMOVEDATA_SWIM_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Depths, -1
 	object_event 24,  4, SPRITE_BERRY_G_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_SCRIPT, 0, Route49FruitTree1, -1
 	object_event 12, 24, SPRITE_BERRY_Q_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route49FruitTree2, -1
+	object_event 34, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_ITEMBALL, 0, Route49TMFalseSwipe, EVENT_TM_54_FALSE_SWIPE
