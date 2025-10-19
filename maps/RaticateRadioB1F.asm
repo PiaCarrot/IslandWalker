@@ -40,7 +40,7 @@ RaticateRadioB1FNoopScene:
 	end
 	
 RaticateRadioTMThief:
-	end
+	itemball TM_THIEF
 	
 RaticateRadioEscapeRope:
 	itemball ESCAPE_ROPE

@@ -486,7 +486,7 @@ MandarinNorthRareCandy:
 	itemball RARE_CANDY
 	
 MandarinNorthTMDarkPulse:
-	end
+	itemball TM_DARK_PULSE
 
 MandarinNorth_MapEvents:
 	db 0, 0 ; filler

@@ -44,7 +44,7 @@ MikanThicketRoseIncense:
 	itemball ROSE_INCENSE
 	
 MikanThicketTMSwordsDance:
-	end
+	itemball TM_SWORDS_DANCE
 	
 MikanThicketCissySign:
 	jumptext MikanThicketCissySignText

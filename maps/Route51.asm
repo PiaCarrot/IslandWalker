@@ -26,7 +26,7 @@ Route51XAttack:
 	itemball X_ATTACK
 	
 Route51TMFocusBlast:
-	end
+	itemball TM_FOCUS_BLAST
 	
 Route51Sign:
 	jumptext Route51SignText
