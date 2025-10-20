@@ -674,10 +674,14 @@ TryDiveOW::
 	ld hl, DIVE
 	call CheckPartyMoveIndex
 	jr c, .cant
+	ld a, [wCurPartyMon]
+	ld [wDiveMon], a
 	jr .load
 
 .underwater
 ; already diving; no additional checks
+	ld a, [wDiveMon]
+	ld [wCurPartyMon], a
 
 .load
 	call GetPartyNickname

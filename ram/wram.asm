@@ -2347,6 +2347,7 @@ wCutWhirlpoolReplacementBlock:: db
 wCutWhirlpoolAnimationType::
 wStrengthSpecies::
 wFishingResult:: db
+wDiveMon:: db
 wDiveReturnState:: db
 wFieldMoveDataEnd::
 
