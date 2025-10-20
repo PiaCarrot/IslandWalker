@@ -140,7 +140,7 @@ CutFunction:
         call CheckMapForSomethingToCut
         jr c, .nothingtocut
         ld a, $1
-        ret
+	ret
 
 .nothingtocut
 	ld a, $2
@@ -392,9 +392,11 @@ SurfFunction:
 	jr nz, .cannotsurf
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
-	jr z, .alreadyfail
+        jr z, .alreadyfail
 	cp PLAYER_SURF_PIKA
-	jr z, .alreadyfail
+        jr z, .alreadyfail
+	cp PLAYER_DIVE
+        jr z, .alreadyfail
 	call GetFacingTileCoord
 	call GetTilePermission
 	cp WATER_TILE
@@ -404,10 +406,10 @@ SurfFunction:
 	farcall CheckFacingObject
 	jr c, .cannotsurf
         ld a, $1
-        ret
+	ret
 .alreadyfail
         ld a, $3
-        ret
+	ret
 .cannotsurf
 	ld a, $2
 	ret
@@ -522,9 +524,11 @@ TrySurfOW::
 ; Don't ask to surf if already fail.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF_PIKA
-	jr z, .quit
+        jr z, .quit
 	cp PLAYER_SURF
-	jr z, .quit
+        jr z, .quit
+	cp PLAYER_DIVE
+        jr z, .quit
 
 ; Must be facing water.
 	ld a, [wFacingTileID]
@@ -559,6 +563,182 @@ TrySurfOW::
 	xor a
 	ret
 
+; Dive support
+DiveFunction:
+	call FieldMoveJumptableReset
+.loop
+	ld hl, .Jumptable
+	call FieldMoveJumptable
+	jr nc, .loop
+	and JUMPTABLE_INDEX_MASK
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.Jumptable:
+	dw .TryDive
+	dw .DoDive
+	dw .FailDive
+
+.TryDive:
+	ld de, ENGINE_CASCADEBADGE
+	call CheckBadge
+	jr c, .no_badge
+	call CheckMapCanDive
+	jr c, .cannot_dive
+	ld a, $1
+	ret
+
+.no_badge
+	ld a, $80
+	ret
+
+.cannot_dive
+	ld a, $2
+	ret
+
+.DoDive:
+	call GetPartyNickname
+	ld hl, DiveFromMenuScript
+	call QueueScript
+	ld a, JUMPTABLE_EXIT | $1
+	ret
+
+.FailDive:
+	ld hl, CantDiveText
+	call MenuTextboxBackup
+	ld a, JUMPTABLE_EXIT
+	ret
+
+DiveFromMenuScript:
+	special UpdateTimePals
+	sjump UsedDiveScript
+
+UsedDiveScript:
+	opentext
+	writetext UsedDiveText
+	waitbutton
+        closetext
+        special FadeOutToWhite
+	waitsfx
+	readmem wSurfingPlayerState
+	writevar VAR_MOVEMENT
+	divewarp
+	end
+
+CantDiveText:
+	text_far _CantDiveText
+	text_end
+
+CanDiveText:
+	text_far _CanDiveText
+	text_end
+
+AskDiveDownText:
+	text_far _AskDiveDownText
+	text_end
+
+AskDiveUpText:
+	text_far _AskDiveUpText
+	text_end
+
+UsedDiveText:
+	text_far _UsedDiveText
+	text_end
+
+CantDiveScript:
+	jumptext CanDiveText
+
+AskDiveScript:
+        opentext
+        copybytetovar wPlayerTileCollision
+	ifequal COLL_DIVE_UP, .Up
+	writetext AskDiveDownText
+	jump .Continue
+.Up
+	writetext AskDiveUpText
+.Continue
+	yesorno
+	iftrue UsedDiveScript
+	closetext
+	end
+
+TryDiveOW::
+	call CheckMapCanDive
+	jr c, .failed
+	ld a, [wPlayerState]
+	cp PLAYER_DIVE
+	jr z, .underwater
+	ld de, ENGINE_CASCADEBADGE
+	call CheckEngineFlag
+	jr c, .cant
+	ld hl, DIVE
+	call CheckPartyMoveIndex
+	jr c, .cant
+	jr .load
+
+.underwater
+; already diving; no additional checks
+
+.load
+	call GetPartyNickname
+	ld a, BANK(AskDiveScript)
+	ld hl, AskDiveScript
+	call CallScript
+	scf
+	ret
+
+.failed
+	xor a
+	ret
+
+.cant
+	ld a, BANK(CantDiveScript)
+	ld hl, CantDiveScript
+	call CallScript
+	scf
+	ret
+
+CheckMapCanDive:
+	ld a, [wDiveMapGroup]
+	and a
+	jr z, .fail
+	ld a, [wDiveMapNumber]
+	and a
+	jr z, .fail
+        ld a, [wPlayerTileCollision]
+	call CheckDiveTile
+	jr nz, .fail
+	cp COLL_DIVE_DOWN
+	jr z, .diving
+	ld a, [wPlayerState]
+	cp PLAYER_DIVE
+	jr nz, .fail
+	ld a, [wDiveReturnState]
+	and a
+	jr nz, .surface
+	ld a, PLAYER_SURF
+.surface
+	ld [wSurfingPlayerState], a
+	xor a
+	ld [wDiveReturnState], a
+	ret
+
+.diving
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr z, .store_dive
+	cp PLAYER_SURF_PIKA
+	jr nz, .fail
+.store_dive
+	ld [wDiveReturnState], a
+	ld a, PLAYER_DIVE
+	ld [wSurfingPlayerState], a
+	xor a
+	ret
+
+.fail
+	scf
+	ret
 FlyFunction:
 	call FieldMoveJumptableReset
 .loop
@@ -965,7 +1145,7 @@ StrengthFunction:
         ld hl, Script_StrengthFromMenu
         call QueueScript
         ld a, JUMPTABLE_EXIT | $1
-        ret
+	ret
 
 SetStrengthFlag:
 	ld hl, wBikeFlags
@@ -1075,11 +1255,11 @@ WhirlpoolFunction:
         call TryWhirlpoolMenu
         jr c, .failed
         ld a, $1
-        ret
+	ret
 
 .failed
         ld a, $2
-        ret
+	ret
 
 .DoWhirlpool:
 	ld hl, Script_WhirlpoolFromMenu
@@ -1437,7 +1617,7 @@ HasRockSmash:
         sbc a
         and TRUE
         ld [wScriptVar], a
-        ret
+	ret
 
 HasDig:
         ld hl, DIG
@@ -1446,7 +1626,7 @@ HasDig:
         sbc a
         and TRUE
         ld [wScriptVar], a
-        ret
+	ret
 
 FishFunction:
 	ld a, e
@@ -1510,11 +1690,11 @@ FishFunction:
         ld a, BATTLETYPE_FISH
         ld [wBattleType], a
         ld a, $2
-        ret
+	ret
 
 .nonibble
         ld a, $1
-        ret
+	ret
 
 .FailFish:
 	ld a, JUMPTABLE_EXIT

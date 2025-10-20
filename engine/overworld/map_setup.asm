@@ -93,8 +93,10 @@ SkipUpdateMapSprites:
 CheckUpdatePlayerSprite:
 	call .CheckForcedBiking
 	jr c, .ok
-	call .CheckSurfing
-	jr c, .ok
+        call .CheckSurfing
+        jr c, .ok
+        call .CheckDiving
+        jr c, .ok
 	call .ResetSurfingOrBikingState
 	ret nc
 .ok
@@ -116,10 +118,10 @@ CheckUpdatePlayerSprite:
 	jr z, .nope
 	cp PLAYER_SKATE
 	jr z, .nope
-	cp PLAYER_SURF
-	jr z, .surfing
-	cp PLAYER_SURF_PIKA
-	jr z, .surfing
+        cp PLAYER_SURF
+        jr z, .surfing
+        cp PLAYER_SURF_PIKA
+        jr z, .surfing
 	call GetMapEnvironment
 	cp INDOOR
 	jr z, .no_biking
@@ -139,17 +141,30 @@ CheckUpdatePlayerSprite:
 	ret
 
 .nope
-	and a
-	ret
+        and a
+        ret
+
+.CheckDiving:
+        ld a, [wMapTileset]
+        cp TILESET_UNDERWATER
+        jr nz, .not_underwater
+        ld a, PLAYER_DIVE
+        ld [wPlayerState], a
+        scf
+        ret
+
+.not_underwater
+        and a
+        ret
 
 .CheckSurfing:
-	call CheckOnWater
+        call CheckOnWater
 	jr nz, .nope2
 	ld a, [wPlayerState]
-	cp PLAYER_SURF
-	jr z, .is_surfing
-	cp PLAYER_SURF_PIKA
-	jr z, .is_surfing
+        cp PLAYER_SURF
+        jr z, .is_surfing
+        cp PLAYER_SURF_PIKA
+        jr z, .is_surfing
 	ld a, PLAYER_SURF
 	ld [wPlayerState], a
 .is_surfing
@@ -211,3 +226,4 @@ DecompressMetatiles:
 	pop af
 	ldh [rSVBK], a
 	ret
+

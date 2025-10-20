@@ -1139,6 +1139,8 @@ TryTileCollisionEvent::
 .surf
 	farcall TrySurfOW
 	jr c, .done
+	farcall TryDiveOW
+	jr c, .done
 ; fallthrough
 .noevent
 	xor a
@@ -1367,3 +1369,5 @@ DoBikeStep::
 	ret
 
 INCLUDE "engine/overworld/cmd_queue.asm"
+
+

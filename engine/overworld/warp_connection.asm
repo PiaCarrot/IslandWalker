@@ -1,7 +1,8 @@
 HandleNewMap:
         call ResetMapBufferEventFlags
-       call ResetFlashIfOutOfCave
-       call ResetDefogIfOutOfFog
+	call ResetFlashIfOutOfCave
+	call ResetDefogIfOutOfFog
+	call ResetDiveMap
         call GetCurrentMapSceneID
         call ResetBikeFlags
         call ResetMapLockedIDs

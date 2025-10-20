@@ -2347,7 +2347,7 @@ wCutWhirlpoolReplacementBlock:: db
 wCutWhirlpoolAnimationType::
 wStrengthSpecies::
 wFishingResult:: db
-	ds 1
+wDiveReturnState:: db
 wFieldMoveDataEnd::
 
 NEXTU

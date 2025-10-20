@@ -302,14 +302,43 @@ _CantSurfText::
 	prompt
 
 _AlreadySurfingText::
-	text "You're already"
-	line "SURFING."
-	prompt
+        text "You're already"
+        line "SURFING."
+        prompt
+
+_UsedDiveText::
+        text_ram wStringBuffer2
+        text " used"
+        line "DIVE!"
+        done
+
+_CantDiveText::
+        text "DIVE can't be"
+        line "used here."
+        prompt
+
+_CanDiveText::
+        text "The sea is deep."
+
+        para "A #MON can"
+        line "DIVE here."
+        done
+
+_AskDiveDownText::
+        text "The sea is deep."
+        line "Want to DIVE?"
+        done
+
+_AskDiveUpText::
+        text "Light is filter-"
+        line "ing from above."
+        cont "Want to DIVE?"
+        done
 
 _AskSurfText::
-	text "The water is calm."
-	line "Want to SURF?"
-	done
+        text "The water is calm."
+        line "Want to SURF?"
+        done
 
 _UseWaterfallText::
 	text_ram wStringBuffer2
@@ -1483,3 +1512,4 @@ _IvySpeech6::
 	cont "answers to all of"
 	cont "life's questions."
 	prompt
+

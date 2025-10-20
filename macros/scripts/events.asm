@@ -1138,4 +1138,21 @@ MACRO lastmonmsg
         dw \1 ; text_pointer
 ENDM
 
+        const divemap_command ; $b6
+MACRO divemap
+if _NARG == 1
+        divemap \1, 0, 0
+else
+        db divemap_command
+        map_id \1 ; map
+        db \2 ; delta x
+        db \3 ; delta y
+endc
+ENDM
+
+        const divewarp_command ; $b7
+MACRO divewarp
+        db divewarp_command
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

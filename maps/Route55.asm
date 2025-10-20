@@ -13,11 +13,16 @@
 	const ROUTE_55_LORELEI
 
 Route55_MapScripts:
-	def_scene_scripts
-	scene_script Route55Noop1Scene, SCENE_ROUTE_55_LOELEI_BATTLE
-	scene_script Route55Noop2Scene, SCENE_ROUTE_55_NOOP
+        def_scene_scripts
+        scene_script Route55Noop1Scene, SCENE_ROUTE_55_LOELEI_BATTLE
+        scene_script Route55Noop2Scene, SCENE_ROUTE_55_NOOP
 
-	def_callbacks
+        def_callbacks
+        callback MAPCALLBACK_NEWMAP, Route55DiveMap
+
+Route55DiveMap:
+        divemap ROUTE_55_UNDERWATER
+        return
 
 Route55Noop1Scene:
 	end

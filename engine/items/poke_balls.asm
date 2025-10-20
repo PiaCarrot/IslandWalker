@@ -221,12 +221,14 @@ NetBallMultiplier:
 
 DiveBallMultiplier:
 ; multiply catch rate by 3.5 if surfing or fishing
-	ld a, [wPlayerState]
-	cp PLAYER_SURF
-	jr z, .water
+        ld a, [wPlayerState]
+        cp PLAYER_SURF
+        jr z, .water
+        cp PLAYER_DIVE
+        jr z, .water
 
-	ld a, [wBattleType]
-	cp BATTLETYPE_FISH
+        ld a, [wBattleType]
+        cp BATTLETYPE_FISH
 	ret nz
 
 .water

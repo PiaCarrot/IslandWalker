@@ -242,6 +242,8 @@ ScriptCommandTable:
         dw Script_checklvlcap              ; b3
         dw Script_checkinverse             ; b4
         dw Script_lastmonmsg              ; b5
+        dw Script_divemap                 ; b6
+        dw Script_divewarp                ; b7
         assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2354,6 +2356,41 @@ Script_checksave:
 	farcall CheckSave
 	ld a, c
 	ld [wScriptVar], a
+	ret
+
+Script_divemap:
+	rst GetScriptByte
+	ld [wDiveMapGroup], a
+	rst GetScriptByte
+	ld [wDiveMapNumber], a
+	rst GetScriptByte
+	ld [wDiveDeltaX], a
+	rst GetScriptByte
+	ld [wDiveDeltaY], a
+	ret
+
+Script_divewarp:
+	ld a, [wDiveMapGroup]
+	ld [wMapGroup], a
+	ld a, [wDiveMapNumber]
+	ld [wMapNumber], a
+	ld a, [wXCoord]
+	ld b, a
+	ld a, [wDiveDeltaX]
+	add b
+	ld [wXCoord], a
+	ld a, [wYCoord]
+	ld b, a
+	ld a, [wDiveDeltaY]
+	add b
+	ld [wYCoord], a
+	ld a, SPAWN_N_A
+	ld [wDefaultSpawnpoint], a
+	ld a, MAPSETUP_WARP
+	ld [hMapEntryMethod], a
+	ld a, 1
+	call LoadMapStatus
+	call StopScript
 	ret
 
 Script_loadmonindex:

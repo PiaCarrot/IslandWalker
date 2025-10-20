@@ -41,12 +41,14 @@ endc
         ret c
 .regular_move
         ld a, [wPlayerState]
-       cp PLAYER_NORMAL
-       jr z, .Normal
+	cp PLAYER_NORMAL
+	jr z, .Normal
 	cp PLAYER_SURF
 	jr z, .Surf
 	cp PLAYER_SURF_PIKA
 	jr z, .Surf
+	cp PLAYER_DIVE
+	jr z, .Normal
 	cp PLAYER_BIKE
 	jr z, .Normal
 	cp PLAYER_SKATE
@@ -284,7 +286,7 @@ endc
 	cp PLAYER_SURF
 	jr z, .TrySurf
 	cp PLAYER_SURF_PIKA
-	jr z, .TrySurf
+        jr z, .TrySurf
 
 	call .CheckLandPerms
 	jr c, .bump
@@ -1087,3 +1089,4 @@ StopPlayerForEvent::
 	xor a
 	ld [wPlayerTurningDirection], a
 	ret
+

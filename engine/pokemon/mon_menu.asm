@@ -135,8 +135,9 @@ PokemonActionSubmenu:
 .Actions:
 	dbw MONMENUITEM_CUT,        MonMenu_Cut
 	dbw MONMENUITEM_FLY,        MonMenu_Fly
-	dbw MONMENUITEM_SURF,       MonMenu_Surf
-	dbw MONMENUITEM_STRENGTH,   MonMenu_Strength
+        dbw MONMENUITEM_SURF,       MonMenu_Surf
+        dbw MONMENUITEM_DIVE,       MonMenu_Dive
+        dbw MONMENUITEM_STRENGTH,   MonMenu_Strength
         dbw MONMENUITEM_FLASH,      MonMenu_Flash
        dbw MONMENUITEM_DEFOG,      MonMenu_Defog
         dbw MONMENUITEM_WHIRLPOOL,  MonMenu_Whirlpool
@@ -720,6 +721,10 @@ MonMenu_Teleport:
 MonMenu_Surf:
 	farcall SurfFunction
 	jr MonMenu_CheckMoveFail
+
+MonMenu_Dive:
+        farcall DiveFunction
+        jr MonMenu_CheckMoveFail
 
 MonMenu_Dig:
 	farcall DigFunction
