@@ -3005,6 +3005,11 @@ wBackupWarpNumber:: db
 wBackupMapGroup::   db
 wBackupMapNumber::  db
 
+wDiveMapGroup:: db
+wDiveMapNumber:: db
+wDiveDeltaX:: db
+wDiveDeltaY:: db
+
 wLastSpawnMapGroup:: db
 wLastSpawnMapNumber:: db
 

@@ -125,6 +125,8 @@
 	const SPRITE_ROTOM_FRIDGE ; 77
 	const SPRITE_ROTOM_FAN ; 77
 	const SPRITE_ROTOM_MOWER ; 77
+	const SPRITE_CHRIS_DIVE ; 77
+	const SPRITE_KRIS_DIVE ; 77
 	
 ; sprites_berries not split yet
 	const SPRITE_BERRY_A_2 ; CHERI/BLUE

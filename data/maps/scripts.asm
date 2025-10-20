@@ -8,6 +8,8 @@ INCLUDE "maps/Route55.asm"
 INCLUDE "maps/PinkanIsland.asm"
 INCLUDE "maps/Route55ManiacsHouse.asm"
 INCLUDE "maps/Route55Cove.asm"
+INCLUDE "maps/Route55Underwater.asm"
+INCLUDE "maps/CrystalCaveUnderwater.asm"
 
 SECTION "Map Scripts 3", ROMX
 

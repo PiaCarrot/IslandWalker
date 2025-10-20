@@ -129,6 +129,8 @@ RotomWasherSpriteGFX::   INCBIN "gfx/sprites/rotom_washer.2bpp"
 RotomFridgeSpriteGFX::   INCBIN "gfx/sprites/rotom_fridge.2bpp"
 RotomFanSpriteGFX::   INCBIN "gfx/sprites/rotom_fan.2bpp"
 RotomMowerSpriteGFX::   INCBIN "gfx/sprites/rotom_mower.2bpp"
+ChrisDiveSpriteGFX::   INCBIN "gfx/sprites/chris_dive.2bpp"
+KrisDiveSpriteGFX::   INCBIN "gfx/sprites/kris_dive.2bpp"
 
 SECTION "Sprites Berry Trees", ROMX
 BerryTypeA2SpriteGFX::           INCBIN "gfx/sprites/berries/type_a_2.2bpp"

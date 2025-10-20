@@ -216,6 +216,8 @@ ENDM
 	map_attributes MillsweetLab, MILLSWEET_LAB, $00, 0
 	map_attributes MillsweetMagikarpHouse, MILLSWEET_MAGIKARP_HOUSE, $00, 0
 	map_attributes Route55ManiacsHouse, ROUTE_55_MANIACS_HOUSE, $00, 0
+	map_attributes Route55Underwater, ROUTE_55_UNDERWATER, $09, 0
+	map_attributes CrystalCaveUnderwater, CRYSTAL_CAVE_UNDERWATER, $35, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0

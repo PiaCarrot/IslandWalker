@@ -17,6 +17,7 @@
 	const TILESET_MATEOS_HOUSE
 	const TILESET_CRYSTAL_CAVE
 	const TILESET_KINNOW
+	const TILESET_UNDERWATER
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

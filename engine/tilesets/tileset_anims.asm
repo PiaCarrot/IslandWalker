@@ -165,6 +165,20 @@ TilesetCave1Anim:
 	dw vTiles2 tile $7e, WriteTileFromBuffer
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
+	
+TilesetUnderwaterAnim:
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw RSEBubbleTileFrames,  AnimateRSEBubbleTile
+	dw NULL,  DoNothing
+	dw SeaweedTile1Frames,  AnimateSeaweedTile1
+	dw SeaweedTile2Frames,  AnimateSeaweedTile2
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
 
 DoneTileAnimation:
 ; Reset the animation command loop.

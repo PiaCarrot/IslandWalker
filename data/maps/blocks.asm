@@ -205,4 +205,10 @@ PinkanIsland_Blocks:
 Route55Cove_Blocks:
 	INCBIN "maps/Route55Cove.ablk"
 
+Route55Underwater_Blocks:
+	INCBIN "maps/Route55Underwater.ablk"
+
+CrystalCaveUnderwater_Blocks:
+	INCBIN "maps/CrystalCaveUnderwater.ablk"
+
 ENDSECTION

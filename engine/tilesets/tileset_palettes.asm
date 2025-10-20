@@ -34,6 +34,8 @@ LoadSpecialMapPalette:
 	jr z, .mateos_house
 	cp TILESET_CRYSTAL_CAVE
 	jr z, .crystal_cave
+	cp TILESET_UNDERWATER
+	jr z, .underwater
 	cp TILESET_PLAYERS_HOUSE
 	jr z, .check_for_curio_shop
 	jr .do_nothing
@@ -82,6 +84,11 @@ LoadSpecialMapPalette:
 	
 .crystal_cave
 	call LoadCrystalCavePalette
+	scf
+	ret
+	
+.underwater
+	call LoadUnderwaterPalette
 	scf
 	ret
 	
@@ -213,6 +220,16 @@ LoadCrystalCavePalette:
 	
 CrystalCavePalette:
 INCLUDE "gfx/tilesets/crystal_cave.pal"
+
+LoadUnderwaterPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, UnderwaterPalette
+	ld bc, 8 palettes
+	jmp FarCopyWRAM
+	
+UnderwaterPalette:
+INCLUDE "gfx/tilesets/underwater.pal"
 
 LoadCurioShopPal:
 	ld a, BANK(wBGPals1)

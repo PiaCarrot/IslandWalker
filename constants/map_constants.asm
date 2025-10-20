@@ -120,6 +120,7 @@ ENDM
 	map_const CRYSTAL_CAVE_GATE,					10,  10
 	map_const CURIO_SHOP,					5,  5
 	map_const SUNBURST_HOUSE,					4,  4
+	map_const CRYSTAL_CAVE_UNDERWATER,					7,  8
 	endgroup
 
 	newgroup KINNOW
@@ -127,6 +128,7 @@ ENDM
 	map_const ROUTE_55,					26,  30
 	map_const ROUTE_55_MANIACS_HOUSE,					4,  4
 	map_const ROUTE_55_COVE,					26,  10
+	map_const ROUTE_55_UNDERWATER,					26,  30
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 1

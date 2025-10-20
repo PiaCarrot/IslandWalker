@@ -31,4 +31,5 @@ Tilesets::
 	tileset TilesetMateosHouse
 	tileset TilesetCrystalCave
 	tileset TilesetKinnow
+	tileset TilesetUnderwater
 	assert_table_length NUM_TILESETS + 1

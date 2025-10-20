@@ -346,3 +346,21 @@ INCBIN "data/tilesets/kinnow_metatiles.bin.lz"
 
 TilesetKinnowColl::
 INCLUDE "data/tilesets/kinnow_collision.asm"
+
+TilesetUnderwatervTiles2GFX::
+INCBIN "gfx/tilesets/underwater.2bpp.vtiles2.lz"
+
+TilesetUnderwatervTiles5GFX::
+INCBIN "gfx/tilesets/underwater.2bpp.vtiles5.lz"
+
+TilesetUnderwatervTiles4GFX::
+INCBIN "gfx/tilesets/underwater.2bpp.vtiles4.lz"
+
+TilesetUnderwaterAttr::
+INCBIN "data/tilesets/underwater_attributes.bin.lz"
+
+TilesetUnderwaterMeta::
+INCBIN "data/tilesets/underwater_metatiles.bin.lz"
+
+TilesetUnderwaterColl::
+INCLUDE "data/tilesets/underwater_collision.asm"

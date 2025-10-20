@@ -130,6 +130,8 @@ OverworldSprites:
 	overworld_sprite RotomFridgeSpriteGFX,     4, STILL_SPRITE, PAL_OW_ORANGE
 	overworld_sprite RotomFanSpriteGFX,     4, STILL_SPRITE, PAL_OW_ORANGE
 	overworld_sprite RotomMowerSpriteGFX,     4, STILL_SPRITE, PAL_OW_ORANGE
+	overworld_sprite ChrisDiveSpriteGFX,     12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite KrisDiveSpriteGFX,     12, WALKING_SPRITE, PAL_OW_BLUE
 	
 	
 	
