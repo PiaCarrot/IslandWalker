@@ -1118,6 +1118,7 @@ AnimateRSEBubbleTile:
 
 ; Alternate tile graphic every frame
 	ld a, [wTileAnimationTimer]
+	srl a
 	and %111
 	swap a ; << 4 (16 bytes)
 	ld e, a
