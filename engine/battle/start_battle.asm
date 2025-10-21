@@ -52,6 +52,12 @@ PlayBattleMusic:
 	and a
 	jr nz, .trainermusic
 
+	call .CheckHighLevelWild
+	jr nc, .regularwild
+	ld de, MUSIC_ORANGE_WILD_HIGH_LEVEL
+	jp .done
+
+.regularwild
 	farcall RegionCheck
 	ld a, e
 	and a
@@ -67,6 +73,33 @@ PlayBattleMusic:
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
 	jp .done
+
+.CheckHighLevelWild
+	ld a, [wPartyCount]
+	and a
+	ret z
+	ld c, a
+	ld hl, wPartyMon1Level
+	ld de, PARTYMON_STRUCT_LENGTH
+	ld b, 0
+
+.loop
+	ld a, [hl]
+	cp b
+	jr c, .next
+	ld b, a
+
+.next
+	add hl, de
+	dec c
+	jr nz, .loop
+	ld a, b
+	add 10
+	ld b, a
+	ld a, [wCurPartyLevel]
+	cp b
+	ccf
+	ret
 
 .trainermusic
 	ld de, MUSIC_CHAMPION_BATTLE
