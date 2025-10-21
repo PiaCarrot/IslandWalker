@@ -19,7 +19,7 @@ CopySpritePal::
 	ld hl, wBGPals1
 	ld bc, 1 palettes
 	rst AddNTimes
-	jr .got_pal
+	jmp .got_pal
 
 .not_copy_bg
 	; check darkness
@@ -67,6 +67,21 @@ CopySpritePal::
        jr .got_pal
 
 .not_special
+       ld a, [wMapTileset]
+       cp TILESET_UNDERWATER
+       jr nz, .not_underwater
+       ld a, [wPalFlags]
+       bit USE_DAYTIME_PAL_F, a
+       jr nz, .not_underwater
+       ld a, [wNeededPalIndex]
+       cp NUM_OW_TIME_OF_DAY_PALS
+       jr nc, .not_underwater
+       ld hl, UnderwaterOBPalette
+       ld bc, 1 palettes
+       rst AddNTimes
+       jr .got_pal
+
+.not_underwater
        ld a, [wNeededPalIndex]
        cp NUM_OW_TIME_OF_DAY_PALS
        jr c, .time_of_day_pal
@@ -113,19 +128,24 @@ ApplyOBPals:
 	jmp FarCopyColorWRAM
 
 MapObjectPals:
-	table_width 1 palettes
+       table_width 1 palettes
 INCLUDE "gfx/overworld/npc_sprites.pal"
-	assert_table_length NUM_OW_TIME_OF_DAY_PALS * NUM_DAYTIMES ; morn, day, nite, eve
+       assert_table_length NUM_OW_TIME_OF_DAY_PALS * NUM_DAYTIMES ; morn, day, nite, eve
 
 SingleObjectPals:
-	table_width 1 palettes
+       table_width 1 palettes
 INCLUDE "gfx/overworld/npc_single_object.pal"
-	assert_table_length NUM_OW_INDIVIDUAL_PALS
+       assert_table_length NUM_OW_INDIVIDUAL_PALS
+
+UnderwaterOBPalette:
+       table_width 1 palettes
+INCLUDE "gfx/overworld/npc_sprites_underwater.pal"
+       assert_table_length NUM_OW_TIME_OF_DAY_PALS + NUM_OW_INDIVIDUAL_PALS
 
 DarknessOBPalette:
-        table_width 1 palettes
+       table_width 1 palettes
 INCLUDE "gfx/overworld/npc_sprites_darkness.pal"
-        assert_table_length NUM_OW_TIME_OF_DAY_PALS + NUM_OW_INDIVIDUAL_PALS
+       assert_table_length NUM_OW_TIME_OF_DAY_PALS + NUM_OW_INDIVIDUAL_PALS
 
 FogOBPalette:
        table_width 1 palettes
