@@ -162,6 +162,7 @@ Music:
 	dba Music_SomeRouteOrangeNight ; regen
 	dba Music_SlateportCityNight ; mmmmm
 	dba Music_PinkanIslandNight ; regen
+	dba Music_OrangeWildHighLevel ; monsta (edited by pia)
 ; rse
 	dba Music_PokemonMart ;Mmmmm
 	dba Music_SlateportCity ;Mmmmm

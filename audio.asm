@@ -201,6 +201,7 @@ INCLUDE "audio/music/orange/orangegymbattle.asm"
 INCLUDE "audio/music/orange/orangetrainerbattle.asm"
 INCLUDE "audio/music/orange/fourisland.asm"
 INCLUDE "audio/music/orange/orangewildnight.asm"
+INCLUDE "audio/music/orange/orangewildhighlvl.asm"
 
 SECTION "Songs Other", ROMX
 INCLUDE "audio/music/orange/ridinglapras.asm" ;mmmm
