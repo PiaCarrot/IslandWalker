@@ -121,6 +121,7 @@ ENDM
 	map_const CURIO_SHOP,					5,  5
 	map_const SUNBURST_HOUSE,					4,  4
 	map_const CRYSTAL_CAVE_UNDERWATER,					7,  8
+	map_const CRYSTAL_CAVE_B2F,					15,  15
 	endgroup
 
 	newgroup KINNOW

@@ -14,6 +14,7 @@ Route55Underwater_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event 17, 11, CRYSTAL_CAVE_UNDERWATER, 1
 
 	def_coord_events
 

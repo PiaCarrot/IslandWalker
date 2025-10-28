@@ -10,6 +10,7 @@ INCLUDE "maps/Route55ManiacsHouse.asm"
 INCLUDE "maps/Route55Cove.asm"
 INCLUDE "maps/Route55Underwater.asm"
 INCLUDE "maps/CrystalCaveUnderwater.asm"
+INCLUDE "maps/CrystalCaveB2F.asm"
 
 SECTION "Map Scripts 3", ROMX
 

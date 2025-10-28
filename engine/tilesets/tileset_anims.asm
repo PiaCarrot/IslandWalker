@@ -79,6 +79,7 @@ TilesetCrystalCaveAnim:
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw RSEWaterFrames, AnimateRSEWaterTiles
+	dw DiveWaterFrames, AnimateDiveWaterTiles
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileDown

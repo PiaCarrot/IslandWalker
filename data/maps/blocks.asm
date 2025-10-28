@@ -211,4 +211,7 @@ Route55Underwater_Blocks:
 CrystalCaveUnderwater_Blocks:
 	INCBIN "maps/CrystalCaveUnderwater.ablk"
 
+CrystalCaveB2F_Blocks:
+	INCBIN "maps/CrystalCaveB2F.ablk"
+
 ENDSECTION

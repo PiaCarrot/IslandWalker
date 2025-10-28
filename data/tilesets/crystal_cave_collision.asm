@@ -71,3 +71,5 @@
 	tilecoll WALL, WALL, FLOOR, LADDER ; 46
 	tilecoll WALL, WALL, WALL, WALL ; 47
 	tilecoll FLOOR, FLOOR, CAVE, WALL ; 48
+	tilecoll DIVE_DOWN, DIVE_DOWN, DIVE_DOWN, DIVE_DOWN ; 49
+	tilecoll WALL, WALL, WALL, WALL ; 4a
