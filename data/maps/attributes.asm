@@ -206,6 +206,7 @@ ENDM
 	map_attributes CrystalCave1F, CRYSTAL_CAVE_1F, $01, 0
 	map_attributes CrystalCaveB1F, CRYSTAL_CAVE_B1F, $01, 0
 	map_attributes CrystalCaveB2F, CRYSTAL_CAVE_B2F, $01, 0
+	map_attributes CrystalCaveB2FTreasureRoom, CRYSTAL_CAVE_B2F_TREASURE_ROOM, $58, 0
 	map_attributes CrystalCaveGate, CRYSTAL_CAVE_GATE, $01, 0
 	map_attributes CurioShop, CURIO_SHOP, $00, 0
 	map_attributes SunburstHouse, SUNBURST_HOUSE, $00, 0

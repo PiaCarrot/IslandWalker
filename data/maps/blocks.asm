@@ -214,4 +214,7 @@ CrystalCaveUnderwater_Blocks:
 CrystalCaveB2F_Blocks:
 	INCBIN "maps/CrystalCaveB2F.ablk"
 
+CrystalCaveB2FTreasureRoom_Blocks:
+	INCBIN "maps/CrystalCaveB2FTreasureRoom.ablk"
+
 ENDSECTION

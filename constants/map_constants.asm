@@ -122,6 +122,7 @@ ENDM
 	map_const SUNBURST_HOUSE,					4,  4
 	map_const CRYSTAL_CAVE_UNDERWATER,					7,  8
 	map_const CRYSTAL_CAVE_B2F,					15,  15
+	map_const CRYSTAL_CAVE_B2F_TREASURE_ROOM,					6,  8
 	endgroup
 
 	newgroup KINNOW
