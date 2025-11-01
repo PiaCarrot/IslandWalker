@@ -393,6 +393,7 @@ jmp nc, .ice
 	ld de, SFX_JUMP_OVER_LEDGE
 	call PlaySFX
 .skip_hop_sfx
+	ld a, PLAYERMOVEMENT_FINISH
 	scf
 	ret
 
