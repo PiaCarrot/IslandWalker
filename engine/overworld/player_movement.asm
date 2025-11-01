@@ -1,5 +1,27 @@
+DEF BIKE_HOP_COOLDOWN_FRAMES EQU 12
+DEF BIKE_HOP_COOLDOWN_UNITS  EQU BIKE_HOP_COOLDOWN_FRAMES << BIKEFLAGS_HOP_COOLDOWN_SHIFT
+
 DoPlayerMovement::
 	call .GetDPad
+	ld hl, wBikeFlags
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jr z, .decrement_bike_hop_cooldown
+	ld a, [hl]
+	and BIKEFLAGS_HOP_COOLDOWN_CLEAR
+	ld [hl], a
+	jr .finished_bike_hop_cooldown
+.decrement_bike_hop_cooldown
+	ld a, [hl]
+	and BIKEFLAGS_HOP_COOLDOWN_MASK
+	jr z, .finished_bike_hop_cooldown
+	sub BIKEFLAGS_HOP_COOLDOWN_UNIT
+	ld b, a
+	ld a, [hl]
+	and BIKEFLAGS_HOP_COOLDOWN_CLEAR
+	or b
+	ld [hl], a
+.finished_bike_hop_cooldown
 	ld a, movement_step_sleep
 	ld [wMovementAnimation], a
 	xor a
@@ -284,22 +306,29 @@ endc
 ; Surfing actually calls .TrySurf directly instead of passing through here.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
-	jr z, .TrySurf
+	jmp z, .TrySurf
 	cp PLAYER_SURF_PIKA
-        jr z, .TrySurf
+	jmp z, .TrySurf
 
 	call .CheckLandPerms
-	jr c, .bump
+	jr nc, .check_npc
 
+.bump
+	xor a
+	ld [wSpinning], a
+	ret
+
+.check_npc
 	call .CheckNPC
 	and a
 	jr z, .bump
 	cp 2
 	jr z, .bump
-	
+
+.after_npc_check
 	ld a, [wSpinning]
 	and a
-	jr nz, .spin
+jmp nz, .spin
 
 	ld a, [wPlayerTileCollision]
 	call CheckIceTile
@@ -323,10 +352,50 @@ endc
 	ret
 
 .fast
-	ld a, STEP_BIKE
+	ld a, [wCurInput]
+	and B_BUTTON
+	jr z, .bike
+	ld hl, wBikeFlags
+	ld a, [hl]
+	and BIKEFLAGS_HOP_COOLDOWN_MASK
+	jr nz, .hop_cooldown
+	ld a, [wWalkingDirection]
+	cp STANDING
+	jr nz, .hop
+	ld a, [wPlayerDirection]
+	rrca
+	rrca
+	maskbits NUM_DIRECTIONS
+	ld [wWalkingDirection], a
+.hop
+	ld a, STEP_BIKE_HOP
 	call .DoStep
+	ld hl, wBikeFlags
+	ld a, [hl]
+	and BIKEFLAGS_HOP_COOLDOWN_CLEAR
+	or BIKE_HOP_COOLDOWN_UNITS
+	ld [hl], a
+	call CheckSFX
+	jr c, .skip_hop_sfx
+	ld de, SFX_JUMP_OVER_LEDGE
+	call PlaySFX
+.skip_hop_sfx
 	scf
 	ret
+
+.hop_cooldown
+	ld a, [wWalkingDirection]
+	cp STANDING
+	jr nz, .bike
+	call .StandInPlace
+	scf
+	ret
+
+.bike
+	ld a, STEP_BIKE
+	call .DoStep
+        scf
+        ret
 
 .walk
 	ld a, [wCurInput]
@@ -360,11 +429,6 @@ endc
 	ld a, STEP_SPIN
 	call .DoStep
 	scf
-	ret
-
-.bump
-	xor a
-	ld [wSpinning], a
 	ret
 
 .TrySurf:
@@ -533,6 +597,7 @@ endc
 	dw .BackJumpStep
 	dw .FinishFacing
 	dw .SpinStep
+	dw .BikeHopStep
 	assert_table_length NUM_STEPS
 
 .SlowStep:
@@ -566,12 +631,17 @@ endc
 	fast_slide_step LEFT
 	fast_slide_step RIGHT
 .BackJumpStep:
-	jump_step UP
-	jump_step DOWN
-	jump_step RIGHT
-	jump_step LEFT
+        jump_step UP
+        jump_step DOWN
+        jump_step RIGHT
+        jump_step LEFT
+.BikeHopStep:
+        jump_in_place
+        jump_in_place
+        jump_in_place
+        jump_in_place
 .TurningStep:
-	turn_step DOWN
+        turn_step DOWN
 	turn_step UP
 	turn_step LEFT
 	turn_step RIGHT

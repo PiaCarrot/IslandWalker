@@ -209,12 +209,13 @@ DEF NUM_SPRITEMOVEFN EQU const_value
 	const STEP_TYPE_RETURN_DIG       ; 12
 	const STEP_TYPE_TRACKING_OBJECT  ; 13
 	const STEP_TYPE_14               ; 14
-	const STEP_TYPE_SCREENSHAKE      ; 15
-	const STEP_TYPE_16               ; 16
-	const STEP_TYPE_17               ; 17
-	const STEP_TYPE_DELETE           ; 18
-	const STEP_TYPE_SKYFALL_TOP      ; 19
-	const STEP_TYPE_NPC_JUMP_INPLACE ; 20
+        const STEP_TYPE_SCREENSHAKE        ; 15
+        const STEP_TYPE_16                 ; 16
+        const STEP_TYPE_17                 ; 17
+        const STEP_TYPE_DELETE             ; 18
+        const STEP_TYPE_SKYFALL_TOP        ; 19
+        const STEP_TYPE_PLAYER_JUMP_INPLACE ; 1a
+        const STEP_TYPE_NPC_JUMP_INPLACE   ; 1b
 DEF NUM_STEP_TYPES EQU const_value
 
 ; ObjectActionPairPointers indexes (see engine/overworld/map_object_action.asm)
@@ -282,13 +283,14 @@ DEF NUM_FACINGS EQU const_value
 ; TODO: fix STEP_RUN constant to have a value of $3
 	const_def
 	const STEP_SLOW          ; 0
-	const STEP_WALK          ; 1
-	const STEP_RUN           ; 2
-	const STEP_BIKE          ; 3
-	const STEP_LEDGE         ; 4
-	const STEP_ICE           ; 5
-	const STEP_TURN          ; 6
-	const STEP_BACK_LEDGE    ; 7
-	const STEP_WALK_IN_PLACE ; 8
-	const STEP_SPIN ; 9
+        const STEP_WALK          ; 1
+        const STEP_RUN           ; 2
+        const STEP_BIKE          ; 3
+        const STEP_LEDGE         ; 4
+        const STEP_ICE           ; 5
+        const STEP_TURN          ; 6
+        const STEP_BACK_LEDGE    ; 7
+        const STEP_WALK_IN_PLACE ; 8
+        const STEP_SPIN          ; 9
+        const STEP_BIKE_HOP      ; a
 DEF NUM_STEPS EQU const_value

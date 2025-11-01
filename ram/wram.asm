@@ -2906,6 +2906,7 @@ wBikeFlags::
 ; bit 0: using strength
 ; bit 1: always on bike
 ; bit 2: downhill
+; bits 3-6: bike hop cooldown timer
 	db
 
 wWildBattlePanic:: db

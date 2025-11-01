@@ -1126,9 +1126,10 @@ StepTypesJumptable:
 	dw StepFunction_16              ; 16
 	dw StepFunction_17              ; 17
 	dw StepFunction_Delete          ; 18
-	dw StepFunction_SkyfallTop      ; 19
-	dw StepFunction_NPCJumpInPlace  ; 19
-	assert_table_length NUM_STEP_TYPES
+        dw StepFunction_SkyfallTop         ; 19
+        dw StepFunction_PlayerJumpInPlace  ; 1a
+        dw StepFunction_NPCJumpInPlace     ; 1b
+        assert_table_length NUM_STEP_TYPES
 
 WaitStep_InPlace:
 	ld hl, OBJECT_STEP_DURATION
@@ -1174,12 +1175,12 @@ StepFunction_NPCJump:
 	ret
 
 StepFunction_PlayerJump:
-	call ObjectStep_AnonJumptable
+        call ObjectStep_AnonJumptable
 .anon_dw
-	dw .initjump
-	dw .stepjump
-	dw .initland
-	dw .stepland
+        dw .initjump
+        dw .stepjump
+        dw .initland
+        dw .stepland
 
 .initjump
 	ld hl, wPlayerStepFlags
@@ -1601,14 +1602,77 @@ StepFunction_PlayerWalk:
 	ld [hl], STANDING
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
-	ld [hl], STEP_TYPE_FROM_MOVEMENT
-	ret
+        ld [hl], STEP_TYPE_FROM_MOVEMENT
+        ret
+
+StepFunction_PlayerJumpInPlace:
+        call ObjectStep_AnonJumptable
+.anon_dw
+        dw .initjump
+        dw .stepjump
+        dw .initland
+        dw .stepland
+
+.initjump
+        ld hl, wPlayerStepDirection
+        ld [hl], STANDING
+        ld hl, wPlayerStepFlags
+        set PLAYERSTEP_START_F, [hl]
+        call ObjectStep_IncAnonJumptableIndex
+.stepjump
+        ld h, 4
+        call UpdateJumpPositionInPlace
+        ld hl, wPlayerStepFlags
+        set PLAYERSTEP_CONTINUE_F, [hl]
+        ld hl, OBJECT_STEP_DURATION
+        add hl, bc
+        dec [hl]
+        ret nz
+        ld hl, OBJECT_FLAGS2
+        add hl, bc
+        res OVERHEAD_F, [hl]
+        ld hl, wPlayerStepFlags
+        set PLAYERSTEP_STOP_F, [hl]
+        set PLAYERSTEP_MIDAIR_F, [hl]
+        call ObjectStep_IncAnonJumptableIndex
+.initland
+        ld hl, OBJECT_STEP_DURATION
+        add hl, bc
+        ld [hl], 4
+        ld hl, wPlayerStepDirection
+        ld [hl], STANDING
+        ld hl, wPlayerStepFlags
+        set PLAYERSTEP_START_F, [hl]
+        call ObjectStep_IncAnonJumptableIndex
+.stepland
+        ld h, 4
+        call UpdateJumpPositionInPlace
+        ld hl, wPlayerStepFlags
+        set PLAYERSTEP_CONTINUE_F, [hl]
+        ld hl, OBJECT_STEP_DURATION
+        add hl, bc
+        dec [hl]
+        ret nz
+        ld hl, wPlayerStepFlags
+        res PLAYERSTEP_MIDAIR_F, [hl]
+        set PLAYERSTEP_STOP_F, [hl]
+        set PLAYERSTEP_SKIP_REPEL_F, [hl]
+        ld hl, OBJECT_SPRITE_Y_OFFSET
+        add hl, bc
+        ld [hl], 0
+        ld hl, OBJECT_FLAGS2
+        add hl, bc
+        res HIGH_PRIORITY_F, [hl]
+        ld hl, OBJECT_STEP_TYPE
+        add hl, bc
+        ld [hl], STEP_TYPE_FROM_MOVEMENT
+        ret
 
 StepFunction_Turn:
-	call ObjectStep_AnonJumptable
+        call ObjectStep_AnonJumptable
 .anon_dw
-	dw .init1
-	dw .step1
+        dw .init1
+        dw .step1
 	dw .init2
 	dw .step2
 
@@ -2471,11 +2535,15 @@ HandleNPCStep::
 	ret
 
 .ResetStepVector
+	call ResetPlayerStepState
+	ret
+
+ResetPlayerStepState::
 	xor a
 	ld [wPlayerStepVectorX], a
 	ld [wPlayerStepVectorY], a
 	ld a, [wPlayerStepFlags]
-	bit 6, a
+	bit PLAYERSTEP_STOP_F, a
 	ld a, $0 ; no-optimize a = 0
 	ld [wPlayerStepFlags], a
 	ret nz
@@ -2667,6 +2735,19 @@ UnfreezeObject: ; unreferenced
 	ret
 
 ResetObject::
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld a, [hl]
+	cp STEP_TYPE_PLAYER_JUMP_INPLACE
+	jr z, .reset_jump_in_place
+	cp STEP_TYPE_NPC_JUMP_INPLACE
+	jr z, .reset_jump_in_place
+	jr .after_reset_jump
+
+.reset_jump_in_place
+	call ResetJumpInPlaceState
+
+.after_reset_jump
 	ld hl, OBJECT_MAP_OBJECT_INDEX
 	add hl, bc
 	ld a, [hl]
@@ -2708,6 +2789,34 @@ ResetObject::
 	db SPRITEMOVEDATA_STANDING_UP
 	db SPRITEMOVEDATA_STANDING_LEFT
 	db SPRITEMOVEDATA_STANDING_RIGHT
+
+ResetJumpInPlaceState:
+       xor a
+       ld hl, OBJECT_SPRITE_Y_OFFSET
+       add hl, bc
+       ld [hl], a
+       ld hl, OBJECT_FLAGS2
+       add hl, bc
+       res HIGH_PRIORITY_F, [hl]
+       push bc
+       ld hl, wPlayerStruct
+       ld a, l
+       cp c
+       jr nz, .not_player
+       ld a, h
+       cp b
+       jr nz, .not_player
+       pop bc
+       call ResetPlayerStepState
+       xor a
+       ld [wHandlePlayerStep], a
+       ld [wPlayerBGMapOffsetX], a
+       ld [wPlayerBGMapOffsetY], a
+       ret
+
+.not_player
+       pop bc
+       ret
 
 _UpdateSprites::
 	ld a, [wStateFlags]

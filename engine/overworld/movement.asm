@@ -827,13 +827,24 @@ JumpInPlace:
 	add hl, bc
 	res OVERHEAD_F, [hl]
 
-	ld hl, OBJECT_ACTION
-	add hl, bc
-	ld [hl], OBJECT_ACTION_STEP
+        ld hl, OBJECT_ACTION
+        add hl, bc
+        ld [hl], OBJECT_ACTION_STEP
 
-	call SpawnShadow
+        call SpawnShadow
 
-	ld hl, OBJECT_STEP_TYPE
-	add hl, bc
-	ld [hl], STEP_TYPE_NPC_JUMP_INPLACE
-	ret
+        ld hl, wCenteredObject
+        ldh a, [hMapObjectIndex]
+        cp [hl]
+        jr z, .player
+
+        ld hl, OBJECT_STEP_TYPE
+        add hl, bc
+        ld [hl], STEP_TYPE_NPC_JUMP_INPLACE
+        ret
+
+.player
+        ld hl, OBJECT_STEP_TYPE
+        add hl, bc
+        ld [hl], STEP_TYPE_PLAYER_JUMP_INPLACE
+        ret

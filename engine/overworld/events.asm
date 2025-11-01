@@ -897,9 +897,18 @@ CountStep:
 	farcall CheckSpecialPhoneCall
 	jr c, .doscript
 
-	; If Repel wore off, don't count the step.
-	call DoRepelStep
-	jr c, .doscript
+        ; If Repel wore off, don't count the step.
+        ld hl, wPlayerStepFlags
+        bit PLAYERSTEP_SKIP_REPEL_F, [hl]
+        jr nz, .skip_repel
+        call DoRepelStep
+        jr c, .doscript
+        jr .after_repel
+
+.skip_repel
+        res PLAYERSTEP_SKIP_REPEL_F, [hl]
+
+.after_repel
 
 	; Count the step for poison and total steps
 	ld hl, wPoisonStepCount
