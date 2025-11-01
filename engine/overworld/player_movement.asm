@@ -331,8 +331,8 @@ endc
 jmp nz, .spin
 
 	ld a, [wPlayerTileCollision]
-	call CheckIceTile
-	jr nc, .ice
+call CheckIceTile
+jmp nc, .ice
 
 ; Downhill riding is slower when not moving down.
 	call .BikeCheck
@@ -367,9 +367,22 @@ jmp nz, .spin
 	rrca
 	maskbits NUM_DIRECTIONS
 	ld [wWalkingDirection], a
+
 .hop
+	ld a, [wCurInput]
+	and PAD_CTRL_PAD
+	jr nz, .direction_hop
+
+.stationary_hop
 	ld a, STEP_BIKE_HOP
 	call .DoStep
+	jr .finish_hop
+
+.direction_hop
+	ld a, STEP_HOP
+	call .DoStep
+
+.finish_hop
 	ld hl, wBikeFlags
 	ld a, [hl]
 	and BIKEFLAGS_HOP_COOLDOWN_CLEAR
@@ -590,15 +603,16 @@ jmp nz, .spin
 	dw .SlowStep
 	dw .NormalStep
 	dw .RunStep
-	dw .BikeStep
-	dw .JumpStep
-	dw .SlideStep
-	dw .TurningStep
-	dw .BackJumpStep
-	dw .FinishFacing
-	dw .SpinStep
-	dw .BikeHopStep
-	assert_table_length NUM_STEPS
+        dw .BikeStep
+        dw .JumpStep
+        dw .SlideStep
+        dw .TurningStep
+        dw .BackJumpStep
+        dw .FinishFacing
+        dw .SpinStep
+        dw .BikeHopStep
+        dw .HopStep
+        assert_table_length NUM_STEPS
 
 .SlowStep:
 	slow_step DOWN
@@ -640,6 +654,11 @@ jmp nz, .spin
         jump_in_place
         jump_in_place
         jump_in_place
+.HopStep:
+        hop_step DOWN
+        hop_step UP
+        hop_step LEFT
+        hop_step RIGHT
 .TurningStep:
         turn_step DOWN
 	turn_step UP

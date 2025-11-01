@@ -96,6 +96,10 @@ MovementPointers:
 	dw Movement_bike_step_left        ; 5c
 	dw Movement_bike_step_right       ; 5d
 	dw Movement_jump_in_place         ; 5e
+	dw Movement_hop_step_down         ; 5f
+	dw Movement_hop_step_up           ; 60
+	dw Movement_hop_step_left         ; 61
+	dw Movement_hop_step_right        ; 62
 	assert_table_length NUM_MOVEMENT_CMDS
 
 Movement_teleport_from:
@@ -652,8 +656,24 @@ Movement_fast_jump_step_left:
 	jmp JumpStep
 
 Movement_fast_jump_step_right:
-	ld a, STEP_RUN << 2 | RIGHT
-	jmp JumpStep
+        ld a, STEP_RUN << 2 | RIGHT
+        jmp JumpStep
+
+Movement_hop_step_down:
+	ld a, STEP_WALK << 2 | DOWN
+	jmp HopStep
+
+Movement_hop_step_up:
+	ld a, STEP_WALK << 2 | UP
+	jmp HopStep
+
+Movement_hop_step_left:
+	ld a, STEP_WALK << 2 | LEFT
+	jmp HopStep
+
+Movement_hop_step_right:
+	ld a, STEP_WALK << 2 | RIGHT
+	jmp HopStep
 
 Movement_turn_step_down:
 	ld a, OW_DOWN
@@ -804,16 +824,48 @@ JumpStep:
 	ret
 
 .player
-	ld hl, OBJECT_STEP_TYPE
+        ld hl, OBJECT_STEP_TYPE
+        add hl, bc
+        ld [hl], STEP_TYPE_PLAYER_JUMP
+        ret
+
+HopStep:
+	call InitStep
+	ld hl, OBJECT_JUMP_HEIGHT
 	add hl, bc
-	ld [hl], STEP_TYPE_PLAYER_JUMP
-	ret
-	
-Movement_jump_in_place:
-JumpInPlace:
+	ld [hl], $0
+
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
-	set HIGH_PRIORITY_F, [hl]
+	res OVERHEAD_F, [hl]
+
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], OBJECT_ACTION_STEP
+
+	call SpawnShadow
+
+	ld hl, wCenteredObject
+	ldh a, [hMapObjectIndex]
+	cp [hl]
+	jr z, .player
+
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_NPC_HOP
+	ret
+
+.player
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_PLAYER_HOP
+	ret
+
+Movement_jump_in_place:
+JumpInPlace:
+        ld hl, OBJECT_FLAGS2
+        add hl, bc
+        set HIGH_PRIORITY_F, [hl]
 
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
