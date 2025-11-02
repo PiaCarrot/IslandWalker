@@ -198,12 +198,12 @@
 	tilecoll WALL, WALL, WALL, DOOR ; c5
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c6
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; c7
-	tilecoll WALL, WALL, WALL, WALL ; c8
-	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE ; c9
+	tilecoll FLOOR, WALL, RAIL, WALL ; c8
+	tilecoll RAIL_HOP, WATER, WATER, WATER ; c9
 	tilecoll WATER, WATER, WATER, WATER ; ca
 	tilecoll WALL, WALL, WALL, WALL ; cb
-	tilecoll WALL, WALL, WALL, WALL ; cc
-	tilecoll WALL, WALL, FLOOR, FLOOR ; cd
+	tilecoll RAIL, WATER, RAIL, WATER ; cc
+	tilecoll RAIL_HOP, RAIL_HOP, WATER, WATER ; cd
 	tilecoll FLOOR, WALL, FLOOR, WALL ; ce
 	tilecoll WALL, WALL, WALL, WALL ; cf
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; d0
