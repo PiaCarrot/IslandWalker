@@ -123,6 +123,8 @@ DEF COLL_UP_RIGHT_BUOY     EQU $c6 ; unused
 DEF COLL_UP_LEFT_BUOY      EQU $c7 ; unused
 DEF COLL_RAIL             EQU $d0
 DEF COLL_RAIL_HOP         EQU $d1
+DEF COLL_HRAIL            EQU $d2
+DEF COLL_HRAIL_HOP        EQU $d3
 DEF COLL_FF                EQU $ff ; garbage
 
 ; collision data type nybbles

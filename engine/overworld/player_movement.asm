@@ -908,6 +908,10 @@ ENDM
         jr z, .rail
         cp COLL_RAIL_HOP
         jr z, .rail_hop
+        cp COLL_HRAIL
+        jr z, .rail
+        cp COLL_HRAIL_HOP
+        jr z, .rail_hop
         call GetTilePermission
         and a ; LAND_TILE
         ret z
@@ -926,6 +930,8 @@ ENDM
         jr nz, .blocked
         ld a, [wPlayerTileCollision]
         cp COLL_RAIL
+        jr z, .allow
+        cp COLL_HRAIL
         jr z, .allow
         ld a, [wCurInput]
         and B_BUTTON

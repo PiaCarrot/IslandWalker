@@ -211,8 +211,8 @@ CollisionPermissionTable::
 	db WATER_TILE        ; cf
         db LAND_TILE         ; COLL_RAIL
         db LAND_TILE         ; COLL_RAIL_HOP
-	db LAND_TILE         ; d2
-	db LAND_TILE         ; d3
+        db LAND_TILE         ; COLL_HRAIL
+        db LAND_TILE         ; COLL_HRAIL_HOP
 	db LAND_TILE         ; d4
 	db LAND_TILE         ; d5
 	db LAND_TILE         ; d6
