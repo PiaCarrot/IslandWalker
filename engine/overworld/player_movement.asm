@@ -904,11 +904,43 @@ ENDM
 .CheckWalkable:
 ; Return 0 if tile a is land. Otherwise, return carry.
 
-	call GetTilePermission
-	and a ; LAND_TILE
-	ret z
-	scf
-	ret
+        cp COLL_RAIL
+        jr z, .rail
+        cp COLL_RAIL_HOP
+        jr z, .rail_hop
+        call GetTilePermission
+        and a ; LAND_TILE
+        ret z
+.blocked
+        scf
+        ret
+
+.rail
+        call .IsOnBike
+        jr nz, .blocked
+        xor a
+        ret
+
+.rail_hop
+        call .IsOnBike
+        jr nz, .blocked
+        ld a, [wPlayerTileCollision]
+        cp COLL_RAIL
+        jr z, .allow
+        ld a, [wCurInput]
+        and B_BUTTON
+        jr z, .blocked
+        ld a, [wCurInput]
+        and PAD_CTRL_PAD
+        jr z, .blocked
+.allow
+        xor a
+        ret
+
+.IsOnBike
+        ld a, [wPlayerState]
+        cp PLAYER_BIKE
+        ret
 
 .CheckSurfable:
 ; Return 0 if tile a is water, or 1 if land.
