@@ -38,9 +38,34 @@ _AnimateTileset::
 Tileset0Anim::
 TilesetValenciaMandarinNorthAnim:
 TilesetMoroIslandAnim:
+	dw vTiles2 tile $13, WriteTileToBuffer
+	dw RSEWaterFrames, AnimateRSEWaterTiles
+	dw ShoreWaterFrames, AnimateShoreWaterTiles
+	dw DiveWaterFrames, AnimateDiveWaterTiles
+	dw RockTopsFrames, AnimateRockTopsTiles
+	dw RockLeftFrames, AnimateRockLeftTiles
+	dw RockBotLeftFrames, AnimateRockBotLeftTiles
+	dw RockBotRightFrames, AnimateRockBotRightTiles
+	dw RockRightFrames, AnimateRockRightTiles
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  DoNothing
+	dw NULL,  DoNothing
+	dw NULL,  AnimateFlowerTile
+	dw WhirlpoolFramesTop, AnimateWhirlpoolTiles
+	dw WhirlpoolFramesBottom, AnimateWhirlpoolTiles
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  DoNothing
+	dw vTiles2 tile $13, WriteTileFromBuffer
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 TilesetKinnowAnim:
 	dw vTiles2 tile $13, WriteTileToBuffer
 	dw RSEWaterFrames, AnimateRSEWaterTiles
+	dw RailTopFrames, AnimateRailTopTiles
+	dw RailBottomFrames, AnimateRailBottomTiles
+	dw RailTopOpenFrames, AnimateRailTopOpenTiles
+	dw RailBottomOpenFrames, AnimateRailBottomOpenTiles
 	dw ShoreWaterFrames, AnimateShoreWaterTiles
 	dw DiveWaterFrames, AnimateDiveWaterTiles
 	dw RockTopsFrames, AnimateRockTopsTiles
@@ -430,6 +455,10 @@ AnimateRockLeftTiles:
 AnimateRockBotLeftTiles:
 AnimateRockBotRightTiles:
 AnimateRockRightTiles:
+AnimateRailTopTiles:
+AnimateRailBottomTiles:
+AnimateRailTopOpenTiles:
+AnimateRailBottomOpenTiles:
 ; Draw two RSE water tiles for the current frame in VRAM tile at de.
 ; based on AnimateWhirlpoolTiles, but with 8 frames
 
@@ -506,6 +535,22 @@ RockBotRightTiles: INCBIN "gfx/tilesets/water/rockbotright.2bpp"
 RockRightFrames: dw vTiles2 tile $49, RockRightTiles
 
 RockRightTiles: INCBIN "gfx/tilesets/water/rockright.2bpp"
+
+RailTopFrames: dw vTiles2 tile $34, RailTopTiles
+
+RailTopTiles: INCBIN "gfx/tilesets/water/rail_top.2bpp"
+
+RailBottomFrames: dw vTiles2 tile $44, RailBottomTiles
+
+RailBottomTiles: INCBIN "gfx/tilesets/water/rail_bottom.2bpp"
+
+RailTopOpenFrames: dw vTiles2 tile $5E, RailTopOpenTiles
+
+RailTopOpenTiles: INCBIN "gfx/tilesets/water/rail_top_open.2bpp"
+
+RailBottomOpenFrames: dw vTiles2 tile $4E, RailBottomOpenTiles
+
+RailBottomOpenTiles: INCBIN "gfx/tilesets/water/rail_bottom_open.2bpp"
 
 ForestTreeLeftAnimation:
 ; Save the stack pointer in bc for WriteTile to restore

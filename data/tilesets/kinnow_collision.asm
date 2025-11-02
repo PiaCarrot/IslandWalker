@@ -221,7 +221,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; dc
 	tilecoll WALL, WALL, WALL, WALL ; dd
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; de
-	tilecoll WALL, WALL, WALL, WALL ; df
+	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; df
 	tilecoll WALL, WALL, WALL, WALL ; e0
 	tilecoll FLOOR, WALL, FLOOR, WALL ; e1
 	tilecoll FLOOR, HOP_DOWN, FLOOR, WALL ; e2
