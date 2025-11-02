@@ -199,11 +199,11 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c6
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; c7
 	tilecoll FLOOR, WALL, RAIL, WALL ; c8
-	tilecoll RAIL_HOP, WATER, WATER, WATER ; c9
+	tilecoll RAIL_HOP, WALL, WALL, WALL ; c9
 	tilecoll WATER, WATER, WATER, WATER ; ca
 	tilecoll WALL, WALL, WALL, WALL ; cb
-	tilecoll RAIL, WATER, RAIL, WATER ; cc
-	tilecoll RAIL_HOP, RAIL_HOP, WATER, WATER ; cd
+	tilecoll RAIL, WALL, RAIL, WALL ; cc
+	tilecoll RAIL_HOP, RAIL_HOP, WALL, WALL ; cd
 	tilecoll FLOOR, WALL, FLOOR, WALL ; ce
 	tilecoll WALL, WALL, WALL, WALL ; cf
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; d0
