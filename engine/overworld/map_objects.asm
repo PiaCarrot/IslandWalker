@@ -3132,6 +3132,7 @@ InitSprites:
 	add hl, bc
 	add [hl]
 	add 8
+	call .AdjustRailOffsetX
 	ld e, a
 	ld a, [wPlayerBGMapOffsetX]
 	add e
@@ -3220,6 +3221,40 @@ InitSprites:
 	ldh [hUsedSpriteIndex], a
 .done
 	xor a
+	ret
+
+.AdjustRailOffsetX:
+	push af
+	push bc
+	push de
+	ld hl, wPlayerStruct
+	ld a, c
+	cp l
+	jr nz, .not_player
+	ld a, b
+	cp h
+	jr nz, .not_player
+	pop de
+	pop bc
+	pop af
+	ld h, a
+	ld a, [wPlayerTileCollision]
+	cp COLL_RAIL
+	jr z, .apply_offset
+	cp COLL_RAIL_HOP
+	jr z, .apply_offset
+	ld a, h
+	ret
+
+.apply_offset
+	ld a, h
+	add 4
+	ret
+
+.not_player
+	pop de
+	pop bc
+	pop af
 	ret
 
 .full
