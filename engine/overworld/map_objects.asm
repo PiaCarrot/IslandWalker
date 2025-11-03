@@ -1836,33 +1836,62 @@ StepFunction_StrengthBoulder:
 	ret
 
 StepFunction_TrackingObject:
-	ld hl, OBJECT_1D
-	add hl, bc
-	ld a, [hli]
-	ld d, [hl]
-	ld e, a
-	ld hl, OBJECT_SPRITE
-	add hl, de
-	ld a, [hl]
-	and a
-	jr z, .nope
-	ld hl, OBJECT_SPRITE_X
-	add hl, de
-	ld a, [hl]
-	ld hl, OBJECT_SPRITE_X
-	add hl, bc
-	ld [hl], a
-	ld hl, OBJECT_SPRITE_Y
-	add hl, de
-	ld a, [hl]
-	ld hl, OBJECT_SPRITE_Y
-	add hl, bc
-	ld [hl], a
-	ld hl, OBJECT_STEP_DURATION
-	add hl, bc
-	ld a, [hl]
-	and a
-	ret z
+ld hl, OBJECT_1D
+add hl, bc
+ld a, [hli]
+ld d, [hl]
+ld e, a
+ld hl, OBJECT_SPRITE
+add hl, de
+ld a, [hl]
+and a
+jr z, .nope
+ld hl, OBJECT_SPRITE_X
+add hl, de
+ld a, [hl]
+ld hl, OBJECT_SPRITE_X
+add hl, bc
+ld [hl], a
+ld hl, OBJECT_SPRITE_Y
+add hl, de
+ld a, [hl]
+ld hl, OBJECT_SPRITE_Y
+add hl, bc
+ld [hl], a
+ld hl, OBJECT_MOVEMENT_TYPE
+add hl, bc
+ld a, [hl]
+cp SPRITEMOVEDATA_SHADOW
+jr nz, .no_shadow_offset
+ld hl, wPlayerStruct
+ld a, l
+cp e
+jr nz, .reset_shadow_offset
+ld a, h
+cp d
+jr nz, .reset_shadow_offset
+ld a, [wPlayerTileCollision]
+cp COLL_RAIL
+jr z, .set_shadow_offset
+cp COLL_RAIL_HOP
+jr z, .set_shadow_offset
+.reset_shadow_offset
+ld hl, OBJECT_SPRITE_X_OFFSET
+add hl, bc
+xor a
+ld [hl], a
+jr .no_shadow_offset
+.set_shadow_offset
+ld hl, OBJECT_SPRITE_X_OFFSET
+add hl, bc
+ld a, 4
+ld [hl], a
+.no_shadow_offset
+ld hl, OBJECT_STEP_DURATION
+add hl, bc
+ld a, [hl]
+and a
+ret z
 	dec [hl]
 	dec [hl]
 	ret nz
