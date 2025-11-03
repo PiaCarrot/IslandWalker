@@ -201,7 +201,7 @@ ValenciaYoungsterScript:
 	giveitem ROCKET_MAIL, 5
 	giveitem ZIGZAG_MAIL, 5
 	giveitem PINK_CURE, 5
-	giveitem LIGHT_BALL
+	giveitem BICYCLE
 	givemoney YOUR_MONEY, 999999
 	setflag ENGINE_POKEGEAR
 	setflag ENGINE_PHONE_CARD
