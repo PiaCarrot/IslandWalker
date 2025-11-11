@@ -91,8 +91,10 @@
 	const CRY_LAIRON
 	const CRY_AGGRON
         const CRY_CARVANHA
+	const CRY_SHARPEDO
         const CRY_WAILMER
         const CRY_NUMEL
+	const CRY_CAMERUPT
         const CRY_SPOINK
         const CRY_SPINDA
         const CRY_TRAPINCH

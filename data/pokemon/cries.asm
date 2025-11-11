@@ -276,12 +276,12 @@ PokemonCries::
 	mon_cry CRY_ARON,          60,   112 ; ARON
 	mon_cry CRY_LAIRON,        30,   112 ; LAIRON
 	mon_cry CRY_AGGRON,         0,   256 ; AGGRON
-	mon_cry CRY_SLOWKING,    $3a3,  $070 ; CARVANHA
-	mon_cry CRY_RAIKOU,      $e00,  $1b0 ; SHARPEDO
+	mon_cry CRY_CARVANHA,      22,   300 ; CARVANHA
+	mon_cry CRY_SHARPEDO,       0,   324 ; SHARPEDO
 	mon_cry CRY_TYPHLOSION,  $f12,  $0c0 ; WAILMER
 	mon_cry CRY_VILEPLUME,   $d22,  $200 ; WAILORD
-	mon_cry CRY_PSYDUCK,     $100,  $0d0 ; NUMEL
-	mon_cry CRY_RHYDON,      $e30,  $190 ; CAMERUPT
+	mon_cry CRY_NUMEL,          0,   128 ; NUMEL
+	mon_cry CRY_CAMERUPT,       0,   384 ; CAMERUPT
 	mon_cry CRY_PIDGEOTTO,   $d00,  $07f ; SPOINK
 	mon_cry CRY_METAPOD,     $06c,  $071 ; GRUMPIG
 	mon_cry CRY_DIGLETT,     $004,  $0a0 ; SPINDA

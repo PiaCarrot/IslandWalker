@@ -2500,7 +2500,7 @@ Cry_Aron_Ch6:
 
 Cry_Aron_Ch8:
         noise_note 10, 10, 0, 10
-	noise_note 8, 8, 2, 48
+	noise_note 16, 8, 2, 48
         sound_ret
 
 Cry_Lairon:
@@ -2586,25 +2586,76 @@ Cry_Aggron_Ch8:
 Cry_Carvanha:
         channel_count 3
         channel 5, Cry_Carvanha_Ch5
-        channel 6, Cry_Carvanha_Ch6
-        channel 8, Cry_Carvanha_Ch8
+	channel 6, Cry_Carvanha_Ch6
+	channel 8, Cry_Carvanha_Ch8
 
 Cry_Carvanha_Ch5:
-        duty_cycle_pattern 1, 0, 1, 0
-        square_note 4, 13, 4, 1680
-        square_note 8, 12, 2, 1648
-        sound_ret
+	duty_cycle_pattern 0, 0, 3, 0
+	square_note 3, 10, 1, 300
+	square_note 1, 0, 2, 300
+	square_note 6, 15, 5, 1378
+	square_note 1, 9, 1, 1317
+	square_note 1, 9, 1, 1327
+	square_note 2, 7, 1, 1314
+	sound_ret
 
 Cry_Carvanha_Ch6:
-        duty_cycle_pattern 2, 3, 2, 3
-        square_note 4, 11, 4, 1648
-        square_note 8, 10, 2, 1600
-        sound_ret
+	duty_cycle_pattern 1, 0, 3, 0
+	square_note 4, 0, 2, 1300
+	square_note 2, 10, 1, 1300
+	square_note 2, 8, 1, 1140
+	square_note 6, 8, 2, 1020
+	sound_ret
 
 Cry_Carvanha_Ch8:
-        noise_note 4, 9, 4, 104
-        noise_note 8, 8, 2, 100
-        sound_ret
+	noise_note 5, 10, 1, 0x48
+	noise_note 1, 9, -3, 0x11
+	noise_note 4, 12, -3, 0x0c
+	noise_note 16, 11, 2, 0x0d
+	sound_ret
+
+Cry_Sharpedo:
+        channel_count 3
+        channel 5, Cry_Sharpedo_Ch5
+	channel 6, Cry_Sharpedo_Ch6
+	channel 8, Cry_Sharpedo_Ch8
+
+Cry_Sharpedo_Ch5:
+	duty_cycle_pattern 0, 2, 3, 1
+	square_note 8, 13, 1, 300
+	square_note 4, 0, 2, 300
+	square_note 8, 11, 4, 657
+	square_note 7, 12, 4, 700
+	square_note 5, 12, 2, 776
+	square_note 4, 14, 2, 1212
+	square_note 8, 13, 1, 900
+	sound_ret
+
+Cry_Sharpedo_Ch6:
+	duty_cycle_pattern 1, 1, 1, 3
+	square_note 8, 13, 2, 1020
+	square_note 4, 0, 2, 1020
+	square_note 16, 12, 4, 1300
+	square_note 4, 10, 4, 1300
+	square_note 4, 8, 3, 1789
+	square_note 4, 7, 2, 1665
+	sound_ret
+
+Cry_Sharpedo_Ch8:
+	noise_note 7, 10, -3, 0x7a
+	noise_note 2, 4, 2, 0x7a
+	noise_note 2, 8, -3, 0x46
+	noise_note 1, 10, -5, 0x36
+	noise_note 1, 10, -5, 0x78
+.loop1:
+	noise_note 2, 13, 1, 0x36
+	noise_note 1, 15, 0, 0x78
+	noise_note 1, 14, 1, 0x36
+	noise_note 1, 13, 0, 0x78
+	sound_loop 4, .loop1
+	noise_note 4, 9, 0, 0x7a
+	noise_note 2, 7, 1, 0x7b
+	sound_ret
 
 Cry_Wailmer:
         channel_count 3
@@ -2632,25 +2683,65 @@ Cry_Wailmer_Ch8:
 Cry_Numel:
         channel_count 3
         channel 5, Cry_Numel_Ch5
-        channel 6, Cry_Numel_Ch6
-        channel 8, Cry_Numel_Ch8
+	channel 6, Cry_Numel_Ch6
+	channel 8, Cry_Numel_Ch8
 
 Cry_Numel_Ch5:
-        duty_cycle_pattern 2, 1, 2, 1
-        square_note 4, 13, 4, 1200
-        square_note 8, 12, 2, 1152
-        sound_ret
+	duty_cycle_pattern 0, 1, 3, 0
+	square_note 16, 0, -1, 1503
+	square_note 16, 0, -1, 1300
+	square_note 16, 0, -1, 1500
+	square_note 4, 0, 1, 1500
+	sound_ret
 
 Cry_Numel_Ch6:
-        duty_cycle_pattern 3, 2, 3, 2
-        square_note 4, 11, 4, 1168
-        square_note 8, 10, 2, 1120
-        sound_ret
+	duty_cycle_pattern 0, 1, 3, 0
+	square_note 16, 0, -1, 1813
+	square_note 16, 0, -1, 1730
+	square_note 16, 0, -1, 1809
+	square_note 4, 0, 1, 1808
+	sound_ret
 
 Cry_Numel_Ch8:
-        noise_note 4, 9, 4, 100
-        noise_note 8, 8, 2, 96
-        sound_ret
+	noise_note 8, 5, -1, 0x79
+	noise_note 8, 5, -1, 0x46
+	noise_note 8, 5, -1, 0x79
+	noise_note 4, 0, 1, 0x79
+	sound_ret
+
+Cry_Camerupt:
+        channel_count 3
+        channel 5, Cry_Camerupt_Ch5
+	channel 6, Cry_Camerupt_Ch6
+	channel 8, Cry_Camerupt_Ch8
+
+Cry_Camerupt_Ch5:
+	duty_cycle_pattern 0, 2, 0, 2
+	square_note 4, 0, -1, 1429
+	square_note 12, 4, 0, 1429
+	square_note 6, 4, 4, 1426
+	square_note 6, 0, -1, 1429
+	square_note 4, 6, 3, 1421
+	sound_ret
+
+Cry_Camerupt_Ch6:
+	duty_cycle_pattern 1, 2, 0, 0
+	square_note 4, 0, -1, 1118
+	square_note 12, 4, 0, 1112
+	square_note 6, 4, 4, 1123
+	square_note 5, 0, -1, 1048
+	square_note 3, 6, 3, 1032
+	sound_ret
+
+Cry_Camerupt_Ch8:
+	noise_note 16, 9, -1, 0x46
+	noise_note 2, 10, 4, 0x46
+	noise_note 12, 10, 4, 0x45
+	noise_note 16, 9, -1, 0x54
+	noise_note 2, 8, 4, 0x54
+	noise_note 3, 12, 0, 0x46
+	noise_note 8, 9, 1, 0x45
+	sound_ret
 
 Cry_Spoink:
         channel_count 3

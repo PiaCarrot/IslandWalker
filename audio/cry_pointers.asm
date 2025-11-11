@@ -86,8 +86,10 @@ Cries:
 	dba Cry_Lairon
 	dba Cry_Aggron
         dba Cry_Carvanha
+	dba Cry_Sharpedo
         dba Cry_Wailmer
         dba Cry_Numel
+	dba Cry_Camerupt
         dba Cry_Spoink
         dba Cry_Spinda
         dba Cry_Trapinch
