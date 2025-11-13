@@ -1973,3 +1973,46 @@ PackMenuGFX:
 INCBIN "gfx/pack/pack_menu.2bpp"
 PackGFX:
 INCBIN "gfx/pack/pack.2bpp"
+
+Special_ChooseItem::
+	ld hl, wItemFlags
+	set IN_BAG_F, [hl]
+	call DisableSpriteUpdates
+	call LoadStandardMenuHeader
+	call DepositSellInitPackBuffers
+	call .PickItem
+	call CloseSubmenu
+	ld hl, wItemFlags
+	res IN_BAG_F, [hl]
+	call ReturnToMapWithSpeechTextbox
+	ret
+
+.PickItem:
+	xor a ; FALSE
+	ld [wScriptVar], a
+.loop
+	xor a
+	ld [wPackUsedItem], a
+        call DepositSellPack
+        ld a, [wPackUsedItem]
+        and a
+        ret z
+        ld a, [wCurPocket]
+        cp VALUABLE_POCKET
+        jr nz, .next
+        call CheckTossableItem
+        ld a, [wItemAttributeValue]
+        and a
+	jr nz, .next
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+.next
+	ld hl, .ItemCantBeSelectedText
+	call PrintText
+	jr .loop
+
+.ItemCantBeSelectedText:
+text_jump ItemCantBeSelectedText
+db "@"

@@ -1712,13 +1712,27 @@ Script_giveitem:
 	ret
 
 Script_takeitem:
-	xor a
-	ld [wScriptVar], a
 	rst GetScriptByte
 	ld l, a
 	rst GetScriptByte
 	ld h, a
+	ld a, [wScriptVar]
+	ld e, a
+	xor a
+	ld [wScriptVar], a
+	ld a, h
+	cp HIGH(ITEM_FROM_MEM)
+	jr nz, .not_from_mem
+	ld a, l
+	cp LOW(ITEM_FROM_MEM)
+	jr nz, .not_from_mem
+	ld a, e
+	jr .got_item
+
+.not_from_mem
 	call GetItemIDFromIndex
+
+.got_item
 	ld [wCurItem], a
 	rst GetScriptByte
 	ld [wItemQuantityChange], a

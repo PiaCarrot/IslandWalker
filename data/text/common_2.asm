@@ -1400,7 +1400,7 @@ _PokemonAskSwapItemText::
 	done
 
 _ItemCantHeldText::
-	text "This item can't be"
+	text "That item can't be"
 	line "held."
 	prompt
 

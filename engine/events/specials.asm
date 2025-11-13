@@ -413,3 +413,83 @@ ClockResetter:
 	farcall RestartClock
 	ret
 
+GetGemManiacPrice:
+	ld hl, GemManiacItemRewards
+; fallthrough
+GetItemManiacPrice:
+push hl
+xor a ; FALSE
+ld [wScriptVar], a
+ld a, [wCurItem]
+call GetItemIndexFromID
+ld d, h
+ld e, l
+pop hl
+.loop
+ld a, [hli]
+ld b, a
+ld a, [hli]
+ld c, a
+ld a, b
+cp $ff
+jr nz, .check_match
+ld a, c
+cp $ff
+ret z
+.check_match
+push hl
+push de
+ld a, b
+call GetItemIndexFromID
+ld b, h
+ld c, l
+pop de
+pop hl
+ld a, d
+cp b
+jr nz, .skip_price
+ld a, e
+cp c
+jr nz, .skip_price
+ld a, [hli]
+ldh [hMoneyTemp + 2], a
+ld a, [hli]
+ldh [hMoneyTemp + 1], a
+xor a
+ldh [hMoneyTemp], a
+ld a, TRUE
+ld [wScriptVar], a
+ret
+
+.skip_price
+inc hl
+inc hl
+jr .loop
+
+GemManiacItemRewards:
+	dw PEARL,         2000
+	dw BIG_PEARL,      8000
+	dw PEARL_STRING,  16000
+	dw STARDUST,       3000
+	dw STAR_PIECE,    12000
+	dw NUGGET,        10000
+	dw BIG_NUGGET,    20000
+	dw RARE_BONE,      7500
+	dw COMET_SHARD,    9000
+	dw HUGE_CRYSTAL,  25000
+	dw LARGE_JADE,    14000
+	dw BIG_EMERALD,   15000
+	dw GIANT_RUBY,    16000
+	dw BIG_SAPPHIRE,  16000
+	dw BIG_AMETHYST,  15000
+	dw HUGE_TOPAZ,    15000
+	dw LARGE_GARNET,  14000
+	dw GIANT_ONYX,    14000
+	dw HUGE_DIAMOND,  30000
+	dw -1
+
+Give_hMoneyTemp:
+	ld de, wMoney
+	ld bc, hMoneyTemp
+	farjp GiveMoney
+

@@ -94,6 +94,9 @@ SpecialsPointers::
 	add_special DisplayCoinCaseBalance
 	add_special DisplayMoneyAndCoinBalance
 	add_special PlaceMoneyTopRight
+	add_special Special_ChooseItem
+	add_special GetGemManiacPrice
+	add_special Give_hMoneyTemp
 	add_special CheckForLuckyNumberWinners
 	add_special CheckLuckyNumberShowFlag
 	add_special ResetLuckyNumberShowFlag

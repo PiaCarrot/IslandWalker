@@ -1027,6 +1027,11 @@ _ItemCantUseOnEggText::
 	line "on an EGG."
 	prompt
 
+ItemCantBeSelectedText::
+	text "That item can't be"
+	line "selected."
+	prompt
+
 _ItemOakWarningText::
 	text "OAK: <PLAYER>!"
 	line "This isn't the"
