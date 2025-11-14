@@ -77,17 +77,52 @@ Route55RuinManiacScript:
 	closetext
 	end
 
-Route55GemManiacGreetingText:
-	text "Welcome to our"
-	line "Maniac hideout!"
+Route55GourmetManiacScript:
+	faceplayer
+	opentext
+	writetext Route55GourmetManiacGreetingText
+	buttonsound
+	special Special_ChooseItem
+	iffalse .NoItem
+	special GetGourmetManiacPrice
+	iffalse .WrongItem
+	writetext Route55GourmetManiacOfferText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .NoItem
+	copybytetovar wCurItem
+	takeitem ITEM_FROM_MEM
+	waitsfx
+	playsound SFX_TRANSACTION
+	special Give_hMoneyTemp
+	special PlaceMoneyTopRight
+	writetext Route55GourmetManiacThankYouText
+	waitbutton
+	closetext
+	end
 
-	para "I'm utterly"
-	line "captivated by"
-	cont "glittering gems"
-	cont "and rare trinkets."
+.NoItem
+	writetext Route55GourmetManiacNoItemText
+	waitbutton
+	closetext
+	end
+
+.WrongItem
+	writetext Route55GourmetManiacWrongItemText
+	waitbutton
+	closetext
+	end
+
+Route55GemManiacGreetingText:
+	text "I'm a world famous"
+	line "jewelry designer!"
+
+	para "I hang out here to"
+	line "procure rare gems"
+	cont "& precious metals."
 
 	para "Do you have any"
-	line "treasures to sell?"
+	line "jewels to sell?"
 	done
 
 Route55GemManiacOfferText:
@@ -104,19 +139,20 @@ Route55GemManiacThankYouText:
 	line "Thank you kindly."
 
 	para "This jewel will"
-	line "shine in my"
-	cont "collection."
+	line "make for a lovely"
+	cont "design."
 	done
 
 Route55GemManiacWrongItemText:
 	text "Hmm… that's not"
-	line "quite gem-worthy."
+	line "quite what I am"
+	cont "looking for."
 	done
 
 Route55GemManiacNoItemText:
-	text "No worries. I'll"
-	line "be here polishing"
-	cont "my finds."
+	text "I'll be here if"
+	line "you find anything"
+	cont "special!"
 	done
 
 Route55RuinManiacGreetingText:
@@ -125,34 +161,68 @@ Route55RuinManiacGreetingText:
 	cont "long forgotten."
 
 	para "Have you dug up"
-	line "any relics or"
-	cont "shards to spare?"
+	line "any relics of"
+	cont "the past?"
 	done
 
 Route55RuinManiacOfferText:
-	text "I'll fund your"
-	line "expedition for"
+	text "I'll buy your"
+	line "findings for"
 	cont "¥@"
 	deciram hMoneyTemp, 3, 7
-	text "!"
+	text "?"
 	done
 
 Route55RuinManiacThankYouText:
-	text "A pristine find!"
-	line "These ruins keep"
-	cont "on giving."
+	text "A wonderous find!"
+	line "I thank you for"
+	cont "your business."
 	done
 
 Route55RuinManiacWrongItemText:
 	text "Hmm… that doesn't"
-	line "match any ruin"
-	cont "catalogues."
+	line "interest me in the"
+	cont "slightest."
 	done
 
 Route55RuinManiacNoItemText:
 	text "If you unearth"
 	line "more relics, bring"
-	cont "them straight here."
+	cont "them by!"
+	done
+
+Route55GourmetManiacGreetingText:
+	text "I'm a world famous"
+	line "chef. I have been"
+	cont "procuring rare"
+	cont "ingredients here."
+	done
+
+Route55GourmetManiacOfferText:
+	text "Oh! That's really"
+	line "good stuff!"
+
+	para "I'll pay ¥@"
+	deciram hMoneyTemp, 3, 7
+	text "."
+	done
+
+Route55GourmetManiacThankYouText:
+	text "Thanks!"
+	line "Here's your"
+	cont "payment."
+	done
+
+Route55GourmetManiacWrongItemText:
+	text "Doesn't look very…"
+	line "edible… Sorry, I"
+	cont "am not interested."
+	done
+
+Route55GourmetManiacNoItemText:
+	text "Come back if you"
+	line "find more rare"
+	cont "ingredients."
 	done
 
 Route55ManiacsHouse_MapEvents:
@@ -169,3 +239,4 @@ Route55ManiacsHouse_MapEvents:
 	def_object_events
 	object_event  1,  5, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route55GemManiacScript, -1
 	object_event  4,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route55RuinManiacScript, -1
+	object_event  6,  4, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route55GourmetManiacScript, -1

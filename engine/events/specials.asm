@@ -419,48 +419,52 @@ GetGemManiacPrice:
 
 GetRuinManiacPrice:
 	ld hl, RuinManiacItemRewards
-; fallthrough
+        jmp GetItemManiacPrice
+
+GetGourmetManiacPrice:
+	ld hl, GourmetManiacItemRewards
+	; fallthrough
 GetItemManiacPrice:
 	push hl
-xor a ; FALSE
-ld [wScriptVar], a
-ld a, [wCurItem]
-call GetItemIndexFromID
-ld d, h
-ld e, l
-pop hl
+	xor a ; FALSE
+	ld [wScriptVar], a
+	ld a, [wCurItem]
+	call GetItemIndexFromID
+	ld d, h
+	ld e, l
+	pop hl
 .loop
-ld a, [hli]
-ld b, a
-ld a, [hli]
-ld c, a
-ld a, b
-cp $ff
-jr nz, .check_match
-ld a, c
-cp $ff
-ret z
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, b
+	cp $ff
+	jr nz, .check_match
+	ld a, c
+	cp $ff
+	ret z
 .check_match
-ld a, d
-cp c
-jr nz, .skip_price
-ld a, e
-cp b
-jr nz, .skip_price
-ld a, [hli]
-ldh [hMoneyTemp + 2], a
-ld a, [hli]
-ldh [hMoneyTemp + 1], a
-xor a
-ldh [hMoneyTemp], a
-ld a, TRUE
-ld [wScriptVar], a
-ret
+	ld a, d
+	cp c
+	jr nz, .skip_price
+	ld a, e
+	cp b
+	jr nz, .skip_price
+	ld a, [hli]
+	ldh [hMoneyTemp + 2], a
+	ld a, [hli]
+	ldh [hMoneyTemp + 1], a
+	xor a
+	ldh [hMoneyTemp], a
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
 
 .skip_price
-inc hl
-inc hl
-jr .loop
+	inc hl
+	inc hl
+	jr .loop
 
 GemManiacItemRewards:
 	dw PEARL,         2000
@@ -497,6 +501,19 @@ RuinManiacItemRewards:
 	dw STARDUST,       5000
 	dw STAR_PIECE,    15000
 	dw COMET_SHARD,   20000
+	dw -1
+
+GourmetManiacItemRewards:
+	dw TINYMUSHROOM,   500
+	dw BIG_MUSHROOM,  2500
+	dw BALMMUSHROOM,  8000
+	dw CANDYTRUFFLE, 12000
+	dw HONEY,          800
+	dw SWEET_HONEY,   1500
+	dw TINY_BAMBOO,   1000
+	dw BIG_BAMBOO,    3000
+	dw SILVER_LEAF,  1000
+	dw GOLD_LEAF,     5000
 	dw -1
 
 Give_hMoneyTemp:
