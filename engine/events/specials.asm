@@ -437,19 +437,11 @@ ld a, c
 cp $ff
 ret z
 .check_match
-push hl
-push de
-ld a, b
-call GetItemIndexFromID
-ld b, h
-ld c, l
-pop de
-pop hl
 ld a, d
-cp b
+cp c
 jr nz, .skip_price
 ld a, e
-cp c
+cp b
 jr nz, .skip_price
 ld a, [hli]
 ldh [hMoneyTemp + 2], a
