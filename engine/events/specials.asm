@@ -415,9 +415,13 @@ ClockResetter:
 
 GetGemManiacPrice:
 	ld hl, GemManiacItemRewards
+	jmp GetItemManiacPrice
+
+GetRuinManiacPrice:
+	ld hl, RuinManiacItemRewards
 ; fallthrough
 GetItemManiacPrice:
-push hl
+	push hl
 xor a ; FALSE
 ld [wScriptVar], a
 ld a, [wCurItem]
@@ -478,6 +482,21 @@ GemManiacItemRewards:
 	dw LARGE_GARNET,  14000
 	dw GIANT_ONYX,    14000
 	dw HUGE_DIAMOND,  30000
+	dw -1
+
+RuinManiacItemRewards:
+	dw RARE_BONE,     12000
+	dw ANCIENT_VASE,  20000
+	dw ANCIENT_CUP,   18000
+	dw ANCIENT_JAR,   16000
+	dw BLUE_SHARD,     5000
+	dw GREEN_SHARD,    5000
+	dw RED_SHARD,      5000
+	dw YELLOW_SHARD,   5000
+	dw CLAY_SHARD,     6000
+	dw STARDUST,       5000
+	dw STAR_PIECE,    15000
+	dw COMET_SHARD,   20000
 	dw -1
 
 Give_hMoneyTemp:

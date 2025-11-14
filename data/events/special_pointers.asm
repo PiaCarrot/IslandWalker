@@ -96,6 +96,7 @@ SpecialsPointers::
 	add_special PlaceMoneyTopRight
 	add_special Special_ChooseItem
 	add_special GetGemManiacPrice
+	add_special GetRuinManiacPrice
 	add_special Give_hMoneyTemp
 	add_special CheckForLuckyNumberWinners
 	add_special CheckLuckyNumberShowFlag
