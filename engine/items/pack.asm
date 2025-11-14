@@ -1974,12 +1974,16 @@ INCBIN "gfx/pack/pack_menu.2bpp"
 PackGFX:
 INCBIN "gfx/pack/pack.2bpp"
 
+DEF CHOOSEITEM_VALUABLES_JT_INDEX EQU 4 ; DepositSellPack pocket order: Items, Balls, Berries, Medicine, Valuables, Key Items, TM/HM
+
 Special_ChooseItem::
 	ld hl, wItemFlags
 	set IN_BAG_F, [hl]
 	call DisableSpriteUpdates
 	call LoadStandardMenuHeader
 	call DepositSellInitPackBuffers
+	ld a, CHOOSEITEM_VALUABLES_JT_INDEX
+	ld [wJumptableIndex], a
 	call .PickItem
 	call CloseSubmenu
 	ld hl, wItemFlags
