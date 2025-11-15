@@ -188,7 +188,7 @@ Route55RuinManiacWrongItemText:
 Route55RuinManiacNoItemText:
 	text "If you unearth"
 	line "more relics, bring"
-	cont "them by!"
+	cont "them to me."
 	done
 
 Route55GourmetManiacGreetingText:
@@ -224,6 +224,29 @@ Route55GourmetManiacNoItemText:
 	line "find more rare"
 	cont "ingredients."
 	done
+	
+Route55ManiacHouseOwnerScript:
+	faceplayer
+	opentext
+	writetext Route55ManiacHouseOwnerText
+	waitbutton
+	closetext
+	end
+	
+Route55ManiacHouseOwnerText:
+	text "Welcome to ZIG'S"
+	line "DIGS!"
+	
+	para "Collectors of all"
+	line "sorts come here"
+	cont "to buy treasure."
+	
+	para "If you have any"
+	line "taking up space"
+	cont "in your PACK, you"
+	cont "should talk to"
+	cont "some of them."
+	done
 
 Route55ManiacsHouse_MapEvents:
 	db 0, 0 ; filler
@@ -237,6 +260,7 @@ Route55ManiacsHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  1,  5, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route55GemManiacScript, -1
-	object_event  4,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route55RuinManiacScript, -1
-	object_event  6,  4, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route55GourmetManiacScript, -1
+	object_event  1,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_SCRIPT, 0, Route55GemManiacScript, -1
+	object_event  4,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route55RuinManiacScript, -1
+	object_event  6,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route55GourmetManiacScript, -1
+	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route55ManiacHouseOwnerScript, -1
