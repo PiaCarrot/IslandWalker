@@ -215,12 +215,21 @@ TMHM_PocketLoop:
 	jr TMHM_ShowTMMoveDescription
 
 TMHM_JoypadLoop:
-	call TMHM_DisplayPocketItems
-	call StaticMenuJoypad
-	ld b, a
-	ld a, [wMenuCursorY]
-	dec a
-	ld [wTMHMPocketCursor], a
+        ld hl, wCursorCurrentTile
+        ld a, [hli]
+        ld h, [hl]
+        ld l, a
+        ld a, [hl]
+        cp "▶"
+        jr nz, .cursor_ready
+        ld a, [wCursorOffCharacter]
+        ld [hl], a
+.cursor_ready
+       call StaticMenuJoypad
+       ld b, a
+        ld a, [wMenuCursorY]
+        dec a
+        ld [wTMHMPocketCursor], a
 	xor a
 	ldh [hBGMapMode], a
 	ld a, [w2DMenuFlags2]
