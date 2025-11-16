@@ -396,19 +396,6 @@ TMHM_DisplayPocketItems:
 	pop bc
 	ld a, c
 	push bc
-	cp NUM_TMS + 1
-	jr nc, .hm2
-	ld bc, SCREEN_WIDTH + 9
-	add hl, bc
-	ld a, "×"
-	ld [hli], a
-	pop bc
-	push bc
-	ld a, b
-	ld [wTempTMHM], a
-	ld de, wTempTMHM
-	lb bc, 1, 2
-	call PrintNum
 .hm2
 	pop bc
 	pop de
@@ -477,25 +464,8 @@ TMHM_PlaySFX_ReadText2:
 	ret
 
 ConsumeTM:
-	call ConvertCurItemIntoCurTMHM
-	ld a, [wTempTMHM]
-	dec a
-	ld hl, wTMsHMs
-	ld b, 0
-	ld c, a
-	add hl, bc
-	ld a, [hl]
-	and a
-	ret z
-	dec a
-	ld [hl], a
-	ret nz
-	ld a, [wTMHMPocketScrollPosition]
-	and a
-	ret z
-	dec a
-	ld [wTMHMPocketScrollPosition], a
-	ret
+; TMs are reusable; leave inventory untouched.
+ret
 
 CountTMsHMs:
 	lb bc, 0, NUM_TMS + NUM_HMS
