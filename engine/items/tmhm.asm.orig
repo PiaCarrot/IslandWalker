@@ -215,21 +215,21 @@ TMHM_PocketLoop:
 	jr TMHM_ShowTMMoveDescription
 
 TMHM_JoypadLoop:
-	ld hl, wCursorCurrentTile
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [hl]
-	cp "▶"
-	jr nz, .cursor_ready
-	ld a, [wCursorOffCharacter]
-	ld [hl], a
+        ld hl, wCursorCurrentTile
+        ld a, [hli]
+        ld h, [hl]
+        ld l, a
+        ld a, [hl]
+        cp "▶"
+        jr nz, .cursor_ready
+        ld a, [wCursorOffCharacter]
+        ld [hl], a
 .cursor_ready
-	call StaticMenuJoypad
-	ld b, a
-	ld a, [wMenuCursorY]
-	dec a
-	ld [wTMHMPocketCursor], a
+       call StaticMenuJoypad
+       ld b, a
+        ld a, [wMenuCursorY]
+        dec a
+        ld [wTMHMPocketCursor], a
 	xor a
 	ldh [hBGMapMode], a
 	ld a, [w2DMenuFlags2]
@@ -240,23 +240,26 @@ TMHM_JoypadLoop:
 	bit B_PAD_A, a
 	jr nz, TMHM_ChooseTMorHM
 	bit B_PAD_B, a
-	jmp nz, TMHM_ExitPack
+	jp nz, TMHM_ExitPack
 	bit B_PAD_RIGHT, a
-	jmp nz, TMHM_ExitPocket
+	jp nz, TMHM_ExitPocket
 	bit B_PAD_LEFT, a
-	jmp nz, TMHM_ExitPocket
+	jp nz, TMHM_ExitPocket
 TMHM_ShowTMMoveDescription:
 	call TMHM_CheckHoveringOverCancel
-	jmp nc, TMHM_ExitPocket
+	jp nc, TMHM_ExitPocket
 	hlcoord 0, 12
 	lb bc, 4, SCREEN_WIDTH - 2
 	call Textbox
 	ld a, [wCurItem]
 	cp NUM_TMS + NUM_HMS + 1
-	jr c, .have_tm
-	call TMHM_LoadCancelIcon
+	jr c, .print_description
+	call TMHM_ShowNoItemIcon
 	jr TMHM_JoypadLoop
-.have_tm
+
+.print_description
+	cp NUM_TMS + NUM_HMS + 1
+	jr nc, TMHM_JoypadLoop
 	ld [wTempTMHM], a
 	predef GetTMHMMove
 	ld a, [wTempTMHM]
@@ -272,19 +275,20 @@ TMHM_ShowTMMoveDescription:
 	ld a, b
 	ld [wTMHMIconMove], a
 	farcall UpdateTMHMIcon
-	jr TMHM_JoypadLoop
+	jp TMHM_JoypadLoop
 
-TMHM_LoadCancelIcon:
-	ld a, [wTMHMIconMove]
-	inc a
-	ret z
-	ld a, $ff
-	ld [wTMHMIconMove], a
+TMHM_ShowNoItemIcon:
 	xor a
+	ld [wTMHMIconMove], a
 	ld [wTMHMIconLoaded], a
-	farcall UpdateTMHMIcon
-	ld a, [wTMHMIconMove]
-	ret
+	ld a, BANK(NoItemIcon)
+	ld hl, NoItemIcon
+	ld de, vTiles2 tile $1f
+	lb bc, BANK(NoItemIcon), $9
+	call DecompressRequest2bpp
+	call LoadItemIconPalette
+	call SetDefaultBGPAndOBP
+	jp WaitBGMap
 
 TMHM_ChooseTMorHM:
 	call TMHM_PlaySFX_ReadText2
@@ -489,7 +493,7 @@ TMHM_PlaySFX_ReadText2:
 
 ConsumeTM:
 ; TMs are reusable; leave inventory untouched.
-	ret
+ret
 
 CountTMsHMs:
 	lb bc, 0, NUM_TMS + NUM_HMS

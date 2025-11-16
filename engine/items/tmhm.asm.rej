@@ -1,0 +1,143 @@
+--- engine/items/tmhm.asm
++++ engine/items/tmhm.asm
+@@ -193,106 +193,121 @@ TMHM_PocketLoop:
+ 	ld [w2DMenuNumCols], a
+ 	ld a, 5
+ 	sub d
+ 	inc a
+ 	cp 6
+ 	jr nz, .okay
+ 	dec a
+ .okay
+ 	ld [w2DMenuNumRows], a
+ 	ld a, $c
+ 	ld [w2DMenuFlags1], a
+ 	xor a
+ 	ld [w2DMenuFlags2], a
+ 	ld a, $20
+ 	ld [w2DMenuCursorOffsets], a
+ 	ld a, PAD_A | PAD_B | PAD_CTRL_PAD
+ 	ld [wMenuJoypadFilter], a
+ 	ld a, [wTMHMPocketCursor]
+ 	inc a
+ 	ld [wMenuCursorY], a
+ 	ld a, $1
+ 	ld [wMenuCursorX], a
+ 	jr TMHM_ShowTMMoveDescription
+ 
+ TMHM_JoypadLoop:
+-        ld hl, wCursorCurrentTile
+-        ld a, [hli]
+-        ld h, [hl]
+-        ld l, a
+-        ld a, [hl]
+-        cp "▶"
+-        jr nz, .cursor_ready
+-        ld a, [wCursorOffCharacter]
+-        ld [hl], a
++	ld hl, wCursorCurrentTile
++	ld a, [hli]
++	ld h, [hl]
++	ld l, a
++	ld a, [hl]
++	cp "▶"
++	jr nz, .cursor_ready
++	ld a, [wCursorOffCharacter]
++	ld [hl], a
+ .cursor_ready
+-       call StaticMenuJoypad
+-       ld b, a
+-        ld a, [wMenuCursorY]
+-        dec a
+-        ld [wTMHMPocketCursor], a
++	call StaticMenuJoypad
++	ld b, a
++	ld a, [wMenuCursorY]
++	dec a
++	ld [wTMHMPocketCursor], a
+ 	xor a
+ 	ldh [hBGMapMode], a
+ 	ld a, [w2DMenuFlags2]
+ 	bit _2DMENU_EXITING_F, a
+ 	jmp nz, TMHM_ScrollPocket
+ 	ld a, b
+ 	ld [wMenuJoypad], a
+ 	bit B_PAD_A, a
+ 	jr nz, TMHM_ChooseTMorHM
+ 	bit B_PAD_B, a
+-	jr nz, TMHM_ExitPack
++	jmp nz, TMHM_ExitPack
+ 	bit B_PAD_RIGHT, a
+-	jr nz, TMHM_ExitPocket
++	jmp nz, TMHM_ExitPocket
+ 	bit B_PAD_LEFT, a
+-	jr nz, TMHM_ExitPocket
++	jmp nz, TMHM_ExitPocket
+ TMHM_ShowTMMoveDescription:
+ 	call TMHM_CheckHoveringOverCancel
+-	jr nc, TMHM_ExitPocket
++	jmp nc, TMHM_ExitPocket
+ 	hlcoord 0, 12
+ 	lb bc, 4, SCREEN_WIDTH - 2
+ 	call Textbox
+ 	ld a, [wCurItem]
+ 	cp NUM_TMS + NUM_HMS + 1
+-	jr nc, TMHM_JoypadLoop
++	jr c, .have_tm
++	call TMHM_LoadCancelIcon
++	jr TMHM_JoypadLoop
++.have_tm
+ 	ld [wTempTMHM], a
+ 	predef GetTMHMMove
+ 	ld a, [wTempTMHM]
+ 	ld b, a
+ 	ld [wCurSpecies], a
+ 	push bc
+ 	hlcoord 1, 14
+ 	call PrintMoveDescription
+ 	pop bc
+ 	ld a, [wTMHMIconMove]
+ 	cp b
+ 	jr z, TMHM_JoypadLoop
+ 	ld a, b
+ 	ld [wTMHMIconMove], a
+ 	farcall UpdateTMHMIcon
+ 	jr TMHM_JoypadLoop
+ 
++TMHM_LoadCancelIcon:
++	ld a, [wTMHMIconMove]
++	inc a
++	ret z
++	ld a, $ff
++	ld [wTMHMIconMove], a
++	xor a
++	ld [wTMHMIconLoaded], a
++	farcall UpdateTMHMIcon
++	ld a, [wTMHMIconMove]
++	ret
++
+ TMHM_ChooseTMorHM:
+ 	call TMHM_PlaySFX_ReadText2
+ 	call CountTMsHMs ; This stores the count to wTempTMHM.
+ 	ld a, [wMenuCursorY]
+ 	dec a
+ 	ld b, a
+ 	ld a, [wTMHMPocketScrollPosition]
+ 	add b
+ 	ld b, a
+ 	ld a, [wTempTMHM]
+ 	cp b
+ 	jr z, _TMHM_ExitPack ; our cursor was hovering over CANCEL
+ TMHM_CheckHoveringOverCancel:
+ 	call TMHM_GetCurrentPocketPosition
+ 	ld a, [wMenuCursorY]
+ 	ld b, a
+ .loop
+ 	inc c
+ 	ld a, c
+ 	cp NUM_TMS + NUM_HMS + 1
+ 	jr nc, .okay
+ 	ld a, [hli]
+ 	and a
+ 	jr z, .loop
+ 	dec b

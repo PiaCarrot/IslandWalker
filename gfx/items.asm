@@ -77,6 +77,9 @@ UpdateItemIcon:
 	ret
 
 UpdateTMHMIcon::
+	ld a, [wTMHMIconMove]
+	inc a
+	jr z, .load_cancel_icon
 	ld a, [wTMHMIconLoaded]
 	and a
 	jr nz, .have_tiles
@@ -94,6 +97,16 @@ UpdateTMHMIcon::
 	ld a, [wStringBuffer1 + MOVE_TYPE]
 	and TYPE_MASK
 	call LoadTMHMTypePalette
+	jr .finish_icon
+
+.load_cancel_icon
+	ld a, BANK(NoItemIcon)
+	ld hl, NoItemIcon
+	ld de, vTiles2 tile $1f
+	lb bc, BANK(NoItemIcon), $9
+	call DecompressRequest2bpp
+	call LoadItemIconPalette
+.finish_icon
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
 	ret
@@ -614,75 +627,75 @@ ItemIconPalettes:
 
 NoItemPalette:
 ; NO ITEM
-RGB 20, 20, 20
-RGB 10, 10, 10
+	RGB 20, 20, 20
+	RGB 10, 10, 10
 
 TMHMTypePalettes:
 ; NORMAL
-RGB 28, 24, 17
-RGB 16, 12, 08
+	RGB 28, 24, 17
+	RGB 16, 12, 08
 ; FIGHTING
-RGB 28, 08, 04
-RGB 17, 00, 00
+	RGB 28, 08, 04
+	RGB 17, 00, 00
 ; FLYING
-RGB 23, 24, 30
-RGB 11, 14, 20
+	RGB 23, 24, 30
+	RGB 11, 14, 20
 ; POISON
-RGB 24, 06, 24
-RGB 11, 00, 11
+	RGB 24, 06, 24
+	RGB 11, 00, 11
 ; GROUND
-RGB 27, 19, 09
-RGB 16, 09, 00
+	RGB 27, 19, 09
+	RGB 16, 09, 00
 ; ROCK
-RGB 24, 18, 05
-RGB 12, 09, 00
+	RGB 24, 18, 05
+	RGB 12, 09, 00
 ; BIRD
-RGB 23, 24, 30
-RGB 11, 14, 20
+	RGB 23, 24, 30
+	RGB 11, 14, 20
 ; BUG
-RGB 19, 26, 06
-RGB 09, 15, 00
+	RGB 19, 26, 06
+	RGB 09, 15, 00
 ; GHOST
-RGB 15, 09, 26
-RGB 07, 02, 15
+	RGB 15, 09, 26
+	RGB 07, 02, 15
 ; STEEL
-RGB 23, 23, 24
-RGB 12, 12, 13
+	RGB 23, 23, 24
+	RGB 12, 12, 13
 ; unused types (treat as NORMAL)
-rept UNUSED_TYPES_END - UNUSED_TYPES - 1
-RGB 28, 24, 17
-RGB 16, 12, 08
-endr
+	rept UNUSED_TYPES_END - UNUSED_TYPES - 1
+	RGB 28, 24, 17
+	RGB 16, 12, 08
+	endr
 ; ???
-RGB 17, 17, 17
-RGB 06, 06, 06
+	RGB 17, 17, 17
+	RGB 06, 06, 06
 ; FIRE
-RGB 31, 16, 04
-RGB 20, 05, 00
+	RGB 31, 16, 04
+	RGB 20, 05, 00
 ; WATER
-RGB 14, 19, 30
-RGB 04, 08, 20
+	RGB 14, 19, 30
+	RGB 04, 08, 20
 ; GRASS
-RGB 12, 28, 08
-RGB 03, 15, 03
+	RGB 12, 28, 08
+	RGB 03, 15, 03
 ; ELECTRIC
-RGB 31, 27, 06
-RGB 20, 14, 00
+	RGB 31, 27, 06
+	RGB 20, 14, 00
 ; PSYCHIC
-RGB 31, 12, 24
-RGB 20, 03, 13
+	RGB 31, 12, 24
+	RGB 20, 03, 13
 ; ICE
-RGB 20, 28, 31
-RGB 08, 16, 23
+	RGB 20, 28, 31
+	RGB 08, 16, 23
 ; DRAGON
-RGB 18, 12, 31
-RGB 08, 05, 20
+	RGB 18, 12, 31
+	RGB 08, 05, 20
 ; DARK
-RGB 12, 09, 09
-RGB 04, 03, 04
+	RGB 12, 09, 09
+	RGB 04, 03, 04
 ; FAIRY
-RGB 31, 21, 31
-RGB 23, 10, 19
+	RGB 31, 21, 31
+	RGB 23, 10, 19
 
 ItemIconPalettes1:
 ; BRIGHTPOWDER
@@ -2017,197 +2030,197 @@ ValuablesIconPalettes:
 	RGB 27, 21, 14
 .IndirectEnd:
 
-SECTION "Item Icons 1", ROMX
-NoItemIcon: INCBIN "gfx/items/no_item.2bpp.lz"
-BrightpowderIcon: INCBIN "gfx/items/brightpowder.2bpp.lz"
-MoonStoneIcon: INCBIN "gfx/items/moon_stone.2bpp.lz"
-EscapeRopeIcon: INCBIN "gfx/items/escape_rope.2bpp.lz"
-RepelIcon: INCBIN "gfx/items/repel.2bpp.lz"
-FireStoneIcon: INCBIN "gfx/items/fire_stone.2bpp.lz"
-ThunderStoneIcon: INCBIN "gfx/items/thunderstone.2bpp.lz"
-WaterStoneIcon: INCBIN "gfx/items/water_stone.2bpp.lz"
-LuckyPunchIcon: INCBIN "gfx/items/lucky_punch.2bpp.lz"
-XAccuracyIcon: INCBIN "gfx/items/battle_item.2bpp.lz"
-LeafStoneIcon: INCBIN "gfx/items/leaf_stone.2bpp.lz"
-PokeDollIcon: INCBIN "gfx/items/poke_doll.2bpp.lz"
-QuickClawIcon: INCBIN "gfx/items/quick_claw.2bpp.lz"
-SharpBeakIcon: INCBIN "gfx/items/sharp_beak.2bpp.lz"
-PoisonBarbIcon: INCBIN "gfx/items/poison_barb.2bpp.lz"
-KingsRockIcon: INCBIN "gfx/items/kings_rock.2bpp.lz"
-SilverPowderIcon: INCBIN "gfx/items/silver_powder.2bpp.lz"
-AmuletCoinIcon: INCBIN "gfx/items/amulet_coin.2bpp.lz"
-CleanseTagIcon: INCBIN "gfx/items/cleanse_tag.2bpp.lz"
-MysticWaterIcon: INCBIN "gfx/items/mystic_water.2bpp.lz"
-TwistedSpoonIcon: INCBIN "gfx/items/twistedspoon.2bpp.lz"
-BlackbeltIcon: INCBIN "gfx/items/black_belt.2bpp.lz"
-BlackGlassesIcon: INCBIN "gfx/items/blackglasses.2bpp.lz"
-PinkBowIcon: INCBIN "gfx/items/pink_bow.2bpp.lz"
-StickIcon: INCBIN "gfx/items/leek.2bpp.lz"
-SmokeBallIcon: INCBIN "gfx/items/smoke_ball.2bpp.lz"
-NeverMeltIceIcon: INCBIN "gfx/items/nevermeltice.2bpp.lz"
-MagnetIcon: INCBIN "gfx/items/magnet.2bpp.lz"
-EverStoneIcon: INCBIN "gfx/items/everstone.2bpp.lz"
-SpellTagIcon: INCBIN "gfx/items/spell_tag.2bpp.lz"
-MiracleSeedIcon: INCBIN "gfx/items/miracle_seed.2bpp.lz"
-ThickClubIcon: INCBIN "gfx/items/bone.2bpp.lz"
-FocusBandIcon: INCBIN "gfx/items/muscle_band.2bpp.lz"
-HardStoneIcon: INCBIN "gfx/items/hard_stone.2bpp.lz"
-LuckyEggIcon: INCBIN "gfx/items/lucky_egg.2bpp.lz"
-CharcoalIcon: INCBIN "gfx/items/charcoal.2bpp.lz"
-ScopeLensIcon: INCBIN "gfx/items/scope_lens.2bpp.lz"
-MetalCoatIcon: INCBIN "gfx/items/metal_coat.2bpp.lz"
-DragonFangIcon: INCBIN "gfx/items/dragon_fang.2bpp.lz"
-LeftoversIcon: INCBIN "gfx/items/leftovers.2bpp.lz"
-DragonScaleIcon: INCBIN "gfx/items/dragon_scale.2bpp.lz"
-BerserkGeneIcon: INCBIN "gfx/items/berserk_gene.2bpp.lz"
-MailIcon: INCBIN "gfx/items/mail.2bpp.lz"
-LightBallIcon: INCBIN "gfx/items/light_ball.2bpp.lz"
-GorgeousBoxIcon: INCBIN "gfx/items/wood_box.2bpp.lz"
-SunStoneIcon: INCBIN "gfx/items/sun_stone.2bpp.lz"
-PolkadotBowIcon: INCBIN "gfx/items/polkadot_bow.2bpp.lz"
-UpGradeIcon: INCBIN "gfx/items/upgrade.2bpp.lz"
-ShinyStoneIcon: INCBIN "gfx/items/shiny_stone.2bpp.lz"
-DuskStoneIcon: INCBIN "gfx/items/dusk_stone.2bpp.lz"
-DawnStoneIcon: INCBIN "gfx/items/dawn_stone.2bpp.lz"
-IceStoneIcon: INCBIN "gfx/items/ice_stone.2bpp.lz"
-BlkAuguriteIcon: INCBIN "gfx/items/black_augurite.2bpp.lz"
-PeatBlockIcon: INCBIN "gfx/items/peat_block.2bpp.lz"
-SweetAppleIcon: INCBIN "gfx/items/sweet_apple.2bpp.lz"
-GalarCuffIcon: INCBIN "gfx/items/galar_cuff.2bpp.lz"
-GalarWreathIcon: INCBIN "gfx/items/galar_wreath.2bpp.lz"
-HolyArmorIcon: INCBIN "gfx/items/holy_armor.2bpp.lz"
-CursedArmorIcon: INCBIN "gfx/items/cursed_armor.2bpp.lz"
-ElectirizerIcon: INCBIN "gfx/items/electirizer.2bpp.lz"
-MagmarizerIcon: INCBIN "gfx/items/magmarizer.2bpp.lz"
-ProtectorIcon: INCBIN "gfx/items/protector.2bpp.lz"
-DubiousDiscIcon: INCBIN "gfx/items/dubious_disc.2bpp.lz"
-OvalStoneIcon: INCBIN "gfx/items/oval_stone.2bpp.lz"
-PrismScaleIcon: INCBIN "gfx/items/prism_scale.2bpp.lz"
-RazorClawIcon: INCBIN "gfx/items/razor_claw.2bpp.lz"
-RazorFangIcon: INCBIN "gfx/items/razor_fang.2bpp.lz"
-ReaperClothIcon: INCBIN "gfx/items/reaper_cloth.2bpp.lz"
-LinkingCordIcon: INCBIN "gfx/items/linking_cord.2bpp.lz"
-FairyFeatherIcon: INCBIN "gfx/items/fairyfeather.2bpp.lz"
-EvioliteIcon: INCBIN "gfx/items/eviolite.2bpp.lz"
-SoulDewIcon: INCBIN "gfx/items/soul_dew.2bpp.lz"
-SootheBellIcon: INCBIN "gfx/items/soothe_bell.2bpp.lz"
-MirrorHerbIcon: INCBIN "gfx/items/mirror_herb.2bpp.lz"
-HerbIcon: INCBIN "gfx/items/herb.2bpp.lz"
-FullIncenseIcon: INCBIN "gfx/items/full_incense.2bpp.lz"
-LaxIncenseIcon: INCBIN "gfx/items/lax_incense.2bpp.lz"
-LuckIncenseIcon: INCBIN "gfx/items/luck_incense.2bpp.lz"
-OddIncenseIcon: INCBIN "gfx/items/odd_incense.2bpp.lz"
-PureIncenseIcon: INCBIN "gfx/items/pure_incense.2bpp.lz"
-RockIncenseIcon: INCBIN "gfx/items/rock_incense.2bpp.lz"
-RoseIncenseIcon: INCBIN "gfx/items/rose_incense.2bpp.lz"
-SeaIncenseIcon: INCBIN "gfx/items/sea_incense.2bpp.lz"
-WaveIncenseIcon: INCBIN "gfx/items/wave_incense.2bpp.lz"
-MachoBraceIcon: INCBIN "gfx/items/macho_brace.2bpp.lz"
-PowerAnkletIcon: INCBIN "gfx/items/power_anklet.2bpp.lz"
-PowerBandIcon: INCBIN "gfx/items/power_band.2bpp.lz"
-PowerBeltIcon: INCBIN "gfx/items/power_belt.2bpp.lz"
-PowerBracerIcon: INCBIN "gfx/items/power_bracer.2bpp.lz"
-PowerLensIcon: INCBIN "gfx/items/power_lens.2bpp.lz"
-PowerWeightIcon: INCBIN "gfx/items/power_weight.2bpp.lz"
-LeaderCrestIcon: INCBIN "gfx/items/leader_crest.2bpp.lz"
-BlockIcon: INCBIN "gfx/items/pokeblock.2bpp.lz"
-AntidoteIcon: INCBIN "gfx/items/antidote.2bpp.lz"
-SeventhHeavenIcon: INCBIN "gfx/items/seventh_heaven.2bpp.lz"
-FullHealIcon: INCBIN "gfx/items/full_heal.2bpp.lz"
-PotionIcon: INCBIN "gfx/items/potion.2bpp.lz"
-MaxPotionIcon: INCBIN "gfx/items/max_potion.2bpp.lz"
-ReviveIcon: INCBIN "gfx/items/revive.2bpp.lz"
-MaxReviveIcon: INCBIN "gfx/items/max_revive.2bpp.lz"
-EtherIcon: INCBIN "gfx/items/ether.2bpp.lz"
-VitaminIcon: INCBIN "gfx/items/vitamin.2bpp.lz"
-HPUpIcon: INCBIN "gfx/items/hp_up.2bpp.lz"
-RagecandybarIcon: INCBIN "gfx/items/ragecandybar.2bpp.lz"
-RareCandyIcon: INCBIN "gfx/items/rare_candy.2bpp.lz"
-PPUpIcon: INCBIN "gfx/items/pp_up.2bpp.lz"
-PPMaxIcon: INCBIN "gfx/items/pp_max.2bpp.lz"
-PewterArareIcon: INCBIN "gfx/items/pewtercrunch.2bpp.lz"
-MintIcon: INCBIN "gfx/items/mint_leaf.2bpp.lz"
-AbilityUpIcon: INCBIN "gfx/items/ability_cap.2bpp.lz"
-MoomooMilkIcon: INCBIN "gfx/items/moomoo_milk.2bpp.lz"
-SodaPopIcon: INCBIN "gfx/items/soda_pop.2bpp.lz"
-EnergyRootIcon: INCBIN "gfx/items/energy_root.2bpp.lz"
-LemonadeIcon: INCBIN "gfx/items/lemonade.2bpp.lz"
-FreshWaterIcon: INCBIN "gfx/items/fresh_water.2bpp.lz"
-RevivalHerbIcon: INCBIN "gfx/items/revival_herb.2bpp.lz"
-BerryJuiceIcon: INCBIN "gfx/items/berry_juice.2bpp.lz"
-NuggetIcon: INCBIN "gfx/items/nugget.2bpp.lz"
-LeafIcon: INCBIN "gfx/items/leaf.2bpp.lz"
-TinyMushroomIcon: INCBIN "gfx/items/tinymushroom.2bpp.lz"
-BigMushroomIcon: INCBIN "gfx/items/big_mushroom.2bpp.lz"
-SlowpokeTailIcon: INCBIN "gfx/items/slowpoketail.2bpp.lz"
-PearlIcon: INCBIN "gfx/items/pearl.2bpp.lz"
-BigPearlIcon: INCBIN "gfx/items/big_pearl.2bpp.lz"
-StarPieceIcon: INCBIN "gfx/items/star_piece.2bpp.lz"
-ShardIcon: INCBIN "gfx/items/brick_piece.2bpp.lz"
-HeartScaleIcon: INCBIN "gfx/items/heart_scale.2bpp.lz"
-BalmmushroomIcon: INCBIN "gfx/items/balmmushroom.2bpp.lz"
-BigNuggetIcon: INCBIN "gfx/items/big_nugget.2bpp.lz"
-PearlStringIcon: INCBIN "gfx/items/pearl_string.2bpp.lz"
-BeachGlassIcon: INCBIN "gfx/items/beach_glass.2bpp.lz"
-PrettyShellIcon: INCBIN "gfx/items/pretty_shell.2bpp.lz"
-TinyBambooIcon: INCBIN "gfx/items/tiny_bamboo.2bpp.lz"
-BigBambooIcon: INCBIN "gfx/items/big_bamboo.2bpp.lz"
-GemstoneIcon: INCBIN "gfx/items/gemstone.2bpp.lz"
-BottleCapIcon: INCBIN "gfx/items/bottle_cap.2bpp.lz"
-HoneyIcon: INCBIN "gfx/items/sweet_honey.2bpp.lz"
-CandyTruffleIcon: INCBIN "gfx/items/candy_truffle.2bpp.lz"
-SpiderSilkIcon: INCBIN "gfx/items/spider_silk.2bpp.lz"
-AncientVaseIcon: INCBIN "gfx/items/ancient_vase.2bpp.lz"
-AncientCupIcon: INCBIN "gfx/items/ancient_cup.2bpp.lz"
-AncientJarIcon: INCBIN "gfx/items/ancient_jar.2bpp.lz"
-GoldStatueIcon: INCBIN "gfx/items/gold_statue.2bpp.lz"
-ExpCandyXSIcon: INCBIN "gfx/items/exp_candy_xs.2bpp.lz"
-ExpCandySIcon: INCBIN "gfx/items/exp_candy_s.2bpp.lz"
-ExpCandyMIcon: INCBIN "gfx/items/exp_candy_m.2bpp.lz"
-ExpCandyLIcon: INCBIN "gfx/items/exp_candy_l.2bpp.lz"
-ExpCandyXLIcon: INCBIN "gfx/items/exp_candy_xl.2bpp.lz"
+	SECTION "Item Icons 1", ROMX
+	NoItemIcon: INCBIN "gfx/items/no_item.2bpp.lz"
+	BrightpowderIcon: INCBIN "gfx/items/brightpowder.2bpp.lz"
+	MoonStoneIcon: INCBIN "gfx/items/moon_stone.2bpp.lz"
+	EscapeRopeIcon: INCBIN "gfx/items/escape_rope.2bpp.lz"
+	RepelIcon: INCBIN "gfx/items/repel.2bpp.lz"
+	FireStoneIcon: INCBIN "gfx/items/fire_stone.2bpp.lz"
+	ThunderStoneIcon: INCBIN "gfx/items/thunderstone.2bpp.lz"
+	WaterStoneIcon: INCBIN "gfx/items/water_stone.2bpp.lz"
+	LuckyPunchIcon: INCBIN "gfx/items/lucky_punch.2bpp.lz"
+	XAccuracyIcon: INCBIN "gfx/items/battle_item.2bpp.lz"
+	LeafStoneIcon: INCBIN "gfx/items/leaf_stone.2bpp.lz"
+	PokeDollIcon: INCBIN "gfx/items/poke_doll.2bpp.lz"
+	QuickClawIcon: INCBIN "gfx/items/quick_claw.2bpp.lz"
+	SharpBeakIcon: INCBIN "gfx/items/sharp_beak.2bpp.lz"
+	PoisonBarbIcon: INCBIN "gfx/items/poison_barb.2bpp.lz"
+	KingsRockIcon: INCBIN "gfx/items/kings_rock.2bpp.lz"
+	SilverPowderIcon: INCBIN "gfx/items/silver_powder.2bpp.lz"
+	AmuletCoinIcon: INCBIN "gfx/items/amulet_coin.2bpp.lz"
+	CleanseTagIcon: INCBIN "gfx/items/cleanse_tag.2bpp.lz"
+	MysticWaterIcon: INCBIN "gfx/items/mystic_water.2bpp.lz"
+	TwistedSpoonIcon: INCBIN "gfx/items/twistedspoon.2bpp.lz"
+	BlackbeltIcon: INCBIN "gfx/items/black_belt.2bpp.lz"
+	BlackGlassesIcon: INCBIN "gfx/items/blackglasses.2bpp.lz"
+	PinkBowIcon: INCBIN "gfx/items/pink_bow.2bpp.lz"
+	StickIcon: INCBIN "gfx/items/leek.2bpp.lz"
+	SmokeBallIcon: INCBIN "gfx/items/smoke_ball.2bpp.lz"
+	NeverMeltIceIcon: INCBIN "gfx/items/nevermeltice.2bpp.lz"
+	MagnetIcon: INCBIN "gfx/items/magnet.2bpp.lz"
+	EverStoneIcon: INCBIN "gfx/items/everstone.2bpp.lz"
+	SpellTagIcon: INCBIN "gfx/items/spell_tag.2bpp.lz"
+	MiracleSeedIcon: INCBIN "gfx/items/miracle_seed.2bpp.lz"
+	ThickClubIcon: INCBIN "gfx/items/bone.2bpp.lz"
+	FocusBandIcon: INCBIN "gfx/items/muscle_band.2bpp.lz"
+	HardStoneIcon: INCBIN "gfx/items/hard_stone.2bpp.lz"
+	LuckyEggIcon: INCBIN "gfx/items/lucky_egg.2bpp.lz"
+	CharcoalIcon: INCBIN "gfx/items/charcoal.2bpp.lz"
+	ScopeLensIcon: INCBIN "gfx/items/scope_lens.2bpp.lz"
+	MetalCoatIcon: INCBIN "gfx/items/metal_coat.2bpp.lz"
+	DragonFangIcon: INCBIN "gfx/items/dragon_fang.2bpp.lz"
+	LeftoversIcon: INCBIN "gfx/items/leftovers.2bpp.lz"
+	DragonScaleIcon: INCBIN "gfx/items/dragon_scale.2bpp.lz"
+	BerserkGeneIcon: INCBIN "gfx/items/berserk_gene.2bpp.lz"
+	MailIcon: INCBIN "gfx/items/mail.2bpp.lz"
+	LightBallIcon: INCBIN "gfx/items/light_ball.2bpp.lz"
+	GorgeousBoxIcon: INCBIN "gfx/items/wood_box.2bpp.lz"
+	SunStoneIcon: INCBIN "gfx/items/sun_stone.2bpp.lz"
+	PolkadotBowIcon: INCBIN "gfx/items/polkadot_bow.2bpp.lz"
+	UpGradeIcon: INCBIN "gfx/items/upgrade.2bpp.lz"
+	ShinyStoneIcon: INCBIN "gfx/items/shiny_stone.2bpp.lz"
+	DuskStoneIcon: INCBIN "gfx/items/dusk_stone.2bpp.lz"
+	DawnStoneIcon: INCBIN "gfx/items/dawn_stone.2bpp.lz"
+	IceStoneIcon: INCBIN "gfx/items/ice_stone.2bpp.lz"
+	BlkAuguriteIcon: INCBIN "gfx/items/black_augurite.2bpp.lz"
+	PeatBlockIcon: INCBIN "gfx/items/peat_block.2bpp.lz"
+	SweetAppleIcon: INCBIN "gfx/items/sweet_apple.2bpp.lz"
+	GalarCuffIcon: INCBIN "gfx/items/galar_cuff.2bpp.lz"
+	GalarWreathIcon: INCBIN "gfx/items/galar_wreath.2bpp.lz"
+	HolyArmorIcon: INCBIN "gfx/items/holy_armor.2bpp.lz"
+	CursedArmorIcon: INCBIN "gfx/items/cursed_armor.2bpp.lz"
+	ElectirizerIcon: INCBIN "gfx/items/electirizer.2bpp.lz"
+	MagmarizerIcon: INCBIN "gfx/items/magmarizer.2bpp.lz"
+	ProtectorIcon: INCBIN "gfx/items/protector.2bpp.lz"
+	DubiousDiscIcon: INCBIN "gfx/items/dubious_disc.2bpp.lz"
+	OvalStoneIcon: INCBIN "gfx/items/oval_stone.2bpp.lz"
+	PrismScaleIcon: INCBIN "gfx/items/prism_scale.2bpp.lz"
+	RazorClawIcon: INCBIN "gfx/items/razor_claw.2bpp.lz"
+	RazorFangIcon: INCBIN "gfx/items/razor_fang.2bpp.lz"
+	ReaperClothIcon: INCBIN "gfx/items/reaper_cloth.2bpp.lz"
+	LinkingCordIcon: INCBIN "gfx/items/linking_cord.2bpp.lz"
+	FairyFeatherIcon: INCBIN "gfx/items/fairyfeather.2bpp.lz"
+	EvioliteIcon: INCBIN "gfx/items/eviolite.2bpp.lz"
+	SoulDewIcon: INCBIN "gfx/items/soul_dew.2bpp.lz"
+	SootheBellIcon: INCBIN "gfx/items/soothe_bell.2bpp.lz"
+	MirrorHerbIcon: INCBIN "gfx/items/mirror_herb.2bpp.lz"
+	HerbIcon: INCBIN "gfx/items/herb.2bpp.lz"
+	FullIncenseIcon: INCBIN "gfx/items/full_incense.2bpp.lz"
+	LaxIncenseIcon: INCBIN "gfx/items/lax_incense.2bpp.lz"
+	LuckIncenseIcon: INCBIN "gfx/items/luck_incense.2bpp.lz"
+	OddIncenseIcon: INCBIN "gfx/items/odd_incense.2bpp.lz"
+	PureIncenseIcon: INCBIN "gfx/items/pure_incense.2bpp.lz"
+	RockIncenseIcon: INCBIN "gfx/items/rock_incense.2bpp.lz"
+	RoseIncenseIcon: INCBIN "gfx/items/rose_incense.2bpp.lz"
+	SeaIncenseIcon: INCBIN "gfx/items/sea_incense.2bpp.lz"
+	WaveIncenseIcon: INCBIN "gfx/items/wave_incense.2bpp.lz"
+	MachoBraceIcon: INCBIN "gfx/items/macho_brace.2bpp.lz"
+	PowerAnkletIcon: INCBIN "gfx/items/power_anklet.2bpp.lz"
+	PowerBandIcon: INCBIN "gfx/items/power_band.2bpp.lz"
+	PowerBeltIcon: INCBIN "gfx/items/power_belt.2bpp.lz"
+	PowerBracerIcon: INCBIN "gfx/items/power_bracer.2bpp.lz"
+	PowerLensIcon: INCBIN "gfx/items/power_lens.2bpp.lz"
+	PowerWeightIcon: INCBIN "gfx/items/power_weight.2bpp.lz"
+	LeaderCrestIcon: INCBIN "gfx/items/leader_crest.2bpp.lz"
+	BlockIcon: INCBIN "gfx/items/pokeblock.2bpp.lz"
+	AntidoteIcon: INCBIN "gfx/items/antidote.2bpp.lz"
+	SeventhHeavenIcon: INCBIN "gfx/items/seventh_heaven.2bpp.lz"
+	FullHealIcon: INCBIN "gfx/items/full_heal.2bpp.lz"
+	PotionIcon: INCBIN "gfx/items/potion.2bpp.lz"
+	MaxPotionIcon: INCBIN "gfx/items/max_potion.2bpp.lz"
+	ReviveIcon: INCBIN "gfx/items/revive.2bpp.lz"
+	MaxReviveIcon: INCBIN "gfx/items/max_revive.2bpp.lz"
+	EtherIcon: INCBIN "gfx/items/ether.2bpp.lz"
+	VitaminIcon: INCBIN "gfx/items/vitamin.2bpp.lz"
+	HPUpIcon: INCBIN "gfx/items/hp_up.2bpp.lz"
+	RagecandybarIcon: INCBIN "gfx/items/ragecandybar.2bpp.lz"
+	RareCandyIcon: INCBIN "gfx/items/rare_candy.2bpp.lz"
+	PPUpIcon: INCBIN "gfx/items/pp_up.2bpp.lz"
+	PPMaxIcon: INCBIN "gfx/items/pp_max.2bpp.lz"
+	PewterArareIcon: INCBIN "gfx/items/pewtercrunch.2bpp.lz"
+	MintIcon: INCBIN "gfx/items/mint_leaf.2bpp.lz"
+	AbilityUpIcon: INCBIN "gfx/items/ability_cap.2bpp.lz"
+	MoomooMilkIcon: INCBIN "gfx/items/moomoo_milk.2bpp.lz"
+	SodaPopIcon: INCBIN "gfx/items/soda_pop.2bpp.lz"
+	EnergyRootIcon: INCBIN "gfx/items/energy_root.2bpp.lz"
+	LemonadeIcon: INCBIN "gfx/items/lemonade.2bpp.lz"
+	FreshWaterIcon: INCBIN "gfx/items/fresh_water.2bpp.lz"
+	RevivalHerbIcon: INCBIN "gfx/items/revival_herb.2bpp.lz"
+	BerryJuiceIcon: INCBIN "gfx/items/berry_juice.2bpp.lz"
+	NuggetIcon: INCBIN "gfx/items/nugget.2bpp.lz"
+	LeafIcon: INCBIN "gfx/items/leaf.2bpp.lz"
+	TinyMushroomIcon: INCBIN "gfx/items/tinymushroom.2bpp.lz"
+	BigMushroomIcon: INCBIN "gfx/items/big_mushroom.2bpp.lz"
+	SlowpokeTailIcon: INCBIN "gfx/items/slowpoketail.2bpp.lz"
+	PearlIcon: INCBIN "gfx/items/pearl.2bpp.lz"
+	BigPearlIcon: INCBIN "gfx/items/big_pearl.2bpp.lz"
+	StarPieceIcon: INCBIN "gfx/items/star_piece.2bpp.lz"
+	ShardIcon: INCBIN "gfx/items/brick_piece.2bpp.lz"
+	HeartScaleIcon: INCBIN "gfx/items/heart_scale.2bpp.lz"
+	BalmmushroomIcon: INCBIN "gfx/items/balmmushroom.2bpp.lz"
+	BigNuggetIcon: INCBIN "gfx/items/big_nugget.2bpp.lz"
+	PearlStringIcon: INCBIN "gfx/items/pearl_string.2bpp.lz"
+	BeachGlassIcon: INCBIN "gfx/items/beach_glass.2bpp.lz"
+	PrettyShellIcon: INCBIN "gfx/items/pretty_shell.2bpp.lz"
+	TinyBambooIcon: INCBIN "gfx/items/tiny_bamboo.2bpp.lz"
+	BigBambooIcon: INCBIN "gfx/items/big_bamboo.2bpp.lz"
+	GemstoneIcon: INCBIN "gfx/items/gemstone.2bpp.lz"
+	BottleCapIcon: INCBIN "gfx/items/bottle_cap.2bpp.lz"
+	HoneyIcon: INCBIN "gfx/items/sweet_honey.2bpp.lz"
+	CandyTruffleIcon: INCBIN "gfx/items/candy_truffle.2bpp.lz"
+	SpiderSilkIcon: INCBIN "gfx/items/spider_silk.2bpp.lz"
+	AncientVaseIcon: INCBIN "gfx/items/ancient_vase.2bpp.lz"
+	AncientCupIcon: INCBIN "gfx/items/ancient_cup.2bpp.lz"
+	AncientJarIcon: INCBIN "gfx/items/ancient_jar.2bpp.lz"
+	GoldStatueIcon: INCBIN "gfx/items/gold_statue.2bpp.lz"
+	ExpCandyXSIcon: INCBIN "gfx/items/exp_candy_xs.2bpp.lz"
+	ExpCandySIcon: INCBIN "gfx/items/exp_candy_s.2bpp.lz"
+	ExpCandyMIcon: INCBIN "gfx/items/exp_candy_m.2bpp.lz"
+	ExpCandyLIcon: INCBIN "gfx/items/exp_candy_l.2bpp.lz"
+	ExpCandyXLIcon: INCBIN "gfx/items/exp_candy_xl.2bpp.lz"
 
-SECTION "Ball and Key Icons", ROMX
-NoBallIcon: INCBIN "gfx/items/no_item.2bpp.lz"
-CoinCaseIcon: INCBIN "gfx/items/coin_case.2bpp.lz"
-ItemfinderIcon: INCBIN "gfx/items/itemfinder.2bpp.lz"
-OldRodIcon: INCBIN "gfx/items/old_rod.2bpp.lz"
-GoodRodIcon: INCBIN "gfx/items/good_rod.2bpp.lz"
-SuperRodIcon: INCBIN "gfx/items/super_rod.2bpp.lz"
-SSTicketIcon: INCBIN "gfx/items/s_s_ticket.2bpp.lz"
-SilverWingIcon: INCBIN "gfx/items/silver_wing.2bpp.lz"
-RainbowWingIcon: INCBIN "gfx/items/rainbow_wing.2bpp.lz"
-SeaMapIcon: INCBIN "gfx/items/old_sea_map.2bpp.lz"
-SkateboardIcon: INCBIN "gfx/items/skateboard.2bpp.lz"
-ExcelScopeIcon: INCBIN "gfx/items/excel_scope.2bpp.lz"
-BerryLogIcon: INCBIN "gfx/items/berry_log.2bpp.lz"
-MasterBallIcon: INCBIN "gfx/items/master_ball.2bpp.lz"
-UltraBallIcon: INCBIN "gfx/items/ultra_ball.2bpp.lz"
-GreatBallIcon: INCBIN "gfx/items/great_ball.2bpp.lz"
-PokeBallIcon: INCBIN "gfx/items/poke_ball.2bpp.lz"
-SafariBallIcon: INCBIN "gfx/items/safari_ball.2bpp.lz"
-NetBallIcon: INCBIN "gfx/items/net_ball.2bpp.lz"
-DiveBallIcon: INCBIN "gfx/items/dive_ball.2bpp.lz"
-NestBallIcon: INCBIN "gfx/items/nest_ball.2bpp.lz"
-RepeatBallIcon: INCBIN "gfx/items/repeat_ball.2bpp.lz"
-TimerBallIcon: INCBIN "gfx/items/timer_ball.2bpp.lz"
-LuxuryBallIcon: INCBIN "gfx/items/luxury_ball.2bpp.lz"
-PremierBallIcon: INCBIN "gfx/items/premier_ball.2bpp.lz"
-FastBallIcon: INCBIN "gfx/items/fast_ball.2bpp.lz"
-LevelBallIcon: INCBIN "gfx/items/level_ball.2bpp.lz"
-LureBallIcon: INCBIN "gfx/items/lure_ball.2bpp.lz"
-HeavyBallIcon: INCBIN "gfx/items/heavy_ball.2bpp.lz"
-LoveBallIcon: INCBIN "gfx/items/love_ball.2bpp.lz"
-FriendBallIcon: INCBIN "gfx/items/friend_ball.2bpp.lz"
-MoonBallIcon: INCBIN "gfx/items/moon_ball.2bpp.lz"
-ParkBallIcon: INCBIN "gfx/items/park_ball.2bpp.lz"
-SportBallIcon: INCBIN "gfx/items/sport_ball.2bpp.lz"
-DuskBallIcon: INCBIN "gfx/items/dusk_ball.2bpp.lz"
-HealBallIcon: INCBIN "gfx/items/heal_ball.2bpp.lz"
-QuickBallIcon: INCBIN "gfx/items/quick_ball.2bpp.lz"
-CherishBallIcon: INCBIN "gfx/items/cherish_ball.2bpp.lz"
-DreamBallIcon: INCBIN "gfx/items/dream_ball.2bpp.lz"
-BeastBallIcon: INCBIN "gfx/items/beast_ball.2bpp.lz"
+	SECTION "Ball and Key Icons", ROMX
+	NoBallIcon: INCBIN "gfx/items/no_item.2bpp.lz"
+	CoinCaseIcon: INCBIN "gfx/items/coin_case.2bpp.lz"
+	ItemfinderIcon: INCBIN "gfx/items/itemfinder.2bpp.lz"
+	OldRodIcon: INCBIN "gfx/items/old_rod.2bpp.lz"
+	GoodRodIcon: INCBIN "gfx/items/good_rod.2bpp.lz"
+	SuperRodIcon: INCBIN "gfx/items/super_rod.2bpp.lz"
+	SSTicketIcon: INCBIN "gfx/items/s_s_ticket.2bpp.lz"
+	SilverWingIcon: INCBIN "gfx/items/silver_wing.2bpp.lz"
+	RainbowWingIcon: INCBIN "gfx/items/rainbow_wing.2bpp.lz"
+	SeaMapIcon: INCBIN "gfx/items/old_sea_map.2bpp.lz"
+	SkateboardIcon: INCBIN "gfx/items/skateboard.2bpp.lz"
+	ExcelScopeIcon: INCBIN "gfx/items/excel_scope.2bpp.lz"
+	BerryLogIcon: INCBIN "gfx/items/berry_log.2bpp.lz"
+	MasterBallIcon: INCBIN "gfx/items/master_ball.2bpp.lz"
+	UltraBallIcon: INCBIN "gfx/items/ultra_ball.2bpp.lz"
+	GreatBallIcon: INCBIN "gfx/items/great_ball.2bpp.lz"
+	PokeBallIcon: INCBIN "gfx/items/poke_ball.2bpp.lz"
+	SafariBallIcon: INCBIN "gfx/items/safari_ball.2bpp.lz"
+	NetBallIcon: INCBIN "gfx/items/net_ball.2bpp.lz"
+	DiveBallIcon: INCBIN "gfx/items/dive_ball.2bpp.lz"
+	NestBallIcon: INCBIN "gfx/items/nest_ball.2bpp.lz"
+	RepeatBallIcon: INCBIN "gfx/items/repeat_ball.2bpp.lz"
+	TimerBallIcon: INCBIN "gfx/items/timer_ball.2bpp.lz"
+	LuxuryBallIcon: INCBIN "gfx/items/luxury_ball.2bpp.lz"
+	PremierBallIcon: INCBIN "gfx/items/premier_ball.2bpp.lz"
+	FastBallIcon: INCBIN "gfx/items/fast_ball.2bpp.lz"
+	LevelBallIcon: INCBIN "gfx/items/level_ball.2bpp.lz"
+	LureBallIcon: INCBIN "gfx/items/lure_ball.2bpp.lz"
+	HeavyBallIcon: INCBIN "gfx/items/heavy_ball.2bpp.lz"
+	LoveBallIcon: INCBIN "gfx/items/love_ball.2bpp.lz"
+	FriendBallIcon: INCBIN "gfx/items/friend_ball.2bpp.lz"
+	MoonBallIcon: INCBIN "gfx/items/moon_ball.2bpp.lz"
+	ParkBallIcon: INCBIN "gfx/items/park_ball.2bpp.lz"
+	SportBallIcon: INCBIN "gfx/items/sport_ball.2bpp.lz"
+	DuskBallIcon: INCBIN "gfx/items/dusk_ball.2bpp.lz"
+	HealBallIcon: INCBIN "gfx/items/heal_ball.2bpp.lz"
+	QuickBallIcon: INCBIN "gfx/items/quick_ball.2bpp.lz"
+	CherishBallIcon: INCBIN "gfx/items/cherish_ball.2bpp.lz"
+	DreamBallIcon: INCBIN "gfx/items/dream_ball.2bpp.lz"
+	BeastBallIcon: INCBIN "gfx/items/beast_ball.2bpp.lz"
 StrangeBallIcon:
 PokeBallHIcon:
 GreatBallHIcon:
@@ -2219,92 +2232,92 @@ FeatherBallIcon:
 WingBallIcon:
 JetBallIcon:
 OriginBallIcon:
-RocketBallIcon: INCBIN "gfx/items/rocket_ball.2bpp.lz"
-GSBallIcon: INCBIN "gfx/items/gs_ball.2bpp.lz"
-ExpShareIcon: INCBIN "gfx/items/exp_share.2bpp.lz"
+	RocketBallIcon: INCBIN "gfx/items/rocket_ball.2bpp.lz"
+	GSBallIcon: INCBIN "gfx/items/gs_ball.2bpp.lz"
+	ExpShareIcon: INCBIN "gfx/items/exp_share.2bpp.lz"
 
-SECTION "Berry Icons", ROMX
-NoBerryIcon: INCBIN "gfx/items/no_item.2bpp.lz"
-PechaBerryIcon: INCBIN "gfx/items/pecha_berry.2bpp.lz"
-CheriBerryIcon: INCBIN "gfx/items/cheri_berry.2bpp.lz"
-AspearBerryIcon: INCBIN "gfx/items/aspear_berry.2bpp.lz"
-RawstBerryIcon: INCBIN "gfx/items/rawst_berry.2bpp.lz"
-PersimBerryIcon: INCBIN "gfx/items/persim_berry.2bpp.lz"
-ChestoBerryIcon: INCBIN "gfx/items/chesto_berry.2bpp.lz"
-LumBerryIcon: INCBIN "gfx/items/lum_berry.2bpp.lz"
-LeppaBerryIcon: INCBIN "gfx/items/leppa_berry.2bpp.lz"
-OranBerryIcon: INCBIN "gfx/items/oran_berry.2bpp.lz"
-SitrusBerryIcon: INCBIN "gfx/items/sitrus_berry.2bpp.lz"
-FigyBerryIcon: INCBIN "gfx/items/figy_berry.2bpp.lz"
-WikiBerryIcon: INCBIN "gfx/items/wiki_berry.2bpp.lz"
-MagoBerryIcon: INCBIN "gfx/items/mago_berry.2bpp.lz"
-AguavBerryIcon: INCBIN "gfx/items/aguav_berry.2bpp.lz"
-IapapaBerryIcon: INCBIN "gfx/items/iapapa_berry.2bpp.lz"
-PomegBerryIcon: INCBIN "gfx/items/pomeg_berry.2bpp.lz"
-KelpsyBerryIcon: INCBIN "gfx/items/kelpsy_berry.2bpp.lz"
-QualotBerryIcon: INCBIN "gfx/items/qualot_berry.2bpp.lz"
-HondewBerryIcon: INCBIN "gfx/items/hondew_berry.2bpp.lz"
-GrepaBerryIcon: INCBIN "gfx/items/grepa_berry.2bpp.lz"
-TamatoBerryIcon: INCBIN "gfx/items/tamato_berry.2bpp.lz"
-OccaBerryIcon: INCBIN "gfx/items/occa_berry.2bpp.lz"
-PasshoBerryIcon: INCBIN "gfx/items/passho_berry.2bpp.lz"
-WacanBerryIcon: INCBIN "gfx/items/wacan_berry.2bpp.lz"
-RindoBerryIcon: INCBIN "gfx/items/rindo_berry.2bpp.lz"
-YacheBerryIcon: INCBIN "gfx/items/yache_berry.2bpp.lz"
-ChopleBerryIcon: INCBIN "gfx/items/chople_berry.2bpp.lz"
-KebiaBerryIcon: INCBIN "gfx/items/kebia_berry.2bpp.lz"
-ShucaBerryIcon: INCBIN "gfx/items/shuca_berry.2bpp.lz"
-CobaBerryIcon: INCBIN "gfx/items/coba_berry.2bpp.lz"
-PayapaBerryIcon: INCBIN "gfx/items/payapa_berry.2bpp.lz"
-TangaBerryIcon: INCBIN "gfx/items/tanga_berry.2bpp.lz"
-ChartiBerryIcon: INCBIN "gfx/items/charti_berry.2bpp.lz"
-KasibBerryIcon: INCBIN "gfx/items/kasib_berry.2bpp.lz"
-HabanBerryIcon: INCBIN "gfx/items/haban_berry.2bpp.lz"
-ColburBerryIcon: INCBIN "gfx/items/colbur_berry.2bpp.lz"
-BabiriBerryIcon: INCBIN "gfx/items/babiri_berry.2bpp.lz"
-ChilanBerryIcon: INCBIN "gfx/items/chilan_berry.2bpp.lz"
-RoseliBerryIcon: INCBIN "gfx/items/roseli_berry.2bpp.lz"
-LiechiBerryIcon: INCBIN "gfx/items/liechi_berry.2bpp.lz"
-GanlonBerryIcon: INCBIN "gfx/items/ganlon_berry.2bpp.lz"
-SalacBerryIcon: INCBIN "gfx/items/salac_berry.2bpp.lz"
-PetayaBerryIcon: INCBIN "gfx/items/petaya_berry.2bpp.lz"
-ApicotBerryIcon: INCBIN "gfx/items/apicot_berry.2bpp.lz"
-LansatBerryIcon: INCBIN "gfx/items/lansat_berry.2bpp.lz"
-StarfBerryIcon: INCBIN "gfx/items/starf_berry.2bpp.lz"
-KeeBerryIcon: INCBIN "gfx/items/kee_berry.2bpp.lz"
-MarangaBerryIcon: INCBIN "gfx/items/maranga_berry.2bpp.lz"
-EnigmaBerryIcon: INCBIN "gfx/items/enigma_berry.2bpp.lz"
-MicleBerryIcon: INCBIN "gfx/items/micle_berry.2bpp.lz"
-CustapBerryIcon: INCBIN "gfx/items/custap_berry.2bpp.lz"
-JabocaBerryIcon: INCBIN "gfx/items/jaboca_berry.2bpp.lz"
-RowapBerryIcon: INCBIN "gfx/items/rowap_berry.2bpp.lz"
-EggantBerryIcon: INCBIN "gfx/items/eggant_berry.2bpp.lz"
-UnyinnBerryIcon: INCBIN "gfx/items/unyinn_berry.2bpp.lz"
-PumkinBerryIcon: INCBIN "gfx/items/pumkin_berry.2bpp.lz"
-CareepBerryIcon: INCBIN "gfx/items/careep_berry.2bpp.lz"
-BitmelBerryIcon: INCBIN "gfx/items/bitmel_berry.2bpp.lz"
-DrashBerryIcon: INCBIN "gfx/items/drash_berry.2bpp.lz"
-RazzBerryIcon: INCBIN "gfx/items/razz_berry.2bpp.lz"
-BlukBerryIcon: INCBIN "gfx/items/bluk_berry.2bpp.lz"
-NanabBerryIcon: INCBIN "gfx/items/nanab_berry.2bpp.lz"
-WepearBerryIcon: INCBIN "gfx/items/wepear_berry.2bpp.lz"
-PinapBerryIcon: INCBIN "gfx/items/pinap_berry.2bpp.lz"
-CornnBerryIcon: INCBIN "gfx/items/cornn_berry.2bpp.lz"
-MagostBerryIcon: INCBIN "gfx/items/magost_berry.2bpp.lz"
-RabutaBerryIcon: INCBIN "gfx/items/rabuta_berry.2bpp.lz"
-NomelBerryIcon: INCBIN "gfx/items/nomel_berry.2bpp.lz"
-SpelonBerryIcon: INCBIN "gfx/items/spelon_berry.2bpp.lz"
-PamtreBerryIcon: INCBIN "gfx/items/pamtre_berry.2bpp.lz"
-WatmelBerryIcon: INCBIN "gfx/items/watmel_berry.2bpp.lz"
-DurinBerryIcon: INCBIN "gfx/items/durin_berry.2bpp.lz"
-BelueBerryIcon: INCBIN "gfx/items/belue_berry.2bpp.lz"
-StribBerryIcon: INCBIN "gfx/items/strib_berry.2bpp.lz"
-TilotaBerryIcon: INCBIN "gfx/items/tilota_berry.2bpp.lz"
-NutpeaBerryIcon: INCBIN "gfx/items/nutpea_berry.2bpp.lz"
-KrauBerryIcon: INCBIN "gfx/items/krau_berry.2bpp.lz"
-LigarcBerryIcon: INCBIN "gfx/items/ligarc_berry.2bpp.lz"
-TotapoBerryIcon: INCBIN "gfx/items/totapo_berry.2bpp.lz"
-PinkanBerryIcon: INCBIN "gfx/items/pinkan_berry.2bpp.lz"
-ApricornIcon: INCBIN "gfx/items/apricorn.2bpp.lz"
-HopoBerryIcon: INCBIN "gfx/items/hopo_berry.2bpp.lz"
-TmHmIcon: INCBIN "gfx/items/tm_hm.2bpp.lz"
+	SECTION "Berry Icons", ROMX
+	NoBerryIcon: INCBIN "gfx/items/no_item.2bpp.lz"
+	PechaBerryIcon: INCBIN "gfx/items/pecha_berry.2bpp.lz"
+	CheriBerryIcon: INCBIN "gfx/items/cheri_berry.2bpp.lz"
+	AspearBerryIcon: INCBIN "gfx/items/aspear_berry.2bpp.lz"
+	RawstBerryIcon: INCBIN "gfx/items/rawst_berry.2bpp.lz"
+	PersimBerryIcon: INCBIN "gfx/items/persim_berry.2bpp.lz"
+	ChestoBerryIcon: INCBIN "gfx/items/chesto_berry.2bpp.lz"
+	LumBerryIcon: INCBIN "gfx/items/lum_berry.2bpp.lz"
+	LeppaBerryIcon: INCBIN "gfx/items/leppa_berry.2bpp.lz"
+	OranBerryIcon: INCBIN "gfx/items/oran_berry.2bpp.lz"
+	SitrusBerryIcon: INCBIN "gfx/items/sitrus_berry.2bpp.lz"
+	FigyBerryIcon: INCBIN "gfx/items/figy_berry.2bpp.lz"
+	WikiBerryIcon: INCBIN "gfx/items/wiki_berry.2bpp.lz"
+	MagoBerryIcon: INCBIN "gfx/items/mago_berry.2bpp.lz"
+	AguavBerryIcon: INCBIN "gfx/items/aguav_berry.2bpp.lz"
+	IapapaBerryIcon: INCBIN "gfx/items/iapapa_berry.2bpp.lz"
+	PomegBerryIcon: INCBIN "gfx/items/pomeg_berry.2bpp.lz"
+	KelpsyBerryIcon: INCBIN "gfx/items/kelpsy_berry.2bpp.lz"
+	QualotBerryIcon: INCBIN "gfx/items/qualot_berry.2bpp.lz"
+	HondewBerryIcon: INCBIN "gfx/items/hondew_berry.2bpp.lz"
+	GrepaBerryIcon: INCBIN "gfx/items/grepa_berry.2bpp.lz"
+	TamatoBerryIcon: INCBIN "gfx/items/tamato_berry.2bpp.lz"
+	OccaBerryIcon: INCBIN "gfx/items/occa_berry.2bpp.lz"
+	PasshoBerryIcon: INCBIN "gfx/items/passho_berry.2bpp.lz"
+	WacanBerryIcon: INCBIN "gfx/items/wacan_berry.2bpp.lz"
+	RindoBerryIcon: INCBIN "gfx/items/rindo_berry.2bpp.lz"
+	YacheBerryIcon: INCBIN "gfx/items/yache_berry.2bpp.lz"
+	ChopleBerryIcon: INCBIN "gfx/items/chople_berry.2bpp.lz"
+	KebiaBerryIcon: INCBIN "gfx/items/kebia_berry.2bpp.lz"
+	ShucaBerryIcon: INCBIN "gfx/items/shuca_berry.2bpp.lz"
+	CobaBerryIcon: INCBIN "gfx/items/coba_berry.2bpp.lz"
+	PayapaBerryIcon: INCBIN "gfx/items/payapa_berry.2bpp.lz"
+	TangaBerryIcon: INCBIN "gfx/items/tanga_berry.2bpp.lz"
+	ChartiBerryIcon: INCBIN "gfx/items/charti_berry.2bpp.lz"
+	KasibBerryIcon: INCBIN "gfx/items/kasib_berry.2bpp.lz"
+	HabanBerryIcon: INCBIN "gfx/items/haban_berry.2bpp.lz"
+	ColburBerryIcon: INCBIN "gfx/items/colbur_berry.2bpp.lz"
+	BabiriBerryIcon: INCBIN "gfx/items/babiri_berry.2bpp.lz"
+	ChilanBerryIcon: INCBIN "gfx/items/chilan_berry.2bpp.lz"
+	RoseliBerryIcon: INCBIN "gfx/items/roseli_berry.2bpp.lz"
+	LiechiBerryIcon: INCBIN "gfx/items/liechi_berry.2bpp.lz"
+	GanlonBerryIcon: INCBIN "gfx/items/ganlon_berry.2bpp.lz"
+	SalacBerryIcon: INCBIN "gfx/items/salac_berry.2bpp.lz"
+	PetayaBerryIcon: INCBIN "gfx/items/petaya_berry.2bpp.lz"
+	ApicotBerryIcon: INCBIN "gfx/items/apicot_berry.2bpp.lz"
+	LansatBerryIcon: INCBIN "gfx/items/lansat_berry.2bpp.lz"
+	StarfBerryIcon: INCBIN "gfx/items/starf_berry.2bpp.lz"
+	KeeBerryIcon: INCBIN "gfx/items/kee_berry.2bpp.lz"
+	MarangaBerryIcon: INCBIN "gfx/items/maranga_berry.2bpp.lz"
+	EnigmaBerryIcon: INCBIN "gfx/items/enigma_berry.2bpp.lz"
+	MicleBerryIcon: INCBIN "gfx/items/micle_berry.2bpp.lz"
+	CustapBerryIcon: INCBIN "gfx/items/custap_berry.2bpp.lz"
+	JabocaBerryIcon: INCBIN "gfx/items/jaboca_berry.2bpp.lz"
+	RowapBerryIcon: INCBIN "gfx/items/rowap_berry.2bpp.lz"
+	EggantBerryIcon: INCBIN "gfx/items/eggant_berry.2bpp.lz"
+	UnyinnBerryIcon: INCBIN "gfx/items/unyinn_berry.2bpp.lz"
+	PumkinBerryIcon: INCBIN "gfx/items/pumkin_berry.2bpp.lz"
+	CareepBerryIcon: INCBIN "gfx/items/careep_berry.2bpp.lz"
+	BitmelBerryIcon: INCBIN "gfx/items/bitmel_berry.2bpp.lz"
+	DrashBerryIcon: INCBIN "gfx/items/drash_berry.2bpp.lz"
+	RazzBerryIcon: INCBIN "gfx/items/razz_berry.2bpp.lz"
+	BlukBerryIcon: INCBIN "gfx/items/bluk_berry.2bpp.lz"
+	NanabBerryIcon: INCBIN "gfx/items/nanab_berry.2bpp.lz"
+	WepearBerryIcon: INCBIN "gfx/items/wepear_berry.2bpp.lz"
+	PinapBerryIcon: INCBIN "gfx/items/pinap_berry.2bpp.lz"
+	CornnBerryIcon: INCBIN "gfx/items/cornn_berry.2bpp.lz"
+	MagostBerryIcon: INCBIN "gfx/items/magost_berry.2bpp.lz"
+	RabutaBerryIcon: INCBIN "gfx/items/rabuta_berry.2bpp.lz"
+	NomelBerryIcon: INCBIN "gfx/items/nomel_berry.2bpp.lz"
+	SpelonBerryIcon: INCBIN "gfx/items/spelon_berry.2bpp.lz"
+	PamtreBerryIcon: INCBIN "gfx/items/pamtre_berry.2bpp.lz"
+	WatmelBerryIcon: INCBIN "gfx/items/watmel_berry.2bpp.lz"
+	DurinBerryIcon: INCBIN "gfx/items/durin_berry.2bpp.lz"
+	BelueBerryIcon: INCBIN "gfx/items/belue_berry.2bpp.lz"
+	StribBerryIcon: INCBIN "gfx/items/strib_berry.2bpp.lz"
+	TilotaBerryIcon: INCBIN "gfx/items/tilota_berry.2bpp.lz"
+	NutpeaBerryIcon: INCBIN "gfx/items/nutpea_berry.2bpp.lz"
+	KrauBerryIcon: INCBIN "gfx/items/krau_berry.2bpp.lz"
+	LigarcBerryIcon: INCBIN "gfx/items/ligarc_berry.2bpp.lz"
+	TotapoBerryIcon: INCBIN "gfx/items/totapo_berry.2bpp.lz"
+	PinkanBerryIcon: INCBIN "gfx/items/pinkan_berry.2bpp.lz"
+	ApricornIcon: INCBIN "gfx/items/apricorn.2bpp.lz"
+	HopoBerryIcon: INCBIN "gfx/items/hopo_berry.2bpp.lz"
+	TmHmIcon: INCBIN "gfx/items/tm_hm.2bpp.lz"
