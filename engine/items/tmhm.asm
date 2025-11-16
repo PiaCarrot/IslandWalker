@@ -1,6 +1,10 @@
 TMHMPocket:
 	ld a, $1
 	ldh [hInMenu], a
+	ld a, $ff
+	ld [wTMHMIconMove], a
+	xor a
+	ld [wTMHMIconLoaded], a
 	call TMHM_PocketLoop
 	ld a, $0 ; no-optimize a = 0
 	ldh [hInMenu], a
@@ -221,7 +225,7 @@ TMHM_JoypadLoop:
 	ldh [hBGMapMode], a
 	ld a, [w2DMenuFlags2]
 	bit _2DMENU_EXITING_F, a
-	jr nz, TMHM_ScrollPocket
+	jmp nz, TMHM_ScrollPocket
 	ld a, b
 	ld [wMenuJoypad], a
 	bit B_PAD_A, a
@@ -244,9 +248,18 @@ TMHM_ShowTMMoveDescription:
 	ld [wTempTMHM], a
 	predef GetTMHMMove
 	ld a, [wTempTMHM]
+	ld b, a
 	ld [wCurSpecies], a
+	push bc
 	hlcoord 1, 14
 	call PrintMoveDescription
+	pop bc
+	ld a, [wTMHMIconMove]
+	cp b
+	jr z, TMHM_JoypadLoop
+	ld a, b
+	ld [wTMHMIconMove], a
+	farcall UpdateTMHMIcon
 	jr TMHM_JoypadLoop
 
 TMHM_ChooseTMorHM:
@@ -303,8 +316,8 @@ TMHM_ScrollPocket:
 	jmp z, TMHM_JoypadLoop
 	dec [hl]
 	call TMHM_DisplayPocketItems
-	jr TMHM_ShowTMMoveDescription
-
+	jmp TMHM_ShowTMMoveDescription
+	
 .down
 	call TMHM_GetCurrentPocketPosition
 	ld b, 5

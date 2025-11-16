@@ -2089,6 +2089,8 @@ wItemsPocketScrollPosition::    db
 wKeyItemsPocketScrollPosition:: db
 wBallsPocketScrollPosition::    db
 wTMHMPocketScrollPosition::     db
+wTMHMIconMove::    db
+wTMHMIconLoaded::    db
 wBerryPocketScrollPosition::    db
 wMedicinePocketScrollPosition::    db
 wValuablePocketScrollPosition::    db

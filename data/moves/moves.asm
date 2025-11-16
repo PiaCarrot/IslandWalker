@@ -513,7 +513,7 @@ SECTION "Moves Gen 5", ROMX
 
 MovesGen5:
         move EFFECT_NORMAL_HIT,         0, NORMAL, PHYSICAL, 100, 20,   0      ;WORK_UP
-        move EFFECT_NORMAL_HIT,        80, NORMAL, PHYSICAL, 100, 10,   0      ;DAZZLING_GLEAM
+        move EFFECT_NORMAL_HIT,        80, FAIRY, SPECIAL, 100, 10,   0      ;DAZZLING_GLEAM
         move EFFECT_NORMAL_HIT,        65, FIGHTING, PHYSICAL, 100, 20,   0      ;LOW_SWEEP
         move EFFECT_NORMAL_HIT,        70, ELECTRIC, PHYSICAL, 100, 20,   0      ;VOLT_SWITCH
         move EFFECT_NORMAL_HIT,        80, WATER,  PHYSICAL, 100, 15,   0      ;SCALD

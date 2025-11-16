@@ -55,7 +55,7 @@ UpdateMedicineIconAndDescription::
 
 UpdateValuableIconAndDescription::
 	farcall UpdateItemValuableDescription
-; fallthrough														
+; fallthrough
 UpdateItemIcon:
 	ld a, [wCurSpecies]
 	call GetItemIndexFromID
@@ -75,7 +75,29 @@ UpdateItemIcon:
 	call SetDefaultBGPAndOBP
 	call WaitBGMap
 	ret
-	
+
+UpdateTMHMIcon::
+	ld a, [wTMHMIconLoaded]
+	and a
+	jr nz, .have_tiles
+	ld a, BANK(TmHmIcon)
+	ld hl, TmHmIcon
+	ld de, vTiles2 tile $1f
+	lb bc, BANK(TmHmIcon), $9
+	call DecompressRequest2bpp
+	ld a, 1
+	ld [wTMHMIconLoaded], a
+.have_tiles
+	ld a, [wTempTMHM]
+	ld de, wStringBuffer1
+	call GetMoveData
+	ld a, [wStringBuffer1 + MOVE_TYPE]
+	and TYPE_MASK
+	call LoadTMHMTypePalette
+	call SetDefaultBGPAndOBP
+	call WaitBGMap
+	ret
+
 ItemIconPointers:
 	indirect_table 2, 1
 	indirect_entries NUM_ITEM_POCKET, ItemIconPointers1
@@ -562,7 +584,19 @@ LoadItemIconPalette:
 	ld de, wBGPals1 palette 7 + 2
 	ld bc, 4
 	jmp FarCopyColorWRAM
-	
+
+LoadTMHMTypePalette:
+	add a
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, TMHMTypePalettes
+	add hl, de
+	ld a, BANK(TMHMTypePalettes)
+	ld de, wBGPals1 palette 7 + 2
+	ld bc, 4
+	jmp FarCopyColorWRAM
+
 ItemIconPalettes:
 	indirect_table 4, 1
 	indirect_entries NUM_ITEM_POCKET, ItemIconPalettes1
@@ -579,9 +613,76 @@ ItemIconPalettes:
 	indirect_table_end
 
 NoItemPalette:
-	; NO ITEM
-	RGB 20, 20, 20
-	RGB 10, 10, 10
+; NO ITEM
+RGB 20, 20, 20
+RGB 10, 10, 10
+
+TMHMTypePalettes:
+; NORMAL
+RGB 28, 24, 17
+RGB 16, 12, 08
+; FIGHTING
+RGB 28, 08, 04
+RGB 17, 00, 00
+; FLYING
+RGB 23, 24, 30
+RGB 11, 14, 20
+; POISON
+RGB 24, 06, 24
+RGB 11, 00, 11
+; GROUND
+RGB 27, 19, 09
+RGB 16, 09, 00
+; ROCK
+RGB 24, 18, 05
+RGB 12, 09, 00
+; BIRD
+RGB 23, 24, 30
+RGB 11, 14, 20
+; BUG
+RGB 19, 26, 06
+RGB 09, 15, 00
+; GHOST
+RGB 15, 09, 26
+RGB 07, 02, 15
+; STEEL
+RGB 23, 23, 24
+RGB 12, 12, 13
+; unused types (treat as NORMAL)
+rept UNUSED_TYPES_END - UNUSED_TYPES - 1
+RGB 28, 24, 17
+RGB 16, 12, 08
+endr
+; ???
+RGB 17, 17, 17
+RGB 06, 06, 06
+; FIRE
+RGB 31, 16, 04
+RGB 20, 05, 00
+; WATER
+RGB 14, 19, 30
+RGB 04, 08, 20
+; GRASS
+RGB 12, 28, 08
+RGB 03, 15, 03
+; ELECTRIC
+RGB 31, 27, 06
+RGB 20, 14, 00
+; PSYCHIC
+RGB 31, 12, 24
+RGB 20, 03, 13
+; ICE
+RGB 20, 28, 31
+RGB 08, 16, 23
+; DRAGON
+RGB 18, 12, 31
+RGB 08, 05, 20
+; DARK
+RGB 12, 09, 09
+RGB 04, 03, 04
+; FAIRY
+RGB 31, 21, 31
+RGB 23, 10, 19
 
 ItemIconPalettes1:
 ; BRIGHTPOWDER
